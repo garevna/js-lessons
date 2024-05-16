@@ -1,0 +1,150 @@
+:root {
+  --cap-image : var(--js-cap);
+
+  --back-color: #ffffff90;
+  --menu-back-color: #fa0;
+  --submenu-back-color: #09b;
+  --back-transparent: #ffffff00;
+  --menu-color: #09b;
+  --submenu-color: #09b;
+  --menu-color-hover: #000;
+  --submenu-color-hover: #000;
+  --selected-lesson-color: #fff;
+  --header-back-color: linear-gradient(to right, #00000000, #00000050 30%, #000000 40%, #000 );
+  --header-back-image: var(--stars);
+
+  --icon:       var(--personage-to-right);
+  --search:     var(--search);
+  --link-image: var(--link);
+
+  --button-gradient-0: linear-gradient(to right, #09b, #09b, #09b);
+  --button-gradient-1: linear-gradient(to right top, #09b, #5bd 10% 30%, #09b);
+  --button-gradient-2: linear-gradient(to right top, #09b, #5bd 30% 50%, #09b);
+  --button-gradient-3: linear-gradient(to right top, #09b, #5bd 50% 70%, #09b);
+  --button-gradient-4: linear-gradient(to right top, #09b, #5bd 70% 90%, #09b);
+  --button-gradient-5: linear-gradient(to right top, #09b, #5bd 40% 50%, #09b);
+  --main-menu-item-height: 16px;
+  --main-font: var(--font-family);
+  --funy-font: 'Happy Monkey', Kavoon, 'Luckiest Guy', Montserrat, Roboto, Arial;
+  --font-family: Montserrat, Poppins, Roboto, sans-serif, Arial;
+}
+
+body {
+  margin: 20px calc(50% - 450px);
+  font-family: var(--font-family);
+  color: #555;
+  background-color: white;
+  border: solid 20px white;
+  border-bottom: solid 70px white;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-family);
+}
+
+html {
+    background: #555;
+    scroll-behavior: smooth;
+}
+
+hr {
+  margin: 32px 0;
+  height: 1px;
+  border-top: solid 1px #f50;
+  border-bottom: solid 1.2px #09b;
+  background: transparent;
+}
+
+main-menu-component {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: var(--header-back-image), var(--header-back-color);
+  background-size: 30%, 100%;
+  background-repeat: repeat-x, no-repeat;
+  background-blend-mode: overlay;
+  box-shadow: 2px 2px 4px #00000090;
+  z-index: 55;
+}
+
+main-menu-component:before {
+  content: "Client-side JS";
+  font-family: "Luckiest Guy";
+  color: #def;
+  display: block;
+  padding: 8px 16px;
+  font-size: 30px;
+  mix-blend-mode: difference;
+  -moz-letter-spacing: 2;
+  -webkit-letter-spacing: 2;
+  letter-spacing: 2;
+}
+
+glitch-logo {
+  position: absolute;
+  top: 70px;
+  left: calc(100% - 150px);
+}
+
+menu-component {
+  position: fixed;
+  top: 8px;
+  z-index: 500;
+  cursor:pointer;
+}
+
+@media screen and (min-width: 1300px) {
+  main-menu-component:before {
+    padding-left: 16px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  main-menu-component:before {
+    padding-left: 20vw;
+  }
+}
+@media screen and (max-width: 900px) {
+  body {
+    margin: 0;
+  }
+  glitch-logo { display: none; }
+  welcome-win { display: none; }
+
+  main-menu-component:before {
+    padding-left: 80px;
+  }
+}
+
+@media screen and (max-width: 480px), screen and (max-height: 480px) {
+    main-menu-component {
+      background: transparent;
+      box-shadow: none;
+    }
+    main-menu-component:before {
+      display: none;
+    }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #079;
+  box-shadow: inset 0 0 1px #00000070;
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f50;
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fa0;
+}

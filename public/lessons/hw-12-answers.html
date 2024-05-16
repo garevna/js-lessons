@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="https://garevna.github.io/a-level-js-lessons/src/icons/a-level-ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <script src="../rainbow.js"></script>
+    <link rel="stylesheet" href="../for-rainbow.css">
+    <title>Homework 12</title>
+    <style>
+        body { font-family: Roboto, Arial;  }
+        pre { padding: 8px 16px; }
+        h1, h2 {
+          color: white;
+          padding: 4px 8px;
+          max-width: 100px;
+          background: #079;
+          text-align: center;
+        }
+        h4 { color: #f50; }
+    </style>
+  </head>
+  <body>
+    <h1>1</h1>
+    easy...
+
+    <h1>2</h1>
+    easy...
+
+    <h1>3</h1>
+    <pre>
+      <code language="js">
+        var addElem = tagName => document.body.appendChild (
+            document.createElement ( tagName )
+        )
+
+        var timeOut = time => new Promise (
+            resolve => setTimeout ( () => resolve(), time )
+        )
+
+        document.body.style.fontFamily = `monospace, Arial`
+
+        var startButton = addElem ( 'button' )
+        startButton.innerText = 'Крутить рулетку'
+
+        startButton.onclick = event => {
+            var winnwer = Math.round ( Math.random() * 20000 )
+            event.target.style.display = "none"
+            var user
+            function show( photoURL, login ) {
+                img.src = photoURL
+                user = addElem ( "h4" )
+                user.innerText = `winner: ${login}`
+            }
+            var img = addElem( "img" )
+            img.height = "200"
+            img.src = "https://thumbs.gfycat.com/LivelyObviousAnhinga-size_restricted.gif"
+            img.style.transition = "all 0.5s"
+            timeOut ( 4000 )
+                .then ( () => img.src = "https://thumbs.gfycat.com/OddWideHookersealion-small.gif" )
+            timeOut ( 3500 )
+                .then ( () => img.style.opacity = 0 )
+            timeOut ( 4500 )
+                .then ( () => img.style.opacity = 1 )
+            timeOut ( 5500 )
+                .then (
+                    () => fetch ( `https://api.github.com/users?since=${winnwer}` )
+                              .then ( response => response.json()
+                                  .then ( users => show ( users[0].avatar_url, users[0].login ) )
+                              )
+                )
+            timeOut ( 10000 )
+                .then ( () => {
+                    img.remove()
+                    user.remove()
+                    event.target.style.display = "block"
+                })
+        }
+      </code>
+    </pre>
+  </body>
+</html>
