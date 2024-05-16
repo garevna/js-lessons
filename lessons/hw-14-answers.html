@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="https://garevna.github.io/a-level-js-lessons/src/icons/a-level-ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <script src="../rainbow.js"></script>
+    <link rel="stylesheet" href="../for-rainbow.css">
+    <title>Homework 14</title>
+    <style>
+        body { font-family: Roboto, Arial;  }
+        pre { padding: 8px 16px; }
+        h1, h2 {
+          color: white;
+          padding: 4px 8px;
+          max-width: 100px;
+          background: #079;
+          text-align: center;
+        }
+        h4 { color: #f50; }
+    </style>
+  </head>
+  <body>
+    <h1>1</h1>
+    <pre>
+      <code language="js">
+...
+      </code>
+    </pre>
+
+    <h1>2</h1>
+    <pre>
+      <code language="js">
+const typeMessage = async ( message, container ) => {
+    while ( message.length ) {
+        var [ letter, message ] = [ message.slice ( 0, 1 ), message.slice ( 1 ) ];
+        container.textContent += await new Promise (
+            resolve => setTimeout ( () => resolve ( letter ), 1000 )
+        )
+    }
+}
+
+typeMessage (
+     "Hello, students!",
+    document.body.appendChild (
+        document.createElement ( "p" )
+    )
+)
+    </code>
+  </pre>
+    <h1>3</h1>
+    <pre>
+      <code language="js">
+const typeMessage = async ( message, container ) => {
+    var [ letter, message ] = [ message.slice ( 0, 1 ), message.slice ( 1 ) ];
+    container.textContent += await new Promise (
+        resolve => setTimeout ( () => resolve ( letter ), 1000 )
+    )
+    return message.length && typeMessage ( message, container )
+}
+
+typeMessage (
+     "Hello, students!",
+    document.body.appendChild (
+        document.createElement ( "p" )
+    )
+)
+      </code>
+    </pre>
+  </body>
+</html>
