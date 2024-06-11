@@ -60,7 +60,8 @@ hr {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: solid 1px #09b; }
+  border: solid 1px #09b;
+}
 
 #search-input {
   padding: 4px 8px;

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="https://garevna.github.io/a-level-js-lessons/src/icons/a-level-ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <script src="../rainbow.js"></script>
+    <link rel="stylesheet" href="../for-rainbow.css">
+    <title>Homework 9</title>
+    <style>
+        body { font-family: Roboto, Arial;  }
+        pre { padding: 8px 16px; }
+        h1, h2 {
+          color: white;
+          padding: 4px 8px;
+          max-width: 100px;
+          background: #079;
+          text-align: center;
+        }
+        h4 { color: #f50; }
+    </style>
+  </head>
+  <body>
+    <h1>1</h1>
+    <pre>
+      <code data-language="js">
+function typeMessage (message, velocity) {
+  var container = document.getElementById('demo')
+    ? document.getElementById('demo')
+    : document.body.appendChild(document.createElement('h3'))
+  container.style = 'color: magenta;'
+
+  message.split('')
+    .forEach((char, index) => setTimeout(() => container.textContent += char, 1000 * velocity * index))
+}
+
+typeMessage('Welcome to the hell', 1)
+      </code>
+    </pre>
+
+    <h1>2</h1>
+    <pre>
+      <code data-language="js">
+var users = (function (list) {
+  var users = []
+  for (var user of list)
+    users.push({
+      name: user,
+      present: false
+    })
+
+    return {
+      setUserPresent (userName, present) {
+        users.filter(user => user.name === userName)[0].present = true
+      },
+      showPresent () {
+        users.filter(user => user.present)
+        .forEach(user => console.log(user))
+      },
+      showAbsent () {
+        users
+          .filter(user => !user.present)
+          .forEach(user => console.log(user))
+      }
+    }
+  })(['Robert', 'Stephan', 'Fred', 'Piter'])
+
+users.showAbsent()
+      </code>
+    </pre>
+
+    <h1>3</h1>
+    <pre>
+      <code language="js">
+var changeClass = (classname, styleString) => Array.from(document.styleSheets)
+  .filter(sheet => !sheet.href)
+  .map(sheet => Array.from(sheet.cssRules).filter(rule => rule.selectorText === `.${classname}`))
+  .filter(item => item.length > 0)
+  .map(item => item[0].cssText.split('}')
+  .join(styleString)
+  .length > 0
+    ? console.log('found')
+    : document.head.appendChild(document.createElement('style'))
+        .textContent = `.${classname} {${styleString}}`
+
+changeClass('second-level-menu', 'background-color: red!important;')
+      </code>
+    </pre>
+  </body>
+</html>

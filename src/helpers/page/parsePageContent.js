@@ -1,3 +1,5 @@
+const { convertStringForAnchor } = require('../../configs').default
+
 export function parsePageContent (pageContent) {
   Object.assign(this, {
     fragments: {},
@@ -34,4 +36,10 @@ export function parsePageContent (pageContent) {
   this.pageContent.length && this.parseTextFragment(this.pageContent)
 
   this.menu.setAttribute('options', JSON.stringify(this.pageContentList))
+
+  if (location.hash) {
+    console.log(location.hash)
+    const elem = document.querySelector(location.hash)
+    elem && elem.scrollIntoView()
+  }
 }

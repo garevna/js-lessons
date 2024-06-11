@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="https://garevna.github.io/a-level-js-lessons/src/icons/a-level-ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <script src="../rainbow.js"></script>
+    <link rel="stylesheet" href="../for-rainbow.css">
+    <title>Homework 8</title>
+    <style>
+        body { font-family: Roboto, Arial;  }
+        pre { padding: 8px 16px; }
+        h1, h2 {
+          color: white;
+          padding: 4px 8px;
+          max-width: 100px;
+          background: #079;
+          text-align: center;
+        }
+        h4 { color: #f50; }
+    </style>
+  </head>
+  <body>
+    <h1>1</h1>
+    <pre>
+      <code data-language="js">
+var p = document.body.appendChild(document.createElement('p'))
+
+var counter = 100
+
+function timer() {
+  if (!counter--) return p.remove()
+  p.innerText = new Date().toLocaleTimeString()
+  setTimeout(timer, 1000)
+}
+
+timer()
+      </code>
+    </pre>
+
+    <h1>2</h1>
+    <pre>
+      <code data-language="js">
+var typeMessage = (function (velocity) {
+  const container = demo
+    ? demo
+    : document.body.appendChild(document.createElement('h4'))
+
+  var index = 0
+  return function (message) {
+    var num = index
+    setTimeout(() => container.textContent += message[num], 1000 * velocity * num)
+    index++ < message.length - 1 && arguments.callee(message)
+  }
+})(1)
+
+typeMessage(`Welcome to the hell`)
+      </code>
+    </pre>
+
+    <h1>3</h1>
+    <pre>
+      <code language="js">
+function User (name) {
+  this.name = name
+  this.id = this.counter()
+}
+
+User.prototype.counter = (function () {
+  var counter = 0
+  return function () {
+    return this.id ? this.id : counter++
+  }
+})()
+
+var users = [
+  new User('Piter'),
+  new User('Antony'),
+  new User('Robert'),
+  new User('Gregory')
+]
+      </code>
+    </pre>
+  </body>
+</html>

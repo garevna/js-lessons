@@ -43,7 +43,7 @@ _________________________________
 
 ~~~js
 
-// Создадим объект source, 
+// Создадим объект source,
 // свойство position которого будет массивом,
 // а свойство attrs - объектом:
 
@@ -80,18 +80,18 @@ target.attrs.color = '#fa0'
 соответствующее значение массива **~source._position_~**
 и значение свойства **~_attrs_._color_~** объекта **~source~** изменились:
 
-![](https://camo.githubusercontent.com/66c769dbc806133b41ce4d018e6423d06e2ca362/68747470733a2f2f6c68362e676f6f676c6575736572636f6e74656e742e636f6d2f53326945454375335a5f395552446a635f5072792d3866464466716258585a4734437733786b68624a524d366667576735635652476c5851396b4a444c5879654f48366237737333664d6c31326a73336b496150643330766367435f2d6949634432666b7141507a4a57364e62744243333550574a5f595f7a4c534c6e2d36746d746a722d57533478667453707845)
+![](illustrations/Object-assign-01.png)
 
 _______________________
 
 ## ![ico-25 icon] Object.create()
 
-^^Этот метод использовался для доступа к прототипу объекта до того, как в спецификации ES6 ( 2015 ) появилось свойство **~&#95;&#95;proto&#95;&#95;~**^^
+^^Этот метод использовался для доступа к прототипу объекта до того, как в спецификации ES6 (2015) появилось свойство **~&#95;&#95;proto&#95;&#95;~**^^
 
 Создает экземпляр объекта на основе прототипа
 
 • Методу нужно передать в качестве первого аргумента ссылку на прототип, который будет использован при создании экземпляра
-• Вторым ( опциональным ) аргументом может быть объект-дескриптор свойств создаваемого экземпляра
+• Вторым (опциональным) аргументом может быть объект-дескриптор свойств создаваемого экземпляра
 
 ◘◘![ico-25 cap] **Пример 3**◘◘
 
@@ -223,7 +223,7 @@ Creator.call(obj, 'sample',  75)
 
 **результат**
 
-![](https://lh5.googleusercontent.com/tZ41G5MsrY2Y2XdD9QWEhHKGBdML2mKPKuYs18HjbLu1vScqaZlSy4udqTRyVvabwuv5q4Iyi9RQec_LAejFuYEreIgbhKpUsrU31J3h3Qxyl4DKbZyK7lEzuVUMPXcuZs3T6GpYa6xNc-I)
+![](illustrations/Object-static-props-01.png)
 
 
 ________________________________________________________
@@ -241,7 +241,7 @@ function Human (name = 'Тимофей', hobby = 'футбол') {
 }
 
 Human.prototype = {
-  speciality: 'монтажник,
+  speciality: 'монтажник',
   age: 20
 }
 
@@ -283,21 +283,21 @@ _______________________________________________________
 
 function SuperClass () {
   this.__proto__.type = 'SuperClass'
-  this.__proto__.name = 'Родительский класс'
+  this.__proto__.name = 'Parent Class'
 }
 
-// Теперь используем метод Object.create() 
+// Теперь используем метод Object.create()
 // для создания подкласса SubClass класса SuperClass
 
 // Для этого объявим конструктор подкласса SubClass:
 
 function SubClass () {
   SuperClass.call(this)
-  this.name = 'Дочерний класс'
+  this.name = 'Child Class'
   this.type = 'SubClass'
 }
 
-// Конструктор SuperClass вызывается в конструкторе SubClass 
+// Конструктор SuperClass вызывается в конструкторе SubClass
 // как обычная функция, однако в контексте экземпляра
 
 var sample = new SubClass()
@@ -305,7 +305,7 @@ var sample = new SubClass()
 
 **Результат**
 
-![](https://lh4.googleusercontent.com/vcps-4BeqX1JkOoOAOPJr82l6T9KExwOvfmuguK2nlkGesPz8LUYIX9qyLPI3ZDyHsAtxystJKAvUVY-EeIBQWVxmg77oiEUNUnqMuST214tak36uuCH9DTw6szNi9h8K2Y_LvtZlcLOQDU)
+![](illustrations/Object-static-props-02.png)
 
 
 ^^Обратите внимание, что **_SuperClass_** передал унаследованные свойства экземпляру, но при этом сам не появился в цепочке наследования:^^
@@ -327,26 +327,26 @@ ____________________________________________________
 // Объявляем конструктор класса Dishes
 
 function Dishes (type) {
-  this.type = 'Посуда'
-  console.log('Конструктор Dishes создал экземпляр посуды: \n', this)
+  this.type = 'dishes'
+  console.log('The constructor Dishes has created an instance: \n', this)
 }
 
 // Создаем свойства и методы прототипа:
 
 Dishes.prototype.wash = function () {
   this.clean = true
-  console.info('Посуда вымыта')
+  console.info('The tableware has been washed.')
 }
 Dishes.prototype.use = function () {
   this.clean = false
-  console.info('Посуда использована, она грязная')
+  console.info('The tableware has been used and it\'s dirty now.')
 }
 
 // Теперь создадим конструктор класса Cup:
 
 function Cup (color) {
-  this.type = 'чашка'
-  this.color = color || 'синяя'
+  this.type = 'cup'
+  this.color = color || 'blue'
 }
 ~~~
 
@@ -366,23 +366,23 @@ Dishes.call(Cup.prototype)
 ^^Создадим экземпляр класса **_Cup_**:^^
 
 ~~~js
-var redCup = new Cup('красная')
+var redCup = new Cup('red')
 ~~~
 
 ◘◘redCup◘◘
 
 ~~~console
 
-▼ Cup {type: "чашка", color: "красная", clean: true}
+▼ Cup {type: "cup", color: "red", clean: true}
     clean: true
-    color: "красная"
-    type: "чашка"
+    color: "red"
+    type: "cup"
   ▼ __proto__: Dishes
-        type: "Посуда"
+        type: "dishes"
       ▼ __proto__:
           ► use: ƒ ()
           ► wash: ƒ ()
-          ► constructor: ƒ Dishes( type )
+          ► constructor: ƒ Dishes(type)
           ► __proto__: Object
 ~~~
 
@@ -401,9 +401,9 @@ greenCup instanceof Object   // true
 ^^Давайте используем чашку, а потом помоем ее^^
 
 ~~~js
-redCup.use()  // Посуда использована, она грязная
+redCup.use()  // The tableware has been used and it's dirty now.
 
-redCup.wash() // Посуда вымыта
+redCup.wash() // The tableware has been washed.
 ~~~
 
 ^^Аналогичный результат можно получить значительно проще, используя свойство **~&#95;&#95;proto&#95;&#95;~**^^
@@ -421,7 +421,7 @@ _________________________________________________________________________
 // Создадим конструктор класса Kitchenware
 
 var Kitchenware = function () {
-  this.className = 'Кухонная утварь'
+  this.className = 'Kitchenware'
   this.__proto__.constructor = Kitchenware
 }
 
@@ -432,34 +432,42 @@ var Kitchenware = function () {
 var Dishes = function () {
   this.__proto__ = new Kitchenware()
   this.__proto__.constructor = Dishes
-  this.className = 'Посуда'
+  this.className = 'Dishes'
 }
 
 // Теперь создадим конструктор класса Cup,
 // и используем конструктор Dishes
 // для создания прототипа экземпляров класса Cup:
 
-var Cup = function ( $color ) {
-  this.__proto__ = new Dishes ()
+var Cup = function ($color) {
+  this.__proto__ = new Dishes()
   this.__proto__.constructor = Cup
-  this.className = 'Чашка'
-  this.color = $color || 'белая'
+  this.className = 'Cup'
+  this.color = $color || 'white'
 }
 
 // Теперь создадим экземпляр yellowCup класса Cup
 // и выведем его в консоль:
 
-var yellowCup = new Cup('желтая')
+var yellowCup = new Cup('yellow')
 console.log('*** cup:\n', yellowCup)
-
-// также выведем в консоль цепочку прототипов,
-// используя метод Object.getPrototypeOf():
-
-console.log('yellowCup prototype: ', Object.getPrototypeOf(yellowCup))
-console.log('yellowCup prototype of prototype: ', Object.getPrototypeOf(Object.getPrototypeOf(yellowCup)))
 ~~~
 
-![](https://lh4.googleusercontent.com/2yS6OUuP93Plj6Fakv-9ZIO_vcEgDYZr3w_qCvL_BESD2DMtRE5wT1QPFA-REI0GtSxOUqT0ToyEl2BVADmn_ha1Srvr4sJCEdIsRWy3qKSqaplxmfnsoVIqazjGQL4dMWQCInGa1OiT9UU)
+![](illustrations/Object-static-props-03.png)
+
+выведем в консоль цепочку прототипов, используя метод **Object.getPrototypeOf**:
+
+~~~js
+console.log(Object.getPrototypeOf(yellowCup))
+~~~
+
+![](illustrations/Object-static-props-04.png)
+
+~~~js
+console.log(Object.getPrototypeOf(Object.getPrototypeOf(yellowCup)))
+~~~
+
+![](illustrations/Object-static-props-05.png)
 
 ^^Обратите внимание, что ссылка на конструктор задана в явном виде:^^
 
@@ -474,9 +482,6 @@ this.__proto__ = new Kitchenware()
 ~~~
 
 ^^имя конструктора прототипа будет  **_Kitchenware_**, а не  **_Dishes_**^^
-^^Из-за этого мы получили бы в консоли вот такую картинку:^^
-
-![](https://lh5.googleusercontent.com/4dTD4u22uMaShQ2MIj5HqFFlhAQq4JioKL1H9ZdcShLOqIHdVQE76Hjdzzesdj5opetDFiu93XNefBJgNw7G79j6gwEepV_elF621RIHoBl9_YxTVdrbHSo5bbLlWLO6xNWdQVnfOCu_Hsk)
 
 ^^Аналогично мы явно указываем ссылку на функцию-конструктор чашки:^^
 
@@ -493,11 +498,11 @@ yellowCup instanceof Cup          // false
 yellowCup instanceof Object       // true
 ~~~
 
-^^Как мы видим, хотя в консоли цепочка прототипов выглядит вполне прилично, на самом деле произошла передача свойств вместо наследования ^^
+^^Как мы видим, хотя в консоли цепочка прототипов выглядит вполне прилично, на самом деле произошла передача свойств вместо делегирования (т.н. "наследования")^^
 
 _____________________________________________________________________________
 
-[![ico-30 hw] **Тесты на Object.create**](https://garevna.github.io/js-quiz/#Object.create)
+[![ico-30 hw] Quiz](quiz/#Object.create)
 
 _____________________________________________________________________________
 
@@ -530,7 +535,6 @@ Object.keys(sample)
 ◘◘^^Результат^^◘◘
 
 ~~~console
-
 ► (3) ["name", "size", "color"]
 ~~~
 
@@ -557,7 +561,6 @@ Object.defineProperty(sample, 'operation', {
 ◘◘^^Результат^^◘◘
 
 ~~~console
-
 ▼ {name: "figure", size: 100, color: "red", type: "svg"}
     color: "red"
     name: "figure"
@@ -608,7 +611,6 @@ console.log(Object.getOwnPropertyDescriptor(thing, 'priceUAH'))
 ◘◘^^Результат^^◘◘
 
 ~~~console
-
 ▼ {get: ƒ, set: ƒ, enumerable: true, configurable: true}
     configurable: true
     enumerable: true
@@ -638,6 +640,12 @@ ____________________________
 и добавим сразу два свойства объекту **sample** с помощью метода **_Object.defineProperties()_**:
 
 ~~~js
+var sample = {
+  name: 'figure',
+  size: 100,
+  color: 'red'
+}
+
 Object.defineProperties(sample, {
   canvas: {
     value: document.querySelector('svg'),
@@ -646,13 +654,25 @@ Object.defineProperties(sample, {
     enumerable: false
   },
   owner: {
-    get: () => this.owner,
-    set: newOwner => this.owner = newOwner
+    get: () => this.owner || this,
+    set: newOwner => Object.assign(this, { owner: newOwner })
   }
 })
 ~~~
 
-![](https://lh3.googleusercontent.com/e2VuWmeLvjOpFj4NoiZN93QXyrZUgr8S8cSxUDvPvaq7FWQEngz0jNtM63z70TOjow4YGiLMQ_a2_77Q6id0Lk93kpqm4MQJKWBzzj1jT-x8jkAKmisADDgnsMuo7F3zc_6yxf-z5jKG0mY)
+![](illustrations/Object-static-props-06.png)
+
+Обратите внимание, что при создании геттера и сеттера свойства **owner** мы использовали стрелочную функцию. За счет этого контекст вызова геттера и сеттера будет:
+
+![](illustrations/Object-static-props-07.png)
+
+т.е. фактически при использовании сеттера мы создаем свойство **owner** глобальному объекту:
+
+~~~js
+sample.owner = sample
+~~~
+
+![](illustrations/Object-static-props-08.png)
 
 ____________________________
 
@@ -1267,12 +1287,8 @@ ____________________________
 ^^![ico-25 icon] Object.isFrozen()^^
 ^^![ico-25 icon] Object.isSealed()^^
 ^^![ico-25 icon] Object.seal()^^
+
+[![ico-30 link] MDN](external/mdn-object-static-props)
 ____________________________
 
-## ![ico-25 hw] Тесты по методам Object
-
-[![ico-30 hw] **Тесты**](https://garevna.github.io/js-quiz/#Object)
-
-__________________
-
-[%%%MDN%%%](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+[![ico-30 hw] Quiz](quiz/Object)

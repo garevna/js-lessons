@@ -4,13 +4,35 @@ const { createPath, minifier } = require('../helpers').default
 const rawSource = `
 footer {
   display: grid;
-  grid-gap: 0;
-	grid-template-columns: 50% 50%;
-	grid-template-areas: "text picture";
+	grid-template-rows: repeat(3, 80px);
+	grid-template-columns: 100px 1fr 200px;
+	gap: 0px 16px;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
 }
+
+#donate-button {
+	grid-area: 3 / 1 / 4 / 2;
+}
+#copyright-text {
+	grid-area: 3 / 2 / 4 / 3;
+}
+#author-photo {
+	grid-area: 2 / 3 / 4 / 4;
+}
+#slogan-donate {
+	grid-area: 2 / 2 / 2 / 3;
+}
+
 .footer-text {
   grid-area: text;
-  padding-left: 24px;
+  display: flex;
+  align-items: end;
+}
+
+.donate-button {
+  grid-area: donate;
   display: flex;
   align-items: end;
 }
@@ -23,20 +45,16 @@ footer {
 
 .footer-picture {
   grid-area: picture;
-  display: flex;
-  justify-content: end;
-  padding: 0 24px 0 0;
-  align-items: center;
+  align-items: end;
 }
 
 .overshadow {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
+  margin: 0;
   box-sizing: border-box;
-  bottom:0;
-  right:50px;
+  border-radius: 50%;
   transition: all 0.5s;
-  vertical-align: bottom;
   background-image: var(--stars), radial-gradient(#ffffff00, #ffffff20 50%, #ffffff10 60%, #ffffff 70%), var(--icon);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: center, center, center;
@@ -46,8 +64,8 @@ footer {
 
 .overshadow__shadow {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   opacity: 0;
   transition: .5s ease;
   transform: translate(0,30%) scale(0.0);
@@ -82,15 +100,54 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
-  .overshadow { width: 100px; height: 100px; }
+  #copyright-text {
+    grid-area: 3 / 2 / 4 / 5;
+  }
+
+  #author-photo {
+    grid-area: 2 / 4 / 3 / 4;
+  }
+
+  #slogan-donate {
+  	grid-area: 2 / 2 / 2 / 4;
+  }
+
+  .overshadow, .overshadow__shadow {
+    width: 100px;
+    height: 100px;
+  }
+
+  .overshadow__text {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 480px) {
   footer {
-  	grid-template-columns: 100% 0;
-  	grid-template-areas: "text  picture";
+  	gap: 0;
   }
-  .overshadow { display: none }
+
+  #donate-button {
+    grid-area: 2 / 1 / 3 / 1;
+  }
+
+  #copyright-text {
+    grid-area: 3 / 1 / 4 / 5;
+    margin: 0 16px;
+  }
+
+  #author-photo {
+    grid-area: 2 / 4 / 3 / 4;
+  }
+
+  .overshadow, .overshadow__shadow {
+    width: 80px;
+    height: 80px;
+  }
+
+  #slogan-donate {
+  	display: none;
+  }
 }
 `
 

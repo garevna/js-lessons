@@ -1,4 +1,5 @@
 const { createPath, createElem } = require('../').default
+const { convertStringForAnchor } = require('../../configs').default
 
 function create (line, anchors) {
   let [text, rest] = ['', line]
@@ -19,15 +20,13 @@ function create (line, anchors) {
     })
 
     if (ref.split('/')[0] === 'page') {
+      const [fileName, hash] = ref.split('/')[1].split('#')
+      const href = createPath('page', fileName) + (hash ? `#${convertStringForAnchor(hash)}` : '')
       Object.assign(link, {
-        page: document.getElementsByTagName('page-element')[0],
+        style: 'text-decoration: none; color: #555;',
+        page: document.querySelector('page-element'),
         className: 'page-link',
-        onclick: function (event) {
-          event.preventDefault()
-          event.target
-            .parentElement
-            .page.setAttribute('src', `${createPath('lessons', ref.split('/')[1])}`)
-        }
+        href
       })
     } else {
       const href = !ref.indexOf('https://')

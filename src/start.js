@@ -19,6 +19,9 @@ import './components/codeOutputComponent'
 import './components/page-component'
 
 import './components/welcome-win'
+import './components/funny-slogan'
+
+import './components/donate'
 
 import Shutter from './components/Shutter'
 
@@ -43,7 +46,3 @@ window.addEventListener('resize', (event) => {
   const grids = document.getElementsByClassName('grid-component')
   Array.from(grids).forEach(elem => elem.dispatchEvent(new Event('resize')))
 })
-
-window.addEventListener('popstate', function(event) {
-  console.log(event)
-}, false)

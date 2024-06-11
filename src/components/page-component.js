@@ -19,10 +19,12 @@ class PageComponent extends HTMLElement {
   }
 
   connectedCallback () {
-    const path = location.pathname.split('/js-lessons').join ('')
-    const fileName = location.search
-      ? location.search.slice(1)
-      : path === '/' ? 'start-page' : location.pathname.slice(1)
+    const { pathname, search, hash } = location
+    const [path, fileName, place] = [
+      pathname.split('/js-lessons').join (''),
+      search ? search.slice(1) : path === '/' ? 'start-page' : location.pathname.slice(1),
+      hash.slice(1)
+    ]
 
     const src = `${createPath('lessons', fileName)}.md`
     this.setAttribute('src', src)
@@ -51,9 +53,10 @@ class PageComponent extends HTMLElement {
   }
 
   getData (file) {
-    fetch(file).then(response => response.text().then(response => this.parsePageContent(response)))
+    fetch(file)
+      .then(response => response.text())
+      .then(response => this.parsePageContent(response))
   }
 }
 
 customElements.define('page-element', PageComponent)
-export default PageComponent

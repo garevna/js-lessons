@@ -11,5 +11,5 @@
     "sourceType": "module",
     "ecmaVersion": 8
   },
-  "ignorePatterns": ["*.txt", "*.html"]
+  "ignorePatterns": ["*.txt", "*.html", "*.md"]
 }

@@ -1,6 +1,32 @@
 const { minifier } = require('../helpers').default
 
 const rawSource = `
+donate-popup {
+  position: fixed;
+  left: 12px;
+  bottom: -800px;
+  border: solid 1px #999;
+  min-width: 320px;
+  max-width: 360px;
+  background: #fbfbfb;
+  padding: 32px;
+  border-radius: 4px;
+  box-shadow: 8px 8px 12px #0007;
+  transition: all .5s;
+  z-index: 100;
+}
+
+.tooltip-text {
+  position: fixed;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: solid 1px #ddd;
+  background: #fafafa;
+  z-index: 501;
+  box-shadow: 4px 4px 8px #0008;
+  z-index: 101;
+}
+
 *:active,  *:hover,  *:focus  {
   outline:  none;
 }
@@ -50,6 +76,7 @@ hr  {
 }
 
 @media screen and (max-width: 480px), screen and (max-height: 480px)  {
+  donate-popup { left: 0; }
   h1  {  font-size:  1.2rem;  }
   h2  {  font-size:  1.0rem;  }
   h3  {  font-size:  0.9rem;  }
@@ -114,9 +141,9 @@ a.visible-anchor  {
   font-weight:  bold;
   padding:  8px 36px 8px 8px;
   background-image:  var(--open-in-new);
-  background-position:  right 8px center;
-  background-repeat:  no-repeat;
-  background-size:  24px;
+  background-position: right 8px center;
+  background-repeat: no-repeat;
+  background-size: 24px;
 }
 
 a.visible-anchor:hover  {
@@ -128,30 +155,30 @@ a.visible-anchor  >  span  {
   vertical-align:  middle;
 }
 
-h1,  h2  {
-  color:  #079;
+h1, h2 {
+  color: #079;
 }
-h3,  h4  {
-  color:  #579;
-}
-
-a  >  span  {
-  vertical-align:  middle;
+h3, h4 {
+  color: #579;
 }
 
-glitch-logo  {
-    position:  absolute;
-    top:  70px;
-    left:  calc(100% - 150px);
+a > span {
+  vertical-align: middle;
 }
 
-@media screen and (max-width: 480px),  screen and (max-height: 480px)  {
-  .main-page  {  width:  100px;  height:  100px;  }
+glitch-logo {
+  position: absolute;
+  top: 70px;
+  left: calc(100% - 150px);
+}
+
+@media screen and (max-width: 480px), screen and (max-height: 480px) {
+  .main-page { width: 100px; height: 100px; }
 }
 
 table  {
-  margin-bottom:  20px;
-  border-collapse:  collapse;
+  margin-bottom: 20px;
+  border-collapse: collapse;
 }
 td  {
   border:  solid 1px #dde;
@@ -208,7 +235,7 @@ menu-component  {
   background-blend-mode:  difference;
 }
 
-button.link,  button.link-ico,  button.cap,  button.page-next,  button.page-previous  {
+button.link, button.cap, button.page-next, button.page-previous  {
   margin:  12px 0;
   font-family:  var(--font-family);
   font-size:  1rem;
@@ -218,7 +245,37 @@ button.link,  button.link-ico,  button.cap,  button.page-next,  button.page-prev
   background-size:  32px, cover;
 }
 
-button.page-next,  button.page-previous  {
+button.link-ico {
+  background: transparent;
+  border: none;
+  font-family: var(--font-family);
+  font-size: 20px;
+  color: #079;
+  font-weight: bold;
+  margin: 4px -12px 0 -24px;
+}
+
+button.link-ico:hover {
+  color: #09b;
+}
+
+button.link, button.cap  {
+  background-position:  8px, center;
+  padding:  8px 8px 8px 48px;
+  background-color: transparent;
+  color:  #079;
+  font-weight: bold;
+  border:  0;
+  /* box-shadow:  1px 1px 2px #0007; */
+}
+
+button.link:hover, button.cap:hover  {
+  /* box-shadow:  0px 0px 2px #0005; */
+  /* text-shadow:  1px 1px 1px #0008; */
+  animation:  button-link-hover 0.5s ease infinite;
+}
+
+button.page-next, button.page-previous  {
   border:  0;
   color:  #079;
   font-weight:  bold;
@@ -235,21 +292,7 @@ button.page-previous  {
   background-position:  left 8px top 4px;
 }
 
-button.link,  button.link-ico,  button.cap  {
-  background-position:  8px, center;
-  padding:  8px 8px 8px 48px;
-  background-color:  #079;
-  color:  white;
-  border:  0;
-  box-shadow:  1px 1px 2px #0007;
-}
-
-button.link:hover,  button.link-ico:hover,  button.cap:hover  {
-  box-shadow:  0px 0px 2px #0005;
-  text-shadow:  1px 1px 1px #0008;
-  animation:  button-link-hover 0.5s ease infinite;
-}
-
+/*
 @keyframes button-link-hover  {
   0%  {  background:  var(--button-gradient-0);  }
   20%  {  background:  var(--button-gradient-1);  }
@@ -258,7 +301,19 @@ button.link:hover,  button.link-ico:hover,  button.cap:hover  {
   80%  {  background:  var(--button-gradient-4);  }
   100%  {  background:  var(--button-gradient-5);  }
 }
+*/
 
+@keyframes button-link-hover  {
+  0%  {  font-weight:  normal;  }
+  20%  {  font-weight:  bold;  }
+  40%  {  font-weight:  normal;  }
+  60%  {  font-weight:  bold;  }
+  70%  {  font-weight:  normal;  }
+  80%  {  font-weight:  bold;  }
+  100%  {  font-weight:  normal;  }
+}
+
+/*
 @keyframes button-cap-hover  {
     0%  {  background-image:  var(--cap-image),  var(--button-gradient-0);  }
    20%  {  background-image:  var(--cap-image),  var(--button-gradient-1);  }
@@ -267,6 +322,7 @@ button.link:hover,  button.link-ico:hover,  button.cap:hover  {
    80%  {  background-image:  var(--cap-image),  var(--button-gradient-4);  }
   100%  {  background-image:  var(--cap-image),  var(--button-gradient-5);  }
 }
+*/
 
 @media screen and (max-width: 900px)  {
   main  {

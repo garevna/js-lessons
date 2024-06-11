@@ -21,7 +21,7 @@ const rawSource = `
   padding-left:  0;
 }
 
-#navigation:hover  .dropdown  {
+#navigation:hover .dropdown {
   opacity: 1;
   max-height: 90vh;
   max-width: 90vw;
@@ -31,11 +31,12 @@ const rawSource = `
 }
 
 #navigation > li  {
-  position:  absolute;
-  font-size:  1rem;
-  line-height:  0.7rem;
-  padding:  0;
-  list-style-type:  none;
+  position: absolute;
+  font-size: 1rem;
+  line-height: 0.7rem;
+  padding: 0;
+  list-style-type: none;
+  border: solid 1px #f0f;
 }
 
 ul,  li,  a  {
@@ -43,22 +44,22 @@ ul,  li,  a  {
 }
 
 ul  {
-  position:  absolute;
-  list-style:  none;
-  margin-left:  -48px;
-  animation:  hide-submenu 0s forwards;
+  position: absolute;
+  list-style: none;
+  margin-left: -48px;
+  animation: hide-submenu 0s forwards;
 }
 
-li > a  {
-  text-decoration:  none;
-  color:  var(--menu-color);
-  display:  block;
-  padding:  8px 0 0 8px;
-  margin:  0;
+li > a {
+  text-decoration: none;
+  color: var(--menu-color);
+  display: block;
+  padding: 8px 0 0 8px;
+  margin: 0;
 }
 
-li:hover > a  {
-  background-color:  var(--menu-highlight-background);
+li:hover > a {
+  background-color: var(--menu-highlight-background);
   color:  var(--menu-highlight-color);
   cursor:  pointer;
 }
@@ -70,7 +71,8 @@ li:hover > a  {
 ul > li  {
   position:  relative;
   list-style-type:  none;
-  background:  var(--menu-background);
+  /* background: var(--menu-background); */
+  background: #000;
   font-size:  0.8rem;
   height:  36px;
   width:  var(--item-width);
@@ -79,7 +81,7 @@ ul > li  {
   animation:  hide-submenu-item 0s forwards;
 }
 
-#navigation:hover > ul > li  {
+#navigation:hover > ul > li {
   animation:  show-submenu-item 0.5s forwards;
 }
 
@@ -105,58 +107,58 @@ li:hover > ul > li,  li:hover > ul > li:hover > ul > li,  li:hover > ul > li:hov
 }
 
 ul:hover > li:hover,  ul:hover > li:hover > ul:hover > li:hover,  ul:hover > li:hover > ul:hover > li:hover > ul:hover > li:hover  {
-  background-color:  var(--menu-highlight-background);
+  background-color: var(--menu-highlight-background);
   cursor:  pointer;
 }
 
-#navigation:hover .dropdown > li  {
+#navigation:hover .dropdown > li {
   animation:  show-submenu-item 0.5s forwards;
 }
 
-.dropdown > li > a  {
+.dropdown > li > a {
   display:  block;
   padding:  16px 8px;
+  border-radius: 4px;
   text-decoration:  none;
   color:  var(--menu-color);
 }
-.dropdown > li:hover > a  {
-  background-color:  var(--hover-back);
-  color:  var(--menu-color);
+.dropdown > li:hover > a {
+  background-color: var(--hover-back);
+  color: var(--menu-color);
 }
 
-.dropdown > li.option1 > *  {
+.dropdown > li.option1 > * {
   margin-left:  0;
 }
 
-.dropdown > li.option2 > *  {
-  margin-left:  16px;
+.dropdown > li.option2 > * {
+  margin-left: 16px;
 }
-
-.dropdown > li.option3 > *  {
-  margin-left:  32px;
+.dropdown > li.option3 > * {
+  margin-left: 24px;
 }
-.dropdown > li.option4 > *  {
-  margin-left:  48px;
+.dropdown > li.option4 > * {
+  margin-left: 32px;
 }
-.dropdown > li.option5 > *  {
-  margin-left:  64px;
+.dropdown > li.option5 > * {
+  margin-left: 40px;
 }
-.dropdown > li.option6 > *  {
-  margin-left:  80px;
+.dropdown > li.option6 > * {
+  margin-left: 48px;
 }
 
 @keyframes show-submenu-item  {
-  0%  {  position:  absolute;  left:  -1000%;  opacity: 0;  }
-  100%  {  position:  relative;  left:  0;  opacity:  1;  }
+  0% { position: absolute; left: -1000%; opacity: 0; }
+  100% { position: relative; left: 0; opacity: 1; }
 }
 @keyframes hide-submenu-item  {
-  0%  {  position:  relative;  left:  0;  opacity:  1;  }
-  100%  {  position:  absolute;  left:  -1000%;  opacity:  0;  }
+  0% { position: relative; left: 0; opacity: 1; }
+  100% { position: absolute; left: -1000%; opacity: 0; }
 }
 
 @keyframes show-submenu  {
-  0%  {  position:  absolute;  left:  0;  opacity:  0;  }
-  100%  {  position:  relative;  top:  0;  left:  0;  opacity: 1;  }
+  0% { position: absolute; left: 0; opacity: 0; }
+  100% { position: relative; top: 0; left: 0; opacity: 1;  }
 }
 
 @keyframes hide-submenu  {

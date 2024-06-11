@@ -10,14 +10,14 @@ _______________________________________
 
 Откройте в браузере любую веб-страницу, которая сохраняет куки на клиенте и которой разрешено это делать на вашем компе
 
-( ![ico-20 warn] Chrome игнорирует файлы ~cookie~ с локальных страниц )
+(![ico-20 warn] Chrome игнорирует файлы ~cookie~ с локальных страниц)
 
-Запустите в консоли следующий ( "многословный" ) код:
+Запустите в консоли следующий ("многословный") код:
 
 ![ico-25 cap] ** 1**
 
 ~~~js
-console.info ( location.href )
+console.info(location.href)
 
 var res = document.cookie
   .split('; ')
@@ -30,13 +30,13 @@ var res = document.cookie
 console.log(res)
 ~~~
 
-![](https://lh4.googleusercontent.com/ff09mvDAMy80ahxWRzoq2QDhrQtACJ19czpFWBSwlEoWf_I3u1QUolgK4pO1A8SKKWp-BNAfjNFTn57WHLejg34Wp_koYlivWH2JjFzikxRMz_nr6fg8ZLBBWOm9Xkmyn0wv3fqSPA8jfSI)
+![](illustrations/cookie-01.png)
 
 Вы получите массив объектов, свойства которых являются записями в ~cookie~-файле данного сайта
 
 Итак, свойство ~document.cookie~ возвращает  строку
 
-В этой строке можно выделить отдельные "записи", отделяемые друг от друга точкой с запятой и пробелом  ( "; " )
+В этой строке можно выделить отдельные "записи", отделяемые друг от друга точкой с запятой и пробелом ("; ")
 
 Каждая "запись" представляет собой подстроку вида  xxx=yyy,   где:
 
@@ -46,31 +46,41 @@ console.log(res)
 В нашем примере метод ~document.cookie~  вернул строку:
 
 ~~~console
-"intercom-id-vuh4y50t=87110d5f-3671-4c46-bc3f-299e7e3702d8; _csrfToken=grvL1zeL-jpCdOS60hSAYv6EeNBy4hiICwb8"
+"APISID=159NndNJXgdvkeuR/AxzpbVBc2wIvRUKUY; SAPISID=IdbwT_IAY_sf2LU0/AW3V_D0PbOcE6M2Nw; __Secure-1PAPISID=IdbwT_IAY_sf2LU0/AW3V_D0PbOcE6M2Nw; __Secure-3PAPISID=IdbwT_IAY_sf2LU0/AW3V_D0PbOcE6M2Nw; SEARCH_SAMESITE=CgQIn5oB; _ga=GA1.1.1904075603.1709622825; SID=g.a000jwgMbBimGB5upYRX-Kfm5BTyAo30M9TafWQ9KJtyvQS8ZE6TraDNspBgaJxj5VeOfXQf_AACgYKAVASAQASFQHGX2MiqbKoB4jjXV_qJznlPC98jRoVAUF8yKo48nGZIgpwi8HEi7bCtzzH0076; _ga_XPW1QSKFW4=GS1.1.1716438502.20.1.1716438502.0.0.0; 1P_JAR=2024-05-23-09; SIDCC=AKEyXzU3YGRF1qmDi2w50N930i66W0XgsD5El6v-2fWjVqS2NaZoO65pijuA_pz80Hjq6IpLzIc"
 ~~~
 
-в этой строке мы видим две подстроки, разделенных  "; "
+в этой строке мы видим подстроки, разделенные "; "
 
 ~~~console
-intercom-id-vuh4y50t=87110d5f-3671-4c46-bc3f-299e7e3702d8
-_csrfToken=grvL1zeL-jpCdOS60hSAYv6EeNBy4hiICwb8
+APISID=159NndNJXgdvkeuR/AxzpbVBc2wIvRUKUY
+SAPISID=IdbwT_IAY_sf2LU0/AW3V_D0PbOcE6M2Nw
+__Secure-1PAPISID=IdbwT_IAY_sf2LU0/AW3V_D0PbOcE6M2Nw
+__Secure-3PAPISID=IdbwT_IAY_sf2LU0/AW3V_D0PbOcE6M2Nw
+SEARCH_SAMESITE=CgQIn5oB
+_ga=GA1.1.1904075603.1709622825
+SID=g.a000jwgMbBimGB5upYRX-Kfm5BTyAo30M9TafWQ9KJtyvQS8ZE6TraDNspBgaJxj5VeOfXQf_AACgYKAVASAQASFQHGX2MiqbKoB4jjXV_qJznlPC98jRoVAUF8yKo48nGZIgpwi8HEi7bCtzzH0076
+_ga_XPW1QSKFW4=GS1.1.1716438502.20.1.1716438502.0.0.0
+1P_JAR=2024-05-23-09
+SIDCC=AKEyXzU3YGRF1qmDi2w50N930i66W0XgsD5El6v-2fWjVqS2NaZoO65pijuA_pz80Hjq6IpLzIc
 ~~~
 
-В первой подстроке
+В первой подстроке APISID=159NndNJXgdvkeuR/AxzpbVBc2wIvRUKUY
 
-~ключ:      intercom-id-vuh4y50t~
-~значение:  87110d5f-3671-4c46-bc3f-299e7e3702d8~
+~ключ:      APISID~
+~значение:  159NndNJXgdvkeuR/AxzpbVBc2wIvRUKUY~
 
-Во второй подстроке
+Во второй подстроке SAPISID=IdbwT_IAY_sf2LU0/AW3V_D0PbOcE6M2Nw
 
-~ключ:      _csrfToken~
-~значение:  grvL1zeL-jpCdOS60hSAYv6EeNBy4hiICwb8~
+~ключ:      SAPISID~
+~значение:  IdbwT_IAY_sf2LU0/AW3V_D0PbOcE6M2Nw~
+
+и т.д.
 
 ____________________________
 
 ![ico-25 cap] ** 2**
 
-Теперь изменим наш код ( и можно перейти на другую страницу ):
+Теперь изменим наш код (и можно перейти на другую страницу):
 
 ~~~js
 console.info(location.href)
@@ -84,7 +94,7 @@ var res = document.cookie
 console.log(res)
 ~~~
 
-![](https://lh4.googleusercontent.com/0S48mrOhxzSppmjxS-1UwW7CZuL2edhilC0y46zhtf8q4elSbLky5uwBawHTLPq8n4dV8k_yDKY9uLd5tRsout8VYucYOWazePFBV-AomUxvwn4i13oZDQ42xZ2ocdm2qO6SR-LnuU-pTLY)
+![](illustrations/cookie-02.png)
 
 В результате выполнения кода
 
@@ -156,7 +166,7 @@ function getCookies () {
 
 Эта функция будет возвращать куки как объект
 
-![](https://lh6.googleusercontent.com/MMmxDm8XRp-hNUNc8wZioR9S2BTgrc3c_v89g5o26BKLuQQgmkBuGQFsfFaFPYF5389YtrCoW7hDBeI5GMdgh-k956BJZnMwUNAQeEJWbfjzwJtrLcJ6BLIYwVbsGZD4ClrBC9fQ1-hJy5k)
+![](illustrations/cookie-03.png)
 
 ___________________________________
 

@@ -6,7 +6,7 @@ class CodeOutput extends HTMLElement {
   constructor () {
     super ()
 
-    const shadow = this.attachShadow({ mode: 'closed' })
+    const shadow = this.attachShadow({ mode: 'open' })
     createElem('style', shadow).textContent = codeOutputStyles
 
     Object.assign(this, {

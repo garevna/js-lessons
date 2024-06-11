@@ -123,6 +123,11 @@ input[type='checkbox']  {
   overflow-y:  hidden;
 }
 
+.collapsible-content pre.black  {
+  background:  #000;
+  color: #eee;
+}
+
 table  {
   margin:  32px 0;
   border-collapse:  collapse;

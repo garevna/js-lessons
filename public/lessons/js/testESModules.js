@@ -1,9 +1,8 @@
 'use strict'
 
 export function showMessage ( message ) {
-    const section = document.querySelector('[script="dynamic-import-3.js"]' ).shadow.querySelector("section")
-    console.log ( section )
-    var demo = document.createElement ( 'div' )
+    const section = document.querySelector('[script="dynamic-import-3.js"]' ).shadow.querySelector('section')
+    var demo = document.createElement('div')
     demo.style = `
         position: fixed;
         top: 15%; left: 15%;
@@ -14,7 +13,7 @@ export function showMessage ( message ) {
         z-index: 300;
         background-color: #000;
     `
-    section.appendChild ( demo )
+    section.appendChild(demo)
     demo.innerHTML = `
         <h2 style="color: #789">Module was successfully imported</h2>
         <p style="color: #fa0">Now you can see how it works :)</p>

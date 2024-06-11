@@ -9,14 +9,15 @@
     "dev": "clean & webpack --mode development -w",
     "start": "node live-server.js",
     "prod": "webpack --mode production",
+    "ls": "git ls-files --cached",
     "deploy": "git subtree push --prefix public origin gh-pages"
   },
   "keywords": [
-    "bible",
-    "text",
-    "json",
-    "convert",
-    "parse"
+    "javascript",
+    "courseware",
+    "lessons",
+    "development",
+    "client side"
   ],
   "author": "garevna <irina.h.fylyppova@gmail.com>",
   "dependencies": {},

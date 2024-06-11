@@ -103,4 +103,4 @@ _____________________________________________________________________________
 
 [![ico-70 youtube]](https://youtu.be/PQYG2aJf6uI/)
 
-[![ico-20 link] google](https://developers.google.com/web/tools/chrome-devtools/)
+[![ico-20 link] Chrome DevTools](external/dev-tools)

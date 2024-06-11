@@ -1,18 +1,18 @@
-# ![ico-25 study] Dynamic import 
+# ![ico-25 study] Dynamic import
 
-**ES10 (2019)**
+**ES 2019**
 
 __________________________________________________
 
-Теперь у нас есть выбор между статическим (**~import~**) и динамическим (**~import()~**) импортом
+Теперь у нас есть выбор между статическим (**~import~**) и динамическим (**~import()~**) импортом.
 
-Динамический импорт представлен новой функцией **~import()~**, возвращающей промис
+Динамический импорт представлен новой функцией **~import()~**, возвращающей промис.
 
-![ico-25 warn] Строго говоря, **~import()~** не является функцией в смысле наследования от **~Function~**, это вообще не объект
+![ico-25 warn] Строго говоря, **~import()~** не является функцией в смысле наследования от **~Function~**, это вообще не объект.
 
 _________________________________
 
-## ![ico-25 cap] Пример 1
+![ico-30 cap] ** 1**
 
 Запустите в консоли **Chrome** следующий код:
 
@@ -29,18 +29,18 @@ document.body.onclick = async () => {
 
 ____________________________________
 
-## ![ico-25 cap] Пример 2
+![ico-30 cap] ** 2**
 
 ^^В этом примере скрипты импортируются динамически, последовательно, с задержкой в несколько секунд^^
 
 ◘◘![ico-20 paper]◘◘
 
 ~~~js
-const scriptFile = 'https://garevna.github.io/js-samples/js/index'
+const scriptPath = 'https://garevna.github.io/js-samples/js/index'
 
 import(`${scriptFile}12.js`)
-  .then(module => setTimeout(() => import(`${scriptFile}21.js`)))
-  .then(setTimeout(() => import(`${scriptFile}22.js`), 10000))
+  .then(module => setTimeout(() => import(`${scriptPath}21.js`)))
+  .then(setTimeout(() => import(`${scriptPath}22.js`), 10000))
 ~~~
 
 ^^Используем асинхронную функцию для упрощения кода:^^
@@ -63,25 +63,25 @@ scriptImports('https://garevna.github.io/js-samples/js/index')
 
 _____________________________________________________
 
-## ![ico-25 cap] Пример 3
+![ico-30 cap] ** 3**
 
 Предположим, в разметке мы подключили скрипт **~index.js~**
 
 ◘◘^^![ico-20 paper] index.html^^◘◘
 
 ~~~html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>ES Modules</title>
-</head>
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;meta charset="utf-8">
+    &lt;title>ES Modules&lt;/title>
+&lt;/head>
 
-  <body>
-    <script src="js/index.js"></script>
-  </body>
+  &lt;body>
+    &lt;script src="js/index.js">&lt;/script>
+  &lt;/body>
 
-</html>
+&lt;/html>
 ~~~
 
 Код файла **~index.js~** создает элемент ~&lt;script>~ с атрибутом **~type = "module"~** и вставляет его на страницу
@@ -130,9 +130,9 @@ export function showMessage (message) {
     position: fixed;
     top: 15%; left: 15%;
     bottom: 15%; right: 15%;
-    box-shadow: 10px 10px 16px #00000090;
+    box-shadow: 8px 8px 12px #00000090;
     border: solid 0.5px #bbb;
-    padding: 30px;
+    padding: 32px;
     z-index: 300;
     background-color: #000;
   `
@@ -167,6 +167,6 @@ import { showMessage } from './js/testESModules.js'
 ________________________________________________________________________
 
 
-[![ico-25 cap] **Live demo**](https://garevna.github.io/js-samples/#25)
+[![ico-25 cap] **Live demo**](samples/25)
 
 ______________________________________________________________________

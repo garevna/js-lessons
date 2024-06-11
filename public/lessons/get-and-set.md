@@ -36,27 +36,27 @@ console.log(sample.birth)
 
 _______________________________
 
-## ![ico-25 cap] PriceUAH ( sample )
+## ![ico-25 cap] PriceUAH
 
-Предположим, есть объект **~commodity~**, описывающий товар
+Предположим, есть объект **~commodity~**, описывающий товар.
 
-Цена товара **_~priceUSD~_** установлена в долларах
+Цена товара **_~priceUSD~_** установлена в долларах.
 
-Предположим, курс доллара устанавливается значением переменной **~course~**
+Предположим, курс доллара устанавливается значением переменной **~course~**.
 
-Для получения цены товара в гривне нужно умножить цену товара в долларах на курс доллара
+Для получения цены товара в гривне нужно умножить цену товара в долларах на курс доллара.
 
-Однако крайне неудобно производить подобные операции каждый раз, когда нужна цена товара в гривне
+Однако крайне неудобно производить подобные операции каждый раз, когда нужна цена товара в гривне.
 
-Создадим вычисляемое свойство **_~priceUAH~_**
+Создадим вычисляемое свойство **_~priceUAH~_**.
 
-Для этого объявим геттер и сеттер свойства
+Для этого объявим геттер и сеттер свойства.
 
 ~~~js
 var course = 28
 
 var commodity = {
-  name: 'Утюг',
+  name: 'Iron',
   mark: 'Tefal',
   priceUSD: 20,
 
@@ -69,19 +69,19 @@ var commodity = {
 }
 ~~~
 
-**Геттер** - это функция, которая будет вычислять актуальное значение цены товара в гривне и возвращать результат как значение свойства **~commodity.priceUAH~**
+**Геттер** - это функция, которая будет вычислять актуальное значение цены товара в гривне и возвращать результат как значение свойства **~commodity.priceUAH~**.
 
 ![ico-20 warn] У геттера не может быть аргументов
 
-**Сеттер** - это функция, которая будет получать новое значение цены товара в гривне ( **_~newPriceUAH~_** ) и пересчитывать цену товара в долларах ( **~commodity.priceUSD~** ) по текущему курсу ( **_~course~_** )
+**Сеттер** - это функция, которая будет получать новое значение цены товара в гривне (**_~newPriceUAH~_**) и пересчитывать цену товара в долларах (**~commodity.priceUSD~**) по текущему курсу (**_~course~_**).
 
-Каждый раз, когда мы будем обращаться к свойству **~commodity.priceUAH~**, будет срабатывать геттер
+Каждый раз, когда мы будем обращаться к свойству **~commodity.priceUAH~**, будет срабатывать геттер.
 
 ~~~js
 console.log(commodity.priceUAH) // 560
 ~~~
 
-Каждый раз, когда мы будем присваивать новое значение свойству **~commodity.priceUAH~**, на самом деле будет вызываться функция-сеттер, которая будет изменять значение свойства **~commodity.priceUSD~**
+Каждый раз, когда мы будем присваивать новое значение свойству **~commodity.priceUAH~**, на самом деле будет вызываться функция-сеттер, которая будет изменять значение свойства **~commodity.priceUSD~**.
 
 
 ~~~js
@@ -92,9 +92,134 @@ console.log(commodity.priceUSD) // 8.928571428571429
 
 {{{get-and-set-price.js}}}
 
+^^^[Full code of example]
+
+Let's create elements to edit dollar exchange rate
+
+~~~js
+const section = document.body
+
+const [container, label, course] = ['div', 'span', 'input']
+  .map(tag => document.createElement(tag))
+
+Object.assign(section.appendChild(container), { style: 'padding: 24px;' })
+Object.assign(container.appendChild(label), { innerText: 'Dollar exchange rate: ' })
+Object.assign(container.appendChild(course), {
+  type: 'number',
+  value: 28.5,
+  onchange (event) {
+    Commodity.prototype.course = event.target.value
+    commodities.forEach(item => item.setPriceUAH())
+  }
+})
+~~~
+
+and now constructor of commodity
+
+~~~js
+function Commodity (name, priceUSD, picture) {
+  Object.assign(this, {
+    name,
+    priceUSD,
+    setPriceUAH () { priceUAH.value = this.priceUAH },
+    setPriceUSD () { priceUSDElement.innerText = this.priceUSD }
+  })
+
+  Object.defineProperty(this, 'priceUAH', {
+    get () {
+      return this.priceUSD * this.course
+    },
+    set (newPriceUAH) {
+      this.priceUSD = Math.round(newPriceUAH * 100 / this.course) / 100
+      this.setPriceUSD()
+    }
+  })
+
+  const card = Object.assign(this.addElem('figure'), {
+    style: `
+      font-family: Arial;
+      width: 160px;
+      border: solid 1px white;
+      padding: 24px;
+      float: left;
+      margin: 8px;
+      box-sizing: boreder-box;
+    `
+  })
+
+  const commodityName = Object.assign(this.addElem('h4', card), {
+    innerText: name,
+    style: 'margin-top: 0;'
+  })
+
+  const img = Object.assign(this.addElem('img', card), {
+    src: picture,
+    height: 100,
+    style: 'margin: 0 0 16px 24px'
+  })
+
+  const prices = this.addElem('div', card)
+
+  this.addElem('small', prices).innerText = 'Price (UAH): '
+
+  const priceUAH = Object.assign(this.addElem('input', prices), {
+    style: `
+      background: transparent;
+      width: 80px;
+      border: 0;
+      color: #09b;
+    `,
+    value: this.priceUAH,
+    onchange: function (event) {
+      this.priceUAH = event.target.value
+      this.setPriceUSD()
+    }.bind(this)
+  })
+
+  const usd = Object.assign(this.addElem('div', card ), {
+    style: `
+      padding: 16px 0 0 0;
+      font-size: 0.8rem;
+      color: #888;
+    `
+  })
+
+  this.addElem('small', usd).innerText = 'Price (USD): '
+
+  const priceUSDElement = Object.assign(this.addElem('small', usd), {
+    style: 'color: #f50'
+  })
+
+  this.setPriceUSD()
+}
+
+Object.assign(Commodity.prototype, {
+  course: course.value,
+  addElem (tagName, container) {
+    return (container ? container : section)
+      .appendChild(document.createElement(tagName))
+  }
+})
+~~~
+
+Now we are ready to create commodities
+
+~~~js
+
+const [iron, fryingPan, saucepan] = ['iron', 'frying-pan', 'saucepan']
+  .map(name => `${location.origin + location.pathname}images/lessons/${name}.jpg`)
+
+const commodities = [
+  new Commodity('Iron', 43, iron),
+  new Commodity('Frying pan', 22, fryingPan),
+  new Commodity('Saucepan', 25, saucepan)
+]
+~~~
+
+^^^
 _____________________________________________________
 
-Для вычисляемых свойств "под капотом" операция присваивания заменяется вызовом функции-сеттера
+Для вычисляемых свойств "под капотом" операция присваивания заменяется вызовом функции-сеттера.
 
 ![ico-20 warn] Поэтому категорически нельзя внутри функции-сеттера использовать присваивание значения этому же свойству:
 
@@ -102,7 +227,7 @@ _____________________________________________________
 
 ~~~js
 var commodity = {
-  name: 'Утюг',
+  name: 'Iron',
   mark: 'Tefal',
   priceUSD: 20,
 
@@ -118,7 +243,6 @@ var commodity = {
 Это приведет к бесконечной рекурсии и генерации исключения:
 
 ~► Uncaught RangeError: Maximum call stack size exceeded~
-
 
 ____________________________________________________________
 
@@ -180,13 +304,13 @@ calculator.result = '5 - 8 '
 
 __________________________________________
 
-## ![ico-25 cap] Human states ( sample )
+## ![ico-25 cap] Human states
 
 Создадим вычисляемое свойство **_~state~_** объекта **~human~**
 
 ~~~js
 var human = {
-  name: 'Иван Сидоренко',
+  name: 'Piter',
   states: ['work', 'relax', 'enjoy'],
   currentState: 0,
 
@@ -214,14 +338,14 @@ human.showState()
 **Результат:**
 
 ~~~console
-Current state: 0 ( work )
+Current state: 0 (work)
 ~~~
 
-Если вычисляемое свойство **_~state~_** фигурирует в левой части оператора присваивания, то вызывается сеттер свойства
+Если вычисляемое свойство **_~state~_** фигурирует в левой части оператора присваивания, то вызывается сеттер свойства.
 
-Сеттер проверяет наличие такого значения в массиве **~human~**.**_~states~_**, и если такого значения там нет, то добавляет его
+Сеттер проверяет наличие такого значения в массиве **~human~**.**_~states~_**, и если такого значения там нет, то добавляет его.
 
-Затем сеттер свойства **_~state~_** устанавливает значение свойства **~human~**.**_~currentState~_** равным индексу элемента массива **~human~**.**_~states~_**, значение которого будет отображать геттер свойства **_~state~_**
+Затем сеттер свойства **_~state~_** устанавливает значение свойства **~human~**.**_~currentState~_** равным индексу элемента массива **~human~**.**_~states~_**, значение которого будет отображать геттер свойства **_~state~_**.
 
 
 ~~~js
@@ -233,7 +357,5 @@ human.showState()
 **Результат:**
 
 ~~~console
-Current state: 3 ( swim )
+Current state: 3 (swim)
 ~~~
-
-

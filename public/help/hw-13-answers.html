@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="https://garevna.github.io/a-level-js-lessons/src/icons/a-level-ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <script src="../rainbow.js"></script>
+    <link rel="stylesheet" href="../for-rainbow.css">
+    <title>Homework 13</title>
+    <style>
+        body { font-family: Roboto, Arial;  }
+        pre { padding: 8px 16px; }
+        h1, h2 {
+          color: white;
+          padding: 4px 8px;
+          max-width: 100px;
+          background: #079;
+          text-align: center;
+        }
+        h4 { color: #f50; }
+    </style>
+  </head>
+  <body>
+    <h1>1</h1>
+    <pre>
+      <code data-language="js">
+easy...
+      </code>
+    </pre>
+
+    <h1>2</h1>
+    <pre>
+      <code data-language="js">
+var addElem = tagName => document.body
+  .appendChild(document.createElement(tagName))
+
+var selector = Object.assign(addElem('input'), {
+  type: 'file',
+  multiple: true,
+  id: 'select-images',
+  style: 'display: none;',
+  onchange (event) {
+    for (var file of event.target.files) {
+      readFile(file)
+        .then(result => addElem('img').src = result)
+        .catch(error => console.error(error))
+    }
+  }
+})
+
+var label = Object.assign(addElem('label'), {
+  htmlFor: 'select-images',
+  innerText: 'Select images',
+  style: 'display: block; font-family: Arial; font-size: 16px; font-weight: bold; color: #09b;'
+})
+
+var readFile = file => new Promise((resolve, reject) => {
+  if (file.type.indexOf('image/')) {
+    return reject(`File ${file.name} is not an image.`)
+  }
+  if (file.size > 25000) {
+    return reject(`The size of file ${file.name} is too large.`)
+  }
+  var reader = Object.assign(new FileReader(), {
+    onload: event => resolve(event.target.result),
+    onerror: event => reject(`Error: ${file.name}`)
+  })
+  reader.readAsDataURL(file)
+})
+    </code>
+  </pre>
+    <h1>3</h1>
+    <pre>
+      <code data-language="js">
+/* Examples */
+
+/* GET all users: */
+
+fetch(`${api}/forms/all`)
+  .then(response => response.status === 200 ? response.json() : {})
+  .then(users => console.log(users))
+
+/* GET user by login: */
+
+const addElem = (tagName) => document.body
+  .appendChild(document.createElement(tagName))
+
+async function getFormData (login) {
+  const formData = await (await fetch(`${api}/forms/${login}`)).formData()
+
+  formData
+    .forEach(prop => prop instanceof File ? addElem('img').src = URL.createObjectURL(prop) : addElem('p').innerText = prop)
+}
+
+getFormData('frodo')
+
+/* POST, PUT, PATCH */
+
+const method = 'POST' /* ('PUT', 'PATCH') */
+
+async function updateUser (login, formData) {
+  const response = await fetch(`${api}/form/${login}`, {
+    method,
+    body: formData
+  })
+
+  console.log(response.status)
+}
+
+/* DELETE */
+
+async function deleteUser (login) {
+  const response = await fetch(`${api}/form/${login}`, {
+    method: 'DELETE'
+  })
+
+  console.log(response.status)
+}
+      </code>
+    </pre>
+  </body>
+</html>

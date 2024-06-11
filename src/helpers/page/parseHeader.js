@@ -1,4 +1,5 @@
 const { createElem } = require('../').default
+const { convertStringForAnchor } = require('../../configs').default
 
 export function parseHeader (line) {
   const headerLevel = line.match(/^[#]{1,6}/)
@@ -19,9 +20,9 @@ export function parseHeader (line) {
     text = content.split(']').slice(-1)[0].trim()
   })
 
-  Object.assign(createElem('a', this.main), {
-    name: encodeURI(text)
-  })
+  const id = convertStringForAnchor(text)
+
+  Object.assign(createElem('a', this.main), { name: id, id })
 
   this.pageContentList.push({
     level: headerLevel[0].length,

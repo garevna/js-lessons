@@ -369,8 +369,8 @@ typeof x === 'number' || x === null
 
 _________________________________________________________________________
 
-[![ico-30 hw] **Упражнения**](test/boolean)
+[![ico-30 hw] Упражнения](test/boolean)
 
 _________________________________________________________________________
 
-[![ico-20 link] w3schools](https://www.w3schools.com/js/js_comparisons.asp/)
+[![ico-20 link] w3schools](external/w3-comparison)

@@ -7,7 +7,7 @@ class MainMenuComponent extends HTMLElement {
   constructor () {
     super()
 
-    // this.homeRef = location.href.split('?')[0]
+    this.lang = localStorage.getItem('lang') || 'eng'
 
     Object.assign(this, {
       shadow: this.attachShadow({ mode: 'closed' }),
@@ -104,8 +104,11 @@ class MainMenuComponent extends HTMLElement {
 
   async getData () {
     this.menuData = await (await fetch(createPath('', 'main-menu.json'))).json()
+    const keywords = await (await fetch(createPath('', 'keywords.json'))).json()
+    console.log(keywords)
+
+    this.menuData
     this.keywords = new FormData
-    // const topLevel = this.shadow.querySelector('#menu')
 
     for (const lesson of this.menuData) {
       const lessonItem = Object.assign(createElem('li', this.menu), {

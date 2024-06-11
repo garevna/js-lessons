@@ -1,48 +1,34 @@
 const section = document.body
 
-section.onclick = ( 
-    () => {
-        let counter = 0
-        return event => message ( `body clicked ${++counter} times` )
-    }
-)()
+section.onclick = (() => {
+  let counter = 0
+  return event => counter++ && message(`body clicked ${counter - 1} times`)
+})()
 
-function message ( text ) {
-    section.innerHTML += `<small style="user-select: none">${text}</small><br>`
+function message (text) {
+  section.innerHTML += `<small style="user-select: none">${text}</small><br>`
 }
 
-message ( 'start' )
+function getUser(since, index = 1) {
+  return fetch(`https://api.github.com/users?since=${since}`)
+    .then(response => response.json())
+    .then(users => message(`github user ${index}: ${users[0].login}`))
+}
 
-setTimeout ( () => message ( 'timeout 0' ) , 3000 )
+message('start')
 
-fetch ( "https://api.github.com/users" )
-        .then (
-            response => response.json ()
-                .then (
-                    users => message ( `1: ${users[0].login}` )
-                )
-        )
+setTimeout(() => message('timeout 0'), 3000)
 
-setTimeout ( () => message ( 'timeout 1' ), 2000 )
+getUser(10)
 
-fetch ( "https://api.github.com/users?since=250" )
-        .then (
-            response => response.json ()
-                .then (
-                    users => message ( `2: ${users[0].login}` )
-                )
-        )
+setTimeout(() => message('timeout 1'), 2000)
 
-setTimeout ( () => message ( 'timeout 2' ), 100 )
+getUser(250, 2)
 
-fetch ( "https://api.github.com/users?since=300" )
-        .then (
-            response => response.json ()
-                .then (
-                    users => message ( `3: ${users[0].login}` )
-                )
-        )
+setTimeout(() => message('timeout 2'), 100)
 
-setTimeout ( () => message ( 'timeout 3' ), 0 )
+getUser(300, 3)
 
-section.dispatchEvent ( new Event ( "click" ) )
+setTimeout(() => message('timeout 3'), 50)
+
+section.dispatchEvent(new Event('click'))

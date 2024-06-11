@@ -44,13 +44,13 @@ __________________________________________
 ~~~js
 var prop = ['smile', 'clock', 'book']
 var bag = {
-  [`____${prop [ 0 ]}` ]: '😉',
-  [ `____${prop [ 1 ]}` ]:  '⏰',
-  [ `____${prop [ 2 ]}` ]:  '📖',
+  [`____${prop[0]}`]: '😉',
+  [`____${prop[1]}`]:  '⏰',
+  [`____${prop[2]}`]:  '📖',
 }
-console.log ( bag.____smile )  // 😉
-console.log ( bag.____clock )  // ⏰
-console.log ( bag.____book )   // 📖
+console.log(bag.____smile)  // 😉
+console.log(bag.____clock)  // ⏰
+console.log(bag.____book)   // 📖
 ~~~
 
 __________________________________________
@@ -59,13 +59,12 @@ __________________________________________
 
 ~~~js
 var sample = {}
-var props = [ 
+var props = [
   { prop: 'mouse', val: '🐭' },
   { prop: 'monkey', val: '🐒' },
   { prop: 'chicken', val: '🐥' }
 ]
 for (var item of props) {
-  // Object.assign(sample, { [item.prop] : item.val } )
   sample[item.prop] = item.val
 }
 console.log(sample.mouse)

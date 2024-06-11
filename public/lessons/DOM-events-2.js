@@ -1,18 +1,26 @@
 let section = document.body
 
-var btn = document.createElement ( 'button' )
-btn.innerText = "OK"
-btn.style = `
-    background-image: url(https://cdn2.iconfinder.com/data/icons/user-23/512/User_Yuppie_2.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: left center;
-    padding: 5px 10px 5px 30px;
+const circle = section.appendChild(document.createElement('div'))
+circle.style = `
+  position: absolute;
+  top: 64px;
+  left: 64px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #09b;
+  transition: all .5s;
 `
-section.appendChild ( btn )
 
-let callback = event => section.innerHTML += `<p>target: <span style="color:#092">${ event.currentTarget.tagName === "SECTION" ? "BODY" : event.currentTarget.tagName }</span> eventPhase: <span style="color:#092">${event.eventPhase}</span></p><hr>`
+const { width, height } = section.getBoundingClientRect()
 
-btn.addEventListener ( 'click', callback, true )
+circle.addEventListener('click', function (event) {
+  event.target
+    .style
+    .background = Math.random() < 0.5 ? '#09b' : '#fa0'
+})
 
-section.addEventListener ( 'click', callback, true )
+circle.addEventListener('click', function (event) {
+  event.target.style.top = Math.max(Math.round(Math.random() * height) - 100, 0) + 'px'
+  event.target.style.left = Math.max(Math.round(Math.random() * width) - 100, 0) + 'px'
+})

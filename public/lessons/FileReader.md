@@ -2,7 +2,7 @@
 
 **Конструктор**
 
-Создает экземпляр объекта, который позволяет веб-приложению асинхронно читать содержимое файлов ( объекты класса **_File_** ) на компьютере пользователя или объекты класса **_Blob_**
+Создает экземпляр объекта, который позволяет веб-приложению асинхронно читать содержимое файлов (объекты класса **_File_**) на компьютере пользователя или объекты класса **_Blob_**
 
 ~~~js
 var reader = new FileReader()
@@ -12,11 +12,10 @@ var reader = new FileReader()
 
 
 ^^^[Методы]
-
-• ~ ƒ ~ **readAsArrayBuffer()**
-• ~ ƒ ~ **readAsBinaryString()**
-• ~ ƒ ~ **readAsDataURL()**
-• ~ ƒ ~ **readAsText()**
+• ~ ƒ~ **~readAsArrayBuffer()~**
+• ~ ƒ~ **~readAsBinaryString()~**
+• ~ ƒ~ **~readAsDataURL()~**
+• ~ ƒ~ **~readAsText()~**
 ^^^
 
 
@@ -31,9 +30,9 @@ ______________________________________
 ![ico-20 green-ok] **readyState**
 
 
-• ^^**EMPTY**   : 0 ( _данные еще не загружены_ )^^
-• ^^**LOADING** : 1 ( _данные загружаются_ )^^
-• ^^**DONE**    : 2 ( _операция чтения завершена_ )^^
+• ^^**EMPTY**   : 0 (_данные еще не загружены_)^^
+• ^^**LOADING** : 1 (_данные загружаются_)^^
+• ^^**DONE**    : 2 (_операция чтения завершена_)^^
 
 ______________________________________
 
@@ -59,7 +58,7 @@ ______________________________________
 
 Разберите работу кода в Chrome DevTools:
 
-◘◘![ico-25 hw] **sample 1**◘◘
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 const selector = document.body.appendChild(document.createElement('input'))
@@ -87,7 +86,7 @@ ____________________________________________________________
 
 Разберите работу кода в Chrome DevTools:
 
-◘◘![ico-25 hw] **sample 2**◘◘
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 const selector = document.body
@@ -138,7 +137,7 @@ selector.onchange = function handleFiles (event) {
       : Object.assign(element, { [prop]: event.target.result })
   }
 }
-    
+
 const fileReader = new FileReader()
 ~~~
 
@@ -146,7 +145,7 @@ _____________________________________________________
 
 Разберите работу кода в Chrome DevTools:
 
-◘◘![ico-25 hw] **sample 3**◘◘
+◘◘![ico-25 cap] ** 3**◘◘
 
 ~~~js
 const selector = document.body
@@ -177,7 +176,6 @@ selector.onchange = function (event) {
     const fileReader = new FileReader()
     fileReader.onload = (image => function (e) {
       image.src = e.target.result
-
     })(picture)
 
     fileReader.readAsDataURL(file)
