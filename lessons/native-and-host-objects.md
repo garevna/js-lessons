@@ -81,8 +81,8 @@ _________________________________
 
 ~~~js
 var figure = {
-  type: 'Окружность',
-  size: 100,
+  type: 'circle',
+  radius: 100,
   color: 'red'
 }
 ~~~
@@ -91,7 +91,7 @@ var figure = {
 
 ~~~js
 console.log(figure.type)
-console.log(figure.size)
+console.log(figure.radius)
 console.log(figure.color)
 ~~~
 
@@ -99,7 +99,7 @@ console.log(figure.color)
 
 ~~~js
 console.log(figure['type'])
-console.log(figure['size'])
+console.log(figure['radius'])
 console.log(figure['color'])
 ~~~
 
@@ -111,7 +111,7 @@ console.log(figure['color'])
 
 ~~~js
 var sample = {
-  path: "https://garevna.github.io/a-level-js-lessons/src/icons/",
+  path: 'https://garevna.github.io/js-lessons/icons/',
 
   testToken: (function (token) {
     return function () {
@@ -120,7 +120,8 @@ var sample = {
   })(prompt('Set Your Token: ')),
 
   page: function () {
-    document.write(`<img src="${this.path}${ this.testToken () ? 'green-ok.png' : 'no-entry.png'}">`)
+    const ico = this.testToken() ? 'green-ok.png' : 'no_entry.png'
+    document.write(`<img src="${this.path}${ico}">`)
   }
 }
 
@@ -129,7 +130,7 @@ sample.page()
 
 ^^В этом примере при создании объекта запрашивается ввод токена доступа, который будет сохранен в замыкании метода **testToken**^^
 
-^^при попытке получения доступа к странице ( свойству **page** ) будет вызван метод **testToken**, который запросит токен доступа и сверит его со значением, хранящимся в замыкании^^
+^^при попытке получения доступа к странице (свойству **page**) будет вызван метод **testToken**, который запросит токен доступа и сверит его со значением, хранящимся в замыкании^^
 
 ^^Если значения совпадут, то на страницу будет выведено ![ico-25 green-ok]^^
 
@@ -152,7 +153,7 @@ ____________________________________________
 
 ~~~js
 var figure2 = {
-  type: 'Треугольник',
+  type: 'triangle',
   size: 150,
   color: 'blue'
 }
@@ -167,8 +168,8 @@ var figure2 = {
 ^^свойства  **_~type~_**,  **_~size~_**  и  **_~color~_**  являются **собственными** свойствами экземпляров  **~figure~**  и  **~figure2~** потому, что их значения локализованы внутри "капсюлы" под именем экземпляра )^^
 
 ~~~js
-figure.type       // "Окружность"
-figure2.type      // "Треугольник"
+figure.type       // "circle"
+figure2.type      // "triangle"
 ~~~
 
 __________________________________________
@@ -208,8 +209,8 @@ ________________________
 
 ~~~js
 var figure = {
-  type: 'Окружность',
-  size: 100,
+  type: 'circle',
+  radius: 100,
   color: 'red'
 }
 ~~~
@@ -217,9 +218,9 @@ var figure = {
 Если "развернуть" экземпляр **figure** в консоли, то помимо собственных перечислимых свойств ~color~, ~size~ и ~type~ мы увидим свойство **~&#95;&#95;proto&#95;&#95;~**, которое не было выведено в консоль, когда мы итерировали объект оператором ~for...in~
 
 ~~~console
-▼{ type: "Окружность", size: 100, color: "red" }
+▼{ type: "Окружность", radius: 100, color: "red" }
     color:"red"
-    size:100
+    radius:100
     type:"Окружность"
   ► __proto__:Object
 ~~~
@@ -228,7 +229,7 @@ var figure = {
 
 Разберемся, является ли это свойство собственным
 
-Значением этого свойства является ссылка на встроенный нативный объект ( конструктор ) **~Object~**
+Значением этого свойства является ссылка на встроенный нативный объект (конструктор) **~Object~**
 
 Если развернуть свойство **~&#95;&#95;proto&#95;&#95;~**, то в консоли мы увидим следующую картину:
 
@@ -371,8 +372,8 @@ var obj = new Sample()
         ► __proto__: Object
 ~~~
 
-• мы создали пустой объект класса **Sample** ^^( точнее, мы создали экземпляр объекта )^^
-• у него нет собственных свойств ^^( потому что в конструкторе ничего не объявлено )^^
+• мы создали пустой объект класса **Sample** ^^(точнее, мы создали экземпляр объекта)^^
+• у него нет собственных свойств ^^(потому что в конструкторе ничего не объявлено)^^
 • у него есть _цепочка прототипов_ - это вложенные одно в другое свойства  **~&#95;&#95;proto&#95;&#95;~**
 • первое "звено" в цепочке прототипов - это ссылка на свойство **~prototype~** функции-конструктора **Sample**
 • свойство **~prototype~**  функции-конструктора **Sample**  является объектом
@@ -386,7 +387,7 @@ Sample.prototype
 
 ~~~console
 ▼ {constructor: ƒ}
-    ► constructor: ƒ Sample( params )
+    ► constructor: ƒ Sample(params)
     ► __proto__: Object
 ~~~
 
@@ -400,7 +401,7 @@ Sample
   }
 ~~~
 
-Если теперь вывести в консоль экземпляр **obj**, то в его свойстве **~&#95;&#95;proto&#95;&#95;~** мы обнаружим новое перечислимое свойство **_~setNewProperty~_** ( _унаследованный метод_ )
+Если теперь вывести в консоль экземпляр **obj**, то в его свойстве **~&#95;&#95;proto&#95;&#95;~** мы обнаружим новое перечислимое свойство **_~setNewProperty~_** (_унаследованный метод_)
 
 Вызовем этот метод:
 
@@ -438,11 +439,9 @@ func()
 ~~~console
 ƒ anonymous(
 ) {
-
-        var x = "Hello"
-        var y = "baby"
-        console.log ( x + ", " + y )
-
+   var x = 'Hello'
+   var y = 'baby'
+   console.log(x + ', ' + y)
 }
 Hello, baby
 ~~~
@@ -462,10 +461,10 @@ ___________________________________
 
 К публичным свойствам и методам экземпляра всегда есть доступ из внешнего окружения
 
-Достаточно использовать _имя экземпляра_ + "." + _имя свойства_ ( _метода_ )
+Достаточно использовать _имя экземпляра_ + "." + _имя свойства_ (_метода_)
 ^^при вызове метода нужно еще добавить круглые скобки после его имени^^
 
-Приватные свойства ( и методы ) экземпляра недоступны извне
+Приватные свойства (и методы) экземпляра недоступны извне
 
 Они не отображаются в консоли при выводе объекта
 
@@ -477,7 +476,7 @@ var  Girl = function (name = 'Jane', age = 25) {
   this.age = age
 
   function showName (name) {
-    console.log(`Меня зовут ${name}`)
+    console.log(`My name is ${name}`)
   }
 
   this.changeName = function (newName) {
@@ -486,7 +485,7 @@ var  Girl = function (name = 'Jane', age = 25) {
   }
 }
 
-var lena = new Girl('Лена', 18)
+var lena = new Girl('Helen', 18)
 lena.changeName('Mary')
 ~~~
 
@@ -494,11 +493,11 @@ lena.changeName('Mary')
 
 **_~name~_**, **_~age~_** и **_~changeName~_** являются **_публичными_** свойствами экземпляра **~lena~**
 
-В публичных методах экземпляра ( **_~changeName~_** )  **~this~**  будет ссылкой на экземпляр ( **~lena~** )
+В публичных методах экземпляра (**_~changeName~_**)  **~this~**  будет ссылкой на экземпляр (**~lena~**)
 
-![ico-20 warn] в приватных методах ( **_~showName~_** ) экземпляра контекстом вызова будет *глобальный объект* **~window~**
+![ico-20 warn] в приватных методах (**_~showName~_**) экземпляра контекстом вызова будет *глобальный объект* **~window~**
 
-( т.е. внутри метода **_~showName~_** **~this~**  будет ссылкой на объект **~window~** )
+(т.е. внутри метода **_~showName~_** **~this~**  будет ссылкой на объект **~window~**)
 
 ___________________________________
 
@@ -507,8 +506,8 @@ ___________________________________
 ~~~js
 var girls = []
 
-girls[0] = new Girl('Лена', 18)
-girls[1] = new Girl('Марина', 20)
+girls[0] = new Girl('Helen', 18)
+girls[1] = new Girl('Mary', 20)
 ~~~
 
 ◘◘![ico-25 cap] 7◘◘
@@ -518,28 +517,28 @@ var Bag = function (keyword) {
   var money = 3000
 
   var documents = [
-    'Паспорт',
-    'Водительские права',
-    'Диплом ВУЗа'
+    'Passport',
+    'Driver license',
+    'University Diploma'
   ]
 
   var accessories = [
-    'Ключи',
-    'Билеты в кино',
-    'Лекарство'
+    'Keys',
+    'Movie tickets',
+    'Medicine'
   ]
 
   this.content = null
-  
+
   function getMoney (sum) {
     money -= sum
   }
 
   this.payment = function (sum) {
-    if (prompt('ты кто?') !== keyword) return '⛔️'
+    if (prompt('Who are you?') !== keyword) return '⛔️'
     getMoney(sum)
-    console.info(`Осталось денег в кошельке: ${money} грн`)
-    return `Уплачено: ${sum} грн`
+    console.info(`Money left in wallet: ${money} uah`)
+    return `Paid: ${sum} uah`
   }
 
   this.rummage = function () {
@@ -548,11 +547,11 @@ var Bag = function (keyword) {
       accessories,
       money
     ]
-    console.log(`Протокол обыска.\nСодержимое сумочки: ${this.content}`)
+    console.log(`Search protocol. Bag contents: ${this.content}`)
   }
 }
 
-var myCase = new Bag('это я, твоя хозяйка')
+var myCase = new Bag('it\'s me, your mistress')
 ~~~
 
 ^^Конструктор **~Bag~**  создает объект с приватными свойствами  **~money~**,  **~documents~** и  **~accessories~**^^
@@ -571,7 +570,7 @@ var myCase = new Bag('это я, твоя хозяйка')
 
 ^^Если хозяин сумки согласится показать ее содержимое, то оно будет помещено в публичное свойство **~content~** для обозрения^^
 
-^^Функция **~getMoney()~** доступа к деньгам  ( приватному свойству **~money~** ) также является приватной, поскольку никто, кроме хозяина, не должен иметь возможность взять деньги из сумки^^
+^^Функция **~getMoney()~** доступа к деньгам  (приватному свойству **~money~**) также является приватной, поскольку никто, кроме хозяина, не должен иметь возможность взять деньги из сумки^^
 
 ^^И есть два публичных метода:^^
 

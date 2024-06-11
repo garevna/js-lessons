@@ -1,4 +1,4 @@
-# ![ico-30 bash] # BASH 
+# ![ico-30 bash] # BASH
 
 **Bourne-Again SHell**
 
@@ -12,12 +12,12 @@ ____________________________________________________
 
 ## ![ico-25 bash] CR | LF
 
-Проблема для разработчиков, работающих на разных платформах, - 
+Проблема для разработчиков, работающих на разных платформах, -
 это разные _коды символов перевода строки_ в текстовых файлах
 
 | Платформа         | символы перевода строки |
 | Windows ( и DOS ) | CR и LF                 |
-| UNIX ( Linux )    | LF                      |
+| UNIX (Linux)      | LF                      |
 | OS X              | LF                      |
 | Mac               | CR                      |
 
@@ -39,7 +39,7 @@ ____________________________________________________
 
 ••echo 'my name is Irina' > sample.txt••
 
-в текщей папке создаст ( или перезапишет ) файл  **sample.txt**  с текстом '_my name is Irina_'
+в текщей папке создаст (или перезапишет) файл  **sample.txt**  с текстом '_my name is Irina_'
 
 ____________________________________________________
 
@@ -55,7 +55,7 @@ ____________________________________________________
 
 после нажатия ~Enter~ можно вводить мнострочный текст
 завершить - ~Ctrl + D~
-В текущей папке будет создан ( или перезаписан ) файл **sample.txt** с введенным текстом
+В текущей папке будет создан (или перезаписан) файл **sample.txt** с введенным текстом
 
 ![ico-20 cap] ** 2**
 
@@ -66,11 +66,11 @@ ____________________________________________________
 
 Результат в блокноте
 
-![](https://lh5.googleusercontent.com/bjByuVJ8p_n11F6NpVdJVyseCMbrQojFdSC0eJFu8g1JIPFfaA9dbKtqtCyv9q30mw8V2epMx0uDKyuWt7BV7Bxnqifp8bFWRRU5USAObvwkk4RwfFeus1oHBZKS4S8IraA526j2bGQ-NQs)
+![](illustrations/git-bash-cat.png)
 
 Результат в Notepad++
 
-![](https://lh6.googleusercontent.com/zdmUMX2t13Yrj68a5T4Q08t5cnFmAhpaGJ2nywqWQ_6Q1r77JS_l3HdNn0DuuIWxQ84pMybzZrkuSjAxv-WS5JNBVdpyQSAWAl11-6_kW3F9AymFdqsyJ3xP0Ekqn_nyLgvrR8AlAre5s6U)
+![](illustrations/git-bash-cat-1.png)
 
 ____________________________________________________
 
@@ -79,7 +79,7 @@ ____________________________________________________
 Команда  **~touch~**  в основном используется для изменения временных меток файла,
 но если файл, имя которого передано как аргумент, не существует,
 то команда  **~touch~**  создает его
-( пустым, если не указана опция  ~-c~  или  ~-h~ )
+(пустым, если не указана опция  ~-c~  или  ~-h~)
 
 ![ico-20 cap] ** 3**
 
@@ -87,7 +87,7 @@ ____________________________________________________
 
 Если файл  _samle.txt_  не существует, то  создаст пустой файл  _samle.txt_
 
-Если файл  _samle.txt_  существует, то  обновит время доступа/модификации файла ( ~timestamp~ ) до текущего времени
+Если файл  _samle.txt_  существует, то  обновит время доступа/модификации файла (~timestamp~) до текущего времени
 
 ![ico-20 warn] Чтобы команда touch не создавала никаких новых файлов,  можно использовать опцию ~-c~
 
@@ -99,7 +99,7 @@ ____________________________________________________
 
 ### ![ico-20 bash] stat
 
-С помощью команды  **~stat~**  выведем информацию о файле  _sample.txt_ до и после выполнения команды ~touch  sample.txt~ 
+С помощью команды  **~stat~**  выведем информацию о файле  _sample.txt_ до и после выполнения команды ~touch  sample.txt~
 
 ~~~console
 $ stat  sample.txt
@@ -109,7 +109,7 @@ $ stat  sample.txt
 
 ••$ touch  sample.txt••
 
-![](https://lh5.googleusercontent.com/WMEU1eQfiWpMsuWhPSpxesS2ZekfL6-e42FZRER6pWdGHGL5eVyVNrzS1hn6IhW4m_1ifxg27Kij2KHa7DaCXaE9mhOUuxyY6hd668O0NZ5GvbDxDkxlTMv11ebpg0104mcNqunkYsgk1sQ)
+![](illustrations/git-bash-stat-1.png)
 
 
 ^^Как видно на скрине,  значения ^^
@@ -132,11 +132,11 @@ $ stat  sample.txt
   stat  sample.txt
 ~~~
 
-На скрине видно, что изменилось только время последнего доступа ( ~Access~ ) и время последнего изменения ( ~Change~ )
+На скрине видно, что изменилось только время последнего доступа (~Access~) и время последнего изменения (~Change~)
 
 ••$ touch  sample.txt  -a••
 
-![](https://lh5.googleusercontent.com/LsLoSKkXwj3ZpKkEQL-ABv-RT4pAg7KRtEWlmpgL1ZowJ49EyEYLlyWEp6Xb8gOu51dLFiOR4Vx5HbjiECvBGLK5G9tdWzHsW0-7dgW0y2CPUeIW3xWi_XRYcqntrv2BSlCM1oFliErm5ZE)
+![](illustrations/git-bash-stat-2.png)
 
 ![ico-20 green-ok] Опция  -m
 
@@ -151,12 +151,11 @@ $ stat  sample.txt
 
 Обратите внимание ( см. скрин ), что:
 
-время создания ( ~Birth~ ) файла **_sample.txt_**  не изменилось,
-время изменения ( ~Change~ ) было изменено на текущее время,
-а время доступа ( ~Access~ ) и время модификации ( ~Modify~ )
+время создания (~Birth~) файла **_sample.txt_**  не изменилось,
+время изменения (~Change~) было изменено на текущее время,
+а время доступа (~Access~) и время модификации (~Modify~)
 установлены такими же, как у файла **file1.txt**
 
-![](https://lh6.googleusercontent.com/bFOcEKUA4pVF4Y31APx4A7TU8m8UNkgXZZUVP9ioLf2-e7yl_3hfUqquk0MRlxpKiSu9wZlx3WhDojetgS5S8HU7gdMgOpICFGao2Pr2RK2iN_vo7kAQwufREhoJVwxn0YHUopG5DfG6ljg)
+![](illustrations/git-bash-stat-3.png)
 
 ____________________________________________________
-

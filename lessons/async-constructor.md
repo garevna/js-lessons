@@ -134,3 +134,5 @@ browser()   // Chrome
 service()   // Firebase
 ~~~
 
+_______________________
+[![ico-30 hw] Тесты](quiz/async )

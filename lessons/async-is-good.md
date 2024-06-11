@@ -13,14 +13,15 @@ const promise = sayHello ()
 
 @@@@
 
-![](createPath("illustrations", "tin.jpg"))
+![](illustrations/tin.jpg)
 и "открыть" обещание ( банку _promise_ ) тогда, **когда нам будет удобно**! Тем более, что "открывашка" - метод ~then()~ - всегда при нем. Промис - надежная консервная банка, в которой содержимое не испортится и не исчезнет
-Еще что хорошего в обещании? - его скромность
-![](createPath("illustrations", "modesty.png"))
-![](http://www.nocoshop.ru/images/news/images/17/2013/01/12/bezumnye_risunki_mr_bingo-4.jpg)
-Оно никогда не прервет работу основного потока
-Никогда не влезет без очереди в Call Stack
-![](https://i1.wp.com/michaelscodingspot.com/wp-content/uploads/2019/03/How-to-implement-a-Queue-in-Csharp.jpg?fit=1000%2C640&ssl=1)
+
+@@@@
+
+@@@@ 3
+![](illustrations/modesty.png)
+Еще что хорошего в обещании? - его скромность. Promise никогда не прервет работу основного потока. Никогда не влезет без очереди в Call Stack.
+![](illustrations/promise-in-queue.png)
 
 @@@@
 
@@ -42,7 +43,7 @@ console.log(`Start: ${new Date().getUTCMilliseconds()}`)
 console.timeEnd('Основной поток')
 ~~~
 
-в консольке мы увидим: 
+в консольке мы увидим:
 
 ~~~console
 Start: 465
@@ -51,7 +52,7 @@ Finish: 465
 Hello
 ~~~
 
-т.е. асинхронная функция ~sayHello()~ ведет себя очень скромно: 
+т.е. асинхронная функция ~sayHello()~ ведет себя очень скромно:
 хотя все, что она делает - просто здоровается,
 но при этом она не вламывается в рабочий поток и не орет с порога: "_Hello_"
 она скромно ждет, когда поток завершит свою работу,
@@ -62,7 +63,7 @@ Hello
 
 Так в чем же дело?
 
-В том, что вызов функции ~sayHello()~ вернул обещание поздороваться, 
+В том, что вызов функции ~sayHello()~ вернул обещание поздороваться,
 но тогда, когда основному потоку это будет удобно ![ico-20 smile]
 
 __________________________________
@@ -223,24 +224,24 @@ __________________________________
 ~~~js
 async function getLogin (resolve, reject) {
   const users = await (await fetch('https://garevna-rest-api.glitch.me/users/all')).json()
-    
+
   const logins = Object.keys(users)
-    
+
   const userInput = document.body
     .appendChild(document.createElement('input'))
-    
+
   userInput.oninput = function (event) {
     const test = logins.includes(event.target.value)
-        
+
     event.target.style.color = test ? 'green' : 'red'
     event.target.title = test ? 'OK' : 'There is no such user in DB'
   }
-    
+
   userInput.onchange = async event => {
     const res = logins.includes(event.target.value)
-         
+
     userInput.remove()
-        
+
     !res ? reject('Not found') : resolve(users[event.target.value])
   }
 }
@@ -266,7 +267,7 @@ _________________________________
 Объявим функцию **getInput**, которая будет возвращать **_промис_**
 Функция **getInput** получает в качестве аргумента объект **users**, и создает элемент ~input~ для ввода логина юзера
 
-Анонимная функция, которая передается конструктору **Promise**, устанавливает обработчика события ~onchange~ элемента ~input~, который вызывает либо **~resolve~**, либо **~reject~** 
+Анонимная функция, которая передается конструктору **Promise**, устанавливает обработчика события ~onchange~ элемента ~input~, который вызывает либо **~resolve~**, либо **~reject~**
 в зависимости от того, что было введено в поле ~input~ ( есть ли соответствующий юзер в базе данных )
 
 ◘◘![ico-20 file] getInput◘◘
@@ -277,14 +278,14 @@ function getInput (users) {
 
   const userInput = document.body
     .appendChild(document.createElement('input'))
-    
+
   userInput.oninput = event => {
     const test = logins.includes(event.target.value)
-        
+
     event.target.style.color = test ? 'green' : 'red'
     event.target.title = test ? '...' : 'There are no such user in DB'
   }
-    
+
   return new Promise((resolve, reject) => {
     userInput.onchange = event => {
       const test = logins.includes(event.target.value)
@@ -320,7 +321,7 @@ const reject = error => console.warn(error)
 
 Осталось только вызвать функцию **getLogin**:
 
-◘◘![ico-20 cap] Вызов функции getLogin◘◘
+◘◘![ico-20 file] Вызов функции getLogin◘◘
 
 ~~~js
 getLogin().then(resolve, reject)
@@ -341,14 +342,14 @@ function getInput ( users ) {
 
   const userInput = document.body
     .appendChild(document.createElement('input'))
-    
+
   userInput.oninput = event => {
     const test = logins.includes(event.target.value)
-        
+
     event.target.style.color = test ? 'green' : 'red'
     event.target.title = test ? '...' : 'There is no such user in DB'
   }
-    
+
   return new Promise((resolve, reject) => {
     userInput.onchange = event => {
       const test = logins.includes(event.target.value)
@@ -374,3 +375,6 @@ getLogin().then(resolve, reject)
 ~~~
 
 {{{async-is-good-5.js}}}
+
+_______________________
+[![ico-30 hw] Тесты](quiz/async )

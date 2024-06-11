@@ -1446,4 +1446,4 @@ Array.from(document.getElementsByClassName('interlanguage-link'))
 
 ________________________________________________
 
-## [Тесты](quiz/arrayIterationMethods)
+[![ico-30 hw] Тесты](quiz/arrayIterationMethods)

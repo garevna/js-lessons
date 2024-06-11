@@ -1,128 +1,112 @@
-let section = document.body
-section.style = `
-    height: 400px!important;
-`
+const section = document.body
 
-let courseContainer = section.appendChild (
-    document.createElement ( "div" )
-)
+section.style = `height: 400px!important;`
 
-courseContainer.style.padding = "20px";
+const [iron, fryingPan, saucepan] = ['iron', 'frying-pan', 'saucepan']
+  .map(name => `${location.origin + location.pathname}images/lessons/${name}.jpg`)
 
-let label = courseContainer.appendChild (
-    document.createElement ( "span" )
-)
+const [container, label, course] = ['div', 'span', 'input'].map(tag => document.createElement(tag))
 
-label.innerText = "Курс доллара: "
+Object.assign(section.appendChild(container), { style: 'padding: 24px;' })
 
-let course = courseContainer.appendChild (
-    document.createElement ( "input" )
-)
+Object.assign(container.appendChild(label), {
+  innerText: 'Dollar exchange rate: '
+})
 
-course.type = "number";
-course.value = 28.5;
-course.onchange = function ( event ) {
+Object.assign(container.appendChild(course), {
+  type: 'number',
+  value: 28.5,
+  onchange (event) {
     Commodity.prototype.course = event.target.value
-    commodities.forEach (
-        item => item.setPriceUAH()
-    )
-}
+    commodities.forEach(item => item.setPriceUAH())
+  }
+})
 
+function Commodity (name, priceUSD, picture) {
+  Object.assign(this, {
+    name,
+    priceUSD,
+    setPriceUAH () { priceUAH.value = this.priceUAH },
+    setPriceUSD () { priceUSDElement.innerText = this.priceUSD }
+  })
 
-function Commodity ( name, __priceUSD, picture ) {
+  Object.defineProperty(this, 'priceUAH', {
+    get () {
+      return this.priceUSD * this.course
+    },
+    set (newPriceUAH) {
+      this.priceUSD = Math.round(newPriceUAH * 100 / this.course) / 100
+      this.setPriceUSD()
+    }
+  })
 
-    this.name = name;
-    this.priceUSD = __priceUSD;
-    this.setPriceUAH = () => priceUAH.value = this.priceUAH;
-    this.setPriceUSD = () => priceUSDElement.innerText = this.priceUSD;
-    
-    Object.defineProperty ( this, "priceUAH", {
-        get () {
-            return this.priceUSD * this.course
-        },
-        set ( newPriceUAH ) {
-            this.priceUSD = Math.round ( newPriceUAH * 100 / this.course ) / 100;
-            this.setPriceUSD();
-        }
-    })
-    
-    const card = this.addElem ( "figure" );
-    card.style = `
-        font-family: Arial;
-        width: 150px;
-        border: solid 1px white;
-        padding: 20px;
-        float: left;
-        margin: 5px;
-        box-sizing: boreder-box;
-    `;
-    
-    const commodityName = this.addElem ( "h4", card );
-    commodityName.innerText = name;
-    commodityName.style.marginTop = "0";
-    
-    const img = this.addElem ( "img", card );
-    img.src = picture;
-    img.height = 100;
-    img.style.margin = "0 0 20px 25px";
+  const card = Object.assign(this.addElem('figure'), {
+    style: `
+      font-family: Arial;
+      width: 160px;
+      border: solid 1px white;
+      padding: 24px;
+      float: left;
+      margin: 8px;
+      box-sizing: boreder-box;
+    `
+  })
 
-    const prices = this.addElem ( "div", card )
+  const commodityName = Object.assign(this.addElem('h4', card), {
+    innerText: name,
+    style: 'margin-top: 0;'
+  })
 
-    this.addElem ( "span", prices ).innerText = "Цена ( грн ): "
-    
-    const priceUAH = this.addElem ( "input", prices );
-    priceUAH.style = `
-        background: transparent;
-        width: 70px;
-        border: 0;
-        color: #09b;
-    `;
-    
-    priceUAH.onchange = function ( event ) {
-        this.priceUAH = event.target.value;
-        this.setPriceUSD();
-    }.bind ( this )
-    
-    priceUAH.value = this.priceUAH;
+  const img = Object.assign(this.addElem('img', card), {
+    src: picture,
+    height: 100,
+    style: 'margin: 0 0 16px 24px'
+  })
 
-    const usd = this.addElem ( "div", card );
-    usd.style = `
-        padding: 10px 0 0 0;
-        font-size: 0.8rem;
-        color: #888;
-    `;
+  const prices = this.addElem('div', card)
 
-    this.addElem ( "small", usd ).innerText = "Цена ( USD ): "
+  this.addElem('small', prices).innerText = "Price (UAH): "
 
-    const priceUSDElement = this.addElem ( "small", usd );
-    priceUSDElement.style.color = "#f50";
-    
-    this.setPriceUSD();
-    
+  const priceUAH = Object.assign(this.addElem('input', prices), {
+    style: `
+      background: transparent;
+      width: 80px;
+      border: 0;
+      color: #09b;
+    `,
+    value: this.priceUAH,
+    onchange: function (event) {
+      this.priceUAH = event.target.value
+      this.setPriceUSD()
+    }.bind(this)
+  })
+
+  const usd = Object.assign(this.addElem('div', card ), {
+    style: `
+      padding: 16px 0 0 0;
+      font-size: 0.8rem;
+      color: #888;
+    `
+  })
+
+  this.addElem('small', usd).innerText = 'Price (USD): '
+
+  const priceUSDElement = Object.assign(this.addElem('small', usd), {
+    style: 'color: #f50'
+  })
+
+  this.setPriceUSD()
 }
 
 Commodity.prototype.course = course.value
 
-Commodity.prototype.addElem = function ( tagName, container ) {
-    return ( container ? container : section ).appendChild (
-        document.createElement ( tagName )
-    )
+Commodity.prototype.addElem = function (tagName, container) {
+  return (container ? container : section)
+    .appendChild(document.createElement(tagName))
 }
 
 const commodities = [
-    new Commodity (
-        "Утюг",
-        43,
-        "https://i1.foxtrot.com.ua/product/MediumImages/6394018_0.jpg"
-    ),
-    new Commodity (
-        "Сковорода",
-        22,
-        "https://i2.rozetka.ua/goods/7696055/tefal_b3010472_images_7696055628.jpg"
-    ),
-    new Commodity (
-        "Кастрюля",
-        25,
-        "https://i1.foxtrot.com.ua/product/MediumImages/6180288_0.jpg"
-    )
+  new Commodity('Iron', 43, iron),
+  new Commodity('Frying pan', 22, fryingPan),
+  new Commodity('Saucepan', 25, saucepan)
 ]

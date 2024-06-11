@@ -50,16 +50,14 @@ __________________________________________
 Получаем **endpoints**:
 
 ~~~console
-
 Resources
-        http://localhost:3000/lastUpdate
-        http://localhost:3000/users
-        http://localhost:3000/posts
-        http://localhost:3000/comments
+  http://localhost:3000/lastUpdate
+  http://localhost:3000/users
+  http://localhost:3000/posts
+  http://localhost:3000/comments
 
 Home
-        http://localhost:3000
-        
+  http://localhost:3000      
 ~~~
 
 __________________________
@@ -371,7 +369,7 @@ const updateChat = async function () {
   const scrollValue = chat.scrollTop
 
   const [users, posts] = await Promise.all([getData('users') , getData('posts')])
-  
+
   console.log(users)
   console.log(posts)
 

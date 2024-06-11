@@ -31,15 +31,15 @@ const input = Object.assign(addElem('h3'), {
     max-width: 360px;
   `
 })
- 
+
 const observer = new MutationObserver(function (mutations) {
   mutations.forEach(function (mutation) {
-    mutation.type === 'characterData'
-      ? target.innerText = mutation.target.data
-      : null
-  })   
+    mutation.type === 'characterData' && Object.assign(target, {
+      innerText: mutation.target.data
+    })
+  })
 })
- 
+
 const config = {
   attributes: true,
   childList: true,

@@ -1,4 +1,4 @@
-# ![ico-30 study] Document Object Model ( DOM )
+# ![ico-30 study] Document Object Model (DOM)
 
 _____________________
 
@@ -12,7 +12,7 @@ _____________________
 
 ~~~html
 <body>
-    <div id="demo"></div>
+  <div id="demo"></div>
 </body>
 ~~~
 
@@ -28,9 +28,9 @@ document
 
 ~~~html
 <body>
-    <div id="demo">
-        <section>Hello</section>
-    </div>
+  <div id="demo">
+    <section>Hello</section>
+  </div>
 </body>
 ~~~
 
@@ -214,7 +214,7 @@ document.querySelector('figure')
 document.querySelector('#demo')
   .insertAdjacentElement('beforebegin', document.createElement('img'))
 
-document.getElementsByTagName('figure)[0]
+document.getElementsByTagName('figure')[0]
   .insertAdjacentElement('afterbegin', document.createElement('li'))
 ~~~
 
@@ -316,7 +316,7 @@ document.querySelector('[title]').childNodes
 ~~~
 ___________________
 
-[![ico-20 link] w3schools](https://www.w3schools.com/jsref/prop_node_childnodes.asp)
+[![ico-20 link] w3schools](external/w3-child-nodes)
 
 _________________________________
 
@@ -345,7 +345,7 @@ ___________________________________
 
 ### ![ico-20 icon] parentNode
 
-^^Ссылка на родительский элемент ( контейнер, в котором находится элемент )^^
+^^Ссылка на родительский элемент (контейнер, в котором находится элемент)^^
 
 ◘◘![ico-25 cap] ** 9**◘◘
 
@@ -389,12 +389,12 @@ _____________________________________
 
 ### ![ico-20 icon] Memory leaks
 
-Предположим, вы сохраняете ссылку на конкретную ячейку таблицы ( тег &lt;td> ) в своем коде
-В какой-то момент в будущем вы решите удалить таблицу из DOM, но забываете удалить ссылку на эту ячейку
-Интуитивно можно предположить, что garbage collector ( сборщик мусора ) будет очищать память от всех переменных, кроме ссылки на эту ячейку
+Предположим, вы сохраняете ссылку на конкретную ячейку таблицы (тег &lt;td>) в своем коде.
+В какой-то момент в будущем вы решите удалить таблицу из DOM, но забываете удалить ссылку на эту ячейку.
+Интуитивно можно предположить, что garbage collector (сборщик мусора) будет очищать память от всех переменных, кроме ссылки на эту ячейку.
 На практике произойдет следующее: поскольку ячейка является дочерним узлом таблицы, а а элементы-потомки сохраняют ссылки на своих родителей,
-сохранившаяся ссылка на ячейку таблицы приводит к тому, что вся таблица остается в памяти
-Учитывайте это внимательно, сохраняя ссылки на элементы DOM
+сохранившаяся ссылка на ячейку таблицы приводит к тому, что вся таблица остается в памяти.
+Учитывайте это внимательно, сохраняя ссылки на элементы DOM.
 
 _______________________________________
 
@@ -458,8 +458,8 @@ document.body.appendChild(btn)
 
 _________________________________________
 
-[![ico-30 hw] **Упражнения**](https://docs.google.com/forms/d/e/1FAIpQLSfOAAnZrszP3EiO3zgYzfkqBpH68ggE9mFzsDyK40_WUjB89A/viewform)
+[![ico-30 hw] Упражнения](test/dom)
 
 _________________________________
 
-[![ico-20 link] w3schools](https://www.w3schools.com/jsref/dom_obj_all.asp)
+[![ico-20 link] w3schools](external/w3-dom-elements)

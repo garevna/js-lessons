@@ -2,32 +2,32 @@ const innerText = 'Hello'
 const addElem = tagName => document.body.appendChild(document.createElement(tagName))
 
 const target = Object.assign(addElem('h2'), {
-    innerText,
-    style: 'color: #09b; font-family: Arial;'
+  innerText,
+  style: 'color: #09b; font-family: Arial;'
 })
 
 const input = Object.assign(addElem('h3'), {
-    innerText,
-    contentEditable: true,
-    style: `
-      padding: 8px 16px;
-      border: solid 1px #999;
-      border-radius: 4px;
-      font-family: Arial;
-      color: #f50;
-      outline: none;
-      max-width: 360px;
-    `
+  innerText,
+  contentEditable: true,
+  style: `
+    padding: 8px 16px;
+    border: solid 1px #999;
+    border-radius: 4px;
+    font-family: Arial;
+    color: #f50;
+    outline: none;
+    max-width: 360px;
+  `
 })
- 
+
 const observer = new MutationObserver(function (mutations) {
   mutations.forEach(function (mutation) {
-    mutation.type === 'characterData'
-      ? target.innerText = mutation.target.data
-      : null
-  })   
+    mutation.type === 'characterData' && Object.assign(target, {
+      innerText: mutation.target.data
+    })
+  })
 })
- 
+
 const config = {
   attributes: true,
   childList: true,

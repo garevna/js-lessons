@@ -1,12 +1,13 @@
-# ![ico-30 study] Document Object Model ( DOM )
+# ![ico-30 study] Document Object Model (DOM)
 
 ## ![ico-25 icon] События элементов DOM
 
-В цепочке прототипов любого элемента DOM есть объект ( класс ) **~EventTarget~**
+@@@@
 
-Благодаря этому все элементы DOM способны "реагировать" на события
+<br><br>В цепочке прототипов любого элемента DOM есть объект (класс) **~EventTarget~**.<br>Благодаря этому все элементы DOM способны "реагировать" на события.<br><br><br>Выведем в консоль этот объект:
+![](images/see-object-look-for-constructor-ukr.png)
 
-Выведем в консоль этот объект:
+@@@@
 
 ~~~js
 console.dir(EventTarget)
@@ -60,10 +61,7 @@ for (var prop in HTMLElement.prototype) {
 
 ^^У каждого html-элемента есть собственный конструктор, который "добавляет" специфические" для этого элемента события^^
 
-^^( например, события **~input~** и **~change~** могут произойти только на элементах форм )^^
-
-
-<img src="https://github.com/garevna/js-course/blob/master/pictures/event-1.png?raw=true" width="300"/>
+^^(например, события **~input~** и **~change~** могут произойти только на элементах форм)^^
 
 __________________________________________________________________
 
@@ -114,26 +112,31 @@ ______________________________________________________
 
 ^^^[event type]
 
-![ico-20 green-ok] click
-![ico-20 green-ok] mouseover
-![ico-20 green-ok] mouseout
-![ico-20 green-ok] mouseenter
-![ico-20 green-ok] mouseleave
-![ico-20 green-ok] mousedown
-![ico-20 green-ok] mouseup
-![ico-20 green-ok] keydown
-![ico-20 green-ok] keyup
+^^![ico-20 green-ok] click^^
+^^![ico-20 green-ok] mouseover^^
+^^![ico-20 green-ok] mouseout^^
+^^![ico-20 green-ok] mouseenter^^
+^^![ico-20 green-ok] mouseleave^^
+^^![ico-20 green-ok] mousedown^^
+^^![ico-20 green-ok] mouseup^^
+^^![ico-20 green-ok] keydown^^
+^^![ico-20 green-ok] keyup^^
+^^![ico-20 green-ok] scroll^^
+^^![ico-20 green-ok] scroll^^
 **...**
 
 ^^^
 
 В примере выше тип события - ~DOMNodeInserted~
 
+![](illustrations/event-1.png)
 Кроме того, у каждого объекта события есть свойство ~target~, которое является ссылкой на элемент, на котором произошло событие
 
 В большинстве случаев это тот элемент, на который был "повешен" обработчик
 
 ![ico-20 warn] Однако в примере выше обработчик был повешен на элемент ~body~, а свойство ~target~ указывает на добавленный в DOM элемент
+
+________________________
 
 В следующем примере свойство ~target~ будет ссылкой на тот элемент, на котором произошел клик
 Клик на пустом контейнере ( элементе div ) добавляет в контейнер картинку
@@ -182,8 +185,8 @@ _________________________________
 
 Полный перечень событий DOM можно найти в спецификации:
 
-[%%%DOM event%%%](https://www.w3schools.com/jsref/dom_obj_event.asp)
-[%%%JS event%%%](https://www.w3schools.com/js/js_events.asp)
+[HTML DOM Events](external/mdn-dom-events)
+[JavaScript Events](external/w3-dom-events)
 
 _________________________________________
 
@@ -194,7 +197,7 @@ _________________________________________
 Свойство  **_~prototype~_**  конструктора **~Event~** содержит свойства, которые будут унаследованы всеми событиями
 
 ~~~js
-var userEvent = new Event( 'user' )
+var userEvent = new Event('user')
 ~~~
 
 ___________________________________
@@ -288,10 +291,9 @@ _________________________________________________
 
 ### ![ico-20 icon] event.clientX &#124; event.clientY
 
-Координаты указателя мышки относительно верхнего левого края видимой части окна браузера
-( **_viewport_** )
+Координаты указателя мышки относительно верхнего левого края видимой части окна браузера (**~viewport~**)
 
-[:::Пример:::](https://codepen.io/garevna/pen/jLbaMg)
+[:::clientX | clientY:::](external/clientX-clientY)
 
 Эти координаты не зависят от положения полосы прокрутки окна браузера
 
@@ -307,28 +309,33 @@ _________________________
 
 ### ![ico-20 icon] eventPhase
 
-[:::eventPhase:::](https://jsfiddle.net/garevna/1cL6nk8j/4/)
+[:::eventPhase:::](external/event-phase)
 
 ____________________________
 
 ## ![ico-25 icon] eventListener
 
-<img src="https://github.com/garevna/js-course/blob/master/pictures/event-2.png?raw=true" width="400"/>
+Этот сервис браузерного API позволяет повесить на одно и то же событие одного и того же элемента несколько коллбеков.
+Для этой цели создается "посредник" между событием элемента и коллбеком.
+Каждый "посредник" как бы "прослушивает" событие элемента.
+Число посредников не ограничено.
+
+![](illustrations/event-2.png)
 
 Методы добавления и удаления прослушивателей событий:
 
 ![ico-20 green-ok] addEventListener
 ![ico-20 green-ok] removeEventListener
 
-Свойства "on..." позволяют "повесить" только одного обработчика данного события на данный элемент
+Свойства "on..." позволяют "повесить" только одного обработчика данного события на данный элемент.
 
-eventListener-ов может быть сколько угодно для одного и того же элемента и одного и того же события
+eventListener-ов может быть сколько угодно для одного и того же элемента и одного и того же события.
 
-Предположим, мы вешаем обработчика события mousemove на все элементы **div**
+Предположим, мы вешаем обработчика события mousemove на все элементы **div**.
 
-Затем вешаем "персонального" обработчика события **_~mousemove~_** на  **~div#sample~**
+Затем вешаем "персонального" обработчика события **_~mousemove~_** на  **~div#sample~**.
 
-На  элементе  **~div#sample~**  "сработают" оба обработчика при наведении указателя мышки
+На элементе **~div#sample~** "сработают" оба обработчика при наведении указателя мышки.
 
 _________________________________________________________________
 
@@ -337,7 +344,7 @@ _________________________________________________________________
 Первый аргумент метода addEventListener - это тип события ( строка ), например:
 ^^• mouseover<br>• mouseout<br>• input<br>• change<br>**...**^^
 
-Второй аргумент - ссылка на функцию ( обработчика события )
+Второй аргумент - ссылка на функцию (обработчика события)
 
 _______________________
 
@@ -355,22 +362,37 @@ ______________________________
 ◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
-var elem = document.body
-  .appendChild(document.createElement('p'))
+var circle = document.body
+  .appendChild(document.createElement('div'))
+circle.style = `
+  position: absolute;
+  top: 64px;
+  left: 64px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #09b;
+  transition: all .5s;
+`
+circle.addEventListener('click', function (event) {
+  event.target
+    .style
+    .background = Math.random() < 0.5 ? '#09b' : '#fa0'
+})
 
-elem.innerText = 'Hello'
-
-function clickdHandler (event) {
-  this.innerHTML = `
-    <small>
-      My content was changed!
-    </small>
-  `
-}
-elem.addEventListener('click', clickdHandler)
+circle.addEventListener('click', function (event) {
+  event.target.style.top = Math.max(Math.random() * window.innerWidth - 200, 0)
+  event.target.style.left = Math.max(Math.random() * window.innerHeight - 200, 0)
+})
 ~~~
 
-Третий аргумент - логическое значение - будучи установленным в **~true~**, позволяет перехватить событие на фазу погружения ( **_capturing_** )
+В этом примере с помощью метода **~addEventListener~** мы назначаем два обрабочика события ~click~ элемента.
+
+{{{DOM-events-2.js}}}
+
+_______________________
+
+Третий (опциональный) формальный параметр метода **~addEventListener~** (логическое значение), по умолчанию имеет значение ~false~; будучи установленным в ~true~, позволяет перехватить событие на фазу погружения (**_capturing_**).
 
 _____________________________
 
@@ -395,7 +417,7 @@ btn.addEventListener('click', callback, true)
 document.body.addEventListener('click', callback, true)
 ~~~
 
-{{{DOM-events-2.js}}}
+{{{DOM-events-3.js}}}
 
 _________________________________________________
 
@@ -440,8 +462,7 @@ __________________
 Запустите код в консоли, кликните на самом маленьком кружке и посмотрите, что будет выведено в консоль
 
 ◘◘![ico-25 cap] ** 5**◘◘
-
-~~~~js
+~~~js
 var elemData = {
    name: 'div',
    attrs: {
@@ -485,7 +506,7 @@ elems [0] = insertElement(0)
 for ( var x = 1; x < 5; x++ ) {
   elems [x] = insertElement(x, elems[x - 1])
 }
-~~~~
+~~~
 
 Теперь перезагрузите страницу, опять вставьте код, но раскомментируйте строку
 
@@ -494,6 +515,7 @@ event.stopPropagation()
 ~~~
 
 кликните на самом маленьком кружке и посмотрите, что будет выведено в консоль
+
 
 ____________________________________
 
@@ -509,14 +531,14 @@ _______________________
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
-~~~~js
+~~~js
 var elem = document.body
   .appendChild(document.createElement('p'))
 
 elem.innerHTML = 'Click me, please'
 
 var text = [
-  'Я тут первый, остальные на фиг!',
+  'I\'m the first here, don\'t pay attention for the rest!',
   'Hello',
   'are you happy?',
   'what is your favorite language?',
@@ -531,7 +553,7 @@ for (var txt of text) {
     }
   })(txt))
 }
-~~~~
+~~~
 
 то при клике на элементе сработают все прослушиватели собятия ~click~ элемента в той последовательности, в какой мы их определили
 
@@ -661,7 +683,7 @@ _______________________________________________________
 Обратите внимание, что элемент в следущем примере создается только один раз
 При удалении элемента ссылка на него сохраняется в переменной **elem**
 вместе со свойствами **onclick**, **onmouseover** и **onmouseout**,
-а при повторной вставке элемента в DOM все обработчики событий продолжают работать так же, как и до удаления 
+а при повторной вставке элемента в DOM все обработчики событий продолжают работать так же, как и до удаления
 
 ◘◘![ico-25 cap] ** 9**◘◘
 
@@ -705,20 +727,20 @@ ____________________________________________________________
 
 Примеры в песочнице:
 
-[:::mouseover & mouseout:::](https://codepen.io/garevna/pen/jLrReP?editors=1010)
+[:::mouseover & mouseout:::](external/mouseover-mouseout)
 
-[:::mouseenter & mouseleave:::](https://codepen.io/garevna/pen/gxaOXq)
+[:::mouseenter & mouseleave:::](external/mouseenter-mouseleave)
 
-[:::onscroll &#124; onwheel:::](https://jsfiddle.net/garevna/ayoLy5eL/1/)
+[:::onscroll &#124; onwheel:::](external/onscroll-onwheel)
 
-[:::keypress vs keydown:::](https://codepen.io/garevna/pen/PKPQVR)
+[:::keypress vs keydown:::](external/keypress-keydown)
 
-[:::dispatchEvent:::](https://codepen.io/garevna/pen/gxpQvy)
+[:::dispatchEvent:::](external/dispatch-event)
 
 _____________________________________________
 
-[![ico-30 hw] **Упражнения**](https://docs.google.com/forms/d/e/1FAIpQLSdeCCJVXykUJdr9gIroRT1H4K2JD6bhSreAs_tvsLd9vaNReQ/viewform)
+[![ico-30 hw] Упражнения](external/dom-events)
 
 ___________________________
 
-[%%%W3S%%% ](https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
+[![ico-30 link] eventListener](external/w3-event-listener)

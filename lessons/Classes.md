@@ -8,7 +8,7 @@
 
 Эта обертка значительно облегчает построение довольно сложных цепочек наследования за счет более простого и удобного интерфейса прокси-объекта.
 
-Однако следует помнить, что это всего лишь целлофан, в который завернули все тот же конструктор. 
+Однако следует помнить, что это всего лишь целлофан, в который завернули все тот же конструктор.
 
 ____________________________________________________________________
 
@@ -25,7 +25,7 @@ class User {
 }
 ~~~
 
-![ico-20 memo] Внутри фигурных скобок объявляется конструктор ( **~constructor~** ) 
+![ico-20 memo] Внутри фигурных скобок объявляется конструктор (**~constructor~**)
 
 ~~~js
 class User {
@@ -470,7 +470,7 @@ ________________________________________________________
 
 ## ![ico-25 icon] Потеря контекста
 
-![ico-20 pin] В строгом режиме не происходит неявной передачи контекста вызова 
+![ico-20 pin] В строгом режиме не происходит неявной передачи контекста вызова
 
 ![ico-20 warn] Потеря контекста происходит всегда, если ссылка на метод передается в новую переменную:
 
@@ -562,7 +562,7 @@ const user = new User('Grig')
 
 user.addSomeInfo([
   { name: 'age', value: 25 },
-  { name: hobby', value: ['football', 'fishing'] },
+  { name: hobby, value: ['football', 'fishing'] },
   {},
   54,
   null
@@ -683,7 +683,7 @@ newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }])
 ~~~
 
 ^^![ico-20 speach] Обратите внимание, что метод **_~drawCircle()~_** находится в прототипе экземпляра^^
-^^( что логично, поскольку это унаследованный метод )^^, 
+^^( что логично, поскольку это унаследованный метод )^^,
 ^^а метод **_~drawLine()~_** родительского класса  **Canvas** находится в прототипе прототипа ^^
 ^^( что соответствует прототипной модели наследования - мы получили цепочку прототипов )^^
 
@@ -842,7 +842,7 @@ __________________________________________________
 
 ~~~js
 const human = {
-  place: () => 
+  place: () =>
     document.getElementById('demo')
       ? document.getElementById('demo')
       : document.body.appendChild(document.createElement('p')).id = 'demo',
@@ -936,7 +936,7 @@ setTimeout(() => person.talk('Hello, baby!'), 2000)
 
 ![ico-20 speach] ^^Внутри метода   **_say ()_**, вызванного из метода **_talk ()_**, ^^
 ^^контекстом вызова будет объект  **person**^^
-^^( т.е.  **~this~**  будет  указывать на объект  person )^^
+^^(т.е.  **~this~**  будет  указывать на объект  person)^^
 ^^но тем не менее ссылка   **~this._place_~**  ^^
 ^^будет благополучно разрешена по цепочке прототипов^^
 
@@ -1082,8 +1082,8 @@ window.onresize = Canvas.resizeCanvas.bind(pict.canvas)
 
 При вызове статического метода  **_~drawLine~_**  первым аргументом ему передается контекст вызова
 
-![ico-20 pin] Примечание: 
- 
+![ico-20 pin] Примечание:
+
 ^^В данном случае объявление метода  **~drawLine~**  как статического^^
 ^^создает ненужные сложности с передачей контекста, ^^
 ^^и гораздо проще объявить его так:^^
@@ -1137,9 +1137,7 @@ ____________________________________________________________________
 
 ## ![ico-25 cap] Пример
 
-В этом примере мы будем работать с  svg-графикой
-
-[**SVG Tutorial**](https://www.w3schools.com/graphics/svg_intro.asp)
+В этом примере мы будем работать с графикой [svg](external/svg)
 
 #### ![ico-20 icon] createElementNS()
 
@@ -1256,7 +1254,7 @@ sample.setSize(400, 400)
 circle.setAttribute('stroke-width', 8)
 ~~~
 
-[![ico-25 cap] **Пример в песочнице**](https://garevna.github.io/js-samples/#18)
+[![ico-25 cap] Пример](samples/18)
 
 _____________________________________________________
 
@@ -1265,7 +1263,7 @@ _____________________________________________________
 ![ico-20 speach] Теперь создадим дочерний класс  **ColoredFigures**,
 расширяющий функционал родительского класса  **DrawFigures**
 путем добавления атрибутов линий и заливки фигур
-( "~stroke~", "~style~", "~fill~" )
+("~stroke~", "~style~", "~fill~")
 и метода удаления элемента  **_erase_**
 
 ![ico-20 speach] В конструкторе дочернего класса вызовем метод **~super()~**,
@@ -1274,7 +1272,7 @@ _____________________________________________________
 
 ![ico-20 speach] Метод **~super()~** должен быть вызван первым в конструкторе,
 поскольку до его вызова  значение  `this`  не будет определено
-внутри конструктора 
+внутри конструктора
 
 ![ico-20 speach] Кроме того, расширим функционал базового класса  **DrawFigures**,
 добавив атрибуты  "~stroke~",  "~style~"  и  "~fill~"
@@ -1300,8 +1298,8 @@ class ColoredFigures extends DrawFigures {
 
   draw (figure, params) {
     if (params.strokeWidth) {
-      Object.assign(params, { 
-        style: `stroke-width: ${ params.strokeWidth }` 
+      Object.assign(params, {
+        style: `stroke-width: ${ params.strokeWidth }`
       })
       delete params.strokeWidth
     }
@@ -1315,43 +1313,43 @@ class ColoredFigures extends DrawFigures {
   }
 }
 ~~~
-                                                           
+
 ![ico-20 speach] Проверим, как работает расширенный класс  **ColoredFigures**
-                                                           
+
 ~~~js
 const canvas = new ColoredFigures(400, 500)
 
-canvas.line({ 
-  x1: 10, 
-  y1: 250, 
-  x2: 250, 
-  y2: 50, 
-  stroke: 'green', 
-  strokeWidth: 5 
+canvas.line({
+  x1: 10,
+  y1: 250,
+  x2: 250,
+  y2: 50,
+  stroke: 'green',
+  strokeWidth: 5
 })
-canvas.circle({ 
-  cx: 150, 
-  cy: 150, 
-  r: 100, 
-  fill: '#ff00ff90', 
+canvas.circle({
+  cx: 150,
+  cy: 150,
+  r: 100,
+  fill: '#ff00ff90',
   stroke: '#909',
-  strokeWidth: 10 
+  strokeWidth: 10
 })
 ~~~
-                                                           
+
 ![ico-20 speach] Конечно, мы можем создавать элементы, обращаясь к методу базового класса  **~drawFigure()~**:
-                                                           
+
 ~~~js
-canvas.drawFigure('line', { 
-  x1: 200, 
-  y1: 150, 
-  x2: 50, 
-  y2: 100, 
-  stroke: 'blue', 
-  style: 'stroke-width: 10' 
+canvas.drawFigure('line', {
+  x1: 200,
+  y1: 150,
+  x2: 50,
+  y2: 100,
+  stroke: 'blue',
+  style: 'stroke-width: 10'
 })
 ~~~
-                                                           
+
 ![ico-20 speach] но тогда созданные svg-элементы не попадут в массив  **~figures~**
 и их нельзя будет удалить с помощью метода  **~erase()~**
 
@@ -1360,7 +1358,7 @@ canvas.drawFigure('line', {
 ![ico-25 speach] Обратите внимание, что у класса  **ColoredFigures** есть свойство  prototype, которого нет ( и не может быть ) у экземпляра
 В свойстве **~prototype~** класса **ColoredFigures** находятся методы **~circle()~**, **~line()~**, **~draw()~** и **~erase()~**
 
-![ico-25 speach] У класса ColoredFigures есть также свойство  **~__proto__~** 
+![ico-25 speach] У класса ColoredFigures есть также свойство  **~__proto__~**
 это ссылка на родительский класс **SVG**
 
 ![ico-25 speach] У родительского класса, как и следовало ожидать, тоже есть свойство **~prototype~**,
@@ -1371,9 +1369,4 @@ canvas.drawFigure('line', {
 
 ________________________________________________________________
 
-[![ico-25 cap] **Пример**](https://garevna.github.io/js-samples/#18)
-[![ico-25 cap] **_с наворотами_**](https://garevna.github.io/js-samples/#06)
-
-____________________________________________________________________
-
-[![ico-30 hw] **Упражнения**](https://docs.google.com/forms/d/e/1FAIpQLSdQqNcBcLuvW7d7_Msf2a7y1BRbVcUptun6IFQ2ybfqCheTRA/viewform)
+[![ico-30 hw] Quiz](quiz/classes)

@@ -77,7 +77,7 @@ var students = ['Иван', 'Татьяна', 'Дмитрий']
 В результате выполнения кода:
 
 ~~~js
-var hello = 'Привет, '' + students[1]
+var hello = 'Привет, ' + students[1]
 ~~~
 в переменной  **hello**  будет значение "*Привет, Татьяна*"
 
@@ -214,4 +214,4 @@ _____________________________________________________________
 
 ________________________________________________________
 
-[![ico-20 link] MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+[![ico-20 link] MDN](external/mdn-data-structures)

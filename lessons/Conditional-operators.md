@@ -161,8 +161,9 @@ console.log(sourse === 'video' ? 'Видосик' : 'Картинка')
 
 _____________________________________________________________
 
-| [![ico-20 link] MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Expressions_and_Operators/) | [![ico-20 link] w3schools](https://www.w3schools.com/js/js_if_else.asp/) |
+[![ico-20 link] MDN](external/mdn-expressions-operators)
+[![ico-20 link] w3schools](external/w3-if-else)
 
 _____________________________________________________________
 
-## [![ico-30 hw] Упражнения](test/conditionalOperators)
+[![ico-30 hw] Упражнения](test/conditionalOperators)

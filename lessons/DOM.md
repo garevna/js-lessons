@@ -1,5 +1,10 @@
-# ![ico-30 study] Document Object Model ( DOM )
+# ![ico-30 study] Document Object Model (DOM)
 
+@@@@
+
+![](images/see-object-look-for-constructor-ukr.png)
+
+@@@@
 _____________________
 
 ## ![ico-25 icon] Объект document
@@ -102,18 +107,18 @@ ______________________
 
 ^^^[Свойства document]
 
-| ![ico-20 green-ok] **document.head**         | ^^HTMLHeadElement^^ |
-| ![ico-20 green-ok] **document.body**         | ^^HTMLBodyElement^^ |
-| ![ico-20 green-ok] **document.doctype**      | ^^_строка_^^        |
-| ![ico-20 green-ok] **document.URL**          | ^^_строка_^^        |
-| ![ico-20 green-ok] **document.location**     | ^^_объект_^^        |
-| ![ico-20 green-ok] **document.images**       | ^^HTMLCollection^^  |
-| ![ico-20 green-ok] **document.forms**        | ^^HTMLCollection^^  |
-| ![ico-20 green-ok] **document.links**        | ^^HTMLCollection^^  |
-| ![ico-20 green-ok] **document.scripts**      | ^^HTMLCollection^^  |
-| ![ico-20 green-ok] **document.styleSheets**  | ^^StyleSheetList^^  |
-| ![ico-20 green-ok] **document.cookie**       | ^^строка^^          |
-| ![ico-20 green-ok] **document.lastModified** | ^^строка ( ~'09/30/2018 11:00:15'~ )^^ |
+| ![ico-20 pin] **document.head**         | ^^HTMLHeadElement^^ |
+| ![ico-20 pin] **document.body**         | ^^HTMLBodyElement^^ |
+| ![ico-20 pin] **document.doctype**      | ^^_string_^^        |
+| ![ico-20 pin] **document.URL**          | ^^_string_^^        |
+| ![ico-20 pin] **document.location**     | ^^_object_^^        |
+| ![ico-20 pin] **document.images**       | ^^HTMLCollection^^  |
+| ![ico-20 pin] **document.forms**        | ^^HTMLCollection^^  |
+| ![ico-20 pin] **document.links**        | ^^HTMLCollection^^  |
+| ![ico-20 pin] **document.scripts**      | ^^HTMLCollection^^  |
+| ![ico-20 pin] **document.styleSheets**  | ^^StyleSheetList^^  |
+| ![ico-20 pin] **document.cookie**       | ^^string^^          |
+| ![ico-20 pin] **document.lastModified** | ^^string (~'09/30/2018 11:00:15'~)^^ |
 | **...**                                      |                     |
 
 ^^^
@@ -136,7 +141,7 @@ for (var sheet of document.styleSheets) {
 }
 ~~~
 
-![ico-20 warn] Все свойства, имена которых начинаются на "**_on_**", могут содержать ссылку на обработчика события, тип которого определяется тем, что следует за "**_on_**" в имени свойства
+![ico-20 warn] Все свойства, имена которых начинаются на "**~on~**", могут содержать ссылку на обработчика события, тип которого определяется тем, что следует за "**~on~**" в имени свойства
 ^^по умолчанию значениями этих свойств будет ~null~^^
 
 ◘◘![ico-20 cap] **^^on...^^**◘◘
@@ -208,9 +213,9 @@ _____________________________
 
 ^^Возвращает коллецию html-элементов ( итерабельный объект класса **~HTMLCollection~** ) по имени класса^^
 
-![ico-20 cap] ** 4**
+![ico-20 cap] **Example 4**
 
-**^^Разметка^^**
+◘◘Разметка◘◘
 
 ~~~html
 &lt;body>
@@ -223,7 +228,7 @@ _____________________________
 &lt;/body>
 ~~~
 
-**^^JS^^**
+◘◘^^JS^^◘◘
 
 ~~~js
 document
@@ -232,7 +237,7 @@ document
   .getElementsByClassName('content')
 ~~~
 
-**^^Результат:^^**
+◘◘^^Результат:^^◘◘
 
 ~~~console
 
@@ -245,9 +250,9 @@ document
 
 ____________________________________________
 
-![ico-25 cap] ** 5**
+![ico-25 cap] **Example 5**
 
-Перейдите [**ссылке**](https://css-tricks.com/almanac/selectors/c/checked/)
+Перейдите [**ссылке**](external/css-trics-checked)
 
 Откройте консоль новой вкладки
 Выполните код в консоли:
@@ -266,7 +271,7 @@ ______________________________________
 ^^Возвращает первый найденный элемент по указанному CSS-селектору^^
 ^^Поиск осуществляется в пределах элемента, в контексте которого вызван метод ( ~element~ )^^
 
-![ico-25 cap] ** 6**
+◘◘![ico-25 cap] ** 6**◘◘
 
 ~~~html
 <body>
@@ -306,16 +311,16 @@ ______________________________________________
 
 Возвращает итерабельный объект класса **~NodeList~**, содержащий все элементы, соответствующие указанному селектору
 
-![ico-25 cap] ** 7**
+![ico-25 cap] **Example 7**
 
 Вернемся к предыдущему примеру (5) и выполним следующий код:
 
+◘◘js◘◘
 ~~~js
 section.querySelectorAll('*')
 ~~~
 
-**Результат в консоли:**
-
+◘◘Результат в консоли:◘◘
 ~~~console
 
 ▼ NodeList(2) [ div, figure.promoClass ]
@@ -329,7 +334,9 @@ ______________________
 
 ## ![ico-25 icon] Типы узлов дерева DOM
 
-DOM представляет собой граф ( дерево ), вершины которого ( узлы, или **_nodes_** ) могут быть html-элементами, комментариями, обычным текстом...
+[![ico-20 link] nodeType](external/mdn-node-types)
+
+DOM представляет собой граф (дерево), вершины которого (узлы, или **_nodes_**) могут быть html-элементами, комментариями, обычным текстом...
 
 Получить все дочерние узлы элемента DOM можно с помощью свойства  **~childNodes~**  этого элемента
 
@@ -338,38 +345,32 @@ document.body.childNodes
 document.querySelector('main').childNodes
 ~~~
 
-Каждый узел ( объект )  имеет свойство  **_nodeType_**
+Каждый узел (объект) имеет свойство **_nodeType_**
 
 ^^^[nodeType]
 
-
-| Код    | Тип узла                                | Пример                                              |
-| ^^ 1^^ | ^^ELEMENT&#95;NODE^^                    | ~&lt;div>~                                          |
-| ^^ 2^^ | ^^ATTRIBUTE&#95;NODE^^                  | ~href = "https://translate.google.com/"~            |
-| ^^ 3^^ | ^^TEXT&#95;NODE^^                       | ~document.body.appendChild ( new Text( "Hello" ) )~ |
-| ^^ 4^^ | ^^CDATA&#95;SECTION&#95;NODE^^          |                                                     |
-| ^^ 5^^ | ^^ENTITY&#95;REFERENCE&#95;NODE^^       |                                                     |
-| ^^ 6^^ | ^^ENTITY&#95;NODE^^                     |                                                     |
-| ^^ 7^^ | ^^PROCESSING&#95;INSTRUCTION&#95;NODE^^ |                                                     |
-| ^^ 8^^ | ^^COMMENT&#95;NODE^^                    | ~&lt;!&ndash;&ndash; ... &ndash;&ndash;>~           |
-| ^^ 9^^ | ^^DOCUMENT&#95;NODE^^                   | ~&lt;html>...&lt;/html>~                            |
-| ^^10^^ | ^^DOCUMENT&#95;TYPE&#95;NODE^^          | ~&lt;!DOCTYPE>~                                     |
-| ^^11^^ | ^^DOCUMENT&#95;FRAGMENT&#95;NODE^^      | ~&lt;template>~                                     |
-| ^^12^^ | ^^NOTATION&#95;NODE^^                   |                                                     |
-
+| Код    | Тип узла                                | Пример                                          |
+| ^^ 1^^ | ^^ELEMENT&#95;NODE^^                    | ~&lt;div>~                                      |
+| ^^ 2^^ | ^^ATTRIBUTE&#95;NODE^^                  | ~href = "https://translate.google.com/"~        |
+| ^^ 3^^ | ^^TEXT&#95;NODE^^                       | ~document.body.appendChild (new Text('Hello'))~ |
+| ^^ 4^^ | ^^CDATA&#95;SECTION&#95;NODE^^          |                                                 |
+| ^^ 5^^ | ^^ENTITY&#95;REFERENCE&#95;NODE^^       |                                                 |
+| ^^ 6^^ | ^^ENTITY&#95;NODE^^                     |                                                 |
+| ^^ 7^^ | ^^PROCESSING&#95;INSTRUCTION&#95;NODE^^ |                                                 |
+| ^^ 8^^ | ^^COMMENT&#95;NODE^^                    | ~&lt;!&ndash;&ndash; ... &ndash;&ndash;>~       |
+| ^^ 9^^ | ^^DOCUMENT&#95;NODE^^                   | ~&lt;html>...&lt;/html>~                        |
+| ^^10^^ | ^^DOCUMENT&#95;TYPE&#95;NODE^^          | ~&lt;!DOCTYPE>~                                 |
+| ^^11^^ | ^^DOCUMENT&#95;FRAGMENT&#95;NODE^^      | ~&lt;template>~                                 |
+| ^^12^^ | ^^NOTATION&#95;NODE^^                   |                                                 |
 
 ^^^
 
-![ico-25 cap] ** 8**
-
-Выполним код в консоли:
+◘◘![ico-25 cap] ** 8**◘◘
 
 ~~~js
 document.body.appendChild(new Text('Hello'))
 document.body.childNodes
 ~~~
-
-Результат:
 
 ~~~console
 
@@ -379,7 +380,9 @@ document.body.childNodes
     ► __proto__: NodeList
 ~~~
 
-![ico-25 cap] ** 9**
+__________________________
+
+◘◘![ico-25 cap] ** 9**◘◘
 
 ~~~js
 var style = document.createElement('style')
@@ -395,10 +398,10 @@ document.head.childNodes[0].nodeType  // 1
 
 _____________________________________________
 
-[![ico-30 hw] **Упражнения**](https://docs.google.com/forms/d/e/1FAIpQLSfOAAnZrszP3EiO3zgYzfkqBpH68ggE9mFzsDyK40_WUjB89A/viewform)
+[![ico-30 hw] Упражнения](external/dom)
 
 ___________________________________
 
-[![ico-20 link] **^^Типы узлов дерева DOM^^**](https://www.w3schools.com/xml/dom_nodetype.asp)
+[![ico-20 link] **^^Типы узлов дерева DOM^^**](external/w3-node-types)
 
-[![ico-20 link] **^^Document^^**](https://developer.mozilla.org/en-US/docs/Web/API/Document)
+[![ico-20 link] **^^Document^^**](external/mdi-dom)

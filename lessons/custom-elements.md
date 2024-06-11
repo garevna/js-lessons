@@ -97,9 +97,9 @@ console.dir(CustomElementRegistry)
 
 ______________________________________________
 
-## ![ico-25 icon] customElements.define ()
+## ![ico-25 icon] customElements.define()
 
-Метод  **~define()~** глобального объекта **customElements** имеет два обязательных параметра:
+Метод  **~define~** глобального объекта **customElements** имеет два обязательных параметра:
 
 • первый - это имя тега для регистрируемого элемента
 • второй - ссылка на класс создаваемого элемента
@@ -114,7 +114,7 @@ _______________________________________
 
 ^^Объявим класс **SampleElement**, расширяющий класс HTMLElement^^
 
-~~~~javascript
+~~~~js
 class SampleElement extends HTMLElement {
   constructor() {
     super ()
@@ -213,12 +213,12 @@ class SampleCustomElement extends HTMLElement {
     this.shadow.appendChild(style)
     this.shadow.appendChild(wrapper)
   }
-  
+
   resizeCanvas (event) {
     this.canvas.width = window.innerWidth - 20
     this.canvas.height = window.innerHeight - 20
   }
-  
+
   drawLine (first, second, border) {
     this.area.strokeStyle = border && border.lineColor
       ? border.lineColor
@@ -275,7 +275,7 @@ class WordsCounter extends HTMLElement {
     })
 
     shadow.appendChild(style)
-    
+
     function countWords (node) {
       const text = node.innerText || node.textContent
       return text.split(/\s+/g).length
@@ -348,7 +348,7 @@ class SampleCustomElement extends HTMLElement {
     if (!point || !point.x || !point.y) return
 
     this.canvas.history.push(point)
-  
+
     const len = this.canvas.history.length
     if (len < 2)  return
 

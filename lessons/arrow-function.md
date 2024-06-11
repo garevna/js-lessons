@@ -114,6 +114,8 @@ ________________________________________
 
 ## ![ico-25 icon] Главные особенности стрелочных функций
 
+![](images/arrow-funcs-neutered-kitties-ukr-color.png)
+
 ### ![ico-20 error] prototype
 
 У стрелочных функций нет объекта  **~prototype~**
@@ -172,7 +174,7 @@ ______________________________________________________
 
 При попытке обратиться к объекту **~arguments~** из стрелочной функции будет сгенерировано исключение ( ~ReferenceError~ )
 
-![](createPath('illustrations', 'arrow-func-arguments.png'))
+![](illustrations/arrow-func-arguments.png)
 
 ![ico-20 pin] Если стрелочная функция объявлена внутри обычной функции,
 то переменные контекста родительской функции будут доступны для стрелочной функции
@@ -255,7 +257,7 @@ var obj = {
 obj.test()   // window
 ~~~
 
-![](createPath('illustrations', 'arrow-func-context.png'))
+![](illustrations/arrow-func-context.png)
 
 **Конструктор**
 
@@ -267,7 +269,7 @@ obj.test()   // window
 
 стрелочная функция, объявленная внутри конструктора, получает "при рождении" контекст вызова конструктора, т.е. создаваемый экзмепляр
 
-![](createPath('illustrations', 'arrow-func-context-1.png'))
+![](illustrations/arrow-func-context-1.png)
 
 _____________________________________________________
 
@@ -306,7 +308,7 @@ ____________________________________________________
 ◘◘![ico-25 cap] **12**◘◘
 _________________________________
 
-![](createPath('illustrations', 'arrow-func-context-2.png'))
+![](illustrations/arrow-func-context-2.png)
 
 При передаче метода **_arrowFunc()_** переменной **arrow**:
 
@@ -364,7 +366,7 @@ object.testOrdinary()
 ~~~
 
 
-![](createPath('illustrations', 'arrow-func-context-3.png'))
+![](illustrations/arrow-func-context-3.png)
 
 Как видим, несмотря на то, что вызов осуществляется в контексте объекта **object**, **_testArrow_** "работает" в контексте, в котором была создана функция **_arrowFunc_**, т.е. в глобальном контексте
 
@@ -372,4 +374,4 @@ object.testOrdinary()
 
 ____________________________________________________________________
 
-[![ico-30 hw] **Тесты**](https://garevna.github.io/js-quiz/#arrowFunctions)
+[![ico-30 hw] Тесты](quiz/arrowFunctions)
