@@ -1,6 +1,6 @@
 const section = document.body
 
-const icon = '<img src="https://www.webfx.com/assets/emoji-cheat-sheet/img/graphics/emojis/warning.png" width="20" style="vertical-align:text-bottom" />'
+const icon = `<img src="${location.href.split(location.search)[0]}/icons/warning.png" width="20" style="vertical-align:text-bottom" />`
 
 function* testArgGenerator (x) {
   section.innerHTML += `<p><small>I receive: x = ${x}</small></p>`

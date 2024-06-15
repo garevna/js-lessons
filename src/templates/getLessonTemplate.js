@@ -1,8 +1,7 @@
-export const getLessonTemplate = lessonId => `
-<input type="radio" id="${lessonId}" name="lessons">
-<label for="${lessonId}">
-  <div class = "icon"></div>
-  <b>${lessonId}</b>
-</label>
-<ul class="sub-level"></ul>
+export const getLessonTemplate = (lessonTitle, lessonId) => `
+<div id="${lessonId}" class="lesson-menu-item">
+  <small class="icon"></small>
+  <b style="cursor: pointer">${lessonTitle}</b>
+</div>
+<ul id="${lessonId || lessonTitle}-sublevel" class="sub-level"></ul>
 `

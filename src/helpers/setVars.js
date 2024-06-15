@@ -5,6 +5,9 @@ const { icons } = require('../configs').default
 export function setVars () {
   const root = document.documentElement
 
+  root.style.setProperty('--main-menu-icon-image', `url(${createPath('icons', 'file_folder.png')}`)
+  root.style.setProperty('--main-menu-active-icon-image', `url(${createPath('icons', 'open_file_folder.png')}`)
+
   root.style.setProperty('--menu-icon-image', `url(${createPath('icons', 'table-of-contents-white.svg')}`)
   root.style.setProperty('--menu-icon-size', '36px')
   root.style.setProperty('--menu-symbol', `url(${createPath('icons', 'table-of-contents-white.svg')}`)

@@ -1,20 +1,20 @@
 # ![ico-30 icon] Throttling and Debouncing
 
-Некоторые ресурсоемкие функции, 
+Некоторые ресурсоемкие функции,
 функции, выполняющиеся достаточно долго, чтобы их частые вызовы отразились на производительности приложения,
-а так же функции, "дергающие" сервер ( т.е. отправляющие AJAX запросы )
+а так же функции, "дергающие" сервер (т.е. отправляющие AJAX запросы)
 нежелательно запускать слишком часто
 
 [%%%lodash%%%](https://lodash.com/)
 
-Для ограничения числа вызовов такой функции можно использовать прием "дроссель" ( **throttling** )
+Для ограничения числа вызовов такой функции можно использовать прием "дроссель" (**throttling**)
 
 _____________________________________________________________
 
 ## ![ico-25 icon] Throttling
 
-Задача - ограничить число вызовов функции 
-путем установки интервала времени, 
+Задача - ограничить число вызовов функции
+путем установки интервала времени,
 который должен пройти с момента предыдущего вызова
 
 ^^Напилим функцию-декоратор :^^
@@ -24,7 +24,7 @@ _____________________________________________________________
 ~~~js
 const throttle = function (func, interval) {
   func.lastCall = null
-    
+
   func.testInterval = () => {
     const int = new Date().getTime() - this.lastCall
     this.lastCall = !int
@@ -34,7 +34,7 @@ const throttle = function (func, interval) {
         : this.lastCall
     return int ? int >= interval : true
   }
-    
+
   return function (args) {
     const test = this.testInterval()
     test && this(args)
@@ -44,14 +44,14 @@ const throttle = function (func, interval) {
 
 Здесь использован паттерн "Декоратор" и прием "замыкание",
 позволяющие получить новый экземпляр на базе исходной функции **func** \
-( первый формальный параметр ),
+(первый формальный параметр),
 который хранит время последнего вызова в собственном свойстве **lastCall**
 и обновляет его значение только тогда, когда истек установленный интервал **interval**
-( второй формальный параметр )
+(второй формальный параметр).
 Функция исполняется только в том случае,
-если с момента предыдущего "срабатывания" колбэка прошло не менее **interval** мс
+если с момента предыдущего "срабатывания" колбэка прошло не менее **interval** мс.
 
-Обратите внимание, что мы не используем здесь "тяжелую артиллерию" таймеров
+Обратите внимание, что мы не используем здесь "тяжелую артиллерию" таймеров.
 
 Теперь создадим, собственно, функцию, которую будем декорировать:
 
@@ -66,7 +66,7 @@ function showPicture () {
 }
 ~~~
 
-Создадим новый экземпляр функции **showPictureThrottle** с помощью декоратора **_throttle_**
+Создадим новый экземпляр функции **showPictureThrottle** с помощью декоратора **_throttle_**.
 
 ~~~js
 const showPictureThrottle = throttle(showPicture, 1000)
@@ -81,9 +81,9 @@ btn.innerText = 'Add picture once per 1 sec'
 btn.onclick = showPictureThrottle
 ~~~
 
-Теперь можно кликать на кнопке - картинка будет вставляться не чаще 1 раза в секунду ![ico-20 smile]
+Теперь можно кликать на кнопке - картинка будет вставляться не чаще 1 раза в секунду ![ico-20 smile].
 
-{{{Throttle-and-Debounce-1.js}}}
+{{{throttling-and-debouncing-1.js}}}
 
 _____________________________________________________________
 
@@ -103,12 +103,12 @@ const debounce = function (func, interval) {
     this.lastCall = !int ? new Date().getTime() : this.lastCall
     return int ? int >= interval : true
   }
-    
+
   return function (args) {
     const test = this.testInterval()
     test && this(args)
     }.bind(func)
-    
+
 }
 ~~~
 
@@ -138,7 +138,7 @@ function inputHandler (event) {
 Теперь создадим экземпляр колбэка, декорированный с помощью функции **debounce**:
 
 ~~~js
-const inputHandlerDebounced = debounce ( inputHandler, 1000 )
+const inputHandlerDebounced = debounce(inputHandler, 1000)
 ~~~
 
 Этот экземпляр будет посылать запрос на сервер только в том случае, если с момента последнего ввода пользователя прошла 1 секунда
@@ -152,10 +152,10 @@ const style = document.head
 
 style.textContent = `
   input {
-    padding: 4px 10px;
+    padding: 4px 12px;
   }
   label {
-    padding-left: 5px;
+    padding-left: 8px;
     font-family: Arial;
     font-style: italic;
     font-size: 0.8rem;
@@ -189,4 +189,4 @@ const createInput = () => {
 createInput()
 ~~~
 
-{{{Throttle-and-Debounce-2.js}}}
+{{{throttling-and-debouncing-2.js}}}

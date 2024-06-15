@@ -38,7 +38,6 @@ export function parsePageContent (pageContent) {
   this.menu.setAttribute('options', JSON.stringify(this.pageContentList))
 
   if (location.hash) {
-    console.log(location.hash)
     const elem = document.querySelector(location.hash)
     elem && elem.scrollIntoView()
   }

@@ -1,5 +1,4 @@
 const simple = [
-  'home',
   'warning',
   'coffee',
   'link',
@@ -11,6 +10,7 @@ const simple = [
   'pen',
   'page_facing_up',
   'memo',
+  'file_folder',
   'open_file_folder',
   'wink',
   'briefcase',
@@ -52,7 +52,8 @@ const simpleFiles = simple.reduce((res, name) => Object.assign(res, { [name]: `$
 
 export const iconFiles = Object.assign(simpleFiles, {
   'open-in-new': 'open-in-new.svg',
-  house: 'home.png',
+  house: 'home-icon.svg',
+  home: 'home-icon.svg',
   menu: 'table-of-contents-white.svg',
   warn: 'warning.png',
   cap: 'coffee.png',

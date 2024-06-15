@@ -1,0 +1,395 @@
+[
+  {
+    "ref": "introduction-basics",
+    "ua": "Вступ. Основи.",
+    "eng": "Introduction. Basics",
+    "ru": "Введение. Основы.",
+    "items": [
+      { "ref": "Block-diagram", "ua": "Блок-схема алгоритму", "eng": "Flowchart of the algorithm", "ru": "Блок-схема алгоритма", "keywords": [ "алгоритм", "последовательность", "ветвление", "цикл", "ряд фибоначчи", "блок-схема" ] },
+      { "ref": "Developer-tools", "ua": "Інструменти розробника", "eng": "Developer tools", "ru": "Инструменты разработчика", "keywords": [ "консоль", "console", "devtools", "браузер" ] },
+      { "ref": "Chrome-dev-tools", "ua": "Chrome DevTools", "ru": "Chrome DevTools", "eng": "Chrome DevTools", "keywords": [ "sources", "pages", "snippets", "debugger", "call stack", "breakpoints", "watch", "devtools", "chrome devtools", "scope" ] },
+      { "ref": "var", "ua": "Змінні. Типи даних", "eng": "Variables. Data types", "ru": "Переменные. Типы данных", "keywords": [ "var", "referenceerror", "undefined", "string", "number", "boolean", "типизация", "динамическая типизация", "ecmascript", "типы данных" ] },
+      { "ref": "typeof", "ua": "Оператор typeof", "eng": "The 'typeof' operator", "ru": "Оператор typeof", "keywords": [ "типизация", "typeof", "string", "number", "boolean", "undefined", "object", "function", "symbol", "null", "массив", "nan", "infinity", "true", "false", "Логический тип", "строка", "объект" ] },
+      { "ref": "data-structures", "ua": "Структури даних", "eng": "Data structures", "ru": "Структуры данных", "keywords": [ "массив", "индекс", "элемент", "объект", "свойство", "значение" ] },
+      { "ref": "Assignments", "ua": "Оператори присвоювання", "eng": "Assignment operators", "ru": "Операторы присваивания", "keywords": [ "типизация", "динамическая типизация", "+=", "-=", "*=", "/=", "%=", "остаток от деления", "присваивание", "значение" ] },
+      { "ref": "Boolean", "ua": "Логічні конструкції", "eng": "Logical constructs", "ru": "Логические конструкции", "keywords": ["операнд", "логическое значение", "true", "false", "оператор сравнения", "логические операции", "логическое выражение", "boolean", "строгое равенство" ] },
+      { "ref": "Conditional-operators", "ua": "Умовні оператори", "eng": "Conditional operators", "ru": "Условные операторы", "keywords": [ "if", "else", "тернарный оператор", "boolean", "логическое выражение", "ветвление", "операнд", "условный оператор" ] },
+      { "ref": "Increment", "ua": "Інкремент", "eng": "Increment", "ru": "Инкремент", "keywords": [ "пост-префиксная форма", "постпрефиксная форма", "префиксная форма", "инкремент", "декремент", "приращение" ] },
+      { "ref": "length", "ua": "Властивість length", "eng": "The 'length' property", "ru": "Свойство length", "keywords": [ "length", "свойство", "массив", "строка", "символ", "элемент" ] },
+      { "ref": "for", "ua": "Оператор for", "eng": "The 'for' operator", "ru": "Оператор for", "keywords": [ "цикл", "for", "итерация", "счетчик", "continue", "break", "условие", "переменная цикла", "инкремент" ] },
+      { "ref": "UTF-8", "ua": "UTF-8", "eng": "UTF-8", "ru": "UTF-8", "keywords": [ "код символа", "кодировочная таблица", "utf-8" ] },
+      { "ref": "hw-01", "ua": "Homework", "eng": "Homework", "ru": "Homework", "keywords": [ "блок-схема", "оператор цикла", "условный оператор" ] }
+      ]
+  },
+  {
+    "ref": "type-coercion",
+    "ua": "Приведення типів. Функції. Методи.",
+    "eng": "Type coercion. Functions. Methods.",
+    "ru": "Приведение типов. Функции. Методы",
+    "items" : {
+      "Explicit-type-conversion": { "ua": "Явне приведення типів", "eng": "Explicit type coercion", "ru": "Явное приведение типов" },
+      "Implicit-type-conversion": { "ua": "Неявне приведення типів", "eng": "Implicit type coercion", "ru": "Неявное приведение типов" },
+      "NaN-null-Infinity": { "ua": "NaN | null | Infinity", "eng": "NaN | null | Infinity", "ru": "NaN | null | Infinity" },
+      "BigInt": { "ua": "BigInt (ES10)", "eng": "BigInt (ES10)", "ru": "BigInt (ES10)" },
+      "function": { "ua": "Функції", "eng": "Functions", "ru": "Функции" },
+      "methods": { "ua": "Методи", "eng": "Methods", "ru": "Методы" },
+      "String-methods": { "ua": "Методи рядків", "eng": "Methods of strings", "ru": "Методы строк" },
+      "String-fromCharCode": { "ua": "String.fromCharCode()", "eng": "String.fromCharCode()", "ru": "String.fromCharCode()" },
+      "literals": { "ua": "Змінні в літералах", "eng": "Variables in literals", "ru": "Переменные в литералах" },
+      "Array-methods": { "ua": "Методи масивів", "eng": "Methods of arrays", "ru": "Методы массивов" },
+      "Date-constructor": { "ua": "Конструктор Date", "eng": "Constructor Date", "ru": "Конструктор Date" },
+      "self-work-02": { "ua": "Самостійна робота", "eng": "Self-study", "ru": "Самостоятельная работа" },
+      "practice-with-XSS": { "ua": "Практика (XSS)", "eng": "Practice (XSS)", "ru": "Практика (XSS)" },
+      "hw-02":
+    }
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      { "ref": , "ru": "Homework", "eng": "Homework" }
+    ]
+  },
+  {
+    "ru": "Объект function",
+      "eng": "Function as an object",
+      "ref": "function-object",
+      "items" : [
+          { "ru": "Циклы while | do ... while", "eng": "while | do ... while", "ref": "while", "keywords": [ "цикл", "while" ] },
+          { "ru": "Циклы for...of | for...in", "eng": "for...of | for...in", "ref": "for-of-for-in", "keywords": [ "цикл", "итерирование", "перебор", "массив", "объект", "свойства", "элементы", "", "" ] },
+          { "ru": "Параметры функции по умолчанию", "eng": "Default values of function parameters", "ref": "default-param-values", "keywords": [ "Параметры по умолчанию", "дефолтные значения параметров", "функция", "параметры", "значения", "аргументы", "вызов", "null", "undefined" ] },
+          { "ru": "Функция как объект", "eng": "Function as an object", "ref": "function-object", "keywords": [ "arguments", "объект", "функция", "callee", "arguments.callee", "контекст", "контекст вызова", "контекст исполнения", "this", "lexical environment", "цепочка областей видимости", "hoisting", "стек", "call stack", "глобальный объект" ] },
+          { "ru": "Практика", "eng": "Practice", "ref": "practice-03", "keywords": [ "devtools", "chrome devtools", "breakpoint", "watch", "array" ] },
+          { "ru": "Homework", "eng": "Homework", "ref": "hw-03", "keywords": [  ] }
+      ]
+  },
+  {
+      "ru": "Прототипное наследование",
+      "eng": "Prototypal inheritance",
+      "ref": "prototypal-inheritance",
+      "items" : [
+          { "ru": "Объекты JS", "eng": "Native and host objects", "ref": "native-and-host-objects", "keywords": [ "нативные объекты", "host-объекты", "литерал объекта", "собственные", "публичные", "приватные", "свойства", "унаследованные", "перечислимые", "неперечислимые", "инкапсуляция", "наследование", "прототип", "конструктор", "экземпляр", "this" ] },
+          { "ru": "Модель наследования JS", "eng": "JS inheritance model", "ref": "inheritance-model", "keywords": [ "new", "наследование", "прототип", "конструктор", "экземпляр", "this", "proto", "prototype", "constructor", "объект", "цепочка прототипов", "контекст вызова", "Object", "class", "класс", "абстракция", "ссылка", "контекст", "инкапсуляция", "наследование" ] },
+          { "ru": "Оператор in", "eng": "The 'in' operator", "ref": "in-operator", "keywords": [ "объект", "свойство", "in", "оператор" ] },
+          { "ru": "Homework", "eng": "Homework", "ref": "hw-04", "keywords": [ "дамская сумочка", "librarybook", "addproperty" ] }
+      ]
+  },
+  {
+      "ru": "Изменение контекста",
+      "eng": "Changing the call context",
+      "ref": "Change-call-context",
+      "items" : [
+          { "ru": "Вычисляемые свойства", "eng": "Computed properties", "ref": "get-and-set", "keywords": [ "get", "set", "свойство", "вычисляемое", "геттер", "сеттер", "price uah", "calculator", "human states" ] },
+          { "ru": "Биндинг и карринг", "eng": "Binding and currying", "ref": "call-apply-bind", "keywords": [ "конструктор", "function", "наследование", "контекст вызова", "this", "apply", "call", "bind", "декоратор", "каррирование", "биндинг",
+                                                                                 "изменение контекста", "currying" ] },
+          { "ru": "Каррирование", "eng": "Currying", "ref": "call-apply-bind-currying", "keywords": [ "конструктор", "function", "наследование", "контекст вызова", "this", "apply", "call", "bind", "декоратор", "каррирование", "биндинг",
+                                                                                 "изменение контекста", "currying" ] },
+          { "ru": "Метод valueOf()", "eng": "The 'valueOf' method", "ref": "value-of", "keywords": [ "valueof", "примитивное значение" ] },
+          { "ru": "Конструктор Error", "eng": "Constructor Error", "ref": "Error", "keywords": [ "конструктор", "error", "try", "catch", "finally", "throw" ] },
+          { "ru": "Оператор switch", "eng": "The 'switch' operator", "ref": "switch", "keywords": [ "switch", "ветвление", "условный оператор", "case", "default" ] },
+          { "ru": "Homework", "eng": "Homework", "ref": "hw-05", "keywords": [ "modificator", "generateError" ] }
+      ]
+  },
+  {
+      "ru": "BOM & DOM",
+      "eng": "BOM & DOM",
+      "ref": "browser-object-model",
+      "items" : [
+          { "ru": "Browser Object Model", "eng": "Browser Object Model", "ref": "BOM", "keywords": ["window", "viewport", "console", "navigator", "screen", "location", "history", "document", "geolocation", "position", "hash", "host", "href", "origin", "port", "protocol", "search", "state", "back", "forward", "go", "open", "write", "close"] },
+          { "ru": "window.postMessage", "eng": "window.postMessage", "ref": "BOM-postMessage", "keywords": [ "window", "postMessage", "message", "post", "onmessage" ] },
+          { "ru": "Document Object Model", "eng": "Document Object Model", "ref": "DOM", "keywords": [ "dom", "object", "eventtarget", "node", "document", "head", "body", "scripts", "styleSheets", "createElement", "htmlunknownelement", "createTextNode", "getelementbyru", "getelementsbytagname", "getelementsbyclassname", "htmlcollection", "queryselector", "nodetype", "childnodes", "appendchild", "nodelist", "children", "элементы", "html", "узлы дерева dom", "хост-объект" ] },
+          { "ru": "Элементы DOM", "eng": "DOM elements", "ref": "DOM-elements", "keywords": [ "appendchild", "removechild", "remove", "parentnode", "insertadjacenthtml", "insertadjacentelement", "insert", "childnodes", "nodelist", "children", "htmlcollection", "setattribute", "getattribute", "getboundingclientrect", "потомки", "родитель", "коллекция", "вставка", "удаление" ] },
+          { "ru": "Homework", "eng": "Homework", "ref": "hw-06", "keywords": [ "classList" ] }
+      ]
+  },
+  {
+      "ru": "DOM events",
+      "eng": "DOM events",
+      "ref": "dom-events",
+      "items" : [
+          { "ru": "События элементов DOM", "eng": "DOM events", "ref": "DOM-events", "keywords": [ "Event Target", "event listener", "event", "dispatchEvent", "addEventListener", "removeEventListener", "DOMNodeInserted", "target", "Custom Event", "callback", "event handler", "clientx", "clienty", "eventphase", "propagation", "preventdefault", "stoppropagation", "stopimmediatepropagation", "события", "элементы" ] },
+          { "ru": "MutationObserver", "eng": "MutationObserver", "ref": "DOM-MutationObserver", "keywords": [ "mutation observer", "изменения", "наблюдатель", "элементы", "mutation", "observer" ] },
+          { "ru": "Элементы форм", "eng": "Form elements", "ref": "forms", "keywords": [ "value", "onchange", "input", "type", "переключатели", "radio", "checked", "checkbox", "select", "selectedindex", "option", "выпадающий список", "click", "color" ] },
+          { "ru": "Homework", "eng": "Homework", "ref": "hw-07", "keywords": [ "click", "mouseover", "mouseout" ] }
+      ]
+  },
+  {
+      "ru": "Замыкание. Рекурсия. Таймеры",
+      "eng": "Closures. Recursion. Timers.",
+      "ref": "functional-programming-stuff",
+      "items" : [
+          { "ref": "arrow-function", "ru": "Стрелочные функции", "eng": "Arrow functions", "keywords": [ "es6", "prototype", "arguments", "контекст вызова", "function", "this", "arrow", "стрелочная функция", "сигнатура" ] },
+          { "ref": "functionality", "ru": "Функциональщина", "eng": "Functional programming stuff", "keywords": ["функция", "функция высшего порядка", "function", "функция аргумент", "функция возвращаемое значение" ] },
+          { "ref": "Closure", "ru": "Замыкание", "eng": "Closure", "keywords": [ "замыкание", "closure", "lexical environment", "iife", "immediately invoked function expression", "функциональное выражение", "function", "функция возвращаемое значение", "return function", "var", "arguments" ] },
+          { "ref": "recursion", "ru": "Рекурсия", "eng": "Recursion", "keywords": ["рекурсивная", "рекурсия", "хвостовая рекурсия", "условие прерывания рекурсии", "стек вызовов", "call stack", "recursion", "самовызов", "функция", "глубина рекурсии"] },
+          { "ref": "Event-Loop", "ru": "Event Loop", "eng": "Event Loop", "keywords": [ "event loop", "событийно-ориентированное программирование", "event-driven programming", "thread", "поток", "процесс", "heap", "куча", "stack", "call stack", "стек", "асинхронность", "task", "queue", "callback", "функция", "обратный вызов", "микрозадача", "promise", "microtask", "очередь задач", "очередь событий", "многопоточность", "однопоточность", "ядро", "процессор", "движок", "браузер" ] },
+          { "ref": "Timers", "ru": "Таймеры", "eng": "Timers", "keywords": [ "settimeout", "callback", "requestanimationframe", "debouncing", "частота обновления страницы", "числовой идентификатор колбэк-функции", "таймер", "timer" ] },
+          { "ref": "hw-08", "ru": "Homework", "eng": "Homework", "eng": "Homework", "keywords": [ "таймер", "рекурсия", "timer", "settimeout" ] }
+      ]
+  },
+  {
+      "ru": "Итерирование массивов. SHA",
+      "eng": "Array iterating methods. SHA",
+      "ref": "array-iterating-methods",
+      "items" : [
+          { "ref": "Array-iterating-methods", "ru": "Итерирующие методы массивов", "eng": "Array iterating methods", "keywords": [ "итерирование", "перебор", "массив", "функция-аргумент", "метод", "контекст", "method", "array", "iteration", "loop", "foreach", "map", "filter", "find", "findindex", "every", "some", "reduce", "sort", "flatmap", "keys", "values", "итератор"] },
+          { "ref": "JS-heap-memory-allocation", "ru": "Тестирование производительности", "eng": "Heap memory allocation", "keywords": [ "performance", "audits", "memory", "javascript", "profiler", "chrome", "devtools", "rail", "paint", "load", "response", "animation", "rule", "heap", "snapshort" ] },
+          { "ref": "throttling-and-debouncing", "ru": "Throttling and debouncing", "eng": "Throttling and debouncing", "keywords": [ "throttling", "debouncing", "", "", "", "", "", "", "", "", "", "", "" ] },
+          { "ref": "SHA", "ru": "Secure Hash Algorithm", "eng": "Secure Hash Algorithm", "keywords": [ "sha", "secure", "hash", "algorithm", "дайджест", "digest", "хеш", "хэш", "integrity", "цифровая подпись", "sha256", "cdn" ] },
+          { "ref": "hw-09", "ru": "Homework", "eng": "Homework", "keywords": [ "typemessage", "setuserpresent", "showpresent", "showabsent", "present", "absent", "user", "message", "timer", "settimeout", "таймер", "changeclass", "" ] }
+      ]
+  },
+  {
+      "ru": "Статические методы Object",
+      "eng": "Static methods of the Object constructor",
+      "ref": "object-static-props",
+      "items" : [
+          { "ref": "let-const", "ru": "let | const", "eng": "let | const", "keywords": [ "es6", "let", "const", "функциональная", "блочная", "область видимости", "функциональная область видимости", "блочная область видимости", "замыкание", "var", "временная мёртвая зона", "hoisting", "referenceerror", "syntaxerror", "typeerror", "error", "исключение", "инициализация", "поднятие", "lexical", "lexicalenvironment" ] },
+          { "ref": "Object-static-props", "ru": "Статические методы Object", "eng": "Static methods of the Object constructor", "keywords": [ "assign", "собственные", "перечислимые", "свойства", "create", "дескриптор", "defineproperty", "геттер", "сеттер", "get", "set", "descriptor", "writable", "value", "вычисляемые свойства", "defineproperties", "entries", "es8", "freeze", "иммутабельность", "getownpropertydescriptor", "property", "enumerable", "configurable", "getownpropertynames", "keys", "setprototypeof", "values" ] },
+          { "ref": "hw-10", "ru": "Homework", "eng": "Homework", "keywords": [ "логирование", "message", "settimeout", "callback", "конструктор" ] }
+      ]
+  },
+  {
+      "ru": "AJAX. Promise",
+      "eng": "AJAX. Promise",
+      "ref": "ajax-promise",
+      "items" : [
+          { "ru": "JSON", "eng": "", "ref": "JSON", "keywords": [ "json", "stringify", "parse", "assign", "глубокое копирование", "глубина структуры" ] },
+          { "ru": "Утилита командной строки curl", "eng": "Command-line utility curl", "ref": "curl", "keywords": [ "curl", "ptsv2.com", "toilet", "туалет", "get", "post", "crud", "http" ] },
+          { "ru": "XMLHttpRequest", "eng": "XMLHttpRequest", "ref": "XMLHttpRequest", "keywords": [ "ajax", "api", "xmlhttprequest", "open", "content-type", "crud", "http", "get", "post", "put", "delete", "patch", "credentials", "cookie", "куки", "send", "request", "header", "setrequestheader", "getallresponseheaders", "response", "readystate", "status", "statustext", "responsetext", "type", "responsetype", "arraybuffer", "blob", "document", "json", "string", "ptsv2.com", "toilet", "туалет", "network", "devtools", "chrome devtools", "onreadystatechange", "progress", "event", "loadstart", "loadend", "load", "error", "timeout", "запрос", "ответ" ] },
+          { "ru": "Заголовок Content-Type", "eng": "Content-Type header", "ref": "Content-Type", "keywords": [ "header", "заголовок", "content type", "content-type", "ptsv2.com", "toilet", "туалет", "application", "form", "json", "text", "image" ] },
+          { "ru": "Promise", "eng": "Promise", "ref": "promise", "keywords": [ "promise", "конструктор", "колбэк", "callback", "microtask", "event loop", "функция", "resolve", "reject", "referenceerror", "then", "catch",
+                                                               "navigator", "battery", "getbattery", "promise.all", "promise.resolve", "function", "функциональщина", "микротаск", "цикл событий", "event" ] },
+          { "ru": "Конструктор Promise", "eng": "Promise constructor", "ref": "promise-constructor", "keywords": [ "promise", "конструктор", "колбэк", "callback", "microtask", "event loop", "функция", "resolve", "reject", "referenceerror", "then", "catch",
+                                                               "navigator", "battery", "getbattery", "promise.all", "promise.resolve", "function", "функциональщина", "микротаск", "цикл событий", "event" ] },
+          { "ru": "Homework", "eng": "Homework", "ref": "hw-11", "keywords": [ "ajax", "json", "xmlhttprequest", "message", "логирование", "settimeout", "таймер", "лог", "log", "key" ] }
+      ]
+  },
+  {
+      "ru": "Fetch API. CORS",
+      "eng": "Fetch API. CORS",
+      "ref": "fetch-cors",
+      "items" : [
+          { "ru": "Fetch API", "eng": "Fetch API", "ref": "fetch-API", "keywords": [ "ajax", "fetch", "cors", "api", "promise", "crud", "method", "post", "get", "put", "delete", "patch", "head", "request", "header", "response", "content-type", "credentials", "cookie", "куки", "mode", "type", "body", "readablestream", "integrity", "method", "status", "statusText", "basic", "opaque", "arraybuffer", "blob", "formdata", "json", "text", "clone", "int8array", "uint8array", "http", "bodyused", "then", "сервер", "запрос", "ответ" ] },
+          { "ru": "CORS", "eng": "CORS", "ref": "CORS", "keywords": [ "ajax", "cors", "origin", "xmlhttprequest", "fetch", "preflight", "request", "header", "response", "access", "control", "method", "access-control", "proxy", "прокси", "кросс-доменный", "кроссдоменный", "домен", "протокол", "access-control-allow-origin", "заголовки", "сервер", "запрос", "ответ", "proxy for cors" ] },
+          { "ru": "cookie", "eng": "cookie", "ref": "cookie", "keywords": [ "cookie", "куки", "клиент", "страница", "данные", "читать", "писать", "текст", "ключ", "значение", "document", "expires", "срок годности", "utc", "date", "gettime" ] },
+          { "ru": "localStorage", "eng": "localStorage", "ref": "localStorage", "keywords": [ "localstorage", "клиент", "данные", "setitem", "getitem", "removeitem", "clear", "key", "event", "storage", "хранилище", "локальное", "страница", "текст", "сохранить на клиенте", "очистить", "добавить", "удалить", "ключ", "прочитать" ] },
+          { "ru": "Homework", "eng": "Homework", "ref": "hw-12", "keywords": [ "cookie", "куки", "клиент", "данные", "прочитать", "записать", "localstorage", "location", "hash", "promise", "then" ] }
+      ]
+  },
+  {
+      "ru": "File API. FormData",
+      "eng": "File API. FormData",
+      "ref": "file-api-and-formdata",
+      "items" : [
+          { "ru": "namedItem", "eng": "namedItem", "ref": "named-item", "keywords": [ "nameditem", "именованный", "named", "htmlcollection", "name", "document", "dom", "элемент", "коллекция" ] },
+          { "ru": "Streams API", "eng": "Streams API", "ref": "readableStream", "keywords": [ "stream", "api", "readable", "readablestream", "конструктор", "getreader", "reader", "pipe", "enqueue", "read", "fetch", "arraybuffer", "blob", "поток", "читать", "данные", "response" ] },
+          { "ru": "ArrayBuffer", "eng": "ArrayBuffer", "ref": "arrayBuffer", "keywords": [ "arraybuffer", "аксессор", "dataview", "int8array", "uint8array", "int16array", "uint16array", "int32array", "uint32array", "конструктор", "binary", "data", "данные", "преобразование", "итерабельный", "array.from", "экземпляр" ] },
+          { "ru": "FileReader", "eng": "FileReader", "ref": "FileReader", "keywords": [ "reader", "filereader", "file", "api", "read", "readas", "readasarraybuffer", "arraybuffer", "binarystring", "readasbinarystring", "dataurl", "readasdataurl", "text", "readastext", "url", "createobjecturl", "читать", "файл", "данные", "клиент" ] },
+          { "ru": "File API", "eng": "File API", "ref": "File-API", "keywords": [ "file", "api", "reader", "читать", "файл", "данные", "клиент", "files", "filelist", "input", "type", "application", "json", "image", "text", "size", "name", "lastmodified", "modified", "тип файла", "размер файла" ] },
+          { "ru": "FormData", "eng": "FormData", "ref": "FormData", "keywords": [ "form", "конструктор", "formdata", "атрибут", "name", "value", "append", "добавить", "ключ", "значение", "has", "get", "getall", "set", "delete", "keys", "entries", "fetch", "отправка файла на сервер", "upload" ] },
+          { "ru": "Homework", "eng": "Homework", "ref": "hw-13", "keywords": [ "blob", "url", "createobjecturl", "input", "files", "type", "ptsv2.com", "toilet", "туалет", "дамп" ] }
+      ]
+  },
+  {
+      "ru": "Асинхронная функция",
+      "eng": "Asynchronous function",
+      "ref": "asynchronous-function",
+      "items" : [
+          { "ru": "Event Loop", "eng": "Event Loop", "ref": "Event-Loop", "keywords": [ "loop", "event", "event loop", "событие", "событийно-ориентированное программирование", "event-driven programming", "thread", "поток", "процесс", "heap", "куча", "stack", "call stack", "стек", "асинхронность", "task", "queue", "callback", "функция", "обратный вызов", "микрозадача", "promise", "microtask", "очередь", "очередь задач", "очередь событий", "многопоточность", "однопоточность", "ядро", "процессор", "движок", "браузер" ] },
+          { "ru": "Чем хороши обещания?", "eng": "Why are promises good?", "ref": "async-is-good", "keywords": [ "promise", "then", "call stack", "stack", "стек", "поток", "async", "await", "return", "таймер", "settimeout", "микротаск", "microtask", "task queue" ] },
+          { "ru": "async | await", "eng": "async | await", "ref": "async-await", "keywords": [ "async", "await", "promise", "then", "syntaxerror", "асинхронная функция", "функция", "function", "промис", "return", "микротаск", "microtask", "task queue" ] },
+          { "ru": "Конструктор асинхронной функции", "eng": "Asynchronous function constructor", "ref": "async-constructor", "keywords": [ "function", "constructor", "функция", "конструктор", "referenceerror" ] },
+          { "ru": "async function vs Promise.all", "eng": "async function vs Promise.all", "ref": "async-vs-Promise-all", "keywords": [ "function", "async", "асинхронная функция", "promise.all", "await", "then", "функция" ] },
+          { "ru": "Homework", "eng": "Homework", "ref": "hw-14", "keywords": [ "async", "await", "асинхронная функция", "function", "функция", "рекурсия", "рекурсивная функция", "then", "promise" ] }
+      ]
+  },
+  {
+      "ru": "REST API",
+      "eng": "REST API",
+      "ref": "rest-api",
+      "items" : [
+          { "ru": "API", "eng": "API", "ref": "API", "keywords": [ "запрос", "ответ", "сервис", "endpoint", "soa", "rpc", "rest", "soap", "csv", "json", "xml", "протокол", "интерфейс" ] },
+          { "ru": "REST API", "eng": "REST API", "ref": "REST", "keywords": [ "endpoint", "операция", "ресурс", "crud", "post", "put", "get", "delete", "patch", "json", "hateoas", "hypermedia", "запрос", "ответ", "сервис", "интерфейс", "протокол" ] },
+          { "ru": "Response status codes", "eng": "Response status codes", "ref": "REST-status", "keywords": [ "", "", "", "", "", "", "", "", "" ] },
+          { "ru": "JSON-placeholder", "eng": "JSON-placeholder", "ref": "JSON-placeholder", "keywords": [ "curl", "get", "post", "put", "delete", "patch", "crud", "endpoint", "операция", "ресурс", "fetch" ] },
+          { "ru": "json-server", "eng": "json-server", "ref": "json-server", "keywords": [ "json", "server", "json-server", "data base", "база данных", "endpoint", "localhost", "port", "http", "get", "post", "put", "delete", "patch", "crud", "fetch", "xmlhttprequest", "head" ] },
+          { "ru": "Размеры и прокрутка элемента", "eng": "Element sizes and scrolling", "ref": "scroll", "keywords": [ "scrollHeight", "scrollWruth", "clientHeight", "clientWruth", "offsetHeight", "offsetWruth", "scrollTop", "scrollLeft", "элемент", "размеры", "прокрутка", "getboundingclientrect", "dom", "top", "left", "bottom", "right", "wruth", "height", "координаты", "ширина", "высота", "scroll" ] },
+          { "ru": "Fake chat", "eng": "Fake chat", "ref": "fake-chat", "keywords": [ "endpoint", "crud", "post", "put", "get", "delete", "json", "база данных", "json-server", "database", "chat", "чат", "http", "promise.all", "async", "await", "scrollTop", "offsetTop", "прокрутка" ] },
+          { "ru": "Homework", "eng": "Homework", "ref": "hw-15", "keywords": [ "endpoint", "crud", "post", "put", "get", "delete", "patch", "json", "база данных", "json-server", "database" ] }
+      ]
+  },
+  {
+      "ru": "Классы",
+      "eng": "Classes",
+      "ref": "classes",
+      "items" : [
+          { "ru": "Строгий режим", "eng": "Strict mode", "ref": "strict-mode", "keywords": [ "strict", "strict mode", "строгий режим", "директива", "referenceerror", "syntaxerror", "delete", "octal", "typeerror", "eval", "arguments", "callee", "arguments.callee", "caller", "with", "implements", "interface", "let", "package", "private", "protected", "public", "static", "yield" ] },
+          { "ru": "Вычисляемые имена свойств", "eng": "Computed property names", "ref": "computed-prop-names", "keywords": [ "es6", "property", "calculated", "вычисляемое", "имя", "свойство", "вычисляемый", "вычисляемые", "имена" ] },
+          { "ru": "Краткий синтаксис методов", "eng": "Short method syntax", "ref": "short-method-syntax", "keywords": [ "es6", "property", "имя", "метод", "method", "syntax", "синтаксис", "short", "краткий", "short form" ] },
+          { "ru": "Краткая форма литерала объекта", "eng": "Shorthand object literal", "ref": "shorthand-object-literal", "keywords": [ "es6", "литерал", "объект", "объявление", "форма", "краткий", "short", "short form", "синтаксис", "syntax" ] },
+          { "ru": "Классы", "eng": "Classes", "ref": "Classes", "keywords": [ "es6", "strict", "strict mode", "строгий режим", "constructor", "class", "класс", "declaration", "expression", "instanceof", "get", "set", "геттер", "сеттер", "контекст", "context", "наследование", "extends", "super", "static", "createElementNS", "svg", "setAttribute", "getAttribute", "конструктор", "свойства", "приватный", "публичный", "унаследованный", "собственный", "приватное свойство", "публичное свойство", "унаследованное свойство", "собственное свойство" ] },
+          { "ru": "Homework", "eng": "Homework", "ref": "hw-16", "keywords": [ "class", "класс", "унаследованное свойство", "json-server" ] }
+      ]
+  },
+  {
+      "ru": "Генераторы и итераторы",
+      "eng": "Generators and iterators",
+      "ref": "generators-and-iterators",
+      "items" : [
+          { "ru": "Фабричные методы. Полиморфизм", "eng": "Factory method. Polymorphism", "ref": "fabric", "keywords": ["fabric", "полиморфизм", "фабрика", "фабричный метод", "паттерн", "модуль", "замыкание", "iife", "интерфейс", "class", "класс", "constructor", "конструктор", "экземпляр", "перечислимый", "неперечислимый", "метод", "enumerable", "унаследованный"] },
+          { "ru": "Деструктуризация", "eng": "Destructuring", "ref": "Destructuring", "keywords": ["структура", "деструктуризация", "присваивание", "деструктурирующее присваивание", "массив", "объект", "destructuring", "structure", "data", "assignment", "spread", "...", "rest", "остаток", "оператор", "коллекция", "итерабельный"] },
+          { "ru": "Генераторы и итераторы", "eng": "Generators and iterators", "ref": "generators", "keywords": ["symbol", "iterator", "итерабельный", "symbol.iterator", "итератор", "генератор", "next", "value", "done", "протокол", "итерирование",
+                                                                                 "протокол итерирования", "yield", "return", "объект", "структура", "структура данных", "iife", "async", "await", "связные списки"] },
+          { "ru": "Асинхронные генераторы", "eng": "Asynchronous generators", "ref": "generators-async", "keywords": [ "symbol", "iterator", "итерабельный", "symbol.iterator", "итератор", "генератор", "next", "value", "done", "протокол", "итерирование",
+                                                                                 "протокол итерирования", "yield", "return", "await", "объект", "структура", "структура данных", "iife", "асинхронный",
+                                                                                 "асинхронный генератор", "async", "promise" ] },
+          { "ru": "Изменение протокола итерирования (yield*)", "eng": "Switching the iteration protocol (yield*)", "ref": "generators-yield", "keywords": [ "symbol", "iterator", "итерабельный", "symbol.iterator", "итератор", "генератор", "next", "value", "done", "протокол", "итерирование",
+                                                                                 "протокол итерирования", "yield", "return", "объект", "структура", "структура данных", "yield*" ] },
+          { "ru": "Передача параметров генератору", "eng": "Passing parameters to a generator", "ref": "generators-arg", "keywords": [ "symbol", "iterator", "итерабельный", "symbol.iterator", "итератор", "генератор", "next", "value", "done", "протокол", "итерирование",
+                                                                                 "протокол итерирования", "yield", "объект", "структура", "структура данных" ] },
+          { "ru": "Homework", "eng": "Homework", "ref": "hw-17", "keywords": ["итерабельный", "symbol.iterator", "итератор", "генератор", "next", "value", "done", "объект", "деструктуризация", "destructuring"] }
+      ]
+  },
+  {
+      "ru": "Веб-компоненты",
+      "eng": "Web-components",
+      "ref": "web-components",
+      "items" : [
+          { "ru": "Селектор :not(:defined)", "eng": "Selector :not(:defined)", "ref": "not-defined", "keywords": [ "web-component", "custom element", "customelements", "веб-компонент", "defined", "not", "селектор", ":not(:defined)", "queryselectorall", "nodelist" ] },
+          { "ru": "Shadow DOM", "eng": "Shadow DOM", "ref": "Shadow-DOM", "keywords": [ "web-component", "custom element", "customelements", "веб-компонент", "shadow", "dom", "shadow dom", "api", "shadow dom api", "attach", "attachshadow", "mode", "open", "closed", "shadowroot", "shadowhost", "теневой" ] },
+          { "ru": "Custom Elements", "eng": "Custom Elements", "ref": "custom-elements", "keywords": [ "unknown", "htmlunknownelement", "htmlelement", "prototype", "custom", "customelements", "define", "кастомный", "элемент", "веб-компонент", "компонент", "регистрация", "html5", "реестр", "class", "extends", "constructor", "super", "класс", "наследование" ] },
+          { "ru": "Хуки жизненного цикла", "eng": "Lifecycle hooks", "ref": "life-cycle-hooks", "keywords": [ "custom element", "customelements", "веб-компонент", "lifecycle", "hook", "lifecycle hook", "хук", "callback", "connectedcallback", "disconnectedcallback", "attribute", "attributechangedcallback", "getattribute", "setattribute", "static", "get", "observedattributes", "event", "событие", "вставка", "удаление", "атрибут", "изменение атрибутов", "отслеживаемые атрибуты", "html-атрибут" ] },
+          { "ru": "whenDefined", "eng": "whenDefined", "ref": "when-defined", "keywords": [ "custom element", "customelements", "веб-компонент", "lifecycle", "hook", "lifecycle hook", "хук", "callback", "event", "регистрация", "компонент", "реестр", "class", "extends", "constructor", "super", "класс", "наследование", "асинхронный", "итератор","генератор","атрибут", "promise", "whendefined", "customelements.whendefined" ] },
+          { "ru": "&lt;template&gt;", "eng": "&lt;template&gt;", "ref": "template", "keywords": [ "custom element", "template", "document", "fragment", "documentfragment", "фрагмент", "шаблон", "разметка", "шаблон разметки", "markup", "html", "content", "dom", "childnodes", "node", "nodelist", "children", "htmlcollection", "clonenode", "вставка", "дерево" ] },
+          { "ru": "Слоты", "eng": "Slots", "ref": "slots", "keywords": [ "slot", "custom element", "веб-компонент", "слот", "именованный", "named", "default", "дефолтный", "контент" ] },
+          { "ru": "Примеры веб-компонентов", "eng": "Web-component examples", "ref": "web-component-samples", "keywords": [ "web-component", "custom element", "customelements", "веб-компонент", "примеры", "slruer", "game", "spoiler", "слайдер", "спойлер", "игра", "персонажи" ] },
+          { "ru": "Homework", "eng": "Homework", "ref": "hw-18", "keywords": [ "web-component", "custom element", "customelements", "веб-компонент", "выпадающее меню", "json-server", "регистрация", "slruer", "слайдер" ] }
+      ]
+  },
+  {
+      "ru": "Webpack",
+      "eng": "Webpack",
+      "ref": "webpack",
+      "items" : [
+          { "ru": "Пакетный менеджер npm", "eng": "npm package manager", "ref": "npm", "keywords": [ "npm", "пакет", "пакетный менеджер", "реестр", "cdn", "node", "which", "version", "root", "init", "package", "package.json", "dependency", "dependencies", "dev", "devdependencies", "npmrc", ".npmrc", "конфигурация", "config", "install", "global", "-g", "--save", "--save-dev", "css-loader", "node_modules", "gitignore", "run", "scripts", "list", "--depth=0", "depth", "search", "link", "symlink", "символическая ссылка", "пакет", "package-lock", "json", "package-lock.json", "integrity", "shrinkwrap", "версия", "зависимости", "deploy", "npm-shrinkwrap", "npm-shrinkwrap.json", "слепок", "установка", "развертывание" ] },
+          { "ru": "Webpack", "eng": "Webpack", "ref": "webpack", "keywords": [ "webpack", "npm", "зависимости", "webpack-cli", "модуль", "module", "пакет", "подключение", "webpack.config.js", "js", "--config", "--watch", "config", "watch", "--mode", "mode", "сборка", "сборщик", "bundle", "файл", "приложение" ] },
+          { "ru": "ES Modules", "eng": "ES Modules", "ref": "webpack-es-modules", "keywords": [ "es6", "webpack", "модуль", "module", "пакет", "js", "сборка", "сборщик", "bundle", "файл", "экспорт", "импорт", "export", "import", "именованный", "именованный экспорт", "именованный импорт", "дефолтный", "дефолтный экспорт", "дефолтный импорт", "по умолчанию", "default", "default export", "default import", "named", "named export", "named import" ] },
+          { "ru": "Dynamic import (ES10)", "eng": "Dynamic import (ES10)", "ref": "dynamic-import", "keywords": [ "es10", "webpack", "модуль", "module", "пакет", "сборка", "сборщик", "bundle", "файл", "динамический импорт", "dynamic", "dynamic import", "import()", "then", "settimeout", "await", "async", "path", "путь" ] },
+          { "ru": "Опция --mode", "eng": "--mode option", "ref": "webpack-mode", "keywords": [ "webpack", "пакет", "сборка", "сборщик", "bundle", "файл", "--mode", "mode", "development", "production", "бандл", "bundle", "package", "package.json", "scripts", "npm", "run", "npm run", "debug" ] },
+          { "ru": "package.json", "eng": "package.json", "ref": "webpack-package-json", "keywords": [ "webpack", "модуль", "package", "пакет", "подключение", "сборка", "сборщик", "bundle", "файл", "config", "конфигурация", "watch", "--watch", "-w", "npm", "run", "npm run", "приложение" ] },
+          { "ru": "Загрузчики стилей", "eng": "Style loaders", "ref": "webpack-css-loaders", "keywords": [ "webpack", "модуль", "module", "пакет", "подключение", "сборка", "сборщик", "bundle", "файл", "loaders", "загрузчик", "node", "node.js", "module.exports", "exports", "require", "npm", "run", "npm run", "config", "webpack.config.js", "rules", "module.rules", "test", "use", "style", "style-loader", "css", "css-loader", "стили", "--save-dev", "node_modules", "package.json", "devdependencies" ] },
+          { "ru": "Загрузчики файлов", "eng": "File loaders", "ref": "webpack-exercise-6", "keywords": [ "webpack", "модуль", "module", "пакет", "подключение", "сборка", "сборщик", "bundle", "файл", "loaders", "загрузчик", "node", "node.js", "module.exports", "exports", "require", "npm", "run", "npm run", "config", "webpack.config.js", "rules", "module.rules", "test", "use", "url", "url-loader", "limit", "размер ", "file", "file-loader", "файл", "base64", "--save-dev", "node_modules", "package.json", "devdependencies" ] },
+          { "ru": "Именованный экспорт", "eng": "Named export", "ref": "webpack-exercise-7", "keywords": [ "webpack", "модуль", "module", "пакет", "подключение", "сборка", "сборщик", "bundle", "файл", "экспорт", "импорт", "export", "import", "пример", "именованный", "именованный экспорт", "example", "sample" ] },
+          { "ru": "Подключение шрифтов", "eng": "Embedding fonts", "eng": "Homework", "ref": "webpack-exercise-8", "keywords": [ "webpack", "module", "пакет", "пакет", "подключение", "сборка", "сборщик", "bundle", "файл", "font", "шрифт", "font awesome", "google fonts" ] }
+      ]
+  },
+  {
+      "ru": "Final project",
+      "eng": "Final project",
+      "ref": "final-project",
+      "items" : [
+          { "ru": "Задание на проектирование", "ref": "Final-project", "keywords": [ "sprint", "final", "project", "спринт", "задание", "проект", "финальный", "тз", "specification", "task" ] }
+      ]
+  },
+  {
+      "ru": "Other important",
+      "eng": "Other important",
+      "ref": "other-important",
+      "items" : [
+          { "ru": "Symbol", "eng": "Symbol", "ref": "Symbol", "keywords": [ "symbol", "property", "name", "символ", "свойство", "глобальный", "реестр", "description", "" ] },
+          { "ru": "Конструктор Set", "eng": "Set constructor", "ref": "Set", "keywords": [ "", "", "", "", "", "", "", "", "" ] }
+      ]
+  },
+  {
+      "ru": "Design Patterns",
+      "eng": "Design Patterns",
+      "ref": "design-patterns",
+      "items" : [
+          { "ru": "Design Patterns", "eng": "Design Patterns", "ref": "patterns", "keywords": [ "design", "паттерн", "pattern", "шаблон", "ооп", "проектирование", "делегирование", "итератор", "iterator", "gang of four", "банда четырех" ] },
+          { "ru": "Паттерн Observer", "eng": "Pattern Observer", "ref": "pattern-Observer", "keywords": [ "design", "паттерн", "pattern", "observer", "шаблон", "ооп", "проектирование", "обозреватель", "наблюдатель" ] },
+          { "ru": "Паттерн Decorator", "eng": "Pattern Decorator", "ref": "pattern-Decorator", "keywords": [ "design", "паттерн", "pattern", "decorator", "шаблон", "ооп", "проектирование", "декоратор" ] },
+          { "ru": "Паттерн Strategy", "eng": "Pattern Strategy", "ref": "pattern-Strategy", "keywords": [ "design", "паттерн", "pattern", "шаблон", "ооп", "проектирование", "strategy", "стратегия" ] }
+      ]
+  },
+  {
+      "ru": "IndexedDB",
+      "eng": "IndexedDB",
+      "ref": "indexed-db",
+      "items" : [
+        { "ru": "ruBFactory API", "eng": "ruBFactory API", "ref": "IndexedDB", "keywords": [
+                  "api", "интерфейс", "сервис", "данные", "базы данных", "index", "индексы", "индексация", "диск", "локальный", "клиент", "key", "ключ", "indexeddb", "sql", "nosql", "store",
+                  "db", "transaction", "request", "запрос", "транзакция", "хранилище", "асинхронный", "upgradeneeded", "versionchange", "version", "чтение", "запись", "соединение", "connect",
+                  "get", "put", "add", "getAll", "cursor", "promise", "async", "await"
+            ]
+          },
+          { "ru": "Хранилища данных IndexedDB", "eng": "IndexedDB store", "ref": "IndexedDB-store", "keywords": [
+                    "api", "интерфейс", "сервис", "данные", "базы данных", "index", "индексы", "индексация", "диск", "локальный", "клиент", "key", "ключ", "indexeddb", "sql", "nosql", "store",
+                    "db", "transaction", "request", "запрос", "транзакция", "хранилище", "асинхронный", "upgradeneeded", "versionchange", "version", "чтение", "запись", "соединение", "connect",
+                    "get", "put", "add", "getAll", "cursor", "promise", "async", "await"
+              ]
+          },
+          { "ru": "ruBIndex", "eng": "ruBIndex", "ref": "IndexedDB-index", "keywords": [
+                    "api", "интерфейс", "сервис", "данные", "базы данных", "index", "индексы", "индексация", "диск", "локальный", "клиент", "key", "ключ", "indexeddb", "sql", "nosql", "store",
+                    "db", "transaction", "request", "запрос", "транзакция", "хранилище", "асинхронный", "upgradeneeded", "versionchange", "version", "чтение", "запись", "соединение", "connect",
+                    "get", "put", "add", "getAll", "cursor", "promise", "async", "await"
+              ]
+          },
+          { "ru": "Transaction", "eng": "Transaction", "ref": "IndexedDB-transaction", "keywords": [
+                    "api", "интерфейс", "сервис", "данные", "базы данных", "index", "индексы", "индексация", "диск", "локальный", "клиент", "key", "ключ", "indexeddb", "sql", "nosql", "store",
+                    "db", "transaction", "request", "запрос", "транзакция", "хранилище", "асинхронный", "upgradeneeded", "versionchange", "version", "чтение", "запись", "соединение", "connect",
+                    "get", "put", "add", "getAll", "cursor", "promise", "async", "await"
+              ]
+          },
+          { "ru": "Основы баз данных", "eng": "Database basics", "ref": "NoSQL", "keywords": [
+                    "данные", "базы данных", "реляционный", "таблицы", "relation", "index", "индексы", "ключ", "денормализация", "нормализация", "mysql", "sql", "nosql", "acru",
+                    "распределённая система", "document", "документ", "graph", "графы", "кэширование", "репликация", "mongo", "", "", "", "", "", "", "", ""
+              ]
+          }
+      ]
+  },
+  {
+      "ru": "Дополнительный материал",
+      "eng": "Additional material",
+      "ref": "additional-material",
+      "items" : [
+          { "ru": "Throttling and debouncing", "eng": "Throttling and debouncing", "ref": "Throttle-and-Debounce", "keywords": [ "debounce", "throttle", "debouncing", "throttling", "дросселирование", "устранение", "дребезг", "производительность", "performance" ] },
+          { "ru": "Принципы SOLru", "eng": "SOLru principles", "ref": "SOLru", "keywords": [ "принцип", "проектирование", "ооп", "наследование", "делегирование", "single responsibility", "responsibility", "open-closed",
+                                                                    "liskov", "liskov substitution", "interface", "segregation", "dependency", "inversion", "модуль", "module", "интерфейс",
+                                                                    "interface", "зависимости", "зависимость", "абстрация" ] },
+          { "ru": "Web-workers", "eng": "Web-workers", "ref": "web-workers", "keywords": [ "api", "worker", "поток", "параллельный", "параллельный поток", "многопоточность", "однопоточность", "web-worker", "конструктор", "api",
+                                                                       "message", "channel", "messagechannel", "postmessage", "onmessage", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ] },
+          { "ru": "Notification API", "eng": "Notification API", "ref": "NotificationAPI", "keywords": [ "api", "notification", "уведомление", "рабочий стол", "юзер", "пользователь", "user", "request", "permission", "require", "interaction",
+                                                                                "requireinteraction", "ru", "body", "badge", "icon", "image", "silent", "опции", "worker", "", "", "", "", "", "", "", "", "", "", "", "" ] },
+          { "ru": "Performance API", "eng": "Performance API", "ref": "performance", "keywords": [ "api", "performance", "memory", "allocation", "runtime", "производительность", "память", "", "", "" ] },
+          { "ru": "Web-socket", "eng": "Web-socket", "ref": "web-socket", "keywords": [ "websocket", "soket", "ws", "wss", "server", "сокет", "сервер", "чат", "http" ] }
+      ]
+  },
+  {
+      "ru": "Справочный материал",
+      "eng": "Reference material",
+      "ref": "reference-material",
+      "items" : [
+          { "ru": "Git", "eng": "Git", "ref": "git", "keywords": [ "git", "bash", "cli", "command", "interpreter", "version", "репо", "repo", "repository", "github", "commit", "push", "pull", "add", "remote", "clone", "ssh", "", "", "" ] },
+          { "ru": "Git Bash", "eng": "Git Bash", "ref": "git-bash", "keywords": [ "git", "bash", "cli", "command", "interpreter", "командная строка", "интерпретатор", "баш", "гит" ] },
+          { "ru": "TCP/IP", "eng": "TCP/IP", "ref": "tcp-ip", "keywords": [ "protocol", "протокол", "tcp", "ip", "port", "порт", "дейтаграмма", "пакет", "internet" ] },
+          { "ru": "localhost", "eng": "localhost", "ref": "localhost", "keywords": [ "protocol", "протокол", "http", "ip", "port", "порт", "dns", "domen", "host", "internet", "www", "сеть", "localhost", "url", "uri", "пакет" ] }
+      ]
+  },
+  {
+      "ru": "ECMAScript",
+      "eng": "ECMAScript",
+      "ref": "ecma-script",
+      "items" : [
+          { "ru": "ECMAScript® Language Specification",  "eng": "ECMAScript® Language Specification", "ref": "ECMA", "keywords": ["ecma", "specification", "language", "ecmascript", "edition", "standard", "", "", ""] }
+      ]
+  }
+]

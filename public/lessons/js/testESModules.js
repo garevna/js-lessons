@@ -7,9 +7,9 @@ export function showMessage ( message ) {
         position: fixed;
         top: 15%; left: 15%;
         bottom: 15%; right: 15%;
-        box-shadow: 10px 10px 16px #00000090;
+        box-shadow: 8px 8px 16px #00000090;
         border: solid 0.5px #bbb;
-        padding: 30px;
+        padding: 32px;
         z-index: 300;
         background-color: #000;
     `

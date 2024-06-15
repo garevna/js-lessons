@@ -35,12 +35,11 @@ hr {
 }
 
 .search-wrapper {
-  padding: 16px 0;
-  margin: 16px 0;
+  margin: 8px 0;
   color: #eee;
 }
 
-.search-icon, .icon {
+.search-icon, .icon, .icon-active {
   display: inline-block;
   background-repeat: no-repeat;
   background-size: contain;
@@ -55,17 +54,28 @@ hr {
   height: 24px;
 }
 
+.icon, .icon-active {
+  cursor: pointer;
+}
+
 .icon {
-  background-image: var(--icon);
+  width: 16px;
+  height: 16px;
+  background-image: var(--main-menu-icon-image);
+}
+
+.icon-active {
   width: 24px;
   height: 24px;
-  border-radius: 50%;
-  border: solid 1px #09b;
+  background-image: var(--main-menu-active-icon-image);
 }
 
 #search-input {
   padding: 4px 8px;
   font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  outline: solid 1px #fa0;
 }
 
 a {
@@ -82,6 +92,37 @@ a {
 
 ul {
   list-style: none;
+}
+
+li.sub-level-item {
+  color: #09b;
+  transition: color 0.3s ease;
+  padding: 8px;
+  cursor: pointer;
+  box-sizing: border-box;
+  animation: show-submenu-item 0.1s;
+}
+
+.lesson-menu-item {
+  cursor: pointer;
+}
+
+.lesson-menu-item--active {
+  color: #fff;
+}
+
+.lesson-menu-item:hover {
+  background: #fa0;
+  color: #000;
+}
+
+li.sub-level-item:hover {
+  background: #fa0;
+  color: #000;
+}
+
+li.sub-level-item--active {
+  color: #fff;
 }
 
 #menuToggle {
@@ -130,7 +171,7 @@ ul {
 }
 
 #menuToggle span:nth-last-child(even) {
-  background: #f50;
+  background: #fa0;
 }
 
 #menuToggle span:first-child {

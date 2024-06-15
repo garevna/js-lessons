@@ -32,6 +32,10 @@ class MenuComponent extends HTMLElement {
     if (!newVal) return
 
     this.options = JSON.parse(this.getAttribute('options'))
+    const notFound = !!this.options.find(option => option.text.indexOf('404') !== -1)
+    const visible = !!location.search && !notFound
+    this.style.visibility = visible ? 'visible' : 'hidden'
+
     this.setAttribute('options', '')
     this.options.forEach((option, index) => {
       const li = Object.assign(createElem('li', this.container), {

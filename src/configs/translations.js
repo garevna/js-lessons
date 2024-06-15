@@ -1,8 +1,11 @@
-const translations = {
+export const translations = {
   algorithm: 'алгоритм',
-  'fibonacci sequence': 'ряд фибоначчи',
+  fibonacci: 'фибоначчи',
+  sequence: 'ряд',
   flowchart: 'блок-схема',
   'flowchart of the algorithm': 'блок-схема алгоритма',
+  developer: 'разработчик',
+  tools: 'инструменты',
   'developer tools': 'инструменты разработчика',
   console: 'консоль',
   browser: 'браузер',

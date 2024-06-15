@@ -1,6 +1,6 @@
 export const icons = {
-  home: { folder: 'icons', fileName: 'home.png' },
-  house: { folder: 'icons', fileName: 'home.png' },
+  home: { folder: 'icons', fileName: 'home-icon.svg' },
+  house: { folder: 'icons', fileName: 'home-icon.svg' },
   'open-in-new': { folder: 'icons', fileName: 'open-in-new.svg' },
   search: { folder: 'icons', fileName: 'search.png' },
   disabled: { folder: 'icons', fileName: 'no_entry.png' },

@@ -59,5 +59,6 @@ export const externalLinks = {
   classes: 'https://docs.google.com/forms/d/e/1FAIpQLSdQqNcBcLuvW7d7_Msf2a7y1BRbVcUptun6IFQ2ybfqCheTRA/viewform',
   crockford: 'http://www.crockford.com/',
   svg: 'https://www.w3schools.com/graphics/svg_intro.asp',
-  shadowDomTest: 'https://docs.google.com/forms/d/e/1FAIpQLSdjCWOSAVFqZqcm4sy-q-KBFmd1i2BbfYQ0pcZaqYb9YZyv5w/viewform'
+  shadowDomTest: 'https://docs.google.com/forms/d/e/1FAIpQLSdjCWOSAVFqZqcm4sy-q-KBFmd1i2BbfYQ0pcZaqYb9YZyv5w/viewform',
+  fielding: 'https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm'
 }
