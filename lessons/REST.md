@@ -20,8 +20,8 @@ ________________________________________
 
 @@@@
 
-![](createPath('illustrations', 'filding.png'))
-**Roy Thomas Fielding**<br><br>^^DOCTOR OF PHILOSOPHY<br/>_in Information and Computer Science^^_<br/>[^^DISSERTATION^^](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
+![](illustrations/filding.png)
+**Roy Thomas Fielding**<br><br>^^DOCTOR OF PHILOSOPHY<br/>_in Information and Computer Science^^_<br/>[^^DISSERTATION^^](external/fielding)
 
 @@@@
 
@@ -104,12 +104,12 @@ img.src = 'https://picsum.photos/id/356/900/500'
 document.body.style.margin = 0
 
 const showImage = function () {
-  const w = window.innerWidth, 
+  const w = window.innerWidth,
         h = window.innerHeight,
         num = Math.round(Math.random() * 900)
-    
+
   arguments[0].src = `https://picsum.photos/id/${num}/${w}/${h}`
-    
+
   setTimeout(() => requestAnimationFrame(showImage), 1000)
 }.bind(null, img)
 
@@ -132,11 +132,10 @@ ___________________________________
 http://api.weatherstack.com/current?access_key=xxxxxxxx&query=Kharkiv
 ~~~
 
-Ответ вы будете получать в формате JSON
-Даже с иконками типа:
-
-![](https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png)
-
+@@@@
+Ответ вы будете получать в формате JSON<br>Даже с иконками
+![](illustrations/REST-01.webp)
+@@@@
 ___________________________________
 
 ## ![ico-25 icon] endpoints для самостоятельной работы с REST API
@@ -208,7 +207,7 @@ fetch('https://garevna-rest-api.glitch.me/users/?name=Stephan')
   ► __proto__: Array(0)
 ~~~
 
-если нужно получить из базы данных **users** всех юзеров в возрасте 18 лет: 
+если нужно получить из базы данных **users** всех юзеров в возрасте 18 лет:
 
 ••https://garevna-rest-api.glitch.me/users?age=&#94;18&#94;••
 
@@ -329,4 +328,3 @@ fetch('https://json-server-with-router.glitch.me/user/garevna', {
 ~~~
 
 Ответ сервера: **~200~**
-
