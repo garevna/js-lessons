@@ -1,1 +1,0 @@
-const module = import(`https://garevna.github.io/js-samples/js/index40.js`)

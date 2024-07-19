@@ -92,8 +92,8 @@
   "async-constructor": ["function", "constructor", "asynchronous function", "async function", "referenceerror"],
   "async-vs-Promise-all": ["function", "async", "asynchronous function", "promise.all", "await", "then"],
   "hw-14": ["async", "await", "asynchronous function", "function", "recursion", "then", "promise"],
-  "API": ["request", "response", "service", "endpoint", "soa", "rpc", "rest", "soap", "csv", "json", "xml", "protocol", "interface"],
-  "REST": ["endpoint", "operation", "resource", "crud", "post", "put", "get", "delete", "patch", "json", "hateoas", "hypermedia", "request", "responce", "service", "interface", "protocol"],
+  "API": ["api", "application", "program", "interface", "request", "response", "service", "endpoint", "soa", "rpc", "rest", "soap", "csv", "json", "xml", "protocol"],
+  "REST": ["api", "endpoint", "operation", "resource", "crud", "post", "put", "get", "delete", "patch", "json", "hateoas", "hypermedia", "request", "responce", "service", "interface", "protocol"],
   "REST-status": ["server", "response", "status"],
   "JSON-placeholder": ["curl", "get", "post", "put", "delete", "patch", "crud", "endpoint", "operation", "resource", "fetch"],
   "json-server": ["json", "server", "json-server", "database", "endpoint", "localhost", "port", "http", "get", "post", "put", "delete", "patch", "crud", "fetch", "xmlhttprequest", "head"],
@@ -134,7 +134,7 @@
   "webpack-exercise-8": ["webpack", "module", "package", "embedding", "build", "builder", "bundle", "file", "font", "font awesome", "google fonts"],
   "Final-project": ["sprint", "final", "project", "финальный", "ts", "specification", "task"],
   "Symbol": ["symbol", "property", "name", "symbol", "property", "global", "registry", "description"],
-  "Set": [],
+  "Set": ["set", "constructor", "unique"],
   "patterns": ["design", "pattern", "template", "OOP", "delegation", "iterator", "gang of four"],
   "pattern-Observer": ["design", "pattern", "observer", "template", "OOP"],
   "pattern-Decorator": ["design", "pattern", "decorator", "template", "OOP"],
@@ -154,6 +154,5 @@
   "git-bash": ["git", "bash", "cli", "command", "interpreter", "command line", "interpreter"],
   "tcp-ip": ["protocol", "tcp", "ip", "port", "datagram", "package", "internet"],
   "localhost": ["protocol", "http", "ip", "port", "dns", "domen", "host", "internet", "www", "localhost", "url", "uri", "package"],
-  "ECMA": ["ecma", "specification", "language", "ecmascript", "edition", "standard", "js"],
-  "__tests": []
+  "ECMA": ["ecma", "specification", "language", "ecmascript", "edition", "standard", "js"]
 }
