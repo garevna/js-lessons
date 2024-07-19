@@ -6,6 +6,18 @@ export function parseLine (line) {
     elem.setAttribute('text', text)
     return elem
   }
+
+  if (line.match(/[→→→]{3}/)) {
+    const text = line.split('→→→').find(str => str.length).trim()
+    let [quiz, variants, right] = text.split('|').map(item => item.trim())
+    variants = variants.split(',').map(variant => variant.trim())
+    const elem = document.createElement('test-component')
+    elem.setAttribute('quiz-question', quiz)
+    elem.setAttribute('choice-variants', JSON.stringify(variants))
+    elem.setAttribute('right-choice', right)
+    return elem
+  }
+
   const img = this.parseImage(line)
 
   if (img) return img

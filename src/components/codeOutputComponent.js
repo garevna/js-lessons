@@ -46,7 +46,7 @@ class CodeOutput extends HTMLElement {
   }
 
   attributeChangedCallback (attrName, oldVal, newVal) {
-    fetch(`${createPath('lessons', newVal)}`)
+    fetch(`${createPath('demo', newVal)}`)
       .then(response => response.text())
       .then(response => {
         response = response.replace(/document.body/g, 'this.section')

@@ -4,7 +4,6 @@ import { createSubmenuItem } from './createSubmenuItem'
 import { closeCallback } from './closeCallback'
 
 const {
-  lang,
   pages,
   defaults: {
     mainMenu: {
@@ -17,7 +16,7 @@ const {
 
 const { getLessonTemplate } = require('../templates').default
 
-export async function getMainMenuData () {
+export async function getMainMenuData (lang) {
   const menuData = await (await fetch(createPath('', 'main-menu.json'))).json()
   this.keywords = await (await fetch(createPath('', 'keywords.json'))).json()
 
@@ -45,7 +44,7 @@ export async function getMainMenuData () {
 
   for (const lesson of this.menuData) {
     const lessonItem = Object.assign(createElem('li', this.menu), {
-      innerHTML: getLessonTemplate(lesson[this.lang], lesson.ref),
+      innerHTML: getLessonTemplate(lesson[lang], lesson.ref),
       id: lesson.ref,
       active: lesson.ref === activeItemRef
     })
@@ -56,10 +55,9 @@ export async function getMainMenuData () {
       subLevel: lessonItem.querySelector('ul.sub-level'),
       icon: lessonItem.querySelector('small'),
       textElement: lessonItem.querySelector('b'),
-      submenuOptions: lesson.items.map(item => createSubmenuItem.call(this, item)),
+      submenuOptions: lesson.items.map(item => createSubmenuItem.call(this, item, this.getAttribute('lang'))),
 
       onclick: function (elems, event) {
-        // if (this.active && event.target.className !== 'sub-level-item') return this.dispatchEvent(new Event('close'))
         const active = elems.find(elem => elem.active)
         if (active) active.dispatchEvent(new Event('close'))
 
@@ -82,6 +80,6 @@ export async function getMainMenuData () {
     })
 
     this.menuOptions.push(lessonItem)
-    if (lessonItem.ref === activeItemRef) lessonItem.dispatchEvent('click')
+    if (lessonItem.ref && lessonItem.ref === activeItemRef) lessonItem.dispatchEvent(new Event('click'))
   }
 }

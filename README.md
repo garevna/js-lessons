@@ -8,10 +8,26 @@
 
 `![](images/car.gif)` - the image file images/car.gif
 
+_____________________________________
+
+#### Slogans
+
+☼☼☼ In JS, functions rule, not classes ☼☼☼.
+
 ________________________
 
-[![ico-30 hw] Упражнения](test/assignments)
+#### Refs
 
-[![ico-30 hw] Тесты](quiz/arrowFunctions)
+##### Internal
 
-_______________________
+[►►►Принцип работы►►►](page/Array-iteration-methods-theory.md)
+
+##### External
+
+[![ico-30 hw] Tests](test/assignments)
+
+[![ico-30 hw] Quiz](quiz/arrowFunctions)
+
+[![ico-30 link] for](external/mdn-for)
+
+[:::**Пример в песочнице**:::](https://plnkr.co/edit/jsH8XKmc0B6g4q8iPZBf?p=preview/)

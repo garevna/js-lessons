@@ -10,7 +10,7 @@ export function setVars () {
 
   root.style.setProperty('--menu-icon-image', `url(${createPath('icons', 'table-of-contents-white.svg')}`)
   root.style.setProperty('--menu-icon-size', '36px')
-  root.style.setProperty('--menu-symbol', `url(${createPath('icons', 'table-of-contents-white.svg')}`)
+  root.style.setProperty('--menu-symbol', `url(${createPath('icons', 'table-of-contents.svg')}`)
   root.style.setProperty('--menu-background', '#333')
   root.style.setProperty('--menu-color', '#eef')
   root.style.setProperty('--menu-highlight-background', '#079')

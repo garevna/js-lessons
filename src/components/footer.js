@@ -1,5 +1,5 @@
 const { footerStyles } = require('../styles').default
-const { createElem } = require('../helpers').default
+const { createElem, createPath } = require('../helpers').default
 const { copyrightText, copyrightSign } = require('../configs').default
 
 class Footer extends HTMLElement {
@@ -10,13 +10,11 @@ class Footer extends HTMLElement {
 
     shadow.innerHTML += `
     <footer>
-      <div id="donate-button" class="donate-button">
-        <img
-          src="${location.href.split('?')[0]}/images/donate.png"
-          width="80"
-          alt="Support the project"
-          onclick="document.querySelector('donate-popup').style.bottom = '32px'"
-        />
+      <div id="donate-button" class="donate-button" onclick="document.querySelector('donate-popup').style.bottom = '32px'">
+        <!-- <span id="blue-heart">&#128153;</span>
+        <span id="yellow-heart">&#128155;</span>
+        <p>DONATE</p> -->
+        <donate-button size="64"></donate-button>
       </div>
       <div id="copyright-text" class="footer-text">
         <small> ${copyrightText} <br><br> ${copyrightSign} </small>

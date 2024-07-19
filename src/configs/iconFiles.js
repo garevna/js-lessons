@@ -43,8 +43,11 @@ const simple = [
   'octocat',
   'git',
   'github',
+  'firebase',
   'atom',
   'sublime',
+  'swagger',
+  'postman',
   'question'
 ]
 
@@ -84,6 +87,7 @@ export const iconFiles = Object.assign(simpleFiles, {
   speach: 'speech_balloon.png',
   negation: 'not.png',
   'git-ver': 'git.png',
+  'google-maps': 'google-maps.png',
   curl: 'curl.svg',
   'slider-button': 'slider-5.gif',
   'slider-button:hover': 'slider-2.gif',

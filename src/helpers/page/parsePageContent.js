@@ -6,7 +6,7 @@ export function parsePageContent (pageContent) {
     pageContent
   })
 
-  this.main.innerHTML = ''
+  this.main.innerHTML = '<glitch-logo></glitch-logo>'
 
   this.regExprs.pageContent = this.pageContent
 
@@ -36,9 +36,4 @@ export function parsePageContent (pageContent) {
   this.pageContent.length && this.parseTextFragment(this.pageContent)
 
   this.menu.setAttribute('options', JSON.stringify(this.pageContentList))
-
-  if (location.hash) {
-    const elem = document.querySelector(location.hash)
-    elem && elem.scrollIntoView()
-  }
 }

@@ -35,8 +35,37 @@ footer {
   grid-area: donate;
   display: flex;
   align-items: end;
+  align-self: end;
+  /* padding: 8px 16px;
+  background: #900;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px; */
+  cursor: pointer;
+}
+/*
+.donate-button > span {
+  font-size: 28px;
+  position: relative;
+  top: -48px;
 }
 
+.donate-button > #blue-heart {
+  animation: 1s linear 0s infinite alternate blue-heart-movie;
+}
+
+.donate-button > #yellow-heart {
+  animation: 1s linear 0s infinite alternate yellow-heart-movie;
+}
+
+.donate-button > p {
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+  top: 12px;
+  left: -78px;
+}
+*/
 .footer-text small {
   border-top: solid 1px #999;
   font-size: 11px;
@@ -147,6 +176,25 @@ footer {
 
   #slogan-donate {
   	display: none;
+  }
+}
+
+@keyframes blue-heart-movie {
+  from {
+    transform: rotate(90deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-90deg) translate(0px, 32px);
+  }
+}
+@keyframes yellow-heart-movie {
+  from {
+    transform: rotate(-60deg) translate(0px, 0px);
+    text-shadow: 0;
+  }
+  to {
+    transform: rotate(45deg) translate(0px, 32px);
+    text-shadow: 0 0 8px #0009;
   }
 }
 `

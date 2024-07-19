@@ -14,6 +14,15 @@ img  {
   box-sizing:  border-box;
 }
 
+img.spoiler-label {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  vertical-align: middle;
+  max-height: 48px;
+}
+
 div  {
   text-align:  justify;
   margin:  16px 0;
@@ -47,7 +56,7 @@ input[type='checkbox']  {
   cursor:  pointer;
   transition:  all 0.25s ease-out;
   user-select:  none;
-  background-image:  var(--folder);
+  background-image: var(--folder);
   background-repeat:  no-repeat;
   background-size:  32px;
   background-position:  left 8px center;

@@ -5,16 +5,19 @@ import './css/for-rainbow.css'
 import './components/glitch'
 import './components/GraphicHeaderComponent'
 import './components/svg-navigation-panel'
+import './components/donate-button'
+import './components/donate-component'
 
 import './components/main-menu'
 import './components/footer'
-
+import './components/lang-switcher'
 import './components/menu-component'
 import './components/spoiler-class'
 import './components/picture-slider'
 import './components/spoiler-component'
 import './components/script-spoiler'
 import './components/codeOutputComponent'
+import './components/test-component'
 
 import './components/page-component'
 
@@ -26,6 +29,7 @@ import './components/donate'
 import Shutter from './components/Shutter'
 
 const { setVars, createPath, createElem } = require('./helpers').default
+
 setVars()
 
 const favicon = Object.assign(createElem('link', document.head), {
@@ -35,11 +39,12 @@ const favicon = Object.assign(createElem('link', document.head), {
 })
 
 window.onscroll = window.onwheel = function (event) {
-  const removed = document.getElementsByTagName('welcome-win')
-  if (removed) {
-    removed[0].remove()
-    window.onscroll = window.onwheel = null
-  }
+  const { scrollTop, scrollHeight } = document.documentElement
+  const offset = scrollHeight - scrollTop - window.innerHeight
+  document.querySelector('main-menu-component').dispatchEvent(Object.assign(new Event('scroll'), { offset }))
+
+  const welcome = document.querySelector('welcome-win')
+  welcome && welcome.remove()
 }
 
 window.addEventListener('resize', (event) => {

@@ -1,6 +1,8 @@
 export const mainMenuTemplate = `
+<div id="main-menu-shadow" style="width: 100vw; height: 100vh; background: #0007; display: none;"></div>
 <graphic-header></graphic-header>
 <svg-nav-panel></svg-nav-panel>
+
 <aside>
   <div id="menuToggle">
     <input type="checkbox" />
@@ -21,4 +23,6 @@ export const mainMenuTemplate = `
     </ul>
   </div>
 </aside>
+
+<donate-component size="48" id="top-donate" />
 `

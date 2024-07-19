@@ -4,6 +4,17 @@ const { convertStringForAnchor } = require('../../configs').default
 function create (line, anchors) {
   let [text, rest] = ['', line]
 
+  if (line.includes('](sounds/')) {
+    const filePath = line.split('](sounds/')[1].slice(0, -1)
+
+    const elem = Object.assign(document.createElement('audio'), {
+      src: createPath('sounds', filePath),
+      controls: true
+    })
+
+    return elem
+  }
+
   const result = anchors.reduce((res, anchor) => {
     ;[text, rest] = rest.split(anchor)
 

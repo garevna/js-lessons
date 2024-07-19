@@ -13,7 +13,7 @@ donate-popup {
   border-radius: 4px;
   box-shadow: 8px 8px 12px #0007;
   transition: all .5s;
-  z-index: 100;
+  z-index: 505;
 }
 
 .tooltip-text {
@@ -24,7 +24,6 @@ donate-popup {
   background: #fafafa;
   z-index: 501;
   box-shadow: 4px 4px 8px #0008;
-  z-index: 101;
 }
 
 *:active,  *:hover,  *:focus  {
@@ -47,6 +46,23 @@ hr  {
   font-family:  Monaco, monospace, Roboto, Arial;
   font-size:  0.8rem;
   line-height:  1.8;
+}
+
+.error-message {
+  background: #522;
+  color: #fee;
+}
+
+.error-message:before {
+  content: '✕';
+  display: inline-block;
+  border-radius: 50%;
+  padding: 1.5px 4px 0;
+  margin-right: 8px;
+  background: #e44;
+  font-size: 10px;
+  font-weight: bold;
+  color: #200;
 }
 
 ::selection  {
@@ -73,18 +89,6 @@ hr  {
   font-size:  18px;
   letter-spacing:  2px;
   font-weight:  bold;
-}
-
-@media screen and (max-width: 480px), screen and (max-height: 480px)  {
-  donate-popup { left: 0; }
-  h1  {  font-size:  1.2rem;  }
-  h2  {  font-size:  1.0rem;  }
-  h3  {  font-size:  0.9rem;  }
-  div  {  font-size: 0.8rem;  }
-  .slogan  {
-    transform:  rotate(-15deg) translate(10%, 48px);
-    width:  80%;
-  }
 }
 
 main  {
@@ -168,12 +172,9 @@ a > span {
 
 glitch-logo {
   position: absolute;
-  top: 70px;
-  left: calc(100% - 150px);
-}
-
-@media screen and (max-width: 480px), screen and (max-height: 480px) {
-  .main-page { width: 100px; height: 100px; }
+  transform: scale(1);
+  top: 64px;
+  left: 16px;
 }
 
 table  {
@@ -266,12 +267,9 @@ button.link, button.cap  {
   color:  #079;
   font-weight: bold;
   border:  0;
-  /* box-shadow:  1px 1px 2px #0007; */
 }
 
 button.link:hover, button.cap:hover  {
-  /* box-shadow:  0px 0px 2px #0005; */
-  /* text-shadow:  1px 1px 1px #0008; */
   animation:  button-link-hover 0.5s ease infinite;
 }
 
@@ -292,17 +290,6 @@ button.page-previous  {
   background-position:  left 8px top 4px;
 }
 
-/*
-@keyframes button-link-hover  {
-  0%  {  background:  var(--button-gradient-0);  }
-  20%  {  background:  var(--button-gradient-1);  }
-  40%  {  background:  var(--button-gradient-2);  }
-  60%  {  background:  var(--button-gradient-3);  }
-  80%  {  background:  var(--button-gradient-4);  }
-  100%  {  background:  var(--button-gradient-5);  }
-}
-*/
-
 @keyframes button-link-hover  {
   0%  {  font-weight:  normal;  }
   20%  {  font-weight:  bold;  }
@@ -313,24 +300,49 @@ button.page-previous  {
   100%  {  font-weight:  normal;  }
 }
 
-/*
-@keyframes button-cap-hover  {
-    0%  {  background-image:  var(--cap-image),  var(--button-gradient-0);  }
-   20%  {  background-image:  var(--cap-image),  var(--button-gradient-1);  }
-   40%  {  background-image:  var(--cap-image),  var(--button-gradient-2);  }
-   60%  {  background-image:  var(--cap-image),  var(--button-gradient-3);  }
-   80%  {  background-image:  var(--cap-image),  var(--button-gradient-4);  }
-  100%  {  background-image:  var(--cap-image),  var(--button-gradient-5);  }
+@media screen and (max-width: 1080px) {
+  glitch-logo {
+    transform: scale(0.8);
+  }
 }
-*/
+
+@media screen and (max-width: 1000px) {
+  glitch-logo {
+    left: calc(100vw - 108px);
+    top: 60px;
+  }
+}
 
 @media screen and (max-width: 900px)  {
   main  {
-    padding:  20px 20px 50px 30px;
+    padding: 48px 16px 48px 32px;
   }
   .overshadow  {
     width:  100px;
     height:  100px;
+  }
+  glitch-logo {
+    transform: scale(0.6);
+    left: calc(100vw - 90px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  glitch-logo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px), screen and (max-height: 480px) {
+  .main-page { width: 100px; height: 100px; }
+  donate-popup { left: 0; }
+  h1  {  font-size:  1.2rem;  }
+  h2  {  font-size:  1.0rem;  }
+  h3  {  font-size:  0.9rem;  }
+  div  {  font-size: 0.8rem;  }
+  .slogan  {
+    transform:  rotate(-15deg) translate(10%, 48px);
+    width:  80%;
   }
 }
 

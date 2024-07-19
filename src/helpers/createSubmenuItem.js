@@ -1,12 +1,10 @@
 import { createElem } from './createElem'
 import { createPath } from './createPath'
 
-const { lang } = require('../configs').default
-
-export function createSubmenuItem (data) {
+export function createSubmenuItem (data, lang) {
   const activeSubItem = location.search.slice(1) || ''
   const elem = Object.assign(document.createElement('li'), {
-    innerText: data[lang()],
+    innerText: data[lang],
     className: activeSubItem !== data.ref ? 'sub-level-item' : 'sub-level-item sub-level-item--active',
     ref: data.ref,
     onclick: function (event) {

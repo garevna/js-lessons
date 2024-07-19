@@ -1,5 +1,7 @@
 import SpoilerClass from './spoiler-class'
 
+const { parseIcons, parseImage } = require('../helpers/page').default
+
 const { createElem, createPath } = require('../helpers').default
 
 class SpoilerComponent extends SpoilerClass {
@@ -21,7 +23,11 @@ class SpoilerComponent extends SpoilerClass {
   attributeChangedCallback (attrName, oldVal, newVal) {
     switch (attrName) {
       case 'header':
-        Object.assign(this.header, { innerHTML: newVal })
+        const [image, icon] = [parseImage(newVal), parseIcons(newVal)]
+
+        image && Object.assign(image, { className: 'spoiler-label' })
+
+        Object.assign(this.header, { innerHTML: image ? image.outerHTML : icon ? icon : newVal })
         break
       case 'ready':
         (() => this.content.forEach(item => this.wrapper.appendChild(item)))()
@@ -34,4 +40,4 @@ class SpoilerComponent extends SpoilerClass {
 
 customElements.define('spoiler-component', SpoilerComponent)
 
-export default SpoilerComponent
+// export default SpoilerComponent

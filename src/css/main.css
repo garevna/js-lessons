@@ -43,9 +43,19 @@ h1, h2, h3 {
   font-family: var(--font-family);
 }
 
+a, a:visited, a:hover, a:active {
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Montserrat, Poppins, monospace, Roboto, Arial;
+  font-size: 16px;
+}
+
+a { color: #f50; }
+a:hover { color: #09b; }
+
 html {
-    background: #555;
-    scroll-behavior: smooth;
+  background: #555;
+  scroll-behavior: smooth;
 }
 
 hr {
@@ -83,17 +93,10 @@ main-menu-component:before {
   letter-spacing: 2;
 }
 
-glitch-logo {
-  position: absolute;
-  top: 70px;
-  left: calc(100% - 150px);
-}
-
-menu-component {
+lang-switcher {
   position: fixed;
-  top: 8px;
-  z-index: 500;
-  cursor:pointer;
+  bottom: -24px;
+  left: -2px;
 }
 
 @media screen and (min-width: 1300px) {
@@ -111,7 +114,6 @@ menu-component {
   body {
     margin: 0;
   }
-  glitch-logo { display: none; }
   welcome-win { display: none; }
 
   main-menu-component:before {
@@ -120,13 +122,9 @@ menu-component {
 }
 
 @media screen and (max-width: 480px), screen and (max-height: 480px) {
-    main-menu-component {
-      background: transparent;
-      box-shadow: none;
-    }
-    main-menu-component:before {
-      display: none;
-    }
+  main-menu-component:before {
+    display: none;
+  }
 }
 
 ::-webkit-scrollbar {

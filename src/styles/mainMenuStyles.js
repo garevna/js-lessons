@@ -8,20 +8,29 @@ const rawSource = `
   -webkit-user-select: none;
 }
 
+#top-donate {
+  position: absolute;
+  top: 0;
+  right: 108px;
+  cursor: pointer;
+  z-index: 504;
+  transition: all .5s;
+}
+
 .go-to-home {
-    position:absolute;
-    top: 0;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left center;
-    background-image: var(--home);
-    vertical-align: text-bottom;
-    width: auto;
-    height: 32px;
-    padding-left: 40px;
-    padding-top: 8px;
-    margin-left: 8px;
+  position:absolute;
+  top: 0;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+  background-image: var(--home);
+  vertical-align: text-bottom;
+  width: auto;
+  height: 32px;
+  padding-left: 40px;
+  padding-top: 8px;
+  margin-left: 8px;
 }
 .home:hover {
   color: #fa0;

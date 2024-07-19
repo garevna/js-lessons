@@ -2,7 +2,7 @@ const { glitchLogoStyles } = require('../styles').default
 const { createElem } = require('../helpers').default
 
 class GlitchLogo extends HTMLElement {
-  constructor(){
+  constructor () {
     super()
     const shadow = this.attachShadow({ mode: 'closed' })
     createElem('style', shadow).textContent = glitchLogoStyles

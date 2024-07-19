@@ -54,7 +54,6 @@ class DonatePopup extends HTMLElement {
             width: wallet.iconSize || 48,
             style: 'cursor: pointer; vertical-align: middle;',
             onclick (event) {
-              // console.log(wallet.number)
               navigator.clipboard.writeText(wallet.number)
               const { clientX, clientY } = event
               const tooltip = Object.assign(createElem('small'), {
@@ -68,7 +67,6 @@ class DonatePopup extends HTMLElement {
               setTimeout(() => tooltip.remove(), 3000)
             }
           })
-          // createElem('br', cell)
           Object.assign(createElem('small', cell), {
             innerText: wallet.name,
             style: 'cursor: pointer;',
