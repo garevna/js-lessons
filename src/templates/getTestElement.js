@@ -20,7 +20,6 @@ const getVariantTemplate = (choiceVariant, index) => `
 `
 
 export const getTestElement = (quest, choiceVariants, rightChoice) => {
-  console.log(choiceVariants)
   const container = document.createElement('fieldset')
   container.appendChild(document.createElement('legend')).textContent = quest
 
@@ -29,7 +28,6 @@ export const getTestElement = (quest, choiceVariants, rightChoice) => {
   }))
 
   const radios = container.getElementsByTagName('input')
-  console.log(radios)
 
   radios.forEach(radio => Object.assign(radio, {
     onclick: testSelected

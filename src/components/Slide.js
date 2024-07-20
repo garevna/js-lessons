@@ -1,7 +1,6 @@
 const { createElem } = require('../helpers').default
 
 export const Slide = function (imageURL, container) {
-  console.log(imageURL)
   const elem = Object.assign(createElem('div', container), {
     style: `background-image: url(${imageURL});`
   })

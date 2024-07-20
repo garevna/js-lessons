@@ -12,7 +12,6 @@ class DonateComponent extends HTMLElement {
 
   connectedCallback () {
     const size = this.getAttribute('size') || 80
-    console.log(size)
     this.shadow.querySelector('donate-button').setAttribute('size', size)
   }
 }

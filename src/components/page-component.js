@@ -94,7 +94,7 @@ class PageComponent extends HTMLElement {
   async switchLang () {
     await this.init()
     const src = this.getAttribute('src')
-    const fileName = location.search.slice(1)
+    const fileName = location.search.slice(1) || 'start-page'
     this.setSource(fileName)
   }
 

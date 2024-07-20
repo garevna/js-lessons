@@ -69,10 +69,10 @@ class DonatePopup extends HTMLElement {
           })
           Object.assign(createElem('small', cell), {
             innerText: wallet.name,
-            style: 'cursor: pointer;',
-            onclick (event) {
-              console.log(wallet.number)
-            }
+            style: 'cursor: pointer;'
+            // onclick (event) {
+            //   console.log(wallet.number)
+            // }
           })
         })
       createElem('hr', provider)

@@ -72,9 +72,9 @@ class MainMenuComponent extends HTMLElement {
       this.checkbox.checked = !this.checkbox.checked
       this.checkbox.dispatchEvent(new Event('click'))
 
-      const state = [{ route: event.target.href }, 'home', event.target.href]
-
-      window.history.pushState(...state)
+      // const state = [{ route: event.target.href }, 'home', event.target.href]
+      //
+      // window.history.pushState(...state)
 
       this.view.setAttribute('src', `${createPath('lessons', 'start-page.md' )}`)
     }.bind(this)

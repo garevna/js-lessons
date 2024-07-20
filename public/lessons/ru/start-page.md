@@ -2,44 +2,45 @@
 
 ### ![ico-20 question] OOP
 
-**JS** cannot be strictly called an object-oriented language because it violates some principles of object-oriented programming. The prototype-based inheritance model essentially involves delegation rather than inheritance as understood in languages with a class-based inheritance model.
-☼☼☼ In JS, functions rule, not classes ☼☼☼.
+Строго говоря, **JS** незьзя назвать объектно-ориентированным языком в силу нарушения некоторых базовых принципов ООП. Прототипную модель наследования скорее можно назвать моделью делегирования, поскольку наследования в полном смысле этого слова не происходит.
 
-### ![ico-20 question] Polymorphism
+☼☼☼ В JS рулят функции, а не классы ☼☼☼.
 
-If you want to experience true **polymorphism**, you need JS.
-Here, polymorphism starts from the very first step.
-In JavaScript, polymorphism manifests itself through various mechanisms such as function overloading, prototypical inheritance, and dynamic typing. These features make JS a powerful and flexible development tool.
+### ![ico-20 question] Полиморфизм
 
-It's mind-boggling!
-Implicit type coercion puzzles many because they do not know the engine allows you to control this process.
+Если вы хотите почувствовать настоящий **полиморфизм**, то вам нужен JS.
+Здесь полиморфизм начинается с самого первого шага.
+В JavaScript полиморфизм проявляется через различные механизмы, такие как перезагрузка функций, прототипное наследование, динамическая типизация. Эти фичи делают JS таким мощным и невероятно гибким инструментом разработки.
 
-So goodbye, class inheritance model! and long live the
-☼☼☼ functional freedom of JS! ☼☼☼
+От этого иногда сносит крышу!
+Многим кажется таким запутанным и сложным неявное приведение типов, потому что они не знают, что движок и здесь дает вам возможность управлять этим процессом.
 
-### ![ico-20 icon] Func-style
+Так что "Прощай, классовая модель наследования!", да здравствует
+☼☼☼ функциональная свобода JS! ☼☼☼
+
+### ![ico-20 icon] Функциональщина
 
 @@@@
-**JS** incorporates many nice features from **functional programming languages** (such as _chaining computations_, _currying_).<br><br>Func-style in JS is a direct consequence of the aforementioned, and importantly, it forms the foundation of asynchrony.
+**JS** включает множество обалденных фич (такие как _цепочные вычисления_, _каррирование_) из **функциональных языков программирования**.<br><br>Более того, функциональщина является базой асинхронщины в JS.
 ![](images/funcs-are-our-jam-2.png)
 
 @@@@
 
-**Asynchrony** relies on callbacks, i.e., **_functions_**.
-In short, JS is built on functions, and this is not just a principle of executing individual tasks, but rather a way of the language's existence, its main essence. The main features of the language - prototype-based inheritance and asynchrony - are implemented through functions.
+**Асинхронщина** базируется на колбеках, т.е. **_функциях_**.
+Короче, JS держится на функциях, и это не просто принцип выполнения отдельных задач, а, скорее, форма существования языка, его истинная сущность. Главные особенности языка - прототипная модель наследования и асинхронность - реализованы посредством функций.
 
 ### ![ico-20 icon] Jazz
 
-☼☼☼ JS - it's jazz, it's improvisation, it's fantastic freedom. ☼☼☼
+☼☼☼ JS - это джаз, импровизация, фантастическая свобода ☼☼☼
 
-But freedom comes with responsibility.
+Но свобода неотделима от ответственности.
 
-It's essential to deeply understand what the engine will do when interpreting your line of code.
-The engine is powerful, so putting someone who can't drive behind the wheel of an HMMWV is complete madness.
+Очень важно понимать, как движок интерпретирует каждую строчку вашего кода.
+Движок очень мощный, поэтому сажать за руль HMMWV человека, не умеющего водить — полное безумие.
 
 @@@@
 
 ![](images/F-35.jpg)
-Even worse is letting a novice "steer" an F35.<br><br>Dive in, guys! With persistence and patience.
-☼☼☼ Have a great flight with JS! ☼☼☼
+Еще хуже — позволить новичку «рулить» F35.<br><br>Ныряйте, ребята! С настойчивостью и терпением.
+☼☼☼ Удачного полета с JS! ☼☼☼
 @@@@
