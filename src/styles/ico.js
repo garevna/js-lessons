@@ -13,6 +13,7 @@ export const ico = `
 .ico-40 { width: 40px; height: 40px; margin: 16px 4px; }
 .ico-50 { width: 48px; height: 48px; margin: 16px 4px; }
 .ico-70 { width: 64px; height: 64px; margin: 16px 4px; }
+.ico-80 { width: 80px; height: 80px; margin: 16px 4px; }
 
 .question {
   outline: 2px solid #d00;
@@ -22,6 +23,6 @@ export const ico = `
 }
 
 .youtube {
-  height: 32px;
+  height: 48px;
 }
 `

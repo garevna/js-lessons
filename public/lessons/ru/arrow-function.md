@@ -6,67 +6,71 @@
 
 ![ico-20 error] **_function_**
 
-В сигнатуре стрелочной функции нет слова **_function_**
+В сигнатуре стрелочной функции нет слова **_function_**:
 
 ~~~js
 (параметры) => { тело функции }
 ~~~
 
-◘◘![ico-25 cap] ** 1**◘◘
+Отсюда логичным образом вытекает, что при объявлении стрелочной функции всегда используется **function expression**:
 
 ~~~js
-var res = (x, y) => x * y
-res(2, 5)
+const multiply = (x, y) => x * y
+multiply(2, 5)  // 10
 ~~~
 
 ______________________
 
-![ico-20 green-ok] Если тело функции состоит из одной операции, фигурные скобки можно опустить
+![ico-20 green-ok] Если тело функции состоит из одной операции, фигурные скобки можно опустить:
 
 ~~~js
-(name = 'user') => console.info(`Hi, ${name}`)
+const sayHi = (name = 'user') => console.info(`Hi, ${name}`)
 ~~~
 
-![ico-20 green-ok] Если у функции всего один формальный параметр, круглые скобки можно опустить
+![ico-20 green-ok] Если у функции всего один формальный параметр, круглые скобки можно опустить:
 
 ~~~js
-name => console.info(`Hi, ${name}`)
+const sayHi = name => console.info(`Hi, ${name}`)
 ~~~
 
-![ico-20 green-ok] При отсутствии формальных параметров круглые скобки обязательны
+![ico-20 green-ok] При отсутствии формальных параметров круглые скобки обязательны:
 
 ~~~js
-() => console.info('Hi, user')
+const sayHi = () => console.info('Hi, user')
 ~~~
 
-![ico-20 green-ok] Если тело функции состоит из одного выражения, значение которого возвращает функция, оператор **~return~** не используется
+________________________________________
 
-__________________________
-
-◘◘![ico-25 cap] ** 2**◘◘
+![ico-20 green-ok] Стрелка **~=>~** в стрелочной функции является оператором **~return~**. Поэтому при отсутствии фигурных скобок, если тело функции состоит из одного выражения, значение которого возвращает функция, оператор **~return~** не используется:
 
 ~~~js
 // обычная функция
-var res = function (x, y) { return x * y }
+const multiply = function (x, y) { return x * y }
 
 // стрелочная функция
-var res = (x, y) => x * y
+const multiply = (x, y) => x * y
 ~~~
 
-![ico-20 green-ok] Операторы ветвления кода ( кроме тернарного оператора ) и операторы цикла нужно заключать в фигурные скобки
+![ico-20 green-ok] Операторы ветвления кода (кроме тернарного оператора) и операторы цикла нужно заключать в фигурные скобки.
 
 ◘◘![ico-25 cap] оператор _for_◘◘
 
 ~~~js
-() => {
-  for (var i = 0; i < 5; i++) console.log(i)
+const iterate = len => {
+  for (let i = 1; i <= len; i++) console.log(i)
 }
+~~~
+
+И тут мы можем убедиться в преимуществах итерирующих методов массивов:
+
+~~~js
+const iterate = len => new Array(len).fill(0).forEach((item, index) => console.log(index + 1))
 ~~~
 
 ◘◘![ico-25 cap] оператор _switch_◘◘
 
 ~~~js
-var answerArrow = question => {
+const getAnswer = question => {
   switch (question) {
     case 'who':
       return 'student'
@@ -75,7 +79,7 @@ var answerArrow = question => {
     case 'where':
       return 'Kharkiv'
     default:
-      return 'I don\'t undestand your question'
+      return 'I don\'t undestand your question.'
   }
 }
 ~~~
@@ -83,25 +87,350 @@ var answerArrow = question => {
 ◘◘![ico-25 cap] тернарный оператор◘◘
 
 ~~~js
-var answerArrow = question =>  
-  question === 'who'
-    ? 'Irina'
-    : question === 'what'
-      ? 'develop'
-      : question === 'where'
-        ? 'Kharkiv'
-        : 'I don\'t undestand your question'
+const getAnswer = question => question === 'who'
+  ? 'Irina'
+  : question === 'what'
+    ? 'develop'
+    : question === 'where'
+      ? 'Kharkiv'
+      : 'I don\'t undestand your question'
 ~~~
 
-С помощью стрелочных функций можно в краткой форме объявлять функции высшего порядка
-
-◘◘![ico-25 cap] ** 6**◘◘
+Или так:
 
 ~~~js
-(func => console.log(func()))(() => prompt('Enter message:'))
+const getAnswer = question => ['who', 'what', 'where'].includes(question)
+  ? ['Irina', 'develop', 'Kharkiv'][['who', 'what', 'where'].indexOf(question)]
+  : 'I don\'t undestand your question'
 ~~~
 
-◘◘![ico-25 cap] ** 7**◘◘
+Или так, если использовать замыкание:
+
+~~~js
+const getAnswer = ((questions, answers) => question => questions.includes(question)
+  ? answers[questions.indexOf(question)]
+  : 'I don\'t undestand your question')(['who', 'what', 'where'], ['Irina', 'develop', 'Kharkiv'])
+~~~
+
+Или так, если использовать прием каррирования:
+
+~~~js
+const getAnswerTemplate = (questions, answers, wrong, question) => questions.includes(question)
+  ? answers[questions.indexOf(question)]
+  : wrong
+
+const getAnswer = getAnswerTemplate
+  .bind(null, ['who', 'what', 'where'], ['Irina', 'develop', 'Kharkiv'], 'I don\'t undestand your question')
+~~~
+
+____________________________________________________
+
+## ![ico-25 icon] Главные особенности стрелочных функций
+
+### ![ico-20 icon] prototype
+
+@@@@
+У стрелочных функций нет объекта  **~prototype~**.<br><br>![ico-20 warn] Поэтому стрелочные функции не могут быть конструктором.
+![](images/arrow-funcs-neutered-kitties.png)
+@@@@
+
+☼☼☼ стрелочные фукции - это кастрированные котики ☼☼☼
+
+~~~js
+console.dir(() => {})
+~~~
+
+~~~console
+▼ ƒ anonymous ()
+    length: 0
+    name: ""
+    arguments: (...)
+    caller: (...)
+  ► [[Prototype]]: ƒ ()
+~~~
+
+~~~js
+console.dir(function () {})
+~~~
+
+~~~console
+▼ ƒ console ()
+    arguments: null
+    caller: null
+    length: 0
+    name: ""
+  ► prototype: {}
+  ► [[Prototype]]: ƒ ()
+~~~
+
+![ico-20 warn] При попытке вызвать стрелочную функцию с ключевым словом **~new~**:
+
+~~~js
+const arrowFunc = () => null
+const obj = new arrowFunc()
+~~~
+
+будет сгенерировано исключение:
+
+~~~error
+    ► TypeError: arrowFunc is not a constructor
+~~~
+
+~~~js
+const obj = new (function () {})
+
+console.log(obj)  // ► {}
+~~~
+
+~~~js
+const obj = new (() => {})
+~~~
+
+~~~error
+    ► TypeError: (intermediate value) is not a constructor
+~~~
+
+______________________________________________________
+
+### ![ico-25 icon] arguments
+
+У стрелочных функций нет объекта  **~arguments~**.
+
+При попытке обратиться к объекту **~arguments~** из стрелочной функции будет сгенерировано исключение (~ReferenceError~).
+
+~~~error
+    ► ReferenceError: arguments is not defined
+~~~
+
+![ico-20 pin] Если стрелочная функция объявлена внутри обычной функции,
+то переменные контекста родительской функции будут доступны для стрелочной функции
+(**~цепочка областей видимости~**),
+поэтому внутри нее будет доступен объект ~arguments~ родительской функции.
+
+~~~js
+function testArguments () {
+  (() => console.log(arguments))()
+}
+testArguments(5, false)
+~~~
+
+В результате работы кода в консоль будет выведен объект ~arguments~ функции **_testArguments_**:
+
+~~~console
+▼ Arguments(2) [5, false, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+    0: 5
+    1: false
+  ► callee: ƒ testArguments()
+    length: 2
+  ► Symbol(Symbol.iterator): ƒ values()
+  ► [[Prototype]]: Object
+~~~
+
+______________________________________________________
+
+### ![ico-20 icon] Контекст вызова
+
+У стрелочных функций контекст вызова всегда будет контекстом, в котором функция была объявлена.
+
+Изменить контекст вызова стрелочной функции невозможно.
+
+Можно сказать, что у стрелочных функций "врожденный" контекст вызова.
+
+#### ![ico-20 icon] Литерал объекта
+
+~~~js
+window.name = 'Chrome'
+
+const human = {
+  name: 'Stephan',
+  getName () {
+    console.log(this.name)
+  },
+  showName: () => console.log(this.name)
+}
+
+human.getName()   // Stephan
+human.showName()  // Chrome
+~~~
+
+Разберемся детальнее, что происходит.
+
+Прежде, чем выполнить присваивание значения переменной **~human~**, движок должен вычислить значение выражения в правой части оператора присваивания.
+В правой части находится литерал объекта.
+1. Движок вызывает конструктор **~Object~**.
+2. Конструктор **~Object~** создает пустой объект и возвращает ссылку на него.
+3. Движок, получив ссылку на объект, помещает эту ссылку в переменную **~human~** и выполняет три присваивания:
+
+~~~js
+human.name = 'Stephan'
+human.getName = function () {
+  console.log(this.name)
+}
+human.showName = () => console.log(this.name)
+~~~
+
+Отметим, что все три присваивания происходят в глобальной области видимости, т.е. в контексте глобального объекта **~window~**.
+
+И вот тут мы видим, как работает передача контекста в процессе присваивания:
+
+![ico-20 pin] если в правой части оператора присваивания находится **обычная функция**, то она получает ссылку на контекст вызова, определяемую в **левой части** оператора присваивания (в нашем примере это объект **~human~**);
+![ico-20 pin] если в правой части оператора присваивания находится **стрелочная функция**, то она получает контекст "**правой части**", т.е. того объекта, в контексте которого происходит присваивание (в нашем примере это глобальный объект **~window~**).
+
+По приколу я называю это "правилом буравчика" ![ico-25 smile]
+
+----------------
+#### ![ico-20 icon] Конструктор
+
+Теперь вспомним, как работает конструктор.
+
+~~~js
+function Sample (name) {
+  this.name = name
+  this.getName = function () {
+    console.log(this.name)
+  }
+  this.showName = () => console.log(this.name)
+}
+~~~
+
+Когда мы вызываем функцию **~Sample~** с ключевым словом **~new~**:
+
+~~~js
+const user = new Sample('Piter')
+~~~
+
+то движок осуществляет следующую последовательность шагов:
+
+1. Вызывает конструктор **~Object~**.
+2. Конструктор **~Object~** создает пустой объект и возвращает ссылку на него.
+3. Движок помещает полученную ссылку в переменную **~user~**.
+~~~js
+const user = new Object()
+~~~
+3. Движок добавляет в этот объект ссылку на свойство **~prototype~** функции **~Sample~**.
+~~~js
+Object.setPrototypeOf(user, Sample.prototype)
+~~~
+4. Движок вызывает функцию **~Sample~** в контексте объекта **~user~**.
+~~~js
+Sample.call(user, 'Piter')
+~~~
+
+Т.е. к моменту, когда код функции **~Sample~** будет запущен на исполнение, контекст ее вызова будет создан (**~user~**), и это будет **экземпляр**.
+Чей экземпляр?
+Движок уже добавил этому экземпляру ссылку на **~prototype~** функции **~Sample~**.
+А в объекте **~prototype~** функции есть свойство **~constructor~**, содержащее ссылку на эту функцию.
+Т.е. экземпляр уже имеет ссылку на конструктор **~Sample~**:
+
+~~~js
+console.log(user.__proto__.constructor.name)  // Sample
+~~~
+и теперь он распознается как экземпляр конструктора **~Sample~**:
+~~~js
+console.log(user instanceof Sample)  // true
+~~~
+
+Что главное мы отсюда выносим:
+
+Функция **~Sample~** будет работать в контексте создаваемого экземпляра, т.е. в контексте объекта **~user~**.
+
+Тогда присваивание:
+
+~~~js
+this.showName = () => console.log(this.name)
+~~~
+
+будет происходить в контексте экземпляра **~user~**.
+Это означает, что стрелочная функция в правой части оператора присваивания получит контекст объекта **~user~**.
+
+__________________________________
+
+#### ![ico-20 icon] Фабрика
+
+Теперь посмотрим, что присходит в случае, когда вместо конструктора мы используем фабрику:
+~~~js
+const template = {
+  name: 'Robert'
+}
+
+function fabric (instance, name) {
+  instance.name = name
+  instance.getName = function () {
+    console.log(this.name)
+  }
+  instance.showName = () => console.log(this.name)
+  return instance
+}
+
+const user = fabric.call(template, {}, 'Piter')
+~~~
+
+Функция **~fabric~** вызывается в контексте объекта **~template~**.
+
+Согласно нашему "правилу буравчика" ![ico-20 smile], метод **~showName~** получит "врожденный" контекст вызова - ссылку на объект **~template~**.
+
+Проверим:
+
+~~~js
+user.showName()  // Robert
+~~~
+____________________________________________________
+
+**Вывод**.
+
+В случае, если экземпляр объекта создан с помощью конструктора,
+использование стрелочных функций в публичных методах объекта гарантирует,
+что **~this~** будет всегда ссылаться на экземпляр.
+
+В противном случае использование стрелочной функции создаст вам кучу проблем с контекстом вызова метода.
+
+_____________________________________________________
+
+## ![ico-20 icon] Примеры
+
+◘◘![ico-25 cap] ** 1**◘◘
+~~~js
+function Sample (name, age) {
+  const userName = name
+  const userAge = age
+  this.getName = this.createMethod(userName)
+  this.getAge = this.createMethod(userAge)
+}
+
+Sample.prototype.createMethod = param => () => console.log(param)
+
+const user = new Sample('Piter', 28)
+~~~
+
+◘◘![ico-25 cap] ** 2**◘◘
+
+~~~js
+const test = ((data = []) => arg => {
+  arg && data.push(arg)
+  return arg ? test :  data
+})()
+
+test(1)
+test(2)
+test(3)
+
+console.log(test()) // [1, 2, 3]
+
+test(4)(5)(7)(8)
+
+console.log(test()) // [1, 2, 3, 4, 5, 7, 8]
+~~~
+
+◘◘![ico-25 cap] ** 3**◘◘
+
+~~~js
+const getUser = (getName = prompt.bind(null, 'User name'), getAge = prompt.bind(null, 'User age')) => ({
+  name: getName(),
+  age: getAge()
+})
+~~~
+
+◘◘![ico-25 cap] ** 4**◘◘
 
 ~~~js
 (func => Object.assign({
@@ -109,268 +438,6 @@ var answerArrow = question =>
   hobby: func('Your hobby')
 }))(message => prompt(message))
 ~~~
-
-________________________________________
-
-## ![ico-25 icon] Главные особенности стрелочных функций
-
-![](images/arrow-funcs-neutered-kitties-ukr-color.png)
-
-### ![ico-20 error] prototype
-
-У стрелочных функций нет объекта  **~prototype~**
-
-![ico-20 warn] Поэтому стрелочные функции не могут быть конструктором
-
-◘◘![ico-25 cap] ** 8**◘◘
-
-~~~js
-var arrowFunc = () => {}
-console.dir(arrowFunc)
-
-const usualFunc = function () {}
-console.dir(usualFunc)
-~~~
-
-**Стрелочная функция**
-
-~~~console
-▼ arrowFunc ()
-    arguments: (...)
-    caller: (...)
-    length: 0
-    name: "func"
-  ► __proto__: ƒ ()
-~~~
-
-**Обычная функция**
-
-~~~console
-▼ ƒ usualFunc ()
-    arguments: null
-    caller: null
-    length: 0
-    name: "usualFunc"
-  ► prototype: {constructor: ƒ}
-  ► __proto__: ƒ ()
-~~~
-
-![ico-20 warn] При попытке вызвать стрелочную функцию с ключевым словом **~new~**
-
-~~~js
-var obj = new arrowFunc()
-~~~
-
-будет сгенерировано исключение:
-
-••![ico-20 error] TypeError: arrowFunc is not a constructor••
-
-
-______________________________________________________
-
-### ![ico-25 err] arguments
-
-У стрелочных функций нет объекта  **~arguments~**
-
-При попытке обратиться к объекту **~arguments~** из стрелочной функции будет сгенерировано исключение ( ~ReferenceError~ )
-
-![](illustrations/arrow-func-arguments.png)
-
-![ico-20 pin] Если стрелочная функция объявлена внутри обычной функции,
-то переменные контекста родительской функции будут доступны для стрелочной функции
-( **~цепочка областей видимости~** ),
-поэтому внутри нее будет доступен объект ~arguments~ родительской функции
-
-◘◘![ico-25 cap] ** 9**◘◘
-
-~~~js
-function testArguments () {
-  var arrowFunc = () =>  console.log(arguments)
-  arrowFunc ()
-}
-testArguments(5, false)
-~~~
-
-В результате работы кода в консоль будет выведен объект ~arguments~ функции **_testArguments_**
-
-______________________________________________________
-
-### ![ico-20 icon] Контекст вызова
-
-У стрелочных функций контекст вызова всегда будет контекстом, в котором функция была объявлена
-
-Изменить контекст вызова стрелочной функции невозможно
-
-Можно сказать, что у стрелочных функций "врожденный" контекст вызова
-
-В следующих примерах можно убедиться, что в результате выполнения присваивания обычная функция меняет контекст вызова в соответствии с левой частью оператора присваивания:
-
-◘◘![ico-25 cap]◘◘
-
-~~~js
-const human = {
-  name: 'Stephan'
-}
-
-const user = {
-  name: 'Peter',
-  showContext () {
-    human.showName = function () { console.log(this.name) }
-  }
-}
-
-user.showContext()
-
-human.showName() /* Stephan */
-~~~
-
-а стрелочная - сохраняет контекст, в котором была объявлена:
-
-◘◘![ico-25 cap]◘◘
-
-~~~js
-const human = {
-  name: 'Stephan'
-}
-
-const user = {
-  name: 'Peter',
-  showContext () {
-    human.showName = () => console.log(this.name)
-  }
-}
-
-user.showContext()
-
-human.showName()  /* Peter */
-~~~
-
---------------------
-
-
-◘◘![ico-25 cap] Литерал объекта◘◘
-
-~~~js
-var obj = {
-  test: () => console.log(this)
-}
-obj.test()   // window
-~~~
-
-![](illustrations/arrow-func-context.png)
-
-**Конструктор**
-
-В случае, если экземпляр объекта создан с помощью конструктора, использование стрелочных функций в публичных методах объекта гарантирует, что  **~this~**  будет всегда ссылаться на экземпляр
-
-Это легко объясняется на основе ранее сказанного:
-
-контекст вызова конструктора - создаваемый экземпляр
-
-стрелочная функция, объявленная внутри конструктора, получает "при рождении" контекст вызова конструктора, т.е. создаваемый экзмепляр
-
-![](illustrations/arrow-func-context-1.png)
-
-_____________________________________________________
-
-#### ![ico-20 icon] Обработчики событий
-
-◘◘стрелочная функция◘◘
-
-~~~js
-document.querySelector('button')
-  .onclick = event => console.log(event.type, this)
-~~~
-
-**_~this~_** будет указывать на глобальный объект ~window~
-
-◘◘обычная функция◘◘
-
-~~~js
-document.querySelector('button')
-  .onmouseover = function (event) {
-    console.log(event.type, this)
-  }
-~~~
-
-**_~this~_** будет указывать на элемент **~button~**
-
-____________________________________________________
-
-#### ![ico-20 icon] Потеря контекста
-
-В примере ниже экземпляр ** some** создан с помощью конструктора **~Constructor~**
-
-Публичный метод **_arrowFunc()_** объявлен с помощью  стрелочной функции
-
-Публичный метод **_ordinaryFunc()_** объявлен с помощью обычной функции
-
-◘◘![ico-25 cap] **12**◘◘
-_________________________________
-
-![](illustrations/arrow-func-context-2.png)
-
-При передаче метода **_arrowFunc()_** переменной **arrow**:
-
-~~~js
-const arrow = some.arrowFunc
-~~~
-
-контекст сохраняется,
-
-а при передаче метода **_ordinaryFunc ()_** переменной **ordinary**:
-
-~~~js
-var ordinary = some.ordinaryFunc
-~~~
-
-контекст меняется, и **_~this~_**  уже указывает на глобальный объект ~window~
-
-Таким образом, у стрелочной функции контекст, в котором она была создана, привязан к функции и не может быть утерян
-
-У обычной функции контекст вызова может отличаться от контекста, в котором она была создана
-
-_____________________________________________________
-
-#### ![ico-20 icon] Изменение контекста
-
-Еще один пример наглядно показывает, что изменить контекст вызова стрелочной функции, определенный при ее создании, нельзя
-
-Объявим две функции в глобальной области видимости:
-
-◘◘![ico-25 cap] **13**◘◘
-
-~~~js
-const arrowFunc = () => console.log(this)
-const ordinaryFunc = function () { console.log(this) }
-~~~
-
-Теперь создадим объект **object** с единственным свойством **_name_**:
-
-~~~js
-const object = { name: 'sample' }
-~~~
-
-и добавим ему методы **_testArrow_** и **_testOrdinary_**:
-
-~~~js
-object.testArrow = arrowFunc
-object.testOrdinary = ordinaryFunc
-~~~
-
-Теперь вызовем оба метода:
-
-~~~js
-object.testArrow()
-object.testOrdinary()
-~~~
-
-
-![](illustrations/arrow-func-context-3.png)
-
-Как видим, несмотря на то, что вызов осуществляется в контексте объекта **object**, **_testArrow_** "работает" в контексте, в котором была создана функция **_arrowFunc_**, т.е. в глобальном контексте
-
-Что касается метода **_testOrdinary_**, то он работает в контексте вызова, т.е. в контексте объекта **object**
 
 ____________________________________________________________________
 
