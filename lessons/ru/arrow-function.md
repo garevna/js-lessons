@@ -173,7 +173,7 @@ const obj = new arrowFunc()
 будет сгенерировано исключение:
 
 ~~~error
-    ► TypeError: arrowFunc is not a constructor
+    TypeError: arrowFunc is not a constructor
 ~~~
 
 ~~~js
@@ -187,7 +187,7 @@ const obj = new (() => {})
 ~~~
 
 ~~~error
-    ► TypeError: (intermediate value) is not a constructor
+    TypeError: (intermediate value) is not a constructor
 ~~~
 
 ______________________________________________________
@@ -199,7 +199,7 @@ ______________________________________________________
 При попытке обратиться к объекту **~arguments~** из стрелочной функции будет сгенерировано исключение (~ReferenceError~).
 
 ~~~error
-    ► ReferenceError: arguments is not defined
+    ReferenceError: arguments is not defined
 ~~~
 
 ![ico-20 pin] Если стрелочная функция объявлена внутри обычной функции,

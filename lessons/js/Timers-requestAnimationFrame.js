@@ -1,92 +1,89 @@
 const section = document.body
 
-let stop = false
-section.onclick = () => stop = !stop
-
-function MovieElement ( title ) {
-    this.elem = this.container.appendChild (
-        document.createElement ( "div" )
-    )
-    this.elem.style = `
-        position: absolute;
-        width: ${this.size}px;
-        height: ${this.size}px;
-        background: ${this.randomColor()};
-        top: ${this.randomY ()}px;
-        left: ${this.randomX ()}px;
-        font-size: 10px;
-        font-family: Arial;
-    `
-
-    this.elem.title = title
-
-    this.targetY = null
-    this.targetX = null
-
-    requestAnimationFrame( this.movieClip.bind ( this ) )
+function addElem (tagName, container = section) {
+  return container
+    .appendChild(document.createElement(tagName))
 }
 
-MovieElement.prototype.size = 40
+function createAnimated (title, container) {
+  return Object.assign(addElem('div', container), {
+    title,
+    style: `
+      position: absolute;
+      width: ${container.size}px;
+      height: ${container.size}px;
+      background: ${container.randomColor()};
+      top: ${container.randomY()}px;
+      left: ${container.randomX()}px;
+    `,
+    targetY: null,
+    targetX: null,
+    setTarget () {
+      Object.assign(this, {
+        targetY: container.randomY(),
+        targetX: container.randomX()
+      })
+    },
+    resetTarget () {
+      Object.assign(this, { targetX: null, targetY: null })
+    },
 
-MovieElement.prototype.container = section.appendChild (
-    document.createElement ( "section" )
-)
+    setDistance () {
+      Object.assign(this, {
+        distanceX: this.targetX - parseInt(this.style.left),
+        distanceY: this.targetY - parseInt(this.style.top)
+      })
+    },
 
-MovieElement.prototype.container.style = `
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 0;
-    margin: 0;
-    box-sizing: border-box;
-`
+    movieClip () {
+      if (container.stop) return
 
-MovieElement.prototype.randomNum = maxVal => Math.round ( Math.random() * maxVal )
-
-MovieElement.prototype.randomX = function () {
-    return this.randomNum ( this.container.offsetWidth - this.size )
-}
-MovieElement.prototype.randomY = function () {
-    return this.randomNum ( this.container.offsetHeight - this.size )
-}
-
-MovieElement.prototype.randomColor = function () {
-    return `rgb(${this.randomNum (255)},
-                ${this.randomNum (255)},
-                ${this.randomNum (255)}
-    )`
-}
-
-MovieElement.prototype.getDistance = function ( axis ) {
-    return this [ 'target' + axis.toUpperCase()] - 
-        parseInt (
-            this.elem.style[ axis.toLowerCase() === "y" ? "top" : "left" ]
-        )
-}
-
-MovieElement.prototype.movieClip = function () {
-    if ( !this.targetY && !this.targetX ) {
-        this.targetY = this.randomY()
-        this.targetX = this.randomX()
-    } else {
-        this.distanceY = this.getDistance ( "y" )
-        this.distanceX = this.getDistance ( "x" )
-        if ( this.distanceY === 0 && this.distanceX === 0 ) {
-            this.targetY = null
-            this.targetX = null
-        } else {
-            this.stepY = Math.sign( this.distanceY )
-            this.stepX = Math.sign( this.distanceX )
-            this.elem.style.top = parseInt ( this.elem.style.top ) + this.stepY + "px"
-            this.elem.style.left = parseInt ( this.elem.style.left ) + this.stepX + "px"
+      if (!this.targetY && !this.targetX) this.setTarget()
+      else {
+        this.setDistance()
+        if (!this.distanceY && !this.distanceX) this.resetTarget()
+        else {
+          Object.assign(this.style, {
+            top: parseInt(this.style.top) + Math.sign(this.distanceY) + 'px',
+            left: parseInt(this.style.left) + Math.sign(this.distanceX) + 'px'
+          })
         }
+      }
+
+      requestAnimationFrame(this.movieClip.bind(this))
     }
-
-    stop || requestAnimationFrame ( this.movieClip.bind ( this ) )
+  })
 }
 
-for ( let item of [ 1, 2, 3, 4 ] ) {
-    let mc = new MovieElement ( item )
-}
+const demo = Object.assign(addElem('section'), {
+  size: 40,
+  stop: true,
+  style: `
+    position: absolute;
+    width: 95%;
+    height: 300px;
+    background-color: #000;
+  `,
+  random: (maxVal, minVal = 0) => Math.max(minVal, Math.round(Math.random() * maxVal)),
+  randomX () {
+    return this.random(this.offsetWidth - this.size)
+  },
+  randomY () {
+    return this.random(this.offsetHeight - this.size)
+  },
+  randomColor () {
+    return `rgb(${this.random(255, 100)}, ${this.random(255, 100)}, ${this.random(255, 100)})`
+  }
+})
+
+Object.assign(demo, {
+  elems: [1, 2, 3, 4].map(num => createAnimated(num, demo)),
+
+  onclick: function (event) {
+    this.stop = !this.stop
+    !this.stop &&
+      this.elems.forEach(elem => requestAnimationFrame(elem.movieClip.bind(elem)))
+  }.bind(demo)
+})
+
+demo.dispatchEvent(new Event('click'))

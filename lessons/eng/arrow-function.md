@@ -175,7 +175,7 @@ const obj = new arrowFunc()
 an exception will be generated:
 
 ~~~error
-    ► TypeError: arrowFunc is not a constructor
+    TypeError: arrowFunc is not a constructor
 ~~~
 
 ~~~js
@@ -189,7 +189,7 @@ const obj = new (() => {})
 ~~~
 
 ~~~error
-    ► TypeError: (intermediate value) is not a constructor
+    TypeError: (intermediate value) is not a constructor
 ~~~
 
 ______________________________________________________
@@ -200,7 +200,7 @@ Arrow functions don't have an **~arguments~** object.
 An exception (~ReferenceError~) will be thrown when trying to access the **~arguments~** object from an arrow function.
 
 ~~~error
-    ► ReferenceError: arguments is not defined
+    ReferenceError: arguments is not defined
 ~~~
 
 ![ico-20 pin] If an arrow function is declared inside a regular function,
