@@ -4,7 +4,8 @@ export const icons = {
   'open-in-new': { folder: 'icons', fileName: 'open-in-new.svg' },
   search: { folder: 'icons', fileName: 'search.png' },
   disabled: { folder: 'icons', fileName: 'no_entry.png' },
-  error: { folder: 'icons', fileName: 'no_entry.png' },
+  error: { folder: 'icons', fileName: 'close-red.png' },
+  warning: { folder: 'icons', fileName: 'warning.png' },
   close: { folder: 'icons', fileName: 'not.png' },
   icon: { folder: 'images', fileName: 'personage-to-right.gif' },
   cap: { folder: 'icons', fileName: 'cap.png' },
@@ -35,5 +36,6 @@ export const icons = {
   'main-page': { folder: 'icons', fileName: 'js-cup-512.png' },
   database: { folder: 'icons', fileName: 'db.png' },
   atom: { folder: 'icons', fileName: 'atom.png' },
-  sublime: { folder: 'icons', fileName: 'sublime.png' }
+  sublime: { folder: 'icons', fileName: 'sublime.png' },
+  egg: { folder: 'icons', fileName: 'egg.png' }
 }

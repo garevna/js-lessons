@@ -1,43 +1,42 @@
 const section = document.body
 
-let promise = message => new Promise (
-    resolve => {
-        let input = document.body.appendChild (
-            document.createElement ( "input" )
-        )
-        input.style = `
-            padding: 4px 8px;
-            font-size: 1rem;
-            color: #09b;
-        `
-        input.placeholder = message
-        input.onchange = function ( event ) {
-            resolve ( event.target.value )
-            event.target.remove()
-        }
+const demo = section.appendChild(document.createElement('pre'))
+
+const create = placeholder => new Promise(resolve => {
+  const input = document.body
+    .appendChild(document.createElement('input'))
+  Object.assign(input, {
+    placeholder,
+    style: `
+      padding: 4px 8px;
+      font-size: 1rem;
+      color: #09b;
+    `,
+    onchange (event) {
+      resolve(event.target.value)
+      event.target.remove()
     }
-)
+  })
+})
 
 const func = async () => {
-    let user = {}
-    const messages = [ "name", "hobby", "speciality" ]
+  const user = {}
+  const props = ['name', 'hobby', 'speciality']
 
-    let responses = await Promise.all (
-        messages.map ( message => promise ( message ) )
-    )
+  const responses = await Promise.all(props.map(prop => create(prop)))
 
-    responses.forEach (
-        ( val, index ) => Object.assign (
-            user,
-            { [ messages [ index ] ] : val }
-        )
-    )
-    return user
+  responses
+    .forEach((val, index) => Object.assign(user, {
+        [props[index]] : val
+    }))
+  return user
 }
 
-func().then (
-    response => section.innerHTML += JSON.stringify ( response )
-        .split ( "{" ).join ( "{<br>&nbsp;&nbsp;&nbsp;&nbsp;" )
-            .split ( "," ).join ( ",<br>&nbsp;&nbsp;&nbsp;&nbsp;" )
-                .split ( "}" ).join ( "<br>}" )
-)
+const show = object => Object.assign(demo, {
+  innerText: JSON.stringify(object, null, '  ')
+    .replace('"name"', 'name')
+    .replace('"hobby"', 'hobby')
+    .replace('"speciality"', 'speciality')
+})
+
+func().then(show)

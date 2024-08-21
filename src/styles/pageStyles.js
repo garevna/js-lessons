@@ -22,7 +22,7 @@ donate-popup {
   border-radius: 4px;
   border: solid 1px #ddd;
   background: #fafafa;
-  z-index: 501;
+  z-index: 510;
   box-shadow: 4px 4px 8px #0008;
 }
 
@@ -49,20 +49,53 @@ hr  {
 }
 
 .error-message {
-  background: #522;
+  background: #522d;
   color: #fee;
+  background-image: var(--error);
+  background-repeat: no-repeat;
+  background-size: 16px 14px;
+  background-position-y: center;
+  background-blend-mode: lighten;
+  font-size: 14px;
+  font-family: monospace;
+  font-weight: bold;
 }
 
 .error-message:before {
-  content: '✕';
+  content: '►';
   display: inline-block;
-  border-radius: 50%;
   padding: 1.5px 4px 0;
   margin-right: 8px;
-  background: #e44;
-  font-size: 10px;
+  margin-left: 20px;
+  margin-top: 8px;
+  color: #bbb;
+  font-size: 12px;
   font-weight: bold;
-  color: #200;
+}
+
+.warning-message {
+  background: #550;
+  color: #fea;
+  background-image: var(--warning);
+  background-repeat: no-repeat;
+  background-size: 16px 14px;
+  background-position-y: center;
+  background-blend-mode: difference;
+  font-size: 14px;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.warning-message:before {
+  content: '►';
+  display: inline-block;
+  padding: 1.5px 4px 0;
+  margin-right: 8px;
+  margin-left: 20px;
+  margin-top: 8px;
+  color: #bbb;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 ::selection  {

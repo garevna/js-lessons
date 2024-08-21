@@ -48,7 +48,7 @@ BigInt(Infinity)
 ![ico-20 err]
 
 ~~~error
-Uncaught RangeError: The number Infinity cannot be converted to a BigInt because it is not an integer
+    Uncaught RangeError: The number Infinity cannot be converted to a BigInt because it is not an integer
 ~~~
 
 #### NaN
@@ -62,7 +62,7 @@ BigInt(NaN)
 ![ico-20 err]
 
 ~~~error
-Uncaught RangeError: The number NaN cannot be converted to a BigInt because it is not an integer
+    Uncaught RangeError: The number NaN cannot be converted to a BigInt because it is not an integer
 ~~~
 
 #### null
@@ -76,7 +76,7 @@ BigInt(null)
 ![ico-20 err]
 
 ~~~error
-Uncaught TypeError: Cannot convert null to a BigInt
+    Uncaught TypeError: Cannot convert null to a BigInt
 ~~~
 
 _____________________________________________________
@@ -113,7 +113,7 @@ BigInt('45 + 8')
 ![ico-20 err]
 
 ~~~error
-Uncaught SyntaxError: Cannot convert 45 + 8 to a BigInt
+    Uncaught SyntaxError: Cannot convert 45 + 8 to a BigInt
 ~~~
 
 _____________________________________________________________
@@ -135,7 +135,7 @@ bigNumber * 2
 ![ico-20 err]
 
 ~~~error
-Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
+    Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
 ~~~
 
 При попытке применить функции библиотеки Math к данным типа **~bigint~**
@@ -149,7 +149,7 @@ Math.sin(bigNumber)
 ![ico-20 err]
 
 ~~~error
-Uncaught TypeError: Cannot convert a BigInt value to a number
+    Uncaught TypeError: Cannot convert a BigInt value to a number
 ~~~
 
 Однако можно привести данное типа **~bigint~** к обычному типу **~number~**

@@ -4,18 +4,19 @@ export function createSpoiler (fragment) {
   const spoiler = Object.assign(createElem('spoiler-component', this.main), {
     content: []
   })
-  const head = fragment.match(/(\^{3})\[(.+)\]/)[0]
+
+  const head = fragment.split('\n')[0]
   spoiler.setAttribute('header', head.slice(4,-1))
 
-  const tables = fragment.match(this.regExprs['Table'])
+  const spoilerContent = fragment.replace(head, '').replace('^^^', '')
+
+  const tables = spoilerContent.match(this.regExprs['Table'])
 
   tables && tables.forEach((table, index) => {
     fragment = fragment.replace(table, '\n‼‼‼' + index + '\n')
   })
 
-  const parts = fragment.split(head).join('').slice(0,-3)
-
-  const lines = fragment.split(head).join('').slice(0,-3).split('\n')
+  const lines = spoilerContent.split('\n')
 
   lines.forEach((line, lineIndex, array) => {
     if (!line.indexOf('‼‼‼')) {

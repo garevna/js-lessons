@@ -6,14 +6,14 @@ export const ico = `
   background-position: center center;
   vertical-align: middle;
 }
-.ico-20 { width: 16px; height: 20px; margin: 4px 4px 8px; }
-.ico-25 { width: 24px; height: 24px; margin: 8px 4px 12px; }
-.ico-30 { width: 32px; height: 32px; margin: 16px 4px; }
-.ico-35 { width: 36px; height: 36px; margin: 16px 4px; }
-.ico-40 { width: 40px; height: 40px; margin: 16px 4px; }
-.ico-50 { width: 48px; height: 48px; margin: 16px 4px; }
-.ico-70 { width: 64px; height: 64px; margin: 16px 4px; }
-.ico-80 { width: 80px; height: 80px; margin: 16px 4px; }
+.ico-20 { width: 16px; height: 20px; margin: 4px; }
+.ico-25 { width: 24px; height: 24px; margin: 4px; }
+.ico-30 { width: 32px; height: 32px; margin: 4px; }
+.ico-35 { width: 36px; height: 36px; margin: 8px 4px 4px; }
+.ico-40 { width: 40px; height: 40px; margin: 8px 4px 4px; }
+.ico-50 { width: 48px; height: 48px; margin: 8px 4px 4px; }
+.ico-70 { width: 64px; height: 64px; margin: 12px 4px 8px; }
+.ico-80 { width: 80px; height: 80px; margin: 16px 4px 8px; }
 
 .question {
   outline: 2px solid #d00;

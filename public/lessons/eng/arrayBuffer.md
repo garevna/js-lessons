@@ -202,8 +202,7 @@ console.log(new Int16Array(buffer))
 ~~~
 
 ~~~error
-  ► Uncaught
-     RangeError: byte length of Int16Array should be a multiple of 2
+  Uncaught RangeError: byte length of Int16Array should be a multiple of 2
 ~~~
 _________________________________________
 

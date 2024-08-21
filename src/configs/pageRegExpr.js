@@ -1,26 +1,39 @@
 const generator = function * () {
   const keys = Object.keys(this)
-  let fragments, start, end, key
+  let fragments, key
 
   while (keys.length) {
-    fragments = true
     key = keys.shift()
 
     if (key === 'pageContent') continue
 
-    while (fragments) {
+    do {
       fragments = this.pageContent.match(this[key])
       if (!fragments) break
-      start = fragments.index
-      end = start + fragments[0].length + 1
-      this.pageContent = this.pageContent.replace(fragments[0], `\n!!!${start}!!!\n`)
-      yield {
-        [start]: {
-          type: key,
-          content: fragments[0]
+
+      if (key === 'Table') {
+        const indexes = fragments.map(fragment => this.pageContent.indexOf(fragment))
+        for (const fragment of fragments) {
+          const start = this.pageContent.indexOf(fragment)
+          this.pageContent = this.pageContent.replace(fragment, `\n!!!${start}!!!\n`)
+          yield {
+            [start]: {
+              type: key,
+              content: fragment
+            }
+          }
+        }
+      } else {
+        const start = fragments.index
+        this.pageContent = this.pageContent.replace(fragments[0], `\n!!!${start}!!!\n`)
+        yield {
+          [start]: {
+            type: key,
+            content: fragments[0]
+          }
         }
       }
-    }
+    } while (fragments)
   }
 
   yield {

@@ -178,7 +178,7 @@ var obj = new arrowFunc()
 буде згенеровано виключення:
 
 ~~~error
-    ► TypeError: arrowFunc is not a constructor
+    TypeError: arrowFunc is not a constructor
 ~~~
 
 ______________________________________________________
@@ -194,7 +194,7 @@ ______________________________________________________
 ~~~
 
 ~~~error
-    ► ReferenceError: arguments is not defined
+    ReferenceError: arguments is not defined
 ~~~
 
 ![ico-20 pin] Якщо стрілочна функція оголошена всередині звичайної функції,

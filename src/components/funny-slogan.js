@@ -80,5 +80,3 @@ class FunnySlogan extends HTMLElement {
 }
 
 customElements.define('funny-slogan', FunnySlogan)
-//
-// export default FunnySlogan

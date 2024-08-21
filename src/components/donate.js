@@ -32,6 +32,12 @@ class DonatePopup extends HTMLElement {
       rowspan: 32
     })
 
+    const tooltip = Object.assign(createElem('small'), {
+      className: 'tooltip-text',
+      style: 'display: none',
+      innerText: 'The number has been copied to clipboard'
+    })
+
     for (const key of Object.keys(donateTo)) {
       const provider = createElem('tr', container)
 
@@ -56,23 +62,17 @@ class DonatePopup extends HTMLElement {
             onclick (event) {
               navigator.clipboard.writeText(wallet.number)
               const { clientX, clientY } = event
-              const tooltip = Object.assign(createElem('small'), {
-                className: 'tooltip-text',
-                style: `top: ${clientY}px; left: ${clientX}px;`,
-                innerText: 'The number has been copied to clipboard',
-                onclick (event) {
-                  event.target.remove()
-                }
+              Object.assign(tooltip.style, {
+                top: `${clientY}px`,
+                left: `${clientX}px`,
+                display: 'block'
               })
-              setTimeout(() => tooltip.remove(), 3000)
+              setTimeout(() => Object.assign(tooltip.style, { display: 'none' }), 3000)
             }
           })
           Object.assign(createElem('small', cell), {
             innerText: wallet.name,
             style: 'cursor: pointer;'
-            // onclick (event) {
-            //   console.log(wallet.number)
-            // }
           })
         })
       createElem('hr', provider)

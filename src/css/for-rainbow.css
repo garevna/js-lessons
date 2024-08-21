@@ -35,3 +35,26 @@ td {
   border: solid 1px #eef;
   padding: 4px 8px;
 }
+
+pre span.keyword {
+  color: #909;
+  font-weight: bold;
+}
+
+pre span.keyword.magic {
+  color: #f4f;
+  font-weight: bold;
+  font-family: cursive, 'sans-serif', monospace;
+}
+
+.method-name {
+  color: #090;
+}
+
+pre .string {
+  color: #d40;
+}
+
+pre .template-literal {
+  color: #297;
+}

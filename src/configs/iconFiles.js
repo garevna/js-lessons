@@ -48,7 +48,9 @@ const simple = [
   'sublime',
   'swagger',
   'postman',
-  'question'
+  'question',
+  'egg',
+  'eyes'
 ]
 
 const simpleFiles = simple.reduce((res, name) => Object.assign(res, { [name]: `${name}.png` }), {})
@@ -59,8 +61,9 @@ export const iconFiles = Object.assign(simpleFiles, {
   home: 'home-icon.svg',
   menu: 'table-of-contents-white.svg',
   warn: 'warning.png',
+  warning: 'warning.png',
   cap: 'coffee.png',
-  error: 'no_entry.png',
+  error: 'close-red.png',
   'page-next': 'page-next.svg',
   'page-previous': 'page-previous.svg',
   paper: 'page_facing_up.png',
@@ -80,6 +83,8 @@ export const iconFiles = Object.assign(simpleFiles, {
   mag: 'search.png',
   palette: 'art.png',
   hourglass: 'sand-watch.png',
+  wait: 'sand-watch.png',
+  clock: 'sand-watch.png',
   white_check_mark: 'green-ok.png',
   pin: 'pushpin.png',
   mail: 'envelope.png',
@@ -91,5 +96,7 @@ export const iconFiles = Object.assign(simpleFiles, {
   curl: 'curl.svg',
   'slider-button': 'slider-5.gif',
   'slider-button:hover': 'slider-2.gif',
-  'draw-io': 'draw-io.svg'
+  'draw-io': 'draw-io.svg',
+  plunker: 'plunker.png',
+  replit: 'repl-it.png'
 })

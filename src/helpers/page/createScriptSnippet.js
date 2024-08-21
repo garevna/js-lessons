@@ -5,7 +5,9 @@ export function createScriptSnippet (fragment) {
     ? this.createConsoleOutput(fragment)
     : lang === 'error'
       ? this.createErrorOutput(fragment)
-      : this.createCodeSnippet(fragment.slice(3 + lang.length, fragment.length - 3), lang)
+      : lang === 'warn' || lang === 'warning'
+        ? this.createWarningOutput(fragment)
+        : this.createCodeSnippet(fragment.slice(3 + lang.length, fragment.length - 3), lang)
 
   return this.main.appendChild(elem)
 }

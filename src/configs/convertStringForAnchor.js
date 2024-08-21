@@ -72,7 +72,9 @@ const translation = {
   'ʹ': '-',
   '`': '-',
   ' ': '_',
-  '()': ''
+  '()': '',
+  '"': '_',
+  '>': '_'
 }
 
 export function convertStringForAnchor (string) {
@@ -80,4 +82,5 @@ export function convertStringForAnchor (string) {
     .map(char => translation[char] || char)
     .join('')
     .replaceAll('|', '_')
+    .replaceAll('&lt;', '')
 }

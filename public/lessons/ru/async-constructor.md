@@ -1,5 +1,7 @@
 ## ![ico-25 icon] Конструктор AsyncFunction
 
+[◄◄◄ Async function ◄◄◄](page/async-await)
+
 Асинхронная функция является экземпляром класса **AsyncFunction**
 
 ![ico-20 warn] AsyncFunction **не** является глобальным объектом
