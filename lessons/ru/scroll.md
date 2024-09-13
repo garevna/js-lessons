@@ -1,35 +1,48 @@
 ## ![ico-25 icon] Размеры и прокрутка элемента
 
-![ico-20 green-ok] **scrollHeight**
+| **Свойство**       |          | Значение (**в пикселях**)                                   |
+| **~scrollHeight~** | readonly | полная высота элемента                                      |
+| **~scrollWidth~**  | readonly | полная ширина элемента                                      |
+| **~clientHeight~** | readonly | высота видимой части элемента (за вычетом полосы прокрутки) |
+| **~clientWidth~**  | readonly | ширина видимой части элемента (за вычетом полосы прокрутки) |
+| **~offsetHeight~** | ^^readonly^^ | высота элемента (включая границы, отступы и горизонтальные полосы прокрутки). Если элемент скрыт (style.display: none), то возвращается 0. |
+| **~offsetWidth~**  | readonly | ширина видимой части элемента (с учетом полосы прокрутки)   |
+| **~scrollTop~**    | readonly | высота "прокрученной" части элемента (сверху)               |
+| **~scrollLeft~**   | readonly | ширина "прокрученной" части элемента (слева)                |
+
+### ![ico-20 icon] **scrollHeight**
 
 полная высота элемента
 
-![ico-20 green-ok] **scrollWidth**
+### ![ico-20 icon] **scrollWidth**
 
 полная ширина элемента
 
-![ico-20 green-ok] **clientHeight**
+### ![ico-20 icon] **clientHeight**
 
 высота видимой части элемента ( за вычетом полосы прокрутки )
 
-![ico-20 green-ok] **clientWidth**
+### ![ico-20 icon] **clientWidth**
 
 ширина видимой части элемента ( за вычетом полосы прокрутки )
 
 
-![ico-20 green-ok] **offsetHeight**
+### ![ico-20 icon] offsetHeight
 
-высота видимой части элемента ( с учетом полосы прокрутки )
+{{{offset-height.js}}}
 
-![ico-20 green-ok] **offsetWidth**
 
-ширина видимой части элемента ( с учетом полосы прокрутки )
+### ![ico-20 icon] **offsetWidth**
 
-![ico-20 green-ok] **scrollTop**
+ширина видимой части элемента (с учетом полосы прокрутки)
+
+{{{offset-left.js}}}
+
+### ![ico-20 icon] **scrollTop**
 
 высота "прокрученной" части элемента ( сверху )
 
-![ico-20 green-ok] **scrollLeft**
+### ![ico-20 icon] **scrollLeft**
 
 ширина "прокрученной" части элемента ( слева )
 
@@ -110,7 +123,7 @@ const changeSize = () => {
     figure.style.top = figure.style.bottom = randomVal ( section.offsetHeight / 3 ) + "px"
     figure.style.left = randomVal ( section.offsetWidth / 3 ) + 100 + "px"
     figure.style.right = randomVal ( section.offsetWidth / 3 ) + "px"
-  
+
 }
 
 const movie = () => requestAnimationFrame ( function () {

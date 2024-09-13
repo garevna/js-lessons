@@ -1,4 +1,4 @@
-let section = document.body
+const section = document.body
 
 section.style.height = "600px!important"
 section.style.padding = 0
@@ -121,8 +121,8 @@ class CanvasPoint {
         this.color[3] = Math.round(255 * ((this.maxDistance - radius) / this.maxDistance))
         let angle = (Math.PI / 2) * Math.random()
         ;[this.x, this.y] = [
-          this.target.x + Math.round ( radius * Math.sin ( angle ) ),
-          this.target.y + Math.round ( radius * Math.cos ( angle ) )
+          this.target.x + Math.round(radius * Math.sin(angle)),
+          this.target.y + Math.round(radius * Math.cos(angle))
         ]
       }
     })

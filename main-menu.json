@@ -9,7 +9,6 @@
       { "ref": "Developer-tools", "ua": "Інструменти розробника", "eng": "Developer tools", "ru": "Инструменты разработчика" },
       { "ref": "Chrome-dev-tools", "ua": "Chrome DevTools", "ru": "Chrome DevTools", "eng": "Chrome DevTools" },
       { "ref": "var", "ua": "Змінні. Типи даних", "eng": "Variables. Data types", "ru": "Переменные. Типы данных" },
-      { "ref": "typeof", "ua": "Оператор typeof", "eng": "The 'typeof' operator", "ru": "Оператор typeof" },
       { "ref": "data-structures", "ua": "Структури даних", "eng": "Data structures", "ru": "Структуры данных" },
       { "ref": "Assignments", "ua": "Оператори присвоювання", "eng": "Assignment operators", "ru": "Операторы присваивания" },
       { "ref": "Boolean", "ua": "Логічні конструкції", "eng": "Logical constructs", "ru": "Логические конструкции" },
@@ -216,7 +215,6 @@
       { "ref": "REST-status", "ua": "Код статусу відповіді сервера", "eng": "Response status codes", "ru": "Код статуса ответа сервера" },
       { "ref": "JSON-placeholder", "ua": "JSON-placeholder", "eng": "JSON-placeholder", "ru": "JSON-placeholder" },
       { "ref": "json-server", "ua": "json-server", "eng": "json-server", "ru": "json-server" },
-      { "ref": "scroll", "ua": "Розміри та прокрутка html-елемента", "eng": "Element sizes and scrolling", "ru": "Размеры и прокрутка html-элемента" },
       { "ref": "fake-chat", "ua": "Fake chat", "eng": "Fake chat", "ru": "Fake chat" },
       { "ref": "hw-15", "ua": "Homework", "eng": "Homework", "ru": "Homework" }
     ]
