@@ -92,11 +92,11 @@ lang-switcher {
   left: -2px;
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1350px) {
   main-menu-component:before { padding-left: 16px; }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1320px) {
   main-menu-component:before { padding-left: 20vw; }
 }
 @media screen and (max-width: 900px) {

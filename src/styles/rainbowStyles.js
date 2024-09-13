@@ -31,11 +31,6 @@ code  {
   font-size:  14px;
   line-height:  1.8;
 }
-
-td  {
-  border:  solid 1px #555;
-  padding:  4px 8px;
-}
 `
 
 export const rainbowStyles = rainbow + minifier(rawSource)

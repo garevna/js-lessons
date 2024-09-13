@@ -134,6 +134,17 @@ li.sub-level-item--active {
   color: #fff;
 }
 
+.translated {
+  margin-left: -9px;
+}
+
+.translated:before {
+  content: '•';
+  color: #0f0;
+  font-size: 18px;
+  margin-right: 4px;
+}
+
 #menuToggle {
   display: block;
   position: absolute;

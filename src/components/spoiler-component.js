@@ -39,5 +39,3 @@ class SpoilerComponent extends SpoilerClass {
 }
 
 customElements.define('spoiler-component', SpoilerComponent)
-
-// export default SpoilerComponent

@@ -2,6 +2,7 @@ import { createPath } from './createPath'
 import { createElem } from './createElem'
 import { createSubmenuItem } from './createSubmenuItem'
 import { closeCallback } from './closeCallback'
+import { createSubmenuItemClass } from './createSubmenuItemClass'
 
 const {
   pages,
@@ -17,8 +18,19 @@ const {
 const { getLessonTemplate } = require('../templates').default
 
 export async function getMainMenuData (lang) {
-  const menuData = await (await fetch(createPath('', 'main-menu.json'))).json()
-  this.keywords = await (await fetch(createPath('', 'keywords.json'))).json()
+  const urls = ['ua', 'eng']
+    .map(lang => createPath('files', null, lang))
+
+  urls.push(createPath('', 'main-menu.json'), createPath('', 'keywords.json'))
+
+  const promises = urls.map(url => fetch(url))
+
+  const results = (await Promise.all(promises))
+    .map(response => response.json())
+
+  const [ua, eng, menuData, keywords] = await Promise.all(results)
+
+  Object.assign(this, { keywords })
 
   const errors = Object.keys(this.keywords).filter(key => !pages.includes(key))
 
@@ -55,7 +67,7 @@ export async function getMainMenuData (lang) {
       subLevel: lessonItem.querySelector('ul.sub-level'),
       icon: lessonItem.querySelector('small'),
       textElement: lessonItem.querySelector('b'),
-      submenuOptions: lesson.items.map(item => createSubmenuItem.call(this, item, this.getAttribute('lang'))),
+      submenuOptions: lesson.items.map(item => createSubmenuItem.call(this, item, this.getAttribute('lang'), ua, eng)),
 
       onclick: function (elems, event) {
         const active = elems.find(elem => elem.active)
@@ -72,7 +84,7 @@ export async function getMainMenuData (lang) {
           setTimeout(function () {
             this.subLevel.appendChild(option)
             Object.assign(option, {
-              className: 'sub-level-item' + (activeRef === option.ref ? ' sub-level-item--active' : '')
+              className: createSubmenuItemClass(option.ref, ua, eng)
             })
           }.bind(this), 100 * index++)
         }

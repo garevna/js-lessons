@@ -2,6 +2,7 @@ const simple = [
   'warning',
   'coffee',
   'link',
+  'point',
   'no-entry',
   'link-ico',
   'link-dark',

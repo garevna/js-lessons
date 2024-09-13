@@ -19,7 +19,12 @@ class MainMenuComponent extends HTMLElement {
   switchLang (newVal) {
     this.menuOptions.forEach((option, index) => {
       option.textElement.innerText = this.menuData[index][newVal]
-      option.submenuOptions.forEach((item, num) => Object.assign(item, { innerText: this.menuData[index].items[num][newVal] }))
+      option.submenuOptions
+        .forEach((item, num) => console.log(item))
+      option.submenuOptions
+        .forEach((item, num) => Object.assign(item, {
+          innerText: this.menuData[index].items[num][newVal]
+        }))
     })
   }
 

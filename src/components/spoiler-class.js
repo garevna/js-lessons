@@ -4,8 +4,10 @@ const { createElem } = require('../helpers').default
 export default class SpoilerClass extends HTMLElement {
   constructor() {
     super()
+
     this.shadow = this.attachShadow({ mode: 'open' })
     createElem('style', this.shadow).textContent = rainbowStyles + spoilerClassStyles + iconStyles
+
     this.shadow.innerHTML += `
       <section id="component">
         <div class="wrap-collabsible">

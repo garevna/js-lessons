@@ -1,3 +1,5 @@
+import { createTableForSpoiler } from './createTableForSpoiler'
+
 const { createElem } = require('../').default
 
 export function createSpoiler (fragment) {
@@ -8,12 +10,13 @@ export function createSpoiler (fragment) {
   const head = fragment.split('\n')[0]
   spoiler.setAttribute('header', head.slice(4,-1))
 
-  const spoilerContent = fragment.replace(head, '').replace('^^^', '')
+  let spoilerContent = fragment.replace(head, '').replace('^^^', '')
 
   const tables = spoilerContent.match(this.regExprs['Table'])
 
   tables && tables.forEach((table, index) => {
-    fragment = fragment.replace(table, '\n‼‼‼' + index + '\n')
+    const html = createTableForSpoiler.call(this, table)
+    spoilerContent = spoilerContent.replace(table, html)
   })
 
   const lines = spoilerContent.split('\n')

@@ -10,6 +10,7 @@ pre {
   margin: 8px 8px 16px 0px;
   padding: 0 4px 8px 0;
   overflow: auto;
+  font-family: monospace;
 }
 
 pre .storage.function, pre .variable.self,
@@ -29,11 +30,6 @@ pre .entity.name.function {
 code {
   font-size: 14px;
   line-height: 1.8;
-}
-
-td {
-  border: solid 1px #eef;
-  padding: 4px 8px;
 }
 
 pre span.keyword {

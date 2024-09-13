@@ -211,16 +211,20 @@ glitch-logo {
 }
 
 table  {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   border-collapse: collapse;
 }
-td  {
-  border:  solid 1px #dde;
-  padding:  5px 10px;
+
+td {
+  border: solid 1px #ddd;
+  padding: 8px 12px;
+  text-align: center;
 }
-td  >  div  {
-  margin:  0;
-  font-size:  0.8rem;
+
+td > * {
+  margin: 0;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 .slider-button  {

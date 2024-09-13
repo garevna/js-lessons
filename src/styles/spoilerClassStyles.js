@@ -30,12 +30,13 @@ div  {
 
 table  {
   margin:  32px 0;
-  border-collapse:  collapse;
+  border-collapse: collapse;
 }
-td  {
+
+td {
   border:  solid 1px #eef;
-  padding:  4px 8px;
-  text-align:  center;
+  padding:  8px 12px;
+  text-align: center;
 }
 
 input[type='checkbox']  {
@@ -133,27 +134,29 @@ input[type='checkbox']  {
 }
 
 .collapsible-content pre.black  {
-  background:  #000;
+  background: #000;
   color: #eee;
 }
 
-table  {
-  margin:  32px 0;
-  border-collapse:  collapse;
+table {
+  margin: 32px 0;
+  border-collapse: collapse;
 }
 
-td  {
-  border:  solid 1px #eef;
-  padding:  4px 8px;
+td {
+  border: solid 1px #eef;
+  padding: 8px 12px;
+  text-align: center;
 }
 
-td  >  div  {
-  margin:  0;
-  padding:  0;
-  font-size:  0.8rem;
+td > * {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
-hr  {
+hr {
   margin:  32px 0;
   border:  0;
 }

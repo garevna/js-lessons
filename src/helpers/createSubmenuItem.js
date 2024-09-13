@@ -1,11 +1,13 @@
 import { createElem } from './createElem'
 import { createPath } from './createPath'
+import { createSubmenuItemClass } from './createSubmenuItemClass'
 
-export function createSubmenuItem (data, lang) {
+export function createSubmenuItem (data, lang, ua, eng) {
   const activeSubItem = location.search.slice(1) || ''
+
   const elem = Object.assign(document.createElement('li'), {
     innerText: data[lang],
-    className: activeSubItem !== data.ref ? 'sub-level-item' : 'sub-level-item sub-level-item--active',
+    className: createSubmenuItemClass(data.ref, ua, eng),
     ref: data.ref,
     onclick: function (event) {
       this.checkbox.checked = !this.checkbox.checked

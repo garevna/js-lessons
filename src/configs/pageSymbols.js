@@ -27,12 +27,22 @@ export const pageSymbols = [
   {
     symb: '~',
     reg: '~',
-    tag: ['<code style="background-color:#eef">', '</code>']
+    tag: ['<code style="background-color:#eef; color: #059">', '</code>']
   },
   {
     symb: '^^',
     reg: '\\^\\^',
     tag: ['<small>', '</small>']
+  },
+  {
+    symb: '↑↑',
+    reg: '↑↑',
+    tag: ['<sup style="color: #09b">', '</sup>']
+  },
+  {
+    symb: '↓↓',
+    reg: '↓↓',
+    tag: ['<sub style="color: #fa0">', '</sub>']
   },
   {
     symb: ':::',
