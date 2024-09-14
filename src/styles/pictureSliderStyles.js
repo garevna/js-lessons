@@ -12,7 +12,7 @@ const rawSource = `
     z-index:  500;
     border:  2px solid #ddd;
     background:  #00000090;
-    background-image:  var(--stars);
+    /* background-image:  var(--stars); */
   }
 
   button  {

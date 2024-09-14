@@ -14,7 +14,7 @@
   --submenu-color-hover: #000;
   --selected-lesson-color: #fff;
   --header-back-color: linear-gradient(to right, #00000000, #00000050 30%, #000000 40%, #000 );
-  --header-back-image: var(--stars);
+  --header-back-image: var(--stars-in-line);
   --link-image: var(--link);
   --main-menu-item-height: 16px;
   --main-font: var(--font-family);
@@ -66,7 +66,7 @@ main-menu-component {
   width: 100%;
   height: 50px;
   background: var(--header-back-image), var(--header-back-color);
-  background-size: 30%, 100%;
+  background-size: contain, 100%;
   background-repeat: repeat-x, no-repeat;
   background-blend-mode: overlay;
   box-shadow: 2px 2px 4px #00000090;

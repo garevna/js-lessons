@@ -36,36 +36,9 @@ footer {
   display: flex;
   align-items: end;
   align-self: end;
-  /* padding: 8px 16px;
-  background: #900;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 4px; */
   cursor: pointer;
 }
-/*
-.donate-button > span {
-  font-size: 28px;
-  position: relative;
-  top: -48px;
-}
 
-.donate-button > #blue-heart {
-  animation: 1s linear 0s infinite alternate blue-heart-movie;
-}
-
-.donate-button > #yellow-heart {
-  animation: 1s linear 0s infinite alternate yellow-heart-movie;
-}
-
-.donate-button > p {
-  color: #fff;
-  font-weight: bold;
-  position: relative;
-  top: 12px;
-  left: -78px;
-}
-*/
 .footer-text small {
   border-top: solid 1px #999;
   font-size: 11px;
@@ -84,7 +57,7 @@ footer {
   box-sizing: border-box;
   border-radius: 50%;
   transition: all 0.5s;
-  background-image: var(--stars), radial-gradient(#ffffff00, #ffffff20 50%, #ffffff10 60%, #ffffff 70%), var(--icon);
+  background-image: var(--personage-on-stars), radial-gradient(#ffffff00, #ffffff20 50%, #ffffff10 60%, #ffffff 70%);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: center, center, center;
   background-size: cover, cover, 40%;
@@ -99,7 +72,7 @@ footer {
   transition: .5s ease;
   transform: translate(0,30%) scale(0.0);
   background-color: #fff;
-  background-image: url(${createPath('images', 'garevna-wild.png')});
+  background-image: var(--garevna-wild);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -176,6 +149,12 @@ footer {
 
   #slogan-donate {
   	display: none;
+  }
+}
+
+@media screen and (max-width: 420px)  {
+  .overshadow  {
+    display:  none;
   }
 }
 

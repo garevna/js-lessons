@@ -1,6 +1,6 @@
 export const mainMenuTemplate = `
 <div id="main-menu-shadow" style="width: 100vw; height: 100vh; background: #0007; display: none;"></div>
-<graphic-header></graphic-header>
+<!-- <graphic-header></graphic-header> -->
 <svg-nav-panel></svg-nav-panel>
 
 <aside>

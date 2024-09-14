@@ -1,3 +1,5 @@
+const { createPath } = require('../helpers').default
+
 class DonateButton extends HTMLElement {
   constructor () {
     super()
@@ -6,7 +8,7 @@ class DonateButton extends HTMLElement {
     this.shadow.innerHTML = `
       <style>
         svg {
-          background-image: var(--stars);
+          background-image: url(${createPath('images', 'stars-for-donates.gif')});
           padding: 12px;
           border-radius: 4px;
         }

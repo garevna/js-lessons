@@ -14,14 +14,14 @@ class WelcomeWin extends HTMLElement {
     <div class="box">
       <div class="content">
         <div id="left">
-          <img src="${createPath(folderPhoto, photo)}" width="250" />
+          <img src="${createPath('images', 'garevna-250.jpeg')}" width="250" />
           <h3 style="font-family: 'Luckiest Guy'; font-size: 24px; font-weight: normal;">${welcome}</h3>
           <h4>
             <small>${sign}</small>
           </h4>
         </div>
         <div id="right" style='text-align:right'>
-          <img src="${createPath(folderPicture, picture)}" height="80">
+          <img src="${createPath('images', 'personage-on-stars-180x180.gif')}" height="80">
           <h3 style="font-family: Poppins, 'Happy Monkey'; color: #fa0;">${slogan}</h3>
         </div>
       </div>

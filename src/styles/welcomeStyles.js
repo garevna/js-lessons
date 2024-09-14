@@ -1,4 +1,4 @@
-const { minifier } = require('../helpers').default
+const { createPath, minifier } = require('../helpers').default
 
 const rawSource = `
 img { border: 0; }
@@ -29,10 +29,6 @@ h3 { color: #dde; }
 .box > .content {
   position: relative;
   background: #000;
-  background-image: linear-gradient(to right, #000 70%, transparent 100%), var(--stars), var(--icon);
-  background-position: left, right, right bottom;
-  background-repeat: no-repeat, repeat, no-repeat;
-  background-size: cover, contain, 100px;
   top: 20px;
   bottom: 10px;
   box-sizing: border-box;

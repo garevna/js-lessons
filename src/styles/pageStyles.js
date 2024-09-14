@@ -354,10 +354,6 @@ button.page-previous  {
   main  {
     padding: 48px 16px 48px 32px;
   }
-  .overshadow  {
-    width:  100px;
-    height:  100px;
-  }
   glitch-logo {
     transform: scale(0.6);
     left: calc(100vw - 90px);
@@ -380,12 +376,6 @@ button.page-previous  {
   .slogan  {
     transform:  rotate(-15deg) translate(10%, 48px);
     width:  80%;
-  }
-}
-
-@media screen and (max-width: 400px)  {
-  .overshadow  {
-    display:  none;
   }
 }
 
