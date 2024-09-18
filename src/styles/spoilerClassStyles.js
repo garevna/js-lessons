@@ -182,6 +182,7 @@ hr:after  {
   padding:  12px 16px;
   font-family:  monospace, Roboto, Arial;
   font-size:  13px;
+  overflow-x: auto;
 }
 
 @media screen and (max-width: 400px),  screen and (max-height: 400px)  {

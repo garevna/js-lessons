@@ -18,6 +18,15 @@ export function parseLine (line) {
     return elem
   }
 
+  if (line.match(/[§]{4}/)) {
+    const text = line.split('§§§§').find(str => str.length).trim()
+    let [header, template] = text.split('|').map(item => item.trim())
+    const elem = document.createElement('live-demo-spoiler')
+    elem.setAttribute('header', header)
+    elem.setAttribute('template', template)
+    return elem
+  }
+
   const img = this.parseImage(line)
 
   if (img) return img

@@ -22,7 +22,7 @@ class ScriptSpoiler extends SpoilerClass {
 
   attributeChangedCallback (attrName, oldVal, newVal) {
     attrName === 'content'
-      ? this.wrapper.appendChild ( this.content )
+      ? this.wrapper.appendChild(this.content)
       : attrName === 'header' || !newVal
         ? this.header.innerText = this.getAttribute('header')
         : null
@@ -30,5 +30,3 @@ class ScriptSpoiler extends SpoilerClass {
 }
 
 customElements.define('script-spoiler', ScriptSpoiler)
-
-export default ScriptSpoiler

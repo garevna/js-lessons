@@ -14,7 +14,7 @@ class WelcomeWin extends HTMLElement {
     <div class="box">
       <div class="content">
         <div id="left">
-          <img src="${createPath('images', 'garevna-250.jpeg')}" width="250" />
+          <img src="${createPath('images', 'garevna.jpg')}" width="250" />
           <h3 style="font-family: 'Luckiest Guy'; font-size: 24px; font-weight: normal;">${welcome}</h3>
           <h4>
             <small>${sign}</small>

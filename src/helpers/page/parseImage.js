@@ -10,5 +10,16 @@ export function parseImage (line) {
     ? url
     : createPath(...url.split('/'))
 
-  return Object.assign(document.createElement('img'), { src })
+  // return new Promise(resolve => {
+  //   const img = Object.assign(new Image(), {
+  //     src,
+  //     alt: 'Picture',
+  //     onload (event) {
+  //       const { width, height } = event.target
+  //       resolve(event.target)
+  //     }
+  //   })
+  // })
+
+  return Object.assign(new Image(), { src, alt: 'Picture' })
 }

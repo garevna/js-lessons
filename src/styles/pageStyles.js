@@ -46,6 +46,7 @@ hr  {
   font-family:  Monaco, monospace, Roboto, Arial;
   font-size:  0.8rem;
   line-height:  1.8;
+  overflow-y: auto;
 }
 
 .error-message {

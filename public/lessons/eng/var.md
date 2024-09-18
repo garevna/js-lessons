@@ -94,7 +94,7 @@ When you declare a variable, you can immediately assign an initial value to it.
 
 For this purpose, the assignment operator (**~ =~** ) is used, which is the most common in any script.
 
-![](illustrations/var-01.gif)
+§§§§ Demo | var_01_template §§§§
 
 The left side of the assignment operator should contain the variable name, the right side should contain some **expression**.
 The engine will compute the value of the expression on the right side of the assignment operator, and put the computed value into the variable named on the left side of the operator.
@@ -180,7 +180,7 @@ ______________________________________________________________
 
 ![ico-25 warn] Variable names can begin with a letter, the sybols **~ $~** and **~ _~**.
 
-![](illustrations/var-02.gif)
+§§§§ Demo | var_02_template §§§§
 
 It is recommended to give long and clear names of variables and functions composed of several words.
 It improves code readability:
@@ -191,7 +191,7 @@ var lastUserVisit = '2019-02-05'
 
 ![ico-25 warn] Variable names are case sensitive (~name~ and ~Name~ are different variables).
 
-![](illustrations/var-04.gif)
+§§§§ Demo | var_03_template §§§§
 
 @@@@
 ![](illustrations/camel-case.png)
@@ -202,11 +202,17 @@ var lastUserVisit = '2019-02-05'
 
 ^^For the future: it is recommended to start **function** names with a **verb** to distinguish them from variable names where data is stored.^^
 
-[![ico-25 warn] **_Reserved words_**](https://www.w3schools.com/js/js_reserved.asp) cannot be used as variable names.
+[![ico-25 warn] **_Reserved words_**](https://www.w3schools.com/js/js_reserved.asp ) cannot be used as variable names.
 
 ![ico-25 warn] Variable names cannot start with a number.
 
-![](illustrations/var-03.gif)
+~~~js
+var 14br = 10
+~~~
+
+~~~error
+    Uncaught SyntaxError: Invalid or unexpected token
+~~~
 
 ______________________________________________________________
 
