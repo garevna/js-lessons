@@ -3,12 +3,13 @@ const { minifier } = require('../helpers').default
 const rawSource = `
 * { outline: none; }
 fieldset {
-  background: #000;
+  background: #333;
   color: #fff;
   padding: 8px 16px 32px 32px;
+  margin-left: -0px;
   border-radius: 4px;
   border: none;
-  box-shadow: 4px 4px 8px #0009;
+  /* box-shadow: 4px 4px 8px #0009; */
   font-size: 14px;
 }
 tr {

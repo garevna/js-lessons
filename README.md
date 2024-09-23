@@ -9,7 +9,11 @@
 **`![](illustrations/dog.png)`** - the image file images/lessons/dog.png
 
 **`![](images/car.gif)`** - the image file images/car.gif
+____________________________________________________
 
+### slider
+
+!![illustrations/flowchart-sequence.svg, illustrations/flowchart-branching.svg, illustrations/flowchart-circle.svg]
 ____________________________________________________
 
 ### icons

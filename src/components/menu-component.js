@@ -6,14 +6,15 @@ class MenuComponent extends HTMLElement {
   constructor () {
     super()
 
-    this.shadow = Object.assign(this.attachShadow({ mode: 'open' }), {
+    this.shadow = Object.assign(this.attachShadow({ mode: 'closed' }), {
       innerHTML: `
         <nav id="page-navigation-menu"></nav>
         <ul id="page-navigation-menu-container"></ul>
       `
     })
 
-    createElem('style', this.shadow).textContent = menuStyles
+    menuStyles.then(css => createElem('style', this.shadow).textContent = css)
+
     Object.assign(this, {
       button: this.shadow.querySelector('#page-navigation-menu'),
       menuContent: this.shadow.querySelector('#page-navigation-menu-container')

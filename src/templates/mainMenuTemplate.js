@@ -11,14 +11,13 @@ export const mainMenuTemplate = `
     <span></span>
     <ul id="menu">
       <div class="search-wrapper">
-        <div class="search-icon"></div>
         <input id="search-input">
+        <div class="search-icon"></div>
         <div id="search-result"></div>
       </div>
 
-      <h3>
-        <a href="${location.href.split('?')[0]}" class="go-to-home"></a>
-      </h3>
+      <a id="go-to" href="${location.href.split('?')[0]}" class="go-to-home"></a>
+
       <hr>
     </ul>
   </div>

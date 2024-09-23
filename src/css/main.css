@@ -1,6 +1,5 @@
 :root {
   --back-color: #fbfbfb90;
-  --cap-image: var(--js-cap);
   --menu-back-color: #fa0;
   --menu-icon-size: 36px;
   --menu-background: #333;
@@ -15,11 +14,37 @@
   --selected-lesson-color: #fff;
   --header-back-color: linear-gradient(to right, #00000000, #00000050 30%, #000000 40%, #000 );
   --header-back-image: var(--stars-in-line);
-  --link-image: var(--link);
   --main-menu-item-height: 16px;
   --main-font: var(--font-family);
   --funy-font: 'Happy Monkey', Kavoon, 'Luckiest Guy', Montserrat, Roboto, Arial;
   --font-family: Montserrat, Poppins, Roboto, sans-serif, Arial;
+}
+
+.flowchart-process {
+  width: 160px;
+  height: max-content;
+  text-align: center;
+  border: solid 1px #555;
+  padding: 8px 16px;
+  margin: 0px auto;
+}
+
+.flowchart-endpoints {
+  width: 160px;
+  height: max-content;
+  text-align: center;
+  border: solid 1px #555;
+  border-radius: 50%;
+  padding: 8px 16px;
+  margin: 0px auto;
+}
+
+.flowchart-arrow {
+  width: 160px;
+  text-align: center;
+  padding: 0px 16px;
+  margin: 0 auto;
+  font-size: 48px;
 }
 
 body {

@@ -1,12 +1,13 @@
-const { spoilerClassStyles, rainbowStyles, iconStyles } = require('../styles').default
-const { createElem } = require('../helpers').default
+const { spoilerClassStyles, rainbowStyles } = require('../styles').default
+const { createElem, getIconStyles } = require('../helpers').default
 
 export default class SpoilerClass extends HTMLElement {
   constructor() {
     super()
 
     this.shadow = this.attachShadow({ mode: 'open' })
-    createElem('style', this.shadow).textContent = rainbowStyles + spoilerClassStyles + iconStyles
+    createElem('style', this.shadow).textContent = rainbowStyles
+    spoilerClassStyles.then(textContent => Object.assign(createElem('style', this.shadow), { textContent }))
 
     this.shadow.innerHTML += `
       <section id="component">

@@ -11,8 +11,7 @@ const rawSource = `
     margin:  0;
     z-index:  500;
     border:  2px solid #ddd;
-    background:  #00000090;
-    /* background-image:  var(--stars); */
+    background:  #000000D0;
   }
 
   button  {
@@ -31,35 +30,28 @@ const rawSource = `
   }
 
   button:hover  {
-    transform:  rotate(360deg);
+    transform:  scale(1.2);
     text-shadow:  2px 2px 4px #000000b0;
     cursor:  pointer;
   }
 
-  #left  {  left:  4%;  }
-  #left:before  {  content:  "<";  }
-  #right  {  right: 4%;  }
-  #right:before  {  content:  ">";  }
+  #left { left: 4%; }
+  #left:before { content: "<"; }
+  #right { right: 4%; }
+  #right:before { content: ">"; }
 
   #close:before  {
-    content:  "";
+    content:  "✖";
+    color: #ddd;
     padding:  8px;
     vertical-align:  middle;
-    background-size:  contain;
-    background-repeat:  no-repeat;
-    background-position:  center;
-    background-image:  var(--no_entry);
   }
 
   .close-button  {
     position:  fixed;
     top:  52px;
-    right:  32px;
-    width:  32px;
-    background-image:  var(--close);
-    background-repeat:  no-repeat;
-    background-position:  center;
-    background-size:  contain;
+    right:  16px;
+    font-size: 24px;
   }
   div  {
     position:  absolute;

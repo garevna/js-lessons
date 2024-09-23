@@ -1,6 +1,12 @@
 const { minifier } = require('../helpers').default
 
-const rawSource = `
+if (!window[Symbol.for('icons.worker')]) {
+  window[Symbol.for('icons.worker')] = Object.assign(new Worker(`${location.origin}${location.pathname}icons.worker.js`), {
+    onerror: error => console.error('! Icons worker Error\n', error)
+  })
+}
+
+let rawSource = `
 *  {
   user-select: none;
   outline: none;
@@ -13,7 +19,7 @@ const rawSource = `
   margin-left: -16px;
   width: var(--menu-icon-size);
   height: var(--menu-icon-size);
-  background-image: var(--menu-icon-image);
+  background-image: url(--menu-icon-image);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -34,7 +40,7 @@ const rawSource = `
 }
 
 #page-navigation-menu:hover {
-  background-image: var(--menu-symbol);
+  background-image: url(--menu-symbol);
 }
 
 li {
@@ -92,4 +98,16 @@ li:hover > a {
 }
 `
 
-export const menuStyles = minifier(rawSource)
+export const menuStyles = new Promise(resolve => {
+  window[Symbol.for('icons.worker')].addEventListener('message', function (event) {
+    const { route, error, response } = event.data
+    if (route !== 'menu') return
+    if (error) console.error(error)
+    if (!response) console.error('There is no response from icons worker!')
+    Object.keys(response).forEach(key => {
+      rawSource = rawSource.replaceAll(`--${key}`, response[key])
+    })
+    resolve(minifier(rawSource))
+  })
+  window[Symbol.for('icons.worker')].postMessage({ route: 'menu' })
+})

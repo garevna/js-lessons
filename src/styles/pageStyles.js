@@ -1,6 +1,12 @@
 const { minifier } = require('../helpers').default
 
-const rawSource = `
+if (!window[Symbol.for('icons.worker')]) {
+  window[Symbol.for('icons.worker')] = Object.assign(new Worker(`${location.origin}${location.pathname}icons.worker.js`), {
+    onerror: error => console.error('! Icons worker Error\n', error)
+  })
+}
+
+let rawSource = `
 donate-popup {
   position: fixed;
   left: 12px;
@@ -38,8 +44,22 @@ hr  {
   background:  transparent;
 }
 
+.icon {
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 50%;
+  border: solid 2px #fff;
+  box-shadow: 2px 2px 2px #00000090;
+  background-color: #057;
+  background-image: url(--icon);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 55%;
+  background-blend-mode: luminosity;
+}
+
 .black  {
-  background-color:  #000;
+  background-color: #000;
   color:  #dde;
   padding:  0 12px;
   margin:  12px 0;
@@ -52,7 +72,7 @@ hr  {
 .error-message {
   background: #522d;
   color: #fee;
-  background-image: var(--error);
+  background-image: url(--error);
   background-repeat: no-repeat;
   background-size: 16px 14px;
   background-position-y: center;
@@ -77,7 +97,7 @@ hr  {
 .warning-message {
   background: #550;
   color: #fea;
-  background-image: var(--warning);
+  background-image: url(--warning);
   background-repeat: no-repeat;
   background-size: 16px 14px;
   background-position-y: center;
@@ -159,10 +179,6 @@ img,  button,  input  {
 img  {
   max-width:  90%;
   margin:  8px;
-  padding:  8px;
-  border:  inset 1px white;
-  box-shadow:  2px 2px 4px #00000080;
-  box-sizing:  border-box;
   vertical-align:  middle;
 }
 
@@ -178,7 +194,7 @@ a.visible-anchor  {
   color:  #079;
   font-weight:  bold;
   padding:  8px 36px 8px 8px;
-  background-image:  var(--open-in-new);
+  background-image:  url(--open-in-new);
   background-position: right 8px center;
   background-repeat: no-repeat;
   background-size: 24px;
@@ -231,7 +247,7 @@ td > * {
 .slider-button  {
   background-color:  transparent;
   border:  1px solid #09b8;
-  background-image:  var(--slider-1);
+  background-image:  url(--slider-1);
   padding:  8px;
   background-size:  contain;
   width:  64px;
@@ -244,7 +260,7 @@ td > * {
 }
 
 .slider-button:hover  {
-  background-image:  var(--slider-2);
+  background-image:  url(--slider-2);
 }
 
 menu-component  {
@@ -266,7 +282,7 @@ menu-component  {
 .close-button:before  {
   content:  "";
   background-size:  contain;
-  background-image:  var(--no_entry);
+  background-image:  url(--no_entry);
   width:  30px;
   height:  30px;
 }
@@ -400,4 +416,19 @@ button.page-previous  {
   background:  #fa0;
 }
 `
-export const pageStyles = minifier(rawSource)
+
+export const pageStyles = new Promise(resolve => {
+  window[Symbol.for('icons.worker')].addEventListener('message', function (event) {
+    const { route, error, response } = event.data
+    if (route !== 'page') return
+    if (error) console.error(error)
+    if (!response) console.error('There is no response from icons worker!')
+    Object.keys(response).forEach(key => {
+      rawSource = rawSource.replaceAll(`--${key}`, response[key])
+    })
+    resolve(minifier(rawSource))
+  })
+  window[Symbol.for('icons.worker')].postMessage({ route: 'page' })
+})
+
+// export const pageStyles = minifier(rawSource)

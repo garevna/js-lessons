@@ -1,6 +1,12 @@
-const { createPath, minifier } = require('../helpers').default
+const { minifier } = require('../helpers').default
 
-const rawSource = `
+if (!window[Symbol.for('icons.worker')]) {
+  window[Symbol.for('icons.worker')] = Object.assign(new Worker(`${location.origin}${location.pathname}icons.worker.js`), {
+    onerror: error => console.error('! Icons worker Error\n', error)
+  })
+}
+
+let rawSource = `
 *  {  box-sizing:  border-box;  }
 a  {  text-decoration:  none;  color:  #079;  }
 a:hover  {  color: #f50;  }
@@ -57,9 +63,9 @@ input[type='checkbox']  {
   cursor:  pointer;
   transition:  all 0.25s ease-out;
   user-select:  none;
-  background-image: var(--folder);
+  background-image: url(--folder);
   background-repeat:  no-repeat;
-  background-size:  32px;
+  background-size: 24px;
   background-position:  left 8px center;
   border-left:  solid 10px transparent;
 }
@@ -109,7 +115,7 @@ input[type='checkbox']  {
   box-shadow:  0px 0px 0px transparent;
 }
 
-.toggle:checked  +  .lbl-toggle  +  .collapsible-content  {
+.toggle:checked  +  .lbl-toggle  +  .collapsible-content {
   max-height:  70vh;
   padding:  16px;
   border:  solid 1px #ddd;
@@ -119,21 +125,22 @@ input[type='checkbox']  {
   box-shadow:  none;
   border:  solid 1px #eee;
   padding:  12px 16px 12px 32px;
-  background-image:  var(--folder-open);
+  background-image: url(--opened);
+  background-size: 24px;
 }
 
-.toggle:checked + .lbl-toggle::before  {
+.toggle:checked + .lbl-toggle::before {
   transform:  rotate(90deg) translateX(-3px);
 }
 
-.collapsible-content pre  {
+.collapsible-content pre {
   background:  #eee;
   padding:  16px 4px 4px 0;
   box-shadow:  none;
   overflow-y:  hidden;
 }
 
-.collapsible-content pre.black  {
+.collapsible-content pre.black {
   background: #000;
   color: #eee;
 }
@@ -157,18 +164,18 @@ td > * {
 }
 
 hr {
-  margin:  32px 0;
-  border:  0;
+  margin: 32px 0;
+  border: 0;
 }
 
 hr:before  {
-  content:  "▗";
-  color:  #f50;
+  content: "▗";
+  color: #f50;
 }
 
 hr:after  {
-  content:  "▘";
-  color:  #09b;
+  content: "▘";
+  color: #09b;
 }
 
 ::-webkit-scrollbar  {
@@ -186,10 +193,10 @@ hr:after  {
 }
 
 @media screen and (max-width: 400px),  screen and (max-height: 400px)  {
-  h1  {  font-size:  1.2rem;  }
-  h2  {  font-size:  1.0rem;  }
-  h3  {  font-size:  0.9rem;  }
-  div  {  font-size:  0.8rem;  }
+  h1 { font-size: 1.2rem; }
+  h2 { font-size: 1.0rem; }
+  h3 { font-size: 0.9rem; }
+  div { font-size: 0.8rem; }
 }
 
 ::-webkit-scrollbar-track  {
@@ -208,4 +215,16 @@ hr:after  {
 }
 `
 
-export const spoilerClassStyles = minifier(rawSource)
+export const spoilerClassStyles = new Promise(resolve => {
+  window[Symbol.for('icons.worker')].addEventListener('message', function (event) {
+    const { route, error, response } = event.data
+    if (route !== 'spoiler') return
+    if (error) console.error(error)
+    if (!response) console.error('There is no response from icons worker!')
+    Object.keys(response).forEach(key => {
+      rawSource = rawSource.replaceAll(`--${key}`, response[key])
+    })
+    resolve(minifier(rawSource))
+  })
+  window[Symbol.for('icons.worker')].postMessage({ route: 'spoiler' })
+})

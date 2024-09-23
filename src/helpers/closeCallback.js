@@ -1,11 +1,3 @@
-const {
-  defaults: {
-    mainMenu: {
-      normalColor
-    }
-  }
-} = require('../configs').default
-
 export function closeCallback (event) {
   event.target.icon.className = 'icon'
 
@@ -17,6 +9,6 @@ export function closeCallback (event) {
     }.bind(this), 40 * index++)
   }
 
-  this.textElement.style.color = normalColor
+  this.textElement.className = 'lesson-menu-item'
   event.target.active = false
 }

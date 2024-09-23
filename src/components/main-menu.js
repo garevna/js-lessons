@@ -14,6 +14,9 @@ class MainMenuComponent extends HTMLElement {
       submenuOptions: [],
       state: 'close'
     })
+
+    console.log('MAIN MENU STYLES:\n', mainMenuStyles)
+    mainMenuStyles.then(css => createElem('style', this.shadow).textContent = css)
   }
 
   switchLang (newVal) {
@@ -49,8 +52,6 @@ class MainMenuComponent extends HTMLElement {
       search: search.bind(this)
     })
 
-    this.setStyles()
-
     this.switchLang(this.lang)
 
     this.addEventListener('scroll', function (event) {
@@ -83,10 +84,6 @@ class MainMenuComponent extends HTMLElement {
     }.bind(this)
 
     this.getData(this.getAttribute('lang')).then(() => this.searchInput.oninput = this.search)
-  }
-
-  setStyles () {
-    createElem('style', this.shadow).textContent = mainMenuStyles
   }
 }
 

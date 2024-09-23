@@ -1,6 +1,16 @@
-const { createPath, minifier } = require('../helpers').default
+const { /* createPath, */ minifier } = require('../helpers').default
 
-const rawSource = `
+// worker
+
+if (!window[Symbol.for('icons.worker')]) {
+  window[Symbol.for('icons.worker')] = Object.assign(new Worker(`${location.origin}${location.pathname}icons.worker.js`), {
+    onerror: error => console.error('! Icons worker Error\n', error)
+  })
+}
+
+// _____________________________
+
+let rawSource = `
 * {
   box-sizing: border-box;
   user-select: none;
@@ -19,12 +29,13 @@ const rawSource = `
 
 .go-to-home {
   position:absolute;
-  top: 0;
+  top: 24px;
+  left: 12px;
   display: inline-block;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: left center;
-  background-image: var(--home);
+  background-image: url(--home);
   vertical-align: text-bottom;
   width: auto;
   height: 32px;
@@ -44,7 +55,7 @@ hr {
 }
 
 .search-wrapper {
-  margin: 8px 0;
+  margin: 20px 0 0 28px;
   color: #eee;
 }
 
@@ -58,7 +69,7 @@ hr {
 }
 
 .search-icon {
-  background-image: var(--search);
+  background-image: url(--search);
   width: 24px;
   height: 24px;
 }
@@ -70,13 +81,13 @@ hr {
 .icon {
   width: 16px;
   height: 16px;
-  background-image: var(--main-menu-icon-image);
+  background-image: url(--main-menu-icon-image);
 }
 
 .icon-active {
-  width: 24px;
-  height: 24px;
-  background-image: var(--main-menu-active-icon-image);
+  width: 20px;
+  height: 20px;
+  background-image: url(--main-menu-active-icon-image);
 }
 
 #search-input {
@@ -122,6 +133,10 @@ li.sub-level-item {
 
 .lesson-menu-item:hover {
   background: #fa0;
+  color: #000;
+}
+
+.lesson-menu-item--active:hover {
   color: #000;
 }
 
@@ -237,13 +252,6 @@ li.sub-level-item--active {
   transform: translate(100%, 0);
   transition: all 0.5s ease-out;
   z-index: 51;
-}
-
-#menu > h3 {
-  position: absolute;
-  top: -4px;
-  left: 16px;
-  color: #09b;
 }
 
 #menu > li {
@@ -437,4 +445,19 @@ input[type="radio"]:checked ~ .sub-level > li:hover > a {
 }
 `
 
-export const mainMenuStyles = minifier(rawSource)
+export const mainMenuStyles = new Promise(resolve => {
+  window[Symbol.for('icons.worker')].addEventListener('message', function (event) {
+    const { route, error, response } = event.data
+    if (route !== 'main-menu') return
+    if (error) console.error('Main menu icons error!\n', error)
+    if (!response) console.error('There is no response from icons worker!')
+    Object.keys(response).forEach(key => {
+      rawSource = rawSource.replaceAll(`--${key}`, response[key])
+    })
+
+    resolve(minifier(rawSource))
+  })
+
+  console.log('Add event listener for route "main-menu"')
+  window[Symbol.for('icons.worker')].postMessage({ route: 'main-menu' })
+})

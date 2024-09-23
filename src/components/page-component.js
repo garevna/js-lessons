@@ -1,6 +1,6 @@
-const { createPath, createElem } = require('../helpers').default
+const { createPath, createElem, getIconStyles } = require('../helpers').default
 const { pageRegExpr, pageSymbols, pages } = require('../configs').default
-const { pageStyles, iconStyles } = require('../styles').default
+const { pageStyles } = require('../styles').default
 
 const methods = require('../helpers/page').default
 
@@ -14,6 +14,8 @@ class PageComponent extends HTMLElement {
       regExprs: pageRegExpr,
       symbols: pageSymbols
     })
+
+    pageStyles.then(css => createElem('style', this).textContent = css)
   }
 
   async connectedCallback () {
@@ -29,8 +31,6 @@ class PageComponent extends HTMLElement {
 
     this.setSource(fileName)
 
-    createElem('style', this).textContent = pageStyles + iconStyles
-
     if (location.hash) {
       setTimeout(() => {
         const elem = document.getElementById(location.hash.slice(1))
@@ -41,17 +41,6 @@ class PageComponent extends HTMLElement {
 
   static get observedAttributes () {
     return ['src', 'lang']
-  }
-
-  async init () {
-    Object.assign(this, {
-      fragments: {},
-      pageContent: '',
-      pageContentList: []
-    })
-
-    this.lang = localStorage.getItem('lang') || this.getAttribute('lang')
-    this.fileList = await (await fetch(createPath('files', null, this.lang))).json()
   }
 
   async attributeChangedCallback (attrName, oldVal, newVal) {
@@ -68,6 +57,17 @@ class PageComponent extends HTMLElement {
       this.lang = newVal
       await this.switchLang()
     }
+  }
+
+  async init () {
+    Object.assign(this, {
+      fragments: {},
+      pageContent: '',
+      pageContentList: []
+    })
+
+    this.lang = localStorage.getItem('lang') || this.getAttribute('lang')
+    this.fileList = await (await fetch(createPath('files', null, this.lang))).json()
   }
 
   testSource (sourceURL) {

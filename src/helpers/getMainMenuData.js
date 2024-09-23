@@ -4,16 +4,7 @@ import { createSubmenuItem } from './createSubmenuItem'
 import { closeCallback } from './closeCallback'
 import { createSubmenuItemClass } from './createSubmenuItemClass'
 
-const {
-  pages,
-  defaults: {
-    mainMenu: {
-      activeLessonColor,
-      activeSubmenuOptionColor,
-      normalColor
-    }
-  }
-} = require('../configs').default
+const { pages } = require('../configs').default
 
 const { getLessonTemplate } = require('../templates').default
 
@@ -75,7 +66,7 @@ export async function getMainMenuData (lang) {
 
         this.active = true
         this.icon.className = 'icon-active'
-        this.textElement.style.color = activeLessonColor
+        this.textElement.className = 'lesson-menu-item--active'
 
         const activeRef = location.search.slice(1)
 
