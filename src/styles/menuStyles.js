@@ -7,7 +7,7 @@ if (!window[Symbol.for('icons.worker')]) {
 }
 
 let rawSource = `
-*  {
+* {
   user-select: none;
   outline: none;
 }
@@ -29,13 +29,16 @@ let rawSource = `
 
 #page-navigation-menu-container {
   position: fixed;
-  top: 34px;
-  height: calc(100vh - 100px);
+  top: 32px;
+  left: 0px;
+  height: 0;
+  padding: 0;
+  border: 0;
+  width: 320px;
   overflow-y: auto;
   overflow-x: hidden;
   background: #000;
-  box-shadow: 4px 4px 8px #0009;
-  border: solid 12px #000;
+  transition: all .5s;
   box-sizing: border-box;
 }
 
@@ -43,7 +46,7 @@ let rawSource = `
   background-image: url(--menu-symbol);
 }
 
-li {
+#page-navigation-menu-container > li {
   transition: all .1s;
   list-style-type: none;
   background: #000;
@@ -51,9 +54,10 @@ li {
   transform: translate(-100vw, 0);
   opacity: 0;
   transition: all .2s;
+  font-size: 0.8rem;
 }
 
-li > a {
+#page-navigation-menu-container > li > a {
   display: block;
   padding: 8px 24px 8px 0;
   border-radius: 4px;
@@ -61,13 +65,13 @@ li > a {
   color: #09b;
 }
 
-li > a > span {
+#page-navigation-menu-container > li > a > span {
   color: #9ce;
   margin-right: 8px;
   font-size: 11px
 }
 
-li:hover > a {
+#page-navigation-menu-container > li:hover > a {
   color: #fa0;
 }
 

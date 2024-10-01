@@ -2,6 +2,7 @@ const { minifier } = require('../helpers').default
 
 const rawSource = `
 * { outline: none; }
+
 section {
   position: relative;
   height: 300px;
@@ -12,11 +13,17 @@ section {
   color: #dde;
   overflow-x: hidden;
   overflow-y: auto;
+  font-family: monospace;
 }
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--main-font);
+}
+
 button {
   background: linear-gradient(to right, #09b, #09b, #09b);
   padding: 8px 16px;
-  font-family: var(--font-family);
+  font-family: var(--main-font);
   font-size: 1.2rem;
   border:0;
   color: white;

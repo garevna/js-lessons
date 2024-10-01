@@ -22,7 +22,7 @@ h3 { color: #dde; }
   perspective: 300px;
   box-sizing: border-box;
   padding: 24px 0 24px 24px;
-  font-family: Montserrat, Roboto, Arial;
+  font-family: var(--font-family);
   line-height: 1.5rem;
 }
 

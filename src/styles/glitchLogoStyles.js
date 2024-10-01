@@ -8,9 +8,8 @@ const rawSource = `
   justify-content: center;
   align-items: center;
   background-color: #000;
-  padding: 20px 20px 0 20px;
+  padding: 16px 16px 0 16px;
   color: #fff;
-  font-family: Poppins, Roboto, sans-serif;
   box-shadow: 3px 3px 5px #00000080;
   overflow: hidden;
 }
@@ -32,7 +31,7 @@ const rawSource = `
 }
 .logo-box .glitch {
   color: #fff;
-  font-family: 'Luckiest Guy', Poppins, Roboto, sans-serif;
+  font-family: var(--welcome-win-font);
   font-size: 80px;
   letter-spacing: 4px;
   position: relative;

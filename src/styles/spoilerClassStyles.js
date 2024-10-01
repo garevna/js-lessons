@@ -187,7 +187,7 @@ hr:after  {
   background-color:  #000;
   color:  #dde;
   padding:  12px 16px;
-  font-family:  monospace, Roboto, Arial;
+  font-family:  monospace, Roboto;
   font-size:  13px;
   overflow-x: auto;
 }

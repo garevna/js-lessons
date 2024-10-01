@@ -5,20 +5,49 @@ const { donateTo } = require('../configs').default
 
 const binance = createPath('images', 'binance.png')
 
-const ref = `<a href="https://www.binance.com" target="_blank"><img src="${binance}" width="48"></a>`
+const ref = `
+  <a href="https://www.binance.com" target="_blank">
+    <img src="${binance}" width="48" height="26">
+  </a>
+`
 
 class DonatePopup extends HTMLElement {
   constructor(){
     super()
 
     const shadow = this.attachShadow({ mode: 'closed' })
+
+    Object.assign(this, {
+      shadow: Object.assign(createElem('div', shadow), {
+        className: 'donate-shadow'
+      }),
+      popup: Object.assign(createElem('div', shadow), {
+        className: 'donate-popup'
+      })
+    })
+
+    this.addEventListener('show', function (event) {
+      this.shadow.style.display = 'block'
+      Object.assign(this.popup.style, { display: 'block' })
+      setTimeout(function () {
+        Object.assign(this.popup.style, { opacity: 1 })
+      }.bind(this))
+    })
+
     createElem('style', shadow).textContent = donateStyles
-    Object.assign(createElem('span', shadow), {
+
+    Object.assign(createElem('span', this.popup), {
       className: 'close-button',
       innerHTML: '&#10006;',
-      onclick () { document.querySelector('donate-popup').style.bottom = '-800px' }
+      onclick: function (event) {
+        Object.assign(this.popup.style, { opacity: 0 })
+        Object.assign(this.shadow.style, { display: 'none' })
+        setTimeout(function () {
+          Object.assign(this.popup.style, { display: 'none' })
+        }.bind(this), 500)
+      }.bind(this)
     })
-    Object.assign(createElem('h5', shadow), {
+    Object.assign(createElem('p', this.popup), {
       innerHTML: `
         I apologise for the temporary inconvenience. I'll connect the service later.<br>
         For now I dare to suggest you to use ${ref} or another exchange.<br>
@@ -26,7 +55,7 @@ class DonatePopup extends HTMLElement {
       `
     })
 
-    const container = Object.assign(createElem('table', shadow), {
+    const container = Object.assign(createElem('table', this.popup), {
       id: 'donate-popup-container',
       width: '100%',
       rowspan: 32
@@ -35,7 +64,7 @@ class DonatePopup extends HTMLElement {
     const tooltip = Object.assign(createElem('small'), {
       className: 'tooltip-text',
       style: 'display: none',
-      innerText: 'The number has been copied to clipboard'
+      innerText: 'The number has been copied to clipboard.'
     })
 
     for (const key of Object.keys(donateTo)) {
@@ -43,22 +72,27 @@ class DonatePopup extends HTMLElement {
 
       const [providerIcon, providerWallets] = [0, 1].map(() => createElem('td', provider))
 
-      providerIcon.style = 'text-align: center;'
+      providerIcon.style = 'text-align: left; margin-left: -4px;'
       providerWallets.style = 'text-align: right;'
+
+      const { width, height } = donateTo[key]
 
       Object.assign(createElem('img', providerIcon), {
         src: donateTo[key].icon,
-        width: donateTo[key].iconSize
+        width,
+        height
       })
 
       donateTo[key].wallets
         .forEach(wallet => {
           const walletCell = createElem('div', providerWallets)
           const cell = createElem('div', walletCell)
+          const { width = 48, height = 36 } = wallet
           Object.assign(createElem('img', cell), {
             src: wallet.icon,
-            width: wallet.iconSize || 48,
-            style: 'cursor: pointer; vertical-align: middle;',
+            width,
+            height,
+            style: 'cursor: pointer; vertical-align: middle; margin-bottom: 8px;',
             onclick (event) {
               navigator.clipboard.writeText(wallet.number)
               const { clientX, clientY } = event

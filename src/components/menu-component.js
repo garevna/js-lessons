@@ -20,35 +20,47 @@ class MenuComponent extends HTMLElement {
       menuContent: this.shadow.querySelector('#page-navigation-menu-container')
     })
 
-    this.menuContent.style.transition = 'all 0.5s'
+    this.addEventListener('main-menu-expand', function (event) {
+      this.button.style.display = 'block'
+    })
+    this.addEventListener('main-menu-close', function (event) {
+      this.button.style.display = 'none'
+    })
+  }
+
+  show () {
+    Object.assign(this.menuContent.style, {
+      height: 'max-content',
+      padding: '24px 16px'
+    })
+    Array.from(this.menuContent.children).forEach((li, index) => setTimeout(() => Object.assign(li.style, {
+      opacity: 1,
+      transform: 'translate(0, 0)'
+    }), 100 * index))
+  }
+
+  hide () {
+    Object.assign(this.menuContent.style, {
+      height: '0px',
+      padding: '0px'
+    })
   }
 
   clickHandler (event) {
     if (event.target.tagName !== 'menu-component') {
       Array.from(this.menuContent.children)
         .forEach(li => Object.assign(li.style, { opacity: 0 }))
-      this.menuContent.style.transform = 'translate(-100vw, 0)'
+      this.hide()
+
       window.removeEventListener('mouseup', this.clickHandler)
     }
   }
 
   connectedCallback () {
-    this.menuContent.style.transform = 'translate(-100vw, 0)'
-    this.button.onclick = function (event) {
-      Array.from(this.menuContent.children)
-        .forEach(li => Object.assign(li.style, { opacity: 0 }))
-      const offset = window.innerWidth >= 1140
-        ? '-180px'
-        : window.innerWidth >= 1008
-          ? '-120px'
-          : '-64px'
-      this.menuContent.style.transform = `translate(${offset}, 0)`
+    this.icon = this.shadow.querySelector('#page-navigation-menu')
+    this.hide()
 
-      Array.from(this.menuContent.children).forEach((li, index) => setTimeout(() => Object.assign(li.style, {
-        opacity: 1,
-        transform: 'translate(0, 0)'
-      }), 100 * index))
-    }.bind(this)
+    this.button.onclick = this.show.bind(this)
 
     window.addEventListener('mouseup', this.clickHandler.bind(this))
   }
@@ -63,6 +75,7 @@ class MenuComponent extends HTMLElement {
     if (!newVal) return
 
     this.options = JSON.parse(this.getAttribute('options'))
+
     this.options.forEach((option, index, arr) => {
       const char = arr[index + 1] && arr[index + 1].level > option.level ? '▼' : '►'
       Object.assign(option, { char })
@@ -73,18 +86,18 @@ class MenuComponent extends HTMLElement {
     this.style.visibility = visible ? 'visible' : 'hidden'
 
     this.setAttribute('options', '')
+
     this.options.forEach((option, index) => {
       const li = createElem('li', this.menuContent)
       Object.assign(li.style, {
-        paddingLeft: `${16 * option.level}px`,
-        fontSize: `${18 - option.level + 1}px`,
+        paddingLeft: `${16 * (option.level - 1)}px`,
         opacity: 0
       })
 
       const href = `#${convertStringForAnchor(option.text)}`
 
       const ref = Object.assign(createElem('a', li), {
-        innerHTML: `<span>${option.char}</span>` + option.text,
+        innerHTML: option.char + option.text,
         href
       })
     })

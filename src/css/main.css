@@ -1,7 +1,7 @@
 :root {
-  --back-color: #fbfbfb90;
+  --back-color: #fbfbfb;
   --menu-back-color: #fa0;
-  --menu-icon-size: 36px;
+  --menu-icon-size: 32px;
   --menu-background: #333;
   --menu-color: #eef;
   --menu-highlight-background: #079;
@@ -13,11 +13,26 @@
   --submenu-color-hover: #000;
   --selected-lesson-color: #fff;
   --header-back-color: linear-gradient(to right, #00000000, #00000050 30%, #000000 40%, #000 );
-  --header-back-image: var(--stars-in-line);
   --main-menu-item-height: 16px;
-  --main-font: var(--font-family);
-  --funy-font: 'Happy Monkey', Kavoon, 'Luckiest Guy', Montserrat, Roboto, Arial;
-  --font-family: Montserrat, Poppins, Roboto, sans-serif, Arial;
+  --main-font: Verdana, Geneva, Sans-Serif;
+  --funy-font: Verdana, Geneva, Sans-Serif;
+  --font-family: Verdana, Geneva, Sans-Serif;
+  --lang-switcher-font: Verdana, Geneva, Sans-Serif;
+  --welcome-win-font: Verdana, Geneva, Sans-Serif;
+  --donate-button-font: Verdana, Geneva, Sans-Serif;
+  --slogan-font: Verdana, Geneva, Sans-Serif;
+  --main-menu-width: 386px;
+  --overshadow-size: 160px;
+}
+
+body {
+  margin: 20px calc(50% - 450px);
+  font-family: var(--font-family);
+  color: #555;
+  background-color: white;
+  border: solid 20px white;
+  border-bottom: solid 70px white;
+  overflow-x: hidden;
 }
 
 .flowchart-process {
@@ -47,24 +62,10 @@
   font-size: 48px;
 }
 
-body {
-  margin: 20px calc(50% - 450px);
-  font-family: var(--font-family);
-  color: #555;
-  background-color: white;
-  border: solid 20px white;
-  border-bottom: solid 70px white;
-  overflow-x: hidden;
-}
-
-h1, h2, h3 {
-  font-family: var(--font-family);
-}
-
 a, a:visited, a:hover, a:active {
   text-decoration: none;
   font-weight: bold;
-  font-family: Montserrat, Poppins, monospace, Roboto, Arial;
+  font-family: var(--font-family);
   font-size: 16px;
 }
 
@@ -84,55 +85,46 @@ hr {
   background: transparent;
 }
 
-main-menu-component {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: var(--header-back-image), var(--header-back-color);
-  background-size: contain, 100%;
-  background-repeat: repeat-x, no-repeat;
-  background-blend-mode: overlay;
-  box-shadow: 2px 2px 4px #00000090;
-  z-index: 55;
-}
-
-main-menu-component:before {
-  content: "Client-side JS";
-  font-family: "Luckiest Guy";
-  color: #def;
-  display: block;
-  padding: 8px 16px;
-  font-size: 30px;
-  mix-blend-mode: difference;
-  -moz-letter-spacing: 2;
-  -webkit-letter-spacing: 2;
-  letter-spacing: 2;
-}
-
 lang-switcher {
   position: fixed;
   bottom: -24px;
   left: -2px;
 }
 
-@media screen and (min-width: 1350px) {
-  main-menu-component:before { padding-left: 16px; }
+glitch-logo {
+  position: absolute;
+  transform: scale(1);
+  top: 64px;
+  left: 16px;
 }
 
 @media screen and (max-width: 1320px) {
   main-menu-component:before { padding-left: 20vw; }
 }
-@media screen and (max-width: 900px) {
-  body { margin: 0; }
-  welcome-win { display: none; }
 
-  main-menu-component:before { padding-left: 80px; }
+@media screen and (max-width: 1200px) {
+  glitch-logo { transform: scale(.8); }
 }
 
-@media screen and (max-width: 480px), screen and (max-height: 480px) {
-  main-menu-component:before { display: none; }
+@media screen and (max-width: 1000px) {
+  glitch-logo {
+    left: calc(100vw - 108px);
+    top: 60px;
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body { margin: 0; }
+  glitch-logo {
+    left: calc(100vw - 90px);
+    transform: scale(.6);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  glitch-logo { display: none; }
+  welcome-win { display: none; }
 }
 
 ::-webkit-scrollbar {

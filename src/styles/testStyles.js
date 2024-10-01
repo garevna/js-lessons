@@ -23,7 +23,7 @@ h4 {
   padding: 8px 12px;
   background: #ddd;
   color: #000;
-  font-family: Montserrat, Poppins, monospace, coursive;
+  font-family: var(--font-family);
   border-radius: 4px;
   letter-spacing: 1.4px;
   width: calc(100% - 48px);

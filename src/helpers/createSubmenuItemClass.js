@@ -1,8 +1,9 @@
 const itemClass = 'sub-level-item'
 const activeItemClass = 'sub-level-item sub-level-item--active'
 
-export function createSubmenuItemClass (ref, ua, eng) {
-  const translated = ua.includes(ref) && eng.includes(ref)
+export function createSubmenuItemClass (data) {
+  const { ref, translated } = data
+  console.log(ref, translated)
 
   const activeSubItem = location.search.slice(1) || ''
 

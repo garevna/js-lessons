@@ -1,7 +1,7 @@
 {
   "parserOptions": {
     "browser" : true,
-    "ecmaVersion": 8
+    "ecmaVersion": 10
   },
   "env": {
     "node" : true,
@@ -9,7 +9,7 @@
   },
   "parserOptions": {
     "sourceType": "module",
-    "ecmaVersion": 8
+    "ecmaVersion": 10
   },
   "ignorePatterns": ["*.txt", "*.html", "*.md"]
 }

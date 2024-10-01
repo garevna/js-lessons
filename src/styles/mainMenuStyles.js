@@ -1,6 +1,6 @@
-const { /* createPath, */ minifier } = require('../helpers').default
+const { minifier } = require('../helpers').default
 
-// worker
+const { stars_in_line } = require('../assets').default
 
 if (!window[Symbol.for('icons.worker')]) {
   window[Symbol.for('icons.worker')] = Object.assign(new Worker(`${location.origin}${location.pathname}icons.worker.js`), {
@@ -8,14 +8,48 @@ if (!window[Symbol.for('icons.worker')]) {
   })
 }
 
-// _____________________________
-
 let rawSource = `
 * {
   box-sizing: border-box;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
+}
+
+#main-menu-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0008;
+  box-sizing: border-box;
+  display: none;
+}
+
+.main-menu-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 48px;
+  box-shadow: 2px 2px 4px #00000090;
+  z-index: 55;
+  background: url(${stars_in_line}), var(--header-back-color);
+  background-size: contain, 100%;
+  background-repeat: repeat-x, no-repeat;
+  background-blend-mode: overlay;
+}
+
+.main-menu-wrapper:before {
+  content: "Client-side JS";
+  font-family: var(--welcome-win-font);
+  color: #def;
+  display: block;
+  padding: 8px 16px;
+  font-size: 30px;
+  mix-blend-mode: difference;
+  letter-spacing: 2;
 }
 
 #top-donate {
@@ -43,6 +77,7 @@ let rawSource = `
   padding-top: 8px;
   margin-left: 8px;
 }
+
 .home:hover {
   color: #fa0;
 }
@@ -74,22 +109,6 @@ hr {
   height: 24px;
 }
 
-.icon, .icon-active {
-  cursor: pointer;
-}
-
-.icon {
-  width: 16px;
-  height: 16px;
-  background-image: url(--main-menu-icon-image);
-}
-
-.icon-active {
-  width: 20px;
-  height: 20px;
-  background-image: url(--main-menu-active-icon-image);
-}
-
 #search-input {
   padding: 4px 8px;
   font-size: 1rem;
@@ -98,24 +117,75 @@ hr {
   outline: solid 1px #fa0;
 }
 
-a {
-  display: inline-block;
-  width: 100%;
-  margin: 0;
-  text-decoration: none;
+.lesson-menu-item, .lesson-menu-item--active, .lesson-menu-item--expanded, .lesson-menu-item--active--expanded {
+  font-size: 0.8rem;
+  font-weight: bold;
   color: #09b;
-  transition: color 0.3s ease;
-  padding: 4px 8px;
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: left center;
+  border-left: solid 4px transparent;
   box-sizing: border-box;
 }
 
-ul {
-  list-style: none;
+.lesson-menu-item {
+  padding: 8px 24px;
+  background-image: url(--main-menu-icon);
+  background-size: 16px;
 }
 
-li.sub-level-item {
-  color: #09b;
+.lesson-menu-item--active {
+  padding: 8px 28px;
+  color: #fff;
+  background-image: url(--active-main-menu-icon);
+  background-size: 16px;
+}
+
+.lesson-menu-item--expanded {
+  padding: 8px 28px;
+  color: #fff;
+  background-image: url(--expanded-main-menu-icon);
+  background-size: 16px;
+}
+
+.lesson-menu-item--active--expanded {
+  padding: 8px 28px;
+  color: #fff;
+  background-image: url(--active-expanded-main-menu-icon);
+  background-size: 20px;
+}
+
+.lesson-menu-item:hover, .lesson-menu-item--active:hover {
+  background: #09b;
+  color: #000;
+  border-left: solid 4px #09b;
+  box-sizing: border-box;
+}
+
+.lesson-menu-item:hover {
+  background-image: url(--main-menu-icon);
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.lesson-menu-item--active:hover {
+  background-image: url(--active-main-menu-icon);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  color: #fff;
+}
+
+.sub-level-item:hover {
+  background: #09b;
+  color: #000;
+}
+
+.sub-level-item, .sub-level-item--active {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: bold;
   transition: color 0.3s ease;
   padding: 8px;
   cursor: pointer;
@@ -123,30 +193,13 @@ li.sub-level-item {
   animation: show-submenu-item 0.1s;
 }
 
-.lesson-menu-item {
-  cursor: pointer;
+.sub-level-item {
+  color: #09b;
 }
 
-.lesson-menu-item--active {
+.sub-level-item--active {
   color: #fff;
-}
-
-.lesson-menu-item:hover {
-  background: #fa0;
-  color: #000;
-}
-
-.lesson-menu-item--active:hover {
-  color: #000;
-}
-
-li.sub-level-item:hover {
-  background: #fa0;
-  color: #000;
-}
-
-li.sub-level-item--active {
-  color: #fff;
+  font-weight: normal;
 }
 
 .translated {
@@ -237,15 +290,13 @@ li.sub-level-item--active {
 
 #menu {
   position: absolute;
-  right: -16px;
+  right: -10px;
   top: 32px;
-  min-width: 320px;
-  width: max-content;
+  width: var(--main-menu-width);
   height: 101vh;
   overflow-y: auto;
-  margin-top: -45px;
+  margin-top: -40px;
   padding: 40px 24px;
-  background: #000000;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   transform-origin: 100% 100%;
@@ -254,64 +305,24 @@ li.sub-level-item--active {
   z-index: 51;
 }
 
-#menu > li {
-  padding: 4px 0;
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: #09b;
-}
-input[type="radio"]:checked ~ label {
-  color: var(--selected-lesson-color);
-}
-
 #menuToggle [type="checkbox"]:checked ~ ul {
   transform: translate(0, 0);
-  box-shadow: -4px -4px 8px #00000090;
 }
 
-ul {
-  list-style: none;
+@media screen and (min-width: 1350px) {
+  .main-menu-wrapper:before { padding-left: 16px; }
 }
 
-input[type="radio"] {
-  display: none;
+@media screen and (max-width: 1320px) {
+  .main-menu-wrapper:before { padding-left: 20vw; }
 }
-input[type="radio"] + label {
-  display: block;
-  cursor: pointer;
-}
-input[type="radio"] + label:hover {
-  background: var(--menu-back-color);
-  color: var(--menu-color-hover);
-}
-
-input[type="radio"] ~ .sub-level > li {
-  animation: hide-submenu-item 0s forwards 0s;
-  cursor: pointer;
-  position: absolute;
-  right: -100%;
-  opacity: 0;
-  font-size: 0;
-  width: 0;
-  height: 0;
-  padding: 0;
-}
-
-input[type="radio"]:checked ~ .sub-level > li { animation: show-submenu-item 0.1s forwards; }
-
-input[type="radio"]:checked ~ .sub-level > li:hover {
-  box-shadow: inset 1px 1px 3px #00000070;
-  cursor: pointer;
-}
-
-input[type="radio"]:checked ~ .sub-level > li:hover > a {
-  width: 100%;
-  color: var(--submenu-color-hover);
-  background-color: var(--submenu-back-color);
+@media screen and (max-width: 900px) {
+  .main-menu-wrapper:before { padding-left: 80px; }
 }
 
 @media screen and (max-width: 480px), screen and (max-height: 480px) {
-  graphic-header { display: none; }
+  .main-menu-wrapper:before { display: none; }
+  .main-menu-wrapper { background-size: cover, 100%; }
 }
 
 @keyframes show-submenu-item {
@@ -364,64 +375,6 @@ input[type="radio"]:checked ~ .sub-level > li:hover > a {
   10%  { height: 70vh; }
   90%  { height: 70vh; }
   100% { height: max-content; }
-}
-
-.noise-container, #noise-back, #noise {
-  width: var(--button-width);
-  height: var(--button-height);
-}
-.noise-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-#noise-back, #noise {
-  position: absolute;
-  top: 0;
-  left: 0;
-  clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
-}
-
-.noise-container:hover > #noise-back {
-  animation: clip-animation 0.3s infinite;
-}
-.noise-container:hover > #noise {
-  animation: clip-animation 0.4s infinite;
-}
-
-#noise {
-  background-color: #f50;
-
-}
-
-#noise-back {
-  background-color: #09b;
-}
-
-@keyframes clip-animation {
-    0% { clip-path: polygon(0% 0%, 5% 0%, 5% 4%, 0% 4%); }
-    2% { clip-path: polygon(0% 8%, 10% 8%, 10% 10%, 0% 10%); }
-    5% { clip-path: polygon(0% 0%, 15% 0%, 15% 5%, 0% 5%); }
-    7% { clip-path: polygon(0% 12%, 40% 12%, 40% 15%, 0% 15%); }
-   10% { clip-path: polygon(0% 25%, 20% 25%, 20% 30%, 0% 30%); }
-   15% { clip-path: polygon(0% 88%, 20% 88%, 20% 90%, 0% 90%); }
-   20% { clip-path: polygon(0% 97%, 50% 97%, 50% 100%, 0% 100%); }
-   27% { clip-path: polygon(0% 90%, 30% 90%, 30% 92%, 0% 92%); }
-   30% { clip-path: polygon(0% 50%, 40% 50%, 40% 54%, 0% 54%); }
-   34% { clip-path: polygon(0% 43%, 40% 43%, 40% 45%, 0% 45%); }
-   40% { clip-path: polygon(0% 30%, 20% 30%, 20% 32%, 0% 32%); }
-   47% { clip-path: polygon(0% 0%, 50% 0%, 50% 3%, 0% 3%); }
-   50% { clip-path: polygon(0% 15%, 30% 15%, 30% 20%, 0% 20%); }
-   55% { clip-path: polygon(0% 17%, 40% 17%, 40% 20%, 0% 20%); }
-   60% { clip-path: polygon(0% 70%, 40% 70%, 40% 73%, 0% 73%); }
-   64% { clip-path: polygon(0% 18%, 30% 18%, 30% 20%, 0% 20%); }
-   70% { clip-path: polygon(0% 80%, 20% 80%, 20% 85%, 0% 85%); }
-   72% { clip-path: polygon(0% 74%, 20% 74%, 20% 77%, 0% 77%); }
-   78% { clip-path: polygon(0% 30%, 40% 30%, 40% 33%, 0% 33%); }
-   80% { clip-path: polygon(0% 40%, 40% 40%, 40% 44%, 0% 44%); }
-   90% { clip-path: polygon(0% 10%, 30% 10%, 30% 12%, 0% 12%); }
-  100% { clip-path: polygon(0% 84%, 35% 84%, 35% 88%, 0% 88%); }
 }
 
 ::-webkit-scrollbar {

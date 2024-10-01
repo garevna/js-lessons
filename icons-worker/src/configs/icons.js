@@ -42,8 +42,10 @@ export const icons = {
   'slider-button': 'slider_1',
   'slider-button:hover': 'slider_2',
   'draw-io': 'draw_io',
-  'main-menu-icon-image': 'folder',
-  'main-menu-active-icon-image': 'folder_open',
+  'main-menu-icon': 'folder_outline',
+  'expanded-main-menu-icon': 'open_file_folder',
+  'active-main-menu-icon': 'folder',
+  'active-expanded-main-menu-icon': 'folder_open_active',
   'menu-icon-image': 'table_of_contents',
   'menu-symbol': 'table_of_contents_white'
 }

@@ -28,7 +28,7 @@ import './components/funny-slogan'
 
 import './components/donate'
 
-import Shutter from './components/Shutter'
+// import Shutter from './components/Shutter'
 
 Rainbow.extend('javascript', [
   {
@@ -73,5 +73,3 @@ window.addEventListener('resize', (event) => {
   const grids = document.getElementsByClassName('grid-component')
   Array.from(grids).forEach(elem => elem.dispatchEvent(new Event('resize')))
 })
-
-!location.search && Object.assign(location, { search: 'start-page' })

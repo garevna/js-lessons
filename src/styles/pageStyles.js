@@ -7,21 +7,6 @@ if (!window[Symbol.for('icons.worker')]) {
 }
 
 let rawSource = `
-donate-popup {
-  position: fixed;
-  left: 12px;
-  bottom: -800px;
-  border: solid 1px #999;
-  min-width: 320px;
-  max-width: 360px;
-  background: #fbfbfb;
-  padding: 32px;
-  border-radius: 4px;
-  box-shadow: 8px 8px 12px #0007;
-  transition: all .5s;
-  z-index: 505;
-}
-
 .tooltip-text {
   position: fixed;
   padding: 8px 12px;
@@ -63,7 +48,7 @@ hr  {
   color:  #dde;
   padding:  0 12px;
   margin:  12px 0;
-  font-family:  Monaco, monospace, Roboto, Arial;
+  font-family:  Monospace, monospace, Monaco, Roboto, Arial;
   font-size:  0.8rem;
   line-height:  1.8;
   overflow-y: auto;
@@ -220,13 +205,6 @@ a > span {
   vertical-align: middle;
 }
 
-glitch-logo {
-  position: absolute;
-  transform: scale(1);
-  top: 64px;
-  left: 16px;
-}
-
 table  {
   margin-bottom: 16px;
   border-collapse: collapse;
@@ -354,38 +332,16 @@ button.page-previous  {
   100%  {  font-weight:  normal;  }
 }
 
-@media screen and (max-width: 1080px) {
-  glitch-logo {
-    transform: scale(0.8);
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  glitch-logo {
-    left: calc(100vw - 108px);
-    top: 60px;
-  }
-}
-
 @media screen and (max-width: 900px)  {
   main  {
     padding: 48px 16px 48px 32px;
   }
-  glitch-logo {
-    transform: scale(0.6);
-    left: calc(100vw - 90px);
-  }
-}
-
-@media screen and (max-width: 600px) {
-  glitch-logo {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 480px), screen and (max-height: 480px) {
-  .main-page { width: 100px; height: 100px; }
-  donate-popup { left: 0; }
+  main  {
+    padding: 48px 0px 48px 0px;
+  }
   h1  {  font-size:  1.2rem;  }
   h2  {  font-size:  1.0rem;  }
   h3  {  font-size:  0.9rem;  }

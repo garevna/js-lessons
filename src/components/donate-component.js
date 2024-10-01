@@ -1,18 +1,30 @@
+const { createElem } = require('../helpers').default
+
 class DonateComponent extends HTMLElement {
   constructor () {
     super()
-    this.shadow = this.attachShadow({ mode: 'open' })
 
-    this.shadow.innerHTML += `
-      <div onclick="document.querySelector('donate-popup').style.bottom = '32px'">
-        <donate-button size="80"></donate-button>
-      </div>
-    `
+    this.button = Object.assign(createElem('donate-button', this), {
+      onclick (event) {
+        this.popup.dispatchEvent(new Event('show'))
+      }
+    })
+
+    this.popup = createElem('donate-popup', this)
+
+    this.addEventListener('main-menu-expand', function (event) {
+      if (window.innerWidth <= 460) this.button.style.display = 'none'
+    }.bind(this))
+
+    this.addEventListener('main-menu-close', function (event) {
+      this.button.style.display = 'block'
+    }.bind(this))
   }
 
   connectedCallback () {
     const size = this.getAttribute('size') || 80
-    this.shadow.querySelector('donate-button').setAttribute('size', size)
+    this.button.setAttribute('size', size)
+    this.button.popup = this.popup
   }
 }
 

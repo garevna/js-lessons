@@ -2,18 +2,18 @@ import { getIconList } from './getIconList'
 import { getIconStyles } from '../getIconStyles'
 import { createElem } from '../createElem'
 
-const { convertStringForAnchor } = require('../../configs').default
+const { pageRegExpr, pageSymbols, convertStringForAnchor } = require('../../configs').default
 
 export function parsePageContent (pageContent) {
   Object.assign(this, {
     fragments: {},
-    pageContent
+    pageContent,
+    regExprs: pageRegExpr,
+    symbols: pageSymbols
   })
 
   getIconStyles('page', getIconList(pageContent))
     .then(textContent => Object.assign(createElem('style', this), { textContent }))
-
-  this.main.innerHTML = '<glitch-logo></glitch-logo>'
 
   this.regExprs.pageContent = this.pageContent
 

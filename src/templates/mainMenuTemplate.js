@@ -1,5 +1,5 @@
 export const mainMenuTemplate = `
-<div id="main-menu-shadow" style="width: 100vw; height: 100vh; background: #0007; display: none;"></div>
+<div id="main-menu-shadow"></div>
 <!-- <graphic-header></graphic-header> -->
 <svg-nav-panel></svg-nav-panel>
 
@@ -17,7 +17,6 @@ export const mainMenuTemplate = `
       </div>
 
       <a id="go-to" href="${location.href.split('?')[0]}" class="go-to-home"></a>
-
       <hr>
     </ul>
   </div>

@@ -29,6 +29,9 @@ export function parseHeader (line) {
     text
   })
 
+  const set = new Set(this.pageContentList.map(item => JSON.stringify(item)))
+  this.pageContentList = Array.from(set).map(item => JSON.parse(item))
+
   return {
     level: headerLevel[0].length,
     text: line = line.split(headerLevel[0]).join('')

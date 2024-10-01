@@ -5,7 +5,7 @@ const rawSource = `
     display: inline-block;
     margin: 16px 0 32px 32px;
     transition: all .5s;
-    font-family: 'Happy Monkey', Montserrat, Roboto, monospace, Arial;
+    font-family: var(--slogan-font);
     font-weight: bold;
     text-align: right;
   }

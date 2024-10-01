@@ -1,4 +1,11 @@
-const { createPath, createElem, search, getMainMenuData } = require('../helpers').default
+import './main-menu-item'
+
+const {
+  createPath,
+  createElem,
+  search,
+  getContentWorker
+} = require('../helpers').default
 
 const { mainMenuStyles } = require('../styles').default
 const { mainMenuTemplate } = require('../templates').default
@@ -7,86 +14,175 @@ class MainMenuComponent extends HTMLElement {
   constructor () {
     super()
 
+    const shadow = this.attachShadow({ mode: 'closed' })
+
     Object.assign(this, {
-      shadow: this.attachShadow({ mode: 'closed' }),
+      worker: getContentWorker(),
+      shadow: Object.assign(createElem('div', shadow), {
+        className: 'main-menu-wrapper'
+      }),
       view: document.getElementsByTagName('page-element')[0],
       menuOptions: [],
-      submenuOptions: [],
       state: 'close'
     })
 
-    console.log('MAIN MENU STYLES:\n', mainMenuStyles)
-    mainMenuStyles.then(css => createElem('style', this.shadow).textContent = css)
+    mainMenuStyles.then(css => createElem('style', shadow).textContent = css)
+
+    this.addEventListener('sublevel-item-clicked', this.sublevelItemClickHandler.bind(this))
+
+    window.addEventListener('popstate', function (event) {
+      const page = location.search.slice(1)
+      this.worker.postMessage({ route: 'lesson', param: page })
+    }.bind(this))
   }
 
-  switchLang (newVal) {
-    this.menuOptions.forEach((option, index) => {
-      option.textElement.innerText = this.menuData[index][newVal]
-      option.submenuOptions
-        .forEach((item, num) => Object.assign(item, {
-          innerText: this.menuData[index].items[num][newVal]
-        }))
-    })
+  getKeywords (keywords) {
+    Object.assign(this, { keywords })
   }
 
-  static get observedAttributes () {
-    return ['lang']
+  getRefs (data) {
+    this.refs = data
+      .flatMap(lesson => lesson.items.map(item => ({ [item.ref]: lesson.ref })))
+      .reduce((res, item) => Object.assign(res, item), {})
   }
 
-  attributeChangedCallback (attrName, oldValue, newValue) {
-    newValue && this.switchLang(newValue)
+  getMainMenuData (data) {
+    this.menuOptions = []
+    this.activeRef = localStorage.getItem('active-ref') || ''
+    this.getRefs(data)
+
+    const activeSubItemRef = location.search.slice(1) || ''
+    const activeItemRef = activeSubItemRef ? this.refs[activeSubItemRef] : ''
+
+    for (const lesson of data) {
+      const { ref, title, items } = lesson
+      const lessonItem = Object.assign(document.createElement('main-menu-item'), {
+        mainMenu: this,
+        ref,
+        title,
+        items
+      })
+
+      this.menuOptions.push(lessonItem)
+    }
+  }
+
+  lessonClickHandler (event) {
+    // const { menuOption: { status, ref } } = event
+    // if (status === 'expanded') return
+    // for (const folder of this.menuOptions) folder.expanded && folder.collapse()
+    // event.menuOption.expand()
+    // localStorage.setItem('expanded', ref)
+  }
+
+  sublevelItemClickHandler (event) {
+    event.stopImmediatePropagation()
+    const { sublevelItem: { ref } } = event
+    this.navigateTo(ref)
   }
 
   connectedCallback () {
     this.shadow.innerHTML += mainMenuTemplate
 
     Object.assign(this, {
-      lang: localStorage.getItem('lang') || this.getAttribute('lang'),
+      svg: this.shadow.querySelector('svg-nav-panel'),
+      backShadow: this.shadow.querySelector('#main-menu-shadow'),
       view: document.getElementsByTagName('page-element')[0],
+      pageMenu: document.getElementsByTagName('menu-component')[0],
       donate: this.shadow.querySelector('#top-donate'),
       checkbox: this.shadow.querySelector('#menuToggle > input[type="checkbox"]'),
       menu: this.shadow.querySelector('#menu'),
-      searchInput: this.shadow.getElementById('search-input'),
+      searchInput: this.shadow.querySelector('#search-input'),
       homeButton: this.shadow.querySelector('.go-to-home'),
-      result: this.shadow.getElementById('search-result'),
+      result: this.shadow.querySelector('#search-result'),
       search: search.bind(this)
     })
 
-    this.switchLang(this.lang)
+    this.worker.addEventListener('message', this.workerMessageHandler.bind(this))
+    this.addEventListener('scroll', this.scrollHandler.bind(this))
+    this.checkbox.onclick = this.checkboxClickHandler.bind(this)
+    this.homeButton.onclick = this.homeButtonClickHandler.bind(this)
 
-    this.addEventListener('scroll', function (event) {
-      Object.assign(this.donate.style, { display: event.offset <= 200 ? 'none' : 'block' })
+    this.addEventListener('lesson-clicked', this.lessonClickHandler)
+  }
+
+  removeOption (elem, index) {
+    return new Promise(function (resolve) {
+      setTimeout(function () {
+        this.menu.removeChild(elem)
+        resolve(index)
+      }.bind(this), index * 20)
+    }.bind(this))
+  }
+
+  hide () {
+    this.state = 'close'
+    this.backShadow.style.display = 'none'
+    this.menu.style['transition-delay'] = '0s'
+    this.checkbox.checked = false
+
+    const promises = this.menuOptions.map(function (option, index) {
+      return new Promise(function (resolve) {
+        setTimeout(function () {
+          this.menu.removeChild(option)
+          resolve(index)
+        }.bind(this), index * 20)
+      }.bind(this))
     }.bind(this))
 
-    this.checkbox.onclick = function (event) {
-      this.state = this.state === 'close' ? 'expand' : 'close'
-      this.shadow.querySelector('#main-menu-shadow').style.display = this.state === 'expand' ? 'block' : 'none'
-      this.menu.style['transition-delay'] = this.state === 'expand' ? '1s' : '0s'
-      this.shadow.querySelector('svg-nav-panel').dispatchEvent(new Event(this.state))
-      this.donate.style.right = this.state === 'expand' ? '348px' : '108px'
+    Promise.all(promises)
+      .then(function () {
+        this.menu.style.opacity = '0'
+        this.svg.dispatchEvent(new Event('close'))
+        this.donate.style.right = '108px'
+      }.bind(this))
+  }
 
-      const activeLesson = this.menuOptions.find(option => option.active)
-      if (activeLesson) {
-        setTimeout(() => activeLesson.dispatchEvent(new Event('click')))
-      }
-    }.bind(this)
+  show () {
+    this.state = 'expand'
+    this.backShadow.style.display = 'block'
+    this.svg.dispatchEvent(new Event('expand'))
+    this.donate.style.right = '387px'
+    this.menu.style['transition-delay'] = '1s'
+    this.menuOptions
+      .forEach((elem, index) => setTimeout(function () { this.menu.appendChild(elem) }.bind(this), index * 20))
+    this.menu.style.opacity = '1'
+    this.checkbox.checked = true
+    const activeLesson = this.menuOptions.find(option => option.active)
+    if (activeLesson) {
+      setTimeout(() => activeLesson.dispatchEvent(new Event('click')))
+    }
+  }
 
-    this.homeButton.onclick = function (event) {
-      event.preventDefault()
-      this.checkbox.checked = !this.checkbox.checked
-      this.checkbox.dispatchEvent(new Event('click'))
+  scrollHandler (event) {
+    Object.assign(this.donate.style, { display: event.offset <= 200 ? 'none' : 'block' })
+  }
 
-      // const state = [{ route: event.target.href }, 'home', event.target.href]
-      //
-      // window.history.pushState(...state)
+  checkboxClickHandler (event) {
+    ;[this.pageMenu, this.donate]
+      .forEach(elem => elem.dispatchEvent(new Event('main-menu-' + this.state)))
 
-      this.view.setAttribute('src', `${createPath('lessons', 'start-page.md' )}`)
-    }.bind(this)
+    this.state === 'close' ? this.show() : this.hide()
+  }
 
-    this.getData(this.getAttribute('lang')).then(() => this.searchInput.oninput = this.search)
+  navigateTo (page = 'start-page') {
+    this.checkbox.checked = !this.checkbox.checked
+    this.checkbox.dispatchEvent(new Event('click'))
+    history.pushState(null, null, `/?${page}`)
+    this.worker.postMessage({ route: 'lesson', param: page })
+  }
+
+  homeButtonClickHandler (event) {
+    event.stopImmediatePropagation()
+    this.navigateTo()
+  }
+
+  workerMessageHandler (event) {
+    const { route, response } = event.data
+    if (route !== 'main-menu' && route !== 'keywords') return
+    const method = route === 'main-menu' ? 'getMainMenuData' : 'getKeywords'
+    this[method](response)
   }
 }
-
-Object.assign(MainMenuComponent.prototype, { getData: getMainMenuData })
 
 customElements.define('main-menu-component', MainMenuComponent)

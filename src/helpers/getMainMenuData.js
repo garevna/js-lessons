@@ -16,6 +16,8 @@ export async function getMainMenuData (lang) {
 
   const promises = urls.map(url => fetch(url))
 
+  window[Symbol.for('content.worker')].postMessage({ route: 'lang', param: lang })
+
   const results = (await Promise.all(promises))
     .map(response => response.json())
 
@@ -34,8 +36,8 @@ export async function getMainMenuData (lang) {
   location.protocol === 'http:' && console.warn('Main menu: invalid page references:\n', referenceErrors)
 
   this.menuData = menuData
-    .map(chapter => Object.assign(chapter, {
-      items: chapter.items.filter(item => pages.includes(item.ref))
+    .map(lesson => Object.assign(lesson, {
+      items: lesson.items.filter(item => pages.includes(item.ref))
     }))
 
   this.refs = this.menuData
@@ -44,6 +46,8 @@ export async function getMainMenuData (lang) {
 
   const activeSubItemRef = location.search.slice(1) || ''
   const activeItemRef = activeSubItemRef ? this.refs[activeSubItemRef] : ''
+
+  console.log(this.menu)
 
   for (const lesson of this.menuData) {
     const lessonItem = Object.assign(createElem('li', this.menu), {

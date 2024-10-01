@@ -1,9 +1,9 @@
 {
   "name": "icons-worker",
-  "version": "7.5.0",
+  "version": "1.1.0",
   "scripts": {
-    "worker-dev": "webpack --config webpack.config.worker.js --mode development -w",
-    "worker-prod": "webpack --config webpack.config.worker.js --mode production"
+    "dev": "webpack --config webpack.config.worker.js --mode development -w",
+    "prod": "webpack --config webpack.config.worker.js --mode production"
   },
   "dependencies": {
     "core-js": "^3.38.1"

@@ -5,7 +5,7 @@ const rawSource = `
 footer {
   display: grid;
 	grid-template-rows: repeat(3, 80px);
-	grid-template-columns: 100px 1fr 200px;
+	grid-template-columns: 100px 1fr var(--overshadow-size);
 	gap: 0px 16px;
 	justify-content: center;
 	width: 100%;
@@ -51,8 +51,8 @@ footer {
 }
 
 .overshadow {
-  width: 180px;
-  height: 180px;
+  width: var(--overshadow-size);
+  height: var(--overshadow-size);
   margin: 0;
   box-sizing: border-box;
   border-radius: 50%;
@@ -66,8 +66,8 @@ footer {
 
 .overshadow__shadow {
   position: absolute;
-  width: 180px;
-  height: 180px;
+  width: var(--overshadow-size);
+  height: var(--overshadow-size);
   opacity: 0;
   transition: .5s ease;
   transform: translate(0,30%) scale(0.0);
@@ -101,13 +101,19 @@ footer {
   z-index: 10;
 }
 
+@media screen and (max-width: 960px)  {
+  .overshadow  {
+    transform: scale(0.8);
+  }
+}
+
 @media screen and (max-width: 600px) {
   #copyright-text {
     grid-area: 3 / 2 / 4 / 5;
   }
 
   #author-photo {
-    grid-area: 2 / 4 / 3 / 4;
+    grid-area: 2 / 4 / 3 / 3;
   }
 
   #slogan-donate {
@@ -115,21 +121,15 @@ footer {
   }
 
   .overshadow, .overshadow__shadow {
-    width: 100px;
-    height: 100px;
-  }
-
-  .overshadow__text {
     display: none;
   }
 }
 
 @media screen and (max-width: 480px) {
-  footer {
-  	gap: 0;
-  }
+  footer { gap: 0; }
 
   #donate-button {
+    transform: scale(.7);
     grid-area: 2 / 1 / 3 / 1;
   }
 
@@ -140,11 +140,6 @@ footer {
 
   #author-photo {
     grid-area: 2 / 4 / 3 / 4;
-  }
-
-  .overshadow, .overshadow__shadow {
-    width: 80px;
-    height: 80px;
   }
 
   #slogan-donate {

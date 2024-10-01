@@ -1,7 +1,6 @@
-export const getLessonTemplate = (lessonTitle, lessonId) => `
-<div id="${lessonId}" class="lesson-menu-item">
-  <small class="icon"></small>
-  <b style="cursor: pointer">${lessonTitle}</b>
+export const getLessonTemplate = (title, ref) => `
+<div id="${ref}" class="lesson-menu-item">
+  ${title}
 </div>
-<ul id="${lessonId || lessonTitle}-sublevel" class="sub-level"></ul>
+<ul id="${ref || title}-sublevel" class="sub-level"></ul>
 `
