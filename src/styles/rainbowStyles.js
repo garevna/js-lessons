@@ -31,6 +31,39 @@ code  {
   font-size:  14px;
   line-height:  1.8;
 }
+
+.black .console-func-symbol:before {
+  content: 'ƒ';
+  color: #f74;
+}
+.black .console-collapsed:before {
+  content: '►';
+  color: #ddd;
+}
+.black .console-expanded:before {
+  content: '▼';
+  color: #ddd;
+}
+.black .console-calculated:before {
+  content: '(...)';
+  color: #ddd;
+}
+
+.black .console-keys {
+  color: #7af;
+}
+
+.black .console-values {
+  color: #a9f;
+}
+
+.black .console-prototype {
+  color: #aaa;
+}
+
+.black .console-prototype-value {
+  color: #eee;
+}
 `
 
 export const rainbowStyles = rainbow + minifier(rawSource)

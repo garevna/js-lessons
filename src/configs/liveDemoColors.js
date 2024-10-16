@@ -12,5 +12,9 @@ export const liveDemoColors = {
   booleanOut: '#b0d',
   operator: '#a5f',
   undefined: '#777',
-  default: '#bbb'
+  default: '#bbb',
+  func_symbol: '#f84',
+  func_body: '#eee',
+  default: '#eee',
+  console_func: '#fd0'
 }

@@ -22,7 +22,7 @@ class WelcomeWin extends HTMLElement {
         </div>
         <div id="right" style='text-align:right'>
           <img src="${createPath('images', 'personage-on-stars-180x180.gif')}" height="80">
-          <h3 style="font-family: var(--funy-font); color: #fa0;">${slogan}</h3>
+          <h3 style="font-family: var(--funny-font); color: #fa0;">${slogan}</h3>
         </div>
       </div>
     </div>

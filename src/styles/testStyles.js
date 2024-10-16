@@ -9,7 +9,6 @@ fieldset {
   margin-left: -0px;
   border-radius: 4px;
   border: none;
-  /* box-shadow: 4px 4px 8px #0009; */
   font-size: 14px;
 }
 tr {
@@ -19,13 +18,13 @@ td {
   vertical-align: middle;
 }
 h4 {
+  font-family: monospace, Monospace;
+  font-size: 17px;
   border: solid 1px #ddd;
   padding: 8px 12px;
   background: #ddd;
   color: #000;
-  font-family: var(--font-family);
   border-radius: 4px;
-  letter-spacing: 1.4px;
   width: calc(100% - 48px);
 }
 #result {
@@ -40,6 +39,8 @@ h4 {
 
 label {
   line-height: 24px;
+  font-family: Monospace, monospace;
+  font-size: 15px;
 }
 input[type="radio"] {
   appearance: none;

@@ -6,7 +6,6 @@ const rawSource = `
     margin: 16px 0 32px 32px;
     transition: all .5s;
     font-family: var(--slogan-font);
-    font-weight: bold;
     text-align: right;
   }
 

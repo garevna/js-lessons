@@ -10,47 +10,64 @@ export const mainMenu = [
       { ref: 'Chrome-dev-tools', ua: 'Chrome DevTools', ru: 'Chrome DevTools', eng: 'Chrome DevTools' },
       { ref: 'var', ua: 'Змінні. Типи даних', eng: 'Variables. Data types', ru: 'Переменные. Типы данных' },
       { ref: 'data-structures', ua: 'Структури даних', eng: 'Data structures', ru: 'Структуры данных' },
-      { ref: 'Assignments', ua: 'Оператори присвоювання', eng: 'Assignment operators', ru: 'Операторы присваивания' },
       { ref: 'Boolean', ua: 'Логічні конструкції', eng: 'Logical constructs', ru: 'Логические конструкции' },
+      { ref: 'function', ua: 'Функції', eng: 'Functions', ru: 'Функции' },
+      { ref: 'hw-flowchart', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+    ]
+  },
+  {
+    ref: 'operators',
+    ua: 'Оператори. Вирази.',
+    eng: 'Operators. Expressions.',
+    ru: 'Операторы. Выражения.',
+    items: [
+      { ref: 'Assignments', ua: 'Оператори присвоювання', eng: 'Assignment operators', ru: 'Операторы присваивания' },
       { ref: 'Conditional-operators', ua: 'Умовні оператори', eng: 'Conditional operators', ru: 'Условные операторы' },
       { ref: 'Increment', ua: 'Інкремент', eng: 'Increment', ru: 'Инкремент' },
-      { ref: 'length', ua: 'Властивість length', eng: 'The \'length\' property', ru: 'Свойство length' },
+      { ref: 'switch', ua: 'Оператор switch', eng: 'The \'switch\' operator', ru: 'Оператор switch' },
       { ref: 'for', ua: 'Оператор for', eng: 'The \'for\' operator', ru: 'Оператор for' },
-      { ref: 'UTF-8', ua: 'UTF-8', eng: 'UTF-8', ru: 'UTF-8' },
-      { ref: 'hw-01', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'while', ua: 'Цикли while | do ... while', eng: 'while | do ... while', ru: 'Циклы while | do ... while' },
+      { ref: 'for-of-for-in', ua: 'Цикли for...of | for...in', eng: 'for...of | for...in', ru: 'Циклы for...of | for...in' },
+      { ref: 'hw-operators', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
   },
   {
     ref: 'type-coercion',
-    ua: 'Приведення типів. Функції. Методи.',
-    eng: 'Type coercion. Functions. Methods.',
-    ru: 'Приведение типов. Функции. Методы',
+    ua: 'Приведення типів.',
+    eng: 'Type coercion.',
+    ru: 'Приведение типов.',
     items: [
       { ref: 'Explicit-type-conversion', ua: 'Явне приведення типів', eng: 'Explicit type coercion', ru: 'Явное приведение типов' },
       { ref: 'Implicit-type-conversion', ua: 'Неявне приведення типів', eng: 'Implicit type coercion', ru: 'Неявное приведение типов' },
       { ref: 'NaN-null-Infinity', ua: 'NaN | null | Infinity', eng: 'NaN | null | Infinity', ru: 'NaN | null | Infinity' },
       { ref: 'BigInt', ua: 'BigInt (ES10)', eng: 'BigInt (ES10)', ru: 'BigInt (ES10)' },
-      { ref: 'function', ua: 'Функції', eng: 'Functions', ru: 'Функции' },
+      { ref: 'literals', ua: 'Змінні в літералах', eng: 'Variables in literals', ru: 'Переменные в литералах' },
+      { ref: 'hw-type-coercion', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+    ]
+  },
+  {
+    ref: 'function',
+    ua: 'Методи.',
+    eng: 'Methods.',
+    ru: 'Методы',
+    items: [
       { ref: 'methods', ua: 'Методи', eng: 'Methods', ru: 'Методы' },
       { ref: 'String-methods', ua: 'Методи рядків', eng: 'Methods of strings', ru: 'Методы строк' },
       { ref: 'String-fromCharCode', ua: 'String.fromCharCode()', eng: 'String.fromCharCode()', ru: 'String.fromCharCode()' },
-      { ref: 'literals', ua: 'Змінні в літералах', eng: 'Variables in literals', ru: 'Переменные в литералах' },
+      { ref: 'UTF-8', ua: 'UTF-8', eng: 'UTF-8', ru: 'UTF-8' },
       { ref: 'Array-methods', ua: 'Методи масивів', eng: 'Methods of arrays', ru: 'Методы массивов' },
       { ref: 'Date-constructor', ua: 'Конструктор Date', eng: 'Constructor Date', ru: 'Конструктор Date' },
       { ref: 'self-work-02', ua: 'Самостійна робота', eng: 'Self-study', ru: 'Самостоятельная работа' },
       { ref: 'practice-with-XSS', ua: 'Практика (XSS)', eng: 'Practice (XSS)', ru: 'Практика (XSS)' },
-      { ref: 'hw-02', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-functions', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
   },
   {
     ref: 'function-object',
-    ua: 'Об\'єкт function',
+    ua: 'Функція як об\'єкт',
     eng: 'Function as an object',
-    ru: 'Объект function',
+    ru: 'Функция как объект',
     items: [
-      { ref: 'while', ua: 'Цикли while | do ... while', eng: 'while | do ... while', ru: 'Циклы while | do ... while' },
-      { ref: 'for-of-for-in', ua: 'Цикли for...of | for...in', eng: 'for...of | for...in', ru: 'Циклы for...of | for...in' },
-      { ref: 'default-param-values', ua: 'Параметри функції за замовчуванням', eng: 'Default values of function parameters', ru: 'Параметры функции по умолчанию' },
       { ref: 'function-object', ua: 'Функція як об\'єкт', eng: 'Function as an object', ru: 'Функция как объект' },
       { ref: 'practice-03', ua: 'Практика', eng: 'Practice', ru: 'Практика' },
       { ref: 'hw-03', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
@@ -64,23 +81,35 @@ export const mainMenu = [
     items: [
       { ref: 'native-and-host-objects', ua: 'Об\'єкти JS', eng: 'Native and host objects', ru: 'Объекты JS' },
       { ref: 'inheritance-model', ua: 'Модель успадкування JS', eng: 'JS inheritance model', ru: 'Модель наследования JS' },
+      { ref: 'value-of', ua: 'Метод valueOf()', eng: 'The \'valueOf\' method', ru: 'Метод valueOf()' },
       { ref: 'in-operator', ua: 'Оператор in', eng: 'The \'in\' operator', ru: 'Оператор in' },
+      { ref: 'Error', ua: 'Конструктор Error', eng: 'Constructor Error', ru: 'Конструктор Error' },
       { ref: 'hw-04', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
   },
   {
     ref: 'Change-call-context',
-    ua: 'Зміна контексту',
-    eng: 'Changing the call context',
-    ru: 'Изменение контекста',
+    ua: 'Зміна контексту. Замикання',
+    eng: 'Changing call context. Closure',
+    ru: 'Изменение контекста. Замыкание',
     items: [
       { ref: 'get-and-set', ua: 'Обчислювані властивості', eng: 'Computed properties', ru: 'Вычисляемые свойства' },
-      { ref: 'call-apply-bind', ua: 'Біндинг і каррінг', eng: 'Binding and currying', ru: 'Биндинг и карринг' },
-      { ref: 'call-apply-bind-currying', ua: 'Каррінг', eng: 'Currying', ru: 'Каррирование' },
-      { ref: 'value-of', ua: 'Метод valueOf()', eng: 'The \'valueOf\' method', ru: 'Метод valueOf()' },
-      { ref: 'Error', ua: 'Конструктор Error', eng: 'Constructor Error', ru: 'Конструктор Error' },
-      { ref: 'switch', ua: 'Оператор switch', eng: 'The \'switch\' operator', ru: 'Оператор switch' },
+      { ref: 'call-apply-bind', ua: 'Зміна контексту виклику', eng: 'Changing the call context', ru: 'Изменение контекста вызова' },
+      { ref: 'Closure', ua: 'Замикання', eng: 'Closure', ru: 'Замыкание' },
       { ref: 'hw-05', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+    ]
+  },
+  {
+    ref: 'functional-programming-stuff',
+    ua: 'Функціональщина',
+    eng: 'Functional stuff',
+    ru: 'Функциональщина',
+    items: [
+      { ref: 'arrow-function', ua: 'Стрілочні функції', eng: 'Arrow functions', ru: 'Стрелочные функции' },
+      { ref: 'functionality', ua: 'Функціональщина', eng: 'Functional programming stuff', ru: 'Функциональщина' },
+      { ref: 'recursion', ua: 'Рекурсія', eng: 'Recursion', ru: 'Рекурсия' },
+      { ref: 'call-apply-bind-currying', ua: 'Каррування', eng: 'Currying', ru: 'Каррирование' },
+      { ref: 'hw-08', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
   },
   {
@@ -90,23 +119,32 @@ export const mainMenu = [
     ru: 'BOM & DOM',
     items: [
       { ref: 'BOM', ua: 'Об\'єктна модель браузера', eng: 'Browser Object Model', ru: 'Объектная модель браузера' },
-      { ref: 'BOM-postMessage', ua: 'window.postMessage', eng: 'window.postMessage', ru: 'window.postMessage' },
       { ref: 'DOM', ua: 'Об\'єктна модель документа', eng: 'Document Object Model', ru: 'Объектная модель документа' },
       { ref: 'DOM-elements', ua: 'Елементи DOM', eng: 'DOM elements', ru: 'Элементы DOM' },
       { ref: 'hw-06', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
   },
   {
-    ref: 'dom-events',
-    ua: 'DOM events',
-    eng: 'DOM events',
-    ru: 'DOM events',
+    ref: 'async-staff',
+    ua: 'Асинхронщина',
+    eng: 'Async staff',
+    ru: 'Асинхронщина',
     items: [
+      { ref: 'Event-Loop', ua: 'Event Loop', eng: 'Event Loop', ru: 'Event Loop' },
+      { ref: 'Timers', ua: 'Таймери', eng: 'Timers', ru: 'Таймеры' },
+      { ref: 'BOM-postMessage', ua: 'window.postMessage', eng: 'window.postMessage', ru: 'window.postMessage' },
       { ref: 'DOM-events', ua: 'Події елементів DOM', eng: 'DOM events', ru: 'События элементов DOM' },
       { ref: 'DOM-MutationObserver', ua: 'MutationObserver', eng: 'MutationObserver', ru: 'MutationObserver' },
       { ref: 'forms', ua: 'Елементи форм', eng: 'Form elements', ru: 'Элементы форм' },
       { ref: 'hw-07', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
+  },
+  {
+    ref: 'dom-events',
+    ua: 'Події об\'єктів DOM',
+    eng: 'DOM events',
+    ru: 'События объектов DOM',
+    items: []
   },
   {
     ref: 'functional-programming-stuff',
@@ -118,8 +156,6 @@ export const mainMenu = [
       { ref: 'functionality', ua: 'Функціональщина', eng: 'Functional programming stuff', ru: 'Функциональщина' },
       { ref: 'Closure', ua: 'Замикання', eng: 'Closure', ru: 'Замыкание' },
       { ref: 'recursion', ua: 'Рекурсія', eng: 'Recursion', ru: 'Рекурсия' },
-      { ref: 'Event-Loop', ua: 'Event Loop', eng: 'Event Loop', ru: 'Event Loop' },
-      { ref: 'Timers', ua: 'Таймери', eng: 'Timers', ru: 'Таймеры' },
       { ref: 'hw-08', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
   },

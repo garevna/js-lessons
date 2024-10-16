@@ -1,5 +1,7 @@
 import './css/main.css'
 
+// import './css/fonts.css'
+
 import './css/for-rainbow.css'
 
 import './components/glitch'
@@ -33,7 +35,7 @@ import './components/donate'
 Rainbow.extend('javascript', [
   {
     name: 'keyword',
-    pattern: /var|let|const|class|function|function *|function*|return|continue|break/g
+    pattern: /var |let |const |class |function|function *|function*|return |continue|break/g
   },
   {
     name: 'keyword.magic',
@@ -46,6 +48,14 @@ Rainbow.extend('javascript', [
   {
     name: 'template-literal',
     pattern: /(\$\{.+\})/g
+  },
+  {
+    name: 'support.method',
+    pattern: /getElementById|getElementsByName|getElementsByTagName|getElementsByClassName|querySelector|querySelectorAll|createElement|createTextNode|createComment|createAttribute|createDocumentFragment|appendChild/g
+  },
+  {
+    name: 'console-methods',
+    pattern: /console|log|warn|dir|console.log|console.warn|console.dir|console.time|console.timeEnd|console.table/g
   }
 ])
 

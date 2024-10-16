@@ -5,7 +5,7 @@
 @@@@
 
 <br><br>В цепочке прототипов любого элемента DOM есть объект (класс) **~EventTarget~**.<br>Благодаря этому все элементы DOM способны "реагировать" на события.<br><br><br>Выведем в консоль этот объект:
-![](images/see-object-look-for-constructor-ukr.png)
+![](images/object-constructor.svg)
 
 @@@@
 

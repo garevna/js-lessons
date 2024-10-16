@@ -109,12 +109,27 @@ hr {
   height: 24px;
 }
 
-#search-input {
+#search-component {
+  display: inline-block;
   padding: 4px 8px;
-  font-size: 1rem;
   border-radius: 4px;
+  border: solid 1px #fa0;
+  background: transparent;
+}
+
+#search-input {
+  font-size: 1rem;
+  color: #eee;
+  background: transparent;
   border: none;
-  outline: solid 1px #fa0;
+  outline: none;
+}
+
+#search-reset {
+  border: 0;
+  background: transparent;
+  color: #fa0;
+  cursor: pointer;
 }
 
 .lesson-menu-item, .lesson-menu-item--active, .lesson-menu-item--expanded, .lesson-menu-item--active--expanded {
@@ -143,7 +158,7 @@ hr {
 
 .lesson-menu-item--expanded {
   padding: 8px 28px;
-  color: #fff;
+  color: #fa0;
   background-image: url(--expanded-main-menu-icon);
   background-size: 16px;
 }

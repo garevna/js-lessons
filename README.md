@@ -4,6 +4,10 @@
 
 ## Description
 
+Symbols ◧ or ◨ will be substituted with logical operator **||**.
+
+Content delivery system is controlled with content-worker.
+
 ### images
 
 **`![](illustrations/dog.png)`** - the image file images/lessons/dog.png
@@ -18,21 +22,48 @@ ____________________________________________________
 
 ### icons
 
+We use icon-worker for icons.
+
+**Request** to worker should be an object `{ route, iconList }`.
+
+**route** is required and may be '**main-menu**', '**menu**', '**page**' or '**spoiler**'.
+
+**iconList** is not required.
+
+If you don't send **iconList** to worker then only default icons for this route will be in response/
+
+**Response from worker will be the object `{ route, iconList, response }`.
+
+**response** will be the array of objects
+
+```js
+{
+  [key]: getIcon(key)
+}
+```
+
+Available keys:
+
+['house', 'home', 'mag', 'search', 'err', 'error', 'warn', 'warning', 'close', 'negation', 'icon', 'cap', 'coffee', 'link', 'link-ico', 'dir', 'folder-open', 'opened', 'hw', 'mortar_board', 'study', 'pin', 'pushpin', 'exclamation', 'yes', 'question', 'open-in-new', 'page-next', 'page-previous', 'sand-watch', 'paper', 'file', 'smile', 'emotion', 'require', 'point_up', 'good', 'exelent', 'thumbsup', 'hourglass', 'wait', 'clock', 'white_check_mark',
+'mail', 'speach_balloon', 'speach-balloon', 'git-ver', 'google-maps', 'slider-button', 'draw-io', 'main-menu-icon', 'expanded-main-menu-icon', 'active-main-menu-icon', 'active-expanded-main-menu-icon', 'menu-icon-image', 'menu-symbol']
+
+#### Using icons
+
 **`![](icons/octocat.png)`** - the image file icons/octocat.png
 
-**`![ico-70 octocat]`** - icon <img width="70" src="https://garevna.github.io/js-lessons/icons/octocat.png" />
+**`![ico-70 octocat]`** - icon <img width="70" src="data:image/png;base64,..." />
 
-**`![ico-50 octocat]`** - icon <img width="50" src="https://garevna.github.io/js-lessons/icons/octocat.png" />
+**`![ico-50 octocat]`** - icon <img width="50" src="data:image/png;base64,..." />
 
-**`![ico-40 octocat]`** - icon <img width="40" src="https://garevna.github.io/js-lessons/icons/octocat.png" />
+**`![ico-40 octocat]`** - icon <img width="40" src="data:image/png;base64,..." />
 
-**`![ico-35 octocat]`** - icon <img width="35" src="https://garevna.github.io/js-lessons/icons/octocat.png" />
+**`![ico-35 octocat]`** - icon <img width="35" src="data:image/png;base64,..." />
 
-**`![ico-30 octocat]`** - icon <img width="30" src="https://garevna.github.io/js-lessons/icons/octocat.png" />
+**`![ico-30 octocat]`** - icon <img width="30" src="data:image/png;base64,..." />
 
-**`![ico-25 octocat]`** - icon <img width="25" src="https://garevna.github.io/js-lessons/icons/octocat.png" />
+**`![ico-25 octocat]`** - icon <img width="25" src="data:image/png;base64,..." />
 
-**`![ico-20 octocat]`** - icon <img width="20" src="https://garevna.github.io/js-lessons/icons/octocat.png" />
+**`![ico-20 octocat]`** - icon <img width="20" src="data:image/png;base64,..." />
 
 _____________________________________
 
@@ -54,18 +85,35 @@ ________________________
 ![](https://garevna.github.io/js-samples/pictures/tests.png)
 _________________________
 
+### Console demo with template
+
+§§§§ Demo | boolean_01_template §§§§
+
+___________________________________________________
+
 ### Links
 
-#### Internal
+**Internal**
 
 `[►►►Принцип работы►►►](page/Array-iteration-methods-theory.md)`
 
-##### External
+**External**
 
 `[![ico-30 hw] Tests](test/assignments)`
 
 `[![ico-30 hw] Quiz](quiz/arrowFunctions)`
 
-`[![ico-30 link] for](external/mdn-for)`
+_____________________________________________
 
-`[:::**Пример в песочнице**:::](https://plnkr.co/edit/jsH8XKmc0B6g4q8iPZBf?p=preview/)`
+**You may use this templates for links:**
+
+`[%%%w3schools%%%](external/w3-comparison)`
+
+`[:::Sandbox example:::](https://plnkr.co/edit/jsH8XKmc0B6g4q8iPZBf?p=preview/)`
+
+`[►►►Boolean►►►](page/Boolean)`
+
+`[◄◄◄Variables and data types◄◄◄](page/var)`
+
+
+![](https://garevna.github.io/js-samples/images/links.png)

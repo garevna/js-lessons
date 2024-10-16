@@ -19,6 +19,14 @@ pre .support.function, pre .constant.language {
   font-weight: bold;
 }
 
+pre .support.method {
+  color: #009070;
+}
+
+pre .console-methods, .function.call {
+  color: #808000;
+}
+
 pre .storage.type {
   color: firebrick;
 }

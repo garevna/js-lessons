@@ -1,9 +1,9 @@
 import './main-menu-item'
+import './search-component'
 
 const {
   createPath,
   createElem,
-  search,
   getContentWorker
 } = require('../helpers').default
 
@@ -47,6 +47,7 @@ class MainMenuComponent extends HTMLElement {
   }
 
   getMainMenuData (data) {
+    this.menuOptions.forEach(option => option.remove())
     this.menuOptions = []
     this.activeRef = localStorage.getItem('active-ref') || ''
     this.getRefs(data)
@@ -65,9 +66,12 @@ class MainMenuComponent extends HTMLElement {
 
       this.menuOptions.push(lessonItem)
     }
+
+    for (const option of this.menuOptions) this.menu.appendChild(option)
   }
 
   lessonClickHandler (event) {
+    console.log(event)
     // const { menuOption: { status, ref } } = event
     // if (status === 'expanded') return
     // for (const folder of this.menuOptions) folder.expanded && folder.collapse()
@@ -84,18 +88,25 @@ class MainMenuComponent extends HTMLElement {
   connectedCallback () {
     this.shadow.innerHTML += mainMenuTemplate
 
+    const [svg, backShadow, donate, checkbox, menu, searchInput, homeButton] = [
+      'svg-nav-panel',
+      '#main-menu-shadow',
+      '#top-donate',
+      '#menuToggle > input[type="checkbox"]',
+      '#menu',
+      '#search-input',
+      '#go-to-home'
+    ].map(selector => this.shadow.querySelector(selector))
+
     Object.assign(this, {
-      svg: this.shadow.querySelector('svg-nav-panel'),
-      backShadow: this.shadow.querySelector('#main-menu-shadow'),
-      view: document.getElementsByTagName('page-element')[0],
-      pageMenu: document.getElementsByTagName('menu-component')[0],
-      donate: this.shadow.querySelector('#top-donate'),
-      checkbox: this.shadow.querySelector('#menuToggle > input[type="checkbox"]'),
-      menu: this.shadow.querySelector('#menu'),
-      searchInput: this.shadow.querySelector('#search-input'),
-      homeButton: this.shadow.querySelector('.go-to-home'),
-      result: this.shadow.querySelector('#search-result'),
-      search: search.bind(this)
+      svg,
+      backShadow,
+      donate,
+      checkbox,
+      menu,
+      searchInput,
+      homeButton,
+      pageMenu: document.getElementsByTagName('menu-component')[0]
     })
 
     this.worker.addEventListener('message', this.workerMessageHandler.bind(this))

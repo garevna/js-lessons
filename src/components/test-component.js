@@ -1,4 +1,5 @@
 const { createElem, createPath } = require('../helpers').default
+const { formatText } = require('../helpers/page').default
 
 const { getTestElement } = require('../templates').default
 
@@ -11,7 +12,7 @@ const getVariantTemplate = (choiceVariant, index) => `
     name="choice-variants"
     value=${choiceVariant}
   />
-  <label for="choice-${index}">${choiceVariant}</label>
+  <label for="choice-${index}">${choiceVariant.replaceAll('\'', '')}</label>
 `
 
 class TestComponent extends HTMLElement {
@@ -42,6 +43,7 @@ class TestComponent extends HTMLElement {
     Object.assign(this, { quizQuestion, variants, rightChoice })
 
     this.radios = this.container.getElementsByTagName('input')
+
     for (const elem of this.radios) {
       elem.onclick = function (event) {
         for (const elem of this.radios) {
@@ -72,7 +74,9 @@ class TestComponent extends HTMLElement {
   attributeChangedCallback (attrName, oldVal, newVal) {
     switch (attrName) {
       case 'quiz-question':
-        this.question.textContent = newVal
+        this.question.innerHTML = newVal
+          .replaceAll('◧', '&#10072;&#10072;')
+          .replaceAll('◨', '&#10072;&#10072;')
         break
       case 'right-choice':
         Object.assign(this, { rightChoice: newVal })

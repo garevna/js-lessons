@@ -82,6 +82,7 @@ class MainMenuItem extends HTMLElement {
   }
 
   collapse () {
+    if (!this.expanded || !this.subLevel.children.length) return
     this.expanded = false
     let index = 0
     for (const option of this.submenuOptions) {
@@ -93,7 +94,7 @@ class MainMenuItem extends HTMLElement {
   }
 
   stylize () {
-    this.clickableArea.className = this.active
+    if (this.clickableArea) this.clickableArea.className = this.active
       ? 'lesson-menu-item--active' + (this.expanded ? '--expanded' : '')
       : 'lesson-menu-item' + (this.expanded ? '--expanded' : '')
   }

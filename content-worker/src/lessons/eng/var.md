@@ -281,6 +281,24 @@ The widest range of characters from various alphabets is represented in the UTF-
 
 [%%%**UTF-8**%%%](https://blog.hubspot.com/website/what-is-utf-8 ) encoding is now the dominant one on the web.
 
+________________________________________
+
+Since strings are an ordered set of characters, the number of characters in a string determines its **length**, is this logic?
+So strings have a property **~length~**, which is available to us as follows:
+
+§§§§ Demo | var_string_length_template §§§§
+
+By the way, note the following expression:
+
+~~~console
+message + string
+~~~
+
+Here the **~ + ~** operator acts as a **string concatenation** operator.
+This creates some inconvenience, since we are more used to treating it as an **arithmetic operator** of addition.
+^^With **dynamic typing**, this duality of the **~ + ~** operator can lead to unpleasant side effects, which we will discuss in the "Type Conversion" section.^^
+^^Later we will learn about **template literals**, which will allow us to avoid string concatenation.^^
+
 ______________________________________________________________
 
 ### ![ico-25 icon] Number
@@ -609,9 +627,3 @@ The **~typeof~** operator works "the old fashioned way", because if the principl
 However, when using it, it is worth remembering its "imperfection".
 
 When comparing the data types of two variables, keep in mind that the characters are arranged in alphabetical order in the encoding table, so when comparing, the larger one will be the one which is located further from the beginning of the table.
-
-______________________________________________________________
-
-[![ico-30 hw] Data types](test/dataTypes)
-
-[![ico-30 hw] Operator **typeof**](test/typeof)

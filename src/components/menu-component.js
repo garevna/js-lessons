@@ -1,5 +1,5 @@
 const { menuStyles } = require('../styles').default
-const { createElem, createPath } = require('../helpers').default
+const { createElem, createPath, getContentWorker } = require('../helpers').default
 const { convertStringForAnchor } = require('../configs').default
 
 class MenuComponent extends HTMLElement {
@@ -13,11 +13,17 @@ class MenuComponent extends HTMLElement {
       `
     })
 
+    this.addEventListener('goto-on-page', function (event) {
+      const { header } = event
+    })
+
     menuStyles.then(css => createElem('style', this.shadow).textContent = css)
 
     Object.assign(this, {
+      worker: getContentWorker(),
       button: this.shadow.querySelector('#page-navigation-menu'),
-      menuContent: this.shadow.querySelector('#page-navigation-menu-container')
+      menuContent: this.shadow.querySelector('#page-navigation-menu-container'),
+      options: []
     })
 
     this.addEventListener('main-menu-expand', function (event) {
@@ -26,6 +32,23 @@ class MenuComponent extends HTMLElement {
     this.addEventListener('main-menu-close', function (event) {
       this.button.style.display = 'none'
     })
+  }
+
+  connectedCallback () {
+    this.worker.addEventListener('message', function (event) {
+      const { route, response } = event.data
+      if (route !== 'page-menu') return
+      event.stopImmediatePropagation()
+      this.options = response
+      this.buildMenu()
+    }.bind(this))
+
+    this.icon = this.shadow.querySelector('#page-navigation-menu')
+    this.hide()
+
+    this.button.onclick = this.show.bind(this)
+
+    window.addEventListener('mouseup', this.clickHandler.bind(this))
   }
 
   show () {
@@ -40,6 +63,10 @@ class MenuComponent extends HTMLElement {
   }
 
   hide () {
+    Array.from(this.menuContent.children).forEach((li, index) => setTimeout(() => Object.assign(li.style, {
+      opacity: 0,
+      transform: 'translate(0, 0)'
+    }), 100 * index))
     Object.assign(this.menuContent.style, {
       height: '0px',
       padding: '0px'
@@ -56,25 +83,10 @@ class MenuComponent extends HTMLElement {
     }
   }
 
-  connectedCallback () {
-    this.icon = this.shadow.querySelector('#page-navigation-menu')
-    this.hide()
-
-    this.button.onclick = this.show.bind(this)
-
-    window.addEventListener('mouseup', this.clickHandler.bind(this))
-  }
-
-  static get observedAttributes() {
-    return ['options']
-  }
-
-  attributeChangedCallback (attrName, oldVal, newVal) {
+  buildMenu () {
     Object.assign(this.menuContent, { innerHTML: '' })
 
-    if (!newVal) return
-
-    this.options = JSON.parse(this.getAttribute('options'))
+    if (!this.options.length) return
 
     this.options.forEach((option, index, arr) => {
       const char = arr[index + 1] && arr[index + 1].level > option.level ? '▼' : '►'
@@ -84,8 +96,6 @@ class MenuComponent extends HTMLElement {
     const notFound = !!this.options.find(option => option.text.indexOf('404') !== -1)
     const visible = !!location.search && !notFound
     this.style.visibility = visible ? 'visible' : 'hidden'
-
-    this.setAttribute('options', '')
 
     this.options.forEach((option, index) => {
       const li = createElem('li', this.menuContent)
@@ -97,7 +107,7 @@ class MenuComponent extends HTMLElement {
       const href = `#${convertStringForAnchor(option.text)}`
 
       const ref = Object.assign(createElem('a', li), {
-        innerHTML: option.char + option.text,
+        innerHTML: option.char + ' ' + option.text,
         href
       })
     })

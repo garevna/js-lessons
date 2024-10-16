@@ -15,12 +15,12 @@
   --header-back-color: linear-gradient(to right, #00000000, #00000050 30%, #000000 40%, #000 );
   --main-menu-item-height: 16px;
   --main-font: Verdana, Geneva, Sans-Serif;
-  --funy-font: Verdana, Geneva, Sans-Serif;
+  --funny-font: Comic Sans MS, Textile, cursive;
   --font-family: Verdana, Geneva, Sans-Serif;
   --lang-switcher-font: Verdana, Geneva, Sans-Serif;
   --welcome-win-font: Verdana, Geneva, Sans-Serif;
   --donate-button-font: Verdana, Geneva, Sans-Serif;
-  --slogan-font: Verdana, Geneva, Sans-Serif;
+  --slogan-font: Comic Sans MS, Textile, cursive;
   --main-menu-width: 386px;
   --overshadow-size: 160px;
 }

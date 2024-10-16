@@ -43,7 +43,7 @@ class GraphicHeader extends HTMLElement {
         stroke: none;
       }
       h3 {
-        font-family: var(--funy-font);
+        font-family: var(--funny-font);
         color: #f50;
       }
 

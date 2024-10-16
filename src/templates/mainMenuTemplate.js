@@ -10,13 +10,8 @@ export const mainMenuTemplate = `
     <span></span>
     <span></span>
     <ul id="menu">
-      <div class="search-wrapper">
-        <input id="search-input">
-        <div class="search-icon"></div>
-        <div id="search-result"></div>
-      </div>
-
-      <a id="go-to" href="${location.href.split('?')[0]}" class="go-to-home"></a>
+      <search-component></search-component>
+      <a id="go-to-home" href="${location.href.split('?')[0]}" class="go-to-home"></a>
       <hr>
     </ul>
   </div>

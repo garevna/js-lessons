@@ -1,19 +1,25 @@
-# ![ico-30 study] Document Object Model (DOM)
+# ![ico-35 study] Document Object Model (DOM)
 
-_____________________
+## ![ico-30 icon] Методы объектов DOM
 
-## ![ico-25 icon] Методы элементов DOM
+Вот тут и начинается самое прикольное: открывая и закрывая дверцы модели машинки, мы будем заставлять браузер открывать и закрывать дверцы оригинала.
 
-### ![ico-20 icon] appendChild()
+Это и есть браузерный **API** для доступа к тому, что браузер отображает на странице.
 
-Добавляет элементу дочерний элемент
+Понятное дело, дверцы тут ни при чем. Речь идет о том, что умеет делать браузер, и что из этого его функционала становится доступно нам посредством объектной модели.
+
+Это методы как самого объекта **~document~**, так и всех **элементов DOM**.
+
+### ![ico-25 icon] appendChild()
+
+Добавляет элементу дочерний элемент.
 
 ◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~html
-<body>
-  <div id="demo"></div>
-</body>
+&ltbody>
+  &ltdiv id="demo">&lt/div>
+&lt/body>
 ~~~
 
 ~~~js
@@ -27,11 +33,11 @@ document
 ◘◘Результат◘◘
 
 ~~~html
-<body>
-  <div id="demo">
-    <section>Hello</section>
-  </div>
-</body>
+&ltbody>
+  &ltdiv id="demo">
+    &ltsection>Hello&lt/section>
+  &lt/div>
+&lt/body>
 ~~~
 
 _______________________
@@ -53,12 +59,12 @@ style
 ◘◘Результат◘◘
 
 ~~~html
-<head>
-  <style>
+&lthead>
+  &ltstyle>
     p { color: red; }
     div { color: blue; }
-  </style>
-</head>
+  &lt/style>
+&lt/head>
 ~~~
 
 _______________________________________
@@ -73,7 +79,7 @@ document.body.appendChild(script)
 
 _________________________________________
 
-### ![ico-20 icon] removeChild()
+### ![ico-25 icon] removeChild()
 
 Удаление элемента
 
@@ -86,12 +92,12 @@ ____________________________
 ◘◘![ico-25 cap] ** 4**◘◘
 
 ~~~html
-<body>
-  <div id="demo">
-    <section id="section"></section>
-    <figure class="figure"></figure>
-  </div>
-</body>
+&ltbody>
+  &ltdiv id="demo">
+    &ltsection id="section">&lt/section>
+    &ltfigure class="figure">&lt/figure>
+  &lt/div>
+&lt/body>
 ~~~
 
 ~~~js
@@ -106,18 +112,18 @@ figure.appendChild(removed)
 ◘◘Результат◘◘
 
 ~~~html
-<body>
-  <div id="demo">
-    <figure class="figure">
-      <section id="section"></section>
-    </figure>
-  </div>
-</body>
+&ltbody>
+  &ltdiv id="demo">
+    &ltfigure class="figure">
+      &ltsection id="section">&lt/section>
+    &lt/figure>
+  &lt/div>
+&lt/body>
 ~~~
 
 _______________________________
 
-### ![ico-20 icon] insertBefore()
+### ![ico-25 icon] insertBefore()
 
 ◘◘![ico-25 cap] ** 5**◘◘
 
@@ -137,71 +143,71 @@ main.insertBefore(document.createElement('p'), section)
 ◘◘Результат◘◘
 
 ~~~html
-<body>
-  <main>
-    <p></p>
-    <section></section>
-    <figure></figure>
-  </main>
-</body>
+&ltbody>
+  &ltmain>
+    &ltp>&lt/p>
+    &ltsection>&lt/section>
+    &ltfigure>&lt/figure>
+  &lt/main>
+&lt/body>
 ~~~
 
 _____________________________________________
 
-### ![ico-20 icon] insertAdjacentHTML()
+### ![ico-25 icon] insertAdjacentHTML()
 
 Вставим в разметку элементы _~main~_, _~section~_ и _~figure~_ следующим образом:
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
 ~~~html
-<body>
-  <main>
-    <section></section>
-    <figure></figure>
-  </main>
-</body>
+&ltbody>
+  &ltmain>
+    &ltsection>&lt/section>
+    &ltfigure>&lt/figure>
+  &lt/main>
+&lt/body>
 ~~~
 
 А теперь выполним следующий код в консоли:
 
 ~~~js
 var section = document.body.querySelector('section')
-section.insertAdjacentHTML('beforeBegin', `<p>beforeBegin</p>`)
-section.insertAdjacentHTML('afterBegin', `<p>afterBegin</p>`)
-section.insertAdjacentHTML('beforeEnd', `<p>beforeEnd</p>`)
-section.insertAdjacentHTML('afterEnd', `<p>afterEnd</p>`)
+section.insertAdjacentHTML('beforeBegin', '<p>beforeBegin</p>')
+section.insertAdjacentHTML('afterBegin', '<p>afterBegin</p>')
+section.insertAdjacentHTML('beforeEnd', '<p>beforeEnd</p>')
+section.insertAdjacentHTML('afterEnd', '<p>afterEnd</p>')
 ~~~
 
 ◘◘Результат◘◘
 
 ~~~html
-<body>
-  <main>
-    <p>beforeBegin</p>
-    <section>
-      <p>afterBegin</p>
-      <p>beforeEnd</p>
-    </section>
-    <p>afterEnd</p>
-    <figure></figure>
-  </main>
-</body>
+&ltbody>
+  &lt;main>
+    &lt;p>beforeBegin&lt;/p>
+    &lt;section>
+      &lt;p>afterBegin&lt/p>
+      &ltp>beforeEnd&lt/p>
+    &lt/section>
+    &ltp>afterEnd&lt/p>
+    &ltfigure>&lt/figure>
+  &lt/main>
+&lt/body>
 ~~~
 
 ______________________________________________
 
-### ![ico-20 icon] insertAdjacentElement()
+### ![ico-25 icon] insertAdjacentElement()
 
 ◘◘![ico-25 cap] ** 7**◘◘
 
 ~~~html
-<body>
-  <main>
-    <section id="demo"></section>
-    <figure></figure>
-  </main>
-</body>
+&ltbody>
+  &ltmain>
+    &ltsection id="demo">&lt/section>
+    &ltfigure>&lt/figure>
+  &lt/main>
+&lt/body>
 ~~~
 
 ~~~js
@@ -221,27 +227,27 @@ document.getElementsByTagName('figure')[0]
 ◘◘Результат◘◘
 
 ~~~html
-<body>
-  <main>
-    <img>
-    <section id="demo">
-      <p></p>
-    </section>
-    <figure>
-      <li></li>
-    </figure>
-    <h3></h3>
-  </main>
-</body>
+&ltbody>
+  &ltmain>
+    &ltimg>
+    &ltsection id="demo">
+      &ltp>&lt/p>
+    &lt/section>
+    &ltfigure>
+      &ltli>&lt/li>
+    &lt/figure>
+    &lth3>&lt/h3>
+  &lt/main>
+&lt/body>
 ~~~
 
 ________________________________________
 
-## ![ico-25 icon] Свойства элементов DOM
+## ![ico-30 icon] Свойства элементов DOM
 
 ____________________________
 
-### ![ico-20 icon] childNodes
+### ![ico-25 icon] childNodes
 
 Объект **~NodeList~**
 
@@ -249,28 +255,28 @@ ____________________________
 
 ~~~html
 &lt;body>
-  Hello, students!
-  <div
+  Hi, students!
+  &ltdiv
     class="container"
-    title="Контейнер"
+    title="Container"
   >
-    <a
+    &lta
       class="paragraph"
       href="https://translate.google.com/"
-      title="Перевод"
+      title="Google translate"
     >
-      Translator
-    </a>
-    <img
+      Google translate
+    &lt/a>
+    &ltimg
       src="http://www.abc.net.au/news/image/9154542-1x1-940x940.jpg"
       width="200"
       id="picture"
       class="galleryPicture"
     />
-  </div>
-  <h1 class="header">Welcome!</h1>
-  <p class="paragraph">You study JS</p>
-</body>
+  &lt/div>
+  &lth1 class="header">Welcome!&lt/h1>
+  &ltp class="paragraph">You study JS&lt/p>
+&lt/body>
 ~~~
 
 Выведем в консоль все дочерние узлы ~document.body~
@@ -294,9 +300,9 @@ document.body.childNodes
   ► __proto__: NodeList
 ~~~
 
-![ico-20 warn] Обратите внимание, что все переводы строк ( и пустые строки ) рассматриваются как тестовые узлы документа
+![ico-20 warn] Обратите внимание, что все переводы строк (и пустые строки) рассматриваются как тестовые узлы документа.
 
-Теперь выведем в консоль все дочерние узлы первого элемента с атрибутом **_title_**
+Теперь выведем в консоль все дочерние узлы первого элемента с атрибутом **_title_**:
 
 ~~~js
 document.querySelector('[title]').childNodes
@@ -316,15 +322,15 @@ document.querySelector('[title]').childNodes
 ~~~
 ___________________
 
-[![ico-20 link] w3schools](external/w3-child-nodes)
+[![ico-20 link] **w3schools**](external/w3-child-nodes )
 
 _________________________________
 
-### ![ico-20 icon] children
+### ![ico-25 icon] children
 
 Объект **~HTMLCollection~**
 
-Используем разметку предыдущего примера
+Используем разметку предыдущего примера.
 
 ~~~js
 document.body.children
@@ -343,19 +349,19 @@ document.body.children
 
 ___________________________________
 
-### ![ico-20 icon] parentNode
+### ![ico-25 icon] parentNode
 
-^^Ссылка на родительский элемент (контейнер, в котором находится элемент)^^
+^^Ссылка на родительский элемент (контейнер, в котором находится элемент).^^
 
 ◘◘![ico-25 cap] ** 9**◘◘
 
 ~~~html
-<body>
-  <div id="demo">
-    <section id="section"></section>
-    <figure></figure>
-  </div>
-</body>
+&ltbody>
+  &ltdiv id="demo">
+    &ltsection id="section">&lt/section>
+    &ltfigure>&lt/figure>
+  &lt/div>
+&lt/body>
 ~~~
 
 ~~~js
@@ -365,7 +371,7 @@ console.dir(section.parentNode)  // ► div#demo
 
 _____________________________________________
 
-### ![ico-20 icon] on + тип события
+### ![ico-25 icon] on + тип события
 
 Все свойства элементов DOM, начинающиеся на **~on~**, являются потенциальными ссылками на обработчика соответствующего события
 
@@ -387,7 +393,7 @@ for (var prop in section) {
 
 _____________________________________
 
-### ![ico-20 icon] Memory leaks
+### ![ico-25 icon] Memory leaks
 
 Предположим, вы сохраняете ссылку на конкретную ячейку таблицы (тег &lt;td>) в своем коде.
 В какой-то момент в будущем вы решите удалить таблицу из DOM, но забываете удалить ссылку на эту ячейку.
@@ -398,7 +404,17 @@ _____________________________________
 
 _______________________________________
 
-### ![ico-20 icon] Атрибуты тегов
+### ![ico-25 icon] Атрибуты тегов
+
+Почти все атрибуты тегов, предусмотренные в спецификации языка HTML5, благополучно маппируются в одноименные свойства объектов DOM.
+Например, в разметке присутствует тег **~&lt;img />~** с атрибутом **~src~**. В объектной модели документа ему будет соответствовать объект, имеющий свойство **~src~**. Значение этого свойства будет таким же, как и у атрибута **~src~**.
+Исключение составляет атрибут **~class~**, поскольку этот идентификатор используется в JS.
+Поэтому аттрибут **~class~** в объектной модели документа представлен свойством **~className~**.
+
+Таким образом, нам не обязательно использовать описанные ниже методы для доступа к значениям стандартных атрибутов.
+
+Однако мы можем устанавливать собственные атрибуты тегов, которые не предусмотрены спецификацией языка.
+В этом случае для получения и установки значений этих атрибутов нам необходимы следующие методы.
 
 ◘◘![ico-25 cap] **setAttribute** | **getAttribute**◘◘
 
@@ -458,7 +474,70 @@ document.body.appendChild(btn)
 
 _________________________________________
 
-[![ico-30 hw] Упражнения](test/dom)
+## ![ico-30 hw] Tests
+
+◘◘** 1**◘◘
+~~~js
+var elem = document.body
+  .appendChild(document.createElement('p'))
+
+elem.tagName = 'div'
+~~~
+
+→→→ Какой элемент появится в DOM? | p, div, 'будет сгенерировано исключение' | p→→→
+
+
+◘◘** 2**◘◘
+~~~js
+document.title = 'DOM'
+~~~
+
+→→→ Что изменится после выполнения скрипта? | 'ничего', 'текст на странице', 'надпись на вкладке' | надпись на вкладке→→→
+
+◘◘** 3**◘◘
+~~~js
+var paragraph = [
+  'BOM',
+  'DOM',
+  'HTMLElement',
+  'Browser Object Model'
+]
+
+for (var text of paragraph) {
+  document.body
+    .appendChild(document.createElement('p'))
+    .innerHTML = text
+}
+~~~
+
+→→→ Сколько элементов будет добавлено на страницу? | 0, 3, 1, 4 | 4→→→
+
+
+◘◘** 4**◘◘
+
+→→→ Какой тип данных у свойства innerHTML элемента DOM? | 'boolean', 'undefined', 'string', 'function', 'number', 'object' | string→→→
+
+
+◘◘** 5**◘◘
+~~~js
+function showProto (elem) {
+  var proto = elem.__proto__
+  var result = []
+  while (proto) {
+    result.push(proto.constructor.name)
+    proto = proto.__proto__
+  }
+  return { [elem.tagName]: result }
+}
+
+var elems = ['p', 'img', 'a', 'div', 'input', 'style', 'script']
+
+elems.forEach(function (elem) {
+  console.log(showProto(document.createElement(elem)))
+})
+~~~
+
+→→→ Что итерирует функция showProto? | 'массив html-элементов', 'свойства html-элемента', 'цепочку прототипов html-элемента' | цепочку прототипов html-элемента→→→
 
 _________________________________
 

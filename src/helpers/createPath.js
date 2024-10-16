@@ -10,6 +10,7 @@ const available = {
   illustrations: 'images/lessons/',
   demo: 'lessons/js',
   external: 'external/',
+  inside_the_page: '',
   externalIcons: 'icons/',
   files: 'files/',
   '404': 'page not found'

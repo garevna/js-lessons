@@ -36,9 +36,9 @@ const rawSource = `
   }
 
   #left { left: 4%; }
-  #left:before { content: "<"; }
+  #left:before { content: "❮"; }
   #right { right: 4%; }
-  #right:before { content: ">"; }
+  #right:before { content: "❯"; }
 
   #close:before  {
     content:  "✖";

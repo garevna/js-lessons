@@ -2,44 +2,47 @@ import SpoilerClass from './spoiler-class'
 
 import templates from '../templates'
 
+const { liveDemoSpoilerStyles } = require('../styles').default
+
 const { createElem } = require('../helpers').default
 
+class TabElement extends HTMLElement  {
+  constructor () {
+    super()
+
+    this.innerHTML = '<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>'
+  }
+}
+
+customElements.define('tab-span', TabElement)
+
+class VarElement extends HTMLElement  {
+  constructor () {
+    super()
+
+    this.innerHTML = '<span style="color: #a5f">var&nbsp;</span>'
+  }
+}
+
+customElements.define('var-span', VarElement)
+
+class ConsoleElement extends HTMLElement  {
+  constructor () {
+    super()
+
+    this.innerHTML = '<span style="color: #eee">console</span>'
+  }
+}
+
+customElements.define('console-span', ConsoleElement)
+
 class LiveDemoSpoiler extends HTMLElement {
-  constructor() {
+  constructor () {
     super()
 
     this.shadow = this.attachShadow({ mode: 'open' })
 
-    createElem('style', this.shadow).textContent = `
-      .live-demo-section {
-        background: #222;
-        border: solid 16px transparent;
-        box-sizing: border-box;
-        font-family: monospace;
-        font-size: 14px;
-        line-height: 1.4;
-        margin-top: -4px;
-        opacity: 0;
-        transition:  all .4s ease-in-out;
-      }
-      #live-demo-header {
-        cursor: pointer;
-      }
-      .live-demo-help {
-        color: #09b;
-        text-align: center;
-      }
-      .prompt-input, .prompt-output {
-        padding-right: 4px;
-        color: #aaa;
-      }
-      .prompt-input:before {
-        content: '❯';
-      }
-      .prompt-output:before {
-        content: '❮•';
-      }
-    `
+    createElem('style', this.shadow).textContent = liveDemoSpoilerStyles
 
     this.shadow.innerHTML += `
       <div class="live-demo-help">▼</div>
@@ -109,6 +112,10 @@ class LiveDemoSpoiler extends HTMLElement {
         }), 500 * counter)
       }
     }
+  }
+
+  parseTemplate (template) {
+    const lines = template.split('\n')
   }
 }
 

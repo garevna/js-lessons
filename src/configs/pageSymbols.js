@@ -51,7 +51,7 @@ export const pageSymbols = [
   },
   {
     symb: '%%%',
-    reg: '\%\%\%',
+    reg: '%%%',
     tag: ['<button class="link-ico">', '</button>']
   },
   {
