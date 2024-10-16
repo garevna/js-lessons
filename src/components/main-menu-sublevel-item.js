@@ -42,7 +42,6 @@ class MainMenuSublevelItem extends HTMLElement {
     Object.assign(this, {
       innerText,
       className: this.getClassName(),
-      // className: (this.active ? 'sub-level-item--active' : 'sub-level-item') + (this.translated ? ' translated' : ''),
       ref,
       translated,
       onclick: this.clickHandler.bind(this)
@@ -53,7 +52,7 @@ class MainMenuSublevelItem extends HTMLElement {
     storageState('active-topic', this.ref)
     storageState('active-lesson', this.lesson.ref)
 
-    history.pushState(null, null, `/?${this.ref}`)
+    // history.pushState(null, null, `${location.pathname}?${this.ref}`)
 
     this.mainMenu.dispatchEvent(Object.assign(new Event('sublevel-item-clicked'), {
       sublevelItem: this

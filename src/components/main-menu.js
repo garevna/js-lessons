@@ -31,6 +31,7 @@ class MainMenuComponent extends HTMLElement {
     this.addEventListener('sublevel-item-clicked', this.sublevelItemClickHandler.bind(this))
 
     window.addEventListener('popstate', function (event) {
+      console.log(event)
       const page = location.search.slice(1)
       this.worker.postMessage({ route: 'lesson', param: page })
     }.bind(this))
@@ -71,7 +72,6 @@ class MainMenuComponent extends HTMLElement {
   }
 
   lessonClickHandler (event) {
-    console.log(event)
     // const { menuOption: { status, ref } } = event
     // if (status === 'expanded') return
     // for (const folder of this.menuOptions) folder.expanded && folder.collapse()
@@ -179,7 +179,8 @@ class MainMenuComponent extends HTMLElement {
   navigateTo (page = 'start-page') {
     this.checkbox.checked = !this.checkbox.checked
     this.checkbox.dispatchEvent(new Event('click'))
-    history.pushState(null, null, `/?${page}`)
+    console.log(`${location.pathname}?${page}`)
+    history.pushState(null, null, `${location.pathname}?${page}`)
     this.worker.postMessage({ route: 'lesson', param: page })
   }
 

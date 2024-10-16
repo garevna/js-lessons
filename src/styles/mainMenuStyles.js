@@ -426,6 +426,5 @@ export const mainMenuStyles = new Promise(resolve => {
     resolve(minifier(rawSource))
   })
 
-  console.log('Add event listener for route "main-menu"')
   window[Symbol.for('icons.worker')].postMessage({ route: 'main-menu' })
 })
