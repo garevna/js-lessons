@@ -605,17 +605,19 @@ __________________________________________________
 
 __________________________________________________
 
-## [![ico-25 icon] Спецификация ECMAScript](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html )
+## ![ico-25 icon] Спецификация ECMAScript
 
-Современная спецификация языка определяет семь типов данных:
+Современная [%%%спецификация языка%%%](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html ) определяет семь типов данных:
 
-• **Boolean**
-• **Null**
-• **Undefined**
-• **Number**
-• **String**
-• **Symbol**
-• **Object**
+<span class="tab-2" />• **Undefined Type**
+<span class="tab-2" />• **Null Type**
+<span class="tab-2" />• **Boolean Type**
+<span class="tab-2" />• **String Type**
+<span class="tab-2" />• **Symbol Type**
+<span class="tab-2" />• **Numeric Types**
+<span class="tab-4" />• **Number Type**
+<span class="tab-4" />• **BigInt Type**
+<span class="tab-2" />• **Object Type**
 
 Оператор **~typeof~** работает "по старинке", поскольку если бы принцип его работы был изменен, то многие сайты, созданные до 2015 года, просто посыпались бы.
 Однако используя его, стоит помнить о его "несовершенстве".

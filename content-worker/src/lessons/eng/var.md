@@ -610,17 +610,19 @@ __________________________________________________
 
 __________________________________________________
 
-## [![ico-25 icon] ECMAScript Specification](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html )
+## ![ico-25 icon] ECMAScript Specification
 
-The current language specification defines seven data types:
+The current [%%%language specification%%%](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html ) defines seven data types:
 
-• **Boolean**
-• **Null**
-• **Undefined**
-• **Number**
-• **String**
-• **Symbol**
-• **Object**
+<span class="tab-2" />• **Undefined Type**
+<span class="tab-2" />• **Null Type**
+<span class="tab-2" />• **Boolean Type**
+<span class="tab-2" />• **String Type**
+<span class="tab-2" />• **Symbol Type**
+<span class="tab-2" />• **Numeric Types**
+<span class="tab-4" />• **Number Type**
+<span class="tab-4" />• **BigInt Type**
+<span class="tab-2" />• **Object Type**
 
 The **~typeof~** operator works "the old fashioned way", because if the principle of its operation were changed, then many sites created before 2015 would simply crumble.
 

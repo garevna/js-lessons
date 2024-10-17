@@ -11,6 +11,19 @@ if (!window[Symbol.for('icons.worker')]) {
 }
 
 let rawSource = `
+.tab-1 {
+  margin-left: 16px;
+}
+.tab-2 {
+  margin-left: 36px;
+}
+.tab-3 {
+  margin-left: 48px;
+}
+.tab-4 {
+  margin-left: 64px;
+}
+
 .tooltip-text {
   position: fixed;
   padding: 8px 12px;
