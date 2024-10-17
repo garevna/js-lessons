@@ -1,23 +1,21 @@
-window [ Symbol.for ( "section" ) ] = document.body;
+window[Symbol.for('section')] = document.body
 
-const moduleURL = "https://garevna.github.io/js-samples/js/index14.js";
+const moduleURL = 'https://garevna.github.io/js-samples/js/index14.js'
 
-const message = "It's impossible to import and execute the module twice";
+const message = 'It\'s impossible to import and execute the module twice.'
 
-const messagePlaceholder = window [ Symbol.for ( "section" ) ].appendChild (
-    document.createElement ( "h4" )
-);
-messagePlaceholder.style.color = "red";
+const messagePlaceholder = window[Symbol.for('section')]
+  .appendChild(document.createElement('h4'))
+messagePlaceholder.style.color = 'red'
 
-const importModule = async () => 
-    window [ Symbol.for ( "section" ) ] [ Symbol.for("module") ] = 
-            ( await import( moduleURL ) );
-            
-const showError = () => messagePlaceholder.innerText = message;
+const importModule = async () => window[Symbol.for('section')][Symbol.for('module')] = (await import(moduleURL))
 
-window [ Symbol.for ( "section" ) ].onclick = () => {
-    if ( !(window [ Symbol.for ( "section" ) ] [ Symbol.for("module") ]) ) importModule()
-    else showError ()
+const showError = () => messagePlaceholder.innerText = message
+
+window[Symbol.for('section')].onclick = () => {
+  !(window[Symbol.for('section')][Symbol.for('module')])
+    ? importModule()
+    : showError()
 }
 
 
@@ -47,7 +45,7 @@ window [ Symbol.for ( "section" ) ].onclick = () => {
 // ~~~
 
 
-  
+
 // const scriptImports = async moduleFile => {
 //     const timeOut = timeInterval => new Promise (
 //         resolve => setTimeout ( () => resolve(), timeInterval )
@@ -60,4 +58,3 @@ window [ Symbol.for ( "section" ) ].onclick = () => {
 // }
 
 // scriptImports ( 'https://garevna.github.io/js-samples/js/index' )
-
