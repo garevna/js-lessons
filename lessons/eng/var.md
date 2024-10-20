@@ -1,11 +1,5 @@
 # ![ico-35 study] Variables. Data types
 
-[%%%**Test**%%%](some)
-[:::**Test**:::](some)
-[►►►**Test**►►►](page/some)
-[◄◄◄**Test**◄◄◄](page/some)
-[**Simple link**](some)
-
 A little ahead of time, let us introduce the concept of a **global object**.
 A **global object** is the environment in which we "live" (operate) and beyond which we cannot go.
 
