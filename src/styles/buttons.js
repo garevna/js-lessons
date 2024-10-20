@@ -1,5 +1,3 @@
-const { page_next, page_previous, coffee, slider, link, open_in_new } = require('../assets').default
-
 export const buttons = `
 button, .close-button, .slider-button {
   background-color: transparent;
@@ -14,7 +12,6 @@ button, .close-button, .slider-button {
 }
 
 .slider-button  {
-  background-image: url(${slider});
   background-size: contain;
   width: 48px;
   height: 48px;
@@ -46,7 +43,6 @@ button.cap, button.coffee, button.page-next, button.page-previous  {
 }
 
 button.link-ico {
-  background-image: url(${link});
   background-size: 32px;
   background-position-y: -4px;
   background-position-x: 0;
@@ -55,25 +51,21 @@ button.link-ico {
   padding: 4px 4px 4px 36px;
 }
 
-button.link-ico:hover {
-  color: #f50;
-}
+button.link-ico:hover { color: #f50; }
 
 button.cap, button.coffee {
   background-position-y: top;
   padding:  8px 8px 8px 36px;
-  background-image: url(${coffee});
   background-size: 32px;
 }
 
-button.page-next  {
+button.page-next {
   padding: 8px 48px 8px 8px;
   background-position: right 8px top 4px;
-  background-image: url(${page_next});
 }
 
-button.page-previous  {
+button.page-previous {
   padding:  8px 8px 8px 48px;
   background-position:  left 8px top 4px;
-  background-image: url(${page_previous});
+}
 `

@@ -1,11 +1,19 @@
-const data = require('../configs').default
+import data from '../configs'
 
-export function getLesson () {
+export async function getLesson () {
   const [pages, list] = [data.pages, data[self.lang]]
-  const lesson = !list.includes(self.currentLesson)
+
+  const pathname = location.pathname.replace('content.worker.js', '')
+
+  const fileName = !list.includes(self.currentLesson)
     ? !pages.includes(self.currentLesson)
-      ? require('../lessons/404.md').default
-      : require('../lessons/' + self.lang + '/404.md').default
-    : require('../lessons/' + self.lang + '/' + self.currentLesson + '.md').default
+      ? '404'
+      : `${self.lang}/404`
+    : `${self.lang}/${self.currentLesson}`
+
+  const url = `${location.origin}${pathname}lessons/${fileName}.md`
+
+  const lesson = await (await fetch(url)).text()
+
   return lesson
 }

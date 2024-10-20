@@ -6,7 +6,6 @@ export const icon = `
     border: solid 2px #fff;
     box-shadow: 2px 2px 2px #00000090;
     background-color: #057;
-    background-image: var(--icon);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 55%;

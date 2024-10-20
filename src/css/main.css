@@ -35,6 +35,10 @@ body {
   overflow-x: hidden;
 }
 
+lang-switcher {
+  z-index: 100;
+}
+
 .flowchart-process {
   width: 160px;
   height: max-content;

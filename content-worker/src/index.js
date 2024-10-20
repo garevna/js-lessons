@@ -3,8 +3,8 @@ const { getMainMenu, getKeywords, getLesson, parseHeaders, search } = require('.
 self.lang = 'eng'
 self.currentLesson = 'start-page'
 
-function switchContent () {
-  const text = getLesson()
+async function switchContent () {
+  const text = await getLesson()
   const headers = parseHeaders(text)
 
   self.postMessage({ route: 'lesson', response: text })
@@ -23,7 +23,7 @@ self.controller = async function (request) {
       self.postMessage({ route, response: { lang: self.lang, page: self.currentLesson } })
 
       self.postMessage({ route: 'main-menu', response: getMainMenu() })
-      self.postMessage({ route: 'lesson', response: getLesson() })
+      switchContent()
     case 'main-menu':
       return self.postMessage({ route, response: getMainMenu() })
     case 'keywords':
@@ -32,12 +32,12 @@ self.controller = async function (request) {
       return search(param)
     case 'lang':
       self.lang = ['eng', 'ua', 'ru'].includes(param) ? param : self.lang
-      switchContent()
+      await switchContent()
       self.postMessage({ route: 'main-menu', response: getMainMenu() })
       return
     case 'lesson':
       self.currentLesson = param
-      switchContent()
+      await switchContent()
       return
     default:
       return self.postMessage({ route, response: null, error: 'Invalid route.' })

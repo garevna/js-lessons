@@ -6,7 +6,7 @@
   "main": "./public",
   "scripts": {
     "clean": "rd /s /q public .cache>nul 2>&1|echo.>nul",
-    "dev": "clean & webpack --mode development -w",
+    "dev": "webpack --mode development -w",
     "start": "node live-server.js",
     "prod": "webpack --mode production",
     "ls": "git ls-files --cached",
@@ -22,6 +22,7 @@
   "author": "garevna <irina.h.fylyppova@gmail.com>",
   "dependencies": {},
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "css-loader": "^6.10.0",
     "live-server": "^1.2.2",
     "style-loader": "^3.3.4",

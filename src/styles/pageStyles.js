@@ -1,14 +1,9 @@
 import { errorAndWarning } from './errorAndWarning'
 import { blackClass } from './blackClass'
-import { buttons } from './buttons'
 
-const { minifier } = require('../helpers').default
+const { minifier, getIconsWorker } = require('../helpers').default
 
-if (!window[Symbol.for('icons.worker')]) {
-  window[Symbol.for('icons.worker')] = Object.assign(new Worker(`${location.origin}${location.pathname}icons.worker.js`), {
-    onerror: error => console.error('! Icons worker Error\n', error)
-  })
-}
+const worker = getIconsWorker()
 
 let rawSource = `
 .tab-1 {
@@ -133,7 +128,6 @@ a.visible-anchor  {
   color:  #079;
   font-weight:  bold;
   padding:  8px 36px 8px 8px;
-  background-image:  url(--open-in-new);
   background-position: right 8px center;
   background-repeat: no-repeat;
   background-size: 24px;
@@ -228,18 +222,22 @@ menu-component {
 ::-webkit-scrollbar-thumb:hover  {
   background:  #fa0;
 }
-` + errorAndWarning + blackClass + buttons
+` + errorAndWarning + blackClass
 
 export const pageStyles = new Promise(resolve => {
-  window[Symbol.for('icons.worker')].addEventListener('message', function (event) {
+  worker.addEventListener('message', function (event) {
     const { route, error, response } = event.data
     if (route !== 'page') return
-    if (error) console.error(error)
-    if (!response) console.error('There is no response from icons worker!')
+
+    if (error || !response) {
+      console.error(error || 'There is no response from icons worker!')
+    }
+
     Object.keys(response).forEach(key => {
       rawSource = rawSource.includes(`--${key}`) ? rawSource.replaceAll(`url(--${key})`, `url(${response[key]})`) : rawSource
     })
+
     resolve(minifier(rawSource))
   })
-  window[Symbol.for('icons.worker')].postMessage({ route: 'page' })
+  worker.postMessage({ route: 'page' })
 })

@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const dirPath = path.join(__dirname, 'src/lessons')
+const dirPath = path.join(__dirname, '../public/lessons')
 
 const dirEntries = fs.readdirSync(dirPath, { withFileTypes: true })
 
@@ -11,8 +11,10 @@ const folders = dirEntries
 folders.forEach(folder => {
   const folderPath = path.join(dirPath, folder.name)
   const files = fs.readdirSync(folderPath, { withFileTypes: true })
-  const list = JSON.stringify(files.map(file => file.name.split('.').slice(0, -1).join('')))
-    .replaceAll('"', '\'')
+
+  const fileList = files.map(file => file.name.split('.').slice(0, -1).join(''))
+
+  const list = JSON.stringify(fileList).replaceAll('"', '\'')
 
   const content = `export const ${folder.name} = ${list}`
 

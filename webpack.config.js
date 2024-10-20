@@ -2,10 +2,16 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-  entry: './src/start.js',
+  entry: {
+    index: './src/start.js',
+    donate: './src/donate.js',
+    'main-menu': './src/main-menu.js'
+  },
   output: {
+    // filename: 'main.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'public'),
-    filename: 'main.js'
+    clean: false
   },
   module: {
     rules: [

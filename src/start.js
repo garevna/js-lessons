@@ -1,17 +1,10 @@
 import './css/main.css'
 
-// import './css/fonts.css'
-
 import './css/for-rainbow.css'
 
 import './components/glitch'
 import './components/plunker-logo'
-import './components/GraphicHeaderComponent'
-import './components/svg-navigation-panel'
-import './components/donate-button'
-import './components/donate-component'
 
-import './components/main-menu'
 import './components/footer'
 import './components/lang-switcher'
 import './components/menu-component'
@@ -27,8 +20,6 @@ import './components/page-component'
 
 import './components/welcome-win'
 import './components/funny-slogan'
-
-import './components/donate'
 
 // import Shutter from './components/Shutter'
 

@@ -1,6 +1,6 @@
 export const routes = {
-  'main-menu': ['main-menu-icon', 'expanded-main-menu-icon', 'active-main-menu-icon', 'active-expanded-main-menu-icon', 'home', 'search'],
   menu: ['menu-icon-image', 'menu-symbol'],
-  page: ['icon', 'error', 'warning', 'no_entry', 'open-in-new'],
+  page: ['study', 'icon', 'error', 'warning', 'coffee'],
+  buttons: ['open-in-new', 'link-ico', 'coffee', 'page-next', 'page-previous'],
   spoiler: ['folder', 'opened']
 }

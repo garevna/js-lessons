@@ -5,15 +5,15 @@ const rawSource = `
 
 section {
   position: relative;
-  height: 300px;
+  height: 320px;
   padding: 16px;
   box-sizing: border-box;
   box-shadow: inset 2px 2px 4px #00000070;
   background: #000;
   color: #dde;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: auto;
   font-family: monospace;
+  transition: all .5s;
 }
 
 h1, h2, h3, h4, h5 {
@@ -21,19 +21,35 @@ h1, h2, h3, h4, h5 {
 }
 
 button {
-  background: linear-gradient(to right, #09b, #09b, #09b);
-  padding: 8px 16px;
+  cursor:pointer;
   font-family: var(--main-font);
   font-size: 1.2rem;
-  border:0;
-  color: white;
-  box-shadow: 1px 1px 2px #00000070;
+  border: 0;
 }
 
-button:hover {
-  animation: button-hover 0.2s ease alternate 2;
+button.start {
+  background: #09b;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: white;
+  box-shadow: -1px -1px 2px #00000070;
+}
+
+button.stop {
+  background: transparent;
+  padding: 0;
+  color: #f50;
+  box-shadow: none;
+}
+
+button.start:hover {
+  animation: button-hover 0.5s ease infinite;
   box-shadow: 0px 0px 2px #00000050;
   text-shadow: 1px 1px 1px #005577de;
+}
+
+button.stop:hover {
+  color: #d00;
 }
 
 @keyframes button-hover {

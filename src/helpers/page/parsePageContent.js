@@ -1,5 +1,3 @@
-import { getIconList } from './getIconList'
-import { getIconStyles } from '../getIconStyles'
 import { createElem } from '../createElem'
 
 const { pageRegExpr, pageSymbols, convertStringForAnchor } = require('../../configs').default
@@ -11,9 +9,6 @@ export function parsePageContent (pageContent) {
     regExprs: pageRegExpr,
     symbols: pageSymbols
   })
-
-  getIconStyles('page', getIconList(pageContent))
-    .then(textContent => Object.assign(createElem('style', this), { textContent }))
 
   this.regExprs.pageContent = this.pageContent
 

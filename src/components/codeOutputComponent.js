@@ -13,30 +13,57 @@ class CodeOutput extends HTMLElement {
       button: createElem('button', shadow),
       section: createElem('section', shadow)
     })
+
+    this.button.className = 'start'
+
+    Object.assign(this.section.style, {
+      height: '0px',
+      opacity: '0.4',
+      padding: '0'
+    })
   }
 
   connectedCallback () {
     Object.assign(this, {
       startHandler: function (event) {
         Object.assign(event.target, {
-          innerText: 'Stop',
+          innerText: '⛌',
           onclick: this.stopHandler
         })
+
         this.section.stop = false
+
+        this.button.className = 'stop'
+
+        Object.assign(this.section.style, {
+          height: '320px',
+          opacity: '1',
+          padding: '16px'
+        })
+
         eval(this.code)
       }.bind(this),
 
       stopHandler: function (event) {
         Object.assign(event.target, {
-          innerText: 'Start',
+          innerText: '►',
           onclick: this.startHandler
         })
+
+        this.button.className = 'start'
+
+        Object.assign(this.section.style, {
+          height: '0px',
+          opacity: '0.4',
+          padding: '0'
+        })
+
         Object.assign(this.section, { stop: true, innerHTML: '' })
       }.bind(this)
     })
 
     Object.assign(this.button, {
-      innerText: 'Start',
+      innerText: '►',
       onclick: this.startHandler
     })
   }

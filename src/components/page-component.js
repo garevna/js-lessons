@@ -1,9 +1,9 @@
-const { createElem, getContentWorker } = require('../helpers').default
+const { createElem, getContentWorker, getIconStyles } = require('../helpers').default
 const { pageStyles } = require('../styles').default
 
 const lib = require('../helpers/page').default
 
-const { parsePageContent, ...methods } = lib
+const { parsePageContent, getIconList, ...methods } = lib
 
 class PageComponent extends HTMLElement {
   constructor () {
@@ -28,14 +28,17 @@ class PageComponent extends HTMLElement {
 
     this.worker.addEventListener('message', this.messageCallback.bind(this))
 
-    this.worker.postMessage({ route: 'lesson', param: page })
-
     location.hash && this.scrollPage()
   }
 
   messageCallback (event) {
     const { route, response } = event.data
+
     if (route !== 'lesson') return
+
+    getIconStyles('page', getIconList(response))
+      .then(textContent => Object.assign(createElem('style', this), { textContent }))
+
     this.main.innerHTML = ''
     this.parsePageContent(response)
     this.scrollPage()
