@@ -1,0 +1,10 @@
+{
+  "name": "service-worker",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack --config webpack.config.worker.js --mode development -w",
+    "prod": "webpack --config webpack.config.worker.js --mode production"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

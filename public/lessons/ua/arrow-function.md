@@ -138,7 +138,7 @@ ________________________________________
 
 @@@@
 <br><br>У стрілочних функцій немає об'єкта **~prototype~**.<br><br>![ico-20 warn] Тому стрілочні функції не можуть бути конструктором.
-![](images/arrow-funcs-neutered-kitties-ukr-color.png)
+![](images/arrow-funcs-neutered-kitties-ukr.svg)
 @@@@
 
 ~~~js

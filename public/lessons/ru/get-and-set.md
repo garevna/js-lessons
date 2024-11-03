@@ -205,9 +205,8 @@ Object.assign(Commodity.prototype, {
 Now we are ready to create commodities
 
 ~~~js
-
 const [iron, fryingPan, saucepan] = ['iron', 'frying-pan', 'saucepan']
-  .map(name => `${location.origin + location.pathname}images/lessons/${name}.jpg`)
+  .map(name => `${location.origin + location.pathname}images/lessons/${name}.svg`)
 
 const commodities = [
   new Commodity('Iron', 43, iron),

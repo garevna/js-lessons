@@ -57,7 +57,7 @@ footer {
   box-sizing: border-box;
   border-radius: 50%;
   transition: all 0.5s;
-  background-image: var(--personage-on-stars), radial-gradient(#ffffff00, #ffffff20 50%, #ffffff10 60%, #ffffff 70%);
+  background-image: url(${createPath('images', 'personage-on-stars.gif')}), radial-gradient(#ffffff00, #ffffff20 50%, #ffffff10 60%, #ffffff 70%);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: center, center, center;
   background-size: cover, cover, 40%;

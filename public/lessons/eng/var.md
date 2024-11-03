@@ -23,7 +23,7 @@ Memory is a huge number of cells, each of which can contain 0 or 1.
 
 @@@@
 Such a cell is a **bit** of memory.<br>That is why the binary number system was the basis for the first computers.<br>The **8 bits** make **1 byte** of memory.
-![](illustrations/vars-bit-and-byte.png)
+![](illustrations/vars-bit-and-byte.svg)
 @@@@
 
 A maximum of 8 units can be placed in **1 byte** of memory, i.e. the binary number 11111111.

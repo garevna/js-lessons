@@ -133,7 +133,7 @@ ____________________________________________________
 
 @@@@
 Arrow functions don't have a **~prototype~** object.<br><br>![ico-20 warn] Therefore, arrow functions cannot be constructors.
-![](images/arrow-funcs-neutered-kitties.png)
+![](images/arrow-funcs-neutered-kitties.svg)
 @@@@
 
 ☼☼☼ arrow functions are neutered kitties ☼☼☼

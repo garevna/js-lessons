@@ -12,7 +12,7 @@ class GraphicHeader extends HTMLElement {
           <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
         </filter>
         <pattern id="picture" patternUnits="userSpaceOnUse" width="100" height="100">
-          <image xlink:href="https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2Fstars-5.gif" x="0" y="-50" width="100" height="200" />
+          <image xlink:href="stars" x="0" y="-50" width="100" height="200" />
         </pattern>
       </defs>
     `

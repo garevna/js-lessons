@@ -151,7 +151,7 @@ _____________________________________________
 ## ![ico-25 icon] Transferring references
 
 @@@@
-![](images/reference-is-a-lockpick.png)
+![](images/reference-is-a-lockpick.svg)
 At this point, the functional purity of iterating methods, unfortunately, ends.<br><br>A function can mutate an object by reference.<br><br>In this case, as a rule, **side effects** occur.
 @@@@
 

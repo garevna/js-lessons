@@ -6,7 +6,7 @@ export const errorAndWarning = `
 }
 
 .error-message {
-  background: #522d;
+  background: #843;
   color: #fee;
   background-image: url(--error);
   background-repeat: no-repeat;

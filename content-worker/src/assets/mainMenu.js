@@ -147,12 +147,11 @@ export const mainMenu = [
     items: []
   },
   {
-    ref: 'functional-programming-stuff',
+    ref: 'closure-recursion-timers',
     ua: 'Замикання. Рекурсія. Таймери.',
     eng: 'Closures. Recursion. Timers.',
     ru: 'Замыкание. Рекурсия. Таймеры.',
     items: [
-      { ref: 'arrow-function', ua: 'Стрілочні функції', eng: 'Arrow functions', ru: 'Стрелочные функции' },
       { ref: 'functionality', ua: 'Функціональщина', eng: 'Functional programming stuff', ru: 'Функциональщина' },
       { ref: 'Closure', ua: 'Замикання', eng: 'Closure', ru: 'Замыкание' },
       { ref: 'recursion', ua: 'Рекурсія', eng: 'Recursion', ru: 'Рекурсия' },

@@ -3,7 +3,7 @@ const section = document.body
 section.style = `height: 400px!important;`
 
 const [iron, fryingPan, saucepan] = ['iron', 'frying-pan', 'saucepan']
-  .map(name => `${location.origin + location.pathname}images/lessons/${name}.jpg`)
+  .map(name => `${location.origin + location.pathname}images/lessons/${name}.svg`)
 
 const [container, label, course] = ['div', 'span', 'input'].map(tag => document.createElement(tag))
 
