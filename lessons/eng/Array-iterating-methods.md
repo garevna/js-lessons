@@ -193,7 +193,7 @@ ___________________________
 
 @@@@
 Mutations of the source array can occur even without passing a reference to the source array. This is due to the fact that if the array elements have a **reference data type**, then the **function-argument** of the method will receive not a value, but a ~reference~, and this creates the possibility of mutations of array elements by ~reference~.
-![](images/reference-is-a-lockpick.png)
+![](images/reference-is-a-lockpick.svg)
 @@@@
 
 ◘◘![ico-25 cap] ** 6**◘◘

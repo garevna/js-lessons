@@ -10,7 +10,7 @@ const timer = ms => setTimeout(() => setTimeout(message.bind(null, `timeout ${ms
 
 function getUser () {
   const since = Math.round(Math.random() * 20000)
-  const index = Math.round(Math.random() * 30)
+  const index = Math.round(Math.random() * 25)
   return fetch(`https://api.github.com/users?since=${since}`)
     .then(response => response.json())
     .then(users => message(`github user ${since + index}: ${users[index].login}`))
