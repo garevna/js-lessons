@@ -1,6 +1,6 @@
 {
   "name": "js-lessons",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "license": "MIT",
   "description": "Web-development. Educational materials for the JS course.",
   "main": "./public",
@@ -10,7 +10,8 @@
     "start": "node live-server.js",
     "prod": "webpack --mode production",
     "ls": "git ls-files --cached",
-    "deploy": "git subtree push --prefix public origin gh-pages"
+    "deploy": "git subtree push --prefix public origin gh-pages",
+    "staging": "git subtree push --prefix public staging gh-pages"
   },
   "keywords": [
     "javascript",

@@ -28,7 +28,9 @@ folders.forEach(folder => {
   'content.worker.js',
   'icons.worker.js',
   'main-menu.js',
-  'donate.js'
+  'donate.js',
+  'registerServiceWorker.js',
+  'service-worker.js'
 ].forEach(fileName => Object.assign(result, { [fileName]: fs.statSync(path.join(__dirname, `../public/${fileName}`)).mtime }))
 
 const list = JSON.stringify(result, null, '\t').replaceAll('"', '\'')

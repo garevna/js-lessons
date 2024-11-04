@@ -41,9 +41,8 @@ export async function searchInCache (event) {
       fetchResponse && await updateCache(fetchResponse)
       return fetchResponse
     } else {
-      console.log('OFFLINE MODE: ', request.url)
+      console.warn('OFFLINE MODE: ', request.url)
       const offline = await cache.match('lessons/offline.md', { ignoreSearch: true })
-      console.log(offline)
       return offline
     }
   }

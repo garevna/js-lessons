@@ -1,5 +1,5 @@
 export const versions = {
-	'eng/404.md': '2024-10-18T08:58:32.745Z',
+	'eng/404.md': '2024-11-03T04:32:15.687Z',
 	'eng/API.md': '2024-10-18T08:58:32.745Z',
 	'eng/Array-iterating-methods-theory.md': '2024-10-21T06:46:11.915Z',
 	'eng/Array-iterating-methods.md': '2024-10-21T06:46:24.810Z',
@@ -310,7 +310,7 @@ export const versions = {
 	'ru/when-defined.md': '2024-10-18T08:58:32.870Z',
 	'ru/while.md': '2024-10-18T08:58:32.871Z',
 	'ru/XMLHttpRequest.md': '2024-10-18T08:58:32.871Z',
-	'ua/404.md': '2024-10-18T10:14:38.520Z',
+	'ua/404.md': '2024-11-03T04:27:10.659Z',
 	'ua/API.md': '2024-10-18T08:58:32.873Z',
 	'ua/Array-iterating-methods-theory.md': '2024-10-21T06:51:33.395Z',
 	'ua/Array-iterating-methods.md': '2024-10-21T06:51:44.109Z',
@@ -334,9 +334,11 @@ export const versions = {
 	'ua/Timers.md': '2024-10-18T08:58:32.884Z',
 	'ua/var.md': '2024-10-22T06:05:53.883Z',
 	'ua/while.md': '2024-10-18T08:58:32.885Z',
-	'index.js': '2024-11-02T18:16:43.271Z',
-	'content.worker.js': '2024-11-01T15:32:07.804Z',
-	'icons.worker.js': '2024-10-20T06:17:38.612Z',
-	'main-menu.js': '2024-10-20T06:17:27.407Z',
-	'donate.js': '2024-10-20T06:17:27.407Z'
+	'index.js': '2024-11-04T08:02:14.256Z',
+	'content.worker.js': '2024-11-04T08:02:32.294Z',
+	'icons.worker.js': '2024-11-04T08:02:42.468Z',
+	'main-menu.js': '2024-11-04T08:02:14.256Z',
+	'donate.js': '2024-11-04T08:02:14.256Z',
+	'registerServiceWorker.js': '2024-11-04T09:31:00.102Z',
+	'service-worker.js': '2024-11-04T09:35:02.916Z'
 }

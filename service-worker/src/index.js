@@ -1,17 +1,9 @@
 const { initialCachedFiles, cacheName } = require('./configs').default
 const { searchInCache } = require('./helpers').default
 
-self.fromCache = []
-self.fromNetwork = []
+const enableNavigationPreload = async () => self.registration.navigationPreload && await self.registration.navigationPreload.enable()
 
-self.addEventListener('message', event => {
-  console.log(self.fromCache)
-  console.log(self.fromNetwork)
-})
-
-// const enableNavigationPreload = async () => self.registration.navigationPreload && await self.registration.navigationPreload.enable()
-//
-// self.addEventListener('activate', event => event.waitUntil(enableNavigationPreload()))
+self.addEventListener('activate', event => event.waitUntil(enableNavigationPreload()))
 
 self.addEventListener('install', event => event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(initialCachedFiles))))
 

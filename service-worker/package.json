@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "webpack --config webpack.config.worker.js --mode development -w",
-    "prod": "webpack --config webpack.config.worker.js --mode production"
+    "prod": "webpack --config webpack.config.worker.js --mode production",
+    "sw": "node config-service-worker.js"
   },
   "dependencies": {},
   "devDependencies": {}
