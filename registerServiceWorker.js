@@ -10,8 +10,6 @@ const registerServiceWorker = async () => {
       const registration = await navigator.serviceWorker.register('service-worker.js', { scope: './' })
       const status = Object.keys(messages).find(key => registration[key])
       status && console.log('SW STATUS:', messages[status])
-      window[Symbol.for('service-worker')] = registration[status]
-      window[Symbol.for('service-worker')].onmessage = event => console.log(event.data)
     } catch (error) {
       console.error(`ServiceWorker registration failed with ${error}`)
     }
