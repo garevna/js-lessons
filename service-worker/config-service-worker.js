@@ -37,6 +37,4 @@ const list = JSON.stringify(result, null, '\t').replaceAll('"', '\'')
 
 const content = `export const versions = ${list}`
 
-console.log(content)
-
 fs.writeFileSync(path.join(__dirname, `src/configs/versions.js`), content, { encoding: 'utf-8' })

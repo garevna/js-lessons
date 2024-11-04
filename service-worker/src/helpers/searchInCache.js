@@ -4,7 +4,7 @@ import { updateCache } from './updateCache'
 import { isStable } from './isStable'
 import { isCached } from './isCached'
 
-const { cacheName, verHeaderName } = require('../configs').default
+const { cacheName } = require('../configs').default
 
 export async function searchInCache (event) {
   const { request } = event
@@ -15,19 +15,15 @@ export async function searchInCache (event) {
   const response = await cache.match(request, { ignoreSearch: true })
 
   if (response) {
-    const lastModified = response.headers.get(verHeaderName)
-
     if (isStable(request)) return response
 
-    const valid = validateVersion(request)
+    const valid = validateVersion(request.url, response)
 
     if (valid) return response
 
-    const cache = await caches.open(cacheName)
-
     const fetchResponse = await getFromRemote(request.url)
 
-    if (fetchResponse) {
+    if (fetchResponse && fetchResponse.ok) {
       await cache.delete(request.url)
       await updateCache(fetchResponse)
       return fetchResponse

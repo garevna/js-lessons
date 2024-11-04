@@ -3,14 +3,14 @@ import { getValidVersion } from './getValidVersion'
 
 const { verHeaderName } = require('../configs').default
 
-export function validateVersion (cacheResponse) {
-	if (!cacheResponse) return true
+export function validateVersion (url, response) {
+	if (!url || !response) return false
 
-  const versified = getVersified(cacheResponse.url)
+  const versified = getVersified(url)
 
   if (!versified) return true
 
-  const version = cacheResponse.headers.get(verHeaderName)
+  const version = response.headers.get(verHeaderName)
 
-  return version && version === getValidVersion(cacheResponse.url)
+  return !!version && version === getValidVersion(url)
 }

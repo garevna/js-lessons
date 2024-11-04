@@ -1,4 +1,6 @@
-import { stars_for_donates } from './stars_for_donates'
+// import { stars_for_donates } from './stars_for_donates'
+
+const stars_for_fonates = `${location.origin}${location.pathname}images/stars-for-donates.gif`
 
 class DonateButton extends HTMLElement {
   constructor () {
@@ -8,7 +10,7 @@ class DonateButton extends HTMLElement {
     this.shadow.innerHTML = `
       <style>
         svg {
-          background-image: url(${stars_for_donates});
+          background-image: url(https://garevna.github.io/js-lessons/images/stars-for-donates.gif);
           padding: 12px;
           border-radius: 4px;
         }
