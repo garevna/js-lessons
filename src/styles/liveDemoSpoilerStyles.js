@@ -1,12 +1,22 @@
-const { minifier } = require('../helpers').default
+import { errorAndWarning } from './errorAndWarning'
 
-const rawSource = `
+const { minifier, getIconsWorker } = require('../helpers').default
+
+const worker = getIconsWorker()
+
+let rawSource = `
 p {
   word-spacing: -0.4rem;
   margin: 4px;
 }
 .output {
   margin-left: 16px;
+}
+.error-message, .warning-message {
+  display: inline-block;
+  width: 100%;
+  vertical-align: super;
+  padding-bottom: 4px;
 }
 .hr {
   display: block;
@@ -70,7 +80,7 @@ p {
 
 .tab {
   display: inline-block;
-  margin-left: 24px;
+  margin-left: 20px;
 }
 
 .tab-2 {
@@ -163,6 +173,24 @@ p {
   font-style: italic;
   color: #eee;
 }
-`
+` + errorAndWarning
 
-export const liveDemoSpoilerStyles = minifier(rawSource)
+// export const liveDemoSpoilerStyles = minifier(rawSource)
+
+export const liveDemoSpoilerStyles = new Promise(resolve => {
+  worker.addEventListener('message', function (event) {
+    const { route, error, response } = event.data
+    if (route !== 'console') return
+
+    if (error || !response) {
+      console.error(error || 'There is no response from icons worker!')
+    }
+
+    Object.keys(response).forEach(key => {
+      rawSource = rawSource.includes(`--${key}`) ? rawSource.replaceAll(`url(--${key})`, `url(${response[key]})`) : rawSource
+    })
+
+    resolve(minifier(rawSource))
+  })
+  worker.postMessage({ route: 'console' })
+})

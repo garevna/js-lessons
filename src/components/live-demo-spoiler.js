@@ -42,7 +42,7 @@ class LiveDemoSpoiler extends HTMLElement {
 
     this.shadow = this.attachShadow({ mode: 'open' })
 
-    createElem('style', this.shadow).textContent = liveDemoSpoilerStyles
+    liveDemoSpoilerStyles.then(css => createElem('style', this.shadow).textContent = css)
 
     this.shadow.innerHTML += `
       <div class="live-demo-help">▼</div>

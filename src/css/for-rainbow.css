@@ -8,7 +8,7 @@ pre {
   border-top-width: 12px;
   border-bottom-width: 16px;
   margin: 8px 8px 16px 0px;
-  padding: 0 4px 8px 0;
+  padding: 0 4px 4px 0;
   overflow: auto;
   font-family: monospace;
 }

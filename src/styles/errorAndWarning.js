@@ -6,12 +6,12 @@ export const errorAndWarning = `
 }
 
 .error-message {
-  background: #843;
+  background: #533;
   color: #fee;
   background-image: url(--error);
   background-repeat: no-repeat;
   background-size: 16px 14px;
-  background-position-y: center;
+  background-position: 4px center;
 }
 
 .warning-message {
@@ -20,7 +20,7 @@ export const errorAndWarning = `
   background-image: url(--warning);
   background-repeat: no-repeat;
   background-size: 16px 16px;
-  background-position-y: center;
+  background-position: 4px center;
 }
 
 .error-message:before, .warning-message:before {
@@ -28,8 +28,8 @@ export const errorAndWarning = `
   display: inline-block;
   padding: 1.5px 4px 0;
   margin-right: 8px;
-  margin-left: 20px;
-  margin-top: 8px;
+  margin-left: 24px;
+  margin-top: 4px;
   color: #bbb;
   font-size: 14px;
   font-weight: bold;

@@ -5,7 +5,10 @@ const enableNavigationPreload = async () => self.registration.navigationPreload 
 
 self.addEventListener('activate', event => event.waitUntil(enableNavigationPreload()))
 
-self.addEventListener('install', event => event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(initialCachedFiles))))
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(initialCachedFiles)))
+  self.skipWaiting()
+})
 
 self.addEventListener('fetch', event => event.respondWith(searchInCache(event)))
 

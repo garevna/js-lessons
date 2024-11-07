@@ -11,7 +11,8 @@
     "prod": "webpack --mode production",
     "ls": "git ls-files --cached",
     "deploy": "git subtree push --prefix public origin gh-pages",
-    "staging": "git subtree push --prefix public staging gh-pages"
+    "staging": "git subtree push --prefix public staging gh-pages",
+    "content-changed": "cd content-worker && node test.js && yarn prod && cd ../service-worker && node config-service-worker.js && yarn prod && cd ../ && yarn prod"
   },
   "keywords": [
     "javascript",

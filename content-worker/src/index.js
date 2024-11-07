@@ -23,7 +23,7 @@ self.controller = async function (request) {
       self.postMessage({ route, response: { lang: self.lang, page: self.currentLesson } })
 
       self.postMessage({ route: 'main-menu', response: getMainMenu() })
-      switchContent()
+      await switchContent()
     case 'main-menu':
       return self.postMessage({ route, response: getMainMenu() })
     case 'keywords':
