@@ -1,11 +1,11 @@
-## ![ico-25 icon] Обещания
+## ![ico-25 icon] Promises
 
-Вызов асинхронной функции возвращает экземпляр **~Promise~**.
+An asynchronous function call returns an instance of **~Promise~**.
 
-Давайте вспомним некоторые ценные свойства экземпляров **~Promise~**.
+Let's recall some valuable properties of **~Promise~** instances.
 
-В первую очередь удобно, что если экземпляр **~Promise~** переходит в состояние **~fulfilled~**, то вовсе не обязательно сразу забирать результат.
-Можно положить нашу "магическую коробку" на полочку:
+First of all, it is convenient that if an instance of **~Promise~** goes to the **~fulfilled~** state, it is not at all necessary to pick up the result immediately.
+We can put our ‘magic box’ on a shelf:
 
 ~~~js
 const promise = sayHello()
@@ -13,17 +13,17 @@ const promise = sayHello()
 
 @@@@
 ![](illustrations/promise-tin.svg)
-и "открыть" ее (как консервную банку) тогда, **когда нам будет удобно**!<br><br>Тем более, что "открывашка" - метод ~then()~ - всегда при ней.<br><br>Экземпляр **~Promise~** - надежная консервная банка, в которой содержимое не испортится и не исчезнет.<br>Главное - не потерять ссылку на эту банку.
+and "open" it (like a tin can) when it suits us!<br><br>Moreover, the "opener" - the **~then()~** method - is always with it.<br><br>The **~Promise~** instance is a reliable tin where the contents won't spoil or disappear.<br>The main thing is not to lose the reference to this can.
 @@@@
 
-Что еще делает экземпляры **~Promise~** такими удобными для нас?
+What else makes instances of **~Promise~** so convenient for us?
 
 @@@@
-Экземпляр **~Promise~** является **микротаском**, а для микротасков существует своя очередь, приоритет которой выше, чем приоритет очереди тасков.<br><br>Т.е. пока толстые и неповоротливые таски будут тупо сидеть в своей очереди и ждать, когда "кабинет" (**Call Stack**) освободится, микротаски один за одним будут проскакивать мимо них в "кабинет". И только когда последний микротаск из привелегированной очереди не пройдет через **Call Stack**, таски будут ждать.
+The **~Promise~** instance is a **microtask**, and microtasks have their own queue, the priority of which is higher than the priority of the task queue.<br><br>I.e. while the fat and sluggish tasks will stupidly sit in their queue and wait for the ‘office’ (**Call Stack**) to be vacated, microtasks one by one will jump past them into the ‘office’. And until the last microtask from the privileged queue passes through the **Call Stack**, the tasks will wait.
 ![](illustrations/queue-microtask.svg)
 @@@@
 
-Например, в результате выполнения следующего кода:
+For example, as a result of executing the following code:
 
 ◘◘![ico-25 cap] ** 1**◘◘
 
@@ -41,7 +41,7 @@ console.log(`Finish: ${new Date().getUTCMilliseconds()}`)
 console.timeEnd('Main thread')
 ~~~
 
-в консоли мы увидим:
+we'll see in the console:
 
 ~~~console
 Start: 465
@@ -51,24 +51,24 @@ Hello
 ~~~
 
 @@@@
-<br>т.е. асинхронная функция ~sayHello()~ ведет себя очень скромно:<br>хотя все, что она делает - просто здоровается,<br>но при этом она не вламывается в рабочий поток и не орет с порога: "_Hello_",<br>она скромно ждет, когда поток завершит свою работу,<br>после чего вежливо говорит "Hello".<br><br>
+<br>i.e. the asynchronous **~sayHello()~** function behaves very modestly:<br>although all it does is just say hello,<br>but it doesn't break into the worker thread and yell "Hello" from the doorstep.<br>it modestly waits for the thread to finish its work,<br>and then politely says "Hello".<br><br>
 ![](illustrations/promise-modesty.svg)
 @@@@
 
-А ведь все, что отличает ее от обычной функции - это слово **~async~**.
-Уберите это слово, и "Hello" появится между "Start..." и "Finish..."
+And all that distinguishes it from a normal function is the word **~async~**.
+Remove that word, and "Hello" appears between "Start..." and "Finish...".
 
-Почему?
+Why?
 
-Да потому, что вызов функции ~sayHello()~ вернул обещание поздороваться, но тогда, когда основному потоку это будет удобно ![ico-20 smile]
+Because the **~sayHello()~** function call returned a promise to say hello, but when it is convenient for the main thread to do so ![ico-20 smile]
 
 __________________________________
 
-## ![ico-25 icon] Больше, чем просто обещание
+## ![ico-25 icon] More than just a promise
 
-Иногда бывает нужно упорядочить выполнение нескольких асинхронных операций.
+Sometimes you may want to streamline the execution of several asynchronous operations.
 
-Мы уже можем решить такую задачу с помощью экземпляра ~Promise~ и цепочки вызовов метода **~then~**:
+We can already solve such a problem with the ~Promise~ instance and the call chain of **~then~** method:
 
 ◘◘![ico-20 cap] ** 2**◘◘
 
@@ -78,14 +78,14 @@ new Promise(resolve => setTimeout(() => resolve('Hello'), 1000))
   .then(response => console.log(response))
 ~~~
 
-В этом примере через 1 секунду первый экземпляр ~Promise~ разрезолвится сообщением "Hello".
-Когда он разрезолвится, будет создан новый экземпляр ~Promise~, который также разрезолвится через 1 секунду.
-Второй экземпляр ~Promise~ добавит к сообщению, возвращенному первым экземпляром ~Promise~, строку ", baby".
-В итоге цепочка экземпляров ~Promise~ разрезолвится через 2 секунды, и в консоли будет ~Hello, baby~.
+In this example, after 1 second, the first instance of ~Promise~ will resolve with the message ‘Hello’.
+When it resolves, a new instance of ~Promise~ will be created, which will also resolve after 1 second.
+The second instance of ~Promise~ will append the string ‘, baby’ to the message returned by the first instance of ~Promise~.
+Eventually, the chain of ~Promise~ instances will resolve after 2 seconds, and the console will show ~Hello, baby~.
 
-Давайте немного изменим код, чтобы отслеживать время.
+Let's modify the code a bit to keep track of time.
 
-Для этого объявим вспомогательную функцию ~setTimer~:
+To do this, let's declare a helper function ~setTimer~:
 
 ~~~js
 function setTimer (message, callback) {
@@ -94,7 +94,7 @@ function setTimer (message, callback) {
 }
 ~~~
 
-Теперь цепочка вызовов метода **~then~** экземпляров ~Promise~ упростится, при этом мы будем видеть индикацию времени выполнения в миллисекундах:
+Now the chain of method **~then~** calls of ~Promise~ instances will be simplified, while we will see an indication of the execution time in milliseconds:
 
 ~~~js
 new Promise(callback => setTimer('Hello', callback))
@@ -102,7 +102,7 @@ new Promise(callback => setTimer('Hello', callback))
   .then(response => setTimer(response, console.log))
 ~~~
 
-Теперь мы увидим в консоли нечто вроде:
+Now we'll see in the console something like:
 
 ~~~console
 568
@@ -112,15 +112,15 @@ new Promise(callback => setTimer('Hello', callback))
 Hello, baby
 ~~~
 
-Асинхронная функция является альтернативным решением.
+The asynchronous function is an alternative solution.
 
-Объявим вспомогательную функцию **resolve**:
+Let's declare an auxiliary function **~resolve~**:
 
 ~~~js
 const resolve = response => document.body.innerHTML += `<p>${response}</p>`
 ~~~
 
-Теперь немного подправим код функции **setTimer**, заменив ~console.log~ вызовом функции ~resolve~:
+Now let's adjust the code of the **~setTimer~** function a bit, replacing ~console.log~ with a call of the **~resolve~** function:
 
 ~~~js
 function setTimer (message, callback) {
@@ -129,7 +129,7 @@ function setTimer (message, callback) {
 }
 ~~~
 
-и теперь объявим асинхронную функцию **sayHello**:
+and now declare the asynchronous function **~sayHello~**:
 
 ~~~js
 const sayHello = async () => {
@@ -137,30 +137,32 @@ const sayHello = async () => {
   return await new Promise(callback => setTimer(`${res}, baby`, callback))
 }
 ~~~
-и вызовем ее, передав через метод ~then~ колбэк **~resolve~**:
+
+and call it by passing a **~resolve~** callback through the **~then~** method:
+
 ~~~js
 sayHello().then(resolve)
 ~~~
 
 {{{async-is-good-1.js}}}
 
-Что мы видим из этого примера:
+What we see from this example:
 
-• вместо вызова метода **~then~** экземпляра **~Promise~** использовано ключевое слово **~await~** асинхронной функции;
-• код, который следует после строки с **~await~**, будет выполнен так, как будто этот код выполняется в колбэке метода **~then~** предыдущего экземпляра **~Promise~**;
-• вызов асинхронной функции возвращает экземпляр **~Promise~**, поэтому получить результат работы асинхронной функции можно только с помощью метода **~then~**;
-• для того, чтобы вызов асинхронной функции резолвился результатом, в теле асинхронной функции должен быть оператор **~return~**.
+• instead of calling the **~then~** method of the **~Promise~** instance, the **~await~** keyword of the asynchronous function is used;
+• the code that follows the line with **~await~** will be executed as if this code were executed in the callback function passed to **~then~** method of the previous **~Promise~** instance;
+• the asynchronous function call returns an instance of **~Promise~**, so you can only get the result of the asynchronous function using the **~then~** method;
+• in order to resolve an asynchronous function call with the result, there must be a **~return~** operator in the body of the asynchronous function.
 
 _________________________
 
-### ![ico-20 icon] Диспетчер очередей
+### ![ico-20 icon] Queue Manager
 
-Асинхронная функция является отличным организатором очередей.
-Она строго следит за порядком в очереди микротасков ![ico-20 smile].
+The asynchronous function is an excellent queue organiser.
+It strictly enforces the order of the microtask queue ![ico-20 smile].
 
-Пусть у нас есть функция **~promise~**, которая возвращает экземпляр ~Promise~,
-при этом биндит колбэку **~resolve~** первый аргумент, переданный функции **~promise~**.
-Второй аргумент функции **~promise~** используется для установки таймера:
+Suppose we have a function **~promise~** that returns an instance of ~Promise~,
+and also binds to the **~resolve~** colback the first argument passed to the **~promise~** function.
+The second argument to the **~promise~** function is used to set the timer:
 
 ~~~js
 function promise () {
@@ -168,13 +170,13 @@ function promise () {
 }
 ~~~
 
-и функция **~resolve~**:
+and the **~resolve~** function:
 
 ~~~js
 const resolve = response => console.log(response)
 ~~~
 
-Сделаем три последовательных вызова функции **~promise~**:
+Let's make three consecutive calls to the **~promise~** function:
 
 ~~~js
 promise('Start', 5).then(resolve)
@@ -185,9 +187,9 @@ resolve('Finish')
 
 {{{async-is-good-3-1.js}}}
 
-Как мы видим, колбэки возвращаются тогда, когда истекло время таймера, а не в порядке их вызова.
+As we can see, the colbacks are returned when the timer time has expired, not in the order they were called.
 
-А теперь выстроим их в очередь с помощью асинхронной функции **~sigma~**:
+Now let's queue them using the asynchronous function **~sigma~**:
 
 ◘◘![ico-20 cap] ** 3**◘◘
 
@@ -208,11 +210,11 @@ sigma().then(response => console.log(response))
 
 {{{async-is-good-3-2.js}}}
 
-Теперь они строго соблюдают очередь ![ico-20 smile]
+Now they're strictly following the queue ![ico-20 smile]
 
 __________________________________
 
-### ![ico-20 icon] Организатор асинхронных процессов
+### ![ico-20 icon] Organiser of asynchronous processes
 
 ◘◘![ico-20 cap] ** 4**◘◘
 
@@ -247,7 +249,7 @@ getLogin(res => console.log(res), err => console.error(err))
 
 {{{async-is-good-4.js}}}
 
-^^Для того, чтобы посмотреть, какие логины есть в базе данных, выполните в консоли:^^
+^^To see which logins are in the database, execute in the console:^^
 
 ~~~js
 fetch('https://garevna-rest-api.glitch.me/users/all')
@@ -257,14 +259,14 @@ fetch('https://garevna-rest-api.glitch.me/users/all')
 
 _________________________________
 
-Немного перепишем предыдущий пример.
+Let's slightly rewrite the previous example.
 
-Объявим функцию **~getInput~**, которая будет возвращать экземпляр **Promise**.
-Функция **~getInput~** получает в качестве аргумента объект **~users~**, и создает элемент ~input~ для ввода логина юзера.
+Declare a **~getInput~** function that will return an instance of **Promise**.
+The **~getInput~** function takes a **~users~** object as an argument, and creates an ~input~ element to enter the login of the user.
 
-Анонимная функция, которая передается конструктору **Promise**, устанавливает обработчика события ~onchange~ элемента ~input~,
-который вызывает либо **~resolve~**, либо **~reject~** в зависимости от того, что было введено в поле ~input~
-(есть ли соответствующий юзер в базе данных).
+The anonymous function that is passed to the **Promise** constructor sets the ~onchange~ event handler of the ~input~ element,
+which calls either **~resolve~** or **~reject~** depending on what was entered into the ~input~ field.
+(whether the corresponding user is in the database).
 
 ◘◘![ico-20 file] getInput◘◘
 
@@ -294,7 +296,7 @@ function getInput (users) {
 }
 ~~~
 
-Теперь создадим асинхронную функцию **~getLogin~**, которая будет делать запрос серверу, получать данные и вызывать функцию **~getInput~** с передачей ей полученных данных:
+Now let's create an asynchronous function **~getLogin~** that will make a request to the server, get the data and call the function **~getInput~** and pass it the received data:
 
 ◘◘![ico-20 file] getLogin◘◘
 
@@ -306,18 +308,18 @@ async function getLogin () {
 }
 ~~~
 
-Осталось только вызвать функцию **getLogin**:
+The only thing left to do is to call the function **getLogin**:
 
-◘◘![ico-20 file] Вызов функции getLogin◘◘
+◘◘![ico-20 file] Function getLogin call◘◘
 
 ~~~js
 getLogin().then(console.log, console.error)
 ~~~
 
-и не забудьте нажать **Enter** после ввода логина.
+and don't forget to press **Enter** after entering the login.
 
 
-^^^[полный код примера]
+^^^[Full example code]
 ~~~js
 function getInput ( users ) {
   const logins = Object.keys(users)
@@ -357,4 +359,4 @@ getLogin().then(console.log, console.error)
 {{{async-is-good-5.js}}}
 
 _______________________
-[![ico-30 hw] Тесты](quiz/async )
+[![ico-30 hw] Quiz](quiz/async )
