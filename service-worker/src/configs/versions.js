@@ -338,11 +338,11 @@ export const versions = {
 	'ua/Timers.md': '2024-10-18T08:58:32.884Z',
 	'ua/var.md': '2024-10-22T06:05:53.883Z',
 	'ua/while.md': '2024-10-18T08:58:32.885Z',
-	'index.js': '2024-11-09T19:25:39.285Z',
+	'index.js': '2024-11-09T20:36:50.323Z',
 	'content.worker.js': '2024-11-09T19:54:29.679Z',
 	'icons.worker.js': '2024-11-05T07:33:37.983Z',
 	'main-menu.js': '2024-11-09T11:59:59.022Z',
 	'donate.js': '2024-11-09T11:59:59.022Z',
 	'registerServiceWorker.js': '2024-11-04T09:31:00.102Z',
-	'service-worker.js': '2024-11-09T20:08:41.775Z'
+	'service-worker.js': '2024-11-09T20:10:19.742Z'
 }
