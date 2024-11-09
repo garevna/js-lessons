@@ -12,6 +12,19 @@ footer {
 	height: 100%;
 }
 
+.service-worker-version-number {
+  position: fixed;
+  bottom: 0;
+  right: 24px;
+  background: #fff9;
+  border-radius: 4px;
+  box-shadow: -2px -2px 4px #0005;
+  padding: 4px 8px;
+  color: #777;
+  font-size: 10px;
+  font-weight: bold;
+}
+
 #donate-button {
 	grid-area: 3 / 1 / 4 / 2;
 }
@@ -72,7 +85,7 @@ footer {
   transition: .5s ease;
   transform: translate(0,30%) scale(0.0);
   background-color: #fff;
-  background-image: var(--garevna-wild);
+  background-image: url(${createPath('images', 'garevna-theatre.jpg')});
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

@@ -1,5 +1,27 @@
-const fs = require('fs')
+const fs = require('fs-extra')
 const path = require('path')
+
+const json = fs.readJsonSync(path.join(__dirname, './package.json'))
+
+function updateVersionNumber (version) {
+  const nums = version.split('.').map(val => Number(val))
+  if (nums[2] < 9) ++nums[2]
+  else {
+    nums[2] = 0
+    if (nums[1] < 9) ++nums[1]
+    else {
+      nums[1] = 0
+      ++nums[0]
+    }
+  }
+  return nums.join('.')
+}
+
+json.version = updateVersionNumber(json.version)
+
+fs.writeJsonSync(path.join(__dirname, './package.json'), json)
+fs.writeFileSync(path.join(__dirname, '../src/configs/serviceWorkerVersion.js'), `export const serviceWorkerVersion = "${json.version}"`)
+fs.writeFileSync(path.join(__dirname, '../src/configs/serviceWorkerDate.js'), `export const serviceWorkerDate = "${new Date().toISOString().slice(0, 10)}"`)
 
 const dirPath = path.join(__dirname, '../public/lessons')
 

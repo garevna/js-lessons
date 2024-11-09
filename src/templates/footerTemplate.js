@@ -1,4 +1,4 @@
-const { copyrightText, copyrightSign, footerSlogan } = require('../configs').default
+const { copyrightText, copyrightSign, footerSlogan, serviceWorkerVersion, serviceWorkerDate } = require('../configs').default
 
 export const footerTemplate = `
 <footer>
@@ -15,6 +15,9 @@ export const footerTemplate = `
       </div>
     </figure>
   </div>
-  <funny-slogan id="slogan-donate" text="${footerSlogan}"/>
+  <funny-slogan id="slogan-donate" text="${footerSlogan}"></funny-slogan>
+  <div class="service-worker-version-number">
+    ${serviceWorkerVersion} | ${serviceWorkerDate}
+  </div>
 </footer>
 `

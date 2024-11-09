@@ -1,6 +1,7 @@
 import { getValidVersion } from './getValidVersion'
+import { getCacheName } from './getCacheName'
 
-const { cacheName, verHeaderName } = require('../configs').default
+const { verHeaderName } = require('../configs').default
 
 export async function updateCache (response) {
   if (response.url.includes('chrome-extension://')) return false
@@ -16,7 +17,7 @@ export async function updateCache (response) {
   const blob = await clone.blob()
   const resp = new Response(blob, { status, statusText, headers })
 
-  const cache = await caches.open(cacheName)
+  const cache = await caches.open(getCacheName())
 
   return await cache.put(response.url, resp)
 }

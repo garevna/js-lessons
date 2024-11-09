@@ -3,15 +3,14 @@ import { getFromRemote } from './getFromRemote'
 import { updateCache } from './updateCache'
 import { isStable } from './isStable'
 import { isCached } from './isCached'
-
-const { cacheName } = require('../configs').default
+import { getCacheName } from './getCacheName'
 
 export async function searchInCache (event) {
   const { request } = event
 
   if (!isCached(request)) return await getFromRemote(request.url)
 
-  const cache = await caches.open(cacheName)
+  const cache = await caches.open(getCacheName())
   const response = await cache.match(request, { ignoreSearch: true })
 
   if (response) {
