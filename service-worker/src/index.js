@@ -1,12 +1,12 @@
-const { initialCachedFiles, cacheName } = require('./configs').default
-const { searchInCache } = require('./helpers').default
+const { initialCachedFiles } = require('./configs').default
+const { searchInCache, getCacheName } = require('./helpers').default
 
 const enableNavigationPreload = async () => self.registration.navigationPreload && await self.registration.navigationPreload.enable()
 
 self.addEventListener('activate', event => event.waitUntil(enableNavigationPreload()))
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(initialCachedFiles)))
+  event.waitUntil(caches.open(getCacheName()).then(cache => cache.addAll(initialCachedFiles)))
   self.skipWaiting()
 })
 

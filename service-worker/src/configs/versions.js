@@ -318,7 +318,7 @@ export const versions = {
 	'ua/Array-iterating-methods.md': '2024-10-21T06:51:44.109Z',
 	'ua/arrayBuffer.md': '2024-10-18T08:58:32.875Z',
 	'ua/arrow-function.md': '2024-10-21T06:20:56.607Z',
-	'ua/Assignments.md': '2024-11-09T19:53:42.923Z',
+	'ua/Assignments.md': '2024-11-10T08:05:27.904Z',
 	'ua/async-await.md': '2024-10-18T08:58:32.877Z',
 	'ua/async-is-good.md': '2024-11-07T07:51:42.169Z',
 	'ua/Block-diagram.md': '2024-10-18T08:58:32.877Z',
@@ -338,11 +338,11 @@ export const versions = {
 	'ua/Timers.md': '2024-10-18T08:58:32.884Z',
 	'ua/var.md': '2024-10-22T06:05:53.883Z',
 	'ua/while.md': '2024-10-18T08:58:32.885Z',
-	'index.js': '2024-11-09T20:36:50.323Z',
+	'index.js': '2024-11-10T08:06:28.484Z',
 	'content.worker.js': '2024-11-09T19:54:29.679Z',
 	'icons.worker.js': '2024-11-05T07:33:37.983Z',
 	'main-menu.js': '2024-11-09T11:59:59.022Z',
 	'donate.js': '2024-11-09T11:59:59.022Z',
 	'registerServiceWorker.js': '2024-11-04T09:31:00.102Z',
-	'service-worker.js': '2024-11-09T20:10:19.742Z'
+	'service-worker.js': '2024-11-10T08:01:02.984Z'
 }
