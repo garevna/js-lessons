@@ -1,47 +1,47 @@
-# ![ico-25 icon] {{s1.h1}}
+# ![ico-25 icon] Status
 
-{{s1.p1}}
+![ico-20 green-ok] **200** (OK)
 
-{{s1.p2}}
+{{s0.p1}}
 
-{{s1.p3}}
+{{s0.p2}}
 
-{{s1.p4}}
+![ico-20 green-ok] **201** (Created)
 
-{{s1.p5}}
+{{s0.p3}}
 
-{{s1.p6}}
+{{s0.p4}}
 
-{{s1.p7}}
+{{s0.p5}}
 
-{{s1.p8}}
+![ico-20 green-ok] **400** (Bad Request)
 
-{{s1.p9}}
+{{s0.p6}}
 
-{{s1.p10}}
+![ico-20 green-ok] **401** (Unauthorized)
 
-{{s1.p11}}
+{{s0.p7}}
 
-{{s1.p12}}
+![ico-20 green-ok] **403** (Forbidden)
 
-{{s1.p13}}
+{{s0.p8}}
 
-{{s1.p14}}
+![ico-20 green-ok] **404** (Not found)
 
-{{s1.p15}}
+{{s0.p9}}
 
-{{s1.p16}}
+![ico-20 green-ok] **405** (Method Not Allowed)
 
-{{s1.p17}}
+{{s0.p10}}
 
-{{s1.p18}}
+![ico-20 green-ok] **410** (Gone)
 
-{{s1.p19}}
+{{s0.p11}}
 
-{{s1.p20}}
+![ico-20 green-ok] **415** (Unsupported Media Type)
 
-{{s1.p21}}
+{{s0.p12}}
 
-{{s1.p22}}
+![ico-20 green-ok] **429** (Too Many Requests)
 
-{{s1.p23}}
+{{s0.p13}}

@@ -51,7 +51,10 @@ const BLOCKS = [
 
 const SEPARATOR = /^[-_=]{3,}$/
 const HEADING = /^(#{1,6})(\s*(?:!\[[^\]]+\]\s*)?)(.*)$/
-const IMAGE_ONLY = /^!\[[^\]]*\]\([^)]*\)$/
+// The target may itself contain parentheses — several lessons write
+// ![](createPath('images', 'x.png')), calling a helper inside the image
+// syntax — so the target is matched greedily up to the final bracket.
+const IMAGE_ONLY = /^!\[[^\]]*\]\(.*\)$/
 
 // An image wrapped in a link — [![ico-70 youtube]](https://…). Markup all the
 // way through, but it carries letters inside the icon name, so without a rule
@@ -79,7 +82,7 @@ const SLOGAN = /^(\s*☼☼☼\s*)(.+?)(\s*☼☼☼\s*)$/
 const TEST = /^(\s*→→→\s*)(.+?)(\s*→→→\s*)$/
 const DEMO = /^(\s*§§§§\s*)(.+?)(\s*§§§§\s*)$/
 
-function extract (source, sectionNames) {
+function extract (source, sectionNames, refDecisions) {
   const messages = {}
   const notes = []
   const sections = []
@@ -88,6 +91,11 @@ function extract (source, sectionNames) {
   let section = 's0'
   const counters = {}
   const fragments = []
+
+  // Whether each content line became a message, in order. The reference
+  // language decides; the others replay it.
+  const decisions = []
+  let contentIndex = -1
 
   const key = (kind) => {
     const bucket = `${section}.${kind}`
@@ -153,10 +161,28 @@ function extract (source, sectionNames) {
     if (GRID_DELIMITER.test(line)) return line
     if (HTML_ONLY.test(line.trim())) return line
 
-    // Nothing to translate means no key at all. A line holding only entities
-    // and punctuation — &nbsp; between grid cells — is spacing, and giving it
-    // a message key made every language carry a copy of it for nothing.
-    if (!/\p{L}/u.test(line.replace(/&[a-zA-Z]+;|&#\d+;/g, ''))) return line
+    // Everything past this point is a content line: not a separator, not an
+    // image, not markup. Whether it becomes a message is decided once, by the
+    // reference language, and replayed by the others.
+    //
+    // The test is "does the Russian hold any Cyrillic". A line without it is
+    // not Russian prose — code, a shell command, a table of method names, quiz
+    // variants — it reads the same in every language and belongs in the
+    // skeleton. Giving it a key made each language carry an identical copy;
+    // practice-03 came out with English and Ukrainian files holding one entry
+    // between them, "![](⟦f7⟧))".
+    //
+    // The decision cannot be taken per language: an English file has no
+    // Cyrillic at all, so applying this test to it would discard every
+    // translation in the file.
+    contentIndex += 1
+
+    const translatable = refDecisions
+      ? refDecisions[contentIndex] !== false
+      : /[Ѐ-ӿ]/.test(line.replace(/&[a-zA-Z]+;|&#\d+;/g, ''))
+
+    decisions[contentIndex] = translatable
+    if (!translatable) return line
 
     let m
 
@@ -226,7 +252,7 @@ function extract (source, sectionNames) {
   // makes each sample exist once instead of once per language.
   const withBlocks = skeleton.replace(/⟦BLOCK(\d+)⟧/g, (_, i) => blocks[Number(i)])
 
-  return { skeleton: withBlocks, messages, notes, sections, fragments }
+  return { skeleton: withBlocks, messages, notes, sections, fragments, decisions }
 }
 
 /* ------------------------------------------------------- round-trip check */
@@ -258,16 +284,21 @@ console.log(`${page}.md — present in: ${langs.join(', ')}\n`)
 const results = {}
 let failed = false
 
-// Section names are taken from the first language present (ru in practice)
-// and reused by the others, so the same section has the same key everywhere.
+// Section names, and the decision about which lines are translatable at all,
+// are taken from the first language present (ru in practice) and reused by the
+// others — so the same paragraph carries the same key in every language.
 let sectionNames = null
+let refDecisions = null
 
 for (const lang of langs) {
   const file = path.join(LESSONS, lang, `${page}.md`)
   const source = fs.readFileSync(file, 'utf8')
 
-  const { skeleton, messages, sections, fragments } = extract(source, sectionNames)
+  const { skeleton, messages, sections, fragments, decisions } =
+    extract(source, sectionNames, refDecisions)
+
   if (!sectionNames) sectionNames = sections
+  if (!refDecisions) refDecisions = decisions
   const rebuilt = assemble(skeleton, messages, fragments)
   const ok = rebuilt === source
 

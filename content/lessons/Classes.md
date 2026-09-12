@@ -1,5 +1,7 @@
 # ![ico-30 study] {{s1.h1}}
 
+**ES6 (ECMAScript 2015)**
+
 {{s1.p1}}
 
 {{s1.p2}}
@@ -7,8 +9,6 @@
 {{s1.p3}}
 
 {{s1.p4}}
-
-{{s1.p5}}
 
 ____________________________________________________________________
 
@@ -81,7 +81,7 @@ const user = new User('Крокодил')
 user.show()
 ~~~
 
-{{s2.p13}}
+◘◘**Result**◘◘
 
 ~~~console
 
@@ -89,8 +89,8 @@ user.show()
 Зато я вижу приватную переменную: 789
 ~~~
 
+{{s2.p13}}
 {{s2.p14}}
-{{s2.p15}}
 
 ~~~js
 
@@ -110,7 +110,7 @@ const user = new User('Крокодил')
 user.show()
 ~~~
 
-{{s2.p16}}
+◘◘**Result**◘◘
 
 ~~~console
 
@@ -118,22 +118,22 @@ user.show()
 Зато я вижу приватную переменную: 789
 ~~~
 
-{{s2.p17}}
+{{s2.p15}}
 
-{{s2.p18}}
+••constructor: class User    /    constructor: ƒ User(name)••
 
 _______________________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] class declaration
 
 
-{{s3.p1}}
+![ico-20 error] **hoisting**
 
-{{s3.p2}}
+{{s2.p16}}
 
-{{s3.p3}}
+{{s2.p17}}
 
-{{s3.p4}}
+{{s2.p18}}
 
 ~~~js
 class Picture {
@@ -147,11 +147,11 @@ class Picture {
 typeof Picture  // "function"
 ~~~
 
-{{s3.p5}}
-{{s3.p6}}
+{{s2.p19}}
+{{s2.p20}}
 
-{{s3.p7}}
-{{s3.p8}}
+{{s2.p21}}
+{{s2.p22}}
 
 ~~~js
 const x = new Picture('http://www.radioactiva.cl/wp-content/uploads/2018/05/pikachu.jpg', 200)
@@ -160,13 +160,13 @@ document.body.appendChild(x.elem)
 
 __________________________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] class expression
 
-{{s4.p1}}
+{{s2.p23}}
 
-### ![ico-20 icon] {{s5.h1}}
+### ![ico-20 icon] {{s3.h1}}
 
-{{s5.p1}}
+{{s3.p1}}
 
 ~~~js
 const Picture = class {
@@ -180,7 +180,7 @@ const Picture = class {
 console.dir(Picture)
 ~~~
 
-{{s5.p2}}
+{{s3.p2}}
 
 ~~~console
 
@@ -193,7 +193,7 @@ console.dir(Picture)
   ► __proto__: ƒ ()
 ~~~
 
-{{s5.p3}}
+{{s3.p3}}
 
 ~~~js
 let sample = new Picture
@@ -201,7 +201,7 @@ let sample = new Picture
 console.log(sample)
 ~~~
 
-{{s5.p4}}
+{{s3.p4}}
 
 ~~~console
 
@@ -214,7 +214,7 @@ console.log(sample)
 
 _____________________________________________________________
 
-{{s5.p5}}
+{{s3.p5}}
 
 ~~~js
 const Picture = class Canvas {
@@ -228,7 +228,7 @@ const Picture = class Canvas {
 console.dir(Picture)
 ~~~
 
-{{s5.p6}}
+{{s3.p6}}
 
 ~~~console
 
@@ -241,7 +241,7 @@ console.dir(Picture)
   ► __proto__: ƒ ()
 ~~~
 
-{{s5.p7}}
+{{s3.p7}}
 
 ~~~js
 const sample = new Picture
@@ -249,7 +249,7 @@ const sample = new Picture
 console.log(sample)
 ~~~
 
-{{s5.p8}}
+{{s3.p8}}
 
 ~~~console
 
@@ -268,11 +268,11 @@ sample instanceof Picture   // true
 sample instanceof Canvas
 ~~~
 
-{{s5.p9}}
+••![ico-20 error] Uncaught ReferenceError: Canvas is not defined••
 
-{{s5.p10}}
+{{s3.p9}}
 
-{{s5.p11}}
+{{s3.p10}}
 
 ~~~js
 sample.constructor.name
@@ -280,7 +280,7 @@ sample.constructor.name
 
 ________________________________________________________________
 
-{{s5.p12}}
+{{s3.p11}}
 
 ~~~js
 const Sample = class Canvas {
@@ -311,7 +311,7 @@ pict.drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 pict.drawLine([{ x: 250, y: 250 }, { x: 100, y: 250 }])
 ~~~
 
-{{s5.p13}}
+{{s3.p12}}
 
 ~~~js
 console.log ( Sample.name ) // "Canvas"
@@ -320,23 +320,23 @@ console.log ( Sample.name ) // "Canvas"
 ________________________________________________________
 
 
-## ![ico-25 icon] {{s6.h1}}
+## ![ico-25 icon] get & set
 
-{{s6.p1}}
+{{s3.p13}}
 
-{{s6.p2}}
+{{s3.p14}}
 
-{{s6.p3}}
+{{s3.p15}}
 
-{{s6.p4}}
+{{s3.p16}}
 
-{{s6.p5}}
+{{s3.p17}}
 
-{{s6.p6}}
+{{s3.p18}}
 
-{{s6.p7}}
+{{s3.p19}}
 
-{{s6.p8}}
+{{s3.p20}}
 
 ~~~js
 const Canvas = class {
@@ -347,9 +347,9 @@ const Canvas = class {
 }
 ~~~
 
-{{s6.p9}}
+{{s3.p21}}
 
-{{s6.p10}}
+{{s3.p22}}
 
 ~~~js
 set history (newHistory) {
@@ -369,10 +369,10 @@ set history (newHistory) {
 }
 ~~~
 
-{{s6.p11}}
-{{s6.p12}}
+{{s3.p23}}
+{{s3.p24}}
 
-{{s6.p13}}
+{{s3.p25}}
 
 ~~~js
 get history () {
@@ -380,9 +380,9 @@ get history () {
 }
 ~~~
 
-{{s6.p14}}
+{{s3.p26}}
 
-{{s6.p15}}
+{{s3.p27}}
 
 ~~~~js
 const Canvas = class {
@@ -415,7 +415,7 @@ const Canvas = class {
 let pict = new Canvas()
 ~~~~
 
-{{s6.p16}}
+{{s3.p28}}
 
 ~~~js
 pict.history = [
@@ -426,7 +426,7 @@ pict.history = [
 ]
 ~~~
 
-{{s6.p17}}
+◘◘pict◘◘
 
 ~~~console
 
@@ -441,40 +441,40 @@ pict.history = [
   ► __proto__: Object
 ~~~
 
-{{s6.p18}}
-{{s6.p19}}
-{{s6.p20}}
+{{s3.p29}}
+{{s3.p30}}
+{{s3.p31}}
 
-{{s6.p21}}
+{{s3.p32}}
 
 ~~~js
 pict.history = ['***']
 ~~~
 
-{{s6.p22}}
+{{s3.p33}}
 
-{{s6.p23}}
+••![ico-20 error] History must contain path array••
 
 ~~~js
 pict.history = true
 ~~~
 
-{{s6.p24}}
+{{s3.p34}}
 
-{{s6.p25}}
+••![ico-20 error] History must be array••
 
-{{s6.p26}}
-{{s6.p27}}
+{{s3.p35}}
+{{s3.p36}}
 
 ________________________________________________________
 
-## ![ico-25 icon] {{s7.h1}}
+## ![ico-25 icon] {{s4.h1}}
 
-{{s7.p1}}
+{{s4.p1}}
 
-{{s7.p2}}
+{{s4.p2}}
 
-{{s7.p3}}
+{{s4.p3}}
 
 ~~~js
 const drawLine = pict.drawLine
@@ -482,24 +482,24 @@ const drawLine = pict.drawLine
 drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 ~~~
 
-{{s7.p4}}
+{{s4.p4}}
 
-{{s7.p5}}
+••![ico-20 error] Uncaught TypeError: Cannot read property 'area' of undefined••
 
-{{s7.p6}}
+{{s4.p5}}
 
 ~~~js
 const drawLine = pict.drawLine.bind(pict)
 ~~~
 
-{{s7.p7}}
-{{s7.p8}}
-{{s7.p9}}
-{{s7.p10}}
+{{s4.p6}}
+{{s4.p7}}
+{{s4.p8}}
+{{s4.p9}}
 
 ______________________________________________________
 
-{{s7.p11}}
+{{s4.p10}}
 
 ~~~js
 class User {
@@ -521,9 +521,9 @@ class User {
 }
 ~~~
 
-{{s7.p12}}
-{{s7.p13}}
-{{s7.p14}}
+{{s4.p11}}
+{{s4.p12}}
+{{s4.p13}}
 
 ~~~js
 var user = new User('Grig')
@@ -533,13 +533,13 @@ user.addSomeInfo([
 ])
 ~~~
 
-{{s7.p15}}
+{{s4.p14}}
 
-{{s7.p16}}
+••![ico-20 error] Uncaught TypeError: Cannot set property 'age' of undefined••
 
-{{s7.p17}}
+{{s4.p15}}
 
-{{s7.p18}}
+{{s4.p16}}
 
 ~~~js
 class User {
@@ -555,7 +555,7 @@ class User {
 }
 ~~~
 
-{{s7.p19}}
+{{s4.p17}}
 
 ~~~js
 const user = new User('Grig')
@@ -570,7 +570,7 @@ user.addSomeInfo([
 console.log(user)
 ~~~
 
-{{s7.p20}}
+{{s4.p18}}
 
 ~~~console
 
@@ -586,16 +586,16 @@ console.log(user)
 
 ________________________________________________________
 
-## ![ico-25 icon] {{s8.h1}}
+## ![ico-25 icon] {{s5.h1}}
 
-### ![ico-20 icon] {{s9.h1}}
+### ![ico-20 icon] extends
 
-{{s9.p1}}
-{{s9.p2}}
+{{s5.p1}}
+{{s5.p2}}
 
-{{s9.p3}}
+{{s5.p3}}
 
-{{s9.p4}}
+{{s5.p4}}
 
 ~~~js
 class Provider extends Array {
@@ -611,17 +611,17 @@ class Provider extends Array {
 }
 ~~~
 
-{{s9.p5}}
+{{s5.p5}}
 
-{{s9.p6}}
+{{s5.p6}}
 
 ~~~js
 let provider = new Provider
 ~~~
 
-{{s9.p7}}
+{{s5.p7}}
 
-{{s9.p8}}
+◘◘provider◘◘
 
 ~~~console
 
@@ -638,7 +638,7 @@ let provider = new Provider
       ► __proto__: Array(0)
 ~~~
 
-{{s9.p9}}
+{{s5.p8}}
 
 ~~~js
 provider instanceof Provider  // true
@@ -650,7 +650,7 @@ provider * 3   // 15
 
 ______________________________
 
-{{s9.p10}}
+{{s5.p9}}
 
 ~~~js
 const Canvas = class {
@@ -682,30 +682,30 @@ newCanvas.drawCircle({ x: 100, y: 100 }, 100)
 newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }])
 ~~~
 
-{{s9.p11}}
-{{s9.p12}}
-{{s9.p13}}
-{{s9.p14}}
+{{s5.p10}}
+{{s5.p11}}
+{{s5.p12}}
+{{s5.p13}}
 
 ________________________________________________________
 
-### ![ico-20 icon] {{s10.h1}}
+### ![ico-20 icon] super
 
-{{s10.p1}}
+{{s5.p14}}
 
-{{s10.p2}}
+{{s5.p15}}
 
-{{s10.p3}}
-{{s10.p4}}
-{{s10.p5}}
+{{s5.p16}}
+{{s5.p17}}
+{{s5.p18}}
 
 ~~~js
 super.drawLine(points, lineColor)
 ~~~
 
-{{s10.p6}}
+{{s5.p19}}
 
-{{s10.p7}}
+{{s5.p20}}
 
 ~~~js
 const Canvas = class {
@@ -733,31 +733,31 @@ class ExtendedCanvas extends Canvas {
 }
 ~~~
 
-{{s10.p8}}
+{{s5.p21}}
 
 ~~~js
 let newCanvas = new ExtendedCanvas()
 ~~~
 
-{{s10.p9}}
+{{s5.p22}}
 
 ~~~js
 newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }], '#ffaa00', 10)
 ~~~
 
-{{s10.p10}}
+{{s5.p23}}
 
 ____________________________________________
 
-### ![ico-20 icon] {{s11.h1}}
+### ![ico-20 icon] super ()
 
-{{s11.p1}}
+{{s5.p24}}
 
-{{s11.p2}}
+{{s5.p25}}
 
-{{s11.p3}}
+{{s5.p26}}
 
-{{s11.p4}}
+{{s5.p27}}
 
 ~~~js
 const Canvas = class {
@@ -782,35 +782,35 @@ class ExtendedCanvas extends Canvas {
 }
 ~~~
 
-{{s11.p5}}
+{{s5.p28}}
 
-{{s11.p6}}
-{{s11.p7}}
+••![ico-20 error] Uncaught ReferenceError: ••
+•• Must call super constructor in derived class before accessing 'this' or returning from derived constructor••
 
 _________________________________________________________
 
-### ![ico-20 icon] {{s12.h1}}
+### ![ico-20 icon] {{s6.h1}}
 
-{{s12.p1}}
-{{s12.p2}}
-{{s12.p3}}
+{{s6.p1}}
+{{s6.p2}}
+{{s6.p3}}
 
-{{s12.p4}}
+{{s6.p4}}
 
-{{s12.p5}}
-{{s12.p6}}
+{{s6.p5}}
+{{s6.p6}}
 
 ~~~js
 Object.setPrototypeOf(person, human)
 ~~~
 
-{{s12.p7}}
+{{s6.p7}}
 
-{{s12.p8}}
-{{s12.p9}}
-{{s12.p10}}
+{{s6.p8}}
+{{s6.p9}}
+{{s6.p10}}
 
-{{s12.p11}}
+{{s6.p11}}
 
 ~~~js
 const human = {
@@ -838,7 +838,7 @@ person.talk('привет!')
 
 __________________________________________________
 
-{{s12.p12}}
+{{s6.p12}}
 
 ~~~js
 const human = {
@@ -868,29 +868,29 @@ person.talk('привет!')
 setTimeout(() => person.talk('Hello, baby!'), 2000)
 ~~~
 
-{{s12.p13}}
-{{s12.p14}}
-{{s12.p15}}
+{{s6.p13}}
+{{s6.p14}}
+{{s6.p15}}
 
-{{s12.p16}}
-{{s12.p17}}
-{{s12.p18}}
-{{s12.p19}}
+{{s6.p16}}
+{{s6.p17}}
+{{s6.p18}}
+{{s6.p19}}
 
-{{s12.p20}}
-{{s12.p21}}
-{{s12.p22}}
-{{s12.p23}}
+{{s6.p20}}
+{{s6.p21}}
+{{s6.p22}}
+{{s6.p23}}
 
-{{s12.p24}}
-{{s12.p25}}
-{{s12.p26}}
-{{s12.p27}}
-{{s12.p28}}
+{{s6.p24}}
+{{s6.p25}}
+{{s6.p26}}
+{{s6.p27}}
+{{s6.p28}}
 
 ______________________________________________________
 
-{{s12.p29}}
+{{s6.p29}}
 
 ~~~js
 const human = {
@@ -917,33 +917,33 @@ person.talk('привет!')
 setTimeout(() => person.talk('Hello, baby!'), 2000)
 ~~~
 
-{{s12.p30}}
-{{s12.p31}}
-{{s12.p32}}
-{{s12.p33}}
+{{s6.p30}}
+{{s6.p31}}
+{{s6.p32}}
+{{s6.p33}}
 
-{{s12.p34}}
-{{s12.p35}}
+{{s6.p34}}
+{{s6.p35}}
 
-{{s12.p36}}
-{{s12.p37}}
-{{s12.p38}}
-{{s12.p39}}
+{{s6.p36}}
+{{s6.p37}}
+{{s6.p38}}
+{{s6.p39}}
 
-{{s12.p40}}
-{{s12.p41}}
-{{s12.p42}}
+{{s6.p40}}
+{{s6.p41}}
+{{s6.p42}}
 
-{{s12.p43}}
-{{s12.p44}}
-{{s12.p45}}
-{{s12.p46}}
-{{s12.p47}}
+{{s6.p43}}
+{{s6.p44}}
+{{s6.p45}}
+{{s6.p46}}
+{{s6.p47}}
 
-{{s12.p48}}
-{{s12.p49}}
-{{s12.p50}}
-{{s12.p51}}
+{{s6.p48}}
+{{s6.p49}}
+{{s6.p50}}
+{{s6.p51}}
 
 ~~~js
 const person = {
@@ -956,23 +956,23 @@ const person = {
 }
 ~~~
 
-{{s12.p52}}
+{{s6.p52}}
 
 ~~~js
 super.say(text)
 ~~~
 
-{{s12.p53}}
+{{s6.p53}}
 
 ~~~js
 this.__proto__.say(text)
 ~~~
 
-{{s12.p54}}
+{{s6.p54}}
 
 ______________________________________________________________
 
-{{s12.p55}}
+{{s6.p55}}
 
 ~~~~js
 const human = {
@@ -1014,20 +1014,20 @@ person.place = 'demo-2'
 setTimeout(() => person.talk('Hello, baby!'), 2000)
 ~~~~
 
-{{s12.p56}}
-{{s12.p57}}
+{{s6.p56}}
+{{s6.p57}}
 
 ________________________________________________________
 
-## ![ico-25 icon] {{s13.h1}}
+## ![ico-25 icon] static
 
-{{s13.p1}}
+{{s6.p58}}
 
-{{s13.p2}}
+{{s6.p59}}
 
-{{s13.p3}}
+{{s6.p60}}
 
-{{s13.p4}}
+{{s6.p61}}
 
 ~~~js
 class Canvas {
@@ -1056,37 +1056,37 @@ Canvas.drawLine(pict, [{ x: 50, y: 50 }, { x: 250, y: 250 }])
 Canvas.drawLine(pict, [{ x: 250, y: 250 }, { x: 100, y: 250 }])
 ~~~
 
-{{s13.p5}}
-{{s13.p6}}
+{{s6.p62}}
+{{s6.p63}}
 
 ~~~js
 Canvas.resizeCanvas
 Canvas.drawLine
 ~~~
 
-{{s13.p7}}
+{{s6.p64}}
 
-{{s13.p8}}
-{{s13.p9}}
+{{s6.p65}}
+{{s6.p66}}
 
 ~~~js
 Canvas.resizeCanvas.call(this.canvas)
 ~~~
 
-{{s13.p10}}
-{{s13.p11}}
+{{s6.p67}}
+{{s6.p68}}
 
 ~~~js
 window.onresize = Canvas.resizeCanvas.bind(pict.canvas)
 ~~~
 
-{{s13.p12}}
+{{s6.p69}}
 
-{{s13.p13}}
+{{s6.p70}}
 
-{{s13.p14}}
-{{s13.p15}}
-{{s13.p16}}
+{{s6.p71}}
+{{s6.p72}}
+{{s6.p73}}
 
 ~~~js
 drawLine (points) {
@@ -1096,12 +1096,12 @@ drawLine (points) {
 }
 ~~~
 
-{{s13.p17}}
+{{s6.p74}}
 
 
 ________________________________________________________
 
-{{s13.p18}}
+{{s6.p75}}
 
 ~~~js
 class Canvas {
@@ -1119,51 +1119,51 @@ var pict = new Canvas()
 window.onresize = Canvas.resizeCanvas
 ~~~
 
-{{s13.p19}}
+{{s6.p76}}
 
-{{s13.p20}}
+••name: "Canvas"••
 
-{{s13.p21}}
-{{s13.p22}}
-{{s13.p23}}
+{{s6.p77}}
+{{s6.p78}}
+{{s6.p79}}
 
-{{s13.p24}}
+••name: ""••
 
-{{s13.p25}}
-{{s13.p26}}
+{{s6.p80}}
+{{s6.p81}}
 
 ____________________________________________________________________
 
 
-## ![ico-25 cap] {{s14.h1}}
+## ![ico-25 cap] {{s7.h1}}
 
-{{s14.p1}}
+{{s7.p1}}
 
-#### ![ico-20 icon] {{s15.h1}}
+#### ![ico-20 icon] createElementNS()
 
-{{s15.p1}}
-{{s15.p2}}
+{{s7.p2}}
+{{s7.p3}}
 
-{{s15.p3}}
+{{s7.p4}}
 
-{{s15.p4}}
+{{s7.p5}}
 
-{{s15.p5}}
-{{s15.p6}}
-{{s15.p7}}
+{{s7.p6}}
+( ~http://www.w3.org/2000/svg~ )
+{{s7.p7}}
 
-{{s15.p8}}
-{{s15.p9}}
+{{s7.p8}}
+{{s7.p9}}
 
-{{s15.p10}}
+{{s7.p10}}
 
-{{s15.p11}}
+{{s7.p11}}
 
 ~~~js
 document.createElementNS('http://www.w3.org/2000/svg', 'svg')
 ~~~
 
-{{s15.p12}}
+{{s7.p12}}
 
 ~~~js
 const svg = document.createElement('svg')
@@ -1173,28 +1173,28 @@ const picture = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
 console.log(picture.namespaceURI)  // "http://www.w3.org/2000/svg"
 ~~~
 
-{{s15.p13}}
+**Valid Namespace URIs:**
 
-{{s15.p14}}
-{{s15.p15}}
+![ico-20 green-ok] **HTML** - http://www.w3.org/1999/xhtml
+![ico-20 green-ok] **SVG** - http://www.w3.org/2000/svg
 
 _______________________________________
 
-#### ![ico-20 icon] {{s16.h1}}
+#### ![ico-20 icon] {{s8.h1}}
 
-{{s16.p1}}
-{{s16.p2}}
+{{s8.p1}}
+{{s8.p2}}
 
-{{s16.p3}}
-{{s16.p4}}
+{{s8.p3}}
+{{s8.p4}}
 
-{{s16.p5}}
-{{s16.p6}}
-{{s16.p7}}
+{{s8.p5}}
+{{s8.p6}}
+{{s8.p7}}
 
-{{s16.p8}}
+{{s8.p8}}
 
-{{s16.p9}}
+{{s8.p9}}
 
 ~~~js
 const DrawFigures = class SVG {
@@ -1224,7 +1224,7 @@ const DrawFigures = class SVG {
 }
 ~~~
 
-{{s16.p10}}
+{{s8.p10}}
 
 ~~~js
 const sample = new DrawFigures(300, 300)
@@ -1233,18 +1233,18 @@ sample
   .setAttribute ('stroke', 'red')
 ~~~
 
-{{s16.p11}}
-{{s16.p12}}
-{{s16.p13}}
+{{s8.p11}}
+{{s8.p12}}
+{{s8.p13}}
 
-{{s16.p14}}
-{{s16.p15}}
+{{s8.p14}}
+{{s8.p15}}
 
 ~~~js
 setAttribute('stroke', 'red')
 ~~~
 
-{{s16.p16}}
+{{s8.p16}}
 
 ~~~js
 const circle = sample.drawFigure('circle', { cx: 180, cy: 180, r: 150 })
@@ -1254,29 +1254,29 @@ sample.setSize(400, 400)
 circle.setAttribute('stroke-width', 8)
 ~~~
 
-{{s16.p17}}
+{{s8.p17}}
 
 _____________________________________________________
 
-#### ![ico-20 icon] {{s17.h1}}
+#### ![ico-20 icon] {{s9.h1}}
 
-{{s17.p1}}
-{{s17.p2}}
-{{s17.p3}}
-{{s17.p4}}
-{{s17.p5}}
+{{s9.p1}}
+{{s9.p2}}
+{{s9.p3}}
+("~stroke~", "~style~", "~fill~")
+{{s9.p4}}
 
-{{s17.p6}}
-{{s17.p7}}
-{{s17.p8}}
+{{s9.p5}}
+{{s9.p6}}
+{{s9.p7}}
 
-{{s17.p9}}
-{{s17.p10}}
-{{s17.p11}}
+{{s9.p8}}
+{{s9.p9}}
+{{s9.p10}}
 
-{{s17.p12}}
-{{s17.p13}}
-{{s17.p14}}
+{{s9.p11}}
+{{s9.p12}}
+{{s9.p13}}
 
 ~~~js
 class ColoredFigures extends DrawFigures {
@@ -1314,7 +1314,7 @@ class ColoredFigures extends DrawFigures {
 }
 ~~~
 
-{{s17.p15}}
+{{s9.p14}}
 
 ~~~js
 const canvas = new ColoredFigures(400, 500)
@@ -1337,7 +1337,7 @@ canvas.circle({
 })
 ~~~
 
-{{s17.p16}}
+{{s9.p15}}
 
 ~~~js
 canvas.drawFigure('line', {
@@ -1350,23 +1350,23 @@ canvas.drawFigure('line', {
 })
 ~~~
 
-{{s17.p17}}
-{{s17.p18}}
+{{s9.p16}}
+{{s9.p17}}
 
-{{s17.p19}}
+{{s9.p18}}
 
-{{s17.p20}}
-{{s17.p21}}
+{{s9.p19}}
+{{s9.p20}}
 
-{{s17.p22}}
-{{s17.p23}}
+{{s9.p21}}
+{{s9.p22}}
 
-{{s17.p24}}
-{{s17.p25}}
+{{s9.p23}}
+{{s9.p24}}
 
-{{s17.p26}}
-{{s17.p27}}
+{{s9.p25}}
+{{s9.p26}}
 
 ________________________________________________________________
 
-{{s17.p28}}
+[![ico-30 hw] Quiz](quiz/classes)

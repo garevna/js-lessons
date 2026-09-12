@@ -1,30 +1,30 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Browser Object Model (BOM)
 
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
+{{s0.p2}}
 
-{{s1.p3}}
+{{s0.p3}}
 
 @@@@
 
 ![](images/users-see-pixels-ukr.svg)
-{{s1.p4}}
+{{s0.p4}}
 
-{{s1.p5}}
+{{s0.p5}}
 ![](images/users-see-pixels.svg)
 
 @@@@
 
 _____________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{s1.h1}}
 
-{{s2.p1}}
-{{s2.p2}}
-{{s2.p3}}
-{{s2.p4}}
+{{s1.p1}}
+{{s1.p2}}
+{{s1.p3}}
+{{s1.p4}}
 
 ~~~html
 &lt;html>
@@ -32,13 +32,13 @@ _____________________________
 &lt;/html>
 ~~~
 
-{{s2.p5}}
+{{s1.p5}}
 
-{{s2.p6}}
+{{s1.p6}}
 
 @@@@
 
-{{s2.p7}}
+{{s1.p7}}
 ![](images/reference-is-a-lockpick.svg)
 
 @@@@
@@ -46,17 +46,17 @@ _____________________________
 @@@@
 
 ![](illustrations/heap-1.jpg)
-{{s2.p8}}
+{{s1.p8}}
 
 @@@@
 
-{{s2.p9}}
+{{s1.p9}}
 
-{{s2.p10}}
+{{s1.p10}}
 
-{{s2.p11}}
+{{s1.p11}}
 
-{{s2.p12}}
+{{s1.p12}}
 
 ~~~html
 &lt;body>
@@ -68,7 +68,7 @@ _____________________________
 &lt;/body>
 ~~~
 
-{{s2.p13}}
+{{s1.p13}}
 
 ~~~js
 window['main-page']    //  ► &lt;main id="main-page>...&lt;/main>"
@@ -78,33 +78,33 @@ window['phone']        //  ► &lt;figure id="phone">&lt;/figure>
 
 ________________________________________________
 
-{{s2.p14}}
-{{s2.p15}}
+{{s1.p14}}
+{{s1.p15}}
 
-^^^[{{s2.spoiler1}}]
+^^^[{{s1.spoiler1}}]
 
-{{s2.p16}}
+{{s1.p16}}
 
-{{s2.p17}}
-{{s2.p18}}
-{{s2.p19}}
+{{s1.p17}}
+• **~window._innerWidth_~**
+• **~window._innerHeight_~**
 
-{{s2.p20}}
+{{s1.p18}}
 
 ^^^
 
-{{s2.p21}}
+{{s1.p19}}
 
-{{s2.p22}}
-{{s2.p23}}
-{{s2.p24}}
-{{s2.p25}}
-{{s2.p26}}
-{{s2.p27}}
+![ico-20 green-ok] console
+![ico-20 green-ok] navigator
+![ico-20 green-ok] screen
+![ico-20 green-ok] location
+![ico-20 green-ok] history
+![ico-20 green-ok] document
 
-{{s2.p28}}
+{{s1.p20}}
 
-{{s2.p29}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 var props = [
@@ -119,7 +119,7 @@ var props = [
 for (var prop of props) console.log(window[prop])
 ~~~
 
-{{s2.p30}}
+{{s1.p21}}
 
 ~~~console
 
@@ -132,15 +132,15 @@ for (var prop of props) console.log(window[prop])
 ~~~
 
 
-{{s2.p31}}
+{{s1.p22}}
 
 _____________________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] navigator
 
-#### {{s4.h1}}
+#### navigator.geolocation
 
-{{s4.p1}}
+◘◘geolocation◘◘
 
 ~~~console
 ▼ Geolocation {}
@@ -153,12 +153,12 @@ _____________________________________
       ► __proto__: Object
 ~~~
 
-{{s4.p2}}
+{{s1.p23}}
 
-{{s4.p3}}
-{{s4.p4}}
+{{s1.p24}}
+{{s1.p25}}
 
-{{s4.p5}}
+◘◘Position◘◘
 
 ~~~console
 ▼ Position {coords: Coordinates, timestamp: 1564355238231}
@@ -175,11 +175,11 @@ _____________________________________
   ► __proto__: Position
 ~~~
 
-{{s4.p6}}
+{{s1.p26}}
 
-{{s4.p7}}
+{{s1.p27}}
 
-{{s4.p8}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js
 const status = document.body
@@ -202,15 +202,15 @@ if (!navigator.geolocation) {
 
 _____________________________________
 
-### ![ico-20 icon] {{s5.h1}}
+### ![ico-20 icon] console
 
-{{s5.p1}}
+{{s1.p28}}
 
 ![](illustrations/console-methods.png)
 
-^^^[{{s5.spoiler1}}]
+^^^[{{s1.spoiler2}}]
 
-{{s5.p2}}
+{{s1.p29}}
 ~~~js
 console.time('while')
 
@@ -226,88 +226,88 @@ for (var x = 0; x < 10000; x++) {}
 console.timeEnd('for')
 ~~~
 
-{{s5.p3}}
+{{s1.p30}}
 
 ^^^
 
 ______________________________________
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] screen
 
 ![](illustrations/screen-properties.png)
 ______________________________________
 
-### ![ico-20 icon] {{s7.h1}}
+### ![ico-20 icon] location
 
 ![](illustrations/location-properties.png)
 
-^^^[{{s7.spoiler1}}]
+^^^[{{s1.spoiler3}}]
 
-{{s7.p1}}
-{{s7.p2}}
-{{s7.p3}}
-{{s7.p4}}
-{{s7.p5}}
-{{s7.p6}}
-{{s7.p7}}
-{{s7.p8}}
-{{s7.p9}}
+![ico-20 green-ok] hash
+![ico-20 green-ok] host
+![ico-20 green-ok] hostname
+![ico-20 green-ok] href
+![ico-20 green-ok] origin
+![ico-20 green-ok] pathname
+![ico-20 green-ok] port
+![ico-20 green-ok] protocol
+![ico-20 green-ok] search
 
 ^^^
 
-^^^[{{s7.spoiler2}}]
+^^^[{{s1.spoiler4}}]
 
-{{s7.p10}}
+{{s1.p31}}
 ~~~js
 var win = window.open('https://css-tricks.com')
 ~~~
 
-{{s7.p11}}
-{{s7.p12}}
+{{s1.p32}}
+{{s1.p33}}
 ~~~js
 console.clear()
 ~~~
 
-{{s7.p13}}
-{{s7.p14}}
-{{s7.p15}}
+{{s1.p34}}
+{{s1.p35}}
+{{s1.p36}}
 ~~~js
 location.hash
 ~~~
 
-{{s7.p16}}
+{{s1.p37}}
 
-{{s7.p17}}
-{{s7.p18}}
+{{s1.p38}}
+{{s1.p39}}
 ~~~js
 win.close()
 ~~~
 
-{{s7.p19}}
+{{s1.p40}}
 
 ^^^
 
-^^^[{{s7.spoiler3}}]
+^^^[{{s1.spoiler5}}]
 
-{{s7.p20}}
+{{s1.p41}}
 ~~~js
 var win = window.open()
 ~~~
 
-{{s7.p21}}
-{{s7.p22}}
+{{s1.p42}}
+{{s1.p43}}
 ~~~js
 location.href = 'https://translate.google.com'
 ~~~
 
-{{s7.p23}}
+{{s1.p44}}
 
 ^^^
 ______________________________________
 
-### ![ico-20 icon] {{s8.h1}}
+### ![ico-20 icon] history
 
-{{s8.p1}}
+{{s1.p45}}
 
 ~~~~console
 ▼ history: History
@@ -332,30 +332,30 @@ ______________________________________
         ► __proto__: Object
 ~~~~
 
-{{s8.p2}}
+{{s1.p46}}
 
-{{s8.p3}}
+{{s1.p47}}
 
-{{s8.p4}}
+{{s1.p48}}
 
-{{s8.p5}}
+{{s1.p49}}
 
 ~~~js
 window.history.go(-2)
 ~~~
 
-{{s8.p6}}
-{{s8.p7}}
+{{s1.p50}}
+[MDN](external/mdi-history-api)
 
-{{s8.p8}}
+{{s1.p51}}
 
 ___________________________________________
 
-### ![ico-20 icon] {{s9.h1}}
+### ![ico-20 icon] document
 
-^^^[{{s9.spoiler1}}]
+^^^[{{s1.spoiler6}}]
 
-{{s9.p1}}
+{{s1.p52}}
 
 ~~~js
 var newWin = window.open()
@@ -364,13 +364,13 @@ newWin.document.write('<script>document.write(\'<h3>Hello!</h3>\')</script>')
 console.log(newWin.document.body)
 ~~~
 
-{{s9.p2}}
+{{s1.p53}}
 
 ^^^
 
-^^^[{{s9.spoiler2}}]
+^^^[{{s1.spoiler7}}]
 
-{{s9.p3}}
+{{s1.p54}}
 
 ~~~js
 var newWin = window.open()
@@ -380,13 +380,13 @@ console.log(newWin.document.body)
 newWin.close()
 ~~~
 
-{{s9.p4}}
+{{s1.p55}}
 
 ^^^
 
-^^^[{{s9.spoiler3}}]
+^^^[{{s1.spoiler8}}]
 
-{{s9.p5}}
+{{s1.p56}}
 
 ~~~js
 var html = `
@@ -405,10 +405,10 @@ var newWin = window.open('https://www.w3schools.com/')
 newWin.document.write(html)
 ~~~
 
-{{s9.p6}}
+{{s1.p57}}
 
 ^^^
 
 _________________________________________________________
 
-{{s9.p7}}
+{{s1.p58}}

@@ -4,23 +4,23 @@ ________________________________
 
 ## ![ico-25 hw] {{s2.h1}}
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] Google Fonts
 
-{{s3.p1}}
+{{s2.p1}}
 
-{{s3.p2}}
+{{s2.p2}}
 
 ~~~css
 @import url("https://fonts.googleapis.com/css?family=Hanalei+Fill|Roboto");
 ~~~
 
-{{s3.p3}}
-{{s3.p4}}
-{{s3.p5}}
+{{s2.p3}}
+{{s2.p4}}
+{{s2.p5}}
 
 ______________________________________________________
 
-{{s3.p6}}
+◘◘![ico-20 file] main.css◘◘
 
 ~~~css
 @import url("https://fonts.googleapis.com/css?family=Hanalei+Fill|Roboto:100,300,400");
@@ -62,24 +62,24 @@ body {
 }
 ~~~
 
-{{s3.p7}}
+{{s2.p6}}
 
 ________________________________________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] Font Awesome
 
-{{s4.p1}}
+[%%%Font Awesome%%%](fontawesome.com)
 
-{{s4.p2}}
+{{s2.p7}}
 
 ~~~css
 @import url("https://use.fontawesome.com/releases/v5.2.0/css/all.css");
 ~~~
 
-{{s4.p3}}
+{{s2.p8}}
 
 ~~~html
 &lt;i class="fas fa-ambulance">&lt;/i>
 ~~~
 
-{{s4.p4}}
+{{s2.p9}}

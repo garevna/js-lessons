@@ -1,7 +1,7 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Custom elements
 
-{{s1.p1}}
-{{s1.p2}}
+{{s0.p1}}
+{{s0.p2}}
 
 ~~~html
 <speaking-club></speaking-club>
@@ -9,15 +9,15 @@
 <mystery-man></mystery-man>
 ~~~
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] HTMLUnknownElement
 
-{{s2.p1}}
+{{s0.p3}}
 
 ~~~html
 <protuberance></protuberance>
 ~~~
 
-{{s2.p2}}
+{{s0.p4}}
 
 ~~~js
 console.dir(document.querySelector('protuberance').__proto__)
@@ -27,7 +27,7 @@ console.dir(document.querySelector('protuberance').__proto__)
 ► HTMLUnknownElement
 ~~~
 
-{{s2.p3}}
+{{s0.p5}}
 
 ~~~js
 console.dir(HTMLUnknownElement)
@@ -43,16 +43,16 @@ console.dir(HTMLUnknownElement)
     __proto__: ƒ HTMLElement()
 ~~~
 
-{{s2.p4}}
+{{s0.p6}}
 
-{{s2.p5}}
+{{s0.p7}}
 
-{{s2.p6}}
-{{s2.p7}}
+{{s0.p8}}
+{{s0.p9}}
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] customElements
 
-{{s3.p1}}
+{{s0.p10}}
 
 ~~~js
 console.dir(customElements)
@@ -70,7 +70,7 @@ console.dir(customElements)
       ► __proto__: Object
 ~~~
 
-{{s3.p2}}
+{{s0.p11}}
 
 ~~~js
 console.dir(CustomElementRegistry)
@@ -93,16 +93,16 @@ console.dir(CustomElementRegistry)
   ► __proto__: ƒ ()
 ~~~~
 
-{{s3.p3}}
+{{s0.p12}}
 
 ______________________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] customElements.define()
 
-{{s4.p1}}
+{{s0.p13}}
 
-{{s4.p2}}
-{{s4.p3}}
+{{s0.p14}}
+{{s0.p15}}
 
 ~~~js
 customElements.define('sample-custom-element', SampleCustomElement)
@@ -110,9 +110,9 @@ customElements.define('sample-custom-element', SampleCustomElement)
 
 _______________________________________
 
-### ![ico-25 icon] {{s5.h1}}
+### ![ico-25 icon] {{s1.h1}}
 
-{{s5.p1}}
+{{s1.p1}}
 
 ~~~~js
 class SampleElement extends HTMLElement {
@@ -158,13 +158,13 @@ class SampleElement extends HTMLElement {
 }
 ~~~~
 
-{{s5.p2}}
+{{s1.p2}}
 
 ~~~js
 customElements.define('sample-element', SampleElement)
 ~~~
 
-{{s5.p3}}
+{{s1.p3}}
 
 ~~~js
 customElements.get('sample-element')
@@ -179,7 +179,7 @@ class SampleElement extends HTMLElement {
         this.picture = document.c…
 ~~~
 
-{{s5.p4}}
+{{s1.p4}}
 
 ~~~javascript
 const elem = document.body
@@ -188,7 +188,7 @@ const elem = document.body
 
 ________________________________________________
 
-### ![ico-25 icon] {{s6.h1}}
+### ![ico-25 icon] {{s2.h1}}
 
 ~~~~js
 class SampleCustomElement extends HTMLElement {
@@ -243,7 +243,7 @@ window.onresize = elem.resizeCanvas.bind(elem)
 elem.drawLine({ x:20, y:20 }, { x:400, y:200 }, { lineColor: '#008595', lineWidth: 5 })
 ~~~~
 
-### ![ico-25 icon] {{s7.h1}}
+### ![ico-25 icon] {{s3.h1}}
 
 ~~~html
 <h3>Пример использования Custom Elements</h3>
@@ -296,7 +296,7 @@ customElements.define('words-counter', WordsCounter)
 ~~~~
 __________________________________________________
 
-### ![ico-25 icon] {{s8.h1}}
+### ![ico-25 icon] {{s4.h1}}
 
 ~~~~js
 class SampleCustomElement extends HTMLElement {

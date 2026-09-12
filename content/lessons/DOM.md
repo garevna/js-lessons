@@ -1,68 +1,68 @@
-# ![ico-35 study] {{s1.h1}}
+# ![ico-35 study] Document Object Model (DOM)
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
+{{s0.p2}}
 
-{{s1.p3}}
+{{s0.p3}}
 
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
+{{s0.p4}}
+{{s0.p5}}
+{{s0.p6}}
 
 @@@@ 1
 ![](images/users-see-pixels.svg)
 @@@@
 
-{{s1.p7}}
-{{s1.p8}}
+{{s0.p7}}
+{{s0.p8}}
 
-{{s1.p9}}
-{{s1.p10}}
-{{s1.p11}}
-{{s1.p12}}
+{{s0.p9}}
+{{s0.p10}}
+{{s0.p11}}
+{{s0.p12}}
 
-^^^[{{s1.spoiler1}}]
+^^^[{{s0.spoiler1}}]
 
-{{s1.p13}}
-{{s1.p14}}
-{{s1.p15}}
+{{s0.p13}}
+{{s0.p14}}
+{{s0.p15}}
 
-{{s1.p16}}
-{{s1.p17}}
+{{s0.p16}}
+{{s0.p17}}
 
 ^^^
-{{s1.p18}}
-{{s1.p19}}
-{{s1.p20}}
-{{s1.p21}}
-{{s1.p22}}
+{{s0.p18}}
+{{s0.p19}}
+{{s0.p20}}
+{{s0.p21}}
+{{s0.p22}}
 
-{{s1.p23}}
+{{s0.p23}}
 
-{{s1.p24}}
-{{s1.p25}}
+{{s0.p24}}
+{{s0.p25}}
 
-{{s1.p26}}
+{{s0.p26}}
 
-☼☼☼ {{s1.slogan1}} ☼☼☼
+☼☼☼ {{s0.slogan1}} ☼☼☼
 
 _________________________________________
 
-## ![ico-30 icon] {{s2.h1}}
+## ![ico-30 icon] {{s1.h1}}
 
-{{s2.p1}}
+{{s1.p1}}
 
 @@@@
-{{s2.p2}}
+{{s1.p2}}
 ![](images/object-constructor.svg)
 @@@@
 
-☼☼☼ {{s2.slogan1}} ☼☼☼
+☼☼☼ {{s1.slogan1}} ☼☼☼
 
-{{s2.p3}}
+{{s1.p3}}
 
-{{s2.p4}}
+◘◘ **showProto** ◘◘
 ~~~js
 function showProto (elem) {
   var proto = elem.__proto__
@@ -71,15 +71,15 @@ function showProto (elem) {
 }
 ~~~
 
-{{s2.p5}}
+{{s1.p4}}
 
 ~~~js
 showProto(document)
 ~~~
 
-{{s2.p6}}
+{{s1.p5}}
 
-{{s2.p7}}
+◘◘^^~document~^^◘◘
 
 ~~~console
 HTMLDocument
@@ -89,20 +89,20 @@ EventTarget
 Object
 ~~~
 
-{{s2.p8}}
+{{s1.p6}}
 
-{{s2.p9}}
-{{s2.p10}}
+^^• **document.head**^^
+^^• **document.body**^^
 
-{{s2.p11}}
+{{s1.p7}}
 
 ~~~js
 showProto(document.head)
 ~~~
 
-{{s2.p12}}
+{{s1.p8}}
 
-{{s2.p13}}
+◘◘^^~document.head~^^◘◘
 ~~~console
 HTMLHeadElement
 HTMLElement
@@ -112,15 +112,15 @@ EventTarget
 Object
 ~~~
 
-{{s2.p14}}
+{{s1.p9}}
 
 ~~~js
 showProto(document.body)
 ~~~
 
-{{s2.p15}}
+{{s1.p10}}
 
-{{s2.p16}}
+◘◘^^~document.body~^^◘◘
 ~~~console
 HTMLBodyElement
 HTMLElement
@@ -130,36 +130,36 @@ EventTarget
 Object
 ~~~
 
-{{s2.p17}}
+{{s1.p11}}
 
 @@@@ 1
 ![](illustrations/DOM-prototype-chain.svg)
 @@@@
 
 @@@@
-{{s2.p18}}
+{{s1.p12}}
 ![](images/object-adam.svg)
 @@@@
 
-{{s2.p19}}
+{{s1.p13}}
 
-{{s2.p20}}
+{{s1.p14}}
 
 ~~~js
 new HTMLElement()
 ~~~
 
-{{s2.p21}}
+{{s1.p15}}
 
 ~~~error
     Uncaught TypeError: Illegal constructor
 ~~~
 
-{{s2.p22}}
-{{s2.p23}}
+{{s1.p16}}
+{{s1.p17}}
 
-{{s2.p24}}
-{{s2.p25}}
+{{s1.p18}}
+{{s1.p19}}
 
 ~~~js
 console.log(document)
@@ -173,7 +173,7 @@ console.log(document)
   &lt;/html>
 ~~~
 
-{{s2.p26}}
+{{s1.p20}}
 
 ~~~js
 console.dir(document)
@@ -383,14 +383,14 @@ console.dir(document)
 ~~~~
 ______________________
 
-## ![ico-30 icon] {{s3.h1}}
+## ![ico-30 icon] {{s2.h1}}
 
-{{s3.p1}}
-{{s3.p2}}
+{{s2.p1}}
+{{s2.p2}}
 
-### ![ico-25 icon] {{s4.h1}}
+### ![ico-25 icon] HTMLElement
 
-{{s4.p1}}
+{{s2.p3}}
 
 ~~~js
 for (var prop in document) {
@@ -400,7 +400,7 @@ for (var prop in document) {
 }
 ~~~
 
-{{s4.p2}}
+◘◘^^**HTMLElement**^^◘◘
 
 ~~~console
 documentElement: HTMLElement
@@ -415,9 +415,9 @@ lastChild: HTMLElement
 
 _______________________________________
 
-### ![ico-25 icon] {{s5.h1}}
+### ![ico-25 icon] HTMLCollection vs NodeList
 
-{{s5.p1}}
+{{s2.p4}}
 
 ~~~js
 ;['HTMLCollection', 'NodeList']
@@ -430,7 +430,7 @@ _______________________________________
   })
 ~~~
 
-{{s5.p2}}
+{{s2.p5}}
 ~~~console
 images: HTMLCollection
 embeds: HTMLCollection
@@ -444,16 +444,16 @@ children: HTMLCollection
 childNodes: NodeList
 ~~~
 
-{{s5.p3}}
+{{s2.p6}}
 
-{{s5.p4}}
+◘◘![ico-25 coffee] **^^document.scripts^^**◘◘
 ~~~js
 for (var script of document.scripts) {
   console.log(script.innerText)
 }
 ~~~
 
-{{s5.p5}}
+◘◘![ico-25 coffee] **^^document.styleSheets^^**◘◘
 ~~~js
 for (var sheet of document.styleSheets) {
   for (var rule of sheet.cssRules) {
@@ -463,9 +463,9 @@ for (var sheet of document.styleSheets) {
 }
 ~~~
 
-{{s5.p6}}
+{{s2.p7}}
 
-{{s5.p7}}
+◘◘![ico-25 coffee] **^^HTMLCollection / NodeList^^**◘◘
 ~~~js
 function test (hostObject) {
   var res = {}
@@ -490,9 +490,9 @@ console.log(test(document.body))
 
 _____________________________________________
 
-{{s5.p8}}
+{{s2.p8}}
 
-{{s5.p9}}
+{{s2.p9}}
 
 ~~~html
 &lt;html>
@@ -506,13 +506,13 @@ _____________________________________________
 &lt;/html>
 ~~~
 
-{{s5.p10}}
+{{s2.p10}}
 
 ~~~js
 console.log(document.body.children)
 ~~~
 
-{{s5.p11}}
+{{s2.p11}}
 
 ~~~console
 ▼ HTMLCollection(2) [section, p]
@@ -522,13 +522,13 @@ console.log(document.body.children)
   ► [[Prototype]]: HTMLCollection
 ~~~
 
-{{s5.p12}}
+{{s2.p12}}
 
 ~~~js
 console.log(document.body.childNodes)
 ~~~
 
-{{s5.p13}}
+{{s2.p13}}
 
 ~~~console
 ▼ NodeList(7) [text, section, text, p, text, comment, text]
@@ -545,7 +545,7 @@ console.log(document.body.childNodes)
 
 ______________________________________________________
 
-### ![ico-25 icon] {{s6.h1}}
+### ![ico-25 icon] Strings
 
 ~~~js
 function getStrings (hostObject) {
@@ -593,9 +593,9 @@ console.log(getStrings(document))
 
 ______________________________________________________
 
-### ![ico-25 icon] {{s7.h1}}
+### ![ico-25 icon] Other objects
 
-{{s7.p1}}
+{{s2.p14}}
 
 ~~~js
 function getObjects () {
@@ -616,7 +616,7 @@ function getObjects () {
 console.log(getObjects())
 ~~~
 
-{{s7.p2}}
+◘◘^^**Result**^^◘◘
 ~~~console
 ▼ {location: 'Location', implementation: 'DOMImplementation', doctype: 'DocumentType', defaultView: 'Window', all: 'HTMLAllCollection', …}
   adoptedStyleSheets: "Array"
@@ -635,18 +635,18 @@ console.log(getObjects())
 
 _________________________________________________
 
-### ![ico-25 icon] {{s8.h1}}
+### ![ico-25 icon] Event handlers
 
-{{s8.p1}}
-{{s8.p2}}
-{{s8.p3}}
-{{s8.p4}}
+{{s2.p15}}
+{{s2.p16}}
+{{s2.p17}}
+{{s2.p18}}
 
-{{s8.p5}}
-{{s8.p6}}
-{{s8.p7}}
+{{s2.p19}}
+{{s2.p20}}
+{{s2.p21}}
 
-{{s8.p8}}
+{{s2.p22}}
 
 ~~~js
 function getEventHandlers (hostObject) {
@@ -658,26 +658,26 @@ function getEventHandlers (hostObject) {
 getEventHandlers(document)
 ~~~
 
-{{s8.p9}}
+{{s2.p23}}
 
-{{s8.p10}}
+{{s2.p24}}
 
-{{s8.p11}}
+{{s2.p25}}
 
 ~~~js
 document.body.onclick = console.log
 ~~~
 
-{{s8.p12}}
+{{s2.p26}}
 
 ~~~js
 document.onscroll = console.log
 ~~~
 
-{{s8.p13}}
-{{s8.p14}}
+{{s2.p27}}
+{{s2.p28}}
 
-{{s8.p15}}
+◘◘ **^^result^^** ◘◘
 
 ~~~console
 ▼ Event {isTrusted: true, type: 'scroll', target: document, currentTarget: document, eventPhase: 2, …}
@@ -697,18 +697,18 @@ document.onscroll = console.log
   ► [[Prototype]]: Event
 ~~~
 
-{{s8.p16}}
-{{s8.p17}}
+{{s2.p29}}
+{{s2.p30}}
 
-{{s8.p18}}
+{{s2.p31}}
 
 ____________________________________________
 
-## ![ico-30 icon] {{s9.h1}}
+## ![ico-30 icon] Constructor Node
 
-{{s9.p1}}
+{{s2.p32}}
 
-{{s9.p2}}
+{{s2.p33}}
 
 ~~~js
 console.dir(Node.prototype)
@@ -786,11 +786,11 @@ console.dir(Node.prototype)
 
 _________________________________________
 
-### ![ico-25 icon] {{s10.h1}}
+### ![ico-25 icon] {{s3.h1}}
 
-{{s10.p1}}
+{{s3.p1}}
 
-{{s10.p2}}
+{{s3.p2}}
 
 ~~~console
 ATTRIBUTE&lowbar;NODE: 2
@@ -804,14 +804,14 @@ PROCESSING&lowbar;INSTRUCTION&lowbar;NODE: 7
 TEXT&lowbar;NODE: 3
 ~~~
 
-{{s10.p3}}
+{{s3.p3}}
 
-{{s10.p4}}
+{{s3.p4}}
 
-{{s10.p5}}
-{{s10.p6}}
+{{s3.p5}}
+{{s3.p6}}
 
-{{s10.p7}}
+{{s3.p7}}
 
 ~~~js
 document.nodeType
@@ -830,36 +830,36 @@ document.body.nodeType
 ~~~
 _______________________________________
 
-### ![ico-25 icon] {{s11.h1}}
+### ![ico-25 icon] Node.prototype methods
 
-{{s11.p1}}
-{{s11.p2}}
+{{s3.p8}}
+{{s3.p9}}
 
 ~~~console
 appendChild: ƒ appendChild()
 removeChild: ƒ removeChild()
 ~~~
 
-{{s11.p3}}
-{{s11.p4}}
+{{s3.p10}}
+{{s3.p11}}
 
-{{s11.p5}}
+{{s3.p12}}
 
-{{s11.p6}}
+{{s3.p13}}
 
-{{s11.p7}}
+{{s3.p14}}
 
 ~~~js
 parent.appendChild(elem)
 ~~~
 
-{{s11.p8}}
+{{s3.p15}}
 
-{{s11.p9}}
+{{s3.p16}}
 
-{{s11.p10}}
+{{s3.p17}}
 
-{{s11.p11}}
+◘◘^^**Elements**^^◘◘
 ~~~console
 &lt;body>
   &lt;section>
@@ -870,17 +870,17 @@ parent.appendChild(elem)
 &lt;/body>
 ~~~
 
-{{s11.p12}}
+{{s3.p18}}
 
-{{s11.p13}}
+{{s3.p19}}
 
 ~~~js
 figure.appendChild(paragraph)
 ~~~
 
-{{s11.p14}}
+{{s3.p20}}
 
-{{s11.p15}}
+◘◘^^**Elements**^^◘◘
 ~~~console
 &lt;body>
   &lt;section>&lt;/section>
@@ -890,28 +890,28 @@ figure.appendChild(paragraph)
 &lt;/body>
 ~~~
 
-{{s11.p16}}
+{{s3.p21}}
 
 ~~~js
 parent.removeChild(elem)
 ~~~
 
-{{s11.p17}}
-{{s11.p18}}
+{{s3.p22}}
+{{s3.p23}}
 
 ____________________________________________
 
-## ![ico-30 icon] {{s12.h1}}
+## ![ico-30 icon] {{s4.h1}}
 
-{{s12.p1}}
-{{s12.p2}}
-{{s12.p3}}
+{{s4.p1}}
+{{s4.p2}}
+{{s4.p3}}
 
-{{s12.p4}}
+{{s4.p4}}
 
-{{s12.p5}}
+{{s4.p5}}
 
-{{s12.p6}}
+◘◘ **^^getMethods^^** ◘◘
 
 ~~~js
 function getMethods (search) {
@@ -925,28 +925,28 @@ function getMethods (search) {
 }
 ~~~
 
-{{s12.p7}}
-{{s12.p8}}
+{{s4.p6}}
+{{s4.p7}}
 
-{{s12.p9}}
+{{s4.p8}}
 
 ~~~js
 getMethods.call(HTMLDocument.prototype)
 ~~~
 
-{{s12.p10}}
+{{s4.p9}}
 
-{{s12.p11}}
+{{s4.p10}}
 
 ~~~js
 getMethods.call(Document.prototype)
 ~~~
 
-{{s12.p12}}
+{{s4.p11}}
 
-### ![ico-25 icon] {{s13.h1}}
+### ![ico-25 icon] create
 
-{{s13.p1}}
+{{s4.p12}}
 
 ~~~js
 getMethods.call(Document.prototype, 'create')
@@ -973,18 +973,18 @@ getMethods.call(Document.prototype, 'create')
   ► [[Prototype]]: Array(0)
 ~~~~
 
-{{s13.p2}}
-{{s13.p3}}
-{{s13.p4}}
+{{s4.p13}}
+{{s4.p14}}
+{{s4.p15}}
 
-#### ![ico-20 icon] {{s14.h1}}
+#### ![ico-20 icon] document.createElement
 
-{{s14.p1}}
+{{s4.p16}}
 
-{{s14.p2}}
-{{s14.p3}}
+{{s4.p17}}
+{{s4.p18}}
 
-{{s14.p4}}
+◘◘![ico-25 coffee] **createElement**◘◘
 
 ~~~js
 var div = document.createElement('div')
@@ -1001,11 +1001,11 @@ Tag name:  DIV
 
 ____________________________________________
 
-#### ![ico-20 icon] {{s15.h1}}
+#### ![ico-20 icon] document.createTextNode
 
-{{s15.p1}}
+{{s4.p19}}
 
-{{s15.p2}}
+◘◘![ico-25 coffee] **createTextNode**◘◘
 
 ~~~js
 var text = document.createTextNode('Text node')
@@ -1018,10 +1018,10 @@ Node type:  3
 Node value:  Text node
 ~~~
 
-{{s15.p3}}
-{{s15.p4}}
+{{s4.p20}}
+{{s4.p21}}
 
-{{s15.p5}}
+◘◘![ico-20 coffee] **Insert styles to document.head**◘◘
 
 ~~~js
 document.head
@@ -1029,7 +1029,7 @@ document.head
   .appendChild(document.createTextNode('div { color: blue; }'))
 ~~~
 
-{{s15.p6}}
+◘◘![ico-20 coffee] **Insert script to page**◘◘
 
 ~~~js
 var script = document.body
@@ -1039,9 +1039,9 @@ script.appendChild(document.createTextNode(`alert('Hello')`))
 
 ____________________________________________
 
-#### ![ico-20 icon] {{s16.h1}}
+#### ![ico-20 icon] document.createComment
 
-{{s16.p1}}
+{{s4.p22}}
 
 ~~~js
 var comment = document.createComment('Some comment will be here.')
@@ -1053,9 +1053,9 @@ console.log(comment)
 ~~~
 ____________________________________________
 
-#### ![ico-20 icon] {{s17.h1}}
+#### ![ico-20 icon] document.createDocumentFragment
 
-{{s17.p1}}
+◘◘^^function **addElem**^^◘◘
 ~~~js
 function addElem (tagName = 'div', container = document.body) {
   return container.appendChild(document.createElement(tagName))
@@ -1087,9 +1087,9 @@ console.log(section)
 ~~~
 _____________________________________________
 
-### ![ico-25 icon] {{s18.h1}}
+### ![ico-25 icon] {{s5.h1}}
 
-{{s18.p1}}
+{{s5.p1}}
 
 ~~~js
 getMethods.call(Document.prototype, 'get')
@@ -1108,19 +1108,19 @@ getMethods.call(Document.prototype, 'get')
   ► [[Prototype]]: Array(0)
 ~~~~
 
-{{s18.p2}}
-{{s18.p3}}
+{{s5.p2}}
+{{s5.p3}}
 
-{{s18.p4}}
+{{s5.p4}}
 
-{{s18.p5}}
-{{s18.p6}}
-{{s18.p7}}
-{{s18.p8}}
+{{s5.p5}}
+{{s5.p6}}
+{{s5.p7}}
+{{s5.p8}}
 
-{{s18.p9}}
+![ico-25 coffee] ** 1**
 
-{{s18.p10}}
+{{s5.p9}}
 
 ~~~html
 &lt;body>
@@ -1133,7 +1133,7 @@ getMethods.call(Document.prototype, 'get')
 &lt;/body>
 ~~~
 
-{{s18.p11}}
+◘◘^^JS^^◘◘
 
 ~~~js
 document
@@ -1142,7 +1142,7 @@ document
   .getElementsByClassName('content')
 ~~~
 
-{{s18.p12}}
+{{s5.p10}}
 
 ~~~console
 
@@ -1155,40 +1155,40 @@ document
 
 ____________________________________________
 
-{{s18.p13}}
+![ico-25 coffee] ** 2**
 
-{{s18.p14}}
+{{s5.p11}}
 
-{{s18.p15}}
-{{s18.p16}}
+{{s5.p12}}
+{{s5.p13}}
 
 ~~~js
 document.getElementsByClassName('screen-reader-text', 'visually-hidden')
 ~~~
 
-{{s18.p17}}
+{{s5.p14}}
 
 ____________________________________________
 
-#### ![ico-20 icon] {{s19.h1}}
+#### ![ico-20 icon] append | remove
 
 _________________________________________
 
-{{s19.p1}}
-{{s19.p2}}
-{{s19.p3}}
+{{s5.p15}}
+{{s5.p16}}
+{{s5.p17}}
 ________________________________________
 
-### ![ico-25 icon] {{s20.h1}}
+### ![ico-25 icon] {{s6.h1}}
 
 ______________________________________
 
-### ![ico-25 icon] {{s21.h1}}
+### ![ico-25 icon] element.querySelector
 
-{{s21.p1}}
-{{s21.p2}}
+{{s6.p1}}
+{{s6.p2}}
 
-{{s21.p3}}
+◘◘![ico-25 coffee] ** 3**◘◘
 
 ~~~html
 &lt;body>
@@ -1216,7 +1216,7 @@ console.dir(document.body.querySelector('[type=\'number\']'))
 console.dir(section.querySelector('[title]'))
 ~~~
 
-{{s21.p4}}
+{{s6.p3}}
 
 ~~~console
 ► section
@@ -1228,20 +1228,20 @@ console.dir(section.querySelector('[title]'))
 
 ______________________________________________
 
-### ![ico-25 icon] {{s22.h1}}
+### ![ico-25 icon] element.querySelectorAll
 
-{{s22.p1}}
+{{s6.p4}}
 
-{{s22.p2}}
+![ico-25 coffee] ** 4**
 
-{{s22.p3}}
+{{s6.p5}}
 
-{{s22.p4}}
+◘◘js◘◘
 ~~~js
 section.querySelectorAll('*')
 ~~~
 
-{{s22.p5}}
+{{s6.p6}}
 ~~~console
 ▼ NodeList(2) [div, figure.promoClass]
   ► 0: div
@@ -1252,9 +1252,9 @@ section.querySelectorAll('*')
 
 _________________________________________________
 
-## ![ico-30 hw] {{s23.h1}}
+## ![ico-30 hw] {{s7.h1}}
 
-{{s23.p1}}
+◘◘![ico-25 hw]** 1**◘◘
 ~~~js
 var elem = document.body
   .appendChild(document.createElement('p'))
@@ -1262,21 +1262,21 @@ var elem = document.body
 elem.tagName = 'div'
 ~~~
 
-→→→ {{s23.quiz1}} | {{s23.quizVariants1}} | {{s23.quizAnswer1}}→→→
+→→→ {{s7.quiz1}} | {{s7.quizVariants1}} | {{s7.quizAnswer1}}→→→
 
 ____________________________________________
 
 
-{{s23.p2}}
+◘◘![ico-25 hw]** 2**◘◘
 ~~~js
 document.title = 'DOM'
 ~~~
 
-→→→ {{s23.quiz2}} | {{s23.quizVariants2}} | {{s23.quizAnswer2}}→→→
+→→→ {{s7.quiz2}} | {{s7.quizVariants2}} | {{s7.quizAnswer2}}→→→
 
 _________________________________________________
 
-{{s23.p3}}
+◘◘![ico-25 hw]** 3**◘◘
 ~~~js
 var paragraph = [
   'BOM',
@@ -1292,19 +1292,19 @@ for (var text of paragraph) {
 }
 ~~~
 
-→→→ {{s23.quiz3}} | {{s23.quizVariants3}} | {{s23.quizAnswer3}}→→→
+→→→ {{s7.quiz3}} | {{s7.quizVariants3}} | {{s7.quizAnswer3}}→→→
 
 _________________________________________
 
-{{s23.p4}}
+◘◘![ico-25 hw]** 4**◘◘
 
-→→→ {{s23.quiz4}} | {{s23.quizVariants4}} | {{s23.quizAnswer4}}→→→
+→→→ {{s7.quiz4}} | {{s7.quizVariants4}} | {{s7.quizAnswer4}}→→→
 
 _________________________________________________
 
-{{s23.p5}}
+![ico-25 hw]** 5**
 
-{{s23.p6}}
+{{s7.p1}}
 
 ~~~js
 var paragraph = document.body
@@ -1312,19 +1312,19 @@ var paragraph = document.body
 paragraph.appendChild(document.createElement('span'))
 ~~~
 
-{{s23.p7}}
+{{s7.p2}}
 
 ~~~js
 document.write('<h3 style="color: #09b">Hello!</h3>')
 ~~~
 
-→→→ {{s23.quiz5}} | {{s23.quizVariants5}} | {{s23.quizAnswer5}}→→→
+→→→ {{s7.quiz5}} | {{s7.quizVariants5}} | {{s7.quizAnswer5}}→→→
 
 _____________________________________________
 
-{{s23.p8}}
+![ico-25 hw]** 6**
 
-{{s23.p9}}
+{{s7.p3}}
 
 ~~~js
 document.write('<h3 style="color: #09b">Hello!</h3>')
@@ -1333,13 +1333,13 @@ var paragraph = document.body
 paragraph.appendChild(document.createElement('span'))
 ~~~
 
-→→→ {{s23.quiz6}} | {{s23.quizVariants6}} | {{s23.quizAnswer6}}→→→
+→→→ {{s7.quiz6}} | {{s7.quizVariants6}} | {{s7.quizAnswer6}}→→→
 
 _____________________________________________
 
-{{s23.p10}}
+![ico-25 hw]** 7**
 
-{{s23.p11}}
+{{s7.p4}}
 
 ~~~js
 document.createElement('h3').innerHTML = 'Welcome'
@@ -1348,13 +1348,13 @@ document.createElement('div')
   .style = 'padding: 48px; border-radius: 50%; border: solid 2px #f0f;'
 ~~~
 
-→→→ {{s23.quiz7}} | {{s23.quizVariants7}} | {{s23.quizAnswer7}}→→→
+→→→ {{s7.quiz7}} | {{s7.quizVariants7}} | {{s7.quizAnswer7}}→→→
 
 _____________________________________________
 
-{{s23.p12}}
+![ico-25 hw]** 8**
 
-{{s23.p13}}
+{{s7.p5}}
 
 ~~~js
 var elems = ['h3', 'p', 'div'].map(tag => document.createElement(tag))
@@ -1368,24 +1368,24 @@ for (var elem of document.body.children) {
 }
 ~~~
 
-→→→ {{s23.quiz8}} | {{s23.quizVariants8}} | {{s23.quizAnswer8}}→→→
+→→→ {{s7.quiz8}} | {{s7.quizVariants8}} | {{s7.quizAnswer8}}→→→
 
 _____________________________________________
 
-{{s23.p14}}
+![ico-25 hw]** 9**
 
-{{s23.p15}}
+{{s7.p6}}
 
 ~~~js
 document.head.innerHTML = `<!-- Comment -->`
 for (var node of document.head.childNodes) console.log(node.nodeType)
 ~~~
 
-→→→ {{s23.quiz9}} | {{s23.quizVariants9}} | {{s23.quizAnswer9}}→→→
+→→→ {{s7.quiz9}} | {{s7.quizVariants9}} | {{s7.quizAnswer9}}→→→
 
 _____________________________________________
 
-{{s23.p16}}
+◘◘![ico-25 hw] **10**◘◘
 
 ~~~js
 function showProto (elem) {
@@ -1405,11 +1405,11 @@ elems.forEach(function (elem) {
 })
 ~~~
 
-→→→ {{s23.quiz10}} | {{s23.quizVariants10}} | {{s23.quizAnswer10}}→→→
+→→→ {{s7.quiz10}} | {{s7.quizVariants10}} | {{s7.quizAnswer10}}→→→
 
 
 ___________________________________
 
-{{s23.p17}}
+{{s7.p7}}
 
-{{s23.p18}}
+[![ico-20 link] **^^Document^^**](external/mdi-dom)

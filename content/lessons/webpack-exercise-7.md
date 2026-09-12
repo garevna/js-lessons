@@ -10,14 +10,14 @@ ________________________________
 {{s2.p3}}
 {{s2.p4}}
 
+![ico-20 green-ok] export class PictureSlider
+![ico-20 green-ok] export const Slide
+
 {{s2.p5}}
 {{s2.p6}}
-
 {{s2.p7}}
-{{s2.p8}}
-{{s2.p9}}
 
-{{s2.p10}}
+◘◘![ico-20 file] PictureSlider.js◘◘
 
 ~~~js
 class PictureSlider extends HTMLElement {
@@ -187,9 +187,9 @@ Object.assign(PictureSlider.prototype, {
 })
 ~~~
 
-{{s2.p11}}
+{{s2.p8}}
 
-{{s2.p12}}
+◘◘![ico-20 file] script.js◘◘
 
 ~~~js
 'use strict'

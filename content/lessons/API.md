@@ -1,214 +1,214 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] API
 
-{{s1.p1}}
+[** ♫**](sounds/ua/api.mp3)
 
-{{s1.p2}}
+{{s0.p1}}
 
 @@@@
 ![](illustrations/api-02.png)
-{{s1.p3}}
-{{s1.p4}}
+{{s0.p2}}
+{{s0.p3}}
 ![](illustrations/api-01.png)
 @@@@
 
 _________________________
 
-{{s1.p5}}
+{{s0.p4}}
 
-{{s1.p6}}
-{{s1.p7}}
+{{s0.p5}}
+{{s0.p6}}
 _________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] CRUD
 
-{{s2.p1}}
+[** ♫**](sounds/ua/api-crud.mp3)
 
-{{s2.p2}}
-{{s2.p3}}
+{{s0.p7}}
+{{s0.p8}}
 
-^^^[{{s2.spoiler1}}]
+^^^[CRUD]
 
-{{s2.p4}}
+{{s0.p9}}
 
-{{s2.p5}}
+{{s0.p10}}
 
-{{s2.p6}}
+| **GET** | **POST** | **PUT** | **PATCH** | **DELETE** | **HEAD** |
 
-{{s2.p7}}
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
-{{s2.p12}}
+{{s0.p11}}
+{{s0.p12}}
+{{s0.p13}}
+{{s0.p14}}
+{{s0.p15}}
+{{s0.p16}}
 
-{{s2.p13}}
+{{s0.p17}}
 
 ^^^
 ____________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] Request & Response
 
-{{s3.p1}}
+[** ♫**](sounds/ua/api-request-response.mp3)
 
-{{s3.p2}}
-{{s3.p3}}
+{{s0.p18}}
+{{s0.p19}}
 
-{{s3.p4}}
-{{s3.p5}}
-{{s3.p6}}
-{{s3.p7}}
+{{s0.p20}}
+{{s0.p21}}
+{{s0.p22}}
+{{s0.p23}}
 
 __________________________________
 
-### ![ico-25 icon] {{s4.h1}}
+### ![ico-25 icon] Resource
 
-{{s4.p1}}
+[** ♫**](sounds/ua/api-resource.mp3)
 
-{{s4.p2}}
+{{s0.p24}}
 
-{{s4.p3}}
+{{s0.p25}}
 
-{{s4.p4}}
+{{s0.p26}}
 
-{{s4.p5}}
+{{s0.p27}}
 
-{{s4.p6}}
+{{s0.p28}}
 
-{{s4.p7}}
+{{s0.p29}}
 
 _____________________________________
 
-## ![ico-25 icon] {{s5.h1}}
+## ![ico-25 icon] API endpoints
 
-{{s5.p1}}
+[** ♫**](sounds/ua/api-endpoints.mp3)
 
-{{s5.p2}}
+{{s0.p30}}
 
-{{s5.p3}}
+^^^[![](icons/swagger.png)]
 ![](illustrations/api-endpoints-01.png)
 ^^^
 
-{{s5.p4}}
+{{s0.p31}}
 
-{{s5.p5}}
+{{s0.p32}}
 
-{{s5.p6}}
-{{s5.p7}}
+^^^[![](icons/endpoint-icon.png)]
+{{s0.p33}}
 
-{{s5.p8}}
-{{s5.p9}}
-{{s5.p10}}
-{{s5.p11}}
-{{s5.p12}}
+{{s0.p34}}
+{{s0.p35}}
+{{s0.p36}}
+{{s0.p37}}
+{{s0.p38}}
 ^^^
 
-{{s5.p13}}
+{{s0.p39}}
 
-{{s5.p14}}
-{{s5.p15}}
-{{s5.p16}}
-{{s5.p17}}
+{{s0.p40}}
+{{s0.p41}}
+{{s0.p42}}
+{{s0.p43}}
 
-{{s5.p18}}
+{{s0.p44}}
 
-{{s5.p19}}
+{{s0.p45}}
 
-{{s5.p20}}
-{{s5.p21}}
+{{s0.p46}}
+{{s0.p47}}
 
-{{s5.p22}}
+^^^[![](icons/swagger.png)]
 ![](illustrations/api-endpoints-02.png)
 ^^^
 
-{{s5.p23}}
+^^^[![](icons/swagger.png)]
 ![](illustrations/api-endpoints-04.png)
 ^^^
 
-{{s5.p24}}
-{{s5.p25}}
-{{s5.p26}}
-{{s5.p27}}
+^^^[![](icons/coffee.png)]
+{{s0.p48}}
+{{s0.p49}}
+{{s0.p50}}
 
-{{s5.p28}}
+••https://api.example.com/users/all••
 
-{{s5.p29}}
+{{s0.p51}}
 
-{{s5.p30}}
+••https://api.example.com/users/${iserId}••
 
 
-{{s5.p31}}
+{{s0.p52}}
 
-{{s5.p32}}
+••https://api.example.com/user/create••
 
-{{s5.p33}}
+{{s0.p53}}
 
-{{s5.p34}}
+••https://api.example.com/user/change/${iserId}••
 
-{{s5.p35}}
-{{s5.p36}}
+{{s0.p54}}
+••https://api.example.com/user/update/${iserId}••
 
-{{s5.p37}}
+{{s0.p55}}
 
-{{s5.p38}}
+••https://api.example.com/user/remove/${iserId}••
 
-{{s5.p39}}
+{{s0.p56}}
 
 ^^^
 
-{{s5.p40}}
-{{s5.p41}}
+{{s0.p57}}
+{{s0.p58}}
 ______________________________________________
 
-## ![ico-25 icon] {{s6.h1}}
+## ![ico-25 icon] web service
 
-{{s6.p1}}
+{{s0.p59}}
 
-{{s6.p2}}
-{{s6.p3}}
-{{s6.p4}}
-{{s6.p5}}
+{{s0.p60}}
+{{s0.p61}}
+{{s0.p62}}
+{{s0.p63}}
 
-{{s6.p6}}
+{{s0.p64}}
 
-{{s6.p7}}
+{{s0.p65}}
 
-{{s6.p8}}
-{{s6.p9}}
-{{s6.p10}}
+![ico-20 green-ok] **SOAP**    (_Simple Object Access Protocol_)
+![ico-20 green-ok] **REST**    (_Representational State Transfer_)
+![ico-20 green-ok] **XML-RPC** (_XML Remote Procedure Call_)
 
 _________________________________________
 
-### ![ico-20 icon] {{s7.h1}}
+### ![ico-20 icon] REST API
 
-{{s7.p1}}
+{{s0.p66}}
 
-{{s7.p2}}
+{{s0.p67}}
 
-{{s7.p3}}
+{{s0.p68}}
 
-{{s7.p4}}
+^^^[![](icons/postman.png)]
 ![](illustrations/api-rest-postman.png)
 ^^^
 
 ___________________________________________
 
-### ![ico-20 icon] {{s8.h1}}
+### ![ico-20 icon] SOAP vs REST
 
-{{s8.p1}}
+{{s0.p69}}
 
-{{s8.p2}}
-{{s8.p3}}
+{{s0.p70}}
+{{s0.p71}}
 
-{{s8.p4}}
+{{s0.p72}}
 
-{{s8.p5}}
+{{s0.p73}}
 
-{{s8.p6}}
+{{s0.p74}}
 
-{{s8.p7}}
-{{s8.p8}}
-{{s8.p9}}
+| ^^• Command Separated Value (CSV)^^ |
+| ^^• JavaScript Object Notation (JSON)^^ |
+| ^^• Really Simple Syndication (RSS)^^ |
 
-{{s8.p10}}
+{{s0.p75}}
 
 _____________________________________

@@ -1,25 +1,25 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Web-workers
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
+{{s0.p2}}
 
-{{s1.p3}}
+{{s0.p3}}
 
 ~~~js
 const worker = new Worker('worker.js')
 ~~~
 
-{{s1.p4}}
-{{s1.p5}}
+{{s0.p4}}
+{{s0.p5}}
 
-{{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
+{{s0.p6}}
+{{s0.p7}}
+{{s0.p8}}
 
-{{s1.p9}}
+{{s0.p9}}
 
-{{s1.p10}}
+{{s0.p10}}
 
 ~~~console
 ▼ ƒ Worker()
@@ -43,45 +43,45 @@ const worker = new Worker('worker.js')
 [[Scopes]]: Scopes[0]
 ~~~
 
-{{s1.p11}}
-{{s1.p12}}
+{{s0.p11}}
+{{s0.p12}}
 
-{{s1.p13}}
+{{s0.p13}}
 
 __________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] onmessage
 
-{{s2.p1}}
-{{s2.p2}}
-{{s2.p3}}
+{{s0.p14}}
+{{s0.p15}}
+{{s0.p16}}
 
-{{s2.p4}}
+◘◘worker.js◘◘
 ~~~js
 onmessage = async function (event) {
   console.log(event.data)
 }
 ~~~
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] postMessage
 
-{{s3.p1}}
+{{s0.p17}}
 
-{{s3.p2}}
+◘◘worker.js◘◘
 ~~~js
 postMessage('message from worker to script')
 ~~~
 
-{{s3.p3}}
+{{s0.p18}}
 
-{{s3.p4}}
+◘◘script.js◘◘
 ~~~js
 worker.postMessage('message from script to worker')
 ~~~
 
 ______________________________________________________________
 
-{{s3.p5}}
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 const worker = new Worker('src/web-worker.js')
@@ -106,7 +106,7 @@ button.onclick = function ( event ) {
 }
 ~~~
 
-{{s3.p6}}
+◘◘worker.js◘◘
 ~~~js
 const messages = []
 
@@ -117,15 +117,15 @@ onmessage = async function( event ) {
 }
 ~~~
 
-{{s3.p7}}
-{{s3.p8}}
-{{s3.p9}}
-{{s3.p10}}
+{{s0.p19}}
+{{s0.p20}}
+{{s0.p21}}
+{{s0.p22}}
 
 {{{web-worker-sample-1.js}}}
 __________________________________________
 
-{{s3.p11}}
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 const p = document.body.appendChild(document.createElement('p'))
@@ -142,7 +142,7 @@ section.appendChild(document.createElement('input'))
   }
 ~~~
 
-{{s3.p12}}
+◘◘web-worker.js◘◘
 ~~~js
 const getHex = () => (Math.max(120, Math.round(Math.random() * 255))).toString(16)
 
@@ -160,14 +160,14 @@ onmessage = function (event) {
 {{{web-worker-sample-2.js}}}
 ___________________________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] importScripts
 
-{{s4.p1}}
+{{s0.p23}}
 
-{{s4.p2}}
-{{s4.p3}}
+{{s0.p24}}
+{{s0.p25}}
 
-{{s4.p4}}
+◘◘![ico-25 cap] ** 3**◘◘
 ~~~js
 self.importScripts('https://cdn.rawgit.com/chrisveness/crypto/4e93a4d/sha256.js')
 
@@ -176,15 +176,15 @@ onmessage = function (event) {
 }
 ~~~
 
-{{s4.p5}}
-{{s4.p6}}
+{{s0.p26}}
+{{s0.p27}}
 
 {{{web-worker-sample-3.js}}}
 ___________________________________________________
 
-## ![ico-25 icon] {{s5.h1}}
+## ![ico-25 icon] MessageChannel
 
-{{s5.p1}}
+◘◘![ico-25 cap] ** 4**◘◘
 
 ~~~js
 const section = document.body

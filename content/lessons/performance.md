@@ -1,17 +1,17 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Performance
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
-{{s1.p7}}
+{{s0.p2}}
+^^• **Performance Timeline API**^^
+^^• **High Resolution Time API**^^
+^^• **Navigation Timing API**^^
+^^• **User Timing API**^^
+^^• **Resource Timing API**^^
 
-{{s1.p8}}
+{{s0.p3}}
 
-^^^[{{s1.spoiler1}}]
+^^^[performance]
 
 ~~~console
 ▼ Performance {timeOrigin: 1546006432906.767, onresourcetimingbufferfull: null, memory: MemoryInfo, navigation: PerformanceNavigation, timing: PerformanceTiming}
@@ -51,22 +51,22 @@
 
 ^^^
 
-{{s1.p9}}
-{{s1.p10}}
+{{s0.p4}}
+{{s0.p5}}
 
-{{s1.p11}}
-{{s1.p12}}
+{{s0.p6}}
+{{s0.p7}}
 
 _____________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] performance.timing
 
-{{s2.p1}}
+{{s0.p8}}
 
-{{s2.p2}}
-{{s2.p3}}
-{{s2.p4}}
-{{s2.p5}}
+| **document.readyState**                                                                                                     | **performance.timing** |
+{{s0.p9}}
+{{s0.p10}}
+{{s0.p11}}
 
 ~~~js
 const { domComplete, domInteractive, domLoading } = performance.timing
@@ -77,9 +77,9 @@ console.log(domInteractive - domLoading)
 
 _____________________________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{s1.h1}}
 
-^^^[{{s3.spoiler1}}]
+^^^[Performance.prototype]
 
 ~~~console
 ▼ Performance {now: ƒ, getEntries: ƒ, getEntriesByType: ƒ, …}
@@ -114,25 +114,25 @@ _____________________________________________________
 
 _______________________________________________________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] now
 
-{{s4.p1}}
+{{s1.p1}}
 
-{{s4.p2}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 console.log(`Старт: ${performance.now()}`)
 setTimeout(() => console.log(`Стоп: ${performance.now()}`), 2000)
 ~~~
 
-{{s4.p3}}
+{{s1.p2}}
 
 ~~~console
 Старт: 207385.50000003306
 Стоп: 209385.9999999986
 ~~~
 
-{{s4.p4}}
+{{s1.p3}}
 
 ~~~console
 209385.9999999986 - 207385.50000003306 = 2000.499999965541 (ms)
@@ -140,11 +140,11 @@ setTimeout(() => console.log(`Стоп: ${performance.now()}`), 2000)
 
 _______________________________________________________________
 
-### ![ico-20 icon] {{s5.h1}}
+### ![ico-20 icon] mark
 
-{{s5.p1}}
+{{s1.p4}}
 
-{{s5.p2}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js
 performance.mark('start')
@@ -158,7 +158,7 @@ const items = window.performance.getEntriesByType('mark')
 console.log(items)
 ~~~
 
-{{s5.p3}}
+{{s1.p5}}
 
 ~~~console
 ▼ (2) [PerformanceMark, PerformanceMark]
@@ -180,11 +180,11 @@ console.log(items)
 
 _______________________________________________________________
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] measure
 
-{{s6.p1}}
+{{s1.p6}}
 
-{{s6.p2}}
+◘◘![ico-20 cap] ** 3**◘◘ 
 
 ~~~js
 performance.mark('start1')
@@ -218,59 +218,59 @@ performance.clearMarks()
 performance.clearMeasures()
 ~~~
 
-{{s6.p3}}
+{{s1.p7}}
 
 ~~~console
 1: duration: 0.20000000949949026ms
 2: duration: 0.20000000949949026ms
 ~~~
 
-{{s6.p4}}
+{{s1.p8}}
 
-{{s6.p5}}
-{{s6.p6}}
-
-_______________________________________________________________
-
-### ![ico-20 icon] {{s7.h1}}
-
-{{s7.p1}}
-{{s7.p2}}
-{{s7.p3}}
-
-{{s7.p4}}
-
-{{s7.p5}}
-
-{{s7.p6}}
-
-{{s7.p7}}
-{{s7.p8}}
-{{s7.p9}}
-{{s7.p10}}
-{{s7.p11}}
-{{s7.p12}}
+• clearMarks()
+• clearMeasures()
 
 _______________________________________________________________
 
-#### ![ico-20 icon] {{s8.h1}}
+### ![ico-20 icon] Entries
 
-{{s8.p1}}
+• getEntries()
+• getEntriesByName()
+• getEntriesByType()
 
-{{s8.p2}}
-{{s8.p3}}
-{{s8.p4}}
-{{s8.p5}}
+{{s1.p9}}
 
-{{s8.p6}}
-{{s8.p7}}
-{{s8.p8}}
+{{s1.p10}}
 
-{{s8.p9}}
-{{s8.p10}}
-{{s8.p11}}
+{{s1.p11}}
 
-{{s8.p12}}
+| entryType | name |
+{{s1.p12}}
+{{s1.p13}}
+{{s1.p14}}
+{{s1.p15}}
+{{s1.p16}}
+
+_______________________________________________________________
+
+#### ![ico-20 icon] getEntries
+
+{{s1.p17}}
+
+• PerformanceResourceTiming
+• PerformancePaintTiming
+• PerformanceMark
+• PerformanceMeasure
+
+{{s1.p18}}
+{{s1.p19}}
+{{s1.p20}}
+
+{{s1.p21}}
+{{s1.p22}}
+{{s1.p23}}
+
+◘◘![ico-20 cap] ** 4**◘◘
 
 ~~~js
 performance.mark('start')
@@ -286,7 +286,7 @@ performance.mark('end')
 console.log(performance.getEntries())
 ~~~
 
-{{s8.p13}}
+{{s1.p24}}
 
 ~~~console
 ▼ (2) [PerformanceMark, PerformanceMark]
@@ -307,7 +307,7 @@ console.log(performance.getEntries())
 ~~~
 
 
-{{s8.p14}}
+◘◘![ico-20 cap] ** 5**◘◘
 
 ~~~js
 performance.mark('start')
@@ -320,7 +320,7 @@ fetch('https://httpbin.org')
   })
 ~~~
 
-^^^[{{s8.spoiler1}}]
+^^^[{{s1.spoiler1}}]
 
 ~~~console
 ▼ (4) [PerformanceMark, PerformanceMeasure, PerformanceResourceTiming, PerformanceMark]
@@ -374,10 +374,10 @@ fetch('https://httpbin.org')
 
 _______________________________________________________________
 
-#### ![ico-20 icon] {{s9.h1}}
+#### ![ico-20 icon] getEntriesByName
 
 
-{{s9.p1}}
+◘◘![ico-20 cap] ** 6**◘◘
 
 ~~~js
 performance.mark('start')
@@ -390,7 +390,7 @@ fetch('https://httpbin.org')
   })
 ~~~
 
-^^^[{{s9.spoiler1}}]
+^^^[{{s1.spoiler2}}]
 
 ~~~console
 ▼ [ PerformanceResourceTiming ]
@@ -426,7 +426,7 @@ fetch('https://httpbin.org')
 
 _______________________________________________________________
 
-{{s9.p2}}
+◘◘![ico-20 cap] ** 7**◘◘
 
 ~~~js
 const pictures = [
@@ -450,7 +450,7 @@ pictures
 console.log(performance.getEntriesByName('start'))
 ~~~
 
-{{s9.p3}}
+{{s1.p25}}
 
 ~~~console
 ▼ (4) [PerformanceMark, PerformanceMark, PerformanceMark, PerformanceMark]
@@ -464,15 +464,15 @@ console.log(performance.getEntriesByName('start'))
 
 _______________________________________________________________
 
-#### ![ico-20 icon] {{s10.h1}}
+#### ![ico-20 icon] getEntriesByType
 
-{{s10.p1}}
+◘◘![ico-20 cap] ** 8**◘◘
 
 ~~~js
 console.log(performance.getEntriesByType('resource'))
 ~~~
 
-^^^[{{s10.spoiler1}}]
+^^^[{{s1.spoiler3}}]
 
 ~~~console
 ▼ [PerformanceResourceTiming]
@@ -508,14 +508,14 @@ console.log(performance.getEntriesByType('resource'))
 
 _______________________________________________________________
 
-{{s10.p2}}
+◘◘![ico-20 cap] ** 9**◘◘
 
 ~~~js
 fetch('https://httpbin.org/')
   .then(response => console.log(performance.getEntriesByType('resource')))
 ~~~
 
-^^^[{{s10.spoiler2}}]
+^^^[{{s1.spoiler4}}]
 
 ~~~console
 ▼ [PerformanceResourceTiming]
@@ -551,25 +551,25 @@ fetch('https://httpbin.org/')
 
 _______________________________________________________________
 
-### ![ico-20 icon] {{s11.h1}}
+### ![ico-20 icon] PerformanceResourceTiming
 
-{{s11.p1}}
+{{s1.p26}}
 
-#### ![ico-20 icon] {{s12.h1}}
+#### ![ico-20 icon] initiatorType
 
-{{s12.p1}}
+{{s1.p27}}
 
-{{s12.p2}}
-{{s12.p3}}
-{{s12.p4}}
-{{s12.p5}}
-{{s12.p6}}
+{{s1.p28}}
+{{s1.p29}}
+{{s1.p30}}
+{{s1.p31}}
+{{s1.p32}}
 
-#### ![ico-20 icon] {{s13.h1}}
+#### ![ico-20 icon] name
 
-{{s13.p1}}
+{{s1.p33}}
 
-{{s13.p2}}
+◘◘![ico-20 cap] **10**◘◘
 
 ~~~js
 const pictures = [
@@ -608,7 +608,7 @@ Promise.all(promises)
 
 ______________________________________________________________________
 
-{{s13.p3}}
+{{s1.p34}}
 
 ________________________________
 
@@ -616,25 +616,25 @@ ________________________________
 
 <img src="http://ogo.ua/images/articles/1567/big/1395958980.jpg" width="120"/>
 &nbsp;
-{{s13.p4}}
+^^2.3999999975785613 (ms)^^
 &nbsp;
 <img src="https://wxpcdn.gcdn.co/dcont/fb/image/crew3_1024.png" width="120"/>
 &nbsp;
-{{s13.p5}}
+^^7.400000002235174 (ms)^^
 &nbsp;
 <img src="https://mixpix.in/post_imgs/2015/04/10/141025/00009.jpg" width="120"/>
 &nbsp;
-{{s13.p6}}
+^^2.5000000023283064 (ms)^^
 &nbsp;
 <img src="https://mixpix.in/post_imgs/2015/04/10/141025/00006.jpg" width="120"/>
 &nbsp;
-{{s13.p7}}
+^^2.900000021327287 (ms)^^
 &nbsp;
 
 @@@@
 
 _______________________________________________________________
 
-## ![ico-25 icon] {{s14.h1}}
+## ![ico-25 icon] Memory allocation
 
 [![ico-70 youtube]](https://www.youtube.com/watch?v=nDNEiu_xwf0&feature=youtu.be)

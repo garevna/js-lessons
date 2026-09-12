@@ -1,20 +1,20 @@
-# ![ico-25 study] {{s1.h1}}
+# ![ico-25 study] Dynamic import
 
-{{s1.p1}}
+**ES 2019**
 
 __________________________________________________
 
-{{s1.p2}}
+{{s0.p1}}
 
-{{s1.p3}}
+{{s0.p2}}
 
-{{s1.p4}}
+{{s0.p3}}
 
 _________________________________
 
-{{s1.p5}}
+![ico-30 cap] ** 1**
 
-{{s1.p6}}
+{{s0.p4}}
 
 ~~~js
 document.body.onclick = async () => {
@@ -22,18 +22,18 @@ document.body.onclick = async () => {
 }
 ~~~
 
-{{s1.p7}}
-{{s1.p8}}
+{{s0.p5}}
+{{s0.p6}}
 
 {{{dynamic-import-1.js}}}
 
 ____________________________________
 
-{{s1.p9}}
+![ico-30 cap] ** 2**
 
-{{s1.p10}}
+{{s0.p7}}
 
-{{s1.p11}}
+◘◘![ico-20 paper]◘◘
 
 ~~~js
 const scriptPath = 'https://garevna.github.io/js-samples/js/index'
@@ -43,9 +43,9 @@ import(`${scriptFile}12.js`)
   .then(setTimeout(() => import(`${scriptPath}22.js`), 10000))
 ~~~
 
-{{s1.p12}}
+{{s0.p8}}
 
-{{s1.p13}}
+◘◘![ico-20 paper]◘◘
 
 ~~~js
 const scriptImports = async moduleFile => {
@@ -63,11 +63,11 @@ scriptImports('https://garevna.github.io/js-samples/js/index')
 
 _____________________________________________________
 
-{{s1.p14}}
+![ico-30 cap] ** 3**
 
-{{s1.p15}}
+{{s0.p9}}
 
-{{s1.p16}}
+◘◘^^![ico-20 paper] index.html^^◘◘
 
 ~~~html
 &lt;!DOCTYPE html>
@@ -84,7 +84,7 @@ _____________________________________________________
 &lt;/html>
 ~~~
 
-{{s1.p17}}
+{{s0.p10}}
 
 ~~~js
 const mod = document.body
@@ -92,9 +92,9 @@ const mod = document.body
 mod.type = 'module'
 ~~~
 
-{{s1.p18}}
+{{s0.p11}}
 
-{{s1.p19}}
+{{s0.p12}}
 
 ~~~js
 mod.textContent = `
@@ -103,9 +103,9 @@ mod.textContent = `
 `
 ~~~
 
-{{s1.p20}}
+{{s0.p13}}
 
-{{s1.p21}}
+◘◘^^![ico-20 paper] js/index.js^^◘◘
 
 ~~~js
 const mod = document.body
@@ -119,9 +119,9 @@ mod.textContent = `
 `
 ~~~
 
-{{s1.p22}}
+{{s0.p14}}
 
-{{s1.p23}}
+◘◘^^![ico-20 paper] js/testESModules.js^^◘◘
 
 ~~~js
 export function showMessage (message) {
@@ -150,23 +150,23 @@ export function showMessage (message) {
 
 __________________________________________________________
 
-{{s1.p24}}
+{{s0.p15}}
 
 ~~~js
 import { showMessage } from 'https://example.com/js/testESModules.js'
 ~~~
 
-{{s1.p25}}
+{{s0.p16}}
 
 ~~~js
 import { showMessage } from './js/testESModules.js'
 ~~~
 
-{{s1.p26}}
+{{s0.p17}}
 
 ________________________________________________________________________
 
 
-{{s1.p27}}
+[![ico-25 cap] **Live demo**](samples/25)
 
 ______________________________________________________________________

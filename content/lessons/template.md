@@ -1,30 +1,30 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] &lt;template>
 
 _____________________________________________________________________________
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
+{{s0.p2}}
 
-{{s1.p3}}
+{{s0.p3}}
 
 ____________________________________________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] DocumentFragment
 
-{{s2.p1}}
+{{s0.p4}}
 
-{{s2.p2}}
+{{s0.p5}}
 
-{{s2.p3}}
+{{s0.p6}}
 
-{{s2.p4}}
+{{s0.p7}}
 
 ________________________________________________________________________________
 
-### ![ico-25 cap] {{s3.h1}}
+### ![ico-25 cap] {{s1.h1}}
 
-{{s3.p1}}
+{{s1.p1}}
 
 ~~~html
 <body>
@@ -35,7 +35,7 @@ ________________________________________________________________________________
 </body>
 ~~~
 
-{{s3.p2}}
+{{s1.p2}}
 
 ~~~html
 ▼ <template id="sample">
@@ -47,14 +47,14 @@ ________________________________________________________________________________
 
 ________________________________________________________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] content
 
-{{s4.p1}}
+{{s1.p3}}
 
 
-### ![ico-25 cap] {{s5.h1}}
+### ![ico-25 cap] {{s2.h1}}
 
-{{s5.p1}}
+{{s2.p1}}
 
 ~~~html
 <template id="svg">
@@ -69,16 +69,16 @@ ________________________________________________________________________________
 </template>
 ~~~
 
-{{s5.p2}}
+{{s2.p2}}
 
-{{s5.p3}}
+**content**
 
 ~~~javascript
 const circle = document.querySelector('#svg')
 console.dir(circle.content)
 ~~~
 
-^^^[{{s5.spoiler1}}]
+^^^[{{s2.spoiler1}}]
 
 ~~~console
 ▼ #document-fragment
@@ -105,39 +105,39 @@ console.dir(circle.content)
 
 ^^^
 
-## ![ico-25 icon] {{s6.h1}}
+## ![ico-25 icon] {{s3.h1}}
 
-{{s6.p1}}
+{{s3.p1}}
 
 ~~~javascript
 document.body.appendChild(circle.content)
 ~~~
 
-{{s6.p2}}
+{{s3.p2}}
 
-{{s6.p3}}
+{{s3.p3}}
 
 ~~~javascript
 console.dir(circle.content)
 ~~~
 
-{{s6.p4}}
+{{s3.p4}}
 
-{{s6.p5}}
+{{s3.p5}}
 
-{{s6.p6}}
+{{s3.p6}}
 
 ~~~javascript
 document.body.appendChild(circle.content.cloneNode(true))
 ~~~
 
-{{s6.p7}}
+{{s3.p7}}
 
 _________________________________________________________________
 
-### ![ico-25 cap] {{s7.h1}}
+### ![ico-25 cap] {{s4.h1}}
 
-{{s7.p1}}
+{{s4.p1}}
 
 ~~~html
 <template id="sample">
@@ -155,7 +155,7 @@ _________________________________________________________________
 </template>
 ~~~
 
-{{s7.p2}}
+{{s4.p2}}
 
 ~~~javascript
 class CanvasElement extends HTMLElement {
@@ -169,7 +169,7 @@ class CanvasElement extends HTMLElement {
 customElements.define('canvas-element', CanvasElement)
 ~~~
 
-{{s7.p3}}
+{{s4.p3}}
 
 ~~~html
 <canvas-element></canvas-element>
@@ -177,9 +177,9 @@ customElements.define('canvas-element', CanvasElement)
 
 _______________________________________________________________________
 
-### ![ico-25 cap] {{s8.h1}}
+### ![ico-25 cap] {{s5.h1}}
 
-{{s8.p1}}
+{{s5.p1}}
 
 ~~~~js
 const template = document.body
@@ -203,11 +203,11 @@ customElements.define('sample-element', class extends HTMLElement {
 })
 ~~~~
 
-{{s8.p2}}
+{{s5.p2}}
 
 ~~~javascript
 document.body
   .appendChild(document.createElement('sample-element'))
 ~~~
 
-{{s8.p3}}
+{{s5.p3}}

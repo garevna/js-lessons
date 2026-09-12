@@ -1,46 +1,46 @@
-# ![ico-30 icon] {{s1.h1}}
+# ![ico-30 icon] JS
 
-### ![ico-20 question] {{s2.h1}}
+### ![ico-20 question] OOP
 
-{{s2.p1}}
+{{s0.p1}}
 
-{{s2.p2}}
+{{s0.p2}}
 
-### ![ico-20 question] {{s3.h1}}
+### ![ico-20 question] {{s1.h1}}
 
-{{s3.p1}}
-{{s3.p2}}
-{{s3.p3}}
+{{s1.p1}}
+{{s1.p2}}
+{{s1.p3}}
 
-{{s3.p4}}
-{{s3.p5}}
+{{s1.p4}}
+{{s1.p5}}
 
-{{s3.p6}}
-☼☼☼ {{s3.slogan1}} ☼☼☼
+{{s1.p6}}
+☼☼☼ {{s1.slogan1}} ☼☼☼
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] {{s2.h1}}
 
 @@@@
-{{s4.p1}}
+{{s2.p1}}
 ![](images/funcs-are-our-jam.svg)
 
 @@@@
 
-{{s4.p2}}
-{{s4.p3}}
+{{s2.p2}}
+{{s2.p3}}
 
-### ![ico-20 icon] {{s5.h1}}
+### ![ico-20 icon] Jazz
 
-☼☼☼ {{s5.slogan1}} ☼☼☼
+☼☼☼ {{s2.slogan1}} ☼☼☼
 
-{{s5.p1}}
+{{s2.p4}}
 
-{{s5.p2}}
-{{s5.p3}}
+{{s2.p5}}
+{{s2.p6}}
 
 @@@@
 
 ![](images/F-35.jpg)
-{{s5.p4}}
-☼☼☼ {{s5.slogan2}} ☼☼☼
+{{s2.p7}}
+☼☼☼ {{s2.slogan2}} ☼☼☼
 @@@@

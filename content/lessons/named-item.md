@@ -1,22 +1,22 @@
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] namedItem
 
-{{s1.p1}}
+{{s0.p1}}
 
-^^^[{{s1.spoiler1}}]
-{{s1.p2}}
+^^^[HTML Collections]
+{{s0.p2}}
 __________________________
 
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
-{{s1.p9}}
+^^![ico-20 green-ok] document.forms^^
+^^![ico-20 green-ok] document.images^^
+^^![ico-20 green-ok] document.anchors^^
+^^![ico-20 green-ok] document.all^^
+^^![ico-20 green-ok] document.scripts^^
+^^![ico-20 green-ok] document.links^^
+^^![ico-20 green-ok] document.plugins^^
 
 ^^^
 
-### ![ico-25 cap] {{s2.h1}}
+### ![ico-25 cap] {{s1.h1}}
 
 ~~~html
 <html>
@@ -39,31 +39,31 @@ __________________________
 </html>
 ~~~
 
-{{s2.p1}}
+{{s1.p1}}
 
 ~~~js
 document.all.namedItem('Google')  // null
 ~~~
 
-{{s2.p2}}
+{{s1.p2}}
 
 ~~~js
 document.all.namedItem('fonts')
 ~~~
 
-{{s2.p3}}
+{{s1.p3}}
 
 ~~~console
 <link name="Google" id="fonts" href="https://fonts.googleapis.com/css?family=Roboto|&amp;display=swap" rel="stylesheet">
 ~~~
 
-{{s2.p4}}
+{{s1.p4}}
 
 _________________________________________
 
-### ![ico-25 cap] {{s3.h1}}
+### ![ico-25 cap] {{s2.h1}}
 
-{{s3.p1}}
+{{s2.p1}}
 
 ~~~js
 console.log(document.forms.namedItem('form'))
@@ -73,13 +73,13 @@ console.log(document.scripts.namedItem('script'))
 console.log(document.all.namedItem('div'))
 ~~~
 
-{{s3.p2}}
+{{s2.p2}}
 
 ________________________________________________
 
-### ![ico-25 cap] {{s4.h1}}
+### ![ico-25 cap] {{s3.h1}}
 
-{{s4.p1}}
+{{s3.p1}}
 
 ~~~js
 function testNamedItem (tagName) {
@@ -93,36 +93,36 @@ function testNamedItem (tagName) {
 }
 ~~~
 
-{{s4.p2}}
+{{s3.p2}}
 
-{{s4.p3}}
+{{s3.p3}}
 
-{{s4.p4}}
-{{s4.p5}}
-{{s4.p6}}
-{{s4.p7}}
-{{s4.p8}}
-{{s4.p9}}
-{{s4.p10}}
-{{s4.p11}}
-{{s4.p12}}
-{{s4.p13}}
-{{s4.p14}}
-{{s4.p15}}
+| **^^Element^^** | **^^id^^** | **^^name^^** |
+| ^^form^^ | + | + |
+| ^^ a^^ | + | + |
+| ^^img^^ | + | + |
+| ^^input^^ | + | + |
+| ^^select^^ | + | + |
+| ^^textarea^^ | + | + |
+| ^^script^^ | + | &ndash; |
+| ^^link^^ | + | &ndash; |
+| ^^div^^ | + | &ndash; |
+| ^^ul^^ | + | &ndash; |
+| ^^li^^ | + | &ndash; |
 
-{{s4.p16}}
+{{s3.p4}}
 
 _____________________________________________________
 
-^^^[{{s4.spoiler1}}]
+^^^[HTMLCollections]
 
-{{s4.p17}}
+{{s3.p5}}
 
-{{s4.p18}}
-{{s4.p19}}
-{{s4.p20}}
-{{s4.p21}}
-{{s4.p22}}
-{{s4.p23}}
+| Element | id | name |
+| documenmt.forms | + | + |
+| document.anchors | + | + |
+| document.images | + | + |
+| document.scripts | + | + |
+| document.links | &ndash; | &ndash; |
 
 ^^^

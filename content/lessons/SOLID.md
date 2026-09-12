@@ -1,98 +1,98 @@
-# ![ico-30 icon] {{s1.h1}}
+# ![ico-30 icon] SOLID
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
+• ^^Single responsibility^^
+• ^^Open-closed^^
+• ^^Liskov substitution^^
+• ^^Interface segregation^^
+• ^^Dependency inversion^^
 
 ____________________________________________
 
-{{s1.p7}}
+{{s0.p2}}
 
-{{s1.p8}}
+{{s0.p3}}
 
-{{s1.p9}}
+{{s0.p4}}
 
-{{s1.p10}}
+{{s0.p5}}
 
-{{s1.p11}}
+{{s0.p6}}
 
-{{s1.p12}}
+{{s0.p7}}
 
-{{s1.p13}}
+{{s0.p8}}
 
-{{s1.p14}}
+{{s0.p9}}
 
-{{s1.p15}}
+{{s0.p10}}
 
-{{s1.p16}}
+{{s0.p11}}
 
-{{s1.p17}}
+{{s0.p12}}
 
-{{s1.p18}}
+{{s0.p13}}
 
-{{s1.p19}}
+{{s0.p14}}
 
-{{s1.p20}}
+{{s0.p15}}
 
-{{s1.p21}}
+{{s0.p16}}
 
-{{s1.p22}}
+{{s0.p17}}
 
-{{s1.p23}}
+{{s0.p18}}
 
-{{s1.p24}}
+{{s0.p19}}
 
-{{s1.p25}}
+{{s0.p20}}
 
-{{s1.p26}}
+{{s0.p21}}
 
-{{s1.p27}}
+{{s0.p22}}
 
-{{s1.p28}}
+{{s0.p23}}
 
 __________________________________________________
 
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] Single responsibility
 
-{{s2.p1}}
+{{s0.p24}}
 
-{{s2.p2}}
+{{s0.p25}}
 
-{{s2.p3}}
+{{s0.p26}}
 
-{{s2.p4}}
+{{s0.p27}}
 
-{{s2.p5}}
+{{s0.p28}}
 
-{{s2.p6}}
+{{s0.p29}}
 
-{{s2.p7}}
+{{s0.p30}}
 
-{{s2.p8}}
+{{s0.p31}}
 
-{{s2.p9}}
+{{s0.p32}}
 
-{{s2.p10}}
+{{s0.p33}}
 
-{{s2.p11}}
+{{s0.p34}}
 
 _______________________________________________________
 
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] Open-closed
 
-{{s3.p1}}
+{{s0.p35}}
 
-{{s3.p2}}
+{{s0.p36}}
 
-{{s3.p3}}
+{{s0.p37}}
 
-{{s3.p4}}
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 class User {
@@ -113,15 +113,15 @@ const user = new User('Иван')
 user.write('Hello!')
 ~~~
 
-{{s3.p5}}
+{{s0.p38}}
 
 ~~~console
 Иван: Hello!
 ~~~
 
-{{s3.p6}}
+{{s0.p39}}
 
-{{s3.p7}}
+{{s0.p40}}
 
 ~~~js
 User.updateMethods('voyage', function (city) {
@@ -129,37 +129,37 @@ User.updateMethods('voyage', function (city) {
 })
 ~~~
 
-{{s3.p8}}
+{{s0.p41}}
 
 ~~~js
 user.voyage('London')
 ~~~
 
-{{s3.p9}}
+{{s0.p42}}
 
 ~~~console
 Иван: I visit London
 ~~~
 
-{{s3.p10}}
+{{s0.p43}}
 
 ____________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] Liskov substitution
 
-{{s4.p1}}
+{{s0.p44}}
 
-{{s4.p2}}
+{{s0.p45}}
 
-{{s4.p3}}
+{{s0.p46}}
 
-{{s4.p4}}
+{{s0.p47}}
 
-{{s4.p5}}
+{{s0.p48}}
 
-{{s4.p6}}
+{{s0.p49}}
 
-{{s4.p7}}
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 class RegisteredUser extends User {
@@ -182,43 +182,43 @@ class RegisteredUser extends User {
 }
 ~~~
 
-{{s4.p8}}
+{{s0.p50}}
 
 ~~~js
 user = new RegisteredUser('Иван', 'xJgb-809/**1Bh')
 ~~~
 
-{{s4.p9}}
+{{s0.p51}}
 
 ______________________________________
 
-## ![ico-25 icon] {{s5.h1}}
+## ![ico-25 icon] Interface segregation
 
-{{s5.p1}}
+{{s0.p52}}
 
-{{s5.p2}}
+{{s0.p53}}
 
-{{s5.p3}}
+{{s0.p54}}
 
-{{s5.p4}}
+{{s0.p55}}
 
-{{s5.p5}}
+{{s0.p56}}
 
-{{s5.p6}}
+{{s0.p57}}
 
-{{s5.p7}}
+{{s0.p58}}
 
-{{s5.p8}}
-{{s5.p9}}
-{{s5.p10}}
+{{s0.p59}}
+{{s0.p60}}
+{{s0.p61}}
 
-{{s5.p11}}
+{{s0.p62}}
 
-{{s5.p12}}
+{{s0.p63}}
 
-{{s5.p13}}
+{{s0.p64}}
 
-{{s5.p14}}
+◘◘![ico-25 cap] ** 3**◘◘
 
 ~~~js
 const card = (function (pin) {
@@ -248,11 +248,11 @@ const card = (function (pin) {
 })(prompt('Set your pincode'))
 ~~~
 
-{{s5.p15}}
+{{s0.p65}}
 
-{{s5.p16}}
+{{s0.p66}}
 
-{{s5.p17}}
+◘◘![ico-25 cap] ** 4**◘◘
 
 ~~~js
 const card = (function (pin) {
@@ -283,17 +283,17 @@ const card = (function (pin) {
 
 ____________________________________________
 
-## ![ico-25 icon] {{s6.h1}}
+## ![ico-25 icon] Dependency Invertion
 
-{{s6.p1}}
+{{s0.p67}}
 
-{{s6.p2}}
+{{s0.p68}}
 
-{{s6.p3}}
+{{s0.p69}}
 
-{{s6.p4}}
+{{s0.p70}}
 
-{{s6.p5}}
+{{s0.p71}}
 
 ~~~js
 User.updateMethods('sedition', function (prop, val) {
@@ -303,20 +303,20 @@ User.updateMethods('sedition', function (prop, val) {
 user.sedition('badExample', 'You should not do this')
 ~~~
 
-{{s6.p6}}
+{{s0.p72}}
 
-{{s6.p7}}
+{{s0.p73}}
 
-{{s6.p8}}
+{{s0.p74}}
 
-{{s6.p9}}
+{{s0.p75}}
 
-{{s6.p10}}
+{{s0.p76}}
 
-{{s6.p11}}
+{{s0.p77}}
 
-{{s6.p12}}
+{{s0.p78}}
 
-{{s6.p13}}
+{{s0.p79}}
 
 ______________________________________________

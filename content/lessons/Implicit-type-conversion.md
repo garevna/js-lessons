@@ -37,7 +37,7 @@ var res = '3' + 20 + 10
 
 {{s3.p9}}
 
-{{s3.p10}}
+![ico-25 cap] ** 1**
 
 ~~~js
 [] + 5             //  "5"
@@ -47,17 +47,17 @@ var res = '3' + 20 + 10
 null + [4, 8]      //  "null4,8"
 ~~~
 
-{{s3.p11}}
+{{s3.p10}}
 
 ~~~js
 String([4, 8])
 ~~~
 
+{{s3.p11}}
+
 {{s3.p12}}
 
-{{s3.p13}}
-
-{{s3.p14}}
+![ico-25 cap] ** 2**
 
 ~~~js
 null + +[4]       // 4
@@ -111,7 +111,7 @@ var z = a + b    //  0 + 1 --> 1
 
 ____________________________________________________________
 
-{{s4.p8}}
+![ico-25 cap] ** 3**
 
 ~~~js
 a = false, b = undefined
@@ -120,7 +120,7 @@ a < b       // 0 < NaN  --> false
 a == b      // 0 == NaN --> false
 ~~~
 
-{{s4.p9}}
+![ico-25 cap] ** 4**
 
 ~~~js
 a = true,  b = null
@@ -135,31 +135,31 @@ ______________________________________________________
 
 {{s5.p1}}
 
-{{s5.p2}}
+![ico-25 cap] ** 5**
 
 ~~~js
 if ('5') console.log('Yes')
 ~~~
 
-{{s5.p3}}
+{{s5.p2}}
 
 ~~~js
 Boolean('5')
 ~~~
 
-{{s5.p4}}
+{{s5.p3}}
 
 _______________________________________________
 
-#### ![ico-20 icon] {{s6.h1}}
+#### ![ico-20 icon] &&
 
-^^^[{{s6.spoiler1}}]
+^^^[{{s5.spoiler1}}]
 
-{{s6.p1}}
+{{s5.p4}}
 
-{{s6.p2}}
+{{s5.p5}}
 
-{{s6.p3}}
+![ico-25 cap] ** 6**
 
 ~~~js
 true && false && null   //  false
@@ -167,60 +167,60 @@ true && '5' && null     //  null
 true && [] && null      //  null
 ~~~
 
-{{s6.p4}}
+![ico-25 cap] ** 7**
 
 ~~~js
 true && ![] && null     //  false
 ~~~
 
-{{s6.p5}}
+{{s5.p6}}
 
 ~~~js
 true && true && true && true     //    true
 ~~~
 
-{{s6.p6}}
+{{s5.p7}}
 
 ^^^
 __________________________________________________________________
 
-#### ![ico-20 icon] {{s7.h1}}
+#### ![ico-20 icon] ||
 
-^^^[{{s7.spoiler1}}]
+^^^[{{s5.spoiler2}}]
 
-{{s7.p1}}
+{{s5.p8}}
 
-{{s7.p2}}
+{{s5.p9}}
 
-{{s7.p3}}
+![ico-25 cap] ** 8**
 
 ~~~js
 null || false || 5 || ''          //   5
 null || '' || 0 || 4 || 10        //   4
 ~~~
 
-{{s7.p4}}
+![ico-25 cap] ** 9**
 
 ~~~js
 null || false || undefined || ''  //  ""
 ~~~
 
-{{s7.p5}}
+{{s5.p10}}
 
-{{s7.p6}}
-{{s7.p7}}
-{{s7.p8}}
-{{s7.p9}}
+{{s5.p11}}
+{{s5.p12}}
+{{s5.p13}}
+{{s5.p14}}
 
-{{s7.p10}}
+{{s5.p15}}
 
 ^^^
 
-#### ![ico-20 icon] {{s8.h1}}
+#### ![ico-20 icon] !!
 
-^^^[{{s8.spoiler1}}]
+^^^[{{s5.spoiler3}}]
 
-{{s8.p1}}
+{{s5.p16}}
 
 ~~~js
 var x = null
@@ -243,9 +243,9 @@ var y = !!x        // false
 
 _____________________________
 
-{{s8.p2}}
+{{s5.p17}}
 
 _____________________________________________________________________
 
-{{s8.p3}}
-{{s8.p4}}
+[![ico-20 link] ^^w3schools^^](https://www.w3schools.com/jsref/jsref_infinity.asp)
+[![ico-20 link] ^^Equality in JavaScript^^](https://dorey.github.io/JavaScript-Equality-Table/unified/)

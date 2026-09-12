@@ -1,64 +1,64 @@
-# ![ico-30 icon] {{s1.h1}}
+# ![ico-30 icon] FileReader
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
+{{s0.p2}}
 
 ~~~js
 var reader = new FileReader()
 ~~~
 
-{{s1.p3}}
+{{s0.p3}}
 
 
-^^^[{{s1.spoiler1}}]
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
-{{s1.p7}}
+^^^[{{s0.spoiler1}}]
+• ~ ƒ~ **~readAsArrayBuffer()~**
+• ~ ƒ~ **~readAsBinaryString()~**
+• ~ ƒ~ **~readAsDataURL()~**
+• ~ ƒ~ **~readAsText()~**
 ^^^
 
 
-^^^[{{s1.spoiler2}}]
+^^^[{{s0.spoiler2}}]
 
-{{s1.p8}}
+![ico-20 green-ok] **error**
 
-{{s1.p9}}
+{{s0.p4}}
 
 ______________________________________
 
-{{s1.p10}}
+![ico-20 green-ok] **readyState**
 
 
-{{s1.p11}}
-{{s1.p12}}
-{{s1.p13}}
+{{s0.p5}}
+{{s0.p6}}
+{{s0.p7}}
 
 ______________________________________
 
-{{s1.p14}}
+![ico-20 green-ok] **result**
 
-{{s1.p15}}
-{{s1.p16}}
-{{s1.p17}}
-
-^^^
-
-^^^[{{s1.spoiler3}}]
-
-
-{{s1.p18}}
-{{s1.p19}}
-{{s1.p20}}
-{{s1.p21}}
-{{s1.p22}}
-{{s1.p23}}
+{{s0.p8}}
+{{s0.p9}}
+{{s0.p10}}
 
 ^^^
 
-{{s1.p24}}
+^^^[{{s0.spoiler3}}]
 
-{{s1.p25}}
+
+![ico-20 green-ok] onabort
+![ico-20 green-ok] onerror
+![ico-20 green-ok] onload
+![ico-20 green-ok] onloadend
+![ico-20 green-ok] onloadstart
+![ico-20 green-ok] onprogress
+
+^^^
+
+{{s0.p11}}
+
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 const selector = document.body.appendChild(document.createElement('input'))
@@ -76,7 +76,7 @@ var picture = document.body.appendChild(document.createElement('img'))
 var fileReader = new FileReader()
 ~~~
 
-{{s1.p26}}
+{{s0.p12}}
 
 ~~~js
 picture.src = URL.createObjectURL(selected)
@@ -84,9 +84,9 @@ picture.src = URL.createObjectURL(selected)
 
 ____________________________________________________________
 
-{{s1.p27}}
+{{s0.p13}}
 
-{{s1.p28}}
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 const selector = document.body
@@ -143,9 +143,9 @@ const fileReader = new FileReader()
 
 _____________________________________________________
 
-{{s1.p29}}
+{{s0.p14}}
 
-{{s1.p30}}
+◘◘![ico-25 cap] ** 3**◘◘
 
 ~~~js
 const selector = document.body

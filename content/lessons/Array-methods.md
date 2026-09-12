@@ -2,234 +2,234 @@
 
 ______________________________________________________
 
-### {{s2.h1}}
+### push
 
-{{s2.p1}}
-{{s2.p2}}
-{{s2.p3}}
+{{s1.p1}}
+{{s1.p2}}
+{{s1.p3}}
 
-^^^[{{s2.spoiler1}}]
+^^^[push()]
 
-{{s2.p4}}
+![ico-25 cap] ** 1**
 
 ~~~js
 var array = ['Nail', 'Bicycle', 'Processor', 'Disk']
 var length = array.push('Program')
 ~~~
 
-{{s2.p5}}
+{{s1.p4}}
 
-{{s2.p6}}
+••['Nail', 'Bicycle', 'Processor', 'Disk', 'Program']••
 
 
-{{s2.p7}}
+{{s1.p5}}
 
 ^^^
 
 ____________________________________________________________________
 
-### {{s3.h1}}
+### pop
 
-^^^[{{s3.spoiler1}}]
+^^^[pop()]
 
-{{s3.p1}}
+{{s1.p6}}
 
-{{s3.p2}}
+{{s1.p7}}
 
-{{s3.p3}}
+![ico-25 cap] ** 1**
 
 ~~~js
 var array = ['Nail', 'Bicycle', 'Processor', 'Disk', 'Program']
 var elem = array.pop()
 ~~~
 
-{{s3.p4}}
+{{s1.p8}}
 
-{{s3.p5}}
+••['Nail', 'Bicycle', 'Processor', 'Disk']••
 
-{{s3.p6}}
+{{s1.p9}}
 ^^^
 
 _________________________________________________________________________
 
-### {{s4.h1}}
+### shift
 
-{{s4.p1}}
-{{s4.p2}}
+{{s1.p10}}
+{{s1.p11}}
 
-^^^[{{s4.spoiler1}}]
+^^^[shift()]
 
-{{s4.p3}}
+![ico-25 cap] ** 1**
 
-{{s4.p4}}
+{{s1.p12}}
 
 ~~~js
 var arrayOfThings = ['Nail', 'Bicycle', 'Processor', 'Disk', 'Program']
 console.log(arrayOfThings.shift())
 ~~~
 
-{{s4.p5}}
+{{s1.p13}}
 
-{{s4.p6}}
+{{s1.p14}}
 
-{{s4.p7}}
+••['Bicycle', 'Processor', 'Disk', 'Program']••
 
 ^^^
 
 ______________________________________________________
 
-### {{s5.h1}}
+### unshift
 
-{{s5.p1}}
-{{s5.p2}}
+{{s1.p15}}
+{{s1.p16}}
 
-^^^[{{s5.spoiler1}}]
+^^^[unshift()]
 
-{{s5.p3}}
+![ico-25 cap] ** 1**
 
 ~~~js
 var drinks = ['coffee', 'tea', 'juice', 'water', 'milk']
 var len = drinks.unshift('beer')
 ~~~
 
-{{s5.p4}}
+{{s1.p17}}
 
-{{s5.p5}}
+••['beer', 'coffee', 'tea', 'juice', 'water', 'milk']••
 
-{{s5.p6}}
+{{s1.p18}}
 ^^^
 
 ___________________________________________________________________
 
-### {{s6.h1}}
+### splice
 
-{{s6.p1}}
-{{s6.p2}}
-{{s6.p3}}
-{{s6.p4}}
+{{s1.p19}}
+{{s1.p20}}
+{{s1.p21}}
+{{s1.p22}}
 
-^^^[{{s6.spoiler1}}]
+^^^[splice()]
 
-{{s6.p5}}
+{{s1.p23}}
 
-{{s6.p6}}
+![ico-25 cap] ** 1**
 
 ~~~js
 var myArray = [1, 2, 3, 4, 5]
 console.log(myArray.splice(2, 1, '*'))
 ~~~
 
-{{s6.p7}}
+{{s1.p24}}
 
 ••[1, 2, '*', 4, 5]••
 
-{{s6.p8}}
-{{s6.p9}}
+{{s1.p25}}
+{{s1.p26}}
 
 _____________________________________
 
-{{s6.p10}}
+![ico-25 cap] ** 2**
 
 ~~~js
 var myArray = [1, 2, 3, 4, 5]
 console.log(myArray.splice(2, 2, '*', '#', '$', '%'))
 ~~~
 
-{{s6.p11}}
+{{s1.p27}}
 
 
 ••[1, 2, '*', '#', '$', '%', 5]••
 
 
-{{s6.p12}}
-{{s6.p13}}
+{{s1.p28}}
+{{s1.p29}}
 
 ______________________________________
 
-{{s6.p14}}
+![ico-25 cap] ** 3**
 
 ~~~js
 var myArray = [1, 2, 3, 4, 5]
 console.log(myArray.splice(2, 2, [7, 8, 9]))
 ~~~
 
-{{s6.p15}}
+{{s1.p30}}
 
-{{s6.p16}}
+••[1, 2, Array(3), 5]••
 
 
-{{s6.p17}}
+{{s1.p31}}
 
-{{s6.p18}}
+{{s1.p32}}
 
 __________________________________________________
 
-{{s6.p19}}
+![ico-25 cap] ** 4**
 
 ~~~js
 var myArray = [1, 2, 3, 4, 5]
 console.log(myArray.splice(2, 0, 'Новый элемент'))
 ~~~
 
-{{s6.p20}}
+{{s1.p33}}
 
-{{s6.p21}}
+{{s1.p34}}
 
-{{s6.p22}}
+{{s1.p35}}
 
-{{s6.p23}}
+{{s1.p36}}
 
 ^^^
 
 ____________________________________________________________________
 
-### {{s7.h1}}
+### slice
 
-{{s7.p1}}
-{{s7.p2}}
-{{s7.p3}}
-{{s7.p4}}
-{{s7.p5}}
-{{s7.p6}}
+{{s1.p37}}
+{{s1.p38}}
+{{s1.p39}}
+{{s1.p40}}
+{{s1.p41}}
+{{s1.p42}}
 
-^^^[{{s7.spoiler1}}]
+^^^[slice()]
 
-{{s7.p7}}
+![ico-25 cap] ** 1**
 
 ~~~js
 var array = ['one', 'two', 'three', 'four', 'five']
 var result = array.slice(1, 2) // ['two']
 ~~~
 
-{{s7.p8}}
+![ico-25 cap] ** 2**
 
 ~~~js
 var array = ['one', 'two', 'three', 'four', 'five']
 var result = array.slice(1, -2) // ['two', 'three']
 ~~~
 
-{{s7.p9}}
+![ico-25 cap] ** 3**
 
 ~~~js
 var array = ['one', 'two', 'three', 'four', 'five']
 var result = array.slice(-2) // ['four', 'five']
 ~~~
 
-{{s7.p10}}
+![ico-25 cap] ** 4**
 
 ~~~js
 var array = ['one', 'two', 'three', 'four', 'five']
 var result = array.slice(-4, -2) // ['two', 'three']
 ~~~
 
-{{s7.p11}}
+![ico-25 cap] ** 5**
 
 ~~~js
 var array = ['one', 'two', 'three', 'four', 'five']
 var result = array.slice(-8, 25) // ['one', 'two', 'three', 'four', 'five']
 ~~~
 
-{{s7.p12}}
+![ico-25 cap] ** 6**
 
 ~~~js
 var array = ['one', 'two', 'three', 'four', 'five']
@@ -240,15 +240,15 @@ var result = array.slice(4, 3) // []
 
 _____________________________________________________________________
 
-### {{s8.h1}}
+### concat
 
-{{s8.p1}}
-{{s8.p2}}
-{{s8.p3}}
+{{s1.p43}}
+{{s1.p44}}
+{{s1.p45}}
 
-^^^[{{s8.spoiler1}}]
+^^^[concat()]
 
-{{s8.p4}}
+![ico-25 cap] ** 1**
 
 ~~~js
 var first = ['one', 'two', 'three']
@@ -256,10 +256,10 @@ var second = ['four', 'five']
 var result = first.concat(second)
 ~~~
 
-{{s8.p5}}
-{{s8.p6}}
+^^**result**:^^
+••['one', 'two', 'three', 'four', 'five']••
 
-{{s8.p7}}
+![ico-25 cap] ** 1**
 
 ~~~js
 var numbers = [1, 2, 3, 4]
@@ -269,44 +269,44 @@ var result = [11, 0, 5]
 result = result.concat(numbers, additional)
 ~~~
 
-{{s8.p8}}
+^^**result**:^^
 ••► (10) [11, 0, 5, 1, 2, 3, 4, 7, 8, 9]••
 
 ^^^
 
 ____________________________________________________________________________
 
-### {{s9.h1}}
+### join
 
-{{s9.p1}}
-{{s9.p2}}
+{{s1.p46}}
+{{s1.p47}}
 
-^^^[{{s9.spoiler1}}]
+^^^[join()]
 
-{{s9.p3}}
+![ico-25 cap] ** 1**
 
 ~~~js
 var drinks = ['coffee', 'tea', 'juice', 'water', 'milk']
 var menu = drinks.join(' | ')
 ~~~
 
-{{s9.p4}}
+^^**menu**:^^
 
-{{s9.p5}}
+••'coffee | tea | juice | water | milk'••
 
 ^^^
 
 _____________________________________________________________
 
-### {{s10.h1}}
+### includes
 
-{{s10.p1}}
+**ES 2016**
 
-{{s10.p2}}
+{{s1.p48}}
 
-^^^[{{s10.spoiler1}}]
+^^^[includes()]
 
-{{s10.p3}}
+![ico-25 cap] ** 1**
 
 ~~~js
 var users = ['Ivan', 'George', 'Stephan']
@@ -317,9 +317,9 @@ users.includes('Mary')     // false
 
 _______________________________________________________________
 
-{{s10.p4}}
+![ico-25 cap] ** 2**
 
-{{s10.p5}}
+{{s1.p49}}
 
 ~~~js
 var users = [
@@ -347,7 +347,7 @@ users.includes({
 
 ______________________________________________________________
 
-{{s10.p6}}
+![ico-25 cap] ** 3**
 
 ~~~js
 var points = [[100, 20], [200, 150], [120, 50]]
@@ -359,4 +359,4 @@ points.includes([100, 20])   // false
 
 _____________________________________________________________________
 
-{{s10.p7}}
+{{s1.p50}}

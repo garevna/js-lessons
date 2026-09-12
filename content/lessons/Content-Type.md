@@ -1,63 +1,63 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Content-Type
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
+{{s0.p2}}
 
-{{s1.p3}}
+{{s0.p3}}
 
-^^^[{{s1.spoiler1}}]
+^^^[{{s0.spoiler1}}]
 
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
-{{s1.p9}}
-{{s1.p10}}
+![ico-20 green-ok] application
+![ico-20 green-ok] audio
+![ico-20 green-ok] image
+![ico-20 green-ok] message
+![ico-20 green-ok] multipart
+![ico-20 green-ok] text
+![ico-20 green-ok] video
 
 _______________________
 
-{{s1.p11}}
+{{s0.p4}}
 
 ^^^
 
-{{s1.p12}}
+{{s0.p5}}
 
-^^^[{{s1.spoiler2}}]
+^^^[{{s0.spoiler2}}]
 
-{{s1.p13}}
-{{s1.p14}}
-{{s1.p15}}
-{{s1.p16}}
-{{s1.p17}}
-{{s1.p18}}
-{{s1.p19}}
-{{s1.p20}}
-{{s1.p21}}
-{{s1.p22}}
-{{s1.p23}}
-{{s1.p24}}
+^^• **application/msword**^^
+^^• **application/pdf**^^
+^^• **application/json**^^
+^^• **image/gif**^^
+^^• **image/jpeg**^^
+^^• **image/png**^^
+^^• **video/mpeg**^^
+^^• **text/plain**^^
+^^• **text/html**^^
+^^• **text/html**; _charset=utf-8_^^
+^^• **multipart/form-data**^^
+^^• **multipart/mixed;** boundary="&#95;&#95;&#95;&#95;&#95;&#95;&#95;&#95;&#95;&#95;"^^
 
 ___________________
 
-{{s1.p25}}
-{{s1.p26}}
-{{s1.p27}}
+{{s0.p6}}
+{{s0.p7}}
+{{s0.p8}}
 
 ^^^
 
 ________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{s1.h1}}
 
-{{s2.p1}}
+{{s1.p1}}
 
-{{s2.p2}}
+[![ico-25 link] https://httpbin.org](https://httpbin.org)
 
-{{s2.p3}}
+{{s1.p2}}
 
-{{s2.p4}}
+{{s1.p3}}
 
 ~~~js
 function postData (data, contentType = 'application/json') {
@@ -77,17 +77,17 @@ function postData (data, contentType = 'application/json') {
 }
 ~~~
 
-{{s2.p5}}
+{{s1.p4}}
 
 ___________________
 
-### ![ico-25 cap] {{s3.h1}}
+### ![ico-25 cap] application/x-www-form-urlencoded
 
 ~~~js
 postData('name=garevna&speciality=frontEnd', 'application/x-www-form-urlencoded')
 ~~~
 
-{{s3.p1}}
+{{s1.p5}}
 
 ~~~console
 {
@@ -116,7 +116,7 @@ postData('name=garevna&speciality=frontEnd', 'application/x-www-form-urlencoded'
 
 ___________________
 
-### ![ico-25 cap] {{s4.h1}}
+### ![ico-25 cap] application/json
 
 ~~~js
 postData(JSON.stringify({
@@ -126,7 +126,7 @@ postData(JSON.stringify({
 }))
 ~~~
 
-{{s4.p1}}
+{{s1.p6}}
 
 ~~~console
 {
@@ -156,7 +156,7 @@ postData(JSON.stringify({
 _______________________________
 
 
-### ![ico-25 cap] {{s5.h1}}
+### ![ico-25 cap] text/plain
 
 ~~~js
 var text = `The weird text generator enables you to convert your normal text into weird text by using different unusual Unicode symbols.
@@ -165,7 +165,7 @@ It generates weird text that resembles the normal characters or numbers of the a
 postData(text, 'text/plain')
 ~~~
 
-{{s5.p1}}
+{{s1.p7}}
 
 ~~~console
 {

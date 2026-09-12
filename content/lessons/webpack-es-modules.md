@@ -1,27 +1,27 @@
 # ![ico-30 study] {{s1.h1}}
 
-{{s1.p1}}
-{{s1.p2}}
+[%%%**export**%%%](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/export)
+[%%%**import**%%%](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/import)
 
 _______________________________________
+
+{{s1.p1}}
+
+{{s1.p2}}
 
 {{s1.p3}}
 
 {{s1.p4}}
 
-{{s1.p5}}
-
-{{s1.p6}}
-
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] export
 
 _______________________________________________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{s2.h1}}
 
-{{s3.p1}}
+{{s2.p1}}
 
-{{s3.p2}}
+◘◘![ico-20 file] lib.js◘◘
 
 ~~~js
 export const sqrt = Math.sqrt
@@ -37,12 +37,12 @@ export function elemExist (elemSelector) {
 
 ________________________________________________________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] {{s3.h1}}
 
-{{s4.p1}}
-{{s4.p2}}
+{{s3.p1}}
+{{s3.p2}}
 
-{{s4.p3}}
+◘◘![ico-20 file] Sample.js◘◘
 
 ~~~js
 const Sample = function (tagName) {
@@ -69,17 +69,17 @@ export default Sample
 
 ____________________________________________________________
 
-## ![ico-25 icon] {{s5.h1}}
+## ![ico-25 icon] import
 
-{{s5.p1}}
+{{s3.p3}}
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] {{s4.h1}}
  
-{{s6.p1}}
-{{s6.p2}}
-{{s6.p3}}
+{{s4.p1}}
+{{s4.p2}}
+{{s4.p3}}
 
-{{s6.p4}}
+◘◘![ico-20 file] main.js:◘◘
 
 ~~~js
 import { buildElement, elemExist } from 'lib'
@@ -93,9 +93,9 @@ const picture = Object.assign(buildElement('img'), {
 console.log(elemExist(picture.tagName))
 ~~~
 
-{{s6.p5}}
+{{s4.p4}}
 
-{{s6.p6}}
+◘◘![ico-20 file] main.js:◘◘
 
 ~~~js
 import * as lib from 'lib'
@@ -111,9 +111,9 @@ console.log(lib.elemExist(picture.tagName))
 
 
 
-### ![ico-20 icon] {{s7.h1}}
+### ![ico-20 icon] {{s5.h1}}
 
-{{s7.p1}}
+{{s5.p1}}
 
 ~~~js
 import Sample from 'Sample'
@@ -123,11 +123,11 @@ const sample = new Sample()
 __________________________________________________________________________
 
 
-## ![ico-25 hw] {{s8.h1}}
+## ![ico-25 hw] {{s6.h1}}
 
-{{s8.p1}}
+{{s6.p1}}
 
-{{s8.p2}}
+◘◘![ico-20 file] promise.js◘◘
 
 ~~~js
 var promise = new Promise(function (resolve, reject) {
@@ -138,7 +138,7 @@ var promise = new Promise(function (resolve, reject) {
 export default promise
 ~~~
 
-{{s8.p3}}
+◘◘![ico-20 file] index.js◘◘
 
 ~~~js
 import promise from './promise.js'
@@ -146,25 +146,25 @@ import promise from './promise.js'
 promise.then(response => document.querySelector('.sampleClass').innerText += response)
 ~~~
 
-{{s8.p4}}
+{{s6.p2}}
 
 ![](https://lh5.googleusercontent.com/zhM1TwRySgAAGrg8ts-n8mvlACifQXHzQudaUs37ce45AtHM9VjMa8CswyohFhG0y9p9sV15jw_rqV8hyOMGX62y5o829hATXLXNLPEN8h779mjS2yC140CdCuwFMvqYGhcu-b9lD1lvquQ)
 
-{{s8.p5}}
+{{s6.p3}}
 
 _______________________________________________________
 
-## ![ico-25 icon] {{s9.h1}} 
+## ![ico-25 icon] Dynamic import 
 
-{{s9.p1}}
+**ES10 ( 2019 )**
 
-{{s9.p2}}
+{{s6.p4}}
 
-{{s9.p3}}
+{{s6.p5}}
 
-{{s9.p4}}
+{{s6.p6}}
 
-{{s9.p5}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 document.body.onclick = async () => {
@@ -172,19 +172,19 @@ document.body.onclick = async () => {
 }
 ~~~
 
-{{s9.p6}}
+{{s6.p7}}
 
-{{s9.p7}}
+{{s6.p8}}
 
-{{s9.p8}}
+^^Next demo will show result only once^^
 
 {{{webpack-es-modules-1.js}}}
 
 __________________
 
-{{s9.p9}}
+{{s6.p9}}
 
-{{s9.p10}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js
 const scriptFile = 'https://garevna.github.io/js-samples/js/index'
@@ -194,9 +194,9 @@ import(`${scriptFile}12.js`)
   .then(() => setTimeout(() => import(`${scriptFile}22.js`), 10000))
 ~~~
 
-{{s9.p11}}
+{{s6.p10}}
 
-{{s9.p12}}
+◘◘![ico-20 cap] **2(1)**◘◘
 
 ~~~js
 const scriptImports = async moduleFile => {
@@ -214,11 +214,11 @@ scriptImports('https://garevna.github.io/js-samples/js/index')
 
 ____________________________________________
 
-{{s9.p13}}
+{{s6.p11}}
 
 
 
-{{s9.p14}}
+◘◘![ico-20 cap] ** 3** ( index.html )◘◘
 
 ~~~html
 &lt;!DOCTYPE html>
@@ -235,7 +235,7 @@ ____________________________________________
 &lt;/html>
 ~~~
 
-{{s9.p15}}
+{{s6.p12}}
 
 ~~~js
 const mod = document.body
@@ -243,9 +243,9 @@ const mod = document.body
 mod.type = 'module'
 ~~~
 
-{{s9.p16}}
+{{s6.p13}}
 
-{{s9.p17}}
+{{s6.p14}}
 
 ~~~js
 mod.textContent = `
@@ -254,9 +254,9 @@ mod.textContent = `
 `
 ~~~
 
-{{s9.p18}}
+{{s6.p15}}
 
-{{s9.p19}}
+◘◘![ico-20 cap] ** 3** (js/index.js)◘◘
 
 ~~~js
 const mod = document.body
@@ -296,19 +296,19 @@ export function showMessage (message) {
 }
 ~~~
 
-{{s9.p20}}
+{{s6.p16}}
 
 ~~~js
 import { showMessage } from 'https://example.com/js/testESModules.js'
 ~~~
 
-{{s9.p21}}
+{{s6.p17}}
 
 ~~~js
 import { showMessage } from './js/testESModules.js'
 ~~~
 
-{{s9.p22}}
+{{s6.p18}}
 
 
-{{s9.p23}}
+[:::Live demo:::](https://garevna.github.io/js-samples/#25)

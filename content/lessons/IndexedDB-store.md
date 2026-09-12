@@ -1,19 +1,77 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] indexedDB
 
 ____________________________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{s1.h1}}
+
+{{s1.p1}}
+
+{{s1.p2}}
+
+{{s1.p3}}
+{{s1.p4}}
+{{s1.p5}}
+
+{{s1.p6}}
+
+{{s1.p7}}
+{{s1.p8}}
+{{s1.p9}}
+{{s1.p10}}
+{{s1.p11}}
+
+{{s1.p12}}
+
+{{s1.p13}}
+| **IDBFactory**              | ![ico-20 green-ok] |
+| **IDBDatabase**             | ![ico-20 negation] |
+
+{{s1.p14}}
+{{s1.p15}}
+
+{{s1.p16}}
+{{s1.p17}}
+_______________________________
+
+{{s1.p18}}
+{{s1.p19}}
+{{s1.p20}}
+{{s1.p21}}
+
+{{s1.p22}}
+{{s1.p23}}
+{{s1.p24}}
+
+{{s1.p25}}
+{{s1.p26}}
+
+{{s1.p27}}
+{{s1.p28}}
+{{s1.p29}}
+{{s1.p30}}
+
+{{s1.p31}}
+
+{{s1.p32}}
+{{s1.p33}}
+{{s1.p34}}
+{{s1.p35}}
+
+![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-1.gif)
+
+_________________________________________________
+
+### ![ico-25 icon] {{s2.h1}}
 
 {{s2.p1}}
 
 {{s2.p2}}
-
 {{s2.p3}}
 {{s2.p4}}
+
 {{s2.p5}}
 
 {{s2.p6}}
-
 {{s2.p7}}
 {{s2.p8}}
 {{s2.p9}}
@@ -21,67 +79,9 @@ ____________________________________________________________
 {{s2.p11}}
 
 {{s2.p12}}
-
 {{s2.p13}}
+
 {{s2.p14}}
-{{s2.p15}}
-
-{{s2.p16}}
-{{s2.p17}}
-
-{{s2.p18}}
-{{s2.p19}}
-_______________________________
-
-{{s2.p20}}
-{{s2.p21}}
-{{s2.p22}}
-{{s2.p23}}
-
-{{s2.p24}}
-{{s2.p25}}
-{{s2.p26}}
-
-{{s2.p27}}
-{{s2.p28}}
-
-{{s2.p29}}
-{{s2.p30}}
-{{s2.p31}}
-{{s2.p32}}
-
-{{s2.p33}}
-
-{{s2.p34}}
-{{s2.p35}}
-{{s2.p36}}
-{{s2.p37}}
-
-![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-1.gif)
-
-_________________________________________________
-
-### ![ico-25 icon] {{s3.h1}}
-
-{{s3.p1}}
-
-{{s3.p2}}
-{{s3.p3}}
-{{s3.p4}}
-
-{{s3.p5}}
-
-{{s3.p6}}
-{{s3.p7}}
-{{s3.p8}}
-{{s3.p9}}
-{{s3.p10}}
-{{s3.p11}}
-
-{{s3.p12}}
-{{s3.p13}}
-
-{{s3.p14}}
 
 ~~~js
 const request = indexedDB.open('sampleDB')
@@ -89,9 +89,9 @@ const request = indexedDB.open('sampleDB')
 request.onupgradeneeded = event => console.log(event.target.result)
 ~~~
 
-{{s3.p15}}
+{{s2.p15}}
 
-{{s3.p16}}
+{{s2.p16}}
 
 ~~~js
 const request = indexedDB.open('sampleDB', 2)
@@ -99,17 +99,17 @@ const request = indexedDB.open('sampleDB', 2)
 request.onupgradeneeded = event => console.log(event.target.result)
 ~~~
 
-{{s3.p17}}
+{{s2.p17}}
 
 ![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-3-1.gif)
 
 ______________________________________________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] createObjectStore
 
-{{s4.p1}}
+{{s2.p18}}
 
-{{s4.p2}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 const request = indexedDB.open('sampleDB', 3)
@@ -121,7 +121,7 @@ request.onupgradeneeded = event => {
 }
 ~~~
 
-{{s4.p3}}
+{{s2.p19}}
 
 ~~~~console
 ▼ IDBObjectStore {name: "firstStore", keyPath: null, indexNames: DOMStringList, transaction: IDBTransaction, autoIncrement: false}
@@ -161,31 +161,31 @@ request.onupgradeneeded = event => {
       ► __proto__: Object
 ~~~~
 
-{{s4.p4}}
-{{s4.p5}}
+{{s2.p20}}
+{{s2.p21}}
 
 ![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-3.gif)
 
-{{s4.p6}}
-{{s4.p7}}
-{{s4.p8}}
-{{s4.p9}}
+{{s2.p22}}
+{{s2.p23}}
+{{s2.p24}}
+{{s2.p25}}
 
-{{s4.p10}}
+{{s2.p26}}
 
-{{s4.p11}}
-{{s4.p12}}
+• **~autoIncrement~**
+• **~keyPath~**
 
-{{s4.p13}}
+{{s2.p27}}
 
-{{s4.p14}}
+• **~indexNames~**
 
-{{s4.p15}}
-{{s4.p16}}
+{{s2.p28}}
+{{s2.p29}}
 
-{{s4.p17}}
+• **~transaction~**
 
-{{s4.p18}}
+{{s2.p30}}
 
 ~~~console
 ▼ IDBObjectStore {name: "First Store", keyPath: null, indexNames: DOMStringList, transaction: IDBTransaction, autoIncrement: false}
@@ -205,53 +205,53 @@ request.onupgradeneeded = event => {
   ► __proto__: IDBObjectStore
 ~~~
 
-{{s4.p19}}
-{{s4.p20}}
-{{s4.p21}}
+{{s2.p31}}
+{{s2.p32}}
+{{s2.p33}}
 
-{{s4.p22}}
+{{s2.p34}}
 
-{{s4.p23}}
-{{s4.p24}}
-{{s4.p25}}
+{{s2.p35}}
+{{s2.p36}}
+{{s2.p37}}
 
-{{s4.p26}}
-{{s4.p27}}
-{{s4.p28}}
+{{s2.p38}}
+{{s2.p39}}
+{{s2.p40}}
 
 __________________________________
 
-{{s4.p29}}
+{{s2.p41}}
 
-{{s4.p30}}
-{{s4.p31}}
-{{s4.p32}}
-{{s4.p33}}
-{{s4.p34}}
-{{s4.p35}}
+| add        | put           |
+| get        | getAll        |
+| delete     | clear         |
+| count      |               |
+| getKey     | getAllKeys    |
+| openCursor | openKeyCursor |
 
-{{s4.p36}}
+{{s2.p42}}
 
 ___________________________________________________________
 
-### ![ico-20 icon] {{s5.h1}}
+### ![ico-20 icon] {{s3.h1}}
 
-{{s5.p1}}
-{{s5.p2}}
+{{s3.p1}}
+{{s3.p2}}
 
-{{s5.p3}}
-{{s5.p4}}
-{{s5.p5}}
+{{s3.p3}}
+{{s3.p4}}
+{{s3.p5}}
 
-{{s5.p6}}
-{{s5.p7}}
+{{s3.p6}}
+{{s3.p7}}
 
-{{s5.p8}}
+{{s3.p8}}
 
-{{s5.p9}}
-{{s5.p10}}
+{{s3.p9}}
+{{s3.p10}}
 
-{{s5.p11}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js
 const request = indexedDB.open('sampleDB', 4)
@@ -266,27 +266,27 @@ request.onupgradeneeded = event => {
 }
 ~~~
 
-{{s5.p12}}
-{{s5.p13}}
-{{s5.p14}}
+{{s3.p11}}
+{{s3.p12}}
+{{s3.p13}}
 
-{{s5.p15}}
-{{s5.p16}}
+| # | Key            | Value                      |
+| 0 | "firstRecord"  | ► { name: "Google" }       |
 
-{{s5.p17}}
+{{s3.p14}}
 
-{{s5.p18}}
+{{s3.p15}}
 
-{{s5.p19}}
-{{s5.p20}}
+{{s3.p16}}
+{{s3.p17}}
 
 ____________________________
 
-{{s5.p21}}
-{{s5.p22}}
-{{s5.p23}}
+{{s3.p18}}
+{{s3.p19}}
+{{s3.p20}}
 
-{{s5.p24}}
+◘◘![ico-20 cap] ** 3**◘◘
 
 ~~~js
 const createUsersDB = users => new Promise((resolve, reject) => Object.assign(indexedDB.open('usersDB'), {
@@ -301,8 +301,8 @@ const createUsersDB = users => new Promise((resolve, reject) => Object.assign(in
 }))
 ~~~
 
-{{s5.p25}}
-{{s5.p26}}
+{{s3.p21}}
+{{s3.p22}}
 
 ~~~js
 async function callUsers () {
@@ -313,22 +313,22 @@ async function callUsers () {
 callUsers().then(resp => console.log(resp))
 ~~~
 
-{{s5.p27}}
-{{s5.p28}}
+{{s3.p23}}
+{{s3.p24}}
 
-{{s5.p29}}
+**userStore**
 
-{{s5.p30}}
-{{s5.p31}}
-{{s5.p32}}
+| # | Key | Value                                                              |
+| 0 | 1   | ► {name: "Stephan", birthYear: 1995, family: {…}, hobby: Array(2)} |
+| 1 | 2   | ► {name: "Andry", birthYear: 1998, family: {…}, hobby: Array(1)}   |
 
 _________________________________________
 
-{{s5.p33}}
-{{s5.p34}}
-{{s5.p35}}
+{{s3.p25}}
+{{s3.p26}}
+{{s3.p27}}
 
-{{s5.p36}}
+{{s3.p28}}
 
 ~~~js
 {
@@ -338,7 +338,7 @@ _________________________________________
 }
 ~~~
 
-{{s5.p37}}
+{{s3.p29}}
 
 ~~~js
 const createStore = function (db, storeName) {
@@ -347,7 +347,7 @@ const createStore = function (db, storeName) {
 }
 ~~~
 
-{{s5.p38}}
+◘◘![ico-20 cap] ** 4**◘◘
 
 ~~~js
 const createUsersDB = users => new Promise((resolve, reject) => Object.assign(indexedDB.open('usersDB'), {
@@ -368,21 +368,21 @@ async function callUsers () {
 callUsers().then(resp => console.log(resp))
 ~~~
 
-{{s5.p39}}
-{{s5.p40}}
+{{s3.p30}}
+{{s3.p31}}
 
-{{s5.p41}}
+**userStore**
 
-{{s5.p42}}
-{{s5.p43}}
-{{s5.p44}}
+| # | Key       | Value                                                              |
+| 0 | "Andry"   | ► {name: "Andry", birthYear: 1998, family: {…}, hobby: Array(1)}   |
+| 1 | "Stephan" | ► {name: "Stephan", birthYear: 1995, family: {…}, hobby: Array(2)} |
 
 __________________________________________________________________________
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] objectStoreNames
 
-{{s6.p1}}
-{{s6.p2}}
+{{s3.p32}}
+{{s3.p33}}
 
 ~~~console
 ▼ DOMStringList {length: 0}
@@ -398,17 +398,17 @@ __________________________________________________________________________
       ► __proto__: Object
 ~~~
 
-{{s6.p3}}
+{{s3.p34}}
 
 ~~~js
 DB.objectStoreNames.contains( "lessonStore" )  // false
 ~~~
 
-{{s6.p4}}
+{{s3.p35}}
 
-{{s6.p5}}
+{{s3.p36}}
 
-{{s6.p6}}
+◘◘![ico-20 cap] ** 5**◘◘
 
 ~~~js
 const openDB = (nameDB, verDB) => new Promise((resolve, reject) => Object.assign(indexedDB.open(nameDB, verDB), {
@@ -418,9 +418,9 @@ const openDB = (nameDB, verDB) => new Promise((resolve, reject) => Object.assign
 }))
 ~~~
 
-{{s6.p7}}
-{{s6.p8}}
-{{s6.p9}}
+{{s3.p37}}
+{{s3.p38}}
+{{s3.p39}}
 
 ~~~js
 const createStore = function (db, storeName) {
@@ -436,9 +436,9 @@ const createStore = function (db, storeName) {
 }
 ~~~
 
-{{s6.p10}}
-{{s6.p11}}
-{{s6.p12}}
+{{s3.p40}}
+{{s3.p41}}
+{{s3.p42}}
 
 ~~~js
 let db, lessonStore
@@ -453,20 +453,20 @@ const reject = event => console.warn(event.target.error)) || null
 openDB('keywordsDB', 1).then(resolve, reject)
 ~~~
 
-^^^[{{s6.spoiler1}}]
+^^^[DOMException]
 
-{{s6.p13}}
+{{s3.p43}}
 
 ~~~js
 openDB('keywordsDB', 1)
   .then(event => event.target.result.createObjectStore('topicStore'), event => console.warn(event.target.error) || null)
 ~~~
 
-{{s6.p14}}
+{{s3.p44}}
 
-{{s6.p15}}
+••![ico-20 error] DOMException: Failed to execute 'createObjectStore' on 'IDBDatabase': The database is not running a version change transaction.••
 
-{{s6.p16}}
+{{s3.p45}}
 
 ~~~js
 let topicStore
@@ -480,27 +480,27 @@ openDB('keywordsDB', 2)
 
 _____________________________________________________
 
-### ![ico-20 icon] {{s7.h1}}
+### ![ico-20 icon] deleteObjectStore
 
-{{s7.p1}}
-{{s7.p2}}
-{{s7.p3}}
+{{s3.p46}}
+{{s3.p47}}
+{{s3.p48}}
 
-{{s7.p4}}
+◘◘![ico-20 cap] ** 6**◘◘
 
 ~~~js
 indexedDB.open('keywordsDB', 3)
   .onupgradeneeded = event => event.target.result.deleteObjectStore('topicStore')
 ~~~
 
-{{s7.p5}}
+{{s3.p49}}
 
 ~~~js
 indexedDB.open('keywordsDB', 4)
   .onupgradeneeded = event => { store = event.target.result.createObjectStore('topicStore, { keyPath: 'topic' }) }
 ~~~
 
-{{s7.p6}}
+{{s3.p50}}
 
 ~~~~js
 const topics = [
@@ -527,7 +527,7 @@ const topics = [
 ]
 ~~~~
 
-{{s7.p7}}
+{{s3.p51}}
 
 ~~~js
 indexedDB.open('keywordsDB')
@@ -539,8 +539,8 @@ indexedDB.open('keywordsDB')
   }
 ~~~
 
-{{s7.p8}}
-{{s7.p9}}
-{{s7.p10}}
+{{s3.p52}}
+{{s3.p53}}
+{{s3.p54}}
 
 _________________________________________________

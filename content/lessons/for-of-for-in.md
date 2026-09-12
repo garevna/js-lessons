@@ -21,13 +21,13 @@ ______________________________
 
 ____________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] for...of
 
-{{s3.p1}}
+{{s2.p5}}
 
-{{s3.p2}}
+{{s2.p6}}
 
-{{s3.p3}}
+{{s2.p7}}
 
 ~~~js
 var iteratedObject = {
@@ -41,17 +41,17 @@ for (var item of iteratedObject) {
 }
 ~~~
 
-{{s3.p4}}
+{{s2.p8}}
 
-{{s3.p5}}
+![ico-20 err]  ~Uncaught TypeError: iteratedObject is not iterable~
 
-{{s3.p6}}
+{{s2.p9}}
 
-{{s3.p7}}
+{{s2.p10}}
 
 ____________________________________________
 
-### ![ico-25 cap] {{s4.h1}}
+### ![ico-25 cap] Array
 
 ~~~js
 var iteratedArray = [10, 20, 30]
@@ -62,11 +62,11 @@ for (var num of iteratedArray) {
 }
 ~~~
 
-{{s4.p1}}
+{{s2.p11}}
 
 _________________________
 
-### ![ico-25 cap] {{s5.h1}}
+### ![ico-25 cap] String
 
 ~~~js
 var iteratedString = 'ABCDEF'
@@ -76,12 +76,12 @@ for (var char of iteratedString) {
 }
 ~~~
 
-{{s5.p1}}
+{{s2.p12}}
 
 ________________________
 
-{{s5.p2}}
-{{s5.p3}}
+{{s2.p13}}
+{{s2.p14}}
 
 ~~~js
 function testBrackets ( string ) {
@@ -108,7 +108,7 @@ function testBrackets ( string ) {
 
 ________________
 
-### ![ico-25 cap] {{s6.h1}}
+### ![ico-25 cap] ~arguments~
 
 ~~~js
 function showArguments () {
@@ -120,15 +120,15 @@ function showArguments () {
 showArguments('begemot', false, 3)
 ~~~
 
-{{s6.p1}}
+{{s2.p15}}
 
 ___________________________
 
-### ![ico-25 icon] {{s7.h1}}
+### ![ico-25 icon] ~continue~ | ~break~
 
-{{s7.p1}}
+{{s2.p16}}
 
-{{s7.p2}}
+{{s2.p17}}
 
 ~~~js
 var cities = [
@@ -148,7 +148,7 @@ for (var city of cities) {
 }
 ~~~
 
-{{s7.p3}}
+{{s2.p18}}
 
 ~~~js
 Киев
@@ -160,7 +160,7 @@ for (var city of cities) {
 Лондон
 ~~~
 
-{{s7.p4}}
+{{s2.p19}}
 
 ~~~js
 for (var city of cities) {
@@ -169,7 +169,7 @@ for (var city of cities) {
 }
 ~~~
 
-{{s7.p5}}
+{{s2.p20}}
 
 ~~~js
 Киев
@@ -179,21 +179,21 @@ for (var city of cities) {
 Монреаль
 ~~~
 
-{{s7.p6}}
+{{s2.p21}}
 
-{{s7.p7}}
+{{s2.p22}}
 
 _____________________
 
-## ![ico-25 icon] {{s8.h1}}
+## ![ico-25 icon] for...in
 
-{{s8.p1}}
+{{s2.p23}}
 
-{{s8.p2}}
+{{s2.p24}}
 
-{{s8.p3}}
+{{s2.p25}}
 
-### ![ico-25 cap] {{s9.h1}}
+### ![ico-25 cap] {{s3.h1}}
 
 ~~~js
 var iteratedObject = {
@@ -207,9 +207,9 @@ for (var prop in iteratedObject) {
 }
 ~~~
 
-{{s9.p1}}
+{{s3.p1}}
 
-{{s9.p2}}
+{{s3.p2}}
 
 ~~~js
 for (var propName in iteratedObject) {
@@ -217,13 +217,13 @@ for (var propName in iteratedObject) {
 }
 ~~~
 
-{{s9.p3}}
+{{s3.p3}}
 
 ~~~js
 Begemot, true, 3
 ~~~
 
-{{s9.p4}}
+{{s3.p4}}
 
 ~~~js
 for (var propName in iteratedObject) {
@@ -231,7 +231,7 @@ for (var propName in iteratedObject) {
 }
 ~~~
 
-{{s9.p5}}
+{{s3.p5}}
 
 ~~~js
 name  :  Begemot
@@ -241,13 +241,13 @@ age  :  3
 
 _____________________________
 
-### ![ico-20 icon] {{s10.h1}}
+### ![ico-20 icon] {{s4.h1}}
 
-{{s10.p1}}
+{{s4.p1}}
 
-{{s10.p2}}
+{{s4.p2}}
 
-### ![ico-25 cap] {{s11.h1}}
+### ![ico-25 cap] {{s5.h1}}
 
 ~~~js
 var iteratedArray = [7, 8, 9]
@@ -257,7 +257,7 @@ for (var index in iteratedArray) {
 }
 ~~~
 
-{{s11.p1}}
+{{s5.p1}}
 
 ~~~js
 0  :  7
@@ -267,7 +267,7 @@ for (var index in iteratedArray) {
 
 __________________________
 
-### ![ico-20 icon] {{s12.h1}}
+### ![ico-20 icon] {{s6.h1}}
 
 ~~~js
 iteratedString = 'Котенок'
@@ -276,7 +276,7 @@ for (var index in iteratedString) {
 }
 ~~~
 
-{{s12.p1}}
+{{s6.p1}}
 
 ~~~js
 0  :  К
@@ -288,14 +288,14 @@ for (var index in iteratedString) {
 6  :  к
 ~~~
 
-{{s12.p2}}
+{{s6.p2}}
 
-{{s12.p3}}
-{{s12.p4}}
+{{s6.p3}}
+{{s6.p4}}
 
 _____________________________________________
 
-### ![ico-25 cap] {{s13.h1}}
+### ![ico-25 cap] {{s7.h1}}
 
 ~~~js
 var article = {
@@ -309,13 +309,13 @@ for (var prop in article) {
 }
 ~~~
 
-{{s13.p1}}
-{{s13.p2}}
-{{s13.p3}}
+{{s7.p1}}
+{{s7.p2}}
+{{s7.p3}}
 
 _______________________________
 
-### ![ico-25 cap] {{s14.h1}}
+### ![ico-25 cap] {{s8.h1}}
 
 ~~~js
 var obj = {
@@ -329,7 +329,7 @@ for (var prop in obj) {
 }
 ~~~
 
-{{s14.p1}}
+{{s8.p1}}
 
 ~~~js
 false
@@ -341,9 +341,9 @@ Canvas
 
 _________________________________
 
-### ![ico-25 cap] {{s15.h1}}
+### ![ico-25 cap] continue
 
-{{s15.p1}}
+{{s8.p2}}
 
 ~~~js
 var obj = {
@@ -358,20 +358,20 @@ for (var prop in obj) {
 }
 ~~~
 
-{{s15.p2}}
+{{s8.p3}}
 
 ~~~js
 11
 05
 ~~~
 
-{{s15.p3}}
+{{s8.p4}}
 
 __________________________
 
-### ![ico-25 cap] {{s16.h1}}
+### ![ico-25 cap] break
 
-{{s16.p1}}
+{{s8.p5}}
 
 ~~~js
 for (var prop in obj) {
@@ -380,15 +380,15 @@ for (var prop in obj) {
 }
 ~~~
 
-{{s16.p2}}
+{{s8.p6}}
 
-{{s16.p3}}
+{{s8.p7}}
 
 ---------------------------------
 
-## ![ico-25 icon] {{s17.h1}}
+## ![ico-25 icon] for...of vs for...in
 
-{{s17.p1}}
+{{s8.p8}}
 
 ~~~js
 var cities = [
@@ -403,29 +403,29 @@ var cities = [
 ]
 ~~~
 
-{{s17.p2}}
+{{s8.p9}}
 
-{{s17.p3}}
+{{s8.p10}}
 
-{{s17.p4}}
+{{s8.p11}}
 
-{{s17.p5}}
+{{s8.p12}}
 
-{{s17.p6}}
+{{s8.p13}}
 
-{{s17.p7}}
+{{s8.p14}}
 
 ~~~js
 cities.whereYouLive = 'Париж'
 ~~~
 
-{{s17.p8}}
+{{s8.p15}}
 
 ~~~js
 console.log(cities)
 ~~~
 
-{{s17.p9}}
+{{s8.p16}}
 
 ~~~js
 ▼ (8) ['Киев', 'Львов', 'Харьков', 'Одесса', 'Монреаль', 'Копенгаген', 'Вена', 'Лондон', whereYouLive: 'Париж']
@@ -442,9 +442,9 @@ console.log(cities)
   ► __proto__: Array(0)
 ~~~
 
-{{s17.p10}}
+{{s8.p17}}
 
-{{s17.p11}}
+{{s8.p18}}
 
 ~~~js
 for (var city of cities) {
@@ -452,7 +452,7 @@ for (var city of cities) {
 }
 ~~~
 
-{{s17.p12}}
+{{s8.p19}}
 
 ~~~console
 Киев
@@ -465,7 +465,7 @@ for (var city of cities) {
 Лондон
 ~~~
 
-{{s17.p13}}
+{{s8.p20}}
 
 ~~~js
 for (var index in cities) {
@@ -473,7 +473,7 @@ for (var index in cities) {
 }
 ~~~
 
-{{s17.p14}}
+{{s8.p21}}
 
 ~~~console
 0
@@ -487,22 +487,22 @@ for (var index in cities) {
 whereYouLive
 ~~~
 
-{{s17.p15}}
+{{s8.p22}}
 
-{{s17.p16}}
+{{s8.p23}}
 
-{{s17.p17}}
+{{s8.p24}}
 
-{{s17.p18}}
+{{s8.p25}}
 
-{{s17.p19}}
+{{s8.p26}}
 
 ~~~js
 cities['whereYouLive']
 ~~~
 
-{{s17.p20}}
+{{s8.p27}}
 
 ________________
 
-{{s17.p21}}
+[![ico-30 hw] Quiz](quiz/for-in-for-of)

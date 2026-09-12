@@ -12,7 +12,7 @@
 
 {{s2.p5}}
 
-{{s2.p6}}
+◘◘![ico-20 file] package.json◘◘
 
 ~~~js
 "scripts": {
@@ -23,12 +23,12 @@
 
 ![](https://lh4.googleusercontent.com/t3HMzsLvURk-jymxhIhITlzHUVfrkuS1UagnldLwLccys2iZH8rBOFWdLf16gh1UqinQ8gjibPgIlqkp5PvYtAaC0hBwA32nscUHScKfZGFdgiWJHwMOyP7NU70qhWGZF87lOjmc7TfY4L8)
 
+{{s2.p6}}
+
 {{s2.p7}}
-
 {{s2.p8}}
-{{s2.p9}}
 
-{{s2.p10}}
+{{s2.p9}}
 
 ![](https://lh4.googleusercontent.com/mzuMRK4yXEhLJ1AW0sBaSswsz35bNA9srOzeQQx0EjWI2xUK7zzeADS9SdFh7g2heeuuBAQLMQYNI4xvVuiVOak-GOMQ88SpmSYE4ERCcYvRtFxg8prqo1pOyl5vy-mDY__8weNvaQ-wXhw)
 
@@ -38,25 +38,25 @@ ______________________________________________________________________
 
 {{s3.p1}}
 
+••![ico-20 bash] npm run dev••
+
 {{s3.p2}}
+
+••![ico-20 bash] npm run build••
 
 {{s3.p3}}
 
 {{s3.p4}}
+_______________________________________________________________________
+
+••![ico-20 bash] npm run dev --watch••
 
 {{s3.p5}}
-
 {{s3.p6}}
-_______________________________________________________________________
 
 {{s3.p7}}
 
-{{s3.p8}}
-{{s3.p9}}
-
-{{s3.p10}}
-
-{{s3.p11}}
+◘◘![ico-20 file] script.js◘◘
 
 ~~~js
 import promise from './promise.js'
@@ -68,8 +68,8 @@ document.body
   .src = 'https://sites.google.com/site/eternalfallout/alienhead-detailed.jpg'
 ~~~
 
-{{s3.p12}}
-{{s3.p13}}
-{{s3.p14}}
+{{s3.p8}}
+{{s3.p9}}
+{{s3.p10}}
 
-{{s3.p15}}
+{{s3.p11}}

@@ -10,51 +10,51 @@
 {{s1.p8}}
 {{s1.p9}}
 
-### ![ico-20 icon] {{s2.h1}}
+### ![ico-20 icon] **scrollHeight**
 
-{{s2.p1}}
+{{s1.p10}}
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] **scrollWidth**
 
-{{s3.p1}}
+{{s1.p11}}
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] **clientHeight**
 
-{{s4.p1}}
+{{s1.p12}}
 
-### ![ico-20 icon] {{s5.h1}}
+### ![ico-20 icon] **clientWidth**
 
-{{s5.p1}}
+{{s1.p13}}
 
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] offsetHeight
 
 {{{offset-height.js}}}
 
 
-### ![ico-20 icon] {{s7.h1}}
+### ![ico-20 icon] **offsetWidth**
 
-{{s7.p1}}
+{{s1.p14}}
 
 {{{offset-left.js}}}
 
-### ![ico-20 icon] {{s8.h1}}
+### ![ico-20 icon] **scrollTop**
 
-{{s8.p1}}
+{{s1.p15}}
 
-### ![ico-20 icon] {{s9.h1}}
+### ![ico-20 icon] **scrollLeft**
 
-{{s9.p1}}
-
-_____________________________________
-
-{{s9.p2}}
+{{s1.p16}}
 
 _____________________________________
 
-### ![ico-30 hw] {{s10.h1}}
+{{s1.p17}}
 
-{{s10.p1}}
+_____________________________________
+
+### ![ico-30 hw] {{s2.h1}}
+
+{{s2.p1}}
 
 ~~~~js
 const section = document.body
@@ -148,17 +148,17 @@ section.onclick = movie
 
 __________________________________________________
 
-## ![ico-20 icon] {{s11.h1}}
+## ![ico-20 icon] getBoundingClientRect()
 
-{{s11.p1}}
+{{s2.p2}}
 
-{{s11.p2}}
+{{s2.p3}}
 
 
-{{s11.p3}}
+{{s2.p4}}
 
-{{s11.p4}}
-{{s11.p5}}
+{{s2.p5}}
+{{s2.p6}}
 
 ~~~js
 document.querySelector ( "p" )
@@ -178,4 +178,4 @@ document.querySelector ( "p" )
   ► __proto__: DOMRect
 ~~~
 
-{{s11.p6}}
+{{s2.p7}}

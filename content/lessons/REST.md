@@ -1,9 +1,35 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] REST API
 
-{{s1.p1}}
+**Representational State Transfer**
 
 __________________________________
 
+{{s0.p1}}
+
+{{s0.p2}}
+
+{{s0.p3}}
+
+![ico-25 cap] **POST**: ^^http://ptsv2.com/t/garevna/post^^
+{{s0.p4}}
+{{s0.p5}}
+
+________________________________________
+
+## ![ico-25 icon] {{s1.h1}}
+
+@@@@
+
+![](illustrations/filding.png)
+**Roy Thomas Fielding**<br><br>^^DOCTOR OF PHILOSOPHY<br/>_in Information and Computer Science^^_<br/>[^^DISSERTATION^^](external/fielding)
+
+@@@@
+
+______________________________
+
+## ![ico-25 icon] HATEOAS
+
+{{s1.p1}}
 {{s1.p2}}
 
 {{s1.p3}}
@@ -12,77 +38,51 @@ __________________________________
 
 {{s1.p5}}
 {{s1.p6}}
+
 {{s1.p7}}
 
-________________________________________
+{{s1.p8}}
 
-## ![ico-25 icon] {{s2.h1}}
+{{s1.p9}}
 
-@@@@
-
-![](illustrations/filding.png)
-{{s2.p1}}
-
-@@@@
-
-______________________________
-
-## ![ico-25 icon] {{s3.h1}}
-
-{{s3.p1}}
-{{s3.p2}}
-
-{{s3.p3}}
-
-{{s3.p4}}
-
-{{s3.p5}}
-{{s3.p6}}
-
-{{s3.p7}}
-
-{{s3.p8}}
-
-{{s3.p9}}
-
-{{s3.p10}}
+{{s1.p10}}
 
 ___________________________________
 
-{{s3.p11}}
+{{s1.p11}}
 
 _____________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] {{s2.h1}}
 
-^^^[{{s4.spoiler1}}]
+^^^[endpoint]
 
-{{s4.p1}}
+{{s2.p1}}
 
-{{s4.p2}}
-{{s4.p3}}
-{{s4.p4}}
-{{s4.p5}}
-{{s4.p6}}
-{{s4.p7}}
+{{s2.p2}}
+{{s2.p3}}
+{{s2.p4}}
+{{s2.p5}}
+{{s2.p6}}
+{{s2.p7}}
 
-{{s4.p8}}
-{{s4.p9}}
-{{s4.p10}}
+{{s2.p8}}
+{{s2.p9}}
+{{s2.p10}}
 
 ^^^
 
-{{s4.p11}}
-{{s4.p12}}
+{{s2.p11}}
+{{s2.p12}}
 
-{{s4.p13}}
+{{s2.p13}}
 
-{{s4.p14}}
-{{s4.p15}}
+{{s2.p14}}
+{{s2.p15}}
 
-{{s4.p16}}
+{{s2.p16}}
 
-{{s4.p17}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 document.body.style.margin = 0
@@ -91,12 +91,12 @@ const img = document.body.appendChild(new Image())
 img.src = 'https://picsum.photos/900/400?random'
 ~~~
 
-{{s4.p18}}
-{{s4.p19}}
+{{s2.p17}}
+{{s2.p18}}
 
-{{s4.p20}}
+{{s2.p19}}
 
-{{s4.p21}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js
 const img = document.body.appendChild(new Image())
@@ -120,31 +120,31 @@ showImage()
 
 ___________________________________
 
-{{s4.p22}}
+{{s2.p20}}
 
-{{s4.p23}}
+{{s2.p21}}
 
-{{s4.p24}}
+{{s2.p22}}
 
-{{s4.p25}}
+{{s2.p23}}
 
 ~~~console
 http://api.weatherstack.com/current?access_key=xxxxxxxx&query=Kharkiv
 ~~~
 
 @@@@
-{{s4.p26}}
+{{s2.p24}}
 ![](illustrations/REST-01.webp)
 @@@@
 ___________________________________
 
-## ![ico-25 icon] {{s5.h1}}
+## ![ico-25 icon] {{s3.h1}}
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] GET
 
-{{s6.p1}}
+{{s3.p1}}
 
-{{s6.p2}}
+••https://garevna-rest-api.glitch.me/users/all••
 
 ~~~js
 fetch('https://garevna-rest-api.glitch.me/users/all')
@@ -152,7 +152,7 @@ fetch('https://garevna-rest-api.glitch.me/users/all')
   .then(response => console.log(response))
 ~~~
 
-{{s6.p3}}
+{{s3.p2}}
 
 ~~~console
 ▼ {451789: {…}, 789451: {…}, begemot: {…}}
@@ -164,9 +164,9 @@ fetch('https://garevna-rest-api.glitch.me/users/all')
 
 _______________________
 
-{{s6.p4}}
+{{s3.p3}}
 
-{{s6.p5}}
+••https://garevna-rest-api.glitch.me/user/begemot••
 
 ~~~js
 fetch('https://garevna-rest-api.glitch.me/user/begemot')
@@ -174,7 +174,7 @@ fetch('https://garevna-rest-api.glitch.me/user/begemot')
   .then(response => console.log(response))
 ~~~
 
-{{s6.p6}}
+{{s3.p4}}
 
 ~~~console
 ▼ {name: "Stephan", age: 36, speciality: "doctor"}
@@ -186,11 +186,11 @@ fetch('https://garevna-rest-api.glitch.me/user/begemot')
 
 _______________________________
 
-{{s6.p7}}
+{{s3.p5}}
 
-{{s6.p8}}
+{{s3.p6}}
 
-{{s6.p9}}
+••https://garevna-rest-api.glitch.me/users/?name=Stephan••
 
 ~~~js
 fetch('https://garevna-rest-api.glitch.me/users/?name=Stephan')
@@ -198,7 +198,7 @@ fetch('https://garevna-rest-api.glitch.me/users/?name=Stephan')
   .then(response => console.log(response))
 ~~~
 
-{{s6.p10}}
+{{s3.p7}}
 
 ~~~console
 ▼ [{…}]
@@ -207,11 +207,11 @@ fetch('https://garevna-rest-api.glitch.me/users/?name=Stephan')
   ► __proto__: Array(0)
 ~~~
 
-{{s6.p11}}
+{{s3.p8}}
 
-{{s6.p12}}
+••https://garevna-rest-api.glitch.me/users?age=&#94;18&#94;••
 
-{{s6.p13}}
+{{s3.p9}}
 
 ~~~js
 fetch('https://garevna-rest-api.glitch.me/users?age=^18^')
@@ -219,7 +219,7 @@ fetch('https://garevna-rest-api.glitch.me/users?age=^18^')
   .then(response => console.log(response))
 ~~~
 
-{{s6.p14}}
+{{s3.p10}}
 
 ~~~console
 ▼ [{…}]
@@ -230,11 +230,11 @@ fetch('https://garevna-rest-api.glitch.me/users?age=^18^')
 
 ___________________________________
 
-### ![ico-20 icon] {{s7.h1}}
+### ![ico-20 icon] POST | PUT | PATCH | DELETE
 
-{{s7.p1}}
+••https://garevna-rest-api.glitch.me/user/_id_••
 
-{{s7.p2}}
+◘◘**POST**◘◘
 
 ~~~js
 fetch('https://garevna-rest-api.glitch.me/user/987145', {
@@ -252,13 +252,13 @@ fetch('https://garevna-rest-api.glitch.me/user/987145', {
   .then(response => console.log(response))
 ~~~
 
-{{s7.p3}}
+{{s3.p11}}
 
 ~~~console
 ► {name: "Mary", age: 19, speciality: "developer"}
 ~~~
 
-{{s7.p4}}
+{{s3.p12}}
 
 ~~~console
 ► {error: 475, message: "987145 allready exist"}
@@ -266,7 +266,7 @@ fetch('https://garevna-rest-api.glitch.me/user/987145', {
 
 ___________________________________
 
-{{s7.p5}}
+◘◘**PUT**◘◘
 
 ~~~js
 fetch('https://garevna-rest-api.glitch.me/user/987145', {
@@ -284,7 +284,7 @@ fetch('https://garevna-rest-api.glitch.me/user/987145', {
   .then(response => console.log(response))
 ~~~
 
-{{s7.p6}}
+{{s3.p13}}
 
 ~~~console
 ► {name: "Helen", age: 20, speciality: "florist"}
@@ -292,7 +292,7 @@ fetch('https://garevna-rest-api.glitch.me/user/987145', {
 
 ___________________________________
 
-{{s7.p7}}
+◘◘**PATCH**◘◘
 
 ~~~js
 fetch('https://garevna-rest-api.glitch.me/user/987145', {
@@ -308,7 +308,7 @@ fetch('https://garevna-rest-api.glitch.me/user/987145', {
   .then(response => console.log(response))
 ~~~
 
-{{s7.p8}}
+{{s3.p14}}
 
 ~~~console
 ► {name: "Helen", age: 20, speciality: "florist", hobby: "flowers"}
@@ -316,7 +316,7 @@ fetch('https://garevna-rest-api.glitch.me/user/987145', {
 
 ___________________________________
 
-{{s7.p9}}
+◘◘**DELETE**◘◘
 
 ~~~js
 fetch('https://json-server-with-router.glitch.me/user/garevna', {
@@ -327,4 +327,4 @@ fetch('https://json-server-with-router.glitch.me/user/garevna', {
 }).then(response => console.log(response.status))
 ~~~
 
-{{s7.p10}}
+{{s3.p15}}

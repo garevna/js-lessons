@@ -19,12 +19,12 @@
 
 _____________________________________________________
 
-## ![ico-30 icon] {{s2.h1}}
+## ![ico-30 icon] forEach()
 
-{{s2.p1}}
-{{s2.p2}}
+{{s1.p13}}
+{{s1.p14}}
 
-{{s2.p3}}
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 const  people = ['Ivan', 'Mary', 'Elena', 'Andrey']
@@ -34,23 +34,23 @@ people.forEach(currentName => console.log(currentName))
 for (const currentName of people) console.log(currentName)
 ~~~
 
-{{s2.p4}}
-{{s2.p5}}
+{{s1.p15}}
+{{s1.p16}}
 
 ~~~js
 currentName => console.log(currentName)
 ~~~
 
-{{s2.p6}}
-{{s2.p7}}
-{{s2.p8}}
-{{s2.p9}}
+{{s1.p17}}
+{{s1.p18}}
+{{s1.p19}}
+{{s1.p20}}
 
-{{s2.p10}}
-{{s2.p11}}
-{{s2.p12}}
+{{s1.p21}}
+{{s1.p22}}
+{{s1.p23}}
 
-{{s2.p13}}
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 const  people = ['Ivan', 'Mary', 'Elena', 'Andrey']
@@ -66,9 +66,9 @@ people.forEach((currentValue, index) => console.log(`${index + 1}: ${currentValu
 ~~~
 _______________________________
 
-{{s2.p14}}
+{{s1.p24}}
 
-{{s2.p15}}
+◘◘![ico-25 cap] ** 3**◘◘
 
 ~~~js
 const users = [
@@ -83,9 +83,9 @@ const show = user => new Promise(resolve => setTimeout(() => resolve(user.name),
 users.forEach(async user => console.log(await show(user)))
 ~~~
 
-{{s2.p16}}
+{{s1.p25}}
 
-{{s2.p17}}
+{{s1.p26}}
 
 ~~~console
 Mary
@@ -94,7 +94,7 @@ Stephan
 Piter
 ~~~
 
-{{s2.p18}}
+{{s1.p27}}
 
 ~~~js
 for (const user of users) {
@@ -102,7 +102,7 @@ for (const user of users) {
 }
 ~~~
 
-{{s2.p19}}
+{{s1.p28}}
 
 ~~~console
 Stephan
@@ -111,7 +111,7 @@ Robert
 Piter
 ~~~
 
-{{s2.p20}}
+{{s1.p29}}
 
 ~~~js
 async function showUsers (users) {
@@ -130,23 +130,23 @@ Stephan
 Piter
 ~~~
 
-{{s2.p21}}
+{{s1.p30}}
 _____________________
 
-{{s2.p22}}
-{{s2.p23}}
+{{s1.p31}}
+{{s1.p32}}
 
 __________________________________________
 
-{{s2.p24}}
-{{s2.p25}}
-{{s2.p26}}
+{{s1.p33}}
+{{s1.p34}}
+{{s1.p35}}
 
-☼☼☼ {{s2.slogan1}} ☼☼☼
+☼☼☼ {{s1.slogan1}} ☼☼☼
 
-{{s2.p27}}
+{{s1.p36}}
 
-{{s2.p28}}
+◘◘![ico-25 cap] ** 4**◘◘
 
 ~~~js
 const  numbers = [8, 4, 9, 7]
@@ -156,11 +156,11 @@ numbers.forEach((numb, ind, res) => res[ind] = numb * 2)
 console.log(numbers) // [ 16, 8, 18, 14 ]
 ~~~
 
-{{s2.p29}}
+{{s1.p37}}
 
-{{s2.p30}}
+{{s1.p38}}
 
-{{s2.p31}}
+◘◘![ico-25 cap] ** 5**◘◘
 
 ~~~js
 const users = ['Mary', 'Piter', 'Robert', 'Stephan']
@@ -168,14 +168,14 @@ const users = ['Mary', 'Piter', 'Robert', 'Stephan']
 users.forEach((name, index, arr) => console.log(arr.pop()))
 ~~~
 
-{{s2.p32}}
+{{s1.p39}}
 
 ~~~console
 Stephan
 Robert
 ~~~
 
-{{s2.p33}}
+{{s1.p40}}
 
 ~~~js
 console.log(users)
@@ -185,14 +185,14 @@ console.log(users)
 ► (2) ['Mary', 'Piter']
 ~~~
 
-{{s2.p34}}
-{{s2.p35}}
+{{s1.p41}}
+{{s1.p42}}
 
 ___________________________
 
-{{s2.p36}}
+{{s1.p43}}
 
-{{s2.p37}}
+◘◘![ico-25 cap] ** 6**◘◘
 
 ~~~js
 const users = [
@@ -214,14 +214,14 @@ Stephan: 41
 
 _________________________________________________
 
-### ![ico-25 icon] {{s3.h1}}
+### ![ico-25 icon] {{s2.h1}}
 
-{{s3.p1}}
+{{s2.p1}}
 
-{{s3.p2}}
+{{s2.p2}}
 
 
-{{s3.p3}}
+◘◘![ico-25 cap] ** 7**◘◘
 
 ~~~js
 const intervals = [[1, 8], [2, 3], [4, 7], [5, 6]]
@@ -229,14 +229,14 @@ const intervals = [[1, 8], [2, 3], [4, 7], [5, 6]]
 intervals.forEach(function (interval) { console.log(this) }, intervals)
 ~~~
 
-{{s3.p4}}
-{{s3.p5}}
+{{s2.p3}}
+{{s2.p4}}
 
 ~~~js
 intervals.forEach(function (interval) { console.log(this) }.bind(intervals))
 ~~~
 
-{{s3.p6}}
+{{s2.p5}}
 
 ~~~js
 const intervals = [[1, 8], [2, 3], [4, 7], [5, 6]]
@@ -246,9 +246,9 @@ intervals.forEach(interval => console.log(this), intervals)
 
 _____________________
 
-{{s3.p7}}
+{{s2.p6}}
 
-{{s3.p8}}
+◘◘![ico-25 cap] ** 8**◘◘
 
 ~~~js
 const  numbers = [8, 4, 9, 7]
@@ -259,11 +259,11 @@ numbers.forEach(function (numb, ind) {
 }, res)
 ~~~
 
-{{s3.p9}}
+{{s2.p7}}
 
 _________________________________
 
-{{s3.p10}}
+◘◘![ico-25 cap] ** 9**◘◘
 
 ~~~js
 const tags = ['figure', 'div', 'h3', 'img']
@@ -299,9 +299,9 @@ tags.forEach((tag, index) => {
 
 _____________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] {{s3.h1}}
 
-{{s4.p1}}
+◘◘![ico-25 cap] **10**◘◘
 
 ~~~js
 ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
@@ -310,18 +310,18 @@ _____________________
   }))
 ~~~
 
-{{s4.p2}}
-{{s4.p3}}
+{{s3.p1}}
+"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"
 
-{{s4.p4}}
-{{s4.p5}}
-{{s4.p6}}
-{{s4.p7}}
+{{s3.p2}}
+{{s3.p3}}
+{{s3.p4}}
+{{s3.p5}}
 
 {{{Array-iteration-methods-2.js}}}
 
 
-{{s4.p8}}
+◘◘![ico-25 cap] **10**◘◘
 
 ~~~js
 ['plus', 'minus', 'divide', 'multiply']
@@ -335,22 +335,22 @@ _____________________
   }))
 ~~~
 
-{{s4.p9}}
-{{s4.p10}}
-{{s4.p11}}
-{{s4.p12}}
-{{s4.p13}}
-{{s4.p14}}
-{{s4.p15}}
-{{s4.p16}}
+{{s3.p6}}
+{{s3.p7}}
+{{s3.p8}}
+{{s3.p9}}
+{{s3.p10}}
+{{s3.p11}}
+{{s3.p12}}
+{{s3.p13}}
 
 {{{Array-iteration-methods-3.js}}}
 
 ____________________
 
-{{s4.p17}}
+{{s3.p14}}
 
-{{s4.p18}}
+{{s3.p15}}
 
 ~~~js
 const callback = rule => console.log(rule)
@@ -361,13 +361,13 @@ Array.from(document.styleSheets)
 
 ______________________
 
-## ![ico-30 icon] {{s5.h1}}
+## ![ico-30 icon] map()
 
-{{s5.p1}}
-{{s5.p2}}
-{{s5.p3}}
+{{s3.p16}}
+{{s3.p17}}
+{{s3.p18}}
 
-{{s5.p4}}
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 const users = [
@@ -386,9 +386,9 @@ users.map(user => `${user.name}: ${new Date().getFullYear() - user.birthYear}`)
 ~~~
 _______________________________
 
-{{s5.p5}}
-{{s5.p6}}
-{{s5.p7}}
+{{s3.p19}}
+{{s3.p20}}
+{{s3.p21}}
 
 ~~~js
 const users = [
@@ -420,13 +420,13 @@ users.map((user, index, arr) => {
 
 ______________________________________________
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] {{s4.h1}}
 
-{{s6.p1}}
+{{s4.p1}}
 
-{{s6.p2}}
+{{s4.p2}}
 
-{{s6.p3}}
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 location.search
@@ -434,7 +434,7 @@ location.search
   .map(x => ({ [x.split('=')[0]] : x.split('=')[1] }))
 ~~~
 
-{{s6.p4}}
+{{s4.p3}}
 
 ~~~console
 ▼ (2) [{…}, {…}]
@@ -446,11 +446,11 @@ location.search
 
 ______________________________________________
 
-{{s6.p5}}
+{{s4.p4}}
 
-{{s6.p6}}
+{{s4.p5}}
 
-{{s6.p7}}
+◘◘![ico-25 cap] ** 3**◘◘
 
 ~~~js
 function getSearchObject () {
@@ -462,9 +462,9 @@ function getSearchObject () {
 }
 ~~~
 
-{{s6.p8}}
+{{s4.p6}}
 
-{{s6.p9}}
+{{s4.p7}}
 
 ~~~console
 ▼ {name: "garevna", date: "10.07.2018"}
@@ -475,7 +475,7 @@ function getSearchObject () {
 
 ______________________________________________
 
-{{s6.p10}}
+◘◘![ico-25 cap] ** 4**◘◘
 
 ~~~js
 ;['plus', 'minus', 'divide', 'multiply']
@@ -491,7 +491,7 @@ ______________________________________________
 
 ______________________________________________
 
-{{s6.p11}}
+◘◘![ico-25 cap] ** 5**◘◘
 
 ~~~js
 const funcs = [
@@ -533,13 +533,13 @@ funcs
 ~~~
 __________________________
 
-## ![ico-25 icon] {{s7.h1}}
+## ![ico-25 icon] filter()
 
-{{s7.p1}}
-{{s7.p2}}
-{{s7.p3}}
+{{s4.p8}}
+{{s4.p9}}
+{{s4.p10}}
 
-{{s7.p4}}
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 var sourceArray = [
@@ -558,7 +558,7 @@ console.log(usa)
 
 ~~~
 
-{{s7.p5}}
+{{s4.p11}}
 
 ~~~console
 
@@ -570,7 +570,7 @@ console.log(usa)
   ► __proto__: Array(0)
 ~~~
 
-{{s7.p6}}
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 const getTransactionMode = (() => {
@@ -591,13 +591,13 @@ getTransactionMode('getAllKeys')  // 'readonly'
 
 _________________________________
 
-## ![ico-25 icon] {{s8.h1}}
+## ![ico-25 icon] find()
 
-{{s8.p1}}
+{{s4.p12}}
 
-{{s8.p2}}
+{{s4.p13}}
 
-{{s8.p3}}
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 var cards = [
@@ -610,7 +610,7 @@ var cards = [
 cards.find(card => card.cash > 4000)
 ~~~
 
-{{s8.p4}}
+{{s4.p14}}
 
 ~~~console
 ▼ { num: "457811714", cash: 5000 }
@@ -621,7 +621,7 @@ cards.find(card => card.cash > 4000)
 
 ___________________________
 
-{{s8.p5}}
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 const getTransactionMode = (() => {
@@ -642,14 +642,14 @@ getTransactionMode('getAllKeys')  // 'readonly'
 
 _________________________
 
-## ![ico-25 icon] {{s9.h1}}
+## ![ico-25 icon] findIndex()
 
-{{s9.p1}}
-{{s9.p2}}
+{{s4.p15}}
+{{s4.p16}}
 
-{{s9.p3}}
+{{s4.p17}}
 
-{{s9.p4}}
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 const cards = [
@@ -662,10 +662,10 @@ const cards = [
 cards.findIndex(card => card.cash > 1500)  // 1
 ~~~
 
-{{s9.p5}}
-{{s9.p6}}
+{{s4.p18}}
+{{s4.p19}}
 
-{{s9.p7}}
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 const functions = [
@@ -681,22 +681,22 @@ functions.findIndex(func => func.toString() === sample.toString())
 
 _______________________
 
-## ![ico-25 icon] {{s10.h1}}
+## ![ico-25 icon] every()
 
-{{s10.p1}}
+{{s4.p20}}
 
-{{s10.p2}}
-{{s10.p3}}
-{{s10.p4}}
+{{s4.p21}}
+{{s4.p22}}
+{{s4.p23}}
 
-{{s10.p5}}
+{{s4.p24}}
 
-{{s10.p6}}
-{{s10.p7}}
+{{s4.p25}}
+{{s4.p26}}
 
-{{s10.p8}}
+{{s4.p27}}
 
-{{s10.p9}}
+◘◘![ico-25 cap] **every**◘◘
 
 ~~~js
 const people = [
@@ -714,25 +714,25 @@ const res = people.every(x => x.country === 'Ukraine')
 console.log(res)
 ~~~
 
-{{s10.p10}}
-{{s10.p11}}
+{{s4.p28}}
+{{s4.p29}}
 
 ______________________________________________
 
-## ![ico-25 icon] {{s11.h1}}
+## ![ico-25 icon] some()
 
-{{s11.p1}}
+{{s4.p30}}
 
-{{s11.p2}}
+{{s4.p31}}
 
-{{s11.p3}}
+{{s4.p32}}
 
-{{s11.p4}}
-{{s11.p5}}
+{{s4.p33}}
+{{s4.p34}}
 
-{{s11.p6}}
+{{s4.p35}}
 
-{{s11.p7}}
+◘◘![ico-25 cap] **some**◘◘
 
 ~~~js
 const people = [
@@ -750,17 +750,17 @@ const res = people.some(x => x.country === 'Pakistan')
 console.log(res)
 ~~~
 
-{{s11.p8}}
-{{s11.p9}}
+{{s4.p36}}
+{{s4.p37}}
 
-{{s11.p10}}
+{{s4.p38}}
 
 ~~~js
 const res = people
   .map(human => human.country)
   .includes('Pakistan')
 ~~~
-{{s11.p11}}
+{{s4.p39}}
 ~~~js
 people
   .filter(x => x.country === 'Pakistan')
@@ -769,56 +769,56 @@ people
 
 ____________________________
 
-## ![ico-25 icon] {{s12.h1}}
+## ![ico-25 icon] reduce()
 
-{{s12.p1}}
-{{s12.p2}}
-{{s12.p3}}
+{{s4.p40}}
+{{s4.p41}}
+{{s4.p42}}
 
-{{s12.p4}}
-{{s12.p5}}
+{{s4.p43}}
+{{s4.p44}}
 
-{{s12.p6}}
-{{s12.p7}}
-{{s12.p8}}
+{{s4.p45}}
+{{s4.p46}}
+{{s4.p47}}
 
-{{s12.p9}}
+{{s4.p48}}
 
-{{s12.p10}}
+{{s4.p49}}
 
 
-{{s12.p11}}
+{{s4.p50}}
 
 ~~~js
 [1, 2, 3, 4, 5].reduce(accumulator => accumulator * 2) // 16
 ~~~
 
-{{s12.p12}}
-{{s12.p13}}
+{{s4.p51}}
+{{s4.p52}}
 
 ~~~js
 accumulator => accumulator * 2
 ~~~
 
-{{s12.p14}}
+{{s4.p53}}
 
 •• 1 * 2 * 2 * 2 * 2 = 16 ••
 
 _____________________________________
 
-{{s12.p15}}
+{{s4.p54}}
 
 ~~~js
 [1, 2, 3, 4, 5].reduce((accumulator, item) => accumulator * item) // 120
 ~~~
 
-{{s12.p16}}
+{{s4.p55}}
 
 •• 1 * 2 * 3 * 4 * 5 = 120 ••
 
 ____________________________
 
-{{s12.p17}}
+{{s4.p56}}
 
 ~~~js
 [1, 2, 3, 4, 5].reduce((accumulator, item) => accumulator * item, 5) // 600
@@ -826,33 +826,33 @@ ____________________________
 
 •• 5 * 1 * 2 * 3 * 4 * 5 = 600 ••
 
-{{s12.p18}}
+{{s4.p57}}
 
 _________________________________
 
-{{s12.p19}}
+{{s4.p58}}
 
 ~~~js
 [10, 2, 3, 4, 5].reduce((accumulator, item, index) => accumulator * item + index) // 1319
 ~~~
 
-{{s12.p20}}
+{{s4.p59}}
 
 •• ((((10 + 0) * 2 + 1) * 3 + 2) * 4 + 3) * 5 + 4 = 1319 ••
 
 _________________________________________
 
-{{s12.p21}}
+{{s4.p60}}
 
-{{s12.p22}}
+{{s4.p61}}
 
-### ![ico-20 icon] {{s13.h1}}
+### ![ico-20 icon] {{s5.h1}}
 
-{{s13.p1}}
-{{s13.p2}}
+{{s5.p1}}
+{{s5.p2}}
 
 
-{{s13.p3}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 ['plus', 'minus', 'divide', 'multiply']
@@ -870,9 +870,9 @@ _________________________________________
 
 ___________________
 
-{{s13.p4}}
+{{s5.p3}}
 
-{{s13.p5}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js
 const string = [
@@ -895,9 +895,9 @@ Andrew: 24
 
 _____________________________________
 
-{{s13.p6}}
+{{s5.p4}}
 
-{{s13.p7}}
+◘◘![ico-20 cap] ** 3**◘◘
 ~~~js
 const string = 'With the trust of thousands of partners from around the world, we are dedicated to contributing to the widespread adoption of cryptocurrencies.'
 
@@ -911,9 +911,9 @@ string
 {{{Array-iteration-methods-reduce-2.js}}}
 _____________________________________
 
-{{s13.p8}}
+{{s5.p5}}
 
-{{s13.p9}}
+◘◘![ico-20 cap] ** 4**◘◘
 
 ~~~js
 const people = [
@@ -941,17 +941,17 @@ const result = people
 
 __________________________________________
 
-{{s13.p10}}
+◘◘![ico-20 cap] ** 5**◘◘
 
 ~~~js
 [5, 4, 3, 1, 10, 5, 9, 2, 1, 4]
   .reduce((res, number, index, arr) => res += parseInt(number / Math.pow(10, index)), 0)
 ~~~
 
-{{s13.p11}}
-{{s13.p12}}
+{{s5.p6}}
+{{s5.p7}}
 
-{{s13.p13}}
+{{s5.p8}}
 
 ~~~js
 parseInt(5e-7) // 5
@@ -968,7 +968,7 @@ parseInt(5000000000000000000000) // 5
 _________________________________________
 
 
-{{s13.p14}}
+◘◘![ico-20 cap] ** 6**◘◘
 
 ~~~js
 [5, 4, 3, 1, 10, 5, 9, 2, 1, 4]
@@ -979,11 +979,11 @@ _________________________________________
 
 _____________________________________
 
-{{s13.p15}}
-{{s13.p16}}
-{{s13.p17}}
+{{s5.p9}}
+{{s5.p10}}
+{{s5.p11}}
 
-{{s13.p18}}
+◘◘![ico-20 cap] ** 7**◘◘
 
 ~~~js
 const array = ['first', 'second', 'third', 'fourth']
@@ -999,26 +999,26 @@ array.reduce((res, item, index, arr) => {
 
 _____________________________________
 
-### {{s14.h1}}
+### Math.sqrt
 
-{{s14.p1}}
-{{s14.p2}}
-{{s14.p3}}
-{{s14.p4}}
-{{s14.p5}}
+{{s5.p12}}
+{{s5.p13}}
+{{s5.p14}}
+{{s5.p15}}
+{{s5.p16}}
 
-{{s14.p6}}
+◘◘![ico-20 cap] ** 8**◘◘
 
 ~~~js
 ;[625, 5, 10].reduce(Math.sqrt) // 5
 ~~~
 
-{{s14.p7}}
+{{s5.p17}}
 ••625 -> 25 -> 5••
 
-{{s14.p8}}
+{{s5.p18}}
 
-{{s14.p9}}
+{{s5.p19}}
 
 ~~~js
 Array.prototype.root = function () {
@@ -1029,30 +1029,30 @@ Array.prototype.root = function () {
 ~~~
 ____________________________________________
 
-{{s14.p10}}
+◘◘![ico-20 cap] ** 9**◘◘
 
 ~~~js
 [0, 0, 0].reduce(Math.sqrt, 625 * 625) // 5
 ~~~
 
-{{s14.p11}}
-{{s14.p12}}
+{{s5.p20}}
+{{s5.p21}}
 
 {{{Array-iteration-methods-reduce-7.js}}}
 
 _______________________________
 
-### {{s15.h1}}
+### Math.pow
 
-{{s15.p1}}
-{{s15.p2}}
+{{s5.p22}}
+{{s5.p23}}
 
-{{s15.p3}}
-{{s15.p4}}
+{{s5.p24}}
+{{s5.p25}}
 
-{{s15.p5}}
+{{s5.p26}}
 
-{{s15.p6}}
+◘◘![ico-20 cap] ** 10**◘◘
 
 ~~~js
 console.log([3, 2, 2].reduce(Math.pow))    // 81
@@ -1070,7 +1070,7 @@ Math.pow(Math.pow(Math.pow(2, 2), 2), 2)   // 256
 
 {{{Array-iteration-methods-reduce-10.js}}}
 
-{{s15.p7}}
+{{s5.p27}}
 
 ~~~js
 Array.prototype.pow = function () {
@@ -1086,49 +1086,49 @@ Array.prototype.pow = function () {
 
 ______________________________________
 
-### ![ico-25 hw] {{s16.h1}}
+### ![ico-25 hw] {{s6.h1}}
 
-{{s16.p1}}
+{{s6.p1}}
 
 ◘◘** 1**◘◘
 
-→→→ {{s16.quiz1}} | {{s16.quizVariants1}} | {{s16.quizAnswer1}} →→→
+→→→ [].reduce(Math.pow) | TypeError, null, NaN, 0 | TypeError →→→
 
 ◘◘** 2**◘◘
 
-→→→ {{s16.quiz2}} | {{s16.quizVariants2}} | {{s16.quizAnswer2}} →→→
+→→→ [].reduce(Math.sqrt, 'Google') | TypeError, null, NaN, 0, 'Google' | Google →→→
 
 ◘◘** 3**◘◘
 
-→→→ {{s16.quiz3}} | {{s16.quizVariants3}} | {{s16.quizAnswer3}} →→→
+→→→ [1].reduce(Math.sqrt, 'Google') | TypeError, null, NaN, 0, 'Google' | NaN →→→
 
 ◘◘** 4**◘◘
 
-→→→ {{s16.quiz4}} | {{s16.quizVariants4}} | {{s16.quizAnswer4}} →→→
+→→→ [-10, -20, 5].reduce(Math.abs) | null, NaN, 0, 10, 20, 5 | 10 →→→
 
 ◘◘** 5**◘◘
 
-→→→ {{s16.quiz5}} | {{s16.quizVariants5}} | {{s16.quizAnswer5}} →→→
+→→→ [.5].reduce(Math.pow, 49) | null, NaN, 0, 7, 49, 5 | 7 →→→
 
 _________________________________
 
-## ![ico-25 icon] {{s17.h1}}
+## ![ico-25 icon] sort()
 
-{{s17.p1}}
+{{s6.p2}}
 
-{{s17.p2}}
-{{s17.p3}}
-{{s17.p4}}
+{{s6.p3}}
+{{s6.p4}}
+{{s6.p5}}
 
-{{s17.p5}}
+{{s6.p6}}
 
-{{s17.p6}}
-{{s17.p7}}
-{{s17.p8}}
+{{s6.p7}}
+{{s6.p8}}
+{{s6.p9}}
 
-{{s17.p9}}
+{{s6.p10}}
 
-{{s17.p10}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 var sourceArray = [
@@ -1145,7 +1145,7 @@ var resArray = sourceArray.sort(function (x, y) {
 })
 ~~~
 
-{{s17.p11}}
+{{s6.p11}}
 
 ~~~console
 ▼ (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
@@ -1160,9 +1160,9 @@ var resArray = sourceArray.sort(function (x, y) {
   ► __proto__: Array(0)
 ~~~
 
-{{s17.p12}}
+{{s6.p12}}
 
-{{s17.p13}}
+◘◘![ico-20 cap] ** 2**◘◘
 ~~~js
 var resArray = sourceArray
   .sort(function (x, y) {
@@ -1171,7 +1171,7 @@ var resArray = sourceArray
   })
 ~~~
 
-{{s17.p14}}
+{{s6.p13}}
 
 ~~~console
 fond - bonus = 30
@@ -1182,8 +1182,8 @@ salary - income = 80
 debt - salary = 300
 ~~~
 
-^^^[{{s17.spoiler1}}]
-{{s17.p15}}
+^^^[{{s6.spoiler1}}]
+{{s6.p14}}
 ~~~js
 var log = []
 var resArray = sourceArray
@@ -1195,7 +1195,7 @@ var resArray = sourceArray
     return  x.value - y.value
   })
 ~~~
-{{s17.p16}}
+**log**
 ~~~console
 ▼ (13) [...]
   ► 0: {id: 'salary > fond', res: true}
@@ -1216,31 +1216,31 @@ var resArray = sourceArray
 ~~~
 ^^^
 
-{{s17.p17}}
+{{s6.p15}}
 
-{{s17.p18}}
+{{s6.p16}}
 
-{{s17.p19}}
+{{s6.p17}}
 
 __________________________
 
-## ![ico-25 icon] {{s18.h1}}
+## ![ico-25 icon] flatMap()
 
-{{s18.p1}}
+{{s6.p18}}
 
-{{s18.p2}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 var cookie = 'name=user; token=Jd7-js15/84; interest=javascript'
 ~~~
 
-{{s18.p3}}
+{{s6.p19}}
 
 ~~~js
 console.log(cookie.split('; ').map(item => item.split('='))
 ~~~
 
-{{s18.p4}}
+{{s6.p20}}
 
 ~~~console
 ▼ (3) [Array(2), Array(2), Array(2)]
@@ -1251,23 +1251,23 @@ console.log(cookie.split('; ').map(item => item.split('='))
   ► __proto__: Array(0)
 ~~~
 
-{{s18.p5}}
+{{s6.p21}}
 
-{{s18.p6}}
+{{s6.p22}}
 
 ~~~js
 console.log(cookie.split('; ').flatMap(item => item.split('='))
 ~~~
 
-{{s18.p7}}
+{{s6.p23}}
 
 ~~~console
 ► (6) ["name", "user", "token", "Jd7-js15/84", "interest", "javascript"]
 ~~~
 
-{{s18.p8}}
+{{s6.p24}}
 
-{{s18.p9}}
+{{s6.p25}}
 
 ~~~js
 function (item) {
@@ -1275,16 +1275,16 @@ function (item) {
 }
 ~~~
 
-{{s18.p10}}
+{{s6.p26}}
 
 ____________________________________________________
 
-## ![ico-25 icon] {{s19.h1}}
+## ![ico-25 icon] keys()
 
-{{s19.p1}}
-{{s19.p2}}
+{{s6.p27}}
+{{s6.p28}}
 
-{{s19.p3}}
+◘◘![ico-20 cap] **keys**◘◘
 
 ~~~js
 const cookie = 'name=user; token=Jd7-js15/84; interest=javascript'
@@ -1299,7 +1299,7 @@ do {
 } while (!done)
 ~~~
 
-{{s19.p4}}
+{{s6.p29}}
 
 ~~~console
 name user
@@ -1310,12 +1310,12 @@ interest javascript
 
 ______________________
 
-## ![ico-25 icon] {{s20.h1}}
+## ![ico-25 icon] values()
 
-{{s20.p1}}
-{{s20.p2}}
+{{s6.p30}}
+{{s6.p31}}
 
-{{s20.p3}}
+◘◘![ico-20 cap] **values**◘◘
 
 ~~~js
 const cookie = 'name=user; token=Jd7-js15/84; interest=javascript'
@@ -1331,7 +1331,7 @@ do {
 } while (!done)
 ~~~
 
-{{s20.p4}}
+{{s6.p32}}
 
 ~~~console
 ► (2) ["name", "user"]
@@ -1341,13 +1341,13 @@ do {
 
 _____________________________________________
 
-## ![ico-30 icon] {{s21.h1}}
+## ![ico-30 icon] {{s7.h1}}
 
 _________________________________________
 
-### ![ico-25 cap] {{s22.h1}}
+### ![ico-25 cap] {{s8.h1}}
 
-{{s22.p1}}
+{{s8.p1}}
 
 ~~~js
 const cards = [
@@ -1362,7 +1362,7 @@ cards.reduce((result, card) => result + card.cash, 0)  // 10300
 
 ___________________________________________________
 
-{{s22.p2}}
+{{s8.p2}}
 
 ~~~js
 cards.reduce((result, card) => ({
@@ -1371,7 +1371,7 @@ cards.reduce((result, card) => ({
 }), { num: '457855155', cash: 0 })
 ~~~
 
-{{s22.p3}}
+{{s8.p3}}
 
 ~~~console
 ▼ { num: "457855155", cash: 10300 }
@@ -1380,7 +1380,7 @@ cards.reduce((result, card) => ({
   ► __proto__: Object
 ~~~
 
-{{s22.p4}}
+{{s8.p4}}
 
 ~~~js
 cards.reduce((result, card) => {
@@ -1393,9 +1393,9 @@ cards.reduce((result, card) => {
 }, { num: '457855155', cash: 0 })
 ~~~
 
-{{s22.p5}}
+{{s8.p5}}
 
-{{s22.p6}}
+{{s8.p6}}
 
 ~~~console
 
@@ -1411,9 +1411,9 @@ cards.reduce((result, card) => {
 
 __________________________________________
 
-### ![ico-25 cap] {{s23.h1}}
+### ![ico-25 cap] {{s9.h1}}
 
-{{s23.p1}}
+{{s9.p1}}
 ~~~js
 const users = [
   { name: 'Watson Armstrong', speciality: 'developer' },
@@ -1433,9 +1433,9 @@ const users = [
 const specialities = users.map(user => user.speciality)
 ~~~
 
-{{s23.p2}}
+{{s9.p2}}
 
-{{s23.p3}}
+◘◘**^^specialities^^**◘◘
 ~~~console
 ▼ [...]
    0: "developer"
@@ -1454,15 +1454,15 @@ const specialities = users.map(user => user.speciality)
   ► [[Prototype]]: Array(0)
 ~~~
 
-{{s23.p4}}
+{{s9.p3}}
 
-{{s23.p5}}
+{{s9.p4}}
 
 ~~~js
 Array.from(new Set(specialities))
 ~~~
 
-{{s23.p6}}
+{{s9.p5}}
 
 ~~~js
 const arr = [
@@ -1486,7 +1486,7 @@ arr.reduce((result, item) => {
 }, [])
 ~~~
 
-{{s23.p7}}
+{{s9.p6}}
 
 ~~~console
 ▼ (3) ["google", "mozilla", "ie"]
@@ -1499,50 +1499,50 @@ arr.reduce((result, item) => {
 
 _________________________________________________
 
-### ![ico-25 cap] {{s24.h1}}
+### ![ico-25 cap] {{s10.h1}}
 
-{{s24.p1}}
+{{s10.p1}}
 
 ~~~js
 const intervals = [[10, 20], [4, 18], [7, 10], [5, 16], [9, 13], [11, 15], [7, 15], [10, 12], [12, 19]]
 ~~~
 
-{{s24.p2}}
+{{s10.p2}}
 
-{{s24.p3}}
+{{s10.p3}}
 ~~~js
 Array.prototype.interior = function (interval = [0, 1]) {
   return this[0] < interval[0] && this[1] > interval[1]
 }
 ~~~
-{{s24.p4}}
+{{s10.p4}}
 ~~~js
 [18, 35].interior([4, 18]) // false
 [18, 35].interior([20, 28]) // true
 ~~~
-{{s24.p5}}
+{{s10.p5}}
 ~~~js
 intervals
   .map((segment, index, array) => array.filter(interval => segment.interior(interval)).length)
 ~~~
 
-{{s24.p6}}
+◘◘**^^Result^^**◘◘
 ~~~console
 ► (9) [2, 6, 0, 5, 1, 0, 2, 0, 0]
 ~~~
 
 __________________________
 
-### ![ico-25 cap] {{s25.h1}}
+### ![ico-25 cap] {{s11.h1}}
 
-{{s25.p1}}
+{{s11.p1}}
 
-{{s25.p2}}
-{{s25.p3}}
+{{s11.p2}}
+{{s11.p3}}
 
-{{s25.p4}}
+{{s11.p4}}
 
-{{s25.p5}}
+◘◘![ico-20 cap] **Brackets validation**◘◘
 
 ~~~js
 String.prototype.testBrackets = (function () {
@@ -1584,7 +1584,7 @@ String.prototype.testBrackets.toString().testBrackets()  // true
 {{{Array-iteration-methods-brackets.js}}}
 ___________________________________________________
 
-### ![ico-25 cap] {{s26.h1}}
+### ![ico-25 cap] location
 
 ~~~js
 function getSearchObject () {
@@ -1605,13 +1605,13 @@ for (const rec in searchObject) {
 }
 ~~~
 
-{{s26.p1}}
+[:::**Live demo**:::](samples/11)
 
 _____________________________________________
 
-### ![ico-25 cap] {{s27.h1}}
+### ![ico-25 cap] getComputedStyle
 
-{{s27.p1}}
+{{s11.p5}}
 
 ~~~js
 Array.from(document.getElementsByClassName('interlanguage-link'))
@@ -1621,4 +1621,4 @@ Array.from(document.getElementsByClassName('interlanguage-link'))
 
 ________________________________________________
 
-{{s27.p2}}
+{{s11.p6}}

@@ -1,12 +1,12 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] ArrayBuffer
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
+{{s0.p2}}
 
-{{s1.p3}}
+{{s0.p3}}
 
-{{s1.p4}}
+{{s0.p4}}
 
 ~~~js
 var buffer  = new ArrayBuffer(16)
@@ -15,15 +15,15 @@ console.log(buffer.byteLength)  // 16
 
 _________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] TypedArray
 
-{{s2.p1}}
+[**MDN**](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Typed_arrays/)
 
-{{s2.p2}}
-{{s2.p3}}
+{{s0.p5}}
+{{s0.p6}}
 
-{{s2.p4}}
-{{s2.p5}}
+{{s0.p7}}
+{{s0.p8}}
 
 ~~~js
 const buffer = new ArrayBuffer(8)
@@ -33,7 +33,7 @@ const typedArrayPrototype = int16Array.__proto__.__proto__
 console.log(typedArrayPrototype.constructor.name)
 ~~~
 
-{{s2.p6}}
+••'TypedArray'••
 
 ~~~js
 const excluding = ['buffer', 'byteLength', 'byteOffset', 'length']
@@ -83,17 +83,17 @@ Object.getOwnPropertyNames(typedArrayPrototype)
 
 _____________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{s1.h1}}
 
-{{s3.p1}}
+{{s1.p1}}
 
-{{s3.p2}}
-{{s3.p3}}
-{{s3.p4}}
-{{s3.p5}}
-{{s3.p6}}
-{{s3.p7}}
-{{s3.p8}}
+![ico-20 green-ok] DataView
+![ico-20 green-ok] Int8Array
+![ico-20 green-ok] Uint8Array
+![ico-20 green-ok] Int16Array
+![ico-20 green-ok] Uint16Array
+![ico-20 green-ok] Int32Array
+![ico-20 green-ok] Uint32Array
 
 ~~~js
 var sample = new ArrayBuffer(32)
@@ -109,9 +109,9 @@ new Int32Array(sample)
 // ► Int32Array(8) [0, 0, 0, 0, 0, 0, 0, 0]
 ~~~
 
-{{s3.p9}}
+{{s1.p2}}
 
-{{s3.p10}}
+{{s1.p3}}
 
 ~~~js
 var buffer  = new ArrayBuffer(16)
@@ -122,17 +122,17 @@ sample[4] = 178
 console.log(sample)
 ~~~
 
-{{s3.p11}}
+{{s1.p4}}
 
 •• ► (16) [50, 0, 0, 255, 178, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]••
 
-{{s3.p12}}
+{{s1.p5}}
 
 ______________________________________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] DataView
 
-{{s4.p1}}
+{{s1.p6}}
 
 ~~~js
 var buffer = new ArrayBuffer(16)
@@ -175,7 +175,7 @@ console.log(dataView.__proto__)
 
 _________________________________
 
-### ![ico-20 icon] {{s5.h1}}
+### ![ico-20 icon] Int16Array
 
 ~~~js
 const buffer = new ArrayBuffer(8)
@@ -206,7 +206,7 @@ console.log(new Int16Array(buffer))
 ~~~
 _________________________________________
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] setInt8
 
 ~~~js
 var buffer = new ArrayBuffer(16)
@@ -217,7 +217,7 @@ dataView.setInt8(5, 55)
 console.log(buffer)
 ~~~
 
-{{s6.p1}}
+◘◘**^^Result^^**◘◘
 ~~~console
 ▼ ArrayBuffer(16) {}
   ► [[Int8Array]]: Int8Array(16) [0, 0, 78, 94, 0, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -230,7 +230,7 @@ console.log(buffer)
 
 ________________________________________
 
-### ![ico-25 icon] {{s7.h1}}
+### ![ico-25 icon] setInt16
 
 ~~~js
 var buffer = new ArrayBuffer(16)
@@ -241,7 +241,7 @@ dataView.setInt16(5, 55)
 console.log(buffer)
 ~~~
 
-{{s7.p1}}
+◘◘**^^Result^^**◘◘
 ~~~console
 ▼ ArrayBuffer(16) {}
   ► [[Int8Array]]: Int8Array(16) [0, 0, 78, 0, 94, 0, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -254,7 +254,7 @@ console.log(buffer)
 
 ________________________________________
 
-### ![ico-25 icon] {{s8.h1}}
+### ![ico-25 icon] setInt32
 
 ~~~js
 var buffer = new ArrayBuffer(16)
@@ -265,7 +265,7 @@ dataView.setInt16(11, 55)
 console.log(buffer)
 ~~~
 
-{{s8.p1}}
+◘◘**^^Result^^**◘◘
 ~~~console
 ▼ ArrayBuffer(16) {}
   ► [[Int8Array]]: Int8Array(16) [0, 0, 0, 0, 78, 0, 0, 0, 94, 0, 0, 0, 55, 0, 0, 0]
@@ -278,9 +278,9 @@ console.log(buffer)
 
 ________________________________________
 
-## ![ico-25 icon] {{s9.h1}}
+## ![ico-25 icon] Examples
 
-{{s9.p1}}
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 const picture = document.body
@@ -295,7 +295,7 @@ fetch('https://avatars.githubusercontent.com/u/19735284?v=4')
 
 ________________________________________
 
-{{s9.p2}}
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 const buffer = new ArrayBuffer(8)
@@ -309,7 +309,7 @@ console.log(new Int8Array(buffer))
 console.log(new Int16Array(buffer))
 ~~~
 
-{{s9.p3}}
+◘◘**^^Int8Array^^**◘◘
 ~~~console
 ▼ Int8Array(8) [0, 5, 9, 0, 8, 0, 0, 0, buffer: ArrayBuffer(8), byteLength: 8, byteOffset: 0, length: 8, Symbol(Symbol.toStringTag): 'Int8Array']
     0: 0
@@ -328,7 +328,7 @@ console.log(new Int16Array(buffer))
   ► [[Prototype]]: TypedArray
 ~~~
 
-{{s9.p4}}
+◘◘**^^Int16Array^^**◘◘
 ~~~console
 ▼ Int16Array(4) [1280, 9, 8, 0, buffer: ArrayBuffer(8), byteLength: 8, byteOffset: 0, length: 4, Symbol(Symbol.toStringTag): 'Int16Array']
     0: 1280
@@ -345,7 +345,7 @@ console.log(new Int16Array(buffer))
 
 __________________________________
 
-{{s9.p5}}
+◘◘![ico-25 cap] ** 3**◘◘
 
 ~~~js
 const buffer = new ArrayBuffer(2000)
@@ -385,7 +385,7 @@ setTimeout(() => {
 }, 2000)
 ~~~
 
-{{s9.p6}}
+◘◘**^^Result^^**◘◘
 
 ~~~console
 ▼ {0: '11111111', 1: '10000000', 7: '00010000', 8: '11100000', 9: '00000010', 12: '00011010', 13: '10001000'}

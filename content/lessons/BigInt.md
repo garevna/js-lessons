@@ -1,31 +1,31 @@
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] BigInt
 
-{{s1.p1}}
+**ES10 (2019)**
 
-{{s1.p2}}
+{{s0.p1}}
 
-{{s1.p3}}
+{{s0.p2}}
 
-{{s1.p4}}
+{{s0.p3}}
 
 __________________________________________________________
 
-### ![ico-20 icon] {{s2.h1}}
+### ![ico-20 icon] {{s1.h1}}
 
-{{s2.p1}}
+{{s1.p1}}
 
 ~~~js
 var bigNumber = 78n
 ~~~
 
-{{s2.p2}}
+{{s1.p2}}
 
 ~~~js
 var bigNumber = Number.MAX_SAFE_INTEGER + 5003  // 9007199254745994
 bigNumber = BigInt(bigNumber) // 9007199254745994n
 ~~~
 
-{{s2.p3}}
+{{s1.p3}}
 
 ~~~js
 typeof bigNumber // 'bigint'
@@ -33,47 +33,47 @@ typeof bigNumber // 'bigint'
 
 _____________________________________________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{s2.h1}}
 
-{{s3.p1}}
+{{s2.p1}}
 
-#### {{s4.h1}}
+#### Infinity
 
 ~~~js
 BigInt(Infinity)
 ~~~
 
-{{s4.p1}}
+{{s2.p2}}
 
-{{s4.p2}}
+![ico-20 err]
 
 ~~~error
     Uncaught RangeError: The number Infinity cannot be converted to a BigInt because it is not an integer
 ~~~
 
-#### {{s5.h1}}
+#### NaN
 
 ~~~js
 BigInt(NaN)
 ~~~
 
-{{s5.p1}}
+{{s2.p3}}
 
-{{s5.p2}}
+![ico-20 err]
 
 ~~~error
     Uncaught RangeError: The number NaN cannot be converted to a BigInt because it is not an integer
 ~~~
 
-#### {{s6.h1}}
+#### null
 
 ~~~js
 BigInt(null)
 ~~~
 
-{{s6.p1}}
+{{s2.p4}}
 
-{{s6.p2}}
+![ico-20 err]
 
 ~~~error
     Uncaught TypeError: Cannot convert null to a BigInt
@@ -81,20 +81,20 @@ BigInt(null)
 
 _____________________________________________________
 
-#### {{s7.h1}}
+#### Boolean → BigInt
 
 ~~~js
 BigInt(false)  // 0n
 BigInt(true)   // 1n
 ~~~
 
-#### {{s8.h1}}
+#### [] → BigInt
 
 ~~~js
 BigInt([])   // 0n
 ~~~
 
-#### {{s9.h1}}
+#### String → BigInt
 
 ~~~js
 BigInt('45')        // 45n
@@ -104,13 +104,13 @@ BigInt('45' - 11)   // 34n
 BigInt('45' - true) // 44n
 ~~~
 
-{{s9.p1}}
+{{s2.p5}}
 
 ~~~js
 BigInt('45 + 8')
 ~~~
 
-{{s9.p2}}
+![ico-20 err]
 
 ~~~error
     Uncaught SyntaxError: Cannot convert 45 + 8 to a BigInt
@@ -118,47 +118,47 @@ BigInt('45 + 8')
 
 _____________________________________________________________
 
-### ![ico-20 icon] {{s10.h1}}
+### ![ico-20 icon] {{s3.h1}}
 
-^^^[{{s10.spoiler1}}]
+^^^[{{s3.spoiler1}}]
 
-{{s10.p1}}
+{{s3.p1}}
 
-{{s10.p2}}
+{{s3.p2}}
 
 ~~~js
 bigNumber * 2
 ~~~
 
-{{s10.p3}}
+{{s3.p3}}
 
-{{s10.p4}}
+![ico-20 err]
 
 ~~~error
     Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
 ~~~
 
-{{s10.p5}}
+{{s3.p4}}
 
 ~~~js
 Math.sin(bigNumber)
 ~~~
 
-{{s10.p6}}
+{{s3.p5}}
 
-{{s10.p7}}
+![ico-20 err]
 
 ~~~error
     Uncaught TypeError: Cannot convert a BigInt value to a number
 ~~~
 
-{{s10.p8}}
+{{s3.p6}}
 
 ~~~js
 Number(bigNumber) // 9007199254745994
 ~~~
 
-{{s10.p9}}
+{{s3.p7}}
 
 ~~~js
 bigNumber = bigNumber * bigNumber // 81129638414696789717133459048036n
@@ -168,7 +168,7 @@ Number(bigNumber) // 8.112963841469679e+31
 bigNumber.toString() // "81129638414696789717133459048036"
 ~~~
 
-{{s10.p10}}
+{{s3.p8}}
 
 ~~~js
 let bigArray = [
@@ -185,9 +185,9 @@ bigArray[BigInt(1)]  // 9007199254740994n
 
 ____________________________________________________________
 
-### ![ico-20 icon] {{s11.h1}}
+### ![ico-20 icon] {{s4.h1}}
 
-{{s11.p1}}
+{{s4.p1}}
 
 ~~~js
 bigArray[0] ^ bigArray[1]  // 2n

@@ -1,13 +1,13 @@
 ## ![ico-30 icon] {{s1.h1}}
 
-{{s1.p1}}
+[![ico-30 cap] Slider](https://garevna.github.io/js-samples/#19)
 
-{{s1.p2}}
+[![ico-30 cap] Spoiler](https://repl.it/@garevna/web-component)
 
-{{s1.p3}}
+[![ico-30 cap] Game](https://github.com/garevna/game/wiki)
 
 
-{{s1.p4}}
+◘◘![ico-30 cap] Canvas◘◘
 ~~~js
 class Canvas extends HTMLElement {
   constructor (pointsNum = 200) {

@@ -1,60 +1,60 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] ECMAScript
 
 ![](illustrations/ecma-logo.jpg)
 
-{{s1.p1}}
+**ES5** (2009)
 
 _______________________________________________________
 
-### {{s2.h1}}
+### [6th Edition / June 2015](https://262.ecma-international.org/6.0/)
 
-{{s2.p1}}
+[![ico-20 link] features](https://www.w3schools.com/js/js_es6.asp)
 
-{{s2.p2}}
-{{s2.p3}}
-{{s2.p4}}
-{{s2.p5}}
-{{s2.p6}}
-{{s2.p7}}
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
-{{s2.p12}}
-{{s2.p13}}
-{{s2.p14}}
+[![ico-20 link] Template literals](page/literals)
+{{s0.p1}}
+[![ico-20 link] Default Parameters](page/default-param-values)
+{{s0.p2}}
+[![ico-20 link] String methods **includes**, **startsWith**, **endsWith**](page/String-methods)
+[![ico-20 link] Symbol](page/Symbol)
+![ico-20 pin] Map constructor
+![ico-20 pin] Set constructor
+[![ico-20 link] let & const](page/let-const)
+[![ico-20 link] Arrow functions](page/arrow-function)
+[![ico-20 link] Promise](page/promise)
+[![ico-20 link] Classes](page/Classes)
+[![ico-20 link] Destructuring](page/Destructuring)
 
 
 _______________________________________________________
 
-### {{s3.h1}}
+### [7ᵗʰ Edition / June 2016](https://262.ecma-international.org/7.0/)
 
-{{s3.p1}}
+{{s0.p3}}
 ~~~js
 a**b // то же, что и Math.pow(a, b) )
 ~~~
 
 _______________________________________________________
 
-### {{s4.h1}}
+### ECMAScript 2017
 
-{{s4.p1}}
+[![ico-20 link] async | await](page/async-await)
 
-{{s4.p2}}
-{{s4.p3}}
-{{s4.p4}}
-{{s4.p5}}
-{{s4.p6}}
-{{s4.p7}}
-
-_______________________________________________________
-
-### {{s5.h1}}
+[![ico-20 link] Array method **includes**](page/Array-methods#includes)
+[![ico-20 link] String methods **padStart** | **padEnd**](page/String-methods#padStart | padEnd)
+[![ico-20 link] Object.getOwnPropertyDescriptors](page/Object-static-props#Object.getOwnPropertyDescriptors)
+[![ico-20 link] Object.entries](page/Object-static-props#Object.entries)
+[![ico-20 link] Object.values](page/Object-static-props#Object.values)
+{{s0.p4}}
 
 _______________________________________________________
 
-### {{s6.h1}}
+### ECMAScript 2018
 
-{{s6.p1}}
-{{s6.p2}}
-{{s6.p3}}
+_______________________________________________________
+
+### ECMAScript 2019
+
+[![ico-20 link] Dynamic import](page/dynamic-import)
+[![ico-20 link] BigInt](page/BigInt)
+[![ico-20 link] Symbol description](page/Syblol)

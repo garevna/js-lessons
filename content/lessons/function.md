@@ -21,63 +21,63 @@
 
 {{s2.p3}}
 
-### ![ico-25 icon] {{s3.h1}}
+### ![ico-25 icon] console.log
 
-{{s3.p1}}
-{{s3.p2}}
+{{s2.p4}}
+{{s2.p5}}
 
-§§§§ {{s3.demo1}} | function_console_template §§§§
+§§§§ Demo | function_console_template §§§§
 
-{{s3.p3}}
+{{s2.p6}}
 
-§§§§ {{s3.demo2}} | function_console_01_template §§§§
+§§§§ Demo | function_console_01_template §§§§
 
-{{s3.p4}}
+{{s2.p7}}
 
-§§§§ {{s3.demo3}} | function_console_02_template §§§§
+§§§§ Demo | function_console_02_template §§§§
 
 _________________________________________________
 
-### ![ico-25 icon] {{s4.h1}}
+### ![ico-25 icon] parseInt
 
-{{s4.p1}}
-{{s4.p2}}
-{{s4.p3}}
-{{s4.p4}}
+{{s2.p8}}
+{{s2.p9}}
+{{s2.p10}}
+{{s2.p11}}
 
-§§§§ {{s4.demo1}} | function_parseInt_template §§§§
+§§§§ Demo | function_parseInt_template §§§§
 
-{{s4.p5}}
+{{s2.p12}}
 
 ~~~js
 parseInt()
 ~~~
 
-{{s4.p6}}
+{{s2.p13}}
 
-{{s4.p7}}
-{{s4.p8}}
-{{s4.p9}}
-{{s4.p10}}
-{{s4.p11}}
+{{s2.p14}}
+{{s2.p15}}
+{{s2.p16}}
+{{s2.p17}}
+{{s2.p18}}
 
-§§§§ {{s4.demo2}} | function_parseInt_01_template §§§§
+§§§§ Demo | function_parseInt_01_template §§§§
 
-{{s4.p12}}
+{{s2.p19}}
 
 _____________________________________________________________________
 
-### ![ico-25 icon] {{s5.h1}}
+### ![ico-25 icon] {{s3.h1}}
 
-{{s5.p1}}
+{{s3.p1}}
 
-{{s5.p2}}
+{{s3.p2}}
 
 ~~~js
 console.log(Math)
 ~~~
 
-{{s5.p3}}
+{{s3.p3}}
 
 ~~~~console
 ▼ Math {abs: ƒ, acos: ƒ, acosh: ƒ, asin: ƒ, asinh: ƒ, …}
@@ -128,100 +128,100 @@ console.log(Math)
   ► [[Prototype]]: Object
 ~~~~
 
-{{s5.p4}}
-{{s5.p5}}
+{{s3.p4}}
+{{s3.p5}}
 
 ~~~console
 round: ƒ round()
 ~~~
 
-{{s5.p6}}
+{{s3.p6}}
 
-§§§§ {{s5.demo1}} | function_math_template §§§§
+§§§§ Demo | function_math_template §§§§
 
-{{s5.p7}}
-{{s5.p8}}
+{{s3.p7}}
+{{s3.p8}}
 
 ~~~console
 Math.sqrt(16)
 ~~~
 
-{{s5.p9}}
+{{s3.p9}}
 
-{{s5.p10}}
+{{s3.p10}}
 
-{{s5.p11}}
+{{s3.p11}}
 
 ~~~js
 var sin = Math.sin(Math.PI / 2)
 ~~~
 
-{{s5.p12}}
-{{s5.p13}}
-{{s5.p14}}
-{{s5.p15}}
+{{s3.p12}}
+{{s3.p13}}
+{{s3.p14}}
+{{s3.p15}}
 
-§§§§ {{s5.demo2}} | function_math_01_template §§§§
+§§§§ Demo | function_math_01_template §§§§
 
-{{s5.p16}}
+{{s3.p16}}
 
 ~~~console
 var argument = Math.PI / 2
 ~~~
 
-{{s5.p17}}
+{{s3.p17}}
 
-{{s5.p18}}
+{{s3.p18}}
 
-{{s5.p19}}
+{{s3.p19}}
 
 ~~~console
 argument
 ~~~
 
-{{s5.p20}}
+{{s3.p20}}
 
-{{s5.p21}}
+{{s3.p21}}
 
 ~~~console
 Math.sin(argument)
 ~~~
 
-{{s5.p22}}
+{{s3.p22}}
 
-{{s5.p23}}
+{{s3.p23}}
 
 ~~~console
 var sin = Math.sin(argument)
 ~~~
 
-{{s5.p24}}
+{{s3.p24}}
 
 ______________________________________________
 
-{{s5.p25}}
-{{s5.p26}}
-{{s5.p27}}
+{{s3.p25}}
+{{s3.p26}}
+{{s3.p27}}
 
-{{s5.p28}}
-{{s5.p29}}
-{{s5.p30}}
+{{s3.p28}}
+{{s3.p29}}
+{{s3.p30}}
 
-{{s5.p31}}
+{{s3.p31}}
 
-§§§§ {{s5.demo3}} | function_console_03_template §§§§
+§§§§ Demo | function_console_03_template §§§§
 
 ______________________________________________
 
-## ![ico-30 icon] {{s6.h1}}
+## ![ico-30 icon] {{s4.h1}}
 
-{{s6.p1}}
-{{s6.p2}}
+{{s4.p1}}
+{{s4.p2}}
 
-{{s6.p3}}
+{{s4.p3}}
 
-{{s6.p4}}
-{{s6.p5}}
+{{s4.p4}}
+{{s4.p5}}
 
 ~~~js
 {
@@ -230,17 +230,17 @@ ______________________________________________
 }
 ~~~
 
-{{s6.p6}}
-{{s6.p7}}
-{{s6.p8}}
+{{s4.p6}}
+{{s4.p7}}
+{{s4.p8}}
 
-§§§§ {{s6.demo1}} | function_00_template §§§§
+§§§§ Demo | function_00_template §§§§
 
-{{s6.p9}}
-{{s6.p10}}
-{{s6.p11}}
+{{s4.p9}}
+{{s4.p10}}
+{{s4.p11}}
 
-{{s6.p12}}
+{{s4.p12}}
 
 ~~~js
 var func = {
@@ -249,20 +249,20 @@ var func = {
 }
 ~~~
 
-{{s6.p13}}
-{{s6.p14}}
-{{s6.p15}}
-{{s6.p16}}
+{{s4.p13}}
+{{s4.p14}}
+{{s4.p15}}
+{{s4.p16}}
 
 ~~~error
     Uncaught SyntaxError: Unexpected identifier 'number'
 ~~~
 
-{{s6.p17}}
+{{s4.p17}}
 
-{{s6.p18}}
+{{s4.p18}}
 
-{{s6.p19}}
+{{s4.p19}}
 
 ~~~js
 var func = function {
@@ -271,18 +271,18 @@ var func = function {
 }
 ~~~
 
-{{s6.p20}}
+{{s4.p20}}
 
 ~~~error
     Uncaught SyntaxError: Unexpected token '{'
 ~~~
 
-{{s6.p21}}
-{{s6.p22}}
+{{s4.p21}}
+{{s4.p22}}
 
-{{s6.p23}}
+{{s4.p23}}
 
-{{s6.p24}}
+{{s4.p24}}
 
 ~~~js
 var func = function () {
@@ -291,61 +291,61 @@ var func = function () {
 }
 ~~~
 
-{{s6.p25}}
+{{s4.p25}}
 
-{{s6.p26}}
-{{s6.p27}}
+{{s4.p26}}
+{{s4.p27}}
 
-{{s6.p28}}
-{{s6.p29}}
+{{s4.p28}}
+{{s4.p29}}
 
-{{s6.p30}}
+{{s4.p30}}
 
-§§§§ {{s6.demo2}} | function_01_template §§§§
+§§§§ Demo | function_01_template §§§§
 
-{{s6.p31}}
-{{s6.p32}}
-{{s6.p33}}
+{{s4.p31}}
+{{s4.p32}}
+{{s4.p33}}
 
-{{s6.p34}}
+{{s4.p34}}
 
 ~~~js
 func()
 ~~~
 
-§§§§ {{s6.demo3}} | function_02_template §§§§
+§§§§ Demo | function_02_template §§§§
 
-{{s6.p35}}
+{{s4.p35}}
 
 ~~~js
 var func = function () {}
 ~~~
 
-{{s6.p36}}
+{{s4.p36}}
 
-{{s6.p37}}
+{{s4.p37}}
 
-{{s6.p38}}
+{{s4.p38}}
 
 _____________________________________________________________________
 
-{{s6.p39}}
+{{s4.p39}}
 
 ~~~js
 function func () {}
 ~~~
 
-{{s6.p40}}
-{{s6.p41}}
-{{s6.p42}}
+{{s4.p40}}
+{{s4.p41}}
+{{s4.p42}}
 
-{{s6.p43}}
-{{s6.p44}}
+{{s4.p43}}
+{{s4.p44}}
 
 _________________________________________________
 
-{{s6.p45}}
-{{s6.p46}}
+{{s4.p45}}
+{{s4.p46}}
 
 ~~~js
 var func = 10
@@ -356,62 +356,62 @@ func()
     Uncaught TypeError: func is not a function
 ~~~
 
-{{s6.p47}}
-{{s6.p48}}
-{{s6.p49}}
+{{s4.p47}}
+{{s4.p48}}
+{{s4.p49}}
 _________________________________________________
+
+## ![ico-30 icon] {{s5.h1}}
+
+{{s5.p1}}
+{{s5.p2}}
+
+{{s5.p3}}
+
+{{s5.p4}}
+{{s5.p5}}
+{{s5.p6}}
+{{s5.p7}}
+{{s5.p8}}
+
+{{s5.p9}}
+{{s5.p10}}
+{{s5.p11}}
+{{s5.p12}}
+
+§§§§ Demo | function_parameters_template §§§§
+
+{{s5.p13}}
+{{s5.p14}}
+{{s5.p15}}
+{{s5.p16}}
+{{s5.p17}}
+
+### ![ico-25 icon] {{s6.h1}}
+
+{{s6.p1}}
+{{s6.p2}}
+
+§§§§ Demo | function_parameters_01_template §§§§
+
+{{s6.p3}}
+
+§§§§ Demo | function_parameters_02_template §§§§
+
+{{s6.p4}}
+
+§§§§ Demo | function_parameters_03_template §§§§
+
+{{s6.p5}}
+
+__________________________________________________________________
 
 ## ![ico-30 icon] {{s7.h1}}
 
 {{s7.p1}}
+
 {{s7.p2}}
-
 {{s7.p3}}
-
-{{s7.p4}}
-{{s7.p5}}
-{{s7.p6}}
-{{s7.p7}}
-{{s7.p8}}
-
-{{s7.p9}}
-{{s7.p10}}
-{{s7.p11}}
-{{s7.p12}}
-
-§§§§ {{s7.demo1}} | function_parameters_template §§§§
-
-{{s7.p13}}
-{{s7.p14}}
-{{s7.p15}}
-{{s7.p16}}
-{{s7.p17}}
-
-### ![ico-25 icon] {{s8.h1}}
-
-{{s8.p1}}
-{{s8.p2}}
-
-§§§§ {{s8.demo1}} | function_parameters_01_template §§§§
-
-{{s8.p3}}
-
-§§§§ {{s8.demo2}} | function_parameters_02_template §§§§
-
-{{s8.p4}}
-
-§§§§ {{s8.demo3}} | function_parameters_03_template §§§§
-
-{{s8.p5}}
-
-__________________________________________________________________
-
-## ![ico-30 icon] {{s9.h1}}
-
-{{s9.p1}}
-
-{{s9.p2}}
-{{s9.p3}}
 
 ~~~js
 var calcs = function (x = 1, y = x * 2, z = 0) {
@@ -419,21 +419,21 @@ var calcs = function (x = 1, y = x * 2, z = 0) {
 }
 ~~~
 
-{{s9.p4}}
-{{s9.p5}}
+{{s7.p4}}
+{{s7.p5}}
 
 ~~~error
     Uncaught SyntaxError: Illegal return statement
 ~~~
 
-{{s9.p6}}
+{{s7.p6}}
 
-{{s9.p7}}
-{{s9.p8}}
+{{s7.p7}}
+{{s7.p8}}
 
 ____________________________________________________________________
 
-## ![ico-25 icon] {{s10.h1}}
+## ![ico-25 icon] {{s8.h1}}
 
 ◘◘** 1**◘◘
 ~~~js
@@ -442,7 +442,7 @@ var func = function (arg) {
 }
 ~~~
 
-→→→ {{s10.quiz1}} | {{s10.quizVariants1}} | {{s10.quizAnswer1}}→→→
+→→→ {{s8.quiz1}} | {{s8.quizVariants1}} | {{s8.quizAnswer1}}→→→
 
 ◘◘** 2**◘◘
 ~~~js
@@ -453,7 +453,7 @@ function greeting (userName) {
 console.log(greeting())
 ~~~
 
-→→→ {{s10.quiz2}} | {{s10.quizVariants2}} | {{s10.quizAnswer2}}→→→
+→→→ {{s8.quiz2}} | {{s8.quizVariants2}} | {{s8.quizAnswer2}}→→→
 
 ◘◘** 3**◘◘
 ~~~js
@@ -464,7 +464,7 @@ function greeting (userName = 'Human') {
 console.log(greeting())
 ~~~
 
-→→→ {{s10.quiz3}} | {{s10.quizVariants3}} | {{s10.quizAnswer3}}→→→
+→→→ {{s8.quiz3}} | {{s8.quizVariants3}} | {{s8.quizAnswer3}}→→→
 
 
 ◘◘** 4**◘◘
@@ -477,7 +477,7 @@ function greeting (userName = 'Human') {
 console.log(greeting())
 ~~~
 
-→→→ {{s10.quiz4}} | {{s10.quizVariants4}} | {{s10.quizAnswer4}}→→→
+→→→ {{s8.quiz4}} | {{s8.quizVariants4}} | {{s8.quizAnswer4}}→→→
 
 ◘◘** 5**◘◘
 ~~~js
@@ -486,7 +486,7 @@ function randomInteger (number = 100) {
 }
 ~~~
 
-→→→ {{s10.quiz5}} | {{s10.quizVariants5}} | {{s10.quizAnswer5}}→→→
+→→→ randomInteger() > 100 | true, false, undefined, 0, NaN | false→→→
 
 ◘◘** 6**◘◘
 ~~~js
@@ -495,7 +495,7 @@ function hexToDecimal (hexNumber = 0) {
 }
 ~~~
 
-→→→ {{s10.quiz6}} | {{s10.quizVariants6}} | {{s10.quizAnswer6}}→→→
+→→→ !hexToDecimal() | undefined, true, false, 0, NaN | true→→→
 
 ◘◘** 7**◘◘
 ~~~js
@@ -504,7 +504,7 @@ function binToDecimal (bin = '1111111') {
 }
 ~~~
 
-→→→ {{s10.quiz7}} | {{s10.quizVariants7}} | {{s10.quizAnswer7}}→→→
+→→→ binToDecimal('540') | undefined, true, false, 0, NaN | 0→→→
 
 ◘◘** 8**◘◘
 ~~~js
@@ -513,11 +513,11 @@ function hexToDecimal (hex = 'FF') {
 }
 ~~~
 
-→→→ {{s10.quiz8}} | {{s10.quizVariants8}} | {{s10.quizAnswer8}}→→→
+→→→ hexToDecimal('rob') | undefined, true, false, 0, NaN, 255 | 255→→→
 ____________________________________________________________________
 
-{{s10.p1}}
+[![ico-25 hw] Quiz](quiz/function)
 
 _______________________________________
-{{s10.p2}}
-{{s10.p3}}
+[![ico-20 link] w3schools](external/w3-function)
+[![ico-20 link] MDN](external/mdn-function)

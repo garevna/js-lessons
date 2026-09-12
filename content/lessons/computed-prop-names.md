@@ -1,12 +1,12 @@
 # ![ico-30 study] {{s1.h1}}
 
-{{s1.p1}}
+**ES6**
 
 ________________________________________________
 
-{{s1.p2}}
+{{s1.p1}}
 
-{{s1.p3}}
+{{s1.p2}}
 
 ~~~js
 var bag = {
@@ -21,7 +21,7 @@ console.log(bag.prop3)  // 🎓
 
 __________________________________________
 
-{{s1.p4}}
+{{s1.p3}}
 
 ~~~js
 var prop = 'prop'
@@ -39,7 +39,7 @@ console.log(bag.prop____3)  // 🎓
 
 __________________________________________
 
-{{s1.p5}}
+{{s1.p4}}
 
 ~~~js
 var prop = ['smile', 'clock', 'book']
@@ -55,7 +55,7 @@ console.log(bag.____book)   // 📖
 
 __________________________________________
 
-{{s1.p6}}
+{{s1.p5}}
 
 ~~~js
 var sample = {}
@@ -74,7 +74,7 @@ console.log(sample.chicken)
 
 __________________________________________
 
-{{s1.p7}}
+{{s1.p6}}
 
 ~~~js
 var things = [
@@ -104,7 +104,7 @@ console.log(bag.getFlower())
 console.log(bag.getMashroom())
 ~~~
 
-{{s1.p8}}
+{{s1.p7}}
 
 ~~~console
 
@@ -115,4 +115,4 @@ console.log(bag.getMashroom())
 🍄
 ~~~
 
-{{s1.p9}}
+{{s1.p8}}

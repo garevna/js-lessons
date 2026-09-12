@@ -1,6 +1,6 @@
 # ![ico-30 study] {{s1.h1}}
 
-{{s1.p1}}
+**ES 2015**
 
 _______________________________________________________
 
@@ -59,7 +59,7 @@ console.log(iterator.next(4))
 
 _______________________________________________________
 
-{{s2.p17}}
+◘◘![ico-20 cap] ** 23**◘◘
 
 ~~~js
 function * testArgGenerator (x) {
@@ -78,36 +78,36 @@ for (const x of [0, 15, 6]) console.warn('Emitted value: ', testArg.next(x).valu
 
 {{{generators-23.js}}}
 
+{{s2.p17}}
+
 {{s2.p18}}
-
 {{s2.p19}}
+
 {{s2.p20}}
-
 {{s2.p21}}
+
 {{s2.p22}}
-
 {{s2.p23}}
-{{s2.p24}}
 
+{{s2.p24}}
 {{s2.p25}}
+
 {{s2.p26}}
 
 {{s2.p27}}
-
 {{s2.p28}}
-{{s2.p29}}
 
+{{s2.p29}}
 {{s2.p30}}
 {{s2.p31}}
+
 {{s2.p32}}
 
 {{s2.p33}}
 
-{{s2.p34}}
-
 ________________________________
 
-{{s2.p35}}
+◘◘![ico-20 cap] ** 24**◘◘
 
 ~~~js
 function * testArgGenerator (x) {
@@ -137,7 +137,7 @@ _______________________________________________________
 
 {{s3.p1}}
 
-{{s3.p2}}
+◘◘![ico-20 cap] ** 25**◘◘
 
 ~~~js
 function* generator (arg) {
@@ -153,7 +153,7 @@ for (const x of [2, 3, 4, 5, 6, 7])
     console.log(iterator.next(x))
 ~~~
 
-{{s3.p3}}
+{{s3.p2}}
 
 ~~~js
 function* generator () {
@@ -168,7 +168,7 @@ for (const x of [, 3, 4, 5, 6, 7]) console.log(iterator.next(x).value)
 
 _______________________________________________________
 
-{{s3.p4}}
+◘◘![ico-20 cap] ** 26**◘◘
 
 ~~~js
 iterator = (function* gen (arg) {
@@ -215,4 +215,4 @@ iterator = (function* gen (arg) {
 
 _________________________________________________________
 
-{{s3.p5}}
+[![ico-30 hw] Quiz](quiz/gen)

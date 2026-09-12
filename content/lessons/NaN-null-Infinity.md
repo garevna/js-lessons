@@ -1,24 +1,24 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] NaN / null / Infinity
 
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{s1.h1}}
 
-{{s2.p1}}
+{{s1.p1}}
 
-{{s2.p2}}
+{{s1.p2}}
 
-{{s2.p3}}
+{{s1.p3}}
 
 ~~~js
 5 / "a"  --> NaN
 "b" * 3  --> NaN
 ~~~
 
-{{s2.p4}}
+{{s1.p4}}
 
-{{s2.p5}}
+{{s1.p5}}
 
-{{s2.p6}}
+{{s1.p6}}
 
 ~~~js
 NaN === NaN            // false
@@ -27,10 +27,10 @@ NaN >= NaN             // false
 NaN <= NaN             // false
 ~~~
 
-{{s2.p7}}
-{{s2.p8}}
+{{s1.p7}}
+{{s1.p8}}
 
-{{s2.p9}}
+{{s1.p9}}
 
 ~~~js
 isNaN('привет')               //  true
@@ -38,19 +38,19 @@ Number.isNaN('привет')        //  false
 Number.isNaN('привет' / 10)   //  true
 ~~~
 
-{{s2.p10}}
+{{s1.p10}}
 
-{{s2.p11}}
+{{s1.p11}}
 
 _____________________________________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{s2.h1}}
 
-{{s3.p1}}
+{{s2.p1}}
 
-{{s3.p2}}
+{{s2.p2}}
 
-{{s3.p3}}
+{{s2.p3}}
 
 ~~~js      
 null == null              // true
@@ -66,25 +66,25 @@ null == []                // false
 
 _____________________________________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] {{s3.h1}}
 
-{{s4.p1}}
+{{s3.p1}}
 
-{{s4.p2}}
+{{s3.p2}}
 
-{{s4.p3}}
+{{s3.p3}}
 
-{{s4.p4}}
+~1.7976931348623157E+10308~
 
-{{s4.p5}}
+{{s3.p4}}
 
-{{s4.p6}}
+{{s3.p5}}
 
 ~~~js
 1 / 0            //  Infinity
 ~~~
 
-{{s4.p7}}
+{{s3.p6}}
 
 ~~~js
 0 / Infinity  // NaN
@@ -98,4 +98,4 @@ Infinity + Infinity  // Infinity
 
 ______________________________________________________________
 
-{{s4.p8}}
+[![ico-20 link] ^^w3schools^^](https://www.w3schools.com/jsref/jsref_infinity.asp)

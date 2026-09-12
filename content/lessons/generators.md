@@ -1,37 +1,37 @@
 # ![ico-30 study] {{s1.h1}}
 
-{{s1.p1}}
+**ES 2015**
 
+{{s1.p1}}
 {{s1.p2}}
 {{s1.p3}}
-{{s1.p4}}
 
 __________________________________________
 
+{{s1.p4}}
+
+## ![ico-25 icon] Symbol.iterator
+
 {{s1.p5}}
 
-## ![ico-25 icon] {{s2.h1}}
+{{s1.p6}}
 
-{{s2.p1}}
-
-{{s2.p2}}
-
-{{s2.p3}}
+{{s1.p7}}
 
 ______________________________
 
-{{s2.p4}}
-{{s2.p5}}
-{{s2.p6}}
+{{s1.p8}}
+{{s1.p9}}
+{{s1.p10}}
 
 ___________________________
 
-{{s2.p7}}
+**Design pattern "~Iterator~"**
 
-{{s2.p8}}
-{{s2.p9}}
+{{s1.p11}}
+{{s1.p12}}
 
-{{s2.p10}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 const browsers = {
@@ -53,7 +53,7 @@ const browsers = {
 }
 ~~~
 
-{{s2.p11}}
+{{s1.p13}}
 
 ~~~js
 for (const name of browsers) {
@@ -64,7 +64,7 @@ for (const name of browsers) {
 {{{generators-1.js}}}
 
 
-{{s2.p12}}
+{{s1.p14}}
 
 ~~~js
 console.log(...browsers)
@@ -74,46 +74,46 @@ console.log(...browsers)
 Google Mozilla Safari
 ~~~
 
-{{s2.p13}}
+{{s1.p15}}
 
-{{s2.p14}}
+{{s1.p16}}
 
 ______________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{s2.h1}}
 
-{{s3.p1}}
-{{s3.p2}}
-{{s3.p3}}
+{{s2.p1}}
+{{s2.p2}}
+{{s2.p3}}
 
-{{s3.p4}}
+{{s2.p4}}
 
-{{s3.p5}}
+{{s2.p5}}
 
-{{s3.p6}}
-{{s3.p7}}
-{{s3.p8}}
+{{s2.p6}}
+{{s2.p7}}
+{{s2.p8}}
 
 ~~~js
 const iterator = generator(...)
 ~~~
 
-{{s3.p9}}
+{{s2.p9}}
 
-{{s3.p10}}
+{{s2.p10}}
 
-{{s3.p11}}
+{{s2.p11}}
 
-{{s3.p12}}
-{{s3.p13}}
-{{s3.p14}}
+{{s2.p12}}
+{{s2.p13}}
+{{s2.p14}}
 
-{{s3.p15}}
+{{s2.p15}}
 
-{{s3.p16}}
-{{s3.p17}}
-{{s3.p18}}
-{{s3.p19}}
+{{s2.p16}}
+{{s2.p17}}
+{{s2.p18}}
+{{s2.p19}}
 
 
 ~~~js
@@ -126,11 +126,11 @@ function* generator (...) {
 }
 ~~~
 
-{{s3.p20}}
+{{s2.p20}}
 
 ____________________
 
-{{s3.p21}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js
 const browsers = {
@@ -142,11 +142,11 @@ const browsers = {
 }
 ~~~
 
-{{s3.p22}}
+{{s2.p21}}
 
 _________________
 
-{{s3.p23}}
+◘◘![ico-20 cap] ** 3**◘◘
 
 ~~~js
 const browsers = (function * () {
@@ -161,29 +161,29 @@ for (const x of [1, 2, 3, 4]) setTimeout(() => console.log(browsers.next().value
 
 {{{generators-3.js}}}
 
-{{s3.p24}}
-{{s3.p25}}
-{{s3.p26}}
+{{s2.p22}}
+{{s2.p23}}
+{{s2.p24}}
 
 ___________________________
 
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] {{s3.h1}}
 
-{{s4.p1}}
-{{s4.p2}}
-{{s4.p3}}
-{{s4.p4}}
+{{s3.p1}}
+{{s3.p2}}
+{{s3.p3}}
+{{s3.p4}}
 
-{{s4.p5}}
+{{s3.p5}}
 
-{{s4.p6}}
+{{s3.p6}}
 
-{{s4.p7}}
+{{s3.p7}}
 
-### {{s5.h1}}
+### lazy evaluation
 
-{{s5.p1}}
+{{s3.p8}}
 
 ~~~js
 function recurse (arg) {
@@ -194,11 +194,11 @@ function recurse (arg) {
 recurse(1)
 ~~~
 
-{{s5.p2}}
+{{s3.p9}}
 
-{{s5.p3}}
+{{s3.p10}}
 
-{{s5.p4}}
+{{s3.p11}}
 
 ~~~js
 const lazyEvaluatedInfiniteList = (function * recurse (arg) {
@@ -210,30 +210,30 @@ for (let x = 0; x < 12000; x++) {
 }
 ~~~
 
-{{s5.p5}}
+{{s3.p12}}
 
-{{s5.p6}}
-{{s5.p7}}
-{{s5.p8}}
-{{s5.p9}}
-{{s5.p10}}
+{{s3.p13}}
+{{s3.p14}}
+{{s3.p15}}
+{{s3.p16}}
+{{s3.p17}}
 
 ______________________________________________________________
 
-## ![ico-25 icon] {{s6.h1}}
+## ![ico-25 icon] next()
 
-{{s6.p1}}
+{{s3.p18}}
 
-{{s6.p2}}
+{{s3.p19}}
 
-{{s6.p3}}
+{{s3.p20}}
 
-{{s6.p4}}
-{{s6.p5}}
+{{s3.p21}}
+{{s3.p22}}
 
 _____________________________________________________________
 
-{{s6.p6}}
+◘◘![ico-20 cap] ** 4**◘◘
 
 ~~~js
 function * colorsGenerator () {
@@ -257,7 +257,7 @@ for (let x=0; x < 100; x++) {
 
 {{{generators-4.js}}}
 
-{{s6.p7}}
+{{s3.p23}}
 
 ~~~js
 const colorIterator = (function * () {
@@ -266,9 +266,9 @@ const colorIterator = (function * () {
 })()
 ~~~
 
-{{s6.p8}}
+{{s3.p24}}
 
-{{s6.p9}}
+◘◘![ico-20 cap] ** 4.1**◘◘
 
 ~~~js
 function createColoredElement (w, h) {
@@ -283,7 +283,7 @@ function createColoredElement (w, h) {
 }
 ~~~
 
-{{s6.p10}}
+{{s3.p25}}
 
 ~~~js
 for (let x = 0; x < 75; x++) {
@@ -296,11 +296,11 @@ for (let x = 0; x < 75; x++) {
 
 ________________________________________________________________
 
-{{s6.p11}}
-{{s6.p12}}
-{{s6.p13}}
+{{s3.p26}}
+{{s3.p27}}
+{{s3.p28}}
 
-{{s6.p14}}
+◘◘![ico-20 cap] ** 5**◘◘
 
 ~~~js
 function * colorsGenerator () {
@@ -340,9 +340,9 @@ showColors(50)
 
 ________________________________________________________________
 
-{{s6.p15}}
+{{s3.p29}}
 
-{{s6.p16}}
+◘◘![ico-20 cap] ** 6**◘◘
 
 ~~~js
 const iterator = (function * (arg) {
@@ -364,9 +364,9 @@ document.body.onmousewheel = () => iterator.next()
 
 ________________________________________
 
-{{s6.p17}}
+{{s3.p30}}
 
-{{s6.p18}}
+◘◘![ico-20 cap] ** 7**◘◘
 
 ~~~~js
 const user = {
@@ -399,7 +399,7 @@ const user = {
 }
 ~~~~
 
-{{s6.p19}}
+{{s3.p31}}
 
 ~~~js
 user.generator = function * () {
@@ -409,28 +409,28 @@ user.generator = function * () {
 }
 ~~~
 
-{{s6.p20}}
+{{s3.p32}}
 
 ~~~js
 user.iterator = user.generator ()
 ~~~
 
-{{s6.p21}}
+{{s3.p33}}
 
 ~~~js
 while (!user.iterator.next().done) {}
 ~~~
 
-{{s6.p22}}
+{{s3.p34}}
 
-{{s6.p23}}
+{{s3.p35}}
 
-{{s6.p24}}
-{{s6.p25}}
+{{s3.p36}}
+{{s3.p37}}
 
-{{s6.p26}}
+{{s3.p38}}
 
-{{s6.p27}}
+{{s3.p39}}
 
 ~~~js
 user[Symbol.iterator] = function * () {
@@ -440,13 +440,13 @@ user[Symbol.iterator] = function * () {
 }
 ~~~
 
-{{s6.p28}}
+{{s3.p40}}
 
 ~~~js
 for (const prop of user) {}
 ~~~
 
-{{s6.p29}}
+{{s3.p41}}
 
 ~~~js
 console.log(...user)
@@ -456,7 +456,7 @@ console.log(...user)
 
 ___________________________________________________________________
 
-{{s6.p30}}
+◘◘![ico-20 cap] ** 8**◘◘
 
 ~~~js
 const elements = [
@@ -486,9 +486,9 @@ console.log(...elements)
 
 ___________________________________________________
 
-## ![ico-25 icon] {{s7.h1}}
+## ![ico-25 icon] {{s4.h1}}
 
-{{s7.p1}}
+◘◘![ico-20 cap] ** 9**◘◘
 
 ~~~js
 const points = {
@@ -532,9 +532,9 @@ console.log(...points)
 
 ___________________________________________________
 
-{{s7.p2}}
+{{s4.p1}}
 
-{{s7.p3}}
+◘◘![ico-20 cap] ** 10**◘◘
 
 ~~~js
 const objects = [
@@ -547,11 +547,11 @@ const objects = [
 ]
 ~~~
 
-{{s7.p4}}
+{{s4.p2}}
 
-{{s7.p5}}
+{{s4.p3}}
 
-{{s7.p6}}
+{{s4.p4}}
 
 ~~~js
 function * someGenerator (objs) {
@@ -566,19 +566,19 @@ function * someGenerator (objs) {
 }
 ~~~
 
-{{s7.p7}}
+{{s4.p5}}
 
-{{s7.p8}}
+{{s4.p6}}
 
 ~~~js
 const iterator = someGenerator(objects)
 ~~~
 
-{{s7.p9}}
+{{s4.p7}}
 
 ______________________________________
 
-{{s7.p10}}
+{{s4.p8}}
 
 ~~~js
 objects[Symbol.iterator] = function * () {
@@ -593,13 +593,13 @@ objects[Symbol.iterator] = function * () {
 }
 ~~~
 
-{{s7.p11}}
+{{s4.p9}}
 
 ~~~js
 for (const obj of objects) console.log(obj)
 ~~~
 
-{{s7.p12}}
+{{s4.p10}}
 
 ~~~js
 const [a, b, c, d] = objects
@@ -607,16 +607,16 @@ const [a, b, c, d] = objects
 
 _________________________________________________________
 
-## ![ico-25 icon] {{s8.h1}}
+## ![ico-25 icon] {{s5.h1}}
 
-{{s8.p1}}
-{{s8.p2}}
+{{s5.p1}}
+{{s5.p2}}
 
-{{s8.p3}}
+{{s5.p3}}
 
-{{s8.p4}}
+{{s5.p4}}
 
-{{s8.p5}}
+{{s5.p5}}
 
 ~~~js
 const canvas = document.body
@@ -627,24 +627,24 @@ const ctx = canvas.getContext('2d')
 const imageData = ctx.getImageData(left, top, width, height)
 ~~~
 
-{{s8.p6}}
+{{s5.p6}}
 
 ~~~js
 const data = imageData.data
 ~~~
 
-{{s8.p7}}
-{{s8.p8}}
-{{s8.p9}}
-{{s8.p10}}
+{{s5.p7}}
+{{s5.p8}}
+{{s5.p9}}
+{{s5.p10}}
 
-{{s8.p11}}
+{{s5.p11}}
 
-{{s8.p12}}
-{{s8.p13}}
+{{s5.p12}}
+{{s5.p13}}
 
 
-{{s8.p14}}
+◘◘![ico-20 cap] ** 11**◘◘
 
 ~~~js
 const canvas = document.body
@@ -670,9 +670,9 @@ canvas[Symbol.iterator] = function * () {
 }
 ~~~
 
-{{s8.p15}}
+{{s5.p14}}
 
-{{s8.p16}}
+{{s5.p15}}
 
 ~~~js
 document.body.style = `
@@ -682,20 +682,20 @@ document.body.style = `
 `
 ~~~
 
-{{s8.p17}}
+{{s5.p16}}
 ~~~js
 for (const point of canvas) {}
 ~~~
-{{s8.p18}}
+{{s5.p17}}
 ~~~js
 console.log(...canvas)
 ~~~
 
-{{s8.p19}}
+{{s5.p18}}
 
 {{{generators-11.js}}}
 
-{{s8.p20}}
+{{s5.p19}}
 
 ~~~js
 const canvas = Object.assign(document.body.appendChild(document.createElement('canvas')), {
@@ -722,7 +722,7 @@ for (const x of canvas) {}
 
 {{{generators-11-1.js}}}
 
-{{s8.p21}}
+{{s5.p20}}
 
 ~~~js
 const canvas = document.body
@@ -756,4 +756,4 @@ for (const x of canvas) {}
 
 _________________________________________________________
 
-{{s8.p22}}
+[![ico-30 hw] Quiz](quiz/gen)

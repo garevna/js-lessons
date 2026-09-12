@@ -1,15 +1,15 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] String
+
+{{s0.p1}}
+
+{{s0.p2}}
+
+{{s0.p3}}
+
+## ![ico-25 icon] {{s1.h1}}
 
 {{s1.p1}}
-
 {{s1.p2}}
-
-{{s1.p3}}
-
-## ![ico-25 icon] {{s2.h1}}
-
-{{s2.p1}}
-{{s2.p2}}
 
 ~~~js
 var message = 'We aRe the champions'
@@ -17,11 +17,11 @@ var message = 'We aRe the champions'
 console.log(message[4])  // R
 ~~~
 
-{{s2.p3}}
+{{s1.p3}}
 
-{{s2.p4}}
+{{s1.p4}}
 
-{{s2.p5}}
+{{s1.p5}}
 
 ~~~js
 var  message = 'Привет', user = 'студент'
@@ -29,30 +29,30 @@ var  message = 'Привет', user = 'студент'
 console.log(message + ', ' + user)
 ~~~
 
-{{s2.p6}}
+{{s1.p6}}
 
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{s2.h1}}
 
-{{s3.p1}}
+{{s2.p1}}
 
-### {{s4.h1}}
+### indexOf
 
-{{s4.p1}}
-{{s4.p2}}
-{{s4.p3}}
+{{s2.p2}}
+{{s2.p3}}
+{{s2.p4}}
 
-^^^[{{s4.spoiler1}}]
+^^^[indexOf()]
 
-{{s4.p4}}
+{{s2.p5}}
 
 ~~~js
 console.log('My new book'.indexOf('new'))
 ~~~
 
-{{s4.p5}}
+{{s2.p6}}
 
-{{s4.p6}}
+{{s2.p7}}
 
 ~~~js
 var mainString = 'Дела идут неплохо'
@@ -60,36 +60,36 @@ var pos = mainString.indexOf('идут')
 console.log(pos)
 ~~~
 
-{{s4.p7}}
+{{s2.p8}}
 
 ^^^
 
-### {{s5.h1}}
+### slice
 
-{{s5.p1}}
-{{s5.p2}}
+{{s2.p9}}
+{{s2.p10}}
 
-{{s5.p3}}
-{{s5.p4}}
-{{s5.p5}}
+{{s2.p11}}
+{{s2.p12}}
+{{s2.p13}}
 
-{{s5.p6}}
+{{s2.p14}}
 
-^^^[{{s5.spoiler1}}]
+^^^[slice()]
 
-{{s5.p7}}
+{{s2.p15}}
 
 ~~~js
 var name = 'Меня зовут Мария'.slice(11, 16)
 console.log(name)
 ~~~
 
-{{s5.p8}}
+{{s2.p16}}
 
 |^^ 0 ^^|^^ 1 ^^|^^ 2 ^^|^^ 3 ^^|^^ 4 ^^|^^ 5 ^^|^^ 6 ^^|^^ 7 ^^|^^ 8 ^^|^^ 9 ^^|^^ 10 ^^|^^ 11 ^^|^^ 12 ^^|^^ 13 ^^|^^ 14 ^^|^^ 15 ^^|
-{{s5.p9}}
+{{s2.p17}}
 
-{{s5.p10}}
+{{s2.p18}}
 
 ~~~js
 var str = 'Меня зовут Мария'
@@ -97,14 +97,14 @@ var name = str.slice(11, str.length)
 console.log(name)
 ~~~
 
-{{s5.p11}}
+{{s2.p19}}
 
-{{s5.p12}}
+{{s2.p20}}
 
-{{s5.p13}}
+{{s2.p21}}
 
 |^^-16^^|^^-15^^|^^-14^^|^^-13^^|^^-12^^|^^-11^^|^^-10^^|^^-9^^|^^-8^^|^^-7^^|^^-6^^|^^-5^^|^^-4^^|^^-3^^|^^-2^^|^^-1^^|
-{{s5.p14}}
+{{s2.p22}}
 |^^ 0 ^^|^^ 1 ^^|^^ 2 ^^|^^ 3 ^^|^^ 4 ^^|^^ 5 ^^|^^ 6 ^^|^^ 7 ^^|^^ 8 ^^|^^ 9 ^^|^^ 10 ^^|^^ 11 ^^|^^ 12 ^^|^^ 13 ^^|^^ 14 ^^|^^ 15 ^^|
 
 ~~~js
@@ -117,7 +117,7 @@ str.slice(-16, -1)                  // вернет  "Меня зовут Мар
 str.slice(-16,  0)                  // вернет  "" ( пустую строку )
 ~~~
 
-{{s5.p15}}
+{{s2.p23}}
 
 ~~~js
 str.slice(-str.length)   // вернет  "Меня зовут Мария" ( всю строку )
@@ -126,19 +126,19 @@ str.slice(5)             // вернет  "зовут Мария" ( до кон�
 
 ^^^
 
-### {{s6.h1}}
+### substring
 
-{{s6.p1}}
-{{s6.p2}}
-{{s6.p3}}
+{{s2.p24}}
+{{s2.p25}}
+{{s2.p26}}
 
-^^^[{{s6.spoiler1}}]
+^^^[substring()]
 
 ~~~js
 'Хорошего дня'.substring(9, 15) // "дня"
 ~~~
 
-{{s6.p4}}
+{{s2.p27}}
 
 ~~~js
 'Хорошего дня'.substring(9)    // "дня"
@@ -146,108 +146,108 @@ str.slice(5)             // вернет  "зовут Мария" ( до кон�
 
 ^^^
 
-### {{s7.h1}}
+### substr
 
-{{s7.p1}}
-{{s7.p2}}
-{{s7.p3}}
+{{s2.p28}}
+{{s2.p29}}
+{{s2.p30}}
 
-^^^[{{s7.spoiler1}}]
+^^^[substr()]
 
-{{s7.p4}}
+![ico-25 cap] ** 1 **
 
 ~~~js
 var str = 'Веселый денек был сегодня'
 console.log(str.substr(8, 5))
 ~~~
 
-{{s7.p5}}
+{{s2.p31}}
 
 
-{{s7.p6}}
+![ico-25 cap] ** 2 **
 
 ~~~js
 var str = 'Веселый денек был сегодня'
 console.log(str.substr(0, 7))
 ~~~
 
-{{s7.p7}}
+{{s2.p32}}
 
 ^^^
 
-### {{s8.h1}}
+### toLowerCase
 
-{{s8.p1}}
+{{s2.p33}}
 
-^^^[{{s8.spoiler1}}]
+^^^[toLowerCase()]
 
-{{s8.p2}}
+![ico-25 cap]
 
 ~~~js
 var str = 'ВЕСЕЛЫЙ ДЕНЕК БЫЛ СЕГОДНЯ'
 console.log(str.toLowerCase ())
 ~~~
 
-{{s8.p3}}
+{{s2.p34}}
 
 ^^^
 
-### {{s9.h1}}
+### toUpperCase
 
-{{s9.p1}}
+{{s2.p35}}
 
-^^^[{{s9.spoiler1}}]
+^^^[toUpperCase()]
 
-{{s9.p2}}
+![ico-25 cap]
 
 ~~~js
 var str = 'веселый денек был сегодня'
 console.log(str.toUpperCase())
 ~~~
 
-{{s9.p3}}
+{{s2.p36}}
 
 ^^^
 
-### {{s10.h1}}
+### split
 
-{{s10.p1}}
-{{s10.p2}}
-{{s10.p3}}
-{{s10.p4}}
+{{s2.p37}}
+{{s2.p38}}
+{{s2.p39}}
+{{s2.p40}}
 
 
-^^^[{{s10.spoiler1}}]
+^^^[split()]
 
-{{s10.p5}}
+![ico-25 cap] ** 1 **
 
 ~~~js
 var str = 'веселый денек был сегодня'
 console.log(str.split('е'))
 ~~~
 
-{{s10.p6}}
+{{s2.p41}}
 
 _______________________
 
-{{s10.p7}}
+![ico-25 cap] ** 2 **
 
 ~~~js
 var str = 'one &#124; two &#124; three &#124; four &#124; five &#124; six'
 console.log(str.split(' &#124; '))
 ~~~
 
-{{s10.p8}}
+{{s2.p42}}
 
 ^^^
 
-### {{s11.h1}}
+### trim
 
-{{s11.p1}}
+{{s2.p43}}
 
-^^^[{{s11.spoiler1}}]
+^^^[trim()]
 
-{{s11.p2}}
+![ico-25 cap]
 
 ~~~js
 var str = '   54   '
@@ -257,13 +257,13 @@ console.log(str.trim().length)  // 2
 
 ^^^
 
-### {{s12.h1}}
+### charAt
 
-{{s12.p1}}
+{{s2.p44}}
 
-^^^[{{s12.spoiler1}}]
+^^^[charAt()]
 
-{{s12.p2}}
+![ico-25 cap]
 
 ~~~js
 var str = 'ХОРОШО'
@@ -272,20 +272,20 @@ console.log(str.charAt(4))   //  Ш
 
 ^^^
 
-### {{s13.h1}}
+### charCodeAt
 
-{{s13.p1}}
+{{s2.p45}}
 
-^^^[{{s13.spoiler1}}]
+^^^[charCodeAt()]
 
-{{s13.p2}}
+![ico-25 cap] ** 1 **
 
 ~~~js
 var str = 'ХОРОШО'
 console.log(str.charCodeAt(4))   //  1064
 ~~~
 
-{{s13.p3}}
+![ico-25 cap] ** 2 **
 
 ~~~js
 var str = '1234567'
@@ -294,56 +294,56 @@ console.log(str.charCodeAt(4))  //  53
 
 ^^^
 
-### {{s14.h1}}
+### repeat
 
-{{s14.p1}}
+{{s2.p46}}
 
-^^^[{{s14.spoiler1}}]
+^^^[repeat()]
 
-{{s14.p2}}
+![ico-25 cap]
 
 ~~~js
 var str = 'ХОРОШО! '
 console.log(str.repeat(4))
 ~~~
 
-{{s14.p3}}
+{{s2.p47}}
 
 ^^^
 
-### {{s15.h1}}
+### replace
 
-{{s15.p1}}
-{{s15.p2}}
+{{s2.p48}}
+{{s2.p49}}
 
-^^^[{{s15.spoiler1}}]
+^^^[replace()]
 
-{{s15.p3}}
+![ico-25 cap]
 
 ~~~js
 var str = 'Ты проиграл! '
 console.log(str.replace('проиграл', 'победил'))
 ~~~
 
-{{s15.p4}}
+{{s2.p50}}
 
 ^^^
 
-### {{s16.h1}}
+### padStart | padEnd
 
-{{s16.p1}}
+**^^ES8 (2017)^^**
 
-{{s16.p2}}
-{{s16.p3}}
-{{s16.p4}}
-{{s16.p5}}
-{{s16.p6}}
-{{s16.p7}}
-{{s16.p8}}
+{{s2.p51}}
+{{s2.p52}}
+{{s2.p53}}
+{{s2.p54}}
+{{s2.p55}}
+{{s2.p56}}
+{{s2.p57}}
 
-^^^[{{s16.spoiler1}}]
+^^^[padStart & padEnd]
 
-{{s16.p9}}
+![ico-25 cap] ** 1 **
 
 ~~~js
 'Google'.padStart(5)               //  "Google"
@@ -354,7 +354,7 @@ console.log(str.replace('проиграл', 'победил'))
   .padEnd(15, '45')                //  "7897Google45454"
 ~~~
 
-{{s16.p10}}
+![ico-25 cap] ** 2 **
 
 ~~~js
 var cities = ['Naples', 'Washington', 'Geneva']
@@ -364,7 +364,7 @@ for (var city of cities) {
 }
 ~~~
 
-{{s16.p11}}
+{{s2.p58}}
 
 ~~~console
 City: Naples           (0)
@@ -376,10 +376,10 @@ City: Geneva           (2)
 
 ___________________________________________________________________________
 
-{{s16.p12}}
+{{s2.p59}}
 
 ___________________________________________________________________________
 
-{{s16.p13}}
-{{s16.p14}}
-{{s16.p15}}
+[^^![ico-20 link] MDN^^](external/mdn-string)
+[^^![ico-20 link] String Methods^^](external/w3-string-methods)
+[^^![ico-20 link] String Reference^^](external/w3-string)

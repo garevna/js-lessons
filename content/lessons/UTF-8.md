@@ -1,40 +1,40 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] UTF-8
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
+{{s0.p2}}
 
-{{s1.p3}}
+{{s0.p3}}
 
-{{s1.p4}}
+^^(**UTF** - _Unicode Transformation Format_)^^
 
-{{s1.p5}}
+{{s0.p4}}
 
-{{s1.p6}}
+{{s0.p5}}
 
-{{s1.p7}}
+{{s0.p6}}
 
-{{s1.p8}}
+{{s0.p7}}
 
-{{s1.p9}}
+{{s0.p8}}
 
 ~~~js
 '@gmail.com' < 'www.google.com'
 ~~~
 
-{{s1.p10}}
+{{s0.p9}}
 
-{{s1.p11}}
+{{s0.p10}}
 
-{{s1.p12}}
+{{s0.p11}}
 
 ~~~js
 '@gmail.com' < '@mail.ru'
 ~~~
 
-{{s1.p13}}
+{{s0.p12}}
 
-{{s1.p14}}
+{{s0.p13}}
 
 ~~~js
 '789'.charCodeAt(0)  // результат будет 55 - это код символа "7"
@@ -44,12 +44,12 @@
 
 ________________________________________________________
 
-### {{s2.h1}}
+### {{s1.h1}}
 
 _____________________________________________________________
 
-{{s2.p1}}
+{{s1.p1}}
 
-{{s2.p2}}
+[![ico-20 link] w3schools](https://www.w3schools.com/html/html_symbols.asp)
 
-{{s2.p3}}
+[![ico-20 link] UTF-8](http://i.voenmeh.ru/kafi5/Kam.loc/inform/UTF-8.htm)

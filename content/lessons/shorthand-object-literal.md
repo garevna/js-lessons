@@ -1,9 +1,9 @@
 # ![ico-30 study] {{s1.h1}}
 
-{{s1.p1}}
+**ES6**
 ________________________________________________
 
-{{s1.p2}}
+{{s1.p1}}
 
 ~~~js
 let name = "Ivan", age = 25
@@ -12,16 +12,16 @@ let user = { name, age }
 console.log ( user )
 ~~~
 
-{{s1.p3}}
+**console**
 
 ~~~console
 
 ► { name: "Ivan", age: 25 }
 ~~~
 
-{{s1.p4}}
+{{s1.p2}}
 
-{{s1.p5}}
+{{s1.p3}}
 
 ~~~js
 let name = "Ivan", age = 25
@@ -39,7 +39,7 @@ family.sister = { name: "Helen", age: 20 }
 console.log ( user )
 ~~~
 
-{{s1.p6}}
+**console**
 
 ~~~console
 

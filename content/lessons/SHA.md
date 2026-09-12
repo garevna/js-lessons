@@ -1,38 +1,38 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Secure Hash Algorithm
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
+{{s0.p2}}
 
-{{s1.p3}}
+{{s0.p3}}
 
-{{s1.p4}}
+{{s0.p4}}
 
-{{s1.p5}}
+{{s0.p5}}
 
-{{s1.p6}}
+{{s0.p6}}
 
-{{s1.p7}}
+{{s0.p7}}
 
-^^^[{{s1.spoiler1}}]
+^^^[SHA]
 
-{{s1.p8}}
+{{s0.p8}}
 
-{{s1.p9}}
-{{s1.p10}}
-{{s1.p11}}
+{{s0.p9}}
+{{s0.p10}}
+{{s0.p11}}
 
-{{s1.p12}}
+{{s0.p12}}
 
 ^^^
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] SHA-1
 
-{{s2.p1}}
+{{s0.p13}}
 
-{{s2.p2}}
+![ico-25 cap] **SHA-1**
 
-{{s2.p3}}
+{{s0.p14}}
 
 ~~~js
 for (var x of arr) {
@@ -40,48 +40,48 @@ for (var x of arr) {
 }
 ~~~
 
-{{s2.p4}}
+{{s0.p15}}
 
-{{s2.p5}}
+••15E84BC669EC1F264F68CF0329A3DE12788EBC7D••
 
-{{s2.p6}}
+{{s0.p16}}
 
 _________________________
 
-### ![ico-25 icon] {{s3.h1}}
+### ![ico-25 icon] {{s1.h1}}
 
-{{s3.p1}}
-{{s3.p2}}
+[%%%SHA1%%%](https://passwordsgenerator.net/sha1-hash-generator/) 
+[%%%SHA2%%%](https://passwordsgenerator.net/sha256-hash-generator/)
 
 ___________________
 
-### ![ico-30 git] {{s4.h1}}
+### ![ico-30 git] js-sha1
 
-{{s4.p1}}
+{{s1.p1}}
 
-{{s4.p2}}
+••![ico-30 bash] $ npm install js-sha1••
 
 _________________
 
-## ![ico-25 icon] {{s5.h1}}
+## ![ico-25 icon] SHA256
 
-{{s5.p1}}
+{{s1.p2}}
 
 ~~~html
 <script src="https://cdn.rawgit.com/chrisveness/crypto/4e93a4d/sha256.js"></script>
 ~~~
 
-{{s5.p2}}
+{{s1.p3}}
 
 ~~~js
 var hash = Sha256.hash(text)
 ~~~
 
-{{s5.p3}}
+{{s1.p4}}
 
-{{s5.p4}}
+{{s1.p5}}
 
-^^^[{{s5.spoiler1}}]
+^^^[sha256sum]
 
 ![](https://lh4.googleusercontent.com/wM_pdlag2wymXBf0vtG0LDwLUPyKPmNI0Z8op0grW79K0LNzSzQMTdOx_1zQtT9Utj6VxtRtNEjJajYfCusV8LejAeXMvtOliRJG_T6btsIShVCe20WkxABN4P2K5zqwp6E9ORQpuRwKF4k)
 
@@ -89,15 +89,15 @@ var hash = Sha256.hash(text)
 
 _______________________
 
-## ![ico-25 icon] {{s6.h1}}
+## ![ico-25 icon] SHA384
 
-{{s6.p1}}
+{{s1.p6}}
 
-{{s6.p2}}
+{{s1.p7}}
 
-{{s6.p3}}
+{{s1.p8}}
 
-{{s6.p4}}
+{{s1.p9}}
 
 ~~~js
 var script = document.createElement('script')
@@ -109,37 +109,37 @@ document.head.appendChild(script)
 
 ______________________________
 
-## ![ico-25 icon] {{s7.h1}}
+## ![ico-25 icon] integrity
 
-{{s7.p1}}
+{{s1.p10}}
 
-{{s7.p2}}
+{{s1.p11}}
 
-{{s7.p3}}
+{{s1.p12}}
 
 ![](https://lh3.googleusercontent.com/JUoOnSODv-YbGzZ_qsAWeSB4MRjYiAL62kmeb6eOSQZvMbVFKgUzC8XAdJq4GRtoWT-8N4AVAbWnXdZfHmLcGRgI-DOuvqANAPLjvLHfvAsC6m0Yas_mNZQ_Mb-w2dwnVh4Zth6ZOwxUYew)
 
-{{s7.p4}}
-{{s7.p5}}
-{{s7.p6}}
-{{s7.p7}}
-{{s7.p8}}
+{{s1.p13}}
+{{s1.p14}}
+{{s1.p15}}
+{{s1.p16}}
+{{s1.p17}}
 
 ___________________________________
 
-## ![ico-25 hw] {{s8.h1}}
+## ![ico-25 hw] {{s2.h1}}
 
-{{s8.p1}}
+{{s2.p1}}
 
-{{s8.p2}}
+{{s2.p2}}
 
-{{s8.p3}}
+{{s2.p3}}
 
-{{s8.p4}}
+{{s2.p4}}
 
-{{s8.p5}}
+{{s2.p5}}
 
-{{s8.p6}}
+{{s2.p6}}
 
 ~~~~js
 var users = [
@@ -159,16 +159,16 @@ var users = [
 ]
 ~~~~
 
-{{s8.p7}}
+{{s2.p7}}
 
-^^^[{{s8.spoiler1}}]
+^^^[Sign In]
 
-{{s8.p8}}
-{{s8.p9}}
-{{s8.p10}}
-{{s8.p11}}
-{{s8.p12}}
+{{s2.p8}}
+{{s2.p9}}
+{{s2.p10}}
+{{s2.p11}}
+{{s2.p12}}
 
 ^^^
 
-{{s8.p13}}
+{{s2.p13}}

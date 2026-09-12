@@ -1,38 +1,38 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] indexedDB
 
 ______________________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{s1.h1}}
 
-{{s2.p1}}
+{{s1.p1}}
 
-{{s2.p2}}
-{{s2.p3}}
-{{s2.p4}}
-{{s2.p5}}
+{{s1.p2}}
+{{s1.p3}}
+{{s1.p4}}
+{{s1.p5}}
 
-{{s2.p6}}
+{{s1.p6}}
 
-{{s2.p7}}
+{{s1.p7}}
 
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
+{{s1.p8}}
+{{s1.p9}}
+{{s1.p10}}
+{{s1.p11}}
 
-{{s2.p12}}
-{{s2.p13}}
-{{s2.p14}}
-{{s2.p15}}
+{{s1.p12}}
+{{s1.p13}}
+{{s1.p14}}
+{{s1.p15}}
 
 
-{{s2.p16}}
+{{s1.p16}}
 
 ~~~js
 console.dir(IDBIndex)
 ~~~
 
-^^^[{{s2.spoiler1}}]
+^^^[IDBIndex]
 
 ~~~console
 ▼ ƒ IDBIndex()
@@ -67,53 +67,53 @@ console.dir(IDBIndex)
 
 ^^^
 
-{{s2.p17}}
+{{s1.p17}}
 
-{{s2.p18}}
+{{s1.p18}}
 
-{{s2.p19}}
-{{s2.p20}}
-{{s2.p21}}
-{{s2.p22}}
-{{s2.p23}}
+{{s1.p19}}
+{{s1.p20}}
+{{s1.p21}}
+{{s1.p22}}
+{{s1.p23}}
 
-{{s2.p24}}
+{{s1.p24}}
 
 _______________________________
 
-{{s2.p25}}
+{{s1.p25}}
 
-{{s2.p26}}
-{{s2.p27}}
-{{s2.p28}}
-{{s2.p29}}
+| **count**      |                   |
+| **get**        | **getAll**        |
+| **getKey**     | **getAllKeys**    |
+| **openCursor** | **openKeyCursor** |
 
 ___________________________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{s2.h1}}
 
-{{s3.p1}}
+{{s2.p1}}
 
-{{s3.p2}}
-{{s3.p3}}
-{{s3.p4}}
-{{s3.p5}}
-{{s3.p6}}
+{{s2.p2}}
+{{s2.p3}}
+{{s2.p4}}
+{{s2.p5}}
+{{s2.p6}}
 
-^^^[{{s3.spoiler1}}]
-{{s3.p7}}
-{{s3.p8}}
-{{s3.p9}}
-{{s3.p10}}
-{{s3.p11}}
-{{s3.p12}}
-{{s3.p13}}
+^^^[{{s2.spoiler1}}]
+{{s2.p7}}
+• **multiEntry** (true / false)
+{{s2.p8}}
+{{s2.p9}}
+{{s2.p10}}
+{{s2.p11}}
+{{s2.p12}}
 
 ^^^
 
 ____________________________________________________________________
 
-{{s3.p14}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 const createUsersDB = users => new Promise((resolve, reject) => {
@@ -145,52 +145,52 @@ async function callUsers () {
 callUsers().then(resp => console.log(resp))
 ~~~
 
-^^^[{{s3.spoiler2}}]
-{{s3.p15}}
-{{s3.p16}}
-{{s3.p17}}
-{{s3.p18}}
-{{s3.p19}}
-{{s3.p20}}
-{{s3.p21}}
-{{s3.p22}}
-{{s3.p23}}
-{{s3.p24}}
-{{s3.p25}}
+^^^[{{s2.spoiler2}}]
+{{s2.p13}}
+{{s2.p14}}
+{{s2.p15}}
+{{s2.p16}}
+{{s2.p17}}
+{{s2.p18}}
+{{s2.p19}}
+{{s2.p20}}
+{{s2.p21}}
+{{s2.p22}}
+{{s2.p23}}
 
-{{s3.p26}}
-{{s3.p27}}
+{{s2.p24}}
+{{s2.p25}}
 
-{{s3.p28}}
-{{s3.p29}}
+{{s2.p26}}
+{{s2.p27}}
 
 ^^^
 
-{{s3.p30}}
+**userStore**
 
-{{s3.p31}}
-{{s3.p32}}
-{{s3.p33}}
+| # | Key | Value                                                               |
+| 0 | 1   | ► { name: "Stephan",birthYear: 1995, family: {...}, hobby: Array(2) } |
+| 1 | 2   | ► { name: "Andry",birthYear: 1998, family: {...}, hobby: Array(1) }   |
 
-{{s3.p34}}
+**nameIndex**
 
-{{s3.p35}}
-{{s3.p36}}
-{{s3.p37}}
+| # | Key(keyPath:"name") | Primary key | Value                                                                 |
+| 0 | Andry               | 2           | ► { name: "Andry",birthYear: 1998, family: {...}, hobby: Array(1) }   |
+| 1 | Stephan             | 1           | ► { name: "Stephan",birthYear: 1995, family: {...}, hobby: Array(2) } |
 
-{{s3.p38}}
+**hobbyIndex**
 
-{{s3.p39}}
-{{s3.p40}}
-{{s3.p41}}
+| # | Key(keyPath:"hobby")   | Primary key | Value                                                                 |
+| 0 | ► ["dancing"]          | 2           | ► { name: "Andry",birthYear: 1998, family: {...}, hobby: Array(1) }   |
+| 1 | ► ["footbal","fising"] | 1           | ► { name: "Stephan",birthYear: 1995, family: {...}, hobby: Array(2) } |
 
 ________________________________________
 
-#### {{s4.h1}}
+#### multiEntry
 
-{{s4.p1}}
-{{s4.p2}}
-{{s4.p3}}
+{{s2.p28}}
+{{s2.p29}}
+{{s2.p30}}
 
 ~~~js
 const createUsersDB = users => new Promise((resolve, reject) => {
@@ -202,26 +202,26 @@ const createUsersDB = users => new Promise((resolve, reject) => {
 ...
 ~~~
 
-{{s4.p4}}
+{{s2.p31}}
 
-{{s4.p5}}
+**hobbyIndex**
 
-{{s4.p6}}
-{{s4.p7}}
-{{s4.p8}}
-{{s4.p9}}
+| # | Key(keyPath:"hobby") | Primary key | Value                                                                 |
+| 0 | "dancing"            | 2           | ► { name: "Andry",birthYear: 1998, family: {...}, hobby: Array(1) }   |
+| 1 | "fising"             | 1           | ► { name: "Stephan",birthYear: 1995, family: {...}, hobby: Array(2) } |
+| 1 | "footbal"            | 1           | ► { name: "Stephan",birthYear: 1995, family: {...}, hobby: Array(2) } |
 
-{{s4.p10}}
+{{s2.p32}}
 
 ___________________________________________________________
 
-{{s4.p11}}
+{{s2.p33}}
 
-{{s4.p12}}
-{{s4.p13}}
-{{s4.p14}}
+{{s2.p34}}
+{{s2.p35}}
+{{s2.p36}}
 
-{{s4.p15}}
+{{s2.p37}}
 
 ~~~js
 fetch('https://garevna-json-server.glitch.me/lessons')
@@ -230,7 +230,7 @@ fetch('https://garevna-json-server.glitch.me/lessons')
 ~~~
 
 
-{{s4.p16}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js
 const openDB = (nameDB, verDB) => new Promise((resolve, reject) => {
@@ -286,11 +286,11 @@ createLessonsDB()
 
 ![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-index-1.gif)
 
-^^^[{{s4.spoiler1}}]
+^^^[{{s2.spoiler3}}]
 
-{{s4.p17}}
+{{s2.p38}}
 
-{{s4.p18}}
+◘◘**openDB**◘◘
 
 ~~~js
 const openDB = (nameDB, verDB) => new Promise((resolve, reject) => {
@@ -303,29 +303,29 @@ const openDB = (nameDB, verDB) => new Promise((resolve, reject) => {
 })
 ~~~
 
-{{s4.p19}}
-{{s4.p20}}
-{{s4.p21}}
-{{s4.p22}}
-{{s4.p23}}
+{{s2.p39}}
+{{s2.p40}}
+{{s2.p41}}
+{{s2.p42}}
+{{s2.p43}}
 
 ~~~js
 let DB, data, lessonStore, topicStore
 ~~~
 
-{{s4.p24}}
-{{s4.p25}}
+{{s2.p44}}
+{{s2.p45}}
 
-{{s4.p26}}
-{{s4.p27}}
-{{s4.p28}}
-{{s4.p29}}
+{{s2.p46}}
+{{s2.p47}}
+{{s2.p48}}
+{{s2.p49}}
 
-{{s4.p30}}
+{{s2.p50}}
 
-{{s4.p31}}
+{{s2.p51}}
 
-{{s4.p32}}
+◘◘**openDBCallback**◘◘
 
 ~~~js
 const openDBCallback = event => {
@@ -340,24 +340,24 @@ const openDBCallback = event => {
 }
 ~~~
 
-{{s4.p33}}
-{{s4.p34}}
-{{s4.p35}}
+{{s2.p52}}
+{{s2.p53}}
+{{s2.p54}}
 
-{{s4.p36}}
+{{s2.p55}}
 
-{{s4.p37}}
-{{s4.p38}}
-{{s4.p39}}
-{{s4.p40}}
-{{s4.p41}}
+{{s2.p56}}
+{{s2.p57}}
+{{s2.p58}}
+{{s2.p59}}
+{{s2.p60}}
 
-{{s4.p42}}
-{{s4.p43}}
-{{s4.p44}}
-{{s4.p45}}
+{{s2.p61}}
+{{s2.p62}}
+{{s2.p63}}
+{{s2.p64}}
 
-{{s4.p46}}
+◘◘**pushLesson**◘◘
 
 ~~~js
 function pushLesson (lesson) {
@@ -368,28 +368,28 @@ function pushLesson (lesson) {
 }
 ~~~
 
-{{s4.p47}}
-{{s4.p48}}
-{{s4.p49}}
-{{s4.p50}}
-{{s4.p51}}
-{{s4.p52}}
+{{s2.p65}}
+{{s2.p66}}
+{{s2.p67}}
+{{s2.p68}}
+{{s2.p69}}
+{{s2.p70}}
 
-{{s4.p53}}
-{{s4.p54}}
-{{s4.p55}}
+{{s2.p71}}
+{{s2.p72}}
+{{s2.p73}}
 
-{{s4.p56}}
-{{s4.p57}}
-{{s4.p58}}
-{{s4.p59}}
-{{s4.p60}}
-{{s4.p61}}
-{{s4.p62}}
-{{s4.p63}}
-{{s4.p64}}
+{{s2.p74}}
+{{s2.p75}}
+{{s2.p76}}
+{{s2.p77}}
+{{s2.p78}}
+{{s2.p79}}
+{{s2.p80}}
+{{s2.p81}}
+{{s2.p82}}
 
-{{s4.p65}}
+◘◘**pushTopic**◘◘
 
 ~~~js
 function pushTopic (lessonIndex, topic) {
@@ -403,10 +403,10 @@ function pushTopic (lessonIndex, topic) {
 }
 ~~~
 
-{{s4.p66}}
-{{s4.p67}}
+{{s2.p83}}
+{{s2.p84}}
 
-{{s4.p68}}
+◘◘**createLessonsDB**◘◘
 
 ~~~js
 async function createLessonsDB () {

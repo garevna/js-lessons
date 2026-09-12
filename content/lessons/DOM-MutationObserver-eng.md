@@ -1,10 +1,10 @@
-# {{s1.h1}}
+# Document Object Model
 
-## {{s2.h1}}
+## MutationObserver
 
-{{s2.p1}}
+{{s0.p1}}
 
-{{s2.p2}}
+Constructor
 
 ~~~js
 const innerText = 'Hello'
@@ -52,6 +52,6 @@ const config = {
 observer.observe(input, config)
 ~~~
 
-{{s2.p3}}
+**Live Demo**
 
 {{{DOM-MutationObserver-1.js}}}

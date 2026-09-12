@@ -38,11 +38,10 @@
   "s4.p3": "Suppose a binary number is stored at the specified address:",
   "s4.p4": "It can be interpreted as a decimal integer:",
   "s4.p5": "or as a string with each character occupying 1 byte:",
-  "s4.p6": "••FGHIKLMN••",
-  "s4.p7": "There are also many other interpretations.",
-  "s4.p8": "^^Variables can store numbers, strings, logical values, specific **⟦f1⟧** and **⟦f2⟧** values, as well as **reference type** data, which we'll get to later.^^",
-  "s4.p9": "So, it is important that the engine knows the type of the data that is stored in the variable.",
-  "s4.p10": "Unlike languages with strict typing, we do not need to specify the type of data we intend to store in a variable when declaring it.",
-  "s4.p11": "**The data type is determined during the process of assigning a value.**",
-  "s4.p12": "This is called **dynamic typing**."
+  "s4.p6": "There are also many other interpretations.",
+  "s4.p7": "^^Variables can store numbers, strings, logical values, specific **⟦f1⟧** and **⟦f2⟧** values, as well as **reference type** data, which we'll get to later.^^",
+  "s4.p8": "So, it is important that the engine knows the type of the data that is stored in the variable.",
+  "s4.p9": "Unlike languages with strict typing, we do not need to specify the type of data we intend to store in a variable when declaring it.",
+  "s4.p10": "**The data type is determined during the process of assigning a value.**",
+  "s4.p11": "This is called **dynamic typing**."
 }

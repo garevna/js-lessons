@@ -7,9 +7,9 @@ ____________________________________________
 {{s2.p1}}
 
 {{s2.p2}}
-{{s2.p3}}
+( "_anonymous_" )
 
-{{s2.p4}}
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 var func = new Function('x', 'y', `
@@ -21,15 +21,15 @@ var func = new Function('x', 'y', `
 func(5, 8, 11, false)
 ~~~
 
+{{s2.p3}}
+{{s2.p4}}
 {{s2.p5}}
-{{s2.p6}}
-{{s2.p7}}
 
 ~~~js
 console.dir(func)
 ~~~
 
-{{s2.p8}}
+{{s2.p6}}
 
 ~~~console
 ▼ ƒ anonymous(x,y,z )
@@ -135,7 +135,7 @@ _________________________________
 
 {{s3.p10}}
 
-{{s3.p11}}
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 function sample () {
@@ -153,7 +153,7 @@ for (var func of funcs) {
 }
 ~~~
 
-{{s3.p12}}
+{{s3.p11}}
 
 ~~~console
 I'm sample
@@ -172,7 +172,7 @@ ____________________________________
 
 {{s4.p2}}
 
-{{s4.p3}}
+◘◘![ico-25 cap] ** 3**◘◘
 
 ~~~js
 var obj = {
@@ -184,8 +184,8 @@ var obj = {
 obj.say()   // google
 ~~~
 
+{{s4.p3}}
 {{s4.p4}}
-{{s4.p5}}
 
 ~~~js
 window.name = 'window'
@@ -205,9 +205,9 @@ obj.say()   // google
 
 _____________________________________________
 
-{{s4.p6}}
+{{s4.p5}}
 
-{{s4.p7}}
+◘◘![ico-25 cap] ** 4**◘◘
 
 ~~~js
 function getName () {
@@ -225,25 +225,25 @@ _____________________________________________
 {{s5.p1}}
 {{s5.p2}}
 
+![ico-20 green-ok] **~apply()~**
+![ico-20 green-ok] **~call()~**
+![ico-20 green-ok] **~bind()~**
+
 {{s5.p3}}
+
 {{s5.p4}}
+
 {{s5.p5}}
 
 {{s5.p6}}
 
 {{s5.p7}}
 
+### ![ico-20 icon] call()
+
 {{s5.p8}}
 
-{{s5.p9}}
-
-{{s5.p10}}
-
-### ![ico-20 icon] {{s6.h1}}
-
-{{s6.p1}}
-
-{{s6.p2}}
+◘◘![ico-25 cap] ** 5**◘◘
 
 ~~~js
 window.name = 'window'
@@ -265,7 +265,7 @@ func.call(figure)    // figure
 func.call(sample)    // sample
 ~~~
 
-{{s6.p3}}
+{{s5.p9}}
 
 ~~~js
 function func () {
@@ -279,19 +279,19 @@ func.call(figure, 9, false, 'Hello')
 func.call(sample, 5, 1, 'Bye')
 ~~~
 
-{{s6.p4}}
+{{s5.p10}}
 
-{{s6.p5}}
-{{s6.p6}}
+••figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]••
+••sample ► Arguments(3) [ 5, 1, "Bye", callee: ƒ, Symbol(Symbol.iterator): ƒ ]••
 
 
 ________________________________________
 
-### ![ico-20 icon] {{s7.h1}}
+### ![ico-20 icon] apply()
 
-{{s7.p1}}
+{{s5.p11}}
 
-{{s7.p2}}
+◘◘![ico-25 cap] ** 6**◘◘
 
 ~~~js
 function func () {
@@ -305,7 +305,7 @@ func.apply(figure, [9, false, 'Hello'])
 func.apply(sample, [5, 1, 'Bye'])
 ~~~
 
-{{s7.p3}}
+{{s5.p12}}
 
 ~~~console
 figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
@@ -315,10 +315,10 @@ sample ► Arguments(3) [ 5, 1, "Bye", callee: ƒ, Symbol(Symbol.iterator): ƒ 
 __________________________________________________
 
 
-{{s7.p4}}
-{{s7.p5}}
+{{s5.p13}}
+{{s5.p14}}
 
-{{s7.p6}}
+◘◘![ico-25 cap] ** 7**◘◘
 
 ~~~js
 var args = [0]
@@ -347,30 +347,30 @@ var objects = [
 objects.forEach(obj => func.apply(obj, args))
 ~~~
 
-{{s7.p7}}
+{{s5.p15}}
 
-{{s7.p8}}
-{{s7.p9}}
-{{s7.p10}}
-{{s7.p11}}
-{{s7.p12}}
-{{s7.p13}}
+••![ico-20 warn] ► Who was called before figure (0):••
+••![ico-20 warn] ► Who was called before sample (1):••
+••figure••
+••![ico-20 warn] ► Who was called before google (2):••
+••figure••
+••sample••
 
 _____________________________
 
-{{s7.p14}}
-{{s7.p15}}
-{{s7.p16}}
+{{s5.p16}}
+{{s5.p17}}
+{{s5.p18}}
 
 ______________________________________________________________________________
 
-### ![ico-20 icon] {{s8.h1}}
+### ![ico-20 icon] bind()
 
-{{s8.p1}}
+{{s5.p19}}
 
-{{s8.p2}}
+{{s5.p20}}
 
-{{s8.p3}}
+◘◘![ico-25 cap] ** 8**◘◘
 
 ~~~js
 function bindContext (func, context, args) {
@@ -386,9 +386,9 @@ var user = { name: 'Фигаро' }
 bindContext(sample, user, 'Hello')
 ~~~
 
-{{s8.p4}}
-{{s8.p5}}
-{{s8.p6}}
+{{s5.p21}}
+{{s5.p22}}
+{{s5.p23}}
 
 ~~~js
 function bindContext (func, context, props) {
@@ -411,11 +411,11 @@ userSayHello()     // Фигаро: Hello
 userSay('Bye')  // Фигаро: Bye
 ~~~
 
-{{s8.p7}}
+{{s5.p24}}
 
 ____________________________
 
-{{s8.p8}}
+◘◘![ico-25 cap] ** 9**◘◘
 
 ~~~js
 var test = (function () {
@@ -442,22 +442,22 @@ funcs[1]()
 funcs[2]()
 ~~~
 
-{{s8.p9}}
+{{s5.p25}}
 
-{{s8.p10}}
-{{s8.p11}}
-{{s8.p12}}
+{{s5.p26}}
+{{s5.p27}}
+{{s5.p28}}
 
 _____________________________
 
-{{s8.p13}}
-{{s8.p14}}
+{{s5.p29}}
+{{s5.p30}}
 
 ____________________________________
 
-{{s8.p15}}
+{{s5.p31}}
 
-{{s8.p16}}
+◘◘![ico-25 cap] **10**◘◘
 
 ~~~js
 var bloom = { name: 'bloom' }
@@ -470,15 +470,15 @@ bloom.sample()
 bloom.google()
 ~~~
 
-{{s8.p17}}
+{{s5.p32}}
 
-{{s8.p18}}
-{{s8.p19}}
-{{s8.p20}}
+{{s5.p33}}
+{{s5.p34}}
+{{s5.p35}}
 
 _______________________________
 
-{{s8.p21}}
+{{s5.p36}}
 
 ~~~js
 bloom.figure()
@@ -486,15 +486,15 @@ bloom.sample()
 bloom.google()
 ~~~
 
-{{s8.p22}}
-{{s8.p23}}
+{{s5.p37}}
+{{s5.p38}}
 
 
 _________________________________________
 
-## ![ico-25 smile] {{s9.h1}}
+## ![ico-25 smile] {{s6.h1}}
 
-{{s9.p1}}
+{{s6.p1}}
 
 ~~~js
 var sample = function () {
@@ -510,4 +510,4 @@ sample()
 
 _________________________
 
-{{s9.p2}}
+{{s6.p2}}

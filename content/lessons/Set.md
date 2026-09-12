@@ -1,16 +1,16 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Set
 
-{{s1.p1}}
+**ES6**
 
-{{s1.p2}}
+{{s0.p1}}
 
-{{s1.p3}}
+{{s0.p2}}
 
-{{s1.p4}}
+{{s0.p3}}
 
 ________________________
 
-{{s1.p5}}
+![ico-25 cap] new Set
 
 ~~~js
 const sample = new Set([5, 1, 3, 8, 1, 5, 3, 3, 8])
@@ -24,7 +24,7 @@ console.log(Array.from(sample))
 // ► (4) [5, 1, 3, 8]
 ~~~
 
-{{s1.p6}}
+{{s0.p4}}
 
 ~~~~Set.prototype
 ▼ Set {constructor: ƒ, has: ƒ, add: ƒ, delete: ƒ, clear: ƒ, …}
@@ -44,11 +44,11 @@ console.log(Array.from(sample))
   ► __proto__: Object
 ~~~~
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] values()
 
-{{s2.p1}}
+{{s0.p5}}
 
-{{s2.p2}}
+{{s0.p6}}
 
 ~~~js
 let done, iterator = sample.values()
@@ -59,15 +59,15 @@ while (!done) {
 }
 ~~~
 
-{{s2.p3}}
+{{s0.p7}}
 
 ________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] add()
 
-{{s3.p1}}
+{{s0.p8}}
 
-{{s3.p2}}
+{{s0.p9}}
 
 ~~~js
 sample.add(1)
@@ -83,11 +83,11 @@ console.log(sample)
 
 ____________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] delete()
 
-{{s4.p1}}
+{{s0.p10}}
 
-{{s4.p2}}
+{{s0.p11}}
 
 ~~~js
 sample.delete(9)
@@ -102,12 +102,12 @@ console.log(sample)
 
 ______________________________________
 
-## ![ico-25 cap] {{s5.h1}}
+## ![ico-25 cap] {{s1.h1}}
 
-{{s5.p1}}
+{{s1.p1}}
 
-{{s5.p2}}
-{{s5.p3}}
+{{s1.p2}}
+{{s1.p3}}
 
 ~~~js
 const users = [
@@ -134,7 +134,7 @@ const userSet = new Set(users)
 console.log(userSet)
 ~~~
 
-{{s5.p4}}
+{{s1.p4}}
 
 ~~~js
 const user1 = {
@@ -154,13 +154,13 @@ const usersNewSet = new Set(usersDoubled)
 console.log(usersNewSet)
 ~~~
 
-{{s5.p5}}
+{{s1.p5}}
 
 _______________________________________________________
 
-## ![ico-25 icon] {{s6.h1}}
+## ![ico-25 icon] {{s2.h1}}
 
-{{s6.p1}}
+{{s2.p1}}
 
 ~~~js
 const human = {
@@ -200,9 +200,9 @@ console.log(humanSet)
 
 _____________________________________________________________
 
-## ![ico-25 cap] {{s7.h1}}
+## ![ico-25 cap] {{s3.h1}}
 
-{{s7.p1}}
+{{s3.p1}}
 
 ~~~js
 function createSet (object = {}) {
@@ -219,7 +219,7 @@ function createSet (object = {}) {
 }
 ~~~
 
-{{s7.p2}}
+{{s3.p2}}
 
 ~~~js
 console.log(createSet({ a: 1, b: 4, c:5, d: 4, e: 5 }))
@@ -257,7 +257,7 @@ console.log(createSet('A9h4G8=45*hG///19*74-78'))
 //         length: 13
 ~~~~
 
-{{s7.p3}}
+{{s3.p3}}
 
 ~~~js
 console.log(Array.from(createSet('A9h4G8=45*hG///19*74-78')).join(''))
@@ -266,11 +266,11 @@ console.log(Array.from(createSet('A9h4G8=45*hG///19*74-78')).join(''))
 ~~~
 ___________________________________________________
 
-{{s7.p4}}
+{{s3.p4}}
 
-## ![ico-25 cap] {{s8.h1}}
+## ![ico-25 cap] {{s4.h1}}
 
-{{s8.p1}}
+{{s4.p1}}
 
 ~~~~js
 const clients = [
@@ -293,7 +293,7 @@ const clients = [
 ]
 ~~~~
 
-{{s8.p2}}
+{{s4.p2}}
 
 ~~~js
 function createSetOfObjects (object = {}) {
@@ -321,15 +321,15 @@ console.log(uniqueClients)
         length: 2
 ~~~~
 
-{{s8.p3}}
+{{s4.p3}}
 
 ~~~js
 uniqueClients.add(JSON.stringify(clients[0]))
 ~~~
 
-{{s8.p4}}
+{{s4.p4}}
 
-{{s8.p5}}
+{{s4.p5}}
 
 ~~~js
 for (const item of uniqueClients) console.log(JSON.parse(item))
@@ -338,11 +338,11 @@ for (const item of uniqueClients) console.log(JSON.parse(item))
 // ► {name: "Margaret", job: "markup-developer"}
 ~~~
 
-{{s8.p6}}
+{{s4.p6}}
 
-{{s8.p7}}
+{{s4.p7}}
 
-{{s8.p8}}
+{{s4.p8}}
 
 ~~~~js
 class UnicElements {
@@ -374,9 +374,9 @@ class UnicElements {
 const testObject = new UnicElements(clients)
 ~~~~
 
-{{s8.p9}}
+{{s4.p9}}
 
-{{s8.p10}}
+{{s4.p10}}
 
 ~~~js
 testObject.next()
@@ -387,11 +387,11 @@ testObject.next()
 // null
 ~~~
 
-{{s8.p11}}
+{{s4.p11}}
 
-{{s8.p12}}
+{{s4.p12}}
 
-{{s8.p13}}
+{{s4.p13}}
 
 ~~~~js
 testObject.add({ name: 'Google', job: 'developer' })
@@ -408,9 +408,9 @@ testObject.next()
 // null
 ~~~~
 
-{{s8.p14}}
+{{s4.p14}}
 
-{{s8.p15}}
+{{s4.p15}}
 
 ~~~~js
 testObject.delete({ name: 'Google', job: 'developer' })
@@ -423,4 +423,4 @@ testObject.next()
 // null
 ~~~~
 
-{{s8.p16}}
+{{s4.p16}}

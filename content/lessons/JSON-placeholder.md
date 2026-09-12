@@ -1,49 +1,49 @@
-## ![ico-30 hw] {{s1.h1}}
+## ![ico-30 hw] json-placeholder
 
-{{s1.p1}}
+{{s0.p1}}
 
 ![](https://garevna.github.io/a-level-js-lessons/src/icons/json-placeholder-logo.png)
 
-{{s1.p2}}
+[JSONPlaceholder](https://jsonplaceholder.typicode.com/)
 
-{{s1.p3}}
+{{s0.p2}}
 
-{{s1.p4}}
+{{s0.p3}}
 
-{{s1.p5}}
+{{s0.p4}}
 
 _____________________________
 
-{{s1.p6}}
+{{s0.p5}}
 
-^^^[{{s1.spoiler1}}]
+^^^[JSONPlaceholder endpoints]
 
 ![](https://lh4.googleusercontent.com/kLZ2AUHmxj_tGElT44CKZEDXYqZ9fKOUbciuV5XDf-tRnKiPT0njS1rJnurGUEI7QGfFLNL6UYRa-noaqWmZ1QcUG_7bKBAYWMSLntBIcA-Kop3T3W-y4w1e-moZvWG-ndn0IPJwtWAOmlE)
 
 ^^^
 _________________________________________________
 
-{{s1.p7}}
+{{s0.p6}}
 
-{{s1.p8}}
+~https://jsonplaceholder.typicode.com/posts~
 
-{{s1.p9}}
+{{s0.p7}}
 
-{{s1.p10}}
+{{s0.p8}}
 
-{{s1.p11}}
+{{s0.p9}}
 
-{{s1.p12}}
+{{s0.p10}}
 
-{{s1.p13}}
+{{s0.p11}}
 
 ____________________________________________
 
-### ![ico-25 cap] {{s2.h1}}
+### ![ico-25 cap] curl
 
-{{s2.p1}}
+{{s0.p12}}
 
-{{s2.p2}}
+{{s0.p13}}
 ~~~console
 $ curl https://jsonplaceholder.typicode.com/comments?postId=1
 ~~~
@@ -52,9 +52,9 @@ $ curl https://jsonplaceholder.typicode.com/comments?postId=1
 
 _____________________________________________
 
-### ![ico-25 cap] {{s3.h1}}
+### ![ico-25 cap] fetch
 
-{{s3.p1}}
+{{s0.p14}}
 
 ~~~js
 fetch('https://jsonplaceholder.typicode.com/comments?postId=1')

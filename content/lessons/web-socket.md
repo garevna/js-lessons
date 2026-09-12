@@ -1,67 +1,67 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] WebSocket
+
+{{s0.p1}}
+
+{{s0.p2}}
+
+{{s0.p3}}
+{{s0.p4}}
+{{s0.p5}}
+
+{{s0.p6}}
+
+{{s0.p7}}
+
+^^^[Request Headers]
+
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Cache-Control: no-cache
+Connection: Upgrade
+Host: echo.websocket.org
+Origin: null
+Pragma: no-cache
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+Sec-WebSocket-Key: FWRPxaoGQhQaeqg1eRPHTw==
+Sec-WebSocket-Version: 13
+Upgrade: websocket
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+
+^^^
+
+{{s0.p8}}
+
+^^^[Response Headers]
+
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: content-type
+Access-Control-Allow-Headers: authorization
+Access-Control-Allow-Headers: x-websocket-extensions
+Access-Control-Allow-Headers: x-websocket-version
+Access-Control-Allow-Headers: x-websocket-protocol
+Access-Control-Allow-Origin: null
+Connection: Upgrade
+Date: Mon, 31 Dec 2018 19:53:07 GMT
+Sec-WebSocket-Accept: OQbuqh0sOBKbPsVMFPKNpI75N8I=
+Server: Kaazing Gateway
+Upgrade: websocket
+
+^^^
+
+{{s0.p9}}
+
+{{s0.p10}}
+
+_____________________________________________
+
+## ![ico-25 hw] {{s1.h1}}
+
 
 {{s1.p1}}
 
 {{s1.p2}}
 
 {{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
-
-{{s1.p6}}
-
-{{s1.p7}}
-
-^^^[{{s1.spoiler1}}]
-
-{{s1.p8}}
-{{s1.p9}}
-{{s1.p10}}
-{{s1.p11}}
-{{s1.p12}}
-{{s1.p13}}
-{{s1.p14}}
-{{s1.p15}}
-{{s1.p16}}
-{{s1.p17}}
-{{s1.p18}}
-{{s1.p19}}
-
-^^^
-
-{{s1.p20}}
-
-^^^[{{s1.spoiler2}}]
-
-{{s1.p21}}
-{{s1.p22}}
-{{s1.p23}}
-{{s1.p24}}
-{{s1.p25}}
-{{s1.p26}}
-{{s1.p27}}
-{{s1.p28}}
-{{s1.p29}}
-{{s1.p30}}
-{{s1.p31}}
-{{s1.p32}}
-
-^^^
-
-{{s1.p33}}
-
-{{s1.p34}}
-
-_____________________________________________
-
-## ![ico-25 hw] {{s2.h1}}
-
-
-{{s2.p1}}
-
-{{s2.p2}}
-
-{{s2.p3}}
 
 ~~~js
 const apiKey = 'oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm'
@@ -69,24 +69,24 @@ const apiKey = 'oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm'
 const websocket = new WebSocket(`wss://demo.piesocket.com/v3/channel_1?api_key=${apiKey}`)
 ~~~
 
-{{s2.p4}}
+{{s1.p4}}
 
 
-{{s2.p5}}
+{{s1.p5}}
 
 
-{{s2.p6}}
-{{s2.p7}}
-{{s2.p8}}
+{{s1.p6}}
+{{s1.p7}}
+{{s1.p8}}
 
-{{s2.p9}}
+{{s1.p9}}
 
-{{s2.p10}}
-{{s2.p11}}
-{{s2.p12}}
-{{s2.p13}}
+{{s1.p10}}
+{{s1.p11}}
+{{s1.p12}}
+{{s1.p13}}
 
-{{s2.p14}}
+◘◘![ico-20 cap]◘◘
 
 ~~~js
 const apiKey = 'oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm'
@@ -112,7 +112,7 @@ websocket.onerror = function (event) {
 }
 ~~~
 
-{{s2.p15}}
+{{s1.p14}}
 
 ~~~console
 CONNECTED
@@ -122,7 +122,19 @@ DISCONNECTED
 
 _____________________________________________
 
-## ![ico-25 hw] {{s3.h1}}
+## ![ico-25 hw] {{s2.h1}}
+
+{{s2.p1}}
+
+{{s2.p2}}
+
+{{s2.p3}}
+
+{{s2.p4}}
+
+### ![ico-20 bash] {{s3.h1}}
+
+••$ npm install ws••
 
 {{s3.p1}}
 
@@ -132,49 +144,37 @@ _____________________________________________
 
 {{s3.p4}}
 
-### ![ico-20 bash] {{s4.h1}}
+{{s3.p5}}
 
-{{s4.p1}}
-
-{{s4.p2}}
-
-{{s4.p3}}
-
-{{s4.p4}}
-
-{{s4.p5}}
-
-{{s4.p6}}
-
-{{s4.p7}}
+{{s3.p6}}
 
 ~~~js
 const socket = require('ws')
 ~~~
 
-{{s4.p8}}
+{{s3.p7}}
 
-{{s4.p9}}
+{{s3.p8}}
 
-{{s4.p10}}
+◘◘![ico-20 cap]◘◘
 
 ~~~js
 const server = new WebSocket.Server({ port: 8080 })
 ~~~
 
-{{s4.p11}}
+{{s3.p9}}
 
-{{s4.p12}}
+{{s3.p10}}
 
-{{s4.p13}}
+{{s3.p11}}
 
-{{s4.p14}}
+{{s3.p12}}
 
-{{s4.p15}}
+{{s3.p13}}
 
-{{s4.p16}}
+{{s3.p14}}
 
-{{s4.p17}}
+◘◘![ico-20 cap]◘◘
 
 ~~~js
 server.on('connection', socket => {
@@ -190,9 +190,9 @@ server.on('connection', socket => {
 })
 ~~~
 
-{{s4.p18}}
+{{s3.p15}}
 
-{{s4.p19}}
+◘◘![ico-20 cap] start.js◘◘
 
 ~~~js
 const WebSocket = require('ws')
@@ -212,18 +212,18 @@ server.on('connection', socket => {
 })
 ~~~
 
-{{s4.p20}}
+{{s3.p16}}
 
-{{s4.p21}}
+••$ node start.js••
 
-{{s4.p22}}
-{{s4.p23}}
+{{s3.p17}}
+~http://localhost:8080/~
 
-{{s4.p24}}
+{{s3.p18}}
 
-{{s4.p25}}
+{{s3.p19}}
 
-{{s4.p26}}
+{{s3.p20}}
 
 ~~~js
 const socket = new WebSocket('ws://localhost:8080')
@@ -240,35 +240,35 @@ socket.addEventListener('message', event => {
 })
 ~~~
 
-{{s4.p27}}
+{{s3.p21}}
 
-{{s4.p28}}
+{{s3.p22}}
 
-{{s4.p29}}
+{{s3.p23}}
 
-{{s4.p30}}
+{{s3.p24}}
 
 ~~~js
 const socket = new WebSocket('ws://localhost:8080')
 ~~~
 
-{{s4.p31}}
+{{s3.p25}}
 
-{{s4.p32}}
+{{s3.p26}}
 
-{{s4.p33}}
+{{s3.p27}}
 
-{{s4.p34}}
+{{s3.p28}}
 
-{{s4.p35}}
+{{s3.p29}}
 
-{{s4.p36}}
+{{s3.p30}}
 
-{{s4.p37}}
+{{s3.p31}}
 
-{{s4.p38}}
+{{s3.p32}}
 
-{{s4.p39}}
+{{s3.p33}}
 
 ~~~console
 $ node start.js
@@ -277,7 +277,7 @@ received from a client:
                 Hello, do you listen to me ?
 ~~~
 
-{{s4.p40}}
+{{s3.p34}}
 
 ~~~console
 ▼ { name: "server", message: "I listen to you" }
@@ -288,27 +288,27 @@ received from a client:
 
 _____________________________________________
 
-## ![ico-25 hw] {{s5.h1}}
+## ![ico-25 hw] {{s4.h1}}
+
+{{s4.p1}}
+
+### ![ico-50 node] {{s5.h1}}
 
 {{s5.p1}}
 
-### ![ico-50 node] {{s6.h1}}
+{{s5.p2}}
 
-{{s6.p1}}
-
-{{s6.p2}}
-
-{{s6.p3}}
+{{s5.p3}}
 
 ~~~js
 const fs = require('fs')
 ~~~
 
-{{s6.p4}}
+{{s5.p4}}
 
-{{s6.p5}}
+{{s5.p5}}
 
-^^^[{{s6.spoiler1}}]
+^^^[users.json]
 
 ~~~json
 [
@@ -338,7 +338,7 @@ const fs = require('fs')
 ^^^
 
 
-^^^[{{s6.spoiler2}}]
+^^^[messages.json]
 
 ~~~json
 [
@@ -366,16 +366,16 @@ const fs = require('fs')
 
 ^^^
 
-{{s6.p6}}
+{{s5.p6}}
 
 ~~~js
 const users = []
 const messages = []
 ~~~
 
-{{s6.p7}}
+{{s5.p7}}
 
-{{s6.p8}}
+{{s5.p8}}
 
 ~~~js
 fs.readFile('users.json', 'utf8', (err, content) => users.push(...JSON.parse(content)))
@@ -383,30 +383,30 @@ fs.readFile('users.json', 'utf8', (err, content) => users.push(...JSON.parse(con
 fs.readFile('messages.json', 'utf8', (err, content) => messages.push(...JSON.parse(content)))
 ~~~
 
-{{s6.p9}}
+{{s5.p9}}
 
-{{s6.p10}}
-{{s6.p11}}
-{{s6.p12}}
-{{s6.p13}}
-{{s6.p14}}
+{{s5.p10}}
+{{s5.p11}}
+{{s5.p12}}
+{{s5.p13}}
+{{s5.p14}}
 
-{{s6.p15}}
+{{s5.p15}}
 
-{{s6.p16}}
+{{s5.p16}}
 
 ~~~js
 const WebSocket = require('ws')
 const server = new WebSocket.Server({ port: 8080 })
 ~~~
 
-{{s6.p17}}
+{{s5.p17}}
 
-{{s6.p18}}
+{{s5.p18}}
 
-{{s6.p19}}
+{{s5.p19}}
 
-{{s6.p20}}
+{{s5.p20}}
 
 ~~~js
 server.on('connection', client => {
@@ -414,16 +414,16 @@ server.on('connection', client => {
 }
 ~~~
 
-{{s6.p21}}
+{{s5.p21}}
 
-{{s6.p22}}
+{{s5.p22}}
 
-{{s6.p23}}
-{{s6.p24}}
-{{s6.p25}}
-{{s6.p26}}
+| • add     | • clear   |
+| • delete  | • entries |
+| • forEach | • has     |
+| • keys    | • values  |
 
-{{s6.p27}}
+{{s5.p23}}
 
 ~~~js
 server.on('connection', client => {
@@ -433,7 +433,7 @@ server.on('connection', client => {
 }
 ~~~
 
-{{s6.p28}}
+{{s5.p24}}
 
 ~~~js
 server.on('connection', client => {
@@ -448,15 +448,15 @@ server.on('connection', client => {
 }
 ~~~
 
-{{s6.p29}}
+{{s5.p25}}
 
 ~~~js
 const randomValue = num => Math.round(Math.random() * num)
 ~~~
 
-{{s6.p30}}
+{{s5.p26}}
 
-{{s6.p31}}
+◘◘![ico-20 file] start.js◘◘
 
 ~~~js
 const fs = require('fs')
@@ -487,10 +487,10 @@ const randomValue = num => Math.round(Math.random() * num)
 
 __________________________________________________________________________
 
-### ![ico-20 icon] {{s7.h1}}
+### ![ico-20 icon] {{s6.h1}}
 
 
-{{s7.p1}}
+◘◘![ico-20 file] index.html◘◘
 
 ~~~html
 &lt;!DOCTYPE html>
@@ -512,13 +512,13 @@ __________________________________________________________________________
 &lt;/html>
 ~~~
 
-{{s7.p2}}
+{{s6.p1}}
 
-{{s7.p3}}
+{{s6.p2}}
 
-{{s7.p4}}
+{{s6.p3}}
 
-{{s7.p5}}
+◘◘![ico-20 file] chat.js◘◘
 
 ~~~js
 class ChatElement extends HTMLElement {
@@ -634,15 +634,15 @@ class ChatElement extends HTMLElement {
 customElements.define('chat-element', ChatElement)
 ~~~
 
-{{s7.p6}}
+{{s6.p4}}
 
-{{s7.p7}}
-{{s7.p8}}
-{{s7.p9}}
+{{s6.p5}}
+{{s6.p6}}
+{{s6.p7}}
 
-{{s7.p10}}
+{{s6.p8}}
 
-{{s7.p11}}
+◘◘![ico-20 file] index.js◘◘
 
 ~~~js
 const socket = new WebSocket('ws://localhost:8080')
@@ -668,23 +668,23 @@ socket.addEventListener('message', event => {
 window.onresize = chat.resize.bind(chat)
 ~~~
 
-{{s7.p12}}
+{{s6.p9}}
 
 _________________________________________________________________________
 
-### ![ico-20 icon] {{s8.h1}}
+### ![ico-20 icon] {{s7.h1}}
 
-{{s8.p1}}
+{{s7.p1}}
 
-{{s8.p2}}
+••$ node start.js••
 
-{{s8.p3}}
+{{s7.p2}}
 
-{{s8.p4}}
+{{s7.p3}}
 
-{{s8.p5}}
+{{s7.p4}}
 
-{{s8.p6}}
+{{s7.p5}}
 
 _____________________________________________
 

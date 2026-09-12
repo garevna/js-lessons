@@ -7,9 +7,9 @@
 
 {{s1.p4}}
 
-## ![ico-30 icon] {{s2.h1}}
+## ![ico-30 icon] while
 
-{{s2.p1}}
+{{s1.p5}}
 
 ~~~javascript
 while (условие) {
@@ -17,13 +17,13 @@ while (условие) {
 }
 ~~~
 
-{{s2.p2}}
+{{s1.p6}}
 
-{{s2.p3}}
-{{s2.p4}}
-{{s2.p5}}
+{{s1.p7}}
+{{s1.p8}}
+{{s1.p9}}
 
-{{s2.p6}}
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 var n = 5
@@ -33,9 +33,9 @@ while (n < 5) {
 }
 ~~~
 
-{{s2.p7}}
+{{s1.p10}}
 
-{{s2.p8}}
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 var res = 0, n = 1
@@ -46,13 +46,13 @@ while (n) {
 }
 ~~~
 
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
+{{s1.p11}}
+{{s1.p12}}
+{{s1.p13}}
 
-{{s2.p12}}
+{{s1.p14}}
 
-{{s2.p13}}
+◘◘![ico-25 cap] ** 3**◘◘
 
 ~~~js
 var res = 0, n = 0
@@ -63,13 +63,13 @@ while (n < 0.5) {
 }
 ~~~
 
-{{s2.p14}}
+{{s1.p15}}
 
 ______________________
 
-## ![ico-30 icon] {{s3.h1}}
+## ![ico-30 icon] do...while
 
-{{s3.p1}}
+{{s1.p16}}
 
 ~~~js
 do {
@@ -77,12 +77,12 @@ do {
 } while (условие)
 ~~~
 
-{{s3.p2}}
+{{s1.p17}}
 
-{{s3.p3}}
-{{s3.p4}}
+{{s1.p18}}
+{{s1.p19}}
 
-{{s3.p5}}
+◘◘![ico-25 cap] ** 4**◘◘
 
 ~~~js
 do {
@@ -93,9 +93,9 @@ do {
 
 ______________________________________________________
 
-## ![ico-30 icon] {{s4.h1}}
+## ![ico-30 icon] Tests
 
-{{s4.p1}}
+◘◘![ico-25 hw]** 1**◘◘
 ~~~js
 do {
   var rand = Math.random()
@@ -103,9 +103,9 @@ do {
 } while (true)
 ~~~
 
-→→→ {{s4.quiz1}} | {{s4.quizVariants1}} | {{s4.quizAnswer1}}→→→
+→→→ {{s1.quiz1}} | {{s1.quizVariants1}} | {{s1.quizAnswer1}}→→→
 
-{{s4.p2}}
+◘◘![ico-25 hw]** 2**◘◘
 ~~~js
 var num = 1
 
@@ -114,9 +114,9 @@ while (Math.random() < .5) {
 }
 ~~~
 
-→→→ {{s4.quiz2}} | {{s4.quizVariants2}} | {{s4.quizAnswer2}}→→→
+→→→ {{s1.quiz2}} | {{s1.quizVariants2}} | {{s1.quizAnswer2}}→→→
 
-{{s4.p3}}
+◘◘![ico-25 hw]** 3**◘◘
 ~~~js
 var num = prompt('Enter the integer') - 0
 var res = 0
@@ -131,9 +131,9 @@ while (true) {
 }
 ~~~
 
-→→→ {{s4.quiz3}} | {{s4.quizVariants3}} | {{s4.quizAnswer3}}→→→
+→→→ {{s1.quiz3}} | {{s1.quizVariants3}} | {{s1.quizAnswer3}}→→→
 
-{{s4.p4}}
+◘◘![ico-25 hw]** 4**◘◘
 ~~~js
 var num = prompt('Enter the integer') - 0
 var res = 1
@@ -147,8 +147,8 @@ while (true) {
 }
 ~~~
 
-→→→ {{s4.quiz4}} | {{s4.quizVariants4}} | {{s4.quizAnswer4}}→→→
+→→→ {{s1.quiz4}} | {{s1.quizVariants4}} | {{s1.quizAnswer4}}→→→
 
 ________________
 
-{{s4.p5}}
+[![ico-30 hw] **Quiz**](quiz/while)

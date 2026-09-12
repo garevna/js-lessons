@@ -1,30 +1,30 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] String
 
-{{s1.p1}}
-{{s1.p2}}
+{{s0.p1}}
+{{s0.p2}}
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] String.fromCharCode()
 
-{{s2.p1}}
+{{s0.p3}}
 
-{{s2.p2}}
+{{s0.p4}}
 
-{{s2.p3}}
-{{s2.p4}}
+{{s0.p5}}
+{{s0.p6}}
 
-{{s2.p5}}
+![ico-25 cap] ** 1 **
 
 ~~~js
 String.fromCharCode(123, 105, 125)  // "{i}"
 ~~~
 
-{{s2.p6}}
+![ico-25 cap] ** 2 **
 
 ~~~js
 String.fromCharCode(48, 49, 50, 51, 52, 53) // "012345"
 ~~~
 
-{{s2.p7}}
+![ico-25 cap] ** 3 **
 
 ~~~js
 var str = ''
@@ -36,4 +36,4 @@ for (var x = 97; x < 105; x++) {
 console.log(str) // abcdefgh
 ~~~
 
-{{s2.p8}}
+{{s0.p7}}

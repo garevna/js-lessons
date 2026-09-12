@@ -1,27 +1,27 @@
 # ![ico-30 study] {{s1.h1}}
 
-{{s1.p1}}
+| ![](illustrations/douglas-crockford.jpg) | «_I think the lack of classes is one of JavaScript's great strengths_»<hr>[Douglas Crockford](external/crockford) |
 
 ☼☼☼ {{s1.slogan1}} ☼☼☼
 
-{{s1.p2}}
+{{s1.p1}}
 
-{{s1.p3}}
+{{s1.p2}}
 
 ~~~js
 const creator = (name, age) => ({ name, age })
 ~~~
 
+{{s1.p3}}
 {{s1.p4}}
 {{s1.p5}}
-{{s1.p6}}
 
+{{s1.p6}}
 {{s1.p7}}
+
 {{s1.p8}}
 
-{{s1.p9}}
-
-{{s1.p10}}
+![ico-25 cap] ** 1**
 
 ~~~js
 function creator = (name, age) {
@@ -29,7 +29,7 @@ function creator = (name, age) {
 }
 ~~~
 
-{{s1.p11}}
+{{s1.p9}}
 
 ~~~js
 const user = new creator('Piter', 25)
@@ -39,13 +39,13 @@ console.log(user instanceof creator) // false
 console.log(user instanceof Object) // true
 ~~~
 
-{{s1.p12}}
+{{s1.p10}}
 
-{{s1.p13}}
+{{s1.p11}}
 
 ____________________________
 
-{{s1.p14}}
+![ico-25 cap] ** 2**
 
 ~~~js
 function creator () {
@@ -57,12 +57,12 @@ const obj = new creator(5, 8, 7)
 obj instanceof creator  // false
 ~~~
 
-{{s1.p15}}
-{{s1.p16}}
+{{s1.p12}}
+{{s1.p13}}
 
 ____________________________
 
-{{s1.p17}}
+![ico-25 cap] ** 3**
 
 ~~~js
 function simple () {
@@ -74,12 +74,12 @@ const obj = new simple
 obj instanceof simple  // true
 ~~~
 
-{{s1.p18}}
-{{s1.p19}}
+{{s1.p14}}
+{{s1.p15}}
 
-{{s1.p20}}
+{{s1.p16}}
 
-{{s1.p21}}
+{{s1.p17}}
 ______________________________
 
 ## ![ico-20 icon] {{s2.h1}}
@@ -87,11 +87,11 @@ ______________________________
 {{s2.p1}}
 {{s2.p2}}
 
+![ico-25 cap] ** 4**
+
 {{s2.p3}}
 
 {{s2.p4}}
-
-{{s2.p5}}
 
 ~~~js
 const google = (function (params, pin) {
@@ -109,7 +109,7 @@ console.log(google.getVar('token'))            // No access
 console.log(google.getVar('name', '789541'))   // Google
 ~~~
 
-{{s2.p6}}
+{{s2.p5}}
 
 ~~~console
 
@@ -122,11 +122,11 @@ console.log(google.getVar('name', '789541'))   // Google
 
 _____________________________
 
-{{s2.p7}}
+![ico-25 cap] ** 5**
 
+{{s2.p6}}
+{{s2.p7}}
 {{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
 
 ~~~~js
 class User {
@@ -152,7 +152,7 @@ google.getVar('token', '789451')  // "AfG78-1nm*15ph"
 google.getVar('cash', '789451')   // 25000
 ~~~~
 
-{{s2.p11}}
+{{s2.p9}}
 
 ~~~console
 
@@ -184,7 +184,7 @@ __________________________________
 {{s3.p4}}
 {{s3.p5}}
 
-{{s3.p6}}
+![ico-25 cap] ** 6**
 
 ~~~~js
 function User () {
@@ -227,7 +227,7 @@ currentUser.write(`I'm here since ${new Date().toLocaleString()}`)
 
 _____________________________
 
-{{s3.p7}}
+**visitor**
 
 ~~~console
 
@@ -241,7 +241,7 @@ _____________________________
 
 ______________________________
 
-{{s3.p8}}
+**currentUser**
 
 ~~~console
 
@@ -279,9 +279,9 @@ console.dir(currentUser.__proto__.constructor)
 
 ~~~
 
-{{s3.p9}}
+{{s3.p6}}
 
-{{s3.p10}}
+{{s3.p7}}
 
 ~~~js
 class User {
@@ -298,6 +298,6 @@ class User {
   }
 }
 ~~~
-{{s3.p11}}
-{{s3.p12}}
-{{s3.p13}}
+{{s3.p8}}
+{{s3.p9}}
+{{s3.p10}}

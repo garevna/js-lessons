@@ -1,20 +1,20 @@
-# ![ico-35 study] {{s1.h1}}
+# ![ico-35 study] Document Object Model (DOM)
 
-## ![ico-30 icon] {{s2.h1}}
+## ![ico-30 icon] {{s1.h1}}
 
-{{s2.p1}}
+{{s1.p1}}
 
-{{s2.p2}}
+{{s1.p2}}
 
-{{s2.p3}}
+{{s1.p3}}
 
-{{s2.p4}}
+{{s1.p4}}
 
-### ![ico-25 icon] {{s3.h1}}
+### ![ico-25 icon] appendChild()
 
-{{s3.p1}}
+{{s1.p5}}
 
-{{s3.p2}}
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~html
 &ltbody>
@@ -30,7 +30,7 @@ document
   .appendChild (section)
 ~~~
 
-{{s3.p3}}
+{{s1.p6}}
 
 ~~~html
 &ltbody>
@@ -42,7 +42,7 @@ document
 
 _______________________
 
-{{s3.p4}}
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 var style = document.createElement('style')
@@ -56,7 +56,7 @@ style
   .appendChild(document.createTextNode(`div { color: blue; }`))
 ~~~
 
-{{s3.p5}}
+{{s1.p7}}
 
 ~~~html
 &lthead>
@@ -69,7 +69,7 @@ style
 
 _______________________________________
 
-{{s3.p6}}
+◘◘![ico-25 cap] ** 3**◘◘
 
 ~~~js
 var script = document.createElement('script')
@@ -79,17 +79,17 @@ document.body.appendChild(script)
 
 _________________________________________
 
-### ![ico-25 icon] {{s4.h1}}
+### ![ico-25 icon] removeChild()
 
-{{s4.p1}}
+{{s1.p8}}
 
-{{s4.p2}}
+{{s1.p9}}
 
-{{s4.p3}}
+{{s1.p10}}
 
 ____________________________
 
-{{s4.p4}}
+◘◘![ico-25 cap] ** 4**◘◘
 
 ~~~html
 &ltbody>
@@ -109,7 +109,7 @@ var figure = document.querySelector('.figure')
 figure.appendChild(removed)
 ~~~
 
-{{s4.p5}}
+{{s1.p11}}
 
 ~~~html
 &ltbody>
@@ -123,9 +123,9 @@ figure.appendChild(removed)
 
 _______________________________
 
-### ![ico-25 icon] {{s5.h1}}
+### ![ico-25 icon] insertBefore()
 
-{{s5.p1}}
+◘◘![ico-25 cap] ** 5**◘◘
 
 ~~~js
 function addElement (tagName, container = document.body) {
@@ -140,7 +140,7 @@ var figure = addElement ('figure', main)
 main.insertBefore(document.createElement('p'), section)
 ~~~
 
-{{s5.p2}}
+{{s1.p12}}
 
 ~~~html
 &ltbody>
@@ -154,11 +154,11 @@ main.insertBefore(document.createElement('p'), section)
 
 _____________________________________________
 
-### ![ico-25 icon] {{s6.h1}}
+### ![ico-25 icon] insertAdjacentHTML()
 
-{{s6.p1}}
+{{s1.p13}}
 
-{{s6.p2}}
+◘◘![ico-25 cap] ** 6**◘◘
 
 ~~~html
 &ltbody>
@@ -169,7 +169,7 @@ _____________________________________________
 &lt/body>
 ~~~
 
-{{s6.p3}}
+{{s1.p14}}
 
 ~~~js
 var section = document.body.querySelector('section')
@@ -179,7 +179,7 @@ section.insertAdjacentHTML('beforeEnd', '<p>beforeEnd</p>')
 section.insertAdjacentHTML('afterEnd', '<p>afterEnd</p>')
 ~~~
 
-{{s6.p4}}
+{{s1.p15}}
 
 ~~~html
 &ltbody>
@@ -197,9 +197,9 @@ section.insertAdjacentHTML('afterEnd', '<p>afterEnd</p>')
 
 ______________________________________________
 
-### ![ico-25 icon] {{s7.h1}}
+### ![ico-25 icon] insertAdjacentElement()
 
-{{s7.p1}}
+◘◘![ico-25 cap] ** 7**◘◘
 
 ~~~html
 &ltbody>
@@ -224,7 +224,7 @@ document.getElementsByTagName('figure')[0]
   .insertAdjacentElement('afterbegin', document.createElement('li'))
 ~~~
 
-{{s7.p2}}
+{{s1.p16}}
 
 ~~~html
 &ltbody>
@@ -243,15 +243,15 @@ document.getElementsByTagName('figure')[0]
 
 ________________________________________
 
-## ![ico-30 icon] {{s8.h1}}
+## ![ico-30 icon] {{s2.h1}}
 
 ____________________________
 
-### ![ico-25 icon] {{s9.h1}}
+### ![ico-25 icon] childNodes
 
-{{s9.p1}}
+{{s2.p1}}
 
-{{s9.p2}}
+◘◘![ico-25 cap] ** 8**◘◘
 
 ~~~html
 &lt;body>
@@ -279,13 +279,13 @@ ____________________________
 &lt/body>
 ~~~
 
-{{s9.p3}}
+{{s2.p2}}
 
 ~~~js
 document.body.childNodes
 ~~~
 
-{{s9.p4}}
+{{s2.p3}}
 
 ~~~console
 ▼ NodeList(7) [text, div.container, text, h1.header, text, p.paragraph, text]
@@ -300,15 +300,15 @@ document.body.childNodes
   ► __proto__: NodeList
 ~~~
 
-{{s9.p5}}
+{{s2.p4}}
 
-{{s9.p6}}
+{{s2.p5}}
 
 ~~~js
 document.querySelector('[title]').childNodes
 ~~~
 
-{{s9.p7}}
+{{s2.p6}}
 
 ~~~console
 ▼ NodeList(5) [text, a.paragraph, text, img#picture.galleryPicture, text]
@@ -322,21 +322,21 @@ document.querySelector('[title]').childNodes
 ~~~
 ___________________
 
-{{s9.p8}}
+[![ico-20 link] **w3schools**](external/w3-child-nodes )
 
 _________________________________
 
-### ![ico-25 icon] {{s10.h1}}
+### ![ico-25 icon] children
 
-{{s10.p1}}
+{{s2.p7}}
 
-{{s10.p2}}
+{{s2.p8}}
 
 ~~~js
 document.body.children
 ~~~
 
-{{s10.p3}}
+{{s2.p9}}
 
 ~~~console
 ▼ HTMLCollection(3) [div.container, h1.header, p.paragraph]
@@ -349,11 +349,11 @@ document.body.children
 
 ___________________________________
 
-### ![ico-25 icon] {{s11.h1}}
+### ![ico-25 icon] parentNode
 
-{{s11.p1}}
+{{s2.p10}}
 
-{{s11.p2}}
+◘◘![ico-25 cap] ** 9**◘◘
 
 ~~~html
 &ltbody>
@@ -371,13 +371,13 @@ console.dir(section.parentNode)  // ► div#demo
 
 _____________________________________________
 
-### ![ico-25 icon] {{s12.h1}}
+### ![ico-25 icon] {{s3.h1}}
 
-{{s12.p1}}
+{{s3.p1}}
 
-{{s12.p2}}
+{{s3.p2}}
 
-{{s12.p3}}
+◘◘![ico-25 cap] **10**◘◘
 
 ~~~js
 var section = document.body
@@ -393,30 +393,30 @@ for (var prop in section) {
 
 _____________________________________
 
-### ![ico-25 icon] {{s13.h1}}
+### ![ico-25 icon] Memory leaks
 
-{{s13.p1}}
-{{s13.p2}}
-{{s13.p3}}
-{{s13.p4}}
-{{s13.p5}}
-{{s13.p6}}
+{{s3.p3}}
+{{s3.p4}}
+{{s3.p5}}
+{{s3.p6}}
+{{s3.p7}}
+{{s3.p8}}
 
 _______________________________________
 
-### ![ico-25 icon] {{s14.h1}}
+### ![ico-25 icon] {{s4.h1}}
 
-{{s14.p1}}
-{{s14.p2}}
-{{s14.p3}}
-{{s14.p4}}
+{{s4.p1}}
+{{s4.p2}}
+{{s4.p3}}
+{{s4.p4}}
 
-{{s14.p5}}
+{{s4.p5}}
 
-{{s14.p6}}
-{{s14.p7}}
+{{s4.p6}}
+{{s4.p7}}
 
-{{s14.p8}}
+◘◘![ico-25 cap] **setAttribute** | **getAttribute**◘◘
 
 ~~~js
 document.body.setAttribute('title', 'Hello')
@@ -426,7 +426,7 @@ console.info(document.body.getAttribute('title'))
 
 ______________________
 
-{{s14.p9}}
+◘◘![ico-25 cap] **getBoundingClientRect**◘◘
 
 ~~~js
 var div = document.body
@@ -441,7 +441,7 @@ div.setAttribute('style', `
 console.info(div.getBoundingClientRect())
 ~~~
 
-{{s14.p10}}
+{{s4.p8}}
 
 ~~~console
 ▼ DOMRect {x: 8, y: 8, width: 202, height: 202, top: 8, …}
@@ -457,7 +457,7 @@ console.info(div.getBoundingClientRect())
 ~~~
 ___________________________
 
-{{s14.p11}}
+◘◘![ico-25 cap] **backgroundImage**◘◘
 
 ~~~js
 var btn = document.createElement('button')
@@ -474,7 +474,7 @@ document.body.appendChild(btn)
 
 _________________________________________
 
-## ![ico-30 hw] {{s15.h1}}
+## ![ico-30 hw] Tests
 
 ◘◘** 1**◘◘
 ~~~js
@@ -484,7 +484,7 @@ var elem = document.body
 elem.tagName = 'div'
 ~~~
 
-→→→ {{s15.quiz1}} | {{s15.quizVariants1}} | {{s15.quizAnswer1}}→→→
+→→→ {{s4.quiz1}} | {{s4.quizVariants1}} | {{s4.quizAnswer1}}→→→
 
 
 ◘◘** 2**◘◘
@@ -492,7 +492,7 @@ elem.tagName = 'div'
 document.title = 'DOM'
 ~~~
 
-→→→ {{s15.quiz2}} | {{s15.quizVariants2}} | {{s15.quizAnswer2}}→→→
+→→→ {{s4.quiz2}} | {{s4.quizVariants2}} | {{s4.quizAnswer2}}→→→
 
 ◘◘** 3**◘◘
 ~~~js
@@ -510,12 +510,12 @@ for (var text of paragraph) {
 }
 ~~~
 
-→→→ {{s15.quiz3}} | {{s15.quizVariants3}} | {{s15.quizAnswer3}}→→→
+→→→ {{s4.quiz3}} | {{s4.quizVariants3}} | {{s4.quizAnswer3}}→→→
 
 
 ◘◘** 4**◘◘
 
-→→→ {{s15.quiz4}} | {{s15.quizVariants4}} | {{s15.quizAnswer4}}→→→
+→→→ {{s4.quiz4}} | {{s4.quizVariants4}} | {{s4.quizAnswer4}}→→→
 
 
 ◘◘** 5**◘◘
@@ -537,8 +537,8 @@ elems.forEach(function (elem) {
 })
 ~~~
 
-→→→ {{s15.quiz5}} | {{s15.quizVariants5}} | {{s15.quizAnswer5}}→→→
+→→→ {{s4.quiz5}} | {{s4.quizVariants5}} | {{s4.quizAnswer5}}→→→
 
 _________________________________
 
-{{s15.p1}}
+[![ico-20 link] w3schools](external/w3-dom-elements)

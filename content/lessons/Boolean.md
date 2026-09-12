@@ -35,7 +35,7 @@ ______________________________________
 
 {{s3.p2}}
 
-{{s3.p3}}
+◘◘ ![ico-25 coffee] ** 1**◘◘
 ~~~js
 var apple = {
   color: 'yellow',
@@ -43,25 +43,25 @@ var apple = {
 }
 ~~~
 
+{{s3.p3}}
+
 {{s3.p4}}
+
+| apple.color | apple.shape | appleIsRed | appleIsRound | appleIsRedAndRound |
+|   'red'     |   'round'   |   ~true~   | ~true~       |   ~true~           |
+|   'yellow'  |   'round'   |   ~false~  | ~true~       |   ~false~          |
+|   'red'     |   'square'  |   ~true~   | ~false~      |   ~false~          |
+|   'green'   |   'square'  |   ~false~  | ~false~      |   ~false~          |
 
 {{s3.p5}}
 
 {{s3.p6}}
+
 {{s3.p7}}
+
 {{s3.p8}}
+
 {{s3.p9}}
-{{s3.p10}}
-
-{{s3.p11}}
-
-{{s3.p12}}
-
-{{s3.p13}}
-
-{{s3.p14}}
-
-{{s3.p15}}
 
 _________________________________________________________________________
 
@@ -87,43 +87,43 @@ _________________________________________________________________________
 {{s4.p16}}
 {{s4.p17}}
 
-§§§§ {{s4.demo1}} | boolean_01_template §§§§
+§§§§ Demo | boolean_01_template §§§§
 
 _________________________________________________________________________
 
 ### ![ico-30 hw] {{s5.h1}}
 
-{{s5.p1}}
+◘◘![ico-25 hw]** 1**◘◘
+
+→→→ 5 > '4' | true, false | true→→→
+
+◘◘![ico-25 hw]** 2**◘◘
+
+→→→ 5 !== '5' | true, false | true→→→
+
+◘◘![ico-25 hw]** 3**◘◘
+
+→→→ 10 != '10' | true, false | false→→→
+
+◘◘![ico-25 hw]** 4**◘◘
+
+→→→ true != 1 | true, false | false→→→
+
+◘◘![ico-25 hw]** 5**◘◘
 
 →→→ {{s5.quiz1}} | {{s5.quizVariants1}} | {{s5.quizAnswer1}}→→→
 
-{{s5.p2}}
+◘◘![ico-25 hw]** 6**◘◘
 
-→→→ {{s5.quiz2}} | {{s5.quizVariants2}} | {{s5.quizAnswer2}}→→→
+→→→ true <= 1 | true, false | true→→→
 
-{{s5.p3}}
+◘◘![ico-25 hw]** 7**◘◘
 
-→→→ {{s5.quiz3}} | {{s5.quizVariants3}} | {{s5.quizAnswer3}}→→→
+→→→ 'abc' < 'cde' | true, false | true→→→
 
-{{s5.p4}}
+◘◘![ico-25 hw]** 8**◘◘
 
-→→→ {{s5.quiz4}} | {{s5.quizVariants4}} | {{s5.quizAnswer4}}→→→
-
-{{s5.p5}}
-
-→→→ {{s5.quiz5}} | {{s5.quizVariants5}} | {{s5.quizAnswer5}}→→→
-
-{{s5.p6}}
-
-→→→ {{s5.quiz6}} | {{s5.quizVariants6}} | {{s5.quizAnswer6}}→→→
-
-{{s5.p7}}
-
-→→→ {{s5.quiz7}} | {{s5.quizVariants7}} | {{s5.quizAnswer7}}→→→
-
-{{s5.p8}}
-
-→→→ {{s5.quiz8}} | {{s5.quizVariants8}} | {{s5.quizAnswer8}}→→→
+→→→ 'Welcome!'.length < 'How are you?'.length | true, false | true→→→
 
 __________________________________________________________________________
 
@@ -176,7 +176,7 @@ var appleIsNotRed = !appleIsRed
 {{s7.p6}}
 {{s7.p7}}
 
-{{s7.p8}}
+◘◘![ico-25 coffee] ** 2**◘◘
 
 ~~~js
 !(5 > 8)    // true
@@ -187,7 +187,7 @@ var appleIsNotRed = !appleIsRed
 !false     // true
 ~~~
 
-{{s7.p9}}
+◘◘![ico-25 coffee] ** 3**◘◘
 
 ~~~js
 !(5 > 4)   // false
@@ -198,7 +198,7 @@ var appleIsNotRed = !appleIsRed
 !true      // false
 ~~~
 
-§§§§ {{s7.demo1}} | boolean_02_template §§§§
+§§§§ Demo | boolean_02_template §§§§
 
 ____________________________________________________________
 
@@ -224,12 +224,12 @@ var appleIsRound = apple.shape === 'round'
 var appleIsRedAndRound = appleIsRed && appleIsRound
 ~~~
 
-§§§§ {{s8.demo1}} | boolean_03_template §§§§
+§§§§ Demo | boolean_03_template §§§§
 
 {{s8.p4}}
 {{s8.p5}}
 
-{{s8.p6}}
+◘◘![ico-25 coffee] ** 4**◘◘
 
 ~~~js
 5 > 8 && 4 < 5   // false  
@@ -239,7 +239,7 @@ var appleIsRedAndRound = appleIsRed && appleIsRound
 false && true    // false
 ~~~
 
-{{s8.p7}}
+◘◘![ico-25 coffee] ** 5**◘◘
 
 ~~~js
 8 < 5 && 4 < 5   // false
@@ -249,7 +249,7 @@ false && true    // false
 false && true    // false
 ~~~
 
-{{s8.p8}}
+◘◘![ico-25 coffee] ** 6**◘◘
 
 ~~~js
 var x = 4, y = 10, z = 8
@@ -261,7 +261,7 @@ z < y            // true,
 false && true    // false
 ~~~
 
-{{s8.p9}}
+◘◘![ico-25 coffee] ** 7**◘◘
 
 ~~~js
 var x = 4, y = 10, z = 8
@@ -273,19 +273,19 @@ z < y            // true,
 true && true     // true
 ~~~
 
-{{s8.p10}}
-{{s8.p11}}
+{{s8.p6}}
+{{s8.p7}}
 
-§§§§ {{s8.demo2}} | boolean_04_template §§§§
+§§§§ Demo | boolean_04_template §§§§
 
-{{s8.p12}}
+{{s8.p8}}
 
 ![](illustrations/logical-operators.svg)
 
-{{s8.p13}}
-{{s8.p14}}
+{{s8.p9}}
+{{s8.p10}}
 
-§§§§ {{s8.demo3}} | boolean_05_template §§§§
+§§§§ Demo | boolean_05_template §§§§
 
 _________________________________________________
 
@@ -293,9 +293,9 @@ _________________________________________________
 
 {{s9.p1}}
 
-§§§§ {{s9.demo1}} | boolean_06_template §§§§
+§§§§ Demo | boolean_06_template §§§§
 
-{{s9.p2}}
+◘◘![ico-25 coffee] ** 8**◘◘
 
 ~~~js
 5 > 8 || 4 < 5   // true
@@ -307,7 +307,7 @@ _________________________________________________
 false || true    // true
 ~~~
 
-{{s9.p3}}
+◘◘![ico-25 coffee] ** 9**◘◘
 
 ~~~js
 5 > 8 || 4 > 5   // false
@@ -319,7 +319,7 @@ false || true    // true
 false || false   // false
 ~~~
 
-{{s9.p4}}
+◘◘![ico-25 coffee] **10**◘◘
 
 ~~~js
 var x = 4, y = 10, z = 8
@@ -333,7 +333,7 @@ z < y            // true,
 false || true    // true
 ~~~
 
-{{s9.p5}}
+◘◘![ico-25 coffee] **11**◘◘
 
 ~~~js
 x > y || z > y   // false
@@ -345,11 +345,11 @@ z > y            // false,
 false || false   // false
 ~~~
 
-{{s9.p6}}
+{{s9.p2}}
 
 ![](illustrations/logical-operators-1.svg)
 
-{{s9.p7}}
+◘◘![ico-25 coffee] **12**◘◘
 
 ~~~js
 var object = {
@@ -366,7 +366,7 @@ true
 ~~~
 _________________________________________________________________________
 
-{{s9.p8}}
+{{s9.p3}}
 
 ~~~js
 !test || !!test    // всегда  true
@@ -376,185 +376,185 @@ _________________________________________________________________________
 
 _________________________________________________________________________
 
-### ![ico-25 icon] {{s10.h1}}
+### ![ico-25 icon] Tests
 
-{{s10.p1}}
-
-~~~js
-var x = undefined
-~~~
-
-→→→ {{s10.quiz1}} | {{s10.quizVariants1}} | {{s10.quizAnswer1}} →→→
-
-{{s10.p2}}
+◘◘![ico-25 hw] ** 1**◘◘
 
 ~~~js
 var x = undefined
 ~~~
 
-→→→ {{s10.quiz2}} | {{s10.quizVariants2}} | {{s10.quizAnswer2}} →→→
+→→→ x ◧ !x | undefined, null, true, false | true →→→
 
-{{s10.p3}}
+◘◘![ico-25 hw] ** 2**◘◘
+
+~~~js
+var x = undefined
+~~~
+
+→→→ x && !x | undefined, null, true, false | undefined →→→
+
+◘◘![ico-25 hw] ** 3**◘◘
 
 ~~~js
 var x = null
 ~~~
 
-→→→ {{s10.quiz3}} | {{s10.quizVariants3}} | {{s10.quizAnswer3}} →→→
+→→→ x ◧ !x | undefined, null, true, false | true →→→
 
-{{s10.p4}}
+◘◘![ico-25 hw] ** 4**◘◘
 
 ~~~js
 var x = null
 ~~~
 
-→→→ {{s10.quiz4}} | {{s10.quizVariants4}} | {{s10.quizAnswer4}} →→→
+→→→ x && !x | undefined, null, true, false | null →→→
 
-{{s10.p5}}
-
-~~~js
-var x = NaN
-~~~
-
-→→→ {{s10.quiz5}} | {{s10.quizVariants5}} | {{s10.quizAnswer5}} →→→
-
-{{s10.p6}}
+◘◘![ico-25 hw] ** 5**◘◘
 
 ~~~js
 var x = NaN
 ~~~
 
-→→→ {{s10.quiz6}} | {{s10.quizVariants6}} | {{s10.quizAnswer6}} →→→
+→→→ x ◧ !x | NaN, null, true, false | true →→→
 
-{{s10.p7}}
+◘◘![ico-25 hw] ** 6**◘◘
+
+~~~js
+var x = NaN
+~~~
+
+→→→ x && !x | NaN, null, true, false | NaN →→→
+
+◘◘![ico-25 hw] ** 7**◘◘
 
 ~~~js
 var x = 5
 ~~~
 
-→→→ {{s10.quiz7}} | {{s10.quizVariants7}} | {{s10.quizAnswer7}} →→→
+→→→ x ◧ !x | NaN, null, 5, true, false | 5 →→→
 
-{{s10.p8}}
+◘◘![ico-25 hw] ** 8**◘◘
 
 ~~~js
 var x = 5
 ~~~
 
-→→→ {{s10.quiz8}} | {{s10.quizVariants8}} | {{s10.quizAnswer8}} →→→
+→→→ x && !x | NaN, null, 5, true, false | false →→→
 
 
-{{s10.p9}}
-
-~~~js
-var x = 'Hi!'
-~~~
-
-→→→ {{s10.quiz9}} | {{s10.quizVariants9}} | {{s10.quizAnswer9}} →→→
-
-
-{{s10.p10}}
+◘◘![ico-25 hw] ** 9**◘◘
 
 ~~~js
 var x = 'Hi!'
 ~~~
 
-→→→ {{s10.quiz10}} | {{s10.quizVariants10}} | {{s10.quizAnswer10}} →→→
+→→→ x ◧ !x | undefined, 'Hi!', true, false | Hi! →→→
 
-{{s10.p11}}
+
+◘◘![ico-25 hw] **10**◘◘
+
+~~~js
+var x = 'Hi!'
+~~~
+
+→→→ x && !x | undefined, 'Hi!', true, false | false →→→
+
+◘◘![ico-25 hw] **11**◘◘
 
 ~~~js
 var x = ''
 ~~~
 
-→→→ {{s10.quiz11}} | {{s10.quizVariants11}} | {{s10.quizAnswer11}} →→→
+→→→ x ◧ !x | undefined, '""', true, false | true →→→
 
 
-{{s10.p12}}
+◘◘![ico-25 hw] **12**◘◘
 
 ~~~js
 var x = ''
 ~~~
 
-→→→ {{s10.quiz12}} | {{s10.quizVariants12}} | {{s10.quizAnswer12}} →→→
+→→→ x && !x | undefined, '""', true, false | "" →→→
 
 
-{{s10.p13}}
-
-~~~js
-var x = 4, y = 10
-~~~
-
-→→→ {{s10.quiz13}} | {{s10.quizVariants13}} | {{s10.quizAnswer13}} →→→
-
-
-{{s10.p14}}
+◘◘![ico-25 hw] **13**◘◘
 
 ~~~js
 var x = 4, y = 10
 ~~~
 
-→→→ {{s10.quiz14}} | {{s10.quizVariants14}} | {{s10.quizAnswer14}} →→→
+→→→ (x > y) ◧ (x < 5) | 4, 10, true, false | true →→→
 
 
-{{s10.p15}}
+◘◘![ico-25 hw] **14**◘◘
+
+~~~js
+var x = 4, y = 10
+~~~
+
+→→→ (x > y) && (x < 5) | 4, 10, true, false | false →→→
+
+
+◘◘![ico-25 hw] **15**◘◘
 
 ~~~js
 var students = ['Piter', 'Anna', 'Demid', 'Josef']
 ~~~
 
-→→→ {{s10.quiz15}} | {{s10.quizVariants15}} | {{s10.quizAnswer15}} →→→
+→→→ students.length && students[1] | 4, 'Piter', 'Anna', 'Demid', 'Josef', true, false | Anna →→→
 
 
-{{s10.p16}}
-
-~~~js
-var students = ['Piter', 'Anna', 'Demid', 'Josef']
-~~~
-
-→→→ {{s10.quiz16}} | {{s10.quizVariants16}} | {{s10.quizAnswer16}} →→→
-
-
-{{s10.p17}}
+◘◘![ico-25 hw] **16**◘◘
 
 ~~~js
 var students = ['Piter', 'Anna', 'Demid', 'Josef']
 ~~~
 
-→→→ {{s10.quiz17}} | {{s10.quizVariants17}} | {{s10.quizAnswer17}} →→→
+→→→ students.length ◧ students[2] | 4, 'Piter', 'Anna', 'Demid', 'Josef', true, false | 4 →→→
 
 
-{{s10.p18}}
+◘◘![ico-25 hw] **17**◘◘
+
+~~~js
+var students = ['Piter', 'Anna', 'Demid', 'Josef']
+~~~
+
+→→→ students.length > 4 ◧ students[2] | 4, 'Piter', 'Anna', 'Demid', 'Josef', true, false | Demid →→→
+
+
+◘◘![ico-25 hw] **18**◘◘
 
 ~~~js
 var array = [true, 'Google', NaN, undefined]
 ~~~
 
-→→→ {{s10.quiz18}} | {{s10.quizVariants18}} | {{s10.quizAnswer18}} →→→
+→→→ array.length > 4 ◧ typeof array[2] | 4, 'string', 'number', 'boolean', 'object', true, false | number →→→
 
-{{s10.p19}}
+◘◘![ico-25 hw] **19**◘◘
 
 ~~~js
 var array = [true, 'Google', NaN, undefined]
 ~~~
 
-→→→ {{s10.quiz19}} | {{s10.quizVariants19}} | {{s10.quizAnswer19}} →→→
+→→→ array.length > 4 ◧ typeof array[2] | 4, 'string', 'number', 'boolean', 'object', true, false | number →→→
 
 
-{{s10.p20}}
+◘◘![ico-25 hw] **20**◘◘
 
 ~~~js
 var alpha = NaN
 var betta = typeof alpha
 ~~~
 
-→→→ {{s10.quiz20}} | {{s10.quizVariants20}} | {{s10.quizAnswer20}} →→→
+→→→ b === 'number' | NaN, 'number', 'boolean', true, false | true →→→
 
 
-{{s10.p21}}
+◘◘![ico-25 hw] **21**◘◘
 
 ~~~js
 var alpha = NaN
 var betta = typeof alpha === 'string'
 ~~~
 
-→→→  {{s10.quiz21}} | {{s10.quizVariants21}} | {{s10.quizAnswer21}} →→→
+→→→  !a && !b | NaN, true, false | true →→→

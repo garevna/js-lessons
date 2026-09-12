@@ -1,15 +1,15 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] JSON
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
+{{s0.p2}}
 
-{{s1.p3}}
+{{s0.p3}}
 
-{{s1.p4}}
+{{s0.p4}}
 
-{{s1.p5}}
-{{s1.p6}}
+![ico-20 green-ok] **JSON.stringify()**
+![ico-20 green-ok] **JSON.parse()**
 
 ~~~~console
 ▼ JSON
@@ -34,13 +34,13 @@
 
 _____________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] JSON.stringify()
 
-{{s2.p1}}
-{{s2.p2}}
-{{s2.p3}}
+{{s0.p5}}
+{{s0.p6}}
+{{s0.p7}}
 
-{{s2.p4}}
+![ico-25 cap] ** 1**
 
 ~~~js
 var obj = {
@@ -58,9 +58,9 @@ JSON.stringify(obj)
 '{"name":"sample","type":"figure","color":"green","size":200,"position":[250,250]}'
 ~~~
 
-{{s2.p5}}
+![ico-25 cap] ** 2**
 
-{{s2.p6}}
+{{s0.p8}}
 
 ~~~js
 var obj = {
@@ -78,9 +78,9 @@ JSON.stringify(obj, ['name', 'type', 'color'])
 '{"name":"sample","type":"figure","color":"green"}'
 ~~~
 
-{{s2.p7}}
+![ico-25 cap] ** 3**
 
-{{s2.p8}}
+{{s0.p9}}
 
 ~~~js
 var obj = {
@@ -107,24 +107,24 @@ console.log(JSON.stringify(obj, null, 2))
 }
 ~~~
 
-### {{s3.h1}}
+### {{s1.h1}}
 
-{{s3.p1}}
-{{s3.p2}}
+{{s1.p1}}
+{{s1.p2}}
 
-{{s3.p3}}
+{{s1.p3}}
 
-{{s3.p4}}
+![ico-25 cap] ** 4**
 
 ~~~js
 console.log(JSON.stringify(window, null, 2))
 ~~~
 
-{{s3.p5}}
+••![ico-20 error] Uncaught TypeError: Converting circular structure to JSON••
 
-{{s3.p6}}
+{{s1.p4}}
 
-{{s3.p7}}
+![ico-25 cap] ** 5**
 
 ~~~js
 var user = {
@@ -149,19 +149,19 @@ console.log(JSON.stringify(user, null, 2))
 }
 ~~~
 
-{{s3.p8}}
+{{s1.p5}}
 
 _____________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] JSON.parse()
 
-{{s4.p1}}
-{{s4.p2}}
+{{s1.p6}}
+{{s1.p7}}
 
-{{s4.p3}}
-{{s4.p4}}
+{{s1.p8}}
+{{s1.p9}}
 
-{{s4.p5}}
+![ico-25 cap] ** 6**
 
 ~~~js
 var x = `{
@@ -191,17 +191,17 @@ JSON.parse(x)
 
 ___________________
 
-## ![ico-25 icon] {{s5.h1}}
+## ![ico-25 icon] {{s2.h1}}
 
-{{s5.p1}}
+{{s2.p1}}
 
-{{s5.p2}}
+{{s2.p2}}
 
-{{s5.p3}}
+{{s2.p3}}
 
-{{s5.p4}}
+{{s2.p4}}
 
-{{s5.p5}}
+![ico-25 cap] ** 7**
 
 ~~~js
 var obj = {
@@ -214,38 +214,38 @@ var obj = {
 var sample = JSON.parse(JSON.stringify(obj))
 ~~~
 
-{{s5.p6}}
+{{s2.p5}}
 
-{{s5.p7}}
+{{s2.p6}}
 
 ~~~js
 var test = Object.assign({}, obj)
 ~~~
 
-{{s5.p8}}
+{{s2.p7}}
 
 ~~~js
 test.position === obj.position
 ~~~
-{{s5.p9}}
+{{s2.p8}}
 
-{{s5.p10}}
+{{s2.p9}}
 
 ~~~js
 sample.position === obj.position
 ~~~
 
-{{s5.p11}}
+{{s2.p10}}
 
 ------------------------------------
 
-## ![ico-25 icon] {{s6.h1}}
+## ![ico-25 icon] {{s3.h1}}
 
-{{s6.p1}}
+{{s3.p1}}
 
-{{s6.p2}}
+![ico-25 cap] ** 8**
 
-{{s6.p3}}
+{{s3.p2}}
 
 ~~~js
 Function.prototype.toJSON = function () {
@@ -253,7 +253,7 @@ Function.prototype.toJSON = function () {
 }
 ~~~
 
-{{s6.p4}}
+{{s3.p3}}
 
 ~~~js
 var user = {
@@ -277,7 +277,7 @@ console.log(JSON.stringify(user, null, 2))
 }
 ~~~
 
-{{s6.p5}}
+{{s3.p4}}
 
 ~~~js
 var user = {
@@ -290,7 +290,7 @@ var user = {
 }
 ~~~
 
-{{s6.p6}}
+{{s3.p5}}
 
 ~~~js
 JSON.parseFuncs = function (obj) {
@@ -303,7 +303,7 @@ JSON.parseFuncs = function (obj) {
 }
 ~~~
 
-{{s6.p7}}
+{{s3.p6}}
 
 ~~~js
 const piter = JSON.parseFuncs(JSON.stringify(user))

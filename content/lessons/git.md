@@ -1,194 +1,194 @@
-# ![ico-50 git-ver] {{s1.h1}}
+# ![ico-50 git-ver] Git
 
 @@@@
 
-{{s1.p1}}
+{{s0.p1}}
 ![](illustrations/Linus-Torvalds.jpg)
 (2005)
-{{s1.p2}}
+{{s0.p2}}
 
 @@@@
 
 _______________________________________________________________________________
 
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
-{{s1.p7}}
+{{s0.p3}}
+{{s0.p4}}
+{{s0.p5}}
+{{s0.p6}}
+{{s0.p7}}
 
-{{s1.p8}}
-{{s1.p9}}
+{{s0.p8}}
+{{s0.p9}}
 
-{{s1.p10}}
+{{s0.p10}}
 _______________________________________________________________________________
 
-^^^[{{s1.spoiler1}}]
+^^^[{{s0.spoiler1}}]
 
-{{s1.p11}}
-{{s1.p12}}
-{{s1.p13}}
+{{s0.p11}}
+{{s0.p12}}
+{{s0.p13}}
 
-{{s1.p14}}
-{{s1.p15}}
-{{s1.p16}}
+{{s0.p14}}
+{{s0.p15}}
+{{s0.p16}}
 
-{{s1.p17}}
-{{s1.p18}}
-{{s1.p19}}
-{{s1.p20}}
+{{s0.p17}}
+{{s0.p18}}
+{{s0.p19}}
+{{s0.p20}}
 
-{{s1.p21}}
+{{s0.p21}}
 
-{{s1.p22}}
-{{s1.p23}}
-{{s1.p24}}
-{{s1.p25}}
-{{s1.p26}}
-{{s1.p27}}
-{{s1.p28}}
-{{s1.p29}}
+{{s0.p22}}
+{{s0.p23}}
+{{s0.p24}}
+{{s0.p25}}
+(**~pull~** = **~fetch~** + **~merge~**)
+{{s0.p26}}
+{{s0.p27}}
+{{s0.p28}}
 
 ^^^
 
 ____________________________________________________
 
-## ![ico-30 icon] {{s2.h1}}
+## ![ico-30 icon] {{s1.h1}}
 
-{{s2.p1}}
-{{s2.p2}}
-{{s2.p3}}
-{{s2.p4}}
+{{s1.p1}}
+{{s1.p2}}
+{{s1.p3}}
+{{s1.p4}}
 
-{{s2.p5}}
-
-@@@@
-
-{{s2.p6}}
-{{s2.p7}}
+{{s1.p5}}
 
 @@@@
 
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
+[![ico-40 atom] Atom](https://atom.io/)
+[![ico-50 sublime] SublimeText](https://www.sublimetext.com/)
 
-{{s2.p11}}
+@@@@
 
-{{s2.p12}}
-{{s2.p13}}
+{{s1.p6}}
+[%%%Installing git%%%](https://gitforwindows.org/)
+{{s1.p7}}
 
-{{s2.p14}}
+{{s1.p8}}
+
+[%%%![ico-70 github]%%%](https://github.com/)
+{{s1.p9}}
+
+{{s1.p10}}
 
 ____________________________________________________
 
-## ![ico-30 bash] {{s3.h1}}
+## ![ico-30 bash] Git BASH
 
-{{s3.p1}}
-{{s3.p2}}
+{{s1.p11}}
+(**CLI** - _command line interpreter_)
 
-{{s3.p3}}
+{{s1.p12}}
 
-{{s3.p4}}
+{{s1.p13}}
 
-{{s3.p5}}
+••![ico-20 bash] $ mkdir <folder name>••
 
-{{s3.p6}}
+{{s1.p14}}
 
 ![](illustrations/git-bash-cd.png)
 
-{{s3.p7}}
-{{s3.p8}}
+{{s1.p15}}
+{{s1.p16}}
 
-{{s3.p9}}
-{{s3.p10}}
+{{s1.p17}}
+{{s1.p18}}
 
-{{s3.p11}}
+••![ico-20 bash] $ git init••
 
 ![](illustrations/git-bash-init.png)
 
-{{s3.p12}}
-{{s3.p13}}
-{{s3.p14}}
+{{s1.p19}}
+{{s1.p20}}
+{{s1.p21}}
 
-{{s3.p15}}
-{{s3.p16}}
+{{s1.p22}}
+{{s1.p23}}
 
 ______________________________________________________
 
-### ![ico-20 bash] {{s4.h1}}
+### ![ico-20 bash] git config
 
-{{s4.p1}}
+{{s1.p24}}
 
-{{s4.p2}}
+{{s1.p25}}
 
-{{s4.p3}}
-{{s4.p4}}
+{{s1.p26}}
+••![ico-20 bash] $ git config --global user.email <email>••
 
-{{s4.p5}}
-{{s4.p6}}
-{{s4.p7}}
-{{s4.p8}}
-{{s4.p9}}
-{{s4.p10}}
+{{s1.p27}}
+{{s1.p28}}
+{{s1.p29}}
+{{s1.p30}}
+{{s1.p31}}
+{{s1.p32}}
 
-{{s4.p11}}
+{{s1.p33}}
 
 ![](illustrations/git-bash-config.png)
 
 ____________________________________________________
 
-### ![ico-20 bash] {{s5.h1}}
+### ![ico-20 bash] git branch
 
-{{s5.p1}}
+{{s1.p34}}
 
-{{s5.p2}}
+{{s1.p35}}
 
-{{s5.p3}}
+••![ico-20 bash] $ git branch  &lt;branch name>••
 
-{{s5.p4}}
+{{s1.p36}}
 
-{{s5.p5}}
+••![ico-20 bash] $ git checkout &lt;branch name>••
 
-{{s5.p6}}
+{{s1.p37}}
 
-{{s5.p7}}
+••![ico-20 bash] $ git  checkout  -b  &lt;branch name>••
 
-{{s5.p8}}
+{{s1.p38}}
 
-{{s5.p9}}
+••![ico-20 bash] $ git  checkout  -b  develop••
 
-{{s5.p10}}
+{{s1.p39}}
 
-{{s5.p11}}
+••![ico-20 bash] $ git branch --delete  &lt;branch name>••
 
-{{s5.p12}}
+{{s1.p40}}
 
-{{s5.p13}}
+••![ico-20 bash] $ git branch -d  &lt;branch name>••
 
-{{s5.p14}}
+{{s1.p41}}
 
-{{s5.p15}}
+{{s1.p42}}
 
-{{s5.p16}}
-{{s5.p17}}
+••![ico-20 bash] $ git checkout develop••
+••![ico-20 bash] $ git merge master••
 
-{{s5.p18}}
-{{s5.p19}}
-{{s5.p20}}
-{{s5.p21}}
+{{s1.p43}}
+{{s1.p44}}
+{{s1.p45}}
+{{s1.p46}}
 
-{{s5.p22}}
+{{s1.p47}}
 
-{{s5.p23}}
+••![ico-20 bash] $ git branch --list••
 
-{{s5.p24}}
+{{s1.p48}}
 
 ![](illustrations/git-branch-list.png)
 
-^^^[{{s5.spoiler1}}]
+^^^[{{s1.spoiler1}}]
 
-{{s5.p25}}
+{{s1.p49}}
 
 ~~~html
 &lt;html>
@@ -205,19 +205,19 @@ ____________________________________________________
 &lt;/html>
 ~~~
 
-{{s5.p26}}
+{{s1.p50}}
 
 ~~~html
 &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD      и       =======
 ~~~
 
-{{s5.p27}}
+{{s1.p51}}
 
-{{s5.p28}}
-{{s5.p29}}
+{{s1.p52}}
+{{s1.p53}}
 
-{{s5.p30}}
-{{s5.p31}}
+{{s1.p54}}
+{{s1.p55}}
 
 ~~~html
 &lt;html>
@@ -230,392 +230,392 @@ ____________________________________________________
 &lt;/html>
 ~~~
 
-{{s5.p32}}
+{{s1.p56}}
 
-{{s5.p33}}
-{{s5.p34}}
+••![ico-20 bash] $ git add index.html••
+••![ico-20 bash] $ git commit -m "Merge fixed conflict"••
 
 ^^^
 ______________________________________________________
 
-# ![ico-50 git] {{s6.h1}}
+# ![ico-50 git] github
 
-{{s6.p1}}
-{{s6.p2}}
-{{s6.p3}}
+{{s1.p57}}
+{{s1.p58}}
+{{s1.p59}}
 
 ______________________________________________________
 
-{{s6.p4}}
+{{s1.p60}}
 ![](illustrations/create-github-repo.png)
 
-{{s6.p5}}
-{{s6.p6}}
+{{s1.p61}}
+{{s1.p62}}
 
 _________________________________________________________
 
-## ![ico-25 hw]  {{s7.h1}}
+## ![ico-25 hw]  {{s2.h1}}
 
-{{s7.p1}}
-{{s7.p2}}
-{{s7.p3}}
-{{s7.p4}}
-{{s7.p5}}
-{{s7.p6}}
-{{s7.p7}}
-{{s7.p8}}
+{{s2.p1}}
+{{s2.p2}}
+{{s2.p3}}
+{{s2.p4}}
+{{s2.p5}}
+{{s2.p6}}
+{{s2.p7}}
+{{s2.p8}}
 
-{{s7.p9}}
+![ico-20 bash] **git clone**
 
-{{s7.p10}}
+{{s2.p9}}
 
-{{s7.p11}}
-{{s7.p12}}
-{{s7.p13}}
-{{s7.p14}}
+{{s2.p10}}
+{{s2.p11}}
+{{s2.p12}}
+{{s2.p13}}
 
 ![](illustrations/github-new-repo.png)
 
-{{s7.p15}}
+{{s2.p14}}
 
 ![](illustrations/github-copy-repo-link.png)
 
-{{s7.p16}}
-{{s7.p17}}
-{{s7.p18}}
+{{s2.p15}}
+{{s2.p16}}
+{{s2.p17}}
 
-{{s7.p19}}
+••![ico-20 bash]$ cd  z:/home/common••
 
-{{s7.p20}}
+{{s2.p18}}
 
-{{s7.p21}}
+••![ico-20 bash]$ git clone https://github.com/garevna/students_homeworks.git••
 
-{{s7.p22}}
+{{s2.p19}}
 
 ![](illustrations/git-clone.png)
 
-{{s7.p23}}
+{{s2.p20}}
 
 ![](illustrations/git-clone-result.png)
 
-{{s7.p24}}
-{{s7.p25}}
-{{s7.p26}}
+{{s2.p21}}
+{{s2.p22}}
+{{s2.p23}}
 
-{{s7.p27}}
+{{s2.p24}}
 
-{{s7.p28}}
+{{s2.p25}}
 
 ![](illustrations/git-clone-readme.png)
 
 __________________________________________________
 
-{{s7.p29}}
+![ico-20 bash] **git status**
 
-{{s7.p30}}
-{{s7.p31}}
-{{s7.p32}}
+{{s2.p26}}
+{{s2.p27}}
+{{s2.p28}}
 
-{{s7.p33}}
+{{s2.p29}}
 
 ![](illustrations/git-status-1.png)
 
 _____________________________
 
-{{s7.p34}}
+![ico-20 bash] **git add**
 
-{{s7.p35}}
-{{s7.p36}}
-{{s7.p37}}
-{{s7.p38}}
-{{s7.p39}}
+{{s2.p30}}
+{{s2.p31}}
+{{s2.p32}}
+{{s2.p33}}
+{{s2.p34}}
 
-{{s7.p40}}
+••![ico-20 bash]$ git add README.md••
 
-{{s7.p41}}
+{{s2.p35}}
 
-{{s7.p42}}
+••![ico-20 bash]$ git add * ••
 
-{{s7.p43}}
+{{s2.p36}}
 
 ![](illustrations/git-add-1.png)
 
 _____________________________
 
-{{s7.p44}}
+![ico-20 bash] **git commit**
 
-{{s7.p45}}
+{{s2.p37}}
 
-{{s7.p46}}
+{{s2.p38}}
 
-{{s7.p47}}
+••![ico-20 bash]$ git commit -m "first commit:  README.md added"••
 
 ![](illustrations/git-commit-1.png)
 
-{{s7.p48}}
+{{s2.p39}}
 
-{{s7.p49}}
-{{s7.p50}}
-{{s7.p51}}
+{{s2.p40}}
+{{s2.p41}}
+{{s2.p42}}
 
-{{s7.p52}}
+{{s2.p43}}
 
-{{s7.p53}}
+••"nothing to commit, working directory clean"••
 
-{{s7.p54}}
+{{s2.p44}}
 
 __________________________
 
-{{s7.p55}}
+![ico-20 bash] **git remote**
 
-{{s7.p56}}
-{{s7.p57}}
-{{s7.p58}}
-{{s7.p59}}
-{{s7.p60}}
-{{s7.p61}}
-{{s7.p62}}
-{{s7.p63}}
+{{s2.p45}}
+{{s2.p46}}
+{{s2.p47}}
+{{s2.p48}}
+{{s2.p49}}
+{{s2.p50}}
+{{s2.p51}}
+{{s2.p52}}
 
-{{s7.p64}}
+{{s2.p53}}
 
 ![](illustrations/git-remote-1.png)
 
 ___________________________
 
-{{s7.p65}}
+![ico-20 bash] **git push**
 
-{{s7.p66}}
-{{s7.p67}}
-{{s7.p68}}
+{{s2.p54}}
+{{s2.p55}}
+{{s2.p56}}
 
-{{s7.p69}}
+••![ico-20 bash]$ git push origin master••
 
-{{s7.p70}}
-{{s7.p71}}
+{{s2.p57}}
+{{s2.p58}}
 
-{{s7.p72}}
+••![ico-20 bash]$ git push origin master:gh-pages••
 
 ![](illustrations/git-push-1.png)
 
-{{s7.p73}}
+{{s2.p59}}
 
-{{s7.p74}}
-{{s7.p75}}
-{{s7.p76}}
+{{s2.p60}}
+{{s2.p61}}
+{{s2.p62}}
 
-{{s7.p77}}
+{{s2.p63}}
 
 ![](illustrations/git-push-2.png)
 
 __________________________
 
-{{s7.p78}}
+![ico-20 bash] **git log**
 
-{{s7.p79}}
+{{s2.p64}}
 
-{{s7.p80}}
+{{s2.p65}}
 
 ![](illustrations/git-log.png)
 
 __________________________________________________________________________
 
-## ![ico-25 hw] {{s8.h1}}
+## ![ico-25 hw] {{s3.h1}}
 
-{{s8.p1}}
-{{s8.p2}}
-{{s8.p3}}
-{{s8.p4}}
-{{s8.p5}}
+{{s3.p1}}
+{{s3.p2}}
+{{s3.p3}}
+{{s3.p4}}
+{{s3.p5}}
 
-{{s8.p6}}
+![ico-20 bash] **git init**
 
-{{s8.p7}}
+{{s3.p6}}
 
-{{s8.p8}}
+{{s3.p7}}
 
-{{s8.p9}}
-{{s8.p10}}
-{{s8.p11}}
-{{s8.p12}}
-{{s8.p13}}
-{{s8.p14}}
-{{s8.p15}}
+{{s3.p8}}
+{{s3.p9}}
+{{s3.p10}}
+{{s3.p11}}
+{{s3.p12}}
+{{s3.p13}}
+{{s3.p14}}
 
 ![](illustrations/git-init-2.png)
 
 __________________________
 
-{{s8.p16}}
+{{s3.p15}}
 
-{{s8.p17}}
+••![ico-20 bash]$ mkdir assets••
 
-{{s8.p18}}
-{{s8.p19}}
-{{s8.p20}}
-{{s8.p21}}
-{{s8.p22}}
+{{s3.p16}}
+{{s3.p17}}
+{{s3.p18}}
+{{s3.p19}}
+{{s3.p20}}
 
 ![](illustrations/git-status-2.png)
 
 __________________________
 
-{{s8.p23}}
-{{s8.p24}}
+{{s3.p21}}
+{{s3.p22}}
 
-{{s8.p25}}
+{{s3.p23}}
 
 ![](illustrations/git-add-2.png)
 
-{{s8.p26}}
+![ico-20 bash] **git rm --cached**
 
-{{s8.p27}}
+{{s3.p24}}
 
-{{s8.p28}}
+••![ico-20 bash]$ git rm --cached  assets/style.css••
 
-{{s8.p29}}
+{{s3.p25}}
 
 ![](illustrations/git-rm.png)
 
 __________________________
 
-{{s8.p30}}
+![ico-20 bash] **git commit**
 
-{{s8.p31}}
+{{s3.p26}}
 
-{{s8.p32}}
+••![ico-20 bash]$ git commit -m "Test creating remote repo from  local"••
 
-{{s8.p33}}
-{{s8.p34}}
-{{s8.p35}}
-{{s8.p36}}
+{{s3.p27}}
+{{s3.p28}}
+{{s3.p29}}
+{{s3.p30}}
 
 ![](illustrations/git-commit-2.png)
 
-{{s8.p37}}
-{{s8.p38}}
+{{s3.p31}}
+{{s3.p32}}
 
-{{s8.p39}}
+{{s3.p33}}
 
-{{s8.p40}}
+![ico-20 bash] **git remote add**
 
-{{s8.p41}}
-{{s8.p42}}
+{{s3.p34}}
+{{s3.p35}}
 
-{{s8.p43}}
+••![ico-20 bash]$ git remote add origin test https://github.com/garevna/test.git••
 
-{{s8.p44}}
-{{s8.p45}}
+{{s3.p36}}
+{{s3.p37}}
 
 ![](illustrations/git-remote-2.png)
 
 __________________________
 
-{{s8.p46}}
+![ico-20 bash] **git push**
 
-{{s8.p47}}
+{{s3.p38}}
 
-{{s8.p48}}
+••![ico-20 bash]$ git push test master••
 
 __________________________________________________________________________
 
-# ![ico-30 git] {{s9.h1}}
+# ![ico-30 git] {{s4.h1}}
 
-{{s9.p1}}
-{{s9.p2}}
+{{s4.p1}}
+{{s4.p2}}
 
-{{s9.p3}}
+{{s4.p3}}
 
-{{s9.p4}}
+••![ico-20 bash]$ ls -al ~/.ssh••
 
-{{s9.p5}}
+{{s4.p4}}
 
-{{s9.p6}}
+{{s4.p5}}
 
-{{s9.p7}}
+••![ico-20 bash]$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"••
 
-{{s9.p8}}
+{{s4.p6}}
 
-{{s9.p9}}
-{{s9.p10}}
+••Enter passphrase (empty for no passphrase):••
+••Enter same passphrase again:••
 
-{{s9.p11}}
+{{s4.p7}}
 
-{{s9.p12}}
-{{s9.p13}}
+{{s4.p8}}
+{{s4.p9}}
 
-{{s9.p14}}
+••![ico-20 bash]$ eval $(ssh-agent -s)••
 
-{{s9.p15}}
+{{s4.p10}}
 
-{{s9.p16}}
+{{s4.p11}}
 
-{{s9.p17}}
+{{s4.p12}}
 
-{{s9.p18}}
+{{s4.p13}}
 
-{{s9.p19}}
+••![ico-20 bash]$ ssh-add ~/.ssh/id_rsa••
 
-{{s9.p20}}
-{{s9.p21}}
+{{s4.p14}}
+{{s4.p15}}
 
-{{s9.p22}}
+{{s4.p16}}
 
-{{s9.p23}}
+{{s4.p17}}
 
-{{s9.p24}}
+{{s4.p18}}
 
-{{s9.p25}}
+{{s4.p19}}
 
-{{s9.p26}}
+••![ico-20 bash]$ clip < ~/.ssh/id_rsa.pub••
 
-{{s9.p27}}
+{{s4.p20}}
 
 @@@@
-{{s9.p28}}
+{{s4.p21}}
 ![](illustrations/git-ssh-1.png)
 @@@@
 
-{{s9.p29}}
-^^^[{{s9.spoiler1}}]
+{{s4.p22}}
+^^^[Settings]
 ![](illustrations/git-ssh-2.png)
 ^^^
 
 @@@@
-{{s9.p30}}
+{{s4.p23}}
 ![](illustrations/git-ssh-3.png)
 @@@@
 
-{{s9.p31}}
+{{s4.p24}}
 
-{{s9.p32}}
+{{s4.p25}}
 
-{{s9.p33}}
+{{s4.p26}}
 
 ![](illustrations/git-ssh-4.png)
 
 __________________________________________________________________________
 
-# ![ico-30 hw] {{s10.h1}}
+# ![ico-30 hw] Homework
 
-^^^[{{s10.spoiler1}}]
-{{s10.p1}}
+^^^[Homework]
+{{s4.p27}}
 
-{{s10.p2}}
-{{s10.p3}}
+{{s4.p28}}
+{{s4.p29}}
 
-{{s10.p4}}
+{{s4.p30}}
 
-{{s10.p5}}
+{{s4.p31}}
 
-{{s10.p6}}
+{{s4.p32}}
 
-{{s10.p7}}
+{{s4.p33}}
 
-{{s10.p8}}
+{{s4.p34}}
 
 ^^^
 
 _____________________________________________
 
-{{s10.p9}}
+[%%%GIT%%%](https://githowto.com/)

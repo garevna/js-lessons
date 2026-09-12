@@ -1,18 +1,18 @@
 # ![ico-30 study] {{s1.h1}}
 
-{{s1.p1}}
+**ES6**
 
 ## ![ico-25 icon] {{s2.h1}}
 
-{{s2.p1}}
+![ico-20 error] **_function_**
 
-{{s2.p2}}
+{{s2.p1}}
 
 ~~~js
 (параметры) => { тело функции }
 ~~~
 
-{{s2.p3}}
+{{s2.p2}}
 
 ~~~js
 const multiply = (x, y) => x * y
@@ -21,19 +21,19 @@ multiply(2, 5)  // 10
 
 ______________________
 
-{{s2.p4}}
+{{s2.p3}}
 
 ~~~js
 const sayHi = (name = 'user') => console.info(`Hi, ${name}`)
 ~~~
 
-{{s2.p5}}
+{{s2.p4}}
 
 ~~~js
 const sayHi = name => console.info(`Hi, ${name}`)
 ~~~
 
-{{s2.p6}}
+{{s2.p5}}
 
 ~~~js
 const sayHi = () => console.info('Hi, user')
@@ -41,7 +41,7 @@ const sayHi = () => console.info('Hi, user')
 
 ________________________________________
 
-{{s2.p7}}
+{{s2.p6}}
 
 ~~~js
 // обычная функция
@@ -51,9 +51,9 @@ const multiply = function (x, y) { return x * y }
 const multiply = (x, y) => x * y
 ~~~
 
-{{s2.p8}}
+{{s2.p7}}
 
-{{s2.p9}}
+{{s2.p8}}
 
 ~~~js
 const iterate = len => {
@@ -61,13 +61,13 @@ const iterate = len => {
 }
 ~~~
 
-{{s2.p10}}
+{{s2.p9}}
 
 ~~~js
 const iterate = len => new Array(len).fill(0).forEach((item, index) => console.log(index + 1))
 ~~~
 
-{{s2.p11}}
+{{s2.p10}}
 
 ~~~js
 const getAnswer = question => {
@@ -84,7 +84,7 @@ const getAnswer = question => {
 }
 ~~~
 
-{{s2.p12}}
+{{s2.p11}}
 
 ~~~js
 const getAnswer = question => question === 'who'
@@ -96,7 +96,7 @@ const getAnswer = question => question === 'who'
       : 'I don\'t undestand your question'
 ~~~
 
-{{s2.p13}}
+{{s2.p12}}
 
 ~~~js
 const getAnswer = question => ['who', 'what', 'where'].includes(question)
@@ -104,7 +104,7 @@ const getAnswer = question => ['who', 'what', 'where'].includes(question)
   : 'I don\'t undestand your question'
 ~~~
 
-{{s2.p14}}
+{{s2.p13}}
 
 ~~~js
 const getAnswer = ((questions, answers) => question => questions.includes(question)
@@ -112,7 +112,7 @@ const getAnswer = ((questions, answers) => question => questions.includes(questi
   : 'I don\'t undestand your question')(['who', 'what', 'where'], ['Irina', 'develop', 'Kharkiv'])
 ~~~
 
-{{s2.p15}}
+{{s2.p14}}
 
 ~~~js
 const getAnswerTemplate = (questions, answers, wrong, question) => questions.includes(question)
@@ -127,14 +127,14 @@ ____________________________________________________
 
 ## ![ico-25 icon] {{s3.h1}}
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] prototype
 
 @@@@
-{{s4.p1}}
+{{s3.p1}}
 ![](images/arrow-funcs-neutered-kitties.svg)
 @@@@
 
-☼☼☼ {{s4.slogan1}} ☼☼☼
+☼☼☼ {{s3.slogan1}} ☼☼☼
 
 ~~~js
 console.dir(() => {})
@@ -163,14 +163,14 @@ console.dir(function () {})
   ► [[Prototype]]: ƒ ()
 ~~~
 
-{{s4.p2}}
+{{s3.p2}}
 
 ~~~js
 const arrowFunc = () => null
 const obj = new arrowFunc()
 ~~~
 
-{{s4.p3}}
+{{s3.p3}}
 
 ~~~error
     TypeError: arrowFunc is not a constructor
@@ -192,20 +192,20 @@ const obj = new (() => {})
 
 ______________________________________________________
 
-### ![ico-25 icon] {{s5.h1}}
+### ![ico-25 icon] arguments
 
-{{s5.p1}}
+{{s3.p4}}
 
-{{s5.p2}}
+{{s3.p5}}
 
 ~~~error
     ReferenceError: arguments is not defined
 ~~~
 
-{{s5.p3}}
-{{s5.p4}}
-{{s5.p5}}
-{{s5.p6}}
+{{s3.p6}}
+{{s3.p7}}
+{{s3.p8}}
+{{s3.p9}}
 
 ~~~js
 function testArguments () {
@@ -214,7 +214,7 @@ function testArguments () {
 testArguments(5, false)
 ~~~
 
-{{s5.p7}}
+{{s3.p10}}
 
 ~~~console
 ▼ Arguments(2) [5, false, callee: ƒ, Symbol(Symbol.iterator): ƒ]
@@ -228,15 +228,15 @@ testArguments(5, false)
 
 ______________________________________________________
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] {{s4.h1}}
 
-{{s6.p1}}
+{{s4.p1}}
 
-{{s6.p2}}
+{{s4.p2}}
 
-{{s6.p3}}
+{{s4.p3}}
 
-#### ![ico-20 icon] {{s7.h1}}
+#### ![ico-20 icon] {{s5.h1}}
 
 ~~~js
 window.name = 'Chrome'
@@ -253,13 +253,13 @@ human.getName()   // Stephan
 human.showName()  // Chrome
 ~~~
 
-{{s7.p1}}
+{{s5.p1}}
 
-{{s7.p2}}
-{{s7.p3}}
-{{s7.p4}}
-{{s7.p5}}
-{{s7.p6}}
+{{s5.p2}}
+{{s5.p3}}
+{{s5.p4}}
+{{s5.p5}}
+{{s5.p6}}
 
 ~~~js
 human.name = 'Stephan'
@@ -269,19 +269,19 @@ human.getName = function () {
 human.showName = () => console.log(this.name)
 ~~~
 
-{{s7.p7}}
+{{s5.p7}}
 
-{{s7.p8}}
+{{s5.p8}}
 
-{{s7.p9}}
-{{s7.p10}}
+{{s5.p9}}
+{{s5.p10}}
 
-{{s7.p11}}
+{{s5.p11}}
 
 ----------------
-#### ![ico-20 icon] {{s8.h1}}
+#### ![ico-20 icon] {{s6.h1}}
 
-{{s8.p1}}
+{{s6.p1}}
 
 ~~~js
 function Sample (name) {
@@ -293,61 +293,61 @@ function Sample (name) {
 }
 ~~~
 
-{{s8.p2}}
+{{s6.p2}}
 
 ~~~js
 const user = new Sample('Piter')
 ~~~
 
-{{s8.p3}}
+{{s6.p3}}
 
-{{s8.p4}}
-{{s8.p5}}
-{{s8.p6}}
+{{s6.p4}}
+{{s6.p5}}
+{{s6.p6}}
 ~~~js
 const user = new Object()
 ~~~
-{{s8.p7}}
+{{s6.p7}}
 ~~~js
 Object.setPrototypeOf(user, Sample.prototype)
 ~~~
-{{s8.p8}}
+{{s6.p8}}
 ~~~js
 Sample.call(user, 'Piter')
 ~~~
 
-{{s8.p9}}
-{{s8.p10}}
-{{s8.p11}}
-{{s8.p12}}
-{{s8.p13}}
+{{s6.p9}}
+{{s6.p10}}
+{{s6.p11}}
+{{s6.p12}}
+{{s6.p13}}
 
 ~~~js
 console.log(user.__proto__.constructor.name)  // Sample
 ~~~
-{{s8.p14}}
+{{s6.p14}}
 ~~~js
 console.log(user instanceof Sample)  // true
 ~~~
 
-{{s8.p15}}
+{{s6.p15}}
 
-{{s8.p16}}
+{{s6.p16}}
 
-{{s8.p17}}
+{{s6.p17}}
 
 ~~~js
 this.showName = () => console.log(this.name)
 ~~~
 
-{{s8.p18}}
-{{s8.p19}}
+{{s6.p18}}
+{{s6.p19}}
 
 __________________________________
 
-#### ![ico-20 icon] {{s9.h1}}
+#### ![ico-20 icon] {{s7.h1}}
 
-{{s9.p1}}
+{{s7.p1}}
 ~~~js
 const template = {
   name: 'Robert'
@@ -365,30 +365,30 @@ function fabric (instance, name) {
 const user = fabric.call(template, {}, 'Piter')
 ~~~
 
-{{s9.p2}}
+{{s7.p2}}
 
-{{s9.p3}}
+{{s7.p3}}
 
-{{s9.p4}}
+{{s7.p4}}
 
 ~~~js
 user.showName()  // Robert
 ~~~
 ____________________________________________________
 
-{{s9.p5}}
+{{s7.p5}}
 
-{{s9.p6}}
-{{s9.p7}}
-{{s9.p8}}
+{{s7.p6}}
+{{s7.p7}}
+{{s7.p8}}
 
-{{s9.p9}}
+{{s7.p9}}
 
 _____________________________________________________
 
-## ![ico-20 icon] {{s10.h1}}
+## ![ico-20 icon] {{s8.h1}}
 
-{{s10.p1}}
+◘◘![ico-25 cap] ** 1**◘◘
 ~~~js
 function Sample (name, age) {
   const userName = name
@@ -402,7 +402,7 @@ Sample.prototype.createMethod = param => () => console.log(param)
 const user = new Sample('Piter', 28)
 ~~~
 
-{{s10.p2}}
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 const test = ((data = []) => arg => {
@@ -421,7 +421,7 @@ test(4)(5)(7)(8)
 console.log(test()) // [1, 2, 3, 4, 5, 7, 8]
 ~~~
 
-{{s10.p3}}
+◘◘![ico-25 cap] ** 3**◘◘
 
 ~~~js
 const getUser = (getName = prompt.bind(null, 'User name'), getAge = prompt.bind(null, 'User age')) => ({
@@ -430,7 +430,7 @@ const getUser = (getName = prompt.bind(null, 'User name'), getAge = prompt.bind(
 })
 ~~~
 
-{{s10.p4}}
+◘◘![ico-25 cap] ** 4**◘◘
 
 ~~~js
 (func => Object.assign({
@@ -441,4 +441,4 @@ const getUser = (getName = prompt.bind(null, 'User name'), getAge = prompt.bind(
 
 ____________________________________________________________________
 
-{{s10.p5}}
+{{s8.p1}}

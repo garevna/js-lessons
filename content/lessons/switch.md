@@ -1,12 +1,12 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] switch
 
-{{s1.p1}}
+{{s0.p1}}
 
 ~~~js
 switch (выражение)
 ~~~
 
-{{s1.p2}}
+![ico-25 cap]
 
 ~~~js
 var words
@@ -31,6 +31,6 @@ switch (season) {
 
 ______________
 
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
+{{s0.p2}}
+[![ico-30 hw] **Quiz**](quiz/switch)
+[![ico-20 link] w3schools](https://www.w3schools.com/js/js_switch.asp )

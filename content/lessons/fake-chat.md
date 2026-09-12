@@ -1,14 +1,14 @@
-# ![ico-30 hw] {{s1.h1}}
+# ![ico-30 hw] Fake chat
 
 _____________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] db.json
 
-{{s2.p1}}
+{{s0.p1}}
 
-{{s2.p2}}
+![ico-20 green-ok] **lastUpdate**
 
-{{s2.p3}}
+{{s0.p2}}
 
 ~~~js
 "lastUpdate": {
@@ -17,13 +17,13 @@ _____________________________
 }
 ~~~
 
-{{s2.p4}}
-{{s2.p5}}
-{{s2.p6}}
+{{s0.p3}}
+{{s0.p4}}
+{{s0.p5}}
 
-{{s2.p7}}
+![ico-20 green-ok] **posts**
 
-{{s2.p8}}
+{{s0.p6}}
 
 ~~~js
 "posts": [
@@ -41,13 +41,13 @@ _____________________________
 
 __________________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] json-server
 
-{{s3.p1}}
+{{s0.p7}}
 
-{{s3.p2}}
+••son-server &#45;&#45;watch db.json••
 
-{{s3.p3}}
+{{s0.p8}}
 
 ~~~console
 Resources
@@ -62,25 +62,25 @@ Home
 
 __________________________
 
-{{s3.p4}}
-{{s3.p5}}
-{{s3.p6}}
+{{s0.p9}}
+{{s0.p10}}
+{{s0.p11}}
 
 ____________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] {{s1.h1}}
 
-#### ![ico-20 green-ok] {{s5.h1}}
+#### ![ico-20 green-ok] lastUpdate
 
-{{s5.p1}}
+{{s1.p1}}
 
 ~~~js
 let lastUpdate
 ~~~
 
-#### ![ico-20 green-ok] {{s6.h1}}
+#### ![ico-20 green-ok] getData
 
-{{s6.p1}}
+{{s1.p2}}
 
 ~~~js
 const getData = function (ref) {
@@ -92,38 +92,38 @@ const getData = function (ref) {
 }
 ~~~
 
-#### ![ico-20 green-ok] {{s7.h1}}
+#### ![ico-20 green-ok] appElem
 
-{{s7.p1}}
-{{s7.p2}}
-{{s7.p3}}
-{{s7.p4}}
-{{s7.p5}}
-{{s7.p6}}
+{{s1.p3}}
+{{s1.p4}}
+{{s1.p5}}
+{{s1.p6}}
+{{s1.p7}}
+{{s1.p8}}
 
 ~~~js
 const addElem = (tagName, container = document.body) => container.appendChild(document.createElement(tagName))
 ~~~
 
-#### ![ico-20 green-ok] {{s8.h1}}
+#### ![ico-20 green-ok] chat
 
-{{s8.p1}}
+{{s1.p9}}
 
-#### ![ico-20 green-ok] {{s9.h1}}
+#### ![ico-20 green-ok] posts & users
 
-{{s9.p1}}
+{{s1.p10}}
 
-#### ![ico-20 green-ok] {{s10.h1}}
+#### ![ico-20 green-ok] currentUser
 
-{{s10.p1}}
+{{s1.p11}}
 
 ~~~js
 let currentUser
 ~~~
 
-#### ![ico-20 green-ok] {{s11.h1}}
+#### ![ico-20 green-ok] chatInput
 
-{{s11.p1}}
+{{s1.p12}}
 
 ~~~js
 const chatInput = Object.assign(addElem('input'), {
@@ -139,9 +139,9 @@ const chatInput = Object.assign(addElem('input'), {
 })
 ~~~
 
-#### ![ico-20 green-ok] {{s12.h1}}
+#### ![ico-20 green-ok] buildChat
 
-{{s12.p1}}
+{{s1.p13}}
 
 ~~~js
 const buildChat = function () {
@@ -163,21 +163,21 @@ const buildChat = function () {
 const chat = buildChat()
 ~~~
 
-#### ![ico-20 green-ok] {{s13.h1}}
+#### ![ico-20 green-ok] initChat
 
-{{s13.p1}}
+{{s1.p14}}
 
-{{s13.p2}}
-{{s13.p3}}
-{{s13.p4}}
+{{s1.p15}}
+{{s1.p16}}
+{{s1.p17}}
 
-{{s13.p5}}
+{{s1.p18}}
 
-{{s13.p6}}
+{{s1.p19}}
 
-{{s13.p7}}
+{{s1.p20}}
 
-{{s13.p8}}
+{{s1.p21}}
 
 ~~~~js
 const initChat = async function () {
@@ -201,36 +201,36 @@ const initChat = async function () {
 
 __________________________
 
-#### ![ico-20 green-ok] {{s14.h1}}
+#### ![ico-20 green-ok] updateChat
 
-{{s14.p1}}
+{{s1.p22}}
 
-{{s14.p2}}
-{{s14.p3}}
-{{s14.p4}}
+{{s1.p23}}
+{{s1.p24}}
+{{s1.p25}}
 
-{{s14.p5}}
-{{s14.p6}}
-{{s14.p7}}
-{{s14.p8}}
-{{s14.p9}}
+{{s1.p26}}
+{{s1.p27}}
+{{s1.p28}}
+{{s1.p29}}
+{{s1.p30}}
 
-{{s14.p10}}
+{{s1.p31}}
 
 ~~~js
 [getData('users'), getData('posts')]
 ~~~
 
-{{s14.p11}}
-{{s14.p12}}
+{{s1.p32}}
+{{s1.p33}}
 
-{{s14.p13}}
-{{s14.p14}}
-{{s14.p15}}
-{{s14.p16}}
-{{s14.p17}}
+{{s1.p34}}
+{{s1.p35}}
+{{s1.p36}}
+{{s1.p37}}
+{{s1.p38}}
 
-{{s14.p18}}
+{{s1.p39}}
 
 ~~~~js
 const updateChat = async function () {
@@ -252,33 +252,33 @@ const updateChat = async function () {
 }
 ~~~~
 
-{{s14.p19}}
-{{s14.p20}}
+{{s1.p40}}
+{{s1.p41}}
 
 ~~~js
 chat.scrollTop = chat.offsetTop
 ~~~
 
-{{s14.p21}}
-{{s14.p22}}
+{{s1.p42}}
+{{s1.p43}}
 
 
 _______________________________________________
 
-## ![ico-25 icon] {{s15.h1}}
+## ![ico-25 icon] {{s2.h1}}
 
-{{s15.p1}}
-{{s15.p2}}
-{{s15.p3}}
+{{s2.p1}}
+{{s2.p2}}
+{{s2.p3}}
 
-{{s15.p4}}
-{{s15.p5}}
-{{s15.p6}}
+{{s2.p4}}
+{{s2.p5}}
+{{s2.p6}}
 
-{{s15.p7}}
-{{s15.p8}}
+{{s2.p7}}
+{{s2.p8}}
 
-{{s15.p9}}
+{{s2.p9}}
 
 ~~~~js
 const chat = buildChat()
@@ -308,7 +308,7 @@ chatInput.onchange = function (event) {
 
 ___________________________
 
-## ![ico-20 file] {{s16.h1}}
+## ![ico-20 file] {{s3.h1}}
 
 ~~~~js
 document.body.style = `

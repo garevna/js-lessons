@@ -1,6 +1,6 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Proxy
 
-{{s1.p1}}
+{{s0.p1}}
 ~~~js
 const permissions = Symbol.for(JSON.stringify({
   read: true,
@@ -8,9 +8,9 @@ const permissions = Symbol.for(JSON.stringify({
   config: false
 }))
 ~~~
-{{s1.p2}}
+{{s0.p2}}
 
-{{s1.p3}}
+{{s0.p3}}
 ~~~js
 const handler = {
   get(target, key) {
@@ -36,7 +36,7 @@ const handler = {
 }
 ~~~
 
-{{s1.p4}}
+{{s0.p4}}
 ~~~js
 const user = new Proxy({
   name: 'Piter',
@@ -45,11 +45,11 @@ const user = new Proxy({
 }, handler)
 ~~~
 
-{{s1.p5}}
+{{s0.p5}}
 
-{{s1.p6}}
+{{s0.p6}}
 
-{{s1.p7}}
+{{s0.p7}}
 
 ~~~js
 const permissions = Symbol.for(JSON.stringify({
@@ -59,7 +59,7 @@ const permissions = Symbol.for(JSON.stringify({
 }))
 ~~~
 
-{{s1.p8}}
+{{s0.p8}}
 
 ~~~js
 const permissions = Symbol.for(JSON.stringify({
@@ -69,13 +69,13 @@ const permissions = Symbol.for(JSON.stringify({
 }))
 ~~~
 
-{{s1.p9}}
-{{s1.p10}}
+{{s0.p9}}
+{{s0.p10}}
 
-{{s1.p11}}
-{{s1.p12}}
-{{s1.p13}}
+• setPrototypeOf
+• defineProperty
+• construct
 
 __________________________________
 
-{{s1.p14}}
+[%%%MDN%%%](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)

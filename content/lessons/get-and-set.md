@@ -36,21 +36,21 @@ console.log(sample.birth)
 
 _______________________________
 
-## ![ico-25 cap] {{s2.h1}}
+## ![ico-25 cap] PriceUAH
 
-{{s2.p1}}
+{{s1.p6}}
 
-{{s2.p2}}
+{{s1.p7}}
 
-{{s2.p3}}
+{{s1.p8}}
 
-{{s2.p4}}
+{{s1.p9}}
 
-{{s2.p5}}
+{{s1.p10}}
 
-{{s2.p6}}
+{{s1.p11}}
 
-{{s2.p7}}
+{{s1.p12}}
 
 ~~~js
 var course = 28
@@ -69,19 +69,19 @@ var commodity = {
 }
 ~~~
 
-{{s2.p8}}
+{{s1.p13}}
 
-{{s2.p9}}
+{{s1.p14}}
 
-{{s2.p10}}
+{{s1.p15}}
 
-{{s2.p11}}
+{{s1.p16}}
 
 ~~~js
 console.log(commodity.priceUAH) // 560
 ~~~
 
-{{s2.p12}}
+{{s1.p17}}
 
 
 ~~~js
@@ -92,9 +92,9 @@ console.log(commodity.priceUSD) // 8.928571428571429
 
 {{{get-and-set-price.js}}}
 
-^^^[{{s2.spoiler1}}]
+^^^[Full code of example]
 
-{{s2.p13}}
+Let's create elements to edit dollar exchange rate
 
 ~~~js
 const section = document.body
@@ -114,7 +114,7 @@ Object.assign(container.appendChild(course), {
 })
 ~~~
 
-{{s2.p14}}
+and now constructor of commodity
 
 ~~~js
 function Commodity (name, priceUSD, picture) {
@@ -202,7 +202,7 @@ Object.assign(Commodity.prototype, {
 })
 ~~~
 
-{{s2.p15}}
+Now we are ready to create commodities
 
 ~~~js
 const [iron, fryingPan, saucepan] = ['iron', 'frying-pan', 'saucepan']
@@ -218,11 +218,11 @@ const commodities = [
 ^^^
 _____________________________________________________
 
-{{s2.p16}}
+{{s1.p18}}
 
-{{s2.p17}}
+{{s1.p19}}
 
-{{s2.p18}}
+![ico-25 err]
 
 ~~~js
 var commodity = {
@@ -239,15 +239,15 @@ var commodity = {
 }
 ~~~
 
-{{s2.p19}}
+{{s1.p20}}
 
-{{s2.p20}}
+~► Uncaught RangeError: Maximum call stack size exceeded~
 
 ____________________________________________________________
 
-## ![ico-25 cap] {{s3.h1}}
+## ![ico-25 cap] Calculator (sample)
 
-{{s3.p1}}
+{{s1.p21}}
 
 ~~~js
 var calculator = {
@@ -271,21 +271,21 @@ var calculator = {
 }
 ~~~
 
-{{s3.p2}}
+{{s1.p22}}
 
-{{s3.p3}}
+{{s1.p23}}
 
 ~~~js
 console.log(calculator.result)
 ~~~
 
-{{s3.p4}}
+{{s1.p24}}
 
 ~~~js
 calculator.result = '5 - 8 '
 ~~~
 
-{{s3.p5}}
+{{s1.p25}}
 
 ~~~console
 ▼ {firstValue: 5, secondValue: 8, operations: Array(5), operation: "-"}
@@ -303,9 +303,9 @@ calculator.result = '5 - 8 '
 
 __________________________________________
 
-## ![ico-25 cap] {{s4.h1}}
+## ![ico-25 cap] Human states
 
-{{s4.p1}}
+{{s1.p26}}
 
 ~~~js
 var human = {
@@ -334,17 +334,17 @@ var human = {
 human.showState()
 ~~~
 
-{{s4.p2}}
+{{s1.p27}}
 
 ~~~console
 Current state: 0 (work)
 ~~~
 
-{{s4.p3}}
+{{s1.p28}}
 
-{{s4.p4}}
+{{s1.p29}}
 
-{{s4.p5}}
+{{s1.p30}}
 
 
 ~~~js
@@ -353,7 +353,7 @@ human.state = 'swim'
 human.showState()
 ~~~
 
-{{s4.p6}}
+{{s1.p31}}
 
 ~~~console
 Current state: 3 (swim)

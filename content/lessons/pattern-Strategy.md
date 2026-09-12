@@ -1,18 +1,18 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Design Patterns
 
 _____________________________________
 
-### ![ico-20 icon] {{s2.h1}}
+### ![ico-20 icon] Strategy
 
-{{s2.p1}}
+{{s0.p1}}
 
-{{s2.p2}}
+{{s0.p2}}
 
 _______________________________
 
-{{s2.p3}}
+{{s0.p3}}
 
-^^^[{{s2.spoiler1}}]
+^^^[helpers/validStrategyNames.js]
 ~~~js
 export const validStrategyNames = [
   'sum-of-all-numeric-fields',
@@ -22,9 +22,9 @@ export const validStrategyNames = [
 ~~~
 ^^^
 
-{{s2.p4}}
+{{s0.p4}}
 
-^^^[{{s2.spoiler2}}]
+^^^[helpers/strategyError.js]
 ~~~js
 export function strategyError () {
   const stack = `
@@ -42,7 +42,7 @@ export function strategyError () {
 ~~~
 ^^^
 
-^^^[{{s2.spoiler3}}]
+^^^[helpers/dataError.js]
 ~~~js
 export function dataError () {
   throw Object.assign(new Error('Sorting error'), {
@@ -54,7 +54,7 @@ export function dataError () {
 ~~~
 ^^^
 
-^^^[{{s2.spoiler4}}]
+^^^[helpers/keyError.js]
 ~~~js
 export function keyError () {
   throw Object.assign(new Error('Sorting error'), {
@@ -66,7 +66,7 @@ export function keyError () {
 ~~~
 ^^^
 
-^^^[{{s2.spoiler5}}]
+^^^[helpers/keyPropError.js]
 ~~~js
 export function keyPropError (key) {
   throw Object.assign(new Error('Sorting error'), {
@@ -78,7 +78,7 @@ export function keyPropError (key) {
 ~~~
 ^^^
 
-^^^[{{s2.spoiler6}}]
+^^^[helpers/arrayFieldError.js]
 
 ~~~js
 export function arrayFieldError (key) {
@@ -92,7 +92,7 @@ export function arrayFieldError (key) {
 ^^^
 ____________________________________
 
-^^^[{{s2.spoiler7}}]
+^^^[helpers/testStrategy.js]
 ~~~js
 import { validStrategyNames } from './validStrategyNames'
 import { strategyError } from './strategyError'
@@ -124,17 +124,17 @@ export function testStrategy (strategyName, data, key) {
 ^^^
 ____________________________________
 
-{{s2.p5}}
-{{s2.p6}}
-{{s2.p7}}
+{{s0.p5}}
+{{s0.p6}}
+{{s0.p7}}
 
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
+{{s0.p8}}
+{{s0.p9}}
+{{s0.p10}}
 
-{{s2.p11}}
+{{s0.p11}}
 
-^^^[{{s2.spoiler8}}]
+^^^[class SortStrategy]
 ~~~js
 import { testStrategy } from './helpers/testStrategy'
 
@@ -189,9 +189,9 @@ class SortStrategy  {
 ~~~
 ^^^
 
-{{s2.p12}}
+{{s0.p12}}
 
-^^^[{{s2.spoiler9}}]
+^^^[salary]
 ~~~js
 const salary = [
   { name: 'Stephan', jan: 5000, fab: 5200, mar: 5800, apr: 4950, may: 4700, jun: 5100, jul: 5300, aug: 5000, sep: 4900, nov: 4800, dec: 5500 },
@@ -205,7 +205,7 @@ const salary = [
 ~~~
 ^^^
 
-^^^[{{s2.spoiler10}}]
+^^^[workers]
 ~~~js
 const workers = [
   { name: 'Stephan', payments: [5000, 5200, 5800, 4950, 4700, 5100, 5300, 5000, 4900, 4800, 5500] },
@@ -219,7 +219,7 @@ const workers = [
 ~~~
 ^^^
 
-^^^[{{s2.spoiler11}}]
+^^^[users]
 ~~~js
 const users = [
   { name: 'Stephan', age: 30, works: 7, children: 2 },
@@ -233,12 +233,12 @@ const users = [
 ~~~
 ^^^
 
-{{s2.p13}}
+{{s0.p13}}
 ~~~js
 const sortStrategy = new SortStrategy
 ~~~
 
-{{s2.p14}}
+{{s0.p14}}
 
 ~~~js
 function sort (algorithm, data, key) {

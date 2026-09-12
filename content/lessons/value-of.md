@@ -1,10 +1,10 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] valueOf
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
+{{s0.p2}}
 
-{{s1.p3}}
+{{s0.p3}}
 
 ~~~js
 var obj = {
@@ -17,23 +17,23 @@ var obj = {
 }
 ~~~
 
-{{s1.p4}}
+{{s0.p4}}
 
 ~~~js
 obj == 4
 ~~~
 
-{{s1.p5}}
+{{s0.p5}}
 
-{{s1.p6}}
+{{s0.p6}}
 
-{{s1.p7}}
+{{s0.p7}}
 
-{{s1.p8}}
+{{s0.p8}}
 
-{{s1.p9}}
+{{s0.p9}}
 
-{{s1.p10}}
+◘◘![ico-25 cap] ** 1 **◘◘
 
 ~~~js
 var human = {
@@ -49,12 +49,12 @@ console.info(human + '!') // Ivan: 25!
 
 ___________________
 
-{{s1.p11}}
+{{s0.p10}}
 
-{{s1.p12}}
+{{s0.p11}}
 
 
-{{s1.p13}}
+◘◘![ico-25 cap] ** 2 **◘◘
 
 
 ~~~js
@@ -63,7 +63,7 @@ Object.prototype.valueOf = function () {
 }
 ~~~
 
-{{s1.p14}}
+{{s0.p12}}
 
 ~~~js
 console.info(Number + '')
@@ -75,7 +75,7 @@ console.info(Number + '')
 
 __________
 
-{{s1.p15}}
+◘◘![ico-25 cap] ** 3 **◘◘
 
 ~~~js
 const test = {
@@ -86,7 +86,7 @@ const test = {
 }
 ~~~
 
-{{s1.p16}}
+{{s0.p13}}
 
 ~~~js
 test == 1 && test == 2 && test == 3
@@ -94,4 +94,4 @@ test == 1 && test == 2 && test == 3
 
 ____________________
 
-{{s1.p17}}
+{{s0.p14}}

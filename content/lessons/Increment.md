@@ -8,31 +8,31 @@
 
 {{s1.p4}}
 
-{{s1.p5}}
+![ico-25 cap]
 
 ~~~javascript
 var x = 0, y = 2
 var z = y + x++
 ~~~
 
-{{s1.p6}}
+{{s1.p5}}
 
 ~~~javascript
 var z = y + x++
 ~~~
 
+{{s1.p6}}
 {{s1.p7}}
-{{s1.p8}}
 
-{{s1.p9}}
+{{s1.p8}}
 
 ~~~javascript
 var x = 0, y = 2
 var z = y + ++x
 ~~~
 
+{{s1.p9}}
 {{s1.p10}}
-{{s1.p11}}
 
 ________________________________________________________
 
@@ -55,4 +55,4 @@ _______________________________
 
 ______________________________________________________________
 
-{{s2.p6}}
+[![ico-20 link] ^^MDN^^](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators)

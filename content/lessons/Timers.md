@@ -3,16 +3,16 @@
 {{s1.p1}}
 {{s1.p2}}
 
-## ![ico-30 clock] {{s2.h1}}
+## ![ico-30 clock] setTimeout
 
-{{s2.p1}}
+{{s1.p3}}
 
-{{s2.p2}}
-{{s2.p3}}
+{{s1.p4}}
+{{s1.p5}}
 
-{{s2.p4}}
+{{s1.p6}}
 
-{{s2.p5}}
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 (function () {
@@ -24,13 +24,13 @@
 })()
 ~~~
 
-{{s2.p6}}
+{{s1.p7}}
 
-{{s2.p7}}
+{{s1.p8}}
 
-{{s2.p8}}
+{{s1.p9}}
 
-{{s2.p9}}
+◘◘![ico-25 cap] ** 2**◘◘
 
 ~~~js
 (function () {
@@ -57,12 +57,12 @@ undefined // основной поток завершил работу, стек
 
 ____________________________
 
-## ![ico-25 clock] {{s3.h1}}
+## ![ico-25 clock] setInterval
 
-{{s3.p1}}
-{{s3.p2}}
+{{s1.p10}}
+{{s1.p11}}
 
-{{s3.p3}}
+^^^[![ico-25 coffee] 3]
 
 ~~~js
 function showTime () {
@@ -97,20 +97,20 @@ var interval = setInterval(() => {
 
 ^^^
 
-{{s3.p4}}
-{{s3.p5}}
+{{s1.p12}}
+{{s1.p13}}
 
 {{{Timers-3.js}}}
 
 _________________________________________
 
-{{s3.p6}}
+{{s1.p14}}
 
-{{s3.p7}}
+{{s1.p15}}
 
-{{s3.p8}}
+{{s1.p16}}
 
-{{s3.p9}}
+◘◘![ico-25 cap] ** 4**◘◘
 
 ~~~js
 let counter = 0
@@ -122,10 +122,10 @@ const interval = setInterval(() => counter++, 1)
 
 ___________________________________________
 
-{{s3.p10}}
-{{s3.p11}}
+{{s1.p17}}
+{{s1.p18}}
 
-{{s3.p12}}
+{{s1.p19}}
 
 ~~~~js
 const style = document.head
@@ -173,16 +173,16 @@ style.textContent = `
 `
 ~~~~
 
-{{s3.p13}}
+{{s1.p20}}
 
 ~~~js
 const createFigure = () => document.body
   .appendChild(document.createElement('div'))
 ~~~
 
-{{s3.p14}}
+{{s1.p21}}
 
-{{s3.p15}}
+◘◘![ico-25 cap] ** 5**◘◘
 
 ~~~js
 const makeStep = figure => figure.offsetLeft < 416
@@ -203,25 +203,25 @@ document.body.onclick = () => clearInterval(timer)
 
 {{{Timers-5.js}}}
 
-{{s3.p16}}
-{{s3.p17}}
-{{s3.p18}}
+{{s1.p22}}
+{{s1.p23}}
+{{s1.p24}}
 
-{{s3.p19}}
+{{s1.p25}}
 
-{{s3.p20}}
+{{s1.p26}}
 
 ____________________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] requestAnimationFrame
 
-{{s4.p1}}
-{{s4.p2}}
-{{s4.p3}}
+{{s1.p27}}
+{{s1.p28}}
+{{s1.p29}}
 
-{{s4.p4}}
+{{s1.p30}}
 
-{{s4.p5}}
+◘◘![ico-25 cap] ** 6**◘◘
 
 ~~~js
 let stop = false
@@ -238,7 +238,7 @@ showTime()
 
 {{{Timers-6.js}}}
 
-{{s4.p6}}
+{{s1.p31}}
 
 ~~~js
 const showTime = function () {
@@ -248,14 +248,14 @@ const showTime = function () {
 console.log(requestAnimationFrame(showTime))
 ~~~
 
-{{s4.p7}}
-{{s4.p8}}
+{{s1.p32}}
+{{s1.p33}}
 
-{{s4.p9}}
-{{s4.p10}}
-{{s4.p11}}
+{{s1.p34}}
+{{s1.p35}}
+{{s1.p36}}
 
-{{s4.p12}}
+{{s1.p37}}
 
 ~~~~js
 const style = document.head
@@ -297,14 +297,14 @@ style.textContent = `
 `
 ~~~~
 
-{{s4.p13}}
-{{s4.p14}}
+{{s1.p38}}
+{{s1.p39}}
 
 ~~~js
 const makeStep = figure => figure.style.left = figure.offsetLeft + 1 + 'px'
 ~~~
 
-{{s4.p15}}
+◘◘![ico-25 cap] ** 7**◘◘
 
 ~~~js
 let stopAnimation = false
@@ -330,7 +330,7 @@ figure2.move()
 
 ______________________________________________
 
-{{s4.p16}}
+◘◘![ico-25 cap] ** 8**◘◘
 
 ~~~js
 const message = 'Old ECMAScript versions was named by numbers: ES5 and ES6.'
@@ -355,7 +355,7 @@ requestAnimationFrame(recurse.bind(null, message))
 
 __________________________________________
 
-{{s4.p17}}
+{{s1.p40}}
 
 ~~~js
 const messages = [
@@ -366,9 +366,9 @@ const messages = [
 ]
 ~~~
 
-{{s4.p18}}
+{{s1.p41}}
 
-{{s4.p19}}
+◘◘![ico-25 cap] ** 9**◘◘
 
 ~~~js
 function recurse (demo, message) {
@@ -392,21 +392,21 @@ messages
 {{{requestAnimationFrame-6.js}}}
 ___________________________________________________
 
-## ![ico-25 icon] {{s5.h1}}
+## ![ico-25 icon] Debounce
 
-{{s5.p1}}
-{{s5.p2}}
-{{s5.p3}}
-{{s5.p4}}
-{{s5.p5}}
+{{s1.p42}}
+{{s1.p43}}
+{{s1.p44}}
+{{s1.p45}}
+{{s1.p46}}
 
-{{s5.p6}}
+{{s1.p47}}
 
-{{s5.p7}}
+{{s1.p48}}
 
-{{s5.p8}}
-{{s5.p9}}
-{{s5.p10}}
+{{s1.p49}}
+{{s1.p50}}
+{{s1.p51}}
 
 ~~~js
 function addElem (back = 'transparent') {
@@ -424,9 +424,9 @@ function addElem (back = 'transparent') {
 }
 ~~~
 
-{{s5.p11}}
+{{s1.p52}}
 
-{{s5.p12}}
+◘◘![ico-25 cap] **10**◘◘
 ~~~js
 const section = document.body
 
@@ -455,9 +455,9 @@ section.onclick = (function () {
 
 _________________________________________________________
 
-## ![ico-25 icon] {{s6.h1}}
+## ![ico-25 icon] {{s2.h1}}
 
-{{s6.p1}}
+![ico-25 cap] **11**
 
 ~~~~js
 function addElem (tagName, container = document.body) {
@@ -553,7 +553,7 @@ demo.dispatchEvent(new Event('click'))
 
 ___________________________________________________
 
-{{s6.p2}}
+◘◘![ico-25 cap] **12**◘◘
 
 ~~~js
 function store () {
@@ -585,6 +585,6 @@ recurse(200)
 {{{Timers-requestAnimationFrame-1.js}}}
 ______________________________________________
 
-{{s6.p3}}
+![ico-25 cap] **13**
 
 {{{Timers-requestAnimationFrame-2.js}}}

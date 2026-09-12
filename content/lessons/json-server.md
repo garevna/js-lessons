@@ -1,14 +1,14 @@
-## ![ico-30 icon] {{s1.h1}}
+## ![ico-30 icon] JSON server
 
-### ![ico-25 bash] {{s2.h1}}
+### ![ico-25 bash] {{s1.h1}}
+
+~npm install -g json-server~
+
+### ![ico-30 db] {{s2.h1}}
 
 {{s2.p1}}
 
-### ![ico-30 db] {{s3.h1}}
-
-{{s3.p1}}
-
-^^^[{{s3.spoiler1}}]
+^^^[db.json]
 
 ~~~js
 {
@@ -105,48 +105,48 @@
 
 ^^^
 
-### ![ico-25 bash] {{s4.h1}}
+### ![ico-25 bash] {{s3.h1}}
 
-{{s4.p1}}
+{{s3.p1}}
 
-{{s4.p2}}
+{{s3.p2}}
 
-{{s4.p3}}
+{{s3.p3}}
 
-{{s4.p4}}
+{{s3.p4}}
 
-{{s4.p5}}
-{{s4.p6}}
+{{s3.p5}}
+{{s3.p6}}
 
-^^^[{{s4.spoiler1}}]
+^^^[{{s3.spoiler1}}]
 
-{{s4.p7}}
-{{s4.p8}}
-{{s4.p9}}
-{{s4.p10}}
+{{s3.p7}}
+{{s3.p8}}
+{{s3.p9}}
+~json-server  z:/home/test/users.json –w~
 
 ^^^
 
 _______________________________________
 
-### ![ico-20 icon] {{s5.h1}}
+### ![ico-20 icon] endpoints
 
-{{s5.p1}}
+{{s3.p10}}
 
-{{s5.p2}}
+| ![ico-20 bash] | ~http://localhost:3000/users<br>http://localhost:3000/posts<br>http://localhost:3000/comments~ |
 
-{{s5.p3}}
+{{s3.p11}}
 
-{{s5.p4}}
-{{s5.p5}}
+{{s3.p12}}
+{{s3.p13}}
 
 _____________________________________
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] fetch
 
-{{s6.p1}}
+{{s3.p14}}
 
-##### ![ico-25 cap] {{s7.h1}}
+##### ![ico-25 cap] GET (1)
 
 ~~~js
 fetch('http://localhost:3000/comments')
@@ -156,11 +156,11 @@ fetch('http://localhost:3000/comments')
 
 ___________________________________________
 
-##### ![ico-25 cap] {{s8.h1}}
+##### ![ico-25 cap] GET (2)
 
-{{s8.p1}}
+{{s3.p15}}
 
-{{s8.p2}}
+{{s3.p16}}
 
 ~~~js
 function getData (ref) {
@@ -180,9 +180,9 @@ Promise.all([
 
 ___________________________________________
 
-##### ![ico-25 cap] {{s9.h1}}
+##### ![ico-25 cap] POST
 
-{{s9.p1}}
+{{s3.p17}}
 
 ~~~js
 fetch('http://localhost:3000/comments', {
@@ -199,11 +199,11 @@ fetch('http://localhost:3000/comments', {
     .then ( response => console.log ( 'response: ', response ) )
 ~~~
 
-{{s9.p2}}
-{{s9.p3}}
-{{s9.p4}}
+{{s3.p18}}
+{{s3.p19}}
+{{s3.p20}}
 
-{{s9.p5}}
+{{s3.p21}}
 
 ~~~js
 fetch ( 'http://localhost:3000/comments?postId=1&id=4' )
@@ -213,9 +213,9 @@ fetch ( 'http://localhost:3000/comments?postId=1&id=4' )
 
 _________________________________________
 
-##### ![ico-25 cap] {{s10.h1}}
+##### ![ico-25 cap] PUT
 
-{{s10.p1}}
+{{s3.p22}}
 
 ~~~js
 fetch ( 'http://localhost:3000/posts/1', {
@@ -234,9 +234,9 @@ fetch ( 'http://localhost:3000/posts/1', {
 
 _________________________________________
 
-##### ![ico-25 cap] {{s11.h1}}
+##### ![ico-25 cap] PATCH
 
-{{s11.p1}}
+{{s3.p23}}
 
 ~~~js
 fetch ( 'http://localhost:3000/posts/1', {
@@ -251,17 +251,17 @@ fetch ( 'http://localhost:3000/posts/1', {
    .then ( response => console.log ( 'response: ', response ) )
 ~~~
 
-{{s11.p2}}
-{{s11.p3}}
-{{s11.p4}}
+{{s3.p24}}
+{{s3.p25}}
+{{s3.p26}}
 
 _______________________________________
 
-##### ![ico-25 cap] {{s12.h1}}
+##### ![ico-25 cap] DELETE
 
-{{s12.p1}}
+{{s3.p27}}
 
-{{s12.p2}}
+{{s3.p28}}
 
 ~~~js
 fetch ( 'http://localhost:3000/comments/1', {
@@ -275,7 +275,7 @@ fetch ( 'http://localhost:3000/comments/1', {
 
 ______________________________________________
 
-### ![ico-20 icon] {{s13.h1}}
+### ![ico-20 icon] XMLHttpRequest
 
 ~~~js
 function workWithData ( method, url, data ) {
@@ -291,7 +291,7 @@ function workWithData ( method, url, data ) {
 }
 ~~~
 
-##### ![ico-25 cap] {{s14.h1}}
+##### ![ico-25 cap] GET
 
 ~~~js
 workWithData (
@@ -300,7 +300,7 @@ workWithData (
 )
 ~~~
 
-##### ![ico-25 cap] {{s15.h1}}
+##### ![ico-25 cap] POST
 
 ~~~js
 workWithData (
@@ -314,7 +314,7 @@ workWithData (
 )
 ~~~
 
-##### ![ico-25 cap] {{s16.h1}}
+##### ![ico-25 cap] DELETE
 
 ~~~js
 workWithData (
@@ -323,7 +323,7 @@ workWithData (
 )
 ~~~
 
-##### ![ico-25 cap] {{s17.h1}}
+##### ![ico-25 cap] PUT
 
 ~~~js
 workWithData (

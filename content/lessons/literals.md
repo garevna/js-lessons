@@ -24,6 +24,8 @@ console.log(lit.charCodeAt(0))
 
 {{s1.p5}}
 
+![](createPath("illustrations", "string-methods-01.png"))
+
 {{s1.p6}}
 
 {{s1.p7}}
@@ -32,13 +34,11 @@ console.log(lit.charCodeAt(0))
 
 {{s1.p9}}
 
-{{s1.p10}}
-
 __________________________________________________________________
 
-{{s1.p11}}
+{{s1.p10}}
 
-{{s1.p12}}
+{{s1.p11}}
 
 ~~~js
 var cities = ['Неаполь', 'Вашингтон', 'Женева']
@@ -48,15 +48,15 @@ for (var i = 0; i < cities.length; i++) {
 }
 ~~~
 
-{{s1.p13}}
+{{s1.p12}}
 
-{{s1.p14}}
+{{s1.p13}}
 
 ____________________________________________________________________
 
-{{s1.p15}}
+{{s1.p14}}
 
-{{s1.p16}}
+{{s1.p15}}
 
 ~~~js
 var cities = [
@@ -76,11 +76,15 @@ for (var x = 0; x < cities.length; x++) {
 console.log(str)
 ~~~
 
+{{s1.p16}}
+
+![](createPath("illustrations", "string-methods-02.png"))
+
+______________________________________________________________________
+
 {{s1.p17}}
 
 {{s1.p18}}
-
-______________________________________________________________________
 
 {{s1.p19}}
 
@@ -92,10 +96,6 @@ ______________________________________________________________________
 
 {{s1.p23}}
 
-{{s1.p24}}
-
-{{s1.p25}}
-
 ~~~js
 var red = Math.round(Math.random() * 255).toString(16)
 var green = Math.round(Math.random() * 255).toString(16)
@@ -104,13 +104,13 @@ var blue = Math.round(Math.random() * 255).toString(16)
 var color = `#${red}${green}${blue}`
 ~~~
 
-{{s1.p26}}
+{{s1.p24}}
 
 ______________________________________________________________________________
 
-{{s1.p27}}
+{{s1.p25}}
 
-{{s1.p28}}
+{{s1.p26}}
 
 ~~~js
 var red = Math.round(Math.random() * 255)
@@ -120,4 +120,4 @@ var blue = Math.round(Math.random() * 255)
 var color = `rgb(${red},${green},${blue})`
 ~~~
 
-{{s1.p29}}
+{{s1.p27}}

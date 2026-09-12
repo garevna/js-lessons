@@ -30,4 +30,4 @@ getCurrentPostComments(postId)
 
 {{s1.p13}}
 
-{{s1.p14}}
+![](createPath("images",'practice-03.png'))

@@ -1,22 +1,22 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] slot
 
 ## ![ico-25 icon]
 
-{{s2.p1}}
+{{s0.p1}}
 
-{{s2.p2}}
+{{s0.p2}}
 
-### ![ico-25 cap] {{s3.h1}}
+### ![ico-25 cap] {{s1.h1}}
 
-{{s3.p1}}
+{{s1.p1}}
 
-{{s3.p2}}
+{{s1.p2}}
 
 ~~~html
 <slot name="script">Default script</slot>
 ~~~
 
-{{s3.p3}}
+{{s1.p3}}
 
 ~~~javascript
 const template = document.body.appendChild (
@@ -34,9 +34,9 @@ template.innerHTML = `
 `
 ~~~
 
-{{s3.p4}}
+{{s1.p4}}
 
-{{s3.p5}}
+{{s1.p5}}
 
 ~~~js
 customElements.define('sample-element', class extends HTMLElement {
@@ -49,13 +49,13 @@ customElements.define('sample-element', class extends HTMLElement {
 })
 ~~~
 
-{{s3.p6}}
+{{s1.p6}}
 
 ~~~js
 const codeText = `function sayHello () { console.log('Hello!') }`
 ~~~
 
-{{s3.p7}}
+{{s1.p7}}
 
 ~~~js
 document.body
@@ -66,11 +66,11 @@ document.body
   }))(codeText))
 ~~~
 
-{{s3.p8}}
+{{s1.p8}}
 
 ___________________________________________________________
 
-{{s3.p9}}
+{{s1.p9}}
 
 ~~~~js
 const template = document.body
@@ -111,4 +111,4 @@ document.body
 
 _____________________________________________________________________
 
-{{s3.p10}}
+[![ico-25 cap] ** 2**](https://repl.it/@garevna/web-component)

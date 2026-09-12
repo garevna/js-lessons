@@ -1,12 +1,12 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] FormData
 
-{{s1.p1}}
+{{s0.p1}}
 
 _______________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{s1.h1}}
 
-{{s2.p1}}
+{{s1.p1}}
 
 ~~~js
 const formData = new FormData()
@@ -32,19 +32,19 @@ formData instanceof FormData   // true
       ► __proto__: Object
 ~~~~
 
-{{s2.p2}}
-{{s2.p3}}
+{{s1.p2}}
+{{s1.p3}}
 
-{{s2.p4}}
+{{s1.p4}}
 _____________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{s2.h1}}
 
-{{s3.p1}}
+{{s2.p1}}
 
-{{s3.p2}}
+{{s2.p2}}
 
-{{s3.p3}}
+![ico-25 cap] ** 1**
 
 ~~~~html
 <head>
@@ -192,26 +192,26 @@ submit.onclick = function (event) {
 ________________________________________________
 
 
-{{s3.p4}}
+[![ico-25 cap] **Live demo**](https://garevna.github.io/js-samples/#29)
 
 ________________________________________________
 
-{{s3.p5}}
+{{s2.p3}}
 
-{{s3.p6}}
-{{s3.p7}}
+{{s2.p4}}
+{{s2.p5}}
 
 ____________________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] {{s3.h1}}
 
-{{s4.p1}}
+![ico-20 icon] append()
 
-{{s4.p2}}
+{{s3.p1}}
 
-{{s4.p3}}
+{{s3.p2}}
 
-{{s4.p4}}
+{{s3.p3}}
 
 ~~~js
 const formData = new FormData()
@@ -219,22 +219,22 @@ formData.append('username', 'garevna')
 formData.append('token', 'HgTY78-jdfhj91*/jskdfj')
 ~~~
 
-{{s4.p5}}
+![ico-20 icon] has()
 
 ~~~js
 formData.has('token')     // true
 ~~~
 
-{{s4.p6}}
+![ico-20 icon] get()
 
 ~~~js
 formData.get('username')  // "garevna"
 formData.get('token')     // "HgTY78-jdfhj91*/jskdfj"
 ~~~
 
-{{s4.p7}}
+![ico-20 icon] getAll()
 
-{{s4.p8}}
+{{s3.p4}}
 
 ~~~js
 formData.append('pictures', 'http://icecream.me/uploads/b0d4d73f21508dd67e0c57a590f582f0.png')
@@ -243,29 +243,29 @@ formData.append('pictures', 'https://github.com/garevna/js-course/raw/master/ima
 formData.getAll('pictures')
 ~~~
 
-{{s4.p9}}
+![ico-20 icon] set()
 
-{{s4.p10}}
+{{s3.p5}}
 
-{{s4.p11}}
+{{s3.p6}}
 
 ~~~js
 formData.set('token', 'gF&op*i91/54gkjHU')
 formData.get('token')  // "gF&op*i91/54gkjHU"
 ~~~
 
-{{s4.p12}}
+![ico-20 icon] delete()
 
 ~~~js
 formData.delete('token')
 formData.get('token')    // null
 ~~~
 
-{{s4.p13}}
+![ico-20 icon] keys()
 
-{{s4.p14}}
+{{s3.p7}}
 
-{{s4.p15}}
+![ico-25 cap] ** 2**
 
 ~~~js
 const iterator = formData.keys()
@@ -274,11 +274,11 @@ iterator.next()
 ...
 ~~~
 
-{{s4.p16}}
+![ico-20 icon] entries()
 
-{{s4.p17}}
+{{s3.p8}}
 
-{{s4.p18}}
+![ico-25 cap] ** 3**
 
 ~~~js
 const iterator = formData.entries()
@@ -287,7 +287,7 @@ iterator.next()
 ...
 ~~~
 
-{{s4.p19}}
+![ico-25 cap] ** 4**
 
 ~~~js
 const formData = new FormData()
@@ -325,11 +325,11 @@ console.log(result)
 
 _____________________________________________
 
-## ![ico-25 icon] {{s5.h1}}
+## ![ico-25 icon] {{s4.h1}}
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] fetch
 
-{{s6.p1}}
+![ico-25 cap] ** 5**
 
 ~~~js
 const fileSelector = document.body
@@ -353,9 +353,9 @@ fileSelector.onchange = function (event) {
 
 ____________________________________
 
-### ![ico-20 icon] {{s7.h1}}
+### ![ico-20 icon] XMLHttpRequest
 
-{{s7.p1}}
+![ico-25 cap] ** 6**
 
 ~~~js
 const fileSelector = document.body
@@ -378,28 +378,28 @@ fileSelector.onchange = function (event) {
 }
 ~~~
 
-{{s7.p2}}
+{{s4.p1}}
 
 ![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FformData-1.png)
 
 
-{{s7.p3}}
+{{s4.p2}}
 
 ~~~console
 data:[<media type>][;base64],<data>
 ~~~
 
-{{s7.p4}}
+{{s4.p3}}
 
 ______________________________________________________
 
-{{s7.p5}}
+![ico-25 cap] ** 7**
 
-{{s7.p6}}
+{{s4.p4}}
 
-{{s7.p7}}
+{{s4.p5}}
 
-{{s7.p8}}
+{{s4.p6}}
 
 ~~~js
 const fileSelector = document.body
@@ -418,7 +418,7 @@ fileSelector.onchange = function (event) {
 }
 ~~~
 
-{{s7.p9}}
+{{s4.p7}}
 
 ~~~js
 const request = new XMLHttpRequest()
@@ -432,21 +432,21 @@ request.onreadystatechange = function (event) {
 request.send()
 ~~~
 
-{{s7.p10}}
+{{s4.p8}}
 
 ![](http://ptsv2.com/static/ToiletLogo.jpg)
 
-{{s7.p11}}
+{{s4.p9}}
 
 ______________________________________________________________________________
 
-## ![ico-25 icon] {{s8.h1}}
+## ![ico-25 icon] {{s5.h1}}
 
-{{s8.p1}}
+••https://garevna-form-data.glitch.me/forms/&lt;id>••
 
-### ![ico-20 icon] {{s9.h1}}
+### ![ico-20 icon] GET
 
-{{s9.p1}}
+◘◘![ico-20 cap] 8◘◘
 
 ~~~js
 fetch('https://garevna-form-data.glitch.me/forms/all')
@@ -465,7 +465,7 @@ fetch('https://garevna-form-data.glitch.me/forms/all')
   ► __proto__: Object
 ~~~
 
-{{s9.p2}}
+◘◘![ico-20 cap] 9◘◘
 
 ~~~js
 function getFormData (url) {
@@ -490,7 +490,7 @@ Frodo
   ► __proto__: File
 ~~~
 
-{{s9.p3}}
+◘◘![ico-20 cap] 10◘◘
 
 ~~~js
 const api = 'https://garevna-form-data.glitch.me/forms'
@@ -544,9 +544,9 @@ status === 200 && document.body.appendChild(result.avatar)
 
 ________________________________________________________
 
-### ![ico-20 icon] {{s10.h1}}
+### ![ico-20 icon] POST | PUT | PATCH
 
-{{s10.p1}}
+••https://garevna-form-data.glitch.me/form/&lt;id>••
 
 ~~~html
 <form id="form">
@@ -574,7 +574,7 @@ ________________________________________________________
 <button id="submit">Submit</button>
 ~~~
 
-{{s10.p2}}
+{{s5.p1}}
 
 ~~~js
 const login = 'bandit'
@@ -587,11 +587,11 @@ fetch(`https://garevna-form-data.glitch.me/form/${login}`, {
 }).then(response => console.log(response.status))
 ~~~
 
-{{s10.p3}}
-{{s10.p4}}
-{{s10.p5}}
+{{s5.p2}}
+{{s5.p3}}
+{{s5.p4}}
 
 ________________________________________________________
 
-{{s10.p6}}
-{{s10.p7}}
+[:::Live Demo:::](https://garevna-form-data.glitch.me/)  
+[![ico-50 git] Live Demo](https://garevna.github.io/js-samples/#47)

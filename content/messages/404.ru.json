@@ -1,11 +1,6 @@
 {
-  "s1.h1": "404",
-  "s1.p1": "File Not Found",
-  "s1.p2": "<h1 style=\"text-align: center\"></h1>",
-  "s1.p3": "На жаль, запитаний вами матеріал не знайдено або не існує.",
-  "s1.p4": "Зверніться до розробника: irina.h.fylyppova@gmail.com",
-  "s1.p5": "Unfortunately, the material you've requested was not found or does not exist.",
-  "s1.p6": "Please contact the developer: irina.h.fylyppova@gmail.com",
-  "s1.p7": "К сожалению, запрошенный вами материал не найден или не существует.",
-  "s1.p8": "Обратитесь к разработчику: irina.h.fylyppova@gmail.com"
+  "s0.p1": "На жаль, запитаний вами матеріал не знайдено або не існує.",
+  "s0.p2": "Зверніться до розробника: irina.h.fylyppova@gmail.com",
+  "s0.p3": "К сожалению, запрошенный вами материал не найден или не существует.",
+  "s0.p4": "Обратитесь к разработчику: irina.h.fylyppova@gmail.com"
 }

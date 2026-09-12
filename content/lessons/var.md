@@ -6,28 +6,28 @@
 
 {{s1.p3}}
 
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
-{{s1.p9}}
-{{s1.p10}}
+• string
+• number
+• [%%%bigint%%%](page/BigInt)
+• boolean
+• undefined
+• symbol
+• [%%%null%%%](page/typeof#null)
 ______________________________________________________________
 
-## ![ico-30 icon] {{s2.h1}}
+## ![ico-30 icon] String
 
-{{s2.p1}}
+{{s1.p4}}
 
 | ^^ 0^^ | ^^ 1^^ | ^^ 2^^ | ^^ 3^^ | ^^ 4^^ | ^^ 5^^ | ^^ 6^^ | ^^ 7^^ | ^^ 8^^ | ^^ 9^^ | ^^10^^ | ^^11^^ | ^^12^^ | ^^13^^ | ^^14^^ | ^^15^^ |
-{{s2.p2}}
+| ** M** | ** y** |        | ** n** | ** a** | ** m** | ** e** |        | ** i** | ** s** |        | ** P** | ** i** | ** t** | ** e** | ** r** |
 
 
-{{s2.p3}}
+{{s1.p5}}
 
-{{s2.p4}}
+{{s1.p6}}
 
-{{s2.p5}}
+◘◘![ico-25 cap]◘◘
 
 ~~~js
 var str = '"es2023" is a shorthand for "ECMAScript 2023 Language Specification".'
@@ -36,197 +36,197 @@ var str = '"es2023" is a shorthand for "ECMAScript 2023 Language Specification".
 var str = "'es2023, x' is a shorthand for 'ECMAScript 2023 Language Specification'."
 ~~~
 
-{{s2.p6}}
+{{s1.p7}}
 
 ~~~js
 str = '\'es2023, x\' is a shorthand for \'ECMAScript 2023 Language Specification\'.'
 ~~~
 
-{{s2.p7}}
+{{s1.p8}}
 
-{{s2.p8}}
+{{s1.p9}}
 
-{{s2.p9}}
+{{s1.p10}}
 
-{{s2.p10}}
+{{s1.p11}}
 
 _____________________________________
 
-{{s2.p11}}
-{{s2.p12}}
+{{s1.p12}}
+{{s1.p13}}
 
-§§§§ {{s2.demo1}} | var_string_length_template §§§§
+§§§§ Demo | var_string_length_template §§§§
 
-{{s2.p13}}
+{{s1.p14}}
 
 ~~~console
 message + string
 ~~~
 
-{{s2.p14}}
-{{s2.p15}}
-{{s2.p16}}
-{{s2.p17}}
+{{s1.p15}}
+{{s1.p16}}
+{{s1.p17}}
+{{s1.p18}}
 
 ______________________________________________________________
 
-## ![ico-30 icon] {{s3.h1}}
+## ![ico-30 icon] Number
 
-{{s3.p1}}
+{{s1.p19}}
 
-{{s3.p2}}
+{{s1.p20}}
 
-{{s3.p3}}
+{{s1.p21}}
 
 ~~~js
 var x = 53.25
 ~~~
 
-{{s3.p4}}
+{{s1.p22}}
 
-{{s3.p5}}
+{{s1.p23}}
 
-{{s3.p6}}
+{{s1.p24}}
 
-{{s3.p7}}
-{{s3.p8}}
-{{s3.p9}}
-{{s3.p10}}
-{{s3.p11}}
+{{s1.p25}}
+{{s1.p26}}
+{{s1.p27}}
+{{s1.p28}}
+{{s1.p29}}
 
-{{s3.p12}}
+{{s1.p30}}
 
-### ![ico-25 icon] {{s4.h1}}
+### ![ico-25 icon] {{s2.h1}}
 
-{{s4.p1}}
+{{s2.p1}}
 
 {{{vars-number-1.js}}}
 
-{{s4.p2}}
+{{s2.p2}}
 
-### ![ico-25 icon] {{s5.h1}}
+### ![ico-25 icon] {{s3.h1}}
 
-{{s5.p1}}
+{{s3.p1}}
 
-{{s5.p2}}
+{{s3.p2}}
 
 ••1.8 ✖ 10↑↑5 ↑↑••
 
-{{s5.p3}}
+{{s3.p3}}
 
-{{s5.p4}}
-{{s5.p5}}
-{{s5.p6}}
+••500 → 5e+2 (5 * 10↑↑2 ↑↑)••
+••5000 → 5e+3 (5 * 10↑↑3 ↑↑)••
+••50000 → 5e+4 (5 * 10↑↑4 ↑↑)••
 
-{{s5.p7}}
-{{s5.p8}}
-{{s5.p9}}
+••0.05 → 5e-2 (5 / 10↑↑2 ↑↑)••
+••0.005 → 5e-3 (5 / 10↑↑3 ↑↑)••
+••0.0005 → 5e-4 (5 / 10↑↑4 ↑↑)••
 
 {{{vars-number-exponential-1.js}}}
 
-{{s5.p10}}
+{{s3.p4}}
 
 {{{vars-number-exponential-2.js}}}
 
 _____________________________________
 
-### ![ico-25 icon] {{s6.h1}}
+### ![ico-25 icon] Infinity
 
-{{s6.p1}}
+{{s3.p5}}
 
 ~~~js
 var x = 1, y = 0
 var z = x / y
 ~~~
 
-{{s6.p2}}
+{{s3.p6}}
 
-{{s6.p3}}
+{{s3.p7}}
 
 {{{vars-number-infinity.js}}}
 
 _____________________________________
 
-### ![ico-25 icon] {{s7.h1}}
+### ![ico-25 icon] NaN
 
-{{s7.p1}}
+{{s3.p8}}
 
-{{s7.p2}}
+{{s3.p9}}
 
-{{s7.p3}}
+{{s3.p10}}
 
-{{s7.p4}}
+{{s3.p11}}
 
-{{s7.p5}}
-{{s7.p6}}
+{{s3.p12}}
+{{s3.p13}}
 
-{{s7.p7}}
-{{s7.p8}}
-{{s7.p9}}
+{{s3.p14}}
+{{s3.p15}}
+{{s3.p16}}
 
-§§§§ {{s7.demo1}} | var_NaN_template §§§§
+§§§§ Demo | var_NaN_template §§§§
 
 __________________________________________________
 
-### ![ico-25 icon] {{s8.h1}}
+### ![ico-25 icon] {{s4.h1}}
 
-{{s8.p1}}
+{{s4.p1}}
 
 {{{vars-number-4.js}}}
 
-{{s8.p2}}
+{{s4.p2}}
 
 _____________________________________
 
-### ![ico-25 icon] {{s9.h1}}
+### ![ico-25 icon] {{s5.h1}}
 
 ◘◘** 1**◘◘
 
-→→→ {{s9.quiz1}} | {{s9.quizVariants1}} | {{s9.quizAnswer1}} →→→
+→→→ 8e-2 | 800, 0.8, 0.08, 8 | 0.08 →→→
 
 ◘◘** 2**◘◘
 
-→→→ {{s9.quiz2}} | {{s9.quizVariants2}} | {{s9.quizAnswer2}} →→→
+→→→ 1.7e+2 | 170, 1.7, 0.17, 17 | 170 →→→
 
 ◘◘** 3**◘◘
 
-→→→ {{s9.quiz3}} | {{s9.quizVariants3}} | {{s9.quizAnswer3}} →→→
+→→→ 0.3e+310 | 3e+309, Infinity | Infinity →→→
 
 ◘◘** 4**◘◘
 
-→→→ {{s9.quiz4}} | {{s9.quizVariants4}} | {{s9.quizAnswer4}} →→→
+→→→ 3e-300 ✖ 1e+30 | 3e-900, Infinity, 0, 3e-270 | 3e-270 →→→
 
 ◘◘** 5**◘◘
 
-→→→ {{s9.quiz5}} | {{s9.quizVariants5}} | {{s9.quizAnswer5}} →→→
+→→→ 1e-5 + 2e-5 | 3e-5, 0.00003, 0.000030000000000000004, NaN | 0.000030000000000000004 →→→
 
 ◘◘** 6**◘◘
 
-→→→ {{s9.quiz6}} | {{s9.quizVariants6}} | {{s9.quizAnswer6}} →→→
+→→→ 0.003 + 0.0015 | 0.0045000000000000005, 0.0045, 45e-4, NaN | 0.0045000000000000005 →→→
 
 ◘◘** 7**◘◘
 
-→→→ {{s9.quiz7}} | {{s9.quizVariants7}} | {{s9.quizAnswer7}} →→→
+→→→ 5e+310 - Infinity | 0, Infinity, NaN | NaN →→→
 
 ◘◘** 8**◘◘
 
-→→→ {{s9.quiz8}} | {{s9.quizVariants8}} | {{s9.quizAnswer8}} →→→
+→→→ 0.005 + Infinity + NaN | 0.005, 0, Infinity, NaN | NaN →→→
 
 ◘◘** 9**◘◘
 
-→→→ {{s9.quiz9}} | {{s9.quizVariants9}} | {{s9.quizAnswer9}} →→→
+→→→ 5e+300 - Infinity | 5e+300, 0, -Infinity, NaN | -Infinity →→→
 
 ______________________________________________________________
 
-## ![ico-30 icon] {{s10.h1}}
+## ![ico-30 icon] Boolean
 
-{{s10.p1}}
+{{s5.p1}}
 
-{{s10.p2}}
+{{s5.p2}}
 
-{{s10.p3}}
+{{s5.p3}}
 
-{{s10.p4}}
+{{s5.p4}}
 
 ~~~js
 5 > 8
@@ -242,32 +242,32 @@ false
 true
 ~~~
 
-{{s10.p5}}
-{{s10.p6}}
-{{s10.p7}}
+{{s5.p5}}
+{{s5.p6}}
+{{s5.p7}}
 
-{{s10.p8}}
+{{s5.p8}}
 
 ~~~js
 var bool = 5 > 8
 ~~~
 
-{{s10.p9}}
+{{s5.p9}}
 
-{{s10.p10}}
+{{s5.p10}}
 
-§§§§ {{s10.demo1}} | var_boolean_template §§§§
+§§§§ Demo | var_boolean_template §§§§
 
 ______________________________________________________________
 
-## ![ico-30 icon] {{s11.h1}}
+## ![ico-30 icon] undefined
 
-{{s11.p1}}
+{{s5.p11}}
 
-{{s11.p2}}
+{{s5.p12}}
 
-{{s11.p3}}
+{{s5.p13}}
 
-{{s11.p4}}
+{{s5.p14}}
 
-§§§§ {{s11.demo1}} | var_undefined_template §§§§
+§§§§ Demo | var_undefined_template §§§§

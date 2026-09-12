@@ -1,24 +1,24 @@
 # ![ico-30 study] {{s1.h1}}
 
+**ES 2015**
+
+_______________________________________________________
+
+## ![ico-25 icon] yield*
+
 {{s1.p1}}
 
-_______________________________________________________
+{{s1.p2}}
 
-## ![ico-25 icon] {{s2.h1}}
-
-{{s2.p1}}
-
-{{s2.p2}}
-
-{{s2.p3}}
+{{s1.p3}}
 
 _______________________________________________________
 
-{{s2.p4}}
+{{s1.p4}}
 
-{{s2.p5}}
+{{s1.p5}}
 
-{{s2.p6}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 const generator = function * (arg) {
@@ -38,9 +38,9 @@ document.body.onclick = function (event) {
 
 ___________________________________________________
 
-{{s2.p7}}
+{{s1.p6}}
 
-{{s2.p8}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js
 const generator1 = function * (arg) {
@@ -56,17 +56,17 @@ function * generator2 () {
 }
 ~~~
 
-{{s2.p9}}
+{{s1.p7}}
 
-{{s2.p10}}
+{{s1.p8}}
 
-{{s2.p11}}
+{{s1.p9}}
 
 ~~~js
 const iterator = generator2(3)
 ~~~
 
-{{s2.p12}}
+{{s1.p10}}
 
 ~~~js
 document.body.onclick = event => console.log(iterator.next().value)
@@ -74,11 +74,11 @@ document.body.onclick = event => console.log(iterator.next().value)
 
 ________________________________
 
-{{s2.p13}}
+{{s1.p11}}
 
-{{s2.p14}}
+{{s1.p12}}
 
-{{s2.p15}}
+{{s1.p13}}
 
 ~~~js
 const generator = function * () {
@@ -86,7 +86,7 @@ const generator = function * () {
 }
 ~~~
 
-{{s2.p16}}
+{{s1.p14}}
 
 ~~~js
 const generator = function * () {
@@ -98,7 +98,7 @@ console.log(...generator())
 
 ________________________________
 
-{{s2.p17}}
+◘◘![ico-20 cap] ** 3**◘◘
 
 ~~~js
 const generator = function* () {
@@ -116,11 +116,11 @@ document.body.onclick = function (event) {
 
 _________________________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] return()
 
-{{s3.p1}}
+{{s1.p15}}
 
-{{s3.p2}}
+◘◘![ico-20 cap] ** 4**◘◘
 
 ~~~js
 const generator1 = function * () {
@@ -147,4 +147,4 @@ document.body.onclick = function (event) {
 
 _________________________________________________________
 
-{{s3.p3}}
+[![ico-30 hw] Quiz](quiz/gen)

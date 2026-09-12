@@ -5,11 +5,11 @@
 ____________________________________________
 
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] Currying
 
-{{s2.p1}}
+{{s1.p1}}
 
-{{s2.p2}}
+![ico-25 cap] ** 1**
 
 ~~~js
 function reminder (arg) {
@@ -18,9 +18,9 @@ function reminder (arg) {
     : Array.from(arguments)
 }
 ~~~
-{{s2.p3}}
-{{s2.p4}}
-{{s2.p5}}
+{{s1.p2}}
+{{s1.p3}}
+{{s1.p4}}
 
 ~~~js
 function sample () {
@@ -40,46 +40,46 @@ alpha,betta
 alpha,betta,delta
 ~~~
 
-{{s2.p6}}
-{{s2.p7}}
+{{s1.p5}}
+{{s1.p6}}
 
-{{s2.p8}}
-{{s2.p9}}
+{{s1.p7}}
+{{s1.p8}}
 
-{{s2.p10}}
+{{s1.p9}}
 
 ~~~js
 alpha('sigma', 'omega')
 ~~~
 
-{{s2.p11}}
+{{s1.p10}}
 
 ~~~console
 alpha,sigma,omega
 ~~~
 
-{{s2.p12}}
-{{s2.p13}}
-{{s2.p14}}
+{{s1.p11}}
+{{s1.p12}}
+{{s1.p13}}
 
 ~~~js
 betta('figure', 'smile')
 ~~~
 
-{{s2.p15}}
+{{s1.p14}}
 
 ~~~console
 alpha,betta,figure,smile
 ~~~
 
-{{s2.p16}}
+{{s1.p15}}
 
-{{s2.p17}}
+{{s1.p16}}
 
 _______________________________________________________
 
 
-{{s2.p18}}
+◘◘![ico-25 cap] **11**◘◘
 
 ~~~js
 function currying (first, second) {
@@ -99,11 +99,11 @@ var curried = currying('Google')
 console.log(curried)
 ~~~
 
-{{s2.p19}}
-{{s2.p20}}
-{{s2.p21}}
+{{s1.p17}}
+{{s1.p18}}
+{{s1.p19}}
 
-{{s2.p22}}
+{{s1.p20}}
 
 ~~~console
 ƒ ( second ) {
@@ -112,13 +112,13 @@ console.log(curried)
 }
 ~~~
 
-{{s2.p23}}
+{{s1.p21}}
 
 ~~~js
 curried()  // null
 ~~~
 
-{{s2.p24}}
+{{s1.p22}}
 
 ~~~js
 curried('Mozilla')   // ► (2) ["Google", "Mozilla"]
@@ -126,9 +126,9 @@ curried('Mozilla')   // ► (2) ["Google", "Mozilla"]
 
 ____________________
 
-{{s2.p25}}
+{{s1.p23}}
 
-{{s2.p26}}
+◘◘![ico-25 cap] **12**◘◘
 
 ~~~js
 var test = function (args) {
@@ -150,7 +150,7 @@ rectFunc(50, 50, 150, 150)
 lineFunc(20, 30, 200, 200)
 ~~~
 
-{{s2.p27}}
+{{s1.p24}}
 
 ~~~console
 Функция func вызвана в контексте объекта figure
@@ -163,7 +163,7 @@ lineFunc(20, 30, 200, 200)
 
 _____________________________
 
-{{s2.p28}}
+◘◘![ico-25 cap] **13**◘◘
 
 ~~~js
 function sample (first, second, third) {
@@ -184,7 +184,7 @@ console.log(test[1]('IE'))
 console.log(test[2]('IE'))
 ~~~
 
-{{s2.p29}}
+{{s1.p25}}
 
 ~~~console
 ► (2) ["Google", "IE"]
@@ -194,7 +194,7 @@ console.log(test[2]('IE'))
 
 _____________________________________
 
-{{s2.p30}}
+◘◘![ico-25 cap] **14**◘◘
 
 ~~~js
 function sample (first, second, third) {
@@ -212,7 +212,7 @@ var test = sample('Google', 'Mozilla', 'Safari')
 for (var num of [0, 1, 2]) console.log(test[num]('IE'))
 ~~~
 
-{{s2.p31}}
+{{s1.p26}}
 
 ~~~console
 ► (2) ["Google", "IE"]
@@ -223,7 +223,7 @@ for (var num of [0, 1, 2]) console.log(test[num]('IE'))
 
 _____________________________________
 
-{{s2.p32}}
+◘◘![ico-25 cap] **15**◘◘
 
 ~~~js
 function func () {
@@ -236,7 +236,7 @@ function func () {
 (eval(`func${'()'.repeat(11)}`))
 ~~~
 
-{{s2.p33}}
+{{s1.p27}}
 
 ~~~console
 1
@@ -253,7 +253,7 @@ function func () {
 
 _____________________________________
 
-{{s2.p34}}
+◘◘![ico-25 cap] **16**◘◘
 
 ~~~js
 function func () {
@@ -284,7 +284,7 @@ func()()()()()()()()()()()
 
 _____________________________________
 
-{{s2.p35}}
+◘◘![ico-25 cap] **17**◘◘
 
 
 ~~~js
@@ -301,9 +301,9 @@ console.log(test ()()()()()().result)  // 64
 ~~~
 _________________________________________
 
-## ![ico-25 smile] {{s3.h1}}
+## ![ico-25 smile] {{s2.h1}}
 
-{{s3.p1}}
+{{s2.p1}}
 
 ~~~js
 var sample = function () {
@@ -319,4 +319,4 @@ sample()
 
 _________________________
 
-{{s3.p2}}
+{{s2.p2}}

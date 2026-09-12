@@ -1,10 +1,10 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Notification API
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
+{{s0.p2}}
 
-{{s1.p3}}
+{{s0.p3}}
 
 ~~~console
 ▼ ƒ Notification()
@@ -23,57 +23,57 @@
 
 ___________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] permission
 
-{{s2.p1}}
-{{s2.p2}}
-{{s2.p3}}
+{{s0.p4}}
+{{s0.p5}}
+{{s0.p6}}
 
-{{s2.p4}}
+{{s0.p7}}
 
-{{s2.p5}}
-{{s2.p6}}
-{{s2.p7}}
+{{s0.p8}}
+{{s0.p9}}
+{{s0.p10}}
 
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
+{{s0.p11}}
+{{s0.p12}}
+{{s0.p13}}
 
-{{s2.p11}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 Notification.requestPermission(permission => alert(`Вы ${permission ? 'разрешили' : 'запретили'} показывать уведомления приложению ${location.host}`))
 ~~~
 
-{{s2.p12}}
+[:::Live Demo:::](https://garevna.github.io/js-samples/#44)
 
-{{s2.p13}}
+{{s0.p14}}
 
-^^^[{{s2.spoiler1}}]
+^^^[{{s0.spoiler1}}]
 
-{{s2.p14}}
+{{s0.p15}}
 
 ~~~js
 Notification.requestPermission()
   .then(permission => ...)
 ~~~
 
-{{s2.p15}}
+{{s0.p16}}
 
 ^^^
 ____________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{s1.h1}}
 
-{{s3.p1}}
+{{s1.p1}}
 
 ~~~js
 const notes = new Notification(title, options)
 ~~~
 
-{{s3.p2}}
+{{s1.p2}}
 
-{{s3.p3}}
+**Notification.prototype**
 
 ~~~~console
 ▼ Notification()
@@ -125,34 +125,34 @@ const notes = new Notification(title, options)
   ► __proto__: ƒ EventTarget()
 ~~~~
 
-{{s3.p4}}
+{{s1.p3}}
 
-{{s3.p5}}
-{{s3.p6}}
-{{s3.p7}}
+{{s1.p4}}
+{{s1.p5}}
+{{s1.p6}}
 
-{{s3.p8}}
+{{s1.p7}}
 
-{{s3.p9}}
+{{s1.p8}}
 
-{{s3.p10}}
-{{s3.p11}}
-{{s3.p12}}
-{{s3.p13}}
-{{s3.p14}}
-{{s3.p15}}
-{{s3.p16}}
-{{s3.p17}}
-{{s3.p18}}
-{{s3.p19}}
-{{s3.p20}}
-{{s3.p21}}
-{{s3.p22}}
-{{s3.p23}}
-{{s3.p24}}
+{{s1.p9}}
+{{s1.p10}}
+{{s1.p11}}
+![ico-20 green-ok] badge (read-only)
+{{s1.p12}}
+{{s1.p13}}
+{{s1.p14}}
+{{s1.p15}}
+{{s1.p16}}
+{{s1.p17}}
+{{s1.p18}}
+{{s1.p19}}
+{{s1.p20}}
+{{s1.p21}}
+{{s1.p22}}
 
 
-{{s3.p25}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js
 Notification
@@ -174,14 +174,14 @@ function showNotification (data) {
 }
 ~~~
 
-{{s3.p26}}
+[:::Live Demo:::](https://garevna.github.io/js-samples/#45)
 ______________________________________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] Notification from Worker
 
-{{s4.p1}}
+{{s1.p23}}
 
-{{s4.p2}}
+◘◘![ico-20 cap] ** 3**◘◘
 
 ~~~js
 const messageWorker = new Worker('./js/notification-worker.js')
@@ -209,7 +209,7 @@ messageWorker.onmessage = function (event) {
 }
 ~~~
 
-{{s4.p3}}
+◘◘![ico-20 cap] worker.js◘◘
 
 ~~~js
 onmessage = function (event) {
@@ -244,4 +244,4 @@ function showNotification (data) {
 
 {{{Notification-with-worker-1.js}}}
 
-{{s4.p4}}
+[:::Live Demo:::](https://garevna.github.io/js-samples/#46)

@@ -1,11 +1,11 @@
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] Promises
 
 
-{{s1.p1}}
+Calling an asynchronous function returns a promise
 
-{{s1.p2}}
-{{s1.p3}}
-{{s1.p4}}
+Let's remember what's good about promises in JS?
+First of all, because if a promise is fulfilled, then it is not at all necessary to immediately take back what was promised.
+You can put the promise on the shelf:
 
 ~~~js
 const promise = sayHello ()
@@ -14,20 +14,20 @@ const promise = sayHello ()
 @@@@
 
 ![](illustrations/tin.jpg)
-{{s1.p5}}
+and then 'open the tin' (_promise_) when **it will be convenient for us**! Moreover, 'the opener' (~then()~ method) is always with it. Promise is a reliable tin in which the contents will not deteriorate or disappear.
 
 @@@@
 
 @@@@ 3
 ![](illustrations/modesty.png)
-{{s1.p6}}
+What else is good about a promise? - his modesty! Promise will never interrupt the main thread. Will never fit into the Call Stack without waiting in line.
 ![](illustrations/promise-in-queue.png)
 
 @@@@
 
-{{s1.p7}}
+![ico-25 cap] **Example 1**
 
-{{s1.p8}}
+For example, as a result of executing the following code:
 
 ~~~js
 const sayHello = async () => 'Hello'
@@ -43,7 +43,7 @@ console.log(`Start: ${new Date().getUTCMilliseconds()}`)
 console.timeEnd('Main thread')
 ~~~
 
-{{s1.p9}}
+we will see in the console:
 
 ~~~console
 Start: 465
@@ -52,28 +52,28 @@ Main thread: 0.279296875ms
 Hello
 ~~~
 
-{{s1.p10}}
-{{s1.p11}}
-{{s1.p12}}
-{{s1.p13}}
-{{s1.p14}}
+ie the asynchronous function ~sayHello()~ behaves very modestly:
+although all it does is just say hello,
+but at the same time it does not break into the main thread and does not yell from the threshold: "_Hello!_"
+it modestly waits for the main thread to complete its work
+after which it politely says "Hello"
 
-{{s1.p15}}
-{{s1.p16}}
+but all that distinguishes it from a regular function is the word **~async~**
+remove this word, and "Hello" will appear between "Start..." and "Finish..."
 
-{{s1.p17}}
+So what's the deal?
 
-{{s1.p18}}
-{{s1.p19}}
+The fact is that the call to the ~sayHello()~ function returned a promise to say hello,
+but when it is convenient for the main thread ![ico-20 smile]
 
 __________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] More than just a promise
 
-{{s2.p1}}
-{{s2.p2}}
+Sometimes you need to streamline the execution of several asynchronous operations.
+We can already solve this problem using a promise and a chain of calls to the **~then~** method:
 
-{{s2.p3}}
+◘◘![ico-20 cap] Example 2◘◘
 
 ~~~js
 new Promise(resolve => setTimeout(() => resolve('Hello'), 1000))
@@ -81,14 +81,14 @@ new Promise(resolve => setTimeout(() => resolve('Hello'), 1000))
   .then(response => console.log(response))
 ~~~
 
-{{s2.p4}}
-{{s2.p5}}
-{{s2.p6}}
-{{s2.p7}}
+In this example, after 1 second the first promise will be resolved with the message "Hello".
+When it resolves, a new promise will be created, which will also resolve after 1 second.
+The second promise will add the string ", baby" to the message returned by the first promise.
+As a result, the chain of promises will resolve in 2 seconds, and the console will display ~Hello, baby~.
 
-{{s2.p8}}
+Let's change the code a little to track time.
 
-{{s2.p9}}
+To do this, we declare an auxiliary function ~setTimer~:
 
 ~~~js
 function setTimer (message, callback) {
@@ -97,7 +97,7 @@ function setTimer (message, callback) {
 }
 ~~~
 
-{{s2.p10}}
+Now the chain of promises will be simplified, and we'll see an indication of the execution time in milliseconds:
 
 ~~~js
 new Promise(callback => setTimer('Hello', callback))
@@ -105,7 +105,7 @@ new Promise(callback => setTimer('Hello', callback))
   .then(response => setTimer(response, console.log))
 ~~~
 
-{{s2.p11}}
+Now we will see in the console something like:
 
 ~~~console
 568
@@ -115,15 +115,15 @@ Promise {<pending>}
 Hello, baby
 ~~~
 
-{{s2.p12}}
+However, an async function is an alternative solution.
 
-{{s2.p13}}
+Let's declare a helper function **resolve**:
 
 ~~~js
 const resolve = response => document.body.innerHTML += `<p>${response}</p>`
 ~~~
 
-{{s2.p14}}
+Let's slightly correct the code of the **setTimer** function, replacing ~console.log~ with a call to the ~resolve~ function:
 
 ~~~js
 function setTimer (message, callback) {
@@ -132,7 +132,7 @@ function setTimer (message, callback) {
 }
 ~~~
 
-{{s2.p15}}
+Now let's declare the asynchronous function **sayHello**:
 
 ~~~js
 const sayHello = async () => {
@@ -141,7 +141,7 @@ const sayHello = async () => {
 }
 ~~~
 
-{{s2.p16}}
+and  call it by passing the **~resolve~** callback through the ~then~ method:
 
 ~~~js
 sayHello().then(resolve)
@@ -149,23 +149,23 @@ sayHello().then(resolve)
 
 {{{async-is-good-1.js}}}
 
-{{s2.p17}}
+What we see from this example:
 
-{{s2.p18}}
-{{s2.p19}}
-{{s2.p20}}
-{{s2.p21}}
+• instead of calling the **~then~** method of the promise, the keyword **~await~** of the asynchronous function was used;
+• the code that follows the line with **~await~** will be executed as if this code was executed in the callback of the **~then~** method of the previous promise;
+• calling an asynchronous function returns a promise, so the result of an asynchronous function can only be obtained using the **~then~** method;
+• in order for a call to an asynchronous function will be resolved with some result, the body of the asynchronous function must contain the operator **~return~**;
 
 _________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] Queue Manager
 
-{{s3.p1}}
-{{s3.p2}}
+The asynchronous function is an excellent queue organizer.
+It strictly ensures that no one jumps over the queue at the Call Stack ![ico-20 smile]
 
-{{s3.p3}}
-{{s3.p4}}
-{{s3.p5}}
+Let us have a function **promise** that returns a promise.
+In this case, the callback resolve binds the first argument passed to the function **promise**.
+The second argument to the **promise** function is used to set the timer:
 
 ~~~js
 function promise () {
@@ -173,13 +173,13 @@ function promise () {
 }
 ~~~
 
-{{s3.p6}}
+and function **resolve**:
 
 ~~~js
 const resolve = response => console.log(response)
 ~~~
 
-{{s3.p7}}
+Let's make three consecutive calls to the **promise** function:
 
 ~~~js
 promise('Start', 5).then(resolve)
@@ -190,11 +190,11 @@ resolve('Finish')
 
 {{{async-is-good-3-1.js}}}
 
-{{s3.p8}}
+As we can see, callbacks are returned when the timer has expired, and not in the order they were called.
 
-{{s3.p9}}
+Now let's queue them up using the asynchronous function **sigma**:
 
-{{s3.p10}}
+◘◘![ico-20 cap] Example 3◘◘
 
 ~~~js
 function promise () {
@@ -213,13 +213,13 @@ sigma().then(response => console.log(response))
 
 {{{async-is-good-3-2.js}}}
 
-{{s3.p11}}
+Now they strictly keep the order of queue! ![ico-20 smile]
 
 __________________________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] Organizer of asynchronous processes
 
-{{s4.p1}}
+◘◘![ico-20 cap] Example 4◘◘
 
 ~~~js
 async function getLogin (resolve, reject) {
@@ -252,7 +252,7 @@ getLogin(res => console.log(res), err => console.error(err))
 
 {{{async-is-good-4.js}}}
 
-{{s4.p2}}
+^^To see what logins are in the database, run in the console:^^
 
 ~~~js
 fetch('https://garevna-rest-api.glitch.me/users/all')
@@ -262,14 +262,14 @@ fetch('https://garevna-rest-api.glitch.me/users/all')
 
 _________________________________
 
-{{s4.p3}}
+Let's rewrite the previous example a little.
 
-{{s4.p4}}
-{{s4.p5}}
+Let's declare a function **getInput** that will return **_promise_**.
+The **getInput** function receives the **users** object as an argument, and creates an ~input~ element for entering the user's login.
 
-{{s4.p6}}
+The anonymous function that is passed to the **Promise** constructor sets up a handler for the onchange event of the ~input~ element, which calls either **~resolve~** or **~reject~** depending on what was entered in the ~input~ field (whether there is a corresponding user in the database)
 
-{{s4.p7}}
+◘◘![ico-20 file] getInput◘◘
 
 ~~~js
 function getInput (users) {
@@ -297,9 +297,9 @@ function getInput (users) {
 }
 ~~~
 
-{{s4.p8}}
+Now let's create an asynchronous function **getLogin**, which will send a request to the server, receive data, call the function **getInput** and transfer the received data to it:
 
-{{s4.p9}}
+◘◘![ico-20 file] getLogin◘◘
 
 ~~~js
 async function getLogin () {
@@ -309,31 +309,31 @@ async function getLogin () {
 }
 ~~~
 
-{{s4.p10}}
+Let's create two more helper functions:
 
-{{s4.p11}}
+◘◘![ico-20 file] resolve & reject◘◘
 
 ~~~js
 const resolve = response => console.log(response)
 const reject = error => console.warn(error)
 ~~~
 
-{{s4.p12}}
+All that remains is to call the **getLogin** function:
 
-{{s4.p13}}
+◘◘![ico-20 cap] Invoke the getLogin function◘◘
 
 ~~~js
 getLogin().then(resolve, reject)
 ~~~
 
-{{s4.p14}}
+and don't forget to press 'Enter' after entering your login.
 
 _____________________
 
-{{s4.p15}}
+So, the complete example code:
 
 
-{{s4.p16}}
+{{s0.p1}}
 
 ~~~js
 function getInput ( users ) {
@@ -376,4 +376,4 @@ getLogin().then(resolve, reject)
 {{{async-is-good-5.js}}}
 
 _______________________
-{{s4.p17}}
+[![ico-30 hw] Quiz](quiz/async )

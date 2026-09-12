@@ -25,7 +25,7 @@ const promise = sayHello()
 
 {{s1.p8}}
 
-{{s1.p9}}
+◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 const sayHello = async () => 'Hello'
@@ -41,7 +41,7 @@ console.log(`Finish: ${new Date().getUTCMilliseconds()}`)
 console.timeEnd('Main thread')
 ~~~
 
-{{s1.p10}}
+{{s1.p9}}
 
 ~~~console
 Start: 465
@@ -51,16 +51,16 @@ Hello
 ~~~
 
 @@@@
-{{s1.p11}}
+{{s1.p10}}
 ![](illustrations/promise-modesty.svg)
 @@@@
 
+{{s1.p11}}
 {{s1.p12}}
+
 {{s1.p13}}
 
 {{s1.p14}}
-
-{{s1.p15}}
 
 __________________________________
 
@@ -70,7 +70,7 @@ __________________________________
 
 {{s2.p2}}
 
-{{s2.p3}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js
 new Promise(resolve => setTimeout(() => resolve('Hello'), 1000))
@@ -78,14 +78,14 @@ new Promise(resolve => setTimeout(() => resolve('Hello'), 1000))
   .then(response => console.log(response))
 ~~~
 
+{{s2.p3}}
 {{s2.p4}}
 {{s2.p5}}
 {{s2.p6}}
+
 {{s2.p7}}
 
 {{s2.p8}}
-
-{{s2.p9}}
 
 ~~~js
 function setTimer (message, callback) {
@@ -94,7 +94,7 @@ function setTimer (message, callback) {
 }
 ~~~
 
-{{s2.p10}}
+{{s2.p9}}
 
 ~~~js
 new Promise(callback => setTimer('Hello', callback))
@@ -102,7 +102,7 @@ new Promise(callback => setTimer('Hello', callback))
   .then(response => setTimer(response, console.log))
 ~~~
 
-{{s2.p11}}
+{{s2.p10}}
 
 ~~~console
 568
@@ -112,15 +112,15 @@ new Promise(callback => setTimer('Hello', callback))
 Hello, baby
 ~~~
 
-{{s2.p12}}
+{{s2.p11}}
 
-{{s2.p13}}
+{{s2.p12}}
 
 ~~~js
 const resolve = response => document.body.innerHTML += `<p>${response}</p>`
 ~~~
 
-{{s2.p14}}
+{{s2.p13}}
 
 ~~~js
 function setTimer (message, callback) {
@@ -129,7 +129,7 @@ function setTimer (message, callback) {
 }
 ~~~
 
-{{s2.p15}}
+{{s2.p14}}
 
 ~~~js
 const sayHello = async () => {
@@ -137,19 +137,19 @@ const sayHello = async () => {
   return await new Promise(callback => setTimer(`${res}, baby`, callback))
 }
 ~~~
-{{s2.p16}}
+{{s2.p15}}
 ~~~js
 sayHello().then(resolve)
 ~~~
 
 {{{async-is-good-1.js}}}
 
-{{s2.p17}}
+{{s2.p16}}
 
+{{s2.p17}}
 {{s2.p18}}
 {{s2.p19}}
 {{s2.p20}}
-{{s2.p21}}
 
 _________________________
 
@@ -189,7 +189,7 @@ resolve('Finish')
 
 {{s3.p9}}
 
-{{s3.p10}}
+◘◘![ico-20 cap] ** 3**◘◘
 
 ~~~js
 function promise () {
@@ -208,13 +208,13 @@ sigma().then(response => console.log(response))
 
 {{{async-is-good-3-2.js}}}
 
-{{s3.p11}}
+{{s3.p10}}
 
 __________________________________
 
 ### ![ico-20 icon] {{s4.h1}}
 
-{{s4.p1}}
+◘◘![ico-20 cap] ** 4**◘◘
 
 ~~~js
 async function getLogin (resolve, reject) {
@@ -247,7 +247,7 @@ getLogin(res => console.log(res), err => console.error(err))
 
 {{{async-is-good-4.js}}}
 
-{{s4.p2}}
+{{s4.p1}}
 
 ~~~js
 fetch('https://garevna-rest-api.glitch.me/users/all')
@@ -257,16 +257,16 @@ fetch('https://garevna-rest-api.glitch.me/users/all')
 
 _________________________________
 
+{{s4.p2}}
+
 {{s4.p3}}
-
 {{s4.p4}}
-{{s4.p5}}
 
+{{s4.p5}}
 {{s4.p6}}
 {{s4.p7}}
-{{s4.p8}}
 
-{{s4.p9}}
+◘◘![ico-20 file] getInput◘◘
 
 ~~~js
 function getInput (users) {
@@ -294,9 +294,9 @@ function getInput (users) {
 }
 ~~~
 
-{{s4.p10}}
+{{s4.p8}}
 
-{{s4.p11}}
+◘◘![ico-20 file] getLogin◘◘
 
 ~~~js
 async function getLogin () {
@@ -306,15 +306,15 @@ async function getLogin () {
 }
 ~~~
 
-{{s4.p12}}
+{{s4.p9}}
 
-{{s4.p13}}
+{{s4.p10}}
 
 ~~~js
 getLogin().then(console.log, console.error)
 ~~~
 
-{{s4.p14}}
+{{s4.p11}}
 
 
 ^^^[{{s4.spoiler1}}]
@@ -357,4 +357,4 @@ getLogin().then(console.log, console.error)
 {{{async-is-good-5.js}}}
 
 _______________________
-{{s4.p15}}
+{{s4.p12}}

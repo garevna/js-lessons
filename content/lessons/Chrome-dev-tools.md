@@ -1,93 +1,93 @@
-# ![ico-30 icon] {{s1.h1}}
+# ![ico-30 icon] Chrome DevTools
 
-{{s1.p1}}
+[![ico-20 link] Chrome DevTools](external/dev-tools)
 _____________________________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] Sources
 
-{{s2.p1}}
+{{s0.p1}}
 
-{{s2.p2}}
+{{s0.p2}}
 ![](illustrations/lesson-01-1.png)
 
-{{s2.p3}}
+{{s0.p3}}
 @@@@
 ![](illustrations/lesson-01-nav-panel.png)
-{{s2.p4}}
+{{s0.p4}}
 @@@@
 
-{{s2.p5}}
+{{s0.p5}}
 @@@@ 1
 ![](illustrations/lesson-01-debugger.png)
 @@@@
 _________________________________________________________
 
-{{s2.p6}}
+{{s0.p6}}
 
-{{s2.p7}}
+{{s0.p7}}
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] Snippet
 
-{{s3.p1}}
+{{s0.p8}}
 
-{{s3.p2}}
+{{s0.p9}}
 
-{{s3.p3}}
+{{s0.p10}}
 
 ![](illustrations/lesson-01-2.png)
 
 @@@@
-{{s3.p4}}
+{{s0.p11}}
 ![](illustrations/lesson-01-snippet.png)
 @@@@
 
 ________________________________________________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] Debugger
 
-{{s4.p1}}
+{{s0.p12}}
 
-{{s4.p2}}
+| Watch | Call Stack | Scope | Breakpoints |
 
-{{s4.p3}}
+{{s0.p13}}
 @@@@
-{{s4.p4}}
+{{s0.p14}}
 ![](illustrations/lesson-01-watch.png)
 @@@@
 
-{{s4.p5}}
+{{s0.p15}}
 
 @@@@
-{{s4.p6}}
+{{s0.p16}}
 ![](illustrations/lesson-01-breakpoints.png)
 @@@@
 
-{{s4.p7}}
-{{s4.p8}}
-{{s4.p9}}
+{{s0.p17}}
+{{s0.p18}}
+{{s0.p19}}
 
 @@@@
 ![](icons/debugger-panel.png)
-{{s4.p10}}
+{{s0.p20}}
 @@@@
 
-{{s4.p11}}
+{{s0.p21}}
 
 ![](illustrations/lesson-01-debugger.gif)
 
 _______________________________________________________
 
-{{s4.p12}}
-{{s4.p13}}
-{{s4.p14}}
+{{s0.p22}}
+{{s0.p23}}
+{{s0.p24}}
 
-{{s4.p15}}
+{{s0.p25}}
 
 _____________________________________________________________________________
 
-### ![ico-25 icon] {{s5.h1}}
+### ![ico-25 icon] Event Listener Breakpoints
 
-{{s5.p1}}
+{{s0.p26}}
 
 ![](illustrations/Chrome-devtools-breakpoints.gif)
 

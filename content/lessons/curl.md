@@ -1,128 +1,128 @@
-# ![ico-50 study] {{s1.h1}}
+# ![ico-50 study] curl
 
-{{s1.p1}}
+{{s0.p1}}
 
 [![ico-50 curl]](https://curl.se/docs/tutorial.html)
 
-{{s1.p2}}
+{{s0.p2}}
 
-{{s1.p3}}
+{{s0.p3}}
 
 _______________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{s1.h1}}
 
-{{s2.p1}}
+{{s1.p1}}
 
-{{s2.p2}}
+••![ico-25 bash] $ curl https://github.com••
 
 ![](illustrations/curl-01.png)
 
 
-{{s2.p3}}
+••![ico-25 bash] $ curl https://garevna.github.io/js-samples/js/index08.js••
 
 ![](illustrations/curl-02.png)
 
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{s2.h1}}
 
-^^^[{{s3.spoiler1}}]
+^^^[-O]
 
-{{s3.p1}}
+{{s2.p1}}
 
-{{s3.p2}}
+••![ico-25 bash] $ curl  -O  https://garevna.github.io/js-samples/js/index08.js••
 
 ![](illustrations/curl-03.png)
 
-{{s3.p3}}
+{{s2.p2}}
 
 ![](illustrations/curl-04.png)
 
 ^^^
 
-^^^[{{s3.spoiler2}}]
+^^^[-o]
 
-{{s3.p4}}
+{{s2.p3}}
 
-{{s3.p5}}
+••![ico-25 bash] $ curl  -o  index-1.html  https://garevna.github.io/js-samples/index.html••
 
 ![](illustrations/curl-05.png)
 
-{{s3.p6}}
+{{s2.p4}}
 
 ![](illustrations/curl-06.png)
 
 ^^^
 
-{{s3.p7}}
-{{s3.p8}}
+{{s2.p5}}
+{{s2.p6}}
 
 __________________
 
-^^^[{{s3.spoiler3}}]
+^^^[-d]
 
-{{s3.p9}}
+{{s2.p7}}
 
-{{s3.p10}}
+••![ico-25 bash] $ curl -d  "name=garevna&subject=testing"  http://httpbin.org/post••
 
 ![](illustrations/curl-07.png)
 
-{{s3.p11}}
+{{s2.p8}}
 
-{{s3.p12}}
+••"Content-Type": "application/x-www-form-urlencoded"••
 
-{{s3.p13}}
+{{s2.p9}}
 
-{{s3.p14}}
+••"name=garevna&subject=testing"••
 
-{{s3.p15}}
+{{s2.p10}}
 
 ^^^
 
-^^^[{{s3.spoiler4}}]
+^^^[-H]
 
-{{s3.p16}}
+{{s2.p11}}
 
-{{s3.p17}}
+{{s2.p12}}
 
-{{s3.p18}}
+{{s2.p13}}
 
-{{s3.p19}}
+••Content-Type: application / x-www-form-urlencoded••
 
-{{s3.p20}}
+{{s2.p14}}
 
-{{s3.p21}}
+{{s2.p15}}
 
-{{s3.p22}}
+••![ico-25 bash] $ curl -d '{ name:Irina }'  -H  'Content-Type: application/json'  http://httpbin.org/post••
 
-{{s3.p23}}
-{{s3.p24}}
-{{s3.p25}}
+{{s2.p16}}
+{{s2.p17}}
+{{s2.p18}}
 
 ![](illustrations/curl-08.png)
 
 ________________________
 
-{{s3.p26}}
+{{s2.p19}}
 
-{{s3.p27}}
+{{s2.p20}}
 
-{{s3.p28}}
+••![ico-25 bash] curl -d @index.html -H 'Content-Type: text/plain' http://httpbin.org/post••
 
 ![](illustrations/curl-09.png)
 
 ^^^
 
-^^^[{{s3.spoiler5}}]
+^^^[-u]
 
-{{s3.p29}}
+{{s2.p21}}
 
-{{s3.p30}}
+{{s2.p22}}
 
-{{s3.p31}}
+••![ico-25 bash] $ curl http://name:passwd@machine.domain/full/path/to/file••
 
-{{s3.p32}}
+{{s2.p23}}
 
-{{s3.p33}}
+••![ico-25 bash] $ curl --user garevna:garevna -d @index.html -H 'Content-Type: text/plain' http://httpbin.org/post••
 
 ^^^

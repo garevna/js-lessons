@@ -1,25 +1,25 @@
-# ![ico-30 icon] {{s1.h1}}
+# ![ico-30 icon] Throttling and Debouncing
 
-{{s1.p1}}
-{{s1.p2}}
-{{s1.p3}}
-{{s1.p4}}
+{{s0.p1}}
+{{s0.p2}}
+{{s0.p3}}
+{{s0.p4}}
 
-{{s1.p5}}
+[%%%lodash%%%](https://lodash.com/)
 
-{{s1.p6}}
+{{s0.p5}}
 
 _____________________________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] Throttling
 
-{{s2.p1}}
-{{s2.p2}}
-{{s2.p3}}
+{{s0.p6}}
+{{s0.p7}}
+{{s0.p8}}
 
-{{s2.p4}}
+{{s0.p9}}
 
-{{s2.p5}}
+◘◘![ico-20 file] throttle◘◘
 
 ~~~js
 const throttle = function (func, interval) {
@@ -42,20 +42,20 @@ const throttle = function (func, interval) {
 }
 ~~~
 
-{{s2.p6}}
-{{s2.p7}}
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
-{{s2.p12}}
-{{s2.p13}}
+{{s0.p10}}
+{{s0.p11}}
+{{s0.p12}}
+{{s0.p13}}
+{{s0.p14}}
+{{s0.p15}}
+{{s0.p16}}
+{{s0.p17}}
 
-{{s2.p14}}
+{{s0.p18}}
 
-{{s2.p15}}
+{{s0.p19}}
 
-{{s2.p16}}
+◘◘![ico-20 file] showPicture◘◘
 
 ~~~js
 function showPicture () {
@@ -66,13 +66,13 @@ function showPicture () {
 }
 ~~~
 
-{{s2.p17}}
+{{s0.p20}}
 
 ~~~js
 const showPictureThrottle = throttle(showPicture, 1000)
 ~~~
 
-{{s2.p18}}
+{{s0.p21}}
 
 ~~~js
 const btn = nav.appendChild(document.createElement('button'))
@@ -81,18 +81,18 @@ btn.innerText = 'Add picture once per 1 sec'
 btn.onclick = showPictureThrottle
 ~~~
 
-{{s2.p19}}
+{{s0.p22}}
 
 {{{throttling-and-debouncing-1.js}}}
 
 _____________________________________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] Debouncing
 
-{{s3.p1}}
-{{s3.p2}}
+{{s0.p23}}
+{{s0.p24}}
 
-{{s3.p3}}
+◘◘![ico-20 file] debounce◘◘
 
 ~~~js
 const debounce = function (func, interval) {
@@ -112,9 +112,9 @@ const debounce = function (func, interval) {
 }
 ~~~
 
-{{s3.p4}}
+{{s0.p25}}
 
-{{s3.p5}}
+◘◘![ico-20 cap] inputHandler◘◘
 
 ~~~js
 function inputHandler (event) {
@@ -135,16 +135,16 @@ function inputHandler (event) {
 }
 ~~~
 
-{{s3.p6}}
+{{s0.p26}}
 
 ~~~js
 const inputHandlerDebounced = debounce(inputHandler, 1000)
 ~~~
 
-{{s3.p7}}
-{{s3.p8}}
+{{s0.p27}}
+{{s0.p28}}
 
-{{s3.p9}}
+{{s0.p29}}
 
 ~~~js
 const style = document.head
@@ -164,10 +164,10 @@ style.textContent = `
 `
 ~~~
 
-{{s3.p10}}
-{{s3.p11}}
+{{s0.p30}}
+{{s0.p31}}
 
-{{s3.p12}}
+{{s0.p32}}
 
 ~~~js
 const createInput = () => {

@@ -4,7 +4,7 @@
 
 {{s1.p2}}
 
-^^^[{{s1.spoiler1}}]
+^^^[typescript]
 {{s1.p3}}
 ~~~js
 var ten: number = 10
@@ -121,11 +121,11 @@ number %= 4
 
 {{s2.p14}}
 
-§§§§ {{s2.demo1}} | assignments_01_template §§§§
+§§§§ Demo | assignments_01_template §§§§
 
 _________________________________________________________________
 
-## ![ico-30 hw] {{s3.h1}}
+## ![ico-30 hw] Tests
 
 ~~~js
 var alpha = 11, betta = 7, sigma = 2, number = NaN
@@ -133,20 +133,20 @@ var alpha = 11, betta = 7, sigma = 2, number = NaN
 
 ◘◘** 1**◘◘
 
-→→→ {{s3.quiz1}}  | {{s3.quizVariants1}} | {{s3.quizAnswer1}} →→→
+→→→ alpha -= sigma  | 7, 11, 9, NaN, 0, 2 | 9 →→→
 
 ◘◘** 2**◘◘
 
-→→→ {{s3.quiz2}}  | {{s3.quizVariants2}} | {{s3.quizAnswer2}} →→→
+→→→ number += betta  | 7, 11, 9, NaN, 0, 2 | NaN →→→
 
 ◘◘** 3**◘◘
 
-→→→ {{s3.quiz3}}  | {{s3.quizVariants3}} | {{s3.quizAnswer3}} →→→
+→→→ betta += sigma  | 7, 11, 9, NaN, 0, 2 | 9 →→→
 
 ◘◘** 4**◘◘
 
-→→→ {{s3.quiz4}}  | {{s3.quizVariants4}} | {{s3.quizAnswer4}} →→→
+→→→ betta /= alpha  | 7, 11, 9, NaN, 1, 2 | 1 →→→
 
 ◘◘** 5**◘◘
 
-→→→ {{s3.quiz5}}  | {{s3.quizVariants5}} | {{s3.quizAnswer5}} →→→
+→→→ alpha %= (sigma + 5)  | 0, 1, 2, 3, NaN | 2 →→→

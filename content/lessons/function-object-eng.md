@@ -1,28 +1,28 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Object 'function'
 
 _______________________________________
 
 
-{{s1.p1}}
-{{s1.p2}}
+**The function is a _callable object_**
+**A function associated with an object through a property is called a _method_**
 
-{{s1.p3}}
+^^![ico-25 file] ECMAScript® 2016 Language Specification^^
 
 _______________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] arguments
 
-{{s2.p1}}
+JavaScript functions have a built-in **~arguments~** object
 
-{{s2.p2}}
+It has a **~length~** property, just like an array
 
-{{s2.p3}}
+Its elements are accessed by index, just like array elements
 
-{{s2.p4}}
+![ico-20 warn] However this is not an array
 
-{{s2.p5}}
+^^Therefore, methods for working with arrays (**~push~**, **~pop~**, etc.) cannot be applied to it.^^
 
-{{s2.p6}}
+^^It can be converted to a regular array using the **~Array.from~** method^^
 
 ~~~js
 function test () {
@@ -31,11 +31,11 @@ function test () {
 }
 ~~~
 
-{{s2.p7}}
+The **~arguments~** object contains all the arguments passed to the function when it was called
 
-{{s2.p8}}
+They will be available by index strictly in the order in which they were passed to the function when called
 
-{{s2.p9}}
+◘◘![ico-25 cap] **Example 1**◘◘
 
 ~~~js
 function testArguments () {
@@ -49,9 +49,9 @@ testArguments(27, false, 'Fill', [7, 4, 5], null)
 
 ______________________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] arguments.callee
 
-{{s3.p1}}
+The **~arguments~** object has a property **_~callee~_** - a link to the function being executed (the “master” function of the ~arguments~ object)
 
 ~~~js
 function testArguments () {
@@ -61,9 +61,9 @@ function testArguments () {
 testArguments() // testArguments
 ~~~
 
-^^^[{{s3.spoiler1}}]
+^^^[Example 2]
 
-{{s3.p2}}
+^^Declare a function **~getArguments~**:^^
 
 ~~~js
 function getArguments (param) {
@@ -71,39 +71,39 @@ function getArguments (param) {
 }
 ~~~
 
-{{s3.p3}}
+^^that, if passed an argument, returns the value of that argument; otherwise, it returns a reference to itself.^^
 
-{{s3.p4}}
+^^Now, call this function with and without a parameter:^^
 
 ~~~js
 var x = getArguments()
 var y = getArguments('Hello!')
 ~~~
 
-{{s3.p5}}
-{{s3.p6}}
+^^We stored the result of the function call without arguments in a variable **~ x ~**,^^
+^^and the result of the call with the argument "Hello!" in a variable **~ y ~**^^
 
-{{s3.p7}}
+^^Now, we print the variables **~ x ~** and **~ y ~** to the console^^
 
-{{s3.p8}}
+^^The variable **~ x ~** contains an exact copy of the **~getArguments~** function^^
 
-{{s3.p9}}
+^^and the variable **~ y ~** contains the string "Hello!"^^
 
-{{s3.p10}}
+^^Call the function **~ x ~**:^^
 
 ~~~js
 x('Goodbye!')
 ~~~
 
-{{s3.p11}}
+and get the string 'Goodbye!'
 
 ^^^
 
-^^^[{{s3.spoiler2}}]
+^^^[Example 3]
 
-{{s3.p12}}
+![ico-25 cap] ** 3 **
 
-{{s3.p13}}
+^^Declare a function that "heals itself," i.e., it adds properties and methods to itself:^^
 
 ~~~js
 function setProperty (prop, val) {
@@ -111,14 +111,14 @@ function setProperty (prop, val) {
 }
 ~~~
 
-{{s3.p14}}
+^^Now, make it create a couple of properties for itself:^^
 
 ~~~js
 setProperty('isActive', false)
 setProperty('value', 50)
 ~~~
 
-{{s3.p15}}
+^^And, for added assurance, make it create a method for itself:^^
 
 ~~~js
 setProperty('method', function () {
@@ -126,19 +126,19 @@ setProperty('method', function () {
 })
 ~~~
 
-{{s3.p16}}
-{{s3.p17}}
-{{s3.p18}}
+^^Here we pass a function as the second argument to it^^
+^^Now, let's check that these properties and method have appeared on the **~setProperty~** function^^
+{{s0.p1}}
 
 ^^^
 
-^^^[{{s3.spoiler3}}]
+^^^[Example 4]
 
-{{s3.p19}}
+![ico-25 cap] ** 4 **
 
-{{s3.p20}}
+^^Let's create a function that "accumulates" the results of its own computations.^^
 
-{{s3.p21}}
+^^Let this be a function that calculates the factorial of a number:^^
 
 ~~~js
 var factorial = function (num) {
@@ -147,7 +147,7 @@ var factorial = function (num) {
 }
 ~~~
 
-{{s3.p22}}
+^^Let's "modify" it as follows:^^
 
 ~~~js
 var factorial = function (num) {
@@ -159,7 +159,7 @@ var factorial = function (num) {
 }
 ~~~
 
-{{s3.p23}}
+^^Call it with different argument values and print the value of the **~res~** property to the console:^^
 
 ~~~js
 factorial(5)
@@ -168,19 +168,19 @@ factorial(5)
 console.log(factorial.res)
 ~~~
 
-{{s3.p24}}
+^^We will get the array ~[120, 3628800]~^^
 
 ^^^
 
-{{s3.p25}}
+^^![ico-20 warn] The following example is better reviewed after studying DOM element events.^^
 
-^^^[{{s3.spoiler4}}]
+^^^[Example 5]
 
-{{s3.p26}}
+![ico-25 cap] ** 5 **
 
-{{s3.p27}}
+^^In this example, anonymous functions are created to handle the **~click~** event of buttons.^^
 
-{{s3.p28}}
+^^Each function "accumulates" data about the time of the click on the button in the array **~arguments.callee.res~**^^
 
 ~~~js
 var buttons = []
@@ -197,7 +197,7 @@ for (var n = 0; n < 5; n++) {
 }
 ~~~
 
-{{s3.p29}}
+^^Let's modify this code:^^
 
 ~~~js
 var buttons = []
@@ -222,71 +222,71 @@ for (var n = 0; n < 5; n++) {
 }
 ~~~
 
-{{s3.p30}}
+^^What does each button click handler do now?^^
 
 ^^^
 
 _______________________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] Callable object
 
-{{s4.p1}}
+In this sense, the function can be compared to ![ico-30 ambulance]
 
-{{s4.p2}}
+Like ![ico-20 ambulance], a function can move from one object to another (from where it is called)
 
-{{s4.p3}}
+In this case, the objects calling the function are **call context**
 
-{{s4.p4}}
+The function itself must have "tools" to perform its task in the context of the call
 
-{{s4.p5}}
+All these tools that are not related to the call context, but are exclusively at the disposal of the function, belong to the **execution context**
 
-{{s4.p6}}
-{{s4.p7}}
+So, where ![ico-20 ambulance] will go is **call context**
+What's inside ![ico-20 ambulance] is the **execution context**
 
-^^^[{{s4.spoiler1}}]
+^^^[Execution context]
 
-{{s4.p8}}
+![ico-30 ambulance]
 
-{{s4.p9}}
-{{s4.p10}}
+| **Properties** ^^(variables)^^ | **Methods** ^^(functions)^^ |
+| ^^A set of tools, medications, bandages, various devices (IVs, defibrillator, ventilator, etc.)^^ | ^^The professional skills of the ambulance staff (can give an injection, start an IV, use a defibrillator, carry the patient on a stretcher, etc.)^^ |
 
-{{s4.p11}}
-
-^^^
-
-^^^[{{s4.spoiler2}}]
-
-{{s4.p12}}
-
-{{s4.p13}}
-{{s4.p14}}
+^^All of this is what the ambulance carries with it.^^
 
 ^^^
 
-## ![ico-25 icon] {{s5.h1}}
+^^^[Call context]
 
-{{s5.p1}}
+![ico-30 ambulance]
 
-{{s5.p2}}
+^^• Specific conditions (private house, apartment in a high-rise building, presence or absence of an elevator, running water, etc.)^^
+^^• A specific patient with specific symptoms, age, medical history, character, etc.^^
+
+^^^
+
+## ![ico-25 icon] Call context
+
+The calling context is **object**
+
+Typically, when calling a function, the name of this object comes before the name of the function, and is separated from it by a dot:
 
 ~~~js
 patient.emergency()
 ~~~
 
-{{s5.p3}}
+As a rule, if the object name is not specified before the function name, then the context of the function call is the global object **~window~**
 
-{{s5.p4}}
+^^The exception is for functions whose calling context is set using the ~bind()~ method^^
 
-{{s5.p5}}
-{{s5.p6}}
+![ico-20 warn] It follows that all JS functions are methods
+If the object ("master" of the method) is not specified, the global object is assumed
 
 _______________________________
 
-^^^[{{s5.spoiler1}}]
+^^^[Example 6]
 
-{{s5.p7}}
+![ico-25 cap] ** 6 **
 
-{{s5.p8}}
+^^Declare three functions:^^
 
 ~~~js
 function first () {
@@ -300,25 +300,25 @@ function third () {
 }
 ~~~
 
-{{s5.p9}}
+^^All three functions are declared in the global context, meaning they are methods of the global **~window~** object.^^
 
-{{s5.p10}}
+^^As we already know, properties of an object can be accessed like elements of an associative array.^^
 
-{{s5.p11}}
+^^Thus, the expression:^^
 
 ~~~js
 window['first']
 ~~~
 
-{{s5.p12}}
+^^will return the **~first~** function, which is a property (method) of the global **~window~** object.^^
 
-{{s5.p13}}
+^^To call this function, we just need to add parentheses:^^
 
 ~~~js
 window['first']()
 ~~~
 
-{{s5.p14}}
+^^Using this fact, we can call a function whose name is stored in a variable of type "_string_":^^
 
 ~~~js
 for (var funcName of ['first', 'second', 'third']) window[funcName]()
@@ -328,90 +328,90 @@ for (var funcName of ['first', 'second', 'third']) window[funcName]()
 
 ____________________________
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] Call context reference
 
-{{s6.p1}}
+When an ambulance is called, it receives a link to the call object.
 
-{{s6.p2}}
+The team needs to know where to go, the patient’s symptoms, age, etc.
 
-{{s6.p3}}
+In the same way, a function must have access to the object that calls it, its properties, which may be necessary for the normal operation of the function.
 
-{{s6.p4}}
+Within a function, **~this~** keyword is a reference to the object in whose context the function is called (i.e., the calling context)
 
-{{s6.p5}}
+For example, for the function ![ico-20 ambulance]
 
-{{s6.p6}}
-{{s6.p7}}
-{{s6.p8}}
-{{s6.p9}}
-{{s6.p10}}
-{{s6.p11}}
+^^![ico-20 green-ok] this.address^^
+^^![ico-20 green-ok] this.floor^^
+^^![ico-20 green-ok] this.apartment^^
+^^![ico-20 green-ok] this.patient.name^^
+^^![ico-20 green-ok] this.patient.age^^
+^^![ico-20 green-ok] this.patient.symptoms^^
 ...
 
-{{s6.p12}}
+^^If it were not for **~this~**, it is unlikely that the function could help the "patient" ![ico-20 smile]^^
 
 _________________________________________
 
-## ![ico-25 icon] {{s7.h1}}
+## ![ico-25 icon] Execution context
 
-{{s7.p1}}
+![ico-20 warn] Each function call results in the creation of a new execution context.
 
-{{s7.p2}}
+The execution context is created before code execution begins.
 
-{{s7.p3}}
-{{s7.p4}}
-{{s7.p5}}
+Each **~return~** exits the execution context.
+While the function execution is not completed, its context will be active.
+Since functions can call each other, their context is pushed onto the stack
 ![](illustrations/function-object-01.png)
-{{s7.p6}}
-{{s7.p7}}
+^^(queue: last in, first out).^^
+The top of this stack will always be the current execution context.
 
 ![](illustrations/function-object-02.png)
 
-{{s7.p8}}
+What will be present in this context?
 
-{{s7.p9}}
-{{s7.p10}}
-{{s7.p11}}
+![ico-20 green-ok] LexicalEnvironment
+![ico-20 green-ok] Scope chain
+![ico-20 green-ok] ~this~
 
 _____________________________________________
 
-### ![ico-20 icon] {{s8.h1}}
+### ![ico-20 icon] Lexical Environment
 
-{{s8.p1}}
-{{s8.p2}}
-{{s8.p3}}
+^^When a function is called, it is activated^^
+^^It needs somewhere to safely “place” its data with which it will work^^
+^^In addition to the arguments a function receives when called, it can have its own internal data needed for temporarily storing intermediate computation results.^^
 
-{{s8.p4}}
+When a function is called, an object is created containing all the necessary variables.
 
-{{s8.p5}}
+This object is called **~LexicalEnvironment~**.
 
-{{s8.p6}}
+~LexicalEnvironment~ contains the function arguments and all variables declared inside the function (including functions)
 
-{{s8.p7}}
+^^therefore it is also called _variable object_ or _activation object_^^
 
-{{s8.p8}}
+^^Thus, the activation object can be compared to a locker for storing the “personal belongings” of the function^^
 
-{{s8.p9}}
+^^![ico-20 warn] It's impossible to access activation object^^
 
 ______________________________________________
 
-### ![ico-20 icon] {{s9.h1}}
+### ![ico-20 icon] hoisting
 
-{{s9.p1}}
+So, after calling the function:
 
-{{s9.p2}}
-{{s9.p3}}
-{{s9.p4}}
-{{s9.p5}}
-{{s9.p6}}
+| ** 1** |   | **An execution context is created**                         |
+|        | • | ^^an activation object is created (~Lexical Environment~)^^ |
+|        | • | ^^scope is determined^^                                     |
+|        | • | ^^the value of **~this~** is set up^^                       |
+| ** 2** |   | **The code is interpreted and executed**                    |
 
-{{s9.p7}}
-{{s9.p8}}
-{{s9.p9}}
+![ico-20 warn] Please note that all internal variables and nested functions are declared before the code starts executing, regardless of the order in which they appear in the code.
+![ico-20 warn] But assignment of values ​​to variables occurs when the code starts executing.
+This results in **hoisting** of variable and function declarations
 
-^^^[{{s9.spoiler1}}]
+^^^[Example 7]
 
-{{s9.p10}}
+![ico-25 cap] ** 7 **
 
 ~~~js
 function delegat () {
@@ -426,53 +426,53 @@ function delegat () {
 }
 ~~~
 
-{{s9.p11}}
+^^Although the declaration of variables **_~ x~_** and **_~ y~_** appears in the code after the ~return~ statement, during the creation of the execution context, an activation object (Lexical Environment) will be formed in the first stage, and all variables declared within the function will be included in this object.^^
 
-{{s9.p12}}
+^^Thus, the declaration of variables **_~ x~_** and **_~ y~_** will take place before the code execution starts.^^
 
-{{s9.p13}}
+^^However, the values will be assigned to variables only at the the second stage, and the code will be executed sequentially.^^
 
-{{s9.p14}}
+^^Therefore, at the time of executing the code `console.log(x)`, the value of the variable **_~ x~_** will not be defined, so ~undefined~' will be printed in the console.^^
 
 ~~~js
 console.log(x) // undefined
 ~~~
 
-{{s9.p15}}
+^^Similarly, at the time of executing the code:^^
 
 ~~~js
 y = x + 5
 ~~~
 
-{{s9.p16}}
+^^the value of the variable **_~ x~_** will be ~undefined~, so the assignment operation will result in **~NaN~**, which will be outputted by the code:^^
 
 ~~~js
 console.log(y)
 ~~~
 
-{{s9.p17}}
+^^After this, the code:^^
 
 ~~~js
 x = 5, y = 10
 ~~~
 
-{{s9.p18}}
+{{s0.p2}}
 
-{{s9.p19}}
+^^Therefore, the function will return the value **25**.^^
 
-{{s9.p20}}
+^^The assignment:^^
 
 ~~~js
 x = 1, y = 1
 ~~~
 
-{{s9.p21}}
+^^will not occur because the execution context will exit before this code.^^
 
 ^^^
 
-^^^[{{s9.spoiler2}}]
+^^^[Example 8]
 
-{{s9.p22}}
+![ico-25 cap] ** 8 **
 
 ~~~js
 var treg = 5
@@ -489,68 +489,68 @@ delegat()
 console.log(treg)  // 5
 ~~~
 
-{{s9.p23}}
+^^In this case, the declaration of the function **~treg~** will be captured in the Lexical Environment of the **~delegat~** function during the creation of its execution context and will not affect the variable **~treg~**, declared in the global context.^^
 
-{{s9.p24}}
+^^These will be different variables, although they share the same identifiers.^^
 
-{{s9.p25}}
+^^Therefore, as a result, ** 5** will be logged in the console.^^
 
 ^^^
 
 ________________________________
 
-### ![ico-20 icon] {{s10.h1}}
+### ![ico-20 icon] Scope
 
-{{s10.p1}}
+**~Scope~** limits the access and visibility of variable and function identifiers.
 
-^^^[{{s10.spoiler1}}]
+^^^[scope]
 
-{{s10.p2}}
+^^Imagine two people named Sasha: 👨‍💼 a guy and 🙎 a girl.^^
 
-{{s10.p3}}
-{{s10.p4}}
-{{s10.p5}}
+^^There are two rooms,^^
+^^and guy Sasha 👨‍💼 is in the first room,^^
+^^while girl Sasha 🙎 is in the second one.^^
 
-{{s10.p6}}
+^^Each room has an observer.^^
 
-{{s10.p7}}
+^^If we ask the observer in the first room: _"Who is Sasha?"_,^^
 
-{{s10.p8}}
+^^he will answer: _"The guy"_ 👨‍💼^^
 
-{{s10.p9}}
+^^Asking a similar question to the observer in the second room, we'll get the answer: _"The girl"_ 🙎^^
 
-{{s10.p10}}
+^^This happens because each room has its own scope.^^
 
 _________________________________
 
-{{s10.p11}}
+^^However, the scope of nested functions will be somewhat different.^^
 
-{{s10.p12}}
-{{s10.p13}}
-{{s10.p14}}
-{{s10.p15}}
+^^Let's assume that nested functions are boxes with walls made of tinted glass.^^
+^^Our function-boxes are nested within each other, like nesting dolls:^^
+^^the second box is inside the first one,^^
+^^the third one is inside the second one, and so on...^^
 
-{{s10.p16}}
-{{s10.p17}}
-{{s10.p18}}
-{{s10.p19}}
-{{s10.p20}}
-{{s10.p21}}
-{{s10.p22}}
+^^The observer in box 2 will not only see the contents of box 2,^^
+^^but also the contents of box 1,^^
+^^and the room where all the boxes are located,^^
+^^but he cannot see the contents of box 3,^^
+^^although the observer in box 3 can see them perfectly...^^
+^^as well as the observers in all other boxes^^
+^^and in the room.^^
 
 ____________________________
 
-{{s10.p23}}
+^^Thus, if a function refers to a variable, it will first look for this variable in its "personal belongings cabinet", and if it doesn't find it, it won't hesitate to "borrow" this variable from the outer room where it is located. ^^
 
 ___________________________
 
-{{s10.p24}}
+^^![ico-20 warn] All nested each other outer "cabinets" represent a ![ico-20 pin] chain of function scopes, which is part of its ![ico-20 pin] **execution context**.^^
 
 ^^^
 
-^^^[{{s10.spoiler2}}]
+^^^[Example 9]
 
-{{s10.p25}}
+![ico-25 cap] ** 9**
 
 ~~~js
 var sample = 1
@@ -562,31 +562,31 @@ function changeSample () {
 changeSample()
 ~~~
 
-{{s10.p26}}
+^^The variable **~sample~**   is declared in the global scope, where the function **~changeSample~** is also declared.^^
 
-{{s10.p27}}
+^^The variable **~sample~** is assigned the value 1 upon declaration.^^
 
-{{s10.p28}}
+^^Since there is no declaration of the variable **~sample~** inside the **~changeSample~** function, when the execution context of the **~changeSample~** function is formed, this variable will not be included to the activation object ("personal belongings cabinet") of the **~changeSample~** function.^^
 
-{{s10.p29}}
+^^Then, during the execution of:^^
 
 ~~~js
 sample = 10
 ~~~
 
-{{s10.p30}}
+^^the following happens:^^
 
-{{s10.p31}}
+^^the **~changeSample~** function, not finding such a variable in its own "room", refers to the external "room" where such a variable exists, and it will be assigned the value 10.^^
 
-{{s10.p32}}
+^^Thus, for each execution context, there exists its own chain of scopes.^^
 
-{{s10.p33}}
+^^The scope chain includes the scopes of all previous contexts in the stack.^^
 
 ^^^
 
-^^^[{{s10.spoiler3}}]
+^^^[Example 10]
 
-{{s10.p34}}
+![ico-25 cap] **10**
 
 ~~~js
 var sample = 1
@@ -606,7 +606,7 @@ console.info('Exited the execution context of the function showSample')
 console.info(`Now sample === ${sample}`)
 ~~~
 
-{{s10.p35}}
+**The result of code execution:**
 
 ~~~console
 Entered the execution context of the function showSample
@@ -615,31 +615,31 @@ Exited the execution context of the function showSample
 Now sample === 1
 ~~~
 
-{{s10.p36}}
+^^This example demonstrates how the **hoisting** mechanism works.^^
 
-{{s10.p37}}
+^^The variable **~sample~** is declared in the global scope with a value of 1.^^
 
-{{s10.p38}}
+^^Inside the **~showSample~** function, after the return statement, the **~sample~** function is declared.^^
 
-{{s10.p39}}
+After the execution of the showSample function is completed, its context will be "unmounted", and the global context will become active again, where the sample variable has a value of 1.
 
-{{s10.p40}}
+^^At first glance, when the code is executed sequentially, this declaration shouldn't work because the ~return~ statement is placed above it.^^
 
-{{s10.p41}}
+^^However, all declarations are gathered into the activation object before the code starts executing.^^
 
-{{s10.p42}}
+^^Therefore, by the time the code of the **~showSample~** function starts executing, the **~sample~** function will already be declared and will be safely located in the ~Lexical Environment~ of the **~showSample~** function.^^
 
-{{s10.p43}}
+^^Thanks to this, variable and function declarations "hoist" to the scope of their "parent" (in our case, the "parent" is the **~showSample~** function).^^
 
-{{s10.p44}}
+^^This is confirmed by logging the **~sample~** variable to the console.^^
 
-{{s10.p45}}
+^^After the execution of the **~showSample~** function is completed, its context will be "unmounted", and the global context will become active again, where the sample variable has a value of 1.^^
 
 ^^^
 
-^^^[{{s10.spoiler4}}]
+^^^[Example 11]
 
-{{s10.p46}}
+![ico-25 cap] **11**
 
 ~~~js
 var sample = 1
@@ -662,51 +662,51 @@ showSample()
 console.info(`(global) ${sample}`)
 ~~~
 
-{{s10.p47}}
+{{s0.p3}}
 
-{{s10.p48}}
+{{s0.p4}}
 
-{{s10.p49}}
+{{s0.p5}}
 
-{{s10.p50}}
+{{s0.p6}}
 
-{{s10.p51}}
+{{s0.p7}}
 
-{{s10.p52}}
+{{s0.p8}}
 
-{{s10.p53}}
+{{s0.p9}}
 
-{{s10.p54}}
+{{s0.p10}}
 
 ^^^
 
 ____________________________________
 
-### ![ico-20 icon] {{s11.h1}}
+### ![ico-20 icon] {{s1.h1}}
 
-{{s11.p1}}
+{{s1.p1}}
 
-{{s11.p2}}
-{{s11.p3}}
-{{s11.p4}}
+{{s1.p2}}
+{{s1.p3}}
+{{s1.p4}}
 
-{{s11.p5}}
+{{s1.p5}}
 
-{{s11.p6}}
+{{s1.p6}}
 
 _______________________________________
 
-### ![ico-20 icon] {{s12.h1}}
+### ![ico-20 icon] this
 
-{{s12.p1}}
+{{s1.p7}}
 
-{{s12.p2}}
+{{s1.p8}}
 
-{{s12.p3}}
+{{s1.p9}}
 
 _______________________________
 
-{{s12.p4}}
+![ico-25 cap] **12**
 
 ~~~js
 function func () {
@@ -714,13 +714,13 @@ function func () {
 }
 ~~~
 
-{{s12.p5}}
+{{s1.p10}}
 
-{{s12.p6}}
+{{s1.p11}}
 
 ________________________________
 
-{{s12.p7}}
+![ico-25 cap] **13**
 
 ~~~js
 function func () {
@@ -736,9 +736,9 @@ func()  // window
 
 ___________________________________
 
-{{s12.p8}}
+![ico-25 cap] **14**
 
-{{s12.p9}}
+{{s1.p12}}
 
 ~~~js
 var human = {
@@ -753,9 +753,9 @@ human.say() // будет выведен объект  human
 
 ________________________________
 
-{{s12.p10}}
+![ico-25 cap] **15**
 
-{{s12.p11}}
+{{s1.p13}}
 
 ~~~js
 function say () {
@@ -767,7 +767,7 @@ function girl () {
 }
 ~~~
 
-{{s12.p12}}
+{{s1.p14}}
 
 ~~~js
 girl.say = say
@@ -777,10 +777,10 @@ girl()         // window
 
 ________________________________________
 
-## ![ico-25 icon] {{s13.h1}}
+## ![ico-25 icon] prototype
 
-{{s13.p1}}
-{{s13.p2}}
+{{s1.p15}}
+{{s1.p16}}
 
 ~~~js
 function sample () {}
@@ -788,7 +788,7 @@ function sample () {}
 console.dir(sample)
 ~~~
 
-{{s13.p3}}
+{{s1.p17}}
 ~~~console
 ▼ ƒ sample()
       arguments: null
@@ -804,23 +804,23 @@ console.dir(sample)
         ▶ 0: Global {type: "global", name: "", object: Window}
 ~~~
 
-{{s13.p4}}
-{{s13.p5}}
-{{s13.p6}}
-{{s13.p7}}
+{{s1.p18}}
+{{s1.p19}}
+{{s1.p20}}
+{{s1.p21}}
 
 _____________________
 
-{{s13.p8}}
-{{s13.p9}}
-{{s13.p10}}
-{{s13.p11}}
-{{s13.p12}}
+{{s1.p22}}
+{{s1.p23}}
+{{s1.p24}}
+{{s1.p25}}
+{{s1.p26}}
 
-{{s13.p13}}
+{{s1.p27}}
 
 ___________________________________
 
-## {{s14.h1}}
+## {{s2.h1}}
 
-{{s14.p1}}
+[![ico-20 link] ^^w3schools^^](https://www.w3schools.com/js/js_scope.asp)

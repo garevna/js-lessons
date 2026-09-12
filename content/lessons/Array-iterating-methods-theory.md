@@ -41,7 +41,7 @@ _____________________________________________
 {{s2.p6}}
 
 
-{{s2.p7}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 Array.prototype.iterate = function (func) {
@@ -51,16 +51,16 @@ Array.prototype.iterate = function (func) {
 ;[7, 4, 1].iterate(console.log)
 ~~~
 
+{{s2.p7}}
 {{s2.p8}}
 {{s2.p9}}
 {{s2.p10}}
 {{s2.p11}}
+
 {{s2.p12}}
-
 {{s2.p13}}
-{{s2.p14}}
 
-{{s2.p15}}
+{{s2.p14}}
 
 ~~~js
 Array.prototype.iterate = function (func, index) {
@@ -75,9 +75,9 @@ Array.prototype.iterate = function (func, index) {
 
 _____________________________________________
 
-{{s2.p16}}
+{{s2.p15}}
 
-{{s2.p17}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js   
 Array.prototype.iterate = function (func) {
@@ -89,22 +89,22 @@ Array.prototype.iterate = function (func) {
 ;[49, 4, 25].iterate(Math.sqrt)
 ~~~
 
-{{s2.p18}}
+{{s2.p16}}
 
 ~~~console
 ► (3) [7, 2, 5]
 ~~~
 
+{{s2.p17}}
+{{s2.p18}}
 {{s2.p19}}
-{{s2.p20}}
-{{s2.p21}}
 
 ~~~js
 const squaring = num => Math.pow(num, 2)
 ;[7, 2, 5].iterate(squaring)
 ~~~
 
-{{s2.p22}}
+{{s2.p20}}
 
 ~~~console
 ► (3) [49, 4, 25]
@@ -112,12 +112,12 @@ const squaring = num => Math.pow(num, 2)
 
 _____________________________________________
 
+{{s2.p21}}
+{{s2.p22}}
 {{s2.p23}}
 {{s2.p24}}
-{{s2.p25}}
-{{s2.p26}}
 
-{{s2.p27}}
+◘◘![ico-20 cap] ** 3**◘◘
 
 ~~~js
 Array.prototype.filtering = function (func) {
@@ -130,7 +130,7 @@ const func = num => num < 10
 ;[108, 24, 5, 17, 1, 7].filtering(func)
 ~~~
 
-{{s2.p28}}
+{{s2.p25}}
 
 ~~~console
 ► (3) [5, 1, 7]
@@ -140,7 +140,7 @@ const func = num => num < 10
 [7, 4, 1, 20, 8].filtering(item => item > 5)
 ~~~
 
-{{s2.p29}}
+{{s2.p26}}
 
 ~~~console
 ► (3) [7, 20, 8]
@@ -165,7 +165,7 @@ _____________________________________________
 {{s4.p2}}
 {{s4.p3}}
 
-{{s4.p4}}
+◘◘ ![ico-25 cap] ** 4** ◘◘
 ~~~js
 const numbers = [8, 4, 9, 7]
 const alter = [7, 5, 0, 11]
@@ -185,13 +185,13 @@ const sample = numbers.iterate(function (item, index, arr) {
 console.log(sample)
 ~~~
 
-{{s4.p5}}
+{{s4.p4}}
 
 ~~~console
 ► (4) [15, 9, 9, 18]
 ~~~
 
-{{s4.p6}}
+◘◘ ![ico-25 cap] ** 5** ◘◘
 ~~~js
 const numbers = [8, 4, 9, 7]
 const alter = [-4, 1, -2, 0]
@@ -210,20 +210,20 @@ const sample = numbers.iterate(function (item) {
 console.log(sample)
 ~~~
 
-{{s4.p7}}
+{{s4.p5}}
 
 ~~~console
 ► (4) [4, 5, 7, 7]
 ~~~
 
-{{s4.p8}}
+{{s4.p6}}
 
 ~~~js
 console.log(alter) // []
 ~~~
 
-{{s4.p9}}
-{{s4.p10}}
+{{s4.p7}}
+{{s4.p8}}
 
 _____________________________________
 
@@ -239,7 +239,7 @@ _____________________________________
 {{s5.p6}}
 
 
-{{s5.p7}}
+◘◘![ico-20 cap] ** 6**◘◘
 
 ~~~js
 const numbers = [8, 4, 9, 7]
@@ -258,34 +258,34 @@ const sample = numbers.iterate((item, index, arr) => item * index - arr[0])
 console.log(sample)
 ~~~
 
-{{s5.p8}}
+{{s5.p7}}
 
 ~~~console
 ► (4) [-8, -4, 10, 13]
 ~~~
 
-{{s5.p9}}
+{{s5.p8}}
 
 ___________________________________________________
 
-## ![ico-25 icon] {{s6.h1}}
+## ![ico-25 icon] Side effects
 
-{{s6.p1}}
-{{s6.p2}}
-{{s6.p3}}
+{{s5.p9}}
+{{s5.p10}}
+{{s5.p11}}
 _______________________
-{{s6.p4}}
+{{s5.p12}}
 ______________________
-{{s6.p5}}
-{{s6.p6}}
-{{s6.p7}}
+{{s5.p13}}
+{{s5.p14}}
+{{s5.p15}}
 
-{{s6.p8}}
+{{s5.p16}}
 
-{{s6.p9}}
+{{s5.p17}}
 
 
-{{s6.p10}}
+◘◘![ico-20 cap] ** 7**◘◘
 
 ~~~js
 const users = [
@@ -303,13 +303,13 @@ users
   .iterate(user => user.age++)
 ~~~
 
-{{s6.p11}}
-{{s6.p12}}
-{{s6.p13}}
+{{s5.p18}}
+{{s5.p19}}
+{{s5.p20}}
 
-☼☼☼ {{s6.slogan1}} ☼☼☼
+☼☼☼ {{s5.slogan1}} ☼☼☼
 
-{{s6.p14}}
+{{s5.p21}}
 
 ~~~console
 ▼ (4) [{…}, {…}, {…}, {…}]
@@ -321,17 +321,17 @@ users
   ► [[Prototype]]: Array(0)
 ~~~
 
-{{s6.p15}}
-{{s6.p16}}
-{{s6.p17}}
+{{s5.p22}}
+{{s5.p23}}
+{{s5.p24}}
 
-{{s6.p18}}
+{{s5.p25}}
 
 _____________________________________________
 
-{{s6.p19}}
+{{s5.p26}}
 
-{{s6.p20}}
+◘◘![ico-20 cap] ** 8**◘◘
 
 ~~~js
 var browsers = ['Chrome', 'FireFox', 'Opera', 'Safari', 'Edge']
@@ -350,7 +350,7 @@ browsers.iterate(storeItem, storeItem)
 console.dir(storeItem)
 ~~~
 
-{{s6.p21}}
+{{s5.p27}}
 
 ~~~console
 ▼ ƒ storeItem(item, index, arr)
@@ -372,19 +372,19 @@ console.dir(storeItem)
 
 _____________________________________________
 
-## ![ico-25 icon] {{s7.h1}}
+## ![ico-25 icon] {{s6.h1}}
 
-{{s7.p1}}
+{{s6.p1}}
 
-{{s7.p2}}
+{{s6.p2}}
 
-{{s7.p3}}
-{{s7.p4}}
-{{s7.p5}}
+{{s6.p3}}
+{{s6.p4}}
+{{s6.p5}}
 
-{{s7.p6}}
+{{s6.p6}}
 
-{{s7.p7}}
+◘◘![ico-20 cap] ** 9**◘◘
 
 ~~~js
 const numbers = [25, 16, 9, 49, 81, 64, 4]
@@ -399,15 +399,15 @@ Array.prototype.idempotence = function (func) {
 numbers.idempotence(Math.sqrt)
 ~~~
 
-{{s7.p8}}
+{{s6.p7}}
 
 ~~~console
 ► (7) [5, 4, 3, 7, 9, 8, 2]
 ~~~
 
-{{s7.p9}}
+{{s6.p8}}
 
-{{s7.p10}}
+{{s6.p9}}
 
 ~~~js
 numbers[6] = 125
@@ -415,15 +415,15 @@ numbers[6] = 125
 numbers.idempotence(Math.sqrt)
 ~~~
 
-{{s7.p11}}
+{{s6.p10}}
 
 ~~~console
 ► (7) [5, 4, 3, 7, 9, 8, 2]
 ~~~
 
-{{s7.p12}}
+{{s6.p11}}
 
-{{s7.p13}}
+{{s6.p12}}
 
 ~~~js
 Array.prototype.idempotence = function (func) {
@@ -434,19 +434,19 @@ Array.prototype.idempotence = function (func) {
 }
 ~~~
 
-{{s7.p14}}
+{{s6.p13}}
 
-{{s7.p15}}
+{{s6.p14}}
 
 ~~~js
 numbers.idempotence(item => item + Math.floor(Math.random() * 100))
 ~~~
 
-{{s7.p16}}
+{{s6.p15}}
 
-{{s7.p17}}
+{{s6.p16}}
 
-{{s7.p18}}
+◘◘![ico-20 cap] **10**◘◘
 ~~~js
 const numbers = [25, 16, 9, 49, 81, 64, 4]
 
@@ -463,7 +463,7 @@ Array.prototype.idempotence = function (func) {
 numbers.idempotence(Math.sqrt)
 ~~~
 
-{{s7.p19}}
+{{s6.p17}}
 
 ~~~console
 '[5,4,3,7,9,8,2]'
@@ -473,16 +473,16 @@ numbers.idempotence(Math.sqrt)
 numbers.idempotence(item => item + Math.floor(Math.random() * 100))
 ~~~
 
-{{s7.p20}}
+{{s6.p18}}
 
 ~~~console
 '[5,4,3,7,9,8,2]'
 ~~~
 
 __________________________________
-{{s7.p21}}
+{{s6.p19}}
 
-{{s7.p22}}
+^^^[![](icons/coffee.png) 11]
 ~~~js
 Array.prototype.idempotence = function (func) {
   const funcArg = func.toString()
@@ -556,11 +556,11 @@ const randomize = item => item + Math.floor(item + Math.random() * 100)
 
 _____________________________________________
 
-## ![ico-25 icon] {{s8.h1}}
+## ![ico-25 icon] {{s7.h1}}
 
-{{s8.p1}}
+{{s7.p1}}
 
-{{s8.p2}}
+◘◘![ico-20 cap] **11**◘◘
 ~~~js
 const jobs = [
   'developer',
@@ -598,9 +598,9 @@ document.body
 
 _____________________________
 
-{{s8.p3}}
+{{s7.p2}}
 
-{{s8.p4}}
+◘◘![ico-20 cap] **12**◘◘
 
 ~~~js
 const salary = [4000, 3200, 4500, 2800, 3500, 2400, 3700]
@@ -627,7 +627,7 @@ document.body
 
 __________________________________________
 
-{{s8.p5}}
+◘◘![ico-20 cap] **13**◘◘
 
 ~~~js
 const arr = [
@@ -654,9 +654,9 @@ arr.iterate(test)
 __________________________________________
 
 
-{{s8.p6}}
+{{s7.p3}}
 
-{{s8.p7}}
+◘◘![ico-20 cap] **14**◘◘
 
 ~~~js
 const companList = ['Google', 'Mozilla', 'Microsoft']
@@ -676,7 +676,7 @@ companList.iterate(test, browsers)
 console.log(browsers)
 ~~~
 
-{{s8.p8}}
+{{s7.p4}}
 
 ~~~console
 ▼ (3) [{…}, {…}, {…}]
@@ -690,8 +690,8 @@ console.log(browsers)
 ________________________________________________________________
 
 
-{{s8.p9}}
+{{s7.p5}}
 
 ________________________________________________________________
 
-{{s8.p10}}
+[![ico-30 hw] Quiz](quiz/arrayIterationMethods)

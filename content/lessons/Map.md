@@ -1,20 +1,20 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Map
 
-{{s1.p1}}
+**ES6**
 
-{{s1.p2}}
-{{s1.p3}}
+{{s0.p1}}
+{{s0.p2}}
 
-{{s1.p4}}
-{{s1.p5}}
+{{s0.p3}}
+{{s0.p4}}
 
-{{s1.p6}}
+{{s0.p5}}
 
 
-## {{s2.h1}}
+## WeakMap
 
-{{s2.p1}}
-{{s2.p2}}
+{{s0.p6}}
+{{s0.p7}}
 
 ~~~js
 const dog = new WeakMap()
@@ -22,4 +22,4 @@ const dog = new WeakMap()
 dog.set('remember', 'remember')
 ~~~
 
-{{s2.p3}}
+••![ico-20 error] TypeError: Invalid value used as weak map key••

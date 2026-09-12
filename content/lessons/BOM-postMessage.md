@@ -1,11 +1,11 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Browser Object Model
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] window.postMessage()
 
-{{s2.p1}}
+{{s0.p1}}
 ___________________________________________________
 
-{{s2.p2}}
+{{s0.p2}}
 
 ~~~js
 for (var key in window) {
@@ -13,12 +13,12 @@ for (var key in window) {
 }
 ~~~
 
-{{s2.p3}}
+{{s0.p3}}
 
-#### ![ico-20 icon]  {{s3.h1}}
+#### ![ico-20 icon]  onmessage
 
-{{s3.p1}}
-{{s3.p2}}
+{{s0.p4}}
+{{s0.p5}}
 
 ~~~js
 window.onmessage = function (event) {
@@ -26,8 +26,8 @@ window.onmessage = function (event) {
 }
 ~~~
 
-{{s3.p3}}
-{{s3.p4}}
+{{s0.p6}}
+{{s0.p7}}
 
 ~~~console
 
@@ -55,27 +55,27 @@ window.onmessage = function (event) {
   ► __proto__: MessageEvent
 ~~~
 
-{{s3.p5}}
-{{s3.p6}}
-{{s3.p7}}
-{{s3.p8}}
+{{s0.p8}}
+{{s0.p9}}
+{{s0.p10}}
+{{s0.p11}}
 
-{{s3.p9}}
+{{s0.p12}}
 _____________________________________
 
-{{s3.p10}}
+{{s0.p13}}
 
-{{s3.p11}}
+{{s0.p14}}
 
-{{s3.p12}}
-{{s3.p13}}
-{{s3.p14}}
+{{s0.p15}}
+{{s0.p16}}
+{{s0.p17}}
 
 ~~~js
 window.name = "parentWin"
 ~~~
 
-{{s3.p15}}
+{{s0.p18}}
 
 ~~~js
 window.onmessage = function (event) {
@@ -83,18 +83,18 @@ window.onmessage = function (event) {
 }
 ~~~
 
-{{s3.p16}}
-{{s3.p17}}
-{{s3.p18}}
+{{s0.p19}}
+{{s0.p20}}
+{{s0.p21}}
 
-{{s3.p19}}
+{{s0.p22}}
 
 ~~~js
 var childWin = window.open('about:blank', 'childWin')
 ~~~
 
-{{s3.p20}}
-{{s3.p21}}
+{{s0.p23}}
+{{s0.p24}}
 
 ~~~js
 childWin.onmessage = function (event) {
@@ -103,10 +103,10 @@ childWin.onmessage = function (event) {
 }
 ~~~
 
-{{s3.p22}}
-{{s3.p23}}
+{{s0.p25}}
+{{s0.p26}}
 
-{{s3.p24}}
+{{s0.p27}}
 
 ~~~js
 childWin.postMessage('Hello, I\'m listening to you', '*')
@@ -114,7 +114,7 @@ childWin.postMessage('Hello, I\'m listening to you', '*')
 
 ____________________________________________
 
-{{s3.p25}}
+{{s0.p28}}
 
 ~~~js
 window.name = 'parentWin'

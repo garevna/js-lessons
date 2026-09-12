@@ -1,10 +1,10 @@
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] async function vs Promise.all
 
-{{s1.p1}}
+{{s0.p1}}
 
-{{s1.p2}}
+{{s0.p2}}
 
-{{s1.p3}}
+{{s0.p3}}
 
 ~~~js
 const getNames = () => new Promise(resolve => setTimeout(() => resolve('Names'), 1000))
@@ -12,9 +12,9 @@ const getNames = () => new Promise(resolve => setTimeout(() => resolve('Names'),
 const getPosts = () => new Promise(resolve => setTimeout(() => resolve('Posts'), 1000))
 ~~~
 
-{{s1.p4}}
+{{s0.p4}}
 
-{{s1.p5}}
+{{s0.p5}}
 
 ~~~js
 async function getData () {
@@ -28,7 +28,7 @@ async function getData () {
 getData ()
 ~~~
 
-{{s1.p6}}
+{{s0.p6}}
 
 ~~~console
 
@@ -38,11 +38,11 @@ time: 2002.258056640625ms
 
 ~~~
 
-{{s1.p7}}
+{{s0.p7}}
 
-{{s1.p8}}
+{{s0.p8}}
 
-{{s1.p9}}
+{{s0.p9}}
 
 ~~~js
 function getData () {
@@ -55,7 +55,7 @@ function getData () {
 }
 ~~~
 
-{{s1.p10}}
+{{s0.p10}}
 
 ~~~console
 
@@ -67,7 +67,7 @@ time: 1001.474365234375ms
 
 _________________________________
 
-{{s1.p11}}
+{{s0.p11}}
 
 ~~~~js
 function getData (typ) {
@@ -92,25 +92,25 @@ function getAllData () {
 getAllData('figures', 'colors', 'diameters')
 ~~~~
 
-{{s1.p12}}
+{{s0.p12}}
 
-{{s1.p13}}
+{{s0.p13}}
 
-{{s1.p14}}
+{{s0.p14}}
 
-{{s1.p15}}
+{{s0.p15}}
 
-{{s1.p16}}
+{{s0.p16}}
 
-{{s1.p17}}
+{{s0.p17}}
 
-{{s1.p18}}
+{{s0.p18}}
 
-{{s1.p19}}
+{{s0.p19}}
 
-{{s1.p20}}
+{{s0.p20}}
 
-{{s1.p21}}
+{{s0.p21}}
 
 _______________________
-{{s1.p22}}
+{{s0.p22}}

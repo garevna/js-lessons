@@ -80,71 +80,71 @@ typeof typeof boolean
 
 {{s2.p22}}
 
-{{s2.p23}}
-{{s2.p24}}
-{{s2.p25}}
-{{s2.p26}}
-{{s2.p27}}
-{{s2.p28}}
-{{s2.p29}}
-{{s2.p30}}
+• ~string~
+• ~number~
+• ~bigint~
+• ~boolean~
+• ~object~
+• ~undefined~
+• ~function~
+• ~symbol~
 
-{{s2.p31}}
+{{s2.p23}}
+
+## ![ico-30 icon] null
+
+{{s2.p24}}
+
+{{s2.p25}}
+
+§§§§ Demo | var_null_template §§§§
+
+__________________________________________________
 
 ## ![ico-30 icon] {{s3.h1}}
 
-{{s3.p1}}
+◘◘** 1**◘◘
 
-{{s3.p2}}
+→→→ typeof 2e-200 | 'number', 'string', 'boolean', 'undefined', 'object' | number →→→
 
-§§§§ {{s3.demo1}} | var_null_template §§§§
+◘◘** 2**◘◘
+
+→→→ typeof NaN | 'number', 'string', 'boolean', 'undefined', 'object' | number →→→
+
+◘◘** 3**◘◘
+
+→→→ typeof 'Infinity' | 'number', 'string', 'boolean', 'undefined', 'object' | string →→→
+
+◘◘** 4**◘◘
+
+→→→ typeof 5 > 8 | 'number', 'string', 'boolean', 'undefined', 'object' | boolean →→→
+
+◘◘** 5**◘◘
+
+→→→ typeof undefined | 'number', 'string', 'boolean', 'undefined', 'object' | undefined →→→
+
+◘◘** 6**◘◘
+
+→→→ typeof null | 'number', 'string', 'boolean', 'undefined', 'object' | object →→→
 
 __________________________________________________
 
 ## ![ico-30 icon] {{s4.h1}}
 
-◘◘** 1**◘◘
+{{s4.p1}}
 
-→→→ {{s4.quiz1}} | {{s4.quizVariants1}} | {{s4.quizAnswer1}} →→→
+<span class="tab-2" />• **^^Undefined Type^^**
+<span class="tab-2" />• **^^Null Type^^**
+<span class="tab-2" />• **^^Boolean Type^^**
+<span class="tab-2" />• **^^String Type^^**
+<span class="tab-2" />• **^^Symbol Type^^**
+<span class="tab-2" />• **^^Numeric Types^^**
+<span class="tab-4" />• **^^Number Type^^**
+<span class="tab-4" />• **^^BigInt Type^^**
+<span class="tab-2" />• **^^Object Type^^**
 
-◘◘** 2**◘◘
+{{s4.p2}}
+{{s4.p3}}
 
-→→→ {{s4.quiz2}} | {{s4.quizVariants2}} | {{s4.quizAnswer2}} →→→
-
-◘◘** 3**◘◘
-
-→→→ {{s4.quiz3}} | {{s4.quizVariants3}} | {{s4.quizAnswer3}} →→→
-
-◘◘** 4**◘◘
-
-→→→ {{s4.quiz4}} | {{s4.quizVariants4}} | {{s4.quizAnswer4}} →→→
-
-◘◘** 5**◘◘
-
-→→→ {{s4.quiz5}} | {{s4.quizVariants5}} | {{s4.quizAnswer5}} →→→
-
-◘◘** 6**◘◘
-
-→→→ {{s4.quiz6}} | {{s4.quizVariants6}} | {{s4.quizAnswer6}} →→→
-
-__________________________________________________
-
-## ![ico-30 icon] {{s5.h1}}
-
-{{s5.p1}}
-
-{{s5.p2}}
-{{s5.p3}}
-{{s5.p4}}
-{{s5.p5}}
-{{s5.p6}}
-{{s5.p7}}
-{{s5.p8}}
-{{s5.p9}}
-{{s5.p10}}
-
-{{s5.p11}}
-{{s5.p12}}
-
-{{s5.p13}}
-{{s5.p14}}
+{{s4.p4}}
+{{s4.p5}}

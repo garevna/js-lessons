@@ -1,38 +1,38 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] XSS
 
-{{s1.p1}}
-{{s1.p2}}
+{{s0.p1}}
+{{s0.p2}}
 
-{{s1.p3}}
-{{s1.p4}}
+{{s0.p3}}
+{{s0.p4}}
 
-{{s1.p5}}
-{{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
+{{s0.p5}}
+{{s0.p6}}
+{{s0.p7}}
+{{s0.p8}}
 
-{{s1.p9}}
+{{s0.p9}}
 
-{{s1.p10}}
+{{s0.p10}}
 
 ![](illustrations/xss-atack.png)
 
-{{s1.p11}}
+{{s0.p11}}
 
-{{s1.p12}}
+{{s0.p12}}
 
 ~~~html
 &lt;IMG SRC="images/hack.png"
      onerror="document.write(String.fromCharCode(88, 83, 83))"/>
 ~~~
 
-{{s1.p13}}
+{{s0.p13}}
 
-{{s1.p14}}
+{{s0.p14}}
 
 ![](illustrations/xss-atack-cookie.png)
 
-{{s1.p15}}
+{{s0.p15}}
 
 ~~~html
 &lt;IFRAME SRC=js/attack.html
@@ -40,30 +40,30 @@
 </IFRAME>
 ~~~
 
-{{s1.p16}}
+{{s0.p16}}
 
-{{s1.p17}}
+{{s0.p17}}
 
-{{s1.p18}}
+{{s0.p18}}
 
 
-## ![ico-25 hw] {{s2.h1}}
+## ![ico-25 hw] {{s1.h1}}
 
-{{s2.p1}}
+{{s1.p1}}
 
-{{s2.p2}}
+{{s1.p2}}
 
 ![](illustrations/xss-atack-breakpoints.png)
 
-{{s2.p3}}
+{{s1.p3}}
 
-{{s2.p4}}
+{{s1.p4}}
 
-{{s2.p5}}
+{{s1.p5}}
 
-{{s2.p6}}
+{{s1.p6}}
 
 __________________________________________________________
 
-{{s2.p7}}
-{{s2.p8}}
+[![ico-20 link] XSS](https://owasp.org/www-community/attacks/xss/)
+[![ico-20 link] websitesecurity](https://www.acunetix.com/websitesecurity/cross-site-scripting/)

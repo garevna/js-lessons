@@ -1,17 +1,17 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Symbol
 
-{{s1.p1}}
+**^^ES6 (2015)^^**
 
-{{s1.p2}}
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
-{{s1.p9}}
+{{s0.p1}}
+{{s0.p2}}
+{{s0.p3}}
+{{s0.p4}}
+{{s0.p5}}
+{{s0.p6}}
+{{s0.p7}}
+{{s0.p8}}
 
-{{s1.p10}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 const symbol = Symbol('Я - новый символ, который ты только что создал')
@@ -29,16 +29,16 @@ toString: Symbol(Я - новый символ, который ты только 
 
 _____________________________________
 
-## ![ico-25 study] {{s2.h1}}
+## ![ico-25 study] {{s1.h1}}
 
-{{s2.p1}}
+{{s1.p1}}
 
-{{s2.p2}}
-{{s2.p3}}
-{{s2.p4}}
-{{s2.p5}}
+{{s1.p2}}
+{{s1.p3}}
+{{s1.p4}}
+{{s1.p5}}
 
-{{s2.p6}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js
 const symb = Symbol('users')
@@ -73,9 +73,9 @@ Google
 obj[symb]()    // Hello
 ~~~
 
-{{s2.p7}}
+{{s1.p6}}
 
-{{s2.p8}}
+◘◘![ico-20 cap] ** 3**◘◘
 
 ~~~js
 console.log(JSON.parse(JSON.stringify(obj)))
@@ -89,23 +89,23 @@ console.log(JSON.parse(JSON.stringify(obj)))
 
 ___________________________________________
 
-## ![ico-25 study] {{s3.h1}}
+## ![ico-25 study] Symbol.for
 
-{{s3.p1}}
-{{s3.p2}}
+{{s1.p7}}
+{{s1.p8}}
 
-{{s3.p3}}
+{{s1.p9}}
 
 ~~~js
 Symbol.for('Google')
 ~~~
 
-{{s3.p4}}
-{{s3.p5}}
-{{s3.p6}}
+{{s1.p10}}
+{{s1.p11}}
+{{s1.p12}}
 
-{{s3.p7}}
-{{s3.p8}}
+{{s1.p13}}
+{{s1.p14}}
 
 ~~~js
 Symbol.for('Google')
@@ -117,7 +117,7 @@ const google = Symbol.for('Google')
 Symbol.keyFor(google)                // Google
 ~~~
 
-{{s3.p9}}
+◘◘![ico-20 cap] ** 4**◘◘
 
 ~~~js
 const calcSessionEnd = seconds => new Date(new Date().getTime() + seconds * 1000)
@@ -131,7 +131,7 @@ const user = {
 const session = Symbol.for(JSON.stringify(user))
 ~~~
 
-{{s3.p10}}
+{{s1.p15}}
 
 ~~~js
 const source = [
@@ -147,7 +147,7 @@ const source = [
 const symUser = Symbol.for('users')
 ~~~
 
-{{s3.p11}}
+◘◘![ico-20 cap] ** 5**◘◘
 
 ~~~js
 const usersInterface = {
@@ -160,7 +160,7 @@ const usersInterface = {
 console.log(usersInterface)
 ~~~
 
-{{s3.p12}}
+◘◘usersInterface◘◘
 
 ~~~console
 ▼ {Symbol(users): Symbol([{"name":"Stephan","age":30,"works":7,"children":2},{"name":"Georg","age":25,"works":2,"chil…}
@@ -175,7 +175,7 @@ console.log(usersInterface)
 console.log(usersInterface.users)
 ~~~
 
-{{s3.p13}}
+◘◘usersInterface.users◘◘
 
 ~~~console
 ▼ (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
@@ -192,7 +192,7 @@ console.log(usersInterface.users)
 __________________________
 
 
-{{s3.p14}}
+◘◘![ico-20 cap] ** 6**◘◘
 
 ~~~js
 usersInterface = {
@@ -208,8 +208,8 @@ usersInterface = {
 console.log(usersInterface.users)  // null
 ~~~
 
-{{s3.p15}}
-{{s3.p16}}
+{{s1.p16}}
+{{s1.p17}}
 
 ~~~js
 usersInterface.users = source
@@ -217,7 +217,7 @@ usersInterface.users = source
 console.log(usersInterface.users)
 ~~~
 
-{{s3.p17}}
+◘◘usersInterface.users◘◘
 
 ~~~console
 ▼ (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]

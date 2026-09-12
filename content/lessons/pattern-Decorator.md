@@ -1,23 +1,23 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Design Patterns
 
 _____________________________________
 
-## ![ico-20 icon] {{s2.h1}}
+## ![ico-20 icon] Decorator
 
-{{s2.p1}}
+{{s0.p1}}
 
-{{s2.p2}}
+{{s0.p2}}
 
 _____________________________________
 
-{{s2.p3}}
+{{s0.p3}}
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{s1.h1}}
 
-{{s3.p1}}
-{{s3.p2}}
+{{s1.p1}}
+{{s1.p2}}
 
-{{s3.p3}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 function sayHello (name = 'user') {
@@ -38,10 +38,10 @@ sayHelloOnce('Sasha')
 sayHelloOnce('Mary')
 ~~~
 
-{{s3.p4}}
-{{s3.p5}}
+{{s1.p3}}
+{{s1.p4}}
 
-{{s3.p6}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js
 function calcSum ( x, y ) {
@@ -55,9 +55,9 @@ calcSumOnce(0.1, 0.2)
 
 __________________________________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] Debounce
 
-{{s4.p1}}
+◘◘![ico-20 cap] ** 3**◘◘
 
 ~~~js
 function showTime () {
@@ -67,11 +67,11 @@ function showTime () {
 document.body.onclick = event => showTime()
 ~~~
 
-{{s4.p2}}
-{{s4.p3}}
-{{s4.p4}}
-{{s4.p5}}
-{{s4.p6}}
+{{s1.p5}}
+{{s1.p6}}
+{{s1.p7}}
+{{s1.p8}}
+{{s1.p9}}
 
 ~~~js
 decoratorThrottling = function (func, interval) {
@@ -85,7 +85,7 @@ decoratorThrottling = function (func, interval) {
 }
 ~~~
 
-{{s4.p7}}
+{{s1.p10}}
 
 ~~~js
 decoratedShowTime = decoratorThrottling(showTime, 2000)

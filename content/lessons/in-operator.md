@@ -83,9 +83,9 @@ var bool = true
 
 __________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] null | undefined
 
-{{s4.p1}}
+{{s3.p4}}
 
 ~~~js
 var sample = Object(null)

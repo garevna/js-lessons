@@ -1,13 +1,15 @@
 # ![ico-40 icon] {{s1.h1}}
 
+**ES6**
+
 {{s1.p1}}
 
 {{s1.p2}}
 
 {{s1.p3}}
-
 {{s1.p4}}
 {{s1.p5}}
+
 {{s1.p6}}
 
 {{s1.p7}}
@@ -16,15 +18,13 @@
 
 {{s1.p9}}
 
-{{s1.p10}}
-
 _______________________________________________________________
 
 ## ![ico-25 icon] {{s2.h1}}
 
 {{s2.p1}}
 
-{{s2.p2}}
+◘◘![ico-20 cap] 1◘◘
 
 ~~~js
 const fruits = ['банан', 'апельсин', 'киви']
@@ -54,7 +54,7 @@ ___________________________________________________________
 
 {{s3.p2}}
 
-{{s3.p3}}
+◘◘![ico-20 cap] 2◘◘
 
 ~~~js
 let x = 5, y = 7, z = 9;
@@ -74,7 +74,7 @@ ___________________________________________________________
 
 {{s4.p2}}
 
-{{s4.p3}}
+◘◘![ico-20 cap] 3◘◘
 
 ~~~js
 const getAngleData = deg => ([
@@ -108,7 +108,7 @@ const array = [5, 1, 4, 9, 3, 8, 0]
 
 {{s5.p2}}
 
-{{s5.p3}}
+◘◘![ico-20 cap] 4◘◘
 
 ~~~js
 array.forEach((item, index, arr) => {
@@ -122,21 +122,21 @@ array.forEach((item, index, arr) => {
 })
 ~~~
 
-{{s5.p4}}
+{{s5.p3}}
 
 ~~~console
 [0, 1, 3, 4, 5, 8, 9]
 ~~~
 
-{{s5.p5}}
+{{s5.p4}}
 
 ~~~js
 const array = ['undefined', 'number', 'boolean', 'string', 'function', 'symbol', 'object']
 ~~~
 
-{{s5.p6}}
+{{s5.p5}}
 
-{{s5.p7}}
+{{s5.p6}}
 
 ~~~console
 ["boolean", "function", "number", "object", "string", "symbol", "undefined"]
@@ -144,25 +144,25 @@ const array = ['undefined', 'number', 'boolean', 'string', 'function', 'symbol',
 
 _____________________________________________________________
 
-## ![ico-25 icon] {{s6.h1}}
+## ![ico-25 icon] Date()
 
 ~~~js
 new Date(...new Date().toLocaleDateString().split('.').reverse())
 ~~~
 
-{{s6.p1}}
+{{s5.p7}}
 
 ~~~js
 user.birthday = new Date(...).toLocaleDateString()
 ~~~
 
-{{s6.p2}}
+{{s5.p8}}
 
 ~~~js
 user.birthday = '27.05.2001'
 ~~~
 
-{{s6.p3}}
+{{s5.p9}}
 
 ~~~js
 const userBirthday = new Date(...user.birthday.split('.').reverse())
@@ -170,14 +170,14 @@ const userBirthday = new Date(...user.birthday.split('.').reverse())
 
 _____________________________________________________________
 
-## ![ico-25 icon] {{s7.h1}}
+## ![ico-25 icon] {{s6.h1}}
 
-{{s7.p1}}
+{{s6.p1}}
 
-{{s7.p2}}
-{{s7.p3}}
+{{s6.p2}}
+{{s6.p3}}
 
-{{s7.p4}}
+◘◘![ico-20 cap] 5◘◘
 
 ~~~js
 const user = {
@@ -193,7 +193,7 @@ console.info(role)   // "admin"
 console.info(stars)  // 5
 ~~~
 
-{{s7.p5}}
+{{s6.p4}}
 
 ~~~js
 let name, age
@@ -201,16 +201,16 @@ let name, age
 ({ name, age } = { name: 'Ivan', age: 25 })
 ~~~
 
-{{s7.p6}}
+{{s6.p5}}
 
 ~~~console
 ⛔️ Uncaught SyntaxError: Unexpected token =
 ~~~
 
-{{s7.p7}}
-{{s7.p8}}
+{{s6.p6}}
+{{s6.p7}}
 
-{{s7.p9}}
+◘◘![ico-20 cap] 6◘◘
 
 ~~~js
 const user = {
@@ -228,13 +228,13 @@ console.log(userName)   // "Ivan"
 console.log(employed)   // true
 ~~~
 
-{{s7.p10}}
+{{s6.p8}}
 
-{{s7.p11}}
+{{s6.p9}}
 
 ____________________________________________________________________
 
-{{s7.p12}}
+◘◘![ico-20 cap] 7◘◘
 
 ~~~js
 const {
@@ -248,9 +248,9 @@ console.log(speciality)  // "слесарь"
 
 ----------------------------------------------------------------------
 
-## ![ico-25 icon] {{s8.h1}}
+## ![ico-25 icon] {{s7.h1}}
 
-{{s8.p1}}
+◘◘![ico-20 cap] 8◘◘
 
 ~~~js
 const humans = [
@@ -276,7 +276,7 @@ const [, , { name, age, speciality }] = humans
 console.log(name, age, speciality)  // Peter 18 student
 ~~~
 
-{{s8.p2}}
+◘◘![ico-20 cap] 9◘◘
 
 ~~~ js
 const user = {
@@ -317,13 +317,13 @@ console.log(motherLastHobby)  // walks
 ____________________________________________________________________
 
 
-## ![ico-25 icon] {{s9.h1}}
+## ![ico-25 icon] {{s8.h1}}
 
-{{s9.p1}}
-{{s9.p2}}
-{{s9.p3}}
+{{s8.p1}}
+{{s8.p2}}
+{{s8.p3}}
 
-{{s9.p4}}
+◘◘![ico-20 cap] 10◘◘
 
 ~~~js
 const getAngleData = deg => (['sin', 'cos', 'tan', 'atan'].map(func => Math[func](deg)))
@@ -344,10 +344,10 @@ show(...getAngleData(Math.PI/3))
 0.808448792630022
 ~~~
 
-{{s9.p5}}
+{{s8.p4}}
 
-{{s9.p6}}
-{{s9.p7}}
+{{s8.p5}}
+{{s8.p6}}
 
 ~~~js
 const [sin30, ...rest30] = getAngleData(Math.PI/3)
@@ -362,9 +362,9 @@ console.log(rest30)
 
 _______________________________________
 
-### ![ico-20 icon] {{s10.h1}}
+### ![ico-20 icon] {{s9.h1}}
 
-{{s10.p1}}
+◘◘![ico-20 cap] 11◘◘
 
 ~~~js
 const user = {
@@ -394,15 +394,15 @@ console.log (userWithoutPass)
 
 _______________________________________
 
-### ![ico-20 icon] {{s11.h1}}
+### ![ico-20 icon] {{s10.h1}}
 
-{{s11.p1}}
-{{s11.p2}}
-{{s11.p3}}
-{{s11.p4}}
-{{s11.p5}}
+{{s10.p1}}
+{{s10.p2}}
+{{s10.p3}}
+{{s10.p4}}
+{{s10.p5}}
 
-{{s11.p6}}
+◘◘![ico-20 cap] 12◘◘
 
 ~~~js
 const array = [1, 2, 3, 4, 5]
@@ -410,9 +410,9 @@ const array = [1, 2, 3, 4, 5]
 const clone = new Array(...array)
 ~~~
 
-{{s11.p7}}
-{{s11.p8}}
-{{s11.p9}}
+{{s10.p6}}
+{{s10.p7}}
+{{s10.p8}}
 
 ~~~js
 const first = [1, 2, 3, 4, 5]
@@ -423,14 +423,14 @@ const clone = new Array(...first, ...second)
 
 ___________________________
 
-## ![ico-20 icon] {{s12.h1}}
+## ![ico-20 icon] Immutability
 
-{{s12.p1}}
-{{s12.p2}}
-{{s12.p3}}
-{{s12.p4}}
+{{s10.p9}}
+{{s10.p10}}
+{{s10.p11}}
+{{s10.p12}}
 
-{{s12.p5}}
+◘◘![ico-20 cap] 13◘◘
 
 ~~~js
 const numbers = [10, 5, 7]
@@ -445,8 +445,8 @@ const summation = () => {
 }
 ~~~
 
-{{s12.p6}}
-{{s12.p7}}
+{{s10.p13}}
+{{s10.p14}}
 
 ~~~js
 console.log((summation())([...numbers]))
@@ -456,11 +456,11 @@ console.log(result)
 
 ____________________________________________________________
 
-{{s12.p8}}
+{{s10.p15}}
 
-{{s12.p9}}
+{{s10.p16}}
 
-{{s12.p10}}
+◘◘![ico-20 cap] 14 (html)◘◘
 
 ~~~html
 <body>
@@ -471,7 +471,7 @@ ____________________________________________________________
 </body>
 ~~~
 
-{{s12.p11}}
+◘◘![ico-20 cap] 14 (JS)◘◘
 
 ~~~js
 const [first, second, third, forth] = document.querySelectorAll('.paragraph')
@@ -484,11 +484,11 @@ console.log(forth)   // <p class="paragraph">4</p>
 
 ____________________________________________________________________
 
-{{s12.p12}}
+{{s10.p17}}
 
-{{s12.p13}}
+{{s10.p18}}
 
-{{s12.p14}}
+◘◘![ico-20 cap] 15 (html)◘◘
 
 ~~~html
 <body>
@@ -505,9 +505,9 @@ ____________________________________________________________________
 </body>
 ~~~
 
-{{s12.p15}}
+{{s10.p19}}
 
-{{s12.p16}}
+◘◘![ico-20 cap] 15 (JS)◘◘
 
 ~~~js
 const demo = document.getElementById('demo')
@@ -518,7 +518,7 @@ const passElem = document.getElementById('pass')
 const title = document.getElementById('title')
 ~~~
 
-{{s12.p17}}
+{{s10.p20}}
 
 ~~~js
 const [demo, btnReg, btnSignIn, nameElem, passElem, title] = ['demo', 'registration', 'sign-in', 'name', 'pass', 'title']
@@ -527,11 +527,11 @@ const [demo, btnReg, btnSignIn, nameElem, passElem, title] = ['demo', 'registrat
 
 _______________________________________________________________________
 
-{{s12.p18}}
+{{s10.p21}}
 
-{{s12.p19}}
+{{s10.p22}}
 
-{{s12.p20}}
+◘◘![ico-20 cap] 16◘◘
 
 ~~~js
 const lettersCounter = str => Object.assign({}, ...str
@@ -542,7 +542,7 @@ const lettersCounter = str => Object.assign({}, ...str
 lettersCounter('htkolkhlfottko')
 ~~~
 
-{{s12.p21}}
+{{s10.p23}}
 
 ~~~console
 ▼ {h: 2, t: 3, k: 3, o: 3, l: 2, …}
@@ -557,11 +557,11 @@ lettersCounter('htkolkhlfottko')
 
 ___________________________________________________________________
 
-### ![ico-30 icon] {{s13.h1}}
+### ![ico-30 icon] Other samples
 
-{{s13.p1}}
+{{s10.p24}}
 
-{{s13.p2}}
+◘◘![ico-20 cap] 17◘◘
 
 ~~~js
 function func (a, b, c) {
@@ -582,7 +582,7 @@ func(...user)   // 26
 
 ______________________________________________________________
 
-{{s13.p3}}
+◘◘![ico-20 cap] 18◘◘
 
 ~~~js
 console.log([...'012345'])
@@ -617,9 +617,9 @@ test({ a: 5, b: 7, c: 8 })  // 20
 
 _________________________
 
-### ![ico-30 hw] {{s14.h1}}
+### ![ico-30 hw] {{s11.h1}}
 
-{{s14.p1}}
+{{s11.p1}}
 
 ~~~js
 function first () {
@@ -636,6 +636,6 @@ second() || console.log(...[first(), second()])
 _______________________________________________________________________________
 
 
-{{s14.p2}}
+[![ico-25 hw] Quiz](quiz/destructuring)
 
 _______________________________________________________________________________

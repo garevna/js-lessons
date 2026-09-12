@@ -1,10 +1,10 @@
 ## ![ico-25 icon] {{s1.h1}}
 
+[◄◄◄ Async function ◄◄◄](page/async-await)
+
 {{s1.p1}}
 
 {{s1.p2}}
-
-{{s1.p3}}
 
 ~~~js
 async function test () {}
@@ -40,33 +40,33 @@ console.dir(test)
         ► __proto__: Object
 ~~~~
 
-{{s1.p4}}
+{{s1.p3}}
 
 ~~~js
 test instanceof AsyncFunction
 ~~~
 
-{{s1.p5}}
+••![ico-20 error] Uncaught ReferenceError: AsyncFunction is not defined••
 
-{{s1.p6}}
+{{s1.p4}}
 
 ~~~js
 const AsyncFunctionConstructor = test.__proto__.constructor
 ~~~
 
-{{s1.p7}}
+{{s1.p5}}
 
 ~~~js
 const AsyncFunction = (async function () {}).__proto__.constructor
 ~~~
 
-{{s1.p8}}
+{{s1.p6}}
 
 ~~~js
 test instanceof AsyncFunction  // true
 ~~~
 
-{{s1.p9}}
+{{s1.p7}}
 
 ~~~js
 const asyncFunc = new AsyncFunction
@@ -74,7 +74,7 @@ const asyncFunc = new AsyncFunction
 console.log(asyncFunc)
 ~~~
 
-{{s1.p10}}
+**Result**
 
 ~~~console
 async ƒ anonymous(
@@ -83,15 +83,15 @@ async ƒ anonymous(
 }
 ~~~
 
-{{s1.p11}}
+{{s1.p8}}
 
 __________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] prototype
 
-{{s2.p1}}
+{{s1.p9}}
 
-{{s2.p2}}
+{{s1.p10}}
 
 ~~~js
 (async function () {})
@@ -99,13 +99,13 @@ __________________________________
   .waitFor = (message, time) => new Promise(resolve => setTimeout(() => resolve(message), time * 1000))
 ~~~
 
-{{s2.p3}}
+{{s1.p11}}
 
 ~~~js
 const sample = async (message, time) => console.log(await sample.waitFor(message, time))
 ~~~
 
-{{s2.p4}}
+{{s1.p12}}
 
 ~~~js
 console.log('Start')
@@ -117,12 +117,12 @@ console.log('End')
 
 __________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{s2.h1}}
 
-{{s3.p1}}
-{{s3.p2}}
+{{s2.p1}}
+{{s2.p2}}
 
-{{s3.p3}}
+{{s2.p3}}
 
 ~~~js
 const func = arg => console.log(arg)
@@ -137,4 +137,4 @@ service()   // Firebase
 ~~~
 
 _______________________
-{{s3.p4}}
+{{s2.p4}}

@@ -73,22 +73,22 @@ array[2]
 {{s2.p16}}
 
 | 0    | 1     | 2        | 3    | 4         |
-{{s2.p17}}
+| 3.14 | false | 'mother' | null | undefined |
 
-{{s2.p18}}
+{{s2.p17}}
 
 ~~~console
 'mother'
 ~~~
 
+{{s2.p18}}
 {{s2.p19}}
-{{s2.p20}}
 
 ~~~js
 array[4] = 'father'
 ~~~
 
-{{s2.p21}}
+{{s2.p20}}
 
 ~~~console
 ► (5) [3.14, false, 'mother', null, 'father']
@@ -96,23 +96,23 @@ array[4] = 'father'
 
 ___________________________________
 
-{{s2.p22}}
+{{s2.p21}}
 
 ~~~js
 var collection = array
 ~~~
 
+{{s2.p22}}
+
 {{s2.p23}}
 
 {{s2.p24}}
-
-{{s2.p25}}
 
 ~~~js
 collection[3] = 'brother'
 ~~~
 
-{{s2.p26}}
+{{s2.p25}}
 
 ~~~js
 array
@@ -122,14 +122,14 @@ array
 ► (5) [3.14, false, 'mother', 'brother', 'father']
 ~~~
 
+{{s2.p26}}
 {{s2.p27}}
+
+### ![ico-25 icon] length
+
 {{s2.p28}}
 
-### ![ico-25 icon] {{s3.h1}}
-
-{{s3.p1}}
-
-{{s3.p2}}
+{{s2.p29}}
 
 ~~~js
 collection.length
@@ -141,25 +141,25 @@ collection.length
 
 _________________________________________
 
-### ![ico-25 hw] {{s4.h1}}
+### ![ico-25 hw] Tests
 
-{{s4.p1}}
-
-~~~js
-var  students = ['Piter', 'Madelin', 'Gregory']
-~~~
-
-→→→ {{s4.quiz1}} | {{s4.quizVariants1}} | {{s4.quizAnswer1}} →→→
-
-{{s4.p2}}
+◘◘![ico-20 hw] 1◘◘
 
 ~~~js
 var  students = ['Piter', 'Madelin', 'Gregory']
 ~~~
 
-→→→ {{s4.quiz2}} | {{s4.quizVariants2}} | {{s4.quizAnswer2}} →→→
+→→→ students[1] | 'Piter', 'Madelin', 'Gregory', null, undefinded | Madelin →→→
 
-{{s4.p3}}
+◘◘![ico-20 hw] 2◘◘
+
+~~~js
+var  students = ['Piter', 'Madelin', 'Gregory']
+~~~
+
+→→→ students[3] | 'Piter', 'Madelin', 'Gregory', null, undefinded | undefinded →→→
+
+◘◘![ico-20 hw] 3◘◘
 
 ~~~js
 var  students = ['Piter', 'Madelin', 'Gregory']
@@ -167,9 +167,9 @@ var group = students
 group[3] = 'Frodo'
 ~~~
 
-→→→ {{s4.quiz3}} | {{s4.quizVariants3}} | {{s4.quizAnswer3}} →→→
+→→→ students[3] | 'Piter', 'Madelin', 'Gregory', 'Frodo', null, undefinded | Frodo →→→
 
-{{s4.p4}}
+◘◘![ico-20 hw] 4◘◘
 
 ~~~js
 var  students = ['Piter', 'Madelin', 'Gregory']
@@ -177,9 +177,9 @@ var group = []
 group[3] = students[0]
 ~~~
 
-→→→ {{s4.quiz4}} | {{s4.quizVariants4}} | {{s4.quizAnswer4}} →→→
+→→→ group.length | 0, 1, 2, 3, 4, undefinded | 4 →→→
 
-{{s4.p5}}
+◘◘![ico-20 hw] 5◘◘
 
 ~~~js
 var  students = ['Piter', 'Madelin', 'Gregory']
@@ -187,34 +187,34 @@ var group = []
 group[0] = students
 ~~~
 
-→→→ {{s4.quiz5}} | {{s4.quizVariants5}} | {{s4.quizAnswer5}}→→→
+→→→ group.length | 0, 1, 2, 3 | 1→→→
 
-{{s4.p6}}
+◘◘![ico-20 hw] 6◘◘
 
 ~~~js
 var  students = ['Frodo', 'Stephan', 'Madelin', 'Helen']
 var hello = 'Hi ' + students[1] + '!'
 ~~~
 
-→→→ {{s4.quiz6}} | {{s4.quizVariants6}} | {{s4.quizAnswer6}}→→→
+→→→ hello | 'Hi !', 'Hi Frodo!', 'Hi Stephan!', 'Hi Madelin!', 'Hi Helen!' | Hi Stephan!→→→
 
 _____________________________________________________________
 
-## ![ico-25 icon] {{s5.h1}}
+## ![ico-25 icon] {{s3.h1}}
 
-{{s5.p1}}
+{{s3.p1}}
 
-{{s5.p2}}
-{{s5.p3}}
-{{s5.p4}}
-{{s5.p5}}
-{{s5.p6}}
-{{s5.p7}}
-{{s5.p8}}
+{{s3.p2}}
+{{s3.p3}}
+{{s3.p4}}
+{{s3.p5}}
+{{s3.p6}}
+{{s3.p7}}
+{{s3.p8}}
 
-{{s5.p9}}
+{{s3.p9}}
 
-{{s5.p10}}
+◘◘![ico-25 cap] 5◘◘
 
 ~~~js
 var human = {
@@ -224,10 +224,10 @@ var human = {
 }
 ~~~
 
-{{s5.p11}}
+{{s3.p10}}
 
-{{s5.p12}}
-{{s5.p13}}
+{{s3.p11}}
+{{s3.p12}}
 
 ~~~js
 human.name
@@ -237,7 +237,7 @@ human.name
 'Frodo'
 ~~~
 
-{{s5.p14}}
+{{s3.p13}}
 
 ~~~js
 human['name']
@@ -247,15 +247,15 @@ human['name']
 'Frodo'
 ~~~
 
-{{s5.p15}}
+{{s3.p14}}
 
-{{s5.p16}}
+{{s3.p15}}
 
 ~~~js
 var propName = 'name'
 ~~~
 
-{{s5.p17}}
+{{s3.p16}}
 
 ~~~js
 human[propName]
@@ -265,13 +265,13 @@ human[propName]
 'Frodo'
 ~~~
 
-{{s5.p18}}
+{{s3.p17}}
 
 ~~~js
 human.hobby = ['sport', 'reading']
 ~~~
 
-{{s5.p19}}
+{{s3.p18}}
 
 ~~~console
 ▼ {name: 'Frodo', age: 35, employed: true, hobby: Array(2)}
@@ -282,69 +282,69 @@ human.hobby = ['sport', 'reading']
   ► [[Prototype]]: Object
 ~~~
 
-{{s5.p20}}
+{{s3.p19}}
 
-{{s5.p21}}
+{{s3.p20}}
 
 ~~~js
 delete human.hobby
 ~~~
 
-{{s5.p22}}
+{{s3.p21}}
 
 ________________________________________________________
 
-### ![ico-25 hw] {{s6.h1}}
+### ![ico-25 hw] Tests
 
-{{s6.p1}}
+◘◘![ico-20 hw] 1◘◘
 
 ~~~js
 var memo = [1, false, 4.8, 'Google', [0, 1]]
 ~~~
 
-→→→ {{s6.quiz1}} | {{s6.quizVariants1}} | {{s6.quizAnswer1}} →→→
+→→→ typeof memo[4] | 'string', 'number', 'boolean', 'object', undefinded | object →→→
 
-{{s6.p2}}
-
-~~~js
-var memo = [1, false, 4.8, 'Google', { name: 'Figaro' }]
-~~~
-
-→→→ {{s6.quiz2}} | {{s6.quizVariants2}} | {{s6.quizAnswer2}} →→→
-
-{{s6.p3}}
+◘◘![ico-20 hw] 2◘◘
 
 ~~~js
 var memo = [1, false, 4.8, 'Google', { name: 'Figaro' }]
 ~~~
 
-→→→ {{s6.quiz3}} | {{s6.quizVariants3}} | {{s6.quizAnswer3}} →→→
+→→→ typeof memo[4] | 'string', 'number', 'boolean', 'object', undefinded | object →→→
 
-{{s6.p4}}
+◘◘![ico-20 hw] 3◘◘
+
+~~~js
+var memo = [1, false, 4.8, 'Google', { name: 'Figaro' }]
+~~~
+
+→→→ typeof memo[4].name | 'string', 'number', 'boolean', 'object', undefinded | string →→→
+
+◘◘![ico-20 hw] 4◘◘
 
 ~~~js
 var list = [{ name: 'Google' }, { name: 'Mozilla' }, { name: 'Microsoft' }, { name: 'Apple' }]
 ~~~
 
-→→→ {{s6.quiz4}} | {{s6.quizVariants4}} | {{s6.quizAnswer4}} →→→
+→→→ typeof list | 'string', 'number', 'boolean', 'object', undefinded | object →→→
 
-{{s6.p5}}
-
-~~~js
-var list = [{ name: 'Google' }, { name: 'Mozilla' }, { name: 'Microsoft' }, { name: 'Apple' }]
-~~~
-
-→→→ {{s6.quiz5}} | {{s6.quizVariants5}} | {{s6.quizAnswer5}} →→→
-
-{{s6.p6}}
+◘◘![ico-20 hw] 5◘◘
 
 ~~~js
 var list = [{ name: 'Google' }, { name: 'Mozilla' }, { name: 'Microsoft' }, { name: 'Apple' }]
 ~~~
 
-→→→ {{s6.quiz6}} | {{s6.quizVariants6}} | {{s6.quizAnswer6}} →→→
+→→→ typeof list[0] | 'string', 'number', 'boolean', 'object', undefinded | object →→→
 
-{{s6.p7}}
+◘◘![ico-20 hw] 5◘◘
+
+~~~js
+var list = [{ name: 'Google' }, { name: 'Mozilla' }, { name: 'Microsoft' }, { name: 'Apple' }]
+~~~
+
+→→→ typeof list[0].name | 'string', 'number', 'boolean', 'object', undefinded | string →→→
+
+◘◘![ico-20 hw] 6◘◘
 
 ~~~js
 var  students = {
@@ -360,27 +360,9 @@ var  students = {
 }
 ~~~
 
-→→→ {{s6.quiz7}} | {{s6.quizVariants7}} | {{s6.quizAnswer7}} →→→
+→→→ students.group | 'Dev-05', 'Programming', 'Piter Clark', 'Helen Surmot', 'Pavel Farios', 'Alex Figa', 'Gregory Trump', undefinded | Dev-05 →→→
 
-{{s6.p8}}
-
-~~~js
-var  students = {
-  group: 'Dev-05',
-  course: 'Programming',
-  names: [
-    'Piter Clark',
-    'Helen Surmot',
-    'Pavel Farios',
-    'Alex Figa',
-    'Gregory Trump'
-  ]
-}
-~~~
-
-→→→ {{s6.quiz8}} | {{s6.quizVariants8}} | {{s6.quizAnswer8}} →→→
-
-{{s6.p9}}
+◘◘![ico-20 hw] 7◘◘
 
 ~~~js
 var  students = {
@@ -396,9 +378,27 @@ var  students = {
 }
 ~~~
 
-→→→ {{s6.quiz9}} | {{s6.quizVariants9}} | {{s6.quizAnswer9}} →→→
+→→→ students[1] | 'Piter Clark', 'Helen Surmot', 'Pavel Farios', 'Alex Figa', 'Gregory Trump', undefinded | undefinded →→→
 
-{{s6.p10}}
+◘◘![ico-20 hw] 8◘◘
+
+~~~js
+var  students = {
+  group: 'Dev-05',
+  course: 'Programming',
+  names: [
+    'Piter Clark',
+    'Helen Surmot',
+    'Pavel Farios',
+    'Alex Figa',
+    'Gregory Trump'
+  ]
+}
+~~~
+
+→→→ students.names[1] | 'Piter Clark', 'Helen Surmot', 'Pavel Farios', 'Alex Figa', 'Gregory Trump', undefinded | Helen Surmot →→→
+
+◘◘![ico-20 hw] 9◘◘
 
 ~~~js
 var  students = [
@@ -425,9 +425,9 @@ var  students = [
 ]
 ~~~
 
-→→→ {{s6.quiz10}} | {{s6.quizVariants10}} | {{s6.quizAnswer10}} →→→
+→→→ students[4].name | 'Piter Clark', 'Helen Surmot', 'Pavel Farios', 'Alex Figa', 'Gregory Trump', undefinded | Gregory Trump →→→
 
-{{s6.p11}}
+◘◘![ico-20 hw] 10◘◘
 
 ~~~js
 var  students = [
@@ -454,8 +454,8 @@ var  students = [
 ]
 ~~~
 
-→→→ {{s6.quiz11}} | {{s6.quizVariants11}} | {{s6.quizAnswer11}} →→→
+→→→ students[4].homeworks[1] | 7, 10, 8, 4, 5, 9, undefinded | 5 →→→
 
 ________________________________________________________
 
-{{s6.p12}}
+[![ico-20 link] MDN](external/mdn-data-structures)

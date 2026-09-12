@@ -1,28 +1,28 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Exceptions
+
+{{s0.p1}}
+{{s0.p2}}
+
+{{s0.p3}}
+
+{{s0.p4}}
+
+☼☼☼ {{s0.slogan1}} ☼☼☼
+
+## ![ico-30 icon] {{s1.h1}}
+
+### ![ico-20 icon] Error
 
 {{s1.p1}}
-{{s1.p2}}
-
-{{s1.p3}}
-
-{{s1.p4}}
-
-☼☼☼ {{s1.slogan1}} ☼☼☼
-
-## ![ico-30 icon] {{s2.h1}}
-
-### ![ico-20 icon] {{s3.h1}}
-
-{{s3.p1}}
 
 ![](illustrations/Error-constructor.png)
 
-{{s3.p2}}
+{{s1.p2}}
 
-{{s3.p3}}
-{{s3.p4}}
+{{s1.p3}}
+{{s1.p4}}
 
-{{s3.p5}}
+![ico-25 cap] ** 1**
 
 ~~~js
 var err = new Error('Arguments are not valid')
@@ -31,9 +31,9 @@ console.dir(err)
 
 ![](illustrations/Error-example-01.png)
 
-{{s3.p6}}
+{{s1.p5}}
 
-{{s3.p7}}
+![ico-25 cap] ** 2**
 
 ~~~js
 var error = Object.assign(new Error('Hello'), {
@@ -50,15 +50,15 @@ console.error(error)
 
 _________________
 
-{{s3.p8}}
-{{s3.p9}}
-{{s3.p10}}
+{{s1.p6}}
+{{s1.p7}}
+{{s1.p8}}
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] SyntaxError
 
 ![](illustrations/SyntaxError.png)
 
-{{s4.p1}}
+![ico-25 cap] ** 3**
 
 ~~~js
 const syntaxError = Object.assign(new SyntaxError(), {
@@ -75,11 +75,11 @@ console.error(syntaxError)
 
 _________________________
 
-### ![ico-20 icon] {{s5.h1}}
+### ![ico-20 icon] ReferenceError
 
 ![](illustrations/ReferenceError.png)
 
-{{s5.p1}}
+![ico-25 cap] ** 4**
 
 ~~~js
 const referenceError = Object.assign(new ReferenceError(), {
@@ -94,11 +94,11 @@ console.error(referenceError)
 ![](illustrations/ReferenceError-example-01.png)
 ________________________
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] TypeError
 
 ![](illustrations/TypeError.png)
 
-{{s6.p1}}
+![ico-25 cap] ** 5**
 
 ~~~js
 const typeError = Object.assign(new TypeError(), {
@@ -115,17 +115,17 @@ console.error(typeError)
 
 ____________________________
 
-## ![ico-30 icon] {{s7.h1}}
+## ![ico-30 icon] {{s2.h1}}
 
-{{s7.p1}}
+{{s2.p1}}
 
-{{s7.p2}}
+{{s2.p2}}
 
-{{s7.p3}}
+{{s2.p3}}
 
-{{s7.p4}}
+{{s2.p4}}
 
-{{s7.p5}}
+![ico-25 cap] ** 6**
 
 ~~~js
 const syntaxError = Object.assign(new SyntaxError(), {
@@ -139,15 +139,15 @@ throw syntaxError
 
 ![](illustrations/SyntaxError-example-02.png)
 
-{{s7.p6}}
+{{s2.p5}}
 
-{{s7.p7}}
+{{s2.p6}}
 
 ________________________
 
-## ![ico-25 icon] {{s8.h1}}
+## ![ico-25 icon] try ... catch
 
-{{s8.p1}}
+{{s2.p7}}
 
 ~~~js
 try {
@@ -157,9 +157,9 @@ try {
 }
 ~~~
 
-{{s8.p2}}
+{{s2.p8}}
 
-{{s8.p3}}
+![ico-25 cap] ** 7**
 
 ~~~js
 var obj = null
@@ -171,19 +171,19 @@ try {
 }
 ~~~
 
-{{s8.p4}}
+{{s2.p9}}
 
 ~~~js
 var x = obj.name
 ~~~
 
-{{s8.p5}}
+{{s2.p10}}
 
-{{s8.p6}}
+{{s2.p11}}
 
 __________________________________
 
-{{s8.p7}}
+![ico-25 cap] ** 8**
 
 ~~~js
 function outerFunc () {
@@ -206,7 +206,7 @@ console.log('Result:', outerFunc())
 
 ![](illustrations/Error-example-reference-error-01.png)
 
-{{s8.p8}}
+![ico-25 cap] ** 9**
 
 ~~~js
 sample = 5
@@ -234,9 +234,9 @@ console.log('Result:', outerFunc())
 _________________________
 
 
-^^^[{{s8.spoiler1}}]
+^^^[ES 2019]
 
-{{s8.p9}}
+{{s2.p12}}
 
 ~~~js
 var obj = null
@@ -250,11 +250,11 @@ try {
 
 ^^^
 
-### ![ico-20 icon] {{s9.h1}}
+### ![ico-20 icon] finally
 
-{{s9.p1}}
+{{s2.p13}}
 
-{{s9.p2}}
+![ico-25 cap] **10**
 
 ~~~js
 try {
@@ -277,9 +277,9 @@ try {
 ![](illustrations/try-catch-finally-01.png)
 
 ____________________________
-{{s9.p3}}
+![ico-25 cap] **11**
 
-{{s9.p4}}
+{{s2.p14}}
 
 ~~~js
 try {
@@ -289,13 +289,13 @@ try {
 }
 ~~~
 
-{{s9.p5}}
+{{s2.p15}}
 
-{{s9.p6}}
+••![ico-20 error] Error: Arguments not valid••
 
 ____________________________
 
-{{s9.p7}}
+![ico-25 cap] **12**
 
 ~~~js
 var num = {}
@@ -317,7 +317,7 @@ console.dir(err)
 
 _________________
 
-{{s9.p8}}
+![ico-25 cap] **13**
 
 ~~~js
 try {
@@ -329,7 +329,7 @@ try {
 
 _________________
 
-{{s9.p9}}
+![ico-25 cap] **14**
 
 ~~~js
 try {
@@ -348,9 +348,9 @@ try {
 
 _________________________
 
-## {{s10.h1}}
+## AggregateError
 
-{{s10.p1}}
+![ico-25 cap] **15**
 
 ~~~js
 const array = [5, 'hero', false, 9, { type: 0 }, [], 11, 34.5, 8.5, 77]
@@ -380,4 +380,4 @@ throw aggregatedError
 
 __________________________________
 
-{{s10.p2}}
+{{s2.p16}}

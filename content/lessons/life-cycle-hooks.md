@@ -1,23 +1,23 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Custom elements
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] lifecycle hooks
 
-{{s2.p1}}
-{{s2.p2}}
-{{s2.p3}}
+{{s0.p1}}
+{{s0.p2}}
+{{s0.p3}}
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] connectedCallback()
 
-{{s3.p1}}
+{{s0.p4}}
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] disconnectedCallback()
 
-{{s4.p1}}
-{{s4.p2}}
+{{s0.p5}}
+{{s0.p6}}
 
-{{s4.p3}}
+{{s0.p7}}
 
-{{s4.p4}}
+{{s0.p8}}
 
 ~~~js
 window.onbeforeunload = function (event) {
@@ -27,9 +27,9 @@ window.onbeforeunload = function (event) {
 ~~~
 
 
-### ![ico-20 icon] {{s5.h1}}
+### ![ico-20 icon] attributeChangedCallback()
 
-{{s5.p1}}
+{{s0.p9}}
 
 ~~~js
 attributeChangedCallback (attrName, oldVal, newVal) {
@@ -37,13 +37,13 @@ attributeChangedCallback (attrName, oldVal, newVal) {
 }
 ~~~
 
-{{s5.p2}}
+{{s0.p10}}
 
-{{s5.p3}}
+{{s0.p11}}
 
-{{s5.p4}}
+{{s0.p12}}
 
-{{s5.p5}}
+{{s0.p13}}
 
 ~~~js
 static get observedAttributes () {
@@ -51,9 +51,9 @@ static get observedAttributes () {
 }
 ~~~
 
-{{s5.p6}}
+{{s0.p14}}
 
-#### ![ico-25 icon] {{s6.h1}}
+#### ![ico-25 icon] {{s1.h1}}
 
 ~~~~js
 class CircleElement extends HTMLElement {
@@ -101,7 +101,7 @@ class CircleElement extends HTMLElement {
 customElements.define('circle-element', CircleElement)
 ~~~~
 
-{{s6.p1}}
+{{s1.p1}}
 
 ~~~js
 for (const x of ['blue', 'red', 'green', 'yellow']) {
@@ -113,11 +113,11 @@ for (const x of ['blue', 'red', 'green', 'yellow']) {
 }
 ~~~
 
-{{s6.p2}}
+{{s1.p2}}
 
-{{s6.p3}}
+{{s1.p3}}
 
-{{s6.p4}}
+{{s1.p4}}
 
 ~~~js
 document
@@ -125,10 +125,10 @@ document
   .setAttribute('color', 'magenta')
 ~~~
 
-{{s6.p5}}
+{{s1.p5}}
 
-{{s6.p6}}
+{{s1.p6}}
 
 ______________________________________________
 
-{{s6.p7}}
+{{s1.p7}}

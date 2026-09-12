@@ -1,14 +1,14 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] indexedDB
 
 ______________________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] transaction
 
-{{s2.p1}}
-{{s2.p2}}
-{{s2.p3}}
+{{s0.p1}}
+|                | _open_                |                 | _transaction_         |                    |
+| **IDBFactory** | ![ico-25 arrow-right] | **IDBDatabase** | ![ico-25 arrow-right] | **IDBObjectStore** |
 
-{{s2.p4}}
+{{s0.p2}}
 
 ~~~js
 console.dir(IDBTransaction)
@@ -47,32 +47,32 @@ console.dir(IDBTransaction)
   ► __proto__: ƒ EventTarget()
 ~~~~
 
-{{s2.p5}}
+{{s0.p3}}
 
-{{s2.p6}}
-{{s2.p7}}
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
-{{s2.p12}}
-{{s2.p13}}
-{{s2.p14}}
-{{s2.p15}}
-{{s2.p16}}
+{{s0.p4}}
+{{s0.p5}}
+{{s0.p6}}
+{{s0.p7}}
+{{s0.p8}}
+{{s0.p9}}
+{{s0.p10}}
+{{s0.p11}}
+{{s0.p12}}
+{{s0.p13}}
+{{s0.p14}}
 
-{{s2.p17}}
+{{s0.p15}}
 ___________________________________________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{s1.h1}}
 
-{{s3.p1}}
-{{s3.p2}}
-{{s3.p3}}
+{{s1.p1}}
+{{s1.p2}}
+{{s1.p3}}
 
-{{s3.p4}}
+{{s1.p4}}
 
-{{s3.p5}}
+{{s1.p5}}
 
 ~~~~js
 const createUsersDB = users => new Promise((resolve, reject) => {
@@ -103,24 +103,24 @@ async function callUsers () {
 callUsers().then(resp => console.log(resp))
 ~~~~
 
-{{s3.p6}}
-{{s3.p7}}
-{{s3.p8}}
-{{s3.p9}}
-{{s3.p10}}
-{{s3.p11}}
-{{s3.p12}}
-{{s3.p13}}
-{{s3.p14}}
+{{s1.p6}}
+{{s1.p7}}
+{{s1.p8}}
+{{s1.p9}}
+{{s1.p10}}
+{{s1.p11}}
+{{s1.p12}}
+{{s1.p13}}
+{{s1.p14}}
 
 ______________________________________________
 
-#### ![ico-20 icon] {{s4.h1}}
+#### ![ico-20 icon] deleteIndex
 
-{{s4.p1}}
-{{s4.p2}}
+{{s1.p15}}
+{{s1.p16}}
 
-{{s4.p3}}
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
 const openDB = (dbName, ver, storeName) => new Promise((resolve, reject) => Object.assign(indexedDB.open(dbName, ver), {
@@ -130,18 +130,18 @@ const openDB = (dbName, ver, storeName) => new Promise((resolve, reject) => Obje
 }))
 ~~~
 
-{{s4.p4}}
-{{s4.p5}}
-{{s4.p6}}
+{{s1.p17}}
+{{s1.p18}}
+{{s1.p19}}
 
-{{s4.p7}}
+{{s1.p20}}
 
 ~~~js
 openDB('users', 2, 'userStore')
   .then(response => console.log(response))
 ~~~
 
-{{s4.p8}}
+{{s1.p21}}
 
 ~~~console
 ▼ IDBObjectStore {name: "userStore", keyPath: null, indexNames: DOMStringList, transaction: IDBTransaction, autoIncrement: true}
@@ -155,7 +155,7 @@ openDB('users', 2, 'userStore')
 
 ________________________________________________
 
-{{s4.p9}}
+{{s1.p22}}
 
 ~~~js
 openDB('users', 3, 'userStore')
@@ -163,65 +163,65 @@ openDB('users', 3, 'userStore')
 )
 ~~~
 
-{{s4.p10}}
+{{s1.p23}}
 
 ___________________________________________
 
-{{s4.p11}}
-{{s4.p12}}
-{{s4.p13}}
+{{s1.p24}}
+{{s1.p25}}
+{{s1.p26}}
 
-{{s4.p14}}
+{{s1.p27}}
 _____________________________________________
 
-### ![ico-20 icon] {{s5.h1}}
+### ![ico-20 icon] {{s2.h1}}
 
-{{s5.p1}}
-{{s5.p2}}
+{{s2.p1}}
+{{s2.p2}}
 
-{{s5.p3}}
-{{s5.p4}}
-{{s5.p5}}
-{{s5.p6}}
+{{s2.p3}}
+{{s2.p4}}
+{{s2.p5}}
+{{s2.p6}}
 ___________________________
 
-{{s5.p7}}
-{{s5.p8}}
-{{s5.p9}}
-{{s5.p10}}
+{{s2.p7}}
+{{s2.p8}}
+{{s2.p9}}
+{{s2.p10}}
 _________________________________
 
-{{s5.p11}}
-{{s5.p12}}
-{{s5.p13}}
-{{s5.p14}}
+{{s2.p11}}
+{{s2.p12}}
+{{s2.p13}}
+{{s2.p14}}
 ________________________________
 
-{{s5.p15}}
+{{s2.p15}}
 
-{{s5.p16}}
-{{s5.p17}}
+{{s2.p16}}
+{{s2.p17}}
 
-{{s5.p18}}
-{{s5.p19}}
+{{s2.p18}}
+{{s2.p19}}
 
-{{s5.p20}}
+{{s2.p20}}
 
-{{s5.p21}}
-{{s5.p22}}
+{{s2.p21}}
+{{s2.p22}}
 
 ![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-1.gif)
 
 _________________________________
 
-#### ![ico-20 icon] {{s6.h1}}
+#### ![ico-20 icon] get
 
-{{s6.p1}}
-{{s6.p2}}
+{{s2.p23}}
+{{s2.p24}}
 
-{{s6.p3}}
+{{s2.p25}}
 
-{{s6.p4}}
+◘◘![ico-20 cap] ** 2**◘◘
 
 ~~~js
 indexedDB.open('users').onsuccess = event => {
@@ -235,7 +235,7 @@ indexedDB.open('users').onsuccess = event => {
 }
 ~~~
 
-{{s6.p5}}
+{{s2.p26}}
 
 ~~~console
 ▼ {name: "Andry", birthYear: 1998, family: {…}, hobby: Array(1)}
@@ -248,9 +248,9 @@ indexedDB.open('users').onsuccess = event => {
 
 __________________________________________________
 
-#### ![ico-20 icon] {{s7.h1}}
+#### ![ico-20 icon] add
 
-{{s7.p1}}
+{{s2.p27}}
 
 ~~~js
 const user = {
@@ -272,10 +272,10 @@ const user = {
 }
 ~~~
 
-{{s7.p2}}
-{{s7.p3}}
+{{s2.p28}}
+{{s2.p29}}
 
-{{s7.p4}}
+◘◘![ico-20 cap] ** 3**◘◘
 
 ~~~js
 indexedDB.open('users')
@@ -290,13 +290,13 @@ indexedDB.open('users')
   }
 ~~~
 
-{{s7.p5}}
+{{s2.p30}}
 
 __________________________________________________
 
-#### ![ico-20 icon] {{s8.h1}}
+#### ![ico-20 icon] getAll
 
-{{s8.p1}}
+◘◘![ico-20 cap] ** 4**◘◘
 
 ~~~js
 indexedDB.open('users').onsuccess = event => {
@@ -310,7 +310,7 @@ indexedDB.open('users').onsuccess = event => {
 }
 ~~~
 
-{{s8.p2}}
+{{s2.p31}}
 
 ~~~console
 ▼  (3) [{…}, {…}, {…}]
@@ -323,12 +323,12 @@ indexedDB.open('users').onsuccess = event => {
 
 _____________________________________________________
 
-#### ![ico-20 icon] {{s9.h1}}
+#### ![ico-20 icon] delete
 
-{{s9.p1}}
-{{s9.p2}}
+{{s2.p32}}
+{{s2.p33}}
 
-{{s9.p3}}
+◘◘![ico-20 cap] ** 5**◘◘
 
 ~~~js
 indexedDB.open('users')
@@ -345,13 +345,13 @@ indexedDB.open('users')
 
 ____________________________________________________
 
-### ![ico-20 icon] {{s10.h1}}
+### ![ico-20 icon] {{s3.h1}}
 
-{{s10.p1}}
-{{s10.p2}}
-{{s10.p3}}
+{{s3.p1}}
+{{s3.p2}}
+{{s3.p3}}
 
-{{s10.p4}}
+◘◘![ico-20 cap] ** 6**◘◘
 
 ~~~js
 indexedDB.open('users').onsuccess = event => {
@@ -363,7 +363,7 @@ indexedDB.open('users').onsuccess = event => {
 }
 ~~~
 
-{{s10.p5}}
+{{s3.p4}}
 
 ~~~console
 ▼ IDBIndex {name: "hobbyIndex", objectStore: IDBObjectStore, keyPath: "hobby", multiEntry: true, unique: false}
@@ -375,9 +375,9 @@ indexedDB.open('users').onsuccess = event => {
   ► __proto__: IDBIndex
 ~~~
 
-{{s10.p6}}
+{{s3.p5}}
 
-{{s10.p7}}
+{{s3.p6}}
 
 ~~~js
 const user = {
@@ -409,13 +409,13 @@ indexedDB.open('users').onsuccess = event => {
 }
 ~~~
 
-{{s10.p8}}
+**hobbyIndex**
 
 ![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-index-2.png)
 
-{{s10.p9}}
+{{s3.p7}}
 
-{{s10.p10}}
+{{s3.p8}}
 
 ~~~js
 const **getDataByIndex** = (indexName, method, keyVal) => indexedDB.open('users')
@@ -431,24 +431,24 @@ const **getDataByIndex** = (indexName, method, keyVal) => indexedDB.open('users'
   }
 ~~~
 
-{{s10.p11}}
-{{s10.p12}}
-{{s10.p13}}
-{{s10.p14}}
+{{s3.p9}}
+{{s3.p10}}
+{{s3.p11}}
+{{s3.p12}}
 
 ____________________________
 
-{{s10.p15}}
-{{s10.p16}}
-{{s10.p17}}
+{{s3.p13}}
+{{s3.p14}}
+{{s3.p15}}
 
-{{s10.p18}}
+◘◘![ico-20 cap] ** 7**◘◘
 
 ~~~js
 getDataByIndex('hobbyIndex', 'get', 'footbal')
 ~~~
 
-{{s10.p19}}
+{{s3.p16}}
 
 ~~~console
 ▼ {name: "Stephan", birthYear: 1995, family: {…}, hobby: Array(2)}
@@ -461,17 +461,17 @@ getDataByIndex('hobbyIndex', 'get', 'footbal')
 
 ____________________________
 
-{{s10.p20}}
-{{s10.p21}}
-{{s10.p22}}
+{{s3.p17}}
+{{s3.p18}}
+{{s3.p19}}
 
-{{s10.p23}}
+◘◘![ico-20 cap] ** 8**◘◘
 
 ~~~js
 getDataByIndex('hobbyIndex', 'getAll', 'footbal')
 ~~~
 
-{{s10.p24}}
+{{s3.p20}}
 
 ~~~console
 ▼ (2) [{…}, {…}]
@@ -482,29 +482,29 @@ getDataByIndex('hobbyIndex', 'getAll', 'footbal')
 ~~~
 ____________________________
 
-{{s10.p25}}
-{{s10.p26}}
+{{s3.p21}}
+{{s3.p22}}
 
-{{s10.p27}}
+◘◘![ico-20 cap] ** 9**◘◘
 
 ~~~js
 getDataByIndex('hobbyIndex', 'getKey', 'footbal')
 ~~~
 
-{{s10.p28}}
+{{s3.p23}}
 ____________________________________________________
 
-{{s10.p29}}
-{{s10.p30}}
-{{s10.p31}}
+{{s3.p24}}
+{{s3.p25}}
+{{s3.p26}}
 
-{{s10.p32}}
+◘◘![ico-20 cap] **10**◘◘
 
 ~~~js
 getDataByIndex('hobbyIndex', 'getAllKeys', 'footbal')
 ~~~
 
-{{s10.p33}}
+{{s3.p27}}
 
 ~~~console
 ▼ (2) [1, 4]

@@ -4,58 +4,58 @@
 
 {{s1.p2}}
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] input
 
-{{s2.p1}}
+{{s1.p3}}
 
-{{s2.p2}}
+{{s1.p4}}
 
-{{s2.p3}}
+{{s1.p5}}
 
-^^^[{{s2.spoiler1}}]
+^^^[type]
 
-{{s2.p4}}
-{{s2.p5}}
-{{s2.p6}}
-{{s2.p7}}
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
-{{s2.p12}}
-{{s2.p13}}
-{{s2.p14}}
-{{s2.p15}}
-{{s2.p16}}
-{{s2.p17}}
-{{s2.p18}}
-{{s2.p19}}
-{{s2.p20}}
-{{s2.p21}}
-{{s2.p22}}
-{{s2.p23}}
-{{s2.p24}}
+• ^^button^^
+• ^^checkbox^^
+• ^^color^^
+• ^^date^^
+• ^^datetime-local^^
+• ^^email^^
+• ^^file^^
+• ^^image^^
+• ^^month^^
+• ^^number^^
+• ^^password^^
+• ^^radio^^
+• ^^range^^
+• ^^reset^^
+• ^^search^^
+• ^^submit^^
+• ^^tel^^
+• ^^text^^
+• ^^time^^
+• ^^url^^
+• ^^week^^
 
 ^^^
 
-{{s2.p25}}
-{{s2.p26}}
+{{s1.p6}}
+{{s1.p7}}
 
-{{s2.p27}}
+{{s1.p8}}
 
-{{s2.p28}}
+{{s1.p9}}
 
-{{s2.p29}}
+{{s1.p10}}
 
 ____________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] Event Handlers
 
-{{s3.p1}}
+{{s1.p11}}
 
-{{s3.p2}}
+{{s1.p12}}
 
-{{s3.p3}}
+{{s1.p13}}
 
 ~~~js
 var demo = document.createElement('p')
@@ -67,11 +67,11 @@ document.body.appendChild(demo)
 
 ____________________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] Secondary functions
 
-{{s4.p1}}
+{{s1.p14}}
 
-{{s4.p2}}
+**inputValueChangedHandler**
 
 ~~~js
 function inputValueChangedHandler (event) {
@@ -80,7 +80,7 @@ function inputValueChangedHandler (event) {
 }
 ~~~
 
-{{s4.p3}}
+**inputClickHandler**
 
 ~~~js
 function inputClickHandler (event) {
@@ -91,9 +91,9 @@ function inputClickHandler (event) {
 
 __________________________________
 
-### ![ico-20 icon] {{s5.h1}}
+### ![ico-20 icon] text
 
-{{s5.p1}}
+{{s1.p15}}
 
 ~~~js
 var inp = document.createElement('input')
@@ -104,9 +104,9 @@ document.body.appendChild(inp)
 inp.onchange = inputValueChangedHandler
 ~~~
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] color
 
-{{s6.p1}}
+{{s1.p16}}
 
 ~~~js
 var clr = document.createElement('input')
@@ -119,23 +119,23 @@ clr.onchange = inputValueChangedHandler
 
 _____________________________
 
-## ![ico-25 icon] {{s7.h1}}
+## ![ico-25 icon] {{s2.h1}}
 
-{{s7.p1}}
+{{s2.p1}}
 
-{{s7.p2}}
-{{s7.p3}}
+{{s2.p2}}
+{{s2.p3}}
 
-{{s7.p4}}
+{{s2.p4}}
 
-{{s7.p5}}
-{{s7.p6}}
+{{s2.p5}}
+{{s2.p6}}
 
-{{s7.p7}}
+{{s2.p7}}
 
-### ![ico-20 icon] {{s8.h1}}
+### ![ico-20 icon] radio
 
-{{s8.p1}}
+{{s2.p8}}
 
 ~~~js
 for (var i = 0; i < 3; i++) {
@@ -152,13 +152,13 @@ for (var i = 0; i < 3; i++) {
 
 ________________________
 
-{{s8.p2}}
+{{s2.p9}}
 
 __________________________________
 
-### ![ico-20 icon] {{s9.h1}}
+### ![ico-20 icon] checkbox
 
-{{s9.p1}}
+{{s2.p10}}
 
 ~~~js
 for (var i = 0; i < 3; i++) {
@@ -174,27 +174,27 @@ for (var i = 0; i < 3; i++) {
 
 _____________________________
 
-{{s9.p2}}
+{{s2.p11}}
 
 _____________________________
 
-## ![ico-25 icon] {{s10.h1}}
+## ![ico-25 icon] select
 
-{{s10.p1}}
-{{s10.p2}}
-{{s10.p3}}
+{{s2.p12}}
+{{s2.p13}}
+{{s2.p14}}
 
-{{s10.p4}}
+{{s2.p15}}
 
-{{s10.p5}}
-{{s10.p6}}
+{{s2.p16}}
+{{s2.p17}}
 
-{{s10.p7}}
+{{s2.p18}}
 
-{{s10.p8}}
-{{s10.p9}}
+{{s2.p19}}
+{{s2.p20}}
 
-{{s10.p10}}
+{{s2.p21}}
 
 ~~~js
 var members = [
@@ -226,4 +226,4 @@ groupMembers.onchange = function (ev) {
 
 ___________________________
 
-{{s10.p11}}
+{{s2.p22}}
