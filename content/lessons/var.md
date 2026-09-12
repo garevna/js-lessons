@@ -19,15 +19,15 @@ ______________________________________________________________
 
 {{s2.p1}}
 
+| ^^ 0^^ | ^^ 1^^ | ^^ 2^^ | ^^ 3^^ | ^^ 4^^ | ^^ 5^^ | ^^ 6^^ | ^^ 7^^ | ^^ 8^^ | ^^ 9^^ | ^^10^^ | ^^11^^ | ^^12^^ | ^^13^^ | ^^14^^ | ^^15^^ |
 {{s2.p2}}
-{{s2.p3}}
 
+
+{{s2.p3}}
 
 {{s2.p4}}
 
 {{s2.p5}}
-
-{{s2.p6}}
 
 ~~~js
 var str = '"es2023" is a shorthand for "ECMAScript 2023 Language Specification".'
@@ -36,11 +36,13 @@ var str = '"es2023" is a shorthand for "ECMAScript 2023 Language Specification".
 var str = "'es2023, x' is a shorthand for 'ECMAScript 2023 Language Specification'."
 ~~~
 
-{{s2.p7}}
+{{s2.p6}}
 
 ~~~js
 str = '\'es2023, x\' is a shorthand for \'ECMAScript 2023 Language Specification\'.'
 ~~~
+
+{{s2.p7}}
 
 {{s2.p8}}
 
@@ -48,25 +50,23 @@ str = '\'es2023, x\' is a shorthand for \'ECMAScript 2023 Language Specification
 
 {{s2.p10}}
 
-{{s2.p11}}
-
 _____________________________________
 
+{{s2.p11}}
 {{s2.p12}}
-{{s2.p13}}
 
 §§§§ {{s2.demo1}} | var_string_length_template §§§§
 
-{{s2.p14}}
+{{s2.p13}}
 
 ~~~console
 message + string
 ~~~
 
+{{s2.p14}}
 {{s2.p15}}
 {{s2.p16}}
 {{s2.p17}}
-{{s2.p18}}
 
 ______________________________________________________________
 
@@ -110,21 +110,21 @@ var x = 53.25
 
 {{s5.p2}}
 
+••1.8 ✖ 10↑↑5 ↑↑••
+
 {{s5.p3}}
 
 {{s5.p4}}
-
 {{s5.p5}}
 {{s5.p6}}
-{{s5.p7}}
 
+{{s5.p7}}
 {{s5.p8}}
 {{s5.p9}}
-{{s5.p10}}
 
 {{{vars-number-exponential-1.js}}}
 
-{{s5.p11}}
+{{s5.p10}}
 
 {{{vars-number-exponential-2.js}}}
 
@@ -180,39 +180,39 @@ _____________________________________
 
 ### ![ico-25 icon] {{s9.h1}}
 
-{{s9.p1}}
+◘◘** 1**◘◘
 
 →→→ {{s9.quiz1}} | {{s9.quizVariants1}} | {{s9.quizAnswer1}} →→→
 
-{{s9.p2}}
+◘◘** 2**◘◘
 
 →→→ {{s9.quiz2}} | {{s9.quizVariants2}} | {{s9.quizAnswer2}} →→→
 
-{{s9.p3}}
+◘◘** 3**◘◘
 
 →→→ {{s9.quiz3}} | {{s9.quizVariants3}} | {{s9.quizAnswer3}} →→→
 
-{{s9.p4}}
+◘◘** 4**◘◘
 
 →→→ {{s9.quiz4}} | {{s9.quizVariants4}} | {{s9.quizAnswer4}} →→→
 
-{{s9.p5}}
+◘◘** 5**◘◘
 
 →→→ {{s9.quiz5}} | {{s9.quizVariants5}} | {{s9.quizAnswer5}} →→→
 
-{{s9.p6}}
+◘◘** 6**◘◘
 
 →→→ {{s9.quiz6}} | {{s9.quizVariants6}} | {{s9.quizAnswer6}} →→→
 
-{{s9.p7}}
+◘◘** 7**◘◘
 
 →→→ {{s9.quiz7}} | {{s9.quizVariants7}} | {{s9.quizAnswer7}} →→→
 
-{{s9.p8}}
+◘◘** 8**◘◘
 
 →→→ {{s9.quiz8}} | {{s9.quizVariants8}} | {{s9.quizAnswer8}} →→→
 
-{{s9.p9}}
+◘◘** 9**◘◘
 
 →→→ {{s9.quiz9}} | {{s9.quizVariants9}} | {{s9.quizAnswer9}} →→→
 

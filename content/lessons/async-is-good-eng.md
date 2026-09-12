@@ -11,23 +11,23 @@
 const promise = sayHello ()
 ~~~
 
-{{s1.p5}}
+@@@@
 
 ![](illustrations/tin.jpg)
+{{s1.p5}}
+
+@@@@
+
+@@@@ 3
+![](illustrations/modesty.png)
 {{s1.p6}}
+![](illustrations/promise-in-queue.png)
+
+@@@@
 
 {{s1.p7}}
 
 {{s1.p8}}
-![](illustrations/modesty.png)
-{{s1.p9}}
-![](illustrations/promise-in-queue.png)
-
-{{s1.p10}}
-
-{{s1.p11}}
-
-{{s1.p12}}
 
 ~~~js
 const sayHello = async () => 'Hello'
@@ -43,7 +43,7 @@ console.log(`Start: ${new Date().getUTCMilliseconds()}`)
 console.timeEnd('Main thread')
 ~~~
 
-{{s1.p13}}
+{{s1.p9}}
 
 ~~~console
 Start: 465
@@ -52,19 +52,19 @@ Main thread: 0.279296875ms
 Hello
 ~~~
 
+{{s1.p10}}
+{{s1.p11}}
+{{s1.p12}}
+{{s1.p13}}
 {{s1.p14}}
+
 {{s1.p15}}
 {{s1.p16}}
+
 {{s1.p17}}
+
 {{s1.p18}}
-
 {{s1.p19}}
-{{s1.p20}}
-
-{{s1.p21}}
-
-{{s1.p22}}
-{{s1.p23}}
 
 __________________________________
 

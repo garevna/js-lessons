@@ -61,12 +61,12 @@ ____________________________________
 
 {{s3.p5}}
 
+@@@@
 {{s3.p6}}
-{{s3.p7}}
 ![](illustrations/async-fynny-02.gif)
-{{s3.p8}}
+@@@@
 
-{{s3.p9}}
+{{s3.p7}}
 
 ## ![ico-25 icon] {{s4.h1}}
 
@@ -92,94 +92,94 @@ ________________________________________
 {{s5.p3}}
 {{s5.p4}}
 
-{{s5.p5}}
+@@@@ 1
 ![](illustrations/event-loop-01.png)
+@@@@
+
+{{s5.p5}}
+
 {{s5.p6}}
 
 {{s5.p7}}
-
 {{s5.p8}}
-
 {{s5.p9}}
+
 {{s5.p10}}
+
 {{s5.p11}}
 
-{{s5.p12}}
-
-{{s5.p13}}
-
-{{s5.p14}}
+@@@@ 1
 ![](illustrations/event-loop-script.png)
+@@@@
+
+{{s5.p12}}
+{{s5.p13}}
+{{s5.p14}}
 {{s5.p15}}
+----------------------------
+@@@@ 1
+![](illustrations/event-loop-02.png)
+@@@@
 
 {{s5.p16}}
+----------------------------
+@@@@ 1
+![](illustrations/event-loop-03.png)
+@@@@
+
 {{s5.p17}}
+
 {{s5.p18}}
 {{s5.p19}}
-----------------------------
 {{s5.p20}}
-![](illustrations/event-loop-02.png)
-{{s5.p21}}
-
-{{s5.p22}}
-----------------------------
-{{s5.p23}}
-![](illustrations/event-loop-03.png)
-{{s5.p24}}
-
-{{s5.p25}}
-
-{{s5.p26}}
-{{s5.p27}}
-{{s5.p28}}
 _________________________________________________
 
+{{s5.p21}}
+{{s5.p22}}
+{{s5.p23}}
+{{s5.p24}}
+{{s5.p25}}
+{{s5.p26}}
+{{s5.p27}}
+
+@@@@ 1
+![](illustrations/event-loop-04.png)
+@@@@
+
+{{s5.p28}}
 {{s5.p29}}
 {{s5.p30}}
+
+@@@@ 1
+![](illustrations/event-loop-05.png)
+@@@@
+
 {{s5.p31}}
 {{s5.p32}}
 {{s5.p33}}
 {{s5.p34}}
-{{s5.p35}}
 
-{{s5.p36}}
-![](illustrations/event-loop-04.png)
-{{s5.p37}}
-
-{{s5.p38}}
-{{s5.p39}}
-{{s5.p40}}
-
-{{s5.p41}}
-![](illustrations/event-loop-05.png)
-{{s5.p42}}
-
-{{s5.p43}}
-{{s5.p44}}
-{{s5.p45}}
-{{s5.p46}}
-
-{{s5.p47}}
+@@@@ 1
 ![](illustrations/event-loop-06.png)
-{{s5.p48}}
+@@@@
 
-{{s5.p49}}
-{{s5.p50}}
-{{s5.p51}}
-{{s5.p52}}
+{{s5.p35}}
+{{s5.p36}}
+{{s5.p37}}
+{{s5.p38}}
 
-{{s5.p53}}
+{{s5.p39}}
 
-{{s5.p54}}
-{{s5.p55}}
-{{s5.p56}}
+{{s5.p40}}
+{{s5.p41}}
+{{s5.p42}}
 
 _____________________
 
-{{s5.p57}}
+@@@@
 ![](images/funcs-rule.svg)
-{{s5.p58}}
-{{s5.p59}}
+{{s5.p43}}
+@@@@
 
 ☼☼☼ {{s5.slogan1}} ☼☼☼
 
@@ -187,30 +187,30 @@ ___________________________________________
 
 ## ![ico-25 icon] {{s6.h1}}
 
+@@@@ 3
 {{s6.p1}}
-{{s6.p2}}
 ![](illustrations/js-engine.png)
+{{s6.p2}}
+@@@@
+
 {{s6.p3}}
+
+@@@@
 {{s6.p4}}
+![](illustrations/web-api.png)
+@@@@
 
 {{s6.p5}}
 
 {{s6.p6}}
 {{s6.p7}}
-![](illustrations/web-api.png)
 {{s6.p8}}
-
 {{s6.p9}}
-
 {{s6.p10}}
 {{s6.p11}}
 {{s6.p12}}
-{{s6.p13}}
-{{s6.p14}}
-{{s6.p15}}
-{{s6.p16}}
 
-{{s6.p17}}
+{{s6.p13}}
 ~~~js
 const start = Date.now()
 const timer = (time = 0) => setTimeout(() => console.log(Date.now() - start), time)
@@ -222,8 +222,8 @@ do {
 
 {{{event-loop-01.js}}}
 
-{{s6.p18}}
-{{s6.p19}}
+{{s6.p14}}
+{{s6.p15}}
 
 __________________________________________
 
@@ -232,17 +232,17 @@ __________________________________________
 {{s7.p1}}
 {{s7.p2}}
 
-{{s7.p3}}
+@@@@
 ![](illustrations/event-loop-queue.png)
+{{s7.p3}}
 {{s7.p4}}
 {{s7.p5}}
+@@@@
+
 {{s7.p6}}
 {{s7.p7}}
 
 {{s7.p8}}
-{{s7.p9}}
-
-{{s7.p10}}
 
 ~~~js
 function message (text) {
@@ -258,16 +258,16 @@ for (var x = 0; x < 1000000000; x++) continue
 message('Loop \'for\' finished')
 ~~~
 
-{{s7.p11}}
-{{s7.p12}}
+{{s7.p9}}
+{{s7.p10}}
 
 {{{Event-Loop-1.js}}}
 
 __________________________________________________________
 
-{{s7.p13}}
+{{s7.p11}}
 
-{{s7.p14}}
+{{s7.p12}}
 ~~~js
 function createFigure () {
   const figure = section
@@ -293,7 +293,7 @@ function createFigure () {
 }
 ~~~
 
-{{s7.p15}}
+{{s7.p13}}
 ~~~js
 function message (text) {
   document.body
@@ -302,9 +302,9 @@ function message (text) {
 }
 ~~~
 
-{{s7.p16}}
+{{s7.p14}}
 
-{{s7.p17}}
+{{s7.p15}}
 
 ~~~js
 const start = Date.now()
@@ -324,17 +324,17 @@ setTimeout(function () {
 
 {{{Event-Loop-3.js}}}
 
-{{s7.p18}}
+{{s7.p16}}
 
+{{s7.p17}}
+{{s7.p18}}
 {{s7.p19}}
-{{s7.p20}}
-{{s7.p21}}
 
 ____________________________________
 
-{{s7.p22}}
+{{s7.p20}}
 
-{{s7.p23}}
+{{s7.p21}}
 ~~~js
 const section = document.body
 
@@ -357,11 +357,11 @@ recurse()
 
 {{{Event-Loop-4.js}}}
 
+{{s7.p22}}
+{{s7.p23}}
 {{s7.p24}}
-{{s7.p25}}
-{{s7.p26}}
 
-{{s7.p27}}
+{{s7.p25}}
 ______________________________
 
 ## ![ico-25 icon] {{s8.h1}}

@@ -62,7 +62,7 @@ _____________________________________________________________________
 
 ### ![art] {{s8.h1}}
 
-{{s8.p1}}
+@@@@
     [![maket-01]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/Olios_Template.zip)
     [![maket-02]](http://psd-html-css.ru/sites/default/files/public/upload/template-files/piroll.zip)
     [![maket-03]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/StockPhotosWebsite.rar)
@@ -79,4 +79,4 @@ _____________________________________________________________________
     [![maket-14]](http://psd-html-css.ru/sites/default/files/public/upload/template-files/alexis.zip)
     [![maket-15]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/Boostfolia.zip)
     [![maket-16]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/PinballResponsiveGridStyleBlogPSD.rar)
-{{s8.p2}}
+@@@@

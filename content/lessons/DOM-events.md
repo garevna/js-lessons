@@ -2,18 +2,18 @@
 
 ## ![ico-25 icon] {{s2.h1}}
 
-{{s2.p1}}
+@@@@
 
-{{s2.p2}}
+{{s2.p1}}
 ![](images/object-constructor.svg)
 
-{{s2.p3}}
+@@@@
 
 ~~~js
 console.dir(EventTarget)
 ~~~
 
-{{s2.p4}}
+{{s2.p2}}
 
 ~~~~console
 
@@ -32,23 +32,23 @@ console.dir(EventTarget)
     ► __proto__: ƒ ()
 ~~~~
 
-{{s2.p5}}
+{{s2.p3}}
 
+{{s2.p4}}
+{{s2.p5}}
 {{s2.p6}}
+
 {{s2.p7}}
 {{s2.p8}}
-
 {{s2.p9}}
+
 {{s2.p10}}
+
 {{s2.p11}}
 
 {{s2.p12}}
 
 {{s2.p13}}
-
-{{s2.p14}}
-
-{{s2.p15}}
 
 ~~~js
 for (var prop in HTMLElement.prototype) {
@@ -57,15 +57,15 @@ for (var prop in HTMLElement.prototype) {
 }
 ~~~
 
+{{s2.p14}}
+
+{{s2.p15}}
+
 {{s2.p16}}
-
-{{s2.p17}}
-
-{{s2.p18}}
 
 __________________________________________________________________
 
-{{s2.p19}}
+{{s2.p17}}
 
 ~~~js
 document.body.ondomnodeinserted = function (event) {
@@ -75,7 +75,7 @@ document.body.ondomnodeinserted = function (event) {
 document.body.appendChild(document.createElement('div'))
 ~~~
 
-{{s2.p20}}
+{{s2.p18}}
 
 ~~~~console
 
@@ -104,14 +104,16 @@ document.body.appendChild(document.createElement('div'))
 
 ______________________________________________________
 
+{{s2.p19}}
+
+{{s2.p20}}
+
 {{s2.p21}}
-
-{{s2.p22}}
-
-{{s2.p23}}
 
 ^^^[{{s2.spoiler1}}]
 
+{{s2.p22}}
+{{s2.p23}}
 {{s2.p24}}
 {{s2.p25}}
 {{s2.p26}}
@@ -121,33 +123,31 @@ ______________________________________________________
 {{s2.p30}}
 {{s2.p31}}
 {{s2.p32}}
-{{s2.p33}}
-{{s2.p34}}
-{{s2.p35}}
+**...**
 
 ^^^
 
-{{s2.p36}}
+{{s2.p33}}
 
 ![](illustrations/event-1.png)
-{{s2.p37}}
+{{s2.p34}}
 
-{{s2.p38}}
+{{s2.p35}}
 
-{{s2.p39}}
+{{s2.p36}}
 
 ________________________
 
+{{s2.p37}}
+{{s2.p38}}
+{{s2.p39}}
 {{s2.p40}}
 {{s2.p41}}
+
 {{s2.p42}}
 {{s2.p43}}
+
 {{s2.p44}}
-
-{{s2.p45}}
-{{s2.p46}}
-
-{{s2.p47}}
 
 ~~~js
 var pictures = [
@@ -183,10 +183,10 @@ var divs = pictures.map(picture => {
 
 _________________________________
 
-{{s2.p48}}
+{{s2.p45}}
 
-{{s2.p49}}
-{{s2.p50}}
+{{s2.p46}}
+{{s2.p47}}
 
 _________________________________________
 

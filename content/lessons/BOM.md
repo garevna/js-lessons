@@ -7,15 +7,15 @@
 
 {{s1.p3}}
 
-{{s1.p4}}
+@@@@
 
 ![](images/users-see-pixels-ukr.svg)
-{{s1.p5}}
+{{s1.p4}}
 
-{{s1.p6}}
+{{s1.p5}}
 ![](images/users-see-pixels.svg)
 
-{{s1.p7}}
+@@@@
 
 _____________________________
 
@@ -36,27 +36,27 @@ _____________________________
 
 {{s2.p6}}
 
-{{s2.p7}}
+@@@@
 
-{{s2.p8}}
+{{s2.p7}}
 ![](images/reference-is-a-lockpick.svg)
+
+@@@@
+
+@@@@
+
+![](illustrations/heap-1.jpg)
+{{s2.p8}}
+
+@@@@
 
 {{s2.p9}}
 
 {{s2.p10}}
 
-![](illustrations/heap-1.jpg)
 {{s2.p11}}
 
 {{s2.p12}}
-
-{{s2.p13}}
-
-{{s2.p14}}
-
-{{s2.p15}}
-
-{{s2.p16}}
 
 ~~~html
 &lt;body>
@@ -68,7 +68,7 @@ _____________________________
 &lt;/body>
 ~~~
 
-{{s2.p17}}
+{{s2.p13}}
 
 ~~~js
 window['main-page']    //  ► &lt;main id="main-page>...&lt;/main>"
@@ -78,33 +78,33 @@ window['phone']        //  ► &lt;figure id="phone">&lt;/figure>
 
 ________________________________________________
 
-{{s2.p18}}
-{{s2.p19}}
+{{s2.p14}}
+{{s2.p15}}
 
 ^^^[{{s2.spoiler1}}]
 
+{{s2.p16}}
+
+{{s2.p17}}
+{{s2.p18}}
+{{s2.p19}}
+
 {{s2.p20}}
-
-{{s2.p21}}
-{{s2.p22}}
-{{s2.p23}}
-
-{{s2.p24}}
 
 ^^^
 
-{{s2.p25}}
+{{s2.p21}}
 
+{{s2.p22}}
+{{s2.p23}}
+{{s2.p24}}
+{{s2.p25}}
 {{s2.p26}}
 {{s2.p27}}
+
 {{s2.p28}}
+
 {{s2.p29}}
-{{s2.p30}}
-{{s2.p31}}
-
-{{s2.p32}}
-
-{{s2.p33}}
 
 ~~~js
 var props = [
@@ -119,7 +119,7 @@ var props = [
 for (var prop of props) console.log(window[prop])
 ~~~
 
-{{s2.p34}}
+{{s2.p30}}
 
 ~~~console
 
@@ -132,7 +132,7 @@ for (var prop of props) console.log(window[prop])
 ~~~
 
 
-{{s2.p35}}
+{{s2.p31}}
 
 _____________________________________
 

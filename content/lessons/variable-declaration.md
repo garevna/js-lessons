@@ -128,18 +128,18 @@ var lastUserVisit = '2019-02-05'
 
 §§§§ {{s3.demo2}} | var_03_template §§§§
 
-{{s3.p6}}
+@@@@
 ![](illustrations/camel-case.png)
+{{s3.p6}}
+@@@@
+
 {{s3.p7}}
+
 {{s3.p8}}
 
 {{s3.p9}}
 
 {{s3.p10}}
-
-{{s3.p11}}
-
-{{s3.p12}}
 
 ~~~js
 var 14br = 10

@@ -559,10 +559,10 @@ _____________________________________
 {{s6.p2}}
 {{s6.p3}}
 
+@@@@ 2
 {{s6.p4}}
-{{s6.p5}}
 ![](illustrations/white-and-black.png)
-{{s6.p6}}
+@@@@
 
 ~~~~js
 const getStatus = async () => Math.random() > .5 ? 'white' : 'black'
@@ -579,35 +579,35 @@ const func = ((startTime, callback) => {
 requestAnimationFrame(func)
 ~~~~
 
+{{s6.p5}}
+
+{{s6.p6}}
+
 {{s6.p7}}
-
 {{s6.p8}}
-
 {{s6.p9}}
 {{s6.p10}}
+
 {{s6.p11}}
+
 {{s6.p12}}
 
 {{s6.p13}}
-
 {{s6.p14}}
-
-{{s6.p15}}
-{{s6.p16}}
 
 {{{async-await-05.js}}}
 
+{{s6.p15}}
+
+{{s6.p16}}
 {{s6.p17}}
 
 {{s6.p18}}
 {{s6.p19}}
 
 {{s6.p20}}
+
 {{s6.p21}}
-
-{{s6.p22}}
-
-{{s6.p23}}
 
 _________________________________________
 

@@ -10,40 +10,40 @@
 {{s1.p5}}
 {{s1.p6}}
 
-{{s1.p7}}
+@@@@ 1
 ![](images/users-see-pixels.svg)
+@@@@
+
+{{s1.p7}}
 {{s1.p8}}
 
 {{s1.p9}}
 {{s1.p10}}
-
 {{s1.p11}}
 {{s1.p12}}
-{{s1.p13}}
-{{s1.p14}}
 
 ^^^[{{s1.spoiler1}}]
 
+{{s1.p13}}
+{{s1.p14}}
 {{s1.p15}}
+
 {{s1.p16}}
 {{s1.p17}}
 
+^^^
 {{s1.p18}}
 {{s1.p19}}
-
-^^^
 {{s1.p20}}
 {{s1.p21}}
 {{s1.p22}}
-{{s1.p23}}
-{{s1.p24}}
 
+{{s1.p23}}
+
+{{s1.p24}}
 {{s1.p25}}
 
 {{s1.p26}}
-{{s1.p27}}
-
-{{s1.p28}}
 
 ☼☼☼ {{s1.slogan1}} ☼☼☼
 
@@ -53,16 +53,16 @@ _________________________________________
 
 {{s2.p1}}
 
+@@@@
 {{s2.p2}}
-{{s2.p3}}
 ![](images/object-constructor.svg)
-{{s2.p4}}
+@@@@
 
 ☼☼☼ {{s2.slogan1}} ☼☼☼
 
-{{s2.p5}}
+{{s2.p3}}
 
-{{s2.p6}}
+{{s2.p4}}
 ~~~js
 function showProto (elem) {
   var proto = elem.__proto__
@@ -71,15 +71,15 @@ function showProto (elem) {
 }
 ~~~
 
-{{s2.p7}}
+{{s2.p5}}
 
 ~~~js
 showProto(document)
 ~~~
 
-{{s2.p8}}
+{{s2.p6}}
 
-{{s2.p9}}
+{{s2.p7}}
 
 ~~~console
 HTMLDocument
@@ -89,20 +89,20 @@ EventTarget
 Object
 ~~~
 
+{{s2.p8}}
+
+{{s2.p9}}
 {{s2.p10}}
 
 {{s2.p11}}
-{{s2.p12}}
-
-{{s2.p13}}
 
 ~~~js
 showProto(document.head)
 ~~~
 
-{{s2.p14}}
+{{s2.p12}}
 
-{{s2.p15}}
+{{s2.p13}}
 ~~~console
 HTMLHeadElement
 HTMLElement
@@ -112,15 +112,15 @@ EventTarget
 Object
 ~~~
 
-{{s2.p16}}
+{{s2.p14}}
 
 ~~~js
 showProto(document.body)
 ~~~
 
-{{s2.p17}}
+{{s2.p15}}
 
-{{s2.p18}}
+{{s2.p16}}
 ~~~console
 HTMLBodyElement
 HTMLElement
@@ -130,36 +130,36 @@ EventTarget
 Object
 ~~~
 
+{{s2.p17}}
+
+@@@@ 1
+![](illustrations/DOM-prototype-chain.svg)
+@@@@
+
+@@@@
+{{s2.p18}}
+![](images/object-adam.svg)
+@@@@
+
 {{s2.p19}}
 
 {{s2.p20}}
-![](illustrations/DOM-prototype-chain.svg)
-{{s2.p21}}
-
-{{s2.p22}}
-{{s2.p23}}
-![](images/object-adam.svg)
-{{s2.p24}}
-
-{{s2.p25}}
-
-{{s2.p26}}
 
 ~~~js
 new HTMLElement()
 ~~~
 
-{{s2.p27}}
+{{s2.p21}}
 
 ~~~error
     Uncaught TypeError: Illegal constructor
 ~~~
 
-{{s2.p28}}
-{{s2.p29}}
+{{s2.p22}}
+{{s2.p23}}
 
-{{s2.p30}}
-{{s2.p31}}
+{{s2.p24}}
+{{s2.p25}}
 
 ~~~js
 console.log(document)
@@ -173,7 +173,7 @@ console.log(document)
   &lt;/html>
 ~~~
 
-{{s2.p32}}
+{{s2.p26}}
 
 ~~~js
 console.dir(document)

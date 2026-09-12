@@ -476,7 +476,7 @@ _________________________________________
 
 ## ![ico-30 hw] {{s15.h1}}
 
-{{s15.p1}}
+◘◘** 1**◘◘
 ~~~js
 var elem = document.body
   .appendChild(document.createElement('p'))
@@ -487,14 +487,14 @@ elem.tagName = 'div'
 →→→ {{s15.quiz1}} | {{s15.quizVariants1}} | {{s15.quizAnswer1}}→→→
 
 
-{{s15.p2}}
+◘◘** 2**◘◘
 ~~~js
 document.title = 'DOM'
 ~~~
 
 →→→ {{s15.quiz2}} | {{s15.quizVariants2}} | {{s15.quizAnswer2}}→→→
 
-{{s15.p3}}
+◘◘** 3**◘◘
 ~~~js
 var paragraph = [
   'BOM',
@@ -513,12 +513,12 @@ for (var text of paragraph) {
 →→→ {{s15.quiz3}} | {{s15.quizVariants3}} | {{s15.quizAnswer3}}→→→
 
 
-{{s15.p4}}
+◘◘** 4**◘◘
 
 →→→ {{s15.quiz4}} | {{s15.quizVariants4}} | {{s15.quizAnswer4}}→→→
 
 
-{{s15.p5}}
+◘◘** 5**◘◘
 ~~~js
 function showProto (elem) {
   var proto = elem.__proto__
@@ -541,4 +541,4 @@ elems.forEach(function (elem) {
 
 _________________________________
 
-{{s15.p6}}
+{{s15.p1}}

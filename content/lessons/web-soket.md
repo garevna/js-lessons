@@ -59,13 +59,13 @@ _______________________________________________
 
 ## ![ico-25 hw] {{s2.h1}}
 
+<img src="https://www.piesocket.com/img/logo.png" height="40"/>
+
 {{s2.p1}}
 
 {{s2.p2}}
 
 {{s2.p3}}
-
-{{s2.p4}}
 
 ~~~js
 const apiKey = 'oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm'
@@ -73,17 +73,17 @@ const apiKey = 'oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm'
 const websocket = new WebSocket(`wss://demo.piesocket.com/v3/channel_1?api_key=${apiKey}`)
 ~~~
 
+{{s2.p4}}
+
+
 {{s2.p5}}
-
-
 {{s2.p6}}
 {{s2.p7}}
-{{s2.p8}}
 
+{{s2.p8}}
 {{s2.p9}}
 {{s2.p10}}
 {{s2.p11}}
-{{s2.p12}}
 
 ~~~js
 const apiKey = 'oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm'
@@ -109,7 +109,7 @@ websocket.onerror = function (event) {
 }
 ~~~
 
-{{s2.p13}}
+{{s2.p12}}
 
 ~~~console
 CONNECTED

@@ -1,18 +1,18 @@
 # ![ico-35 study] {{s1.h1}}
 
+@@@@
 {{s1.p1}}
-{{s1.p2}}
 ![](images/funcs-are-our-jam.svg)
+@@@@
+
+{{s1.p2}}
+
 {{s1.p3}}
-
 {{s1.p4}}
-
 {{s1.p5}}
+
 {{s1.p6}}
 {{s1.p7}}
-
-{{s1.p8}}
-{{s1.p9}}
 
 ## ![ico-30 icon] {{s2.h1}}
 
@@ -435,7 +435,7 @@ ____________________________________________________________________
 
 ## ![ico-25 icon] {{s10.h1}}
 
-{{s10.p1}}
+◘◘** 1**◘◘
 ~~~js
 var func = function (arg) {
   return Math.random() * arg
@@ -444,7 +444,7 @@ var func = function (arg) {
 
 →→→ {{s10.quiz1}} | {{s10.quizVariants1}} | {{s10.quizAnswer1}}→→→
 
-{{s10.p2}}
+◘◘** 2**◘◘
 ~~~js
 function greeting (userName) {
   return 'Hi ' + userName + '!'
@@ -455,7 +455,7 @@ console.log(greeting())
 
 →→→ {{s10.quiz2}} | {{s10.quizVariants2}} | {{s10.quizAnswer2}}→→→
 
-{{s10.p3}}
+◘◘** 3**◘◘
 ~~~js
 function greeting (userName = 'Human') {
   return 'Hi ' + userName + '!'
@@ -467,7 +467,7 @@ console.log(greeting())
 →→→ {{s10.quiz3}} | {{s10.quizVariants3}} | {{s10.quizAnswer3}}→→→
 
 
-{{s10.p4}}
+◘◘** 4**◘◘
 ~~~js
 function greeting (userName = 'Human') {
   return 'Welcome ' + userName + '!'
@@ -479,7 +479,7 @@ console.log(greeting())
 
 →→→ {{s10.quiz4}} | {{s10.quizVariants4}} | {{s10.quizAnswer4}}→→→
 
-{{s10.p5}}
+◘◘** 5**◘◘
 ~~~js
 function randomInteger (number = 100) {
   return Math.round(Math.random() * number)
@@ -488,7 +488,7 @@ function randomInteger (number = 100) {
 
 →→→ {{s10.quiz5}} | {{s10.quizVariants5}} | {{s10.quizAnswer5}}→→→
 
-{{s10.p6}}
+◘◘** 6**◘◘
 ~~~js
 function hexToDecimal (hexNumber = 0) {
   return parseInt(hexNumber, 16) || 0
@@ -497,7 +497,7 @@ function hexToDecimal (hexNumber = 0) {
 
 →→→ {{s10.quiz6}} | {{s10.quizVariants6}} | {{s10.quizAnswer6}}→→→
 
-{{s10.p7}}
+◘◘** 7**◘◘
 ~~~js
 function binToDecimal (bin = '1111111') {
   return parseInt(bin, 2) || 0
@@ -506,7 +506,7 @@ function binToDecimal (bin = '1111111') {
 
 →→→ {{s10.quiz7}} | {{s10.quizVariants7}} | {{s10.quizAnswer7}}→→→
 
-{{s10.p8}}
+◘◘** 8**◘◘
 ~~~js
 function hexToDecimal (hex = 'FF') {
   return parseInt(hex, 16) || 255
@@ -516,8 +516,8 @@ function hexToDecimal (hex = 'FF') {
 →→→ {{s10.quiz8}} | {{s10.quizVariants8}} | {{s10.quizAnswer8}}→→→
 ____________________________________________________________________
 
-{{s10.p9}}
+{{s10.p1}}
 
 _______________________________________
-{{s10.p10}}
-{{s10.p11}}
+{{s10.p2}}
+{{s10.p3}}

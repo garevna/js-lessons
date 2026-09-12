@@ -103,27 +103,27 @@ __________________________________________________
 
 ## ![ico-30 icon] {{s4.h1}}
 
-{{s4.p1}}
+◘◘** 1**◘◘
 
 →→→ {{s4.quiz1}} | {{s4.quizVariants1}} | {{s4.quizAnswer1}} →→→
 
-{{s4.p2}}
+◘◘** 2**◘◘
 
 →→→ {{s4.quiz2}} | {{s4.quizVariants2}} | {{s4.quizAnswer2}} →→→
 
-{{s4.p3}}
+◘◘** 3**◘◘
 
 →→→ {{s4.quiz3}} | {{s4.quizVariants3}} | {{s4.quizAnswer3}} →→→
 
-{{s4.p4}}
+◘◘** 4**◘◘
 
 →→→ {{s4.quiz4}} | {{s4.quizVariants4}} | {{s4.quizAnswer4}} →→→
 
-{{s4.p5}}
+◘◘** 5**◘◘
 
 →→→ {{s4.quiz5}} | {{s4.quizVariants5}} | {{s4.quizAnswer5}} →→→
 
-{{s4.p6}}
+◘◘** 6**◘◘
 
 →→→ {{s4.quiz6}} | {{s4.quizVariants6}} | {{s4.quizAnswer6}} →→→
 

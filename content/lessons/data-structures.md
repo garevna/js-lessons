@@ -27,15 +27,15 @@ var students = group
 {{s1.p14}}
 {{s1.p15}}
 
-{{s1.p16}}
+@@@@
 ![](images/reference-is-a-lockpick.svg)
+{{s1.p16}}
+@@@@
+
 {{s1.p17}}
 {{s1.p18}}
-
 {{s1.p19}}
 {{s1.p20}}
-{{s1.p21}}
-{{s1.p22}}
 
 _________________________________________________
 
@@ -72,23 +72,23 @@ array[2]
 {{s2.p15}}
 {{s2.p16}}
 
+| 0    | 1     | 2        | 3    | 4         |
 {{s2.p17}}
-{{s2.p18}}
 
-{{s2.p19}}
+{{s2.p18}}
 
 ~~~console
 'mother'
 ~~~
 
+{{s2.p19}}
 {{s2.p20}}
-{{s2.p21}}
 
 ~~~js
 array[4] = 'father'
 ~~~
 
-{{s2.p22}}
+{{s2.p21}}
 
 ~~~console
 ► (5) [3.14, false, 'mother', null, 'father']
@@ -96,23 +96,23 @@ array[4] = 'father'
 
 ___________________________________
 
-{{s2.p23}}
+{{s2.p22}}
 
 ~~~js
 var collection = array
 ~~~
 
+{{s2.p23}}
+
 {{s2.p24}}
 
 {{s2.p25}}
-
-{{s2.p26}}
 
 ~~~js
 collection[3] = 'brother'
 ~~~
 
-{{s2.p27}}
+{{s2.p26}}
 
 ~~~js
 array
@@ -122,8 +122,8 @@ array
 ► (5) [3.14, false, 'mother', 'brother', 'father']
 ~~~
 
+{{s2.p27}}
 {{s2.p28}}
-{{s2.p29}}
 
 ### ![ico-25 icon] {{s3.h1}}
 

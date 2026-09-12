@@ -63,11 +63,11 @@ for (var prop in HTMLElement.prototype) {
 {{s2.p18}}
 
 
-{{s2.p19}}
+<img src="https://github.com/garevna/js-course/blob/master/pictures/event-1.png?raw=true" width="300"/>
 
 __________________________________________________________________
 
-{{s2.p20}}
+{{s2.p19}}
 
 ~~~js
 document.body.ondomnodeinserted = function (event) {
@@ -77,7 +77,7 @@ document.body.ondomnodeinserted = function (event) {
 document.body.appendChild(document.createElement('div'))
 ~~~
 
-{{s2.p21}}
+{{s2.p20}}
 
 ~~~~console
 
@@ -106,14 +106,15 @@ document.body.appendChild(document.createElement('div'))
 
 ______________________________________________________
 
+{{s2.p21}}
+
 {{s2.p22}}
 
 {{s2.p23}}
 
-{{s2.p24}}
-
 ^^^[{{s2.spoiler1}}]
 
+{{s2.p24}}
 {{s2.p25}}
 {{s2.p26}}
 {{s2.p27}}
@@ -122,29 +123,28 @@ ______________________________________________________
 {{s2.p30}}
 {{s2.p31}}
 {{s2.p32}}
-{{s2.p33}}
-{{s2.p34}}
+**...**
 
 ^^^
+
+{{s2.p33}}
+
+{{s2.p34}}
 
 {{s2.p35}}
 
 {{s2.p36}}
 
 {{s2.p37}}
-
 {{s2.p38}}
-
 {{s2.p39}}
 {{s2.p40}}
 {{s2.p41}}
+
 {{s2.p42}}
 {{s2.p43}}
 
 {{s2.p44}}
-{{s2.p45}}
-
-{{s2.p46}}
 
 ~~~js
 var pictures = [
@@ -180,10 +180,10 @@ var divs = pictures.map(picture => {
 
 _________________________________
 
-{{s2.p47}}
+{{s2.p45}}
 
-{{s2.p48}}
-{{s2.p49}}
+{{s2.p46}}
+{{s2.p47}}
 
 _________________________________________
 
@@ -313,11 +313,13 @@ ____________________________
 
 ## ![ico-25 icon] {{s11.h1}}
 
+<img src="https://github.com/garevna/js-course/blob/master/pictures/event-2.png?raw=true" width="400"/>
+
 {{s11.p1}}
 
 {{s11.p2}}
-
 {{s11.p3}}
+
 {{s11.p4}}
 
 {{s11.p5}}
@@ -327,8 +329,6 @@ ____________________________
 {{s11.p7}}
 
 {{s11.p8}}
-
-{{s11.p9}}
 
 _________________________________________________________________
 

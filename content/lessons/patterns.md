@@ -12,15 +12,15 @@
 
 ________________________________________
 
-{{s1.p6}}
+@@@@
 
 ![](https://img.artlebedev.ru/everything/izdal/yazyk-shablonov/yazyk-shablonov-cover.jpg)
+{{s1.p6}}
 {{s1.p7}}
 {{s1.p8}}
-{{s1.p9}}
 ![](https://i.pinimg.com/originals/0b/c7/f0/0bc7f0c5ab814da316948fd2c9dd39aa.jpg)
-{{s1.p10}}
-{{s1.p11}}
+{{s1.p9}}
+@@@@
 _____________________________________________________
 
 ## ![ico-25 icon] {{s2.h1}}

@@ -43,14 +43,14 @@ console.log(input.files[0])
 {{s1.p16}}
 {{s1.p17}}
 {{s1.p18}}
-{{s1.p19}}
+...
 
 !![illustrations/file-api-02.png, illustrations/file-api-03.png, illustrations/file-api-04.png]
 
-{{s1.p20}}
+{{s1.p19}}
 
-{{s1.p21}}
+{{s1.p20}}
 
 ___________________________________
 
-{{s1.p22}}
+{{s1.p21}}

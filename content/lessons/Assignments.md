@@ -131,22 +131,22 @@ _________________________________________________________________
 var alpha = 11, betta = 7, sigma = 2, number = NaN
 ~~~
 
-{{s3.p1}}
+◘◘** 1**◘◘
 
 →→→ {{s3.quiz1}}  | {{s3.quizVariants1}} | {{s3.quizAnswer1}} →→→
 
-{{s3.p2}}
+◘◘** 2**◘◘
 
 →→→ {{s3.quiz2}}  | {{s3.quizVariants2}} | {{s3.quizAnswer2}} →→→
 
-{{s3.p3}}
+◘◘** 3**◘◘
 
 →→→ {{s3.quiz3}}  | {{s3.quizVariants3}} | {{s3.quizAnswer3}} →→→
 
-{{s3.p4}}
+◘◘** 4**◘◘
 
 →→→ {{s3.quiz4}}  | {{s3.quizVariants4}} | {{s3.quizAnswer4}} →→→
 
-{{s3.p5}}
+◘◘** 5**◘◘
 
 →→→ {{s3.quiz5}}  | {{s3.quizVariants5}} | {{s3.quizAnswer5}} →→→

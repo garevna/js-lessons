@@ -164,15 +164,15 @@ ____________________________________
 
 ## ![ico-25 icon] {{s4.h1}}
 
-{{s4.p1}}
+@@@@
 ![](images/funcs-call-girls-ukr.svg)
 
+{{s4.p1}}
+@@@@
+
 {{s4.p2}}
+
 {{s4.p3}}
-
-{{s4.p4}}
-
-{{s4.p5}}
 
 ~~~js
 var obj = {
@@ -184,8 +184,8 @@ var obj = {
 obj.say()   // google
 ~~~
 
-{{s4.p6}}
-{{s4.p7}}
+{{s4.p4}}
+{{s4.p5}}
 
 ~~~js
 window.name = 'window'
@@ -205,9 +205,9 @@ obj.say()   // google
 
 _____________________________________________
 
-{{s4.p8}}
+{{s4.p6}}
 
-{{s4.p9}}
+{{s4.p7}}
 
 ~~~js
 function getName () {

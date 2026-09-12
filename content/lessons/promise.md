@@ -432,16 +432,16 @@ ________________________________________________________________________________
 
 {{s11.p3}}
 
+@@@@
 {{s11.p4}}
-{{s11.p5}}
 ![](illustrations/promise-all.jpg)
+@@@@
+
+{{s11.p5}}
 {{s11.p6}}
-
 {{s11.p7}}
-{{s11.p8}}
-{{s11.p9}}
 
-{{s11.p10}}
+{{s11.p8}}
 
 ~~~js
 const data = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth']
@@ -454,7 +454,7 @@ promises.forEach(promise => promise.then(console.log))
 
 {{{promise-arrays-01.js}}}
 
-{{s11.p11}}
+{{s11.p9}}
 
 ~~~js
 const data = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth']
@@ -471,13 +471,13 @@ promises
 
 {{{promise-arrays-02.js}}}
 
+{{s11.p10}}
+{{s11.p11}}
+
 {{s11.p12}}
 {{s11.p13}}
 
 {{s11.p14}}
-{{s11.p15}}
-
-{{s11.p16}}
 
 ~~~js
 const data = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth']
@@ -502,12 +502,12 @@ const promise = new Promise(resolve => recurse(resolve))
 promise.then(console.log)
 ~~~
 
-{{s11.p17}}
+{{s11.p15}}
 
-{{s11.p18}}
-{{s11.p19}}
+@@@@
+{{s11.p16}}
 ![](illustrations/promises-collection.png)
-{{s11.p20}}
+@@@@
 
 __________________________________________
 

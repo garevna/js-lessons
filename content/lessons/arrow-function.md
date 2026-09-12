@@ -129,10 +129,10 @@ ____________________________________________________
 
 ### ![ico-20 icon] {{s4.h1}}
 
+@@@@
 {{s4.p1}}
-{{s4.p2}}
 ![](images/arrow-funcs-neutered-kitties.svg)
-{{s4.p3}}
+@@@@
 
 ☼☼☼ {{s4.slogan1}} ☼☼☼
 
@@ -163,14 +163,14 @@ console.dir(function () {})
   ► [[Prototype]]: ƒ ()
 ~~~
 
-{{s4.p4}}
+{{s4.p2}}
 
 ~~~js
 const arrowFunc = () => null
 const obj = new arrowFunc()
 ~~~
 
-{{s4.p5}}
+{{s4.p3}}
 
 ~~~error
     TypeError: arrowFunc is not a constructor

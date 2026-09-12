@@ -45,11 +45,9 @@
   "s3.p4": "It improves code readability:",
   "s3.p5": "![ico-25 warn] Variable names are case sensitive (⟦f13⟧ and ⟦f14⟧ are different variables).",
   "s3.demo2": "Demo",
-  "s3.p6": "@@@@",
-  "s3.p7": "**Camel Case** - a style of writing multi-word variable names where each successive word begins with an upper case literal.<br><br>The first literal with which a variable name begins must be in lower case.",
-  "s3.p8": "@@@@",
-  "s3.p9": "^^Only constructor and class names, which we will get to know later, should begin with an uppercase letter.^^",
-  "s3.p10": "^^For the future: it is recommended to start **function** names with a **verb** to distinguish them from variable names where data is stored.^^",
-  "s3.p11": "[![ico-25 warn] **_Reserved words_**](https://www.w3schools.com/js/js_reserved.asp ) cannot be used as variable names.",
-  "s3.p12": "![ico-25 warn] Variable names cannot start with a number."
+  "s3.p6": "**Camel Case** - a style of writing multi-word variable names where each successive word begins with an upper case literal.<br><br>The first literal with which a variable name begins must be in lower case.",
+  "s3.p7": "^^Only constructor and class names, which we will get to know later, should begin with an uppercase letter.^^",
+  "s3.p8": "^^For the future: it is recommended to start **function** names with a **verb** to distinguish them from variable names where data is stored.^^",
+  "s3.p9": "[![ico-25 warn] **_Reserved words_**](https://www.w3schools.com/js/js_reserved.asp ) cannot be used as variable names.",
+  "s3.p10": "![ico-25 warn] Variable names cannot start with a number."
 }

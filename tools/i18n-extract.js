@@ -64,6 +64,17 @@ const IMAGE_LINK = /^\[!\[[^\]]*\]\]\([^)]*\)$/
 // were sentences. The title inside the brackets is prose; the rest is not.
 const SPOILER_OPEN = /^(\^{3}\[)([^\]]*)(\]\s*)$/
 const SPOILER_CLOSE = /^\^{3}\s*$/
+
+// A grid is delimited by @@@@ on its own line (pageRegExpr.Grid). Only the
+// delimiters are markup: 43 of the 65 grids in the course hold prose between
+// them, so the grid cannot be treated as one opaque block the way code is —
+// its contents go through the line rules like anything else.
+const GRID_DELIMITER = /^@{4}\s*$/
+
+// A line that is nothing but an HTML tag — <img src="…" width="120"/>. The
+// letters live in the attribute names and the URL, so without a rule it reads
+// as prose.
+const HTML_ONLY = /^<[^>]+>$/
 const SLOGAN = /^(\s*☼☼☼\s*)(.+?)(\s*☼☼☼\s*)$/
 const TEST = /^(\s*→→→\s*)(.+?)(\s*→→→\s*)$/
 const DEMO = /^(\s*§§§§\s*)(.+?)(\s*§§§§\s*)$/
@@ -139,6 +150,13 @@ function extract (source, sectionNames) {
     if (IMAGE_ONLY.test(line.trim())) return line
     if (IMAGE_LINK.test(line.trim())) return line
     if (SPOILER_CLOSE.test(line)) return line
+    if (GRID_DELIMITER.test(line)) return line
+    if (HTML_ONLY.test(line.trim())) return line
+
+    // Nothing to translate means no key at all. A line holding only entities
+    // and punctuation — &nbsp; between grid cells — is spacing, and giving it
+    // a message key made every language carry a copy of it for nothing.
+    if (!/\p{L}/u.test(line.replace(/&[a-zA-Z]+;|&#\d+;/g, ''))) return line
 
     let m
 
