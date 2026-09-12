@@ -1,0 +1,19 @@
+{
+  "s1.h1": "indexedDB",
+  "s1.p1": "^^Indexed Database^^",
+  "s1.p2": "**NoSQL**",
+  "s1.spoiler1": "Chrome DevTools",
+  "s1.spoiler2": "Firefox ( Mozilla )",
+  "s3.h1": "IDBRequest",
+  "s3.p3": "| ![ico-20 green-ok] | **^^onsuccess^^** | **^^result^^** |",
+  "s3.p4": "| ![ico-20 error]    | **^^onerror^^**   | **^^error^^** |",
+  "s4.h1": "indexedDB.open",
+  "s4.p9": "◘◘![ico-20 cap] ** 1**◘◘",
+  "s5.h1": "upgradeneeded",
+  "s5.p15": "◘◘![ico-20 cap] ** 2**◘◘",
+  "s5.p39": "◘◘![ico-20 cap] ** 3**◘◘",
+  "s6.h1": "indexedDB.databases",
+  "s7.h1": "indexedDB.deleteDatabase",
+  "s7.p12": "◘◘![ico-20 cap] ** 4**◘◘",
+  "s7.p22": "| **IDBFactory** | **open**  | => | **IDBDatabase** |"
+}

@@ -1,0 +1,9 @@
+{
+  "s1.p3": "![ico-20 pin] development",
+  "s1.p4": "![ico-20 pin] production",
+  "s1.p7": "••![ico-20 bash] webpack --mode development••",
+  "s1.p10": "••![ico-20 bash] webpack --mode production••",
+  "s2.p2": "◘◘![ico-20 file] package.json◘◘",
+  "s2.p4": "••![ico-20 bash] npm run dev••",
+  "s2.p5": "••![ico-20 bash] npm run prod••"
+}

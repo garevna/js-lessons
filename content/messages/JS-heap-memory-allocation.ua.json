@@ -1,0 +1,14 @@
+{
+  "s2.h1": "RAIL",
+  "s2.p6": "|  **Response**  |  **Animation**  |  **Idle**  |  **Load**  |",
+  "s3.h1": "JavaScript Profiler",
+  "s3.p3": "![](createPath('images', 'js-profiler.png'))",
+  "s4.h1": "Audits",
+  "s4.p3": "![](createPath('images', 'audits.png'))",
+  "s5.h1": "Performance",
+  "s5.p17": "![](createPath('images', 'performance.png'))",
+  "s5.p18": "[%%%Accessibility%%%](⟦f0⟧)",
+  "s6.h1": "Memory",
+  "s6.p1": "[%%%How to Record Heap Snapshots%%%](⟦f1⟧)",
+  "s6.p2": "[%%%Fix Memory Problems%%%](⟦f2⟧)"
+}

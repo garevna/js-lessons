@@ -1,0 +1,16 @@
+{
+  "s1.h1": "Web-workers",
+  "s2.h1": "onmessage",
+  "s2.p4": "◘◘worker.js◘◘",
+  "s3.h1": "postMessage",
+  "s3.p2": "◘◘worker.js◘◘",
+  "s3.p4": "◘◘script.js◘◘",
+  "s3.p5": "◘◘![ico-25 cap] ** 1**◘◘",
+  "s3.p6": "◘◘worker.js◘◘",
+  "s3.p11": "◘◘![ico-25 cap] ** 2**◘◘",
+  "s3.p12": "◘◘web-worker.js◘◘",
+  "s4.h1": "importScripts",
+  "s4.p4": "◘◘![ico-25 cap] ** 3**◘◘",
+  "s5.h1": "MessageChannel",
+  "s5.p1": "◘◘![ico-25 cap] ** 4**◘◘"
+}

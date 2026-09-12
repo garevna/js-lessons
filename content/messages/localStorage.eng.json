@@ -1,0 +1,14 @@
+{
+  "s2.h1": "localStorage",
+  "s2.p4": "![ico-25 google]",
+  "s2.p5": "![ico-25 mozilla]",
+  "s3.spoiler1": "setItem ( key, value )",
+  "s3.spoiler2": "getItem (key)",
+  "s3.spoiler3": "removeItem (key)",
+  "s3.spoiler4": "clear()",
+  "s3.spoiler5": "key (index)",
+  "s3.p10": "![ico-25 cap] ** 1**",
+  "s3.p12": "![ico-25 cap] ** 2**",
+  "s3.p15": "![ico-25 cap] ** 3**",
+  "s4.h1": "Events"
+}

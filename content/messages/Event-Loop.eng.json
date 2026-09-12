@@ -159,7 +159,5 @@
   "s8.p23": "This callback receives an instance of the **Response** constructor, which needs to be parsed using the **⟦f27⟧** method to get the contents of body.",
   "s8.p24": "The **⟦f28⟧** method again returns a **promise**, and we pass the second callback to it's **⟦f29⟧** method.",
   "s8.p25": "Last callback will already receive the contents of the server response.",
-  "s8.p26": "Thus, the first callback will be sent to the **microtask queue** first, and only after it ‘works out’ will the second callback be sent to the **microtask queue**.",
-  "s8.p27": "If we were to send only one callback to the **task queue** using the **⟦f30⟧** method, then all timer callbacks would get into the **Call Stack** before the last microtask got into the **microtask queue**.",
-  "s8.p28": "To “even the odds,” the timer callback sets the timer again. Then the situation in the **task queue** will be similar to the **microtask queue**."
+  "s8.p26": "Thus, the first callback will be sent to the **microtask queue** first, and only after it ‘works out’ will the second callback be sent to the **microtask queue**."
 }

@@ -77,19 +77,29 @@ for (const page of pages) {
   const untranslated = Object.entries(source)
     .filter(([k, v]) => !(k in existing) || existing[k] === v)
 
-  // A message with no letters in it has nothing to translate — the numbering
-  // inside a callout, ◘◘![ico-20 cap] ** 1**◘◘, is markup that happens to sit
-  // on its own line. Sending those to a translator is noise, and on some pages
-  // they were most of what was left. Copy them over and leave them out.
-  // HTML entities carry letters — &nbsp; &bsol; &#10072; — but a line holding
-  // nothing else is spacing, not a sentence. Drop them, and the hidden-fragment
-  // marks, before deciding whether anything is left to translate.
-  const hasLetters = (s) => /\p{L}/u.test(
+  // A segment written without a single Cyrillic letter is not Russian prose,
+  // and there is nothing in it to translate. Scanning the queue, all 2736 such
+  // segments were one of:
+  //
+  //   x && !x          code
+  //   $ git checkout   a shell command
+  //   true, undefined  quiz variants
+  //   | getKey |       a table row
+  //   ![ico-25 hw]     callout numbering
+  //   <div>↓</div>     html
+  //
+  // These are precisely the segments a translator damages: DeepL will happily
+  // translate "cat", and rewrite the quotes inside a code sample. Copying them
+  // over untouched removes a third of the queue and most of the risk.
+  //
+  // HTML entities are stripped first — &nbsp; carries letters but a line
+  // holding only entities is spacing, not a sentence.
+  const needsTranslation = (s) => /[Ѐ-ӿ]/.test(
     s.replace(/⟦f\d+⟧/g, '').replace(/&[a-zA-Z]+;|&#\d+;/g, '')
   )
 
-  const copied = untranslated.filter(([, v]) => !hasLetters(v))
-  const todo = untranslated.filter(([, v]) => hasLetters(v))
+  const copied = untranslated.filter(([, v]) => !needsTranslation(v))
+  const todo = untranslated.filter(([, v]) => needsTranslation(v))
 
   if (copied.length) {
     const merged = { ...existing }

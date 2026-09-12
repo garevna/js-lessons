@@ -1,0 +1,23 @@
+{
+  "s1.h1": "Streams API",
+  "s1.p6": "[![ico-20 link] MDN](⟦f0⟧)",
+  "s2.spoiler1": "Readable Streams",
+  "s2.p2": "![ico-20 green-ok] ReadableStream",
+  "s2.p3": "![ico-20 green-ok] ReadableStreamDefaultReader",
+  "s2.p4": "![ico-20 green-ok] ReadableStreamDefaultController",
+  "s2.spoiler2": "Writable streams",
+  "s2.p5": "![ico-20 green-ok] WritableStream",
+  "s2.p6": "![ico-20 green-ok] WritableStreamDefaultWriter",
+  "s2.p7": "![ico-20 green-ok] WritableStreamDefaultController",
+  "s3.h1": "ReadableStream",
+  "s3.p4": "^^• cancel()^^",
+  "s3.p5": "^^• getReader()^^",
+  "s3.p6": "^^• pipeThrough()^^",
+  "s3.p7": "^^• pipeTo()^^",
+  "s3.p8": "^^• tee()^^",
+  "s3.p14": "![ico-25 cap] ** 1**",
+  "s3.p18": "![ico-25 cap] ** 2**",
+  "s3.p43": "![ico-25 cap] ** 3**",
+  "s4.h1": "fetch",
+  "s4.p2": "![ico-25 cap] ** 4**"
+}

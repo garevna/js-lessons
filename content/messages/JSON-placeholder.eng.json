@@ -1,3 +1,8 @@
 {
-  "s1.p8": "⟦f8⟧"
+  "s1.h1": "json-placeholder",
+  "s1.p2": "[JSONPlaceholder](⟦f2⟧)",
+  "s1.spoiler1": "JSONPlaceholder endpoints",
+  "s1.p8": "⟦f8⟧",
+  "s2.h1": "curl",
+  "s3.h1": "fetch"
 }

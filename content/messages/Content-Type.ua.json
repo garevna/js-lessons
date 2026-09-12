@@ -1,3 +1,27 @@
 {
-  "s1.p2": "**⟦f0⟧**"
+  "s1.h1": "Content-Type",
+  "s1.p2": "**⟦f0⟧**",
+  "s1.p4": "![ico-20 green-ok] application",
+  "s1.p5": "![ico-20 green-ok] audio",
+  "s1.p6": "![ico-20 green-ok] image",
+  "s1.p7": "![ico-20 green-ok] message",
+  "s1.p8": "![ico-20 green-ok] multipart",
+  "s1.p9": "![ico-20 green-ok] text",
+  "s1.p10": "![ico-20 green-ok] video",
+  "s1.p13": "^^• **application/msword**^^",
+  "s1.p14": "^^• **application/pdf**^^",
+  "s1.p15": "^^• **application/json**^^",
+  "s1.p16": "^^• **image/gif**^^",
+  "s1.p17": "^^• **image/jpeg**^^",
+  "s1.p18": "^^• **image/png**^^",
+  "s1.p19": "^^• **video/mpeg**^^",
+  "s1.p20": "^^• **text/plain**^^",
+  "s1.p21": "^^• **text/html**^^",
+  "s1.p22": "^^• **text/html**; _charset=utf-8_^^",
+  "s1.p23": "^^• **multipart/form-data**^^",
+  "s1.p24": "^^• **multipart/mixed;** boundary=\"&#95;&#95;&#95;&#95;&#95;&#95;&#95;&#95;&#95;&#95;\"^^",
+  "s2.p2": "[![ico-25 link] https://httpbin.org](⟦f3⟧)",
+  "s3.h1": "application/x-www-form-urlencoded",
+  "s4.h1": "application/json",
+  "s5.h1": "text/plain"
 }

@@ -1,0 +1,14 @@
+{
+  "s1.p1": "![ico-20 green-ok] file-loader",
+  "s1.p2": "![ico-20 green-ok]  url-loader",
+  "s2.h1": "url-loader",
+  "s3.p6": "◘◘![ico-20 file] script.js◘◘",
+  "s3.p7": "◘◘![ico-20 file] main.css◘◘",
+  "s4.h1": "file-loader",
+  "s4.p2": "••![ico-20 bash] npm install --save-dev file-loader••",
+  "s4.p4": "◘◘![ico-20 webpack] webpack.config.js◘◘",
+  "s4.p15": "◘◘![ico-25 cap] webpack.config.js◘◘",
+  "s4.p19": "[%%%file-loader%%%](⟦f28⟧)",
+  "s4.p20": "[%%%url-loader%%%](⟦f29⟧)",
+  "s4.p21": "[%%%loaders%%%](⟦f30⟧)"
+}

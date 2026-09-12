@@ -1,0 +1,16 @@
+{
+  "s1.h1": "Secure Hash Algorithm",
+  "s1.spoiler1": "SHA",
+  "s2.h1": "SHA-1",
+  "s2.p2": "![ico-25 cap] **SHA-1**",
+  "s2.p5": "••15E84BC669EC1F264F68CF0329A3DE12788EBC7D••",
+  "s3.p1": "[%%%SHA1%%%](⟦f0⟧) ",
+  "s3.p2": "[%%%SHA2%%%](⟦f1⟧)",
+  "s4.h1": "js-sha1",
+  "s4.p2": "••![ico-30 bash] $ npm install js-sha1••",
+  "s5.h1": "SHA256",
+  "s5.spoiler1": "sha256sum",
+  "s6.h1": "SHA384",
+  "s7.h1": "integrity",
+  "s8.spoiler1": "Sign In"
+}

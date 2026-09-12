@@ -1,0 +1,13 @@
+{
+  "s1.h1": "Status",
+  "s1.p1": "![ico-20 green-ok] **200** (OK)",
+  "s1.p4": "![ico-20 green-ok] **201** (Created)",
+  "s1.p8": "![ico-20 green-ok] **400** (Bad Request)",
+  "s1.p10": "![ico-20 green-ok] **401** (Unauthorized)",
+  "s1.p12": "![ico-20 green-ok] **403** (Forbidden)",
+  "s1.p14": "![ico-20 green-ok] **404** (Not found)",
+  "s1.p16": "![ico-20 green-ok] **405** (Method Not Allowed)",
+  "s1.p18": "![ico-20 green-ok] **410** (Gone)",
+  "s1.p20": "![ico-20 green-ok] **415** (Unsupported Media Type)",
+  "s1.p22": "![ico-20 green-ok] **429** (Too Many Requests)"
+}

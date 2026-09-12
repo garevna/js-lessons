@@ -64,6 +64,7 @@
   "s7.p1": "![ico-20 warn] The value **⟦f29⟧** can occur when trying to perform arithmetic operations with operands that aren't numbers and can't be converted to a number, like ⟦f30⟧, as well as when attempting to divide zero by zero: ⟦f31⟧.",
   "s7.p2": "![ico-20 warn] The value **⟦f32⟧** is not equal to any other value, including itself.",
   "s7.p3": "![ico-20 warn] No arithmetic operations in JS will ever result in an error, because if there's an error, the operation will return **⟦f33⟧**.",
+  "s7.demo1": "Demo",
   "s8.h1": "Error in calculations",
   "s8.p1": "Now let's talk about the accuracy of calculations and rounding numbers.",
   "s8.p2": "So, clearly working with numbers isn't our top priority, and if you suddenly decide to use **JS** like **Fortran**, you'll have to deal with calculation inaccuracies.",

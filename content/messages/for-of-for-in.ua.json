@@ -1,4 +1,13 @@
 {
+  "s3.h1": "for...of",
+  "s3.p5": "![ico-20 err]  ⟦f2⟧",
+  "s4.h1": "Array",
+  "s5.h1": "String",
   "s6.h1": "⟦f5⟧",
-  "s7.h1": "⟦f7⟧ | ⟦f8⟧"
+  "s7.h1": "⟦f7⟧ | ⟦f8⟧",
+  "s8.h1": "for...in",
+  "s15.h1": "continue",
+  "s16.h1": "break",
+  "s17.h1": "for...of vs for...in",
+  "s17.p21": "[![ico-30 hw] Quiz](⟦f33⟧)"
 }

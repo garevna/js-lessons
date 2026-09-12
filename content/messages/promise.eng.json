@@ -1,5 +1,6 @@
 {
   "s1.h1": "Promise",
+  "s1.p1": "[►►►callback►►►](⟦f0⟧)",
   "s2.h1": "Constructor",
   "s2.p1": "Constructor **⟦f0⟧** is a **higher-order function**.",
   "s2.p2": "This means that the constructor **⟦f1⟧** expects a **function** as a **required argument**.",

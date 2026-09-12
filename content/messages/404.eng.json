@@ -2,5 +2,7 @@
   "s1.h1": "This material is not translated yet.",
   "s1.p1": "<h1 style=\"text-align: center\">Not translated</h1>",
   "s1.p2": "<h5 style=\"text-align: center\">![ico-35 warn] I apologise, the translation of this material is in process.</h5>",
-  "s1.p3": "<h5 style=\"text-align: center\">You can view this topic in ^^russian^^, or wait until the translation will be completed.</h5>"
+  "s1.p3": "<h5 style=\"text-align: center\">You can view this topic in ^^russian^^, or wait until the translation will be completed.</h5>",
+  "s1.p5": "Unfortunately, the material you've requested was not found or does not exist.",
+  "s1.p6": "Please contact the developer: irina.h.fylyppova@gmail.com"
 }

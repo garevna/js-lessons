@@ -1,6 +1,19 @@
 {
+  "s1.h1": "FileReader",
   "s1.p4": "• ⟦f1⟧ **⟦f2⟧**",
   "s1.p5": "• ⟦f3⟧ **⟦f4⟧**",
   "s1.p6": "• ⟦f5⟧ **⟦f6⟧**",
-  "s1.p7": "• ⟦f7⟧ **⟦f8⟧**"
+  "s1.p7": "• ⟦f7⟧ **⟦f8⟧**",
+  "s1.p8": "![ico-20 green-ok] **error**",
+  "s1.p10": "![ico-20 green-ok] **readyState**",
+  "s1.p14": "![ico-20 green-ok] **result**",
+  "s1.p18": "![ico-20 green-ok] onabort",
+  "s1.p19": "![ico-20 green-ok] onerror",
+  "s1.p20": "![ico-20 green-ok] onload",
+  "s1.p21": "![ico-20 green-ok] onloadend",
+  "s1.p22": "![ico-20 green-ok] onloadstart",
+  "s1.p23": "![ico-20 green-ok] onprogress",
+  "s1.p25": "◘◘![ico-25 cap] ** 1**◘◘",
+  "s1.p28": "◘◘![ico-25 cap] ** 2**◘◘",
+  "s1.p30": "◘◘![ico-25 cap] ** 3**◘◘"
 }

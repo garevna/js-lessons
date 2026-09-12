@@ -1,4 +1,17 @@
 {
+  "s1.p6": "![](createPath(\"images\", \"smoke-monkey.gif\"))",
+  "s2.h1": "prototype",
+  "s2.p2": "◘◘![ico-25 cap] ** 1**◘◘",
+  "s2.p8": "![](createPath(\"images\", \"cat-no.gif\"))",
+  "s2.spoiler1": "Object.prototype",
+  "s3.h1": "constructor",
+  "s3.p14": "◘◘![ico-25 cap] ** 2**◘◘",
+  "s4.h1": "this",
+  "s7.p5": "◘◘![ico-25 cap] ** 3**◘◘",
+  "s7.p12": "◘◘![ico-25 cap] ** 4**◘◘",
+  "s8.h1": "Object.&#95;&#95;proto&#95;&#95;",
   "s8.p8": "| ⟦f110⟧ | ⟦f111⟧ |",
-  "s8.p9": "| ⟦f112⟧ | ⟦f113⟧ |"
+  "s8.p9": "| ⟦f112⟧ | ⟦f113⟧ |",
+  "s9.p19": "[![ico-20 link] ^^Global_Objects^^](⟦f133⟧)",
+  "s9.p20": "[![ico-20 link] ^^Object-Oriented JavaScript^^](⟦f134⟧)"
 }

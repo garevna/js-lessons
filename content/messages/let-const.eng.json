@@ -1,0 +1,21 @@
+{
+  "s1.h1": "let | const",
+  "s1.p1": "**ES6 ( 2015 )**",
+  "s2.h1": "let",
+  "s3.p3": "◘◘![ico-25 cap] ** 1**◘◘",
+  "s3.p6": "◘◘![ico-25 cap] ** 2**◘◘",
+  "s3.p8": "◘◘![ico-25 cap] **var**◘◘",
+  "s3.p9": "◘◘![ico-25 cap] **let**◘◘",
+  "s4.p6": "◘◘![ico-25 cap] ** 3**◘◘",
+  "s4.p8": "••![ico-25 err] ReferenceError: Cannot access 'x' before initialization••",
+  "s4.p10": "◘◘![ico-25 cap] ** 4**◘◘",
+  "s4.p12": "![ico-20 err] ⟦f0⟧",
+  "s4.p15": "◘◘![ico-25 cap] ** 5**◘◘",
+  "s5.h1": "const",
+  "s5.p5": "◘◘![ico-25 cap] ** 6**◘◘",
+  "s5.p7": "![ico-20 err] ⟦f5⟧",
+  "s5.p9": "◘◘![ico-25 cap] ** 7**◘◘",
+  "s5.p11": "••![ico-20 err] Uncaught SyntaxError: Missing initializer in const declaration••",
+  "s5.p13": "◘◘![ico-25 cap] ** 8**◘◘",
+  "s5.p15": "◘◘![ico-25 cap] ** 9**◘◘"
+}

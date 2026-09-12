@@ -1,0 +1,20 @@
+{
+  "s1.h1": "curl",
+  "s2.p2": "••![ico-25 bash] $ curl https://github.com••",
+  "s2.p3": "••![ico-25 bash] $ curl https://garevna.github.io/js-samples/js/index08.js••",
+  "s3.spoiler1": "-O",
+  "s3.p2": "••![ico-25 bash] $ curl  -O  https://garevna.github.io/js-samples/js/index08.js••",
+  "s3.spoiler2": "-o",
+  "s3.p5": "••![ico-25 bash] $ curl  -o  index-1.html  https://garevna.github.io/js-samples/index.html••",
+  "s3.spoiler3": "-d",
+  "s3.p10": "••![ico-25 bash] $ curl -d  \"name=garevna&subject=testing\"  http://httpbin.org/post••",
+  "s3.p12": "••\"Content-Type\": \"application/x-www-form-urlencoded\"••",
+  "s3.p14": "••\"name=garevna&subject=testing\"••",
+  "s3.spoiler4": "-H",
+  "s3.p19": "••Content-Type: application / x-www-form-urlencoded••",
+  "s3.p22": "••![ico-25 bash] $ curl -d '{ name:Irina }'  -H  'Content-Type: application/json'  http://httpbin.org/post••",
+  "s3.p28": "••![ico-25 bash] curl -d @index.html -H 'Content-Type: text/plain' http://httpbin.org/post••",
+  "s3.spoiler5": "-u",
+  "s3.p31": "••![ico-25 bash] $ curl http://name:passwd@machine.domain/full/path/to/file••",
+  "s3.p33": "••![ico-25 bash] $ curl --user garevna:garevna -d @index.html -H 'Content-Type: text/plain' http://httpbin.org/post••"
+}

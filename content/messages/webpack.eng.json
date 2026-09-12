@@ -1,3 +1,16 @@
 {
-  "s2.p13": "![](⟦f13⟧))"
+  "s1.h1": "Webpack",
+  "s1.p7": "••![ico-20 bash] npm install -g webpack webpack-cli••",
+  "s1.p10": "••![ico-20 bash] npm i webpack webpack-cli --save-dev••",
+  "s1.p15": "![ico-25 webpack] **webpack.config.js**",
+  "s1.p21": "![ico-20 webpack] **--config**",
+  "s1.p24": "••![ico-20 bash] webpack --config prod.config.js••",
+  "s1.p25": "◘◘![ico-20 memo] package.json◘◘",
+  "s2.p1": "( zero-config )",
+  "s2.p4": "◘◘![ico-25 file] **index.html**◘◘",
+  "s2.p5": "![ico-25 folder] **src**",
+  "s2.p7": "◘◘![ico-25 file] **index.js**◘◘",
+  "s2.p9": "••![ico-20 bash] webpack••",
+  "s2.p13": "![](⟦f13⟧))",
+  "s3.p2": "••![ico-20 bash] webpack --watch --mode production••"
 }

@@ -1,0 +1,18 @@
+{
+  "s1.h1": "Fake chat",
+  "s2.h1": "db.json",
+  "s2.p2": "![ico-20 green-ok] **lastUpdate**",
+  "s2.p7": "![ico-20 green-ok] **posts**",
+  "s3.h1": "json-server",
+  "s3.p2": "••son-server &#45;&#45;watch db.json••",
+  "s5.h1": "lastUpdate",
+  "s6.h1": "getData",
+  "s7.h1": "appElem",
+  "s8.h1": "chat",
+  "s9.h1": "posts & users",
+  "s10.h1": "currentUser",
+  "s11.h1": "chatInput",
+  "s12.h1": "buildChat",
+  "s13.h1": "initChat",
+  "s14.h1": "updateChat"
+}

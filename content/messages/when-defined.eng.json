@@ -1,4 +1,8 @@
 {
+  "s1.h1": "Custom elements",
+  "s2.h1": ".whenDefined()",
   "s3.p4": "• **⟦f2⟧**",
-  "s3.p5": "• **⟦f3⟧**"
+  "s3.p5": "• **⟦f3⟧**",
+  "s5.p15": "• addElem",
+  "s5.p16": "• promise"
 }

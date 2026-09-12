@@ -30,7 +30,6 @@
   "s4.p13": "![ico20] You can also track changes in variable values in the **⟦f9⟧** section of the debugger:",
   "s4.p14": "• Local - local variables of the function being executed.",
   "s4.p15": "• Block - variables of the call context of the executable function.",
-  "s4.p16": "![ico-20 warn] Keep track of what function is currently running in the **⟦f10⟧**.",
   "s5.h1": "Event Listener Breakpoints",
   "s5.p1": "In **Chrome DevTools**, you can also suspend code execution when DOM events occur."
 }
