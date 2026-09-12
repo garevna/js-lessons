@@ -1,0 +1,117 @@
+name: build and deploy
+
+# When this runs.
+#   push to master  — the normal path: content or code changes, site rebuilds
+#   workflow_dispatch — a manual "Run workflow" button in the Actions tab,
+#                       useful when you want a rebuild without a commit
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+# By default the token a workflow gets may only read the repository. Pushing
+# the built site to gh-pages is a write, so it has to be asked for explicitly.
+permissions:
+  contents: write
+
+# Two pushes in quick succession would otherwise race each other to gh-pages
+# and the loser could publish stale output. This lets the newer run cancel the
+# older one instead.
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+        with:
+          # Full history on purpose. The service worker version is the commit
+          # count (see service-worker/config-service-worker.js), and a shallow
+          # clone would report 1 — the version would go backwards on every run.
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          # Restores the yarn cache between runs so installs take seconds
+          # instead of minutes. All four lockfiles feed the cache key, so the
+          # cache is invalidated when any of them changes.
+          cache: yarn
+          cache-dependency-path: |
+            yarn.lock
+            icons-worker/yarn.lock
+            content-worker/yarn.lock
+            service-worker/yarn.lock
+
+      - name: Install dependencies
+        # Four independent projects: the root and the three workers.
+        # --frozen-lockfile makes the install fail rather than silently
+        # resolve different versions than the lockfile records.
+        run: npm run install:all
+
+      - name: Build
+        # sw-identity -> icons-worker -> content-worker -> root -> service-worker.
+        # The order matters: the root bundle prints the service worker version
+        # in the footer, and the version map hashes the bundles, so identity
+        # comes first and the map comes last.
+        run: npm run full
+
+      - name: Check the build produced everything
+        # A webpack error fails the step above, but a missing entry point can
+        # slip through quietly. Better to find out here than on the live site.
+        run: |
+          for file in index.js donate.js main-menu.js content.worker.js icons.worker.js service-worker.js; do
+            test -s "public/$file" || { echo "::error::public/$file is missing or empty"; exit 1; }
+          done
+          echo "all six bundles present"
+
+      - name: Publish public/ to gh-pages
+        run: |
+          # The site is ~290 MB, nearly all of it images and audio that rarely
+          # change. Committing on top of the existing gh-pages lets git send
+          # only what actually differs; starting a fresh history each time
+          # would leave the server with no common ancestor to negotiate
+          # against, and every deploy would upload all 290 MB again.
+          # Not --depth=1: a shallow ref in an otherwise complete clone makes
+          # the later push fail with "shallow update not allowed".
+          if git fetch -q origin gh-pages; then
+            # --no-checkout leaves the index pointing at the published site
+            # without writing 290 MB to disk that rsync would overwrite a
+            # moment later. git add then sees only the real differences.
+            git worktree add --no-checkout -B gh-pages ../site origin/gh-pages
+          else
+            echo "gh-pages does not exist yet — creating it"
+            git worktree add --detach ../site
+            git -C ../site checkout -q --orphan gh-pages
+          fi
+
+          # --delete so files removed from public/ disappear from the site too.
+          # .git is the worktree's own link file and must survive the sync.
+          rsync -a --delete --exclude='.git' public/ ../site/
+
+          # Tells GitHub Pages to serve the files as they are. Without it Pages
+          # runs Jekyll, which quietly skips files and folders whose names
+          # begin with an underscore.
+          touch ../site/.nojekyll
+
+          cd ../site
+          git add -A
+
+          # An identical build is not an error — a docs-only commit to master
+          # can leave the output unchanged.
+          if git diff --cached --quiet; then
+            echo "site unchanged, nothing to publish"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Build ${GITHUB_SHA::7} from ${GITHUB_REF_NAME}"
+          git push -q origin gh-pages
+
+          echo "published $(git ls-files | wc -l) files"

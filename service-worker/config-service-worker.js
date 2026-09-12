@@ -1,7 +1,15 @@
 /**
- * Generates the service worker's cache-version map and build identity.
+ * Generates the service worker's build identity and cache-version map.
  *
- * Run after the lesson content and the bundles are in place — it reads both.
+ * Two phases, because they need different things to exist:
+ *
+ *   --identity  version + date, derived from git alone. The root bundle
+ *               prints them in the footer, so this has to run before it.
+ *   --versions  the hash map, which reads the built bundles and therefore
+ *               has to run after them.
+ *
+ * With no argument it does both, which is what a local rebuild wants once
+ * the bundles are already there.
  *
  * Versions are content hashes, not modification times. mtime looked like the
  * obvious choice, but git does not store it: a fresh clone stamps every file
@@ -21,6 +29,11 @@ const { execFileSync } = require('child_process')
 
 const root = path.join(__dirname, '..')
 const LESSONS = path.join(root, 'public/lessons')
+
+const args = process.argv.slice(2)
+const only = args.find(a => a === '--identity' || a === '--versions')
+const doIdentity = !only || only === '--identity'
+const doVersions = !only || only === '--versions'
 
 /**
  * Built assets cached alongside the lesson content.
@@ -55,19 +68,21 @@ function git (...args) {
 
 const versions = {}
 
-for (const entry of fs.readdirSync(LESSONS, { withFileTypes: true })) {
-  if (!entry.isDirectory()) continue
-  for (const file of fs.readdirSync(path.join(LESSONS, entry.name))) {
-    versions[`${entry.name}/${file}`] = hashOf(path.join(LESSONS, entry.name, file))
+if (doVersions) {
+  for (const entry of fs.readdirSync(LESSONS, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue
+    for (const file of fs.readdirSync(path.join(LESSONS, entry.name))) {
+      versions[`${entry.name}/${file}`] = hashOf(path.join(LESSONS, entry.name, file))
+    }
   }
-}
 
-for (const name of ASSETS) {
-  const file = path.join(root, 'public', name)
-  if (!fs.existsSync(file)) {
-    throw new Error(`Missing public/${name} — build the bundles before this script (see "yarn full").`)
+  for (const name of ASSETS) {
+    const file = path.join(root, 'public', name)
+    if (!fs.existsSync(file)) {
+      throw new Error(`Missing public/${name} — build the bundles first (see the "full" script).`)
+    }
+    versions[name] = hashOf(file)
   }
-  versions[name] = hashOf(file)
 }
 
 // ------------------------------------------------------------ build identity
@@ -90,8 +105,13 @@ const date = git('log', '-1', '--format=%cs') || new Date().toISOString().slice(
 const asModule = (name, value) =>
   `export const ${name} = ${JSON.stringify(value, null, '\t').replaceAll('"', '\'')}\n`
 
-fs.writeFileSync(path.join(__dirname, 'src/configs/versions.js'), asModule('versions', versions), 'utf-8')
-fs.writeFileSync(path.join(root, 'src/configs/serviceWorkerVersion.js'), asModule('serviceWorkerVersion', version), 'utf-8')
-fs.writeFileSync(path.join(root, 'src/configs/serviceWorkerDate.js'), asModule('serviceWorkerDate', date), 'utf-8')
+if (doIdentity) {
+  fs.writeFileSync(path.join(root, 'src/configs/serviceWorkerVersion.js'), asModule('serviceWorkerVersion', version), 'utf-8')
+  fs.writeFileSync(path.join(root, 'src/configs/serviceWorkerDate.js'), asModule('serviceWorkerDate', date), 'utf-8')
+  console.log(`service worker ${version} | ${date}`)
+}
 
-console.log(`service worker ${version} | ${date} — ${Object.keys(versions).length} resources hashed`)
+if (doVersions) {
+  fs.writeFileSync(path.join(__dirname, 'src/configs/versions.js'), asModule('versions', versions), 'utf-8')
+  console.log(`${Object.keys(versions).length} resources hashed`)
+}
