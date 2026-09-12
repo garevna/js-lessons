@@ -11,7 +11,7 @@
 
 {{s1.p8}}
 
-{{s1.p9}}
+^^^[{{s1.spoiler1}}]
 
 ~~~console
 ▼ Performance {timeOrigin: 1546006432906.767, onresourcetimingbufferfull: null, memory: MemoryInfo, navigation: PerformanceNavigation, timing: PerformanceTiming}
@@ -49,13 +49,13 @@
   ► __proto__: Performance
 ~~~
 
+^^^
+
+{{s1.p9}}
 {{s1.p10}}
 
 {{s1.p11}}
 {{s1.p12}}
-
-{{s1.p13}}
-{{s1.p14}}
 
 _____________________________________________
 
@@ -79,7 +79,7 @@ _____________________________________________________
 
 ## ![ico-25 icon] {{s3.h1}}
 
-{{s3.p1}}
+^^^[{{s3.spoiler1}}]
 
 ~~~console
 ▼ Performance {now: ƒ, getEntries: ƒ, getEntriesByType: ƒ, …}
@@ -110,7 +110,7 @@ _____________________________________________________
   ► __proto__: EventTarget
 ~~~
 
-{{s3.p2}}
+^^^
 
 _______________________________________________________________
 
@@ -320,7 +320,7 @@ fetch('https://httpbin.org')
   })
 ~~~
 
-{{s8.p15}}
+^^^[{{s8.spoiler1}}]
 
 ~~~console
 ▼ (4) [PerformanceMark, PerformanceMeasure, PerformanceResourceTiming, PerformanceMark]
@@ -370,7 +370,7 @@ fetch('https://httpbin.org')
   ► __proto__: Array(0)
 ~~~
 
-{{s8.p16}}
+^^^
 
 _______________________________________________________________
 
@@ -390,7 +390,7 @@ fetch('https://httpbin.org')
   })
 ~~~
 
-{{s9.p2}}
+^^^[{{s9.spoiler1}}]
 
 ~~~console
 ▼ [ PerformanceResourceTiming ]
@@ -422,11 +422,11 @@ fetch('https://httpbin.org')
   ► __proto__: Array(0)
 ~~~
 
-{{s9.p3}}
+^^^
 
 _______________________________________________________________
 
-{{s9.p4}}
+{{s9.p2}}
 
 ~~~js
 const pictures = [
@@ -450,7 +450,7 @@ pictures
 console.log(performance.getEntriesByName('start'))
 ~~~
 
-{{s9.p5}}
+{{s9.p3}}
 
 ~~~console
 ▼ (4) [PerformanceMark, PerformanceMark, PerformanceMark, PerformanceMark]
@@ -472,7 +472,7 @@ _______________________________________________________________
 console.log(performance.getEntriesByType('resource'))
 ~~~
 
-{{s10.p2}}
+^^^[{{s10.spoiler1}}]
 
 ~~~console
 ▼ [PerformanceResourceTiming]
@@ -504,18 +504,18 @@ console.log(performance.getEntriesByType('resource'))
   ► __proto__: Array(0)
 ~~~
 
-{{s10.p3}}
+^^^
 
 _______________________________________________________________
 
-{{s10.p4}}
+{{s10.p2}}
 
 ~~~js
 fetch('https://httpbin.org/')
   .then(response => console.log(performance.getEntriesByType('resource')))
 ~~~
 
-{{s10.p5}}
+^^^[{{s10.spoiler2}}]
 
 ~~~console
 ▼ [PerformanceResourceTiming]
@@ -547,7 +547,7 @@ fetch('https://httpbin.org/')
   ► __proto__: Array(0)
 ~~~
 
-{{s10.p6}}
+^^^
 
 _______________________________________________________________
 
@@ -637,4 +637,4 @@ _______________________________________________________________
 
 ## ![ico-25 icon] {{s14.h1}}
 
-{{s14.p1}}
+[![ico-70 youtube]](https://www.youtube.com/watch?v=nDNEiu_xwf0&feature=youtu.be)

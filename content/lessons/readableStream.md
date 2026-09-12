@@ -15,16 +15,16 @@ ____________________________________________________
 
 {{s2.p1}}
 
+^^^[{{s2.spoiler1}}]
 {{s2.p2}}
 {{s2.p3}}
 {{s2.p4}}
+^^^
+^^^[{{s2.spoiler2}}]
 {{s2.p5}}
 {{s2.p6}}
 {{s2.p7}}
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
+^^^
 
 ### ![ico-20 icon] {{s3.h1}}
 
@@ -219,9 +219,9 @@ function readStream (stream, container) {
 
 {{s3.p40}}
 
-{{s3.p41}}
+[![ico-70 youtube]](https://youtu.be/hZJByg_KcX4)
 
-{{s3.p42}}
+{{s3.p41}}
 
 ~~~js
 async function readStream (stream, container) {
@@ -233,15 +233,15 @@ async function readStream (stream, container) {
 }
 ~~~
 
-{{s3.p43}}
+{{s3.p42}}
 
-{{s3.p44}}
+[![ico-70 youtube]](https://youtu.be/OJOOBgqbsmk)
 
 _______________________________________________
 
-{{s3.p45}}
+{{s3.p43}}
 
-{{s3.p46}}
+{{s3.p44}}
 
 ~~~~js
 const stream = new ReadableStream({
@@ -256,7 +256,7 @@ const stream = new ReadableStream({
 })
 ~~~~
 
-{{s3.p47}}
+{{s3.p45}}
 
 ~~~~js
 async function readStream (stream, container) {
@@ -268,7 +268,7 @@ async function readStream (stream, container) {
 }
 ~~~~
 
-{{s3.p48}}
+{{s3.p46}}
 
 ~~~~js
 const avatars = document.body
@@ -279,7 +279,7 @@ avatars.pushUser = function (chank) {
 }
 ~~~~
 
-{{s3.p49}}
+{{s3.p47}}
 
 ~~~js
 readStream(stream, avatars)
@@ -298,7 +298,7 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
   .then(response => console.log(response.body))
 ~~~
 
-{{s4.p3}}
+^^^[{{s4.spoiler1}}]
 
 ~~~console
 ▼ ReadableStream {}
@@ -315,16 +315,16 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
       ► __proto__: Object
 ~~~
 
-{{s4.p4}}
+^^^
 
-{{s4.p5}}
+{{s4.p3}}
 
 ~~~js
 fetch('http://ptsv2.com/t/garevna/d/980001/json')
   .then(response => console.log(response.body.getReader()))
 ~~~
 
-{{s4.p6}}
+^^^[{{s4.spoiler2}}]
 
 ~~~console
 ▼ ReadableStreamDefaultReader {}
@@ -339,9 +339,9 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
       ► __proto__: Object
 ~~~
 
-{{s4.p7}}
+^^^
 
-{{s4.p8}}
+{{s4.p4}}
 
 ~~~js
 fetch('http://ptsv2.com/t/garevna/d/980001/json')
@@ -349,7 +349,7 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
   .then(response => console.log(response))
 ~~~
 
-{{s4.p9}}
+^^^[{{s4.spoiler3}}]
 
 ~~~console
 ▼ {value: Uint8Array(1401), done: false}
@@ -358,11 +358,11 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
   ► __proto__: Object
 ~~~
 
-{{s4.p10}}
+^^^
 
-{{s4.p11}}
+{{s4.p5}}
 
-{{s4.p12}}
+{{s4.p6}}
 
 ~~~~js
 fetch('http://ptsv2.com/t/garevna/d/980001/json')
@@ -375,15 +375,15 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
   }))
 ~~~~
 
-{{s4.p13}}
+^^^[{{s4.spoiler4}}]
 
 ~~~console
 ArrayBuffer(1401) {0: 123, 1: 34, 2: 84, 3: 105, 4: 109, 5: 101, 6: 115, 7: 116, 8: 97, 9: 109, 10: 112, 11: 34, 12: 58, 13: 34, 14: 50, 15: 48, 16: 49, 17: 56, 18: 45, 19: 49, 20: 48, 21: 45, 22: 50, 23: 52, 24: 84, 25: 48, 26: 55, 27: 58, 28: 48, 29: 52, 30: 58, 31: 49, 32: 56, 33: 46, 34: 48, 35: 57, 36: 51, 37: 49, 38: 90, 39: 34, 40: 44, 41: 34, 42: 77, 43: 101, 44: 116, 45: 104, 46: 111, 47: 100, 48: 34, 49: 58, 50: 34, 51: 80, 52: 79, 53: 83, 54: 84, 55: 34, 56: 44, 57: 34, 58: 82, 59: 101, 60: 109, 61: 111, 62: 116, 63: 101, 64: 65, 65: 100, 66: 100, 67: 114, 68: 34, 69: 58, 70: 34, 71: 49, 72: 56, 73: 53, 74: 46, 75: 51, 76: 56, 77: 46, 78: 50, 79: 49, 80: 55, 81: 46, 82: 54, 83: 57, 84: 34, 85: 44, 86: 34, 87: 73, 88: 68, 89: 34, 90: 58, 91: 57, 92: 56, 93: 48, 94: 48, 95: 48, 96: 49, 97: 44, 98: 34, 99: 72, …}
 ~~~
 
-{{s4.p14}}
+^^^
 
-{{s4.p15}}
+{{s4.p7}}
 
 ~~~~js
 fetch('http://ptsv2.com/t/garevna/d/980001/json')
@@ -402,7 +402,7 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
    })
 ~~~~
 
-{{s4.p16}}
+^^^[{{s4.spoiler5}}]
 
 ~~~console
 ▼ Blob(1401) {size: 1401, type: ""}
@@ -411,9 +411,9 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
     __proto__: Blob
 ~~~
 
-{{s4.p17}}
+^^^
 
-{{s4.p18}}
+{{s4.p8}}
 
 ~~~~js
 const blob = new Blob(['body { background-color: #dde; }' ], { type: 'text/css' })

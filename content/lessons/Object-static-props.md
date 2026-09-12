@@ -113,7 +113,7 @@ ________________________
 {{s3.p7}}
 {{s3.p8}}
 
-{{s3.p9}}
+^^^[{{s3.spoiler1}}]
 
 ~~~js
 function Figure (figType) {
@@ -144,10 +144,10 @@ var circle = Object.create(new Figure('circle'), {
 })
 ~~~
 
-{{s3.p10}}
+^^^
 
 
-{{s3.p11}}
+{{s3.p9}}
 
 ~~~console
 
@@ -171,7 +171,7 @@ circle instanceof Figure  // true
 _________________________________________________________
 
 
-{{s3.p12}}
+{{s3.p10}}
 
 ~~~js
 
@@ -191,9 +191,9 @@ var proto = {
 var obj = Object.create(proto)
 ~~~
 
-{{s3.p13}}
+{{s3.p11}}
 
-{{s3.p14}}
+{{s3.p12}}
 
 ~~~console
 
@@ -206,7 +206,7 @@ var obj = Object.create(proto)
       ► __proto__: Object
 ~~~
 
-{{s3.p15}}
+{{s3.p13}}
 
 ~~~js
 var Creator = function (id, val) {
@@ -215,13 +215,13 @@ var Creator = function (id, val) {
 }
 ~~~
 
-{{s3.p16}}
+{{s3.p14}}
 
 ~~~js
 Creator.call(obj, 'sample',  75)
 ~~~
 
-{{s3.p17}}
+{{s3.p15}}
 
 ![](illustrations/Object-static-props-01.png)
 
@@ -229,7 +229,7 @@ Creator.call(obj, 'sample',  75)
 ________________________________________________________
 
 
-{{s3.p18}}
+{{s3.p16}}
 
 ~~~js
 
@@ -250,7 +250,7 @@ Human.prototype = {
 var worker = Object.create(new Human('Иван', 'рыбалка'))
 ~~~
 
-{{s3.p19}}
+{{s3.p17}}
 
 ~~~console
 
@@ -265,7 +265,7 @@ var worker = Object.create(new Human('Иван', 'рыбалка'))
 ~~~
 
 
-{{s3.p20}}
+{{s3.p18}}
 
 ~~~js
 worker instanceof Human   // true
@@ -275,7 +275,7 @@ worker instanceof Object  // true
 _______________________________________________________
 
 
-{{s3.p21}}
+{{s3.p19}}
 
 ~~~js
 
@@ -303,12 +303,12 @@ function SubClass () {
 var sample = new SubClass()
 ~~~
 
-{{s3.p22}}
+{{s3.p20}}
 
 ![](illustrations/Object-static-props-02.png)
 
 
-{{s3.p23}}
+{{s3.p21}}
 
 ~~~js
 sample instanceof SubClass    // true
@@ -316,12 +316,12 @@ sample instanceof SuperClass  // false
 sample instanceof Object      // true
 ~~~
 
-{{s3.p24}}
+{{s3.p22}}
 
 ____________________________________________________
 
 
-{{s3.p25}}
+{{s3.p23}}
 
 ~~~js
 // Объявляем конструктор класса Dishes
@@ -350,26 +350,26 @@ function Cup (color) {
 }
 ~~~
 
-{{s3.p26}}
-{{s3.p27}}
+{{s3.p24}}
+{{s3.p25}}
 
 ~~~js
 Cup.prototype = Object.create(Dishes.prototype)
 ~~~
 
-{{s3.p28}}
+{{s3.p26}}
 
 ~~~js
 Dishes.call(Cup.prototype)
 ~~~
 
-{{s3.p29}}
+{{s3.p27}}
 
 ~~~js
 var redCup = new Cup('red')
 ~~~
 
-{{s3.p30}}
+{{s3.p28}}
 
 ~~~console
 
@@ -387,8 +387,8 @@ var redCup = new Cup('red')
 ~~~
 
 
-{{s3.p31}}
-{{s3.p32}}
+{{s3.p29}}
+{{s3.p30}}
 
 ~~~js
 redCup instanceof Cup        // true
@@ -396,9 +396,9 @@ redCup instanceof Dishes     // true
 greenCup instanceof Object   // true
 ~~~
 
+{{s3.p31}}
+{{s3.p32}}
 {{s3.p33}}
-{{s3.p34}}
-{{s3.p35}}
 
 ~~~js
 redCup.use()  // The tableware has been used and it's dirty now.
@@ -406,14 +406,14 @@ redCup.use()  // The tableware has been used and it's dirty now.
 redCup.wash() // The tableware has been washed.
 ~~~
 
-{{s3.p36}}
+{{s3.p34}}
 
 _________________________________________________________________________
 
-{{s3.p37}}
+{{s3.p35}}
 
 
-{{s3.p38}}
+{{s3.p36}}
 
 ~~~js
 // усложним задачу, удлинив цепочку прототипов еще одним классом - Kitchenware
@@ -455,7 +455,7 @@ console.log('*** cup:\n', yellowCup)
 
 ![](illustrations/Object-static-props-03.png)
 
-{{s3.p39}}
+{{s3.p37}}
 
 ~~~js
 console.log(Object.getPrototypeOf(yellowCup))
@@ -469,27 +469,27 @@ console.log(Object.getPrototypeOf(Object.getPrototypeOf(yellowCup)))
 
 ![](illustrations/Object-static-props-05.png)
 
-{{s3.p40}}
+{{s3.p38}}
 
 ~~~js
 this.__proto__.constructor = Dishes
 ~~~
 
-{{s3.p41}}
+{{s3.p39}}
 
 ~~~js
 this.__proto__ = new Kitchenware()  
 ~~~
 
-{{s3.p42}}
+{{s3.p40}}
 
-{{s3.p43}}
+{{s3.p41}}
 
 ~~~js
 this.__proto__.constructor = Cup
 ~~~
 
-{{s3.p44}}
+{{s3.p42}}
 
 ~~~js
 yellowCup instanceof Kitchenware  // true
@@ -498,11 +498,11 @@ yellowCup instanceof Cup          // false
 yellowCup instanceof Object       // true
 ~~~
 
-{{s3.p45}}
+{{s3.p43}}
 
 _____________________________________________________________________________
 
-{{s3.p46}}
+{{s3.p44}}
 
 _____________________________________________________________________________
 
@@ -815,9 +815,9 @@ ____________________________________________________
 
 {{s8.p7}}
 
-{{s8.p8}}
+^^^[{{s8.spoiler1}}]
 
-{{s8.p9}}
+{{s8.p8}}
 
 ~~~js
 var provider = { name: 'Google' }
@@ -831,11 +831,11 @@ provider.addProp = function (propName, propVal) {
 console.log(provider) // { name: "Google" }
 ~~~
 
-{{s8.p10}}
+^^^
 
-{{s8.p11}}
+^^^[{{s8.spoiler2}}]
 
-{{s8.p12}}
+{{s8.p9}}
 
 ~~~js
 var provider = { name: 'Google', service: 'API' }
@@ -847,11 +847,11 @@ delete provider.service  // false
 console.log(provider) // { name: "Google", service: "API" }
 ~~~
 
-{{s8.p13}}
+^^^
 
-{{s8.p14}}
+^^^[{{s8.spoiler3}}]
 
-{{s8.p15}}
+{{s8.p10}}
 
 ~~~js
 var provider = { name: "Google", service: "API" }
@@ -863,13 +863,13 @@ provider.name = "Mozilla"
 console.log ( provider.name ) // Google
 ~~~
 
-{{s8.p16}}
+^^^
 
-{{s8.p17}}
+^^^[{{s8.spoiler4}}]
 
-{{s8.p18}}
+{{s8.p11}}
 
-{{s8.p19}}
+{{s8.p12}}
 
 ~~~js
 // Изменим дескриптор свойства объекта до "заморозки":
@@ -888,9 +888,9 @@ for (var prop in provider) {
 // service: API
 ~~~
 
-{{s8.p20}}
+{{s8.p13}}
 
-{{s8.p21}}
+{{s8.p14}}
 
 ~~~js
 provider.name = 'Mozilla'
@@ -898,7 +898,7 @@ provider.name = 'Mozilla'
 console.log(provider.name) // "Google"
 ~~~
 
-{{s8.p22}}
+{{s8.p15}}
 
 ~~~js
 Object.defineProperty(provider, 'name', {
@@ -909,7 +909,7 @@ Object.defineProperty(provider, 'name', {
 provider.name = 'Mozilla'
 ~~~
 
-{{s8.p23}}
+{{s8.p16}}
 
 ~~~js
 for (var prop in provider) {
@@ -920,9 +920,9 @@ for (var prop in provider) {
 // service: API
 ~~~
 
-{{s8.p24}}
+{{s8.p17}}
 
-{{s8.p25}}
+{{s8.p18}}
 
 ~~~js
 Object.freeze(provider)
@@ -933,27 +933,27 @@ Object.defineProperty(provider, 'service', {
 })
 ~~~
 
-{{s8.p26}}
+{{s8.p19}}
 
-{{s8.p27}}
+{{s8.p20}}
 
-{{s8.p28}}
+{{s8.p21}}
 
-{{s8.p29}}
+{{s8.p22}}
 
 ~~~js
 Object.getOwnPropertyDescriptor(provider, 'service')
 ~~~
 
-{{s8.p30}}
+{{s8.p23}}
 
-{{s8.p31}}
+{{s8.p24}}
 
-{{s8.p32}}
+{{s8.p25}}
 
-{{s8.p33}}
+{{s8.p26}}
 
-{{s8.p34}}
+^^^
 _________________________________________________________________________________________________
 
 ## ![ico-25 icon] {{s9.h1}}

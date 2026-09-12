@@ -55,34 +55,34 @@ _____________________________________
 
 ## ![ico-25 icon] {{s4.h1}}
 
+^^^[{{s4.spoiler1}}]
+
 {{s4.p1}}
 
 {{s4.p2}}
-
 {{s4.p3}}
 {{s4.p4}}
 {{s4.p5}}
 {{s4.p6}}
 {{s4.p7}}
-{{s4.p8}}
 
+{{s4.p8}}
 {{s4.p9}}
 {{s4.p10}}
-{{s4.p11}}
 
+^^^
+
+{{s4.p11}}
 {{s4.p12}}
 
 {{s4.p13}}
-{{s4.p14}}
 
+{{s4.p14}}
 {{s4.p15}}
 
 {{s4.p16}}
+
 {{s4.p17}}
-
-{{s4.p18}}
-
-{{s4.p19}}
 
 ~~~js
 document.body.style.margin = 0
@@ -91,12 +91,12 @@ const img = document.body.appendChild(new Image())
 img.src = 'https://picsum.photos/900/400?random'
 ~~~
 
+{{s4.p18}}
+{{s4.p19}}
+
 {{s4.p20}}
+
 {{s4.p21}}
-
-{{s4.p22}}
-
-{{s4.p23}}
 
 ~~~js
 const img = document.body.appendChild(new Image())
@@ -120,22 +120,22 @@ showImage()
 
 ___________________________________
 
+{{s4.p22}}
+
+{{s4.p23}}
+
 {{s4.p24}}
 
 {{s4.p25}}
-
-{{s4.p26}}
-
-{{s4.p27}}
 
 ~~~console
 http://api.weatherstack.com/current?access_key=xxxxxxxx&query=Kharkiv
 ~~~
 
-{{s4.p28}}
-{{s4.p29}}
+{{s4.p26}}
+{{s4.p27}}
 ![](illustrations/REST-01.webp)
-{{s4.p30}}
+{{s4.p28}}
 ___________________________________
 
 ## ![ico-25 icon] {{s5.h1}}

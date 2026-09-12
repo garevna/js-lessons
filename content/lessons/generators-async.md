@@ -317,11 +317,11 @@ ______________________________________________________
 {{s5.p6}}
 
 
+^^^[{{s5.spoiler1}}]
+
 {{s5.p7}}
 
 {{s5.p8}}
-
-{{s5.p9}}
 
 ~~~js
 const pictures = [
@@ -336,7 +336,7 @@ const pictures = [
 ]
 ~~~
 
-{{s5.p10}}
+{{s5.p9}}
 
 ~~~js
 pictures.createSlide = function () {
@@ -363,6 +363,8 @@ pictures.createSlide = function () {
 }
 ~~~
 
+{{s5.p10}}
+
 {{s5.p11}}
 
 {{s5.p12}}
@@ -371,19 +373,19 @@ pictures.createSlide = function () {
 
 {{s5.p14}}
 
-{{s5.p15}}
-
 ~~~js
 pictures.iterator = (function * () { ... }).call(pictures)
 ~~~
+
+{{s5.p15}}
 
 {{s5.p16}}
 
 {{s5.p17}}
 
-{{s5.p18}}
-
 _________________________
+
+{{s5.p18}}
 
 {{s5.p19}}
 
@@ -392,8 +394,6 @@ _________________________
 {{s5.p21}}
 
 {{s5.p22}}
-
-{{s5.p23}}
 
 ~~~js
 function moveSlide (slide, active) {
@@ -405,9 +405,9 @@ function moveSlide (slide, active) {
 
 __________________________
 
-{{s5.p24}}
+{{s5.p23}}
 
-{{s5.p25}}
+{{s5.p24}}
 
 ~~~js
 const getNextPictureNum = function () {
@@ -417,7 +417,7 @@ const getNextPictureNum = function () {
 
 ____________________________
 
-{{s5.p26}}
+{{s5.p25}}
 
 ~~~js
 const slides = [
@@ -426,14 +426,14 @@ const slides = [
 ]
 ~~~
 
-{{s5.p27}}
+{{s5.p26}}
 
 ___________________________________
 
-{{s5.p28}}
+{{s5.p27}}
 
+{{s5.p28}}
 {{s5.p29}}
-{{s5.p30}}
 
 ~~~js
 let currentSlide = 0
@@ -442,17 +442,17 @@ this.currentPicture = 0
 
 _________________________________
 
-{{s5.p31}}
+{{s5.p30}}
 
+{{s5.p31}}
 {{s5.p32}}
 {{s5.p33}}
-{{s5.p34}}
 
 ~~~js
 Math.abs(currentSlide - 1)
 ~~~
 
-{{s5.p35}}
+{{s5.p34}}
 
 ~~~js
 while (true) {
@@ -471,9 +471,9 @@ while (true) {
 }
 ~~~
 
-{{s5.p36}}
+^^^
 
-{{s5.p37}}
+{{s5.p35}}
 
 ~~~~js
 const pictures = [
@@ -557,7 +557,7 @@ const pictureSlider = new PictureSlider(pictures)
 
 _______________________________________________________
 
-{{s5.p38}}
+{{s5.p36}}
 
 ~~~js
 Object.assign(document.body.appendChild(document.createElement('button')), {
@@ -585,4 +585,4 @@ const getAvatar = avaGenerator ()
 
 _________________________________________________________
 
-{{s5.p39}}
+{{s5.p37}}

@@ -1182,8 +1182,8 @@ salary - income = 80
 debt - salary = 300
 ~~~
 
+^^^[{{s17.spoiler1}}]
 {{s17.p15}}
-{{s17.p16}}
 ~~~js
 var log = []
 var resArray = sourceArray
@@ -1195,7 +1195,7 @@ var resArray = sourceArray
     return  x.value - y.value
   })
 ~~~
-{{s17.p17}}
+{{s17.p16}}
 ~~~console
 ▼ (13) [...]
   ► 0: {id: 'salary > fond', res: true}
@@ -1214,13 +1214,13 @@ var resArray = sourceArray
     length: 13
   ► __proto__: Array(0)
 ~~~
+^^^
+
+{{s17.p17}}
+
 {{s17.p18}}
 
 {{s17.p19}}
-
-{{s17.p20}}
-
-{{s17.p21}}
 
 __________________________
 

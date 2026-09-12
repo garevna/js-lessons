@@ -317,7 +317,7 @@ getLogin().then(console.log, console.error)
 {{s4.p14}}
 
 
-{{s4.p15}}
+^^^[{{s4.spoiler1}}]
 ~~~js
 function getInput ( users ) {
   const logins = Object.keys(users)
@@ -352,9 +352,9 @@ async function getLogin () {
 
 getLogin().then(console.log, console.error)
 ~~~
-{{s4.p16}}
+^^^
 
 {{{async-is-good-5.js}}}
 
 _______________________
-{{s4.p17}}
+{{s4.p15}}

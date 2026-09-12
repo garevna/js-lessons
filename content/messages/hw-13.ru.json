@@ -20,9 +20,7 @@
   "s4.p8": "![ico-20 pin] Создать объект класса **⟦f6⟧**.",
   "s4.p9": "![ico-20 pin] Передать в него введенные значения из формы.",
   "s4.p10": "![ico-20 pin] Отправить данные формы на сервер.",
-  "s4.p11": "^^^[Endpoints]",
-  "s4.p12": "![ico-20 link] **GET**",
-  "s4.p13": "![ico-20 link] **POST**, **PUT**, **PATCH**, **DELETE**",
-  "s4.p14": "^^^",
-  "s4.p15": "[![ico-30 link-ico]](⟦f7⟧)"
+  "s4.spoiler1": "Endpoints",
+  "s4.p11": "![ico-20 link] **GET**",
+  "s4.p12": "![ico-20 link] **POST**, **PUT**, **PATCH**, **DELETE**"
 }

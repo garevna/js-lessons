@@ -75,33 +75,33 @@ window['user' + 'Name'] = 'Helen'
 
 {{s2.p29}}
 
+^^^
+
 {{s2.p30}}
 
+
+
 {{s2.p31}}
-
-
-
-{{s2.p32}}
 
 ~~~js
 var x, y, z
 ~~~
 
-{{s2.p33}}
+{{s2.p32}}
 
-{{s2.p34}}
+{{s2.p33}}
 
 ~~~js
 console.log(sigma)
 ~~~
 
-{{s2.p35}}
+{{s2.p34}}
 
 ~~~error
     Uncaught ReferenceError: sigma is not defined
 ~~~
 
-{{s2.p36}}
+{{s2.p35}}
 
 ~~~js
 var person = 'Piter',  hobby = 'football',  age = 30

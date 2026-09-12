@@ -16,12 +16,16 @@ _____________________________
 
 {{s1.p6}}
 
-{{s1.p7}}
+^^^[{{s1.spoiler1}}]
 
 ![](https://lh4.googleusercontent.com/kLZ2AUHmxj_tGElT44CKZEDXYqZ9fKOUbciuV5XDf-tRnKiPT0njS1rJnurGUEI7QGfFLNL6UYRa-noaqWmZ1QcUG_7bKBAYWMSLntBIcA-Kop3T3W-y4w1e-moZvWG-ndn0IPJwtWAOmlE)
 
-{{s1.p8}}
+^^^
 _________________________________________________
+
+{{s1.p7}}
+
+{{s1.p8}}
 
 {{s1.p9}}
 
@@ -32,10 +36,6 @@ _________________________________________________
 {{s1.p12}}
 
 {{s1.p13}}
-
-{{s1.p14}}
-
-{{s1.p15}}
 
 ____________________________________________
 

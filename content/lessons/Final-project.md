@@ -63,20 +63,20 @@ _____________________________________________________________________
 ### ![art] {{s8.h1}}
 
 {{s8.p1}}
+    [![maket-01]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/Olios_Template.zip)
+    [![maket-02]](http://psd-html-css.ru/sites/default/files/public/upload/template-files/piroll.zip)
+    [![maket-03]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/StockPhotosWebsite.rar)
+    [![maket-04]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/Gallaria-FreeBlogTemplateDesign.rar)
+    [![maket-05]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/ProfessionalWebsiteTemplateleo.rar)
+    [![maket-06]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/FreeOnlineShopWebsiteTemplatePSD.zip)
+    [![maket-07]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/Portal_UI.psd.zip)
+    [![maket-08]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/BeautifulTravelandHotel.rar)
+    [![maket-09]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/Marcy-free-peronal-blog-psd-template.zip)
+    [![maket-10]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/freelancer232.zip)
+    [![maket-11]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/THEYALOW.rar)
+    [![maket-12]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/BWTemplate.zip)
+    [![maket-13]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/SinglePageWebsite.rar)
+    [![maket-14]](http://psd-html-css.ru/sites/default/files/public/upload/template-files/alexis.zip)
+    [![maket-15]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/Boostfolia.zip)
+    [![maket-16]](http://psd-html-css.ru/sites/default/files/public/old/rar_files/PinballResponsiveGridStyleBlogPSD.rar)
 {{s8.p2}}
-{{s8.p3}}
-{{s8.p4}}
-{{s8.p5}}
-{{s8.p6}}
-{{s8.p7}}
-{{s8.p8}}
-{{s8.p9}}
-{{s8.p10}}
-{{s8.p11}}
-{{s8.p12}}
-{{s8.p13}}
-{{s8.p14}}
-{{s8.p15}}
-{{s8.p16}}
-{{s8.p17}}
-{{s8.p18}}

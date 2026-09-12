@@ -131,7 +131,7 @@ button.onclick = function (event) {
 
 {{s6.p7}}
 
-{{s6.p8}}
+^^^[{{s6.spoiler1}}]
 
 ~~~console
 segments: 0.536865234375ms
@@ -148,21 +148,21 @@ segments: 0.459228515625ms
 (9) [5, 0, 1, 0, 4, 2, 0, 1, 1]
 ~~~
 
+^^^
+
+{{s6.p8}}
+
 {{s6.p9}}
 
+[![ico-70 youtube]](https://youtu.be/nDNEiu_xwf0)
+
 {{s6.p10}}
-
 {{s6.p11}}
-
 {{s6.p12}}
 
 {{s6.p13}}
+
 {{s6.p14}}
 {{s6.p15}}
-
 {{s6.p16}}
-
 {{s6.p17}}
-{{s6.p18}}
-{{s6.p19}}
-{{s6.p20}}

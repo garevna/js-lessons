@@ -111,7 +111,7 @@ __________________________
 
 {{s2.p17}}
 
-{{s2.p18}}
+^^^[{{s2.spoiler1}}]
 ~~~console
 ▼ {constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
   ► constructor: ƒ Object()
@@ -128,27 +128,27 @@ __________________________
   ► get __proto__: ƒ __proto__()
   ► set __proto__: ƒ __proto__()
 ~~~
+^^^
+
+{{s2.p18}}
+
 {{s2.p19}}
-
-{{s2.p20}}
-
-{{s2.p21}}
 
 ~~~js
 sample.hasOwnProperty('name')   // true
 ~~~
+
+{{s2.p20}}
+
+{{s2.p21}}
 
 {{s2.p22}}
 
 {{s2.p23}}
 
 {{s2.p24}}
-
 {{s2.p25}}
-
 {{s2.p26}}
-{{s2.p27}}
-{{s2.p28}}
 
 _________________________________________________________________
 

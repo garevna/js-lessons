@@ -12,7 +12,7 @@ _______________________________
 
 {{s2.p3}}
 
-{{s2.p4}}
+^^^[{{s2.spoiler1}}]
 ~~~js
 export const validStrategyNames = [
   'sum-of-all-numeric-fields',
@@ -20,11 +20,11 @@ export const validStrategyNames = [
   'key'
 ]
 ~~~
-{{s2.p5}}
+^^^
 
-{{s2.p6}}
+{{s2.p4}}
 
-{{s2.p7}}
+^^^[{{s2.spoiler2}}]
 ~~~js
 export function strategyError () {
   const stack = `
@@ -40,9 +40,9 @@ export function strategyError () {
   })
 }
 ~~~
-{{s2.p8}}
+^^^
 
-{{s2.p9}}
+^^^[{{s2.spoiler3}}]
 ~~~js
 export function dataError () {
   throw Object.assign(new Error('Sorting error'), {
@@ -52,9 +52,9 @@ export function dataError () {
   })
 }
 ~~~
-{{s2.p10}}
+^^^
 
-{{s2.p11}}
+^^^[{{s2.spoiler4}}]
 ~~~js
 export function keyError () {
   throw Object.assign(new Error('Sorting error'), {
@@ -64,9 +64,9 @@ export function keyError () {
   })
 }
 ~~~
-{{s2.p12}}
+^^^
 
-{{s2.p13}}
+^^^[{{s2.spoiler5}}]
 ~~~js
 export function keyPropError (key) {
   throw Object.assign(new Error('Sorting error'), {
@@ -76,9 +76,9 @@ export function keyPropError (key) {
   })
 }
 ~~~
-{{s2.p14}}
+^^^
 
-{{s2.p15}}
+^^^[{{s2.spoiler6}}]
 
 ~~~js
 export function arrayFieldError (key) {
@@ -89,10 +89,10 @@ export function arrayFieldError (key) {
   })
 }
 ~~~
-{{s2.p16}}
+^^^
 ____________________________________
 
-{{s2.p17}}
+^^^[{{s2.spoiler7}}]
 ~~~js
 import { validStrategyNames } from './validStrategyNames'
 import { strategyError } from './strategyError'
@@ -121,20 +121,20 @@ export function testStrategy (strategyName, data, key) {
   }
 }
 ~~~
-{{s2.p18}}
+^^^
 ____________________________________
 
-{{s2.p19}}
-{{s2.p20}}
-{{s2.p21}}
+{{s2.p5}}
+{{s2.p6}}
+{{s2.p7}}
 
-{{s2.p22}}
-{{s2.p23}}
-{{s2.p24}}
+{{s2.p8}}
+{{s2.p9}}
+{{s2.p10}}
 
-{{s2.p25}}
+{{s2.p11}}
 
-{{s2.p26}}
+^^^[{{s2.spoiler8}}]
 ~~~js
 import { testStrategy } from './helpers/testStrategy'
 
@@ -187,11 +187,11 @@ class SortStrategy  {
   }
 }
 ~~~
-{{s2.p27}}
+^^^
 
-{{s2.p28}}
+{{s2.p12}}
 
-{{s2.p29}}
+^^^[{{s2.spoiler9}}]
 ~~~js
 const salary = [
   { name: 'Stephan', jan: 5000, fab: 5200, mar: 5800, apr: 4950, may: 4700, jun: 5100, jul: 5300, aug: 5000, sep: 4900, nov: 4800, dec: 5500 },
@@ -203,9 +203,9 @@ const salary = [
   { name: 'Andry', jan: 2800, fab: 2700, mar: 2800, apr: 2750, may: 2700, jun: 2500, jul: 2800, aug: 2700, sep: 2700, nov: 2800, dec: 3000 }
 ]
 ~~~
-{{s2.p30}}
+^^^
 
-{{s2.p31}}
+^^^[{{s2.spoiler10}}]
 ~~~js
 const workers = [
   { name: 'Stephan', payments: [5000, 5200, 5800, 4950, 4700, 5100, 5300, 5000, 4900, 4800, 5500] },
@@ -217,9 +217,9 @@ const workers = [
   { name: 'Andry', payments: [1000, 1000, 900, 950] }
 ]
 ~~~
-{{s2.p32}}
+^^^
 
-{{s2.p33}}
+^^^[{{s2.spoiler11}}]
 ~~~js
 const users = [
   { name: 'Stephan', age: 30, works: 7, children: 2 },
@@ -231,14 +231,14 @@ const users = [
   { name: 'Andry', age: 45, works: 20, children: 2 }
 ]
 ~~~
-{{s2.p34}}
+^^^
 
-{{s2.p35}}
+{{s2.p13}}
 ~~~js
 const sortStrategy = new SortStrategy
 ~~~
 
-{{s2.p36}}
+{{s2.p14}}
 
 ~~~js
 function sort (algorithm, data, key) {

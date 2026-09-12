@@ -4,15 +4,15 @@ _____________________________________________________
 
 ## ![ico-25 icon] {{s2.h1}}
 
-{{s2.p1}}
+^^^[{{s2.spoiler1}}]
 
+{{s2.p1}}
 {{s2.p2}}
 {{s2.p3}}
-{{s2.p4}}
 ______________________
-{{s2.p5}}
+{{s2.p4}}
 
-{{s2.p6}}
+^^^
 ______________
 
 # ![ico-30 icon] {{s3.h1}}
@@ -44,10 +44,11 @@ _____________________________________________________________
 
 {{s4.p2}}
 
+^^^[{{s4.spoiler1}}]
+
 {{s4.p3}}
 
 {{s4.p4}}
-
 {{s4.p5}}
 {{s4.p6}}
 {{s4.p7}}
@@ -63,20 +64,19 @@ _____________________________________________________________
 {{s4.p17}}
 {{s4.p18}}
 {{s4.p19}}
+
+^^^
+________________________________________________
+
 {{s4.p20}}
 
 {{s4.p21}}
-________________________________________________
-
-{{s4.p22}}
-
-{{s4.p23}}
 
 ~~~js
 const request = new Request('https://api.github.com/users')
 ~~~
 
-{{s4.p24}}
+{{s4.p22}}
 
 ~~~~Request
 ▼ Request {method: "GET", url: "https://api.github.com/users", headers: Headers, destination: "", referrer: "about:client", …}
@@ -98,9 +98,9 @@ const request = new Request('https://api.github.com/users')
   ► __proto__: Request
 ~~~~
 
-{{s4.p25}}
+{{s4.p23}}
 
-{{s4.p26}}
+{{s4.p24}}
 
 ~~~js
 const request = new Request('https://api.github.com/users', {
@@ -114,7 +114,7 @@ const request = new Request('https://api.github.com/users', {
 request.headers.get('Content-Type')
 ~~~
 
-{{s4.p27}}
+{{s4.p25}}
 
 ~~~~Request
 ▼ Request {method: "GET", url: "https://api.github.com/users", headers: Headers, destination: "", referrer: "about:client", …}
@@ -136,13 +136,13 @@ request.headers.get('Content-Type')
   ► __proto__: Request
 ~~~~
 
-{{s4.p28}}
+{{s4.p26}}
 
 ~~~console
 ► headers: Headers {}
 ~~~
 
-{{s4.p29}}
+{{s4.p27}}
 
 ~~~~Headers
 ▼ Headers {}
@@ -162,13 +162,13 @@ request.headers.get('Content-Type')
       ► __proto__: Object
 ~~~~
 
-{{s4.p30}}
+{{s4.p28}}
 
 ~~~js
 request.headers.get('Content-Type') // "application/json"
 ~~~
 
-{{s4.p31}}
+{{s4.p29}}
 
 ~~~js
 const request = new Request('https://api.github.com/users', {
@@ -180,14 +180,14 @@ const request = new Request('https://api.github.com/users', {
 })
 ~~~
 
-{{s4.p32}}
+{{s4.p30}}
 
+{{s4.p31}}
+{{s4.p32}}
 {{s4.p33}}
 {{s4.p34}}
 {{s4.p35}}
 {{s4.p36}}
-{{s4.p37}}
-{{s4.p38}}
 
 _______________________________________________
 
@@ -211,13 +211,13 @@ _______________________________________________
 
 {{s6.p1}}
 
+^^^[{{s6.spoiler1}}]
+
 {{s6.p2}}
 
 {{s6.p3}}
 
 {{s6.p4}}
-
-{{s6.p5}}
 
 ~~~js
 const request = new Request('https://avatars2.githubusercontent.com/u/46?v=4', {
@@ -228,7 +228,7 @@ fetch(request)
   .then(response => console.log(response))
 ~~~
 
-{{s6.p6}}
+{{s6.p5}}
 
 ~~~console
 Fetch API cannot load https://avatars2.githubusercontent.com/u/46?v=4
@@ -236,20 +236,20 @@ Request mode is "same-origin"
 but the URL's origin is not same as the request origin null
 ~~~
 
+{{s6.p6}}
 {{s6.p7}}
+
 {{s6.p8}}
+
+^^^
+
+^^^[{{s6.spoiler2}}]
 
 {{s6.p9}}
 
-{{s6.p10}}
-
-{{s6.p11}}
-
-{{s6.p12}}
-
 _________________________________________________________
 
-{{s6.p13}}
+{{s6.p10}}
 
 ~~~js
 const request = new Request('https://avatars2.githubusercontent.com/u/46?v=4', {
@@ -261,22 +261,22 @@ fetch(request)
   .then(response => console.log(response))
 ~~~
 
+{{s6.p11}}
+{{s6.p12}}
+{{s6.p13}}
+
+^^^
+
+^^^[{{s6.spoiler3}}]
+
 {{s6.p14}}
 {{s6.p15}}
-{{s6.p16}}
-
-{{s6.p17}}
-
-{{s6.p18}}
-
-{{s6.p19}}
-{{s6.p20}}
 
 ________________________________________________
 
-{{s6.p21}}
+{{s6.p16}}
 
-{{s6.p22}}
+{{s6.p17}}
 
 ~~~js
 const request = new Request('http://bm.img.com.ua/img/prikol/images/large/0/0/307600.jpg', {
@@ -286,7 +286,7 @@ fetch(request)
   .then(response => console.log(response))
 ~~~
 
-{{s6.p23}}
+{{s6.p18}}
 
 ~~~console
 Failed to load http://bm.img.com.ua/img/prikol/images/large/0/0/307600.jpg:
@@ -296,20 +296,20 @@ If an opaque response serves your needs,
 set the request's mode to 'no-cors' to fetch the resource with CORS disabled
 ~~~
 
-{{s6.p24}}
+{{s6.p19}}
 
 ~~~console
 Uncaught (in promise) TypeError: Failed to fetch
 ~~~
 
-{{s6.p25}}
-{{s6.p26}}
+{{s6.p20}}
+{{s6.p21}}
 
-{{s6.p27}}
+{{s6.p22}}
 
-{{s6.p28}}
+^^^
 
-{{s6.p29}}
+{{s6.p23}}
 
 ~~~js
 var request = new Request('https://httpbin.org/get', {
@@ -341,16 +341,16 @@ fetch(request)
 
 ______________________________________
 
-{{s6.p30}}
+{{s6.p24}}
 
 ~~~js
 const request = new Request('http://bm.img.com.ua/img/prikol/images/large/0/0/307600.jpg')
 console.log(request.mode) // cors
 ~~~
 
-{{s6.p31}}
-{{s6.p32}}
-{{s6.p33}}
+{{s6.p25}}
+{{s6.p26}}
+{{s6.p27}}
 
 _____________________________________________________
 
@@ -450,25 +450,25 @@ ________________________________________
 {{s11.p1}}
 {{s11.p2}}
 
+^^^[{{s11.spoiler1}}]
+
 {{s11.p3}}
 
 {{s11.p4}}
 
 {{s11.p5}}
-
 {{s11.p6}}
-{{s11.p7}}
 
 ~~~js
 fetch('https://api.2ip.ua/geo.json?ip=')
   .then(response => { ... })
 ~~~
 
+{{s11.p7}}
 {{s11.p8}}
 {{s11.p9}}
 {{s11.p10}}
 {{s11.p11}}
-{{s11.p12}}
 
 ~~~js
 fetch('https://api.2ip.ua/geo.json?ip=')
@@ -476,14 +476,14 @@ fetch('https://api.2ip.ua/geo.json?ip=')
   .then(response => ...)
 ~~~
 
+{{s11.p12}}
 {{s11.p13}}
+
+^^^
+
+^^^[{{s11.spoiler2}}]
+
 {{s11.p14}}
-
-{{s11.p15}}
-
-{{s11.p16}}
-
-{{s11.p17}}
 
 ~~~js
 fetch('https://api.github.com/users?since=135')
@@ -500,7 +500,7 @@ fetch('https://api.github.com/users?since=135')
   .then(response => console.log(response))
 ~~~
 
-{{s11.p18}}
+^^^
 
 _____________________________________
 
@@ -664,7 +664,7 @@ fetch(request)
 
 {{s14.p12}}
 
-{{s14.p13}}
+^^^[{{s14.spoiler1}}]
 
 ~~~console
 ▼ Response {type: "cors", url: "https://httpbin.org/post", redirected: false, status: 200, ok: true, …}
@@ -680,9 +680,9 @@ fetch(request)
   ► __proto__: Response
 ~~~
 
-{{s14.p14}}
+^^^
 
-{{s14.p15}}
+^^^[{{s14.spoiler2}}]
 
 ~~~console
 ▼ {args: {…}, data: "Hello, students!", files: {…}, form: {…}, headers: {…}, …}
@@ -697,8 +697,8 @@ fetch(request)
   ► __proto__: Object
 ~~~
 
-{{s14.p16}}
+^^^
 
 _____________________________________________________________________________________
 
-{{s14.p17}}
+{{s14.p13}}

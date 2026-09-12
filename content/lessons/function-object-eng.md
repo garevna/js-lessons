@@ -61,9 +61,9 @@ function testArguments () {
 testArguments() // testArguments
 ~~~
 
-{{s3.p2}}
+^^^[{{s3.spoiler1}}]
 
-{{s3.p3}}
+{{s3.p2}}
 
 ~~~js
 function getArguments (param) {
@@ -71,16 +71,18 @@ function getArguments (param) {
 }
 ~~~
 
-{{s3.p4}}
+{{s3.p3}}
 
-{{s3.p5}}
+{{s3.p4}}
 
 ~~~js
 var x = getArguments()
 var y = getArguments('Hello!')
 ~~~
 
+{{s3.p5}}
 {{s3.p6}}
+
 {{s3.p7}}
 
 {{s3.p8}}
@@ -89,21 +91,19 @@ var y = getArguments('Hello!')
 
 {{s3.p10}}
 
-{{s3.p11}}
-
 ~~~js
 x('Goodbye!')
 ~~~
 
+{{s3.p11}}
+
+^^^
+
+^^^[{{s3.spoiler2}}]
+
 {{s3.p12}}
 
 {{s3.p13}}
-
-{{s3.p14}}
-
-{{s3.p15}}
-
-{{s3.p16}}
 
 ~~~js
 function setProperty (prop, val) {
@@ -111,14 +111,14 @@ function setProperty (prop, val) {
 }
 ~~~
 
-{{s3.p17}}
+{{s3.p14}}
 
 ~~~js
 setProperty('isActive', false)
 setProperty('value', 50)
 ~~~
 
-{{s3.p18}}
+{{s3.p15}}
 
 ~~~js
 setProperty('method', function () {
@@ -126,19 +126,19 @@ setProperty('method', function () {
 })
 ~~~
 
+{{s3.p16}}
+{{s3.p17}}
+{{s3.p18}}
+
+^^^
+
+^^^[{{s3.spoiler3}}]
+
 {{s3.p19}}
+
 {{s3.p20}}
+
 {{s3.p21}}
-
-{{s3.p22}}
-
-{{s3.p23}}
-
-{{s3.p24}}
-
-{{s3.p25}}
-
-{{s3.p26}}
 
 ~~~js
 var factorial = function (num) {
@@ -147,7 +147,7 @@ var factorial = function (num) {
 }
 ~~~
 
-{{s3.p27}}
+{{s3.p22}}
 
 ~~~js
 var factorial = function (num) {
@@ -159,7 +159,7 @@ var factorial = function (num) {
 }
 ~~~
 
-{{s3.p28}}
+{{s3.p23}}
 
 ~~~js
 factorial(5)
@@ -168,19 +168,19 @@ factorial(5)
 console.log(factorial.res)
 ~~~
 
-{{s3.p29}}
+{{s3.p24}}
 
-{{s3.p30}}
+^^^
 
-{{s3.p31}}
+{{s3.p25}}
 
-{{s3.p32}}
+^^^[{{s3.spoiler4}}]
 
-{{s3.p33}}
+{{s3.p26}}
 
-{{s3.p34}}
+{{s3.p27}}
 
-{{s3.p35}}
+{{s3.p28}}
 
 ~~~js
 var buttons = []
@@ -197,7 +197,7 @@ for (var n = 0; n < 5; n++) {
 }
 ~~~
 
-{{s3.p36}}
+{{s3.p29}}
 
 ~~~js
 var buttons = []
@@ -222,9 +222,9 @@ for (var n = 0; n < 5; n++) {
 }
 ~~~
 
-{{s3.p37}}
+{{s3.p30}}
 
-{{s3.p38}}
+^^^
 
 _______________________________________________
 
@@ -243,25 +243,25 @@ _______________________________________________
 {{s4.p6}}
 {{s4.p7}}
 
+^^^[{{s4.spoiler1}}]
+
 {{s4.p8}}
 
 {{s4.p9}}
-
 {{s4.p10}}
+
 {{s4.p11}}
+
+^^^
+
+^^^[{{s4.spoiler2}}]
 
 {{s4.p12}}
 
 {{s4.p13}}
-
 {{s4.p14}}
 
-{{s4.p15}}
-
-{{s4.p16}}
-{{s4.p17}}
-
-{{s4.p18}}
+^^^
 
 ## ![ico-25 icon] {{s5.h1}}
 
@@ -282,11 +282,11 @@ patient.emergency()
 
 _______________________________
 
+^^^[{{s5.spoiler1}}]
+
 {{s5.p7}}
 
 {{s5.p8}}
-
-{{s5.p9}}
 
 ~~~js
 function first () {
@@ -300,31 +300,31 @@ function third () {
 }
 ~~~
 
+{{s5.p9}}
+
 {{s5.p10}}
 
 {{s5.p11}}
-
-{{s5.p12}}
 
 ~~~js
 window['first']
 ~~~
 
-{{s5.p13}}
+{{s5.p12}}
 
-{{s5.p14}}
+{{s5.p13}}
 
 ~~~js
 window['first']()
 ~~~
 
-{{s5.p15}}
+{{s5.p14}}
 
 ~~~js
 for (var funcName of ['first', 'second', 'third']) window[funcName]()
 ~~~
 
-{{s5.p16}}
+^^^
 
 ____________________________
 
@@ -409,9 +409,9 @@ ______________________________________________
 {{s9.p8}}
 {{s9.p9}}
 
-{{s9.p10}}
+^^^[{{s9.spoiler1}}]
 
-{{s9.p11}}
+{{s9.p10}}
 
 ~~~js
 function delegat () {
@@ -426,53 +426,53 @@ function delegat () {
 }
 ~~~
 
+{{s9.p11}}
+
 {{s9.p12}}
 
 {{s9.p13}}
 
 {{s9.p14}}
 
-{{s9.p15}}
-
 ~~~js
 console.log(x) // undefined
 ~~~
 
-{{s9.p16}}
+{{s9.p15}}
 
 ~~~js
 y = x + 5
 ~~~
 
-{{s9.p17}}
+{{s9.p16}}
 
 ~~~js
 console.log(y)
 ~~~
 
-{{s9.p18}}
+{{s9.p17}}
 
 ~~~js
 x = 5, y = 10
 ~~~
 
+{{s9.p18}}
+
 {{s9.p19}}
 
 {{s9.p20}}
-
-{{s9.p21}}
 
 ~~~js
 x = 1, y = 1
 ~~~
 
+{{s9.p21}}
+
+^^^
+
+^^^[{{s9.spoiler2}}]
+
 {{s9.p22}}
-
-{{s9.p23}}
-
-{{s9.p24}}
-
-{{s9.p25}}
 
 ~~~js
 var treg = 5
@@ -489,13 +489,13 @@ delegat()
 console.log(treg)  // 5
 ~~~
 
-{{s9.p26}}
+{{s9.p23}}
 
-{{s9.p27}}
+{{s9.p24}}
 
-{{s9.p28}}
+{{s9.p25}}
 
-{{s9.p29}}
+^^^
 
 ________________________________
 
@@ -503,12 +503,14 @@ ________________________________
 
 {{s10.p1}}
 
+^^^[{{s10.spoiler1}}]
+
 {{s10.p2}}
 
 {{s10.p3}}
-
 {{s10.p4}}
 {{s10.p5}}
+
 {{s10.p6}}
 
 {{s10.p7}}
@@ -519,38 +521,36 @@ ________________________________
 
 {{s10.p10}}
 
-{{s10.p11}}
-
 _________________________________
 
-{{s10.p12}}
+{{s10.p11}}
 
+{{s10.p12}}
 {{s10.p13}}
 {{s10.p14}}
 {{s10.p15}}
-{{s10.p16}}
 
+{{s10.p16}}
 {{s10.p17}}
 {{s10.p18}}
 {{s10.p19}}
 {{s10.p20}}
 {{s10.p21}}
 {{s10.p22}}
-{{s10.p23}}
 
 ____________________________
 
-{{s10.p24}}
+{{s10.p23}}
 
 ___________________________
 
+{{s10.p24}}
+
+^^^
+
+^^^[{{s10.spoiler2}}]
+
 {{s10.p25}}
-
-{{s10.p26}}
-
-{{s10.p27}}
-
-{{s10.p28}}
 
 ~~~js
 var sample = 1
@@ -562,7 +562,17 @@ function changeSample () {
 changeSample()
 ~~~
 
+{{s10.p26}}
+
+{{s10.p27}}
+
+{{s10.p28}}
+
 {{s10.p29}}
+
+~~~js
+sample = 10
+~~~
 
 {{s10.p30}}
 
@@ -570,23 +580,13 @@ changeSample()
 
 {{s10.p32}}
 
-~~~js
-sample = 10
-~~~
-
 {{s10.p33}}
 
+^^^
+
+^^^[{{s10.spoiler3}}]
+
 {{s10.p34}}
-
-{{s10.p35}}
-
-{{s10.p36}}
-
-{{s10.p37}}
-
-{{s10.p38}}
-
-{{s10.p39}}
 
 ~~~js
 var sample = 1
@@ -606,7 +606,7 @@ console.info('Exited the execution context of the function showSample')
 console.info(`Now sample === ${sample}`)
 ~~~
 
-{{s10.p40}}
+{{s10.p35}}
 
 ~~~console
 Entered the execution context of the function showSample
@@ -614,6 +614,16 @@ sample === function sample () {}
 Exited the execution context of the function showSample
 Now sample === 1
 ~~~
+
+{{s10.p36}}
+
+{{s10.p37}}
+
+{{s10.p38}}
+
+{{s10.p39}}
+
+{{s10.p40}}
 
 {{s10.p41}}
 
@@ -625,21 +635,11 @@ Now sample === 1
 
 {{s10.p45}}
 
+^^^
+
+^^^[{{s10.spoiler4}}]
+
 {{s10.p46}}
-
-{{s10.p47}}
-
-{{s10.p48}}
-
-{{s10.p49}}
-
-{{s10.p50}}
-
-{{s10.p51}}
-
-{{s10.p52}}
-
-{{s10.p53}}
 
 ~~~js
 var sample = 1
@@ -662,23 +662,23 @@ showSample()
 console.info(`(global) ${sample}`)
 ~~~
 
+{{s10.p47}}
+
+{{s10.p48}}
+
+{{s10.p49}}
+
+{{s10.p50}}
+
+{{s10.p51}}
+
+{{s10.p52}}
+
+{{s10.p53}}
+
 {{s10.p54}}
 
-{{s10.p55}}
-
-{{s10.p56}}
-
-{{s10.p57}}
-
-{{s10.p58}}
-
-{{s10.p59}}
-
-{{s10.p60}}
-
-{{s10.p61}}
-
-{{s10.p62}}
+^^^
 
 ____________________________________
 

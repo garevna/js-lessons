@@ -11,7 +11,7 @@ __________________________________
 
 {{s1.p5}}
 
-{{s1.p6}}
+^^^[{{s1.spoiler1}}]
 
 ~~~console
 Accept-Encoding: gzip, deflate
@@ -28,11 +28,11 @@ Upgrade: websocket
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
 ~~~
 
-{{s1.p7}}
+^^^
 
-{{s1.p8}}
+{{s1.p6}}
 
-{{s1.p9}}
+^^^[{{s1.spoiler2}}]
 
 ~~~console
 Access-Control-Allow-Credentials: true
@@ -49,11 +49,11 @@ Server: Kaazing Gateway
 Upgrade: websocket
 ~~~
 
-{{s1.p10}}
+^^^
 
-{{s1.p11}}
+{{s1.p7}}
 
-{{s1.p12}}
+{{s1.p8}}
 
 _______________________________________________
 
@@ -311,7 +311,7 @@ const fs = require('fs')
 
 {{s6.p7}}
 
-{{s6.p8}}
+^^^[{{s6.spoiler1}}]
 
 ~~~json
 [
@@ -338,9 +338,9 @@ const fs = require('fs')
 ]
 ~~~
 
-{{s6.p9}}
+^^^
 
-{{s6.p10}}
+^^^[{{s6.spoiler2}}]
 
 ~~~json
 [
@@ -366,18 +366,18 @@ const fs = require('fs')
 ]
 ~~~
 
-{{s6.p11}}
+^^^
 
-{{s6.p12}}
+{{s6.p8}}
 
 ~~~js
 const users = []
 const messages = []
 ~~~
 
-{{s6.p13}}
+{{s6.p9}}
 
-{{s6.p14}}
+{{s6.p10}}
 
 ~~~js
 fs.readFile('users.json', 'utf8', (err, content) => users = JSON.parse(content))
@@ -385,12 +385,25 @@ fs.readFile('users.json', 'utf8', (err, content) => users = JSON.parse(content))
 fs.readFile('messages.json', 'utf8', (err, content) => messages = JSON.parse(content))
 ~~~
 
-{{s6.p15}}
+{{s6.p11}}
 
+{{s6.p12}}
+{{s6.p13}}
+{{s6.p14}}
+{{s6.p15}}
 {{s6.p16}}
+
 {{s6.p17}}
+
 {{s6.p18}}
+
+~~~js
+const WebSocket = require('ws')
+const server = new WebSocket.Server({ port: 8080 })
+~~~
+
 {{s6.p19}}
+
 {{s6.p20}}
 
 {{s6.p21}}
@@ -398,8 +411,9 @@ fs.readFile('messages.json', 'utf8', (err, content) => messages = JSON.parse(con
 {{s6.p22}}
 
 ~~~js
-const WebSocket = require('ws')
-const server = new WebSocket.Server({ port: 8080 })
+server.on('connection', client => {
+  ...
+}
 ~~~
 
 {{s6.p23}}
@@ -407,25 +421,11 @@ const server = new WebSocket.Server({ port: 8080 })
 {{s6.p24}}
 
 {{s6.p25}}
-
 {{s6.p26}}
-
-~~~js
-server.on('connection', client => {
-  ...
-}
-~~~
-
 {{s6.p27}}
-
 {{s6.p28}}
 
 {{s6.p29}}
-{{s6.p30}}
-{{s6.p31}}
-{{s6.p32}}
-
-{{s6.p33}}
 
 ~~~js
 server.on('connection', client => {
@@ -437,7 +437,7 @@ server.on('connection', client => {
 }
 ~~~
 
-{{s6.p34}}
+{{s6.p30}}
 
 ~~~js
 server.on('connection', client => {
@@ -452,15 +452,15 @@ server.on('connection', client => {
 }
 ~~~
 
-{{s6.p35}}
+{{s6.p31}}
 
 ~~~js
 const randomValue = num => Math.round(Math.random() * num)
 ~~~
 
-{{s6.p36}}
+{{s6.p32}}
 
-{{s6.p37}}
+^^^[{{s6.spoiler3}}]
 
 ~~~js
 const fs = require('fs')
@@ -490,7 +490,7 @@ server.on('connection', client => {
 const randomValue = num => Math.round(Math.random() * num)
 ~~~
 
-{{s6.p38}}
+^^^
 
 ______________________________________________________________
 

@@ -24,9 +24,9 @@ ____________________________
 
 ### ![ico-20 icon] {{s3.h1}}
 
-{{s3.p1}}
+^^^[{{s3.spoiler1}}]
 
-{{s3.p2}}
+{{s3.p1}}
 
 ~~~js
 localStorage.setItem('figure', 'circle')
@@ -34,8 +34,8 @@ localStorage.setItem('circle', 100)
 localStorage.setItem('color', 'red')
 ~~~
 
+{{s3.p2}}
 {{s3.p3}}
-{{s3.p4}}
 
 ~~~js
 var user = {
@@ -48,11 +48,11 @@ localStorage.setItem('user', JSON.stringify(user))
 ~~~
 ![](https://lh6.googleusercontent.com/C5_6UMa6lCRV-0uIPrpFc2EnrRJbpl4GE3TJmu1F5IjBbKVqu7IFK_OhWBnvIzRPX5bCblGaIqRDKlNNG_2r_4J2yriXO0jPcS_MWUHcEQwj8AJ8bziGqU1Kowl4MhQsMnBd3T2jUkwXmhE)
 
-{{s3.p5}}
+^^^
 
-{{s3.p6}}
+^^^[{{s3.spoiler2}}]
 
-{{s3.p7}}
+{{s3.p4}}
 
 ~~~js
 localStorage.getItem('figure')  // "circle"
@@ -60,7 +60,7 @@ localStorage.getItem('circle')  // "100"
 localStorage.getItem('color')   // "red"
 ~~~
 
-{{s3.p8}}
+{{s3.p5}}
 
 ~~~js
 localStorage['figure']  // вернет "circle"
@@ -68,52 +68,52 @@ localStorage['circle']  // вернет "100"
 localStorage['color']   // вернет "red"
 ~~~
 
-{{s3.p9}}
+{{s3.p6}}
 
 ~~~js
 localStorage['user']
 ~~~
 
-{{s3.p10}}
+{{s3.p7}}
 
 ~~~js
 '{ "name": "Иван", "lastVisit": "27.02.2018", "lastPage": "/home/page_07" }'
 ~~~
 
-{{s3.p11}}
+{{s3.p8}}
 
 ~~~js
 JSON.parse(localStorage['user'])
 ~~~
 
-{{s3.p12}}
+^^^
 
-{{s3.p13}}
+^^^[{{s3.spoiler3}}]
 
 ~~~js
 localStorage.removeItem('circle')
 ~~~
 
-{{s3.p14}}
+^^^
 
-{{s3.p15}}
+^^^[{{s3.spoiler4}}]
 
-{{s3.p16}}
+{{s3.p9}}
 
-{{s3.p17}}
+^^^
 
 
-{{s3.p18}}
+^^^[{{s3.spoiler5}}]
 
 ![](https://lh4.googleusercontent.com/HIMDL3cti50OFewe729t9aiJogCWrtQzMJklRwdtJqCgswUei2jrvEK0Q23qW3wzerPgfsKlIgHooc75MBUisfhn8OhlxAvQTDI_x3DPxJSJQMgkn-V_G6L7XW9cFrDwllsj7uhP99tFNRo)
 
-{{s3.p19}}
+^^^
 
 ___________________________
 
-{{s3.p20}}
+{{s3.p10}}
 
-{{s3.p21}}
+{{s3.p11}}
 
 ~~~js
 let k = 0
@@ -124,7 +124,7 @@ while (k < localStorage.length) {
 
 _______________________
 
-{{s3.p22}}
+{{s3.p12}}
 
 ~~~js
 localStorage.setItem('url', location.href)
@@ -137,13 +137,13 @@ const user = {
 localStorage.setItem('user', JSON.stringify(user))
 ~~~
 
-{{s3.p23}}
+{{s3.p13}}
 
 ~~~js
 for (const key in localStorage) console.log(key)
 ~~~
 
-{{s3.p24}}
+{{s3.p14}}
 
 ~~~console
 circle
@@ -160,9 +160,9 @@ clear
 
 ______________________
 
-{{s3.p25}}
+{{s3.p15}}
 
-{{s3.p26}}
+{{s3.p16}}
 
 ~~~js
 Storage.prototype.getItemList = function () {
@@ -174,7 +174,7 @@ Storage.prototype.getItemList = function () {
 
 ![](https://lh4.googleusercontent.com/7xyx1vvwXZw0F1hQx7dR3HUca227YXbz5ScaTplal2XqZxsVeGT_OIb-JQomW5Ao0ZVqQSeQvdeUBShrPB4_yRioGo_0MnYiu9GU7WiXvd-2-VyiO4Z-IcFhrogdPtz7JM10SQbKg_OU7gA)
 
-{{s3.p27}}
+{{s3.p17}}
 
 _____________________
 

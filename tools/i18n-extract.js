@@ -52,6 +52,18 @@ const BLOCKS = [
 const SEPARATOR = /^[-_=]{3,}$/
 const HEADING = /^(#{1,6})(\s*(?:!\[[^\]]+\]\s*)?)(.*)$/
 const IMAGE_ONLY = /^!\[[^\]]*\]\([^)]*\)$/
+
+// An image wrapped in a link — [![ico-70 youtube]](https://…). Markup all the
+// way through, but it carries letters inside the icon name, so without a rule
+// of its own it looks like prose and gets sent to a translator.
+const IMAGE_LINK = /^\[!\[[^\]]*\]\]\([^)]*\)$/
+
+// A spoiler opens with ^^^[Title] and closes with a bare ^^^. The app's
+// grammar has this (pageRegExpr.Spoiler) and the first version of this tool
+// did not, so the delimiters were being offered for translation as if they
+// were sentences. The title inside the brackets is prose; the rest is not.
+const SPOILER_OPEN = /^(\^{3}\[)([^\]]*)(\]\s*)$/
+const SPOILER_CLOSE = /^\^{3}\s*$/
 const SLOGAN = /^(\s*☼☼☼\s*)(.+?)(\s*☼☼☼\s*)$/
 const TEST = /^(\s*→→→\s*)(.+?)(\s*→→→\s*)$/
 const DEMO = /^(\s*§§§§\s*)(.+?)(\s*§§§§\s*)$/
@@ -125,8 +137,14 @@ function extract (source, sectionNames) {
     if (line.includes('⟦BLOCK')) return line
     if (SEPARATOR.test(line.trim())) return line
     if (IMAGE_ONLY.test(line.trim())) return line
+    if (IMAGE_LINK.test(line.trim())) return line
+    if (SPOILER_CLOSE.test(line)) return line
 
     let m
+
+    if ((m = line.match(SPOILER_OPEN))) {
+      return m[2].trim() ? m[1] + put('spoiler', m[2]) + m[3] : line
+    }
 
     if ((m = line.match(HEADING))) {
       const [, hashes, icon, text] = m

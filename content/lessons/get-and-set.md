@@ -92,9 +92,9 @@ console.log(commodity.priceUSD) // 8.928571428571429
 
 {{{get-and-set-price.js}}}
 
-{{s2.p13}}
+^^^[{{s2.spoiler1}}]
 
-{{s2.p14}}
+{{s2.p13}}
 
 ~~~js
 const section = document.body
@@ -114,7 +114,7 @@ Object.assign(container.appendChild(course), {
 })
 ~~~
 
-{{s2.p15}}
+{{s2.p14}}
 
 ~~~js
 function Commodity (name, priceUSD, picture) {
@@ -202,7 +202,7 @@ Object.assign(Commodity.prototype, {
 })
 ~~~
 
-{{s2.p16}}
+{{s2.p15}}
 
 ~~~js
 const [iron, fryingPan, saucepan] = ['iron', 'frying-pan', 'saucepan']
@@ -215,14 +215,14 @@ const commodities = [
 ]
 ~~~
 
-{{s2.p17}}
+^^^
 _____________________________________________________
 
+{{s2.p16}}
+
+{{s2.p17}}
+
 {{s2.p18}}
-
-{{s2.p19}}
-
-{{s2.p20}}
 
 ~~~js
 var commodity = {
@@ -239,9 +239,9 @@ var commodity = {
 }
 ~~~
 
-{{s2.p21}}
+{{s2.p19}}
 
-{{s2.p22}}
+{{s2.p20}}
 
 ____________________________________________________________
 

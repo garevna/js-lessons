@@ -81,30 +81,30 @@ ________________________________________________
 {{s2.p18}}
 {{s2.p19}}
 
+^^^[{{s2.spoiler1}}]
+
 {{s2.p20}}
 
 {{s2.p21}}
-
 {{s2.p22}}
 {{s2.p23}}
+
 {{s2.p24}}
+
+^^^
 
 {{s2.p25}}
 
 {{s2.p26}}
-
 {{s2.p27}}
-
 {{s2.p28}}
 {{s2.p29}}
 {{s2.p30}}
 {{s2.p31}}
+
 {{s2.p32}}
+
 {{s2.p33}}
-
-{{s2.p34}}
-
-{{s2.p35}}
 
 ~~~js
 var props = [
@@ -119,7 +119,7 @@ var props = [
 for (var prop of props) console.log(window[prop])
 ~~~
 
-{{s2.p36}}
+{{s2.p34}}
 
 ~~~console
 
@@ -132,7 +132,7 @@ for (var prop of props) console.log(window[prop])
 ~~~
 
 
-{{s2.p37}}
+{{s2.p35}}
 
 _____________________________________
 
@@ -208,9 +208,9 @@ _____________________________________
 
 ![](illustrations/console-methods.png)
 
-{{s5.p2}}
+^^^[{{s5.spoiler1}}]
 
-{{s5.p3}}
+{{s5.p2}}
 ~~~js
 console.time('while')
 
@@ -226,9 +226,9 @@ for (var x = 0; x < 10000; x++) {}
 console.timeEnd('for')
 ~~~
 
-{{s5.p4}}
+{{s5.p3}}
 
-{{s5.p5}}
+^^^
 
 ______________________________________
 
@@ -241,8 +241,9 @@ ______________________________________
 
 ![](illustrations/location-properties.png)
 
-{{s7.p1}}
+^^^[{{s7.spoiler1}}]
 
+{{s7.p1}}
 {{s7.p2}}
 {{s7.p3}}
 {{s7.p4}}
@@ -251,58 +252,57 @@ ______________________________________
 {{s7.p7}}
 {{s7.p8}}
 {{s7.p9}}
+
+^^^
+
+^^^[{{s7.spoiler2}}]
+
 {{s7.p10}}
-
-{{s7.p11}}
-
-{{s7.p12}}
-
-{{s7.p13}}
 ~~~js
 var win = window.open('https://css-tricks.com')
 ~~~
 
-{{s7.p14}}
-{{s7.p15}}
+{{s7.p11}}
+{{s7.p12}}
 ~~~js
 console.clear()
 ~~~
 
-{{s7.p16}}
-{{s7.p17}}
-{{s7.p18}}
+{{s7.p13}}
+{{s7.p14}}
+{{s7.p15}}
 ~~~js
 location.hash
 ~~~
 
-{{s7.p19}}
+{{s7.p16}}
 
-{{s7.p20}}
-{{s7.p21}}
+{{s7.p17}}
+{{s7.p18}}
 ~~~js
 win.close()
 ~~~
 
-{{s7.p22}}
+{{s7.p19}}
 
-{{s7.p23}}
+^^^
 
-{{s7.p24}}
+^^^[{{s7.spoiler3}}]
 
-{{s7.p25}}
+{{s7.p20}}
 ~~~js
 var win = window.open()
 ~~~
 
-{{s7.p26}}
-{{s7.p27}}
+{{s7.p21}}
+{{s7.p22}}
 ~~~js
 location.href = 'https://translate.google.com'
 ~~~
 
-{{s7.p28}}
+{{s7.p23}}
 
-{{s7.p29}}
+^^^
 ______________________________________
 
 ### ![ico-20 icon] {{s8.h1}}
@@ -353,9 +353,9 @@ ___________________________________________
 
 ### ![ico-20 icon] {{s9.h1}}
 
-{{s9.p1}}
+^^^[{{s9.spoiler1}}]
 
-{{s9.p2}}
+{{s9.p1}}
 
 ~~~js
 var newWin = window.open()
@@ -364,13 +364,13 @@ newWin.document.write('<script>document.write(\'<h3>Hello!</h3>\')</script>')
 console.log(newWin.document.body)
 ~~~
 
+{{s9.p2}}
+
+^^^
+
+^^^[{{s9.spoiler2}}]
+
 {{s9.p3}}
-
-{{s9.p4}}
-
-{{s9.p5}}
-
-{{s9.p6}}
 
 ~~~js
 var newWin = window.open()
@@ -380,13 +380,13 @@ console.log(newWin.document.body)
 newWin.close()
 ~~~
 
-{{s9.p7}}
+{{s9.p4}}
 
-{{s9.p8}}
+^^^
 
-{{s9.p9}}
+^^^[{{s9.spoiler3}}]
 
-{{s9.p10}}
+{{s9.p5}}
 
 ~~~js
 var html = `
@@ -405,10 +405,10 @@ var newWin = window.open('https://www.w3schools.com/')
 newWin.document.write(html)
 ~~~
 
-{{s9.p11}}
+{{s9.p6}}
 
-{{s9.p12}}
+^^^
 
 _________________________________________________________
 
-{{s9.p13}}
+{{s9.p7}}

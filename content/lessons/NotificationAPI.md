@@ -49,18 +49,18 @@ Notification.requestPermission(permission => alert(`Вы ${permission ? 'раз�
 
 {{s2.p13}}
 
-{{s2.p14}}
+^^^[{{s2.spoiler1}}]
 
-{{s2.p15}}
+{{s2.p14}}
 
 ~~~js
 Notification.requestPermission()
   .then(permission => ...)
 ~~~
 
-{{s2.p16}}
+{{s2.p15}}
 
-{{s2.p17}}
+^^^
 ____________________________
 
 ## ![ico-25 icon] {{s3.h1}}

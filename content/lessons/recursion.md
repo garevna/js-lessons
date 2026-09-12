@@ -11,9 +11,9 @@
 
 {{s1.p6}}
 
-{{s1.p7}}
+^^^[{{s1.spoiler1}}]
 
-{{s1.p8}}
+{{s1.p7}}
 
 ~~~js
 function factorial (num, result) {
@@ -22,7 +22,7 @@ function factorial (num, result) {
 }
 ~~~
 
-{{s1.p9}}
+{{s1.p8}}
 
 ~~~js
 function factorial (n, result = 1) {
@@ -31,7 +31,7 @@ function factorial (n, result = 1) {
 }
 ~~~
 
-{{s1.p10}}
+{{s1.p9}}
 
 ~~~js
 function factorial (n, result) {
@@ -41,7 +41,7 @@ function factorial (n, result) {
 }
 ~~~
 
-{{s1.p11}}
+{{s1.p10}}
 
 ~~~js
 function factorial (n, result = 1) {
@@ -49,11 +49,11 @@ function factorial (n, result = 1) {
 }
 ~~~
 
+^^^
+
+{{s1.p11}}
+
 {{s1.p12}}
-
-{{s1.p13}}
-
-{{s1.p14}}
 
 ~~~js
 function factor (num) {
@@ -65,18 +65,18 @@ function factor (num) {
 }
 ~~~
 
+{{s1.p13}}
+
+{{s1.p14}}
+
 {{s1.p15}}
 
 {{s1.p16}}
 
+[![ico-70 youtube]](https://www.youtube.com/watch?time_continue=2&v=nbqLBlanSMk)
+
 {{s1.p17}}
-
 {{s1.p18}}
-
-{{s1.p19}}
-
-{{s1.p20}}
-{{s1.p21}}
 
 ## ![ico-25 hw] {{s2.h1}}
 

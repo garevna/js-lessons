@@ -268,13 +268,13 @@ for (const x of ['blue', 'red', 'green', 'yellow']) {
 
 ___________________________________
 
+[![ico-25 cap]](https://garevna.github.io/js-samples/#22)
+
 {{s5.p7}}
 
 {{s5.p8}}
 
 {{s5.p9}}
-
-{{s5.p10}}
 
 ~~~js
 const elems = [
@@ -301,13 +301,15 @@ const elems = [
 ]
 ~~~
 
-{{s5.p11}}
+{{s5.p10}}
 
 ~~~js
 elems.iterator = (async function * () {
   ...
 }).call(elems)
 ~~~
+
+{{s5.p11}}
 
 {{s5.p12}}
 
@@ -316,17 +318,15 @@ elems.iterator = (async function * () {
 {{s5.p14}}
 
 {{s5.p15}}
-
 {{s5.p16}}
+
 {{s5.p17}}
 
 {{s5.p18}}
 
 {{s5.p19}}
-
 {{s5.p20}}
 {{s5.p21}}
-{{s5.p22}}
 
 ~~~js
 const addElem = (size, color) => {
@@ -338,18 +338,18 @@ const addElem = (size, color) => {
 }
 ~~~
 
-{{s5.p23}}
+{{s5.p22}}
 
+{{s5.p23}}
 {{s5.p24}}
-{{s5.p25}}
 
 ~~~js
 const promise = (size, color) => new Promise(resolve => setTimeout(() => resolve(addElem(size, color)), Math.round(Math.random() * 5000)))
 ~~~
 
-{{s5.p26}}
+{{s5.p25}}
 
-{{s5.p27}}
+{{s5.p26}}
 
 ~~~js
 let len = this.length
@@ -361,14 +361,14 @@ while (len --> 0) {
 }
 ~~~
 
-{{s5.p28}}
+{{s5.p27}}
 
+{{s5.p28}}
 {{s5.p29}}
 {{s5.p30}}
 {{s5.p31}}
-{{s5.p32}}
 
-{{s5.p33}}
+{{s5.p32}}
 
 ~~~js
 elems.iterator = (async function * () {
@@ -393,7 +393,7 @@ elems.iterator = (async function * () {
 }).call(elems)
 ~~~
 
-{{s5.p34}}
+{{s5.p33}}
 
 ~~~js
 async function iterateElements () {
@@ -403,6 +403,6 @@ async function iterateElements () {
 iterateElements ()
 ~~~
 
-{{s5.p35}}
+{{s5.p34}}
 
-{{s5.p36}}
+{{s5.p35}}

@@ -32,7 +32,7 @@ ______________________________________________________
 console.dir(IDBIndex)
 ~~~
 
-{{s2.p17}}
+^^^[{{s2.spoiler1}}]
 
 ~~~console
 ▼ ƒ IDBIndex()
@@ -65,28 +65,28 @@ console.dir(IDBIndex)
   ► __proto__: ƒ ()
 ~~~
 
+^^^
+
+{{s2.p17}}
+
 {{s2.p18}}
 
 {{s2.p19}}
-
 {{s2.p20}}
-
 {{s2.p21}}
 {{s2.p22}}
 {{s2.p23}}
-{{s2.p24}}
-{{s2.p25}}
 
-{{s2.p26}}
+{{s2.p24}}
 
 _______________________________
 
-{{s2.p27}}
+{{s2.p25}}
 
+{{s2.p26}}
+{{s2.p27}}
 {{s2.p28}}
 {{s2.p29}}
-{{s2.p30}}
-{{s2.p31}}
 
 ___________________________________________
 
@@ -100,6 +100,7 @@ ___________________________________________
 {{s3.p5}}
 {{s3.p6}}
 
+^^^[{{s3.spoiler1}}]
 {{s3.p7}}
 {{s3.p8}}
 {{s3.p9}}
@@ -107,13 +108,12 @@ ___________________________________________
 {{s3.p11}}
 {{s3.p12}}
 {{s3.p13}}
-{{s3.p14}}
 
-{{s3.p15}}
+^^^
 
 ____________________________________________________________________
 
-{{s3.p16}}
+{{s3.p14}}
 
 ~~~js
 const createUsersDB = users => new Promise((resolve, reject) => {
@@ -145,6 +145,9 @@ async function callUsers () {
 callUsers().then(resp => console.log(resp))
 ~~~
 
+^^^[{{s3.spoiler2}}]
+{{s3.p15}}
+{{s3.p16}}
 {{s3.p17}}
 {{s3.p18}}
 {{s3.p19}}
@@ -154,16 +157,19 @@ callUsers().then(resp => console.log(resp))
 {{s3.p23}}
 {{s3.p24}}
 {{s3.p25}}
+
 {{s3.p26}}
 {{s3.p27}}
-{{s3.p28}}
 
+{{s3.p28}}
 {{s3.p29}}
+
+^^^
+
 {{s3.p30}}
 
 {{s3.p31}}
 {{s3.p32}}
-
 {{s3.p33}}
 
 {{s3.p34}}
@@ -177,12 +183,6 @@ callUsers().then(resp => console.log(resp))
 {{s3.p39}}
 {{s3.p40}}
 {{s3.p41}}
-
-{{s3.p42}}
-
-{{s3.p43}}
-{{s3.p44}}
-{{s3.p45}}
 
 ________________________________________
 
@@ -286,11 +286,11 @@ createLessonsDB()
 
 ![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-index-1.gif)
 
+^^^[{{s4.spoiler1}}]
+
 {{s4.p17}}
 
 {{s4.p18}}
-
-{{s4.p19}}
 
 ~~~js
 const openDB = (nameDB, verDB) => new Promise((resolve, reject) => {
@@ -303,29 +303,29 @@ const openDB = (nameDB, verDB) => new Promise((resolve, reject) => {
 })
 ~~~
 
+{{s4.p19}}
 {{s4.p20}}
 {{s4.p21}}
 {{s4.p22}}
 {{s4.p23}}
-{{s4.p24}}
 
 ~~~js
 let DB, data, lessonStore, topicStore
 ~~~
 
+{{s4.p24}}
 {{s4.p25}}
-{{s4.p26}}
 
+{{s4.p26}}
 {{s4.p27}}
 {{s4.p28}}
 {{s4.p29}}
+
 {{s4.p30}}
 
 {{s4.p31}}
 
 {{s4.p32}}
-
-{{s4.p33}}
 
 ~~~js
 const openDBCallback = event => {
@@ -340,24 +340,24 @@ const openDBCallback = event => {
 }
 ~~~
 
+{{s4.p33}}
 {{s4.p34}}
 {{s4.p35}}
+
 {{s4.p36}}
 
 {{s4.p37}}
-
 {{s4.p38}}
 {{s4.p39}}
 {{s4.p40}}
 {{s4.p41}}
-{{s4.p42}}
 
+{{s4.p42}}
 {{s4.p43}}
 {{s4.p44}}
 {{s4.p45}}
-{{s4.p46}}
 
-{{s4.p47}}
+{{s4.p46}}
 
 ~~~js
 function pushLesson (lesson) {
@@ -368,17 +368,18 @@ function pushLesson (lesson) {
 }
 ~~~
 
+{{s4.p47}}
 {{s4.p48}}
 {{s4.p49}}
 {{s4.p50}}
 {{s4.p51}}
 {{s4.p52}}
-{{s4.p53}}
 
+{{s4.p53}}
 {{s4.p54}}
 {{s4.p55}}
-{{s4.p56}}
 
+{{s4.p56}}
 {{s4.p57}}
 {{s4.p58}}
 {{s4.p59}}
@@ -387,9 +388,8 @@ function pushLesson (lesson) {
 {{s4.p62}}
 {{s4.p63}}
 {{s4.p64}}
-{{s4.p65}}
 
-{{s4.p66}}
+{{s4.p65}}
 
 ~~~js
 function pushTopic (lessonIndex, topic) {
@@ -403,10 +403,10 @@ function pushTopic (lessonIndex, topic) {
 }
 ~~~
 
+{{s4.p66}}
 {{s4.p67}}
-{{s4.p68}}
 
-{{s4.p69}}
+{{s4.p68}}
 
 ~~~js
 async function createLessonsDB () {
@@ -418,4 +418,4 @@ async function createLessonsDB () {
 createLessonsDB ()
 ~~~
 
-{{s4.p70}}
+^^^

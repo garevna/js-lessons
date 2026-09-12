@@ -43,6 +43,5 @@
   "s4.p20": "• Local - local variables of the function being executed.",
   "s4.p21": "• Block - variables of the call context of the executable function.",
   "s5.h1": "Event Listener Breakpoints",
-  "s5.p1": "In **Chrome DevTools**, you can also suspend code execution when DOM events occur.",
-  "s5.p2": "[![ico-70 youtube]](⟦f11⟧)"
+  "s5.p1": "In **Chrome DevTools**, you can also suspend code execution when DOM events occur."
 }

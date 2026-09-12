@@ -81,7 +81,12 @@ for (const page of pages) {
   // inside a callout, ◘◘![ico-20 cap] ** 1**◘◘, is markup that happens to sit
   // on its own line. Sending those to a translator is noise, and on some pages
   // they were most of what was left. Copy them over and leave them out.
-  const hasLetters = (s) => /\p{L}/u.test(s.replace(/⟦f\d+⟧/g, ''))
+  // HTML entities carry letters — &nbsp; &bsol; &#10072; — but a line holding
+  // nothing else is spacing, not a sentence. Drop them, and the hidden-fragment
+  // marks, before deciding whether anything is left to translate.
+  const hasLetters = (s) => /\p{L}/u.test(
+    s.replace(/⟦f\d+⟧/g, '').replace(/&[a-zA-Z]+;|&#\d+;/g, '')
+  )
 
   const copied = untranslated.filter(([, v]) => !hasLetters(v))
   const todo = untranslated.filter(([, v]) => hasLetters(v))

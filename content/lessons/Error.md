@@ -234,9 +234,9 @@ console.log('Result:', outerFunc())
 _________________________
 
 
-{{s8.p9}}
+^^^[{{s8.spoiler1}}]
 
-{{s8.p10}}
+{{s8.p9}}
 
 ~~~js
 var obj = null
@@ -248,7 +248,7 @@ try {
 }
 ~~~
 
-{{s8.p11}}
+^^^
 
 ### ![ico-20 icon] {{s9.h1}}
 

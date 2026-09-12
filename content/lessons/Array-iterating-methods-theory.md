@@ -518,7 +518,7 @@ Array.prototype.idempotence = function (func) {
   return self.results[num][index]
 }
 ~~~
-{{s7.p23}}
+^^^
 
 ~~~js
 const numbers = [25, 16, 9, 49, 81, 64, 4]

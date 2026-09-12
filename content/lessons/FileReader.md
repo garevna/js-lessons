@@ -11,54 +11,54 @@ var reader = new FileReader()
 {{s1.p3}}
 
 
+^^^[{{s1.spoiler1}}]
 {{s1.p4}}
 {{s1.p5}}
 {{s1.p6}}
 {{s1.p7}}
+^^^
+
+
+^^^[{{s1.spoiler2}}]
+
 {{s1.p8}}
+
 {{s1.p9}}
 
+______________________________________
 
 {{s1.p10}}
 
+
 {{s1.p11}}
-
 {{s1.p12}}
-
-______________________________________
-
 {{s1.p13}}
 
-
-{{s1.p14}}
-{{s1.p15}}
-{{s1.p16}}
-
 ______________________________________
 
+{{s1.p14}}
+
+{{s1.p15}}
+{{s1.p16}}
 {{s1.p17}}
+
+^^^
+
+^^^[{{s1.spoiler3}}]
+
 
 {{s1.p18}}
 {{s1.p19}}
 {{s1.p20}}
-
 {{s1.p21}}
-
 {{s1.p22}}
-
-
 {{s1.p23}}
+
+^^^
+
 {{s1.p24}}
+
 {{s1.p25}}
-{{s1.p26}}
-{{s1.p27}}
-{{s1.p28}}
-
-{{s1.p29}}
-
-{{s1.p30}}
-
-{{s1.p31}}
 
 ~~~js
 const selector = document.body.appendChild(document.createElement('input'))
@@ -76,7 +76,7 @@ var picture = document.body.appendChild(document.createElement('img'))
 var fileReader = new FileReader()
 ~~~
 
-{{s1.p32}}
+{{s1.p26}}
 
 ~~~js
 picture.src = URL.createObjectURL(selected)
@@ -84,9 +84,9 @@ picture.src = URL.createObjectURL(selected)
 
 ____________________________________________________________
 
-{{s1.p33}}
+{{s1.p27}}
 
-{{s1.p34}}
+{{s1.p28}}
 
 ~~~js
 const selector = document.body
@@ -143,9 +143,9 @@ const fileReader = new FileReader()
 
 _____________________________________________________
 
-{{s1.p35}}
+{{s1.p29}}
 
-{{s1.p36}}
+{{s1.p30}}
 
 ~~~js
 const selector = document.body

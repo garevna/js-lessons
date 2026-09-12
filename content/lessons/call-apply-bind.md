@@ -56,7 +56,7 @@ ________________________________
 console.dir(Function)
 ~~~
 
-{{s3.p5}}
+^^^[{{s3.spoiler1}}]
 
 ~~~console
 ▼ ƒ Function()
@@ -83,9 +83,9 @@ console.dir(Function)
   ► __proto__: ƒ ()
 ~~~
 
-{{s3.p6}}
+^^^
 
-{{s3.p7}}
+{{s3.p5}}
 
 ~~~js
 function func () {
@@ -95,7 +95,7 @@ function func () {
 console.dir(func)
 ~~~
 
-{{s3.p8}}
+^^^[{{s3.spoiler2}}]
 
 ~~~console
 ▼ ƒ func()
@@ -122,20 +122,20 @@ console.dir(func)
       ► __proto__: Object
 ~~~
 
+^^^
+
+{{s3.p6}}
+
+_________________________________
+
+{{s3.p7}}
+
+{{s3.p8}}
 {{s3.p9}}
 
 {{s3.p10}}
 
-_________________________________
-
 {{s3.p11}}
-
-{{s3.p12}}
-{{s3.p13}}
-
-{{s3.p14}}
-
-{{s3.p15}}
 
 ~~~js
 function sample () {
@@ -153,7 +153,7 @@ for (var func of funcs) {
 }
 ~~~
 
-{{s3.p16}}
+{{s3.p12}}
 
 ~~~console
 I'm sample

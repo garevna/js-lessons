@@ -12,8 +12,9 @@
 
 {{s1.p7}}
 
-{{s1.p8}}
+^^^[{{s1.spoiler1}}]
 
+{{s1.p8}}
 {{s1.p9}}
 {{s1.p10}}
 {{s1.p11}}
@@ -25,14 +26,16 @@
 {{s1.p17}}
 {{s1.p18}}
 {{s1.p19}}
+
+^^^
+
 {{s1.p20}}
 
+^^^[{{s1.spoiler2}}]
+
 {{s1.p21}}
-
 {{s1.p22}}
-
 {{s1.p23}}
-
 {{s1.p24}}
 {{s1.p25}}
 {{s1.p26}}
@@ -42,15 +45,12 @@
 {{s1.p30}}
 {{s1.p31}}
 {{s1.p32}}
+
+^^^
+
 {{s1.p33}}
+
 {{s1.p34}}
-{{s1.p35}}
-
-{{s1.p36}}
-
-{{s1.p37}}
-
-{{s1.p38}}
 
 _____________________________________________
 
@@ -308,7 +308,7 @@ const fs = require('fs')
 
 {{s6.p5}}
 
-{{s6.p6}}
+^^^[{{s6.spoiler1}}]
 
 ~~~json
 [
@@ -335,10 +335,10 @@ const fs = require('fs')
 ]
 ~~~
 
-{{s6.p7}}
+^^^
 
 
-{{s6.p8}}
+^^^[{{s6.spoiler2}}]
 
 ~~~json
 [
@@ -364,18 +364,18 @@ const fs = require('fs')
 ]
 ~~~
 
-{{s6.p9}}
+^^^
 
-{{s6.p10}}
+{{s6.p6}}
 
 ~~~js
 const users = []
 const messages = []
 ~~~
 
-{{s6.p11}}
+{{s6.p7}}
 
-{{s6.p12}}
+{{s6.p8}}
 
 ~~~js
 fs.readFile('users.json', 'utf8', (err, content) => users.push(...JSON.parse(content)))
@@ -383,12 +383,25 @@ fs.readFile('users.json', 'utf8', (err, content) => users.push(...JSON.parse(con
 fs.readFile('messages.json', 'utf8', (err, content) => messages.push(...JSON.parse(content)))
 ~~~
 
-{{s6.p13}}
+{{s6.p9}}
 
+{{s6.p10}}
+{{s6.p11}}
+{{s6.p12}}
+{{s6.p13}}
 {{s6.p14}}
+
 {{s6.p15}}
+
 {{s6.p16}}
+
+~~~js
+const WebSocket = require('ws')
+const server = new WebSocket.Server({ port: 8080 })
+~~~
+
 {{s6.p17}}
+
 {{s6.p18}}
 
 {{s6.p19}}
@@ -396,8 +409,9 @@ fs.readFile('messages.json', 'utf8', (err, content) => messages.push(...JSON.par
 {{s6.p20}}
 
 ~~~js
-const WebSocket = require('ws')
-const server = new WebSocket.Server({ port: 8080 })
+server.on('connection', client => {
+  ...
+}
 ~~~
 
 {{s6.p21}}
@@ -405,25 +419,11 @@ const server = new WebSocket.Server({ port: 8080 })
 {{s6.p22}}
 
 {{s6.p23}}
-
 {{s6.p24}}
-
-~~~js
-server.on('connection', client => {
-  ...
-}
-~~~
-
 {{s6.p25}}
-
 {{s6.p26}}
 
 {{s6.p27}}
-{{s6.p28}}
-{{s6.p29}}
-{{s6.p30}}
-
-{{s6.p31}}
 
 ~~~js
 server.on('connection', client => {
@@ -433,7 +433,7 @@ server.on('connection', client => {
 }
 ~~~
 
-{{s6.p32}}
+{{s6.p28}}
 
 ~~~js
 server.on('connection', client => {
@@ -448,15 +448,15 @@ server.on('connection', client => {
 }
 ~~~
 
-{{s6.p33}}
+{{s6.p29}}
 
 ~~~js
 const randomValue = num => Math.round(Math.random() * num)
 ~~~
 
-{{s6.p34}}
+{{s6.p30}}
 
-{{s6.p35}}
+{{s6.p31}}
 
 ~~~js
 const fs = require('fs')

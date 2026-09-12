@@ -95,22 +95,22 @@ var interval = setInterval(() => {
 }, 5)
 ~~~
 
-{{s3.p4}}
+^^^
 
+{{s3.p4}}
 {{s3.p5}}
-{{s3.p6}}
 
 {{{Timers-3.js}}}
 
 _________________________________________
+
+{{s3.p6}}
 
 {{s3.p7}}
 
 {{s3.p8}}
 
 {{s3.p9}}
-
-{{s3.p10}}
 
 ~~~js
 let counter = 0
@@ -122,10 +122,10 @@ const interval = setInterval(() => counter++, 1)
 
 ___________________________________________
 
+{{s3.p10}}
 {{s3.p11}}
-{{s3.p12}}
 
-{{s3.p13}}
+{{s3.p12}}
 
 ~~~~js
 const style = document.head
@@ -173,16 +173,16 @@ style.textContent = `
 `
 ~~~~
 
-{{s3.p14}}
+{{s3.p13}}
 
 ~~~js
 const createFigure = () => document.body
   .appendChild(document.createElement('div'))
 ~~~
 
-{{s3.p15}}
+{{s3.p14}}
 
-{{s3.p16}}
+{{s3.p15}}
 
 ~~~js
 const makeStep = figure => figure.offsetLeft < 416
@@ -203,13 +203,13 @@ document.body.onclick = () => clearInterval(timer)
 
 {{{Timers-5.js}}}
 
+{{s3.p16}}
 {{s3.p17}}
 {{s3.p18}}
+
 {{s3.p19}}
 
 {{s3.p20}}
-
-{{s3.p21}}
 
 ____________________________________________
 

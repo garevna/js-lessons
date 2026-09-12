@@ -14,17 +14,17 @@
 
 {{s1.p7}}
 
+^^^[{{s1.spoiler1}}]
+
 {{s1.p8}}
 
 {{s1.p9}}
-
 {{s1.p10}}
 {{s1.p11}}
+
 {{s1.p12}}
 
-{{s1.p13}}
-
-{{s1.p14}}
+^^^
 
 ## ![ico-25 icon] {{s2.h1}}
 
@@ -81,11 +81,11 @@ var hash = Sha256.hash(text)
 
 {{s5.p4}}
 
-{{s5.p5}}
+^^^[{{s5.spoiler1}}]
 
 ![](https://lh4.googleusercontent.com/wM_pdlag2wymXBf0vtG0LDwLUPyKPmNI0Z8op0grW79K0LNzSzQMTdOx_1zQtT9Utj6VxtRtNEjJajYfCusV8LejAeXMvtOliRJG_T6btsIShVCe20WkxABN4P2K5zqwp6E9ORQpuRwKF4k)
 
-{{s5.p6}}
+^^^
 
 _______________________
 
@@ -161,14 +161,14 @@ var users = [
 
 {{s8.p7}}
 
-{{s8.p8}}
+^^^[{{s8.spoiler1}}]
 
+{{s8.p8}}
 {{s8.p9}}
 {{s8.p10}}
 {{s8.p11}}
 {{s8.p12}}
+
+^^^
+
 {{s8.p13}}
-
-{{s8.p14}}
-
-{{s8.p15}}

@@ -70,7 +70,6 @@
   "s4.p12": "The only thing left to do is to call the function **getLogin**:",
   "s4.p13": "◘◘![ico-20 file] Function getLogin call◘◘",
   "s4.p14": "and don't forget to press **Enter** after entering the login.",
-  "s4.p15": "^^^[Full example code]",
-  "s4.p16": "^^^",
-  "s4.p17": "[![ico-30 hw] Quiz](quiz/async )"
+  "s4.spoiler1": "Full example code",
+  "s4.p15": "[![ico-30 hw] Quiz](quiz/async )"
 }

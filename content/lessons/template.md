@@ -78,7 +78,7 @@ const circle = document.querySelector('#svg')
 console.dir(circle.content)
 ~~~
 
-{{s5.p4}}
+^^^[{{s5.spoiler1}}]
 
 ~~~console
 ▼ #document-fragment
@@ -103,7 +103,7 @@ console.dir(circle.content)
   ► __proto__: DocumentFragment
 ~~~
 
-{{s5.p5}}
+^^^
 
 ## ![ico-25 icon] {{s6.h1}}
 

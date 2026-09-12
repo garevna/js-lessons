@@ -120,45 +120,45 @@ _____________________________________________________________
 
 ### ![ico-20 icon] {{s10.h1}}
 
+^^^[{{s10.spoiler1}}]
+
 {{s10.p1}}
 
 {{s10.p2}}
-
-{{s10.p3}}
 
 ~~~js
 bigNumber * 2
 ~~~
 
-{{s10.p4}}
+{{s10.p3}}
 
-{{s10.p5}}
+{{s10.p4}}
 
 ~~~error
     Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
 ~~~
 
-{{s10.p6}}
+{{s10.p5}}
 
 ~~~js
 Math.sin(bigNumber)
 ~~~
 
-{{s10.p7}}
+{{s10.p6}}
 
-{{s10.p8}}
+{{s10.p7}}
 
 ~~~error
     Uncaught TypeError: Cannot convert a BigInt value to a number
 ~~~
 
-{{s10.p9}}
+{{s10.p8}}
 
 ~~~js
 Number(bigNumber) // 9007199254745994
 ~~~
 
-{{s10.p10}}
+{{s10.p9}}
 
 ~~~js
 bigNumber = bigNumber * bigNumber // 81129638414696789717133459048036n
@@ -168,7 +168,7 @@ Number(bigNumber) // 8.112963841469679e+31
 bigNumber.toString() // "81129638414696789717133459048036"
 ~~~
 
-{{s10.p11}}
+{{s10.p10}}
 
 ~~~js
 let bigArray = [
@@ -181,7 +181,7 @@ let bigArray = [
 bigArray[BigInt(1)]  // 9007199254740994n
 ~~~
 
-{{s10.p12}}
+^^^
 
 ____________________________________________________________
 

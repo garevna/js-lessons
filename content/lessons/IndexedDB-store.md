@@ -453,20 +453,20 @@ const reject = event => console.warn(event.target.error)) || null
 openDB('keywordsDB', 1).then(resolve, reject)
 ~~~
 
-{{s6.p13}}
+^^^[{{s6.spoiler1}}]
 
-{{s6.p14}}
+{{s6.p13}}
 
 ~~~js
 openDB('keywordsDB', 1)
   .then(event => event.target.result.createObjectStore('topicStore'), event => console.warn(event.target.error) || null)
 ~~~
 
+{{s6.p14}}
+
 {{s6.p15}}
 
 {{s6.p16}}
-
-{{s6.p17}}
 
 ~~~js
 let topicStore
@@ -476,7 +476,7 @@ openDB('keywordsDB', 2)
   .then(callback, event => console.warn(event.target.error))
 ~~~
 
-{{s6.p18}}
+^^^
 
 _____________________________________________________
 
