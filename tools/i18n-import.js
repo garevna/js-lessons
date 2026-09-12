@@ -125,6 +125,58 @@ for (const file of outFiles) {
   }
 }
 
+// DeepL leaves untranslatable pieces alone but does rewrite quotation marks
+// into the target language's typographic pair. In prose that is an
+// improvement. In a quiz it is a silent break: the answer has to match one of
+// the variants character for character, and "0" against „0“ does not.
+const quizProblems = []
+
+for (const key of Object.keys(accepted)) {
+  const m = key.match(/^(.*\.)quizAnswer(\d+)$/)
+  if (!m) continue
+
+  const variantsKey = `${m[1]}quizVariants${m[2]}`
+  const variants = (accepted[variantsKey] !== undefined ? accepted[variantsKey] : source[variantsKey])
+  if (variants === undefined) continue
+
+  // The two sides reach the page by different routes, and the comparison has
+  // to follow both:
+  //
+  //   variants  go into value=${choiceVariant}, an attribute written without
+  //             quotes, so a variant spelled 'Google' arrives as Google —
+  //             the browser consumed the quotes as delimiters
+  //   answer    goes through setAttribute('right-choice', …), which parses
+  //             nothing, so it arrives exactly as written
+  //
+  // Unquoting both sides — or neither — reports mismatches that the browser
+  // does not have. Checking this against the component instead of guessing
+  // turned 39 confident findings into none.
+  const unquote = (s) => {
+    const t = s.trim()
+    return (t.length > 1 && (t[0] === "'" || t[0] === '"') && t[t.length - 1] === t[0])
+      ? t.slice(1, -1)
+      : t
+  }
+
+  const answer = accepted[key].trim()
+  const list = variants.split(',').map(unquote)
+
+  if (!list.includes(answer)) {
+    // Same answer, different quotes, is the common case — say so, because the
+    // fix is to copy one of the variants rather than to retranslate.
+    const loose = (s) => s.replace(/[«»„“”"']/g, '"')
+    const why = list.some((v) => loose(v) === loose(answer))
+      ? `quiz answer no longer matches a variant — only the quote characters differ: "${answer}" vs [${list.join(' | ')}]`
+      : `quiz answer "${answer}" is not among the variants [${list.join(' | ')}]`
+
+    quizProblems.push({ key, why })
+    delete accepted[key]
+    delete accepted[variantsKey]
+  }
+}
+
+problems.push(...quizProblems.map((q) => ({ file: q.key, why: q.why, text: '' })))
+
 const missing = index.filter(({ n }) => !seen.has(n))
 
 const file = path.join(MESSAGES, `${page}.${lang}.json`)
