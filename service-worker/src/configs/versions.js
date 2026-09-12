@@ -347,10 +347,10 @@ export const versions = {
 	'ua/var.md': '436b54bee540',
 	'ua/variable-declaration.md': 'ca35bb7b2872',
 	'ua/while.md': 'e00d728f4ce5',
-	'index.js': 'bb4c98b09a40',
+	'index.js': '61dbd309d590',
 	'content.worker.js': 'cbafa233fd69',
 	'icons.worker.js': 'b5d2b9c5b3cb',
 	'main-menu.js': '165bc27ad07f',
-	'donate.js': '1a7232d17394',
+	'donate.js': '2ecf803a37fc',
 	'registerServiceWorker.js': 'b69c38092929'
 }

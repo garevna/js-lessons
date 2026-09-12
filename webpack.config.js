@@ -1,14 +1,13 @@
-// ESM, because package.json declares "type": "module" — a CommonJS config
-// (require / module.exports / __dirname) throws "require is not defined in ES
-// module scope" under current webpack-cli. The worker sub-projects declare no
-// "type", so their configs stay CommonJS.
+// CommonJS on purpose. The source mixes ESM exports with require() calls —
+// webpack only accepts that combination in its "javascript/auto" mode, which
+// it uses for .js files unless package.json declares "type": "module".
+// Declaring the package as ESM makes webpack treat every .js file as strict
+// ESM, where require is undefined: the build then succeeds and the bundle
+// throws "require is not defined" in the browser.
 
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
+const path = require('path')
 
-const root = path.dirname(fileURLToPath(import.meta.url))
-
-export default {
+module.exports = {
   entry: {
     index: './src/start.js',
     donate: './src/donate.js',
@@ -16,7 +15,7 @@ export default {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(root, 'public'),
+    path: path.resolve(__dirname, 'public'),
     clean: false
   },
   module: {
@@ -27,14 +26,6 @@ export default {
           'style-loader',
           'css-loader'
         ]
-      },
-      {
-        // Under "type": "module" webpack resolves imports the strict ESM way,
-        // where './components/glitch' must carry its .js extension. The source
-        // omits extensions throughout, so relax it rather than rewrite every
-        // import in the tree.
-        test: /\.m?js$/,
-        resolve: { fullySpecified: false }
       }
     ]
   }

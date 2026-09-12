@@ -3,7 +3,6 @@
   "version": "5.0.0",
   "license": "MIT",
   "description": "Web-development. Educational materials for the JS course.",
-  "type": "module",
   "main": "./public",
   "scripts": {
     "clean": "node -e \"const fs=require('fs');['index.js','donate.js','main-menu.js','content.worker.js','icons.worker.js','service-worker.js'].forEach(f=>fs.rmSync('public/'+f,{force:true}));fs.rmSync('public/.cache',{recursive:true,force:true})\"",
