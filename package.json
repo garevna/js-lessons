@@ -3,6 +3,7 @@
   "version": "5.0.0",
   "license": "MIT",
   "description": "Web-development. Educational materials for the JS course.",
+  "type": "module",
   "main": "./public",
   "scripts": {
     "clean": "rd /s /q public .cache>nul 2>&1|echo.>nul",

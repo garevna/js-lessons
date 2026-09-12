@@ -1,34 +1,30 @@
 export const mainMenu = [
   {
     ref: 'introduction-basics',
-    ua: 'Вступ. Основи.',
+    ua: 'Вступ. Основи',
     eng: 'Introduction. Basics',
-    ru: 'Введение. Основы.',
+    ru: 'Введение. Основы',
     items: [
       { ref: 'Block-diagram', ua: 'Блок-схема алгоритму', eng: 'Flowchart of the algorithm', ru: 'Блок-схема алгоритма' },
       { ref: 'Developer-tools', ua: 'Інструменти розробника', eng: 'Developer tools', ru: 'Инструменты разработчика' },
-      { ref: 'Chrome-dev-tools', ua: 'Chrome DevTools', ru: 'Chrome DevTools', eng: 'Chrome DevTools' },
-      { ref: 'var', ua: 'Змінні. Типи даних', eng: 'Variables. Data types', ru: 'Переменные. Типы данных' },
-      { ref: 'data-structures', ua: 'Структури даних', eng: 'Data structures', ru: 'Структуры данных' },
-      { ref: 'Boolean', ua: 'Логічні конструкції', eng: 'Logical constructs', ru: 'Логические конструкции' },
-      { ref: 'function', ua: 'Функції', eng: 'Functions', ru: 'Функции' },
+      { ref: 'Chrome-dev-tools', ua: 'Chrome DevTools', eng: 'Chrome DevTools', ru: 'Chrome DevTools' },
+      { ref: 'global-object-and-memory', ua: 'Глобальний об\'єкт. Пам\'ять', eng: 'Global object. Memory', ru: 'Глобальный объект. Память' },
       { ref: 'hw-flowchart', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
   },
   {
-    ref: 'operators',
-    ua: 'Оператори. Вирази.',
-    eng: 'Operators. Expressions.',
-    ru: 'Операторы. Выражения.',
+    ref: 'data-types',
+    ua: 'Змінні. Типи даних',
+    eng: 'Variables. Data types',
+    ru: 'Переменные. Типы данных',
     items: [
+      { ref: 'variable-declaration', ua: 'Оголошення змінних', eng: 'Variable declaration', ru: 'Объявление переменных' },
+      { ref: 'var', ua: 'Примітивні типи даних', eng: 'Primitive data types', ru: 'Примитивные типы данных' },
+      { ref: 'typeof', ua: 'Оператор typeof', eng: 'Operator typeof', ru: 'Оператор typeof' },
+      { ref: 'data-structures', ua: 'Структури даних', eng: 'Data structures', ru: 'Структуры данных' },
+      { ref: 'Boolean', ua: 'Логічні конструкції', eng: 'Logical constructs', ru: 'Логические конструкции' },
+      { ref: 'function', ua: 'Функції', eng: 'Functions', ru: 'Функции' },
       { ref: 'Assignments', ua: 'Оператори присвоювання', eng: 'Assignment operators', ru: 'Операторы присваивания' },
-      { ref: 'Conditional-operators', ua: 'Умовні оператори', eng: 'Conditional operators', ru: 'Условные операторы' },
-      { ref: 'Increment', ua: 'Інкремент', eng: 'Increment', ru: 'Инкремент' },
-      { ref: 'switch', ua: 'Оператор switch', eng: 'The \'switch\' operator', ru: 'Оператор switch' },
-      { ref: 'for', ua: 'Оператор for', eng: 'The \'for\' operator', ru: 'Оператор for' },
-      { ref: 'while', ua: 'Цикли while | do ... while', eng: 'while | do ... while', ru: 'Циклы while | do ... while' },
-      { ref: 'for-of-for-in', ua: 'Цикли for...of | for...in', eng: 'for...of | for...in', ru: 'Циклы for...of | for...in' },
-      { ref: 'hw-operators', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
   },
   {
@@ -39,12 +35,27 @@ export const mainMenu = [
     items: [
       { ref: 'Explicit-type-conversion', ua: 'Явне приведення типів', eng: 'Explicit type coercion', ru: 'Явное приведение типов' },
       { ref: 'Implicit-type-conversion', ua: 'Неявне приведення типів', eng: 'Implicit type coercion', ru: 'Неявное приведение типов' },
-      { ref: 'NaN-null-Infinity', ua: 'NaN | null | Infinity', eng: 'NaN | null | Infinity', ru: 'NaN | null | Infinity' },
       { ref: 'BigInt', ua: 'BigInt (ES10)', eng: 'BigInt (ES10)', ru: 'BigInt (ES10)' },
       { ref: 'literals', ua: 'Змінні в літералах', eng: 'Variables in literals', ru: 'Переменные в литералах' },
       { ref: 'hw-type-coercion', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
   },
+  {
+    ref: 'operators',
+    ua: 'Оператори. Вирази.',
+    eng: 'Operators. Expressions.',
+    ru: 'Операторы. Выражения.',
+    items: [
+      { ref: 'Conditional-operators', ua: 'Умовні оператори', eng: 'Conditional operators', ru: 'Условные операторы' },
+      { ref: 'Increment', ua: 'Інкремент', eng: 'Increment', ru: 'Инкремент' },
+      { ref: 'switch', ua: 'Оператор switch', eng: 'The \'switch\' operator', ru: 'Оператор switch' },
+      { ref: 'for', ua: 'Оператор for', eng: 'The \'for\' operator', ru: 'Оператор for' },
+      { ref: 'while', ua: 'Цикли while | do ... while', eng: 'while | do ... while', ru: 'Циклы while | do ... while' },
+      { ref: 'for-of-for-in', ua: 'Цикли for...of | for...in', eng: 'for...of | for...in', ru: 'Циклы for...of | for...in' },
+      { ref: 'hw-operators', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+    ]
+  },
+
   {
     ref: 'function',
     ua: 'Методи.',

@@ -49,10 +49,17 @@ class MenuComponent extends HTMLElement {
     this.button.onclick = this.show.bind(this)
 
     window.addEventListener('mouseup', this.clickHandler.bind(this))
+
+    const { left } = this.button.getBoundingClientRect()
+    Object.assign(this.menuContent.style, {
+      left: (left - 24) + 'px'
+    })
   }
 
   show () {
+    const { left } = this.button.getBoundingClientRect()
     Object.assign(this.menuContent.style, {
+      left: (left - 24) + 'px',
       height: 'max-content',
       padding: '24px 16px'
     })

@@ -36,6 +36,4 @@ export function parsePageContent (pageContent) {
       })
 
   this.pageContent.length && this.parseTextFragment(this.pageContent)
-
-  this.menu.setAttribute('options', JSON.stringify(this.pageContentList))
 }

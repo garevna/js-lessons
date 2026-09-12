@@ -117,7 +117,7 @@ p {
 
 .var {
   margin-right: 8px;
-  color: #a5f;
+  color: #c7f;
 }
 
 .math {
@@ -134,29 +134,27 @@ p {
 .number-out { color: #97d; }
 
 .boolean { color: #afa; }
-.boolean-out { color: #b0d; }
+.boolean-out { color: #a8f; }
 
 .undefined { color: #777; }
 
-.console {
-  color: #fd0;
-}
+.console { color: #fd0; }
 
 .operator-1 {
   margin-right: 12px;
-  color: #a5f;
+  color: #c7f;
 }
 .operator-2 {
   margin: 0 12px;
-  color: #a5f;
+  color: #c7f;
 }
 .operator-not {
-  color: #a5f;
+  color: #c7f;
 }
 
 .function {
   margin-right: 8px;
-  color: #a5f;
+  color: #c7f;
 }
 
 .function-brackets {
@@ -173,6 +171,8 @@ p {
   font-style: italic;
   color: #eee;
 }
+
+.null { color: #a5f; }
 ` + errorAndWarning
 
 // export const liveDemoSpoilerStyles = minifier(rawSource)
