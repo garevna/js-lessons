@@ -5,6 +5,10 @@ node_modules
 */dist
 ___toBeRemoved
 
+# translation working files: exported text and DeepL output
+/translate
+
+
 
 # local env files
 .env
