@@ -1,1 +1,1 @@
-export const serviceWorkerVersion = "1.4.9"
+export const serviceWorkerVersion = '2.0.29'
