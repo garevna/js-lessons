@@ -112,7 +112,15 @@ function extract (source, sectionNames) {
     }
   }
 
-  const skeleton = body.split('\n').map((line) => {
+  // Some lesson files are CRLF and some are LF. Splitting on \n alone leaves a
+  // \r at the end of every line, and the heading pattern then fails to match —
+  // every heading in the file quietly becomes a paragraph, which is how
+  // typeof.eng ended up keyed s0.p1 instead of s1.h1. The round-trip check
+  // does not catch it: the line still goes into a message and comes back
+  // unchanged. It proves nothing was lost, not that it was classified right.
+  const eol = body.includes('\r\n') ? '\r\n' : '\n'
+
+  const skeleton = body.split(/\r?\n/).map((line) => {
     if (!line.trim()) return line
     if (line.includes('⟦BLOCK')) return line
     if (SEPARATOR.test(line.trim())) return line
@@ -175,7 +183,7 @@ function extract (source, sectionNames) {
     }
 
     return put('p', line)
-  }).join('\n')
+  }).join(eol)
 
   // Put the code back. The skeleton is what gets written to disk, and it is
   // already language-independent, so the blocks belong in it — that is what

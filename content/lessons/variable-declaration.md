@@ -1,107 +1,107 @@
-{{s0.p1}}
+# ![ico-35 study] {{s1.h1}}
 
-{{s0.p2}}
+## ![ico-30 icon] {{s2.h1}}
 
-{{s0.p3}}
-{{s0.p4}}
-{{s0.p5}}
+{{s2.p1}}
+{{s2.p2}}
+{{s2.p3}}
 
-{{s0.p6}}
-{{s0.p7}}
-{{s0.p8}}
+{{s2.p4}}
+{{s2.p5}}
+{{s2.p6}}
 
-{{s0.p9}}
+{{s2.p7}}
 ~~~js
 var number
 ~~~
-{{s0.p10}}
-{{s0.p11}}
+{{s2.p8}}
+{{s2.p9}}
 
-{{s0.p12}}
-{{s0.p13}}
+{{s2.p10}}
+{{s2.p11}}
 
-{{s0.p14}}
+{{s2.p12}}
 
-{{s0.p15}}
+{{s2.p13}}
 
-{{s0.p16}}
+{{s2.p14}}
 
-{{s0.p17}}
+{{s2.p15}}
 
-§§§§ {{s0.demo1}} | var_01_template §§§§
+§§§§ {{s2.demo1}} | var_01_template §§§§
 
-{{s0.p18}}
-{{s0.p19}}
+{{s2.p16}}
+{{s2.p17}}
 
 ~~~js
 var number = 5 + 8 - 4
 ~~~
 
-{{s0.p20}}
+{{s2.p18}}
 
-{{s0.p21}}
+{{s2.p19}}
 
 ~~~js
 'user' + 'Name' = 9 + 8
 ~~~
 
-{{s0.p22}}
+{{s2.p20}}
 
 ~~~error
     Uncaught SyntaxError: Invalid left-hand side in assignment
 ~~~
 
-{{s0.p23}}
+{{s2.p21}}
 
-{{s0.p24}}
+{{s2.p22}}
 
-{{s0.p25}}
+{{s2.p23}}
 
-{{s0.p26}}
+{{s2.p24}}
 
 ~~~js
 var userName = 'Piter'
 ~~~
 
-{{s0.p27}}
-{{s0.p28}}
-{{s0.p29}}
+{{s2.p25}}
+{{s2.p26}}
+{{s2.p27}}
 
-{{s0.p30}}
+{{s2.p28}}
 
 ~~~js
 window['user' + 'Name'] = 'Helen'
 ~~~
 
-{{s0.p31}}
+{{s2.p29}}
 
-{{s0.p32}}
+{{s2.p30}}
 
-{{s0.p33}}
+{{s2.p31}}
 
 
 
-{{s0.p34}}
+{{s2.p32}}
 
 ~~~js
 var x, y, z
 ~~~
 
-{{s0.p35}}
+{{s2.p33}}
 
-{{s0.p36}}
+{{s2.p34}}
 
 ~~~js
 console.log(sigma)
 ~~~
 
-{{s0.p37}}
+{{s2.p35}}
 
 ~~~error
     Uncaught ReferenceError: sigma is not defined
 ~~~
 
-{{s0.p38}}
+{{s2.p36}}
 
 ~~~js
 var person = 'Piter',  hobby = 'football',  age = 30
@@ -109,37 +109,37 @@ var person = 'Piter',  hobby = 'football',  age = 30
 
 ______________________________________________________________
 
-{{s0.p39}}
+## ![ico-30 icon] {{s3.h1}}
 
-{{s0.p40}}
+{{s3.p1}}
 
-{{s0.p41}}
+{{s3.p2}}
 
-§§§§ {{s0.demo2}} | var_02_template §§§§
+§§§§ {{s3.demo1}} | var_02_template §§§§
 
-{{s0.p42}}
-{{s0.p43}}
+{{s3.p3}}
+{{s3.p4}}
 
 ~~~js
 var lastUserVisit = '2019-02-05'
 ~~~
 
-{{s0.p44}}
+{{s3.p5}}
 
-§§§§ {{s0.demo3}} | var_03_template §§§§
+§§§§ {{s3.demo2}} | var_03_template §§§§
 
-{{s0.p45}}
+{{s3.p6}}
 ![](illustrations/camel-case.png)
-{{s0.p46}}
-{{s0.p47}}
+{{s3.p7}}
+{{s3.p8}}
 
-{{s0.p48}}
+{{s3.p9}}
 
-{{s0.p49}}
+{{s3.p10}}
 
-{{s0.p50}}
+{{s3.p11}}
 
-{{s0.p51}}
+{{s3.p12}}
 
 ~~~js
 var 14br = 10
