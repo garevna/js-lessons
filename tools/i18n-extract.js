@@ -17,8 +17,9 @@
  *   →→→ q | v | r →→→  the answer must stay identical to one of the variants
  *   # ![ico-30 x] Text the icon belongs to the skeleton, the text does not
  *
- * Keys are sequential within the enclosing section (h1.p1, string.p2), so
- * editing one section does not renumber its neighbours.
+ * Keys are the section number plus a running number within it (s3.p2), so a
+ * paragraph inserted in one section renumbers only that section — and the key
+ * does not depend on the heading text, which is translated.
  */
 
 const fs = require('fs')
@@ -55,20 +56,13 @@ const SLOGAN = /^(\s*☼☼☼\s*)(.+?)(\s*☼☼☼\s*)$/
 const TEST = /^(\s*→→→\s*)(.+?)(\s*→→→\s*)$/
 const DEMO = /^(\s*§§§§\s*)(.+?)(\s*§§§§\s*)$/
 
-const slug = (s) =>
-  s.replace(/!\[[^\]]*\]/g, '')
-    .replace(/[^\p{L}\p{N}]+/gu, '-')
-    .replace(/^-+|-+$/g, '')
-    .toLowerCase()
-    .slice(0, 24) || 'x'
-
 function extract (source, sectionNames) {
   const messages = {}
   const notes = []
   const sections = []
 
   let sectionIndex = -1
-  let section = 'intro'
+  let section = 's0'
   const counters = {}
   const fragments = []
 
@@ -130,16 +124,15 @@ function extract (source, sectionNames) {
       const [, hashes, icon, text] = m
       sectionIndex += 1
 
-      // Sections are identified by position, not by their heading text: the
-      // text is translated, and the key has to be the same in every language.
-      // The name comes from the reference language so it stays readable.
-      let name = (sectionNames && sectionNames[sectionIndex]) || slug(text)
-
-      // Two headings can slug to the same name — "BigInt" appearing twice, or
-      // two long headings sharing their first 24 characters. Left alone their
-      // counters merge and the later message overwrites the earlier one, which
-      // is how a quiz answer once ended up inside a heading.
-      if (!sectionNames && sections.includes(name)) name = `${name}-${sectionIndex}`
+      // Sections are numbered by position. Naming them after the heading was
+      // the first attempt and it was wrong twice over: the heading is
+      // translated, so "замыкание" and "closure" are the same section under
+      // different names, and two headings can slug to the same string and
+      // merge their counters.
+      //
+      // A number keeps the property that matters — a paragraph inserted in one
+      // section renumbers only that section, not the rest of the page.
+      const name = `s${sectionIndex + 1}`
 
       section = name
       sections[sectionIndex] = name

@@ -1,0 +1,8 @@
+{
+  "s1.h1": "switch",
+  "s1.p1": "Оператор  **switch** предназначен для ветвления кода на несколько веток в зависимости от значения _выражения_, передаваемого ему в качестве операнда",
+  "s1.p2": "![ico-25 cap]",
+  "s1.p3": "[![ico-25 cap] Пример в песочнице](https://jsfiddle.net/garevna/g4roemnL/27/ )",
+  "s1.p4": "[![ico-30 hw] **Quiz**](⟦f0⟧)",
+  "s1.p5": "[![ico-20 link] w3schools](https://www.w3schools.com/js/js_switch.asp )"
+}
