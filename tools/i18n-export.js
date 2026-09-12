@@ -74,11 +74,33 @@ for (const page of pages) {
 
   // Keys whose text is still the Russian original count as untranslated too:
   // that is what a copied-but-not-yet-translated file looks like.
-  const todo = Object.entries(source)
+  const untranslated = Object.entries(source)
     .filter(([k, v]) => !(k in existing) || existing[k] === v)
 
+  // A message with no letters in it has nothing to translate — the numbering
+  // inside a callout, ◘◘![ico-20 cap] ** 1**◘◘, is markup that happens to sit
+  // on its own line. Sending those to a translator is noise, and on some pages
+  // they were most of what was left. Copy them over and leave them out.
+  const hasLetters = (s) => /\p{L}/u.test(s.replace(/⟦f\d+⟧/g, ''))
+
+  const copied = untranslated.filter(([, v]) => !hasLetters(v))
+  const todo = untranslated.filter(([, v]) => hasLetters(v))
+
+  if (copied.length) {
+    const merged = { ...existing }
+    for (const [k, v] of copied) merged[k] = v
+
+    const ordered = {}
+    for (const k of Object.keys(source)) if (k in merged) ordered[k] = merged[k]
+
+    fs.writeFileSync(
+      path.join(MESSAGES, `${page}.${lang}.json`),
+      JSON.stringify(ordered, null, 2) + '\n'
+    )
+  }
+
   if (!todo.length) {
-    console.log(`  ${page}: complete`)
+    console.log(`  ${page}: complete${copied.length ? ` (${copied.length} copied as-is)` : ''}`)
     continue
   }
 
@@ -124,7 +146,8 @@ for (const page of pages) {
   console.log(
     `  ${page.padEnd(28)} ${String(todo.length).padStart(4)} segments` +
     `  ${String(chars).padStart(6)} chars` +
-    `  ${chunks.length} file${chunks.length > 1 ? 's' : ''}`
+    `  ${chunks.length} file${chunks.length > 1 ? 's' : ''}` +
+    (copied.length ? `  (+${copied.length} copied as-is)` : '')
   )
 }
 

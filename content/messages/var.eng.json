@@ -58,8 +58,6 @@
   "s5.p9": "••50000 → 5e+4 (5 * 10↑↑4 ↑↑)••",
   "s5.p10": "••0.05 → 5e-2 (5 / 10↑↑2 ↑↑)••",
   "s5.p11": "••0.005 → 5e-3 (5 / 10↑↑3 ↑↑)••",
-  "s5.p12": "••0.0005 → 5e-4 (5 / 10↑↑4 ↑↑)••",
-  "s5.p13": "However, \"under the hood,\" the engine itself converts the number to exponential form to save memory.",
   "s6.h1": "Infinity",
   "s6.p1": "![ico-20 warn] The value **⟦f25⟧** can occur when dividing by zero:",
   "s6.p2": "^^The value of variable **⟦f26⟧** will be **⟦f27⟧**.^^",
