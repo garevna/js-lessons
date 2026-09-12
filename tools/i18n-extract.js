@@ -91,7 +91,11 @@ function extract (source, sectionNames) {
   // instead of being hidden.
   const protect = (text) => text
     .replace(/~[^~\n]+~/g, (m) => `⟦f${fragments.push(m) - 1}⟧`)
-    .replace(/\]\([^)\s]+\)/g, (m) => `⟦f${fragments.push(m) - 1}⟧`)
+    // Only the target inside the parentheses is hidden, not the parentheses
+    // themselves: the message then still reads as a link, [label](⟦f0⟧),
+    // instead of leaving a dangling bracket for the translator to puzzle over.
+    .replace(/(\]\()([^)\s]+)(\))/g, (_, open, target, close) =>
+      `${open}⟦f${fragments.push(target) - 1}⟧${close}`)
 
   const put = (kind, text) => {
     const k = key(kind)
