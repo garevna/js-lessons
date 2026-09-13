@@ -102,6 +102,7 @@ const marks = (s) => ({
 
 const accepted = {}
 const problems = []
+const added = []
 const seen = new Set()
 
 for (const file of outFiles) {
@@ -171,15 +172,40 @@ for (const file of outFiles) {
       continue
     }
 
+    // Emphasis differences are not all the same kind of problem.
+    //
+    //   unbalanced   an odd number of ** or ^^ — the page prints literal
+    //                carets or asterisks. Always broken.
+    //   lost         fewer markers than the Russian — the author's emphasis
+    //                was dropped somewhere in the sentence.
+    //   added        more markers, still in pairs. Valid markup and a page
+    //                that renders: DeepL emphasising a term the Russian left
+    //                plain, "Объект window" -> "The **window** object".
+    //
+    // Rejecting the third kind leaves the paragraph in Russian, which is
+    // worse than a word in bold the author did not ask for. It is accepted
+    // and listed instead, so it can be reviewed rather than lost.
     const a = marks(original)
     const b = marks(translated)
     const off = Object.keys(a).filter((k) => a[k] !== b[k])
+
     if (off.length) {
-      problems.push({
-        file, why: `emphasis markers differ (${off.map((k) => `${k} ${a[k]}→${b[k]}`).join(', ')})`,
-        original: original.slice(0, 90), text: translated.slice(0, 90), where: { file, n }
-      })
-      continue
+      const describe = off.map((k) => `${k} ${a[k]}→${b[k]}`).join(', ')
+      const unbalanced = b.bold % 2 !== 0 || b.small % 2 !== 0
+      const lost = Object.keys(a).some((k) => b[k] < a[k])
+
+      if (unbalanced || lost) {
+        problems.push({
+          file,
+          why: unbalanced
+            ? `emphasis left unpaired (${describe})`
+            : `emphasis lost (${describe})`,
+          original: original.slice(0, 90), text: translated.slice(0, 90), where: { file, n }
+        })
+        continue
+      }
+
+      added.push({ key, why: describe, original: original.slice(0, 80), text: translated.slice(0, 80) })
     }
 
     accepted[key] = translated
@@ -261,6 +287,17 @@ console.log(`  accepted:   ${Object.keys(accepted).length}`)
 console.log(`  rejected:   ${problems.length}`)
 console.log(`  not seen:   ${missing.length}`)
 console.log(`  coverage:   ${done}/${total} (${Math.round(100 * done / total)}%)`)
+
+if (added.length) {
+  console.log('\n  accepted, but carrying emphasis the Russian did not have:\n')
+  for (const x of added.slice(0, 8)) {
+    console.log(`    ${x.why}`)
+    console.log(`      ru:  ${x.original}`)
+    console.log(`      ${lang}: ${x.text}`)
+    console.log('')
+  }
+  if (added.length > 8) console.log(`    … and ${added.length - 8} more\n`)
+}
 
 if (problems.length) {
   console.log('\n  rejected — the page keeps Russian for these:\n')

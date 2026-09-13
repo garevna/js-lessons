@@ -25,6 +25,7 @@
   "s3.p6": "^^In this example, when creating the object, you’re prompted to enter an access token, which will be stored in the body of the **testToken** method^^",
   "s3.p7": "^^When attempting to access the page (the **page** property), the **testToken** method will be called, which will request an access token and verify it against the value stored in the closure^^",
   "s3.p8": "^^If the values match, ![ico-25 green-ok] will be displayed on the page^^",
+  "s3.p9": "^^Otherwise, ![ico-25 err] will be displayed on the page^^",
   "s4.h1": "Inherent properties",
   "s4.p1": "Instance properties are _encapsulated_ within the instance",
   "s4.p2": "For example, the instance **⟦f2⟧** acts as a ‘capsule’ in which the properties **⟦f3⟧**, **⟦f4⟧** and **⟦f5⟧**  are separated from the same properties of other instances",

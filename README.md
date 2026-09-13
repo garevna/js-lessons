@@ -199,11 +199,15 @@ Russian for it, which is recoverable; a broken page is not.
 | Checked | Why |
 |---|---|
 | `⟦f0⟧` placeholders | hidden code and link targets — losing one breaks the page |
-| `**` `_` `^^` counts | an unbalanced marker turns a paragraph into literal asterisks |
+| `**` `_` `^^` counts | an unpaired marker prints literal asterisks; emphasis the Russian had must not go missing |
 | `<br>` and other tags | a dropped break runs two lines together |
 | URLs | a rewritten link is a dead link |
 | quiz answers | the answer must still match one of the variants, and DeepL rewrites quotes |
 | segment numbers | a merged pair of lines would shift every later translation onto the wrong key |
+
+Emphasis that DeepL *adds* — a term the Russian left plain coming back bold —
+is accepted and listed separately, because rejecting it would leave the
+paragraph in Russian, which is worse than a word in bold nobody asked for.
 
 Keep the numbering when pasting. The importer matches on it and refuses to
 guess from line order.
