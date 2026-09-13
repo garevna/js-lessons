@@ -25,12 +25,25 @@ const root = path.join(__dirname, '..')
 const MESSAGES = path.join(root, 'content/messages')
 const OUT = path.join(root, 'translate')
 
-const [page, lang] = process.argv.slice(2)
+const [typed, lang] = process.argv.slice(2)
 
-if (!page || !lang) {
+if (!typed || !lang) {
   console.error('usage: node tools/i18n-import.js <page> <lang>')
   process.exit(1)
 }
+
+// Same reason as in the exporter: a name typed in the wrong case opens the
+// right file on Windows and then writes a second one beside it, which on
+// GitHub is a different file entirely.
+const known = fs.readdirSync(MESSAGES)
+  .filter((f) => f.endsWith('.ru.json'))
+  .map((f) => f.replace('.ru.json', ''))
+
+const page = known.includes(typed)
+  ? typed
+  : (known.find((k) => k.toLowerCase() === typed.toLowerCase()) || typed)
+
+if (page !== typed) console.log(`  (using "${page}" — that is how the page is spelled)`)
 
 const indexFile = path.join(OUT, `${page}.${lang}.index.json`)
 if (!fs.existsSync(indexFile)) {

@@ -50,12 +50,26 @@ const readJson = (file) => {
   }
 }
 
-const pages = target === '--all'
-  ? fs.readdirSync(MESSAGES)
-    .filter((f) => f.endsWith('.ru.json'))
-    .map((f) => f.replace('.ru.json', ''))
-    .sort()
-  : [target]
+const known = fs.readdirSync(MESSAGES)
+  .filter((f) => f.endsWith('.ru.json'))
+  .map((f) => f.replace('.ru.json', ''))
+  .sort()
+
+// Windows opens Classes.ru.json when asked for classes.ru.json, so a typed
+// name in the wrong case works locally and then writes classes.ua.json beside
+// Classes.ru.json. On GitHub, where case matters, that is a different file and
+// the page loses its translation. Resolve to the name on disk instead.
+const canonical = (name) => {
+  if (known.includes(name)) return name
+  const match = known.find((k) => k.toLowerCase() === name.toLowerCase())
+  if (match) {
+    console.log(`  (using "${match}" — that is how the page is spelled)`)
+    return match
+  }
+  return name
+}
+
+const pages = target === '--all' ? known : [canonical(target)]
 
 fs.mkdirSync(OUT, { recursive: true })
 
@@ -169,9 +183,14 @@ for (const page of pages) {
 if (!totalSegments) process.exit(0)
 
 console.log(`
-  ${totalSegments} segments, ${totalChars} characters, ${totalFiles} files in translate/
+  ${totalSegments} segments, ${totalChars} characters, ${totalFiles} files in
 
-  For each translate/<name>.txt:
+    ${OUT}
+
+  The folder is in .gitignore — these are working files, so they will not
+  show on GitHub and some editors dim or hide them. Open them from disk.
+
+  For each <name>.txt there:
     1. open it, copy everything
     2. paste into DeepL with target language ${lang}
     3. save the result as translate/<name>.out.txt
