@@ -1,6 +1,123 @@
 # JS lessons
 
-[**start**](https://garevna.github.io/js-lessons)
+[**Open the course**](https://garevna.github.io/js-lessons)
+
+A JavaScript course of 167 lessons in Russian, English and Ukrainian. The
+lessons are written in a small markup language of its own and rendered in the
+browser by hand-written custom elements — no framework, no runtime dependency.
+Pages are fetched and cached by a web worker, so the course works offline once
+visited.
+
+## Getting started
+
+```
+yarn install:all      the root project and the three workers
+yarn full             build everything
+yarn start            serve public/ locally
+```
+
+`yarn full` runs the pieces in an order that matters:
+
+```
+sw-identity     version and date for the footer, from git
+icons-worker    icons.worker.js
+content-worker  the page registry, then content.worker.js
+prod            index.js, main-menu.js, donate.js
+service-worker  the cache version map, then service-worker.js
+```
+
+The version map hashes the built bundles, so it has to run last; the footer
+prints the version, so that has to be written first.
+
+Deployment is automatic: a push to `master` builds the site in GitHub Actions
+and publishes `public/` to the `gh-pages` branch. `yarn deploy` still works for
+a manual push from a workstation.
+
+## Writing a lesson
+
+A lesson is a `.md` file in `content/lessons/`, written in the markup below.
+It is not Markdown — the syntax is the project's own, parsed by
+`src/helpers/page`.
+
+### Blocks
+
+Each of these is recognised before anything else and rendered as a unit.
+
+| Syntax | Renders as |
+|---|---|
+| <code>~~~js … ~~~</code> | a code sample (the language tag is optional) |
+| <code>~~~~ … ~~~~</code> | a runnable script, collapsed |
+| `{{{ … }}}` | console output |
+| `^^^[Title]` … `^^^` | a spoiler; the title is shown, the body unfolds |
+| `@@@@` … `@@@@` | a grid — images and captions laid out in columns |
+| `!![a.svg, b.svg, c.svg]` | a slider |
+| `\| a \| b \|` on consecutive lines | a table |
+| `____________` | a horizontal rule |
+
+### Lines
+
+| Syntax | Renders as |
+|---|---|
+| `# … ###### …` | headings, six levels |
+| `☼☼☼ text ☼☼☼` | a slogan |
+| `→→→ question \| variant, variant \| answer →→→` | a quiz |
+| `§§§§ header \| templateId §§§§` | a live console demo |
+
+The answer of a quiz has to match one of its variants exactly. A variant may be
+quoted — `'Google'` — and the quotes are consumed as attribute delimiters, so
+the answer is written without them.
+
+### Inline
+
+| Syntax | Renders as |
+|---|---|
+| `**bold**` | bold |
+| `_italic_` | italic |
+| `~code~` | inline code |
+| `^^small^^` | smaller text |
+| `↑↑sup↑↑` `↓↓sub↓↓` | superscript, subscript |
+| `••…••` | a dark panel |
+| `◘◘…◘◘` | a bordered panel |
+| `○○…○○` | a slogan block |
+| `◧` `◨` | the `\|\|` operator, which cannot be written directly |
+
+### Images
+
+```
+![](illustrations/dog.png)      images/lessons/dog.png
+![](images/car.gif)             images/car.gif
+```
+
+Paths are resolved through `createPath`, which knows a handful of aliases:
+`images`, `illustrations`, `icons`, `sounds`, `lessons`, `help`, `files`,
+`page`, `external`.
+
+### Icons
+
+Icons are inlined by the icon worker, so they cost no request:
+
+```
+![ico-70 octocat]    ![ico-40 octocat]    ![ico-25 octocat]
+![ico-50 octocat]    ![ico-35 octocat]    ![ico-20 octocat]
+![ico-30 octocat]
+```
+
+Available keys:
+
+['house', 'home', 'mag', 'search', 'err', 'error', 'warn', 'warning', 'close', 'negation', 'icon', 'cap', 'coffee', 'link', 'link-ico', 'dir', 'folder-open', 'opened', 'hw', 'mortar_board', 'study', 'pin', 'pushpin', 'exclamation', 'yes', 'question', 'open-in-new', 'page-next', 'page-previous', 'sand-watch', 'paper', 'file', 'smile', 'emotion', 'require', 'point_up', 'good', 'exelent', 'thumbsup', 'hourglass', 'wait', 'clock', 'white_check_mark',
+'mail', 'speach_balloon', 'speach-balloon', 'git-ver', 'google-maps', 'slider-button', 'draw-io', 'main-menu-icon', 'expanded-main-menu-icon', 'active-main-menu-icon', 'active-expanded-main-menu-icon', 'menu-icon-image', 'menu-symbol']
+
+### Links
+
+```
+[►►►Boolean►►►](page/Boolean)                     next page
+[◄◄◄Variables and data types◄◄◄](page/var)        previous page
+[%%%w3schools%%%](external/w3-comparison)         external reference
+[:::Sandbox example:::](https://plnkr.co/edit/…)  sandbox
+[![ico-30 hw] Tests](test/assignments)            an icon as the label
+```
+
+![](https://garevna.github.io/js-samples/images/links.png)
 
 ## Translation
 
@@ -109,118 +226,51 @@ Put the Russian `.md` in `public/lessons/ru/`, then run the extractor on it.
 The page registry and the language lists are generated from the folders during
 the build — they are not maintained by hand.
 
-## Description
+## How it is built
 
-Symbols ◧ or ◨ will be substituted with logical operator **||**.
+Four independent npm projects share one repository:
 
-Content delivery system is controlled with content-worker.
+| Project | Builds | Does |
+|---|---|---|
+| root | `index.js`, `main-menu.js`, `donate.js` | the custom elements that render a page |
+| `content-worker/` | `content.worker.js` | fetches lessons, keeps the page registry |
+| `icons-worker/` | `icons.worker.js` | serves inlined icons |
+| `service-worker/` | `service-worker.js` | caching and offline |
 
-### images
+`public/` is both source and output: the lessons, images and sounds live there
+alongside the bundles the build writes into it. The whole folder is what gets
+published.
 
-**`![](illustrations/dog.png)`** - the image file images/lessons/dog.png
+Two files are generated during the build and should not be edited by hand:
+the page registry in `content-worker/src/configs/`, built from the folders
+under `public/lessons/`, and the cache version map in
+`service-worker/src/configs/versions.js`.
 
-**`![](images/car.gif)`** - the image file images/car.gif
-____________________________________________________
+### Caching
 
-### slider
+The service worker versions every cached resource by a hash of its contents.
+Anything whose hash changed is refetched; everything else is served from cache.
+Fonts and images are never revalidated — they are assumed immutable — so a bad
+copy of an image survives until the site data is cleared.
 
-!![illustrations/flowchart-sequence.svg, illustrations/flowchart-branching.svg, illustrations/flowchart-circle.svg]
-____________________________________________________
+If a page looks wrong after a deploy and a normal reload does not fix it:
+DevTools → Application → Service Workers → Unregister, then Clear site data.
 
-### icons
+## Gotchas
 
-We use icon-worker for icons.
+**Do not edit `public/lessons/`.** Those files are built from
+`content/lessons/` and `content/messages/`. Edits there are overwritten.
 
-**Request** to worker should be an object `{ route, iconList }`.
+**Page names are case-sensitive.** `Classes` and `classes` are the same file on
+Windows and two different ones on GitHub. The tools normalise a name to the
+spelling on disk and say so; git does not.
 
-**route** is required and may be '**main-menu**', '**menu**', '**page**' or '**spoiler**'.
+**The root package is not ESM.** The source mixes `export` with `require()`,
+which webpack accepts only in `javascript/auto` mode. Adding `"type": "module"`
+to `package.json` makes every `.js` strict ESM, where `require` is undefined —
+the build still succeeds and the bundle throws on load.
 
-**iconList** is not required.
-
-If you don't send **iconList** to worker then only default icons for this route will be in response/
-
-**Response from worker will be the object `{ route, iconList, response }`.
-
-**response** will be the array of objects
-
-```js
-{
-  [key]: getIcon(key)
-}
-```
-
-Available keys:
-
-['house', 'home', 'mag', 'search', 'err', 'error', 'warn', 'warning', 'close', 'negation', 'icon', 'cap', 'coffee', 'link', 'link-ico', 'dir', 'folder-open', 'opened', 'hw', 'mortar_board', 'study', 'pin', 'pushpin', 'exclamation', 'yes', 'question', 'open-in-new', 'page-next', 'page-previous', 'sand-watch', 'paper', 'file', 'smile', 'emotion', 'require', 'point_up', 'good', 'exelent', 'thumbsup', 'hourglass', 'wait', 'clock', 'white_check_mark',
-'mail', 'speach_balloon', 'speach-balloon', 'git-ver', 'google-maps', 'slider-button', 'draw-io', 'main-menu-icon', 'expanded-main-menu-icon', 'active-main-menu-icon', 'active-expanded-main-menu-icon', 'menu-icon-image', 'menu-symbol']
-
-#### Using icons
-
-**`![](icons/octocat.png)`** - the image file icons/octocat.png
-
-**`![ico-70 octocat]`** - icon <img width="70" src="data:image/png;base64,..." />
-
-**`![ico-50 octocat]`** - icon <img width="50" src="data:image/png;base64,..." />
-
-**`![ico-40 octocat]`** - icon <img width="40" src="data:image/png;base64,..." />
-
-**`![ico-35 octocat]`** - icon <img width="35" src="data:image/png;base64,..." />
-
-**`![ico-30 octocat]`** - icon <img width="30" src="data:image/png;base64,..." />
-
-**`![ico-25 octocat]`** - icon <img width="25" src="data:image/png;base64,..." />
-
-**`![ico-20 octocat]`** - icon <img width="20" src="data:image/png;base64,..." />
-
-_____________________________________
-
-### Slogans
-
-`☼☼☼ Don't make the console blush for you ☼☼☼.`
-
-![](https://garevna.github.io/js-samples/pictures/slogan.png)
-
-________________________
-
-### Tests
-```
-◘◘** 1**◘◘
-
-→→→ [].reduce(Math.pow) | TypeError, null, NaN, 0 | TypeError →→→
-```
-
-![](https://garevna.github.io/js-samples/pictures/tests.png)
-_________________________
-
-### Console demo with template
-
-§§§§ Demo | boolean_01_template §§§§
-
-___________________________________________________
-
-### Links
-
-**Internal**
-
-`[►►►Принцип работы►►►](page/Array-iteration-methods-theory.md)`
-
-**External**
-
-`[![ico-30 hw] Tests](test/assignments)`
-
-`[![ico-30 hw] Quiz](quiz/arrowFunctions)`
-
-_____________________________________________
-
-**You may use this templates for links:**
-
-`[%%%w3schools%%%](external/w3-comparison)`
-
-`[:::Sandbox example:::](https://plnkr.co/edit/jsH8XKmc0B6g4q8iPZBf?p=preview/)`
-
-`[►►►Boolean►►►](page/Boolean)`
-
-`[◄◄◄Variables and data types◄◄◄](page/var)`
-
-
-![](https://garevna.github.io/js-samples/images/links.png)
+**Line endings vary between lesson files.** Tools that split on `
+` alone
+leave a `
+` behind and stop recognising headings.
