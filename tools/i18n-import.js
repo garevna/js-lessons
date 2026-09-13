@@ -81,10 +81,23 @@ const tags = (s) => (s.match(/<\/?[a-zA-Z][^>]*>/g) || [])
 // but "usually" is not a property worth relying on for a link.
 const urls = (s) => (s.match(/https?:\/\/[^\s)*_`'"<]+/g) || []).sort()
 
+// Italic is counted as whole _spans_, not as single underscores, and the
+// boundary test is Unicode-aware.
+//
+// Counting underscores with \w was wrong in a way that only showed up on
+// translation: \w is ASCII in JavaScript, so a marker beside "Локальная" was
+// counted and the same marker beside "Local" was not. Every _курсив_ becoming
+// _italic_ then looked like damage — the first real import rejected a perfectly
+// good segment with "italic 2→0".
+//
+// Identifiers like snake_case are not a worry here: inline code is hidden as
+// ⟦fN⟧ before a message is ever written.
+const ITALIC = /(?<![\p{L}\p{N}_])_(?!\s)[^_\n]*(?<!\s)_(?![\p{L}\p{N}_])/gu
+
 const marks = (s) => ({
   bold: (s.match(/\*\*/g) || []).length,
   small: (s.match(/\^\^/g) || []).length,
-  italic: (s.match(/(?<![_\w])_(?![_\w])/g) || []).length
+  italic: (s.match(ITALIC) || []).length
 })
 
 const accepted = {}
