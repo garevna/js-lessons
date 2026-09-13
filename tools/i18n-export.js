@@ -183,19 +183,31 @@ for (const page of pages) {
 
 if (!totalSegments) process.exit(0)
 
+const page1 = pages.length === 1 ? pages[0] : '<page>'
+
 console.log(`
-  ${totalSegments} segments, ${totalChars} characters, ${totalFiles} files in
+  ╭──────────────────────────────────────────────────────────────────╮
+  │  NOTHING IS TRANSLATED YET. This step only prepared the text.    │
+  ╰──────────────────────────────────────────────────────────────────╯
+
+  ${totalSegments} segments, ${totalChars} characters, ${totalFiles} file${totalFiles > 1 ? 's' : ''} written to
 
     ${OUT}
 
   The folder is in .gitignore — these are working files, so they will not
   show on GitHub and some editors dim or hide them. Open them from disk.
 
-  For each <name>.txt there:
-    1. open it, copy everything
-    2. paste into DeepL with target language ${lang}
-    3. save the result as translate/<name>.out.txt
-    4. node tools/i18n-import.js ${pages.length === 1 ? pages[0] : '<page>'} ${lang}
+  Step 2 of 4 — translate. For each <name>.txt in that folder:
+      open it, copy everything, paste into DeepL with target language ${lang}
+
+  Step 3 of 4 — save. Put DeepL's answer next to the original, renamed:
+      <name>.txt  ->  <name>.out.txt
+
+  Step 4 of 4 — bring it back in:
+      node tools/i18n-import.js ${page1} ${lang}
+
+  Until step 4 runs, the page still counts as untranslated and will keep
+  appearing in:  npm run i18n -- --todo
 
   Keep the numbering. The ⟦f0⟧ marks are hidden code and link targets —
   they must come back unchanged, and the importer checks that they did.`)

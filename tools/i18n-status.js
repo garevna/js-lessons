@@ -111,6 +111,17 @@ for (const lang of LANGS) {
   console.log(`  ${lang}: ${totals[lang]} of ${totals.keys} translated, ${left} to go`)
 }
 if (waitingCount) {
-  console.log(`\n  → ${waitingCount} exports are waiting for their .out.txt`)
+  const example = rows.find((r) => LANGS.some((l) => r.per[l].waiting))
+  const lang = LANGS.find((l) => example.per[l].waiting)
+
+  console.log(`
+  →  ${waitingCount} page${waitingCount > 1 ? 's have' : ' has'} been exported but not yet translated.
+     Exporting only writes the text out; the page stays untranslated until
+     DeepL's answer is saved as .out.txt and imported. For ${example.page}:
+
+       1. open translate/${example.page}.${lang}.01.txt, copy it
+       2. paste into DeepL, target language ${lang}
+       3. save the answer as translate/${example.page}.${lang}.01.out.txt
+       4. node tools/i18n-import.js ${example.page} ${lang}`)
 }
 console.log('')
