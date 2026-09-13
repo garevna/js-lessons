@@ -86,10 +86,11 @@ for (const page of pages) {
 
   const existing = readJson(path.join(MESSAGES, `${page}.${lang}.json`)) || {}
 
-  // Keys whose text is still the Russian original count as untranslated too:
-  // that is what a copied-but-not-yet-translated file looks like.
-  const untranslated = Object.entries(source)
-    .filter(([k, v]) => !(k in existing) || existing[k] === v)
+  // A key already in the target file has been handled — the importer only
+  // writes what came back and passed its checks. Re-exporting keys whose
+  // translation happens to read the same as the Russian would offer the same
+  // words forever: "Результат:" is spelled identically in Ukrainian.
+  const untranslated = Object.entries(source).filter(([k]) => !(k in existing))
 
   // A segment written without a single Cyrillic letter is not Russian prose,
   // and there is nothing in it to translate. Scanning the queue, all 2736 such
