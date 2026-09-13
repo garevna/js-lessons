@@ -137,15 +137,17 @@ for (const file of outFiles) {
     const got = placeholders(translated)
     if (want.join() !== got.join()) {
       problems.push({
-        file,
-        why: `placeholders changed: expected ${want.join(' ') || 'none'}, got ${got.join(' ') || 'none'}`,
-        text: translated.slice(0, 70)
+        file, why: `placeholders changed: expected ${want.join(' ') || 'none'}, got ${got.join(' ') || 'none'}`,
+        original: original.slice(0, 90), text: translated.slice(0, 90), where: { file, n }
       })
       continue
     }
 
     if (translated.includes('⟦BLOCK')) {
-      problems.push({ file, why: 'a code block leaked into the message', text: translated.slice(0, 70) })
+      problems.push({
+        file, why: 'a code block leaked into the message',
+        original: original.slice(0, 90), text: translated.slice(0, 90), where: { file, n }
+      })
       continue
     }
 
@@ -153,9 +155,8 @@ for (const file of outFiles) {
     const gotTags = tags(translated)
     if (wantTags.join() !== gotTags.join()) {
       problems.push({
-        file,
-        why: `html changed: expected ${wantTags.join(' ') || 'none'}, got ${gotTags.join(' ') || 'none'}`,
-        text: translated.slice(0, 70)
+        file, why: `html changed: expected ${wantTags.join(' ') || 'none'}, got ${gotTags.join(' ') || 'none'}`,
+        original: original.slice(0, 90), text: translated.slice(0, 90), where: { file, n }
       })
       continue
     }
@@ -164,9 +165,8 @@ for (const file of outFiles) {
     const gotUrls = urls(translated)
     if (wantUrls.join() !== gotUrls.join()) {
       problems.push({
-        file,
-        why: `a URL changed: expected ${wantUrls.join(' ') || 'none'}, got ${gotUrls.join(' ') || 'none'}`,
-        text: translated.slice(0, 70)
+        file, why: `a URL changed: expected ${wantUrls.join(' ') || 'none'}, got ${gotUrls.join(' ') || 'none'}`,
+        original: original.slice(0, 90), text: translated.slice(0, 90), where: { file, n }
       })
       continue
     }
@@ -176,9 +176,8 @@ for (const file of outFiles) {
     const off = Object.keys(a).filter((k) => a[k] !== b[k])
     if (off.length) {
       problems.push({
-        file,
-        why: `emphasis markers differ (${off.map((k) => `${k} ${a[k]}→${b[k]}`).join(', ')})`,
-        text: translated.slice(0, 70)
+        file, why: `emphasis markers differ (${off.map((k) => `${k} ${a[k]}→${b[k]}`).join(', ')})`,
+        original: original.slice(0, 90), text: translated.slice(0, 90), where: { file, n }
       })
       continue
     }
@@ -264,10 +263,13 @@ console.log(`  not seen:   ${missing.length}`)
 console.log(`  coverage:   ${done}/${total} (${Math.round(100 * done / total)}%)`)
 
 if (problems.length) {
-  console.log('\n  rejected segments — these keep their previous value:')
+  console.log('\n  rejected — the page keeps Russian for these:\n')
   for (const p of problems.slice(0, 12)) {
     console.log(`    ${p.why}`)
-    console.log(`      ${p.text}`)
+    if (p.original) console.log(`      ru: ${p.original}`)
+    if (p.text) console.log(`      ${lang}: ${p.text}`)
+    if (p.where) console.log(`      fix line ${p.where.n} of translate/${p.where.file}, then run this again`)
+    console.log('')
   }
   if (problems.length > 12) console.log(`    … and ${problems.length - 12} more`)
 }
