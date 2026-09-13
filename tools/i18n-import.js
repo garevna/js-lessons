@@ -67,6 +67,20 @@ if (!outFiles.length) {
 
 /** Everything that has to come back exactly as it went in. */
 const placeholders = (s) => (s.match(/⟦f\d+⟧/g) || []).sort()
+
+// HTML inside prose. Seven segments across the pages exported so far carry a
+// <br> in the middle of a sentence — "он видит пиксели.<br>Эти…" — and a
+// translator that drops one runs two lines together with nothing to show for
+// it. The tag itself cannot be hidden the way inline code is: where the break
+// falls is part of the sentence, and the translator has to see it.
+const tags = (s) => (s.match(/<\/?[a-zA-Z][^>]*>/g) || [])
+  .map((t) => t.toLowerCase())
+  .sort()
+
+// A URL must return character for character. DeepL usually leaves them alone,
+// but "usually" is not a property worth relying on for a link.
+const urls = (s) => (s.match(/https?:\/\/[^\s)*_`'"<]+/g) || []).sort()
+
 const marks = (s) => ({
   bold: (s.match(/\*\*/g) || []).length,
   small: (s.match(/\^\^/g) || []).length,
@@ -119,6 +133,28 @@ for (const file of outFiles) {
 
     if (translated.includes('⟦BLOCK')) {
       problems.push({ file, why: 'a code block leaked into the message', text: translated.slice(0, 70) })
+      continue
+    }
+
+    const wantTags = tags(original)
+    const gotTags = tags(translated)
+    if (wantTags.join() !== gotTags.join()) {
+      problems.push({
+        file,
+        why: `html changed: expected ${wantTags.join(' ') || 'none'}, got ${gotTags.join(' ') || 'none'}`,
+        text: translated.slice(0, 70)
+      })
+      continue
+    }
+
+    const wantUrls = urls(original)
+    const gotUrls = urls(translated)
+    if (wantUrls.join() !== gotUrls.join()) {
+      problems.push({
+        file,
+        why: `a URL changed: expected ${wantUrls.join(' ') || 'none'}, got ${gotUrls.join(' ') || 'none'}`,
+        text: translated.slice(0, 70)
+      })
       continue
     }
 
