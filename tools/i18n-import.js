@@ -288,6 +288,15 @@ console.log(`  rejected:   ${problems.length}`)
 console.log(`  not seen:   ${missing.length}`)
 console.log(`  coverage:   ${done}/${total} (${Math.round(100 * done / total)}%)`)
 
+// The import has only filed the text under content/. public/lessons is what
+// the site serves, and it has not changed yet — which is exactly what "I
+// checked locally and the translations did not appear" looked like.
+if (Object.keys(accepted).length) {
+  console.log(`
+  written to content/messages/${page}.${lang}.json — now build the page:
+    node tools/i18n-build.js ${page}     (or npm run lessons for all of them)`)
+}
+
 if (added.length) {
   console.log('\n  accepted, but carrying emphasis the Russian did not have:\n')
   for (const x of added.slice(0, 8)) {

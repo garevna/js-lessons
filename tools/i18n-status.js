@@ -122,6 +122,8 @@ if (waitingCount) {
        1. open translate/${example.page}.${lang}.01.txt, copy it
        2. paste into DeepL, target language ${lang}
        3. save the answer as translate/${example.page}.${lang}.01.out.txt
-       4. node tools/i18n-import.js ${example.page} ${lang}`)
+       4. node tools/i18n-import.js ${example.page} ${lang}
+       5. npm run lessons   — importing files the text under content/;
+                              this is what writes public/lessons/`)
 }
 console.log('')

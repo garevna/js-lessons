@@ -20,6 +20,7 @@ yarn start            serve public/ locally
 
 ```
 sw-identity     version and date for the footer, from git
+lessons         public/lessons/ from content/, in all three languages
 icons-worker    icons.worker.js
 content-worker  the page registry, then content.worker.js
 prod            index.js, main-menu.js, donate.js
@@ -27,7 +28,9 @@ service-worker  the cache version map, then service-worker.js
 ```
 
 The version map hashes the built bundles, so it has to run last; the footer
-prints the version, so that has to be written first.
+prints the version, so that has to be written first. `lessons` comes before
+`content-worker`, which builds the page registry by reading the folders the
+lessons were just written into.
 
 Deployment is automatic: a push to `master` builds the site in GitHub Actions
 and publishes `public/` to the `gh-pages` branch. `yarn deploy` still works for
@@ -134,12 +137,18 @@ content/lessons/Closure.md         structure: markup, code, {{keys}}
 content/messages/Closure.ru.json   the Russian text
 content/messages/Closure.eng.json  the English text
 content/messages/Closure.ua.json   the Ukrainian text
+content/fragments/Closure.json     inline code and link targets
 ```
 
 The skeleton holds everything that is the same in every language — headings,
 icons, code samples, tables, links. Only prose gets a key, so a code sample
 exists once rather than three times, and a change to the layout reaches every
 language at once.
+
+Inside a message, anything a translator must not touch — inline code, a link's
+target — is replaced by a `⟦f0⟧` mark and kept in the fragments file. One table
+serves all three languages: a translation imported from DeepL carries the
+Russian numbering, so `⟦f5⟧` has to mean the same snippet in every file.
 
 `public/lessons/{ru,eng,ua}/*.md` are built from these. Do not edit them.
 
@@ -162,8 +171,9 @@ one.
 
 ### Translating a page
 
-Four steps. Exporting does **not** translate anything — it only writes the text
-out for DeepL, and the page stays untranslated until step 4 has run.
+Five steps. Exporting does **not** translate anything — it only writes the text
+out for DeepL; importing only files the answer under `content/`. The page on the
+site does not change until step 5 has run.
 
 **1. Export.**
 
@@ -189,6 +199,22 @@ right target language.
 ```
 node tools/i18n-import.js Closure eng
 ```
+
+Checks each segment, writes the ones that came back intact into
+`content/messages/Closure.eng.json`, and says what it refused and why.
+
+**5. Build.**
+
+```
+npm run lessons              every page
+node tools/i18n-build.js Closure
+```
+
+The message file is not what the site serves. This is the step that joins the
+skeleton, the messages and the fragments into `public/lessons/eng/Closure.md`,
+and until it runs the translation exists only in `content/`. `npm run full`
+does it too, so a deploy never ships a stale page — but locally it is easy to
+import, look at the site, and conclude that nothing happened.
 
 ### What the importer refuses
 
@@ -263,7 +289,14 @@ DevTools → Application → Service Workers → Unregister, then Clear site dat
 ## Gotchas
 
 **Do not edit `public/lessons/`.** Those files are built from
-`content/lessons/` and `content/messages/`. Edits there are overwritten.
+`content/lessons/` and `content/messages/` by `npm run lessons`. Edits there
+are overwritten. The reverse is the easier mistake to make: editing `content/`
+and expecting the site to change without building.
+
+**A language file appears only once the page has a translation.** The build
+writes `public/lessons/eng/<page>.md` when at least one key is translated, not
+for all 167 pages — otherwise the menu would report the whole course as
+translated and most of it would be Russian under an English name.
 
 **Page names are case-sensitive.** `Classes` and `classes` are the same file on
 Windows and two different ones on GitHub. The tools normalise a name to the

@@ -1,1 +1,1 @@
-export const serviceWorkerDate = '2026-09-13'
+export const serviceWorkerDate = '2026-09-14'

@@ -130,11 +130,11 @@ ____________________________________________________
 ### ![ico-20 icon] prototype
 
 @@@@
-У стрелочных функций нет объекта  **~prototype~**.<br><br>![ico-20 warn] Поэтому стрелочные функции не могут быть конструктором.
+Arrow functions do not have an object **~prototype~**.<br><br>![ico-20 warn] Therefore, arrow functions cannot be constructors.
 ![](images/arrow-funcs-neutered-kitties.svg)
 @@@@
 
-☼☼☼ стрелочные фукции - это кастрированные котики ☼☼☼
+☼☼☼ Arrow functions are neutered cats ☼☼☼
 
 ~~~js
 console.dir(() => {})
@@ -163,14 +163,14 @@ console.dir(function () {})
   ► [[Prototype]]: ƒ ()
 ~~~
 
-![ico-20 warn] При попытке вызвать стрелочную функцию с ключевым словом **~new~**:
+![ico-20 warn] When attempting to call an arrow function with the keyword **~new~**:
 
 ~~~js
 const arrowFunc = () => null
 const obj = new arrowFunc()
 ~~~
 
-будет сгенерировано исключение:
+an exception will be thrown:
 
 ~~~error
     TypeError: arrowFunc is not a constructor
@@ -194,18 +194,18 @@ ______________________________________________________
 
 ### ![ico-25 icon] arguments
 
-У стрелочных функций нет объекта  **~arguments~**.
+Arrow functions do not have an object **~arguments~**.
 
-При попытке обратиться к объекту **~arguments~** из стрелочной функции будет сгенерировано исключение (~ReferenceError~).
+Attempting to access the object **~arguments~** from within an arrow function will raise an exception (~ReferenceError~).
 
 ~~~error
     ReferenceError: arguments is not defined
 ~~~
 
-![ico-20 pin] Если стрелочная функция объявлена внутри обычной функции,
-то переменные контекста родительской функции будут доступны для стрелочной функции
+![ico-20 pin] If an arrow function is declared inside a regular function,
+then the context variables of the parent function will be accessible to the arrow function
 (**~цепочка областей видимости~**),
-поэтому внутри нее будет доступен объект ~arguments~ родительской функции.
+so the ~arguments~ object of the parent function will be accessible within it.
 
 ~~~js
 function testArguments () {
@@ -214,7 +214,7 @@ function testArguments () {
 testArguments(5, false)
 ~~~
 
-В результате работы кода в консоль будет выведен объект ~arguments~ функции **_testArguments_**:
+As a result of the code running, the object ~arguments~ of the function **_testArguments_** will be printed to the console:
 
 ~~~console
 ▼ Arguments(2) [5, false, callee: ƒ, Symbol(Symbol.iterator): ƒ]
@@ -234,7 +234,7 @@ Arrow functions don't have a **~prototype~** object.<br><br>![ico-20 warn] There
 
 an exception will be generated:
 
-Можно сказать, что у стрелочных функций "врожденный" контекст вызова.
+It can be said that arrow functions have an ‘inherent’ call context.
 
 #### ![ico-20 icon] arguments
 
@@ -271,12 +271,12 @@ human.showName = () => console.log(this.name)
 
 As a result of running the code, the ~arguments~ object of the **~testArguments~** function will be printed to the console:
 
-И вот тут мы видим, как работает передача контекста в процессе присваивания:
+And here we can see how context passing works during assignment:
 
-![ico-20 pin] если в правой части оператора присваивания находится **обычная функция**, то она получает ссылку на контекст вызова, определяемую в **левой части** оператора присваивания (в нашем примере это объект **~human~**);
-![ico-20 pin] если в правой части оператора присваивания находится **стрелочная функция**, то она получает контекст "**правой части**", т.е. того объекта, в контексте которого происходит присваивание (в нашем примере это глобальный объект **~window~**).
+![ico-20 pin] if there is a **regular function** on the right-hand side of the assignment statement, it receives a reference to the call context defined on the **left-hand side** of the assignment statement (in our example, this is the object **~human~**);
+![ico-20 pin] if the right-hand side of the assignment statement contains an **arrow function**, it receives the context of the “**right-hand side**”, i.e. the object in whose context the assignment takes place (in our example, this is the global object **~window~**).
 
-По приколу я называю это "правилом буравчика" ![ico-25 smile]
+Just for fun, I call this the ‘drill rule’ ![ico-25 smile]
 
 ----------------
 #### ![ico-20 icon] Call context
@@ -301,47 +301,47 @@ const user = new Sample('Piter')
 
 It can be said that arrow functions have an "innate" call context.
 
-1. Вызывает конструктор **~Object~**.
-2. Конструктор **~Object~** создает пустой объект и возвращает ссылку на него.
-3. Движок помещает полученную ссылку в переменную **~user~**.
+1. Calls the constructor **~Object~**.
+2. The constructor **~Object~** creates an empty object and returns a reference to it.
+3. The engine stores the returned reference in the variable **~user~**.
 ~~~js
 const user = new Object()
 ~~~
-3. Движок добавляет в этот объект ссылку на свойство **~prototype~** функции **~Sample~**.
+3. The engine adds a reference to the **~prototype~** property of the **~Sample~** function to this object.
 ~~~js
 Object.setPrototypeOf(user, Sample.prototype)
 ~~~
-4. Движок вызывает функцию **~Sample~** в контексте объекта **~user~**.
+4. The engine calls the **~Sample~** function within the context of the **~user~** object.
 ~~~js
 Sample.call(user, 'Piter')
 ~~~
 
-Т.е. к моменту, когда код функции **~Sample~** будет запущен на исполнение, контекст ее вызова будет создан (**~user~**), и это будет **экземпляр**.
-Чей экземпляр?
-Движок уже добавил этому экземпляру ссылку на **~prototype~** функции **~Sample~**.
-А в объекте **~prototype~** функции есть свойство **~constructor~**, содержащее ссылку на эту функцию.
-Т.е. экземпляр уже имеет ссылку на конструктор **~Sample~**:
+In other words, by the time the code of the function **~Sample~** is executed, its call context will have been created (**~user~**), and this will be an **instance**.
+Whose instance?
+The engine has already added a reference to **~prototype~** of the function **~Sample~** to this instance.
+And the object **~prototype~** of the function has a property **~constructor~** containing a reference to this function.
+In other words, the instance already has a reference to the constructor **~Sample~**:
 
 ~~~js
 console.log(user.__proto__.constructor.name)  // Sample
 ~~~
-и теперь он распознается как экземпляр конструктора **~Sample~**:
+and is now recognised as an instance of the constructor **~Sample~**:
 ~~~js
 console.log(user instanceof Sample)  // true
 ~~~
 
-Что главное мы отсюда выносим:
+The key point to take away from this is:
 
-Функция **~Sample~** будет работать в контексте создаваемого экземпляра, т.е. в контексте объекта **~user~**.
+The function **~Sample~** will operate in the context of the instance being created, i.e. in the context of the object **~user~**.
 
-Тогда присваивание:
+Therefore, the assignment:
 
 ~~~js
 this.showName = () => console.log(this.name)
 ~~~
 
-будет происходить в контексте экземпляра **~user~**.
-Это означает, что стрелочная функция в правой части оператора присваивания получит контекст объекта **~user~**.
+will take place in the context of the instance **~user~**.
+This means that the arrow function on the right-hand side of the assignment statement will inherit the context of the object **~user~**.
 
 __________________________________
 

@@ -197,17 +197,22 @@ console.log(`
   The folder is in .gitignore — these are working files, so they will not
   show on GitHub and some editors dim or hide them. Open them from disk.
 
-  Step 2 of 4 — translate. For each <name>.txt in that folder:
+  Step 2 of 5 — translate. For each <name>.txt in that folder:
       open it, copy everything, paste into DeepL with target language ${lang}
 
-  Step 3 of 4 — save. Put DeepL's answer next to the original, renamed:
+  Step 3 of 5 — save. Put DeepL's answer next to the original, renamed:
       <name>.txt  ->  <name>.out.txt
 
-  Step 4 of 4 — bring it back in:
+  Step 4 of 5 — bring it back in:
       node tools/i18n-import.js ${page1} ${lang}
+
+  Step 5 of 5 — build the page the site actually serves:
+      npm run lessons
 
   Until step 4 runs, the page still counts as untranslated and will keep
   appearing in:  npm run i18n -- --todo
+  Until step 5 runs, the translation exists only under content/ and the site
+  goes on showing Russian.
 
   Keep the numbering. The ⟦f0⟧ marks are hidden code and link targets —
   they must come back unchanged, and the importer checks that they did.`)
