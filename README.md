@@ -256,6 +256,24 @@ Put the Russian `.md` in `public/lessons/ru/`, then run the extractor on it.
 The page registry and the language lists are generated from the folders during
 the build — they are not maintained by hand.
 
+## The Donate section
+
+Card numbers, crypto addresses and the payment link live in
+`src/donate/donate.config.js` — one file, and the only one that holds an
+account number. Editing it on GitHub is enough: the push rebuilds and
+redeploys the site.
+
+A bank card expires every few years and fails silently when it does — the
+transfer is declined and nobody tells the site's owner. Replacing the number in
+that file is the whole of the fix.
+
+`payment.url` is for a hosted payment page: the donor clicks and lands on a
+form that already knows who is being paid. Any service handing out a plain link
+fits — a monobank jar, a Ko-fi page, a LiqPay button. A link is all a static
+site can use: there is no server to sign a request or take a callback, and a
+secret key in the bundle would be readable by anyone who opens DevTools. While
+the url is empty the popup shows the cards alone.
+
 ## How it is built
 
 Four independent npm projects share one repository:

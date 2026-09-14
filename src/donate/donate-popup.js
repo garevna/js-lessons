@@ -1,15 +1,7 @@
 import { donateStyles } from './donateStyles'
-import { createPath } from './createPath'
 import { createElem } from './createElem'
 import { donateTo } from './donateTo'
-
-const binance = createPath('images', 'binance.png')
-
-const ref = `
-  <a href="https://www.binance.com" target="_blank">
-    <img src="${binance}" width="48" height="26">
-  </a>
-`
+import { donateConfig } from './donate.config'
 
 class DonatePopup extends HTMLElement {
   constructor(){
@@ -47,13 +39,26 @@ class DonatePopup extends HTMLElement {
         }.bind(this), 500)
       }.bind(this)
     })
+
+    const { url, label } = donateConfig.payment
+
     Object.assign(createElem('p', this.popup), {
-      innerHTML: `
-        I apologise for the temporary inconvenience. I'll connect the service later.<br>
-        For now I dare to suggest you to use ${ref} or another exchange.<br>
-        Thank you in advance.
-      `
+      innerText: url ? donateConfig.intro.withPayment : donateConfig.intro.cardsOnly
     })
+
+    // A hosted payment page, when there is one: one click instead of copying
+    // a number and switching to a banking app. Everything below stays as the
+    // fallback — for anyone who would rather transfer it themselves, and for
+    // whenever the service is down.
+    if (url) {
+      Object.assign(createElem('a', this.popup), {
+        className: 'pay-button',
+        href: url,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        innerText: label
+      })
+    }
 
     const container = Object.assign(createElem('table', this.popup), {
       id: 'donate-popup-container',
@@ -61,11 +66,26 @@ class DonatePopup extends HTMLElement {
       rowspan: 32
     })
 
-    const tooltip = Object.assign(createElem('small'), {
+    // Inside the shadow root on purpose. Created without a parent it lands in
+    // document.body, where the popup's styles do not reach it and it is not
+    // positioned at all — the confirmation appeared as a stray line at the
+    // bottom of the page, if it was noticed at all.
+    const tooltip = Object.assign(createElem('small', shadow), {
       className: 'tooltip-text',
-      style: 'display: none',
-      innerText: 'The number has been copied to clipboard.'
+      innerText: 'Copied to clipboard'
     })
+
+    const copy = (value, event) => {
+      navigator.clipboard.writeText(value)
+      const { clientX, clientY } = event
+      Object.assign(tooltip.style, {
+        top: `${clientY + 16}px`,
+        left: `${clientX}px`,
+        opacity: 1
+      })
+      clearTimeout(copy.timer)
+      copy.timer = setTimeout(() => Object.assign(tooltip.style, { opacity: 0 }), 2000)
+    }
 
     for (const key of Object.keys(donateTo)) {
       const provider = createElem('tr', container)
@@ -86,27 +106,26 @@ class DonatePopup extends HTMLElement {
       donateTo[key].wallets
         .forEach(wallet => {
           const walletCell = createElem('div', providerWallets)
-          const cell = createElem('div', walletCell)
+
+          // The whole row copies, not just the icon. The caption is now the
+          // card number itself, and a number is the thing a donor reaches for.
+          const cell = Object.assign(createElem('div', walletCell), {
+            className: 'wallet',
+            title: 'Click to copy',
+            onclick: (event) => copy(wallet.number, event)
+          })
+
           const { width = 48, height = 36 } = wallet
+
           Object.assign(createElem('img', cell), {
             src: wallet.icon,
             width,
             height,
-            style: 'cursor: pointer; vertical-align: middle; margin-bottom: 8px;',
-            onclick (event) {
-              navigator.clipboard.writeText(wallet.number)
-              const { clientX, clientY } = event
-              Object.assign(tooltip.style, {
-                top: `${clientY}px`,
-                left: `${clientX}px`,
-                display: 'block'
-              })
-              setTimeout(() => Object.assign(tooltip.style, { display: 'none' }), 3000)
-            }
+            style: 'vertical-align: middle; margin-bottom: 8px;'
           })
+
           Object.assign(createElem('small', cell), {
-            innerText: wallet.name,
-            style: 'cursor: pointer;'
+            innerText: wallet.name
           })
         })
       createElem('hr', provider)

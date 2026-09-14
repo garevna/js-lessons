@@ -410,10 +410,10 @@ export const versions = {
 	'ua/web-workers.md': 'fc1f3ee8e0bd',
 	'ua/webpack.md': 'a1a7fc46f3dd',
 	'ua/while.md': '88e312bf728d',
-	'index.js': 'c0d1e7bf95dd',
+	'index.js': 'f637b95c0d59',
 	'content.worker.js': 'c34bb3d52c4e',
 	'icons.worker.js': 'b5d2b9c5b3cb',
 	'main-menu.js': '165bc27ad07f',
-	'donate.js': '2ecf803a37fc',
+	'donate.js': '8c18404c5c55',
 	'registerServiceWorker.js': 'b69c38092929'
 }

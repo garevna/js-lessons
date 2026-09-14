@@ -49,6 +49,46 @@ const rawSource = `
     cursor: pointer;
   }
 
+  /* The hosted payment page, when one is configured. */
+  .pay-button {
+    display: block;
+    margin: 16px 16px 4px 0;
+    padding: 10px;
+    background: #09b;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background .2s;
+  }
+
+  .pay-button:hover { background: #078; }
+
+  /* A card number is meant to be read and copied, so it is spaced out and
+     set in a monospaced face — digits line up and 0 does not read as O. */
+  .wallet { cursor: pointer; }
+  .wallet small {
+    font-family: Consolas, 'Courier New', monospace;
+    letter-spacing: .5px;
+    color: #555;
+  }
+  .wallet:hover small { color: #09b; }
+
+  .tooltip-text {
+    position: fixed;
+    padding: 4px 8px;
+    background: #333;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: 510;
+  }
+
   table { border-collapse: collapse; }
   tr { border-bottom: solid 1px #ddd; }
   td { vertical-align: middle; padding: 16px 0; }
