@@ -3,7 +3,6 @@
 These methods teach us to think within the **functional paradigm**.
 
 All array iterating methods are **higher-order functions**.
-
 ![ico-20 exclamation] The required first argument of each method is **function**.
 ![ico-20 warn] If, when calling a method, the first argument is not a function, an exception **TypeError** will be generated.
 ^^The second argument of the method is optional; it is a reference to the call context of the **function-argument**.^^
@@ -191,10 +190,7 @@ At each iteration, the length of the array is reduced by 1, and the **~forEach~*
 
 ___________________________
 
-@@@@
 Mutations of the source array can occur even without passing a reference to the source array. This is due to the fact that if the array elements have a **reference data type**, then the **function-argument** of the method will receive not a value, but a ~reference~, and this creates the possibility of mutations of array elements by ~reference~.
-![](images/reference-is-a-lockpick.svg)
-@@@@
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
@@ -267,9 +263,6 @@ numbers.forEach(function (numb, ind) {
 
 _________________________________
 
-
-### ![ico-20 icon] Examples with the forEach method
-
 ◘◘![ico-25 cap] ** 9**◘◘
 
 ~~~js
@@ -306,6 +299,8 @@ tags.forEach((tag, index) => {
 
 _____________________
 
+### ![ico-20 icon] Examples with the ~map~ method
+
 ◘◘![ico-25 cap] **10**◘◘
 
 ~~~js
@@ -315,13 +310,13 @@ _____________________
   }))
 ~~~
 
-^^In this example, we use the **~forEach~** method to create an array of functions named^^
-^^"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine".^^
+Go to [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )
+"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"
 
-^^Each of these functions checks the type of the **~arg~** argument passed to it,^^
-^^and if it is ~function~, then it calls **~arg~**,^^
-^^passing it its own sequence number (0, 1, 2 ...) as an argument,^^
-^^otherwise, it returns a number - its sequence number (0, 1, 2 ...).^^
+In the new tab console, run the code:
+You should get the result:
+Go to [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )
+Now in the new tab console, declare the function:
 
 {{{Array-iteration-methods-2.js}}}
 
@@ -340,22 +335,22 @@ _____________________
   }))
 ~~~
 
-^^In this example, we create another array of functions named "plus", "minus", "divide", "multiply".^^
-^^Each of these functions has two formal parameters,^^
-^^so the first thing it does is check the length of the **~arguments~** object,^^
-^^and if the length is 2, then performs the corresponding operation on the arguments^^
-^^(adds, subtracts, multiplies, divides).^^
-^^Otherwise, returns the curried function,^^
-^^whose first argument is already “stitched”,^^
-^^and which can be called with one (missing second) argument.^^
+Call the **~getSearchObject~** function.
+You should get the result:
+The **~filter()~** method iterates the array, checking that the specified condition is satisfied for each element of the array.
+The method returns a new array.
+The resulting array will contain only those elements that satisfy the filtering condition.
+◘◘**Result**◘◘
+The method searches the array and returns the first found element that satisfies the given condition.
+If there is no such element in the array, returns ~undefined~.
 
 {{{Array-iteration-methods-3.js}}}
 
 ____________________
 
-![ico-25 memo] Exercise
+◘◘**Result**◘◘
 
-^^Figure out for yourself what the following code does:^^
+Like ~find()~ method, it searches the array for the first element that satisfies the specified condition.
 
 ~~~js
 const callback = rule => console.log(rule)
@@ -368,9 +363,9 @@ ______________________
 
 ## ![ico-30 icon] map()
 
-This method returns a new array.
-The elements of the new array will be the values ​​returned by the **function-argument** at each iteration.
-The method **argument-function** must return a new value (the ~return~ operator must be present).
+However, it does not return the element itself, but its index.
+If no such element is found in the array, returns **-1**.
+The obvious advantage over the **~indexOf~** method is that you can work with arrays of elements that have a **reference data type**.
 
 ◘◘![ico-25 cap] ** 1**◘◘
 
@@ -391,10 +386,9 @@ users.map(user => `${user.name}: ${new Date().getFullYear() - user.birthYear}`)
 ~~~
 _______________________________
 
-Just like in the **~forEach()~** method, in the **~map()~** method, the argument function has three optional formal parameters.
-
-![ico-20 green-ok] The **arr** argument will contain a reference to the source array.
-![ico-20 green-ok] The **index** argument is the iteration counter, or the index of the current element of the array being iterated.
+In this example, the array elements are objects, and the **~indexOf~** method is not applicable to this array.
+Checks the array for elements that **not** satisfy the specified condition.
+Returns a boolean value:
 
 ~~~js
 const users = [
@@ -426,11 +420,11 @@ users.map((user, index, arr) => {
 
 ______________________________________________
 
-### ![ico-20 icon] Examples with the ~map~ method
+### ![ico-20 icon] Examples with the reduce() method
 
-Go to [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )
+Let's reduce an array of strings to an object.
 
-In the new tab console, run the code:
+To do this, we definitely need to specify the starting value of the **accumulator variable**, since the value of the first element of the array will be a string, and we want to get an object.
 
 ◘◘![ico-25 cap] ** 2**◘◘
 
@@ -440,7 +434,7 @@ location.search
   .map(x => ({ [x.split('=')[0]] : x.split('=')[1] }))
 ~~~
 
-You should get the result:
+Now let's reduce the array of objects to a string.
 
 ~~~console
 ▼ (2) [{…}, {…}]
@@ -452,9 +446,9 @@ You should get the result:
 
 ______________________________________________
 
-Go to [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )
+Now let's count how many times each character appears in the string and return an object:
 
-Now in the new tab console, declare the function:
+Now let's count how many residents of each country are on the list.
 
 ◘◘![ico-25 cap] ** 3**◘◘
 
@@ -468,9 +462,9 @@ function getSearchObject () {
 }
 ~~~
 
-Call the **~getSearchObject~** function.
+The engine uses the exponential form of representing small numbers, i.e. instead of **~0.0000005~** there will be **~5e-7~**.
 
-You should get the result:
+For large numbers the same thing happens, i.e. instead of **~5000000000000000000000~** there will be **~5e+21~**.
 
 ~~~console
 ▼ {name: "garevna", date: "10.07.2018"}
@@ -541,29 +535,30 @@ __________________________
 
 ## ![ico-25 icon] filter()
 
-The **~filter()~** method iterates the array, checking that the specified condition is satisfied for each element of the array.
-The method returns a new array.
-The resulting array will contain only those elements that satisfy the filtering condition.
+From here:
+As in the case of other iterating methods, the **function-argument** is it can take additional arguments - the index of the current array element and a link to the original array itself.
+With a reference, we can manipulate the original array, making it mutable.
 
 ◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 var sourceArray = [
-  { name: 'Mykola Vasilenko', country: 'Ukraine' },
+  { name: 'Николай Василенко', country: 'Ukraine' },
   { name: 'Duke Shane', country: 'USA' },
   { name: 'Demid Shveik', country: 'France' },
-  { name: 'Semyon Kartko', country: 'Ukraine' },
+  { name: 'Семен Картко', country: 'Ukraine' },
   { name: 'Margaret Johnson', country: 'USA' },
-  { name: 'Pilip Danko', country: 'Ukraine' },
+  { name: 'Филипп Данько', country: 'Ukraine' },
   { name: 'Robert Trump', country: 'USA' },
 ]
 
 var usa = sourceArray.filter(x => x.country === 'USA')
 
 console.log(usa)
+
 ~~~
 
-◘◘**Result**◘◘
+◘◘![ico-20 cap] ** 7**◘◘
 
 ~~~console
 
@@ -574,8 +569,6 @@ console.log(usa)
     length: 3
   ► __proto__: Array(0)
 ~~~
-
-______________________________________
 
 ◘◘![ico-25 cap] ** 2**◘◘
 
@@ -600,9 +593,9 @@ _________________________________
 
 ## ![ico-25 icon] find()
 
-The method searches the array and returns the first found element that satisfies the given condition.
+The library function **~Math.sqrt~** takes only 1 argument (a number), and returns the square root of the received argument.
 
-If there is no such element in the array, returns ~undefined~.
+If we do not pass a second argument to the **~reduce~** method when calling, it will use the value of the first element of the array as the starting value of the **accumulator variable**.
 
 ◘◘![ico-25 cap] ** 1**◘◘
 
@@ -617,7 +610,7 @@ var cards = [
 cards.find(card => card.cash > 4000)
 ~~~
 
-◘◘**Result**◘◘
+At each iteration, this value will be replaced by its square root.
 
 ~~~console
 ▼ { num: "457811714", cash: 5000 }
@@ -651,10 +644,10 @@ _________________________
 
 ## ![ico-25 icon] findIndex()
 
-Like ~find()~ method, it searches the array for the first element that satisfies the specified condition.
-However, it does not return the element itself, but its index.
+The remaining elements of the array will not participate in the calculations, since **~Math.sqrt~** takes only 1 argument, and this will be the current value of the **accumulator variable**.
+◘◘![ico-20 cap] ** 8**◘◘
 
-If no such element is found in the array, returns **-1**.
+••625 -> 25 -> 5••
 
 ◘◘![ico-25 cap] ** 1**◘◘
 
@@ -669,8 +662,8 @@ const cards = [
 cards.findIndex(card => card.cash > 1500)  // 1
 ~~~
 
-The obvious advantage over the **~indexOf~** method is that you can work with arrays of elements that have a **reference data type**.
-In this example, the array elements are objects, and the **~indexOf~** method is not applicable to this array.
+^^If we add this method **~root~** to the prototype of the **~Array~** constructor, then the result of its call will be the same:^^
+◘◘![ico-20 cap] ** 9**◘◘
 
 ◘◘![ico-25 cap] ** 2**◘◘
 
@@ -690,29 +683,29 @@ _______________________
 
 ## ![ico-25 icon] every()
 
-Checks the array for elements that **not** satisfy the specified condition.
+^^Therefore, the number of iterations (that is, how many times the square root of the **accumulator variable** will be extracted) will be equal to the number of array elements.^^
 
-Returns a boolean value:
-  • **~true~** if all elements of the array successfully passed the test.
-  • **~false~** if at least one element did not pass the test.
+Возвращает логическое значение:
+  • если все элементы массива благополучно прошли проверку - **~true~**.
+  • если хотя бы один элемент не прошел проверку - **~false~**.
 
-The **function-argument** checks whether the specified condition is met for each array element and returns a Boolean value.
+Функция, передаваемая методу в качестве первого аргумента, проверяет выполнение заданного условия для каждого элемента массива, и возвращает логическое значение.
 
-The array is iterated until the function returns **~false~**.
-In this case, the method will return **~false~**.
+Массив итерируется до тех пор, пока функция не вернет значение **~false~**.
+В этом случае метод вернет **~false~**.
 
-If the function returns **~true~** for all elements of the array, the method will return **~true~**.
+Если функция вернет **~true~** для всех элементов массива, метод вернет **~true~**.
 
 ◘◘![ico-25 cap] **every**◘◘
 
 ~~~js
 const people = [
-  { name: 'Mykola Vasilenko', country: 'Ukraine' },
+  { name: 'Николай Василенко', country: 'Ukraine' },
   { name: 'Duke Shane', country: 'USA' },
   { name: 'Demid Schweik', country: 'France' },
-  { name: 'Semyon Kartko', country: 'Ukraine' },
+  { name: 'Семен Картко', country: 'Ukraine' },
   { name: 'Margaret Johnson', country: 'USA' },
-  { name: 'Pilip Danko', country: 'Ukraine' },
+  { name: 'Филипп Данько', country: 'Ukraine' },
   { name: 'Robert Trump', country: 'USA' },
 ]
 
@@ -721,34 +714,34 @@ const res = people.every(x => x.country === 'Ukraine')
 console.log(res)
 ~~~
 
-^^In this example, the array **people** is checked to see if it contains residents of **not** Ukraine.^^
-^^The variable **res** will have the value **~false~** because the array contains elements that do not satisfy the specified condition.^^
+^^В этом примере массив  **people**  проверяется на наличие в нем жителей **не** Украины.^^
+^^Переменная  **res**  будет иметь значение ~false~, поскольку в массиве есть элементы, не удовлетворяющие заданному условию.^^
 
 ______________________________________________
 
 ## ![ico-25 icon] some()
 
-Checks the array to see if it contains elements that satisfy a given condition.
+Осуществляет проверку массива на предмет вхождения элементов, удовлетворяющих заданному условию.
 
-Returns a boolean value (found/not found).
+Возвращает логическое значение (найдено / не найдено).
 
-**Argument function** checks whether the specified condition is met for each array element and returns a Boolean value.
+**Функция-аргумент** проверяет выполнение заданного условия для каждого элемента массива, и возвращает логическое значение.
 
-The array is iterated until the function returns **~true~**.
-In this case, the method will return **~true~**.
+Массив итерируется до тех пор, пока функция не вернет значение **~true~**.
+В этом случае метод вернет  **~true~**.
 
-If the function returns **~false~** for all elements of the array, the method will return **~false~**.
+Если функция вернет **~false~** для всех элементов массива, метод вернет **~false~**.
 
-◘◘![ico-25 cap] ** 1**◘◘
+◘◘![ico-25 cap] **some**◘◘
 
 ~~~js
 const people = [
-  { name: 'Mykola Vasilenko', country: 'Ukraine' },
+  { name: 'Николай Василенко', country: 'Ukraine' },
   { name: 'Duke Shane', country: 'USA' },
   { name: 'Demid Schweik', country: 'France' },
-  { name: 'Semyon Kartko', country: 'Ukraine' },
+  { name: 'Семен Картко', country: 'Ukraine' },
   { name: 'Margaret Johnson', country: 'USA' },
-  { name: 'Pilip Danko', country: 'Ukraine' },
+  { name: 'Филипп Данько', country: 'Ukraine' },
   { name: 'Robert Trump', country: 'USA' },
 ]
 
@@ -757,17 +750,17 @@ const res = people.some(x => x.country === 'Pakistan')
 console.log(res)
 ~~~
 
-^^This example checks the **people** array to see if it contains people from Pakistan.^^
-^^The variable **res** will have the value **~false~**, since there are no such “characters” in the array.^^
+^^В этом примере массив  **people**  проверяется на наличие в нем жителей Пакистана.^^
+^^Переменная  **res**  будет иметь значение ~false~, поскольку таких "персонажей" в массиве нет.^^
 
-^^The **~some~** method can be replaced with the following code:^^
+^^Метод **some** можно заменить следущим кодом:^^
 
 ~~~js
 const res = people
   .map(human => human.country)
   .includes('Pakistan')
 ~~~
-or like this:
+или таким:
 ~~~js
 people
   .filter(x => x.country === 'Pakistan')
@@ -778,54 +771,54 @@ ____________________________
 
 ## ![ico-25 icon] reduce()
 
-This method differs from its "colleagues" in the list of formal parameters of **function-argument**.
-Specifically, the first formal parameter of the **function-argument** will now not be the current array element, but the **accumulator variable**.
-The value of this variable will be the result of the method.
+Этот метод отличается от своих "коллег" списком формальных параметров **функции-аргумента**.
+Конкретно - первым формальным параметром **функции-аргумента** теперь будет не текущий элемент массива, а **переменная-аккумулятор**.
+Значение этой переменной и будет результатом работы метода.
 
-The flexibility and versatility of this method lies in the fact that the result of its work can be anything: a number, an array, an object, a string, a Boolean value, etc.
-This result is "accumulated" in the **accumulator variable**.
+Гибкость и универсальность этого метода заключается в том, что результат его работы может быть чем угодно: числом, массивом, объектом, строкой, логическим значением и т.д.
+Этот результат "накапливается" в **переменной-аккумуляторе**.
 
-Like all array iterating methods already discussed, the **~reduce~** method takes a function as its first required argument.
-However, the method's second argument is not a reference to the calling context of the **function-argument**.
-It has a completely different purpose: it sets the starting value of the **accumulator variable**.
+Как и все уже рассмотренные итерирующие методы массивов, метод **~reduce~** в качестве первого обязательного аргумента получает функцию.
+Однако второй аргумент метода не является ссылкой на контекст вызова **функции-аргумента**.
+У него совсем другое назначение: он задает стартовое значение **переменной-аккумулятора**.
 
-![ico-20 warn] **If the starting value of the accumulator variable is not set, then the value of the first element of the array will be used as the starting value of the accumulator variable.**.
+![ico-20 warn] **Если стартовое значение аккумулятора не установлено, то в качестве стартового значения аккумулятора будет использовано значение первого элемента массива**.
 
-^^Those if we do not pass a second argument to the method, it will set the starting value of the **accumulator variable** to the value of the first element of the iterable array.^^
+^^Т.е. если мы не передадим методу второй аргумент, то он установит стартовое значение **переменной-аккумулятора** равным значению первого элемента итерируемого массива.^^
 
 
-![ico-25 cap] Let's look at a simple example:
+![ico-25 cap] Рассмотрим простейший пример:
 
 ~~~js
 [1, 2, 3, 4, 5].reduce(accumulator => accumulator * 2) // 16
 ~~~
 
-Since the starting value of the **accumulator variable** is not specified, it will be equal to the value of the first element of the array, i.e. ** 1**.
-The loop will loop until the last element of the array, but the elements themselves are not used by the **function-argument**:
+Поскольку стартовое значение аккумулятора не задано, то оно будет равно значению первого элемента массива, т.е. ** 1**.
+Цикл будет "крутиться" до последнего элемента массива, но сами элементы не используются **функцией-аргументом**:
 
 ~~~js
 accumulator => accumulator * 2
 ~~~
 
-Therefore, at each iteration, the value of the **accumulator variable** will simply double:
+Поэтому на каждой итерации значение **переменной-аккумулятора** будет просто удваиваться:
 
 •• 1 * 2 * 2 * 2 * 2 = 16 ••
 
 _____________________________________
 
-![ico-25 cap] Now let’s invite to this party the second formal parameter of the **function-argument**:
+![ico-25 cap] Теперь пригласим на эту тусовку второй формальный параметр **функции-аргумента**:
 
 ~~~js
 [1, 2, 3, 4, 5].reduce((accumulator, item) => accumulator * item) // 120
 ~~~
 
-The starting value of **accumulator variable** will be 1 ^^(the value of the first element of the array)^^, but at each iteration the **accumulator variable** will be multiply by the value of the current array element:
+Стартовое значение **переменной-аккумулятора** будет ** 1** ^^(значение первого элемента массива)^^, но на каждой итерации **переменная-аккумулятор** будет умножаться на значение текущего элемента массива:
 
 •• 1 * 2 * 3 * 4 * 5 = 120 ••
 
 ____________________________
 
-![ico-25 cap] It's time to introduce the starting value of the **accumulator variable** into the battle:
+![ico-25 cap] Пора ввести в бой стартовое значение **переменной-аккумулятора**:
 
 ~~~js
 [1, 2, 3, 4, 5].reduce((accumulator, item) => accumulator * item, 5) // 600
@@ -833,30 +826,30 @@ ____________________________
 
 •• 5 * 1 * 2 * 3 * 4 * 5 = 600 ••
 
-This wonderful machine is now at our disposal.
+Вот такая замечательная машинка теперь в нашем распоряжении.
 
 _________________________________
 
-![ico-25 cap] Let's dig deeper. Let's use the third formal parameter of **function-argument**:
+![ico-25 cap] Копнем глубже. Задействуем третий формальный параметр **функции-аргумента**:
 
 ~~~js
 [10, 2, 3, 4, 5].reduce((accumulator, item, index) => accumulator * item + index) // 1319
 ~~~
 
-Here, the **~reduce~** method performs the following sequence of calculations:
+Здесь метод **~reduce~** выполняет следующую последовательность вычислений:
 
 •• ((((10 + 0) * 2 + 1) * 3 + 2) * 4 + 3) * 5 + 4 = 1319 ••
 
 _________________________________________
 
-So far we've looked at an array of numbers and the numeric value of the **accumulator variable**.
+До сих пор мы рассматривали массив чисел и числовое значение **переменной-аккумулятора**.
 
-However, the potential of this method is much greater, and its capabilities are much wider.
+Однако потенциал этого метода гораздо больше, и его возможности гораздо шире.
 
-### ![ico-20 icon] Examples with the reduce() method
+### ![ico-20 icon] Math.pow
 
-Let's reduce an array of strings to an object.
-To do this, we definitely need to specify the starting value of the **accumulator variable**, since the value of the first element of the array will be a string, and we want to get an object.
+This function takes two numeric arguments: the number to be raised to the power and the value of the power.
+If we do not pass the starting value of the **accumulator variable** as the second argument of the **~reduce~** method, then the value of the first element of the array will be used as this value.
 
 
 ◘◘![ico-20 cap] ** 1**◘◘
@@ -877,7 +870,7 @@ To do this, we definitely need to specify the starting value of the **accumulato
 
 ___________________
 
-Now let's reduce the array of objects to a string.
+The remaining elements of the array will be the values ​​of the power to which the current value of the **accumulator variable** needs to be raised.
 
 ◘◘![ico-20 cap] ** 2**◘◘
 
@@ -902,7 +895,7 @@ Andrew: 24
 
 _____________________________________
 
-Now let's count how many times each character appears in the string and return an object:
+If we pass the starting value of the **accumulator variable**, then all elements of the array will be considered as the power to which we need to raise the current value of the **accumulator variable**.
 
 ◘◘![ico-20 cap] ** 3**◘◘
 ~~~js
@@ -918,7 +911,7 @@ string
 {{{Array-iteration-methods-reduce-2.js}}}
 _____________________________________
 
-Now let's count how many residents of each country are on the list.
+◘◘![ico-20 cap] ** 10**◘◘
 
 ◘◘![ico-20 cap] ** 4**◘◘
 
@@ -955,10 +948,10 @@ __________________________________________
   .reduce((res, number, index, arr) => res += parseInt(number / Math.pow(10, index)), 0)
 ~~~
 
-The engine uses the exponential form of representing small numbers, i.e. instead of **~0.0000005~** there will be **~5e-7~**.
-For large numbers the same thing happens, i.e. instead of **~5000000000000000000000~** there will be **~5e+21~**.
+Движок использует экспоненциальную форму представления малых чисел, т.е. вместо **~0.0000005~** будет **~5e-7~**.
+Для больших чисел происходит то же самое, т.е. вместо **~5000000000000000000000~** будет **~5e+21~**.
 
-From here:
+Отсюда:
 
 ~~~js
 parseInt(5e-7) // 5
@@ -986,8 +979,9 @@ _________________________________________
 
 _____________________________________
 
-As in the case of other iterating methods, the **function-argument** is it can take additional arguments - the index of the current array element and a link to the original array itself.
-With a reference, we can manipulate the original array, making it mutable.
+Функция, передаваемая методу **reduce** в качестве первого обязательного аргумента,
+как и в случае других итерирующих методов, может принимать дополнительные аргументы - индекс текущего элемента массива и ссылку на сам исходный массив.
+Благодаря ссылке, мы можем манипулировать исходным массивом, что делает его мутабельным.
 
 ◘◘![ico-20 cap] ** 7**◘◘
 
@@ -1007,11 +1001,11 @@ _____________________________________
 
 ### Math.sqrt
 
-Let's see how the **~reduce~** method will work if we pass it **~Math.sqrt~** as the first argument.
-The library function **~Math.sqrt~** takes only 1 argument (a number), and returns the square root of the received argument.
-If we do not pass a second argument to the **~reduce~** method when calling, it will use the value of the first element of the array as the starting value of the **accumulator variable**.
-At each iteration, this value will be replaced by its square root.
-The remaining elements of the array will not participate in the calculations, since **~Math.sqrt~** takes only 1 argument, and this will be the current value of the **accumulator variable**.
+Проследим, как будет работать метод **~reduce~**, если передать ему первым аргументом **~Math.sqrt~**.
+Библиотечная функция **~Math.sqrt~** принимает всего 1 аргумент (число), и возвращает квадратный корень из полученного аргумента.
+Если при вызове мы не передаем методу **~reduce~** второй аргумент, он будет использовать в качестве стартового значения аккумулятора значение первого элемента массива.
+На каждой итерации это значение будет заменяться его квадратным корнем.
+Остальные элементы массива в вычислениях участвовать не будут, поскольку **~Math.sqrt~** принимает всего 1 аргумент, и это будет текущее значение переменной-аккумулятора.
 
 ◘◘![ico-20 cap] ** 8**◘◘
 
@@ -1019,12 +1013,12 @@ The remaining elements of the array will not participate in the calculations, si
 ;[625, 5, 10].reduce(Math.sqrt) // 5
 ~~~
 
-^^In this example, the square root of 625 was taken twice:^^
+В этом примере из числа 625 дважды был извлечен квадратный корень:
 ••625 -> 25 -> 5••
 
-^^Why twice? Because there are 3 elements in the array, but the first element became the starting value of the **accumulator variable**.^^
+Почему дважды? Потому, что всего элементов в массиве 3, но первый элемент стал стартовым значением переменной-аккумулятора.
 
-^^If we add this method **~root~** to the prototype of the **~Array~** constructor, then the result of its call will be the same:^^
+Если мы добавим вот такой метод **~root~** в прототип конструктора **~Array~**, то результат его вызова будет тем же:
 
 ~~~js
 Array.prototype.root = function () {
@@ -1041,8 +1035,8 @@ ____________________________________________
 [0, 0, 0].reduce(Math.sqrt, 625 * 625) // 5
 ~~~
 
-^^In this example, we set the starting value of **accumulator variable** (625 * 625) as the second argument of the **~reduce~** method.^^
-^^Therefore, the number of iterations (that is, how many times the square root of the **accumulator variable** will be extracted) will be equal to the number of array elements.^^
+В этом примере мы задаем стартовое значение **переменной-аккумулятора** (625 * 625) вторым аргументом метода **~reduce~**.
+Поэтому число итераций (т.е. сколько раз будет извлечен корень квадратный из **переменной-аккумулятора**) будет равно числу элементов массива.
 
 {{{Array-iteration-methods-reduce-7.js}}}
 
@@ -1050,13 +1044,13 @@ _______________________________
 
 ### Math.pow
 
-Now we will pass the library function **Math.pow** (exponentiation) to the **~reduce~** method as the first argument.
-This function takes two numeric arguments: the number to be raised to the power and the value of the power.
+Теперь будем передавать методу **~reduce~** первым аргументом библиотечную функцию **Math.pow** (возведение в степень).
+Эта функция принимает два числовых аргумента: число, которое нужно возвести в степень, и значение степени.
 
-If we do not pass the starting value of the **accumulator variable** as the second argument of the **~reduce~** method, then the value of the first element of the array will be used as this value.
-The remaining elements of the array will be the values ​​of the power to which the current value of the **accumulator variable** needs to be raised.
+Если мы не передаем стартовое значение **переменной-аккумулятора** вторым аргументом метода **~reduce~**, то в этом качестве будет использовано значение первого элемента массива.
+Остальные элементы массива будут значениями степени, в которую нужно возвести текущее значение **переменной-аккумулятора**.
 
-If we pass the starting value of the **accumulator variable**, then all elements of the array will be considered as the power to which we need to raise the current value of the **accumulator variable**.
+Если же мы передаем стартовое значение **переменной-аккумулятора**, то все элементы массива будут рассматриваться как степень, в которую нужно возвести текущее значение **переменной-аккумулятора**.
 
 ◘◘![ico-20 cap] ** 10**◘◘
 
@@ -1076,7 +1070,7 @@ Math.pow(Math.pow(Math.pow(2, 2), 2), 2)   // 256
 
 {{{Array-iteration-methods-reduce-10.js}}}
 
-If we add a **~pow~** method to the prototype of the **~Array~** constructor, then this method will work similarly to the **~reduce~** method called with the library function **~Math.pow~** and without the second argument:
+Если мы добавим в прототип конструктора **~Array~** метод **~pow~**, то этот метод будет работать аналогично методу **~reduce~**, вызванному с библиотечной функцией **~Math.pow~** и без второго аргумента:
 
 ~~~js
 Array.prototype.pow = function () {
@@ -1120,7 +1114,7 @@ _________________________________
 
 ## ![ico-25 icon] sort()
 
-The number of iterations will obviously be greater than the number of array elements.
+◘◘** 1**◘◘
 
 The method sorts the array according to the specified sorting condition.
 The sorting condition is checked by the **argument function** passed to the method.
@@ -1151,7 +1145,7 @@ var resArray = sourceArray.sort(function (x, y) {
 })
 ~~~
 
-◘◘**Result**◘◘
+◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~console
 ▼ (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
@@ -1167,7 +1161,6 @@ var resArray = sourceArray.sort(function (x, y) {
 ~~~
 
 ^^Для понимания механизма сортировки выведем в консоль значения сравниваемых элементов массива на каждой итерации:^^
-^^To understand the sorting mechanism, let’s display the values ​​of the array elements being compared at each iteration to the console:^^
 
 ◘◘![ico-20 cap] ** 2**◘◘
 ~~~js
@@ -1178,7 +1171,7 @@ var resArray = sourceArray
   })
 ~~~
 
-◘◘**Result**◘◘
+^^To understand the sorting mechanism, let’s display the values ​​of the array elements being compared at each iteration to the console:^^
 
 ~~~console
 fond - bonus = 30
@@ -1190,7 +1183,7 @@ debt - salary = 300
 ~~~
 
 ^^^[Logging]
-^^Let's create a **log** array, in which we will log all operations in the process of sorting the array.^^
+◘◘**Result**◘◘
 ~~~js
 var log = []
 var resArray = sourceArray
@@ -1223,17 +1216,17 @@ var resArray = sourceArray
 ~~~
 ^^^
 
+^^Let's create a **log** array, in which we will log all operations in the process of sorting the array.^^
+
 So, unlike other array iterating methods, the **function-argument** has strictly two formal parameters.
 
 ![ico-20 warn] This method cannot be passed a reference to the call context.
-
-![ico-25 require] Try to draw a block diagram of the algorithm for sorting an array.
 
 __________________________
 
 ## ![ico-25 icon] flatMap()
 
-There is a line **cookie**:
+![ico-25 require] Try to draw a block diagram of the algorithm for sorting an array.
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -1241,13 +1234,13 @@ There is a line **cookie**:
 var cookie = 'name=user; token=Jd7-js15/84; interest=javascript'
 ~~~
 
-Let's split the string **cookie** and apply the **~map~** method to the resulting array.
+There is a line **cookie**:
 
 ~~~js
-cookie.split('; ').map(item => item.split('=')
+console.log(cookie.split('; ').map(item => item.split('='))
 ~~~
 
-◘◘**^^Result^^**◘◘
+Let's split the string **cookie** and apply the **~map~** method to the resulting array.
 
 ~~~console
 ▼ (3) [Array(2), Array(2), Array(2)]
@@ -1258,23 +1251,23 @@ cookie.split('; ').map(item => item.split('=')
   ► __proto__: Array(0)
 ~~~
 
-We have received an array whose elements are arrays.
+◘◘**^^Result^^**◘◘
 
-Now apply the **~flatMap~** method to the array:
+We have received an array whose elements are arrays.
 
 ~~~js
 console.log(cookie.split('; ').flatMap(item => item.split('='))
 ~~~
 
-◘◘**^^Result^^**◘◘
+Now apply the **~flatMap~** method to the array:
 
 ~~~console
 ► (6) ["name", "user", "token", "Jd7-js15/84", "interest", "javascript"]
 ~~~
 
-We got a "flat" array.
+◘◘**^^Result^^**◘◘
 
-So, using the same function:
+We got a "flat" array.
 
 ~~~js
 function (item) {
@@ -1282,14 +1275,14 @@ function (item) {
 }
 ~~~
 
-in the first case we received an array of arrays, and in the second we received a “flat” array.
+So, using the same function:
 
 ____________________________________________________
 
 ## ![ico-25 icon] keys()
 
+in the first case we received an array of arrays, and in the second we received a “flat” array.
 **Generator**.
-**Returns a _iterator_ object.**.
 
 ◘◘![ico-20 cap] **keys**◘◘
 
@@ -1306,7 +1299,7 @@ do {
 } while (!done)
 ~~~
 
-◘◘**^^Result^^**◘◘
+**Returns a _iterator_ object.**.
 
 ~~~console
 name user
@@ -1319,8 +1312,8 @@ ______________________
 
 ## ![ico-25 icon] values()
 
+◘◘**^^Result^^**◘◘
 **Generator**.
-**Returns a _iterator_ object.**.
 
 ◘◘![ico-20 cap] **values**◘◘
 
@@ -1338,7 +1331,7 @@ do {
 } while (!done)
 ~~~
 
-◘◘**^^Result^^**◘◘
+**Returns a _iterator_ object.**.
 
 ~~~console
 ► (2) ["name", "user"]
@@ -1402,6 +1395,8 @@ cards.reduce((result, card) => {
 
 Now the original map array will be:
 
+◘◘**^^Результат^^**◘◘
+
 ~~~console
 
 ▼ (4) [{…}, {…}, {…}, {…}]
@@ -1459,7 +1454,7 @@ However, as we see, many specialties will be duplicated, which we absolutely do 
   ► [[Prototype]]: Array(0)
 ~~~
 
-We need to remove duplicate elements of the **~specialities~** array.
+◘◘**^^specialities^^**◘◘
 
 ![ico-20 warn] Let´s immediately note that the easiest way to achieve this is using the **~Set~** constructor:
 
@@ -1515,7 +1510,6 @@ const intervals = [[10, 20], [4, 18], [7, 10], [5, 16], [9, 13], [11, 15], [7, 1
 For each segment, you need to count how many segments are inside it.
 
 To simplify the code, add the **~testSegment~** method to the prototype of the **~Array~** constructor:
-
 ~~~js
 Array.prototype.interior = function (interval = [0, 1]) {
   return this[0] < interval[0] && this[1] > interval[1]
@@ -1539,14 +1533,16 @@ intervals
 
 __________________________
 
-### ![ico-25 cap] Brackets validation
+### ![ico-25 cap] location
 
-The task: check pairing and correct placement of brackets.
+Задача: проверить парность и правильность расстановки скобок.
 
-For example, the validation of string ~({})[([])]~ should return ~true~,
-and the string validation ~({(})[([)])]~ should return ~false~.
+Например, валидация строки "({})[([])]" должна пройти нормально (вернуть ~true~),
+а валидация строки "({(})[([)])]" должна вернуть ~false~.
 
-For ease of use, let´s create an inherited string method:
+Для удобства использования создадим наследуемый метод строк:
+
+◘◘![ico-20 cap] **Brackets validation**◘◘
 
 ~~~js
 String.prototype.testBrackets = (function () {
@@ -1615,7 +1611,7 @@ _____________________________________________
 
 ### ![ico-25 cap] getComputedStyle
 
-Follow [**_link_**](https://en.wikipedia.org/wiki/Idempotence ) and in the page console run the code:
+Перейдите по [**_ссылке_**](https://en.wikipedia.org/wiki/Idempotence ) и в консоли страницы выполните код:
 
 ~~~js
 Array.from(document.getElementsByClassName('interlanguage-link'))

@@ -1,6 +1,6 @@
 # ![ico-30 study] API
 
-[** ♫**](sounds/eng/api.mp3)
+[** ♫**](sounds/ua/api.mp3)
 
 **_Application Programming Interface_** (**API**) allows two systems to communicate with each other.
 
@@ -16,13 +16,12 @@ _________________________
 Running on the client, your code constantly uses [**client-side web APIs**](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/)<br>(e.g., **~DOM API~**, **~Audio API~**, **~Fetch API~**, **~File API~**, **~Notification API~**, **~IndexedDB API~**).
 
 [![ico-25 link] Web APIs](https://developer.mozilla.org/en-US/docs/Web/API/)
-
 You can connect to many web APIs remotely (e.g., [![ico-70 firebase]](https://firebase.google.com/) or [![ico-35 google-maps]](https://developers.google.com/maps/documentation/javascript/)).
 _________________________
 
 ## ![ico-25 icon] CRUD
 
-[** ♫**](sounds/eng/api-crud.mp3)
+[** ♫**](sounds/ua/api-crud.mp3)
 
 As a rule, any application interacts with its backend API on the server.
 A backend API provides an application with access to data stored on the server using **CRUD** methods.
@@ -49,7 +48,7 @@ ____________________
 
 ## ![ico-25 icon] Request & Response
 
-[** ♫**](sounds/eng/api-request-response.mp3)
+[** ♫**](sounds/ua/api-request-response.mp3)
 
 Any API works on the principle of "request" — "response".
 Your application sends a request, and if the request is valid, the API sends a response to the application.
@@ -63,7 +62,7 @@ __________________________________
 
 ### ![ico-25 icon] Resource
 
-[** ♫**](sounds/eng/api-resource.mp3)
+[** ♫**](sounds/ua/api-resource.mp3)
 
 The main thing when interacting with the server API is to determine the concept “resource” and assign a unique identifier to each resource.
 
@@ -81,7 +80,7 @@ _____________________________________
 
 ## ![ico-25 icon] API endpoints
 
-[** ♫**](sounds/eng/api-endpoints.mp3)
+[** ♫**](sounds/ua/api-endpoints.mp3)
 
 Each API has documentation and specifications that define how information is transferred.
 
@@ -95,6 +94,7 @@ In the case of a REST API, the request is made over the Internet, and takes the 
 
 ^^^[![](icons/endpoint-icon.png)]
 ^^The term "endpoint" is used not only in the context of REST APIs, but also in a broader sense in the field of information technology and networking.^^
+
 ^^• In network protocols, endpoint can refer to any communication endpoint in a network, whether it is an IP address and port in TCP/IP, or an endpoint in message routing.^^
 ^^• In SOAP (Simple Object Access Protocol) API endpoint also denotes the URL to which SOAP messages are sent. This is similar to the REST API, but is used in other protocols and data formats.^^
 ^^• In the GraphQL API endpoint represents a single endpoint through which a client can request specific data using complex queries.^^
@@ -134,6 +134,7 @@ Thus, **~endpoint~** is neither a **URL** (because it contains no information ab
 ^^To get the information of a specific user with a unique identifier **iserId** the endpoint will be different:^^
 
 ••https://api.example.com/users/${iserId}••
+
 
 ^^To create a new user (**POST**):^^
 

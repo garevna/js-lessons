@@ -1,3 +1,4 @@
+
 # ![ico-35 study] Типи даних
 
 ## ![ico-30 icon] Оператор typeof
@@ -90,8 +91,6 @@ typeof typeof boolean
 
 Як бачите, у цьому списку є типи даних, які ми поки що не розглядали і які нам ще належить вивчити.
 
-__________________________________________________
-
 ## ![ico-30 icon] null
 
 Значення **~null~** означає відсутність значення у змінної. Це значення є суперечливим у тому сенсі, що таке значення належить до примітивних типів даних, тоді як оператор **~typeof null~** повертає «~object~». А всі дані типу «~object~» (крім **~null~**) відносяться до **посилального типу**. Цей баг потрібно мати на увазі, коли ми використовуємо оператор **~typeof~**.
@@ -134,15 +133,15 @@ __________________________________________________
 
 Сучасна [%%%специфікація мови%%%](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html ) визначає сім типів даних:
 
-<span class="tab-2" />• **Undefined Type**
-<span class="tab-2" />• **Null Type**
-<span class="tab-2" />• **Boolean Type**
-<span class="tab-2" />• **String Type**
-<span class="tab-2" />• **Symbol Type**
-<span class="tab-2" />• **Numeric Types**
-<span class="tab-4" />• **Number Type**
-<span class="tab-4" />• **BigInt Type**
-<span class="tab-2" />• **Object Type**
+<span class="tab-2" />• **^^Undefined Type^^**
+<span class="tab-2" />• **^^Null Type^^**
+<span class="tab-2" />• **^^Boolean Type^^**
+<span class="tab-2" />• **^^String Type^^**
+<span class="tab-2" />• **^^Symbol Type^^**
+<span class="tab-2" />• **^^Numeric Types^^**
+<span class="tab-4" />• **^^Number Type^^**
+<span class="tab-4" />• **^^BigInt Type^^**
+<span class="tab-2" />• **^^Object Type^^**
 
 Оператор **~typeof~** працює «по-старому», оскільки якби принцип його роботи було змінено, то багато сайтів, створених до 2015 року, просто посипалися б.
 Однак використовуючи його, варто пам'ятати про його «недосконалість».

@@ -58,8 +58,6 @@ JSON.stringify(obj)
 '{"name":"sample","type":"figure","color":"green","size":200,"position":[250,250]}'
 ~~~
 
-_____________________
-
 ![ico-25 cap] ** 2**
 
 Другий (необов'язковий) формальний параметр можна використовувати, наприклад, наступним чином:
@@ -79,8 +77,6 @@ JSON.stringify(obj, ['name', 'type', 'color'])
 ~~~console
 '{"name":"sample","type":"figure","color":"green"}'
 ~~~
-
-__________________________________
 
 ![ico-25 cap] ** 3**
 
@@ -111,7 +107,7 @@ console.log(JSON.stringify(obj, null, 2))
 }
 ~~~
 
-### ![ico-20 icon] Обмеження
+### Обмеження
 
 Справа в тому, що серіалізація об'єктів не завжди можлива.
 Є так звані об'єкти, що не серіалізуються, тому що містять циклічні посилання.
@@ -125,8 +121,6 @@ console.log(JSON.stringify(window, null, 2))
 ~~~
 
 ••![ico-20 error] Uncaught TypeError: Converting circular structure to JSON••
-
-___________________
 
 Спробуємо серіалізувати об'єкт, що містить такі властивості:
 
@@ -290,7 +284,7 @@ var user = {
   name: 'Jack',
   age: 25,
   hobby: 'football',
-  getName () {
+  getName: function getName () {
     console.log(this.name)
   }
 }
