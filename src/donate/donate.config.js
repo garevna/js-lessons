@@ -31,11 +31,13 @@ export const donateConfig = {
    * server to sign a request or receive a callback, and a secret key put in
    * the bundle would be readable by everyone.
    *
-   * While url is empty the popup shows only the cards, so this can stay as it
-   * is until there is a real link to put in it.
+   * Currently a monobank jar: the donor enters an amount and pays by card,
+   * Apple Pay or Google Pay, optionally anonymously. Emptying url takes the
+   * button away again and leaves the cards, which is the way to turn this off
+   * if the jar is ever closed.
    */
   payment: {
-    url: '',
+    url: 'https://send.monobank.ua/jar/4DbcR5rSjq',
     label: 'Support the course'
   },
 
