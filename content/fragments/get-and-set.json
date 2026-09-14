@@ -1,0 +1,21 @@
+[
+  "~get~",
+  "~set~",
+  "~birth~",
+  "~commodity~",
+  "~priceUSD~",
+  "~course~",
+  "~priceUAH~",
+  "~commodity.priceUAH~",
+  "~newPriceUAH~",
+  "~commodity.priceUSD~",
+  "~result~",
+  "~firstValue~",
+  "~secondValue~",
+  "~operation~",
+  "~calculator~",
+  "~state~",
+  "~human~",
+  "~states~",
+  "~currentState~"
+]

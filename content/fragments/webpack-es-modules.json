@@ -1,0 +1,15 @@
+[
+  "~export~",
+  "~import~",
+  "~webpack~",
+  "~import()~",
+  "~Function~",
+  "~index.js~",
+  "~&lt;script>~",
+  "~type = \"module\"~",
+  "~showMessage~",
+  "~js/testESModules.js~",
+  "~ /~",
+  "~./~",
+  "~../~"
+]

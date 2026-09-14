@@ -13,10 +13,11 @@ A **global object** is the environment in which we "live" (operate) and beyond w
 Simplistically speaking, the **global object** for us is the browser (more precisely, its **object model**, but we will deal with that later).
 The browser itself works in the operating system and has access to its capabilities.
 But we cannot go outside the browser and interact with the operating system directly.
+
 So, the operating system allocates system resources, in particular memory, for the work of applications, including the browser.
 The browser manages the memory resource allocated to it, part of which it allocates to the **V8** engine.
-
 Next we will talk about variables, i.e. the memory that will be used by our application.
+
 For our code, access to the global object is provided by the **~window~** variable.
 
 ## ![ico-30 icon] Memory and data
@@ -31,7 +32,6 @@ Such a cell is a **bit** of memory.<br>That is why the binary number system was 
 A maximum of 8 units can be placed in **1 byte** of memory, i.e. the binary number 11111111.
 
 In decimal notation this would be the number 255 without a sign.
-
 If **byte** (8 bits) is interpreted as a signed number, one bit will contain the sign of the number (**+ **or** -**), so the maximum number with a sign that can ‘fit’ into one byte is 127 (seven units).
 
 ••-1111111↓↓2 ↓↓ → -127↓↓10↓↓••
@@ -91,5 +91,4 @@ So, it is important that the engine knows the type of the data that is stored in
 Unlike languages with strict typing, we do not need to specify the type of data we intend to store in a variable when declaring it.
 
 **The data type is determined during the process of assigning a value.**
-
 This is called **dynamic typing**.

@@ -25,6 +25,7 @@
 ~~~
 
 Спочатку в консолі з'являться повідомлення 'START' та 'END',
+
 а потім, приблизно через секунду, повідомлення 'One second has passed'.
 
 Однак це не означає, що якщо ви передасте нульове значення методу ~setTimeout~, функція зворотного виклику буде викликана негайно.
@@ -49,7 +50,7 @@
 START
 2
 END
-undefined // основний потік завершив роботу, стек викликів порожній.
+undefined // основной поток завершил работу, стек вызовов пуст.
 1
 3
 ~~~
@@ -319,7 +320,7 @@ figure2.move = function () {
   !stopAnimation && requestAnimationFrame(this.move.bind(this))
 }.bind(figure2)
 
-// Запускаємо анімацію:
+// Запускаем анимацию:
 
 const timer = setInterval(() => figure1.makeStep(), 17)
 figure2.move()

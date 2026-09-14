@@ -7,11 +7,11 @@
   "s2.h1": "Browser Console",
   "s2.p1": "In the console we see the prompt **⟦f2⟧**, i.e. the console is waiting for you to enter any command, which will be executed as soon as you press **⟦f3⟧**:",
   "s2.p2": "Due to the fact that every browser has the JS engine (V8), we can execute any script directly in the console.",
-  "s2.p3": "^^If you need to enter a multi-line code fragment, at the end of each line press **⟦f4⟧** instead of **⟦f5⟧**, because **⟦f6⟧** executes the entered code immediately, and **⟦f7⟧** allows you to jump to a new line of code without starting execution.^^",
+  "s2.p3": "^^If you need to enter a multi-line code fragment, at the end of each line press **⟦f4⟧** instead of **⟦f3⟧**, because **⟦f3⟧** executes the entered code immediately, and **⟦f4⟧** allows you to jump to a new line of code without starting execution.^^",
   "s2.p4": "Generally speaking, the console is intended for displaying messages when our code is being executed.",
   "s2.p5": "For example, when we encounter errors in our code, the engine will generate an **exception** and throw an error message to the console.",
   "s2.p6": "All exceptions are grouped into three main clusters:",
   "s2.p7": "Exception means interrupting code execution on the line where there is an error.",
-  "s2.p8": "Moreover, we can access the console \"by name\" (**⟦f8⟧**) and use its commands to output some messages to the console:",
+  "s2.p8": "Moreover, we can access the console \"by name\" (**⟦f5⟧**) and use its commands to output some messages to the console:",
   "s2.p9": "![ico-25 smile] We will stop studying the Developer Toolbar for now, but we will use its other tabs later on, and I hope you will appreciate the possibilities this panel provides you with."
 }

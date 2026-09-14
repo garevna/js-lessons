@@ -1,0 +1,8 @@
+[
+  "~src~",
+  "~index.js~",
+  "~package.json~",
+  "~script~",
+  "~index.html~",
+  "~--watch~"
+]

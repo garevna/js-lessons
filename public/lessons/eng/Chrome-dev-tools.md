@@ -65,30 +65,29 @@ This is quite easy to do directly in the snippet code.<br>All lines of code are 
 After running the snippet (► **Ctrl + Enter**) , the engine will execute line by line until it reaches the next **~breakpoint~**.
 Here the engine will pause executing the code, and you will be able to see the current values ​​of the variables you are watching, and then resume executing the code from where you left off.
 You can also make changes to the code, save your changes (**~Ctrl + S~**) and resume code execution.
-After resuming, the new version of the code will work.
 
 @@@@
 ![](icons/debugger-panel.png)
-To resume the execution of the code, use the button ![ico-40 debug-button].
+After resuming, the new version of the code will work.
 @@@@
 
-![ico-25 warn] After setting the ~breakpoints~, you need to reload the page ![reload].
+To resume the execution of the code, use the button ![ico-40 debug-button].
 
 ![](illustrations/lesson-01-debugger.gif)
 
 _______________________________________________________
 
+![ico-25 warn] After setting the ~breakpoints~, you need to reload the page ![reload].
 ![ico20] You can also track changes in variable values in the **~Scope~** section of the debugger:
 • Local - local variables of the function being executed.
-• Block - variables of the call context of the executable function.
 
-![ico-20 warn] Keep track of what function is currently running in the **~Call Stack~**.
+• Block - variables of the call context of the executable function.
 
 _____________________________________________________________________________
 
 ### ![ico-25 icon] Event Listener Breakpoints
 
-In **Chrome DevTools**, you can also suspend code execution when DOM events occur.
+В  **Chrome DevTools**  можно также приостанавливать выполнение кода, когда происходят события DOM
 
 ![](illustrations/Chrome-devtools-breakpoints.gif)
 

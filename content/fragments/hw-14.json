@@ -1,0 +1,7 @@
+[
+  "quiz/async",
+  "~printString~",
+  "~container~",
+  "~appendChild~",
+  "~document.createTextNode~"
+]

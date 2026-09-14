@@ -1,0 +1,14 @@
+[
+  "~Error~",
+  "~new~",
+  "~SyntaxError~",
+  "~ReferenceError~",
+  "~TypeError~",
+  "~throw~",
+  "~console.log~",
+  "~try ... catch~",
+  "~try { ... }~",
+  "~catch~",
+  "~undefined~",
+  "test/exclusions"
+]

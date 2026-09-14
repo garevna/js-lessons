@@ -1,0 +1,20 @@
+[
+  "~scrollHeight~",
+  "~scrollWidth~",
+  "~clientHeight~",
+  "~clientWidth~",
+  "~offsetHeight~",
+  "~offsetWidth~",
+  "~scrollTop~",
+  "~scrollLeft~",
+  "https://garevna.github.io/js-samples/chanks/scroll.html",
+  "~Element~",
+  "~Element._prototype_~",
+  "~getBoundingClientRect()~",
+  "~DOMRect~",
+  "~top~",
+  "~left~",
+  "~bottom~",
+  "~right~",
+  "https://garevna.github.io/js-samples/chanks/getBoundingClientRect.html"
+]

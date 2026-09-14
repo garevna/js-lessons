@@ -1,15 +1,13 @@
+
 # ![ico-35 study] Variables. Data types
 
 ## ![ico-30 icon] Operator typeof
 
 ^^Another language operator that you're getting to know today.^^
-
 ^^The first one, as you remember, is the **assignment operator**.^^
-
 ^^Next, we got familiar with two **comparison operators**.^^
 
 Language operators always have **operands**.
-
 For example, the assignment operator has two operands: one on the left and the other on the right.
 
 ![ico-20 warn] Operands are always separated from the operator by a space.
@@ -40,7 +38,6 @@ We'll see in the console:
 ~~~
 
 Let's figure out what the engine does when it encounters a ~**typeof** num~ statement.
-
 The engine calculates the value of this expression and replaces the ~**typeof** num~ expression with the computed value.
 
 Let's look at another example:
@@ -94,18 +91,17 @@ Possible values ​​(strings) returned by the **~typeof~** operator:
 
 As you can see, there are data types on this list that we haven't covered yet and that we have yet to explore.
 
-__________________________________________________
-
-### ![ico-30 icon] null
+## ![ico-30 icon] null
 
 The value **~null~** means that the variable has no value. This value is inconsistent in the sense that such a value refers to primitive data types, while the **~typeof null~** operator returns ‘~object~’. And all data of type ‘~object~’ (except **~null~**) is of **reference type**. This bug should be kept in mind when we use the **~typeof~** operator.
 
 Another peculiarity of **~null~** value is that if you use strict equality, then **~null~** will be equal only to itself, while non-strictly it will be equal only to **~undefined~**. This is understandable: they have different data types. But the fact that the value of **~null~** and the value of **~undefined~** are considered equal (without regard to data type) tells us that both of these values have the same meaning: no value. Both of these values are primitives, and they have one more feature in common, which we will understand a bit later, when we start studying constructors.
 
 §§§§ Demo | var_null_template §§§§
+
 __________________________________________________
 
-### ![ico-30 icon] Tests
+## ![ico-30 icon] Tests
 
 ◘◘** 1**◘◘
 
@@ -137,18 +133,18 @@ __________________________________________________
 
 The current [%%%language specification%%%](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html ) defines seven data types:
 
-<span class="tab-2" />• **Undefined Type**
-<span class="tab-2" />• **Null Type**
-<span class="tab-2" />• **Boolean Type**
-<span class="tab-2" />• **String Type**
-<span class="tab-2" />• **Symbol Type**
-<span class="tab-2" />• **Numeric Types**
-<span class="tab-4" />• **Number Type**
-<span class="tab-4" />• **BigInt Type**
-<span class="tab-2" />• **Object Type**
+<span class="tab-2" />• **^^Undefined Type^^**
+<span class="tab-2" />• **^^Null Type^^**
+<span class="tab-2" />• **^^Boolean Type^^**
+<span class="tab-2" />• **^^String Type^^**
+<span class="tab-2" />• **^^Symbol Type^^**
+<span class="tab-2" />• **^^Numeric Types^^**
+<span class="tab-4" />• **^^Number Type^^**
+<span class="tab-4" />• **^^BigInt Type^^**
+<span class="tab-2" />• **^^Object Type^^**
 
 The **~typeof~** operator works "the old fashioned way", because if the principle of its operation were changed, then many sites created before 2015 would simply crumble.
-
 However, when using it, it is worth remembering its "imperfection".
 
 When comparing the data types of two variables, keep in mind that the characters are arranged in alphabetical order in the encoding table, so when comparing, the larger one will be the one which is located further from the beginning of the table.
+который расположен дальше от начала таблицы.

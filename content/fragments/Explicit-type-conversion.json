@@ -1,0 +1,23 @@
+[
+  "~string~",
+  "~number~",
+  "~boolean~",
+  "~String()~",
+  "~Number()~",
+  "~Boolean()~",
+  "~NaN~",
+  "~true~",
+  "~\"\"~",
+  "~\"   \"~",
+  "~\"\\n\"~",
+  "~\"\\t\"~",
+  "~String.fromCharCode(cod)~",
+  "~Number(true)~",
+  "~parseInt~",
+  "~parseFloat~",
+  "~Number~",
+  "~false~",
+  "~toString()~",
+  "~object~",
+  "external/explicit-type-covertion"
+]

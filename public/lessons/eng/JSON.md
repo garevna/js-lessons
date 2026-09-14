@@ -40,7 +40,8 @@ The only required argument of the method is a reference to an object or array, a
 ^^Two additional formal parameters are optional.^^
 Return value is JSON string.
 
-◘◘![ico-25 cap] ** 1**◘◘
+![ico-25 cap] ** 1**
+
 ~~~js
 var obj = {
   name: 'sample',
@@ -57,11 +58,10 @@ JSON.stringify(obj)
 '{"name":"sample","type":"figure","color":"green","size":200,"position":[250,250]}'
 ~~~
 
-__________________________________
-
-The second (optional) formal parameter can be used, for example, as follows:
+![ico-25 cap] ** 2**
 
 ◘◘![ico-25 cap] ** 2**◘◘
+
 ~~~js
 var obj = {
   name: 'sample',
@@ -78,11 +78,10 @@ JSON.stringify(obj, ['name', 'type', 'color'])
 '{"name":"sample","type":"figure","color":"green"}'
 ~~~
 
-_________________________________
-
-The third (optional) formal parameter is needed to format the result:
+![ico-25 cap] ** 3**
 
 ◘◘![ico-25 cap] ** 3**◘◘
+
 ~~~js
 var obj = {
   name: 'sample',
@@ -108,14 +107,15 @@ console.log(JSON.stringify(obj, null, 2))
 }
 ~~~
 
-### ![ico-20 icon] Restrictions
+### Restrictions
 
 The thing is, object serialization is not always possible.
 There are so-called **non-serializable** objects that contain **cyclic references**.
 
 For example, when we try to serialize the **window** object, we will receive a _TypeError_:
 
-◘◘![ico-25 cap] ** 4**◘◘
+![ico-25 cap] ** 4**
+
 ~~~js
 console.log(JSON.stringify(window, null, 2))
 ~~~
@@ -124,7 +124,7 @@ console.log(JSON.stringify(window, null, 2))
 
 Let's try to serialize an object containing the following properties:
 
-◘◘![ico-25 cap] ** 5**◘◘
+![ico-25 cap] ** 5**
 
 ~~~js
 var user = {
@@ -227,7 +227,6 @@ Boolean expression:
 ~~~js
 test.position === obj.position
 ~~~
-
 returns ~true~ because the value of the **test.position** property is a reference, and the value of the **obj.position** property is also a reference, and these references point to the same object.
 
 And here is the logical expression:

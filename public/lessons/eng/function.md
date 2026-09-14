@@ -200,15 +200,11 @@ then we will see ~undefined~ in the console again, because the assignment does n
 ______________________________________________
 
 So, to call a function we need a function name followed by parentheses.
-
 In the parentheses we can pass the function **arguments**, i.e. the data that the function will use when calculating the return value.
-
 However, the function may not return any value, then the engine treats it as if the function returned ~undefined~.
 
 Any line of code that we run in the console by pressing the ~_Enter_~ key is treated as a **anonymous** function call.
-
 If that line contains an assignment operator, that line of code will return no value, so we see ~undefined~ in the console.
-
 If we call the **~console.log~** function, it outputs the arguments passed to it to the console but returns no value, so we see ~undefined~ again after the output to the console.
 
 Finally, let's see what the **~typeof~** operator returns:
@@ -299,12 +295,11 @@ So, we used the assignment operator, in the right part of which we put the follo
 
 As we already know, the engine will first calculate the expression in the right part of the assignment operator, and then put the obtained value into the **~func~** variable.
 So, after evaluating the expression in the right part of the assignment operator, a **function object** (in the language specification - ‘**callable object**’) will be created.
+
 But all objects, as we already know, are **reference data type**, i.e. a **reference** will be returned to us, which will go into the **~func~** variable.
-
 So, the code inside the function body has not been executed.
-Shall we check it?
 
-Let's declare the variables **~number~** and **~name~** before declaring the function.
+Shall we check it?
 
 §§§§ Demo | function_01_template §§§§
 
@@ -312,7 +307,7 @@ As you can see, the function declaration did not affect the values of the variab
 That is, the code in the function body did not work.
 However, when we printed the **~func~** variable to the console, we saw the function body. That is, the function's code is stored somewhere, but it has not worked yet.
 
-So, we have a reference to the function, now we just need to call the function:
+Such an assignment:
 
 ~~~js
 func()
@@ -320,39 +315,37 @@ func()
 
 §§§§ Demo | function_02_template §§§§
 
-Such an assignment:
+is one of the ways to declare a function, which is called **function expression**.
 
 ~~~js
 var func = function () {}
 ~~~
 
-is one of the ways to declare a function, which is called **function expression**.
-
 Indeed, if we use an assignment operator, we have an **expression** on the right-hand side, hence the name **function expression**.
 
 However, this is not the only way to declare a function.
 
+In fact, the keyword **_~function~_** instead of the keyword **_~var~_** is quite enough for us:
+
 _____________________________________________________________________
 
-In fact, the keyword **_~function~_** instead of the keyword **_~var~_** is quite enough for us:
+This is another way of declaring a function - **function declaration**.
 
 ~~~js
 function func () {}
 ~~~
 
-This is another way of declaring a function - **function declaration**.
-
 We see that the difference from **function expression** is the absence of the assignment operator.
 Later we'll go into details about what it affects and why.
-
 In fact, we have declared a **_~func~_** variable by immediately specifying its data type when declaring it, i.e. using **_~function~_** instead of **_~var~_**.
 
 The fact that we don't use the assignment operator doesn't mean that assignment doesn't happen. Assignment happens ‘under the bonnet’. That is, a function is created and a reference to it is placed in the **_~func~_** variable.
+![ico-25 warn] Parentheses after a variable name indicate a function call and can only be used when the variable is a reference to a function.
 
 _________________________________________________
 
-![ico-25 warn] Parentheses after a variable name indicate a function call and can only be used when the variable is a reference to a function.
 Otherwise, a **TypeError** exception will be generated:
+В противном случае будет сгенерировано исключение **TypeError**:
 
 ~~~js
 var func = 10
@@ -362,6 +355,10 @@ func()
 ~~~error
     Uncaught TypeError: func is not a function
 ~~~
+
+Движок воспринимает вызов функции как выражение, значение которого нужно вычислить, для чего нужно запустить на исполнение код функции.
+Это означает, что после вычисления выражения ~func()~ в том месте, где оно было встречено, будет некое значение...
+Давайте разберемся, как определяется это значение.
 _________________________________________________
 
 ## ![ico-30 icon] Formal parameters
@@ -372,32 +369,23 @@ When calling a function, parentheses are also required.
 Obviously, parentheses play an important role here.
 
 Recall how parentheses can be used when calling a function: we use them to pass **arguments** to the function. I.e. we place some data to parentheses for the function to use this data at runtime.
-
 Ok, but how does the function receive this data?
-
 Arguments have to be saved somewhere, and function needs a reference to them to operate with.
-
 And where do we store the data? Well, not in drawers, and not in basins, and not in pots.
 We store our data in **variables**.
 
 That is, in order to accept the arguments passed when calling a function, we need to prepare the variables where these data (arguments) will be placed beforehand.
-
 And somehow it is self-evident that we should place the names of these variables to the same place where the arguments will be received later.
-
 That is, in parentheses.
-
 Do you see the sense?
 
 §§§§ Demo | function_parameters_template §§§§
 
 Thus, when declaring a function, we use parentheses to list there the names of variables that we will use for calculations in the body of the function.
-
-These variables are called **formal parameters** of the function.
-
 These variables have no values at the time the function is declared.
-
 When the function is called, **arguments** will be listed in parentheses, which will become the values of the formal parameters at this moment.
 That is, each time we call the function, we can pass different arguments to it, thus getting different results.
+Т.е. каждый раз при вызове функции мы можем передавать ей различные аргументы, тем самым получая различные результаты.
 
 ### ![ico-25 icon] Default values
 
@@ -415,7 +403,6 @@ Furthermore, you can make the default values of the function parameters **calcul
 §§§§ Demo | function_parameters_03_template §§§§
 
 ![ico-25 warn] Note that **default function parameter values** are usefull when a **~undefined~** value (or no value at all) is passed as function arguments.
-That is, it does not save you from checking for other ‘undesirable’ argument values, such as **~null~**, **~NaN~** or when the argument should be a number and a non-numeric value is passed.
 
 __________________________________________________________________
 
@@ -442,6 +429,7 @@ If you try to use it outside the function body, an exception will be generated:
 The **~return~** operator interrupts function execution, and if the **~return~** operator has an operand (expression), the value of this expression will be calculated and returned by the function.
 
 If the operand is not explicitly specified, **~undefined~** is implied.
+Если операнд не указан явно, подразумевается **~undefined~**.
 
 ____________________________________________________________________
 

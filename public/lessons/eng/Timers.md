@@ -50,7 +50,7 @@ However, this does not mean that if you pass a null value to the ~setTimeout~ me
 START
 2
 END
-undefined // the main thread has finished its work, the call stack is empty.
+undefined // основной поток завершил работу, стек вызовов пуст.
 1
 3
 ~~~
@@ -320,7 +320,7 @@ figure2.move = function () {
   !stopAnimation && requestAnimationFrame(this.move.bind(this))
 }.bind(figure2)
 
-// Let's run the animation:
+// Запускаем анимацию:
 
 const timer = setInterval(() => figure1.makeStep(), 17)
 figure2.move()
@@ -457,9 +457,9 @@ _________________________________________________________
 
 ## ![ico-25 icon] Examples
 
-^^^[![ico-25 cap] 11]
+![ico-25 cap] **11**
 
-~~~js
+~~~~js
 function addElem (tagName, container = document.body) {
   return container
     .appendChild(document.createElement(tagName))
@@ -547,8 +547,7 @@ Object.assign(demo, {
 })
 
 demo.dispatchEvent(new Event('click'))
-~~~
-^^^
+~~~~
 
 {{{Timers-requestAnimationFrame.js}}}
 

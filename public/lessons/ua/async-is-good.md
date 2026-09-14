@@ -137,9 +137,7 @@ const sayHello = async () => {
   return await new Promise(callback => setTimer(`${res}, baby`, callback))
 }
 ~~~
-
 і викличемо її, передавши через метод ~then~ колбек **~resolve~**:
-
 ~~~js
 sayHello().then(resolve)
 ~~~

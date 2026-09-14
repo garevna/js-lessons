@@ -1,0 +1,17 @@
+{
+  "s0.p1": "All characters have a numeric code",
+  "s0.p2": "The correspondence between a character and its code is defined in a character encoding table",
+  "s0.p3": "UTF-8 encoding offers the widest coverage of characters from various alphabets",
+  "s0.p4": "When comparing two strings, the numeric codes of the characters in these strings are compared sequentially",
+  "s0.p5": "^^For example, the decimal code for the character ** @** is 64, whilst the decimal code for the character ** w** is 119^^",
+  "s0.p6": "^^The logical expression ⟦f0⟧ will evaluate to ⟦f1⟧^^",
+  "s0.p7": "Strings are compared character by character until the first mismatch is found",
+  "s0.p8": "The logical expression",
+  "s0.p9": "will evaluate to **⟦f2⟧**, because when comparing the first characters of the two strings, it will be found that the code for the character ‘@’ is smaller than that for the character ‘w’",
+  "s0.p10": "no further comparison will be carried out",
+  "s0.p11": "The logical expression",
+  "s0.p12": "will have the value **⟦f2⟧**, because the codes of the first characters of these strings match, and the decimal code of the character ‘g’ (103) is less than the decimal code of the character ‘m’ (109)",
+  "s0.p13": "You can find out the code of a character at a specific position in a string using the ⟦f3⟧ method",
+  "s1.h1": "[![ico-30 hw] Exercises](⟦f4⟧)",
+  "s1.p1": "[![ico-20 link] hexadecimal character codes](https://www.fileformat.info/info/charset/UTF-8/list.htm ‘hexadecimal character codes’)"
+}

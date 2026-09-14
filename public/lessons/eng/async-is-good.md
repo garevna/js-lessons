@@ -137,9 +137,7 @@ const sayHello = async () => {
   return await new Promise(callback => setTimer(`${res}, baby`, callback))
 }
 ~~~
-
 and call it by passing a **~resolve~** callback through the **~then~** method:
-
 ~~~js
 sayHello().then(resolve)
 ~~~

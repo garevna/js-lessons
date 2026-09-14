@@ -11,9 +11,9 @@ In this case, we use one of the **~while~** or **~do...while~** loop operators.
 
 Syntactically, the **~while~** operator includes three mandatory parts: the word **~while~** itself, followed by parentheses in which the logical expression (the loop condition) will be written, and then the body of the loop enclosed in curly braces:
 
-~~~js
-while (condition) {
-  ...loop body
+~~~javascript
+while (условие) {
+  ...тело цикла
 }
 ~~~
 

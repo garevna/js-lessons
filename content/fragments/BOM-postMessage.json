@@ -1,0 +1,13 @@
+[
+  "~message~",
+  "~onmessage~",
+  "~source~",
+  "~event~",
+  "~data~",
+  "~target~",
+  "~about:blank~",
+  "~name~",
+  "~window~",
+  "~this.name~",
+  "~event.source.name~"
+]

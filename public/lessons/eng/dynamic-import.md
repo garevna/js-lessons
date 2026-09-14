@@ -48,9 +48,9 @@ import(`${scriptFile}12.js`)
 ◘◘![ico-20 paper]◘◘
 
 ~~~js
-const timeOut = timeInterval => new Promise(resolve => setTimeout(() => resolve(), timeInterval))
-
 const scriptImports = async moduleFile => {
+  const timeOut = timeInterval => new Promise(resolve => setTimeout(() => resolve(), timeInterval))
+
   await import(`${moduleFile}12.js`)
   await timeOut(8000)
   await import(`${moduleFile}21.js`)

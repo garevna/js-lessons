@@ -3,6 +3,7 @@
 ### ![ico-20 question] OOP
 
 **JS** cannot be strictly called an object-oriented language because it violates some principles of object-oriented programming. The prototype-based inheritance model essentially involves delegation rather than inheritance as understood in languages with a class-based inheritance model.
+
 ☼☼☼ In JS, functions rule, not classes ☼☼☼.
 
 ### ![ico-20 question] Polymorphism

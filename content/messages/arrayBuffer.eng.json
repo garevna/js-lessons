@@ -8,10 +8,10 @@
   "s0.p7": "Binary data stored in a typed array can be interpreted as a string, as an audio or video file, as an image, or as an array of numbers.",
   "s0.p8": "The **TypedArray** constructor is also not directly available, and can be referenced from the inheritance chain of any instance.",
   "s1.h1": "Accessors",
-  "s1.p1": "To work with **⟦f1⟧** instance data, you must use constructors that instantiate **accessors**.",
-  "s1.p2": "Calling the ⟦f2⟧, ⟦f3⟧, ⟦f4⟧, ⟦f5⟧, ⟦f6⟧, ⟦f7⟧ will result in an _iterable object_ with numeric data.",
-  "s1.p3": "To get an array, you can use the **⟦f8⟧** method:",
+  "s1.p1": "To work with **⟦f0⟧** instance data, you must use constructors that instantiate **accessors**.",
+  "s1.p2": "Calling the ⟦f1⟧, ⟦f2⟧, ⟦f3⟧, ⟦f4⟧, ⟦f5⟧, ⟦f6⟧ will result in an _iterable object_ with numeric data.",
+  "s1.p3": "To get an array, you can use the **⟦f10⟧** method:",
   "s1.p4": "**Result**",
-  "s1.p5": "However, this is a \"one-way road\" because it creates a new array **⟦f9⟧** where changes are not reflected in the original object **⟦f10⟧**.",
-  "s1.p6": "This constructor is used to create an accessor instance that provides flexible access to the data in the original **⟦f11⟧** instance."
+  "s1.p5": "However, this is a \"one-way road\" because it creates a new array **⟦f8⟧** where changes are not reflected in the original object **⟦f9⟧**.",
+  "s1.p6": "This constructor is used to create an accessor instance that provides flexible access to the data in the original **⟦f0⟧** instance."
 }

@@ -7,7 +7,7 @@
   "s2.p4": "- **Cycle** - multiple repetition of the same sequence of actions.",
   "s2.p5": "Programming begins with _description of an algorithm_.",
   "s2.p6": "**Algorithm** is a step-by-step system of instructions defining the process of transition from the initial data (input) to the desired result (output).",
-  "s2.p7": "| **⟦f0⟧** | ** ➔** | **⟦f1⟧** | ** ➔** | **⟦f2⟧** |",
+  "s2.p7": "| **⟦f5⟧** | ** ➔** | **⟦f6⟧** | ** ➔** | **⟦f7⟧** |",
   "s2.p8": "If the output result exists, the algorithm is executed in a finite number of steps.",
   "s2.p9": "If the desired result does not exist, the algorithm either never completes or reaches a dead end.",
   "s2.p10": "Sometimes the algorithm is simple enough that you keep it in mind when you write a script.",

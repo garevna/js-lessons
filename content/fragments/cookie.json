@@ -1,0 +1,18 @@
+[
+  "~cookie~",
+  "~document.cookie~",
+  "~xxx - идентификатор~",
+  "~yyy - значение~",
+  "~ключ:      APISID~",
+  "~значение:  159NndNJXgdvkeuR/AxzpbVBc2wIvRUKUY~",
+  "~ключ:      SAPISID~",
+  "~значение:  IdbwT_IAY_sf2LU0/AW3V_D0PbOcE6M2Nw~",
+  "~Object.assign~",
+  "~x.split('=')~",
+  "~map~",
+  "~window.open()~",
+  "~expires~",
+  "~toUTCString()~",
+  "~\"name=Ирина\"~",
+  "~getTime()~"
+]

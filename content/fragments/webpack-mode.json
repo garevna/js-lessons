@@ -1,0 +1,7 @@
+[
+  "~webpack~",
+  "~--mode~",
+  "~development~",
+  "~production~",
+  "~scripts~"
+]

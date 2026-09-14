@@ -1,0 +1,14 @@
+[
+  "~var~",
+  "~window~",
+  "~ =~",
+  "~number~",
+  "~userName~",
+  "~window.userName~",
+  "~window['userName']~",
+  "~undefined~",
+  "~ $~",
+  "~ _~",
+  "~name~",
+  "~Name~"
+]

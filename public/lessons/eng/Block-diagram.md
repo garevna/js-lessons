@@ -10,6 +10,7 @@ Structural programming is based on the triad:
 - **Branching** - selection of an action depending on the fulfilment of a condition.
 - **Cycle** - multiple repetition of the same sequence of actions.
 
+
 Programming begins with _description of an algorithm_.
 
 **Algorithm** is a step-by-step system of instructions defining the process of transition from the initial data (input) to the desired result (output).

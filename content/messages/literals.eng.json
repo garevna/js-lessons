@@ -26,5 +26,5 @@
   "s1.p24": "The variable **⟦f6⟧** will now contain a string representing the colour value in hexadecimal format",
   "s1.p25": "![ico-25 cap] **Example 5**",
   "s1.p26": "You can generate a random colour value using the function **⟦f7⟧**",
-  "s1.p27": "The variable **⟦f8⟧** will now contain a string representing a colour value in the **⟦f9⟧** model, with decimal colour values for each channel"
+  "s1.p27": "The variable **⟦f6⟧** will now contain a string representing a colour value in the **⟦f8⟧** model, with decimal colour values for each channel"
 }

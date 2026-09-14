@@ -19,6 +19,7 @@ In JS we deal with **dynamic typing**, when the data type of a variable is set i
 That is, in the right part of the assignment statement there is a **expression**, the value of which the engine must calculate and place in the variable whose name is specified in the left part of the assignment statement.
 
 The simplest kind of expression is a constant, for example, 10:
+
 ~~~js
 var ten = 10
 ~~~

@@ -11,11 +11,9 @@ Upon encountering such a declaration, the engine reserves a certain section of c
 ^^Note that if necessary, the engine can move the stored value to another memory location, and it will automatically change the value of the address to which the variable name is bound without you even knowing it.^^
 
 ![ico-25 warn] Declaring a variable with the **~var~** keyword places our variable in a global **~window~** object.
-
 ~~~js
 var number
 ~~~
-
 What does this mean for us?
 That we can refer to the value of this variable both directly by its name and indirectly through a **global object**:
 
@@ -80,6 +78,7 @@ You can check for yourself that the value of the **~userName~** variable has cha
 ^^^
 
 ^^When we get to destructuring, you'll see what other expressions can be on the left side of the assignment operator.^^
+
 
 
 ![ico-25 warn] If we declare variables but don't assign initial values to them:

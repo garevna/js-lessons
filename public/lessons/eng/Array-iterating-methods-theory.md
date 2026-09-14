@@ -150,19 +150,20 @@ _____________________________________________
 
 ## ![ico-25 icon] Transferring references
 
-@@@@
-![](images/reference-is-a-lockpick.svg)
 At this point, the functional purity of iterating methods, unfortunately, ends.<br><br>A function can mutate an object by reference.<br><br>In this case, as a rule, **side effects** occur.
-@@@@
-
 There are two ways to pass references in array iterating methods.
 The first one is passing a reference to the **call context** of the **function-argument** by the second argument of the method.
+
 The second is passing the reference to the source array to the **function-argument** itself when calling it.
+Первый - передача ссылки на контекста вызова функции-аргумента вторым аргументом метода.
+Второй - передача ссылки на исходный массив самой функции-аргументу при вызове.
 
 ### ![ico-20 icon] The second argument of the method
 
 Each method can take two arguments: a function and a reference to it's call context.
+
 In fact, the second argument of the method saves us from the need to bind the call context to the function-argument.
+◘◘ ![ico-25 cap] ** 4** ◘◘
 
 ◘◘ ![ico-25 cap] ** 4** ◘◘
 ~~~js
@@ -190,8 +191,6 @@ Result:
 ► (4) [15, 9, 9, 18]
 ~~~
 
-_______________________
-
 ◘◘ ![ico-25 cap] ** 5** ◘◘
 ~~~js
 const numbers = [8, 4, 9, 7]
@@ -211,7 +210,7 @@ const sample = numbers.iterate(function (item) {
 console.log(sample)
 ~~~
 
-Result:
+◘◘ ![ico-25 cap] ** 5** ◘◘
 
 ~~~console
 ► (4) [4, 5, 7, 7]
@@ -223,8 +222,8 @@ However, there is a **side effect** - the array **~alter~** is now empty:
 console.log(alter) // []
 ~~~
 
-Another inconvenience is that in this case we cannot pass _arrow functions_ to the method, since their call context cannot be changed.
 However, _arrow functions_ make the code more concise.
+Однако стрелочные функции делают код более лаконичным.
 
 _____________________________________
 
@@ -259,30 +258,31 @@ const sample = numbers.iterate((item, index, arr) => item * index - arr[0])
 console.log(sample)
 ~~~
 
-Result:
+◘◘![ico-20 cap] ** 6**◘◘
 
 ~~~console
 ► (4) [-8, -4, 10, 13]
 ~~~
 
-^^The function **sample** receives a reference to the source array **numbers** in the variable **arr**.^^
+Result:
 
 ___________________________________________________
 
 ## ![ico-25 icon] Side effects
 
+^^The function **sample** receives a reference to the source array **numbers** in the variable **arr**.^^
 ![ico-20 warn] Pure functions, as iterative methods are supposed to be, do not generate **side effects**, i.e. no _external variables are mutated_.
 Array iterating methods are **higher-order functions** that iterate over a source array, passing one array element at a time as an argument to the function.
-Thus, the **function-argument** does not have a reference to the original array itself, and cannot mutate it.
 _______________________
 ![ico-20 warn] Except the cases when the elements of the source array have a reference data type, i.e. The function-argument receives not a value but a reference to an array element.
 ______________________
 The original array, as a rule, does not change.
 That is, they were originally supposed to be **pure functions** that do not generate external effects, which distinguishes them from ordinary array methods such as ~push()~, ~concat()~, etc.
-
 But we have already shown earlier that this functional purity is violated by passing references (the reference to the call context of function-argument or the reference to the source array).
 
 Similarly, if we are dealing with **deep data structures**, then it is not values ​​that are passed, but references, which creates the possibility of **side effects**.
+
+◘◘![ico-20 cap] ** 7**◘◘
 
 
 ◘◘![ico-20 cap] ** 7**◘◘
@@ -307,7 +307,7 @@ In this example, we are iterating over an array of objects, i.e. we are dealing 
 At each iteration, the argument function (~user => user.age++~) of the **~iterate~** method receives a reference to the object.
 This gives to it the ability to mutate the original array, since
 
-☼☼☼ reference is a lockpick ☼☼☼
+☼☼☼ ссылка - это отмычка ☼☼☼
 
 As a result of executing the code, the **users** array will look like this:
 
@@ -350,7 +350,8 @@ browsers.iterate(storeItem, storeItem)
 console.dir(storeItem)
 ~~~
 
-◘◘**^^Result^^**◘◘
+◘◘![ico-20 cap] ** 8**◘◘
+
 ~~~console
 ▼ ƒ storeItem(item, index, arr)
   ▼ history: Array(5)
@@ -375,13 +376,13 @@ _____________________________________________
 
 If a method every time being called returns the same result with the same argument values, then it is **_idempotent_**.
 
-^^i.e. when calling a method with the same array and function repeatedly, the result will always be the same.^^
-
 In object-oriented languages, method idempotency is practically unattainable if the function arguments have a **reference data type**.
+
 Because arrays have a **reference data type**, array iterating methods operate with a reference.
 The reference remains the same, but from one method call to the next, the contents of the array may have changed, which will affect the result.
-
 Let's try to create an idempotent method:
+
+◘◘![ico-20 cap] ** 9**◘◘
 
 ◘◘![ico-20 cap] ** 9**◘◘
 
@@ -414,15 +415,15 @@ numbers[6] = 125
 numbers.idempotence(Math.sqrt)
 ~~~
 
-Result:
+Note that the method will return a **_new reference_** each time, since each time the method is called it creates a new array, but the contents of this array will be the same.
 
 ~~~console
 ► (7) [5, 4, 3, 7, 9, 8, 2]
 ~~~
 
-Note that the method will return a **_new reference_** each time, since each time the method is called it creates a new array, but the contents of this array will be the same.
-
 For the purity of the experiment, you can return the JSON string:
+
+However, in this example we used the idempotent function-argument **~Math.sqrt~**.
 
 ~~~js
 Array.prototype.idempotence = function (func) {
@@ -433,17 +434,17 @@ Array.prototype.idempotence = function (func) {
 }
 ~~~
 
-However, in this example we used the idempotent function-argument **~Math.sqrt~**.
-
 If we pass a function-argument that is not idempotent to the **~idempotence~** method, the method will not be idempotent because it will return a different result when called with the same set of arguments:
+
+In this example, you can see that if the function-argument that we pass to the **~idempotence~** method is not _idempotent_, then the result of the method will vary, i.e. the idempotency of a method directly depends on the idempotency of the **function-argument**.
 
 ~~~js
 numbers.idempotence(item => item + Math.floor(Math.random() * 100))
 ~~~
 
-In this example, you can see that if the function-argument that we pass to the **~idempotence~** method is not _idempotent_, then the result of the method will vary, i.e. the idempotency of a method directly depends on the idempotency of the **function-argument**.
-
 Let's try to fix this situation:
+
+◘◘![ico-20 cap] **10**◘◘
 
 ◘◘![ico-20 cap] **10**◘◘
 ~~~js
@@ -477,11 +478,12 @@ Result:
 ~~~console
 '[5,4,3,7,9,8,2]'
 ~~~
-_________________________________________
 
+__________________________________
 Try to figure out the following example on your own.
 
-~~~~js
+^^^[![](icons/coffee.png) 11]
+~~~js
 Array.prototype.idempotence = function (func) {
   const funcArg = func.toString()
   try {
@@ -515,9 +517,9 @@ Array.prototype.idempotence = function (func) {
 
   return self.results[num][index]
 }
-~~~~
+~~~
+^^^
 
-^^^[try]
 ~~~js
 const numbers = [25, 16, 9, 49, 81, 64, 4]
 numbers.idempotence(Math.sqrt)
@@ -551,14 +553,14 @@ const randomize = item => item + Math.floor(item + Math.random() * 100)
 ~~~console
 ► (7) [87, 98, 42, 128, 184, 152, 79]
 ~~~
-^^^
+
 _____________________________________________
 
 ## ![ico-25 icon] Examples
 
 Passing the Call Context
 
-◘◘![ico-20 cap] **12**◘◘
+◘◘![ico-20 cap] **11**◘◘
 ~~~js
 const jobs = [
   'developer',
@@ -596,9 +598,9 @@ document.body
 
 _____________________________
 
-Passing the second (optional) parameter (the index of the current array element) to the function-argument.
+◘◘![ico-20 cap] **12**◘◘
 
-◘◘![ico-20 cap] **13**◘◘
+◘◘![ico-20 cap] **12**◘◘
 
 ~~~js
 const salary = [4000, 3200, 4500, 2800, 3500, 2400, 3700]
@@ -625,7 +627,7 @@ document.body
 
 __________________________________________
 
-◘◘![ico-20 cap] **14**◘◘
+◘◘![ico-20 cap] **13**◘◘
 
 ~~~js
 const arr = [
@@ -651,9 +653,10 @@ arr.iterate(test)
 ~~~
 __________________________________________
 
-Let's use the second and third optional parameters of the argument function:
 
-◘◘![ico-20 cap] **15**◘◘
+◘◘![ico-20 cap] **13**◘◘
+
+◘◘![ico-20 cap] **14**◘◘
 
 ~~~js
 const companList = ['Google', 'Mozilla', 'Microsoft']
@@ -673,7 +676,7 @@ companList.iterate(test, browsers)
 console.log(browsers)
 ~~~
 
-◘◘**^^Result^^**◘◘
+◘◘![ico-20 cap] **14**◘◘
 
 ~~~console
 ▼ (3) [{…}, {…}, {…}]
@@ -687,7 +690,7 @@ console.log(browsers)
 ________________________________________________________________
 
 
-[◄◄◄Array iterating methods◄◄◄](page/Array-iterating-methods.md)
+◘◘![ico-20 cap] **15**◘◘
 
 ________________________________________________________________
 

@@ -1,0 +1,9 @@
+[
+  "~for...in~",
+  "~Object.keys~",
+  "~Object.getOwnPropertyNames~",
+  "~JSON.stringify~",
+  "~Symbol.keyFor()~",
+  "~set~",
+  "~get~"
+]

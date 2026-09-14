@@ -82,7 +82,7 @@ const SLOGAN = /^(\s*☼☼☼\s*)(.+?)(\s*☼☼☼\s*)$/
 const TEST = /^(\s*→→→\s*)(.+?)(\s*→→→\s*)$/
 const DEMO = /^(\s*§§§§\s*)(.+?)(\s*§§§§\s*)$/
 
-function extract (source, sectionNames, refDecisions) {
+function extract (source, sectionNames, refDecisions, sharedFragments) {
   const messages = {}
   const notes = []
   const sections = []
@@ -90,7 +90,8 @@ function extract (source, sectionNames, refDecisions) {
   let sectionIndex = -1
   let section = 's0'
   const counters = {}
-  const fragments = []
+  // One table per page, shared by every language.
+  const fragments = sharedFragments || []
 
   // Whether each content line became a message, in order. The reference
   // language decides; the others replay it.
@@ -114,13 +115,24 @@ function extract (source, sectionNames, refDecisions) {
   // and a translator who cannot see what is emphasised cannot place it in a
   // sentence that reorders words. Those markers are checked by validate()
   // instead of being hidden.
+  // Reuse the entry when this exact fragment is already in the table, so every
+  // language agrees on what ⟦f5⟧ means, and append only what is new. Without
+  // that, each language numbered its own table: a page could end up holding
+  // messages from two numbering spaces — its own translation and segments
+  // imported from DeepL, which carry the Russian numbering — and a placeholder
+  // would resolve to the wrong snippet.
+  const hide = (value) => {
+    const at = fragments.indexOf(value)
+    return `⟦f${at === -1 ? fragments.push(value) - 1 : at}⟧`
+  }
+
   const protect = (text) => text
-    .replace(/~[^~\n]+~/g, (m) => `⟦f${fragments.push(m) - 1}⟧`)
+    .replace(/~[^~\n]+~/g, hide)
     // Only the target inside the parentheses is hidden, not the parentheses
     // themselves: the message then still reads as a link, [label](⟦f0⟧),
     // instead of leaving a dangling bracket for the translator to puzzle over.
     .replace(/(\]\()([^)\s]+)(\))/g, (_, open, target, close) =>
-      `${open}⟦f${fragments.push(target) - 1}⟧${close}`)
+      `${open}${hide(target)}${close}`)
 
   const put = (kind, text) => {
     const k = key(kind)
@@ -265,7 +277,7 @@ function assemble (skeleton, messages, fragments) {
     text.replace(/⟦f(\d+)⟧/g, (whole, i) =>
       fragments[Number(i)] !== undefined ? fragments[Number(i)] : whole)
 
-  return skeleton.replace(/\{\{([^}]+)\}\}/g, (whole, k) =>
+  return skeleton.replace(/(?<!\{)\{\{([a-zA-Z0-9_.]+)\}\}(?!\})/g, (whole, k) =>
     k in messages ? restore(messages[k]) : whole)
 }
 
@@ -289,16 +301,18 @@ let failed = false
 // others — so the same paragraph carries the same key in every language.
 let sectionNames = null
 let refDecisions = null
+let sharedFragments = null
 
 for (const lang of langs) {
   const file = path.join(LESSONS, lang, `${page}.md`)
   const source = fs.readFileSync(file, 'utf8')
 
   const { skeleton, messages, sections, fragments, decisions } =
-    extract(source, sectionNames, refDecisions)
+    extract(source, sectionNames, refDecisions, sharedFragments)
 
   if (!sectionNames) sectionNames = sections
   if (!refDecisions) refDecisions = decisions
+  if (!sharedFragments) sharedFragments = fragments
   const rebuilt = assemble(skeleton, messages, fragments)
   const ok = rebuilt === source
 
@@ -354,6 +368,16 @@ if (write && !failed) {
   const msgDir = path.join(root, 'content/messages')
   fs.mkdirSync(skelDir, { recursive: true })
   fs.mkdirSync(msgDir, { recursive: true })
+
+  // The fragment table has to reach disk too. Without it the messages hold
+  // ⟦f5⟧ references with nothing to resolve them against, and content/ cannot
+  // rebuild a page at all.
+  const fragDir = path.join(root, 'content/fragments')
+  fs.mkdirSync(fragDir, { recursive: true })
+  fs.writeFileSync(
+    path.join(fragDir, `${page}.json`),
+    JSON.stringify(sharedFragments, null, 2) + '\n'
+  )
 
   // ru is the reference skeleton; the others contribute messages only.
   fs.writeFileSync(path.join(skelDir, `${page}.md`), results.ru.skeleton)

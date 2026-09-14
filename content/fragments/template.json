@@ -1,0 +1,15 @@
+[
+  "~<template>~",
+  "~document~",
+  "~body~",
+  "~content~",
+  "~template~",
+  "~<template>...</template>~",
+  "~<template id=\"svg\"></template>~",
+  "~childNodes~",
+  "~NodeList [ ]~",
+  "~children~",
+  "~HTMLCollection [ ]~",
+  "~cloneNode (true)~",
+  "~true~"
+]

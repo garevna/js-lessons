@@ -15,8 +15,11 @@ Multiple threads can exist within the same process and share resources (memory).
 ^^![ico-20 warn] A program that uses only the main thread is **_single-threaded_**.^^
 
 ^^Multithreaded languages use multiple threads.^^
+
 ^^In multiprocessor (multi-core) systems, each processor (core) serves a separate thread, so threads do run in parallel (concurrently).^^
+
 ^^If there is only one processor, it has to switch from one thread to another quite often to create an illusion of simultaneous code execution in all threads.^^
+
 ^^^
 
 A **stack** is a "fast" chunk of RAM.
@@ -50,6 +53,7 @@ ____________________________________
 ☼☼☼ Asynchrony is event domination ☼☼☼
 
 One of the main properties of events is that the time of their occurrence is unpredictable.
+
 What cannot be predicted is impossible to synchronize.
 
 We don't know in advance when the user will click on the button, or if he or she will click at all.
@@ -460,11 +464,9 @@ getUser()
 In this example, by sending a **~fetch()~** request to the server, we receive a **promise** and pass the callback to the **~then()~** method of this promise.
 This callback receives an instance of the **Response** constructor, which needs to be parsed using the **~json()~** method to get the contents of body.
 The **~json()~** method again returns a **promise**, and we pass the second callback to it's **~then()~** method.
+
 Last callback will already receive the contents of the server response.
+
 Thus, the first callback will be sent to the **microtask queue** first, and only after it ‘works out’ will the second callback be sent to the **microtask queue**.
-
-If we were to send only one callback to the **task queue** using the **~setTimeout()~** method, then all timer callbacks would get into the **Call Stack** before the last microtask got into the **microtask queue**.
-
-To “even the odds,” the timer callback sets the timer again. Then the situation in the **task queue** will be similar to the **microtask queue**.
 
 ________________________________________________

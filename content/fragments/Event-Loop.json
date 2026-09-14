@@ -1,0 +1,22 @@
+[
+  "~main()~",
+  "~Call Stack~",
+  "~anonimous~",
+  "~click~",
+  "~document.body~",
+  "~setTimeout~",
+  "~createFigure~",
+  "~message~",
+  "~then~",
+  "~fetch()~",
+  "~then()~",
+  "~json()~",
+  "~body~",
+  "~setTimeout()~",
+  "~Garbage Collectors~",
+  "~function~",
+  "~parent~",
+  "~anonymous~",
+  "~demo~",
+  "~callback~"
+]

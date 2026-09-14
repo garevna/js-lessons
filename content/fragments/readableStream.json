@@ -1,0 +1,22 @@
+[
+  "~ReadableStream~",
+  "~start()~",
+  "~queue~",
+  "~enqueue()~",
+  "~chunk~",
+  "~textStream~",
+  "~close()~",
+  "~getReader~",
+  "~reader~",
+  "~read()~",
+  "~messageBox~",
+  "~putChank~",
+  "~readStream~",
+  "~getReader()~",
+  "~stream~",
+  "~Response~",
+  "~body~",
+  "~ReadableStreamDefaultReader~",
+  "~ArrayBuffer~",
+  "~Blob~"
+]

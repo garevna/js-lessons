@@ -16,14 +16,14 @@
   "s2.p8": "An exception will be thrown:",
   "s2.p9": "It will run in the loop because the block {...} is clearly present",
   "s2.p10": "![ico-25 pin] ⟦f0⟧ does not create properties in the global object",
-  "s2.p11": "![ico-20 pin] Block scope (as with ⟦f1⟧)",
-  "s2.p12": "![ico-20 pin] Duplicate declarations are not permitted (as with ⟦f2⟧)",
-  "s2.p13": "![ico-20 pin] Generally, everything is the same as with ⟦f3⟧, except:",
+  "s2.p11": "![ico-20 pin] Block scope (as with ⟦f0⟧)",
+  "s2.p12": "![ico-20 pin] Duplicate declarations are not permitted (as with ⟦f0⟧)",
+  "s2.p13": "![ico-20 pin] Generally, everything is the same as with ⟦f0⟧, except:",
   "s2.p14": "![ico-20 warn] The value cannot be changed",
   "s2.p15": "An exception will be thrown:",
   "s2.p16": "![ico-20 warn] You must initialise the value when declaring it",
   "s2.p17": "An exception will be thrown:",
   "s2.p18": "If a constant is an object, the values of its properties can be changed:",
   "s2.p19": "The same applies to arrays:",
-  "s2.p20": "[![ico-30 hw] **Exercises**](⟦f4⟧)"
+  "s2.p20": "[![ico-30 hw] **Exercises**](⟦f1⟧)"
 }

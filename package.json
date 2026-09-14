@@ -1,6 +1,6 @@
 {
   "name": "js-lessons",
-  "version": "5.0.0",
+  "version": "7.0.0",
   "license": "MIT",
   "description": "Web-development. Educational materials for the JS course.",
   "main": "./public",
@@ -15,13 +15,14 @@
     "icons-worker": "cd icons-worker && npm run prod",
     "content-worker": "node content-worker/build-content.js && cd content-worker && npm run prod",
     "service-worker": "node service-worker/config-service-worker.js --versions && cd service-worker && npm run prod",
-    "content-only": "npm run content-worker && npm run service-worker",
+    "content-only": "npm run lessons && npm run content-worker && npm run service-worker",
     "scripts-only": "npm run sw-identity && npm run prod && npm run service-worker",
     "content-scripts": "npm run sw-identity && npm run prod && npm run content-worker && npm run service-worker",
-    "full": "npm run sw-identity && npm run icons-worker && npm run content-worker && npm run prod && npm run service-worker",
+    "full": "npm run sw-identity && npm run lessons && npm run icons-worker && npm run content-worker && npm run prod && npm run service-worker",
     "install:all": "yarn install --frozen-lockfile && cd icons-worker && yarn install --frozen-lockfile && cd ../content-worker && yarn install --frozen-lockfile && cd ../service-worker && yarn install --frozen-lockfile",
     "sw-identity": "node service-worker/config-service-worker.js --identity",
-    "i18n": "node tools/i18n-status.js"
+    "i18n": "node tools/i18n-status.js",
+    "lessons": "node tools/i18n-build.js"
   },
   "keywords": [
     "javascript",

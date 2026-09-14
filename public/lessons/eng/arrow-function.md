@@ -9,7 +9,7 @@
 In the signature of an arrow function, there's no word **_function_**:
 
 ~~~js
-(parameters) => { function body }
+(параметры) => { тело функции }
 ~~~
 
 Hence, it follows logically that **_function expression_** is always used when declaring an arrow function:
@@ -42,20 +42,18 @@ const sayHi = () => console.info('Hi, user')
 ________________________________________
 
 ![ico-20 green-ok] In an arrow function, the arrow **~=>~** serves as the return operator.
-So, if there are no curly braces and the function body consists of just one expression,
-the value of that expression is returned without needing to use the **~return~** operator.
 
 ~~~js
-// regular function
+// обычная функция
 const multiply = function (x, y) { return x * y }
 
-// arrow function
+// стрелочная функция
 const multiply = (x, y) => x * y
 ~~~
 
-![ico-20 green-ok] Branching code operators (except for the ternary operator) and loop operators should be enclosed in curly braces.
+So, if there are no curly braces and the function body consists of just one expression,
 
-◘◘![ico-25 cap] operator **~for~**◘◘
+the value of that expression is returned without needing to use the **~return~** operator.
 
 ~~~js
 const iterate = len => {
@@ -63,13 +61,13 @@ const iterate = len => {
 }
 ~~~
 
-And here we can see the advantages of array iterating methods:
+![ico-20 green-ok] Branching code operators (except for the ternary operator) and loop operators should be enclosed in curly braces.
 
 ~~~js
 const iterate = len => new Array(len).fill(0).forEach((item, index) => console.log(index + 1))
 ~~~
 
-◘◘![ico-25 cap] оператор **~switch~**◘◘
+◘◘![ico-25 cap] operator **~for~**◘◘
 
 ~~~js
 const getAnswer = question => {
@@ -86,7 +84,7 @@ const getAnswer = question => {
 }
 ~~~
 
-◘◘![ico-25 cap] ternary operator◘◘
+And here we can see the advantages of array iterating methods:
 
 ~~~js
 const getAnswer = question => question === 'who'
@@ -98,7 +96,7 @@ const getAnswer = question => question === 'who'
       : 'I don\'t undestand your question'
 ~~~
 
-Or like this:
+◘◘![ico-25 cap] оператор **~switch~**◘◘
 
 ~~~js
 const getAnswer = question => ['who', 'what', 'where'].includes(question)
@@ -106,7 +104,7 @@ const getAnswer = question => ['who', 'what', 'where'].includes(question)
   : 'I don\'t undestand your question'
 ~~~
 
-Or so if using a closure:
+◘◘![ico-25 cap] ternary operator◘◘
 
 ~~~js
 const getAnswer = ((questions, answers) => question => questions.includes(question)
@@ -114,7 +112,7 @@ const getAnswer = ((questions, answers) => question => questions.includes(questi
   : 'I don\'t undestand your question')(['who', 'what', 'where'], ['Irina', 'develop', 'Kharkiv'])
 ~~~
 
-Or so if using a currying technique:
+Or like this:
 
 ~~~js
 const getAnswerTemplate = (questions, answers, wrong, question) => questions.includes(question)
@@ -132,11 +130,11 @@ ____________________________________________________
 ### ![ico-20 icon] prototype
 
 @@@@
-Arrow functions don't have a **~prototype~** object.<br><br>![ico-20 warn] Therefore, arrow functions cannot be constructors.
+У стрелочных функций нет объекта  **~prototype~**.<br><br>![ico-20 warn] Поэтому стрелочные функции не могут быть конструктором.
 ![](images/arrow-funcs-neutered-kitties.svg)
 @@@@
 
-☼☼☼ arrow functions are neutered kitties ☼☼☼
+☼☼☼ стрелочные фукции - это кастрированные котики ☼☼☼
 
 ~~~js
 console.dir(() => {})
@@ -165,14 +163,14 @@ console.dir(function () {})
   ► [[Prototype]]: ƒ ()
 ~~~
 
-![ico-20 warn] When trying to call an arrow function with the **~new~** keyword:
+![ico-20 warn] При попытке вызвать стрелочную функцию с ключевым словом **~new~**:
 
 ~~~js
 const arrowFunc = () => null
 const obj = new arrowFunc()
 ~~~
 
-an exception will be generated:
+будет сгенерировано исключение:
 
 ~~~error
     TypeError: arrowFunc is not a constructor
@@ -196,17 +194,18 @@ ______________________________________________________
 
 ### ![ico-25 icon] arguments
 
-Arrow functions don't have an **~arguments~** object.
-An exception (~ReferenceError~) will be thrown when trying to access the **~arguments~** object from an arrow function.
+У стрелочных функций нет объекта  **~arguments~**.
+
+При попытке обратиться к объекту **~arguments~** из стрелочной функции будет сгенерировано исключение (~ReferenceError~).
 
 ~~~error
     ReferenceError: arguments is not defined
 ~~~
 
-![ico-20 pin] If an arrow function is declared inside a regular function,
-the context variables of the parent function will be available to the arrow function
-(**~scope chain~**),
-so the **~arguments~** object of the parent function will be accessible inside it.
+![ico-20 pin] Если стрелочная функция объявлена внутри обычной функции,
+то переменные контекста родительской функции будут доступны для стрелочной функции
+(**~цепочка областей видимости~**),
+поэтому внутри нее будет доступен объект ~arguments~ родительской функции.
 
 ~~~js
 function testArguments () {
@@ -215,7 +214,7 @@ function testArguments () {
 testArguments(5, false)
 ~~~
 
-As a result of running the code, the ~arguments~ object of the **~testArguments~** function will be printed to the console:
+В результате работы кода в консоль будет выведен объект ~arguments~ функции **_testArguments_**:
 
 ~~~console
 ▼ Arguments(2) [5, false, callee: ƒ, Symbol(Symbol.iterator): ƒ]
@@ -229,15 +228,15 @@ As a result of running the code, the ~arguments~ object of the **~testArguments~
 
 ______________________________________________________
 
-### ![ico-20 icon] Call context
+### ![ico-20 icon] prototype
 
-![ico-20 warn] For arrow functions, the call context will always be the context in which the function was declared.
+Arrow functions don't have a **~prototype~** object.<br><br>![ico-20 warn] Therefore, arrow functions cannot be constructors.
 
-![ico-20 warn] It is not possible to change the call context of arrow function.
+an exception will be generated:
 
-It can be said that arrow functions have an "innate" call context.
+Можно сказать, что у стрелочных функций "врожденный" контекст вызова.
 
-#### ![ico-20 icon] Object literal
+#### ![ico-20 icon] arguments
 
 ~~~js
 window.name = 'Chrome'
@@ -254,14 +253,14 @@ human.getName()   // Stephan
 human.showName()  // Chrome
 ~~~
 
-Let's take a closer look at what is happening.
+Arrow functions don't have an **~arguments~** object.
 
-Before assigning a value to the **~human~** variable, the engine must calculate the value of the expression on the right side of the assignment operator.
-On the right side is the literal of the object.
-___________________
-1. The engine calls the **~Object~** constructor.
-2. The **~Object~** constructor creates an empty instance and returns a reference to it.
-3. The engine, having received a reference to an instance, places this reference in the **~human~** variable and performs three assignments:
+An exception (~ReferenceError~) will be thrown when trying to access the **~arguments~** object from an arrow function.
+![ico-20 pin] If an arrow function is declared inside a regular function,
+the context variables of the parent function will be available to the arrow function
+(**~scope chain~**),
+so the **~arguments~** object of the parent function will be accessible inside it.
+
 ~~~js
 human.name = 'Stephan'
 human.getName = function () {
@@ -269,20 +268,20 @@ human.getName = function () {
 }
 human.showName = () => console.log(this.name)
 ~~~
-Note that all three assignments occur in the **global scope**, i.e. in the context of the global **~window~** object.
-___________________
 
-And here's where we see how context transfer happens in the assignment process:
+As a result of running the code, the ~arguments~ object of the **~testArguments~** function will be printed to the console:
 
-![ico-20 pin] if there is an **ordinary function** in the right part of the assignment operator, this function receives a reference to the calling context defined in the **left part** of the assignment operator (in our example it is a **~human~** instance);
-![ico-20 pin] if there is an **arrow function** in the right part of the assignment operator, it receives the context of the ‘**right part**’, i.e. the object in the context of which the assignment takes place (in our example it is the global object **~window~**).
+И вот тут мы видим, как работает передача контекста в процессе присваивания:
 
-For fun, I call it the ‘drill rule’ ![ico-25 smile]
+![ico-20 pin] если в правой части оператора присваивания находится **обычная функция**, то она получает ссылку на контекст вызова, определяемую в **левой части** оператора присваивания (в нашем примере это объект **~human~**);
+![ico-20 pin] если в правой части оператора присваивания находится **стрелочная функция**, то она получает контекст "**правой части**", т.е. того объекта, в контексте которого происходит присваивание (в нашем примере это глобальный объект **~window~**).
+
+По приколу я называю это "правилом буравчика" ![ico-25 smile]
 
 ----------------
-#### ![ico-20 icon] Constructor
+#### ![ico-20 icon] Call context
 
-Now let's remember how the constructor works.
+![ico-20 warn] For arrow functions, the call context will always be the context in which the function was declared.
 
 ~~~js
 function Sample (name) {
@@ -294,64 +293,61 @@ function Sample (name) {
 }
 ~~~
 
-When we call the **~Sample~** function with the keyword **~new~**:
+![ico-20 warn] It is not possible to change the call context of arrow function.
 
 ~~~js
 const user = new Sample('Piter')
 ~~~
 
-then the engine performs the following sequence of steps:
+It can be said that arrow functions have an "innate" call context.
 
-1. Calls the constructor **~Object~**.
-2. The **~Object~** constructor creates an empty instance and returns a reference to it.
-3. The engine places the resulting reference into the **~user~** variable.
+1. Вызывает конструктор **~Object~**.
+2. Конструктор **~Object~** создает пустой объект и возвращает ссылку на него.
+3. Движок помещает полученную ссылку в переменную **~user~**.
 ~~~js
 const user = new Object()
 ~~~
-3. The engine adds a reference to the **~prototype~** property of the **~Sample~** function to this instance.
+3. Движок добавляет в этот объект ссылку на свойство **~prototype~** функции **~Sample~**.
 ~~~js
 Object.setPrototypeOf(user, Sample.prototype)
 ~~~
-4. The engine calls the **~Sample~** function in the context of the **~user~** instance.
+4. Движок вызывает функцию **~Sample~** в контексте объекта **~user~**.
 ~~~js
 Sample.call(user, 'Piter')
 ~~~
 
-That is, by the time the code of the **~Sample~** function is run for execution, the context of its call will have been created (the instance **~user~**).
-Whose instance will the **~user~** be?
-The engine has already added to this instance a reference to the **~prototype~** of the **~Sample~** function.
-And the **~prototype~** object of the function has a **~constructor~** property containing a reference to that function.
-That is, the instance **~user~** already has a reference to the function **~Sample~** as it's constructor:
+Т.е. к моменту, когда код функции **~Sample~** будет запущен на исполнение, контекст ее вызова будет создан (**~user~**), и это будет **экземпляр**.
+Чей экземпляр?
+Движок уже добавил этому экземпляру ссылку на **~prototype~** функции **~Sample~**.
+А в объекте **~prototype~** функции есть свойство **~constructor~**, содержащее ссылку на эту функцию.
+Т.е. экземпляр уже имеет ссылку на конструктор **~Sample~**:
 
 ~~~js
 console.log(user.__proto__.constructor.name)  // Sample
 ~~~
-
-and now it is recognised as an instance of the constructor **~Sample~**:
-
+и теперь он распознается как экземпляр конструктора **~Sample~**:
 ~~~js
 console.log(user instanceof Sample)  // true
 ~~~
 
-What is the main thing we can learn from here:
+Что главное мы отсюда выносим:
 
-The **~Sample~** function will work in the context of the instance being created, i.e. in the context of the **~user~** object.
+Функция **~Sample~** будет работать в контексте создаваемого экземпляра, т.е. в контексте объекта **~user~**.
 
-Then the assignment:
+Тогда присваивание:
 
 ~~~js
 this.showName = () => console.log(this.name)
 ~~~
 
-will take place in the context of the **~user~** instance.
-This means that the arrow function on the right side of the assignment statement will get the context of the **~user~** object.
+будет происходить в контексте экземпляра **~user~**.
+Это означает, что стрелочная функция в правой части оператора присваивания получит контекст объекта **~user~**.
 
 __________________________________
 
-#### ![ico-20 icon] Factory
+#### ![ico-20 icon] Object literal
 
-Now let's see what happens when we use a factory instead of a constructor:
-
+Let's take a closer look at what is happening.
 ~~~js
 const template = {
   name: 'Robert'
@@ -369,28 +365,28 @@ function fabric (instance, name) {
 const user = fabric.call(template, {}, 'Piter')
 ~~~
 
-Function **~fabric~** is called in the context of a **~template~** object.
+Before assigning a value to the **~human~** variable, the engine must calculate the value of the expression on the right side of the assignment operator.
 
-According to our "drill rule" ![ico-20 smile], **~showName~** method will get an "innate" call context - a reference to the **~template~** object.
+On the right side is the literal of the object.
 
-Let's check this:
+1. The engine calls the **~Object~** constructor.
 
 ~~~js
 user.showName()  // Robert
 ~~~
 ____________________________________________________
 
-**Conclusion**.
+2. The **~Object~** constructor creates an empty instance and returns a reference to it.
 
-If an instance is created using a constructor,
-the use of arrow functions in the public methods of the instance guarantees
-that **~this~** will always refer to the instance.
+3. The engine, having received a reference to an instance, places this reference in the **~human~** variable and performs three assignments:
+Note that all three assignments occur in the **global scope**, i.e. in the context of the global **~window~** object.
+And here's where we see how context transfer happens in the assignment process:
 
-Otherwise, using the arrow function will give you a lot of problems with the context of the method call.
+![ico-20 pin] if there is an **ordinary function** in the right part of the assignment operator, this function receives a reference to the calling context defined in the **left part** of the assignment operator (in our example it is a **~human~** instance);
 
 _____________________________________________________
 
-## ![ico-20 icon] Examples
+## ![ico-20 icon] Constructor
 
 ◘◘![ico-25 cap] ** 1**◘◘
 ~~~js
@@ -405,8 +401,6 @@ Sample.prototype.createMethod = param => () => console.log(param)
 
 const user = new Sample('Piter', 28)
 ~~~
-
-________________________________________
 
 ◘◘![ico-25 cap] ** 2**◘◘
 
@@ -427,8 +421,6 @@ test(4)(5)(7)(8)
 console.log(test()) // [1, 2, 3, 4, 5, 7, 8]
 ~~~
 
-________________________________________
-
 ◘◘![ico-25 cap] ** 3**◘◘
 
 ~~~js
@@ -437,8 +429,6 @@ const getUser = (getName = prompt.bind(null, 'User name'), getAge = prompt.bind(
   age: getAge()
 })
 ~~~
-
-________________________________________
 
 ◘◘![ico-25 cap] ** 4**◘◘
 
@@ -451,4 +441,4 @@ ________________________________________
 
 ____________________________________________________________________
 
-[![ico-30 hw] Quiz](quiz/arrowFunctions)
+Now let's remember how the constructor works.

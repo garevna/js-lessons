@@ -278,7 +278,7 @@ console.log(buffer)
 
 ________________________________________
 
-## ![ico-25 icon] Приклади
+## ![ico-25 icon] Examples
 
 ◘◘![ico-25 cap] ** 1**◘◘
 

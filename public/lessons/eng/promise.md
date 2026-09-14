@@ -2,10 +2,14 @@
 
 __________________________________________________________________________________________
 
-## ![ico-30 icon] Constructor
+[►►►callback►►►](page/Event-Loop#Callback)
 
-Constructor **~Promise~** is a **higher-order function**.
-This means that the constructor **~Promise~** expects a **function** as a **required argument**.
+__________________________________________________________________________________________
+
+## ![ico-30 icon] Function-argument
+
+The function-argument of the **~Promise~** constructor is also a **higher-order function**, i.e. its formal parameters are **functions**.
+^^Moreover, its formal parameters are callback functions.^^
 
 ~~~js
 const promise = new Promise(function (...) {
@@ -13,13 +17,13 @@ const promise = new Promise(function (...) {
 })
 ~~~
 
-If you call constructor **~Promise~** without an argument:
+The function-argument will be called when the **~Promise~** instance is created.
 
 ~~~js
 const promise = new Promise ()
 ~~~
 
-![ico-20 err] an exception will be thrown:
+Let's try passing to the **~Promise~** constructor the reference to a function without formal parameters:
 
 ~~~error
     Uncaught TypeError: Promise resolver undefined is not a function
@@ -27,13 +31,13 @@ const promise = new Promise ()
 
 __________________________________________________________________________________________
 
-### ![ico-25 icon] Function-argument
+### ![ico-25 icon] Instance
 
-The function-argument of the **~Promise~** constructor is also a **higher-order function**, i.e. its formal parameters are **functions**.
-^^Moreover, its formal parameters are callback functions.^^
+Let's see what the **~Promise~** constructor creates:
+So we have an instance that has a ~[[[PromiseState]]~ property set to "**~pending~**" and a ~[[PromiseResult]]~ property set to **~undefined~**.
 
-The function-argument will be called when the **~Promise~** instance is created.
-Let's try passing to the **~Promise~** constructor the reference to a function without formal parameters:
+^^These properties can be seen in the debugger console, but the script does not have access to them.^^
+Also, we see three "inherited" methods: **~then~**, **~catch~**, and **~finally~**, which we'll discuss further.
 
 ~~~js
 console.log('Start')
@@ -43,22 +47,22 @@ new Promise(() => console.log('Promise starts'))
 console.log('End')
 ~~~
 
+Как мы видим, конструктор **~Promise~** вызвал переданную ему анонимную функцию.
+
 ~~~console
 Start
 Promise starts
 End
 ~~~
 
-As we can see, the **~Promise~** constructor called the anonymous function passed to it.
-So, we've passed a function to **~Promise~** constructor, and the last one has called this function.
-
-So far, no async stuff.
+Итак, мы передали конструктору **~Promise~** некую функцию, а он ее вызвал.
+Пока никакой асинхронщины.
 
 _____________________________________
 
-### ![ico-25 icon] Instance
+### ![ico-25 icon] Static methods
 
-Let's see what the **~Promise~** constructor creates:
+Let's also see what static methods the **~Promise~** constructor has.
 
 ~~~js
 const promise = new Promise(() => console.log('Promise starts'))
@@ -80,16 +84,16 @@ Promise starts
     [[PromiseResult]]: undefined
 ~~~
 
-So we have an instance that has a ~[[[PromiseState]]~ property set to "**~pending~**" and a ~[[PromiseResult]]~ property set to **~undefined~**.
+Let’s see what they can do.
+Ok, we have received an instance whose state is no longer “~pending~”, but “**~fulfilled~**”.
 
-^^These properties can be seen in the debugger console, but the script does not have access to them.^^
-Also, we see three "inherited" methods: **~then~**, **~catch~**, and **~finally~**, which we'll discuss further.
+And the result is no longer ~undefined~, but "**Hello**".
 
 __________________________________________
 
-### ![ico-25 icon] Static methods
+### ![ico-25 icon] Prototypal methods
 
-Let's also see what static methods the **~Promise~** constructor has.
+Each instance created by the **~Promise~** constructor “inherits” the methods **~then~**, **~catch~** and **~finally~** from the “daddy”.
 
 ~~~js
 console.dir(Promise)
@@ -114,7 +118,7 @@ console.dir(Promise)
   ► [[Prototype]]: ƒ ()
 ~~~
 
-Let’s see what they can do.
+The methods **~then~** and **~catch~**  are two “holes” in the box through which we can extract what is in this box.
 
 ~~~js
 const promise = Promise.resolve('Hello')
@@ -128,8 +132,8 @@ console.log(promise)
     [[PromiseResult]]: "Hello"
 ~~~
 
-Ok, we have received an instance whose state is no longer “~pending~”, but “**~fulfilled~**”.
-And the result is no longer ~undefined~, but "**Hello**".
+To do this you need to “stick your hands” into these holes.
+By "hands" we mean **functions**.
 
 ~~~js
 const promise = Promise.reject('Access denied.')
@@ -143,86 +147,87 @@ console.log(promise)
     [[PromiseResult]]: "Access denied."
 ~~~
 
-Now we have an instance whose state is no longer "~pending~", not "~fulfilled~", but "**~rejected~**".
-And the result is "**Access denied.**".
+![ico-25 warn] So the methods **~then~**, **~catch~** and **~finally~** are **higher-order functions** because their arguments must be **functions**.
+However, if you pass nothing or any other value that is not a function the method will not throw an exception, although the method will not work.
 
-Those, we have received an object that can have different states (~[[PromiseState]]~), and which can have content (~[[PromiseResult]]~).
-It's pretty much like a closed box that might have something inside (~[[PromiseResult]]~).
+Those the expression:
+or:
 
-So, an instance of the **~Promise~** constructor will be in one of three possible states:
+will be equivalent to the expression:
 
 | **pending** | **fulfilled** | **rejected** |
-| ^^No contents yet (box empty)^^ | ^^The result is in the box^^  | ^^There is an error message in the box^^ |
+It makes sense, since the method's job is to pass a callback function to the **Event Loop**, and if there's nothing to pass, the method will do nothing.
 
 _________________________________________
 
 ![ico-35 coffee]
 
-Let's say you walked into a café where there are no waiters and you placed an order ![ico-35 egg].
-At the same time, a box appears on the table in front of you, and at some point the answer to your order will appear in this box.
-The answer will not appear immediately, since it takes time to transfer the order to the kitchen.
-The answer may be positive (then the ![ico-35 egg] will will appear in the box),
-or negative if the chef can't cook the ![ico-35 egg] right now due to a lack of necessary ingredients.
+![ico-25 warn] The methods **~then~**, **~catch~** and **~finally~** return an instance of **~Promise~**.
 
-The trick is that you can't peek inside the box to see if something's come up or not.
+That is, once you create an instance of **~Promise~**, you can't "escape" the "vicious circle"; no matter what you do, the result will always be a new instance of **~Promise~**.
+Ответ появится не сразу, поскольку нужно время, чтобы передать заказ на кухню.
+Ответ может быть положительным, тогда в коробке появится ![ico-35 egg],
+или же отрицательным, если в данный момент повар не может приготовить ![ico-35 egg] ввиду отсутствия необходимых ингредиентов.
 
-While the box is empty, its state (~[[PromiseState]]~) will be **~pending~**.
-If the ![ico-35 egg] appears in the box, the state (~[[PromiseState]]~) will become **~fulfilled~**.
-If there's a rejection in the box, then the state (~[[PromiseState]]~) will become **~rejected~**.
+Прикол в том, что вы не можете заглянуть в коробку и узнать, появилось там что-то, или нет.
+
+Пока коробка пуста, ее состояние (~[[PromiseState]]~) будет **~pending~**.
+Если в коробке появится ![ico-35 egg], то состяние (~[[PromiseState]]~) станет **~fulfilled~**.
+Если в коробке отказ, то состяние (~[[PromiseState]]~) станет **~rejected~**.
 
 | **~PromiseState~** | **~PromiseResult~** |
 | **~pending~**      | ![ico-25 wait]      |
 | **~fulfilled~**    | ![ico-40 egg]       |
 | **~rejected~**     | ![ico-25 error]     |
 
-Now we need to figure out how to “pull” the values ​​of the ~[[PromiseState]]~ and ~[[PromiseResult]]~ properties from this instance.
-We can see them in the console, but those properties aren't available for our code.
+Теперь надо разобраться с тем, как "вытащить" из этого экземпляра значения свойств ~[[PromiseState]]~ и ~[[PromiseResult]]~.
+В консоли-то мы их видим, но для нашего кода эти свойства недоступны.
 
-But we are really hungry.
+А кушать-то хочется.
 
-Let's try out the prototypal methods that are available to an instance of the **~Promise~** constructor.
+Давайте испытаем прототипные методы, которые доступны экземпляру конструктора **~Promise~**.
 
 _______________________________________________________
 
-### ![ico-25 icon] Prototypal methods
+### ![ico-25 icon] catch
 
-Each instance created by the **~Promise~** constructor “inherits” the methods **~then~**, **~catch~** and **~finally~** from the “daddy”.
+Let's take exception handling seriously.
 
-The methods **~then~** and **~catch~**  are two “holes” in the box through which we can extract what is in this box.
-To do this you need to “stick your hands” into these holes.
+It’s very bad if the console turns red with error messages while your application is running.
+Для этого нужно "всунуть руки" в эти дырки.
 
-By "hands" we mean **functions**.
+Под "руками" подразумеваются **функции**.
 
-![ico-25 warn] So the methods **~then~**, **~catch~** and **~finally~** are **higher-order functions** because their arguments must be **functions**.
+![ico-25 warn] Итак, методы **~then~**, **~catch~** и **~finally~** являются **функциями высшего порядка**, поскольку их аргументами должны быть **функции**.
 
-However, if you pass nothing or any other value that is not a function the method will not throw an exception, although the method will not work.
-Those the expression:
+Однако если вы передадите методу любое другое значение, не являющееся функцией, или вообще не передадите ничего, то исключения не будет, хотя метод не сработает.
+Т.е. выражение:
 
 ~~~js
 Promise.resolve('Access granted.').then()
 ~~~
 
-or:
+или:
 
 ~~~js
 Promise.resolve('Access granted.').then(10)
 ~~~
 
-will be equivalent to the expression:
+будет равносильно выражению:
 
 ~~~js
 Promise.resolve('Access granted.')
 ~~~
 
-It makes sense, since the method's job is to pass a callback function to the **Event Loop**, and if there's nothing to pass, the method will do nothing.
+Это логично, ведь задача метода - передать колбек в **Event Loop**, а если передавать нечего, то метод **ничего делать не будет**.
 
-![ico-25 warn] The methods **~then~**, **~catch~** and **~finally~** return an instance of **~Promise~**.
+![ico-25 warn] Методы **~then~**, **~catch~** и **~finally~** возвращают экземпляр **~Promise~**.
 
-That is, once you create an instance of **~Promise~**, you can't "escape" the "vicious circle"; no matter what you do, the result will always be a new instance of **~Promise~**.
+Т.е. как только вы создали экземпляр **~Promise~**, вы уже не сможете "вырваться" из "заколдованного круга", т.е. что бы вы ни делали, результатом всегда будет новый экземпляр **~Promise~**.
 
 #### ![ico-20 icon] catch
 
-The function that we will pass to the **~catch~** method will pick up an error message if the request is rejected and the state of our “box” becomes **~rejected~**.
+Функция, которую мы передадим методу **~catch~**, заберет сообщение об ошибке, если запрос будет отклонен и состояние нашей "коробки" станет **~rejected~**.
 
 ~~~js
 const promise = Promise.reject('Access denied.')
@@ -232,8 +237,8 @@ const promise = Promise.reject('Access denied.')
     Uncaught (in promise) Access denied.
 ~~~
 
-Let's take exception handling seriously.
-It’s very bad if the console turns red with error messages while your application is running.
+Давайте отнесемся серьезно к обработке исключений.
+Очень плохо, если в процессе работы вашего приложения консоль будет красной от сообщений об ошибке.
 
 ☼☼☼ Don't make the console blush for you ☼☼☼
 
@@ -247,7 +252,7 @@ const promise = Promise.reject('Access denied.').catch(console.log)
 
 #### ![ico-20 icon] then
 
-Through the hole **~then~** you can stick two hands at once: one for the result, the other for the error message:
+Через дырку **~then~** можно всунуть сразу две руки: одну - за результатом, вторую - за сообщением об ошибке:
 
 ~~~js
 console.log('Start')
@@ -265,7 +270,7 @@ Access denied.
 
 #### ![ico-20 icon] finally
 
-I think this method is quite simple.
+Думаю, с этим методом все достаточно просто.
 
 ~~~js
 console.log('Start')
@@ -285,32 +290,30 @@ Finally
 ~~~
 ______________________________________________
 
-## ![ico-30 icon] Magic box
+## ![ico-30 icon] then
 
-So, using the **~Promise~** constructor, you can create a magic box with two holes.
-As we already realized, it's just impossible to peek into this box "here and now."
-Access to its contents is possible only through [►►►**Event Loop**►►►](page/Event-Loop).
-So, you'll have to send callbacks for the result, and there's no other way to get the contents out of the box.
+Итак, с помощью конструктора **~Promise~** можно создать магическую коробку с двумя дырками.
+Как мы уже поняли, заглянуть в эту коробку "здесь и сейчас" просто нереально.
+Доступ к ее содержимому возможен только через [►►►**Event Loop**►►►](page/Event-Loop).
+Т.е. вам придется отправить за результатом колбеки, и другого способа извлечь содержимое из коробки не существует.
 
-Let's figure out why it is this way.
+Давайте разберемся, почему именно так.
 
-Actually, the **~Promise~** instance acts as a "trap" for the result of the asynchronous process.
+На самом деле экземпляр **~Promise~** работает как "ловушка" для результата асинхронного процесса.
+Поскольку мы не знаем, когда завершится асинхронный процесс, то мы не знаем, когда состояние коробки изменится и в ней появится содержимое.
 
-Since we don't know when the asynchronous process will end, we don't know when the state of the box will change and the contents will appear inside it.
+Если бы коробку можно было сразу же открыть, то, скорее всего, мы увидели бы пустую коробку.
+Представьте теперь, что вы зависаете возле коробки и ждете, когда в ней появится содержимое.
+Т.е. блокируете стек вызовов.
+Но содержимое не может появиться в коробке, пока стек вызовов занят.
+Даже если уже пришел ответ сервера, или истекло время таймера...
+Т.е. вы зависнете с пустой коробкой в руках. При этом заблокируете страницу.
+Вывод: код, создавший экземпляр **~Promise~**, должен завершить работу и освободить стек вызовов.
 
-If the box could be opened immediately, then most likely we would see an empty box.
-Now imagine that you are hovering near a box and waiting for the contents to appear inside it.
-Those you block the **Call Stack**.
-But the contents cannot appear in the box while the Call Stack is busy.
-Even if the server response has already delivered, or the timer has expired...
-So, you'll be stuck with an empty box in your hands. Plus, you'll lock the page.
+Когда мы передаем экземпляру **~Promise~** свои колбеки через "дырки" **~then~**, **~catch~** и **~finally~**, мы освобождаем стек вызовов и даем возможность коробке получить нужный результат. Получив результат, коробка передаст его одному из наших колбеков.
 
-The output: the code that created the **~Promise~** instance should finish running and free up the Call Stack.
-
-When we pass our callback functions through the holes **~then~**, **~catch~** and **~finally~** of the **~Promise~** instance, we free the call stack and we give the box the opportunity to get the desired result. Having received the result, the box will pass it on to one of our callback functions.
-
-Now let's go back to the constructor.
-We know that when calling the **~Promise~** constructor, we must pass it a certain function (more precisely, a reference to a function).
+Теперь вернемся к конструктору.
+Мы знаем, что при вызове конструктора **~Promise~** мы должны передать ему некую функцию (точнее, ссылку на функцию).
 
 ~~~js
 const promise = new Promise(function (resolve, reject) {
@@ -318,12 +321,12 @@ const promise = new Promise(function (resolve, reject) {
 })
 ~~~
 
-This function will be called immediately.
-But this function has two formal parameters.
+Эта функция будет сразу же вызвана.
+Но у этой функции есть два формальный параметра.
 
-Here you should have a completely reasonable question:
-if we pass the **~Promise~** constructor a reference to a function, but we do not pass any arguments to call that function, then how can the constructor call it?
-After all, the constructor should pass  an arguments to this function when calling?
+Тут у вас должен возникнуть вполне логичный вопрос:
+если мы передаем конструктору **~Promise~** ссылку на функцию, но не передаем аргументы для вызова этой функции, то как конструктор может ее вызвать?
+Ведь при вызове он должен передать ей аргументы?
 
 ◘◘![ico-25 coffee] ** 2**◘◘
 ~~~js
@@ -342,25 +345,25 @@ const promise = (function (startTime) {
 promise.then(console.log)
 ~~~
 
-In this example, we see that we send the **~console.log~** callback after the **~Promise~** instance has been created.
-And we couldn’t have done this before, since we use its **~then~** method to pass the callback.
+В этом примере мы видим, что колбек **~console.log~** мы передаем уже после того, как экземпляр **~Promise~** был создан.
+Да и не могли бы раньше, поскольку мы используем его метод **~then~** для передачи колбека.
 
-This is precisely the magic of our two-hole box.
-The box itself will send its own callback functions to the [►►►**Event Loop**►►►](page/Event-Loop) for the result.
+Именно в этом и заключается магия нашей коробки с двумя дырками.
+Коробка сама отправит собственные колбеки за результатом в [►►►**Event Loop**►►►](page/Event-Loop).
 
-Let's see what happens if we create the **~Promise~** instance much earlier than we'll transfer the callback functions using the **_~then~_** and **_~catch~_** methods.
+Давайте помотрим, что произойдет, если мы создадим экземпляр ~Promise~ значительно раньше, чем повесим колбэки с помощью методов **_~then~_** и **_~catch~_**
 
 ~~~js
 var test = new Promise(resolve => resolve(`Time: ${new Date().getSeconds()}/`))
 ~~~
 
-After waiting a few seconds, let's execute the code:
+Выждав несколько секунд, выполним код:
 
 ~~~js
 test.then(data => console.log(data, new Date().getSeconds()))
 ~~~
 
-In the console we will see something like:
+В консоли мы увидим что-то вроде:
 
 ~~~console
 Start
@@ -368,13 +371,13 @@ End
 Time: 24/ 36
 ~~~
 
-Those. at the time the promise **~test~** was created, it was 24 seconds, and when we added callbacks, it was already 36 seconds.
-But the trick is that, although we “stuck our hands” into the **~then~** hole a few seconds later, the magic box saved for us the result that was obtained earlier.
+Т.е. в момент создания промиса **~test~** было 24 секунды, а когда мы добавили колбэки, было уже 36 секунд.
+Но прикол в том, что, хотя мы "всунули руки" в дырку **~then~** на несколько секунд позже, магическая коробка сохранила для нас результат, который был получен ранее.
 
-Imagine that you launched several asynchronous processes, received several "magic boxes", and put them on a shelf.
-You can get out the contents of the boxes at any time convenient for you and in any sequence convenient for you.
+Представьте, что вы запустили несколько асинхронных процессов, получили несколько "магических коробок", и поставили их на полку.
+Вы сможете извлечь содержимое коробок в любой удобный вам момент и в любой удобной для вас последовательности.
 
-To illustrate this, let's use the anonymous function from the previous example, but now give it the name **~createPromise~** and modify it a little:
+Для иллюстрации этого воспользуемся анонимной функцией из предыдущего примера, но теперь дадим ей имя **~createPromise~** и немного модифицируем ее:
 
 ~~~js
 function createPromise (startTime, title) {
@@ -389,7 +392,7 @@ function createPromise (startTime, title) {
 }
 ~~~
 
-Now let's use it to create three instances of **~Promise~**:
+Теперь создадим с ее помощью три экземпляра **~Promise~**:
 
 ◘◘![ico-25 cap] ** 3**◘◘
 ~~~js
@@ -402,12 +405,12 @@ second.then(console.log)
 third.then(console.log)
 ~~~
 
-As we can see, these three instances are resolved in a random order, depending on the value of the random variable **~interval~**, which is determined at the time the instance is created.
+Как мы видим, резолвятся эти три экземпляра в произвольном порядке, в зависимости от значения случайной величины **~interval~**, которая определяется в момент создания экземпляра.
 
 {{{promise-03.js}}}
 
-Suppose we need to strictly follow the output order: first → second → third.
-To do this, let’s use the “magical” properties of our “box with two holes”:
+Предположим, нам нужно строго соблюдать последовательность вывода: first → second → third.
+Воспользуемся для этого "магическими" свойствами нашей "коробки с двумя дырками":
 
 ◘◘![ico-25 cap] ** 4**◘◘
 ~~~js
@@ -422,23 +425,23 @@ first.then(() => second.then(console.log).then(third))
 
 __________________________________________________________________________________________
 
-## ![ico-25 icon] "Bundles" of promises
+## ![ico-25 icon] finally
 
-Continuing to study the static methods of the **~Promise~** constructor, we discover that in addition to **~Promise.resolve~** and **~Promise.reject~**, there are a number of useful methods with which we can serve entire collections of promises at once.
-The main thing is that these collections should be **iterable**.
+Продолжая изучать статические методы конструктора **~Promise~**, мы обнаруживаем, что кроме **~Promise.resolve~** и **~Promise.reject~**, есть еще ряд полезных методов, с помощью которых мы можем обслуживать сразу целые коллекции промисов.
+Главное - чтобы эти коллекции были **итерабельными**.
 
-When we run several asynchronous operations in parallel, we find ourselves in the storm of callback functions returning to us.
+Когда мы запускаем параллельно несколько асинхронных операций, мы попадаем в стихию возвращающихся к нам колбеков.
 
 @@@@
-Imagine a tennis court and a cannon fires balls at a rate of five balls per second, and you have to catch them.<br>What if there are two cannons? Three cannons?...
+Представьте себе теннисный корт, и пушка выстреливает шарики со скоростью пять шариков в секунду, а вам нужно их отбивать.<br>А если две пушки? Три пушки?...
 ![](illustrations/promise-all.jpg)
 @@@@
 
-Of course, promises make things easier.
-These "magic boxes" act as "traps" for the balls.
-We can "get the balls" from these "boxes" using the method **~then~**.
+Безусловно, промисы облегчают задачу.
+Эти "магические коробки" работают как "ловушки" для шариков.
+Мы можем "извлекать шарики" из этих "коробок" с помощью метода **~then~**.
 
-Things get more complicated if you need the results of these asynchronous operations in a given order.
+Все осложняется, если результаты этих асинхронных операций вам нужны в заданном порядке.
 
 ~~~js
 const data = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth']
@@ -451,7 +454,7 @@ promises.forEach(promise => promise.then(console.log))
 
 {{{promise-arrays-01.js}}}
 
-This clearly suggests a solution of this kind:
+Тут явно напрашивается некое решение такого рода:
 
 ~~~js
 const data = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth']
@@ -468,10 +471,11 @@ promises
 
 {{{promise-arrays-02.js}}}
 
-This is especially convenient if we need the results of several asynchronous operations simultaneously.
-We can run several asynchronous operations, and process the received data in a "batch" when they all complete.
-However, in this case, we don't know when the array **~results~** will be ready.
-So we need another promise which will resolve after all the promises in the array are resolved.
+Это особенно удобно, если результаты нескольких асинхронных операций нам нужны одновременно.
+Мы можем запустить несколько асинхронных операций, и обрабатывать полученные данные "пакетом", когда они все завершатся.
+
+Однако в этом варианте мы не знаем, когда массив **~results~** будет готов.
+Т.е. нужен еще один промис, который вернет нам **~results~** после того, как все промисы в массиве разрезолвятся.
 
 ◘◘![ico-25 cap] ** 5**◘◘
 
@@ -498,10 +502,10 @@ const promise = new Promise(resolve => recurse(resolve))
 promise.then(console.log)
 ~~~
 
-So, next we will look at the static methods of the **~Promise~** constructor, which take as an argument a reference to **iterable collection of promises** and return **one promise**.
+Итак, далее мы будем рассматривать статические методы конструктора **~Promise~**, которые принимают в качестве аргумента ссылку на **массив промисов** и возвращают один промис.
 
 @@@@
-I.e. let's "pack" several "magic boxes" into one "magic box".
+Т.е "упакуем" несколько "магических коробок" в одну "магическую коробку".
 ![](illustrations/promises-collection.png)
 @@@@
 
@@ -509,8 +513,8 @@ __________________________________________
 
 ### ![ico-20 icon] Promise.all
 
-This method takes an iterable collection of promises, and returns a single promise, which will resolve with an iterable collection of results when all promises resolve.
-The remarkable thing is that the order of responses in the results collection strictly corresponds to the order of promises in the original collection of promises.
+Этот метод принимает итерабельную коллекцию промисов, и возвращает один промис, который резолвится массивом результатов тогда, когда все промисы разрезолвятся.
+Замечательно то, что порадок следования ответов в массиве результатов строго соотвествует порядку следования промисов в исходном массиве промисов.
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
@@ -528,7 +532,7 @@ Promise.all(promises)
   .then(responses => responses.forEach(show))
 ~~~
 
-![ico-20 warn] If there is a possibility of rejection of at least one of the promises, then our entire “package” will be rejected:
+![ico-20 warn] Если существует вероятность "провала" хотя бы одного из промисов, то весь наш "пакет" слетит:
 
 ~~~js
 const executor = (resolve, reject) => Math.random() > 0.5 ? resolve('success') : reject(new Error('ups...'))
@@ -541,7 +545,7 @@ Promise.all(promises)
 
 {{{promise-all-01.js}}}
 
-Let's go back to our example 5 and see how much simpler the code becomes using the **~Promise.all~** method:
+Давайте вернемся к нашему примеру 5 и посмотрим, насколько проще станет код с использованием метода **~Promise.all~**:
 
 ◘◘![ico-25 cap] ** 7**◘◘
 
@@ -564,13 +568,13 @@ ______________________________________________
 
 ### ![ico-20 icon] Promise.allSettled
 
-Returns a promise that resolves with the iterable collection of objects.
-Each promise in the source iterable collection of promises corresponds the object in the resulting iterable collection of objects.
-Each object of resulting iterable collection has three possible properties: **~status~**, **~value~** and **~reason~**.
+Возвращает промис, который резолвится массивом объектов.
+Каждому промису в исходном массиве соответствует объект в результирующем массиве.
+Объект имеет три возможных свойства: **~status~**, **~value~** и **~reason~**.
 
-The **~status~** property can take one of two values: **~fulfilled~** or **~rejected~**.
-When the **~status~** property has the value **~fulfilled~**, then the **~value~** property contains the result of the promise.
-When the **~status~** property has the value **~rejected~**, then the **~reason~** property contains a message about the reason for the error.
+Свойство **~status~** может принимать одно из двух значений: **~fulfilled~** или **~rejected~**.
+Когда свойство **~status~** имеет значение **~fulfilled~**, то свойство **~value~** содержит результат промиса.
+Когда свойство **~status~** имеет значение **~rejected~**, то свойство **~reason~** содержит сообщение о причине ошибки.
 
 ~~~js
 const promises = ['map', 'google', 'research', 'store'].map(item => Promise.resolve(item))
@@ -586,7 +590,7 @@ ______________________________________________
 
 ### ![ico-20 icon] Promise.any
 
-This static method of **~Promise~** constructor finds the first successfully resolved promise in the promise "batch" and returns it.
+Этот статический метод конструктора **~Promise~** находит первый благополучно разрешившийся промис в "пакете" промисов и возвращает его.
 
 ~~~js
 const freePort = 4000
@@ -597,8 +601,8 @@ const promises = [3000, 3256, 4000, 3040, 5000]
 Promise.any(promises).then(console.log)
 ~~~
 
-This method is good when we send several requests, but are satisfied with one of the results.
-For example, if we want to display a picture on the page, but we don’t remember exactly in which folder it is located.
+Этот метод хорош тогда, когда мы посылаем несколько запросов, но удовлетворимся одним из результатов.
+Например, если мы хотим вывести картинку на страницу, но не помним точно, в какой папке она находится.
 
 ◘◘![ico-25 cap] ** 8**◘◘
 
@@ -623,13 +627,13 @@ function testURL (src) {
 const promises = getURLs('coffee.png').map(url => testURL(url))
 ~~~
 
-If we use the previous method:
+Если мы воспользуемся предыдущим методом:
 
 ~~~js
 Promise.allSettled(promises).then(console.log)
 ~~~
 
-then we will see in the console:
+то увидим в консоли:
 
 ~~~console
 ▼ (4) [{…}, {…}, {…}, {…}]
@@ -641,25 +645,25 @@ then we will see in the console:
   ► [[Prototype]]: Array(0)
 ~~~
 
-However, if we are sure that at least one of the promises will be resolved, then we can use the method **~Promise.any~**:
+Однако, если мы уверены, что хотя бы один из промисов разрешится, то можно применить метод **~Promise.any~**:
 
 ~~~js
 Promise.any(promises)
   .then(img => document.body.appendChild(img))
 ~~~
 
-and then we will see the desired picture on the page.
+и тогда мы увидим на странице нужную картинку.
 ______________________________________________
 
 ### ![ico-20 icon] Promise.race
 
-"Race" - which of the promises will be resolved first.
-It doesn't matter what the result will be.
-The main thing is that it reaches the finish line first.
+"Скачки" - какой из промисов разрешится первым.
+Не важно, каким будет результат.
+Главное - он пришел к финишу первым.
 
-If one of the promises will be rejected before the others are resolved or rejected, we will see an error message.
+Т.е. если первым "провалится" один из промисов, то мы увидим сообщение об ошибке.
 
-Let's use **Github Users API**:
+Воспользуемся **Github Users API**:
 
 ◘◘![ico-25 cap] ** 9**◘◘
 
@@ -700,12 +704,11 @@ Promise.race(promises).then(show)
 {{{promise-race.js}}}
 __________________________________________________________________________________________
 
-## ![ico-25 icon] Examples
+## ![ico-25 icon] Magic box
 
-We use **Battery API** to get information about battery charging.
-The **~getBattery()~** method of the **~navigator~** object returns a ~promise~.
-![ico-25 warn] This example will not work in the console of the ~about:blank~ page.
-^^Метод  **_getBattery()_**  объекта  **navigator** возвращает промис.^^
+So, using the **~Promise~** constructor, you can create a magic box with two holes.
+As we already realized, it's just impossible to peek into this box "here and now."
+Access to its contents is possible only through [►►►**Event Loop**►►►](page/Event-Loop).
 
 
 ◘◘![ico-25 cap] **10**◘◘
@@ -761,7 +764,7 @@ new Promise(resolve => resolve())
 
 ______________________________________________________________
 
-Let's extend the prototype of the **~Error~** constructor a little:
+So, you'll have to send callbacks for the result, and there's no other way to get the contents out of the box.
 
 ~~~~js
 Object.defineProperty(Error.prototype, 'name', {
@@ -800,7 +803,7 @@ Object.assign(Error.prototype, {
 })
 ~~~~
 
-In addition, let's extend the functionality of the console:
+Let's figure out why it is this way.
 
 ~~~~js
 Object.assign(console, {
@@ -810,7 +813,7 @@ Object.assign(console, {
 })
 ~~~~
 
-Now let's do the following:
+Actually, the **~Promise~** instance acts as a "trap" for the result of the asynchronous process.
 
 ◘◘![ico-25 cap] **12**◘◘
 
