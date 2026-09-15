@@ -1,5 +1,14 @@
 export function parseLine (line) {
   if (line.match(/[-_]{3,5000}/)) return document.createElement('hr')
+
+  // ♦♦♦4♦♦♦ — the heading of an example block. Only the number is written;
+  // the icon, the border and the word come from the renderer, so the word is
+  // never copied into a lesson and never sent to a translator.
+  if (line.match(/^\s*♦{3}/)) {
+    const number = line.split('♦♦♦').find(str => str.trim()) || ''
+    return this.createExampleHeader(number.trim())
+  }
+
   if (line.match(/[☼]{3}/)) {
     const text = line.split('☼☼☼').find(str => str.length).trim()
     const elem = document.createElement('funny-slogan')

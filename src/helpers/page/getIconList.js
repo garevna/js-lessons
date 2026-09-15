@@ -3,6 +3,10 @@ export function getIconList (pageText) {
   const names = icons
     ? icons.map(icon => icon.slice(2, -1).split(' ')).map(arr => arr[1])
     : []
+  // ♦♦♦N♦♦♦ draws the cup without writing an icon marker into the page, so
+  // the style for it has to be asked for here or the heading renders blank.
+  if (/^[ 	]*♦{3}/m.test(pageText)) names.push('cap')
+
   const links = pageText.match(/\[(.)+\]\(.+\)/gm)
 
   links && names.push('open-in-new')

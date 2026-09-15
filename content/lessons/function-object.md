@@ -31,7 +31,7 @@ function test () {
 {{s2.p7}}
 {{s2.p8}}
 
-{{s2.p9}}
+♦♦♦1♦♦♦
 
 ~~~js
 function testArguments () {

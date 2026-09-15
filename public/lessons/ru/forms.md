@@ -55,7 +55,7 @@ ____________________
 
 Вставьте на страницу элемент  **~ p ~**, установите его свойство  ~id = "_demo_"~
 
-◘◘![ico-25 cap] **Пример 1**◘◘
+♦♦♦1♦♦♦
 
 ~~~js
 var demo = document.createElement('p')
@@ -93,7 +93,7 @@ __________________________________
 
 ### ![ico-20 icon] text
 
-◘◘![ico-25 cap] **Пример 2**◘◘
+♦♦♦2♦♦♦
 
 ~~~js
 var inp = document.createElement('input')
@@ -106,7 +106,7 @@ inp.onchange = inputValueChangedHandler
 
 ### ![ico-20 icon] color
 
-◘◘![ico-25 cap] **Пример 3**◘◘
+♦♦♦3♦♦♦
 
 ~~~js
 var clr = document.createElement('input')
@@ -135,7 +135,7 @@ _____________________________
 
 ### ![ico-20 icon] radio
 
-◘◘![ico-25 cap] **Пример 4**◘◘
+♦♦♦4♦♦♦
 
 ~~~js
 for (var i = 0; i < 3; i++) {
@@ -158,7 +158,7 @@ __________________________________
 
 ### ![ico-20 icon] checkbox
 
-◘◘![ico-25 cap] **Пример 6**◘◘
+♦♦♦6♦♦♦
 
 ~~~js
 for (var i = 0; i < 3; i++) {
@@ -194,7 +194,7 @@ _____________________________
 • **~value~** - значение ~value~ выбранного ~option~
 • **~selectedIndex~** - порядковый номер выбранного ~option~
 
-◘◘![ico-25 cap] **Пример 8**◘◘
+♦♦♦8♦♦♦
 
 ~~~js
 var members = [

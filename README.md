@@ -62,6 +62,7 @@ Each of these is recognised before anything else and rendered as a unit.
 | Syntax | Renders as |
 |---|---|
 | `# … ###### …` | headings, six levels |
+| `♦♦♦4♦♦♦` | the heading of an example block — see Components |
 | `☼☼☼ text ☼☼☼` | a slogan |
 | `→→→ question \| variant, variant \| answer →→→` | a quiz |
 | `§§§§ header \| templateId §§§§` | a live console demo |
@@ -69,6 +70,48 @@ Each of these is recognised before anything else and rendered as a unit.
 The answer of a quiz has to match one of its variants exactly. A variant may be
 quoted — `'Google'` — and the quotes are consumed as attribute delimiters, so
 the answer is written without them.
+
+### Components
+
+Some constructs are not markup at all: they name a component, and the renderer
+draws the whole thing. The lesson writes only what changes.
+
+| Syntax | Component | Draws |
+|---|---|---|
+| `♦♦♦4♦♦♦` | `createExampleHeader` | the heading of an example block: bordered panel, coffee cup, the word for the current language, the number |
+| `☼☼☼ text ☼☼☼` | `funny-slogan` | a slogan |
+| `→→→ question \| variants \| answer →→→` | `test-component` | a quiz |
+| `§§§§ header \| templateId §§§§` | `live-demo-spoiler` | a live console demo |
+
+`♦♦♦4♦♦♦` replaces what the lessons used to spell out by hand:
+
+```
+◘◘![ico-25 cap] **Пример 4**◘◘
+```
+
+That line was written 45 times across four pages, and the only thing that ever
+differed was the number. Worse, it was 45 separate things to translate, each
+sent to DeepL without any context — which is how one course ended up with
+"Example", "An example" and "Sample" on neighbouring pages. The word now lives
+in `src/configs/pageLabels.js` and is chosen when the page renders, so it never
+reaches a translator and never appears in a message file.
+
+Adding a component of your own is three small pieces:
+
+1. the words it needs, in `src/configs/pageLabels.js`, one entry per language
+2. `src/helpers/page/create<Name>.js`, exporting a function of the same name
+   that returns an element — the folder is collected automatically, there is
+   nothing to register
+3. a branch in `src/helpers/page/parseLine.js` that recognises the syntax and
+   calls it
+
+Pick a symbol nothing else uses, and repeat it three or four times the way the
+existing ones do — the parser looks at the start of a line, so a stray `♦` in
+prose is harmless but a line starting with one is not.
+
+One thing to remember: icon styles are requested by scanning the page text for
+`![ico-NN name]` markers. A component that draws an icon without writing such a
+marker has to ask for it in `getIconList.js`, or it renders blank.
 
 ### Inline
 

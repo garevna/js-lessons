@@ -51,6 +51,17 @@ function split (text) {
       core = inner.slice(lead.length, inner.length - tail.length)
       changed = true
     }
+
+    // A trailing number is not part of the phrase. "Пример 1" and "Пример 12"
+    // are one phrase and one translation with a different number after it —
+    // which is the whole of what changes in an example heading, and the reason
+    // 124 of them were each being sent to a translator on their own.
+    const number = core.match(/\s*\d+\.?$/)
+    if (number && core.length > number[0].length) {
+      post = number[0] + post
+      core = core.slice(0, core.length - number[0].length)
+      changed = true
+    }
   }
 
   return { pre, core, post }

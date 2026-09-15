@@ -59,11 +59,6 @@
     "eng": "They will be accessible by index strictly in the order in which they were passed to the function when it was called.",
     "ua": "Вони будуть доступні за індексом строго в тому порядку, в якому вони були передані функції під час виклику."
   },
-  "s2.p9": {
-    "ru": "◘◘![ico-25 cap] **Пример 1**◘◘",
-    "eng": "◘◘![ico-25 cap] **Example 1**◘◘",
-    "ua": "◘◘![ico-25 cap] **Приклад 1**◘◘"
-  },
   "s2.p10": {
     "ru": "У объекта **⟦f0⟧** есть свойство **_⟦f5⟧_** - ссылка на выполняемую функцию (функцию-\"хозяина\" объекта  ⟦f0⟧).",
     "eng": "The object **⟦f0⟧** has a property **_⟦f5⟧_** – a reference to the function being executed (the ‘owner’ function of the object  ⟦f0⟧).",

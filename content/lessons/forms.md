@@ -55,7 +55,7 @@ ____________________
 
 {{s1.p12}}
 
-{{s1.p13}}
+♦♦♦1♦♦♦
 
 ~~~js
 var demo = document.createElement('p')
@@ -93,7 +93,7 @@ __________________________________
 
 ### ![ico-20 icon] text
 
-{{s1.p15}}
+♦♦♦2♦♦♦
 
 ~~~js
 var inp = document.createElement('input')
@@ -106,7 +106,7 @@ inp.onchange = inputValueChangedHandler
 
 ### ![ico-20 icon] color
 
-{{s1.p16}}
+♦♦♦3♦♦♦
 
 ~~~js
 var clr = document.createElement('input')
@@ -135,7 +135,7 @@ _____________________________
 
 ### ![ico-20 icon] radio
 
-{{s2.p8}}
+♦♦♦4♦♦♦
 
 ~~~js
 for (var i = 0; i < 3; i++) {
@@ -158,7 +158,7 @@ __________________________________
 
 ### ![ico-20 icon] checkbox
 
-{{s2.p10}}
+♦♦♦6♦♦♦
 
 ~~~js
 for (var i = 0; i < 3; i++) {
@@ -194,7 +194,7 @@ _____________________________
 {{s2.p19}}
 {{s2.p20}}
 
-{{s2.p21}}
+♦♦♦8♦♦♦
 
 ~~~js
 var members = [
