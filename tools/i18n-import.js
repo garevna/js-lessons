@@ -65,6 +65,52 @@ if (!outFiles.length) {
   process.exit(1)
 }
 
+// Matching on the segment number only works while the numbers still mean what
+// they meant when the file was sent. DeepL sometimes splits or merges a line
+// and renumbers the whole list to keep it sequential, and what comes back
+// looks perfectly well formed while every segment past the change sits one
+// place from home. arrow-function.ua came back with 31 numbered lines for the
+// 30 it was sent; three of them passed every other check, because the
+// neighbour they had slid onto happened to carry the same placeholders, and
+// they reached the live page as translations of the wrong paragraph.
+//
+// So the count is checked first, per file, and a mismatch stops the import
+// instead of salvaging what it can. A renumbered list cannot be repaired by
+// reading numbers out of it.
+const numbered = (text) => text.split(/\r?\n/)
+  .filter((line) => /^\s*\d+\s*[.)]/.test(line.trim())).length
+
+const counts = []
+
+for (const file of outFiles) {
+  const part = Number((file.match(/\.(\d+)\.out\.txt$/) || [])[1])
+  const sent = index.filter((x) => x.chunk === part).length
+  // An index written before chunk numbers were recorded cannot answer this
+  // per file. Those exports predate the check and go on as before.
+  if (sent) counts.push({ file, sent, back: numbered(fs.readFileSync(path.join(OUT, file), 'utf8')) })
+}
+
+const miscounted = counts.filter((c) => c.sent !== c.back)
+
+if (miscounted.length) {
+  console.error(`\n  ${page} → ${lang}: the translation came back with a different number of lines than it was sent.\n`)
+  for (const c of miscounted) {
+    console.error(`    ${c.file}: sent ${c.sent} segments, got ${c.back} lines`)
+  }
+  console.error(`
+  Nothing has been imported. This is not a partial translation: when the count
+  changes, the list has been renumbered, and every segment after the change
+  belongs to a different key than its number claims. The checks below cannot
+  catch that, because a shifted line is still a valid translation of
+  something — just not of the paragraph it would be filed under.
+
+  Open the file beside the .txt it came from and find where they diverge: a
+  line was either split in two or merged with its neighbour. Restore one line
+  per segment, keep the original numbers, and run this again.
+`)
+  process.exit(1)
+}
+
 /** Everything that has to come back exactly as it went in. */
 const placeholders = (s) => (s.match(/⟦f\d+⟧/g) || []).sort()
 
@@ -76,6 +122,14 @@ const placeholders = (s) => (s.match(/⟦f\d+⟧/g) || []).sort()
 const tags = (s) => (s.match(/<\/?[a-zA-Z][^>]*>/g) || [])
   .map((t) => t.toLowerCase())
   .sort()
+
+// ![ico-20 speach] names an icon, and getIcon falls back to a default for any
+// name it does not know. DeepL read the name as a word and corrected the
+// author's typo to "speech", which is not an asset: 42 speech balloons across
+// three English pages had quietly become the default icon. Nothing complained,
+// because a default icon is exactly what the code shows when it cannot find
+// the one it was asked for.
+const icons = (s) => (s.match(/!\[ico-\d+ [\w:-]+\]/g) || []).sort()
 
 // A URL must return character for character. DeepL usually leaves them alone,
 // but "usually" is not a property worth relying on for a link.
@@ -157,6 +211,16 @@ for (const file of outFiles) {
     if (wantTags.join() !== gotTags.join()) {
       problems.push({
         file, why: `html changed: expected ${wantTags.join(' ') || 'none'}, got ${gotTags.join(' ') || 'none'}`,
+        original: original.slice(0, 90), text: translated.slice(0, 90), where: { file, n }
+      })
+      continue
+    }
+
+    const wantIcons = icons(original)
+    const gotIcons = icons(translated)
+    if (wantIcons.join() !== gotIcons.join()) {
+      problems.push({
+        file, why: `an icon name changed: expected ${wantIcons.join(' ') || 'none'}, got ${gotIcons.join(' ') || 'none'}`,
         original: original.slice(0, 90), text: translated.slice(0, 90), where: { file, n }
       })
       continue

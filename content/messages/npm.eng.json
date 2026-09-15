@@ -50,7 +50,7 @@
   "s0.p49": "••![ico-20 bash] npm install -g &lt;package name>••",
   "s0.p50": "^^![ico-20 pin] **Local installation of a package** named &lt;package name>:^^",
   "s0.p51": "••![ico-20 bash] npm install &lt;package name>••",
-  "s0.p52": "![ico-20 speech] ^^_Local_ – this means the package will be installed in the directory (project folder) you are currently in when you run the command  **⟦f15⟧**^^",
+  "s0.p52": "![ico-20 speach] ^^_Local_ – this means the package will be installed in the directory (project folder) you are currently in when you run the command  **⟦f15⟧**^^",
   "s0.p53": "![ico-20 npm] When installing packages with the _⟦f16⟧_  or _⟦f17⟧_",
   "s0.p54": "**⟦f15⟧**  option, it will add the corresponding entries to the ![ico-20 dir] **⟦f11⟧**  or  ! [ico-20 dir] **⟦f12⟧**",
   "s0.p55": "![ico-20 cap] For example, the command",

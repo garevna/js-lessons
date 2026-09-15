@@ -1,0 +1,14 @@
+{
+  "s0.p1": "A brilliant feature that allows you to dynamically change an element’s content",
+  "s0.p2": "![ico-20 warn] Browser support is not yet complete; **Edge** is still catching up with the evergreen browsers",
+  "s1.h1": "An example using a named slot",
+  "s1.p1": "It’s all very straightforward here:",
+  "s1.p2": "In the markup template, we’ll insert a named slot:",
+  "s1.p3": "Let’s insert the template with the slot into the DOM:",
+  "s1.p4": "Now we can dynamically change the text inside the slot",
+  "s1.p5": "To start with, let’s create a custom element **⟦f0⟧** using this markup template:",
+  "s1.p6": "Let’s create a variable **_⟦f1⟧_** to store the text to be inserted:",
+  "s1.p7": "Now we can insert the custom element onto the page with the specified content:",
+  "s1.p8": "That’s it!",
+  "s1.p9": "Full code snippet:"
+}

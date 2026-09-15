@@ -27,7 +27,7 @@ __________________________________
 ^^but the cup from which you are currently drinking tea is a concrete instantiation of the abstraction ‘cup’^^
 ^^To create a concrete instance of the ‘cup’ class in the classical model, the keyword **~new~** is used^^
 
-![ico-25 speech] **Inheritance in the classical model**
+![ico-25 speach] **Inheritance in the classical model**
 ^^The abstraction ‘cup’ is nested within another abstraction – ‘container’ – since a saucepan, a tank and a flask are also containers^^
 ^^Thus, the ‘cup’ class inherits from the ‘container’ class^^
 

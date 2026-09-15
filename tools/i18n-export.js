@@ -135,7 +135,9 @@ for (const page of pages) {
   }
 
   // An index file records which number maps to which key, so the importer
-  // never has to infer the mapping from order alone.
+  // never has to infer the mapping from order alone. It also records which
+  // chunk each segment went into, so the importer can tell whether a file
+  // came back with the number of lines it was sent — see below.
   const index = []
   const chunks = []
   let chunk = []
@@ -153,7 +155,7 @@ for (const page of pages) {
 
     chunk.push(line)
     size += line.length + 1
-    index.push({ n, key })
+    index.push({ n, key, chunk: chunks.length + 1 })
   })
 
   if (chunk.length) chunks.push(chunk)
