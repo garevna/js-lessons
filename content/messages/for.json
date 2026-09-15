@@ -1,0 +1,457 @@
+{
+  "s1.h1": {
+    "ru": "Оператор for",
+    "eng": "Operator for",
+    "ua": "Оператор for"
+  },
+  "s1.p1": {
+    "ru": "Ну, вот мы и добрались до третьего основополагающего принципа структурного программирования - до циклов.",
+    "eng": "Well, now we have reached the third fundamental principle of structural programming - loops.",
+    "ua": "Ну, ось ми і дісталися до третього основоположного принципу структурного програмування - до циклів."
+  },
+  "s1.p2": {
+    "ru": "Как мы уже, я надеюсь, знаем, цикл - это повторение одних и тех же действий несколько раз.",
+    "eng": "As I hope we already know, a loop is a repetition of the same actions several times.",
+    "ua": "Як ми вже, я сподіваюся, знаємо, цикл - це повторення одних і тих самих дій кілька разів."
+  },
+  "s1.p3": {
+    "ru": "Т.е. есть какой-то код, который должен быть выполнен неоднократно.",
+    "eng": "That is, there is some code that must be executed repeatedly.",
+    "ua": "Тобто є якийсь код, який має бути виконаний неодноразово."
+  },
+  "s1.p4": {
+    "ru": "Этот код помещается в фигурные скобки **⟦f0⟧** и называется **телом цикла**.",
+    "eng": "This code is placed in curly braces **⟦f0⟧** and is called the **body of the loop**.",
+    "ua": "Цей код поміщається у фігурні дужки **⟦f0⟧** і називається **тілом циклу**."
+  },
+  "s1.p5": {
+    "ru": "Каждое повторение цикла называется **итерацией цикла**.",
+    "eng": "Each repetition of the loop is called a **loop iteration**.",
+    "ua": "Кожне повторення циклу називається **ітерацією циклу**."
+  },
+  "s1.p6": {
+    "ru": "Таким образом, у любого оператора цикла будет тело, и это тело всегда заключено в фигурные скобки.",
+    "eng": "Thus, any loop statement will have a body, and this body is always enclosed in curly braces.",
+    "ua": "Таким чином, будь-який оператор циклу матиме тіло, і це тіло завжди поміщене у фігурні дужки."
+  },
+  "s1.p7": {
+    "ru": "На каждой итерации цикла код внутри фигурных скобок будет исполняться.",
+    "eng": "But every loop has one important task: to stop at the right time.",
+    "ua": "Але в кожного циклу є одне важливе завдання: вчасно зупинитися."
+  },
+  "s1.p8": {
+    "ru": "Но у каждого цикла есть одна важная задача: во-время остановиться.",
+    "eng": "We cannot endlessly repeat the execution of the code in curly braces.",
+    "ua": "Ми ж не можемо нескінченно повторювати виконання коду у фігурних дужках."
+  },
+  "s1.p9": {
+    "ru": "Мы же не можем бесконечно повторять выполнение кода в фигурных скобках.",
+    "eng": "An endless loop means a browser tab freezing. We certainly don't need it.",
+    "ua": "Нескінченний цикл - це підвисання вкладки браузера. Нам це точно ні до чого."
+  },
+  "s1.p10": {
+    "ru": "Бесконечный цикл - это подвисание вкладки браузера. Нам это точно ни к чему.",
+    "eng": "So, we need to stop the loop at the right time.",
+    "ua": "Отже, цикл потрібно вчасно зупинити."
+  },
+  "s1.p11": {
+    "ru": "Итак, цикл нужно во-время остановить.",
+    "eng": "To do this, determine when the loop should be stopped.",
+    "ua": "Для цього визначити, коли цикл має бути зупинений."
+  },
+  "s1.p12": {
+    "ru": "Для этого определить, когда цикл должен быть остановлен.",
+    "eng": "There are options:",
+    "ua": "Є варіанти:"
+  },
+  "s1.p13": {
+    "ru": "Есть варианты:",
+    "eng": "- Directly specify how many times the loop should be executed;",
+    "ua": "- Прямо вказати, скільки разів має бути виконано цикл;"
+  },
+  "s1.p14": {
+    "ru": "• Прямо указать, сколько раз должен быть выполнен цикл;",
+    "eng": "- Set some condition that the loop will be repeated if it is fulfilled. Such a condition (some expression) is always placed in parentheses.",
+    "ua": "- Задати якусь умову, при виконанні якої цикл буде повторюватися. Така умова (якийсь вираз) завжди поміщається в круглі дужки."
+  },
+  "s1.p15": {
+    "ru": "• Задать некое условие, при выполении которого цикл будет повторяться. Такое условие (некое выражение) всегда помещается в круглые скобки.",
+    "eng": "The loop condition can be any evaluated expression (i.e. syntactically correct), but after evaluating the value of this expression, the engine will always cast it to a boolean type (**⟦f1⟧** or **⟦f2⟧**).",
+    "ua": "Умова циклу може бути будь-яким обчислювальним виразом (тобто синтаксично коректним), але після обчислення значення цього виразу движок завжди приведе його до логічного типу (**⟦f1⟧** або **⟦f2⟧**)."
+  },
+  "s1.p16": {
+    "ru": "Условие цикла может быть любым вычисляемым выражением (т.е. синтаксически корректным), но после вычисления значения этого выражения движок всегда приведет его к логическому типу (**⟦f1⟧** или **⟦f2⟧**).",
+    "eng": "So, any loop operator has three mandatory parts: **the operator name** (keyword), a **condition** in parentheses, and a **body** in curly braces.",
+    "ua": "Отже, у будь-якого оператора циклу є три обов'язкові частини: **назва оператора** (ключове слово), **умова** у круглих дужках і **тіло** у фігурних дужках."
+  },
+  "s1.p17": {
+    "ru": "Итак, у любого оператора цикла есть три обязательные части: **название оператора** (ключевое слово), **условие** в круглых скобках и **тело** в фигурных скобках.",
+    "eng": "We begin our journey through loops with the **⟦f3⟧** loop statement.",
+    "ua": "Ми починаємо нашу подорож циклами з оператора циклу **⟦f3⟧**."
+  },
+  "s1.p18": {
+    "ru": "Для оператора цикла **⟦f3⟧** нужна переменная-счетчик (переменная цикла), которая должна:",
+    "eng": "The **⟦f3⟧** loop operator requires a counter variable (loop variable), which must:",
+    "ua": "Для оператора циклу **⟦f3⟧** потрібна змінна-лічильник (змінна циклу), яка повинна:"
+  },
+  "s1.p19": {
+    "ru": "1. иметь стартовое значение. Т.е. ее нужно объявить и присвоить ей начальное значение;",
+    "eng": "1. have an initial value. In other words, it must be declared and assigned an initial value;",
+    "ua": "1. мати початкове значення. Тобто її потрібно оголосити та присвоїти їй початкове значення;"
+  },
+  "s1.p20": {
+    "ru": "2. переменная должна менять свое значение после каждой итерации цикла (иначе цикл будет бесконечным);",
+    "eng": "2. the variable must change its value after each iteration of the loop (otherwise the loop will be infinite);",
+    "ua": "2. змінна повинна змінювати своє значення після кожної ітерації циклу (інакше цикл буде нескінченним);"
+  },
+  "s1.p21": {
+    "ru": "3. на каждой итерации значение переменной цикла должно проверяться на предмет выполнения ограничения (иначе цикл будет бесконечным).",
+    "eng": "3. at each iteration, the value of the loop variable must be checked against the condition (otherwise the loop will be infinite).",
+    "ua": "3. на кожній ітерації значення змінної циклу має перевірятися на дотримання умови (інакше цикл буде нескінченним)."
+  },
+  "s1.p22": {
+    "ru": "Мы начинаем наше путешествие по циклам с оператора цикла **⟦f3⟧**.",
+    "eng": "We begin our journey through loops with the **⟦f3⟧** loop statement.",
+    "ua": "Ми починаємо нашу подорож циклами з оператора циклу **⟦f3⟧**."
+  },
+  "s1.p23": {
+    "ru": "Для оператора цикла **⟦f3⟧** все, что касается переменной цикла (инициализация, изменение, проверка) помещается в круглые скобки:",
+    "eng": "For the **⟦f3⟧** loop statement, everything relating to the loop variable (initialisation, modification, checking) is placed within round brackets:",
+    "ua": "Для оператора циклу **⟦f3⟧** усе, що стосується змінної циклу (ініціалізація, зміна, перевірка), поміщається в круглі дужки:"
+  },
+  "s1.p24": {
+    "ru": "Например:",
+    "eng": "For example:",
+    "ua": "Наприклад:"
+  },
+  "s1.p25": {
+    "ru": "Тогда получаем во такую картину:",
+    "eng": "This gives us the following picture:",
+    "ua": "Тоді отримуємо таку картину:"
+  },
+  "s1.p26": {
+    "ru": "Осталось наполнить тело цикла кодом.",
+    "eng": "All that remains is to fill the loop body with code.",
+    "ua": "Залишилося заповнити тіло циклу кодом."
+  },
+  "s2.h1": {
+    "ru": "Директива break",
+    "eng": "Syntax",
+    "ua": "Syntax"
+  },
+  "s2.p1": {
+    "ru": "Прерывает выполнение цикла.",
+    "eng": "The **⟦f3⟧** loop statement requires a counter variable (loop variable) that must:",
+    "ua": "Для оператора циклу **⟦f3⟧** потрібна змінна-лічильник (змінна циклу), яка повинна:"
+  },
+  "s2.p2": {
+    "ru": "Дело в том, что ни одна из фаз (initialization; condition; update) для переменной цикла не является обязательной.",
+    "eng": "1. have a start value. That is, it must be declared and assigned a start value;",
+    "ua": "1. мати стартове значення. Тобто її потрібно оголосити і присвоїти їй початкове значення;"
+  },
+  "s2.p3": {
+    "ru": "Теоретически можно организовать цикл, в котором все три фазы будут пропущены:",
+    "eng": "2. the variable must change its value after each iteration of the loop (otherwise the loop will be infinite);",
+    "ua": "2. змінна повинна змінювати своє значення після кожної ітерації циклу (інакше цикл буде нескінченним);"
+  },
+  "s2.p4": {
+    "ru": "^^Здесь мы использовали функцию **⟦f4⟧** встроенной библиотеки <a href=\"#byblyoteka_Math\">**Math**</a>.^^",
+    "eng": "3. at each iteration, the loop variable's value must be checked to see if the constraint is met (otherwise the loop will be infinite).",
+    "ua": "3. на кожній ітерації значення змінної циклу має перевірятися на предмет виконання обмеження (інакше цикл буде нескінченним)."
+  },
+  "s2.p5": {
+    "ru": "В этом случае управление циклом переходит в тело цикла.",
+    "eng": "Например:",
+    "ua": "Наприклад:"
+  },
+  "s2.p6": {
+    "ru": "Не очень красивое решение, не так ли?",
+    "eng": "Then we get the following picture:",
+    "ua": "Тоді отримуємо таку картину:"
+  },
+  "s2.p7": {
+    "ru": "Уж если вы не хотите возиться с переменной цикла, то лучше использовать оператор цикла **⟦f5⟧**, который будет рассмотрен далее.",
+    "eng": "It remains to fill the loop body with code.",
+    "ua": "Залишилося наповнити тіло циклу кодом."
+  },
+  "s2.p8": {
+    "ru": "Но чисто из спортивного интереса такой вариант рассмотреть стоит.",
+    "eng": "But purely out of curiosity, it is worth considering this option.",
+    "ua": "Але суто з цікавості такий варіант варто розглянути."
+  },
+  "s2.p9": {
+    "ru": "Например, если нужно вывести в консоль все числа от 1 до 10, то можно сделать так:",
+    "eng": "For example, if you need to print all numbers from 1 to 10 to the console, you can do it like this:",
+    "ua": "Наприклад, якщо потрібно вивести в консоль усі числа від 1 до 10, то можна зробити так:"
+  },
+  "s2.p10": {
+    "ru": "Здесь условие на переменную цикла пропущено, что привело бы к бесконечному циклу, если бы мы не поставили прерывание цикла ⟦f6⟧ внутри его тела.",
+    "eng": "Here, the condition on the loop variable has been omitted, which would lead to an infinite loop if we hadn’t placed the loop termination condition ⟦f6⟧ inside its body.",
+    "ua": "Тут умова на змінну циклу пропущена, що призвело б до нескінченного циклу, якби ми не поставили переривання циклу ⟦f6⟧ усередині його тіла."
+  },
+  "s3.h1": {
+    "ru": "Директива continue",
+    "eng": "Directive break",
+    "ua": "Директива break"
+  },
+  "s3.p1": {
+    "ru": "Прерывает выполнение текущей итерации цикла.",
+    "eng": "Interrupts the loop execution.",
+    "ua": "Перериває виконання циклу."
+  },
+  "s3.p2": {
+    "ru": "Например, если нужно вывести в консоль только четные числа до 10, то можно сделать так:",
+    "eng": "The point is that none of the phases (initialisation; condition; update) for a loop variable is mandatory.",
+    "ua": "Річ у тім, що жодна з фаз (initialization; condition; update) для змінної циклу не є обов'язковою."
+  },
+  "s3.p3": {
+    "ru": "А можно и так:",
+    "eng": "Theoretically, you can organise a loop in which all three phases will be skipped:",
+    "ua": "Теоретично можна організувати цикл, у якому всі три фази будуть пропущені:"
+  },
+  "s3.p4": {
+    "ru": "^^Поскольку в теле условного оператора  ⟦f7⟧  всего одна операция, фигурные скобки мы опустили.^^",
+    "eng": "^^Here we used the **⟦f4⟧** function of the built-in library <a href=\"#byblyoteka_Math\">**Math**</a>.^^",
+    "ua": "^^Тут ми використовували функцію **⟦f4⟧** вбудованої бібліотеки <a href=\"#byblyoteka_Math\">**Math**</a>.^^"
+  },
+  "s3.p5": {
+    "ru": "^^⟦f8⟧ - это операция взятия остатка от деления (⟦f9⟧ будет 0, ⟦f10⟧ будет 1)^^",
+    "eng": "In this case, the loop control is transferred to the loop body.",
+    "ua": "У цьому випадку керування циклом переходить у тіло циклу."
+  },
+  "s3.p6": {
+    "ru": "^^⟦f11⟧  значение или тип данных переменной ** x** не совпадает со значением или типом данных переменной ** y**^^",
+    "eng": "Not a very nice solution, is it?",
+    "ua": "Не дуже гарне рішення, чи не так?"
+  },
+  "s3.p7": {
+    "ru": "Расшифровка выражения в круглых скобках:",
+    "eng": "If you don't want to mess with the loop variable, you'd better use the **⟦f5⟧** loop operator, which will be discussed later.",
+    "ua": "Якщо вже ви не хочете возитися зі змінною циклу, то краще використовувати оператор циклу **⟦f5⟧**, який буде розглянуто далі."
+  },
+  "s3.p8": {
+    "ru": "| ⟦f12⟧ | ^^инициализируем переменную цикла, т.е. объявляем ее и присваиваем ей начальное значение 0^^ |",
+    "eng": "But purely out of sporting interest, this option is worth considering.",
+    "ua": "Але суто зі спортивного інтересу такий варіант розглянути варто."
+  },
+  "s3.p9": {
+    "ru": "| ⟦f13⟧ | ^^способ изменения переменной цикла на каждой итерации<br>в данном случае после каждой итерации значение переменной цикла будет увеличиваться на единицу^^ |",
+    "eng": "For example, if you want to print all numbers from 1 to 10 to the console, you can do it this way:",
+    "ua": "Наприклад, якщо потрібно вивести в консоль усі числа від 1 до 10, то можна зробити так:"
+  },
+  "s3.p10": {
+    "ru": "| ⟦f14⟧ | ^^устанавливаем ограничение на число итераций цикла<br>( значение переменной цикла будет увеличиваться до тех пор, пока оно меньше 10)^^ |",
+    "eng": "The condition on the loop variable is omitted here, which would result in an infinite loop if we didn't put the loop interrupt ⟦f6⟧ inside its body.",
+    "ua": "Тут умову на змінну циклу пропущено, що призвело б до нескінченного циклу, якби ми не поставили переривання циклу ⟦f6⟧ всередині його тіла."
+  },
+  "s3.p11": {
+    "ru": "• ^^В данном примере к значению переменной ⟦f15⟧ 10 раз будет добавлено значение вычисляемого выражения  ⟦f16⟧^^",
+    "eng": "• ^^In this example, the value of the variable ⟦f15⟧ will be incremented 10 times by the value of the expression ⟦f16⟧^^",
+    "ua": "• ^^У цьому прикладі до значення змінної ⟦f15⟧ 10 разів буде додано значення обчислюваного виразу  ⟦f16⟧^^"
+  },
+  "s3.p12": {
+    "ru": "• ^^На первой итерации цикла значением переменной цикла ** i** будет 0, поэтому значение переменной ⟦f15⟧ не изменится^^",
+    "eng": "• ^^On the first iteration of the loop, the value of the loop variable **i** will be 0, so the value of the variable ⟦f15⟧ will not change^^",
+    "ua": "• ^^На першій ітерації циклу значенням змінної циклу ** i** буде 0, тому значення змінної ⟦f15⟧ не зміниться^^"
+  },
+  "s3.p13": {
+    "ru": "• ^^После первой итерации значение переменной цикла ** i** будет увеличено на единицу, и станет равно 1^^",
+    "eng": "• ^^After the first iteration, the value of the loop variable ** i** will be incremented by one and will become 1^^",
+    "ua": "• ^^Після першої ітерації значення змінної циклу ** i** буде збільшено на одиницю і стане рівним 1^^"
+  },
+  "s3.p14": {
+    "ru": "• ^^На второй итерации цикла значение выражения  ⟦f16⟧ уже будет равно 2, это значение будет добавлено к значению переменной ⟦f15⟧, которое станет равно 2^^",
+    "eng": "• ^^On the second iteration of the loop, the value of the expression  ⟦f16⟧ will already be 2; this value will be added to the value of the variable ⟦f15⟧, which will then become 2^^",
+    "ua": "• ^^На другій ітерації циклу значення виразу  ⟦f16⟧ вже дорівнюватиме 2, це значення буде додано до значення змінної ⟦f15⟧, яке стане рівним 2^^"
+  },
+  "s3.p15": {
+    "ru": "• ^^После итерации значение переменной цикла ** i** опять увеличится на 1 и станет равно 2^^",
+    "eng": "• ^^After the iteration, the value of the loop variable ** i** will again be incremented by 1 and will become 2^^",
+    "ua": "• ^^Після ітерації значення змінної циклу ** i** знову збільшиться на 1 і стане рівним 2^^"
+  },
+  "s3.p16": {
+    "ru": "• ^^На третьей итерации выражение  ⟦f16⟧ примет значение 4^^",
+    "eng": "• ^^On the third iteration, the expression  ⟦f16⟧ will take the value 4^^",
+    "ua": "• ^^На третій ітерації вираз  ⟦f16⟧ прийме значення 4^^"
+  },
+  "s3.p17": {
+    "ru": "• ^^Это значение будет добавлено к значению переменной ⟦f15⟧, которое станет равно ⟦f17⟧^^",
+    "eng": "• ^^This value will be added to the value of the variable ⟦f15⟧, which will then become ⟦f17⟧^^",
+    "ua": "• ^^Це значення буде додано до значення змінної ⟦f15⟧, яке стане рівним ⟦f17⟧^^"
+  },
+  "s3.p18": {
+    "ru": "^^И так далее...^^",
+    "eng": "^^And so on...^^",
+    "ua": "^^І так далі...^^"
+  },
+  "s3.p19": {
+    "ru": "В этом примере приращение переменной цикла осуществляется внутри тела цикла.",
+    "eng": "In this example, the loop variable is incremented within the body of the loop.",
+    "ua": "У цьому прикладі приріст змінної циклу здійснюється всередині тіла циклу."
+  },
+  "s3.p20": {
+    "ru": "Однако делать так я не рекомендую.",
+    "eng": "However, I do not recommend doing this.",
+    "ua": "Однак робити так я не рекомендую."
+  },
+  "s3.p21": {
+    "ru": "Это требует повышенной внимательности и может приводить к ошибкам.",
+    "eng": "It requires extra care and can lead to errors.",
+    "ua": "Це вимагає підвищеної уважності й може призводити до помилок."
+  },
+  "s3.p22": {
+    "ru": "Такие \"финты\" хороши для операторов цикла **⟦f5⟧** и **⟦f18⟧**, а уж если вы используете оператор **⟦f3⟧**, то лучше не выпендриваться и все настроки для переменной цикла делать в круглых скобках. Это нагляднее и проще в отладке.",
+    "eng": "Such ‘tricks’ work well for the **⟦f5⟧** and **⟦f18⟧** loop statements, but if you’re using the **⟦f3⟧** statement, it’s best not to show off and to put all the settings for the loop variable inside round brackets. This is clearer and easier to debug.",
+    "ua": "Такі «фінти» підходять для операторів циклу **⟦f5⟧** і **⟦f18⟧**, а якщо ви використовуєте оператор **⟦f3⟧**, то краще не випендрюватися і всі налаштування для змінної циклу робити в круглих дужках. Це наочніше і простіше в налагодженні."
+  },
+  "s3.p23": {
+    "ru": "Вывод в консоль степеней двойки.",
+    "eng": "Printing powers of two to the console.",
+    "ua": "Виведення в консоль степенів числа 2."
+  },
+  "s3.p24": {
+    "ru": "◘◘![ico-25 cap] Массив◘◘",
+    "eng": "◘◘![ico-25 cap] Array◘◘",
+    "ua": "◘◘![ico-25 cap] Масив◘◘"
+  },
+  "s3.p25": {
+    "ru": "^^У массивов, так же, как у текстовых строк, есть свойство ⟦f19⟧.^^",
+    "eng": "^^Arrays, just like text strings, have the ⟦f19⟧ property.^^",
+    "ua": "^^Масиви, так само як і текстові рядки, мають властивість ⟦f19⟧.^^"
+  },
+  "s3.p26": {
+    "ru": "^^Это свойство содержит число элементов массива (или число символов в строке).^^",
+    "eng": "^^This property contains the number of elements in the array (or the number of characters in the string).^^",
+    "ua": "^^Ця властивість містить кількість елементів масиву (або кількість символів у рядку).^^"
+  },
+  "s3.p27": {
+    "ru": "^^В качестве ограничения на число итераций цикла мы используем длину массива^^ ⟦f20⟧:",
+    "eng": "^^We use the length of the array^^ ⟦f20⟧ as the limit on the number of loop iterations:",
+    "ua": "^^Як обмеження на кількість ітерацій циклу ми використовуємо довжину масиву^^ ⟦f20⟧:"
+  },
+  "s3.p28": {
+    "ru": "^^т.е. пока переменная цикла меньше длины массива, цикл будет повторяться.^^",
+    "eng": "^^i.e. as long as the loop variable is less than the length of the array, the loop will repeat.^^",
+    "ua": "^^Тобто, доки змінна циклу менша за довжину масиву, цикл буде повторюватися.^^"
+  },
+  "s3.p29": {
+    "ru": "^^В результате выполнения цикла в переменной ⟦f15⟧ будет сумма элементов массива ⟦f21⟧.^^",
+    "eng": "^^As a result of executing the loop, the variable ⟦f15⟧ will contain the sum of the elements of the array ⟦f21⟧.^^",
+    "ua": "^^У результаті виконання циклу у змінній ⟦f15⟧ буде сума елементів масиву ⟦f21⟧.^^"
+  },
+  "s3.p30": {
+    "ru": "^^![ico-20 warn] Можно изменять значение переменной цикла на каждой итерации на число, отличное от единицы.^^",
+    "eng": "^^![ico-20 warn] You can change the value of the loop variable to a number other than one at each iteration.^^",
+    "ua": "^^![ico-20 warn] Можна змінювати значення змінної циклу на кожній ітерації на число, відмінне від одиниці.^^"
+  },
+  "s3.p31": {
+    "ru": "^^Следующий код выведет в консоль все нечетные числа от 1 до 20:^^",
+    "eng": "^^The following code will print all odd numbers from 1 to 20 to the console:^^",
+    "ua": "^^Наступний код виведе в консоль усі непарні числа від 1 до 20:^^"
+  },
+  "s3.quiz1": {
+    "ru": "Какое значение будет у переменной number после завершения цикла?",
+    "eng": "What will be the value of the variable `number` once the loop has finished?",
+    "ua": "Яке значення матиме змінна number після завершення циклу?"
+  },
+  "s3.quizVariants1": {
+    "ru": "1, 2, 3, 4, 5, 6",
+    "eng": "1, 2, 3, 4, 5, 6",
+    "ua": "1, 2, 3, 4, 5, 6"
+  },
+  "s3.quizAnswer1": {
+    "ru": "2",
+    "eng": "2",
+    "ua": "2"
+  },
+  "s3.quiz2": {
+    "ru": "Какое значение будет у переменной res_x после завершения цикла?",
+    "eng": "What will be the value of the variable `res_x` once the loop has finished?",
+    "ua": "Яке значення матиме змінна res_x після завершення циклу?"
+  },
+  "s3.quizVariants2": {
+    "ru": "1, 3, 5, 6, 9, 10",
+    "eng": "1, 3, 5, 6, 9, 10",
+    "ua": "1, 3, 5, 6, 9, 10"
+  },
+  "s3.quizAnswer2": {
+    "ru": "6",
+    "eng": "6",
+    "ua": "6"
+  },
+  "s3.quiz3": {
+    "ru": "Какое значение будет у переменной res_y после завершения цикла?",
+    "eng": "What value will the variable `res_y` have after the loop has finished?",
+    "ua": "Яке значення матиме змінна res_y після завершення циклу?"
+  },
+  "s3.quizVariants3": {
+    "ru": "1, 3, 5, 6, 9, 10",
+    "eng": "1, 3, 5, 6, 9, 10",
+    "ua": "1, 3, 5, 6, 9, 10"
+  },
+  "s3.quizAnswer3": {
+    "ru": "9",
+    "eng": "9",
+    "ua": "9"
+  },
+  "s3.quiz4": {
+    "ru": "Какое значение будет у переменной number после завершения цикла?",
+    "eng": "What value will the variable `number` have after the loop has finished?",
+    "ua": "Яке значення матиме змінна number після завершення циклу?"
+  },
+  "s3.quizVariants4": {
+    "ru": "1, 2, 3, 4, 5, 6, 7",
+    "eng": "1, 2, 3, 4, 5, 6, 7",
+    "ua": "1, 2, 3, 4, 5, 6, 7"
+  },
+  "s3.quizAnswer4": {
+    "ru": "2",
+    "eng": "2",
+    "ua": "2"
+  },
+  "s3.quiz5": {
+    "ru": "Какое значение будет у переменной number после завершения цикла?",
+    "eng": "What value will the variable `number` have after the loop has finished?",
+    "ua": "Яке значення матиме змінна number після завершення циклу?"
+  },
+  "s3.quizVariants5": {
+    "ru": "1, 2, 3, 4, 5, 6, 7",
+    "eng": "1, 2, 3, 4, 5, 6, 7",
+    "ua": "1, 2, 3, 4, 5, 6, 7"
+  },
+  "s3.quizAnswer5": {
+    "ru": "1",
+    "eng": "1",
+    "ua": "1"
+  },
+  "s3.quiz6": {
+    "ru": "Какое значение будет у переменной number после завершения цикла?",
+    "eng": "What value will the variable `number` have after the loop has finished?",
+    "ua": "Яке значення матиме змінна number після завершення циклу?"
+  },
+  "s3.quizVariants6": {
+    "ru": "0, -1, -9, -11, -12, -20, -21, -22, -23",
+    "eng": "0, -1, -9, -11, -12, -20, -21, -22, -23",
+    "ua": "0, -1, -9, -11, -12, -20, -21, -22, -23"
+  },
+  "s3.quizAnswer6": {
+    "ru": "-23",
+    "eng": "-23",
+    "ua": "-23"
+  },
+  "s3.quiz7": {
+    "ru": "Что будет в переменной message после завершения цикла?",
+    "eng": "What will the variable `message` contain after the loop has finished?",
+    "ua": "Що буде в змінній message після завершення циклу?"
+  },
+  "s3.quizVariants7": {
+    "ru": "'Hi! Welcome! Nice to see you. How are you?', 'Hi! How are you?', 'Hi! Welcome! ', 'Hi! Nice to see you.', 'Welcome! Nice to see you. How are you?', 'Welcome! How are you?', 'Nice to see you. How are you?', 'How are you?'",
+    "eng": "'Hi! Welcome! Nice to see you. How are you?', 'Hi! How are you?', 'Hi! Welcome! ', 'Hi! Nice to see you.', 'Welcome! Nice to see you. How are you?', 'Welcome! How are you?', 'Nice to see you. How are you?', 'How are you?'",
+    "ua": "'Hi! Welcome! Nice to see you. How are you?', 'Hi! How are you?', 'Hi! Welcome! ', 'Hi! Nice to see you.', 'Welcome! Nice to see you. How are you?', 'Welcome! How are you?', 'Nice to see you. How are you?', 'How are you?'"
+  },
+  "s3.quizAnswer7": {
+    "ru": "Welcome! How are you?",
+    "eng": "Welcome! How are you?",
+    "ua": "Welcome! How are you?"
+  }
+}

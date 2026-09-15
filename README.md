@@ -129,16 +129,28 @@ Ukrainian are translated from it.
 
 ### How a page is stored
 
-A page is not one file per language. It is a skeleton plus a message file per
-language:
+A page is a skeleton plus one message file holding all three languages:
 
 ```
-content/lessons/Closure.md         structure: markup, code, {{keys}}
-content/messages/Closure.ru.json   the Russian text
-content/messages/Closure.eng.json  the English text
-content/messages/Closure.ua.json   the Ukrainian text
-content/fragments/Closure.json     inline code and link targets
+content/lessons/Closure.md      structure: markup, code, {{keys}}
+content/messages/Closure.json   the text, in every language
+content/fragments/Closure.json  inline code and link targets
+content/common.json             phrases that repeat across the course
 ```
+
+The message file is one entry per paragraph:
+
+```json
+"s2.p4": {
+  "ru": "Замыкание — это функция вместе с её лексическим окружением.",
+  "eng": "A closure is a function together with its lexical environment.",
+  "ua": ""
+}
+```
+
+An empty string means nobody has translated it yet. Keeping the three
+languages side by side is what makes a translation filed under the wrong
+paragraph visible: the Russian it claims to translate sits on the line above.
 
 The skeleton holds everything that is the same in every language — headings,
 icons, code samples, tables, links. Only prose gets a key, so a code sample
@@ -148,13 +160,13 @@ language at once.
 Inside a message, anything a translator must not touch — inline code, a link's
 target — is replaced by a `⟦f0⟧` mark and kept in the fragments file. One table
 serves all three languages: a translation imported from DeepL carries the
-Russian numbering, so `⟦f5⟧` has to mean the same snippet in every file.
+Russian numbering, so `⟦f5⟧` has to mean the same snippet in every language.
 
 `public/lessons/{ru,eng,ua}/*.md` are built from these. Do not edit them.
 
-A key missing from a message file falls back to Russian, so a half-translated
-page works: the translated paragraphs appear in the chosen language and the
-rest stays Russian. There is no need to finish a page in one sitting.
+A missing translation falls back to Russian, so a half-translated page works:
+the translated paragraphs appear in the chosen language and the rest stays
+Russian. There is no need to finish a page in one sitting.
 
 ### What to do next
 
@@ -169,11 +181,40 @@ npm run i18n -- --done       finished pages
 the top, so a session finishes several pages instead of half-filling a long
 one.
 
+### The repeated phrases come first
+
+`Результат в консоли:` appears 33 times across 12 pages. `Пример 1` appears on
+nine. Sent to DeepL as part of a page, each occurrence is translated on its
+own, out of context, and comes back a little differently every time — "Result
+in the console", "Output in the console" and "Output to the console" were all
+in the pages at once.
+
+```
+npm run common                          collect them into content/common.json
+node tools/i18n-export.js --common eng
+node tools/i18n-import.js --common eng
+```
+
+295 phrases cover 899 occurrences, so translating them once removes 604
+segments from the queue and, more to the point, is the only way a heading
+reads the same on every page. After that each page export fills them in by
+itself and reports how many.
+
+`npm run common` also prints every phrase currently translated more than one
+way, with counts — a short list worth reading, because the most common reading
+is the one it keeps.
+
+The table is keyed by the phrase with its markup stripped, so `Результат`,
+`**Результат**` and `◘◘^^Результат^^◘◘` share one entry and each occurrence
+gets its own markup back. It is a translator's aid, not a layer the build
+knows about: the filled-in text is written into the page's own message file,
+so a page still holds every word it shows.
+
 ### Translating a page
 
 Five steps. Exporting does **not** translate anything — it only writes the text
-out for DeepL; importing only files the answer under `content/`. The page on the
-site does not change until step 5 has run.
+out for DeepL; importing only files the answer under `content/`. The page on
+the site does not change until step 5 has run.
 
 **1. Export.**
 
@@ -182,8 +223,9 @@ node tools/i18n-export.js Closure eng
 ```
 
 Writes `translate/Closure.eng.01.txt` and so on — numbered segments, split into
-chunks that fit DeepL's free limit. Already-translated keys are skipped, so
-running this again after a partial pass exports only what is left.
+chunks that fit DeepL's free limit. Already-translated keys are skipped, and so
+are segments with nothing to translate in them and phrases the common table can
+answer, so what is left is only what actually needs a translator.
 
 The folder is in `.gitignore`: these are working files. Open them from disk;
 they will not appear on GitHub.
@@ -201,7 +243,7 @@ node tools/i18n-import.js Closure eng
 ```
 
 Checks each segment, writes the ones that came back intact into
-`content/messages/Closure.eng.json`, and says what it refused and why.
+`content/messages/Closure.json`, and says what it refused and why.
 
 **5. Build.**
 
@@ -224,7 +266,9 @@ Russian for it, which is recoverable; a broken page is not.
 
 | Checked | Why |
 |---|---|
+| the line count | a file that comes back with a different number of lines has been renumbered, and every segment past the change belongs to a different key than its number claims — nothing is imported |
 | `⟦f0⟧` placeholders | hidden code and link targets — losing one breaks the page |
+| `![ico-20 pin]` names | an icon name is a lookup, and an unknown one silently renders the default icon |
 | `**` `_` `^^` counts | an unpaired marker prints literal asterisks; emphasis the Russian had must not go missing |
 | `<br>` and other tags | a dropped break runs two lines together |
 | URLs | a rewritten link is a dead link |
@@ -235,17 +279,37 @@ Emphasis that DeepL *adds* — a term the Russian left plain coming back bold �
 is accepted and listed separately, because rejecting it would leave the
 paragraph in Russian, which is worse than a word in bold nobody asked for.
 
-Keep the numbering when pasting. The importer matches on it and refuses to
-guess from line order.
+Keep the numbering and one line per segment. The importer matches on the number
+and refuses to guess from line order.
+
+The same checks can be run over what is already on disk, which is where they
+find things no import would accept today — translations written before a check
+existed, and translations filed under the wrong key:
+
+```
+npm run i18n-check                      counts per file
+node tools/i18n-check.js promise --list   the findings themselves
+```
+
 
 ### Editing the Russian
 
-Edit `content/messages/<page>.ru.json` for text, or `content/lessons/<page>.md`
-for structure. After changing a page's structure, re-extract it:
+Edit the `ru` value in `content/messages/<page>.json` for text, or
+`content/lessons/<page>.md` for structure, then rebuild with `npm run lessons`.
+
+Changing a paragraph's Russian does not clear its translation — whether the
+translation still says the right thing is a judgement only you can make.
+Changing a page's **structure** is different, and needs a re-extract:
 
 ```
 node tools/i18n-extract.js <page> --write
 ```
+
+Keys are positional — `s5.p9` is the ninth paragraph of the sixth section — so
+inserting one sentence renumbers everything below it. The extractor carries
+translations across by matching the Russian text rather than the key, so each
+one follows its paragraph to the new number; a paragraph whose Russian actually
+changed loses its translation, and only that one. It reports how many of each.
 
 The extractor splits a page and then rebuilds it, comparing the result with the
 original byte for byte. A page that fails that check is not written.
@@ -315,6 +379,14 @@ and expecting the site to change without building.
 writes `public/lessons/eng/<page>.md` when at least one key is translated, not
 for all 167 pages — otherwise the menu would report the whole course as
 translated and most of it would be Russian under an English name.
+
+**`content/orphans/` is a holding pen, not part of the build.** When the
+three-language message files were merged, 364 values turned out to be keyed to
+paragraphs that no longer existed — a page's Russian had been edited, the keys
+renumbered, and the translations left pointing at numbers. They are somebody's
+work, so they were set aside rather than deleted. Nothing reads them. The
+extractor now carries translations across by text, so the folder should not
+grow.
 
 **Page names are case-sensitive.** `Classes` and `classes` are the same file on
 Windows and two different ones on GitHub. The tools normalise a name to the

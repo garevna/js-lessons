@@ -1,0 +1,27 @@
+{
+  "s1.h1": {
+    "ru": "Краткая форма объявления методов",
+    "eng": "Shorthand syntax for declaring methods",
+    "ua": "Скорочена форма оголошення методів"
+  },
+  "s1.p1": {
+    "ru": "![ico-25 icon] Краткий синтаксис объявления методов при инициализации объекта:",
+    "eng": "![ico-25 icon] Shorthand syntax for declaring methods when initialising an object:",
+    "ua": "![ico-25 icon] Скорочений синтаксис оголошення методів під час ініціалізації об’єкта:"
+  },
+  "s1.p2": {
+    "ru": "![ico-20 warning] Вместо ",
+    "eng": "![ico-20 warning] Instead of",
+    "ua": "![ico-20 warning] Замість"
+  },
+  "s1.p3": {
+    "ru": "можно использовать краткую форму: ",
+    "eng": "you can use the shorthand syntax:",
+    "ua": "можна використовувати скорочену форму:"
+  },
+  "s1.p4": {
+    "ru": "![ico-20 warning] Краткий синтаксис допускает вычисляемые имена свойств",
+    "eng": "![ico-20 warning] The shorthand syntax allows for evaluated property names",
+    "ua": "![ico-20 warning] Скорочений синтаксис допускає обчислювані імена властивостей"
+  }
+}

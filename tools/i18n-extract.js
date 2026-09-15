@@ -379,13 +379,84 @@ if (write && !failed) {
     JSON.stringify(sharedFragments, null, 2) + '\n'
   )
 
-  // ru is the reference skeleton; the others contribute messages only.
   fs.writeFileSync(path.join(skelDir, `${page}.md`), results.ru.skeleton)
-  for (const lang of langs) {
-    const body = JSON.stringify(results[lang].messages, null, 2)
-    fs.writeFileSync(path.join(msgDir, `${page}.${lang}.json`), body + '\n')
+
+  const msgFile = path.join(msgDir, `${page}.json`)
+  let existing = {}
+  try { existing = JSON.parse(fs.readFileSync(msgFile, 'utf8')) } catch {}
+
+  // Translations follow the Russian text, not the key.
+  //
+  // Keys are positional — s5.p9 is the ninth paragraph of the sixth section —
+  // so inserting one sentence into the Russian renumbers everything below it.
+  // Matching on the key alone meant a translation stayed on the number while
+  // the paragraph moved out from under it, and the pages carried 364 values
+  // keyed to paragraphs that no longer existed. Matching on the text means an
+  // edit costs the translation of the paragraph that was edited, and only
+  // that one.
+  const byText = new Map()
+  for (const entry of Object.values(existing)) {
+    if (!entry || !entry.ru) continue
+    const slot = byText.get(entry.ru) || {}
+    for (const l of ['eng', 'ua']) if (entry[l] && !slot[l]) slot[l] = entry[l]
+    byText.set(entry.ru, slot)
   }
-  console.log(`\n  written: content/lessons/${page}.md + ${langs.length} message files`)
+
+  // Translations extracted from the built pages are only usable while those
+  // pages still have the Russian page's structure. When they do not — the
+  // Russian was edited and the others have not been rebuilt — the keys they
+  // produce describe the old shape, and taking them would file each
+  // translation under whatever paragraph now holds its number.
+  const structureAgrees = langs.length === 1 ||
+    langs.every((l) => Object.keys(results[l].messages).join('\n') === Object.keys(results.ru.messages).join('\n'))
+
+  const out = {}
+  let carried = 0
+  let dropped = 0
+
+  for (const [key, ru] of Object.entries(results.ru.messages)) {
+    const fromPage = structureAgrees ? results : null
+    const previous = byText.get(ru) || {}
+    const entry = { ru, eng: '', ua: '' }
+
+    for (const l of ['eng', 'ua']) {
+      let extracted = fromPage && fromPage[l] ? fromPage[l].messages[key] : undefined
+
+      // A built page shows Russian wherever the translation is missing, so a
+      // value extracted back out of it that equals the Russian is the
+      // fallback, not a translation. Storing it would count the paragraph as
+      // done and keep it out of every future export — which is how "Например:"
+      // ended up filed as the English for a paragraph of an English lesson.
+      //
+      // Short strings that are genuinely the same in both languages lose
+      // nothing by this: the build falls back to the Russian and emits exactly
+      // the same text, and the exporter copies them over untouched the next
+      // time the page goes out.
+      if (extracted === ru) extracted = undefined
+
+      entry[l] = extracted || previous[l] || ''
+      if (!extracted && previous[l]) carried += 1
+    }
+    out[key] = entry
+  }
+
+  // What the old file had and the new one does not: paragraphs whose Russian
+  // changed, so their translation is about text that is no longer there.
+  const nowPresent = new Set(Object.values(results.ru.messages))
+  for (const entry of Object.values(existing)) {
+    if (!entry || !entry.ru || nowPresent.has(entry.ru)) continue
+    if (entry.eng || entry.ua) dropped += 1
+  }
+
+  fs.writeFileSync(msgFile, JSON.stringify(out, null, 2) + '\n')
+
+  console.log(`\n  written: content/lessons/${page}.md + content/messages/${page}.json`)
+  if (!structureAgrees) {
+    console.log(`  the built ${langs.filter((l) => l !== 'ru').join(' and ')} page${langs.length > 2 ? 's' : ''} no longer match the Russian structure —`)
+    console.log('  translations were carried over from the message file by text instead')
+  }
+  if (carried) console.log(`  ${carried} translation${carried === 1 ? '' : 's'} followed their Russian text to a new key`)
+  if (dropped) console.log(`  ${dropped} translation${dropped === 1 ? '' : 's'} dropped: the Russian they belonged to was edited`)
 } else if (write) {
   console.log('\n  not written — round-trip failed')
 }

@@ -1,0 +1,272 @@
+{
+  "s1.h1": {
+    "ru": "Таймеры",
+    "eng": "Таймеры",
+    "ua": "Таймери"
+  },
+  "s1.p1": {
+    "ru": "Первым аргументом таймеру в обязательном порядке передается функция обратного вызова (callback).",
+    "eng": "The first argument passed to the timer is always the callback function.",
+    "ua": "Першим аргументом таймера обов'язково передається функція зворотного виклику (callback)."
+  },
+  "s1.p2": {
+    "ru": "Установка таймера возвращает числовой идентификатор таймера.",
+    "eng": "Setting a timer returns a numeric timer ID.",
+    "ua": "Встановлення таймера повертає числовий ідентифікатор таймера."
+  },
+  "s1.p3": {
+    "ru": "Метод ⟦f0⟧ объекта ⟦f1⟧ принимает два аргумента:",
+    "eng": "The ⟦f0⟧ method of the ⟦f1⟧ object takes two arguments:",
+    "ua": "Метод ⟦f0⟧ об'єкта ⟦f1⟧ приймає два аргументи:"
+  },
+  "s1.p4": {
+    "ru": "![ico-20 green-ok] функцию обратного вызова (callback).",
+    "eng": "![ico-20 green-ok] callback function.",
+    "ua": "![ico-20 green-ok] функцію зворотного виклику (callback)."
+  },
+  "s1.p5": {
+    "ru": "![ico-20 green-ok] длительность интервала задержки (в миллисекундах).",
+    "eng": "![ico-20 green-ok] duration of the delay interval (in milliseconds).",
+    "ua": "![ico-20 green-ok] тривалість інтервалу затримки (в мілісекундах)."
+  },
+  "s1.p6": {
+    "ru": "Функция, переданная в качестве первого аргумента, будет вызвана через указанный вторым аргументом интервал.",
+    "eng": "The function passed as the first argument will be called at the interval specified by the second argument.",
+    "ua": "Функція, передана як перший аргумент, буде викликана з інтервалом, зазначеним другим аргументом."
+  },
+  "s1.p7": {
+    "ru": "Сначала в консоль будут выведены сообщения 'START' и 'END',",
+    "eng": "First, the messages 'START' and 'END' will be printed to the console,",
+    "ua": "Спочатку в консолі з'являться повідомлення 'START' та 'END',"
+  },
+  "s1.p8": {
+    "ru": "а затем, примерно через секунду - сообщение 'One second has passed'.",
+    "eng": "and then, after about a second, the message 'One second has passed'.",
+    "ua": "а потім, приблизно через секунду, повідомлення 'One second has passed'."
+  },
+  "s1.p9": {
+    "ru": "Однако это не означает, что если передать нулевое значение методу ⟦f0⟧, то вызов коллбэк-функции произойдет немедленно.",
+    "eng": "However, this does not mean that if you pass a null value to the ⟦f0⟧ method, the callback function will be called immediately.",
+    "ua": "Однак це не означає, що якщо ви передасте нульове значення методу ⟦f0⟧, функція зворотного виклику буде викликана негайно."
+  },
+  "s1.p10": {
+    "ru": "Я не рекомендую вам использовать этот таймер.",
+    "eng": "I don't recommend you use this timer.",
+    "ua": "Я не рекомендую вам використовувати цей таймер."
+  },
+  "s1.p11": {
+    "ru": "Во-первых, потому что точный интервал времени не может быть выдержан.",
+    "eng": "Firstly, because the exact time interval cannot be maintained.",
+    "ua": "По-перше, тому що точний часовий інтервал витримати неможливо."
+  },
+  "s1.p12": {
+    "ru": "![ico-25 warn] Обязательно остановите таймеры, иначе страница будет \"подвисать\".",
+    "eng": "![ico-25 warn] Be sure to stop the timers, otherwise the page will freeze.",
+    "ua": "![ico-25 warn] Обов'язково зупиніть таймери, інакше сторінка «зависне»."
+  },
+  "s1.p13": {
+    "ru": "Это, кстати, вторая причина, почему не стоит использовать таймер **⟦f2⟧**.",
+    "eng": "This, by the way, is the second reason why you should not use the **⟦f2⟧** timer.",
+    "ua": "Це, до речі, друга причина, по якій не варто використовувати таймер **⟦f2⟧**."
+  },
+  "s1.p14": {
+    "ru": "И третья причина, почему не стоит использовать таймер **⟦f2⟧** заключается в том, что частота перерисовки страницы браузером никогда не совпадет с частотой вызова колбека вашего таймера.",
+    "eng": "And the third reason why you should not use the **⟦f2⟧** timer is that the frequency at which the browser redraws the page will never coincide with the frequency at which your timer callback is called.",
+    "ua": "І третя причина, по якій не варто використовувати таймер **⟦f2⟧** полягає в тому, що частота, з якою браузер перемальовує сторінку, ніколи не буде співпадати з частотою, з якою викликається callback вашого таймера."
+  },
+  "s1.p15": {
+    "ru": "То есть, колбек таймера может сработать несколько раз, но на странице это отобразится только во время очередной перерисовки страницы браузером.",
+    "eng": "That is, the timer's callback may trigger several times, but it will only appear on the page when the browser repaints the page again.",
+    "ua": "Тобто callback таймера може спрацьовувати кілька разів, але це буде відображатися на сторінці тільки при наступному перемальовуванні сторінки браузером."
+  },
+  "s1.p16": {
+    "ru": "Посмотрите, как обновляется на странице значение счетчика, которое инкрементируется таймером, установленным на 1мс:",
+    "eng": "See how the counter value, which is incremented by the timer set to 1ms, is updated on the page:",
+    "ua": "Подивіться, як оновлюється на сторінці значення лічильника, яке збільшується таймером, встановленим на 1 мс:"
+  },
+  "s1.p17": {
+    "ru": "Теперь посмотрим, как (не надо) анимировать объект на странице с помощью таймера **⟦f2⟧**.",
+    "eng": "Now let's see how (you shouldn't do this) to animate an object on a page using the **⟦f2⟧** timer.",
+    "ua": "Тепер давайте подивимося, як (не треба) анімувати об'єкт на сторінці за допомогою таймера **⟦f2⟧**."
+  },
+  "s1.p18": {
+    "ru": "Поскольку я рекомендую вам отдавать предпочтение CSS-анимации везде, где это возможно, то одновременно в этом примере будет продемонстрирована аналогичная анимация, но с помощью **⟦f3⟧**.",
+    "eng": "Since I recommend that you favour CSS animation wherever possible, this example will demonstrate a similar animation, but using **⟦f3⟧**.",
+    "ua": "Оскільки я рекомендую вам віддавати перевагу CSS-анімації скрізь, де це можливо, цей приклад також продемонструє аналогічну анімацію, але з **⟦f3⟧**."
+  },
+  "s1.p19": {
+    "ru": "Для начала давайте позаботимся о стилевом оформлении анимируемых элементов:",
+    "eng": "First, let's take care of styling the animated elements:",
+    "ua": "Для початку давайте подбаємо про стилізацію елементів, які будуть анімовані:"
+  },
+  "s1.p20": {
+    "ru": "и объявим функцию, создающую анимируемый элемент:",
+    "eng": "and declare a function that creates the animated element:",
+    "ua": "і оголосимо функцію, яка створює анімований елемент:"
+  },
+  "s1.p21": {
+    "ru": "Теперь перейдем непосредственно к анимации.",
+    "eng": "Now let's go directly to the animation.",
+    "ua": "Тепер перейдемо до самої анімації."
+  },
+  "s1.p22": {
+    "ru": "Помните, что именно браузер превращает в пиксели то, что вы создаете для юзера, и он гораздо эффективнее выполняет свою работу, чем ваш код.",
+    "eng": "Remember, it is the browser that turns what you create for the user into pixels, and it does its job much more efficiently than your code.",
+    "ua": "Пам'ятайте, що саме браузер перетворює те, що ви створюєте для користувача, в пікселі, і він виконує свою роботу набагато ефективніше, ніж ваш код."
+  },
+  "s1.p23": {
+    "ru": "CSS-анимация всегда согласована с частотой обновления страницы.",
+    "eng": "CSS animations are always coordinated with the page refresh rate.",
+    "ua": "CSS-анімація завжди узгоджується з частотою оновлення сторінки."
+  },
+  "s1.p24": {
+    "ru": "Вывод: вам не стоит пытаться конкурировать с браузером в том, в чем он заведомо сильнее вас.",
+    "eng": "Conclusion: you should not try to compete with the browser in what it is obviously stronger than you.",
+    "ua": "Висновок: вам не варто намагатися конкурувати з браузером в тому, в чому він однозначно сильніший за вас."
+  },
+  "s1.p25": {
+    "ru": "Однако если уж так необходимо использовать скрипт для анимации чего-либо, то и здесь браузер предоставляет вам более надежный инструмент, чем таймеры.",
+    "eng": "However, if you need to use a script to animate something, the browser provides you with a more reliable tool than timers.",
+    "ua": "Однак, якщо вам дійсно потрібно використовувати скрипт для анімації чогось, то браузер надає вам більш надійний інструмент, ніж таймери."
+  },
+  "s1.p26": {
+    "ru": "Это **⟦f4⟧** - метод объекта **window**.",
+    "eng": "This **⟦f4⟧** is a method of the **window** object.",
+    "ua": "Це метод объекта window **⟦f4⟧**."
+  },
+  "s1.p27": {
+    "ru": "Итак, есть несколько \"недостатоков\" таймеров, которые делают нежелательным их использование для анимации.",
+    "eng": "So, there are a few ‘shortcomings’ of timers that make it undesirable to use them for animation.",
+    "ua": "Отже, є кілька «недоліків» таймерів, які роблять небажаним їх використання для анімації."
+  },
+  "s1.p28": {
+    "ru": "Первое - вы никогда не можете быть уверены в том, что время, которое пройдет до момента попадания колбека таймера в колстек, будет таким, которое вы задали при установке таймера.",
+    "eng": "The first is that you can never be sure that the time that passes until the timer's callback function enters the Call Stack will be the time you set when you set the timer.",
+    "ua": "По-перше, ви ніколи не можете бути впевнені, що час, який пройде до того, як callback таймера потрапить у Call Stack, буде тим, який ви визначили під час встановлення таймера."
+  },
+  "s1.p29": {
+    "ru": "Второе - совершенно нереально согласовать частоту перерисовки страницы браузером с частотой вызова колбека таймера.",
+    "eng": "The second is that it is completely unrealistic to match the frequency at which the browser redraws the page with the frequency at which the timer's callback is called.",
+    "ua": "По-друге, абсолютно нереально звірити частоту перемальовування сторінок браузером з частотою виклику callback таймера."
+  },
+  "s1.p30": {
+    "ru": "В качестве аргумента **⟦f4⟧** получает колбэк-функцию, которая будет вызвана перед следующей перерисовкой браузером страницы.",
+    "eng": "As an argument, **⟦f4⟧** gets a callback function that will be called before the next time the browser redraws the page.",
+    "ua": "У якості аргументу **⟦f4⟧** отримує колбек-функцію, яка буде викликана перед наступною перерисовкою браузером сторінки."
+  },
+  "s1.p31": {
+    "ru": "**⟦f4⟧** возвращает целое число, являющееся уникальным идентификатором (ссылкой) для callback-функции.",
+    "eng": "**⟦f4⟧** returns an integer that is a unique identifier (reference) for the callback function.",
+    "ua": "**⟦f4⟧** повертає ціле число, яке є унікальним ідентифікатором (посиланням) для функції зворотного виклику."
+  },
+  "s1.p32": {
+    "ru": "Браузеры осуществляют перерисовку страницы с частотой ~ 60fps (frames per second - кадров в секунду).",
+    "eng": "Browsers redraw the page at a frequency of ~ 60fps (frames per second).",
+    "ua": "Браузери перемальовують сторінку зі швидкістю ~ 60fps (frames per second - кадрів в секунду)."
+  },
+  "s1.p33": {
+    "ru": "Именно с этой частотой будет вызываться колбэк-функция, что позволяет избежать \"дребезга\" (_debouncing_).",
+    "eng": "This is the frequency at which the callback function will be called, thus avoiding _debouncing_.",
+    "ua": "Саме з цією частотою буде викликатися колбек-функція, що дозволяє уникнути \"дребезгу\" (_debouncing_)."
+  },
+  "s1.p34": {
+    "ru": "Следующий пример наглядно демонстрирует, что использование **⟦f4⟧**.",
+    "eng": "The following example clearly demonstrates that using **⟦f4⟧**.",
+    "ua": "Наступний приклад ілюструє, що **⟦f4⟧**"
+  },
+  "s1.p35": {
+    "ru": "обеспечивает более \"гладкую\" анимацию, чем анимация с помощью таймеров,",
+    "eng": "provides a smoother animation than animation using timers,",
+    "ua": "забезпечує більш плавну анімацію, ніж анімація з таймером,"
+  },
+  "s1.p36": {
+    "ru": "поскольку частота изменения координат объекта согласована с частотой обновления (перерисовки) страницы браузером.",
+    "eng": "because the frequency of object coordinate changes is matched to the frequency at which the browser refreshes (redraws) the page.",
+    "ua": "тому що частота зміни координат об'єкта узгоджується з частотою оновлення (перемальовування) сторінки браузером."
+  },
+  "s1.p37": {
+    "ru": "Как и в примере 5, сначала стилизуем анимируемые элементы:",
+    "eng": "As in Example 5, we first style the animated elements:",
+    "ua": "Як і в прикладі 5, спочатку стилізуємо анімовані елементи:"
+  },
+  "s1.p38": {
+    "ru": "Далее мы будем использовать функцию **⟦f5⟧** из того же примера 5.",
+    "eng": "Next, we will use the **⟦f5⟧** function from the same example 5.",
+    "ua": "Далі ми будемо використовувати функцію **⟦f5⟧** з того ж прикладу 5."
+  },
+  "s1.p39": {
+    "ru": "А еще мы объявим функцию **⟦f6⟧**:",
+    "eng": "We will also declare the **⟦f6⟧** function:",
+    "ua": "А ще ми оголосимо функцію **⟦f6⟧**:"
+  },
+  "s1.p40": {
+    "ru": "В следующем примере мы будем выводить на страницу массив сообщений:",
+    "eng": "In the following example, we will output to the page the next array of messages:",
+    "ua": "У наступному прикладі ми виводитимемо на сторінку масив повідомлень:"
+  },
+  "s1.p41": {
+    "ru": "Сделаем так, чтобы эти сообщения выводились на страницу одновременно, но по одному символу за раз:",
+    "eng": "Let's make these messages appear on the page at the same time, but one character at a time:",
+    "ua": "Зробимо так, щоб ці повідомлення виводилися на сторінку одночасно, але по одному символу за один раз:"
+  },
+  "s1.p42": {
+    "ru": "Так называемый \"дребезг\" (debounce) - это неприятное явление, которое означает, что какая-то функция вызывается слишком часто.",
+    "eng": "Debounce is an unpleasant phenomenon which means that some function is called too often.",
+    "ua": "Так званий \"дребезг\" (debounce) – це неприємне явище, яке означає, що якась функція викликається занадто часто."
+  },
+  "s1.p43": {
+    "ru": "Чаще всего такое происходит с обработчиками событий UI.",
+    "eng": "This happens most frequently with UI event handlers.",
+    "ua": "Найчастіше таке відбувається з обробниками подій UI."
+  },
+  "s1.p44": {
+    "ru": "Особенно это плохо, если код функции отправляет запрос на сервер.",
+    "eng": "It is especially bad if the function code sends a request to the server.",
+    "ua": "Особливо це погано, якщо код функції надсилає запит на сервер."
+  },
+  "s1.p45": {
+    "ru": "Для обработки такого запроса нужно время, а нетерпеливый юзер может многократно нажимать на кнопку, не дождавшись немедленного ответа.",
+    "eng": "It takes time to process such a request, and an impatient user may repeatedly press the button without waiting for an immediate response.",
+    "ua": "Для обробки такого запиту потрібен час, а нетерплячий користувач може багаторазово натискати на кнопку, не дочекавшись негайної відповіді."
+  },
+  "s1.p46": {
+    "ru": "Так же дребезг может возникать вследствие технических причин, например, когда \"залипает\" кнопка мышки или клавиша на клавиатуре.",
+    "eng": "Also debounce can occur due to technical reasons, for example, when a mouse button or a key on the keyboard ‘sticks’.",
+    "ua": "Так само дребезг може виникати внаслідок технічних причин, наприклад, коли \"залипає\" кнопка мишки або клавіша на клавіатурі."
+  },
+  "s1.p47": {
+    "ru": "Наша задача - не допустить дребезг независимо от причины его происхождения, т.е. \"дросселировать\" (throttle) вызовы функции, контролируя их частоту.",
+    "eng": "Our task is to prevent debounce regardless of the reason of its origin, i.e. ‘throttle’ function calls by controlling their frequency.",
+    "ua": "Наше завдання - не допустити дребезг незалежно від причини його походження, тобто «дроселювати» (throttle) виклики функції, контролюючи їхню частоту."
+  },
+  "s1.p48": {
+    "ru": "В следующем примере **⟦f4⟧** используется для того, чтобы при обработке кликов ограничить их частоту 1 кликом в секунду.",
+    "eng": "In the following example, **⟦f4⟧** is used to limit the frequency of clicks to 1 click per second.",
+    "ua": "У наступному прикладі **⟦f4⟧** використовується для того, щоб під час обробки кліків обмежити їхню частоту до 1 кліка на секунду."
+  },
+  "s1.p49": {
+    "ru": "Объявим вспомогательную функцию **⟦f7⟧**, которая позволит нам наглядно отобразить, как \"дросселируются\" клики: когда клик \"проходит\", то будет появляться закрашенный прямоугольник, когда клик игнорируется, то прямоугольник будет \"пустым\".",
+    "eng": "Let's declare an auxiliary function **⟦f7⟧**, which will allow us to visualise how clicks are ‘throttled’: when a click ‘passes’, a coloured rectangle will appear, when a click is ignored, the rectangle will be ‘empty’.",
+    "ua": "Оголосимо допоміжну функцію **⟦f7⟧**, яка дозволить нам наочно відобразити, як \"дросселюються\" кліки: коли клік \"проходить\", то з'являтиметься зафарбований прямокутник, коли клік ігнорується, то прямокутник буде \"порожнім\"."
+  },
+  "s1.p50": {
+    "ru": "Функция **⟦f7⟧** добавляет элемент на страницу и устанавливает его стилевое свойство ⟦f8⟧ в значение, которое передано функции аргументом.",
+    "eng": "The **⟦f7⟧** function adds an element to the page and sets its ⟦f8⟧ style property to the value passed to the function as an argument.",
+    "ua": "Функція **⟦f7⟧** додає елемент на сторінку та встановлює його стильову властивість ⟦f8⟧ у значення, яке передано функції аргументом."
+  },
+  "s1.p51": {
+    "ru": "При этом дефолтное значение формального параметра **⟦f9⟧** будет ⟦f10⟧.",
+    "eng": "The default value of the **⟦f9⟧** formal parameter will be ⟦f10⟧.",
+    "ua": "При цьому дефолтне значення формального параметра **⟦f9⟧** буде ⟦f10⟧."
+  },
+  "s1.p52": {
+    "ru": "Теперь можно напилить сам код \"дросселя\":",
+    "eng": "Now we can write the ‘throttle’ code itself:",
+    "ua": "Тепер можна напиляти сам код \"дросселя\":"
+  },
+  "s2.h1": {
+    "ru": "Примеры",
+    "eng": "Examples",
+    "ua": "Приклади"
+  }
+}

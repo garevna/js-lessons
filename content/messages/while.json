@@ -1,0 +1,162 @@
+{
+  "s1.h1": {
+    "ru": "Циклы while и do...while",
+    "eng": "While and do...while loops",
+    "ua": "Цикли while | do...while"
+  },
+  "s1.p1": {
+    "ru": "Очень часто число итераций цикла заранее неизвестно, и оно зависит от выполнения некоего условия.",
+    "eng": "Very often the number of loop iterations is unknown in advance and it depends on the fulfilment of some condition.",
+    "ua": "Дуже часто число ітерацій циклу заздалегідь невідоме, і воно залежить від виконання якоїсь умови."
+  },
+  "s1.p2": {
+    "ru": "Как в армейской поговорке, \"копать от забора и до обеда\".",
+    "eng": "As the army saying goes, ‘dig from the fence to lunch’.",
+    "ua": "Як в армійській приказці, «копати від паркану і до обіду»."
+  },
+  "s1.p3": {
+    "ru": "Поэтому мы не можем использовать счетчик итераций, поскольку не можем установить ограничение на его значение.",
+    "eng": "That is why we cannot use the iteration counter because we cannot set a limit on its value.",
+    "ua": "Тому ми не можемо використовувати лічильник ітерацій, оскільки не можемо встановити обмеження на його значення."
+  },
+  "s1.p4": {
+    "ru": "В этом случае мы используем один из операторов цикла **⟦f0⟧** или **⟦f1⟧**.",
+    "eng": "In this case, we use one of the **⟦f0⟧** or **⟦f1⟧** loop operators.",
+    "ua": "У цьому випадку ми використовуємо один з операторів циклу **⟦f0⟧** або **⟦f1⟧**."
+  },
+  "s1.p5": {
+    "ru": "Синтаксически оператор **⟦f0⟧** включает три обязательные части: само слово **⟦f0⟧**, затем (через пробел) круглые скобки, в которых будет записано логическое выражение (условие цикла), и затем (через пробел) - тело цикла, заключенное в фигурные скобки:",
+    "eng": "Syntactically, the **⟦f0⟧** operator includes three mandatory parts: the word **⟦f0⟧** itself, followed by parentheses in which the logical expression (the loop condition) will be written, and then the body of the loop enclosed in curly braces:",
+    "ua": "Синтаксично оператор **⟦f0⟧** містить три обов'язкові частини: саме слово **⟦f0⟧**, потім (через пробіл) круглі дужки, у яких буде записано логічний вираз (умову циклу), а потім (через пробіл) - тіло циклу, укладене у фігурні дужки:"
+  },
+  "s1.p6": {
+    "ru": "Что будет делать движок, столкнувшись с таким выражением?",
+    "eng": "What will the engine do when faced with such an expression?",
+    "ua": "Що робитиме движок, зіткнувшись із таким виразом?"
+  },
+  "s1.p7": {
+    "ru": "1. Сначала он вычислит значение логического выражения в круглых скобках и приведет его к логическому типу.",
+    "eng": "1. First, it will calculate the value of the boolean expression in parentheses and convert it to a boolean type.",
+    "ua": "1. Спочатку він обчислить значення логічного виразу в круглих дужках і приведе його до логічного типу."
+  },
+  "s1.p8": {
+    "ru": "2. Если условие выполнено (т.е. вычисленное значение будет ⟦f2⟧), то выполняется код внутри фигурных скобок (очередная итерация цикла).",
+    "eng": "2. If the condition is satisfied (i.e. the calculated value is ⟦f2⟧), the code inside the curly brackets will be executed (the next iteration of the loop).",
+    "ua": "2. Якщо умова виконана (тобто обчислене значення буде ⟦f2⟧), то виконується код всередині фігурних дужок (чергова ітерація циклу)."
+  },
+  "s1.p9": {
+    "ru": "После чего движок вернется к пункту 1.",
+    "eng": "After that the engine will return to point 1.",
+    "ua": "Після чого движок повернеться до пункту 1."
+  },
+  "s1.p10": {
+    "ru": "^^Этот цикл не будет выполнен ни разу, поскольку условие ⟦f3⟧ не выполнено изначально, т.е. при вычислении выражения в круглых скобках будет получено значение ⟦f4⟧.^^",
+    "eng": "^^This loop will not be executed once because the condition ⟦f3⟧ is not fulfilled initially, i.e. the value ⟦f4⟧ will be obtained when evaluating the expression in parentheses.^^",
+    "ua": "^^Цей цикл не буде виконано жодного разу, оскільки умову ⟦f3⟧ не виконано від початку, тобто під час обчислення виразу в круглих дужках буде отримано значення ⟦f4⟧.^^"
+  },
+  "s1.p11": {
+    "ru": "^^Цикл будет суммировать введенные юзером числа до тех пор, пока в модальном окне ⟦f5⟧ не будет нажата кнопка ⟦f6⟧.^^",
+    "eng": "^^The loop will sum the numbers entered by the user until the ⟦f6⟧ button is pressed in the ⟦f5⟧ modal window.^^",
+    "ua": "^^Цикл підсумовуватиме введені юзером числа доти, доки в модальному вікні ⟦f5⟧ не буде натиснута кнопка ⟦f6⟧.^^"
+  },
+  "s1.p12": {
+    "ru": "^^Поскольку в модальном окне введенные значения будут строкового типа, мы приводим их к числу с помощью вычитания ⟦f7⟧.^^",
+    "eng": "^^Since the values entered in the modal window will be of string type, we convert them to a number by subtracting ⟦f7⟧.^^",
+    "ua": "^^Оскільки в модальному вікні введені значення будуть рядкового типу, ми приводимо їх до числа за допомогою віднімання ⟦f7⟧.^^"
+  },
+  "s1.p13": {
+    "ru": "^^Если в результате вычитания ⟦f7⟧ будет получено значение ⟦f8⟧, то к переменной ⟦f9⟧ будет добавлен 0.^^",
+    "eng": "^^If the subtraction ⟦f7⟧ results in the value ⟦f8⟧, then 0 will be added to the ⟦f9⟧ variable.^^",
+    "ua": "^^Якщо в результаті віднімання ⟦f7⟧ буде отримано значення ⟦f8⟧, то до змінної ⟦f9⟧ буде додано 0.^^."
+  },
+  "s1.p14": {
+    "ru": "В следующем примере мы воспользуемся функцией **⟦f10⟧** библиотеки **⟦f11⟧**, которая генерирует псевдо-случайное число от 0 до 1:",
+    "eng": "In the following example, we will use the **⟦f10⟧** function of the **⟦f11⟧** library, which generates a pseudo-random number from 0 to 1:",
+    "ua": "У наступному прикладі ми скористаємося функцією **⟦f10⟧** бібліотеки **⟦f11⟧**, яка генерує псевдовипадкове число від 0 до 1:"
+  },
+  "s1.p15": {
+    "ru": "Очевидно, что этот цикл не будет бесконечным, поскольку рано или поздно значение **⟦f12⟧** окажется больше 0.5.",
+    "eng": "Obviously, this loop will not be infinite, because sooner or later the value of **⟦f12⟧** will be greater than 0.5.",
+    "ua": "Очевидно, що цей цикл не буде нескінченним, оскільки рано чи пізно значення **⟦f12⟧** виявиться більшим за 0.5."
+  },
+  "s1.p16": {
+    "ru": "Этот цикл сначала выполняет код в фигурных скобках, а потом проверяет выполнение условия.",
+    "eng": "This loop first executes the code in curly braces and then checks if the condition is fulfilled.",
+    "ua": "Цей цикл спочатку виконує код у фігурних дужках, а потім перевіряє виконання умови."
+  },
+  "s1.p17": {
+    "ru": "^^Цикл будет выполнен как минимум 1 раз, поскольку проверка истинности условия происходит после очередной итерации цикла.^^",
+    "eng": "^^The loop will be executed at least 1 time, because the condition is checked after the next iteration of the loop.^^",
+    "ua": "^^Цикл буде виконано щонайменше 1 раз, оскільки перевірка істинності умови відбувається після чергової ітерації циклу.^^"
+  },
+  "s1.p18": {
+    "ru": "Когда этот цикл предпочтительнее предыдущего?",
+    "eng": "When is this loop preferable to the previous loop?",
+    "ua": "Коли цей цикл кращий за попередній?"
+  },
+  "s1.p19": {
+    "ru": "Например, в таком случае:",
+    "eng": "For example, in a case like this:",
+    "ua": "Наприклад, у такому випадку:"
+  },
+  "s1.quiz1": {
+    "ru": "Будет ли цикл бесконечным?",
+    "eng": "Will the loop be infinite?",
+    "ua": "Чи буде цикл нескінченним?"
+  },
+  "s1.quizVariants1": {
+    "ru": "'yes', 'no'",
+    "eng": "'yes', 'no'",
+    "ua": "'yes', 'no'"
+  },
+  "s1.quizAnswer1": {
+    "ru": "no",
+    "eng": "no",
+    "ua": "no"
+  },
+  "s1.quiz2": {
+    "ru": "Будет ли цикл бесконечным?",
+    "eng": "Will the loop be infinite?",
+    "ua": "Чи буде цикл нескінченним?"
+  },
+  "s1.quizVariants2": {
+    "ru": "'yes', 'no'",
+    "eng": "'yes', 'no'",
+    "ua": "'yes', 'no'"
+  },
+  "s1.quizAnswer2": {
+    "ru": "no",
+    "eng": "no",
+    "ua": "no"
+  },
+  "s1.quiz3": {
+    "ru": "Что будет в консоли, если в модальном окне ввести 8?",
+    "eng": "What will be displayed in console if you type 8 in the modal window?",
+    "ua": "Що буде в консолі, якщо в модальному вікні ввести 8?"
+  },
+  "s1.quizVariants3": {
+    "ru": "'', '2 ** 1 = 2', '2 ** 2 = 4', '2 ** 3 = 8', '2 ** 4 = 16'",
+    "eng": "'', '2 ** 1 = 2', '2 ** 2 = 4', '2 ** 3 = 8', '2 ** 4 = 16'",
+    "ua": "'', '2 ** 1 = 2', '2 ** 2 = 4', '2 ** 3 = 8', '2 ** 4 = 16'"
+  },
+  "s1.quizAnswer3": {
+    "ru": "2 ** 3 = 8",
+    "eng": "2 ** 3 = 8",
+    "ua": "2 ** 3 = 8"
+  },
+  "s1.quiz4": {
+    "ru": "Что будет в консоли, если в модальном окне ввести 5?",
+    "eng": "What will be displayed in console if you type 5 in the modal window?",
+    "ua": "Що буде в консолі, якщо в модальному вікні ввести 5?"
+  },
+  "s1.quizVariants4": {
+    "ru": "24, 0, 120, 20",
+    "eng": "24, 0, 120, 20",
+    "ua": "24, 0, 120, 20"
+  },
+  "s1.quizAnswer4": {
+    "ru": "120",
+    "eng": "120",
+    "ua": "120"
+  }
+}

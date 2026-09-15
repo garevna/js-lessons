@@ -1,0 +1,72 @@
+{
+  "s0.p1": {
+    "ru": "Паттерн \"Декоратор\" позволяет добавить специфические \"черты\" целевому объекту",
+    "eng": "The ‘Decorator’ pattern allows specific ‘features’ to be added to a target object",
+    "ua": "Паттерн «Декоратор» дозволяє додати специфічні «риси» до цільового об’єкта"
+  },
+  "s0.p2": {
+    "ru": "Примером реализации паттерна Decorator является метод **bind**",
+    "eng": "An example of the Decorator pattern in action is the **bind** method",
+    "ua": "Прикладом реалізації паттерна Decorator є метод **bind**"
+  },
+  "s0.p3": {
+    "ru": "Предположим, мы хотим управлять вызовами некоторых функций",
+    "eng": "Suppose we want to control calls to certain functions",
+    "ua": "Припустимо, ми хочемо керувати викликами деяких функцій"
+  },
+  "s1.h1": {
+    "ru": "Одиночный вызов",
+    "eng": "A single call",
+    "ua": "Одноразовий виклик"
+  },
+  "s1.p1": {
+    "ru": "Декоратор, обеспечивающий одноразовое использование функции",
+    "eng": "A decorator that ensures a function is used only once",
+    "ua": "Декоратор, що забезпечує одноразове використання функції"
+  },
+  "s1.p2": {
+    "ru": "( повторные вызовы будут игнорироваться )",
+    "eng": "(repeated calls will be ignored)",
+    "ua": "(повторні виклики ігноруватимуться)"
+  },
+  "s1.p3": {
+    "ru": "В следующем примере мы применим ту же функцию-декоратор,",
+    "eng": "In the following example, we will apply the same decorator function,",
+    "ua": "У наступному прикладі ми застосуємо ту саму функцію-декоратор,"
+  },
+  "s1.p4": {
+    "ru": "но уже к другой функции, вычисляющей сумму двух аргументов:",
+    "eng": "but to a different function that calculates the sum of two arguments:",
+    "ua": "але вже до іншої функції, що обчислює суму двох аргументів:"
+  },
+  "s1.p5": {
+    "ru": "А теперь объявим функцию-декоратор **decoratorThrottling**,",
+    "eng": "Now let’s declare the decorator function **decoratorThrottling**,",
+    "ua": "А тепер оголосимо функцію-декоратор **decoratorThrottling**,"
+  },
+  "s1.p6": {
+    "ru": "которая \"снабжает\" переданную ей функцию",
+    "eng": "which ‘endows’ the function passed to it",
+    "ua": "яка «наділяє» передану їй функцію"
+  },
+  "s1.p7": {
+    "ru": "способностью контролировать частоту вызовов",
+    "eng": "with the ability to control the frequency of calls",
+    "ua": "здатністю контролювати частоту викликів"
+  },
+  "s1.p8": {
+    "ru": "путем определения временного интервала",
+    "eng": "by defining a time interval",
+    "ua": "шляхом визначення часового інтервалу"
+  },
+  "s1.p9": {
+    "ru": "с момента последнего вызова",
+    "eng": "from the moment of the last call",
+    "ua": "від моменту останнього виклику"
+  },
+  "s1.p10": {
+    "ru": "...и \"декорируем\" функцию **showTime**",
+    "eng": "…and ‘decorate’ the function **showTime**",
+    "ua": "...і «декоруємо» функцію **showTime**"
+  }
+}

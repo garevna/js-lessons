@@ -1,0 +1,557 @@
+{
+  "s1.h1": {
+    "ru": "Принцип работы итерирующих методов",
+    "eng": "Deeper into iterating methods",
+    "ua": "Як працюють ітеративні методи"
+  },
+  "s1.p1": {
+    "ru": "[◄◄◄ Итерирующие методы массивов ◄◄◄](⟦f0⟧)",
+    "eng": "[◄◄◄ Array iterating methods ◄◄◄](⟦f0⟧)",
+    "ua": "[◄◄◄ Ітеруючі методи масивів ◄◄◄](⟦f0⟧)"
+  },
+  "s1.p2": {
+    "ru": "Выведя в консоль свойство **_⟦f1⟧_** конструктора массивов, можно убедиться, что эти структуры данных наследуют много методов, и некоторые из них мы уже знаем.",
+    "eng": "By displaying the **_⟦f1⟧_** property of the **⟦f15⟧** constructor in the console, we can see that these data structures inherit many methods, and some of them we already know.",
+    "ua": "Вивівши в консоль властивість **_⟦f1⟧_** конструктора **⟦f15⟧**, можна переконатися, що ці структури даних успадковують багато методів, і деякі з них ми вже знаємо."
+  },
+  "s1.p3": {
+    "ru": "Часть методов, с которыми мы уже знакомы, выполняют какую-то операцию с массивом.",
+    "eng": "Some of the methods that we are already familiar with perform some kind of operation on the array.",
+    "ua": "Деякі методи, з якими ми вже знайомі, виконують якусь операцію над масивом."
+  },
+  "s1.p4": {
+    "ru": "^^(добавляют элемент в массив, удаляют или заменяют элементы в массиве, объединяют несколько массивов в один и т.д.).^^",
+    "eng": "^^(add an element to an array, remove or replace elements in an array, merge several arrays into one, etc.).^^",
+    "ua": "^^(додати елемент до масиву, видалити або замінити елементи в масиві, об'єднати кілька масивів в один тощо).^^"
+  },
+  "s1.p5": {
+    "ru": "Итерирующие методы перебирают элементы массива один за другим строго в порядке возрастания их индексов.",
+    "eng": "Iterating methods loop through the array elements one by one strictly in ascending order of their indices.",
+    "ua": "Ітеруючі методи перебирають елементи масиву один за одним строго в порядку зростання їх індексів."
+  },
+  "s1.p6": {
+    "ru": "^^(за исключением ⟦f2⟧, который осуществляет перебор справа налево).^^",
+    "eng": "^^(except ⟦f2⟧, which is right-to-left).^^",
+    "ua": "^^(за винятком ⟦f2⟧, який здійснює перебір справа наліво).^^"
+  },
+  "s1.p7": {
+    "ru": "_Группа итерирующих методов массивов - пример реализации функциональной парадигмы в ООП._",
+    "eng": "_A group of array iterating methods is an example of an implementation of the **functional paradigm**._",
+    "ua": "_Група ітеруючих методів масивів є прикладом реалізації функціональної парадигми._"
+  },
+  "s1.p8": {
+    "ru": "Главное, что нужно помнить про итерирующие методы массивов - это **функции высшего порядка**.",
+    "eng": "The main thing to remember about array iterating methods are **higher-order functions**.",
+    "ua": "Головне, що потрібно пам'ятати про ітеруючі методи масиву – це **функції вищого порядку**."
+  },
+  "s1.p9": {
+    "ru": "Это будет напоминать вам, что ![ico-20 warn] **первым и обязательным аргументом итерирующего метода является функция**.",
+    "eng": "This will remind you that ![ico-20 warn] the **first and required argument of an iterative method is a function**.",
+    "ua": "Це нагадає вам, що ![ico-20 warn] **першим і обов'язковим аргументом методу є функція**."
+  },
+  "s1.p10": {
+    "ru": "• метод будет перебирать элементы массива один за другим, пока не дойдет до конца массива.",
+    "eng": "• The method will iterate over the elements of the array one by one until it reaches the end of the array.",
+    "ua": "• Метод буде перебирати елементи масиву один за одним, поки не досягне кінця масиву."
+  },
+  "s1.p11": {
+    "ru": "• на каждой итерации метод будет вызывать переданную ему функцию-аргумент.",
+    "eng": "• At each iteration, the method will call the **argument function** passed to it.",
+    "ua": "• На кожній ітерації метод буде викликати передану йому **функцію-аргумент**."
+  },
+  "s1.p12": {
+    "ru": "• при вызове функции-аргумента метод будет передавать ей значение текущего элемента массива.",
+    "eng": "• When an **argument function** is called, the method will pass it the value of the current element of the array.",
+    "ua": "• При виклику **функції-аргументу** метод передасть їй значення поточного елемента масиву."
+  },
+  "s2.h1": {
+    "ru": "Декоратор цикла",
+    "eng": "Cycle decorator",
+    "ua": "Декоратор циклу"
+  },
+  "s2.p1": {
+    "ru": "Преимущества методов перед операторами цикла очевидны.",
+    "eng": "The advantages of methods over loop operators are obvious.",
+    "ua": "Переваги методів перед операторами циклу очевидні."
+  },
+  "s2.p2": {
+    "ru": "Например, с помощью методов мы организовываем цепочные вычисления, а операторы цикла \"разбивают\" красивую цепочку, нарушая гармонию нашего кода.",
+    "eng": "For example, with the help of methods, we organize chain calculations, and loop operators \"break\" a beautiful chain, breaking the harmony of our code.",
+    "ua": "Наприклад, за допомогою методів ми організовуємо ланцюгові обчислення, а оператори циклу \"розбивають\" красивий ланцюжок, порушуючи гармонію нашого коду."
+  },
+  "s2.p3": {
+    "ru": "Циклы требуют от нас достаточно много рутинной работы: нам нужно инициализировать переменную цикла, определить, как она будет изменяться на каждой итерации, контролировать ее значение, чтобы во-время завершить цикл. Короче говоря, создать механизм цикла своими руками. Мы даже не будем обсуждать возможные ошибки, возникающие при этом.",
+    "eng": "Loops require a lot of routine work from us: we need to initialize the loop variable, determine how it will change in each iteration, control its value in order to complete the loop in time. In short, we need to create a mechanism of cycle with your own hands. We won't even discuss the possible mistakes that arise in this case.",
+    "ua": "Цикли вимагають від нас досить багато рутинної роботи: нам потрібно ініціалізувати змінну циклу, визначити, як вона буде змінюватися на кожній ітерації, контролювати її значення, щоб вчасно завершити цикл. Коротше кажучи, створити механізм циклу своїми руками. Ми навіть не будемо обговорювати можливі помилки, що виникають при цьому."
+  },
+  "s2.p4": {
+    "ru": "Циклы ⟦f3⟧ и ⟦f4⟧ значительно облегчили работу по итерированию массивов и объектов. Однако это все еще операторы цикла, а не методы.",
+    "eng": "Loops ⟦f3⟧ and ⟦f4⟧ greatly facilitated the work of iterating on arrays and objects. However, these are still loop operators, not methods.",
+    "ua": "Цикли ⟦f3⟧ і ⟦f4⟧ значно полегшили роботу з ітерування масивів і об'єктів. Однак це все ще оператори циклу, а не методи."
+  },
+  "s2.p5": {
+    "ru": "Когда мы \"заворачиваем\" цикл в функцию (метод), мы обеспечиваем возможность использования цепочных вычислений.",
+    "eng": "When we wrap a loop in a function (method), we enable on-chain computing.",
+    "ua": "Коли ми \"завертаємо\" цикл у функцію (метод), ми забезпечуємо можливість використання ланцюгових обчислень."
+  },
+  "s2.p6": {
+    "ru": "Итак, итерирующие методы можно интерпретировать как функциональные \"обертки\" для цикла ⟦f3⟧.",
+    "eng": "So, iterative methods can be interpreted as functional \"wrappers\" for **⟦f3⟧** operator.",
+    "ua": "Таким чином, ітеруючі методи можна інтерпретувати як функціональні «обгортки» для оператора ⟦f3⟧."
+  },
+  "s2.p7": {
+    "ru": "В этом примере мы создали кастомный унаследованный метод массивов **⟦f5⟧**",
+    "eng": "In this example, we've created a custom inherited method of arrays **⟦f5⟧**",
+    "ua": "У цьому прикладі ми створили кастомний успадкований метод масивів **⟦f5⟧**"
+  },
+  "s2.p8": {
+    "ru": "с формальным параметром ⟦f6⟧ (^^function^^),",
+    "eng": "with the formal parameter ⟦f6⟧ (^^function^^),",
+    "ua": "з формальним параметром ⟦f6⟧ (^^function^^),"
+  },
+  "s2.p9": {
+    "ru": "который перебирает в цикле ⟦f3⟧ исходный массив",
+    "eng": "which iterates through the original array in a **⟦f3⟧** loop",
+    "ua": "який перебирає в циклі ⟦f3⟧ вихідний масив"
+  },
+  "s2.p10": {
+    "ru": "и на каждой итерации вызывает ⟦f6⟧,",
+    "eng": "and on each iteration calls ⟦f6⟧,",
+    "ua": "і на кожній ітерації викликає ⟦f6⟧,"
+  },
+  "s2.p11": {
+    "ru": "передавая ей очередной элемент исходного массива.",
+    "eng": "passing to it the next element of the initial array.",
+    "ua": "передаючи їй черговий елемент вихідного масиву."
+  },
+  "s2.p12": {
+    "ru": "В этом примере метод **⟦f5⟧** ничего не возвращает,",
+    "eng": "In this example, **⟦f5⟧** method returns nothing,",
+    "ua": "У цьому прикладі метод **⟦f5⟧** нічого не повертає,"
+  },
+  "s2.p13": {
+    "ru": "и он не мутирует исходный массив, т.е. не производит внешних эффектов.",
+    "eng": "and it does not mutate the original array, i.e. it does not produce **external effects**.",
+    "ua": "І він не змінює вихідний масив, тобто не виробляє зовнішніх ефектів."
+  },
+  "s2.p14": {
+    "ru": "Того же эффекта можно добиться с помощью рекурсии:",
+    "eng": "The same result can be achieved with the help of recursion:",
+    "ua": "Такого ж ефекту можна досягти за допомогою рекурсії:"
+  },
+  "s2.p15": {
+    "ru": "Если мы хотим, чтобы метод возвращал новый массив, достаточно сделать следующее:",
+    "eng": "If we want the method to return a new array, all we need to do is the next:",
+    "ua": "Якщо ми хочемо, щоб метод повернув новий масив, нам потрібно зробити наступне:"
+  },
+  "s2.p16": {
+    "ru": "Результат:",
+    "eng": "Result:",
+    "ua": "Результат:"
+  },
+  "s2.p17": {
+    "ru": "В результате кастомный метод **⟦f5⟧** будет \"собирать\" в массив ⟦f7⟧",
+    "eng": "As a result, the custom method **⟦f5⟧** will “collect” into the **res** array",
+    "ua": "В результаті кастомний метод **⟦f5⟧** збиратиме\" в масив ⟦f7⟧"
+  },
+  "s2.p18": {
+    "ru": "результаты вызова функции ⟦f6⟧ на каждой итерации,",
+    "eng": "the results of calling the function ⟦f6⟧ at each iteration,",
+    "ua": "результати виклику функції ⟦f6⟧ на кожній ітерації,"
+  },
+  "s2.p19": {
+    "ru": "и возвращать массив ⟦f7⟧.",
+    "eng": "and return the **res** array.",
+    "ua": "та повертати масив ⟦f7⟧."
+  },
+  "s2.p20": {
+    "ru": "Результат:",
+    "eng": "Result:",
+    "ua": "Результат:"
+  },
+  "s2.p21": {
+    "ru": "Мы можем напилить кастомный метод, фильтрующий исходный массив в соответствии с заданным условием.",
+    "eng": "We can create a custom method that filters the source array in accordance with a given condition.",
+    "ua": "Ми можемо напилити кастомний метод, що фільтрує вихідний масив відповідно до заданої умови."
+  },
+  "s2.p22": {
+    "ru": "Теперь функция ⟦f6⟧ должна возвращать логическое значение.",
+    "eng": "The function **⟦f6⟧** should now return a **boolean value**.",
+    "ua": "Тепер функція **⟦f6⟧** має повертати логічне значення."
+  },
+  "s2.p23": {
+    "ru": "Если для очередного элемента массива функция ⟦f6⟧ вернет ⟦f8⟧, то этот элемент попадет в результирующий массив ⟦f7⟧.",
+    "eng": "If the function **⟦f6⟧** returns ⟦f8⟧ for the next array element, then this element will be included in the resulting array **res**.",
+    "ua": "Якщо для чергового елемента масиву функція **⟦f6⟧** поверне ⟦f8⟧, цей елемент потрапить у результуючий масив **res**."
+  },
+  "s2.p24": {
+    "ru": "В противном случае - нет.",
+    "eng": "Otherwise, no.",
+    "ua": "В іншому випадку – ні."
+  },
+  "s2.p25": {
+    "ru": "Результат:",
+    "eng": "Result:",
+    "ua": "Результат:"
+  },
+  "s2.p26": {
+    "ru": "Результат:",
+    "eng": "Result:",
+    "ua": "Результат:"
+  },
+  "s3.h1": {
+    "ru": "Передача ссылок",
+    "eng": "Transferring references",
+    "ua": "Передача посилань"
+  },
+  "s3.p1": {
+    "ru": "В этом месте функциональная чистота итерирующих методов, к сожалению, заканчивается.",
+    "eng": "At this point, the functional purity of iterating methods, unfortunately, ends.<br><br>A function can mutate an object by reference.<br><br>In this case, as a rule, **side effects** occur.",
+    "ua": "Тут, на жаль, закінчується функціональна чистота ітеруючих методів.<br><br>**Посилання - це \"відмичка\"**, і за посиланням функція може мутувати об'єкт.<br><br>При цьому зазвичай виникають побічні ефекти (**side effects**)."
+  },
+  "s3.p2": {
+    "ru": "**Ссылка - это \"отмычка\"**, и по ссылке функция может мутировать объект.",
+    "eng": "There are two ways to pass references in array iterating methods.",
+    "ua": "Є два способи передачі посилань у методах ітерації масивів."
+  },
+  "s3.p3": {
+    "ru": "При этом, как правило, возникают побочные эффекты (side effects).",
+    "eng": "The first one is passing a reference to the **call context** of the **function-argument** by the second argument of the method.",
+    "ua": "Перший - передача посилання на **контекст виклику функції-аргумента** другим аргументом методу."
+  },
+  "s3.p4": {
+    "ru": "Есть два способа передачи ссылок в итерирующих методах массивов.",
+    "eng": "The second is passing the reference to the source array to the **function-argument** itself when calling it.",
+    "ua": "Другий - передача посилання на вихідний масив самій **функції-аргументу** при виклику."
+  },
+  "s3.p5": {
+    "ru": "Первый - передача ссылки на контекста вызова функции-аргумента вторым аргументом метода.",
+    "eng": "",
+    "ua": ""
+  },
+  "s3.p6": {
+    "ru": "Второй - передача ссылки на исходный массив самой функции-аргументу при вызове.",
+    "eng": "",
+    "ua": ""
+  },
+  "s4.h1": {
+    "ru": "Второй аргумент метода",
+    "eng": "The second argument of the method",
+    "ua": "Другий аргумент методу"
+  },
+  "s4.p1": {
+    "ru": "Каждый метод может принимать два аргумента: функцию и ссылку на контекст вызова.",
+    "eng": "Each method can take two arguments: a function and a reference to it's call context.",
+    "ua": "Кожен метод може приймати два аргументи: функцію та посилання на контекст виклику."
+  },
+  "s4.p2": {
+    "ru": "Кроме обязательного аргумента-функции, мы можем передать методу второй (опциональный) аргумент - ссылку на контекст вызова этой функции.",
+    "eng": "In fact, the second argument of the method saves us from the need to bind the call context to the function-argument.",
+    "ua": "Крім обов'язкового **аргументу-функції**, ми можемо передати методу другий (необов'язковий) аргумент - посилання на контекст виклику цієї функції."
+  },
+  "s4.p3": {
+    "ru": "По сути, второй аргумент избавляет нас от необходимости явно биндить контект вызова функции, которая передается методу как аргумент.",
+    "eng": "◘◘ ![ico-25 cap] ** 4** ◘◘",
+    "ua": "Насправді, другий аргумент звільняє нас від необхідності явно байндити контекст виклику функції, яка передається методу як аргумент."
+  },
+  "s4.p4": {
+    "ru": "Результат:",
+    "eng": "Result:",
+    "ua": "◘◘ ![ico-25 cap] ** 4** ◘◘"
+  },
+  "s4.p5": {
+    "ru": "Результат:",
+    "eng": "◘◘ ![ico-25 cap] ** 5** ◘◘",
+    "ua": "Результат:"
+  },
+  "s4.p6": {
+    "ru": "Однако появляется побочный эффект - массив **alter** теперь пустой:",
+    "eng": "However, there is a **side effect** - the array **⟦f16⟧** is now empty:",
+    "ua": "Результат:"
+  },
+  "s4.p7": {
+    "ru": "Еще одно неудобство заключается в том, что при этом мы не можем передавать методу стрелочные функции, поскольку у них контекст вызова изменить невозможно.",
+    "eng": "However, _arrow functions_ make the code more concise.",
+    "ua": "Ще одна незручність полягає в тому, що при цьому ми не можемо передавати методу стрілочні функції, оскільки в них контекст виклику змінити неможливо."
+  },
+  "s4.p8": {
+    "ru": "Однако стрелочные функции делают код более лаконичным.",
+    "eng": "",
+    "ua": "Однак стрілочні функції роблять код більш лаконічним."
+  },
+  "s5.h1": {
+    "ru": "Передача ссылки на исходный массив функции-аргументу",
+    "eng": "Reference to the source array",
+    "ua": "Посилання на вихідний масив"
+  },
+  "s5.p1": {
+    "ru": "Функция-аргумент может иметь три формальных параметра.",
+    "eng": "**function-argument** has three optional formal parameters.",
+    "ua": "Функція-аргумент може мати три формальні параметри."
+  },
+  "s5.p2": {
+    "ru": "Первый - это текущий элемент массива.",
+    "eng": "The first is the **current element** of the array.",
+    "ua": "Перший - це поточний елемент масиву."
+  },
+  "s5.p3": {
+    "ru": "Второй - это индекс текущего элемента массива.",
+    "eng": "The second is the **index** of the current array element.",
+    "ua": "Другий - це індекс поточного елемента масиву."
+  },
+  "s5.p4": {
+    "ru": "Третий - это ссылка на исходный массив.",
+    "eng": "The third is a reference to the original array.",
+    "ua": "Третій - це посилання на вихідний масив."
+  },
+  "s5.p5": {
+    "ru": "Передача этой \"отмычки\" функции-аргументу грубо разрушает функциональную чистоту метода и создает огромные возможности для побочных эффектов.",
+    "eng": "Passing this “master key” to the **function-argument** destroys the functional purity of the method and creates opportunities for **side effects**.",
+    "ua": "Передача цієї \"відмички\" функції-аргументу грубо руйнує функціональну чистоту методу і створює величезні можливості для побічних ефектів."
+  },
+  "s5.p6": {
+    "ru": "Следующий пример показывает, как это работает.",
+    "eng": "The following example shows how this works.",
+    "ua": "Наступний приклад показує, як це працює."
+  },
+  "s5.p7": {
+    "ru": "Результат:",
+    "eng": "◘◘![ico-20 cap] ** 6**◘◘",
+    "ua": "◘◘![ico-20 cap] ** 6**◘◘"
+  },
+  "s5.p8": {
+    "ru": "^^Функция **sample** получает в переменной **_arr_** ссылку на исходный массив **numbers**.^^",
+    "eng": "Result:",
+    "ua": "Результат:"
+  },
+  "s5.p9": {
+    "ru": "![ico-20 warn] Чистые функции, какими, по идее, должны были быть итерирующие методы, не порождают внешних эффектов, т.е. не мутируют никакие внешние переменные.",
+    "eng": "^^The function **sample** receives a reference to the source array **numbers** in the variable **arr**.^^",
+    "ua": ""
+  },
+  "s5.p10": {
+    "ru": "Итерирующие методы массивов - это функции высшего порядка, которые перебирают исходный массив, передавая функции-аргументу по очереди один элемент массива за другим.",
+    "eng": "![ico-20 warn] Pure functions, as iterative methods are supposed to be, do not generate **side effects**, i.e. no _external variables are mutated_.",
+    "ua": ""
+  },
+  "s5.p11": {
+    "ru": "Таким образом, функция-аргумент не имеет ссылки на сам исходный массив, и не может его мутировать.",
+    "eng": "Array iterating methods are **higher-order functions** that iterate over a source array, passing one array element at a time as an argument to the function.",
+    "ua": ""
+  },
+  "s5.p12": {
+    "ru": "![ico-20 warn] Исключение - если элементы исходного массива имеют **ссылочный тип данных**, т.е. функция-аргумент получает ссылку на элемент массива.",
+    "eng": "![ico-20 warn] Except the cases when the elements of the source array have a reference data type, i.e. The function-argument receives not a value but a reference to an array element.",
+    "ua": ""
+  },
+  "s5.p13": {
+    "ru": "Возвращается всегда новый массив (или не массив, как мы увидим позже, или вообще ничего).",
+    "eng": "The original array, as a rule, does not change.",
+    "ua": ""
+  },
+  "s5.p14": {
+    "ru": "Исходный массив, как правило, не изменяется.",
+    "eng": "That is, they were originally supposed to be **pure functions** that do not generate external effects, which distinguishes them from ordinary array methods such as ⟦f9⟧, ⟦f10⟧, etc.",
+    "ua": ""
+  },
+  "s5.p15": {
+    "ru": "Т.е. изначально это должны были быть чистые функции, не порождающие внешних эффектов, что их отличает от обычных методов массивов, таких как ⟦f9⟧, ⟦f10⟧ и т.д.",
+    "eng": "But we have already shown earlier that this functional purity is violated by passing references (the reference to the call context of function-argument or the reference to the source array).",
+    "ua": ""
+  },
+  "s5.p16": {
+    "ru": "Но мы уже показали ранее, что эта функциональная чистота нарушается передачей ссылок (методу - на контекста вызова функции-аргумента и на исходный массив - функции-аргументу).",
+    "eng": "Similarly, if we are dealing with **deep data structures**, then it is not values ​​that are passed, but references, which creates the possibility of **side effects**.",
+    "ua": ""
+  },
+  "s5.p17": {
+    "ru": "Аналогично, если мы имеем дело с **глубокими структурами данных**, то происходит передача не значений, а ссылок, что создает возможность возникновения побочных эффектов.",
+    "eng": "◘◘![ico-20 cap] ** 7**◘◘",
+    "ua": ""
+  },
+  "s5.p18": {
+    "ru": "В этом примере мы итерируем массив объектов, т.е. имеем дело с глубокой структурой данных.",
+    "eng": "In this example, we are iterating over an array of objects, i.e. we are dealing with a **deep data structure**.",
+    "ua": ""
+  },
+  "s5.p19": {
+    "ru": "На каждой итерации функция-аргумент (⟦f11⟧) метода **⟦f5⟧** получает ссылку на объект.",
+    "eng": "At each iteration, the argument function (⟦f11⟧) of the **⟦f5⟧** method receives a reference to the object.",
+    "ua": ""
+  },
+  "s5.p20": {
+    "ru": "Это дает ей возможность мутировать исходный массив, поскольку",
+    "eng": "This gives to it the ability to mutate the original array, since",
+    "ua": ""
+  },
+  "s5.slogan1": {
+    "ru": "ссылка - это отмычка",
+    "eng": "",
+    "ua": ""
+  },
+  "s5.p21": {
+    "ru": "В результате выполнения кода массив **users** будет таким:",
+    "eng": "As a result of executing the code, the **users** array will look like this:",
+    "ua": ""
+  },
+  "s5.p22": {
+    "ru": "Мы видим, что возраст всех юзеров изменился, хотя мы не передавали ссылку на исходный массив **users**.",
+    "eng": "We see that the age of all users has changed, although we did not pass a link to the original array **users**.",
+    "ua": ""
+  },
+  "s5.p23": {
+    "ru": "Но массив **users** является глубокой структурой данных, и его элементы имеют ссылочный тип,",
+    "eng": "But the array **users** is a **_deep data structure_** and its elements have **reference data type**,",
+    "ua": ""
+  },
+  "s5.p24": {
+    "ru": "поэтому функция-аргумент (⟦f11⟧) метода **⟦f5⟧** получила \"отмычку\" и смогла мутировать объекты по сслыке.",
+    "eng": "therefore, the function-argument (⟦f11⟧) of the **⟦f5⟧** method received a “master key” and was able to mutate objects by reference.",
+    "ua": ""
+  },
+  "s5.p25": {
+    "ru": "Итак, side effects возникают вследствие передачи ссылок вместо значений.",
+    "eng": "So, **side effects** arise from **passing references instead of values**.",
+    "ua": ""
+  },
+  "s5.p26": {
+    "ru": "Следующий пример показывает, что можно мутировать и саму функцию-аргумент:",
+    "eng": "The following example shows that you can mutate the argument function itself:",
+    "ua": ""
+  },
+  "s5.p27": {
+    "ru": "Результат в консоли:",
+    "eng": "◘◘![ico-20 cap] ** 8**◘◘",
+    "ua": ""
+  },
+  "s6.h1": {
+    "ru": "Идемпотентность",
+    "eng": "Idempotency",
+    "ua": "Side effects"
+  },
+  "s6.p1": {
+    "ru": "Если метод при одном и том же значении аргументов возвращает один и тот же результат, то он **_идемпотентен_**.",
+    "eng": "If a method every time being called returns the same result with the same argument values, then it is **_idempotent_**.",
+    "ua": "![ico-20 warn] Чисті функції, якими, в принципі, мали б бути ітеруючі методи, не викликають зовнішніх ефектів, тобто не мутують жодні зовнішні змінні."
+  },
+  "s6.p2": {
+    "ru": "^^т.е. при повторном вызове метода с одним и тем же массивом и функцией результат всегда будет одним и тем же.^^",
+    "eng": "In object-oriented languages, method idempotency is practically unattainable if the function arguments have a **reference data type**.",
+    "ua": "Отже, **аргумент-функція** не має посилання на сам масив і не може його змінювати."
+  },
+  "s6.p3": {
+    "ru": "В объектно-ориентированных языках идемпотентность методов практически недостижима, если аргументы функции являются ссылочным типом данных.",
+    "eng": "Because arrays have a **reference data type**, array iterating methods operate with a reference.",
+    "ua": "![ico-20 warn] Виняток - якщо елементи початкового масиву мають **посилальний тип даних**, тобто функція-аргумент отримує посилання на елемент масиву."
+  },
+  "s6.p4": {
+    "ru": "Поскольку массивы являются ссылочным типом, итерирующие методы работают со ссылкой, а не с коллекцией данных.",
+    "eng": "The reference remains the same, but from one method call to the next, the contents of the array may have changed, which will affect the result.",
+    "ua": "Початковий масив, як правило, залишається незмінним."
+  },
+  "s6.p5": {
+    "ru": "Ссылка остается той же самой, но от одного вызова метода до другого содержимое массива могло измениться, что отразится на результате.",
+    "eng": "Let's try to create an idempotent method:",
+    "ua": "Тобто, спочатку вони повинні були бути чистими функціями, що не породжують зовнішніх ефектів, що робить їх відмінними від звичайних методів масивів, таких як ⟦f9⟧, ⟦f10⟧ і т.д."
+  },
+  "s6.p6": {
+    "ru": "Давайте попробуем создать идемпотентный метод:",
+    "eng": "◘◘![ico-20 cap] ** 9**◘◘",
+    "ua": "Проте ми вже показали раніше, що ця функціональна чистота порушується передачею посилань (на контекст виклику **функції-аргумента** і на початковий масив)."
+  },
+  "s6.p7": {
+    "ru": "Результат:",
+    "eng": "Result:",
+    "ua": "Так само, якщо ми матимемо справу з **глибокими структурами даних**, то відбувається передача не значень, а посилань, що створює можливість виникнення побічних ефектів."
+  },
+  "s6.p8": {
+    "ru": "При первом вызове метода **⟦f12⟧** с данным массивом метод мутирует массив, добавляя ему свойство ⟦f13⟧ и сохраняя в этом свойстве ссылку на исходное состояние массива.",
+    "eng": "The first time the **⟦f12⟧** method is called with a given array, the method mutates the array by adding an ⟦f13⟧ property to it and storing a reference to the initial state of the array in this property.",
+    "ua": "◘◘![ico-20 cap] ** 7**◘◘"
+  },
+  "s6.p9": {
+    "ru": "При повторном вызове метод игнорирует все измения, которые могли произойти с массивом за время между первым и вторым вызовом метода, и работает с клоном ⟦f13⟧.",
+    "eng": "When called again, the method ignores all changes that may have occurred to the array during the time between the first and second method calls, and works with the clone ⟦f13⟧.",
+    "ua": "У цьому прикладі ми ітеруємо масив об'єктів, тобто маємо справу з глибокою структурою даних."
+  },
+  "s6.p10": {
+    "ru": "Результат:",
+    "eng": "Note that the method will return a **_new reference_** each time, since each time the method is called it creates a new array, but the contents of this array will be the same.",
+    "ua": "На кожній ітерації **функція-аргумент** (⟦f11⟧) методу **⟦f5⟧** отримує посилання на об'єкт."
+  },
+  "s6.p11": {
+    "ru": "Заметим, что при этом каждый раз метод будет возвращать новую ссылку, поскольку при каждом вызове метод создает новый массив, однако содержимое этого массива будет одним и тем же.",
+    "eng": "For the purity of the experiment, you can return the JSON string:",
+    "ua": "В результаті виконання коду масив **users** буде виглядати наступним чином:"
+  },
+  "s6.p12": {
+    "ru": "Для чистоты эксперимента можно возвращать JSON-строку свойства ⟦f13⟧.",
+    "eng": "However, in this example we used the idempotent function-argument **⟦f14⟧**.",
+    "ua": "Ми бачимо, що вік всіх користувачів змінився, хоча ми не передавали посилання на оригінальний масив **users**."
+  },
+  "s6.p13": {
+    "ru": "Однако в данном примере мы использовали идемпотентный метод **⟦f14⟧**.",
+    "eng": "If we pass a function-argument that is not idempotent to the **⟦f12⟧** method, the method will not be idempotent because it will return a different result when called with the same set of arguments:",
+    "ua": "Але масив **users** є глибокою структурою даних, а його елементи мають **посилальний тип**,"
+  },
+  "s6.p14": {
+    "ru": "Если же мы передадим методу **⟦f12⟧** функцию, которая не является идемпотентной, то метод не будет идемпотентным, поскольку при вызове с одним и тем же набором аргументов он будет возвращать различный результат:",
+    "eng": "In this example, you can see that if the function-argument that we pass to the **⟦f12⟧** method is not _idempotent_, then the result of the method will vary, i.e. the idempotency of a method directly depends on the idempotency of the **function-argument**.",
+    "ua": "тому **функція-аргумент** (⟦f11⟧) методу **⟦f5⟧** отримала \"майстер-ключ\" і змогла змінювати об'єкти за посиланням."
+  },
+  "s6.p15": {
+    "ru": "В этом примере видно, что если функция, которую мы передаем методу **⟦f12⟧**, не является _идемпотентной_, то и результат работы метода будет варьировать, т.е. идемпотентность метода напрямую зависит от идемпотентности функции-аргумента.",
+    "eng": "Let's try to fix this situation:",
+    "ua": "Отже, **побічні ефекти** виникають через передачу посилань замість значень."
+  },
+  "s6.p16": {
+    "ru": "Попробуем исправить эту ситуацию:",
+    "eng": "◘◘![ico-20 cap] **10**◘◘",
+    "ua": "У наведеному нижче прикладі показано, що ви можете змінити саму функцію-аргумент:"
+  },
+  "s6.p17": {
+    "ru": "Результат:",
+    "eng": "Result:",
+    "ua": "◘◘![ico-20 cap] ** 8**◘◘"
+  },
+  "s6.p18": {
+    "ru": "Результат:",
+    "eng": "Result:",
+    "ua": "◘◘**^^Результат^^**◘◘"
+  },
+  "s6.p19": {
+    "ru": "Попробуйте самостоятельно разобраться в следующем примере.",
+    "eng": "Try to figure out the following example on your own.",
+    "ua": ""
+  },
+  "s7.h1": {
+    "ru": "Примеры",
+    "eng": "Examples",
+    "ua": "Ідемпотентність"
+  },
+  "s7.p1": {
+    "ru": "Передача контекста вызова",
+    "eng": "Passing the Call Context",
+    "ua": "^^Тобто, якщо викликати метод з одним і тим же масивом і функцією багаторазово, результат завжди буде однаковим.^^"
+  },
+  "s7.p2": {
+    "ru": "Передача функции-аргументу второго (опционального) параметра (индекса текущего элемента массива).",
+    "eng": "◘◘![ico-20 cap] **12**◘◘",
+    "ua": "В об'єктно-орієнтованих мовах ідемпотентність методів практично недосяжна, особливо коли аргументи функції мають посилальний тип даних."
+  },
+  "s7.p3": {
+    "ru": "Используем второй и третий опицональные параметры функции-аргумента:",
+    "eng": "◘◘![ico-20 cap] **13**◘◘",
+    "ua": "Оскільки масиви мають посилальний тип даних, то ітеруючі методи масивів від початку працюють із посиланням."
+  },
+  "s7.p4": {
+    "ru": "Результат в консоли:",
+    "eng": "◘◘![ico-20 cap] **14**◘◘",
+    "ua": "Викликаючи метод повторно з одним і тим самим посиланням, ми не гарантовані від того, що вміст масиву в інтервалі між двома викликами методу не змінився."
+  },
+  "s7.p5": {
+    "ru": "[◄◄◄Итерирующие методы массивов◄◄◄](⟦f0⟧)",
+    "eng": "◘◘![ico-20 cap] **15**◘◘",
+    "ua": "Спробуємо створити ідемпотентний метод:"
+  }
+}

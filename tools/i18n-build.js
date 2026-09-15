@@ -5,12 +5,13 @@
  *   node tools/i18n-build.js            every page
  *   node tools/i18n-build.js var        one page
  *
- * A page is a skeleton plus a message file per language plus one table of
- * fragments — the inline code and link targets hidden from translators. This
- * puts them back together. Nothing else writes public/lessons; editing those
- * files directly means losing the edit on the next build.
+ * A page is a skeleton, one message file holding all three languages, and one
+ * table of fragments — the inline code and link targets hidden from
+ * translators. This puts them back together. Nothing else writes
+ * public/lessons; editing those files directly means losing the edit on the
+ * next build.
  *
- * A key with no translation falls back to Russian, so a half-translated page
+ * An empty translation falls back to Russian, so a half-translated page
  * renders: translated paragraphs in the chosen language, the rest still in
  * Russian. That is what makes it possible to translate a page over several
  * sittings without ever publishing a broken one.
@@ -58,30 +59,32 @@ const problems = []
 for (const page of pages) {
   const skeleton = fs.readFileSync(path.join(CONTENT, 'lessons', `${page}.md`), 'utf8')
   const fragments = readJson(path.join(CONTENT, 'fragments', `${page}.json`)) || []
-  const source = readJson(path.join(CONTENT, 'messages', `${page}.${REFERENCE}.json`))
+  const entries = readJson(path.join(CONTENT, 'messages', `${page}.json`))
 
-  if (!source) {
-    problems.push(`${page}: no ${REFERENCE} messages`)
+  if (!entries) {
+    problems.push(`${page}: no message file`)
     continue
   }
 
   for (const lang of LANGS) {
-    const messages = lang === REFERENCE
-      ? source
-      : readJson(path.join(CONTENT, 'messages', `${page}.${lang}.json`))
+    const translated = lang === REFERENCE
+      ? 1
+      : Object.values(entries).filter((e) => e[lang]).length
 
-    if (!messages || !Object.keys(messages).length) {
+    if (!translated) {
       skipped += 1
       continue
     }
 
     const page_ = skeleton.replace(/(?<!\{)\{\{([a-zA-Z0-9_.]+)\}\}(?!\})/g, (whole, key) => {
-      const text = messages[key] !== undefined ? messages[key] : source[key]
-      if (text === undefined) {
+      const entry = entries[key]
+      if (!entry) {
         problems.push(`${page}.${lang}: {{${key}}} has no text in any language`)
         return whole
       }
-      return text
+      // An empty string is a key nobody has translated yet, not a paragraph
+      // that is meant to be blank — the extractor never makes a key for one.
+      return entry[lang] || entry[REFERENCE]
     })
 
     const out = page_.replace(/⟦f(\d+)⟧/g, (whole, i) => {

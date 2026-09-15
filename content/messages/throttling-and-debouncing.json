@@ -1,0 +1,162 @@
+{
+  "s0.p1": {
+    "ru": "Некоторые ресурсоемкие функции,",
+    "eng": "Certain resource-intensive functions,",
+    "ua": "Деякі ресурсомісткі функції,"
+  },
+  "s0.p2": {
+    "ru": "функции, выполняющиеся достаточно долго, чтобы их частые вызовы отразились на производительности приложения,",
+    "eng": "functions that take long enough to execute that frequent calls to them would affect the application’s performance,",
+    "ua": "функції, виконання яких триває достатньо довго, щоб їх часті виклики вплинули на продуктивність додатка,"
+  },
+  "s0.p3": {
+    "ru": "а так же функции, \"дергающие\" сервер (т.е. отправляющие AJAX запросы)",
+    "eng": "as well as functions that jerk the server (i.e. send AJAX requests)",
+    "ua": "а також функції, що «навантажують» сервер (тобто надсилають AJAX-запити)"
+  },
+  "s0.p4": {
+    "ru": "нежелательно запускать слишком часто",
+    "eng": "should not be called too frequently",
+    "ua": "небажано запускати занадто часто"
+  },
+  "s0.p5": {
+    "ru": "Для ограничения числа вызовов такой функции можно использовать прием \"дроссель\" (**throttling**)",
+    "eng": "To limit the number of calls to such a function, you can use the **throttling** technique",
+    "ua": "Для обмеження кількості викликів такої функції можна використовувати прийом «дроселювання» (**throttling**)"
+  },
+  "s0.p6": {
+    "ru": "Задача - ограничить число вызовов функции",
+    "eng": "The aim is to limit the number of function calls",
+    "ua": "Завдання — обмежити кількість викликів функції"
+  },
+  "s0.p7": {
+    "ru": "путем установки интервала времени,",
+    "eng": "by setting a time interval,",
+    "ua": "шляхом встановлення інтервалу часу,"
+  },
+  "s0.p8": {
+    "ru": "который должен пройти с момента предыдущего вызова",
+    "eng": "which must elapse since the previous call",
+    "ua": "який має минути з моменту попереднього виклику"
+  },
+  "s0.p9": {
+    "ru": "^^Напилим функцию-декоратор :^^",
+    "eng": "^^Let’s write a decorator function:^^",
+    "ua": "^^Напишемо функцію-декоратор :^^"
+  },
+  "s0.p10": {
+    "ru": "Здесь использован паттерн \"Декоратор\" и прием \"замыкание\",",
+    "eng": "Here, the ‘Decorator’ pattern and the ‘closing’ technique are used,",
+    "ua": "Тут використано патерн «Декоратор» і прийом «замикання»,"
+  },
+  "s0.p11": {
+    "ru": "позволяющие получить новый экземпляр на базе исходной функции **func** \\",
+    "eng": "which allow us to obtain a new instance based on the original function **func** \\",
+    "ua": "що дозволяють отримати новий екземпляр на основі вихідної функції **func** \\"
+  },
+  "s0.p12": {
+    "ru": "(первый формальный параметр),",
+    "eng": "(the first formal parameter),",
+    "ua": "(перший формальний параметр),"
+  },
+  "s0.p13": {
+    "ru": "который хранит время последнего вызова в собственном свойстве **lastCall**",
+    "eng": "which stores the time of the last call in its own property **lastCall**",
+    "ua": "який зберігає час останнього виклику у власній властивості **lastCall**"
+  },
+  "s0.p14": {
+    "ru": "и обновляет его значение только тогда, когда истек установленный интервал **interval**",
+    "eng": "and updates its value only when the specified interval **interval**",
+    "ua": "та оновлює його значення лише тоді, коли минув встановлений інтервал **interval**"
+  },
+  "s0.p15": {
+    "ru": "(второй формальный параметр).",
+    "eng": "(the second formal parameter) has elapsed.",
+    "ua": "(другий формальний параметр)."
+  },
+  "s0.p16": {
+    "ru": "Функция исполняется только в том случае,",
+    "eng": "The function is executed only if",
+    "ua": "Функція виконується лише в тому випадку,"
+  },
+  "s0.p17": {
+    "ru": "если с момента предыдущего \"срабатывания\" колбэка прошло не менее **interval** мс.",
+    "eng": "at least **interval** ms have passed since the previous ‘trigger’ of the callback.",
+    "ua": "якщо з моменту попереднього «спрацьовування» колбека минуло не менше **interval** мс."
+  },
+  "s0.p18": {
+    "ru": "Обратите внимание, что мы не используем здесь \"тяжелую артиллерию\" таймеров.",
+    "eng": "Note that we are not using the ‘heavy artillery’ of timers here.",
+    "ua": "Зверніть увагу, що ми не використовуємо тут «важку артилерію» таймерів."
+  },
+  "s0.p19": {
+    "ru": "Теперь создадим, собственно, функцию, которую будем декорировать:",
+    "eng": "Now let’s create the actual function that we’re going to decorate:",
+    "ua": "Тепер створимо, власне, функцію, яку будемо декорувати:"
+  },
+  "s0.p20": {
+    "ru": "Создадим новый экземпляр функции **showPictureThrottle** с помощью декоратора **_throttle_**.",
+    "eng": "Let’s create a new instance of the **showPictureThrottle** function using the **_throttle_** decorator.",
+    "ua": "Створимо новий екземпляр функції **showPictureThrottle** за допомогою декоратора **_throttle_**."
+  },
+  "s0.p21": {
+    "ru": "Создадим кнопку, при клике на которой будет вызываться функция **showPictureThrottle**:",
+    "eng": "Let’s create a button which, when clicked, will call the **showPictureThrottle** function:",
+    "ua": "Створимо кнопку, при натисканні на яку викликатиметься функція **showPictureThrottle**:"
+  },
+  "s0.p22": {
+    "ru": "Теперь можно кликать на кнопке - картинка будет вставляться не чаще 1 раза в секунду ![ico-20 smile].",
+    "eng": "You can now click the button – the image will be displayed no more than once per second ![ico-20 smile].",
+    "ua": "Тепер можна натискати на кнопку — зображення вставлятиметься не частіше ніж 1 раз на секунду ![ico-20 smile]."
+  },
+  "s0.p23": {
+    "ru": "Здесь будет незначительное отличие от предыдущего варианта функции-декоратора",
+    "eng": "There will be a slight difference here from the previous version of the decorator function",
+    "ua": "Тут буде незначна відмінність від попереднього варіанту функції-декоратора"
+  },
+  "s0.p24": {
+    "ru": "Функция **debounce** также проверяет интервал времени, прошедший с момента последнего вызова",
+    "eng": "The **debounce** function also checks the time interval that has elapsed since the last call",
+    "ua": "Функція **debounce** також перевіряє інтервал часу, що минув з моменту останнього виклику"
+  },
+  "s0.p25": {
+    "ru": "Если внутри строки встречаются двойные кавычки, то сама строка должна быть завернута в одинарные, и наоброт",
+    "eng": "If double quotes appear within a string, the string itself must be enclosed in single quotes, and vice versa",
+    "ua": "Якщо всередині рядка зустрічаються подвійні лапки, то сам рядок має бути укладений у одинарні лапки, і навпаки"
+  },
+  "s0.p26": {
+    "ru": "Теперь создадим экземпляр колбэка, декорированный с помощью функции **debounce**:",
+    "eng": "Now let’s create an instance of the callback, decorated using the **debounce** function:",
+    "ua": "Тепер створимо екземпляр колбека, декорований за допомогою функції **debounce**:"
+  },
+  "s0.p27": {
+    "ru": "Этот экземпляр будет посылать запрос на сервер только в том случае, если с момента последнего ввода пользователя прошла 1 секунда",
+    "eng": "This instance will only send a request to the server if 1 second has elapsed since the user’s last input",
+    "ua": "Цей екземпляр надсилатиме запит на сервер лише в тому випадку, якщо з моменту останнього введення користувачем минула 1 секунда"
+  },
+  "s0.p28": {
+    "ru": "Если вводить символы очень быстро, запрос отправляться не будет",
+    "eng": "If you type very quickly, the request will not be sent",
+    "ua": "Якщо вводити символи дуже швидко, запит не надсилатиметься"
+  },
+  "s0.p29": {
+    "ru": "Добавим немного стилей:",
+    "eng": "Let’s add some styling:",
+    "ua": "Додамо трохи стилів:"
+  },
+  "s0.p30": {
+    "ru": "А теперь объявим функцию, которая создает и вставляет на страницу элемент input,",
+    "eng": "Now let’s declare a function that creates and inserts an `input` element onto the page,",
+    "ua": "А тепер оголосимо функцію, яка створює та вставляє на сторінку елемент input,"
+  },
+  "s0.p31": {
+    "ru": "и вызовем ее:",
+    "eng": "and call it:",
+    "ua": "і викличемо її:"
+  },
+  "s0.p32": {
+    "ru": "◘◘![ico-20 cap] Запуск◘◘",
+    "eng": "◘◘![ico-20 cap] Run◘◘",
+    "ua": "◘◘![ico-20 cap] Запуск◘◘"
+  }
+}

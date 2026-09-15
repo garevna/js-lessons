@@ -1,0 +1,72 @@
+{
+  "s0.p1": {
+    "ru": "Это **поведенческий** паттерн.",
+    "eng": "This is a **behavioral** pattern.",
+    "ua": "Це поведінковий патерн."
+  },
+  "s0.p2": {
+    "ru": "Он позволяет описать несколько стратегий поведения объекта с возможностью выбора нужной стратегии.",
+    "eng": "It allows you to describe several strategies of the object's behavior with the ability to choose the desired strategy.",
+    "ua": "Він дозволяє описати кілька стратегій поведінки об'єкта з можливістю вибору потрібної стратегії."
+  },
+  "s0.p3": {
+    "ru": "Для начала создадим несколько вспомогательных модулей, которые можно потом импортировать в главный модуль класса.",
+    "eng": "First, let's create a few helper modules, which you can then import into the main module of the class.",
+    "ua": "Спочатку створимо кілька допоміжних модулів, які можна потім імпортувати в головний модуль класу."
+  },
+  "s0.p4": {
+    "ru": "Создадим вспомогательные функции ⟦f0⟧, ⟦f1⟧, ⟦f2⟧, ⟦f3⟧, ⟦f4⟧:",
+    "eng": "Let's create the helper functions ⟦f0⟧, ⟦f1⟧, ⟦f2⟧, ⟦f3⟧, ⟦f4⟧:",
+    "ua": "Створимо допоміжні функції ⟦f0⟧, ⟦f1⟧, ⟦f2⟧, ⟦f3⟧, ⟦f4⟧:"
+  },
+  "s0.p5": {
+    "ru": "Создадим класс **SortStrategy**.",
+    "eng": "Let's create a **SortStrategy** class.",
+    "ua": "Створимо клас **SortStrategy**."
+  },
+  "s0.p6": {
+    "ru": "Экземпляр этого класса будет сортировать полученный массив объектов в соответствии с указанной стратегией.",
+    "eng": "An instance of this class will sort the resulting array of objects according to the specified strategy.",
+    "ua": "Примірник цього класу сортуватиме отриманий масив об'єктів відповідно до зазначеної стратегії."
+  },
+  "s0.p7": {
+    "ru": "В данном примере экземпляр может использовать три стратегии сортировки:",
+    "eng": "In this example, the instance can use three collation strategies:",
+    "ua": "У цьому прикладі екземпляр може використовувати три стратегії сортування:"
+  },
+  "s0.p8": {
+    "ru": "| **key** | сортировка по заданному ключу.<br>^^Каждый элемент массива (объект) должен иметь свойство с соответствующим названием.^^ |",
+    "eng": "| **key** | Sort by a given key.<br>^^Each element (object) of the array must have a property with an appropriate name.^^ |",
+    "ua": "| **key** | сортування за заданим ключем.<br>^^Кожен елемент масиву (об'єкт) повинен мати властивість із відповідною назвою.^^ |"
+  },
+  "s0.p9": {
+    "ru": "| **sum-of-all-numeric-fields** | сортировка по сумме всех числовых свойств объекта.<br>^^Все числовые свойства объекта, являющегося элементом исходного (сортируемого) массива, будут суммироваться.<br>Сортировка исходного массива будет выполняться по сумме числовых свойств объектов.^^ |",
+    "eng": "| **sum-of-all-numeric-fields** | Sort by the sum of all numeric properties of the object.<br>^^All numeric properties of the object that is an element of the original (sorted) array will be summed.<br>The source array will be sorted by the sum of the numeric properties of the objects.^^ |",
+    "ua": "| **sum-of-all-numeric-fields** | сортування за сумою всіх числових властивостей об'єкта.<br>^^Усі числові властивості об'єкта, що є елементом вихідного (сортованого) масиву, сумуватимуться.<br>Сортування вихідного масиву виконуватиметься за сумою числових властивостей об'єктів.^^ |"
+  },
+  "s0.p10": {
+    "ru": "| **array-field-length** | сортировка по длине свойства-массива.<br>^^Все объекты, являющиеся элементами исходного (сортируемого) массива, должны иметь свойство-массив.<br>Сортировка исходного массива будет выполняться по длине массива-свойства.^^ |",
+    "eng": "| **array-field-length** | Sort by length of the array property.<br>^^All objects that are elements of the original (sortable) array must have an array property.<br>The source array will be sorted by the length of the property array.^^ |",
+    "ua": "| **array-field-length** | сортування за довжиною властивості-масиву.<br>^^Усі об'єкти, що є елементами вихідного (сортованого) масиву, повинні мати властивість-масив.<br>Сортування вихідного масиву виконуватиметься за довжиною масиву-властивості.^^ |"
+  },
+  "s0.p11": {
+    "ru": "Переключение с одной стратегии на другую происходит за счет изменения свойства **valueOf** каждого элемента исходного массива.",
+    "eng": "Switching from one strategy to another occurs by changing the **valueOf** property of each element of the source array.",
+    "ua": "Перемикання з однієї стратегії в іншу відбувається за рахунок зміни властивості **valueOf** кожного елемента вихідного масиву."
+  },
+  "s0.p12": {
+    "ru": "Теперь займемся исходными данными. Будем использовать три массива объектов с различным набором свойств.",
+    "eng": "Now let's deal with the initial data. We will use three arrays of objects with a different set of properties.",
+    "ua": "Тепер займемося вихідними даними. Будемо використовувати три масиви об'єктів із різним набором властивостей."
+  },
+  "s0.p13": {
+    "ru": "Осталось создать экземпляр класса **SortStrategy**:",
+    "eng": "The only thing left to do is to create an instance of the **SortStrategy** class:",
+    "ua": "Залишилося створити екземпляр класу **SortStrategy**:"
+  },
+  "s0.p14": {
+    "ru": "и проверить, как он работает.",
+    "eng": "and check how it works.",
+    "ua": "та перевірити, як він працює."
+  }
+}

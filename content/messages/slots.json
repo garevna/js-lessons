@@ -1,0 +1,62 @@
+{
+  "s0.p1": {
+    "ru": "Классная фича, которая позволяет динамически изменять контент элемента",
+    "eng": "A brilliant feature that allows you to dynamically change an element’s content",
+    "ua": "Класна фіча, яка дозволяє динамічно змінювати вміст елемента"
+  },
+  "s0.p2": {
+    "ru": "![ico-20 warn] Поддержка в браузерах еще не полная, **Edge** пока догоняет вечнозеленые",
+    "eng": "![ico-20 warn] Browser support is not yet complete; **Edge** is still catching up with the evergreen browsers",
+    "ua": "![ico-20 warn] Підтримка в браузерах ще не повна, **Edge** поки що наздоганяє «вічнозелені»"
+  },
+  "s1.h1": {
+    "ru": "Пример с именованным слотом",
+    "eng": "An example using a named slot",
+    "ua": "Приклад з іменованим слотом"
+  },
+  "s1.p1": {
+    "ru": "Здесь все элементарно:",
+    "eng": "It’s all very straightforward here:",
+    "ua": "Тут усе елементарно:"
+  },
+  "s1.p2": {
+    "ru": "В шаблоне разметки мы вставим именованный слот:",
+    "eng": "In the markup template, we’ll insert a named slot:",
+    "ua": "У шаблоні розмітки ми вставимо іменований слот:"
+  },
+  "s1.p3": {
+    "ru": "Вставим шаблон со слотом в DOM:",
+    "eng": "Let’s insert the template with the slot into the DOM:",
+    "ua": "Вставимо шаблон зі слотом у DOM:"
+  },
+  "s1.p4": {
+    "ru": "Теперь можно динамически изменять текст внутри слота",
+    "eng": "Now we can dynamically change the text inside the slot",
+    "ua": "Тепер можна динамічно змінювати текст усередині слота"
+  },
+  "s1.p5": {
+    "ru": "Давайте для начала создадим кастомный элемент **⟦f0⟧** с этим шаблоном разметки:",
+    "eng": "To start with, let’s create a custom element **⟦f0⟧** using this markup template:",
+    "ua": "Давайте для початку створимо кастомний елемент **⟦f0⟧** із цим шаблоном розмітки:"
+  },
+  "s1.p6": {
+    "ru": "Создадим переменную **_⟦f1⟧_**, в которой будем хранить текст для вставки:",
+    "eng": "Let’s create a variable **_⟦f1⟧_** to store the text to be inserted:",
+    "ua": "Створимо змінну **_⟦f1⟧_**, у якій будемо зберігати текст для вставки:"
+  },
+  "s1.p7": {
+    "ru": "Теперь можно вставлять кастомный элемент на страницу с заданным контентом:",
+    "eng": "Now we can insert the custom element onto the page with the specified content:",
+    "ua": "Тепер можна вставляти користувацький елемент на сторінку із заданим контентом:"
+  },
+  "s1.p8": {
+    "ru": "Вот и все!",
+    "eng": "That’s it!",
+    "ua": "Ось і все!"
+  },
+  "s1.p9": {
+    "ru": "Полный код сниппета:",
+    "eng": "Full code snippet:",
+    "ua": "Повний код сніпету:"
+  }
+}

@@ -1,0 +1,353 @@
+{
+  "s4.h1": {
+    "eng": "Promises' reminder",
+    "ua": "8"
+  },
+  "s4.p1": {
+    "eng": "We have already said that a copy of the **⟦f2⟧** constructor is a `magic box with two holes`.",
+    "ua": "У цьому прикладі код основного потоку відпрацює за значенням ** 5** змінної ⟦f29⟧."
+  },
+  "s4.p2": {
+    "eng": "**⟦f15⟧** and **⟦f20⟧** methods are the \"holes\" in the box.",
+    "ua": "◘◘![ico-25 cap] **12**◘◘"
+  },
+  "s4.p3": {
+    "eng": "Through these \"holes\" we put in our callback functions, and the box \"promises\" us that as soon as the contents appear in it, one of our callbacks will receive it.",
+    "ua": "Зауважимо, що:"
+  },
+  "s4.p4": {
+    "eng": "@@@@ 2",
+    "ua": "1. Проміс, який повертає функція ⟦f31⟧, розрізолвився останнім, хоча це перший рядок коду."
+  },
+  "s4.p5": {
+    "eng": "It is not known when the contents will appear in the box.<br>What will this content be - a \"white ball\" (**response**) or \"black ball\" (**error**) also unknown.",
+    "ua": "2. Першим розрізолвився ⟦f32⟧ (другий рядок коду)."
+  },
+  "s4.p6": {
+    "eng": "And the magic box sends its own callback functions for the white and black balls to the **Event Loop**.",
+    "ua": "3. Другим розрізолвився проміс, повернутий функцією ⟦f33⟧ (третій рядок коду)."
+  },
+  "s4.p7": {
+    "eng": "Callbacks are already \"sitting\" in the table of events \"in ambush\".",
+    "ua": "Зробив \"рокіровку\" другої і третьої стрічок коду:"
+  },
+  "s4.p8": {
+    "eng": "They \"catch the balls\" for us.",
+    "ua": "ми побачимо, що порядок виведення консоль змінився відповідним чином:"
+  },
+  "s4.p9": {
+    "eng": "When caught, they will put it in the magic box of the **⟦f2⟧** instance.",
+    "ua": "тобто їх колбеки потрапляють в чергу мікротасків в тій же послідовності, в якій вони з'явилися в коді."
+  },
+  "s4.p10": {
+    "eng": "They are tied, respectively, to the following events:",
+    "ua": "А ось з функцією ⟦f31⟧ все інакше."
+  },
+  "s4.p11": {
+    "eng": "1. \"A white ball has arrived\" (response).",
+    "ua": "Покажемо, що код:"
+  },
+  "s4.p12": {
+    "eng": "2. \"A black ball has arrived\" (error).",
+    "ua": "працює ідентично до коду:"
+  },
+  "s4.p13": {
+    "eng": "Only one of them will return back from the **Event Loop**.",
+    "ua": "Для цього запустимо їх спочатку у такій послідовності:"
+  },
+  "s4.p14": {
+    "eng": "The contents will appear in the box of the **⟦f2⟧** instance.",
+    "ua": "а потім змінимо порядок їх проходження:"
+  },
+  "s4.p15": {
+    "eng": "Now a magic box with two holes is waiting for you to stick your \"hands\" (**⟦f16⟧** and **⟦f18⟧** callbacks), into these holes, to which the box can give the ball.",
+    "ua": "Як ми бачимо, вони резолвуються строго в порядку їхнього слідування в коді."
+  },
+  "s4.p16": {
+    "eng": "Perhaps, you have already \"stick your hands in\" before, then you will receive the ball as soon as it appears in the box of the **⟦f2⟧** instance.",
+    "ua": "Тобто появлення ключового слова **⟦f13⟧** подовжує на 1 ланцюг колбеків, що проходять через Event Loop, і це призводить до того, що в прикладі 12 останнім \"вийде на фініш\" ⟦f34⟧."
+  },
+  "s4.p17": {
+    "eng": "Otherwise, the ball will remain in the box until you use the methods **⟦f15⟧** and **⟦f20⟧**, i.e. until you \"stick your hands in\" to pick up the ball."
+  },
+  "s4.p18": {
+    "eng": "![ico-30 point_up] It follows that the magic box synchronizes two autonomous asynchronous processes."
+  },
+  "s4.p19": {
+    "eng": "This is the magical power of a \"box with two holes\"."
+  },
+  "s4.p20": {
+    "eng": "Those, the 'magic promise box' sends its own callback functions \"to run out and get the ball\", and then waits for you to stick your hands (callbacks) into the holes **⟦f15⟧** and **⟦f20⟧** to give out the ball from storage."
+  },
+  "s4.p21": {
+    "eng": "^^Moreover, you can stick both hands (**⟦f16⟧** и **⟦f18⟧**) into one hole **⟦f15⟧**, although using the second hole **⟦f20⟧** in some cases saves you from error messages in the console.^^"
+  },
+  "s4.slogan1": {
+    "eng": "Don't make the console blush for you."
+  },
+  "s5.h1": {
+    "eng": "await &lt;expression>",
+    "ua": "14"
+  },
+  "s5.p1": {
+    "eng": "It needs to calculate the value of this expression."
+  },
+  "s5.p2": {
+    "eng": "![ico-25 warn] Until it calculates it and replaces the ⟦f22⟧ with the received (calculated) value, it will not move to the next line of asynchronous function code."
+  },
+  "s5.p3": {
+    "eng": "If the value is a reference to the **⟦f2⟧**, instance, then the engine will call the method **⟦f15⟧** of this instance and pass the callback to it:"
+  },
+  "s5.p4": {
+    "eng": "and will pause the execution of the asynchronous function until the callback function returns from **Event Loop** with the result \"ball\" (⟦f24⟧) and puts it in the box (⟦f2⟧ instance)."
+  },
+  "s5.p5": {
+    "eng": "After the result appears in the box, the engine will take it out of the box and insert it into the place of the ⟦f22⟧."
+  },
+  "s5.p6": {
+    "eng": "We've already asked ourselves what the engine will do if ⟦f25⟧ is not a promise."
+  },
+  "s5.p7": {
+    "eng": "And we have already figured out what the engine will do if ⟦f25⟧ is an object that has a **⟦f15⟧** method."
+  },
+  "s5.p8": {
+    "eng": "Now let's see what the engine will do if ⟦f25⟧ is a string, or a number, or some other value."
+  },
+  "s5.p9": {
+    "eng": "◘◘![ico-25 cap] ** 6**◘◘"
+  },
+  "s5.p10": {
+    "eng": "Everything that is printed to the console after the **_Finish_** message is the callback functions that \"passed\" through the **Event Loop**."
+  },
+  "s5.p11": {
+    "eng": "If they are printed before ⟦f5⟧ these are **microtasks**."
+  },
+  "s5.p12": {
+    "eng": "So, the engine was safely outputting ^^**_Start_**^^ to the console, then it came across a functional expression ([IIFE](⟦f26⟧)) and started ‘calculating’ the value of the expression in parentheses."
+  },
+  "s5.p13": {
+    "eng": "But we see the declaration of an anonymous asynchronous function in the parentheses."
+  },
+  "s5.p14": {
+    "eng": "The engine passes the control to the constructor, which creates this function and returns a reference to it."
+  },
+  "s5.p15": {
+    "eng": "The engine, having received a reference to the function, calls it, as the parentheses (function call) follow."
+  },
+  "s5.p16": {
+    "eng": "The anonymous asynchronous function starts executing, and the console displays the message ^^**_Async function starts_**^^."
+  },
+  "s5.p17": {
+    "eng": "However, in the next line of the function's code, the engine \"stumbled upon\" an expression:"
+  },
+  "s5.p18": {
+    "eng": "Here the engine understands that it is necessary to send a callback function ⟦f46⟧ to **Event Loop**, and the async function must wait for its return to complete the execution of this line of code."
+  },
+  "s5.p19": {
+    "eng": "The engine couldn't resume the async function execution until the callback function ⟦f46⟧ returns."
+  },
+  "s5.p20": {
+    "eng": "But callback function can return only when the Call Stack will be free."
+  },
+  "s5.p21": {
+    "eng": "So, the engine needs to ‘get rid’ of this async function for a while, but in such a way that after the return of the callback ⟦f46⟧ it can resume the execution of async function."
+  },
+  "s5.p22": {
+    "eng": "How can this be done?"
+  },
+  "s5.p23": {
+    "eng": "For example, by replacing the remaining unexecuted function code:"
+  },
+  "s5.p24": {
+    "eng": "to this code:"
+  },
+  "s5.p25": {
+    "eng": "And then the engine continues to execute the script code from the line:"
+  },
+  "s5.p26": {
+    "eng": "Thus, the occurrence of the keyword **⟦f13⟧** causes the unexecuted remainder of the asynchronous function code to become a callback function."
+  },
+  "s6.h1": {
+    "eng": "7",
+    "ua": "16"
+  },
+  "s6.p1": {
+    "eng": "In this example, we specifically named the function **⟦f28⟧** to track its appearance in the call stack.",
+    "ua": "Зафіксуємо значення поточного часу в змінній **⟦f35⟧** і оголосимо допоміжні функції **⟦f36⟧** і **⟦f28⟧**:"
+  },
+  "s7.h1": {
+    "eng": "11",
+    "ua": "17"
+  },
+  "s7.p1": {
+    "eng": "◘◘![ico-25 cap] **11**◘◘",
+    "ua": "Розглянемо суто умоглядний варіант"
+  },
+  "s8.h1": {
+    "eng": "12",
+    "ua": "19"
+  },
+  "s8.p1": {
+    "eng": "◘◘![ico-25 cap] **12**◘◘",
+    "ua": "◘◘Object◘◘"
+  },
+  "s8.p2": {
+    "eng": "Note that:",
+    "ua": "Як ми можемо бачити, доданий елемент матиме два методи: **⟦f40⟧** та **⟦f41⟧**, які дозволяють змінювати текстовий вміст елемента."
+  },
+  "s8.p3": {
+    "eng": "1. The ⟦f2⟧ instance returned by ⟦f31⟧ will be resolved last, even though it is the first line of code.",
+    "ua": "◘◘Number◘◘"
+  },
+  "s8.p4": {
+    "eng": "2. The ⟦f32⟧ (second line of code) will be resolved first.",
+    "ua": "[![ico-30 hw] Quiz](⟦f51⟧)"
+  },
+  "s8.p5": {
+    "eng": "3. The ⟦f2⟧ instance returned by ⟦f33⟧ (third line of code) will be resolved second."
+  },
+  "s8.p6": {
+    "eng": "Having castling of the second and third lines of the code:"
+  },
+  "s8.p7": {
+    "eng": "we will see that the order of the console output has changed accordingly:"
+  },
+  "s8.p8": {
+    "eng": "that is, their callback functions end up in the microtask queue in the same sequence in which they appeared in the code."
+  },
+  "s8.p9": {
+    "eng": "But with the function ⟦f31⟧ it's different."
+  },
+  "s8.p10": {
+    "eng": "Let's show that the code:"
+  },
+  "s8.p11": {
+    "eng": "works identical to the code:"
+  },
+  "s8.p12": {
+    "eng": "To do this, let’s run them first in the following sequence:"
+  },
+  "s8.p13": {
+    "eng": "As we said earlier, the asynchronous function itself is interrupted at the point where **⟦f13⟧** is met, and the rest of the code of this function, which was not executed before, itself becomes a callback function and \"goes\" into the **Event Loop** to free the Call Stack and allow the callback ⟦f47⟧ to return with the result ('async-await'). Therefore, the chain is extended by 1 microtask."
+  },
+  "s8.p14": {
+    "eng": "◘◘![ico-25 cap] **14**◘◘"
+  },
+  "s9.h1": {
+    "eng": "15"
+  },
+  "s9.p1": {
+    "eng": "◘◘![ico-25 cap] **15**◘◘"
+  },
+  "s9.p2": {
+    "eng": "Let's record the value of the current time in milliseconds in the **⟦f35⟧** variable and declare the auxiliary functions **⟦f36⟧** and **⟦f28⟧**:"
+  },
+  "s9.p3": {
+    "eng": "Now let's declare the functions **⟦f37⟧** and **⟦f3⟧**:"
+  },
+  "s9.p4": {
+    "eng": "Now let's run the code:"
+  },
+  "s9.p5": {
+    "eng": "◘◘![ico-25 cap] **16**◘◘"
+  },
+  "s9.p6": {
+    "eng": "As you can see, messages are output in a random order, depending on what value the **⟦f36⟧** function returned for each ⟦f2⟧ instance."
+  },
+  "s9.p7": {
+    "eng": "◘◘**promise chain**◘◘"
+  },
+  "s9.p8": {
+    "eng": "◘◘**async function**◘◘"
+  },
+  "s10.h1": {
+    "eng": "17"
+  },
+  "s10.p1": {
+    "eng": "Let's consider a purely speculative option"
+  },
+  "s10.p2": {
+    "eng": "^^(you shouldn't do this in real  projects)^^:"
+  },
+  "s10.p3": {
+    "eng": "◘◘![ico-25 cap] **17**◘◘"
+  },
+  "s10.p4": {
+    "eng": "What you should pay attention to:"
+  },
+  "s10.p5": {
+    "eng": "the **⟦f48⟧** method is passed an async function."
+  },
+  "s10.p6": {
+    "eng": "Therefore, after each iteration, the **⟦f49⟧** variable will be a ⟦f2⟧ instance,"
+  },
+  "s10.p7": {
+    "eng": "and it must be resolved using **await**."
+  },
+  "s10.p8": {
+    "eng": "or this:"
+  },
+  "s10.p9": {
+    "eng": "◘◘![ico-25 cap] **18**◘◘"
+  },
+  "s11.h1": {
+    "eng": "19"
+  },
+  "s11.p1": {
+    "eng": "As we can see, the added element will have two methods: **⟦f40⟧** and **⟦f41⟧**, which allow you to modify the text content of the element."
+  },
+  "s11.p2": {
+    "eng": "Now you can create “simple” functions **⟦f44⟧** and **⟦f45⟧**:"
+  },
+  "s11.p3": {
+    "eng": "◘◘![ico-25 cap] **19**◘◘"
+  },
+  "s11.p4": {
+    "eng": "[:::**20**:::](⟦f50⟧)"
+  },
+  "s11.p5": {
+    "eng": "[![ico-30 hw] Quiz](⟦f51⟧)"
+  },
+  "s6.p2": {
+    "ua": "Тепер оголосимо функції **⟦f37⟧** і **⟦f3⟧**:"
+  },
+  "s6.p3": {
+    "ua": "◘◘![ico-25 cap] **16**◘◘"
+  },
+  "s6.p4": {
+    "ua": "Як бачите, повідомлення відображаються у випадковому порядку, залежно від того, яке значення повертала функція **⟦f36⟧** для кожного промісу."
+  },
+  "s6.p5": {
+    "ua": "Задача - синхронізувати потрапляння колбеків у стек викликів так, щоб спочатку в консолі вивелося \"**_First_**\", потім \"**_Second_**\", а потім \"**_Third_**\"."
+  },
+  "s6.p6": {
+    "ua": "◘◘**Ланцюжок промісів**◘◘"
+  },
+  "s6.p7": {
+    "ua": "◘◘**Асинхронна функція**◘◘"
+  },
+  "s7.p2": {
+    "ua": "◘◘![ico-25 cap] **17**◘◘"
+  },
+  "s7.p3": {
+    "ua": "На що тут слід звернути увагу:"
+  },
+  "s7.p4": {
+    "ua": "методу **⟦f48⟧** передається асинхронна функція, яка повертає екземпляр ⟦f2⟧."
+  },
+  "s7.p5": {
+    "ua": "Тому після кожної ітерації змінна **⟦f49⟧** буде посиланням на екземпляр ⟦f2⟧,"
+  },
+  "s7.p6": {
+    "ua": "який треба резолвити за допомогою **⟦f13⟧**."
+  },
+  "s7.p7": {
+    "ua": "У результаті роботи скрипта у змінній **⟦f54⟧** буде екземпляр ⟦f2⟧."
+  },
+  "s7.p8": {
+    "ua": "Витягнемо результат:"
+  },
+  "s7.p9": {
+    "ua": "![ico-20 yes] Увага, щоб скоротити кількість звернень до сервера, краще зробити так:"
+  }
+}

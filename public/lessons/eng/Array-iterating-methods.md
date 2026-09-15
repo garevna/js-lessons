@@ -1395,7 +1395,7 @@ cards.reduce((result, card) => {
 
 Now the original map array will be:
 
-◘◘**^^Результат^^**◘◘
+◘◘**^^Result^^**◘◘
 
 ~~~console
 

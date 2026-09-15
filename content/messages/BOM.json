@@ -1,0 +1,362 @@
+{
+  "s0.p1": {
+    "ru": "На стороне клиента мы живем в браузере, а браузер живет в операционной системе.",
+    "eng": "On the client side, we operate within a browser, and the browser runs on the operating system.",
+    "ua": "На стороні клієнта ми працюємо в браузері, а браузер працює в операційній системі."
+  },
+  "s0.p2": {
+    "ru": "^^(Заметим, что мы можем жить не только в браузере, например, на стороне сервера мы можем жить в Node.js.)^^",
+    "eng": "^^(Note that we can operate not only within a browser; for example, on the server side, we can run in Node.js.)^^",
+    "ua": "^^(Зауважимо, що ми можемо працювати не лише в браузері; наприклад, на стороні сервера ми можемо працювати в Node.js.)^^"
+  },
+  "s0.p3": {
+    "ru": "Давайте подумаем, как браузер представляет себя нам.",
+    "eng": "Let’s consider how the browser presents itself to us.",
+    "ua": "Давайте поміркуємо, як браузер представляє себе нам."
+  },
+  "s0.p4": {
+    "ru": "Когда юзер открывает страницу в браузере, он видит пиксели.<br>Эти пиксели для него рендерит браузер.<br><br>Когда верстальщик создает страницу, он видит теги.<br>А браузер из этих тегов генерит пиксели для юзера.<br><br>Мы же видим браузер как объект **window**.<br>Потому что мы все видим как объекты.",
+    "eng": "When a user opens a page in a browser, they see pixels.<br>These pixels are rendered for them by the browser.<br><br>When a front-end developer creates a page, they see tags. <br>And the browser generates pixels for the user from these tags.<br><br>We, however, see the browser as a **window** object.<br>Because we see everything as objects.",
+    "ua": "Коли користувач відкриває сторінку в браузері, він бачить пікселі.<br>Ці пікселі для нього рендерить браузер.<br><br>Коли верстальник створює сторінку, він бачить теги. <br>А браузер із цих тегів генерує пікселі для користувача.<br><br>Ми ж бачимо браузер як об’єкт **window**.<br>Тому що ми все бачимо як об’єкти."
+  },
+  "s0.p5": {
+    "ru": "<br>Але, но браузер - не объект, а большое и сложное приложение!<br><br>Так что же мы видим?<br><br>Мы видим **модель браузера**, которую он создает специально для нас.<br>**Объектную модель**.",
+    "eng": "<br>But wait—the browser isn’t an object, it’s a large and complex application! <br><br>So what do we actually see?<br><br>We see the **browser model**, which it creates specifically for us.<br>The **object model**.",
+    "ua": "<br>Але ж браузер — не об’єкт, а великий і складний додаток! <br><br>То що ж ми бачимо?<br><br>Ми бачимо **модель браузера**, яку він створює спеціально для нас.<br>**Об’єктну модель**."
+  },
+  "s1.h1": {
+    "ru": "Объект window",
+    "eng": "The **window** object",
+    "ua": "Об’єкт window"
+  },
+  "s1.p1": {
+    "ru": "Многие свойства объекта **window** являются ссылками на другие объекты, которые, в свою очередь, являются объектными моделями.",
+    "eng": "Many properties of the **window** object are references to other objects, which, in turn, are object models.",
+    "ua": "Багато властивостей об’єкта **window** є посиланнями на інші об’єкти, які, у свою чергу, є об’єктними моделями."
+  },
+  "s1.p2": {
+    "ru": "Рассмотрим, к примеру, объект **document**.",
+    "eng": "Let’s consider, for example, the **document** object.",
+    "ua": "Розглянемо, наприклад, об’єкт **document**."
+  },
+  "s1.p3": {
+    "ru": "В объекте **window** есть одноименное свойство, содержащее ссылку на объект **document**.",
+    "eng": "The **window** object has a property of the same name, containing a reference to the **document** object.",
+    "ua": "В об’єкті **window** є однойменна властивість, що містить посилання на об’єкт **document**."
+  },
+  "s1.p4": {
+    "ru": "Верстальщик видит его как",
+    "eng": "The front-end developer sees it as",
+    "ua": "Верстальник бачить його як"
+  },
+  "s1.p5": {
+    "ru": "Юзер увидит отрендеренную браузером страницу, т.е. пиксели.",
+    "eng": "The user will see the page rendered by the browser, i.e. pixels.",
+    "ua": "Користувач побачить відрендерену браузером сторінку, тобто пікселі."
+  },
+  "s1.p6": {
+    "ru": "А мы с вами видим объект.",
+    "eng": "Whereas you and I see the object.",
+    "ua": "А ми з вами бачимо об’єкт."
+  },
+  "s1.p7": {
+    "ru": "<br><br>И мы имеем доступ к свойствам и методам этого объекта по ссылке.",
+    "eng": "<br><br>And we have access to this object’s properties and methods via the reference.",
+    "ua": "<br><br>І ми маємо доступ до властивостей та методів цього об’єкта за посиланням."
+  },
+  "s1.p8": {
+    "ru": "Любая переменная, объявленная с помощью ⟦f0⟧, становится свойством объекта **window**.<br><br>Она уязвима, потому что она оказалась в \"куче\" (**heap**).",
+    "eng": "Any variable declared using ⟦f0⟧ becomes a property of the **window** object. <br><br>It is vulnerable because it ends up on the **heap**.",
+    "ua": "Будь-яка змінна, оголошена за допомогою ⟦f0⟧, стає властивістю об’єкта **window**. <br><br>Вона вразлива, тому що опинилася в «купі» (**heap**)."
+  },
+  "s1.p9": {
+    "ru": "Куча потому и куча, что все аппы, запущенные в браузере, сваливают туда свои переменные.",
+    "eng": "The heap is called the heap precisely because all apps running in the browser dump their variables there.",
+    "ua": "Купа є купою саме тому, що всі додатки, запущені в браузері, скидають туди свої змінні."
+  },
+  "s1.p10": {
+    "ru": "^^Если произойдет конфликт имен, т.е. два разных аппа, запущенных в браузере, определят переменные с одинаковым именем, то значение этой переменной будет переопределено и один из аппов точно получит неприятный \"сюрприз\".^^",
+    "eng": "^^If a name conflict occurs – that is, if two different apps running in the browser define variables with the same name – the value of that variable will be overwritten and one of the apps is bound to be in for an unpleasant ‘surprise’.^^",
+    "ua": "^^Якщо виникне конфлікт імен, тобто два різні додатки, запущені в браузері, визначать змінні з однаковою назвою, то значення цієї змінної буде перевизначено, і один із додатків точно отримає неприємний «сюрприз».^^"
+  },
+  "s1.p11": {
+    "ru": "Кроме того, аналогичная история происходит с идентификаторами элементов. В объекте **window** автоматически появляется переменная с таким именем.",
+    "eng": "Furthermore, the same thing happens with element identifiers. A variable with this name automatically appears in the **window** object.",
+    "ua": "Крім того, аналогічна ситуація трапляється з ідентифікаторами елементів. В об’єкті **window** автоматично з’являється змінна з такою назвою."
+  },
+  "s1.p12": {
+    "ru": "Если в разметке у вас есть элементы с атрибутом **id**",
+    "eng": "If you have elements in your markup with the **id** attribute",
+    "ua": "Якщо у вашій розмітці є елементи з атрибутом **id**"
+  },
+  "s1.p13": {
+    "ru": "то с использованием BOM получить ссылку на нужный элемент очень просто",
+    "eng": "then using the BOM makes it very easy to get a reference to the required element",
+    "ua": "то за допомогою BOM отримати посилання на потрібний елемент дуже просто"
+  },
+  "s1.p14": {
+    "ru": "**_viewport_** - часть окна браузера, где отображается веб-страница",
+    "eng": "**_viewport_** – the part of the browser window where the web page is displayed",
+    "ua": "**_viewport_** — частина вікна браузера, де відображається веб-сторінка"
+  },
+  "s1.p15": {
+    "ru": "^^( без панелей и элементов управления самого браузера )^^",
+    "eng": "^^(excluding the browser’s own toolbars and controls)^^",
+    "ua": "^^( без панелей та елементів керування самого браузера )^^"
+  },
+  "s1.spoiler1": {
+    "ru": "Упражнение 1",
+    "eng": "Exercise 1",
+    "ua": "Вправа 1"
+  },
+  "s1.p16": {
+    "ru": "Объявите функцию **_⟦f1⟧_**, которая выводит в консоль текущие размеры ⟦f2⟧",
+    "eng": "Declare a function **_⟦f1⟧_** that outputs the current dimensions to the console ⟦f2⟧",
+    "ua": "Оголосіть функцію **_⟦f1⟧_**, яка виводить у консоль поточні розміри ⟦f2⟧"
+  },
+  "s1.p17": {
+    "ru": "Используйте свойства объекта ⟦f3⟧:",
+    "eng": "Use the properties of the ⟦f3⟧ object:",
+    "ua": "Використовуйте властивості об’єкта ⟦f3⟧:"
+  },
+  "s1.p18": {
+    "ru": "Изменяйте размер ⟦f2⟧ и вызывайте функцию **_⟦f1⟧_**",
+    "eng": "Resize ⟦f2⟧ and call the function **_⟦f1⟧_**",
+    "ua": "Змінюйте розмір ⟦f2⟧ і викликайте функцію **_⟦f1⟧_**"
+  },
+  "s1.p19": {
+    "ru": "К числу свойств объекта  **window** относятся следующие объекты:",
+    "eng": "The following objects are among the properties of the **window** object:",
+    "ua": "До числа властивостей об’єкта  **window** належать такі об’єкти:"
+  },
+  "s1.p20": {
+    "ru": "^^Проверим это:^^",
+    "eng": "^^Let’s check this:^^",
+    "ua": "^^Перевіримо це:^^"
+  },
+  "s1.p21": {
+    "ru": "^^**Результат в консоли:**^^",
+    "eng": "^^**Result in the console:**^^",
+    "ua": "^^**Результат у консолі:**^^"
+  },
+  "s1.p22": {
+    "ru": "У каждого из этих объектов есть свои свойства и методы",
+    "eng": "Each of these objects has its own properties and methods",
+    "ua": "Кожен із цих об’єктів має свої властивості та методи"
+  },
+  "s1.p23": {
+    "ru": "Метод **getCurrentPosition** имеет три формальных параметра",
+    "eng": "The **getCurrentPosition** method has three formal parameters",
+    "ua": "Метод **getCurrentPosition** має три формальні параметри"
+  },
+  "s1.p24": {
+    "ru": "Первый формальный параметр ( обязательный ) - это функция, которая будет вызвана в случае благополучного завершения операции",
+    "eng": "The first formal parameter (required) is a function that will be called if the operation completes successfully",
+    "ua": "Перший формальний параметр (обов’язковий) — це функція, яка буде викликана у разі успішного завершення операції"
+  },
+  "s1.p25": {
+    "ru": "Она получит в качестве аргумента объект следующей структуры:",
+    "eng": "It will receive an object with the following structure as an argument:",
+    "ua": "Вона отримає як аргумент об’єкт такої структури:"
+  },
+  "s1.p26": {
+    "ru": "Второй формальный параметр (опциональный) - тоже функция, которая будет вызвана в случае неудачного завершения геолокации",
+    "eng": "The second formal parameter (optional) is also a function that will be called if the geolocation fails",
+    "ua": "Другий формальний параметр (опціональний) — теж функція, яка буде викликана у разі невдалого завершення геолокації"
+  },
+  "s1.p27": {
+    "ru": "Третий (опциональный) формальный параметр - это объект опций запроса",
+    "eng": "The third (optional) formal parameter is the request options object",
+    "ua": "Третій (опціональний) формальний параметр — це об’єкт опцій запиту"
+  },
+  "s1.p28": {
+    "ru": "Методами объекта  **⟦f4⟧**  мы уже пользовались",
+    "eng": "We have already used the methods of the **⟦f4⟧** object",
+    "ua": "Ми вже користувалися методами об’єкта  **⟦f4⟧**"
+  },
+  "s1.spoiler2": {
+    "ru": "Упражнение 2",
+    "eng": "Exercise 2",
+    "ua": "Вправа 2"
+  },
+  "s1.p29": {
+    "ru": "^^Выполните код в консоли:^^",
+    "eng": "^^Run the code in the console:^^",
+    "ua": "^^Виконайте код у консолі:^^"
+  },
+  "s1.p30": {
+    "ru": "Что произошло ?",
+    "eng": "What happened?",
+    "ua": "Що сталося?"
+  },
+  "s1.spoiler3": {
+    "ru": "свойства объекта location",
+    "eng": "Properties of the `location` object",
+    "ua": "Властивості об’єкта location"
+  },
+  "s1.spoiler4": {
+    "ru": "Упражнение 3",
+    "eng": "Exercise 3",
+    "ua": "Вправа 3"
+  },
+  "s1.p31": {
+    "ru": "^^Выполните код в консоли:^^",
+    "eng": "^^Run the code in the console:^^",
+    "ua": "^^Виконайте код у консолі:^^"
+  },
+  "s1.p32": {
+    "ru": "^^Откройте консоль новой вкладки^^",
+    "eng": "^^Open the console in a new tab^^",
+    "ua": "^^Відкрийте консоль у новій вкладці^^"
+  },
+  "s1.p33": {
+    "ru": "^^Выполните код в консоли:^^",
+    "eng": "^^Run the code in the console:^^",
+    "ua": "^^Виконайте код у консолі:^^"
+  },
+  "s1.p34": {
+    "ru": "^^Добавьте в конец адреса в адресной строке браузера: #777^^",
+    "eng": "^^Add the following to the end of the address in the browser’s address bar: #777^^",
+    "ua": "^^Додайте в кінець адреси в адресному рядку браузера: #777^^"
+  },
+  "s1.p35": {
+    "ru": "^^Нажмите _Enter_^^",
+    "eng": "^^Press _Enter_^^",
+    "ua": "^^Натисніть _Enter_^^"
+  },
+  "s1.p36": {
+    "ru": "^^Выполните код в консоли:^^",
+    "eng": "^^Run the code in the console:^^",
+    "ua": "^^Виконайте код у консолі:^^"
+  },
+  "s1.p37": {
+    "ru": "^^Что вы видите в консоли?^^",
+    "eng": "^^What can you see in the console?^^",
+    "ua": "^^Що ви бачите в консолі?^^"
+  },
+  "s1.p38": {
+    "ru": "^^Вернитесь в исходную вкладку^^",
+    "eng": "^^Return to the original tab^^",
+    "ua": "^^Поверніться до початкової вкладки^^"
+  },
+  "s1.p39": {
+    "ru": "^^Выполните код в консоли:^^",
+    "eng": "^^Run the code in the console:^^",
+    "ua": "^^Виконайте код у консолі:^^"
+  },
+  "s1.p40": {
+    "ru": "Что произошло ?",
+    "eng": "What happened?",
+    "ua": "Що сталося?"
+  },
+  "s1.spoiler5": {
+    "ru": "Упражнение 4",
+    "eng": "Exercise 4",
+    "ua": "Вправа 4"
+  },
+  "s1.p41": {
+    "ru": "^^Выполните код в консоли:^^",
+    "eng": "^^Run the code in the console:^^",
+    "ua": "^^Виконайте код у консолі:^^"
+  },
+  "s1.p42": {
+    "ru": "^^Откройте консоль новой вкладки^^",
+    "eng": "^^Open the console in a new tab^^",
+    "ua": "^^Відкрийте консоль у новій вкладці^^"
+  },
+  "s1.p43": {
+    "ru": "^^Выполните код в консоли:^^",
+    "eng": "^^Run the code in the console:^^",
+    "ua": "^^Виконайте код у консолі:^^"
+  },
+  "s1.p44": {
+    "ru": "Что произошло?",
+    "eng": "What happened?",
+    "ua": "Що сталося?"
+  },
+  "s1.p45": {
+    "ru": "Посмотрим на объект **⟦f5⟧** в консоли:",
+    "eng": "Let’s look at the object **⟦f5⟧** in the console:",
+    "ua": "Подивимося на об’єкт **⟦f5⟧** у консолі:"
+  },
+  "s1.p46": {
+    "ru": "![ico-20 green-ok] Свойство **history._state_** (строка) содержит адрес текущей страницы",
+    "eng": "![ico-20 green-ok] The property **history._state_** (string) contains the address of the current page",
+    "ua": "![ico-20 green-ok] Властивість **history._state_** (рядок) містить адресу поточної сторінки"
+  },
+  "s1.p47": {
+    "ru": "![ico-20 green-ok] Свойство **history._length_** (целое число) содержит число переходов в истории текущей страницы ^^(на единицу больше, чем максимально возможное значение для метода **_go()_**)^^",
+    "eng": "![ico-20 green-ok] The **history._length_** property (integer) contains the number of navigation steps in the current page’s history ^^(one more than the maximum possible value for the **_go()_** method)^^",
+    "ua": "![ico-20 green-ok] Властивість **history._length_** (ціле число) містить кількість переходів в історії поточної сторінки ^^(на одиницю більше, ніж максимально можливе значення для методу **_go()_**)^^"
+  },
+  "s1.p48": {
+    "ru": "![ico-20 green-ok] С помощью методов **history._back()_** и **history._forward()_** можно управлять переходами назад / вперед по истории",
+    "eng": "![ico-20 green-ok] The **history._back()_** and **history._forward()_** methods can be used to navigate backwards and forwards through the history",
+    "ua": "![ico-20 green-ok] За допомогою методів **history._back()_** та **history._forward()_** можна керувати переходами назад / вперед по історії"
+  },
+  "s1.p49": {
+    "ru": "![ico-20 green-ok] С помощью метода **history._go()_** (^^если аргумент метода - целое число^^) можно перейти на заданное число страниц вперед (^^положительное значение аргумента^^) или назад (^^отрицательное значение аргумента^^)",
+    "eng": "![ico-20 green-ok] Using the **history._go()_** method (^^if the method’s argument is an integer^^), you can navigate a specified number of pages forwards (^^a positive argument value^^) or backwards (^^a negative argument value^^)",
+    "ua": "![ico-20 green-ok] За допомогою методу **history._go()_** (^^якщо аргумент методу — ціле число^^) можна перейти на задану кількість сторінок вперед (^^додатне значення аргументу^^) або назад (^^від’ємне значення аргументу^^)"
+  },
+  "s1.p50": {
+    "ru": "^^В HTML5 были введены методы **history._pushState()_** и **history._replaceState()_**, которые позволяют добавлять и изменять записи истории^^",
+    "eng": "^^HTML5 introduced the **history._pushState()_** and **history._replaceState()_** methods, which allow you to add and modify history entries^^",
+    "ua": "^^У HTML5 були введені методи **history._pushState()_** та **history._replaceState()_**, які дозволяють додавати та змінювати записи історії^^"
+  },
+  "s1.p51": {
+    "ru": "Обратите внимание, что свойство **⟦f6⟧** является ссылкой на **⟦f7⟧**, а свойство **⟦f8⟧** является ссылкой на  **⟦f9⟧**",
+    "eng": "Note that the **⟦f6⟧** property is a link to **⟦f7⟧**, and the **⟦f8⟧** property is a link to **⟦f9⟧**",
+    "ua": "Зверніть увагу, що властивість **⟦f6⟧** є посиланням на **⟦f7⟧**, а властивість **⟦f8⟧** є посиланням на **⟦f9⟧**"
+  },
+  "s1.spoiler6": {
+    "ru": "Упражнение 5",
+    "eng": "Exercise 5",
+    "ua": "Вправа 5"
+  },
+  "s1.p52": {
+    "ru": "^^Выполните код в консоли:^^",
+    "eng": "^^Run the code in the console:^^",
+    "ua": "^^Виконайте код у консолі:^^"
+  },
+  "s1.p53": {
+    "ru": "Что произошло ?",
+    "eng": "What happened?",
+    "ua": "Що сталося?"
+  },
+  "s1.spoiler7": {
+    "ru": "Упражнение 6",
+    "eng": "Exercise 6",
+    "ua": "Вправа 6"
+  },
+  "s1.p54": {
+    "ru": "^^Выполните код в консоли:^^",
+    "eng": "^^Run the code in the console:^^",
+    "ua": "^^Виконайте код у консолі:^^"
+  },
+  "s1.p55": {
+    "ru": "Что произошло ?",
+    "eng": "What happened?",
+    "ua": "Що сталося?"
+  },
+  "s1.spoiler8": {
+    "ru": "Упражнение 7",
+    "eng": "Exercise 7",
+    "ua": "Вправа 7"
+  },
+  "s1.p56": {
+    "ru": "^^Выполните код в консоли:^^",
+    "eng": "^^Run the code in the console:^^",
+    "ua": "^^Виконайте код у консолі:^^"
+  },
+  "s1.p57": {
+    "ru": "Что произошло?",
+    "eng": "What happened?",
+    "ua": "Що сталося?"
+  },
+  "s1.p58": {
+    "ru": "[![ico-30 hw] Упражнения](⟦f10⟧)",
+    "eng": "[![ico-30 hw] Exercises](⟦f10⟧)",
+    "ua": "[![ico-30 hw] Вправи](⟦f10⟧)"
+  }
+}

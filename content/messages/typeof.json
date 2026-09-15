@@ -1,0 +1,172 @@
+{
+  "s1.h1": {
+    "ru": "Переменные. Типы данных",
+    "eng": "Variables. Data types",
+    "ua": "Типи даних"
+  },
+  "s2.h1": {
+    "ru": "Оператор typeof",
+    "eng": "Operator typeof",
+    "ua": "Оператор typeof"
+  },
+  "s2.p1": {
+    "ru": "^^Еще один оператор языка, с которым вы знакомитесь сегодня.^^",
+    "eng": "^^Another language operator that you're getting to know today.^^",
+    "ua": "^^Ще один оператор мови, з яким ви знайомитеся сьогодні.^^"
+  },
+  "s2.p2": {
+    "ru": "^^Первый, как вы помните, это **оператор присваивания**.^^",
+    "eng": "^^The first one, as you remember, is the **assignment operator**.^^",
+    "ua": "^^Перший, як ви пам'ятаєте, це **оператор присвоювання**.^^"
+  },
+  "s2.p3": {
+    "ru": "^^Далее мы познакомились с двумя **операторами сравнения**.^^",
+    "eng": "^^Next, we got familiar with two **comparison operators**.^^",
+    "ua": "^^Далі ми познайомилися з двома **операторами порівняння**.^^"
+  },
+  "s2.p4": {
+    "ru": "Операторы языка всегда имеют **операнды**.",
+    "eng": "Language operators always have **operands**.",
+    "ua": "Оператори мови завжди мають **операнди**."
+  },
+  "s2.p5": {
+    "ru": "Например, у оператора присваивания два операнда: один - слева, второй - справа.",
+    "eng": "For example, the assignment operator has two operands: one on the left and the other on the right.",
+    "ua": "Наприклад, оператор присвоювання має два операнди: один - ліворуч, другий - праворуч."
+  },
+  "s2.p6": {
+    "ru": "![ico-20 warn] Операнды всегда отделяются от оператора пробелом.",
+    "eng": "![ico-20 warn] Operands are always separated from the operator by a space.",
+    "ua": "![ico-20 warn] Операнди завжди відокремлюються від оператора пропуском."
+  },
+  "s2.p7": {
+    "ru": "В зависимости от числа операндов оператор может быть:",
+    "eng": "Depending on the number of operands, an operator can be:",
+    "ua": "Залежно від числа операндів оператор може бути:"
+  },
+  "s2.p8": {
+    "ru": "| оператор  | число операндов | пример |",
+    "eng": "| operator | number of operands | exapmples |",
+    "ua": "| оператор  | число операндів | приклад                                  |"
+  },
+  "s2.p9": {
+    "ru": "| унарный   | 1               | **⟦f0⟧** |",
+    "eng": "| unary    | 1                  | **⟦f0⟧** |",
+    "ua": "| унарний   | 1               | **⟦f0⟧**                             |"
+  },
+  "s2.p10": {
+    "ru": "| бинарный  | 2               | **⟦f1⟧**, **⟦f2⟧**, **⟦f3⟧** |",
+    "eng": "| binary   | 2                  | **⟦f1⟧**, **⟦f2⟧**, **⟦f3⟧** |",
+    "ua": "| бінарний  | 2               | **⟦f1⟧**, **⟦f2⟧**, **⟦f3⟧**             |"
+  },
+  "s2.p11": {
+    "ru": "| тернарный | 3               | этот оператор мы рассмотрим чуть позже |",
+    "eng": "| ternary  | 3                  | we'll look at this operator a little later |",
+    "ua": "| тернарний | 3               | цей оператор ми розглянемо трохи пізніше |"
+  },
+  "s2.p12": {
+    "ru": "Объявим переменную **⟦f4⟧** и присвоим ей значение 10:",
+    "eng": "Let's declare the variable **⟦f4⟧** and assign it a value of 10:",
+    "ua": "Оголосимо змінну **⟦f4⟧** і присвоїмо їй значення 10:"
+  },
+  "s2.p13": {
+    "ru": "А теперь воспользуемся оператором **⟦f0⟧**, чтобы узнать тип данных переменной **⟦f4⟧**:",
+    "eng": "Now let's use the **⟦f0⟧** operator to find out the data type of **⟦f4⟧** variable:",
+    "ua": "А тепер скористаємося оператором **⟦f0⟧**, щоб дізнатися тип даних змінної **⟦f4⟧**:"
+  },
+  "s2.p14": {
+    "ru": "В консоли мы увидим:",
+    "eng": "We'll see in the console:",
+    "ua": "В консолі ми побачимо:"
+  },
+  "s2.p15": {
+    "ru": "Давайте разберемся, что делает движок, когда встречает выражение ⟦f5⟧.",
+    "eng": "Let's figure out what the engine does when it encounters a ⟦f5⟧ statement.",
+    "ua": "Давайте розберемося, що робить движок, коли зустрічає вираз ⟦f5⟧."
+  },
+  "s2.p16": {
+    "ru": "Движок вычисляет значение этого выражения и заменяет выражение ⟦f5⟧ на вычисленное значение.",
+    "eng": "The engine calculates the value of this expression and replaces the ⟦f5⟧ expression with the computed value.",
+    "ua": "Движок обчислює значення цього виразу і замінює вираз ⟦f5⟧ на обчислене значення."
+  },
+  "s2.p17": {
+    "ru": "Посмотрим еще один пример:",
+    "eng": "Let's look at another example:",
+    "ua": "Подивимося ще один приклад:"
+  },
+  "s2.p18": {
+    "ru": "![ico-25 warn] Оператор **⟦f0⟧** возвращает **строку**.",
+    "eng": "![ico-25 warn] The **⟦f0⟧** operator returns a **string**.",
+    "ua": "![ico-25 warn] Оператор **⟦f0⟧** повертає **рядок**."
+  },
+  "s2.p19": {
+    "ru": "Что это означает?",
+    "eng": "What does this mean?",
+    "ua": "Що це означає?"
+  },
+  "s2.p20": {
+    "ru": "Это означает, что если движок столкнется с таким выражением (лишенным всякого смысла, кроме познавательного - для вас):",
+    "eng": "This means that if the engine encounters an expression like this (devoid of any meaning other than educational - for you):",
+    "ua": "Це означає, що якщо движок зіткнеться з таким виразом (позбавленим усякого сенсу, крім пізнавального - для вас):"
+  },
+  "s2.p21": {
+    "ru": "то мы всегда получим один и тот же ответ:",
+    "eng": "then we will always get the same answer:",
+    "ua": "то ми завжди отримаємо одну й ту саму відповідь:"
+  },
+  "s2.p22": {
+    "ru": "Возможные значения (строки), возвращаемые оператором **⟦f0⟧**:",
+    "eng": "Possible values ​​(strings) returned by the **⟦f0⟧** operator:",
+    "ua": "Можливі значення (рядки), що повертаються оператором **⟦f0⟧**:"
+  },
+  "s2.p23": {
+    "ru": "Как видите, в этом списке есть типы данных, которые мы пока не рассматривали и которые нам еще предстоит изучить.",
+    "eng": "As you can see, there are data types on this list that we haven't covered yet and that we have yet to explore.",
+    "ua": "Як бачите, у цьому списку є типи даних, які ми поки що не розглядали і які нам ще належить вивчити."
+  },
+  "s2.p24": {
+    "ru": "Значение **⟦f6⟧** означает отсутствие значения у переменной. Это значение является противоречивым в том смысле, что такое значение относится к примитивным типам данных, в то время как оператор **⟦f7⟧** возвращает \"⟦f8⟧\". А все данные типа \"⟦f8⟧\" (кроме **⟦f6⟧**) относятся к **ссылочному типу**. Этот баг нужно иметь в виду, когда мы используем оператор **⟦f0⟧**.",
+    "eng": "The value **⟦f6⟧** means that the variable has no value. This value is inconsistent in the sense that such a value refers to primitive data types, while the **⟦f7⟧** operator returns ‘⟦f8⟧’. And all data of type ‘⟦f8⟧’ (except **⟦f6⟧**) is of **reference type**. This bug should be kept in mind when we use the **⟦f0⟧** operator.",
+    "ua": "Значення **⟦f6⟧** означає відсутність значення у змінної. Це значення є суперечливим у тому сенсі, що таке значення належить до примітивних типів даних, тоді як оператор **⟦f7⟧** повертає «⟦f8⟧». А всі дані типу «⟦f8⟧» (крім **⟦f6⟧**) відносяться до **посилального типу**. Цей баг потрібно мати на увазі, коли ми використовуємо оператор **⟦f0⟧**."
+  },
+  "s2.p25": {
+    "ru": "Еще одной особенностью значения **⟦f6⟧** является то, что если использовать строгое равенство, то **⟦f6⟧** будет равен только самому себе, а нестрого он будет равен только **⟦f9⟧**. Это и понятно: тип данных у них разный. Но вот то, что значение **⟦f6⟧** и значение **⟦f9⟧** считаются равными (без учета типа данных) говорит нам о том, что оба эти значения имеют одинаковый смысл: отсутствие значения. Оба эти значения являются примитивами, и их объединяет еще одна особенность, которую мы поймем несколько позже, когда начнем изучать конструкторы.",
+    "eng": "Another peculiarity of **⟦f6⟧** value is that if you use strict equality, then **⟦f6⟧** will be equal only to itself, while non-strictly it will be equal only to **⟦f9⟧**. This is understandable: they have different data types. But the fact that the value of **⟦f6⟧** and the value of **⟦f9⟧** are considered equal (without regard to data type) tells us that both of these values have the same meaning: no value. Both of these values are primitives, and they have one more feature in common, which we will understand a bit later, when we start studying constructors.",
+    "ua": "Ще однією особливістю значення **⟦f6⟧** є те, що якщо використовувати сувору рівність, то **⟦f6⟧** дорівнюватиме тільки самому собі, а нестрого він дорівнюватиме тільки **⟦f9⟧**. Це і зрозуміло: тип даних у них різний. Але ось те, що значення **⟦f6⟧** і значення **⟦f9⟧** вважаються рівними (без урахування типу даних), говорить нам про те, що обидва ці значення мають однаковий сенс: відсутність значення. Обидва ці значення є примітивами, і їх об'єднує ще одна особливість, яку ми зрозуміємо дещо пізніше, коли почнемо вивчати конструктори."
+  },
+  "s3.h1": {
+    "ru": "Тесты",
+    "eng": "Tests",
+    "ua": "Тести"
+  },
+  "s4.h1": {
+    "ru": "Спецификация ECMAScript",
+    "eng": "ECMAScript Specification",
+    "ua": "Специфікація ECMAScript"
+  },
+  "s4.p1": {
+    "ru": "Современная [%%%спецификация языка%%%](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html ) определяет семь типов данных:",
+    "eng": "The current [%%%language specification%%%](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html ) defines seven data types:",
+    "ua": "Сучасна [%%%специфікація мови%%%](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html ) визначає сім типів даних:"
+  },
+  "s4.p2": {
+    "ru": "Оператор **⟦f0⟧** работает \"по старинке\", поскольку если бы принцип его работы был изменен, то многие сайты, созданные до 2015 года, просто посыпались бы.",
+    "eng": "The **⟦f0⟧** operator works \"the old fashioned way\", because if the principle of its operation were changed, then many sites created before 2015 would simply crumble.",
+    "ua": "Оператор **⟦f0⟧** працює «по-старому», оскільки якби принцип його роботи було змінено, то багато сайтів, створених до 2015 року, просто посипалися б."
+  },
+  "s4.p3": {
+    "ru": "Однако используя его, стоит помнить о его \"несовершенстве\".",
+    "eng": "However, when using it, it is worth remembering its \"imperfection\".",
+    "ua": "Однак використовуючи його, варто пам'ятати про його «недосконалість»."
+  },
+  "s4.p4": {
+    "ru": "При сравнении типов данных двух переменных учитывайте, что символы расположены в кодировочной таблице в алфавитном порядке, поэтому при сравнении большим будет тот,",
+    "eng": "When comparing the data types of two variables, keep in mind that the characters are arranged in alphabetical order in the encoding table, so when comparing, the larger one will be the one which is located further from the beginning of the table.",
+    "ua": "Під час порівняння типів даних двох змінних враховуйте, що символи розташовані в кодувальній таблиці в алфавітному порядку, тому під час порівняння більшим буде той,"
+  },
+  "s4.p5": {
+    "ru": "который расположен дальше от начала таблицы.",
+    "eng": "",
+    "ua": "який розташований далі від початку таблиці."
+  }
+}

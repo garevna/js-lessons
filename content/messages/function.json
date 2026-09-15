@@ -1,0 +1,782 @@
+{
+  "s1.h1": {
+    "ru": "Функции",
+    "eng": "Функции",
+    "ua": "Функції"
+  },
+  "s1.p1": {
+    "ru": "Сейчас мы научимся работать с еще одним очень важным типом данных: **⟦f0⟧**.<br>На функциях держится вся наша \"вселенная JS\".<br><br>**Функции - это ссылочный тип данных**.<br><br>Это означает, что после объявления функции у нас \"в руках\" будет переменная, в которой будет ссылка на функцию.",
+    "eng": "Now we'll learn how to work with another very important type of data: **⟦f0⟧**.<br>Our entire \"JS universe\" is based on functions.<br><br>**Functions are a reference type of data.**.<br><br>This means that after declaring a function, we will have a variable in our hands that will be a reference to the function.",
+    "ua": "Зараз ми навчимося працювати зі ще одним дуже важливим типом даних: **⟦f0⟧**.<br>На функціях тримається весь наш «всесвіт JS».<br><br>**Функції - це посилальний тип даних**.<br><br>Це означає, що після оголошення функції в нас «у руках» буде змінна, у якій буде посилання на функцію."
+  },
+  "s1.p2": {
+    "ru": "Когда кто-то болеет, то вызывают врача, когда возникают проблемы с водопроводом или канализацией - вызывают сантехника, а когда проблемы с проводкой в доме - вызывают электрика. Хорошо, что есть врачи, сантехники и электрики. Обратите внимание, что они не живут у нас в доме и не делают свою работу постоянно. Иначе в нашем доме был бы ад, толпы людей, которые все время что-то делают... Нет-нет, мы вызываем их только тогда, когда возникает необходимость. Они приходят, делают свою работу и уходят. Но у нас остается телефон или другой способ их вызова, если проблема возникнет опять.",
+    "eng": "When someone is sick, a doctor will be called, when there are problems with water supply or sewerage, a plumber will be called, and when there are problems with wiring in the house, we call an electrician. It's good that there are doctors, plumbers and electricians. Please note that they do not live in our house and do not do their work all the time. Otherwise, there would be hell in our house, crowds of people who are doing something all the time... No, no, we call them only when the need arises. They come, do their job and leave. But we still have a phone or another way to call them if the problem arises again.",
+    "ua": "Коли хтось хворіє, то викликають лікаря, коли виникають проблеми з водопроводом чи каналізацією - викликають сантехніка, а коли проблеми з проводкою в будинку - викликають електрика. Добре, що є лікарі, сантехніки та електрики. Зверніть увагу, що вони не живуть у нас у будинку і не роблять свою роботу постійно. Інакше в нашому будинку було б пекло, натовпи людей, які весь час щось роблять... Ні-ні, ми викликаємо їх тільки тоді, коли виникає необхідність. Вони приходять, роблять свою роботу і йдуть. Але в нас залишається телефон або інший спосіб їхнього виклику, якщо проблема виникне знову."
+  },
+  "s1.p3": {
+    "ru": "То же самое с функциями.",
+    "eng": "Same with functions.",
+    "ua": "Те ж саме з функціями."
+  },
+  "s1.p4": {
+    "ru": "Каждая функция умеет что-то делать.",
+    "eng": "Each function can do something.",
+    "ua": "Кожна функція вміє щось робити."
+  },
+  "s1.p5": {
+    "ru": "Каждая функция может быть вызвана, когда возникнет необходимость.",
+    "eng": "Each function can be called when the need arises.",
+    "ua": "Кожна функція може бути викликана, коли виникне необхідність."
+  },
+  "s1.p6": {
+    "ru": "Давайте для начала научимся их вызывать.",
+    "eng": "Let's first learn how to call them.",
+    "ua": "Давайте для початку навчимося їх викликати."
+  },
+  "s1.p7": {
+    "ru": "^^Действительно, если есть готовая дрель, то стоит научиться ею пользоваться ![ico-20 wink].^^",
+    "eng": "^^Indeed, if you have a ready-made drill, then you should learn how to use it ![ico-20 wink].^^",
+    "ua": "^^Дійсно, якщо є готовий дриль, то варто навчитися ним користуватися ![ico-20 wink].^^"
+  },
+  "s2.h1": {
+    "ru": "Вызов функции",
+    "eng": "Function call",
+    "ua": "Виклик функції"
+  },
+  "s2.p1": {
+    "ru": "У нас есть много встроенных функций, а также есть функции, которые предоставляет нам браузер.",
+    "eng": "We have a lot of built-in functions and there are also functions that the browser provides us.",
+    "ua": "У нас є багато вбудованих функцій, а також є функції, які надає нам браузер."
+  },
+  "s2.p2": {
+    "ru": "Вызов функции состоит из двух частей: имени функции и следующих за именем функции круглых скобок, в которых могут быть переданы **аргументы**, т.е. какие-то данные, которые функция будет использовать в своей работе.",
+    "eng": "A function call consists of two parts: the function name and parentheses following the function name, in which **arguments** can be passed, i.e. some data that the function will use in its work.",
+    "ua": "Виклик функції складається з двох частин: імені функції та круглих дужок, що слідують за ім'ям функції, у яких можуть бути передані **аргументи**, тобто якісь дані, які функція використовуватиме у своїй роботі."
+  },
+  "s2.p3": {
+    "ru": "Есть функции, которые не требуют передачи **аругментов** при вызове. В этом случае вы можете вызвать такую функцию с пустыми круглыми скобками, но ![ico-20 warn]  круглые скобки должны быть обязательно. Если вы передадите такой функции аргументы, она их просто проигнорирует, поскольку они не нужны для ее работы. Если вы передатите агрументов больше, чем надо, лишние аргументы будут отброшены.",
+    "eng": "There are functions that do not require passing arguments when called. In this case, you can call such a function with empty parentheses, but parentheses are required. If you pass arguments to such a function, it will simply ignore them because they are not needed for it to work. If you pass more arguments than necessary, unnecessary arguments will be discarded.",
+    "ua": "Є функції, які не потребують передачі **аругментів** під час виклику. У цьому випадку ви можете викликати таку функцію з порожніми круглими дужками, але ![ico-20 warn] круглі дужки мають бути обов'язково. Якщо ви передасте такій функції аргументи, вона їх просто проігнорує, оскільки вони не потрібні для її роботи. Якщо ви передасте більше аргументів, ніж треба, зайві аргументи будуть відкинуті."
+  },
+  "s2.p4": {
+    "ru": "Например, мы пользуемся консолью браузера, и код, который мы набираем в консоли, автоматически исполняется после нажатия _Enter_.",
+    "eng": "For example, we use the browser console, and the code we type in the console is automatically executed after pressing _Enter_.",
+    "ua": "Наприклад, ми користуємося консоллю браузера, і код, який ми набираємо в консолі, автоматично виконується після натискання _Enter_."
+  },
+  "s2.p5": {
+    "ru": "Но до сих пор мы не знали, что можем обратиться к консоли напрямую (**⟦f1⟧**) и вызвать одну из ее функций:",
+    "eng": "But until now, we didn't know that we could access the console directly (**⟦f1⟧**) and call one of its functions:",
+    "ua": "Але досі ми не знали, що можемо звернутися до консолі безпосередньо (**⟦f1⟧**) і викликати одну з її функцій:"
+  },
+  "s2.p6": {
+    "ru": "![ico-25 warn] Для того, чтобы набрать в консоли многострочный код, используйте сочетание клавиш ⟦f2⟧, поскольку _Enter_ сразу запускает набранную строчку кода на исполнение:",
+    "eng": "![ico-25 warn] In order to type multi-line code in the console, use the ⟦f2⟧ keyboard shortcut, since ⟦f18⟧ immediately starts the typed line of code for execution:",
+    "ua": "![ico-25 warn] Для того, щоб набрати в консолі багаторядковий код, використовуйте поєднання клавіш ⟦f2⟧, оскільки ⟦f18⟧ відразу запускає набраний рядок коду на виконання:"
+  },
+  "s2.p7": {
+    "ru": "Теперь с помощью ⟦f2⟧ мы можем объявить объект:",
+    "eng": "Now, using ⟦f2⟧ we can declare the object:",
+    "ua": "Тепер за допомогою ⟦f2⟧ ми можемо оголосити об'єкт:"
+  },
+  "s2.p8": {
+    "ru": "В нашем распоряжении так же несколько очень полезных встроенных функций, например, **⟦f3⟧**, которая пасит переданный ей аргумент как целое число.",
+    "eng": "We also have some very useful built-in functions at our disposal, such as **⟦f3⟧**, which passes the argument passed to it as an integer.",
+    "ua": "У нашому розпорядженні так само кілька дуже корисних вбудованих функцій, наприклад, **⟦f3⟧**, яка парсить переданий їй аргумент як ціле число."
+  },
+  "s2.p9": {
+    "ru": "Если это строка, начинающаяся с цифр, то остальная часть строки отбрасывается, и возвращается целая часть числа, состоящего из этих цифр.",
+    "eng": "If it is a string starting with digits, the rest of the string is discarded and the integer part of the number consisting of these digits is returned.",
+    "ua": "Якщо це рядок, що починається з цифр, то інша частина рядка відкидається, і повертається ціла частина числа, що складається з цих цифр."
+  },
+  "s2.p10": {
+    "ru": "Если это число с плавающей точкой, то возвращается целая часть числа.",
+    "eng": "If it is a floating point number, the integer part of the number is returned.",
+    "ua": "Якщо це число з плаваючою крапкою, то повертається ціла частина числа."
+  },
+  "s2.p11": {
+    "ru": "Если это что-то, что не приводится к числу, то возвращается **⟦f4⟧**:",
+    "eng": "If it is something that is not cast to a number, then **⟦f4⟧** is returned:",
+    "ua": "Якщо це щось, що не приводиться до числа, то повертається **⟦f4⟧**:"
+  },
+  "s2.p12": {
+    "ru": "Как видите, эта функция ждет агумент при вызове, и если вы его не передадите, т.е. вызовете функцию с пустыми круглыми скобками:",
+    "eng": "As you can see, this function waits for the agument when you call it, and if you don't pass it, i.e. call the function with empty parentheses:",
+    "ua": "Як бачите, ця функція чекає на агумент під час виклику, і якщо ви його не передасте, тобто викличете функцію з порожніми круглими дужками:"
+  },
+  "s2.p13": {
+    "ru": "то значением аргумента будет **⟦f5⟧**.",
+    "eng": "then the value of the argument will be **⟦f5⟧**.",
+    "ua": "то значенням аргументу буде **⟦f5⟧**."
+  },
+  "s2.p14": {
+    "ru": "Однако эта функция может принимать и **второй аргумент**.",
+    "eng": "However, this function can also take a **second argument**.",
+    "ua": "Однак ця функція може приймати і **другий аргумент**."
+  },
+  "s2.p15": {
+    "ru": "По умолчанию этот аргумент равен **10**.",
+    "eng": "By default, this argument is **10**.",
+    "ua": "За замовчуванням цей аргумент дорівнює **10**."
+  },
+  "s2.p16": {
+    "ru": "Если вы укажете 2, то первый аргумент будет рассматриваться как число в **двоичной системе исчисления**. Если в этом случае первый аргумент будет содержать цифры, отличные от 0 или 1, то функция **⟦f3⟧** вернет **⟦f4⟧**.",
+    "eng": "If you specify 2, the first argument will be treated as a number in **binary notation**. If the first argument then contains digits other than 0 or 1, the **⟦f3⟧** function will return **⟦f4⟧**.",
+    "ua": "Якщо ви вкажете 2, то перший аргумент буде розглядатися як число в **двійковій системі числення**. Якщо в цьому випадку перший аргумент міститиме цифри, відмінні від 0 або 1, то функція **⟦f3⟧** поверне **⟦f4⟧**."
+  },
+  "s2.p17": {
+    "ru": "Если вторым аргументом вы передадите 8, то первый аргумент будет рассматриваться как число в **восьмеричной системе исчисления**.",
+    "eng": "If you pass 8 as the second argument, the first argument will be treated as a number in **eight digits**.",
+    "ua": "Якщо другим аргументом ви передасте 8, то перший аргумент розглядатиметься як число у **восьмиричній системі числення**."
+  },
+  "s2.p18": {
+    "ru": "Если вторым аргументом вы передадите 16, то первый аргумент будет рассматриваться как число в **шестнадцатеричной системе исчисления**.",
+    "eng": "If you pass 16 as the second argument, the first argument will be treated as a number in **hexadecimal notation**.",
+    "ua": "Якщо другим аргументом ви передасте 16, то перший аргумент буде розглядатися як число в **шістнадцятковій системі числення**."
+  },
+  "s2.p19": {
+    "ru": "**Возвращаемое значение всегда будет десятичным числом**.",
+    "eng": "**The return value will always be a decimal number**.",
+    "ua": "**Повернуте значення завжди буде десятковим числом**."
+  },
+  "s3.h1": {
+    "ru": "Библиотека Math",
+    "eng": "Math library",
+    "ua": "Бібліотека Math"
+  },
+  "s3.p1": {
+    "ru": "Так же у нас есть встроенная библиотека математических функций **Math**.",
+    "eng": "We also have a built-in library of mathematical functions **Math**.",
+    "ua": "Так само в нас є вбудована бібліотека математичних функцій **Math**."
+  },
+  "s3.p2": {
+    "ru": "Мы можем посмотреть в консоли ее содержимое:",
+    "eng": "We can view its contents in the console:",
+    "ua": "Ми можемо подивитися в консолі її вміст:"
+  },
+  "s3.p3": {
+    "ru": "И увидим длинный список всех математических констант (например, число PI), а так же функций:",
+    "eng": "And we will see a long list of all mathematical constants (e.g. PI number) as well as functions:",
+    "ua": "І побачимо довгий список усіх математичних констант (наприклад, число ⟦f19⟧), а також функцій:"
+  },
+  "s3.p4": {
+    "ru": "^^Обратите внимание, что имена констант пишутся в верхнем регистре, т.е. заглавными буквами.^^",
+    "eng": "^^ Note that constant names are written in uppercase, i.e. capital letters.^^",
+    "ua": "^^Зверніть увагу, що імена констант пишуться у верхньому регістрі, тобто великими літерами.^^"
+  },
+  "s3.p5": {
+    "ru": "^^Функции выделяются литерой **⟦f6⟧** и обязательно имеют имя. Иначе как бы мы их вызвали?^^",
+    "eng": "^^Functions are highlighted with the letter **⟦f6⟧** and must have a name. Otherwise, how would we call them? ^^",
+    "ua": "^^Функції виділяються літерою **⟦f20⟧** і обов'язково мають ім'я. Інакше як би ми їх викликали?^^"
+  },
+  "s3.p6": {
+    "ru": "Попробуем вызвать некоторые функции библиотеки **Math**:",
+    "eng": "Let's try to call some functions of the **Math** library:",
+    "ua": "Спробуємо викликати деякі функції бібліотеки **Math**:"
+  },
+  "s3.p7": {
+    "ru": "В круглых скобках мы передаем функциям при вызове **аргументы**.",
+    "eng": "In parentheses, we pass **arguments** to functions when calling them.",
+    "ua": "У круглих дужках ми передаємо функціям під час виклику **аргументи**."
+  },
+  "s3.p8": {
+    "ru": "Например, мы передаем функции извлечения квадратного корня число 16 при вызове:",
+    "eng": "For example, we pass the number 16 to the square root function when we call it:",
+    "ua": "Наприклад, ми передаємо функції вилучення квадратного кореня число 16 під час виклику:"
+  },
+  "s3.p9": {
+    "ru": "и получаем результат: 4.",
+    "eng": "and we get the result: 4.",
+    "ua": "і отримуємо результат: 4."
+  },
+  "s3.p10": {
+    "ru": "Т.е. все математические функции возвращают **значение**.",
+    "eng": "That is, all mathematical functions return a **value**.",
+    "ua": "Тобто всі математичні функції повертають **значення**."
+  },
+  "s3.p11": {
+    "ru": "Посмотрим на такой оператор присваивания:",
+    "eng": "Let's look at such an assignment operator:",
+    "ua": "Подивимося на такий оператор присвоювання:"
+  },
+  "s3.p12": {
+    "ru": "В правой части оператора присваивания находится **выражение**.",
+    "eng": "The right-hand side of an assignment operator contains an **expression**.",
+    "ua": "У правій частині оператора присвоювання знаходиться **вираз**."
+  },
+  "s3.p13": {
+    "ru": "Для того, чтобы выполнить присваивание, движок должен вычислить **значение** выражения в правой части, а для этого вызвать функцию и передать ей число.",
+    "eng": "In order to perform an assignment, the engine must calculate the **value** of the expression in the right-hand side, and to do this, call the function and pass a number to it.",
+    "ua": "Для того, щоб виконати присвоювання, движок має обчислити **значення** виразу в правій частині, а для цього викликати функцію і передати їй число."
+  },
+  "s3.p14": {
+    "ru": "Но в круглых скобках вызова функции опять стоит **выражение** ⟦f7⟧.",
+    "eng": "But the parentheses of the function call again contain the **expression** ⟦f7⟧.",
+    "ua": "Але в круглих дужках виклику функції знову стоїть **вираз** ⟦f7⟧."
+  },
+  "s3.p15": {
+    "ru": "Т.е. движок должен сначала вычислить выражение в круглых скобках, и затем полученное значение передать функции ⟦f8⟧ при вызове.",
+    "eng": "That is, the engine must first calculate the expression in the parentheses, and then pass the resulting value to the ⟦f8⟧ function when calling it.",
+    "ua": "Тобто движок повинен спочатку обчислити вираз у круглих дужках, і потім отримане значення передати функції ⟦f8⟧ під час виклику."
+  },
+  "s3.p16": {
+    "ru": "Обратите внимание, что когда мы запускаем на исполнение в консоли код:",
+    "eng": "Note that when we run the code for execution in the console:",
+    "ua": "Зверніть увагу, що коли ми запускаємо на виконання в консолі код:"
+  },
+  "s3.p17": {
+    "ru": "то консоль возвращает ⟦f5⟧.",
+    "eng": "then the console returns ⟦f5⟧.",
+    "ua": "то консоль повертає ⟦f5⟧."
+  },
+  "s3.p18": {
+    "ru": "Это происходит потому, что оператор присваивания не возвращает никакого значения.",
+    "eng": "This is because the assignment operator does not return any value.",
+    "ua": "Це відбувається тому, що оператор присвоювання не повертає жодного значення."
+  },
+  "s3.p19": {
+    "ru": "А вот когда мы запрашиваем значение переменной:",
+    "eng": "But when we ask for the value of a variable:",
+    "ua": "А ось коли ми запитуємо значення змінної:"
+  },
+  "s3.p20": {
+    "ru": "то возвращается уже не ⟦f5⟧, а число, и это число мы видим в консоли вместо ⟦f5⟧.",
+    "eng": "then it returns not ⟦f5⟧, but a number, and we see this number in the console instead of ⟦f5⟧.",
+    "ua": "то повертається вже не ⟦f5⟧, а число, і це число ми бачимо в консолі замість ⟦f5⟧."
+  },
+  "s3.p21": {
+    "ru": "Аналогично, когда мы вызываем функцию:",
+    "eng": "Similarly, when we call the function:",
+    "ua": "Аналогічно, коли ми викликаємо функцію:"
+  },
+  "s3.p22": {
+    "ru": "то возвращается значение 1, и мы видим в консоли это значение вместо ⟦f5⟧.",
+    "eng": "then the value 1 is returned, and we see that value in the console instead of ⟦f5⟧.",
+    "ua": "то повертається значення 1, і ми бачимо в консолі це значення замість ⟦f5⟧."
+  },
+  "s3.p23": {
+    "ru": "Однако если мы сделаем так:",
+    "eng": "However, if we do this:",
+    "ua": "Однак якщо ми зробимо так:"
+  },
+  "s3.p24": {
+    "ru": "то мы опять увидим в консоли ⟦f5⟧, потому что присваивание не возвращает значения.",
+    "eng": "then we will see ⟦f5⟧ in the console again, because the assignment does not return a value.",
+    "ua": "то ми знову побачимо в консолі ⟦f5⟧, тому що присвоювання не повертає значення."
+  },
+  "s3.p25": {
+    "ru": "Итак, для вызова функции нужно имя функции, после которого должны быть круглые скобки.",
+    "eng": "So, to call a function we need a function name followed by parentheses.",
+    "ua": "Отже, для виклику функції потрібне ім'я функції, після якого мають бути круглі дужки."
+  },
+  "s3.p26": {
+    "ru": "В круглых скобках мы можем передать функции **аргументы**, т.е. данные, которые функция будет использовать при вычислении возвращаемого значения.",
+    "eng": "In the parentheses we can pass the function **arguments**, i.e. the data that the function will use when calculating the return value.",
+    "ua": "У круглих дужках ми можемо передати функції **аргументи**, тобто дані, які функція використовуватиме під час обчислення значення, що повертається."
+  },
+  "s3.p27": {
+    "ru": "Однако функция может не возвращать никакого значения, тогда движок воспринимает это так, как если бы функция вернула ⟦f5⟧.",
+    "eng": "However, the function may not return any value, then the engine treats it as if the function returned ⟦f5⟧.",
+    "ua": "Однак функція може не повертати жодного значення, тоді движок сприймає це так, як якщо б функція повернула ⟦f5⟧."
+  },
+  "s3.p28": {
+    "ru": "Любая строчка кода, которую мы запускаем в консоли нажатием клавиши _Enter_, воспринимается как вызов **анонимной** функции.",
+    "eng": "Any line of code that we run in the console by pressing the ⟦f18⟧ key is treated as a **anonymous** function call.",
+    "ua": "Будь-який рядок коду, який ми запускаємо в консолі натисканням клавіші ⟦f18⟧, сприймається як виклик **анонімної** функції."
+  },
+  "s3.p29": {
+    "ru": "Если эта строчка содержит оператор присваивания, то такая строчка кода не вернет никакого значения, поэтому мы видим в консоли ⟦f5⟧.",
+    "eng": "If that line contains an assignment operator, that line of code will return no value, so we see ⟦f5⟧ in the console.",
+    "ua": "Якщо цей рядок містить оператор присвоювання, то такий рядок коду не поверне жодного значення, тому ми бачимо в консолі ⟦f5⟧."
+  },
+  "s3.p30": {
+    "ru": "Если мы вызываем функцию **⟦f9⟧**, она выводит переданные ей аргументы в консоль, но не возвращает никакого значения, поэтому после вывода в консоль мы опять увидим ⟦f5⟧.",
+    "eng": "If we call the **⟦f9⟧** function, it outputs the arguments passed to it to the console but returns no value, so we see ⟦f5⟧ again after the output to the console.",
+    "ua": "Якщо ми викликаємо функцію **⟦f9⟧**, вона виводить передані їй аргументи в консоль, але не повертає жодного значення, тому після виведення в консоль ми знову побачимо ⟦f5⟧."
+  },
+  "s3.p31": {
+    "ru": "Наконец, давайте посмотрим, что же вернет нам оператор **⟦f10⟧**:",
+    "eng": "Finally, let's see what the **⟦f10⟧** operator returns:",
+    "ua": "Нарешті, давайте подивимося, що ж поверне нам оператор **⟦f10⟧**:"
+  },
+  "s4.h1": {
+    "ru": "Объявление функции",
+    "eng": "Declaring a function",
+    "ua": "Оголошення функції"
+  },
+  "s4.p1": {
+    "ru": "Мы уже научились вызывать функции. Пора нам научиться создавать их, а точнее - объявлять функции.",
+    "eng": "We have already learnt how to call functions. It's time to learn how to create them, or more precisely, how to declare functions.",
+    "ua": "Ми вже навчилися викликати функції. Пора нам навчитися створювати їх, а точніше - оголошувати функції."
+  },
+  "s4.p2": {
+    "ru": "Именно объявлять, потому что нашей целью не является немедленный вызов функции в том месте, где мы ее объявили.",
+    "eng": "Exactly declare, because our goal is not to immediately call a function where we have declared it.",
+    "ua": "Саме оголошувати, бо нашою метою не є негайний виклик функції в тому місці, де ми її оголосили."
+  },
+  "s4.p3": {
+    "ru": "Для того, чтобы правильно объявить функцию, нам нужно понять, чем функция отличается от всех остальных типов данных.",
+    "eng": "In order to properly declare a function, we need to understand how a function differs from all other data types.",
+    "ua": "Для того, щоб правильно оголосити функцію, нам потрібно зрозуміти, чим функція відрізняється від усіх інших типів даних."
+  },
+  "s4.p4": {
+    "ru": "Во-первых, функция содержит код, который будет выполнен в момент вызова функции.",
+    "eng": "Firstly, a function contains the code that will be executed when the function is called.",
+    "ua": "По-перше, функція містить код, який буде виконано в момент виклику функції."
+  },
+  "s4.p5": {
+    "ru": "Этот код помещается в фигурные скобки и называется **телом функции**.",
+    "eng": "This code is placed in curly braces and is called the **body of the function**.",
+    "ua": "Цей код поміщається у фігурні дужки і називається **тілом функції**."
+  },
+  "s4.p6": {
+    "ru": "Здесь явно чего-то не хватает, не так ли?",
+    "eng": "There is obviously something missing here, isn't there?",
+    "ua": "Тут явно чогось не вистачає, чи не так?"
+  },
+  "s4.p7": {
+    "ru": "Во-первых, у функции должно быть имя, чтобы мы могли ее вызвать.",
+    "eng": "Of course, after all, the function must have a name so that we can call it.",
+    "ua": "По-перше, у функції має бути ім'я, щоб ми могли її викликати."
+  },
+  "s4.p8": {
+    "ru": "Во-вторых, мы видим блок кода в фигурных скобках, и если его так и поместить в наш код, то он будет просто выполнен, как и все строчки кода до него и после него.",
+    "eng": "And more of that, we see a code block in curly braces, and if we put it into our code in this way, it will simply be executed, just like all the lines of code before and after it.",
+    "ua": "По-друге, ми бачимо блок коду у фігурних дужках, і якщо його так і помістити в наш код, то він буде просто виконаний, як і всі рядки коду до нього і після нього."
+  },
+  "s4.p9": {
+    "ru": "Нет, нам явно нужно нечто другое.",
+    "eng": "No, we obviously need something else.",
+    "ua": "Ні, нам явно потрібно щось інше."
+  },
+  "s4.p10": {
+    "ru": "Ну, например, чтобы код был сохранен под каким-то именем, но не был исполнен в том месте, где появился.",
+    "eng": "For example, we need the code to be saved under some name, but not executed in the place where it appeared.",
+    "ua": "Ну, наприклад, щоб код був збережений під якимось ім'ям, але не був виконаний у тому місці, де з'явився."
+  },
+  "s4.p11": {
+    "ru": "Чтобы можно было потом, когда понадобится, запустить этот код на исполнение. Не сразу, а когда-то потом.",
+    "eng": "So that we can run that code later, when we need to, to execute it. Not immediately, but sometime later.",
+    "ua": "Щоб можна було потім, коли знадобиться, запустити цей код на виконання. Не відразу, а колись потім."
+  },
+  "s4.p12": {
+    "ru": "Но если мы просто запишем:",
+    "eng": "But if we just write it down:",
+    "ua": "Але якщо ми просто запишемо:"
+  },
+  "s4.p13": {
+    "ru": "то движок подумает, что мы хотим создать объект (помните, как мы создавали структуры данных?).",
+    "eng": "the engine will think we want to create an object (remember how we created data structures?).",
+    "ua": "то движок подумає, що ми хочемо створити об'єкт (пам'ятаєте, як ми створювали структури даних?)."
+  },
+  "s4.p14": {
+    "ru": "Но мы не можем использовать ключевое слово **_⟦f11⟧_** и оператор присваивания внутри фигурных скобок при объявлении объекта, потому что там должны быть перечислены через запятую пары (ключ: значение).",
+    "eng": "But we can't use the keyword **_~⟦f11⟧_** and the assignment operator inside curly braces when declaring an object, because there must be comma-separated pairs (key: value) listed there.",
+    "ua": "Але ми не можемо використовувати ключове слово **_⟦f11⟧__** і оператор присвоювання всередині фігурних дужок під час оголошення об'єкта, тому що там мають бути перераховані через кому пари (ключ: значення)."
+  },
+  "s4.p15": {
+    "ru": "Что же ответит нам движок на наш код?",
+    "eng": "What will the engine respond to our code?",
+    "ua": "Що ж відповість нам движок на наш код?"
+  },
+  "s4.p16": {
+    "ru": "Движок сгенерирует исключение **SyntaxError**:",
+    "eng": "The engine will generate the **SyntaxError** exception:",
+    "ua": "Движок згенерує виняток **SyntaxError**:"
+  },
+  "s4.p17": {
+    "ru": "Так как же нам объяснить движку, что это не объект, а тело функции?",
+    "eng": "So how do we explain to the engine that this is not an object, but the body of a function?",
+    "ua": "То як же нам пояснити движку, що це не об'єкт, а тіло функції?"
+  },
+  "s4.p18": {
+    "ru": "Нам для этого нужно ключевое слово **⟦f0⟧**.",
+    "eng": "We need the keyword **⟦f0⟧** for that.",
+    "ua": "Нам для цього потрібно ключове слово **⟦f0⟧**."
+  },
+  "s4.p19": {
+    "ru": "Давайте попробуем исправить ситуацию так:",
+    "eng": "Let's try to fix the situation like this:",
+    "ua": "Давайте спробуємо виправити ситуацію так:"
+  },
+  "s4.p20": {
+    "ru": "и опять движок генерирует исключение **SyntaxError**:",
+    "eng": "and the engine generates a **SyntaxError** exception again:",
+    "ua": "і знову движок генерує виняток **SyntaxError**:"
+  },
+  "s4.p21": {
+    "ru": "Движку явно не нравится фигурная скобка после слова **⟦f0⟧**...",
+    "eng": "The engine obviously doesn't like the curly bracket after the word **⟦f0⟧**....",
+    "ua": "Движку явно не подобається фігурна дужка після слова **⟦f0⟧**..."
+  },
+  "s4.p22": {
+    "ru": "Хм... Может, там должно быть что-то другое?",
+    "eng": "Hmmm... Maybe it should be something else?",
+    "ua": "Хм... Може, там має бути щось інше?"
+  },
+  "s4.p23": {
+    "ru": "И теперь мы вспоминаем, что вызываем-то мы функцию всегда с помощью круглых скобок, в которых могут быть переданы аргументы.",
+    "eng": "And now we remember that we always call a function using parentheses, in which arguments can be passed.",
+    "ua": "І тепер ми згадуємо, що викликаємо ми функцію завжди за допомогою круглих дужок, у яких можуть бути передані аргументи."
+  },
+  "s4.p24": {
+    "ru": "Ага, так и есть, нам нужно вставить круглые скобки между ключевым словом **⟦f0⟧** и открывающей фигурной скобкой '{':",
+    "eng": "Aha, that's right, we need to insert parentheses between the **⟦f0⟧** keyword and the opening curly brace \"{\":",
+    "ua": "Ага, так і є, нам потрібно вставити круглі дужки між ключовим словом **⟦f0⟧** і фігурною дужкою, що відкриває, '{':"
+  },
+  "s4.p25": {
+    "ru": "Итак, мы использовали оператор присваивания, в правой части которого мы поместили такое выражение: ключевое слово **⟦f0⟧**, за которым обязательно следуют круглые скобки, и далее - фигурные скобки для тела функции.",
+    "eng": "So, we used the assignment operator, in the right part of which we put the following expression: the keyword **⟦f0⟧**, followed by parentheses, and then curly brackets for the function body.",
+    "ua": "Отже, ми використовували оператор присвоювання, у правій частині якого ми помістили такий вираз: ключове слово **⟦f0⟧**, за яким обов'язково йдуть круглі дужки, і далі - фігурні дужки для тіла функції."
+  },
+  "s4.p26": {
+    "ru": "Как мы уже знаем, движок сначала вычислит выражение в правой части оператора присваивания, а затем полученное значение поместит в переменную **⟦f12⟧**.",
+    "eng": "As we already know, the engine will first calculate the expression in the right part of the assignment operator, and then put the obtained value into the **⟦f12⟧** variable.",
+    "ua": "Як ми вже знаємо, движок спочатку обчислить вираз у правій частині оператора присвоювання, а потім отримане значення помістить у змінну **⟦f12⟧**."
+  },
+  "s4.p27": {
+    "ru": "Так вот, после вычисления выражения в правой части оператора присваивания будет создан **объект функции** (в спецификации языка - \"**вызываемый объект**\"), а все объекты, как мы уже знаем, являются **ссылочным типом данных**, т.е. нам будет возвращена **ссылка**, которая и попадет в переменную **⟦f12⟧**.",
+    "eng": "So, after evaluating the expression in the right part of the assignment operator, a **function object** (in the language specification - ‘**callable object**’) will be created.",
+    "ua": "Так ось, після обчислення виразу в правій частині оператора присвоювання буде створено **об'єкт функції** (у специфікації мови - «**об'єкт, що **викликається**»), а всі об'єкти, як ми вже знаємо, є **посилальним типом даних**, тобто нам буде повернуто **посилання**, яке й потрапить у змінну **⟦f12⟧**."
+  },
+  "s4.p28": {
+    "ru": "Итак, код внутри тела функции не был исполнен.",
+    "eng": "But all objects, as we already know, are **reference data type**, i.e. a **reference** will be returned to us, which will go into the **⟦f12⟧** variable.",
+    "ua": "Отже, код усередині тіла функції не було виконано."
+  },
+  "s4.p29": {
+    "ru": "Проверим?",
+    "eng": "So, the code inside the function body has not been executed.",
+    "ua": "Перевіримо?"
+  },
+  "s4.p30": {
+    "ru": "Обявим переменные **⟦f13⟧** и **⟦f14⟧** до объявления функции.",
+    "eng": "Shall we check it?",
+    "ua": "Оголосимо змінні **⟦f13⟧** і **⟦f14⟧** до оголошення функції."
+  },
+  "s4.p31": {
+    "ru": "Как видите, объявление функции никак не повлияло на значения переменных **⟦f13⟧** и **⟦f14⟧**.",
+    "eng": "As you can see, the function declaration did not affect the values of the variables **⟦f13⟧** and **⟦f14⟧**.",
+    "ua": "Як бачите, оголошення функції ніяк не вплинуло на значення змінних **⟦f13⟧** і **⟦f14⟧**."
+  },
+  "s4.p32": {
+    "ru": "Т.е. код в теле функции не сработал.",
+    "eng": "That is, the code in the function body did not work.",
+    "ua": "Тобто код у тілі функції не спрацював."
+  },
+  "s4.p33": {
+    "ru": "Однако когда мы вывели переменную **⟦f12⟧** в консоль, мы увидели тело функции. Т.е. код функции где-то сохранен, но пока он не сработал.",
+    "eng": "However, when we printed the **⟦f12⟧** variable to the console, we saw the function body. That is, the function's code is stored somewhere, but it has not worked yet.",
+    "ua": "Однак коли ми вивели змінну **⟦f12⟧** у консоль, ми побачили тіло функції. Тобто код функції десь збережений, але поки він не спрацював."
+  },
+  "s4.p34": {
+    "ru": "Итак, ссылка на функцию у нас есть, осталось вызвать функцию:",
+    "eng": "Such an assignment:",
+    "ua": "Отже, посилання на функцію в нас є, залишилося викликати функцію:"
+  },
+  "s4.p35": {
+    "ru": "Вот такое присваивание:",
+    "eng": "is one of the ways to declare a function, which is called **function expression**.",
+    "ua": "Ось таке присвоювання:"
+  },
+  "s4.p36": {
+    "ru": "является одним из способов объявления функции, который называется **function expression**.",
+    "eng": "Indeed, if we use an assignment operator, we have an **expression** on the right-hand side, hence the name **function expression**.",
+    "ua": "є одним зі способів оголошення функції, який називається **function expression**."
+  },
+  "s4.p37": {
+    "ru": "Действительно, если мы используем оператор присваивания, то в правой части у нас находится **выражение** (expression), отсюда и название **function expression**.",
+    "eng": "However, this is not the only way to declare a function.",
+    "ua": "Дійсно, якщо ми використовуємо оператор присвоювання, то в правій частині в нас міститься **вираз** (expression), звідси й назва **function expression**."
+  },
+  "s4.p38": {
+    "ru": "Однако это не единственный способ объявления функции.",
+    "eng": "In fact, the keyword **_⟦f0⟧_** instead of the keyword **_⟦f11⟧_** is quite enough for us:",
+    "ua": "Однак це не єдиний спосіб оголошення функції."
+  },
+  "s4.p39": {
+    "ru": "На самом деле нам вполне достаточно ключевого слова **_⟦f0⟧_** вместо ключевого слова **_⟦f11⟧_**:",
+    "eng": "This is another way of declaring a function - **function declaration**.",
+    "ua": "Насправді нам цілком достатньо ключового слова **_⟦f0⟧_** замість ключового слова **_⟦f11⟧_**:"
+  },
+  "s4.p40": {
+    "ru": "Это еще один способ объявления функции - **function declaration**.",
+    "eng": "We see that the difference from **function expression** is the absence of the assignment operator.",
+    "ua": "Це ще один спосіб оголошення функції - **function declaration**."
+  },
+  "s4.p41": {
+    "ru": "Главное отличие от **function expression** - отсутствие оператора присваивания.",
+    "eng": "Later we'll go into details about what it affects and why.",
+    "ua": "Головна відмінність від **function expression** - відсутність оператора присвоювання."
+  },
+  "s4.p42": {
+    "ru": "Позже мы разберем подробнее, на что это влияет и почему.",
+    "eng": "In fact, we have declared a **_⟦f12⟧_** variable by immediately specifying its data type when declaring it, i.e. using **_⟦f0⟧_** instead of **_⟦f11⟧_**.",
+    "ua": "Пізніше ми розберемо детальніше, на що це впливає і чому."
+  },
+  "s4.p43": {
+    "ru": "Фактически мы объявили переменную **_⟦f12⟧_**, сразу же указав ее тип данных при объявлении, т.е. используя **_⟦f0⟧_** вместо **_⟦f11⟧_**.",
+    "eng": "The fact that we don't use the assignment operator doesn't mean that assignment doesn't happen. Assignment happens ‘under the bonnet’. That is, a function is created and a reference to it is placed in the **_⟦f12⟧_** variable.",
+    "ua": "Фактично ми оголосили змінну **__⟦f12⟧_**, одразу ж вказавши її тип даних під час оголошення, тобто використовуючи **_⟦f0⟧_** замість **_⟦f11⟧_**."
+  },
+  "s4.p44": {
+    "ru": "Тот факт, что мы не используем оператор присваивания, не означает, что присваивания не происходит. Присваивание происходит \"под капотом\". Т.е. создается функция и ссылка на нее помещается в переменную **_⟦f12⟧_**.",
+    "eng": "![ico-25 warn] Parentheses after a variable name indicate a function call and can only be used when the variable is a reference to a function.",
+    "ua": "Той факт, що ми не використовуємо оператор присвоювання, не означає, що присвоювання не відбувається. Присвоювання відбувається «під капотом». Тобто створюється функція і посилання на неї поміщається у змінну **_⟦f12⟧_**."
+  },
+  "s4.p45": {
+    "ru": "![ico-25 warn] Круглые скобки после имени переменной означают вызов функции и могут быть использованы только тогда, когда эта переменная является ссылкой на функцию.",
+    "eng": "Otherwise, a **TypeError** exception will be generated:",
+    "ua": "![ico-25 warn] Круглі дужки після імені змінної означають виклик функції і можуть бути використані тільки тоді, коли ця змінна є посиланням на функцію."
+  },
+  "s4.p46": {
+    "ru": "В противном случае будет сгенерировано исключение **TypeError**:",
+    "eng": "Otherwise, a **TypeError** exception will be thrown:",
+    "ua": "В іншому випадку буде згенеровано виняток **TypeError**:"
+  },
+  "s4.p47": {
+    "ru": "Движок воспринимает вызов функции как выражение, значение которого нужно вычислить, для чего нужно запустить на исполнение код функции.",
+    "eng": "The engine treats a function call as an expression whose value needs to be evaluated, which requires the function’s code to be executed.",
+    "ua": "В іншому разі буде згенеровано виняток **TypeError**:"
+  },
+  "s4.p48": {
+    "ru": "Это означает, что после вычисления выражения ⟦f15⟧ в том месте, где оно было встречено, будет некое значение...",
+    "eng": "This means that once the expression ⟦f15⟧ has been evaluated, there will be a certain value at the point where it was encountered...",
+    "ua": ""
+  },
+  "s4.p49": {
+    "ru": "Давайте разберемся, как определяется это значение.",
+    "eng": "Let’s look at how this value is determined.",
+    "ua": ""
+  },
+  "s5.h1": {
+    "ru": "Формальные параметры",
+    "eng": "Formal parameters",
+    "ua": "Формальні параметри"
+  },
+  "s5.p1": {
+    "ru": "Давайте вернемся к тому, что при объявлении функции круглые скобки являются обязательными.",
+    "eng": "Let's go back to the fact that parentheses are required when declaring a function.",
+    "ua": "Давайте повернемося до того, що при оголошенні функції круглі дужки є обов'язковими."
+  },
+  "s5.p2": {
+    "ru": "При вызове функции круглые скобки также являются обязательными.",
+    "eng": "When calling a function, parentheses are also required.",
+    "ua": "При виклику функції круглі дужки також є обов'язковими."
+  },
+  "s5.p3": {
+    "ru": "Очевидно, что круглые скобки играют здесь важную роль.",
+    "eng": "Obviously, parentheses play an important role here.",
+    "ua": "Очевидно, що круглі дужки відіграють тут важливу роль."
+  },
+  "s5.p4": {
+    "ru": "Вспомним, как могут быть использованы круглые скобки при вызове функции: мы передаем функции **аргументы** в момент вызова, т.е. какие-то данные, которые функция использует во время работы.",
+    "eng": "Recall how parentheses can be used when calling a function: we use them to pass **arguments** to the function. I.e. we place some data to parentheses for the function to use this data at runtime.",
+    "ua": "Згадаймо, як можуть бути використані круглі дужки під час виклику функції: ми передаємо функції **аргументи** у момент виклику, тобто якісь дані, які функція використовує під час роботи."
+  },
+  "s5.p5": {
+    "ru": "Ок, а как функция \"принимает\" эти данные?",
+    "eng": "Ok, but how does the function receive this data?",
+    "ua": "Ок, а як функція «приймає» ці дані?"
+  },
+  "s5.p6": {
+    "ru": "Их же нужно куда-то \"положить\".",
+    "eng": "Arguments have to be saved somewhere, and function needs a reference to them to operate with.",
+    "ua": "Їх же потрібно кудись «покласти»."
+  },
+  "s5.p7": {
+    "ru": "А где мы храним данные? Ну, не ящиках, и не в тазиках, и не в кастрюлях.",
+    "eng": "And where do we store the data? Well, not in drawers, and not in basins, and not in pots.",
+    "ua": "А де ми зберігаємо дані? Ну, не в ящиках, і не в тазиках, і не в каструлях."
+  },
+  "s5.p8": {
+    "ru": "Мы храним свои данные в **переменных**.",
+    "eng": "We store our data in **variables**.",
+    "ua": "Ми зберігаємо свої дані в **змінних**."
+  },
+  "s5.p9": {
+    "ru": "Т.е. чтобы принять переданные при вызове функции аргументы, нужно заранее приготовить переменные, в которые эти данные (аргументы) будут помещены.",
+    "eng": "That is, in order to accept the arguments passed when calling a function, we need to prepare the variables where these data (arguments) will be placed beforehand.",
+    "ua": "Тобто щоб прийняти передані під час виклику функції аргументи, потрібно заздалегідь приготувати змінні, в які ці дані (аргументи) будуть поміщені."
+  },
+  "s5.p10": {
+    "ru": "И как-то само собой напрашивается, что нужно имена этих переменных разместить там, куда потом буду поступать аргументы.",
+    "eng": "And somehow it is self-evident that we should place the names of these variables to the same place where the arguments will be received later.",
+    "ua": "І якось само собою напрошується, що потрібно імена цих змінних розмістити там, куди потім будуть надходити аргументи."
+  },
+  "s5.p11": {
+    "ru": "Т.е. в кргулых скобках.",
+    "eng": "That is, in parentheses.",
+    "ua": "Тобто в круглих дужках."
+  },
+  "s5.p12": {
+    "ru": "Логично?",
+    "eng": "Do you see the sense?",
+    "ua": "Логічно?"
+  },
+  "s5.p13": {
+    "ru": "Таким образом, при объявлении функции мы используем круглые скобки для того, чтобы перечислить там имена переменных, которые мы будем использовать для вычислений в теле функции.",
+    "eng": "Thus, when declaring a function, we use parentheses to list there the names of variables that we will use for calculations in the body of the function.",
+    "ua": "Таким чином, під час оголошення функції ми використовуємо круглі дужки для того, щоб перерахувати там імена змінних, які ми будемо використовувати для обчислень у тілі функції."
+  },
+  "s5.p14": {
+    "ru": "Эти переменные называются **формальные параметры** функции.",
+    "eng": "These variables have no values at the time the function is declared.",
+    "ua": "Ці змінні називаються **формальні параметри** функції."
+  },
+  "s5.p15": {
+    "ru": "На момент объявления функции у этих переменных нет значений.",
+    "eng": "When the function is called, **arguments** will be listed in parentheses, which will become the values of the formal parameters at this moment.",
+    "ua": "Під час виклику функції в круглих дужках будуть перераховані **аргументи**, які і стануть значеннями формальних параметрів на даний момент."
+  },
+  "s5.p16": {
+    "ru": "При вызове функции в круглых скобках будут перечислены **аргументы**, которые и станут значениями формальных параметров на данный момент.",
+    "eng": "That is, each time we call the function, we can pass different arguments to it, thus getting different results.",
+    "ua": "Тобто щоразу під час виклику функції ми можемо передавати їй різні аргументи, тим самим отримуючи різні результати."
+  },
+  "s5.p17": {
+    "ru": "Т.е. каждый раз при вызове функции мы можем передавать ей различные аргументы, тем самым получая различные результаты.",
+    "eng": "In other words, each time we call a function, we can pass it different arguments, thereby obtaining different results.",
+    "ua": "Давайте розберемося, як визначається це значення."
+  },
+  "s6.h1": {
+    "ru": "Дефолтные значения",
+    "eng": "Default values",
+    "ua": "Дефолтні значення"
+  },
+  "s6.p1": {
+    "ru": "Конечно, большую проблему составляли для нас ошибки, связанные с передачей некорректных значений аргументов.",
+    "eng": "Obviously, the big problem for us was errors related to passing incorrect values of arguments.",
+    "ua": "Звичайно, велику проблему становили для нас помилки, пов'язані з передачею некоректних значень аргументів."
+  },
+  "s6.p2": {
+    "ru": "В арифметических операциях в случае ошибки мы будем получать коварное значение **⟦f4⟧**, которое будет доставлять нам много неприятностей.",
+    "eng": "In arithmetic operations, in case of an error we will get the insidious value **⟦f4⟧**, which will cause us a lot of trouble.",
+    "ua": "В арифметичних операціях у разі помилки ми отримуватимемо підступне значення **⟦f4⟧**, яке доставлятиме нам багато неприємностей."
+  },
+  "s6.p3": {
+    "ru": "Но в 2015 году вышла новая версия спецификации языка (ES6), в которой у нас появилась возможность задавать дефолтные значения параметров функции при ее объявлении, что позволяет избежать проблем с вызовом функции без параметров или когда эти параметры имеют значения **⟦f5⟧**:",
+    "eng": "But in 2015, a new version of the language specification (ES6) was released in which we now have the ability to set default values for function parameters when declaring a function, which avoids the problems of calling a function with no parameters or when those parameters have values **⟦f5⟧**:",
+    "ua": "Але у 2015 році вийшла нова версія специфікації мови (ES6), у якій у нас з'явилася можливість задавати дефолтні значення параметрів функції під час її оголошення, що дає змогу уникнути проблем із викликом функції без параметрів або коли ці параметри мають значення **⟦f5⟧**:"
+  },
+  "s6.p4": {
+    "ru": "Более того, можно сделать дефолтные значения параметров функции **вычисляемыми**:",
+    "eng": "Furthermore, you can make the default values of the function parameters **calculable**:",
+    "ua": ""
+  },
+  "s6.p5": {
+    "ru": "![ico-25 warn] Обратите внимание, что **значения параметров функции по умолчанию** используются только в том случае, если при вызове функции передано значение **⟦f5⟧** (или вообще не передано никакого значения). Т.е. это не избавляет вас от необходимости проверять другие \"нежелательные\" значения аргументов, такие как **⟦f16⟧**, **⟦f4⟧** или когда аргумент должен быть числом, а передано не числовое значение.",
+    "eng": "![ico-25 warn] Note that **default function parameter values** are usefull when a **⟦f5⟧** value (or no value at all) is passed as function arguments.",
+    "ua": ""
+  },
+  "s7.h1": {
+    "ru": "Оператор return",
+    "eng": "Return operator",
+    "ua": "Оператор return"
+  },
+  "s7.p1": {
+    "ru": "Функции, которые мы объявляли до сих пор, были как бы \"неполноценные\", потому что они ничего не возвращали, поэтому мы в консоли все время видели это назойливое **⟦f5⟧**.",
+    "eng": "The functions we've declared so far have been kind of \"incomplete\" because they didn't return anything, so we kept seeing that annoying **⟦f5⟧** in the console.",
+    "ua": "Тепер, нарешті, ми позбудемося цієї «неповноцінності» і змусимо наші функції повертати значення."
+  },
+  "s7.p2": {
+    "ru": "Теперь, наконец, мы избавимся от этой \"неполноценности\" и заставим наши функции возвращать значение.",
+    "eng": "Now, finally, we will get rid of this \"inferiority\" and make our functions return a value.",
+    "ua": "А зробити це дуже легко: для цього є унарний оператор **⟦f17⟧**."
+  },
+  "s7.p3": {
+    "ru": "А сделать это очень легко: для это есть унарный оператор **⟦f17⟧**.",
+    "eng": "And it is very easy to do it: there is a unary operator **⟦f17⟧** for this purpose.",
+    "ua": "![ico-25 warn] Цей оператор може бути використаний тільки в тілі функції."
+  },
+  "s7.p4": {
+    "ru": "![ico-25 warn] Этот оператор может быть использован только в теле функции.",
+    "eng": "![ico-25 warn] This operator can be used only in the function body.",
+    "ua": "Якщо ви спробуєте використати його поза тілом функції, то буде згенеровано виняток:"
+  },
+  "s7.p5": {
+    "ru": "Если вы попытаетесь использовать его вне тела функции, то будет сгенерировано исключение:",
+    "eng": "If you try to use it outside the function body, an exception will be generated:",
+    "ua": "Оператор **⟦f17⟧** перериває виконання функції, і якщо після оператора **⟦f17⟧** стоїть якийсь вираз (операнд), то значення цього виразу (операнда) буде обчислено і повернуто функцією."
+  },
+  "s7.p6": {
+    "ru": "Оператор **⟦f17⟧** прерывает выполнение функции, и если после оператора **⟦f17⟧** стоит какое-то выражение, то значение этого выражения будет вычислено и возвращено функцией.",
+    "eng": "The **⟦f17⟧** operator interrupts function execution, and if the **⟦f17⟧** operator has an operand (expression), the value of this expression will be calculated and returned by the function.",
+    "ua": "Якщо операнд не вказано явно, мається на увазі **⟦f5⟧**."
+  },
+  "s7.p7": {
+    "ru": "Это унарный оператор, т.е. у него может быть только один операнд.",
+    "eng": "If the operand is not explicitly specified, **⟦f5⟧** is implied.",
+    "ua": ""
+  },
+  "s7.p8": {
+    "ru": "Если операнд не указан явно, подразумевается **⟦f5⟧**.",
+    "eng": "If an operand is not explicitly specified, **⟦f5⟧** is implied.",
+    "ua": ""
+  },
+  "s8.h1": {
+    "ru": "Тесты",
+    "eng": "Tests",
+    "ua": "Тести"
+  },
+  "s8.quiz1": {
+    "ru": "Что это такое?",
+    "eng": "What's that?",
+    "ua": "Що це таке?"
+  },
+  "s8.quizVariants1": {
+    "ru": "'function declaration', 'function expression'",
+    "eng": "'function declaration', 'function expression'",
+    "ua": "'function declaration', 'function expression'"
+  },
+  "s8.quizAnswer1": {
+    "ru": "function expression",
+    "eng": "function expression",
+    "ua": "function expression"
+  },
+  "s8.quiz2": {
+    "ru": "Что будет в консоли?",
+    "eng": "What's going to be in the console?",
+    "ua": "Що буде в консолі?"
+  },
+  "s8.quizVariants2": {
+    "ru": "'\"\"', 'Hi user!', 'Hi undefined!', 'Hi !'",
+    "eng": "'\"\"', 'Hi user!', 'Hi undefined!', 'Hi !'",
+    "ua": "'\"\"', 'Hi user!', 'Hi undefined!', 'Hi !'"
+  },
+  "s8.quizAnswer2": {
+    "ru": "Hi undefined!",
+    "eng": "Hi undefined!",
+    "ua": "Hi undefined!"
+  },
+  "s8.quiz3": {
+    "ru": "Что будет в консоли?",
+    "eng": "What's going to be in the console?",
+    "ua": "Що буде в консолі?"
+  },
+  "s8.quizVariants3": {
+    "ru": "'\"\"', 'Hi !', 'Hi undefined!', 'Hi Human!'",
+    "eng": "'\"\"', 'Hi !', 'Hi undefined!', 'Hi Human!'",
+    "ua": "'\"\"', 'Hi !', 'Hi undefined!', 'Hi Human!'"
+  },
+  "s8.quizAnswer3": {
+    "ru": "Hi Human!",
+    "eng": "Hi Human!",
+    "ua": "Hi Human!"
+  },
+  "s8.quiz4": {
+    "ru": "Что будет в консоли?",
+    "eng": "What's going to be in the console?",
+    "ua": "Що буде в консолі?"
+  },
+  "s8.quizVariants4": {
+    "ru": "'Hi !', 'Welcome !', 'Hi undefined!', 'Welcome undefined!', 'Hi Human!', 'Welcome Human!'",
+    "eng": "'Hi !', 'Welcome !', 'Hi undefined!', 'Welcome undefined!', 'Hi Human!', 'Welcome Human!'",
+    "ua": "'Hi !', 'Welcome !', 'Hi undefined!', 'Welcome undefined!', 'Hi Human!', 'Welcome Human!'"
+  },
+  "s8.quizAnswer4": {
+    "ru": "Welcome Human!",
+    "eng": "Welcome Human!",
+    "ua": "Welcome Human!"
+  }
+}

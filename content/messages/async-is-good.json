@@ -1,0 +1,307 @@
+{
+  "s1.h1": {
+    "ru": "Обещания",
+    "eng": "Promises",
+    "ua": "Обіцянки"
+  },
+  "s1.p1": {
+    "ru": "Вызов асинхронной функции возвращает экземпляр **⟦f0⟧**.",
+    "eng": "An asynchronous function call returns an instance of **⟦f0⟧**.",
+    "ua": "Виклик асинхронної функції повертає екземпляр **⟦f0⟧**."
+  },
+  "s1.p2": {
+    "ru": "Давайте вспомним некоторые ценные свойства экземпляров **⟦f0⟧**.",
+    "eng": "Let's recall some valuable properties of **⟦f0⟧** instances.",
+    "ua": "Давайте згадаємо деякі цінні властивості екземплярів **⟦f0⟧**."
+  },
+  "s1.p3": {
+    "ru": "В первую очередь удобно, что если экземпляр **⟦f0⟧** переходит в состояние **⟦f1⟧**, то вовсе не обязательно сразу забирать результат.",
+    "eng": "First of all, it is convenient that if an instance of **⟦f0⟧** goes to the **⟦f1⟧** state, it is not at all necessary to pick up the result immediately.",
+    "ua": "Насамперед зручно, що якщо екземпляр **⟦f0⟧** переходить у стан **⟦f1⟧**, то зовсім не обов'язково відразу забирати результат."
+  },
+  "s1.p4": {
+    "ru": "Можно положить нашу \"магическую коробку\" на полочку:",
+    "eng": "We can put our ‘magic box’ on a shelf:",
+    "ua": "Можна покласти нашу «магічну коробку» на поличку:"
+  },
+  "s1.p5": {
+    "ru": "и \"открыть\" ее (как консервную банку) тогда, **когда нам будет удобно**!<br><br>Тем более, что \"открывашка\" - метод ⟦f2⟧ - всегда при ней.<br><br>Экземпляр **⟦f0⟧** - надежная консервная банка, в которой содержимое не испортится и не исчезнет.<br>Главное - не потерять ссылку на эту банку.",
+    "eng": "and \"open\" it (like a tin can) when it suits us!<br><br>Moreover, the \"opener\" - the **⟦f2⟧** method - is always with it.<br><br>The **⟦f0⟧** instance is a reliable tin where the contents won't spoil or disappear.<br>The main thing is not to lose the reference to this can.",
+    "ua": "і «відкрити» її (як консервну банку) тоді, коли нам буде зручно!<br><br>Тим більше, що «відкривачка» - метод **⟦f2⟧** - завжди при ній.<br><br>Екземпляр **⟦f0⟧** - надійна консервна банка, у якій вміст не зіпсується і не зникне.<br>Головне - не втратити посилання на цю банку."
+  },
+  "s1.p6": {
+    "ru": "Что еще делает экземпляры **⟦f0⟧** такими удобными для нас?",
+    "eng": "What else makes instances of **⟦f0⟧** so convenient for us?",
+    "ua": "Що ще робить екземпляри **⟦f0⟧** такими зручними для нас?"
+  },
+  "s1.p7": {
+    "ru": "Экземпляр **⟦f0⟧** является **микротаском**, а для микротасков существует своя очередь, приоритет которой выше, чем приоритет очереди тасков.<br><br>Т.е. пока толстые и неповоротливые таски будут тупо сидеть в своей очереди и ждать, когда \"кабинет\" (**Call Stack**) освободится, микротаски один за одним будут проскакивать мимо них в \"кабинет\". И только когда последний микротаск из привелегированной очереди не пройдет через **Call Stack**, таски будут ждать.",
+    "eng": "The **⟦f0⟧** instance is a **microtask**, and microtasks have their own queue, the priority of which is higher than the priority of the task queue.<br><br>I.e. while the fat and sluggish tasks will stupidly sit in their queue and wait for the ‘office’ (**Call Stack**) to be vacated, microtasks one by one will jump past them into the ‘office’. And until the last microtask from the privileged queue passes through the **Call Stack**, the tasks will wait.",
+    "ua": "Екземпляр **⟦f0⟧** є **мікротаском**, а для мікротасків існує своя черга, пріоритет якої вищий за пріоритет черги тасків.<br><br>Т. е. поки товсті та неповороткі таски тупо сидітимуть у своїй черзі та чекатимуть, коли «кабінет» (**Call Stack**) звільниться, мікротаски один за одним проскакуватимуть повз них у «кабінет». І поки останній мікротаск із привілейованої черги не пройде через **Call Stack**, таски чекатимуть."
+  },
+  "s1.p8": {
+    "ru": "Например, в результате выполнения следующего кода:",
+    "eng": "For example, as a result of executing the following code:",
+    "ua": "Наприклад, внаслідок виконання такого коду:"
+  },
+  "s1.p9": {
+    "ru": "в консоли мы увидим:",
+    "eng": "we'll see in the console:",
+    "ua": "у консолі ми побачимо:"
+  },
+  "s1.p10": {
+    "ru": "<br>т.е. асинхронная функция ⟦f3⟧ ведет себя очень скромно:<br>хотя все, что она делает - просто здоровается,<br>но при этом она не вламывается в рабочий поток и не орет с порога: \"_Hello_\",<br>она скромно ждет, когда поток завершит свою работу,<br>после чего вежливо говорит \"Hello\".<br><br>",
+    "eng": "<br>i.e. the asynchronous **⟦f3⟧** function behaves very modestly:<br>although all it does is just say hello,<br>but it doesn't break into the worker thread and yell \"Hello\" from the doorstep.<br>it modestly waits for the thread to finish its work,<br>and then politely says \"Hello\".<br><br>",
+    "ua": "<br>тобто асинхронна функція **⟦f3⟧** поводиться дуже скромно:<br>хоча все, що вона робить - просто вітається,<br>але при цьому вона не вламується в робочий потік і не кричить з порога: «Hello»,<br>вона скромно чекає, коли потік завершить свою роботу,<br>після чого ввічливо каже «Hello».<br><br>"
+  },
+  "s1.p11": {
+    "ru": "А ведь все, что отличает ее от обычной функции - это слово **⟦f4⟧**.",
+    "eng": "And all that distinguishes it from a normal function is the word **⟦f4⟧**.",
+    "ua": "Але ж усе, що відрізняє її від звичайної функції - це слово **⟦f4⟧**."
+  },
+  "s1.p12": {
+    "ru": "Уберите это слово, и \"Hello\" появится между \"Start...\" и \"Finish...\"",
+    "eng": "Remove that word, and \"Hello\" appears between \"Start...\" and \"Finish...\".",
+    "ua": "Приберіть це слово, і «Hello» з'явиться між «Start...» і «Finish...»"
+  },
+  "s1.p13": {
+    "ru": "Почему?",
+    "eng": "Why?",
+    "ua": "Чому?"
+  },
+  "s1.p14": {
+    "ru": "Да потому, что вызов функции ⟦f3⟧ вернул обещание поздороваться, но тогда, когда основному потоку это будет удобно ![ico-20 smile]",
+    "eng": "Because the **⟦f3⟧** function call returned a promise to say hello, but when it is convenient for the main thread to do so ![ico-20 smile]",
+    "ua": "Та тому, що виклик функції **⟦f3⟧** повернув обіцянку привітатися, але тоді, коли основному потоку це буде зручно ![ico-20 smile]"
+  },
+  "s2.h1": {
+    "ru": "Больше, чем просто обещание",
+    "eng": "More than just a promise",
+    "ua": "Більше, ніж просто обіцянка"
+  },
+  "s2.p1": {
+    "ru": "Иногда бывает нужно упорядочить выполнение нескольких асинхронных операций.",
+    "eng": "Sometimes you may want to streamline the execution of several asynchronous operations.",
+    "ua": "Іноді буває потрібно впорядкувати виконання кількох асинхронних операцій."
+  },
+  "s2.p2": {
+    "ru": "Мы уже можем решить такую задачу с помощью экземпляра ⟦f0⟧ и цепочки вызовов метода **⟦f5⟧**:",
+    "eng": "We can already solve such a problem with the ⟦f0⟧ instance and the call chain of **⟦f5⟧** method:",
+    "ua": "Ми вже можемо вирішити таке завдання за допомогою екземпляра ⟦f0⟧ і ланцюжка викликів методу **⟦f5⟧**:"
+  },
+  "s2.p3": {
+    "ru": "В этом примере через 1 секунду первый экземпляр ⟦f0⟧ разрезолвится сообщением \"Hello\".",
+    "eng": "In this example, after 1 second, the first instance of ⟦f0⟧ will resolve with the message ‘Hello’.",
+    "ua": "У цьому прикладі через 1 секунду перший екземпляр **⟦f0⟧** резолвиться повідомленням «Hello»."
+  },
+  "s2.p4": {
+    "ru": "Когда он разрезолвится, будет создан новый экземпляр ⟦f0⟧, который также разрезолвится через 1 секунду.",
+    "eng": "When it resolves, a new instance of ⟦f0⟧ will be created, which will also resolve after 1 second.",
+    "ua": "Коли він резолвиться, буде створено новий екземпляр **⟦f0⟧**, який також резолвиться через 1 секунду."
+  },
+  "s2.p5": {
+    "ru": "Второй экземпляр ⟦f0⟧ добавит к сообщению, возвращенному первым экземпляром ⟦f0⟧, строку \", baby\".",
+    "eng": "The second instance of ⟦f0⟧ will append the string ‘, baby’ to the message returned by the first instance of ⟦f0⟧.",
+    "ua": "Другий екземпляр **⟦f0⟧** додасть до повідомлення, повернутого першим екземпляром **⟦f0⟧**, рядок «, baby»."
+  },
+  "s2.p6": {
+    "ru": "В итоге цепочка экземпляров ⟦f0⟧ разрезолвится через 2 секунды, и в консоли будет ⟦f6⟧.",
+    "eng": "Eventually, the chain of ⟦f0⟧ instances will resolve after 2 seconds, and the console will show ⟦f6⟧.",
+    "ua": "У підсумку ланцюжок екземплярів **⟦f0⟧** розрезолвиться через 2 секунди, і в консолі буде ⟦f6⟧."
+  },
+  "s2.p7": {
+    "ru": "Давайте немного изменим код, чтобы отслеживать время.",
+    "eng": "Let's modify the code a bit to keep track of time.",
+    "ua": "Давайте трохи змінимо код, щоб відстежувати час."
+  },
+  "s2.p8": {
+    "ru": "Для этого объявим вспомогательную функцию ⟦f7⟧:",
+    "eng": "To do this, let's declare a helper function ⟦f7⟧:",
+    "ua": "Для цього оголосимо допоміжну функцію **⟦f7⟧**:"
+  },
+  "s2.p9": {
+    "ru": "Теперь цепочка вызовов метода **⟦f5⟧** экземпляров ⟦f0⟧ упростится, при этом мы будем видеть индикацию времени выполнения в миллисекундах:",
+    "eng": "Now the chain of method **⟦f5⟧** calls of ⟦f0⟧ instances will be simplified, while we will see an indication of the execution time in milliseconds:",
+    "ua": "Тепер ланцюжок викликів методу **⟦f5⟧** екземплярів ⟦f0⟧ спроститься, при цьому ми будемо бачити індикацію часу виконання в мілісекундах:"
+  },
+  "s2.p10": {
+    "ru": "Теперь мы увидим в консоли нечто вроде:",
+    "eng": "Now we'll see in the console something like:",
+    "ua": "Тепер ми побачимо в консолі щось на кшталт:"
+  },
+  "s2.p11": {
+    "ru": "Асинхронная функция является альтернативным решением.",
+    "eng": "The asynchronous function is an alternative solution.",
+    "ua": "Асинхронна функція є альтернативним рішенням."
+  },
+  "s2.p12": {
+    "ru": "Объявим вспомогательную функцию **resolve**:",
+    "eng": "Let's declare an auxiliary function **⟦f9⟧**:",
+    "ua": "Оголосимо допоміжну функцію **resolve**:"
+  },
+  "s2.p13": {
+    "ru": "Теперь немного подправим код функции **setTimer**, заменив ⟦f8⟧ вызовом функции ⟦f9⟧:",
+    "eng": "Now let's adjust the code of the **⟦f7⟧** function a bit, replacing ⟦f8⟧ with a call of the **⟦f9⟧** function:",
+    "ua": "Тепер трохи підправимо код функції **⟦f7⟧**, замінивши ⟦f8⟧ викликом функції **⟦f9⟧**:"
+  },
+  "s2.p14": {
+    "ru": "и теперь объявим асинхронную функцию **sayHello**:",
+    "eng": "and now declare the asynchronous function **⟦f20⟧**:",
+    "ua": "і оголосимо асинхронну функцію **⟦f20⟧**:"
+  },
+  "s2.p15": {
+    "ru": "и вызовем ее, передав через метод ⟦f5⟧ колбэк **⟦f9⟧**:",
+    "eng": "and call it by passing a **⟦f9⟧** callback through the **⟦f5⟧** method:",
+    "ua": "і викличемо її, передавши через метод ⟦f5⟧ колбек **⟦f9⟧**:"
+  },
+  "s2.p16": {
+    "ru": "Что мы видим из этого примера:",
+    "eng": "What we see from this example:",
+    "ua": "Що ми бачимо з цього прикладу:"
+  },
+  "s2.p17": {
+    "ru": "• вместо вызова метода **⟦f5⟧** экземпляра **⟦f0⟧** использовано ключевое слово **⟦f10⟧** асинхронной функции;",
+    "eng": "• instead of calling the **⟦f5⟧** method of the **⟦f0⟧** instance, the **⟦f10⟧** keyword of the asynchronous function is used;",
+    "ua": "• замість виклику методу **⟦f5⟧** екземпляра **⟦f0⟧** використано ключове слово **⟦f10⟧** асинхронної функції;"
+  },
+  "s2.p18": {
+    "ru": "• код, который следует после строки с **⟦f10⟧**, будет выполнен так, как будто этот код выполняется в колбэке метода **⟦f5⟧** предыдущего экземпляра **⟦f0⟧**;",
+    "eng": "• the code that follows the line with **⟦f10⟧** will be executed as if this code were executed in the callback function passed to **⟦f5⟧** method of the previous **⟦f0⟧** instance;",
+    "ua": "• код, який слідує після рядка з **⟦f10⟧**, буде виконано так, начебто цей код виконується в колбеку методу **⟦f5⟧** попереднього екземпляра **⟦f0⟧**;"
+  },
+  "s2.p19": {
+    "ru": "• вызов асинхронной функции возвращает экземпляр **⟦f0⟧**, поэтому получить результат работы асинхронной функции можно только с помощью метода **⟦f5⟧**;",
+    "eng": "• the asynchronous function call returns an instance of **⟦f0⟧**, so you can only get the result of the asynchronous function using the **⟦f5⟧** method;",
+    "ua": "• виклик асинхронної функції повертає екземпляр **⟦f0⟧**, тому отримати результат роботи асинхронної функції можна тільки за допомогою методу **⟦f5⟧**;"
+  },
+  "s2.p20": {
+    "ru": "• для того, чтобы вызов асинхронной функции резолвился результатом, в теле асинхронной функции должен быть оператор **⟦f11⟧**.",
+    "eng": "• in order to resolve an asynchronous function call with the result, there must be a **⟦f11⟧** operator in the body of the asynchronous function.",
+    "ua": "• для того, щоб виклик асинхронної функції резолвився результатом, у тілі асинхронної функції має бути оператор **⟦f11⟧**."
+  },
+  "s3.h1": {
+    "ru": "Диспетчер очередей",
+    "eng": "Queue Manager",
+    "ua": "Диспетчер черг"
+  },
+  "s3.p1": {
+    "ru": "Асинхронная функция является отличным организатором очередей.",
+    "eng": "The asynchronous function is an excellent queue organiser.",
+    "ua": "Асинхронна функція є чудовим організатором черг."
+  },
+  "s3.p2": {
+    "ru": "Она строго следит за порядком в очереди микротасков ![ico-20 smile].",
+    "eng": "It strictly enforces the order of the microtask queue ![ico-20 smile].",
+    "ua": "Вона суворо стежить за порядком у черзі мікротасків ![ico-20 smile]."
+  },
+  "s3.p3": {
+    "ru": "Пусть у нас есть функция **⟦f12⟧**, которая возвращает экземпляр ⟦f0⟧,",
+    "eng": "Suppose we have a function **⟦f12⟧** that returns an instance of ⟦f0⟧,",
+    "ua": "Нехай у нас є функція **⟦f12⟧**, яка повертає екземпляр ⟦f0⟧,"
+  },
+  "s3.p4": {
+    "ru": "при этом биндит колбэку **⟦f9⟧** первый аргумент, переданный функции **⟦f12⟧**.",
+    "eng": "and also binds to the **⟦f9⟧** colback the first argument passed to the **⟦f12⟧** function.",
+    "ua": "при цьому біндить колбеку **⟦f9⟧** перший аргумент, переданий функції **⟦f12⟧**."
+  },
+  "s3.p5": {
+    "ru": "Второй аргумент функции **⟦f12⟧** используется для установки таймера:",
+    "eng": "The second argument to the **⟦f12⟧** function is used to set the timer:",
+    "ua": "Другий аргумент функції **⟦f12⟧** використовується для встановлення таймера:"
+  },
+  "s3.p6": {
+    "ru": "и функция **⟦f9⟧**:",
+    "eng": "and the **⟦f9⟧** function:",
+    "ua": "і функція **⟦f9⟧**:"
+  },
+  "s3.p7": {
+    "ru": "Сделаем три последовательных вызова функции **⟦f12⟧**:",
+    "eng": "Let's make three consecutive calls to the **⟦f12⟧** function:",
+    "ua": "Зробимо три послідовні виклики функції **⟦f12⟧**:"
+  },
+  "s3.p8": {
+    "ru": "Как мы видим, колбэки возвращаются тогда, когда истекло время таймера, а не в порядке их вызова.",
+    "eng": "As we can see, the colbacks are returned when the timer time has expired, not in the order they were called.",
+    "ua": "Як ми бачимо, колбеки повертаються тоді, коли минув час таймера, а не в порядку їхнього виклику."
+  },
+  "s3.p9": {
+    "ru": "А теперь выстроим их в очередь с помощью асинхронной функции **⟦f13⟧**:",
+    "eng": "Now let's queue them using the asynchronous function **⟦f13⟧**:",
+    "ua": "А тепер вишикуємо їх у чергу за допомогою асинхронної функції **⟦f13⟧**:"
+  },
+  "s3.p10": {
+    "ru": "Теперь они строго соблюдают очередь ![ico-20 smile]",
+    "eng": "Now they're strictly following the queue ![ico-20 smile]",
+    "ua": "Тепер вони суворо дотримуються черги ![ico-20 smile]"
+  },
+  "s4.h1": {
+    "ru": "Организатор асинхронных процессов",
+    "eng": "Organiser of asynchronous processes",
+    "ua": "Організатор асинхронних процесів"
+  },
+  "s4.p1": {
+    "ru": "^^Для того, чтобы посмотреть, какие логины есть в базе данных, выполните в консоли:^^",
+    "eng": "^^To see which logins are in the database, execute in the console:^^",
+    "ua": "^^Для того, щоб подивитися, які логіни є в базі даних, виконайте в консолі:^^"
+  },
+  "s4.p2": {
+    "ru": "Немного перепишем предыдущий пример.",
+    "eng": "Let's slightly rewrite the previous example.",
+    "ua": "Трохи перепишемо попередній приклад."
+  },
+  "s4.p3": {
+    "ru": "Объявим функцию **⟦f14⟧**, которая будет возвращать экземпляр **Promise**.",
+    "eng": "Declare a **⟦f14⟧** function that will return an instance of **Promise**.",
+    "ua": "Оголосимо функцію **⟦f14⟧**, яка повертатиме екземпляр **⟦f0⟧**."
+  },
+  "s4.p4": {
+    "ru": "Функция **⟦f14⟧** получает в качестве аргумента объект **⟦f15⟧**, и создает элемент ⟦f16⟧ для ввода логина юзера.",
+    "eng": "The **⟦f14⟧** function takes a **⟦f15⟧** object as an argument, and creates an ⟦f16⟧ element to enter the login of the user.",
+    "ua": "Функція **⟦f14⟧** отримує як аргумент об'єкт **⟦f15⟧**, і створює елемент ⟦f16⟧ для введення логіна користувача."
+  },
+  "s4.p5": {
+    "ru": "Анонимная функция, которая передается конструктору **Promise**, устанавливает обработчика события ⟦f17⟧ элемента ⟦f16⟧,",
+    "eng": "The anonymous function that is passed to the **Promise** constructor sets the ⟦f17⟧ event handler of the ⟦f16⟧ element,",
+    "ua": "Анонімна функція, яка передається конструктору **⟦f0⟧**, встановлює обробника події **⟦f17⟧** елемента ⟦f16⟧,"
+  },
+  "s4.p6": {
+    "ru": "который вызывает либо **⟦f9⟧**, либо **⟦f18⟧** в зависимости от того, что было введено в поле ⟦f16⟧",
+    "eng": "which calls either **⟦f9⟧** or **⟦f18⟧** depending on what was entered into the ⟦f16⟧ field.",
+    "ua": "який викликає або **⟦f9⟧**, або **⟦f18⟧** залежно від того, що було введено в поле ⟦f16⟧"
+  },
+  "s4.p7": {
+    "ru": "(есть ли соответствующий юзер в базе данных).",
+    "eng": "(whether the corresponding user is in the database).",
+    "ua": "(чи є відповідний користувач у базі даних)."
+  },
+  "s4.p8": {
+    "ru": "Теперь создадим асинхронную функцию **⟦f19⟧**, которая будет делать запрос серверу, получать данные и вызывать функцию **⟦f14⟧** с передачей ей полученных данных:",
+    "eng": "Now let's create an asynchronous function **⟦f19⟧** that will make a request to the server, get the data and call the function **⟦f14⟧** and pass it the received data:",
+    "ua": "Тепер створимо асинхронну функцію **⟦f19⟧**, яка робитиме запит серверу, отримуватиме дані та викликатиме функцію **⟦f14⟧** з передачею їй отриманих даних:"
+  },
+  "s4.p9": {
+    "ru": "Осталось только вызвать функцию **getLogin**:",
+    "eng": "The only thing left to do is to call the function **getLogin**:",
+    "ua": "Залишилося тільки викликати функцію **getLogin**:"
+  },
+  "s4.p10": {
+    "ru": "◘◘![ico-20 file] Вызов функции getLogin◘◘",
+    "eng": "◘◘![ico-20 file] Function getLogin call◘◘",
+    "ua": "◘◘![ico-20 file] Виклик функції getLogin◘◘"
+  },
+  "s4.p11": {
+    "ru": "и не забудьте нажать **Enter** после ввода логина.",
+    "eng": "and don't forget to press **Enter** after entering the login.",
+    "ua": "і не забудьте натиснути **Enter** після введення логіна."
+  },
+  "s4.spoiler1": {
+    "ru": "полный код примера",
+    "eng": "Full example code",
+    "ua": "повний код прикладу"
+  },
+  "s4.p12": {
+    "ru": "[![ico-30 hw] Тесты](quiz/async )",
+    "eng": "[![ico-30 hw] Quiz](quiz/async )",
+    "ua": "[![ico-30 hw] Quiz](quiz/async )"
+  }
+}

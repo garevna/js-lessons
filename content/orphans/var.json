@@ -1,0 +1,110 @@
+{
+  "s6.h1": {
+    "eng": "Error in calculations",
+    "ua": "undefined"
+  },
+  "s6.p1": {
+    "eng": "Now let's talk about the accuracy of calculations and rounding numbers.",
+    "ua": "**тип даних: \"undefined\"**."
+  },
+  "s6.p2": {
+    "eng": "So, clearly working with numbers isn't our top priority, and if you suddenly decide to use **JS** like **Fortran**, you'll have to deal with calculation inaccuracies.",
+    "ua": "Змінні іноді оголошуються без присвоювання їм початкового значення."
+  },
+  "s7.h1": {
+    "eng": "Tests for number"
+  },
+  "s7.quiz1": {
+    "eng": "8e-2"
+  },
+  "s7.quizVariants1": {
+    "eng": "800, 0.8, 0.08, 8"
+  },
+  "s7.quizAnswer1": {
+    "eng": "0.08"
+  },
+  "s7.p1": {
+    "eng": "◘◘** 2**◘◘"
+  },
+  "s7.quiz2": {
+    "eng": "1.7e+2"
+  },
+  "s7.quizVariants2": {
+    "eng": "170, 1.7, 0.17, 17"
+  },
+  "s7.quizAnswer2": {
+    "eng": "170"
+  },
+  "s7.p2": {
+    "eng": "◘◘** 3**◘◘"
+  },
+  "s7.p3": {
+    "eng": "Logical expressions are created using comparison operators."
+  },
+  "s7.p4": {
+    "eng": "The result of evaluating a **logical expression** will always be a Boolean value (**⟦f25⟧** or **⟦f24⟧**)."
+  },
+  "s7.p5": {
+    "eng": "That is, if we declare a **⟦f26⟧** variable:"
+  },
+  "s7.p6": {
+    "eng": "this will be a **⟦f27⟧** type variable."
+  },
+  "s7.p7": {
+    "eng": "Next, we'll frequently encounter **⟦f27⟧** data."
+  },
+  "s7.demo1": {
+    "eng": "Demo"
+  },
+  "s8.h1": {
+    "eng": "undefined"
+  },
+  "s8.p1": {
+    "eng": "**data type: \"undefined\"**."
+  },
+  "s8.p2": {
+    "eng": "Sometimes variables are declared without being assigned an initial value."
+  },
+  "s8.p3": {
+    "eng": "If a variable is declared without a value, its value will be **⟦f28⟧**."
+  },
+  "s5.quiz1": {
+    "ua": "8e-2"
+  },
+  "s5.quizVariants1": {
+    "ua": "800, 0.8, 0.08, 8"
+  },
+  "s5.quizAnswer1": {
+    "ua": "0.08"
+  },
+  "s5.quiz2": {
+    "ua": "1.7e+2"
+  },
+  "s5.quizVariants2": {
+    "ua": "170, 1.7, 0.17, 17"
+  },
+  "s5.quizAnswer2": {
+    "ua": "170"
+  },
+  "s5.quiz3": {
+    "ua": "0.3e+310"
+  },
+  "s5.quizVariants3": {
+    "ua": "3e+309, Infinity"
+  },
+  "s5.quizAnswer3": {
+    "ua": "Infinity"
+  },
+  "s5.demo1": {
+    "ua": "Demo"
+  },
+  "s6.p3": {
+    "ua": "Якщо змінна оголошена без значення, її значення буде **⟦f28⟧**."
+  },
+  "s6.p4": {
+    "ua": "^^(без лапок, _'undefined'_ - це вже рядок).^^"
+  },
+  "s6.demo1": {
+    "ua": "Demo"
+  }
+}

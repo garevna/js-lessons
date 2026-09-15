@@ -1,0 +1,9 @@
+{
+  "s1.h1": {
+    "eng": "Event Listener Breakpoints",
+    "ua": "Event Listener Breakpoints"
+  },
+  "s1.p1": {
+    "eng": "In **Chrome DevTools**, you can also suspend code execution when DOM events occur."
+  }
+}

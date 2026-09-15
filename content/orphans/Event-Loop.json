@@ -1,0 +1,8 @@
+{
+  "s3.p45": {
+    "eng": "If we were to send only one callback to the **task queue** using the **⟦f13⟧** method, then all timer callbacks would get into the **Call Stack** before the last microtask got into the **microtask queue**."
+  },
+  "s3.p46": {
+    "eng": "To “even the odds,” the timer callback sets the timer again. Then the situation in the **task queue** will be similar to the **microtask queue**."
+  }
+}

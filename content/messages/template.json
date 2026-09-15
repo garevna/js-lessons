@@ -1,0 +1,157 @@
+{
+  "s0.p1": {
+    "ru": "Элемент ⟦f0⟧ предназначен для хранения шаблона разметки",
+    "eng": "The ⟦f0⟧ element is intended to store a markup template",
+    "ua": "Елемент ⟦f0⟧ призначений для зберігання шаблону розмітки"
+  },
+  "s0.p2": {
+    "ru": "![ico-20 warn] **Он не отображается на странице**",
+    "eng": "![ico-20 warn] **It is not displayed on the page**",
+    "ua": "![ico-20 warn] **Він не відображається на сторінці**"
+  },
+  "s0.p3": {
+    "ru": "![ico-20 warn] **Он парсится браузером, поэтому должен содержать только валидный код разметки**",
+    "eng": "![ico-20 warn] **It is parsed by the browser, so it must contain only valid markup code**",
+    "ua": "![ico-20 warn] **Він аналізується браузером, тому має містити лише валідний код розмітки**"
+  },
+  "s0.p4": {
+    "ru": "это фрагмент документа, у которого нет родителя в дереве DOM",
+    "eng": "This is a document fragment that has no parent in the DOM tree",
+    "ua": "це фрагмент документа, який не має батьківського елемента в дереві DOM"
+  },
+  "s0.p5": {
+    "ru": "DocumentFragment содержит DOM-элементы ( nodes ), как и объект ⟦f1⟧",
+    "eng": "A DocumentFragment contains DOM elements (nodes), just like the ⟦f1⟧ object",
+    "ua": "DocumentFragment містить DOM-елементи (nodes), як і об’єкт ⟦f1⟧"
+  },
+  "s0.p6": {
+    "ru": "Но поскольку фрагмент документа не является частью структуры DOM, он не отображается на странице",
+    "eng": "However, as a document fragment is not part of the DOM structure, it is not displayed on the page",
+    "ua": "Але оскільки фрагмент документа не є частиною структури DOM, він не відображається на сторінці"
+  },
+  "s0.p7": {
+    "ru": "Это шаблон разметки, который при необходимости может быть вставлен в нужное время в нужном месте",
+    "eng": "This is a markup template which, if necessary, can be inserted at the right time and in the right place",
+    "ua": "Це шаблон розмітки, який за потреби можна вставити в потрібний час у потрібному місці"
+  },
+  "s1.h1": {
+    "ru": "Пример 1",
+    "eng": "Example 1",
+    "ua": "Приклад 1"
+  },
+  "s1.p1": {
+    "ru": "^^Откроем вкладку _Elements_ инструментов разработчика и вставим в элемент ⟦f2⟧ следующий код разметки:^^",
+    "eng": "^^Let’s open the _Elements_ tab in the developer tools and insert the following markup code into the ⟦f2⟧ element:^^",
+    "ua": "^^Відкриємо вкладку _Elements_ інструментів розробника та вставимо в елемент ⟦f2⟧ такий код розмітки:^^"
+  },
+  "s1.p2": {
+    "ru": "^^При этом на странице ничего не появится, а вот во вкладке  **Elements**  мы увидим следующую картинку^^",
+    "eng": "^^Nothing will appear on the page, but in the **Elements** tab we will see the following image^^",
+    "ua": "^^При цьому на сторінці нічого не з’явиться, а ось у вкладці  **Elements**  ми побачимо таке зображення^^"
+  },
+  "s1.p3": {
+    "ru": "Свойство  _**⟦f3⟧**_  элемента  ⟦f4⟧  содержит код разметки, находящийся  в контейнере ⟦f5⟧",
+    "eng": "The _**⟦f3⟧**_ property of the ⟦f4⟧ element contains the markup code located within the ⟦f5⟧ container",
+    "ua": "Властивість  _**⟦f3⟧**_  елемента  ⟦f4⟧  містить код розмітки, що знаходиться  у контейнері ⟦f5⟧"
+  },
+  "s2.h1": {
+    "ru": "Пример 2",
+    "eng": "Example 2",
+    "ua": "Приклад 2"
+  },
+  "s2.p1": {
+    "ru": "**Шаблон разметки**",
+    "eng": "**Markup template**",
+    "ua": "**Шаблон розмітки**"
+  },
+  "s2.p2": {
+    "ru": "^^Выведем в консоль свойство ⟦f3⟧^^",
+    "eng": "^^Let’s log the ⟦f3⟧ property to the console^^",
+    "ua": "^^Виведемо в консоль властивість ⟦f3⟧^^"
+  },
+  "s2.spoiler1": {
+    "ru": "Результат",
+    "eng": "Result",
+    "ua": "Результат"
+  },
+  "s3.h1": {
+    "ru": "Вставка в DOM",
+    "eng": "Inserting into the DOM",
+    "ua": "Вставка в DOM"
+  },
+  "s3.p1": {
+    "ru": "^^Если выполнить код:^^",
+    "eng": "^^If we run the code:^^",
+    "ua": "^^Якщо виконати код:^^"
+  },
+  "s3.p2": {
+    "ru": "^^то после вставки в DOM содержимого шаблона контейнер  ⟦f6⟧  будет пустым^^",
+    "eng": "^^then, after the template’s content has been inserted into the DOM, the container  ⟦f6⟧  will be empty^^",
+    "ua": "^^то після вставки вмісту шаблону в DOM контейнер  ⟦f6⟧  буде порожнім^^"
+  },
+  "s3.p3": {
+    "ru": "^^Можно проверить это:^^",
+    "eng": "^^You can check this:^^",
+    "ua": "^^Це можна перевірити:^^"
+  },
+  "s3.p4": {
+    "ru": "^^Свойство  **⟦f7⟧**  будет  **_⟦f8⟧_** (пустая коллекция узлов)^^",
+    "eng": "^^The property  **⟦f7⟧**  will be  **_⟦f8⟧_** (an empty collection of nodes)^^",
+    "ua": "^^Властивість  **⟦f7⟧**  буде  **_⟦f8⟧_** (порожня колекція вузлів)^^"
+  },
+  "s3.p5": {
+    "ru": "^^Свойство  **⟦f9⟧**  будет  **_⟦f10⟧_** (пустая коллекция элементов)^^",
+    "eng": "^^The property  **⟦f9⟧**  will be  **_⟦f10⟧_** (an empty collection of elements)^^",
+    "ua": "^^Властивість  **⟦f9⟧**  буде  **_⟦f10⟧_** (порожня колекція елементів)^^"
+  },
+  "s3.p6": {
+    "ru": "![ico-20 warn] Для многоразового использования шаблона разметки нужно использовать метод ⟦f11⟧",
+    "eng": "![ico-20 warn] To reuse the markup template, you need to use the ⟦f11⟧ method",
+    "ua": "![ico-20 warn] Для багаторазового використання шаблону розмітки потрібно використовувати метод ⟦f11⟧"
+  },
+  "s3.p7": {
+    "ru": "![ico-20 warn] ⟦f12⟧ указывает на глубокое копирование, т.е. всех подузлов дерева",
+    "eng": "![ico-20 warn] ⟦f12⟧ indicates a deep copy, i.e. all subnodes of the tree",
+    "ua": "![ico-20 warn] ⟦f12⟧ вказує на глибоке копіювання, тобто всіх підвузлів дерева"
+  },
+  "s4.h1": {
+    "ru": "Пример 3",
+    "eng": "Example 3",
+    "ua": "Приклад 3"
+  },
+  "s4.p1": {
+    "ru": "**Шаблон разметки**",
+    "eng": "**Markup template**",
+    "ua": "**Шаблон розмітки**"
+  },
+  "s4.p2": {
+    "ru": "**Класс**",
+    "eng": "**Class**",
+    "ua": "**Клас**"
+  },
+  "s4.p3": {
+    "ru": "**Вставка на страницу**",
+    "eng": "**Insert into page**",
+    "ua": "**Вставка на сторінку**"
+  },
+  "s5.h1": {
+    "ru": "Пример 4",
+    "eng": "Example 4",
+    "ua": "Приклад 4"
+  },
+  "s5.p1": {
+    "ru": "^^Теперь давайте все сделаем на чистом JS:^^",
+    "eng": "^^Now let’s do it all in pure JS:^^",
+    "ua": "^^А тепер давайте зробимо все на чистому JS:^^"
+  },
+  "s5.p2": {
+    "ru": "^^Теперь вы можете сколько угодно раз вставить на страницу:^^",
+    "eng": "^^Now you can insert it into the page as many times as you like:^^",
+    "ua": "^^Тепер ви можете вставляти на сторінку скільки завгодно разів:^^"
+  },
+  "s5.p3": {
+    "ru": "^^Жутко удобно, правда ?^^ ![wink-25]",
+    "eng": "^^It’s incredibly handy, isn’t it?^^ ![wink-25]",
+    "ua": "^^Дуже зручно, правда?^^ ![wink-25]"
+  }
+}

@@ -4,26 +4,32 @@
  *
  *   node tools/i18n-export.js var eng
  *   node tools/i18n-export.js --all eng
+ *   node tools/i18n-export.js --common eng     the repeated phrases, once
  *
  * Writes translate/<page>.<lang>.NN.txt — numbered segments, chunked to stay
  * under the free web limit. Paste one file into DeepL, paste the result into
  * the matching .out.txt, and run i18n-import.js.
  *
- * Only segments that still need translating are exported: a key already
- * present in the target message file is skipped, so re-running after a partial
- * pass exports only what is left.
+ * Two kinds of segment never reach the file:
+ *
+ *   already translated    a key whose entry for this language is filled
+ *   nothing to translate  a segment with no Cyrillic in it, or one whose
+ *                         words are in content/common.json already answered
  *
  * The numbering is what survives the round trip. DeepL keeps line breaks most
  * of the time but not always, and a merged pair of lines would silently shift
  * every following translation onto the wrong key. The importer matches on the
- * number and refuses to guess.
+ * number, checks that as many lines came back as went out, and refuses to
+ * guess.
  */
 
 const fs = require('fs')
 const path = require('path')
+const { core, dress } = require('./lib/phrases')
 
 const root = path.join(__dirname, '..')
 const MESSAGES = path.join(root, 'content/messages')
+const COMMON = path.join(root, 'content/common.json')
 const OUT = path.join(root, 'translate')
 
 // DeepL's free web translator takes 5000 characters at a time. Leave room for
@@ -33,7 +39,7 @@ const CHUNK = 3500
 const [target, lang] = process.argv.slice(2)
 
 if (!target || !lang) {
-  console.error('usage: node tools/i18n-export.js <page|--all> <lang>')
+  console.error('usage: node tools/i18n-export.js <page|--all|--common> <lang>')
   process.exit(1)
 }
 
@@ -50,100 +56,37 @@ const readJson = (file) => {
   }
 }
 
-const known = fs.readdirSync(MESSAGES)
-  .filter((f) => f.endsWith('.ru.json'))
-  .map((f) => f.replace('.ru.json', ''))
-  .sort()
-
-// Windows opens Classes.ru.json when asked for classes.ru.json, so a typed
-// name in the wrong case works locally and then writes classes.ua.json beside
-// Classes.ru.json. On GitHub, where case matters, that is a different file and
-// the page loses its translation. Resolve to the name on disk instead.
-const canonical = (name) => {
-  if (known.includes(name)) return name
-  const match = known.find((k) => k.toLowerCase() === name.toLowerCase())
-  if (match) {
-    console.log(`  (using "${match}" — that is how the page is spelled)`)
-    return match
-  }
-  return name
-}
-
-const pages = target === '--all' ? known : [canonical(target)]
+// A segment written without a single Cyrillic letter is not Russian prose, and
+// there is nothing in it to translate. Scanning the queue, all 2736 such
+// segments were one of:
+//
+//   x && !x          code
+//   $ git checkout   a shell command
+//   true, undefined  quiz variants
+//   | getKey |       a table row
+//   ![ico-25 hw]     callout numbering
+//   <div>x</div>     html
+//
+// These are precisely the segments a translator damages: DeepL will happily
+// translate "cat", and rewrite the quotes inside a code sample. Copying them
+// over untouched removes a third of the queue and most of the risk.
+//
+// HTML entities are stripped first — &nbsp; carries letters but a line holding
+// only entities is spacing, not a sentence.
+const needsTranslation = (s) => /[Ѐ-ӿ]/.test(
+  s.replace(/⟦f\d+⟧/g, '').replace(/&[a-zA-Z]+;|&#\d+;/g, '')
+)
 
 fs.mkdirSync(OUT, { recursive: true })
 
-let totalSegments = 0
-let totalChars = 0
-let totalFiles = 0
-
-for (const page of pages) {
-  const source = readJson(path.join(MESSAGES, `${page}.ru.json`))
-  if (!source) {
-    console.error(`  ${page}: no ${page}.ru.json — run i18n-extract first`)
-    continue
-  }
-
-  const existing = readJson(path.join(MESSAGES, `${page}.${lang}.json`)) || {}
-
-  // A key already in the target file has been handled — the importer only
-  // writes what came back and passed its checks. Re-exporting keys whose
-  // translation happens to read the same as the Russian would offer the same
-  // words forever: "Результат:" is spelled identically in Ukrainian.
-  const untranslated = Object.entries(source).filter(([k]) => !(k in existing))
-
-  // A segment written without a single Cyrillic letter is not Russian prose,
-  // and there is nothing in it to translate. Scanning the queue, all 2736 such
-  // segments were one of:
-  //
-  //   x && !x          code
-  //   $ git checkout   a shell command
-  //   true, undefined  quiz variants
-  //   | getKey |       a table row
-  //   ![ico-25 hw]     callout numbering
-  //   <div>↓</div>     html
-  //
-  // These are precisely the segments a translator damages: DeepL will happily
-  // translate "cat", and rewrite the quotes inside a code sample. Copying them
-  // over untouched removes a third of the queue and most of the risk.
-  //
-  // HTML entities are stripped first — &nbsp; carries letters but a line
-  // holding only entities is spacing, not a sentence.
-  const needsTranslation = (s) => /[Ѐ-ӿ]/.test(
-    s.replace(/⟦f\d+⟧/g, '').replace(/&[a-zA-Z]+;|&#\d+;/g, '')
-  )
-
-  const copied = untranslated.filter(([, v]) => !needsTranslation(v))
-  const todo = untranslated.filter(([, v]) => needsTranslation(v))
-
-  if (copied.length) {
-    const merged = { ...existing }
-    for (const [k, v] of copied) merged[k] = v
-
-    const ordered = {}
-    for (const k of Object.keys(source)) if (k in merged) ordered[k] = merged[k]
-
-    fs.writeFileSync(
-      path.join(MESSAGES, `${page}.${lang}.json`),
-      JSON.stringify(ordered, null, 2) + '\n'
-    )
-  }
-
-  if (!todo.length) {
-    console.log(`  ${page}: complete${copied.length ? ` (${copied.length} copied as-is)` : ''}`)
-    continue
-  }
-
-  // An index file records which number maps to which key, so the importer
-  // never has to infer the mapping from order alone. It also records which
-  // chunk each segment went into, so the importer can tell whether a file
-  // came back with the number of lines it was sent — see below.
+/** Numbered chunks plus the index that says which number is which key. */
+function writeChunks (name, segments) {
   const index = []
   const chunks = []
   let chunk = []
   let size = 0
 
-  todo.forEach(([key, text], i) => {
+  segments.forEach(([key, text], i) => {
     const n = i + 1
     const line = `${n}. ${text}`
 
@@ -161,26 +104,151 @@ for (const page of pages) {
   if (chunk.length) chunks.push(chunk)
 
   chunks.forEach((lines, i) => {
-    const name = `${page}.${lang}.${String(i + 1).padStart(2, '0')}.txt`
-    fs.writeFileSync(path.join(OUT, name), lines.join('\n') + '\n')
+    fs.writeFileSync(
+      path.join(OUT, `${name}.${String(i + 1).padStart(2, '0')}.txt`),
+      lines.join('\n') + '\n'
+    )
   })
 
-  fs.writeFileSync(
-    path.join(OUT, `${page}.${lang}.index.json`),
-    JSON.stringify(index, null, 2) + '\n'
-  )
+  fs.writeFileSync(path.join(OUT, `${name}.index.json`), JSON.stringify(index, null, 2) + '\n')
+  return chunks.length
+}
 
+/* ----------------------------------------------------- the common phrases */
+
+if (target === '--common') {
+  const common = readJson(COMMON)
+  if (!common) {
+    console.error('no content/common.json — run node tools/i18n-common.js first')
+    process.exit(1)
+  }
+
+  const todo = Object.entries(common)
+    .filter(([, v]) => !v[lang])
+    .map(([phrase]) => [phrase, phrase])
+
+  if (!todo.length) {
+    console.log(`  every repeated phrase already has a ${lang} translation`)
+    process.exit(0)
+  }
+
+  const files = writeChunks(`common.${lang}`, todo)
   const chars = todo.reduce((n, [, v]) => n + v.length, 0)
+
+  console.log(`
+  ${todo.length} repeated phrases, ${chars} characters, ${files} file(s).
+
+  These are the headings and stock sentences that recur across the course.
+  "Результат в консоли:" alone appears 33 times on 12 pages. Translate them
+  once here and every page that uses them is filled in on its next export.
+
+    1. open translate/common.${lang}.01.txt, copy it
+    2. paste into DeepL, target language ${lang}
+    3. save the answer as translate/common.${lang}.01.out.txt
+    4. node tools/i18n-import.js --common ${lang}
+
+  Keep them short. A heading translated as a whole sentence is worse than one
+  left in Russian, because it will be reused everywhere.`)
+  process.exit(0)
+}
+
+/* ------------------------------------------------------------- the pages */
+
+const known = fs.readdirSync(MESSAGES)
+  .filter((f) => f.endsWith('.json'))
+  .map((f) => f.replace(/\.json$/, ''))
+  .sort()
+
+// Windows opens Classes.json when asked for classes.json, so a typed name in
+// the wrong case works locally and then writes a second file beside the first.
+// On GitHub, where case matters, that is a different file and the page loses
+// its translation. Resolve to the name on disk instead.
+const canonical = (name) => {
+  if (known.includes(name)) return name
+  const match = known.find((k) => k.toLowerCase() === name.toLowerCase())
+  if (match) {
+    console.log(`  (using "${match}" — that is how the page is spelled)`)
+    return match
+  }
+  return name
+}
+
+const pages = target === '--all' ? known : [canonical(target)]
+const common = readJson(COMMON) || {}
+
+let totalSegments = 0
+let totalChars = 0
+let totalFiles = 0
+let totalCopied = 0
+let totalFromCommon = 0
+
+for (const page of pages) {
+  const file = path.join(MESSAGES, `${page}.json`)
+  const entries = readJson(file)
+  if (!entries) {
+    console.error(`  ${page}: no ${page}.json — run i18n-extract first`)
+    continue
+  }
+
+  const untranslated = Object.entries(entries).filter(([, e]) => !e[lang])
+
+  let copied = 0
+  let fromCommon = 0
+  const todo = []
+
+  for (const [key, entry] of untranslated) {
+    // Nothing in it to translate: copy the Russian across as it stands.
+    if (!needsTranslation(entry.ru)) {
+      entry[lang] = entry.ru
+      copied += 1
+      continue
+    }
+
+    // Said before, somewhere else in the course. Take the agreed translation
+    // and put it back inside whatever markup this occurrence happens to wear.
+    const phrase = common[core(entry.ru)]
+    if (phrase && phrase[lang]) {
+      entry[lang] = dress(phrase[lang], entry.ru)
+      fromCommon += 1
+      continue
+    }
+
+    todo.push([key, entry.ru])
+  }
+
+  if (copied || fromCommon) {
+    fs.writeFileSync(file, JSON.stringify(entries, null, 2) + '\n')
+  }
+
+  totalCopied += copied
+  totalFromCommon += fromCommon
+
+  const filled = []
+  if (copied) filled.push(`${copied} copied as-is`)
+  if (fromCommon) filled.push(`${fromCommon} from common`)
+
+  if (!todo.length) {
+    console.log(`  ${page}: complete${filled.length ? ` (${filled.join(', ')})` : ''}`)
+    continue
+  }
+
+  const files = writeChunks(`${page}.${lang}`, todo)
+  const chars = todo.reduce((n, [, v]) => n + v.length, 0)
+
   totalSegments += todo.length
   totalChars += chars
-  totalFiles += chunks.length
+  totalFiles += files
 
   console.log(
     `  ${page.padEnd(28)} ${String(todo.length).padStart(4)} segments` +
     `  ${String(chars).padStart(6)} chars` +
-    `  ${chunks.length} file${chunks.length > 1 ? 's' : ''}` +
-    (copied.length ? `  (+${copied.length} copied as-is)` : '')
+    `  ${files} file(s)` +
+    (filled.length ? `  (+${filled.join(', +')})` : '')
   )
+}
+
+if (totalCopied || totalFromCommon) {
+  console.log(`\n  filled in without asking DeepL: ${totalCopied} with nothing to translate, ${totalFromCommon} from content/common.json`)
 }
 
 if (!totalSegments) process.exit(0)
@@ -192,7 +260,7 @@ console.log(`
   │  NOTHING IS TRANSLATED YET. This step only prepared the text.    │
   ╰──────────────────────────────────────────────────────────────────╯
 
-  ${totalSegments} segments, ${totalChars} characters, ${totalFiles} file${totalFiles > 1 ? 's' : ''} written to
+  ${totalSegments} segments, ${totalChars} characters, ${totalFiles} file(s) written to
 
     ${OUT}
 
@@ -216,5 +284,6 @@ console.log(`
   Until step 5 runs, the translation exists only under content/ and the site
   goes on showing Russian.
 
-  Keep the numbering. The ⟦f0⟧ marks are hidden code and link targets —
-  they must come back unchanged, and the importer checks that they did.`)
+  Keep the numbering, and keep one line per segment. The marks are hidden code
+  and link targets — they must come back unchanged, and the importer checks
+  both that and the line count.`)

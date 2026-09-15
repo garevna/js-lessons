@@ -7,10 +7,10 @@
  *   node tools/i18n-status.js --done    only finished pages
  *   node tools/i18n-status.js --next    the shortest unfinished pages first
  *
- * Coverage is counted against the Russian message file, which holds exactly
- * the keys that need translating — markup and code never get one. A key counts
- * as done once it is present in the target file, which is what the importer
- * writes when a translation comes back and passes its checks.
+ * A page is one file holding all three languages per key. A key counts as
+ * translated when its entry for that language is not empty — which is what the
+ * importer writes when a translation comes back and passes its checks, and
+ * what the exporter writes for a segment with nothing in it to translate.
  *
  * The arrow marks a page that has been exported and is waiting for its
  * .out.txt, so the folder listing is not something to keep comparing by hand.
@@ -39,23 +39,18 @@ const readJson = (file) => {
 const exported = fs.existsSync(OUT) ? fs.readdirSync(OUT) : []
 
 const pages = fs.readdirSync(MESSAGES)
-  .filter((f) => f.endsWith('.ru.json'))
-  .map((f) => f.replace('.ru.json', ''))
+  .filter((f) => f.endsWith('.json'))
+  .map((f) => f.replace(/\.json$/, ''))
   .sort()
 
 const rows = pages.map((page) => {
-  const source = readJson(path.join(MESSAGES, `${page}.ru.json`)) || {}
-  const total = Object.keys(source).length
+  const entries = readJson(path.join(MESSAGES, `${page}.json`)) || {}
+  const values = Object.values(entries)
+  const total = values.length
 
   const per = {}
   for (const lang of LANGS) {
-    const target = readJson(path.join(MESSAGES, `${page}.${lang}.json`)) || {}
-
-    // A key present in the target file is a key someone handled. Comparing
-    // the text with the Russian instead looks clever and is wrong: "Результат:"
-    // is spelled the same in Ukrainian, so pages holding such words could
-    // never reach 100% however carefully they were translated.
-    const done = Object.keys(source).filter((k) => k in target).length
+    const done = values.filter((e) => e[lang]).length
 
     const waiting = exported.some((f) => f.startsWith(`${page}.${lang}.`) && f.endsWith('.txt') && !f.endsWith('.out.txt')) &&
       !exported.some((f) => f.startsWith(`${page}.${lang}.`) && f.endsWith('.out.txt'))

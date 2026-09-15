@@ -1,0 +1,97 @@
+{
+  "s1.h1": {
+    "ru": "Рекурсия",
+    "eng": "Recursion",
+    "ua": "Рекурсія"
+  },
+  "s1.p1": {
+    "ru": "Рекурсия - это процесс, в котором функция вызывает сама себя, прямо или косвенно",
+    "eng": "Recursion is a process in which a function calls itself, either directly or indirectly",
+    "ua": "Рекурсія — це процес, у якому функція викликає саму себе, прямо чи опосередковано"
+  },
+  "s1.p2": {
+    "ru": "Рекурсивная функция в функциональном программировании является более \"чистой\" альтернативой циклу",
+    "eng": "In functional programming, a recursive function is a ‘purer’ alternative to a loop",
+    "ua": "Рекурсивна функція у функціональному програмуванні є «чистішою» альтернативою циклу"
+  },
+  "s1.p3": {
+    "ru": "![ico-20 warn] Каждая рекурсивная функция должна иметь условие прерывания рекурсии",
+    "eng": "![ico-20 warn] Every recursive function must have a condition to terminate the recursion",
+    "ua": "![ico-20 warn] Кожна рекурсивна функція повинна мати умову припинення рекурсії"
+  },
+  "s1.p4": {
+    "ru": "В противном случае вызов функции приведет к бесконечному циклу",
+    "eng": "Otherwise, calling the function will result in an infinite loop",
+    "ua": "В іншому разі виклик функції призведе до нескінченного циклу"
+  },
+  "s1.p5": {
+    "ru": "**Хвостовая рекурсия** - это когда последним исполняемым оператором рекурсивной функции будет оператор  **_return_** с вызовом этой же функции",
+    "eng": "**Tail recursion** is when the last statement executed by a recursive function is the **_return_** statement, which calls the function itself",
+    "ua": "**Хвостова рекурсія** — це коли останнім оператором, що виконується в рекурсивній функції, є оператор **_return_** із викликом цієї ж функції"
+  },
+  "s1.p6": {
+    "ru": "Простейший ( классический ) пример рекурсии - вычисление факториала",
+    "eng": "The simplest (classic) example of recursion is calculating a factorial",
+    "ua": "Найпростіший (класичний) приклад рекурсії — обчислення факторіалу"
+  },
+  "s1.spoiler1": {
+    "ru": "Вычисление факториала",
+    "eng": "Calculating a factorial",
+    "ua": "Обчислення факторіалу"
+  },
+  "s1.p7": {
+    "ru": "Для того, чтобы избавиться от опционального параметра, используем замыкание:",
+    "eng": "To get rid of the optional parameter, we use closure:",
+    "ua": "Щоб позбутися опціонального параметра, використовуємо замикання:"
+  },
+  "s1.p8": {
+    "ru": "В JavaScript каждый вызов функции добавит кадр вызова в стек",
+    "eng": "In JavaScript, every function call adds a call frame to the stack",
+    "ua": "У JavaScript кожен виклик функції додає кадр виклику до стека"
+  },
+  "s1.p9": {
+    "ru": "Когда вызов завершается, кадр удаляется из стека",
+    "eng": "When the call completes, the frame is removed from the stack",
+    "ua": "Коли виклик завершується, кадр видаляється зі стека"
+  },
+  "s1.p10": {
+    "ru": "Однако рекурсивная функция не завершается сразу",
+    "eng": "However, a recursive function does not terminate immediately",
+    "ua": "Однак рекурсивна функція не завершується одразу"
+  },
+  "s1.p11": {
+    "ru": "Она вернет рекурсивный вызов самой себя",
+    "eng": "It will return a recursive call to itself",
+    "ua": "Вона поверне рекурсивний виклик самої себе"
+  },
+  "s1.p12": {
+    "ru": "Если хвостовая рекурсия достаточно глубокая, это может привести к переполнению стека и генерации исключения ![ico-20 err] **⟦f0⟧**",
+    "eng": "If tail recursion is deep enough, this can lead to a stack overflow and the generation of an exception ![ico-20 err] **⟦f0⟧**",
+    "ua": "Якщо хвостова рекурсія є достатньо глибокою, це може призвести до переповнення стека та генерації винятку ![ico-20 err] **⟦f0⟧**"
+  },
+  "s1.p13": {
+    "ru": "^^Исключение **⟦f0⟧** возникает тогда, когда глубина рекурсии превышает 10000^^",
+    "eng": "^^The **⟦f0⟧** exception occurs when the depth of recursion exceeds 10,000^^",
+    "ua": "^^Виняток **⟦f0⟧** виникає тоді, коли глибина рекурсії перевищує 10000^^"
+  },
+  "s2.h1": {
+    "ru": "Упражнение",
+    "eng": "Exercise",
+    "ua": "Вправа"
+  },
+  "s2.p1": {
+    "ru": "Разберите код функции **circle**",
+    "eng": "Analyse the code for the **circle** function",
+    "ua": "Проаналізуйте код функції **circle**"
+  },
+  "s2.p2": {
+    "ru": "Вызовите функцию **circle**",
+    "eng": "Call the **circle** function",
+    "ua": "Викличте функцію **circle**"
+  },
+  "s2.p3": {
+    "ru": "[![ico-30 hw] **Тесты**](⟦f1⟧)",
+    "eng": "[![ico-30 hw] **Tests**](⟦f1⟧)",
+    "ua": "[![ico-30 hw] **Тести**](⟦f1⟧)"
+  }
+}

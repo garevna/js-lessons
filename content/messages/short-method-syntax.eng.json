@@ -1,7 +1,0 @@
-{
-  "s1.h1": "Shorthand syntax for declaring methods",
-  "s1.p1": "![ico-25 icon] Shorthand syntax for declaring methods when initialising an object:",
-  "s1.p2": "![ico-20 warning] Instead of",
-  "s1.p3": "you can use the shorthand syntax:",
-  "s1.p4": "![ico-20 warning] The shorthand syntax allows for evaluated property names"
-}

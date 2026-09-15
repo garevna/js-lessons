@@ -23,27 +23,32 @@ const path = require('path')
 
 const root = path.join(__dirname, '..')
 const MESSAGES = path.join(root, 'content/messages')
+const COMMON = path.join(root, 'content/common.json')
 const OUT = path.join(root, 'translate')
 
 const [typed, lang] = process.argv.slice(2)
 
 if (!typed || !lang) {
-  console.error('usage: node tools/i18n-import.js <page> <lang>')
+  console.error('usage: node tools/i18n-import.js <page|--common> <lang>')
   process.exit(1)
 }
+
+const isCommon = typed === '--common'
 
 // Same reason as in the exporter: a name typed in the wrong case opens the
 // right file on Windows and then writes a second one beside it, which on
 // GitHub is a different file entirely.
 const known = fs.readdirSync(MESSAGES)
-  .filter((f) => f.endsWith('.ru.json'))
-  .map((f) => f.replace('.ru.json', ''))
+  .filter((f) => f.endsWith('.json'))
+  .map((f) => f.replace(/\.json$/, ''))
 
-const page = known.includes(typed)
-  ? typed
-  : (known.find((k) => k.toLowerCase() === typed.toLowerCase()) || typed)
+const page = isCommon
+  ? 'common'
+  : (known.includes(typed)
+      ? typed
+      : (known.find((k) => k.toLowerCase() === typed.toLowerCase()) || typed))
 
-if (page !== typed) console.log(`  (using "${page}" — that is how the page is spelled)`)
+if (!isCommon && page !== typed) console.log(`  (using "${page}" — that is how the page is spelled)`)
 
 const indexFile = path.join(OUT, `${page}.${lang}.index.json`)
 if (!fs.existsSync(indexFile)) {
@@ -54,7 +59,15 @@ if (!fs.existsSync(indexFile)) {
 const index = JSON.parse(fs.readFileSync(indexFile, 'utf8'))
 const keyOf = new Map(index.map(({ n, key }) => [n, key]))
 
-const source = JSON.parse(fs.readFileSync(path.join(MESSAGES, `${page}.ru.json`), 'utf8'))
+// One file per page holds all three languages; the common table holds the
+// repeated phrases keyed by the Russian itself. Either way what the checks
+// need is a key-to-Russian lookup.
+const entries = isCommon
+  ? JSON.parse(fs.readFileSync(COMMON, 'utf8'))
+  : JSON.parse(fs.readFileSync(path.join(MESSAGES, `${page}.json`), 'utf8'))
+
+const source = {}
+for (const key of Object.keys(entries)) source[key] = isCommon ? key : entries[key].ru
 
 const outFiles = fs.readdirSync(OUT)
   .filter((f) => f.startsWith(`${page}.${lang}.`) && f.endsWith('.out.txt'))
@@ -330,21 +343,25 @@ problems.push(...quizProblems.map((q) => ({ file: q.key, why: q.why, text: '' })
 
 const missing = index.filter(({ n }) => !seen.has(n))
 
-const file = path.join(MESSAGES, `${page}.${lang}.json`)
-const existing = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {}
-
-// Keys keep the order of the Russian source, so the file reads top to bottom
-// like the page does and diffs stay legible.
-const merged = {}
-for (const key of Object.keys(source)) {
-  const value = accepted[key] !== undefined ? accepted[key] : existing[key]
-  if (value !== undefined) merged[key] = value
-}
-
-fs.writeFileSync(file, JSON.stringify(merged, null, 2) + '\n')
-
+// Written back into the file the text came out of: the page's own message
+// file, where the entry for this language sits beside the Russian it
+// translates, or the common table.
+let done = 0
 const total = Object.keys(source).length
-const done = Object.keys(merged).length
+
+if (isCommon) {
+  for (const [key, value] of Object.entries(accepted)) {
+    if (entries[key]) entries[key][lang] = value
+  }
+  fs.writeFileSync(COMMON, JSON.stringify(entries, null, 2) + '\n')
+  done = Object.values(entries).filter((e) => e[lang]).length
+} else {
+  for (const [key, value] of Object.entries(accepted)) {
+    if (entries[key]) entries[key][lang] = value
+  }
+  fs.writeFileSync(path.join(MESSAGES, `${page}.json`), JSON.stringify(entries, null, 2) + '\n')
+  done = Object.values(entries).filter((e) => e[lang]).length
+}
 
 console.log(`${page} → ${lang}`)
 console.log(`  accepted:   ${Object.keys(accepted).length}`)
@@ -356,9 +373,17 @@ console.log(`  coverage:   ${done}/${total} (${Math.round(100 * done / total)}%)
 // the site serves, and it has not changed yet — which is exactly what "I
 // checked locally and the translations did not appear" looked like.
 if (Object.keys(accepted).length) {
-  console.log(`
-  written to content/messages/${page}.${lang}.json — now build the page:
+  if (isCommon) {
+    console.log(`
+  written to content/common.json. Every page using these phrases picks them
+  up on its next export:
+
+    node tools/i18n-export.js --all ${lang}`)
+  } else {
+    console.log(`
+  written to content/messages/${page}.json — now build the page:
     node tools/i18n-build.js ${page}     (or npm run lessons for all of them)`)
+  }
 }
 
 if (added.length) {
