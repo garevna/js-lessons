@@ -49,7 +49,7 @@
 
 _________________________________________
 
-## ![ico-30 icon] Цепочка прототипов
+## ![ico-30 icon] The prototype chain
 
 Каждый объект является экземпляром, созданным каким-то конструктором.
 
@@ -77,7 +77,7 @@ function showProto (elem) {
 showProto(document)
 ~~~
 
-Результат:
+Result:
 
 ◘◘^^~document~^^◘◘
 
@@ -430,7 +430,7 @@ _______________________________________
   })
 ~~~
 
-◘◘^^**Результат**^^◘◘
+◘◘^^**Result**^^◘◘
 ~~~console
 images: HTMLCollection
 embeds: HTMLCollection
@@ -1142,7 +1142,7 @@ document
   .getElementsByClassName('content')
 ~~~
 
-◘◘^^Результат:^^◘◘
+◘◘^^Result:^^◘◘
 
 ~~~console
 
@@ -1160,7 +1160,7 @@ ____________________________________________
 Перейдите [**ссылке**](external/css-trics-checked )
 
 Откройте консоль новой вкладки.
-Выполните код в консоли:
+Run the code in the console:
 
 ~~~js
 document.getElementsByClassName('screen-reader-text', 'visually-hidden')
@@ -1216,7 +1216,7 @@ console.dir(document.body.querySelector('[type=\'number\']'))
 console.dir(section.querySelector('[title]'))
 ~~~
 
-**Результат в консоли:**
+**Result in the console:**
 
 ~~~console
 ► section
@@ -1241,7 +1241,7 @@ ______________________________________________
 section.querySelectorAll('*')
 ~~~
 
-◘◘Результат в консоли:◘◘
+◘◘Result in the console:◘◘
 ~~~console
 ▼ NodeList(2) [div, figure.promoClass]
   ► 0: div
@@ -1252,7 +1252,7 @@ section.querySelectorAll('*')
 
 _________________________________________________
 
-## ![ico-30 hw] Тесты
+## ![ico-30 hw] Tests
 
 ◘◘![ico-25 hw]** 1**◘◘
 ~~~js

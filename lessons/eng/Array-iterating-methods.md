@@ -348,7 +348,7 @@ If there is no such element in the array, returns ~undefined~.
 
 ____________________
 
-◘◘**Result**◘◘
+![ico-25 memo] Exercise
 
 Like ~find()~ method, it searches the array for the first element that satisfies the specified condition.
 
@@ -464,7 +464,7 @@ function getSearchObject () {
 
 The engine uses the exponential form of representing small numbers, i.e. instead of **~0.0000005~** there will be **~5e-7~**.
 
-For large numbers the same thing happens, i.e. instead of **~5000000000000000000000~** there will be **~5e+21~**.
+Now let's reduce the array of objects to a string.
 
 ~~~console
 ▼ {name: "garevna", date: "10.07.2018"}
@@ -558,7 +558,7 @@ console.log(usa)
 
 ~~~
 
-◘◘![ico-20 cap] ** 7**◘◘
+◘◘**Result**◘◘
 
 ~~~console
 
@@ -610,7 +610,7 @@ var cards = [
 cards.find(card => card.cash > 4000)
 ~~~
 
-At each iteration, this value will be replaced by its square root.
+◘◘**Result**◘◘
 
 ~~~console
 ▼ { num: "457811714", cash: 5000 }
@@ -1145,7 +1145,7 @@ var resArray = sourceArray.sort(function (x, y) {
 })
 ~~~
 
-◘◘![ico-20 cap] ** 1**◘◘
+◘◘**Result**◘◘
 
 ~~~console
 ▼ (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
@@ -1171,7 +1171,7 @@ var resArray = sourceArray
   })
 ~~~
 
-^^To understand the sorting mechanism, let’s display the values ​​of the array elements being compared at each iteration to the console:^^
+◘◘**Result**◘◘
 
 ~~~console
 fond - bonus = 30
@@ -1240,7 +1240,7 @@ There is a line **cookie**:
 console.log(cookie.split('; ').map(item => item.split('='))
 ~~~
 
-Let's split the string **cookie** and apply the **~map~** method to the resulting array.
+◘◘**^^Result^^**◘◘
 
 ~~~console
 ▼ (3) [Array(2), Array(2), Array(2)]
@@ -1259,7 +1259,7 @@ We have received an array whose elements are arrays.
 console.log(cookie.split('; ').flatMap(item => item.split('='))
 ~~~
 
-Now apply the **~flatMap~** method to the array:
+◘◘**^^Result^^**◘◘
 
 ~~~console
 ► (6) ["name", "user", "token", "Jd7-js15/84", "interest", "javascript"]
@@ -1281,7 +1281,7 @@ ____________________________________________________
 
 ## ![ico-25 icon] keys()
 
-in the first case we received an array of arrays, and in the second we received a “flat” array.
+Result
 **Generator**.
 
 ◘◘![ico-20 cap] **keys**◘◘
@@ -1299,7 +1299,7 @@ do {
 } while (!done)
 ~~~
 
-**Returns a _iterator_ object.**.
+◘◘**^^Result^^**◘◘
 
 ~~~console
 name user
@@ -1312,7 +1312,7 @@ ______________________
 
 ## ![ico-25 icon] values()
 
-◘◘**^^Result^^**◘◘
+Result
 **Generator**.
 
 ◘◘![ico-20 cap] **values**◘◘
@@ -1331,7 +1331,7 @@ do {
 } while (!done)
 ~~~
 
-**Returns a _iterator_ object.**.
+◘◘**^^Result^^**◘◘
 
 ~~~console
 ► (2) ["name", "user"]

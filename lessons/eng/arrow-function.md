@@ -96,7 +96,7 @@ const getAnswer = question => question === 'who'
       : 'I don\'t undestand your question'
 ~~~
 
-◘◘![ico-25 cap] оператор **~switch~**◘◘
+Или так:
 
 ~~~js
 const getAnswer = question => ['who', 'what', 'where'].includes(question)
@@ -170,7 +170,7 @@ const arrowFunc = () => null
 const obj = new arrowFunc()
 ~~~
 
-an exception will be thrown:
+An exception will be thrown:
 
 ~~~error
     TypeError: arrowFunc is not a constructor
@@ -369,7 +369,7 @@ Before assigning a value to the **~human~** variable, the engine must calculate 
 
 On the right side is the literal of the object.
 
-1. The engine calls the **~Object~** constructor.
+Let’s check:
 
 ~~~js
 user.showName()  // Robert
@@ -386,7 +386,7 @@ And here's where we see how context transfer happens in the assignment process:
 
 _____________________________________________________
 
-## ![ico-20 icon] Constructor
+## ![ico-20 icon] Examples
 
 ◘◘![ico-25 cap] ** 1**◘◘
 ~~~js

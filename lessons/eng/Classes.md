@@ -201,7 +201,7 @@ let sample = new Picture
 console.log(sample)
 ~~~
 
-◘◘**Output in the console:**◘◘
+◘◘**Result in the console:**◘◘
 
 ~~~console
 
@@ -228,7 +228,7 @@ const Picture = class Canvas {
 console.dir(Picture)
 ~~~
 
-◘◘**Output in the console:**◘◘
+◘◘**Result in the console:**◘◘
 
 ~~~console
 
@@ -249,7 +249,7 @@ const sample = new Picture
 console.log(sample)
 ~~~
 
-◘◘**Output in the console:**◘◘
+◘◘**Result in the console:**◘◘
 
 ~~~console
 

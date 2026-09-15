@@ -87,7 +87,7 @@ ___________________
 postData('name=garevna&speciality=frontEnd', 'application/x-www-form-urlencoded')
 ~~~
 
-Результат в консоли:
+Результат у консолі:
 
 ~~~console
 {
@@ -126,7 +126,7 @@ postData(JSON.stringify({
 }))
 ~~~
 
-Результат в консоли:
+Результат у консолі:
 
 ~~~console
 {
@@ -165,7 +165,7 @@ It generates weird text that resembles the normal characters or numbers of the a
 postData(text, 'text/plain')
 ~~~
 
-Результат в консоли:
+Результат у консолі:
 
 ~~~console
 {

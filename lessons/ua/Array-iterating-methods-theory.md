@@ -89,7 +89,7 @@ Array.prototype.iterate = function (func) {
 ;[49, 4, 25].iterate(Math.sqrt)
 ~~~
 
-Результат:
+Результат
 
 ~~~console
 ► (3) [7, 2, 5]
@@ -104,7 +104,7 @@ const squaring = num => Math.pow(num, 2)
 ;[7, 2, 5].iterate(squaring)
 ~~~
 
-Результат:
+Результат
 
 ~~~console
 ► (3) [49, 4, 25]
@@ -130,7 +130,7 @@ const func = num => num < 10
 ;[108, 24, 5, 17, 1, 7].filtering(func)
 ~~~
 
-Результат:
+Результат
 
 ~~~console
 ► (3) [5, 1, 7]
@@ -140,7 +140,7 @@ const func = num => num < 10
 [7, 4, 1, 20, 8].filtering(item => item > 5)
 ~~~
 
-Результат:
+Результат
 
 ~~~console
 ► (3) [7, 20, 8]
@@ -185,7 +185,7 @@ const sample = numbers.iterate(function (item, index, arr) {
 console.log(sample)
 ~~~
 
-◘◘ ![ico-25 cap] ** 4** ◘◘
+Результат
 
 ~~~console
 ► (4) [15, 9, 9, 18]
@@ -210,7 +210,7 @@ const sample = numbers.iterate(function (item) {
 console.log(sample)
 ~~~
 
-Результат:
+Результат
 
 ~~~console
 ► (4) [4, 5, 7, 7]
@@ -258,7 +258,7 @@ const sample = numbers.iterate((item, index, arr) => item * index - arr[0])
 console.log(sample)
 ~~~
 
-◘◘![ico-20 cap] ** 6**◘◘
+Результат
 
 ~~~console
 ► (4) [-8, -4, 10, 13]
@@ -307,7 +307,7 @@ users
 На каждой итерации функция-аргумент (~user => user.age++~) метода **~iterate~** получает ссылку на объект.
 Это дает ей возможность мутировать исходный массив, поскольку
 
-☼☼☼ ссылка - это отмычка ☼☼☼
+☼☼☼ посилання - це відмичка ☼☼☼
 
 В результате выполнения кода массив **users** будет таким:
 
@@ -350,7 +350,7 @@ browsers.iterate(storeItem, storeItem)
 console.dir(storeItem)
 ~~~
 
-Результат в консоли:
+Результат у консолі:
 
 ~~~console
 ▼ ƒ storeItem(item, index, arr)
@@ -399,7 +399,7 @@ Array.prototype.idempotence = function (func) {
 numbers.idempotence(Math.sqrt)
 ~~~
 
-Так само, якщо ми матимемо справу з **глибокими структурами даних**, то відбувається передача не значень, а посилань, що створює можливість виникнення побічних ефектів.
+Результат
 
 ~~~console
 ► (7) [5, 4, 3, 7, 9, 8, 2]
@@ -415,7 +415,7 @@ numbers[6] = 125
 numbers.idempotence(Math.sqrt)
 ~~~
 
-На кожній ітерації **функція-аргумент** (~user => user.age++~) методу **~iterate~** отримує посилання на об'єкт.
+Результат
 
 ~~~console
 ► (7) [5, 4, 3, 7, 9, 8, 2]
@@ -463,7 +463,7 @@ Array.prototype.idempotence = function (func) {
 numbers.idempotence(Math.sqrt)
 ~~~
 
-◘◘![ico-20 cap] ** 8**◘◘
+Результат
 
 ~~~console
 '[5,4,3,7,9,8,2]'
@@ -473,7 +473,7 @@ numbers.idempotence(Math.sqrt)
 numbers.idempotence(item => item + Math.floor(Math.random() * 100))
 ~~~
 
-◘◘**^^Результат^^**◘◘
+Результат
 
 ~~~console
 '[5,4,3,7,9,8,2]'
@@ -676,7 +676,7 @@ companList.iterate(test, browsers)
 console.log(browsers)
 ~~~
 
-Викликаючи метод повторно з одним і тим самим посиланням, ми не гарантовані від того, що вміст масиву в інтервалі між двома викликами методу не змінився.
+Результат у консолі:
 
 ~~~console
 ▼ (3) [{…}, {…}, {…}]

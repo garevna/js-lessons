@@ -222,7 +222,7 @@ Let's compare the results of **~Object.assign()~** and **~JSON.stringify()~** â†
 var test = Object.assign({}, obj)
 ~~~
 
-Boolean expression:
+The logical expression
 
 ~~~js
 test.position === obj.position

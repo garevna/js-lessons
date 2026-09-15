@@ -252,7 +252,7 @@ ________________________________________________________________________________
 
 ![ico-20 warn] Ключевое слово  **~await~**  можно использовать только внутри **асинхронных функций**.
 
-^^В противном случае будет сгенерировано исключение:^^
+^^Otherwise, an exception will be thrown:^^
 
 ~~~error
     Uncaught SyntaxError: await is only valid in async function
@@ -704,7 +704,7 @@ message => {
 
 _____________________________________________
 
-## ![ico-20 icon] Object with 'then' method
+## ![ico-20 icon] Examples
 
 ### ![ico-25 cap] 7
 
@@ -1116,7 +1116,7 @@ fetch(`${origin}/users?name=Stephan&name=Andry`)
   .then(console.log)
 ~~~
 
-или так:
+or like this:
 
 ~~~js
 const origin = 'https://garevna-json-server.glitch.me'

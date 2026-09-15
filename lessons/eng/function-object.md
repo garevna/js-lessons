@@ -251,7 +251,7 @@ What is inside the ![ico-20 ambulance] is the **execution context**.
 
 ^^^
 
-^^^[Context of the call]
+^^^[prototype]
 
 ![ico-30 ambulance]
 
@@ -260,7 +260,7 @@ What is inside the ![ico-20 ambulance] is the **execution context**.
 
 ^^^
 
-## ![ico-25 icon] Call context
+## ![ico-25 icon] prototype
 
 The call context is an **object**.
 
@@ -604,7 +604,7 @@ console.info('We left the execution context of the function "showSample"')
 console.info(`Now sample === ${sample}`)
 ~~~
 
-**Output to the console:**
+**Result in the console:**
 
 ~~~console
 We are in the execution context of the function "showSample"
@@ -664,7 +664,7 @@ console.info(`(global) ${sample}`)
 
 ____________________________________
 
-### ![ico-20 icon] The scope chain
+### ![ico-20 icon] Scope chain
 
 So, a function may use variables that are not present in its ~LexicalEnvironment~.
 

@@ -91,7 +91,7 @@ Each character has a numeric code, and the character codes are compared.
 
 _________________________________________________________________________
 
-### ![ico-30 hw] Logical operators
+### ![ico-30 hw] Tests
 
 ◘◘![ico-25 hw]** 1**◘◘
 

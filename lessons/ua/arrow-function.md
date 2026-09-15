@@ -96,7 +96,7 @@ const getAnswer = question => question === 'who'
       : 'I don\'t undestand your question'
 ~~~
 
-◘◘![ico-25 cap] оператор _switch_◘◘
+оператор _switch_
 
 ~~~js
 const getAnswer = question => ['who', 'what', 'where'].includes(question)
@@ -228,7 +228,7 @@ testArguments(5, false)
 
 ______________________________________________________
 
-### ![ico-20 icon] prototype
+### ![ico-20 icon] Контекст виклику
 
 <br><br>У стрілочних функцій немає об'єкта **~prototype~**.<br><br>![ico-20 warn] Тому стрілочні функції не можуть бути конструктором.
 
@@ -369,7 +369,7 @@ const user = fabric.call(template, {}, 'Piter')
 
 У правій частині знаходиться літерал об'єкта.
 
-1. Двигун викликає конструктор **~Object~**.
+Перевіримо:
 
 ~~~js
 user.showName()  // Robert
@@ -386,7 +386,7 @@ ____________________________________________________
 
 _____________________________________________________
 
-## ![ico-20 icon] Конструктор
+## ![ico-20 icon] Ідемпотентність
 
 ◘◘![ico-25 cap] ** 1**◘◘
 ~~~js

@@ -210,7 +210,7 @@ const sample = numbers.iterate(function (item) {
 console.log(sample)
 ~~~
 
-◘◘ ![ico-25 cap] ** 5** ◘◘
+Result:
 
 ~~~console
 ► (4) [4, 5, 7, 7]
@@ -258,7 +258,7 @@ const sample = numbers.iterate((item, index, arr) => item * index - arr[0])
 console.log(sample)
 ~~~
 
-◘◘![ico-20 cap] ** 6**◘◘
+Result:
 
 ~~~console
 ► (4) [-8, -4, 10, 13]
@@ -307,7 +307,7 @@ In this example, we are iterating over an array of objects, i.e. we are dealing 
 At each iteration, the argument function (~user => user.age++~) of the **~iterate~** method receives a reference to the object.
 This gives to it the ability to mutate the original array, since
 
-☼☼☼ ссылка - это отмычка ☼☼☼
+☼☼☼ reference is a lockpick ☼☼☼
 
 As a result of executing the code, the **users** array will look like this:
 
@@ -350,7 +350,7 @@ browsers.iterate(storeItem, storeItem)
 console.dir(storeItem)
 ~~~
 
-◘◘![ico-20 cap] ** 8**◘◘
+Result in the console:
 
 ~~~console
 ▼ ƒ storeItem(item, index, arr)
@@ -415,7 +415,7 @@ numbers[6] = 125
 numbers.idempotence(Math.sqrt)
 ~~~
 
-Note that the method will return a **_new reference_** each time, since each time the method is called it creates a new array, but the contents of this array will be the same.
+Result:
 
 ~~~console
 ► (7) [5, 4, 3, 7, 9, 8, 2]
@@ -676,7 +676,7 @@ companList.iterate(test, browsers)
 console.log(browsers)
 ~~~
 
-◘◘![ico-20 cap] **14**◘◘
+Result in the console:
 
 ~~~console
 ▼ (3) [{…}, {…}, {…}]

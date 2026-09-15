@@ -6,7 +6,7 @@ ________________________________________________________________________________
 
 __________________________________________________________________________________________
 
-## ![ico-30 icon] Function-argument
+## ![ico-30 icon] Call context
 
 The function-argument of the **~Promise~** constructor is also a **higher-order function**, i.e. its formal parameters are **functions**.
 ^^Moreover, its formal parameters are callback functions.^^
@@ -23,7 +23,7 @@ The function-argument will be called when the **~Promise~** instance is created.
 const promise = new Promise ()
 ~~~
 
-Let's try passing to the **~Promise~** constructor the reference to a function without formal parameters:
+![ico-20 err] будет сгенерировано исключение
 
 ~~~error
     Uncaught TypeError: Promise resolver undefined is not a function
@@ -704,7 +704,7 @@ Promise.race(promises).then(show)
 {{{promise-race.js}}}
 __________________________________________________________________________________________
 
-## ![ico-25 icon] Magic box
+## ![ico-25 icon] Examples
 
 So, using the **~Promise~** constructor, you can create a magic box with two holes.
 As we already realized, it's just impossible to peek into this box "here and now."

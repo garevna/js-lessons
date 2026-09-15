@@ -142,7 +142,7 @@ var sample = Object.defineProperty({}, 'x', {
 sample.x = 5   // 0
 ~~~
 
-**strict mode:**
+**Strict mode:**
 
 ~~~js
 'use strict'
@@ -155,7 +155,7 @@ var sample = Object.defineProperty({}, 'x', {
 sample.x = 5
 ~~~
 
-**an exception will be thrown:**
+**An exception will be thrown:**
 
 ••![ico-20 error] Uncaught TypeError: Cannot assign to read only property 'x' of object '#&lt;Object>'••
 
@@ -163,7 +163,7 @@ ________________________________________________
 
 ### ![ico-20 warn] modifying the values of properties with a getter (but no setter)
 
-**normal mode:**
+**Normal mode:**
 
 ~~~js
 var obj = { 
@@ -175,7 +175,7 @@ var obj = {
 obj.x = 5 // 0
 ~~~
 
-**strict mode:**
+**Strict mode:**
 
 ~~~js
 'use strict'
@@ -189,7 +189,7 @@ var obj = {
 obj.x = 5
 ~~~
 
-**an exception will be thrown:**
+**An exception will be thrown:**
 
 ••![ico-20 error] Uncaught TypeError: Cannot set property x of #<Object> which has only a getter••
 
@@ -263,7 +263,7 @@ _____________________________________________
 
 ### ![ico-20 warn] Use **_arguments.callee_**
 
-**normal mode:**
+**Normal mode:**
 
 ~~~js
 function test () {
@@ -273,7 +273,7 @@ function test () {
 test ()
 ~~~
 
-**Output to the console:**
+**Result in the console:**
 
 ~~~console
 
@@ -282,7 +282,7 @@ test ()
 }
 ~~~
 
-**strict mode:**
+**Strict mode:**
 
 ~~~js
 'use strict'
@@ -294,7 +294,7 @@ function test () {
 test ()
 ~~~
 
-**an exception will be raised:**
+**An exception will be thrown:**
 
 ![ico-20 error] ~~~console
   
@@ -318,7 +318,7 @@ function test () {
 test ()
 ~~~
 
-**Output to the console:**
+**Result in the console:**
 
 ~~~console
 
@@ -329,7 +329,7 @@ test ()
 }
 ~~~
 
-**strict mode:**
+**Strict mode:**
 
 ~~~js
 'use strict'
@@ -343,7 +343,7 @@ function test () {
 test ()
 ~~~
 
-**an exception will be raised:**
+**An exception will be thrown:**
 
 ~~~console
   
@@ -393,7 +393,7 @@ with (Math) {
 console.log(y)
 ~~~
 
-**An exception will be raised:**
+**An exception will be thrown:**
 
 ••![ico-20 error] Uncaught SyntaxError: Strict mode code may not include a with statement••
 
@@ -403,14 +403,14 @@ _________________________________________________
 
 ###### for security reasons 
 
-**normal mode:**
+**Normal mode:**
 
 ~~~js
 eval('var gamma = 2')
 console.log(gamma)
 ~~~
 
-**strict mode:**
+**Strict mode:**
 
 ~~~js
 'use strict'
@@ -419,7 +419,7 @@ eval('var gamma = 2')
 console.log(gamma)
 ~~~
 
-**an exception will be raised:**
+**An exception will be thrown:**
 
 ••![ico-20 error] Uncaught ReferenceError: gamma is not defined••
 
@@ -437,6 +437,6 @@ __________________________________________
 | ![ico-20 error] | static |
 | ![ico-20 error] | yield |
 
-**an exception will be raised:**
+**An exception will be thrown:**
 
 ••![ico-20 error] Uncaught SyntaxError: Unexpected strict mode reserved word••

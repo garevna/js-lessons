@@ -252,7 +252,7 @@ ________________________________________________________________________________
 
 ![ico-20 warn] Ключове слово **~await~** можна використовувати лише всередині **асинхронних функцій**.
 
-^^В іншому випадку буде згенеровано виняток:^^
+^^В іншому разі буде згенеровано виняток:^^
 
 ~~~error
     Uncaught SyntaxError: await is only valid in async function
@@ -311,7 +311,7 @@ asyncFunc()
 Resolved!
 ~~~
 
-Або так:
+оператор _switch_
 
 ~~~js
 (async () => console.log(await createPromise('Resolved!')))()
@@ -704,7 +704,7 @@ message => {
 
 _____________________________________________
 
-## ![ico-20 icon] await &lt;expression>
+## ![ico-20 icon] Ідемпотентність
 
 ### ![ico-25 cap] 7
 
@@ -1116,7 +1116,7 @@ fetch(`${origin}/users?name=Stephan&name=Andry`)
   .then(console.log)
 ~~~
 
-или так:
+або так:
 
 ~~~js
 const origin = 'https://garevna-json-server.glitch.me'
