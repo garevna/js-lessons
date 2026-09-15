@@ -48,7 +48,7 @@ The correspondence between a character and its code is established in the encodi
 
 The widest range of characters from various alphabets is represented in the UTF-8 encoding (Unicode Transformation Format, 8-bit).
 
-[%%%**UTF-8**%%%](https://blog.hubspot.com/website/what-is-utf-8 ) encoding is now the dominant one on the web.
+[%%%**UTF-8**%%%](https://blog.hubspot.com/website/what-is-utf-8) encoding is now the dominant one on the web.
 
 _____________________________________
 

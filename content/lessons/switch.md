@@ -33,4 +33,4 @@ ______________
 
 {{s0.p2}}
 [![ico-30 hw] **Quiz**](quiz/switch)
-[![ico-20 link] w3schools](https://www.w3schools.com/js/js_switch.asp )
+[![ico-20 link] w3schools](https://www.w3schools.com/js/js_switch.asp)

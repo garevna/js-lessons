@@ -57,4 +57,4 @@ _______________________________________________________
 
 [![ico-20 link] Dynamic import](page/dynamic-import)
 [![ico-20 link] BigInt](page/BigInt)
-[![ico-20 link] Symbol description](page/Syblol)
+[![ico-20 link] Symbol description](page/Symbol)

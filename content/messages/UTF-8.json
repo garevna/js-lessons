@@ -60,8 +60,8 @@
     "ua": "[![ico-30 hw] Вправи](⟦f4⟧)"
   },
   "s1.p1": {
-    "ru": "[![ico-20 link] шестнадцатеричные коды символов](https://www.fileformat.info/info/charset/UTF-8/list.htm \"шестнадцатеричные коды символов\")",
-    "eng": "[![ico-20 link] hexadecimal character codes](https://www.fileformat.info/info/charset/UTF-8/list.htm ‘hexadecimal character codes’)",
-    "ua": "[![ico-20 link] шістнадцяткові коди символів](https://www.fileformat.info/info/charset/UTF-8/list.htm «шістнадцяткові коди символів»)"
+    "ru": "[![ico-20 link] шестнадцатеричные коды символов](https://www.fileformat.info/info/charset/UTF-8/list.htm)",
+    "eng": "[![ico-20 link] hexadecimal character codes](https://www.fileformat.info/info/charset/UTF-8/list.htm)",
+    "ua": "[![ico-20 link] шістнадцяткові коди символів](https://www.fileformat.info/info/charset/UTF-8/list.htm)"
   }
 }

@@ -33,8 +33,15 @@ export function createAnchors (line, anchors) {
         href
       })
     } else {
-      const href = !ref.indexOf('https://')
-        ? ref.slice(0, -1)
+      // An address stands as written. It used to be sliced one character short
+      // — ref.slice(0, -1) — so every external link landed one character wide
+      // of its target, and the workaround in the lessons was a space at the end
+      // for the slice to eat. Those spaces are gone from the pages now.
+      //
+      // http as well as https: plain http missed this branch entirely and was
+      // handed to createPath, which read "http:" as a folder alias.
+      const href = /^https?:\/\//.test(ref)
+        ? ref
         : createPath(...ref.split('/'))
       Object.assign(link, { href })
     }

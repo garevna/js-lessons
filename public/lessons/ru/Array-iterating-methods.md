@@ -422,7 +422,7 @@ ______________________________________________
 
 ### ![ico-20 icon] Примеры с методом map
 
-Перейдите по [![ico-20 link] **_ссылке_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )
+Перейдите по [![ico-20 link] **_ссылке_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)
 
 В консоли новой вкладки выполните код:
 
@@ -446,7 +446,7 @@ location.search
 
 ______________________________________________
 
-Перейдите по [![ico-20 link] **_ссылке_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )
+Перейдите по [![ico-20 link] **_ссылке_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)
 
 Теперь в консоли новой вкладки объявите функцию:
 
@@ -1611,7 +1611,7 @@ _____________________________________________
 
 ### ![ico-25 cap] getComputedStyle
 
-Перейдите по [**_ссылке_**](https://en.wikipedia.org/wiki/Idempotence ) и в консоли страницы выполните код:
+Перейдите по [**_ссылке_**](https://en.wikipedia.org/wiki/Idempotence) и в консоли страницы выполните код:
 
 ~~~js
 Array.from(document.getElementsByClassName('interlanguage-link'))

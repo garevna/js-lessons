@@ -48,7 +48,7 @@ ________________________________________________________
 
 _____________________________________________________________
 
-[![ico-20 link] hexadecimal character codes](https://www.fileformat.info/info/charset/UTF-8/list.htm ‘hexadecimal character codes’)
+[![ico-20 link] hexadecimal character codes](https://www.fileformat.info/info/charset/UTF-8/list.htm)
 
 [![ico-20 link] w3schools](https://www.w3schools.com/html/html_symbols.asp)
 

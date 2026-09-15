@@ -310,12 +310,12 @@ _____________________
   }))
 ~~~
 
-Перейдіть за [![ico-20 link] **_посиланням_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )
+Перейдіть за [![ico-20 link] **_посиланням_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)
 "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"
 
 У консолі нової вкладки виконайте код:
 У вас має вийти результат:
-Перейдіть за [![ico-20 link] **_посиланням_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )
+Перейдіть за [![ico-20 link] **_посиланням_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)
 Тепер у консолі нової вкладки оголосіть функцію:
 
 {{{Array-iteration-methods-2.js}}}
@@ -1520,7 +1520,7 @@ Array.prototype.interior = function (interval = [0, 1]) {
 [18, 35].interior([4, 18]) // false
 [18, 35].interior([20, 28]) // true
 ~~~
-Перейдіть за [**_посиланням_**](https://en.wikipedia.org/wiki/Idempotence ) і в консолі сторінки виконайте код:
+Перейдіть за [**_посиланням_**](https://en.wikipedia.org/wiki/Idempotence) і в консолі сторінки виконайте код:
 ~~~js
 intervals
   .map((segment, index, array) => array.filter(interval => segment.interior(interval)).length)
@@ -1611,7 +1611,7 @@ _____________________________________________
 
 ### ![ico-25 cap] getComputedStyle
 
-Перейдите по [**_ссылке_**](https://en.wikipedia.org/wiki/Idempotence ) и в консоли страницы выполните код:
+Перейдите по [**_ссылке_**](https://en.wikipedia.org/wiki/Idempotence) и в консоли страницы выполните код:
 
 ~~~js
 Array.from(document.getElementsByClassName('interlanguage-link'))

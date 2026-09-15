@@ -137,7 +137,7 @@ var lastUserVisit = '2019-02-05'
 
 ^^For the future: it is recommended to start **function** names with a **verb** to distinguish them from variable names where data is stored.^^
 
-[![ico-25 warn] **_Reserved words_**](https://www.w3schools.com/js/js_reserved.asp ) cannot be used as variable names.
+[![ico-25 warn] **_Reserved words_**](https://www.w3schools.com/js/js_reserved.asp) cannot be used as variable names.
 
 ![ico-25 warn] Variable names cannot start with a number.
 

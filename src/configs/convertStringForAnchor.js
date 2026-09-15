@@ -78,7 +78,13 @@ const translation = {
 }
 
 export function convertStringForAnchor (string) {
-  return string.trim().split('')
+  // "()" is listed in the table above, but the table is applied one character
+  // at a time, so a two-character key could never match and headings kept
+  // their parentheses in the id. A link cannot carry them back: the anchor
+  // expression stops at the first ")", so [x](page/p#Object.entries()) parses
+  // as "…#Object.entries(" and lands nowhere. Dropping them here is what the
+  // table meant to do, and it makes those links work as written.
+  return string.trim().replaceAll('()', '').trim().split('')
     .map(char => translation[char] || char)
     .join('')
     .replaceAll('|', '_')

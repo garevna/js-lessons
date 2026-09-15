@@ -68,7 +68,7 @@ ________________________________________________
 
 ### ![ico-20 icon] Font Awesome
 
-[%%%Font Awesome%%%](fontawesome.com)
+[%%%Font Awesome%%%](https://fontawesome.com)
 
 {{s2.p7}}
 

@@ -832,7 +832,7 @@ for (let num = 0; num < 10; num++) {
 
 ________________________________
 
-| [![ico-25 plunker] **13**](https://plnkr.co/edit/99ajm1Z3jcpKQQoE ) | [![ico-25 plunker] **14**](https://plnkr.co/edit/DIStxeDAPpXmhSTw ) | [![ico-70 replit] **15**](https://repl.it/@garevna/promise-sample-1 ) |
+| [![ico-25 plunker] **13**](https://plnkr.co/edit/99ajm1Z3jcpKQQoE) | [![ico-25 plunker] **14**](https://plnkr.co/edit/DIStxeDAPpXmhSTw) | [![ico-70 replit] **15**](https://repl.it/@garevna/promise-sample-1) |
 
 __________________________________________________________________________________________
 

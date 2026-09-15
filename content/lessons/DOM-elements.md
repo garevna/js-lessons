@@ -322,7 +322,7 @@ document.querySelector('[title]').childNodes
 ~~~
 ___________________
 
-[![ico-20 link] **w3schools**](external/w3-child-nodes )
+[![ico-20 link] **w3schools**](external/w3-child-nodes)
 
 _________________________________
 

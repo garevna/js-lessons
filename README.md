@@ -175,6 +175,29 @@ Available keys:
 
 ![](https://garevna.github.io/js-samples/images/links.png)
 
+
+### Checking the links
+
+```
+npm run links          every link, resolved the way the renderer resolves it
+npm run links -- --net  also ask the addresses whether they answer
+```
+
+A target is not a URL but a small language: `page/var` is another lesson,
+`external/mdn-string` is a name in `src/configs/externalLinks.js`,
+`images/x.png` is a file in `public/`. Each kind fails differently and all of
+them fail quietly — the page renders, the anchor is there, it goes nowhere. The
+checker resolves all of them, and follows `page/lesson#heading` down to the
+heading.
+
+Two things it knows about the markup itself. A target cannot contain `)` —
+the anchor expression stops at the first one — and it cannot contain a space.
+A space at the end used to be a deliberate workaround, from when the renderer
+cut one character off every external address; a space in the middle is usually
+a Markdown link title, `[text](url "title")`, which this markup has no notion
+of, so the title becomes part of the address.
+
+
 ## Translation
 
 The lessons live in three languages. Russian is the source; English and

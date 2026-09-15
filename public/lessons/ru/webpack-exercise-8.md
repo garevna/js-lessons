@@ -6,7 +6,7 @@ ________________________________
 
 ### ![ico-20 icon] Google Fonts
 
-Для начала импортируем некоторые шрифты [%%%Google%%%](fonts.google.com), используя внешний URL
+Для начала импортируем некоторые шрифты [%%%Google%%%](https://fonts.google.com), используя внешний URL
 
 Для этого в наш файл ![ico-20 file] **~main.css~** мы добавим строчку
 
@@ -68,7 +68,7 @@ ________________________________________________
 
 ### ![ico-20 icon] Font Awesome
 
-[%%%Font Awesome%%%](fontawesome.com)
+[%%%Font Awesome%%%](https://fontawesome.com)
 
 Самый простой способ подключения иконок Font Awesome - импорт в ![ico-20 file] **~main.css~**:
 

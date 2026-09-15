@@ -48,7 +48,7 @@ str = '\'es2023, x\' is a shorthand for \'ECMAScript 2023 Language Specification
 
 Самый широкий охват символов различных алфавитов представлен в кодировке **UTF-8** (Unicode Transformation Format, 8-bit).
 
-Кодировка [%%% **UTF-8**%%%](https://blog.hubspot.com/website/what-is-utf-8 ) сейчас является доминирующей в веб.
+Кодировка [%%% **UTF-8**%%%](https://blog.hubspot.com/website/what-is-utf-8) сейчас является доминирующей в веб.
 
 _____________________________________
 

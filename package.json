@@ -24,6 +24,7 @@
     "i18n": "node tools/i18n-status.js",
     "phrases": "node tools/i18n-phrases.js",
     "i18n-check": "node tools/i18n-check.js",
+    "links": "node tools/check-links.js",
     "lessons": "node tools/i18n-build.js"
   },
   "keywords": [

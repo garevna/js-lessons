@@ -271,8 +271,8 @@
   },
   "s3.p1": {
     "ru": "В этом примере мы создаем с помощью метода **forEach** массив функций с именами",
-    "eng": "Go to [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )",
-    "ua": "Перейдіть за [![ico-20 link] **_посиланням_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )"
+    "eng": "Go to [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)",
+    "ua": "Перейдіть за [![ico-20 link] **_посиланням_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)"
   },
   "s3.p2": {
     "ru": "Каждая из этих функций проверяет тип переданного ей аргумента **_arg_**,",
@@ -286,8 +286,8 @@
   },
   "s3.p4": {
     "ru": "передавая ей в качестве аргумента свой порядковый номер (0, 1, 2 ...),",
-    "eng": "Go to [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )",
-    "ua": "Перейдіть за [![ico-20 link] **_посиланням_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )"
+    "eng": "Go to [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)",
+    "ua": "Перейдіть за [![ico-20 link] **_посиланням_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)"
   },
   "s3.p5": {
     "ru": "в противном случае возвращает число - свой порядковый номер (0, 1, 2 ...).",
@@ -375,7 +375,7 @@
     "ua": "Приклади з методом reduce()"
   },
   "s4.p1": {
-    "ru": "Перейдите по [![ico-20 link] **_ссылке_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )",
+    "ru": "Перейдите по [![ico-20 link] **_ссылке_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)",
     "eng": "Let's reduce an array of strings to an object.",
     "ua": "Давайте зведемо масив рядків до об'єкта."
   },
@@ -390,7 +390,7 @@
     "ua": "Тепер зведемо масив об'єктів до рядка."
   },
   "s4.p4": {
-    "ru": "Перейдите по [![ico-20 link] **_ссылке_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )",
+    "ru": "Перейдите по [![ico-20 link] **_ссылке_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)",
     "eng": "Now let's count how many times each character appears in the string and return an object:",
     "ua": "Тепер порахуємо, скільки разів кожен символ зустрічається в рядку, і повернемо об'єкт:"
   },
@@ -1032,7 +1032,7 @@
   "s10.p5": {
     "ru": "Теперь мы можем выполнить поставленную задачу:",
     "eng": "Now we can complete the task:",
-    "ua": "Перейдіть за [**_посиланням_**](https://en.wikipedia.org/wiki/Idempotence ) і в консолі сторінки виконайте код:"
+    "ua": "Перейдіть за [**_посиланням_**](https://en.wikipedia.org/wiki/Idempotence) і в консолі сторінки виконайте код:"
   },
   "s11.h1": {
     "ru": "Проверка парных скобок",
@@ -1060,7 +1060,7 @@
     "ua": ""
   },
   "s11.p5": {
-    "ru": "Перейдите по [**_ссылке_**](https://en.wikipedia.org/wiki/Idempotence ) и в консоли страницы выполните код:",
+    "ru": "Перейдите по [**_ссылке_**](https://en.wikipedia.org/wiki/Idempotence) и в консоли страницы выполните код:",
     "eng": "",
     "ua": ""
   },

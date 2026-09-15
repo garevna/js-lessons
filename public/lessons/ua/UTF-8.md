@@ -48,7 +48,7 @@ ________________________________________________________
 
 _____________________________________________________________
 
-[![ico-20 link] шістнадцяткові коди символів](https://www.fileformat.info/info/charset/UTF-8/list.htm «шістнадцяткові коди символів»)
+[![ico-20 link] шістнадцяткові коди символів](https://www.fileformat.info/info/charset/UTF-8/list.htm)
 
 [![ico-20 link] w3schools](https://www.w3schools.com/html/html_symbols.asp)
 
