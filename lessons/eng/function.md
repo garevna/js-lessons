@@ -297,7 +297,7 @@ As we already know, the engine will first calculate the expression in the right 
 So, after evaluating the expression in the right part of the assignment operator, a **function object** (in the language specification - ‘**callable object**’) will be created.
 
 But all objects, as we already know, are **reference data type**, i.e. a **reference** will be returned to us, which will go into the **~func~** variable.
-Shall we check?
+So, the code inside the function body has not been executed.
 
 Shall we check it?
 
