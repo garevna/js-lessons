@@ -25,6 +25,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const crypto = require('crypto')
 const { core, dress } = require('./lib/phrases')
 
 const root = path.join(__dirname, '..')
@@ -35,6 +36,8 @@ const OUT = path.join(root, 'translate')
 // DeepL's free web translator takes 5000 characters at a time. Leave room for
 // the numbering and for a translation coming out longer than the source.
 const CHUNK = 3500
+
+const digest = (s) => crypto.createHash('sha1').update(s).digest('hex').slice(0, 8)
 
 const [target, lang] = process.argv.slice(2)
 
@@ -98,7 +101,11 @@ function writeChunks (name, segments) {
 
     chunk.push(line)
     size += line.length + 1
-    index.push({ n, key, chunk: chunks.length + 1 })
+    // The fingerprint lets the importer notice that the page changed after
+    // the export: a key that vanished, or one that still exists and now holds
+    // different Russian. Without it a rewritten paragraph would take the old
+    // translation and nothing would complain.
+    index.push({ n, key, chunk: chunks.length + 1, ru: digest(text) })
   })
 
   if (chunk.length) chunks.push(chunk)

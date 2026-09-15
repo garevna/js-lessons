@@ -340,6 +340,8 @@ Russian for it, which is recoverable; a broken page is not.
 
 | Checked | Why |
 |---|---|
+| the key still exists | a page edited after the export — the phrase moved into the book, or the page was re-extracted and renumbered |
+| the Russian is unchanged | the export records a fingerprint of what it sent, so a paragraph rewritten since cannot take the old translation |
 | the line count | a file that comes back with a different number of lines has been renumbered, and every segment past the change belongs to a different key than its number claims — nothing is imported |
 | `⟦f0⟧` placeholders | hidden code and link targets — losing one breaks the page |
 | `![ico-20 pin]` names | an icon name is a lookup, and an unknown one silently renders the default icon |

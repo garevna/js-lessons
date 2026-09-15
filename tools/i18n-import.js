@@ -20,6 +20,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const crypto = require('crypto')
 
 const root = path.join(__dirname, '..')
 const MESSAGES = path.join(root, 'content/messages')
@@ -58,6 +59,13 @@ if (!fs.existsSync(indexFile)) {
 
 const index = JSON.parse(fs.readFileSync(indexFile, 'utf8'))
 const keyOf = new Map(index.map(({ n, key }) => [n, key]))
+
+// An export records a fingerprint of the Russian it sent, so a stale index
+// can be recognised instead of quietly filing a translation under a
+// paragraph that has changed since.
+const digest = (s) => crypto.createHash('sha1').update(s).digest('hex').slice(0, 8)
+const hashOf = new Map(index.filter((x) => x.ru).map(({ n, ru }) => [n, ru]))
+const stale = []
 
 // One file per page holds all three languages; the common table holds the
 // repeated phrases keyed by the Russian itself. Either way what the checks
@@ -208,6 +216,36 @@ for (const file of outFiles) {
     seen.add(n)
 
     const original = source[key]
+
+    // The index was written by an export; the page has been edited since if a
+    // key it names is gone. That happens legitimately — the phrase moved into
+    // content/phrases.json, or the page was re-extracted and renumbered — and
+    // it used to crash here on undefined rather than say so.
+    if (original === undefined) {
+      stale.push(n)
+      problems.push({
+        file,
+        why: `${key} is no longer a key of this page — it moved to the phrase book, or the page was re-extracted`,
+        text: translated.slice(0, 90),
+        where: { file, n }
+      })
+      continue
+    }
+
+    // Worse than a missing key: a key that still exists and now holds
+    // different Russian. The number would line up, every check would pass, and
+    // the page would get a translation of a paragraph that has been rewritten.
+    if (hashOf.has(n) && hashOf.get(n) !== digest(original)) {
+      stale.push(n)
+      problems.push({
+        file,
+        why: `the Russian under ${key} changed after this export`,
+        original: original.slice(0, 90),
+        text: translated.slice(0, 90),
+        where: { file, n }
+      })
+      continue
+    }
 
     const want = placeholders(original)
     const got = placeholders(translated)
@@ -413,10 +451,38 @@ if (problems.length) {
     console.log(`    ${p.why}`)
     if (p.original) console.log(`      ru: ${p.original}`)
     if (p.text) console.log(`      ${lang}: ${p.text}`)
-    if (p.where) console.log(`      fix line ${p.where.n} of translate/${p.where.file}, then run this again`)
+    if (p.where && !stale.includes(p.where.n)) console.log(`      fix line ${p.where.n} of translate/${p.where.file}, then run this again`)
     console.log('')
   }
   if (problems.length > 12) console.log(`    … and ${problems.length - 12} more`)
+}
+
+if (stale.length) {
+  console.log(`
+  ${stale.length} segment${stale.length === 1 ? '' : 's'} could not be placed because the page changed after
+  the export. Editing the .out.txt will not help — the numbers no longer mean
+  what they meant. Export again and the queue will hold only what is still
+  missing:
+
+    node tools/i18n-export.js ${page} ${lang}`)
+
+  // A key that vanished into the phrase book usually vanished with a
+  // translation the author just produced, and it would be a shame to retype it.
+  const book = (() => {
+    try { return JSON.parse(fs.readFileSync(PHRASES, 'utf8')) } catch { return null }
+  })()
+
+  if (book) {
+    const waiting = [...Object.values(book.common || {}), ...Object.values(book.topic || {})]
+      .filter((e) => !e[lang]).length
+    if (waiting) {
+      console.log(`
+  Some of them are phrases the book now owns. ${waiting} of its entries still have
+  no ${lang}, and they are short:
+
+    node tools/i18n-export.js --phrases ${lang}`)
+    }
+  }
 }
 
 if (missing.length) {
