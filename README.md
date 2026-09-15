@@ -127,6 +127,16 @@ marker has to ask for it in `getIconList.js`, or it renders blank.
 | `○○…○○` | a slogan block |
 | `◧` `◨` | the `\|\|` operator, which cannot be written directly |
 
+
+**A single character between markers now works.** `~.~`, `**i**`, `_2_`. It used
+to need two, which left the markers in the text and paired one of them with the
+next one along — 703 broken tags across 600 lines.
+
+**Underscores inside a word are not italics.** `__proto__` and a URL with
+`pikachu_2_by_name` in it are left alone; an italic marker has to sit outside a
+word on both sides. Use `~code~` for identifiers regardless — it says what they
+are.
+
 ### Images
 
 ```
