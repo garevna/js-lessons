@@ -59,7 +59,7 @@ In a normal constructor, the call context for private methods will be the global
 
 ____________________________________
 
-◘◘![ico-25 cap] **Example 1**◘◘
+♦♦♦1♦♦♦
 
 ~~~js
 class User {
@@ -133,7 +133,7 @@ _______________________________________________
 
 Classes are special ‘wrapper’ functions that ‘wrap’ the constructor
 
-◘◘![ico-25 cap] **Example 2**◘◘
+♦♦♦2♦♦♦
 
 ~~~js
 class Picture {
@@ -166,7 +166,7 @@ __________________________________________________
 
 ### ![ico-20 icon] Examples of named classes
 
-◘◘![ico-25 cap] **Example 3**◘◘
+♦♦♦3♦♦♦
 
 ~~~js
 const Picture = class {
@@ -214,7 +214,7 @@ console.log(sample)
 
 _____________________________________________________________
 
-◘◘![ico-25 cap] **Example 4**◘◘
+♦♦♦4♦♦♦
 
 ~~~js
 const Picture = class Canvas {
@@ -280,7 +280,7 @@ sample.constructor.name
 
 ________________________________________________________________
 
-◘◘![ico-25 cap] **Example 5**◘◘
+♦♦♦5♦♦♦
 
 ~~~js
 const Sample = class Canvas {
@@ -336,7 +336,7 @@ To create computed properties, you need to use getters and setters
 
 Let’s look at a simplified example using canvas:
 
-◘◘![ico-25 cap] **Example 6**◘◘
+♦♦♦6♦♦♦
 
 ~~~js
 const Canvas = class {
@@ -474,7 +474,7 @@ ________________________________________________________
 
 ![ico-20 warn] Context loss always occurs if a reference to a method is assigned to a new variable:
 
-◘◘![ico-25 cap] **Example 7**◘◘
+♦♦♦7♦♦♦
 
 ~~~js
 const drawLine = pict.drawLine
@@ -499,7 +499,7 @@ const drawLine = pict.drawLine.bind(pict)
 
 ______________________________________________________
 
-◘◘![ico-25 cap] **Example 8**◘◘
+♦♦♦8♦♦♦
 
 ~~~js
 class User {
@@ -595,7 +595,7 @@ In fact, we are passing a reference to the prototype using **~extends~**
 
 ^^Let’s declare the **Provider** class^^
 
-◘◘![ico-25 cap] **Example 9**◘◘
+♦♦♦9♦♦♦
 
 ~~~js
 class Provider extends Array {
@@ -650,7 +650,7 @@ provider * 3   // 15
 
 ______________________________
 
-◘◘![ico-25 cap] **Example 10**◘◘
+♦♦♦10♦♦♦
 
 ~~~js
 const Canvas = class {
@@ -705,7 +705,7 @@ super.drawLine(points, lineColor)
 
 ^^Now the code will look like this:^^
 
-◘◘![ico-25 cap] **Example 11**◘◘
+♦♦♦11♦♦♦
 
 ~~~js
 const Canvas = class {
@@ -757,7 +757,7 @@ In the previous examples, we did not use the constructor of the derived class
 
 ![ico-20 warning] The first thing you need to do in the constructor of the derived class is to call the **super()** method
 
-◘◘![ico-25 cap] **Example 12**◘◘
+♦♦♦12♦♦♦
 
 ~~~js
 const Canvas = class {
@@ -810,7 +810,7 @@ Object.setPrototypeOf(person, human)
 ^^in the methods   **_~getPlace()~_**  and  **_~talk()~_** of the  **person** object ^^
 ^^using the keyword **~super~** :^^
 
-◘◘![ico-25 cap] **Example 13**◘◘
+♦♦♦13♦♦♦
 
 ~~~js
 const human = {
@@ -838,7 +838,7 @@ person.talk('привет!')
 
 __________________________________________________
 
-◘◘![ico-25 cap] **Example 14**◘◘
+♦♦♦14♦♦♦
 
 ~~~js
 const human = {
@@ -890,7 +890,7 @@ setTimeout(() => person.talk('Hello, baby!'), 2000)
 
 ______________________________________________________
 
-◘◘![ico-25 cap] **Example 15**◘◘
+♦♦♦15♦♦♦
 
 ~~~js
 const human = {
@@ -972,7 +972,7 @@ and the result is identical ![ico-20 smile]
 
 ______________________________________________________________
 
-◘◘![ico-25 cap] **Example 16**◘◘
+♦♦♦16♦♦♦
 
 ~~~~js
 const human = {
@@ -1027,7 +1027,7 @@ Static methods of a class are declared using the **static** keyword
 
 ![ico-20 warn] Within a static method, ~this~ refers to the class constructor, not to an instance
 
-◘◘![ico-25 cap] **Example 17**◘◘
+♦♦♦17♦♦♦
 
 ~~~js
 class Canvas {
@@ -1101,7 +1101,7 @@ drawLine (points) {
 
 ________________________________________________________
 
-◘◘![ico-25 cap] **Example 18**◘◘
+♦♦♦18♦♦♦
 
 ~~~js
 class Canvas {

@@ -31,7 +31,7 @@ function test () {
 The object **~arguments~** contains all the arguments passed to the function when it was called.
 They will be accessible by index strictly in the order in which they were passed to the function when it was called.
 
-◘◘![ico-25 cap] **Example 1**◘◘
+♦♦♦1♦♦♦
 
 ~~~js
 function testArguments () {
