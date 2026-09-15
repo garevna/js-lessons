@@ -252,7 +252,7 @@ ________________________________________________________________________________
 
 {{s0.p36}}
 
-^^{{common.c61}}^^
+{{s0.p37}}
 
 ~~~error
     Uncaught SyntaxError: await is only valid in async function
@@ -311,7 +311,7 @@ asyncFunc()
 Resolved!
 ~~~
 
-{{common.c172}}
+{{s0.p53}}
 
 ~~~js
 (async () => console.log(await createPromise('Resolved!')))()
@@ -704,7 +704,7 @@ message => {
 
 _____________________________________________
 
-## ![ico-20 icon] {{common.c14}}
+## ![ico-20 icon] {{common.c10}}
 
 ### ![ico-25 cap] 7
 
@@ -1116,7 +1116,7 @@ fetch(`${origin}/users?name=Stephan&name=Andry`)
   .then(console.log)
 ~~~
 
-{{common.c13}}
+{{common.c9}}
 
 ~~~js
 const origin = 'https://garevna-json-server.glitch.me'

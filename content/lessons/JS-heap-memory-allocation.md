@@ -131,7 +131,7 @@ button.onclick = function (event) {
 
 {{s1.p46}}
 
-^^^[{{common.c20}}]
+^^^[{{common.c14}}]
 
 ~~~console
 segments: 0.536865234375ms

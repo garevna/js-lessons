@@ -221,7 +221,7 @@ var Creator = function (id, val) {
 Creator.call(obj, 'sample',  75)
 ~~~
 
-**{{common.c153}}**
+{{s1.p25}}
 
 ![](illustrations/Object-static-props-01.png)
 
@@ -542,7 +542,7 @@ ______________________________________________________________________
 
 ### ![ico-20 icon] {{s2.h1}}
 
-**{{common.c164}}**
+{{s2.p1}}
 
 {{s2.p2}}
 
@@ -933,7 +933,7 @@ Object.defineProperty(provider, 'service', {
 })
 ~~~
 
-{{common.c26}}
+{{topic.t6}}
 
 ••![ico-20 error] Uncaught TypeError: Cannot redefine property: service••
 

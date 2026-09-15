@@ -49,6 +49,11 @@
     "eng": "The _**⟦f3⟧**_ property of the ⟦f4⟧ element contains the markup code located within the ⟦f5⟧ container",
     "ua": "Властивість  _**⟦f3⟧**_  елемента  ⟦f4⟧  містить код розмітки, що знаходиться  у контейнері ⟦f5⟧"
   },
+  "s2.p1": {
+    "ru": "**Шаблон разметки**",
+    "eng": "**Markup template**",
+    "ua": "**Шаблон розмітки**"
+  },
   "s2.p2": {
     "ru": "^^Выведем в консоль свойство ⟦f3⟧^^",
     "eng": "^^Let’s log the ⟦f3⟧ property to the console^^",
@@ -93,6 +98,11 @@
     "ru": "![ico-20 warn] ⟦f12⟧ указывает на глубокое копирование, т.е. всех подузлов дерева",
     "eng": "![ico-20 warn] ⟦f12⟧ indicates a deep copy, i.e. all subnodes of the tree",
     "ua": "![ico-20 warn] ⟦f12⟧ вказує на глибоке копіювання, тобто всіх підвузлів дерева"
+  },
+  "s4.p1": {
+    "ru": "**Шаблон разметки**",
+    "eng": "**Markup template**",
+    "ua": "**Шаблон розмітки**"
   },
   "s4.p2": {
     "ru": "**Класс**",

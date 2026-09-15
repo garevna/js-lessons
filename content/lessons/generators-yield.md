@@ -1,4 +1,4 @@
-# ![ico-30 study] {{common.c30}}
+# ![ico-30 study] {{common.c20}}
 
 **ES 2015**
 

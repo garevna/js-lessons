@@ -1,4 +1,4 @@
-# ![ico-30 study] {{common.c18}}
+# ![ico-30 study] {{common.c13}}
 
 {{s1.p1}}
 

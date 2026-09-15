@@ -484,7 +484,7 @@ var elem = document.body
 elem.tagName = 'div'
 ~~~
 
-→→→ {{common.c64}} | {{common.c65}} | {{s4.quizAnswer1}}→→→
+→→→ {{s4.quiz1}} | {{s4.quizVariants1}} | {{s4.quizAnswer1}}→→→
 
 
 ◘◘** 2**◘◘
@@ -492,7 +492,7 @@ elem.tagName = 'div'
 document.title = 'DOM'
 ~~~
 
-→→→ {{common.c66}} | {{common.c67}} | {{common.c68}}→→→
+→→→ {{s4.quiz2}} | {{s4.quizVariants2}} | {{s4.quizAnswer2}}→→→
 
 ◘◘** 3**◘◘
 ~~~js
@@ -510,12 +510,12 @@ for (var text of paragraph) {
 }
 ~~~
 
-→→→ {{common.c69}} | {{s4.quizVariants3}} | {{s4.quizAnswer3}}→→→
+→→→ {{s4.quiz3}} | {{s4.quizVariants3}} | {{s4.quizAnswer3}}→→→
 
 
 ◘◘** 4**◘◘
 
-→→→ {{common.c70}} | {{s4.quizVariants4}} | {{s4.quizAnswer4}}→→→
+→→→ {{s4.quiz4}} | {{s4.quizVariants4}} | {{s4.quizAnswer4}}→→→
 
 
 ◘◘** 5**◘◘
@@ -537,7 +537,7 @@ elems.forEach(function (elem) {
 })
 ~~~
 
-→→→ {{common.c71}} | {{s4.quizVariants5}} | {{common.c73}}→→→
+→→→ {{s4.quiz5}} | {{s4.quizVariants5}} | {{s4.quizAnswer5}}→→→
 
 _________________________________
 

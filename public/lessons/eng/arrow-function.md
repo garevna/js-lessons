@@ -96,7 +96,7 @@ const getAnswer = question => question === 'who'
       : 'I don\'t undestand your question'
 ~~~
 
-Или так:
+◘◘![ico-25 cap] оператор **~switch~**◘◘
 
 ~~~js
 const getAnswer = question => ['who', 'what', 'where'].includes(question)
@@ -369,7 +369,7 @@ Before assigning a value to the **~human~** variable, the engine must calculate 
 
 On the right side is the literal of the object.
 
-Let’s check:
+1. The engine calls the **~Object~** constructor.
 
 ~~~js
 user.showName()  // Robert

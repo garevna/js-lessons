@@ -57,7 +57,7 @@ _________________________________
 
 ### ![ico-20 warn] {{s3.h1}}
 
-**{{common.c9}}**
+**{{topic.t2}}**
 
 ~~~js
 function sum (x, y) {
@@ -67,7 +67,7 @@ function sum (x, y) {
 delete sum   // false
 ~~~
 
-**{{common.c7}}**
+**{{topic.t0}}**
 
 ~~~js
 'use strict'
@@ -87,13 +87,13 @@ ________________________________________________
 
 ### ![ico-20 warn] {{s4.h1}}
 
-**{{common.c9}}**
+**{{topic.t2}}**
 
 ~~~js
 var x = 010   // 8
 ~~~
 
-**{{common.c7}}**
+**{{topic.t0}}**
 
 ~~~js
 'use strict'
@@ -109,13 +109,13 @@ __________________________________________________
 
 ### ![ico-20 warn] {{s5.h1}}
 
-**{{common.c9}}**
+**{{topic.t2}}**
 
 ~~~js
 var x = '\010'   // ""
 ~~~
 
-**{{common.c7}}**
+**{{topic.t0}}**
 
 ~~~js
 'use strict'
@@ -131,7 +131,7 @@ _________________________________________
 
 ### ![ico-20 warn] {{s6.h1}}
 
-**{{common.c9}}**
+**{{topic.t2}}**
 
 ~~~js
 var sample = Object.defineProperty({}, 'x', {
@@ -142,7 +142,7 @@ var sample = Object.defineProperty({}, 'x', {
 sample.x = 5   // 0
 ~~~
 
-**{{common.c7}}**
+**{{topic.t0}}**
 
 ~~~js
 'use strict'
@@ -163,7 +163,7 @@ ________________________________________________
 
 ### ![ico-20 warn] {{s7.h1}}
 
-**{{common.c9}}**
+**{{topic.t2}}**
 
 ~~~js
 var obj = { 
@@ -175,7 +175,7 @@ var obj = {
 obj.x = 5 // 0
 ~~~
 
-**{{common.c7}}**
+**{{topic.t0}}**
 
 ~~~js
 'use strict'
@@ -197,13 +197,13 @@ _________________________________________________
 
 ### ![ico-20 warn] {{s8.h1}}
 
-**{{common.c9}}**
+**{{topic.t2}}**
 
 ~~~js
 delete Object.prototype  // false
 ~~~
 
-**{{common.c7}}**
+**{{topic.t0}}**
 
 ~~~js
 'use strict'
@@ -219,13 +219,13 @@ _______________________________________________
 
 ### ![ico-20 warn] {{s9.h1}}
 
-**{{common.c9}}**
+**{{topic.t2}}**
 
 ~~~js
 var eval = 7  // 7
 ~~~
 
-**{{common.c7}}**
+**{{topic.t0}}**
 
 ~~~js
 'use strict'
@@ -241,13 +241,13 @@ _______________________________________
 
 ### ![ico-20 warn] {{s10.h1}}
 
-**{{common.c9}}**
+**{{topic.t2}}**
 
 ~~~js
 var arguments = 7  // 7
 ~~~
 
-**{{common.c7}}**
+**{{topic.t0}}**
 
 ~~~js
 'use strict'
@@ -263,7 +263,7 @@ _____________________________________________
 
 ### ![ico-20 warn] {{s11.h1}}
 
-**{{common.c9}}**
+**{{topic.t2}}**
 
 ~~~js
 function test () {
@@ -282,7 +282,7 @@ test ()
 }
 ~~~
 
-**{{common.c7}}**
+**{{topic.t0}}**
 
 ~~~js
 'use strict'
@@ -329,7 +329,7 @@ test ()
 }
 ~~~
 
-**{{common.c7}}**
+**{{topic.t0}}**
 
 ~~~js
 'use strict'
@@ -357,7 +357,7 @@ ___________________________________
 
 ### ![ico-20 warn] {{s12.h1}} 
 
-**{{common.c9}}**
+**{{topic.t2}}**
 
 ~~~js
 var x, y
@@ -374,7 +374,7 @@ with (Math) {
 console.log(y)  // 256
 ~~~
 
-**{{common.c7}}**
+**{{topic.t0}}**
 
 ~~~js
 'use strict'
@@ -403,14 +403,14 @@ _________________________________________________
 
 ###### {{s14.h1}} 
 
-**{{common.c9}}**
+**{{topic.t2}}**
 
 ~~~js
 eval('var gamma = 2')
 console.log(gamma)
 ~~~
 
-**{{common.c7}}**
+**{{topic.t0}}**
 
 ~~~js
 'use strict'

@@ -14,7 +14,7 @@
  *
  *   already translated    a key whose entry for this language is filled
  *   nothing to translate  a segment with no Cyrillic in it, or one whose
- *                         words are in content/common.json already answered
+ *                         words are already answered in content/phrases.json
  *
  * The numbering is what survives the round trip. DeepL keeps line breaks most
  * of the time but not always, and a merged pair of lines would silently shift
@@ -29,7 +29,7 @@ const { core, dress } = require('./lib/phrases')
 
 const root = path.join(__dirname, '..')
 const MESSAGES = path.join(root, 'content/messages')
-const COMMON = path.join(root, 'content/common.json')
+const PHRASES = path.join(root, 'content/phrases.json')
 const OUT = path.join(root, 'translate')
 
 // DeepL's free web translator takes 5000 characters at a time. Leave room for
@@ -39,7 +39,7 @@ const CHUNK = 3500
 const [target, lang] = process.argv.slice(2)
 
 if (!target || !lang) {
-  console.error('usage: node tools/i18n-export.js <page|--all|--common> <lang>')
+  console.error('usage: node tools/i18n-export.js <page|--all|--phrases> <lang>')
   process.exit(1)
 }
 
@@ -116,25 +116,30 @@ function writeChunks (name, segments) {
 
 /* ----------------------------------------------------- the common phrases */
 
-if (target === '--common') {
-  const common = readJson(COMMON)
-  if (!common) {
-    console.error('no content/common.json — run node tools/i18n-common.js first')
+if (target === '--phrases') {
+  const book = readJson(PHRASES)
+  if (!book) {
+    console.error('no content/phrases.json — run npm run phrases first')
     process.exit(1)
   }
 
-  // Keyed by id, sent as Russian: the index maps the segment number back to
-  // the id, so a phrase can be reworded without orphaning its translation.
-  const todo = Object.entries(common)
-    .filter(([, v]) => !v[lang])
-    .map(([id, v]) => [id, v.ru])
+  // Keyed by section and id, sent as Russian: the index maps the segment
+  // number back to the key, so a phrase can be reworded without orphaning its
+  // translation. Both sections go out together — a translator has no reason
+  // to care which is stock wording and which belongs to one lesson.
+  const todo = []
+  for (const section of ['common', 'topic']) {
+    for (const [id, v] of Object.entries(book[section] || {})) {
+      if (!v[lang]) todo.push([`${section}.${id}`, v.ru])
+    }
+  }
 
   if (!todo.length) {
-    console.log(`  every repeated phrase already has a ${lang} translation`)
+    console.log(`  every phrase in the book already has a ${lang} translation`)
     process.exit(0)
   }
 
-  const files = writeChunks(`common.${lang}`, todo)
+  const files = writeChunks(`phrases.${lang}`, todo)
   const chars = todo.reduce((n, [, v]) => n + v.length, 0)
 
   console.log(`
@@ -144,10 +149,10 @@ if (target === '--common') {
   "Результат в консоли:" alone appears 33 times on 12 pages. Translate them
   once here and every page that uses them is filled in on its next export.
 
-    1. open translate/common.${lang}.01.txt, copy it
+    1. open translate/phrases.${lang}.01.txt, copy it
     2. paste into DeepL, target language ${lang}
-    3. save the answer as translate/common.${lang}.01.out.txt
-    4. node tools/i18n-import.js --common ${lang}
+    3. save the answer as translate/phrases.${lang}.01.out.txt
+    4. node tools/i18n-import.js --phrases ${lang}
 
   Keep them short. A heading translated as a whole sentence is worse than one
   left in Russian, because it will be reused everywhere.`)
@@ -176,12 +181,14 @@ const canonical = (name) => {
 }
 
 const pages = target === '--all' ? known : [canonical(target)]
-const common = readJson(COMMON) || {}
+const book = readJson(PHRASES) || {}
 
-// The table is keyed by id; looking a phrase up needs the other direction.
-const commonByText = new Map()
-for (const entry of Object.values(common)) {
-  if (entry && entry.ru) commonByText.set(entry.ru, entry)
+// The book is keyed by id; looking a phrase up needs the other direction.
+const byText = new Map()
+for (const section of ['common', 'topic']) {
+  for (const entry of Object.values(book[section] || {})) {
+    if (entry && entry.ru) byText.set(entry.ru, entry)
+  }
 }
 
 let totalSegments = 0
@@ -214,7 +221,7 @@ for (const page of pages) {
 
     // Said before, somewhere else in the course. Take the agreed translation
     // and put it back inside whatever markup this occurrence happens to wear.
-    const phrase = commonByText.get(core(entry.ru))
+    const phrase = byText.get(core(entry.ru))
     if (phrase && phrase[lang]) {
       entry[lang] = dress(phrase[lang], entry.ru)
       fromCommon += 1
@@ -233,7 +240,7 @@ for (const page of pages) {
 
   const filled = []
   if (copied) filled.push(`${copied} copied as-is`)
-  if (fromCommon) filled.push(`${fromCommon} from common`)
+  if (fromCommon) filled.push(`${fromCommon} from the phrase book`)
 
   if (!todo.length) {
     console.log(`  ${page}: complete${filled.length ? ` (${filled.join(', ')})` : ''}`)
@@ -256,7 +263,7 @@ for (const page of pages) {
 }
 
 if (totalCopied || totalFromCommon) {
-  console.log(`\n  filled in without asking DeepL: ${totalCopied} with nothing to translate, ${totalFromCommon} from content/common.json`)
+  console.log(`\n  filled in without asking DeepL: ${totalCopied} with nothing to translate, ${totalFromCommon} from content/phrases.json`)
 }
 
 if (!totalSegments) process.exit(0)

@@ -30,7 +30,7 @@ const LESSONS = path.join(root, 'public/lessons')
 
 const REFERENCE = 'ru'
 const LANGS = ['ru', 'eng', 'ua']
-const COMMON_PREFIX = 'common.'
+const { resolve } = require('./lib/phrase-refs')
 
 const only = process.argv[2]
 
@@ -42,7 +42,7 @@ const readJson = (file) => {
   }
 }
 
-const common = readJson(path.join(CONTENT, 'common.json')) || {}
+const book = readJson(path.join(CONTENT, 'phrases.json')) || {}
 
 const pages = fs.readdirSync(path.join(CONTENT, 'lessons'))
   .filter((f) => f.endsWith('.md'))
@@ -83,9 +83,7 @@ for (const page of pages) {
       // A repeated phrase lives in the shared table, not in the page: the
       // skeleton points at it so "или:" is one entry and one translation
       // rather than twelve keys saying the same thing.
-      const entry = key.startsWith(COMMON_PREFIX)
-        ? common[key.slice(COMMON_PREFIX.length)]
-        : entries[key]
+      const entry = resolve(book, key) || entries[key]
 
       if (!entry) {
         problems.push(`${page}.${lang}: {{${key}}} has no text in any language`)

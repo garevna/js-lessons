@@ -47,7 +47,7 @@
 {{s0.p18}}
 
 
-## ![ico-25 hw] {{common.c11}}
+## ![ico-25 hw] {{common.c8}}
 
 {{s1.p1}}
 

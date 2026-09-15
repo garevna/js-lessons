@@ -464,7 +464,7 @@ function getSearchObject () {
 
 The engine uses the exponential form of representing small numbers, i.e. instead of **~0.0000005~** there will be **~5e-7~**.
 
-Now let's reduce the array of objects to a string.
+For large numbers the same thing happens, i.e. instead of **~5000000000000000000000~** there will be **~5e+21~**.
 
 ~~~console
 ▼ {name: "garevna", date: "10.07.2018"}
@@ -1281,7 +1281,7 @@ ____________________________________________________
 
 ## ![ico-25 icon] keys()
 
-Result
+in the first case we received an array of arrays, and in the second we received a “flat” array.
 **Generator**.
 
 ◘◘![ico-20 cap] **keys**◘◘
@@ -1312,7 +1312,7 @@ ______________________
 
 ## ![ico-25 icon] values()
 
-Result
+◘◘**^^Result^^**◘◘
 **Generator**.
 
 ◘◘![ico-20 cap] **values**◘◘

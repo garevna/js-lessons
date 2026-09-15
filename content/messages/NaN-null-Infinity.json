@@ -4,6 +4,11 @@
     "eng": "The value NaN",
     "ua": "Значення NaN"
   },
+  "s1.p1": {
+    "ru": "**Тип данных ⟦f0⟧**",
+    "eng": "**Data type ⟦f0⟧**",
+    "ua": "**Тип даних ⟦f0⟧**"
+  },
   "s1.p2": {
     "ru": "Сокращение от **Not a Number** ( результат операции не является числом )",
     "eng": "Abbreviation for **Not a Number** (the result of an operation is not a number)",
@@ -78,6 +83,11 @@
     "ru": "Значение Infinity",
     "eng": "The value Infinity",
     "ua": "Значення Infinity"
+  },
+  "s3.p1": {
+    "ru": "**Тип данных ⟦f0⟧**",
+    "eng": "**Data type ⟦f0⟧**",
+    "ua": "**Тип даних ⟦f0⟧**"
   },
   "s3.p2": {
     "ru": "Значение, превышающее максимально возможное число с плавающей  запятой",

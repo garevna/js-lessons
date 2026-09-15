@@ -23,17 +23,17 @@ const path = require('path')
 
 const root = path.join(__dirname, '..')
 const MESSAGES = path.join(root, 'content/messages')
-const COMMON = path.join(root, 'content/common.json')
+const PHRASES = path.join(root, 'content/phrases.json')
 const OUT = path.join(root, 'translate')
 
 const [typed, lang] = process.argv.slice(2)
 
 if (!typed || !lang) {
-  console.error('usage: node tools/i18n-import.js <page|--common> <lang>')
+  console.error('usage: node tools/i18n-import.js <page|--phrases> <lang>')
   process.exit(1)
 }
 
-const isCommon = typed === '--common'
+const isBook = typed === '--phrases'
 
 // Same reason as in the exporter: a name typed in the wrong case opens the
 // right file on Windows and then writes a second one beside it, which on
@@ -42,13 +42,13 @@ const known = fs.readdirSync(MESSAGES)
   .filter((f) => f.endsWith('.json'))
   .map((f) => f.replace(/\.json$/, ''))
 
-const page = isCommon
-  ? 'common'
+const page = isBook
+  ? 'phrases'
   : (known.includes(typed)
       ? typed
       : (known.find((k) => k.toLowerCase() === typed.toLowerCase()) || typed))
 
-if (!isCommon && page !== typed) console.log(`  (using "${page}" — that is how the page is spelled)`)
+if (!isBook && page !== typed) console.log(`  (using "${page}" — that is how the page is spelled)`)
 
 const indexFile = path.join(OUT, `${page}.${lang}.index.json`)
 if (!fs.existsSync(indexFile)) {
@@ -62,9 +62,17 @@ const keyOf = new Map(index.map(({ n, key }) => [n, key]))
 // One file per page holds all three languages; the common table holds the
 // repeated phrases keyed by the Russian itself. Either way what the checks
 // need is a key-to-Russian lookup.
-const entries = isCommon
-  ? JSON.parse(fs.readFileSync(COMMON, 'utf8'))
-  : JSON.parse(fs.readFileSync(path.join(MESSAGES, `${page}.json`), 'utf8'))
+// The book is two sections; flattened to section.id so a key reads here the
+// same way it reads in a skeleton.
+const book = isBook ? JSON.parse(fs.readFileSync(PHRASES, 'utf8')) : null
+const entries = {}
+if (isBook) {
+  for (const section of ['common', 'topic']) {
+    for (const [id, entry] of Object.entries(book[section] || {})) entries[`${section}.${id}`] = entry
+  }
+} else {
+  Object.assign(entries, JSON.parse(fs.readFileSync(path.join(MESSAGES, `${page}.json`), 'utf8')))
+}
 
 const source = {}
 for (const key of Object.keys(entries)) source[key] = entries[key].ru
@@ -349,11 +357,13 @@ const missing = index.filter(({ n }) => !seen.has(n))
 let done = 0
 const total = Object.keys(source).length
 
-if (isCommon) {
+if (isBook) {
+  // entries holds the very objects the book does, so writing through them
+  // updates the section each phrase came from.
   for (const [key, value] of Object.entries(accepted)) {
     if (entries[key]) entries[key][lang] = value
   }
-  fs.writeFileSync(COMMON, JSON.stringify(entries, null, 2) + '\n')
+  fs.writeFileSync(PHRASES, JSON.stringify(book, null, 2) + '\n')
   done = Object.values(entries).filter((e) => e[lang]).length
 } else {
   for (const [key, value] of Object.entries(accepted)) {
@@ -373,12 +383,12 @@ console.log(`  coverage:   ${done}/${total} (${Math.round(100 * done / total)}%)
 // the site serves, and it has not changed yet — which is exactly what "I
 // checked locally and the translations did not appear" looked like.
 if (Object.keys(accepted).length) {
-  if (isCommon) {
+  if (isBook) {
     console.log(`
-  written to content/common.json. Every page using these phrases picks them
-  up on its next export:
+  written to content/phrases.json. Every page pointing at these phrases shows
+  them on the next build:
 
-    node tools/i18n-export.js --all ${lang}`)
+    npm run lessons`)
   } else {
     console.log(`
   written to content/messages/${page}.json — now build the page:

@@ -24,7 +24,7 @@
 
 const fs = require('fs')
 const path = require('path')
-const { dereference } = require('./lib/common-refs')
+const { dereference } = require('./lib/phrase-refs')
 
 const root = path.join(__dirname, '..')
 const LESSONS = path.join(root, 'public/lessons')
@@ -456,7 +456,7 @@ if (write && !failed) {
   let referenced = 0
 
   const commonTable = (() => {
-    try { return JSON.parse(fs.readFileSync(path.join(root, 'content/common.json'), 'utf8')) } catch { return null }
+    try { return JSON.parse(fs.readFileSync(path.join(root, 'content/phrases.json'), 'utf8')) } catch { return null }
   })()
 
   if (commonTable) {
@@ -474,7 +474,7 @@ if (write && !failed) {
     console.log(`  the built ${langs.filter((l) => l !== 'ru').join(' and ')} page${langs.length > 2 ? 's' : ''} no longer match the Russian structure —`)
     console.log('  translations were carried over from the message file by text instead')
   }
-  if (referenced) console.log(`  ${referenced} repeated phrase${referenced === 1 ? '' : 's'} point at content/common.json instead of a key of their own`)
+  if (referenced) console.log(`  ${referenced} repeated phrase${referenced === 1 ? '' : 's'} point at the phrase book instead of a key of their own`)
   if (carried) console.log(`  ${carried} translation${carried === 1 ? '' : 's'} followed their Russian text to a new key`)
   if (dropped) console.log(`  ${dropped} translation${dropped === 1 ? '' : 's'} dropped: the Russian they belonged to was edited`)
 } else if (write) {

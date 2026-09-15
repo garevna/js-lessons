@@ -16,7 +16,7 @@
 
 {{s0.p7}}
 
-{{common.c39}}
+{{topic.t11}}
 
 ~~~js
 '@gmail.com' < 'www.google.com'
@@ -26,7 +26,7 @@
 
 {{s0.p10}}
 
-{{common.c39}}
+{{topic.t11}}
 
 ~~~js
 '@gmail.com' < '@mail.ru'

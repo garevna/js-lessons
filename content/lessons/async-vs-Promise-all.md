@@ -28,7 +28,7 @@ async function getData () {
 getData ()
 ~~~
 
-**{{common.c20}}**
+**{{common.c14}}**
 
 ~~~console
 
@@ -55,7 +55,7 @@ function getData () {
 }
 ~~~
 
-**{{common.c20}}**
+**{{common.c14}}**
 
 ~~~console
 
@@ -113,4 +113,4 @@ getAllData('figures', 'colors', 'diameters')
 {{s0.p21}}
 
 _______________________
-{{common.c41}}
+{{s0.p22}}

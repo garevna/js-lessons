@@ -142,7 +142,7 @@ __________________________________________
 {{s1.p34}}
 {{s1.p35}}
 
-☼☼☼ {{common.c45}} ☼☼☼
+☼☼☼ {{s1.slogan1}} ☼☼☼
 
 {{s1.p36}}
 
@@ -434,7 +434,7 @@ location.search
   .map(x => ({ [x.split('=')[0]] : x.split('=')[1] }))
 ~~~
 
-{{common.c47}}
+{{s4.p3}}
 
 ~~~console
 ▼ (2) [{…}, {…}]
@@ -464,7 +464,7 @@ function getSearchObject () {
 
 {{s4.p6}}
 
-{{common.c47}}
+{{s4.p7}}
 
 ~~~console
 ▼ {name: "garevna", date: "10.07.2018"}
@@ -1086,7 +1086,7 @@ Array.prototype.pow = function () {
 
 ______________________________________
 
-### ![ico-25 hw] {{common.c15}}
+### ![ico-25 hw] {{common.c11}}
 
 {{s6.p1}}
 
@@ -1281,8 +1281,8 @@ ____________________________________________________
 
 ## ![ico-25 icon] keys()
 
-{{common.c48}}
-{{common.c49}}
+{{s6.p27}}
+{{s6.p28}}
 
 ◘◘![ico-20 cap] **keys**◘◘
 
@@ -1312,8 +1312,8 @@ ______________________
 
 ## ![ico-25 icon] values()
 
-{{common.c48}}
-{{common.c49}}
+{{s6.p30}}
+{{s6.p31}}
 
 ◘◘![ico-20 cap] **values**◘◘
 

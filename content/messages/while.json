@@ -99,6 +99,11 @@
     "eng": "For example, in a case like this:",
     "ua": "Наприклад, у такому випадку:"
   },
+  "s1.quiz1": {
+    "ru": "Будет ли цикл бесконечным?",
+    "eng": "Will the loop be infinite?",
+    "ua": "Чи буде цикл нескінченним?"
+  },
   "s1.quizVariants1": {
     "ru": "'yes', 'no'",
     "eng": "'yes', 'no'",
@@ -108,6 +113,11 @@
     "ru": "no",
     "eng": "no",
     "ua": "no"
+  },
+  "s1.quiz2": {
+    "ru": "Будет ли цикл бесконечным?",
+    "eng": "Will the loop be infinite?",
+    "ua": "Чи буде цикл нескінченним?"
   },
   "s1.quizVariants2": {
     "ru": "'yes', 'no'",

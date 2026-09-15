@@ -265,7 +265,7 @@ chat.scrollTop = chat.offsetTop
 
 _______________________________________________
 
-## ![ico-25 icon] {{common.c193}}
+## ![ico-25 icon] {{s2.h1}}
 
 {{s2.p1}}
 {{s2.p2}}

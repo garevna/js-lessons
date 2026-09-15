@@ -307,7 +307,7 @@ In this example, we are iterating over an array of objects, i.e. we are dealing 
 At each iteration, the argument function (~user => user.age++~) of the **~iterate~** method receives a reference to the object.
 This gives to it the ability to mutate the original array, since
 
-☼☼☼ reference is a lockpick ☼☼☼
+☼☼☼ ссылка - это отмычка ☼☼☼
 
 As a result of executing the code, the **users** array will look like this:
 

@@ -222,7 +222,7 @@ var sample = JSON.parse(JSON.stringify(obj))
 var test = Object.assign({}, obj)
 ~~~
 
-{{common.c39}}
+{{topic.t11}}
 
 ~~~js
 test.position === obj.position

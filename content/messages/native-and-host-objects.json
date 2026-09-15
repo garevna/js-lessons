@@ -24,6 +24,11 @@
     "eng": "Built-in objects",
     "ua": "Вбудовані об’єкти"
   },
+  "s2.p4": {
+    "ru": "**Конструкторы**",
+    "eng": "**Constructors**",
+    "ua": "**Конструктори**"
+  },
   "s2.p5": {
     "ru": "и объектами, которые создаются в процессе работы кода",
     "eng": "and objects created whilst the code is running",
@@ -44,6 +49,11 @@
     "eng": "Host objects",
     "ua": "Хост-об’єкти"
   },
+  "s2.p9": {
+    "ru": "**Конструкторы**",
+    "eng": "**Constructors**",
+    "ua": "**Конструктори**"
+  },
   "s2.p10": {
     "ru": "![ico-20 warn] ^^Поскольку конструкторы - это функции, для получения дерева их свойств нужно использовать метод **⟦f0⟧** ( а не ⟦f1⟧ )^^",
     "eng": "![ico-20 warn] ^^As constructors are functions, you must use the **⟦f0⟧** method (rather than ⟦f1⟧) to retrieve their property tree^^",
@@ -63,6 +73,11 @@
     "ru": "![ico-20 green-ok] С помощью конструктора",
     "eng": "![ico-20 green-ok] Using a constructor",
     "ua": "![ico-20 green-ok] За допомогою конструктора"
+  },
+  "s3.h1": {
+    "ru": "Литерал объекта",
+    "eng": "Object literal",
+    "ua": "Літерал об’єкта"
   },
   "s3.p1": {
     "ru": "В литеральной нотации объект описывается внутри блока фигурных скобок:",
@@ -463,6 +478,11 @@
     "ru": "![ico-25 pin] Конструктор позволяет создавать экземпляры объектов, имеющих не только публичные, но и приватные свойства и методы",
     "eng": "![ico-25 pin] The constructor allows you to create instances of objects that have not only public but also private properties and methods",
     "ua": "![ico-25 pin] Конструктор дозволяє створювати екземпляри об’єктів, що мають не тільки публічні, але й приватні властивості та методи"
+  },
+  "s7.p25": {
+    "ru": "**Конструктор Function**",
+    "eng": "**The Function Constructor**",
+    "ua": "**Конструктор Function**"
   },
   "s8.h1": {
     "ru": "Публичные и приватные свойства",

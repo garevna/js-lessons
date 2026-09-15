@@ -179,6 +179,11 @@
     "eng": "And we know that",
     "ua": "А ми знаємо, що"
   },
+  "s1.slogan1": {
+    "ru": "ссылка - это отмычка",
+    "eng": "reference is a lockpick",
+    "ua": "посилання - це відмичка"
+  },
   "s1.p36": {
     "ru": "Передача ссылки создает возможность мутировать исходный массив:",
     "eng": "Passing a reference creates the ability to mutate the original array:",
@@ -379,6 +384,11 @@
     "eng": "To do this, we definitely need to specify the starting value of the **accumulator variable**, since the value of the first element of the array will be a string, and we want to get an object.",
     "ua": "Для цього нам обов'язково потрібно вказати стартове значення акумулятора, оскільки значення першого елемента масиву буде рядок, а ми хочемо отримати об'єкт."
   },
+  "s4.p3": {
+    "ru": "У вас должен получиться результат:",
+    "eng": "Now let's reduce the array of objects to a string.",
+    "ua": "Тепер зведемо масив об'єктів до рядка."
+  },
   "s4.p4": {
     "ru": "Перейдите по [![ico-20 link] **_ссылке_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )",
     "eng": "Now let's count how many times each character appears in the string and return an object:",
@@ -393,6 +403,11 @@
     "ru": "Вызовите функцию  **⟦f13⟧**.",
     "eng": "The engine uses the exponential form of representing small numbers, i.e. instead of **⟦f21⟧** there will be **⟦f22⟧**.",
     "ua": "Двигун використовує експоненційну форму уявлення малих чисел, тобто. замість **⟦f21⟧** буде **⟦f22⟧**."
+  },
+  "s4.p7": {
+    "ru": "У вас должен получиться результат:",
+    "eng": "For large numbers the same thing happens, i.e. instead of **⟦f23⟧** there will be **⟦f24⟧**.",
+    "ua": "Для великих чисел відбувається те саме, тобто. замість **⟦f23⟧** буде **⟦f24⟧**."
   },
   "s4.p8": {
     "ru": "Метод **⟦f14⟧** итерирует массив, проверяя выполнение заданного условия для каждого элемента массива.",
@@ -907,6 +922,26 @@
   "s6.p26": {
     "ru": "мы получили в первом случае массив массивов, а во втором - \"плоский\" массив",
     "eng": "So, using the same function:",
+    "ua": ""
+  },
+  "s6.p27": {
+    "ru": "**Генератор**.",
+    "eng": "in the first case we received an array of arrays, and in the second we received a “flat” array.",
+    "ua": ""
+  },
+  "s6.p28": {
+    "ru": "**Возвращает объект _итератора_**.",
+    "eng": "**Generator**.",
+    "ua": ""
+  },
+  "s6.p30": {
+    "ru": "**Генератор**.",
+    "eng": "◘◘**^^Result^^**◘◘",
+    "ua": ""
+  },
+  "s6.p31": {
+    "ru": "**Возвращает объект _итератора_**.",
+    "eng": "**Generator**.",
     "ua": ""
   },
   "s7.h1": {

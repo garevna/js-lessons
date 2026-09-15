@@ -1,8 +1,8 @@
 # ![ico-30 study] {{s1.h1}}
 
-## ![ico-25 hw] {{common.c11}}
+## ![ico-25 hw] {{common.c8}}
 
-### ![ico-20 sand-watch] {{common.c19}} 1
+### ![ico-20 sand-watch] {{topic.t4}} 1
 
 {{s3.p1}}
 {{s3.p2}}
@@ -10,7 +10,7 @@
 {{s3.p4}}
 {{s3.p5}}
 
-### ![ico-20 sand-watch] {{common.c19}} 2
+### ![ico-20 sand-watch] {{topic.t4}} 2
 
 {{s4.p1}}
 {{s4.p2}}
@@ -32,7 +32,7 @@
 
 _________________________________________________________
 
-### ![ico-20 sand-watch] {{common.c19}} 3
+### ![ico-20 sand-watch] {{topic.t4}} 3
 
 {{s5.p1}}
 {{s5.p2}}
@@ -42,14 +42,14 @@ _________________________________________________________
 {{s5.p6}}
 {{s5.p7}}
 
-### ![ico-20 sand-watch] {{common.c19}} 4
+### ![ico-20 sand-watch] {{topic.t4}} 4
 
 {{s6.p1}}
 {{s6.p2}}
 {{s6.p3}}
 {{s6.p4}}
 
-### ![ico-20 sand-watch] {{common.c19}} 5
+### ![ico-20 sand-watch] {{topic.t4}} 5
 
 {{s7.p1}}
 

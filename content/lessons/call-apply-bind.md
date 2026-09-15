@@ -1,8 +1,8 @@
-# ![ico-30 study] {{common.c180}}
+# ![ico-30 study] {{s1.h1}}
 
 ____________________________________________
 
-## ![ico-25 icon] {{common.c181}}
+## ![ico-25 icon] {{s2.h1}}
 
 {{s2.p1}}
 
@@ -43,7 +43,7 @@ console.dir(func)
 
 ________________________________
 
-## ![ico-25 icon] {{common.c60}}
+## ![ico-25 icon] {{s3.h1}}
 
 {{s3.p1}}
 
@@ -162,7 +162,7 @@ I'm figure
 
 ____________________________________
 
-## ![ico-25 icon] {{common.c27}}
+## ![ico-25 icon] {{common.c19}}
 
 @@@@
 ![](images/funcs-call-girls-ukr.svg)
@@ -220,7 +220,7 @@ getName.getName()
 ~~~
 _____________________________________________
 
-## ![ico-25 icon] {{common.c180}}
+## ![ico-25 icon] {{s5.h1}}
 
 {{s5.p1}}
 {{s5.p2}}
@@ -492,9 +492,9 @@ bloom.google()
 
 _________________________________________
 
-## ![ico-25 smile] {{common.c178}}
+## ![ico-25 smile] {{s6.h1}}
 
-![ico-20 question] {{common.c179}}
+{{s6.p1}}
 
 ~~~js
 var sample = function () {

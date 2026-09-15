@@ -178,7 +178,7 @@ A page is a skeleton plus one message file holding all three languages:
 content/lessons/Closure.md      structure: markup, code, {{keys}}
 content/messages/Closure.json   the text, in every language
 content/fragments/Closure.json  inline code and link targets
-content/common.json             phrases that repeat across the course
+content/phrases.json             phrases that repeat across the course
 ```
 
 The message file is one entry per paragraph:
@@ -224,74 +224,65 @@ npm run i18n -- --done       finished pages
 the top, so a session finishes several pages instead of half-filling a long
 one.
 
-### The repeated phrases come first
-
-`Результат в консоли:` appears 33 times across 12 pages. `Пример 1` appears on
-nine. Sent to DeepL as part of a page, each occurrence is translated on its
-own, out of context, and comes back a little differently every time — "Result
-in the console", "Output in the console" and "Output to the console" were all
-in the pages at once.
-
-```
-npm run common                          collect them into content/common.json
-node tools/i18n-export.js --common eng
-node tools/i18n-import.js --common eng
-```
-
-295 phrases cover 899 occurrences, so translating them once removes 604
-segments from the queue and, more to the point, is the only way a heading
-reads the same on every page. After that each page export fills them in by
-itself and reports how many.
-
-`npm run common` also prints every phrase currently translated more than one
-way, with counts — a short list worth reading, because the most common reading
-is the one it keeps.
-
-The table is keyed by the phrase with its markup stripped, so `Результат`,
-`**Результат**` and `◘◘^^Результат^^◘◘` share one entry and each occurrence
-gets its own markup back. It is a translator's aid, not a layer the build
-knows about: the filled-in text is written into the page's own message file,
-so a page still holds every word it shows.
-
-
-### Phrases the pages share
+### The phrase book
 
 A page that says `или:` twelve times used to hold twelve keys, each with the
 same two characters in it and each translated on its own. Now the skeleton
-points at the shared table:
+points at the book:
 
 ```
 ◘◘{{common.c17}}◘◘
 ```
 
-and `content/common.json` holds the phrase once:
+and `content/phrases.json` holds the phrase once. 397 keys across 95 pages
+point at it.
 
-```json
-"c17": { "ru": "или:", "eng": "or:", "ua": "або:" }
+Two sections, because repeating often does not make a phrase the course's.
+
+**`common`** — stock wording turning up in lessons that have nothing to do with
+each other. `Результат в консоли:` is on twelve different pages and means the
+same thing on all of them. Written as `{{common.c3}}`.
+
+**`topic`** — wording that repeats inside one lesson. `строгий режим:` appears
+twelve times, all of them on the page about strict mode. Worth writing once,
+but it is that lesson's wording, so the entry records which lessons it belongs
+to and the skeleton says `{{topic.t0}}`.
+
+The first version of this table had one section and used repetition as the
+whole test, which put `События элементов DOM` in a file called common. The
+difference is not how often a phrase repeats but whether the pages it repeats
+on have anything to do with each other.
+
+What belongs in the book is **template wording** — a label, a heading, a stock
+caption. Not a paragraph. A phrase in the book is edited for every page at
+once, which is the point for `Результат:` and a trap for anything you might
+want to reword in one place only. Hence the 60-character limit, and hence
+`content/phrases-ignore.json`, a plain list of phrases never to share: add a
+line there and `npm run phrases` will leave it in the pages.
+
 ```
-
-702 keys across 122 pages moved out this way. Only the words move: the markup
-around them — emphasis, a border, a trailing number — stays in the skeleton, so
-`Результат`, `**Результат**` and `◘◘^^Результат^^◘◘` share one translation and
-keep their own appearance. A reference is only made when putting the markup
-back reproduces the original byte for byte, which is why rebuilding all 167
-Russian pages after the change produced no diff at all.
-
-```
-npm run common               rebuild the table from the pages
+npm run phrases              rebuild the book, and list what it chose
 node tools/i18n-dedupe.js    what would move out of the pages (--write to do it)
 ```
 
+Both sections are translated together:
+
+```
+node tools/i18n-export.js --phrases eng
+node tools/i18n-import.js --phrases eng
+```
+
+Only the words move out of a page. The markup around them — emphasis, a border,
+a trailing number — stays in the skeleton, so `Результат`, `**Результат**` and
+`◘◘^^Результат^^◘◘` share one translation and keep their own appearance. A
+reference is only made when putting the markup back reproduces the original
+byte for byte, which is why rebuilding all 167 Russian pages after the change
+produced no diff at all.
+
 Ids are assigned once and never reused, because a skeleton points at them. A
 phrase that stops repeating keeps its entry rather than leaving a page pointing
-at nothing.
-
-Long text stays in its page. A paragraph that happens to appear twice is still
-that page's own writing, and two of the lessons are near-duplicates of each
-other — without a limit, 76 of one page's 95 keys would have moved into a table
-of "common phrases". Only phrases of 60 characters or less become references.
-The table still holds the long ones, which is what lets the exporter fill in a
-repeat without asking a translator twice.
+at nothing. A phrase carrying `⟦fN⟧` is never shared: that number indexes the
+page's own fragment table, and the tables differ from page to page.
 
 ### Translating a page
 

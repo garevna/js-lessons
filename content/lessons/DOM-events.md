@@ -1,6 +1,6 @@
 # ![ico-30 study] Document Object Model (DOM)
 
-## ![ico-25 icon] {{common.c74}}
+## ![ico-25 icon] {{s1.h1}}
 
 @@@@
 
@@ -13,7 +13,7 @@
 console.dir(EventTarget)
 ~~~
 
-{{common.c75}}
+{{s1.p2}}
 
 ~~~~console
 
@@ -39,8 +39,8 @@ console.dir(EventTarget)
 • dispatchEvent
 
 {{s1.p4}}
-^^{{common.c78}}^^
-^^{{common.c79}}^^
+{{s1.p5}}
+{{s1.p6}}
 
 {{s1.p7}}
 
@@ -57,7 +57,7 @@ for (var prop in HTMLElement.prototype) {
 }
 ~~~
 
-^^{{common.c84}}^^
+{{s1.p11}}
 
 {{s1.p12}}
 
@@ -104,11 +104,11 @@ document.body.appendChild(document.createElement('div'))
 
 ______________________________________________________
 
-![ico-20 warn] {{common.c86}}
+{{s1.p15}}
 
-{{common.c87}}
+{{s1.p16}}
 
-{{common.c88}}
+{{s1.p17}}
 
 ^^^[event type]
 
@@ -127,7 +127,7 @@ ______________________________________________________
 
 ^^^
 
-{{common.c89}}
+{{s1.p18}}
 
 ![](illustrations/event-1.png)
 {{s1.p19}}
@@ -183,16 +183,16 @@ var divs = pictures.map(picture => {
 
 _________________________________
 
-{{common.c100}}
+{{s1.p29}}
 
 [HTML DOM Events](external/mdn-dom-events)
 [JavaScript Events](external/w3-dom-events)
 
 _________________________________________
 
-## ![ico-25 icon] {{common.c101}}
+## ![ico-25 icon] {{s2.h1}}
 
-{{common.c102}}
+{{s2.p1}}
 
 {{s2.p2}}
 
@@ -204,7 +204,7 @@ ___________________________________
 
 ## ![ico-25 icon] dispatchEvent
 
-{{common.c104}}
+{{s2.p3}}
 
 ◘◘![ico-25 cap] **dispatchEvent**◘◘
 
@@ -322,7 +322,7 @@ ____________________________
 
 ![](illustrations/event-2.png)
 
-{{common.c118}}
+{{s2.p22}}
 
 ![ico-20 green-ok] addEventListener
 ![ico-20 green-ok] removeEventListener
@@ -527,7 +527,7 @@ ____________________________________
 
 _______________________
 
-{{common.c128}}
+{{s2.p43}}
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
@@ -557,7 +557,7 @@ for (var txt of text) {
 
 {{s2.p44}}
 
-{{common.c130}}
+{{s2.p45}}
 
 ~~~js
 event.stopImmediatePropagation()
@@ -583,7 +583,7 @@ ____________________________________________
 
 ___________________
 
-{{common.c140}}
+{{s2.p55}}
 
 ◘◘![ico-25 cap] ** 7**◘◘
 
@@ -601,7 +601,7 @@ document.getElementById('sample')
 
 ___________________________________
 
-{{common.c141}}
+{{s2.p56}}
 
 ◘◘![ico-25 cap] ** 8**◘◘
 
@@ -617,7 +617,7 @@ _________________________
 
 ![ico-25 cap] ** 9**
 
-^^^[{{common.c24}}]
+^^^[{{common.c17}}]
 
 ~~~html
 <div id="main-frame" class="wrapper">
@@ -645,7 +645,7 @@ _________________________
 
 ^^^
 
-^^^[{{common.c142}}]
+^^^[{{s2.spoiler2}}]
 
 ~~~js
 var collection = document.querySelectorAll('p &#126; *')
@@ -725,7 +725,7 @@ document.body.onclick = bodyClickHandler
 
 ____________________________________________________________
 
-{{common.c147}}
+{{s2.p61}}
 
 [:::mouseover & mouseout:::](external/mouseover-mouseout)
 

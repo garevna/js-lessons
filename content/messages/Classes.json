@@ -24,6 +24,11 @@
     "eng": "However, it should be borne in mind that this is merely a layer of cellophane in which the same old constructor has been wrapped.",
     "ua": "Однак слід пам’ятати, що це всього лише целофан, у який загорнули той самий конструктор."
   },
+  "s2.h1": {
+    "ru": "Синтаксис",
+    "eng": "Syntax",
+    "ua": "Синтаксис"
+  },
   "s2.p1": {
     "ru": "![ico-20 warn] Код внутри тела класса всегда выполняется в **⟦f1⟧**",
     "eng": "![ico-20 warn] Code within the class body is always executed in **⟦f1⟧**",
@@ -254,6 +259,16 @@
     "eng": "^^![ico-20 speach] Let’s try to perform the assignment by passing incorrect values:^^",
     "ua": "^^![ico-20 speach] Спробуємо виконати присвоєння, передаючи некоректні значення:^^"
   },
+  "s3.p33": {
+    "ru": "**Результат - исключение:**",
+    "eng": "**Result – an exception:**",
+    "ua": "**Результат — виняток:**"
+  },
+  "s3.p34": {
+    "ru": "**Результат - исключение:**",
+    "eng": "**Result – an exception:**",
+    "ua": "**Результат — виняток:**"
+  },
   "s3.p35": {
     "ru": "^^![ico-20 speach] Значение свойства  **_history_**  не изменилось, ^^",
     "eng": "^^![ico-20 speach] The value of the **_history_** property has not changed, ^^",
@@ -333,6 +348,11 @@
     "ru": "^^Создадим экземпляр **user** и вызовем метод **_addSomeInfo_**^^",
     "eng": "^^Let’s create an instance of **user** and call the **_addSomeInfo_** method^^",
     "ua": "^^Створимо екземпляр **user** і викличемо метод **_addSomeInfo_**^^"
+  },
+  "s5.h1": {
+    "ru": "Наследование",
+    "eng": "Inheritance",
+    "ua": "Спадкування"
   },
   "s5.p1": {
     "ru": "Ключевое слово **⟦f15⟧** используется для создания дочернего класса",
@@ -448,6 +468,11 @@
     "ru": "![ico-20 warning] Первое, что нужно выполнить в конструкторе наследующего класса - вызвать метод **super()**",
     "eng": "![ico-20 warning] The first thing you need to do in the constructor of the derived class is to call the **super()** method",
     "ua": "![ico-20 warning] Перше, що потрібно виконати у конструкторі класу, що успадковується, — викликати метод **super()**"
+  },
+  "s5.p28": {
+    "ru": "В противном случае будет сгенерировано исключение:",
+    "eng": "Otherwise, an exception will be thrown:",
+    "ua": "В іншому разі буде згенеровано виняток:"
   },
   "s6.h1": {
     "ru": "super в литералах объектов",

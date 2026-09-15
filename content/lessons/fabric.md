@@ -109,7 +109,7 @@ console.log(google.getVar('token'))            // No access
 console.log(google.getVar('name', '789541'))   // Google
 ~~~
 
-^^{{common.c191}}^^
+{{s2.p5}}
 
 ~~~console
 
@@ -152,7 +152,7 @@ google.getVar('token', '789451')  // "AfG78-1nm*15ph"
 google.getVar('cash', '789451')   // 25000
 ~~~~
 
-^^{{common.c191}}^^
+{{s2.p9}}
 
 ~~~console
 
@@ -174,7 +174,7 @@ google.getVar('cash', '789451')   // 25000
 
 __________________________________
 
-## ![ico-25 icon] {{common.c192}}
+## ![ico-25 icon] {{s3.h1}}
 
 {{s3.p1}}
 

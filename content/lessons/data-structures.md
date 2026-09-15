@@ -39,9 +39,9 @@ var students = group
 
 _________________________________________________
 
-## ![ico-30 icon] {{common.c34}}
+## ![ico-30 icon] {{common.c23}}
 
-**{{common.c184}}**
+{{s2.p1}}
 
 {{s2.p2}}
 {{s2.p3}}
@@ -104,7 +104,7 @@ var collection = array
 
 {{s2.p22}}
 
-{{common.c185}}
+{{s2.p23}}
 
 {{s2.p24}}
 
@@ -200,9 +200,9 @@ var hello = 'Hi ' + students[1] + '!'
 
 _____________________________________________________________
 
-## ![ico-25 icon] {{common.c25}}
+## ![ico-25 icon] {{common.c18}}
 
-**{{common.c184}}**
+{{s3.p1}}
 
 {{s3.p2}}
 {{s3.p3}}

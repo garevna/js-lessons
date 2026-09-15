@@ -1,4 +1,9 @@
 {
+  "s1.h1": {
+    "ru": "Данные на клиенте",
+    "eng": "Data on the client",
+    "ua": "Дані на клієнті"
+  },
   "s1.p1": {
     "ru": "**Локальное хранилище данных на клиенте**",
     "eng": "**Local data storage on the client**",

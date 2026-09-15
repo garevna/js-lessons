@@ -96,7 +96,7 @@ const getAnswer = question => question === 'who'
       : 'I don\'t undestand your question'
 ~~~
 
-оператор _switch_
+◘◘![ico-25 cap] оператор _switch_◘◘
 
 ~~~js
 const getAnswer = question => ['who', 'what', 'where'].includes(question)
@@ -369,7 +369,7 @@ const user = fabric.call(template, {}, 'Piter')
 
 У правій частині знаходиться літерал об'єкта.
 
-Перевіримо:
+1. Двигун викликає конструктор **~Object~**.
 
 ~~~js
 user.showName()  // Robert

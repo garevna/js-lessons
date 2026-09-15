@@ -455,7 +455,7 @@ section.onclick = (function () {
 
 _________________________________________________________
 
-## ![ico-25 icon] {{common.c14}}
+## ![ico-25 icon] {{common.c10}}
 
 ![ico-25 cap] **11**
 

@@ -210,7 +210,7 @@ _____________________________________
 
 ^^^[{{common.c3}} 2]
 
-^^{{common.c8}}^^
+^^{{topic.t1}}^^
 ~~~js
 console.time('while')
 
@@ -226,7 +226,7 @@ for (var x = 0; x < 10000; x++) {}
 console.timeEnd('for')
 ~~~
 
-{{common.c22}}
+{{topic.t5}}
 
 ^^^
 
@@ -257,20 +257,20 @@ ______________________________________
 
 ^^^[{{common.c3}} 3]
 
-^^{{common.c8}}^^
+^^{{topic.t1}}^^
 ~~~js
 var win = window.open('https://css-tricks.com')
 ~~~
 
-^^{{common.c53}}^^
-^^{{common.c8}}^^
+{{s1.p32}}
+^^{{topic.t1}}^^
 ~~~js
 console.clear()
 ~~~
 
 {{s1.p34}}
 {{s1.p35}}
-^^{{common.c8}}^^
+^^{{topic.t1}}^^
 ~~~js
 location.hash
 ~~~
@@ -278,29 +278,29 @@ location.hash
 {{s1.p37}}
 
 {{s1.p38}}
-^^{{common.c8}}^^
+^^{{topic.t1}}^^
 ~~~js
 win.close()
 ~~~
 
-{{common.c22}}
+{{topic.t5}}
 
 ^^^
 
 ^^^[{{common.c3}} 4]
 
-^^{{common.c8}}^^
+^^{{topic.t1}}^^
 ~~~js
 var win = window.open()
 ~~~
 
-^^{{common.c53}}^^
-^^{{common.c8}}^^
+{{s1.p42}}
+^^{{topic.t1}}^^
 ~~~js
 location.href = 'https://translate.google.com'
 ~~~
 
-{{common.c54}}
+{{s1.p44}}
 
 ^^^
 ______________________________________
@@ -355,7 +355,7 @@ ___________________________________________
 
 ^^^[{{common.c3}} 5]
 
-^^{{common.c8}}^^
+^^{{topic.t1}}^^
 
 ~~~js
 var newWin = window.open()
@@ -364,13 +364,13 @@ newWin.document.write('<script>document.write(\'<h3>Hello!</h3>\')</script>')
 console.log(newWin.document.body)
 ~~~
 
-{{common.c22}}
+{{topic.t5}}
 
 ^^^
 
 ^^^[{{common.c3}} 6]
 
-^^{{common.c8}}^^
+^^{{topic.t1}}^^
 
 ~~~js
 var newWin = window.open()
@@ -380,13 +380,13 @@ console.log(newWin.document.body)
 newWin.close()
 ~~~
 
-{{common.c22}}
+{{topic.t5}}
 
 ^^^
 
 ^^^[{{common.c3}} 7]
 
-^^{{common.c8}}^^
+^^{{topic.t1}}^^
 
 ~~~js
 var html = `
@@ -405,7 +405,7 @@ var newWin = window.open('https://www.w3schools.com/')
 newWin.document.write(html)
 ~~~
 
-{{common.c54}}
+{{s1.p57}}
 
 ^^^
 

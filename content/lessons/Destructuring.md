@@ -20,7 +20,7 @@
 
 _______________________________________________________________
 
-## ![ico-25 icon] {{common.c34}}
+## ![ico-25 icon] {{common.c23}}
 
 {{s2.p1}}
 
@@ -170,7 +170,7 @@ const userBirthday = new Date(...user.birthday.split('.').reverse())
 
 _____________________________________________________________
 
-## ![ico-25 icon] {{common.c25}}
+## ![ico-25 icon] {{common.c18}}
 
 {{s6.p1}}
 
@@ -486,7 +486,7 @@ ____________________________________________________________________
 
 {{s10.p17}}
 
-{{common.c24}}
+{{common.c17}}
 
 ◘◘![ico-20 cap] 15 (html)◘◘
 
@@ -542,7 +542,7 @@ const lettersCounter = str => Object.assign({}, ...str
 lettersCounter('htkolkhlfottko')
 ~~~
 
-**{{common.c153}}**
+{{s10.p23}}
 
 ~~~console
 ▼ {h: 2, t: 3, k: 3, o: 3, l: 2, …}

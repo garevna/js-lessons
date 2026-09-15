@@ -2,7 +2,7 @@
 
 **ES6**
 
-**{{common.c10}}**
+**{{common.c7}}**
 
 {{s0.p2}}
 
@@ -134,7 +134,7 @@ const userSet = new Set(users)
 console.log(userSet)
 ~~~
 
-{{common.c168}}
+{{s1.p4}}
 
 ~~~js
 const user1 = {

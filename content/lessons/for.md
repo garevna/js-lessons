@@ -41,7 +41,7 @@ for (initialization; condition; update) {
 }
 ~~~
 
-{{common.c196}}
+{{s1.p24}}
 ~~~js
 // initialization:
 var index = 0
@@ -156,7 +156,7 @@ for (var i = 0; i < 10; i++) {
 {{s3.p16}}
 {{s3.p17}}
 
-^^{{common.c167}}^^
+{{s3.p18}}
 
 _________________________________________________________________
 

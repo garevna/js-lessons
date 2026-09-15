@@ -189,7 +189,7 @@ Math.sin(argument)
 
 {{s3.p22}}
 
-{{common.c168}}
+{{s3.p23}}
 
 ~~~console
 var sin = Math.sin(argument)
@@ -297,7 +297,7 @@ var func = function () {
 {{s4.p27}}
 
 {{s4.p28}}
-{{common.c185}}
+{{s4.p29}}
 
 {{s4.p30}}
 
@@ -433,7 +433,7 @@ var calcs = function (x = 1, y = x * 2, z = 0) {
 
 ____________________________________________________________________
 
-## ![ico-25 icon] {{common.c15}}
+## ![ico-25 icon] {{common.c11}}
 
 ◘◘** 1**◘◘
 ~~~js
@@ -453,7 +453,7 @@ function greeting (userName) {
 console.log(greeting())
 ~~~
 
-→→→ {{common.c43}} | {{s8.quizVariants2}} | {{s8.quizAnswer2}}→→→
+→→→ {{topic.t13}} | {{s8.quizVariants2}} | {{s8.quizAnswer2}}→→→
 
 ◘◘** 3**◘◘
 ~~~js
@@ -464,7 +464,7 @@ function greeting (userName = 'Human') {
 console.log(greeting())
 ~~~
 
-→→→ {{common.c43}} | {{s8.quizVariants3}} | {{s8.quizAnswer3}}→→→
+→→→ {{topic.t13}} | {{s8.quizVariants3}} | {{s8.quizAnswer3}}→→→
 
 
 ◘◘** 4**◘◘
@@ -477,7 +477,7 @@ function greeting (userName = 'Human') {
 console.log(greeting())
 ~~~
 
-→→→ {{common.c43}} | {{s8.quizVariants4}} | {{s8.quizAnswer4}}→→→
+→→→ {{topic.t13}} | {{s8.quizVariants4}} | {{s8.quizAnswer4}}→→→
 
 ◘◘** 5**◘◘
 ~~~js

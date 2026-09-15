@@ -167,7 +167,7 @@ style.textContent = `
 {{s0.p30}}
 {{s0.p31}}
 
-◘◘![ico-20 cap] {{common.c193}}◘◘
+{{s0.p32}}
 
 ~~~js
 const createInput = () => {

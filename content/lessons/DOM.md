@@ -49,7 +49,7 @@
 
 _________________________________________
 
-## ![ico-30 icon] {{common.c148}}
+## ![ico-30 icon] {{s1.h1}}
 
 {{s1.p1}}
 
@@ -872,7 +872,7 @@ parent.appendChild(elem)
 
 {{s3.p18}}
 
-{{common.c16}}
+{{common.c12}}
 
 ~~~js
 figure.appendChild(paragraph)
@@ -1087,7 +1087,7 @@ console.log(section)
 ~~~
 _____________________________________________
 
-### ![ico-25 icon] {{common.c149}}
+### ![ico-25 icon] {{s5.h1}}
 
 {{s5.p1}}
 
@@ -1120,7 +1120,7 @@ getMethods.call(Document.prototype, 'get')
 
 ![ico-25 coffee] ** 1**
 
-◘◘{{common.c24}}◘◘
+◘◘{{common.c17}}◘◘
 
 ~~~html
 &lt;body>
@@ -1160,7 +1160,7 @@ ____________________________________________
 {{s5.p11}}
 
 {{s5.p12}}
-{{common.c8}}
+{{topic.t1}}
 
 ~~~js
 document.getElementsByClassName('screen-reader-text', 'visually-hidden')
@@ -1179,7 +1179,7 @@ _________________________________________
 {{s5.p17}}
 ________________________________________
 
-### ![ico-25 icon] {{common.c149}}
+### ![ico-25 icon] {{s6.h1}}
 
 ______________________________________
 
@@ -1252,7 +1252,7 @@ section.querySelectorAll('*')
 
 _________________________________________________
 
-## ![ico-30 hw] {{common.c15}}
+## ![ico-30 hw] {{common.c11}}
 
 ◘◘![ico-25 hw]** 1**◘◘
 ~~~js
@@ -1262,7 +1262,7 @@ var elem = document.body
 elem.tagName = 'div'
 ~~~
 
-→→→ {{common.c64}} | {{common.c65}} | {{s7.quizAnswer1}}→→→
+→→→ {{s7.quiz1}} | {{s7.quizVariants1}} | {{s7.quizAnswer1}}→→→
 
 ____________________________________________
 
@@ -1272,7 +1272,7 @@ ____________________________________________
 document.title = 'DOM'
 ~~~
 
-→→→ {{common.c66}} | {{common.c67}} | {{common.c68}}→→→
+→→→ {{s7.quiz2}} | {{s7.quizVariants2}} | {{s7.quizAnswer2}}→→→
 
 _________________________________________________
 
@@ -1292,19 +1292,19 @@ for (var text of paragraph) {
 }
 ~~~
 
-→→→ {{common.c69}} | {{s7.quizVariants3}} | {{s7.quizAnswer3}}→→→
+→→→ {{s7.quiz3}} | {{s7.quizVariants3}} | {{s7.quizAnswer3}}→→→
 
 _________________________________________
 
 ◘◘![ico-25 hw]** 4**◘◘
 
-→→→ {{common.c70}} | {{s7.quizVariants4}} | {{s7.quizAnswer4}}→→→
+→→→ {{s7.quiz4}} | {{s7.quizVariants4}} | {{s7.quizAnswer4}}→→→
 
 _________________________________________________
 
 ![ico-25 hw]** 5**
 
-{{common.c17}}
+{{s7.p1}}
 
 ~~~js
 var paragraph = document.body
@@ -1318,13 +1318,13 @@ paragraph.appendChild(document.createElement('span'))
 document.write('<h3 style="color: #09b">Hello!</h3>')
 ~~~
 
-→→→ {{common.c150}} | {{s7.quizVariants5}} | {{s7.quizAnswer5}}→→→
+→→→ {{s7.quiz5}} | {{s7.quizVariants5}} | {{s7.quizAnswer5}}→→→
 
 _____________________________________________
 
 ![ico-25 hw]** 6**
 
-{{common.c17}}
+{{s7.p3}}
 
 ~~~js
 document.write('<h3 style="color: #09b">Hello!</h3>')
@@ -1333,13 +1333,13 @@ var paragraph = document.body
 paragraph.appendChild(document.createElement('span'))
 ~~~
 
-→→→ {{common.c150}} | {{s7.quizVariants6}} | {{s7.quizAnswer6}}→→→
+→→→ {{s7.quiz6}} | {{s7.quizVariants6}} | {{s7.quizAnswer6}}→→→
 
 _____________________________________________
 
 ![ico-25 hw]** 7**
 
-{{common.c17}}
+{{s7.p4}}
 
 ~~~js
 document.createElement('h3').innerHTML = 'Welcome'
@@ -1354,7 +1354,7 @@ _____________________________________________
 
 ![ico-25 hw]** 8**
 
-{{common.c17}}
+{{s7.p5}}
 
 ~~~js
 var elems = ['h3', 'p', 'div'].map(tag => document.createElement(tag))
@@ -1368,20 +1368,20 @@ for (var elem of document.body.children) {
 }
 ~~~
 
-→→→ {{common.c151}} | {{s7.quizVariants8}} | {{s7.quizAnswer8}}→→→
+→→→ {{s7.quiz8}} | {{s7.quizVariants8}} | {{s7.quizAnswer8}}→→→
 
 _____________________________________________
 
 ![ico-25 hw]** 9**
 
-{{common.c17}}
+{{s7.p6}}
 
 ~~~js
 document.head.innerHTML = `<!-- Comment -->`
 for (var node of document.head.childNodes) console.log(node.nodeType)
 ~~~
 
-→→→ {{common.c151}} | {{s7.quizVariants9}} | {{s7.quizAnswer9}}→→→
+→→→ {{s7.quiz9}} | {{s7.quizVariants9}} | {{s7.quizAnswer9}}→→→
 
 _____________________________________________
 
@@ -1405,7 +1405,7 @@ elems.forEach(function (elem) {
 })
 ~~~
 
-→→→ {{common.c71}} | {{s7.quizVariants10}} | {{common.c73}}→→→
+→→→ {{s7.quiz10}} | {{s7.quizVariants10}} | {{s7.quizAnswer10}}→→→
 
 
 ___________________________________

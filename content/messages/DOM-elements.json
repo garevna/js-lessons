@@ -179,10 +179,40 @@
     "eng": "",
     "ua": ""
   },
+  "s4.quiz1": {
+    "ru": "Какой элемент появится в DOM?",
+    "eng": "",
+    "ua": ""
+  },
+  "s4.quizVariants1": {
+    "ru": "p, div, 'будет сгенерировано исключение'",
+    "eng": "",
+    "ua": ""
+  },
   "s4.quizAnswer1": {
     "ru": "p",
     "eng": "p",
     "ua": "p"
+  },
+  "s4.quiz2": {
+    "ru": "Что изменится после выполнения скрипта?",
+    "eng": "",
+    "ua": ""
+  },
+  "s4.quizVariants2": {
+    "ru": "'ничего', 'текст на странице', 'надпись на вкладке'",
+    "eng": "",
+    "ua": ""
+  },
+  "s4.quizAnswer2": {
+    "ru": "надпись на вкладке",
+    "eng": "",
+    "ua": ""
+  },
+  "s4.quiz3": {
+    "ru": "Сколько элементов будет добавлено на страницу?",
+    "eng": "",
+    "ua": ""
   },
   "s4.quizVariants3": {
     "ru": "0, 3, 1, 4",
@@ -194,6 +224,11 @@
     "eng": "4",
     "ua": "4"
   },
+  "s4.quiz4": {
+    "ru": "Какой тип данных у свойства innerHTML элемента DOM?",
+    "eng": "",
+    "ua": ""
+  },
   "s4.quizVariants4": {
     "ru": "'boolean', 'undefined', 'string', 'function', 'number', 'object'",
     "eng": "'boolean', 'undefined', 'string', 'function', 'number', 'object'",
@@ -204,8 +239,18 @@
     "eng": "string",
     "ua": "string"
   },
+  "s4.quiz5": {
+    "ru": "Что итерирует функция showProto?",
+    "eng": "",
+    "ua": ""
+  },
   "s4.quizVariants5": {
     "ru": "'массив html-элементов', 'свойства html-элемента', 'цепочку прототипов html-элемента'",
+    "eng": "",
+    "ua": ""
+  },
+  "s4.quizAnswer5": {
+    "ru": "цепочку прототипов html-элемента",
     "eng": "",
     "ua": ""
   }

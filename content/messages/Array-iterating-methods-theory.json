@@ -349,6 +349,11 @@
     "eng": "This gives to it the ability to mutate the original array, since",
     "ua": ""
   },
+  "s5.slogan1": {
+    "ru": "ссылка - это отмычка",
+    "eng": "",
+    "ua": ""
+  },
   "s5.p21": {
     "ru": "В результате выполнения кода массив **users** будет таким:",
     "eng": "As a result of executing the code, the **users** array will look like this:",

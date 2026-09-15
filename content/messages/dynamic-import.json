@@ -14,15 +14,30 @@
     "eng": "![ico-25 warn] Strictly speaking, **⟦f1⟧** is not a function in the sense of inheriting from **⟦f2⟧**, it is not an object at all.",
     "ua": "![ico-25 warn] Строго кажучи, **⟦f1⟧** не є функцією в сенсі успадкування від **⟦f2⟧**, це взагалі не об'єкт."
   },
+  "s0.p4": {
+    "ru": "Запустите в консоли **Chrome** следующий код:",
+    "eng": "Run the following code in the console:",
+    "ua": "Запустіть у консолі наведений нижче код."
+  },
   "s0.p5": {
     "ru": "^^![ico-20 speach] Примечательно то, что в файле **_index21.js_** нет директивы **_⟦f3⟧_**^^",
     "eng": "^^![ico-20 speach] Notably, there is no **_⟦f3⟧_** directive in the **_index21.js_**file.^^",
     "ua": "^^![ico-20 speach] Примітно, що у файлі **⟦f13⟧** немає директиви **_⟦f3⟧_**.^^"
   },
+  "s0.p6": {
+    "ru": "^^Однако импорт сработал, и скрипт запустился^^",
+    "eng": "^^However, the import worked, and the script ran.^^",
+    "ua": "^^Однак імпорт спрацював, і скрипт запустився.^^"
+  },
   "s0.p7": {
     "ru": "^^В этом примере скрипты импортируются динамически, последовательно, с задержкой в несколько секунд^^",
     "eng": "^^In this example, the scripts are imported dynamically, sequentially, with a delay of a few seconds.^^",
     "ua": "^^У цьому прикладі скрипти імпортуються динамічно, послідовно, із затримкою в кілька секунд.^^"
+  },
+  "s0.p8": {
+    "ru": "^^Используем асинхронную функцию для упрощения кода:^^",
+    "eng": "^^Let's use an asynchronous function to simplify the code:^^",
+    "ua": "^^Використовуємо асинхронну функцію для спрощення коду:^^"
   },
   "s0.p9": {
     "ru": "Предположим, в разметке мы подключили скрипт **⟦f4⟧**",
@@ -44,6 +59,11 @@
     "eng": "and calls it with the text \"_Hi, students! Welcome to new age of ES Modules!_\"",
     "ua": "і викликає її з текстом \"_Hi, students! Welcome to new age of ES Modules!_\"."
   },
+  "s0.p13": {
+    "ru": "Полный код:",
+    "eng": "Full code:",
+    "ua": "Повний код:"
+  },
   "s0.p14": {
     "ru": "Именованый экспорт в файле **⟦f8⟧**",
     "eng": "Named export in file **⟦f8⟧**:",
@@ -58,5 +78,10 @@
     "ru": "или относительный путь, начинающийся с ⟦f9⟧, ⟦f10⟧ или ⟦f11⟧:",
     "eng": "or a relative path starting with ⟦f9⟧, ⟦f10⟧ or ⟦f11⟧:",
     "ua": "або відносний шлях, що починається з ⟦f9⟧, ⟦f10⟧ або ⟦f11⟧:"
+  },
+  "s0.p17": {
+    "ru": "В противном случае импорт завершится неудачей",
+    "eng": "Otherwise the import will fail.",
+    "ua": "Інакше імпорт завершиться невдачею."
   }
 }

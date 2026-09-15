@@ -117,7 +117,7 @@ function sample () {
 sample ()
 ~~~
 
-{{common.c26}}
+{{topic.t6}}
 
 ![ico-20 err] ~Uncaught SyntaxError: Identifier 'figure' has already been declared~
 
@@ -160,7 +160,7 @@ const XXX = 11
 XXX = 55
 ~~~
 
-{{common.c26}}
+{{topic.t6}}
 
 ![ico-20 err] ~Uncaught TypeError: Assignment to constant variable.~
 
@@ -172,7 +172,7 @@ XXX = 55
 const XXX
 ~~~
 
-{{common.c26}}
+{{topic.t6}}
 
 ••![ico-20 err] Uncaught SyntaxError: Missing initializer in const declaration••
 

@@ -69,7 +69,7 @@ const permissions = Symbol.for(JSON.stringify({
 }))
 ~~~
 
-{{common.c23}}
+{{common.c16}}
 {{s0.p10}}
 
 • setPrototypeOf

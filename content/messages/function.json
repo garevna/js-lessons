@@ -254,6 +254,11 @@
     "eng": "then the value 1 is returned, and we see that value in the console instead of ⟦f5⟧.",
     "ua": "то повертається значення 1, і ми бачимо в консолі це значення замість ⟦f5⟧."
   },
+  "s3.p23": {
+    "ru": "Однако если мы сделаем так:",
+    "eng": "However, if we do this:",
+    "ua": "Однак якщо ми зробимо так:"
+  },
   "s3.p24": {
     "ru": "то мы опять увидим в консоли ⟦f5⟧, потому что присваивание не возвращает значения.",
     "eng": "then we will see ⟦f5⟧ in the console again, because the assignment does not return a value.",
@@ -438,6 +443,11 @@
     "ru": "Итак, код внутри тела функции не был исполнен.",
     "eng": "But all objects, as we already know, are **reference data type**, i.e. a **reference** will be returned to us, which will go into the **⟦f12⟧** variable.",
     "ua": "Отже, код усередині тіла функції не було виконано."
+  },
+  "s4.p29": {
+    "ru": "Проверим?",
+    "eng": "So, the code inside the function body has not been executed.",
+    "ua": "Перевіримо?"
   },
   "s4.p30": {
     "ru": "Обявим переменные **⟦f13⟧** и **⟦f14⟧** до объявления функции.",

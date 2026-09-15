@@ -257,7 +257,7 @@ for (var index in iteratedArray) {
 }
 ~~~
 
-**{{common.c28}}**
+**{{topic.t7}}**
 
 ~~~js
 0  :  7
@@ -276,7 +276,7 @@ for (var index in iteratedString) {
 }
 ~~~
 
-**{{common.c28}}**
+**{{topic.t7}}**
 
 ~~~js
 0  :  К
@@ -452,7 +452,7 @@ for (var city of cities) {
 }
 ~~~
 
-**{{common.c28}}**
+**{{topic.t7}}**
 
 ~~~console
 Киев
@@ -473,7 +473,7 @@ for (var index in cities) {
 }
 ~~~
 
-**{{common.c28}}**
+**{{topic.t7}}**
 
 ~~~console
 0

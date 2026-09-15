@@ -12,7 +12,7 @@
 
 ____________________________________________________________________
 
-## ![ico-25 icon] {{common.c58}}
+## ![ico-25 icon] {{s2.h1}}
 
 {{s2.p1}}
 {{s2.p2}}
@@ -451,7 +451,7 @@ pict.history = [
 pict.history = ['***']
 ~~~
 
-**{{common.c59}}**
+{{s3.p33}}
 
 ••![ico-20 error] History must contain path array••
 
@@ -459,7 +459,7 @@ pict.history = ['***']
 pict.history = true
 ~~~
 
-**{{common.c59}}**
+{{s3.p34}}
 
 ••![ico-20 error] History must be array••
 
@@ -586,7 +586,7 @@ console.log(user)
 
 ________________________________________________________
 
-## ![ico-25 icon] {{common.c60}}
+## ![ico-25 icon] {{s5.h1}}
 
 ### ![ico-20 icon] extends
 
@@ -782,7 +782,7 @@ class ExtendedCanvas extends Canvas {
 }
 ~~~
 
-{{common.c61}}
+{{s5.p28}}
 
 ••![ico-20 error] Uncaught ReferenceError: ••
 •• Must call super constructor in derived class before accessing 'this' or returning from derived constructor••
@@ -1082,7 +1082,7 @@ window.onresize = Canvas.resizeCanvas.bind(pict.canvas)
 
 {{s6.p69}}
 
-![ico-20 pin] {{common.c23}}
+![ico-20 pin] {{common.c16}}
 
 {{s6.p71}}
 {{s6.p72}}

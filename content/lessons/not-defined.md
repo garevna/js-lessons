@@ -9,7 +9,7 @@
 </body>
 ~~~
 
-{{common.c224}}
+{{s1.p1}}
 
 ~~~js
 document.querySelectorAll(':not(:defined)')
@@ -21,7 +21,7 @@ document.querySelectorAll(':not(:defined)')
 ▶ NodeList(2) [hello-element, bye-element]
 ~~~
 
-{{common.c224}}
+{{s1.p3}}
 
 ~~~js
 document.querySelectorAll(':defined')

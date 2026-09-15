@@ -21,7 +21,7 @@ console.log(message[4])  // R
 
 {{s1.p4}}
 
-^^{{common.c21}}^^
+^^{{common.c15}}^^
 
 ~~~js
 var  message = 'Привет', user = 'студент'
@@ -44,7 +44,7 @@ console.log(message + ', ' + user)
 
 ^^^[indexOf()]
 
-^^{{common.c156}}^^
+{{s2.p5}}
 
 ~~~js
 console.log('My new book'.indexOf('new'))
@@ -52,7 +52,7 @@ console.log('My new book'.indexOf('new'))
 
 {{s2.p6}}
 
-^^{{common.c16}}^^
+^^{{common.c12}}^^
 
 ~~~js
 var mainString = 'Дела идут неплохо'
@@ -67,7 +67,7 @@ console.log(pos)
 ### slice
 
 {{s2.p9}}
-{{common.c40}}
+{{s2.p10}}
 
 {{s2.p11}}
 {{s2.p12}}
@@ -77,7 +77,7 @@ console.log(pos)
 
 ^^^[slice()]
 
-^^{{common.c21}}^^
+^^{{common.c15}}^^
 
 ~~~js
 var name = 'Меня зовут Мария'.slice(11, 16)
@@ -128,8 +128,8 @@ str.slice(5)             // вернет  "зовут Мария" ( до кон�
 
 ### substring
 
-{{common.c171}}
-{{common.c40}}
+{{s2.p24}}
+{{s2.p25}}
 {{s2.p26}}
 
 ^^^[substring()]
@@ -148,8 +148,8 @@ str.slice(5)             // вернет  "зовут Мария" ( до кон�
 
 ### substr
 
-{{common.c171}}
-{{common.c40}}
+{{s2.p28}}
+{{s2.p29}}
 {{s2.p30}}
 
 ^^^[substr()]

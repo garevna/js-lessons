@@ -682,7 +682,7 @@ console.info(`(global) ${sample}`)
 
 ____________________________________
 
-### ![ico-20 icon] {{common.c42}}
+### ![ico-20 icon] {{topic.t12}}
 
 {{s1.p1}}
 
@@ -788,7 +788,7 @@ function sample () {}
 console.dir(sample)
 ~~~
 
-{{common.c197}}
+{{s1.p17}}
 ~~~console
 ▼ ƒ sample()
       arguments: null

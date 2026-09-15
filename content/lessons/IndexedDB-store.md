@@ -313,8 +313,8 @@ async function callUsers () {
 callUsers().then(resp => console.log(resp))
 ~~~
 
-{{common.c159}}
-{{common.c160}}
+{{s3.p23}}
+{{s3.p24}}
 
 **userStore**
 
@@ -368,8 +368,8 @@ async function callUsers () {
 callUsers().then(resp => console.log(resp))
 ~~~
 
-{{common.c159}}
-{{common.c160}}
+{{s3.p30}}
+{{s3.p31}}
 
 **userStore**
 

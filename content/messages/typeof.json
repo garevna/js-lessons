@@ -94,6 +94,11 @@
     "eng": "![ico-25 warn] The **⟦f0⟧** operator returns a **string**.",
     "ua": "![ico-25 warn] Оператор **⟦f0⟧** повертає **рядок**."
   },
+  "s2.p19": {
+    "ru": "Что это означает?",
+    "eng": "What does this mean?",
+    "ua": "Що це означає?"
+  },
   "s2.p20": {
     "ru": "Это означает, что если движок столкнется с таким выражением (лишенным всякого смысла, кроме познавательного - для вас):",
     "eng": "This means that if the engine encounters an expression like this (devoid of any meaning other than educational - for you):",

@@ -1,4 +1,4 @@
-# ![ico-30 study] {{common.c176}}
+# ![ico-30 study] {{s1.h1}}
 
 ☼☼☼ {{s1.slogan1}} ☼☼☼
 
@@ -52,7 +52,7 @@ alpha,betta,delta
 alpha('sigma', 'omega')
 ~~~
 
-{{common.c177}}
+{{s1.p10}}
 
 ~~~console
 alpha,sigma,omega
@@ -66,7 +66,7 @@ alpha,sigma,omega
 betta('figure', 'smile')
 ~~~
 
-{{common.c177}}
+{{s1.p14}}
 
 ~~~console
 alpha,betta,figure,smile
@@ -301,9 +301,9 @@ console.log(test ()()()()()().result)  // 64
 ~~~
 _________________________________________
 
-## ![ico-25 smile] {{common.c178}}
+## ![ico-25 smile] {{s2.h1}}
 
-![ico-20 question] {{common.c179}}
+{{s2.p1}}
 
 ~~~js
 var sample = function () {

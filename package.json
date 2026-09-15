@@ -22,7 +22,7 @@
     "install:all": "yarn install --frozen-lockfile && cd icons-worker && yarn install --frozen-lockfile && cd ../content-worker && yarn install --frozen-lockfile && cd ../service-worker && yarn install --frozen-lockfile",
     "sw-identity": "node service-worker/config-service-worker.js --identity",
     "i18n": "node tools/i18n-status.js",
-    "common": "node tools/i18n-common.js",
+    "phrases": "node tools/i18n-phrases.js",
     "i18n-check": "node tools/i18n-check.js",
     "lessons": "node tools/i18n-build.js"
   },

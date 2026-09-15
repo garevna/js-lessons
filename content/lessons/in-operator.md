@@ -26,7 +26,7 @@ console.log('valueOf' in sample)  // true
 
 ___________________________________
 
-## ![ico-25 icon] {{common.c34}}
+## ![ico-25 icon] {{common.c23}}
 
 ~~~js
 var arr = [1, 2, 3]
@@ -55,7 +55,7 @@ var bool = new Boolean('5')
 'valueOf' in bool  // true
 ~~~
 
-{{common.c13}}
+{{common.c9}}
 
 ~~~js
 var sample = Object('Welcome to the hell')

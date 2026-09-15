@@ -307,7 +307,7 @@ users
 {{s5.p19}}
 {{s5.p20}}
 
-☼☼☼ {{common.c45}} ☼☼☼
+☼☼☼ {{s5.slogan1}} ☼☼☼
 
 {{s5.p21}}
 
@@ -556,7 +556,7 @@ const randomize = item => item + Math.floor(item + Math.random() * 100)
 
 _____________________________________________
 
-## ![ico-25 icon] {{common.c14}}
+## ![ico-25 icon] {{common.c10}}
 
 {{s7.p1}}
 

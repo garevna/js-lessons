@@ -4,7 +4,7 @@
 
 _______________________________________
 
-## ![ico-25 icon] {{common.c10}}
+## ![ico-25 icon] {{common.c7}}
 
 {{s1.p1}}
 
@@ -203,7 +203,7 @@ ________________________________________________
 
 ____________________________________________
 
-## ![ico-25 icon] {{common.c18}}
+## ![ico-25 icon] {{common.c13}}
 
 ![ico-20 icon] append()
 
@@ -263,7 +263,7 @@ formData.get('token')    // null
 
 ![ico-20 icon] keys()
 
-{{common.c155}}
+{{s3.p7}}
 
 ![ico-25 cap] ** 2**
 
@@ -276,7 +276,7 @@ iterator.next()
 
 ![ico-20 icon] entries()
 
-{{common.c155}}
+{{s3.p8}}
 
 ![ico-25 cap] ** 3**
 

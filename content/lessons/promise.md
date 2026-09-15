@@ -6,7 +6,7 @@ ________________________________________________________________________________
 
 __________________________________________________________________________________________
 
-## ![ico-30 icon] {{common.c10}}
+## ![ico-30 icon] {{common.c7}}
 
 {{s1.p1}}
 {{s1.p2}}
@@ -23,7 +23,7 @@ const promise = new Promise(function (...) {
 const promise = new Promise ()
 ~~~
 
-![ico-20 err] {{common.c33}}
+![ico-20 err] {{topic.t8}}
 
 ~~~error
     Uncaught TypeError: Promise resolver undefined is not a function
@@ -704,7 +704,7 @@ Promise.race(promises).then(show)
 {{{promise-race.js}}}
 __________________________________________________________________________________________
 
-## ![ico-25 icon] {{common.c14}}
+## ![ico-25 icon] {{common.c10}}
 
 {{s8.p1}}
 {{s8.p2}}

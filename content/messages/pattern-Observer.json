@@ -1,4 +1,9 @@
 {
+  "s0.p1": {
+    "ru": "Это **поведенческий** паттерн.",
+    "eng": "This is a **behavioral** pattern.",
+    "ua": "Це **поведінкова** модель."
+  },
   "s0.p2": {
     "ru": "Разберем конкретную ситуацию, в которой его можно применить.",
     "eng": "Let's analyze a specific situation in which it can be used.",

@@ -34,6 +34,11 @@
     "eng": "The simplest (classic) example of recursion is calculating a factorial",
     "ua": "Найпростіший (класичний) приклад рекурсії — обчислення факторіалу"
   },
+  "s1.spoiler1": {
+    "ru": "Вычисление факториала",
+    "eng": "Calculating a factorial",
+    "ua": "Обчислення факторіалу"
+  },
   "s1.p7": {
     "ru": "Для того, чтобы избавиться от опционального параметра, используем замыкание:",
     "eng": "To get rid of the optional parameter, we use closure:",

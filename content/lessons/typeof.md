@@ -31,7 +31,7 @@ var num = 10
 typeof num
 ~~~
 
-{{common.c38}}
+{{topic.t10}}
 
 ~~~console
 'number'
@@ -54,7 +54,7 @@ typeof companyName
 
 {{s2.p18}}
 
-{{common.c222}}
+{{s2.p19}}
 
 ~~~js
 var boolean = false
@@ -101,7 +101,7 @@ typeof typeof boolean
 
 __________________________________________________
 
-## ![ico-30 icon] {{common.c15}}
+## ![ico-30 icon] {{common.c11}}
 
 ◘◘** 1**◘◘
 

@@ -139,7 +139,7 @@ module.exports = {
 
 ___________________________________
 
-![ico-20 webpack] **{{common.c31}}**
+![ico-20 webpack] **{{common.c21}}**
 
 {{s2.p9}}
 {{s2.p10}}

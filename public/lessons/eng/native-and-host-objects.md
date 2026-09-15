@@ -73,7 +73,7 @@ There are two ways to create a native JS object:
 
 _________________________________
 
-## ![ico-25 icon] arguments
+## ![ico-25 icon] Object literal
 
 In literal notation, an object is defined within a block of curly brackets:
 

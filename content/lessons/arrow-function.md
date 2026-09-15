@@ -2,7 +2,7 @@
 
 **ES6**
 
-## ![ico-25 icon] {{common.c58}}
+## ![ico-25 icon] {{s2.h1}}
 
 ![ico-20 error] **_function_**
 
@@ -96,7 +96,7 @@ const getAnswer = question => question === 'who'
       : 'I don\'t undestand your question'
 ~~~
 
-{{common.c172}}
+{{s2.p12}}
 
 ~~~js
 const getAnswer = question => ['who', 'what', 'where'].includes(question)
@@ -228,7 +228,7 @@ testArguments(5, false)
 
 ______________________________________________________
 
-### ![ico-20 icon] {{common.c27}}
+### ![ico-20 icon] {{common.c19}}
 
 {{s4.p1}}
 
@@ -236,7 +236,7 @@ ______________________________________________________
 
 {{s4.p3}}
 
-#### ![ico-20 icon] {{common.c173}}
+#### ![ico-20 icon] {{s5.h1}}
 
 ~~~js
 window.name = 'Chrome'
@@ -279,7 +279,7 @@ human.showName = () => console.log(this.name)
 {{s5.p11}}
 
 ----------------
-#### ![ico-20 icon] {{common.c10}}
+#### ![ico-20 icon] {{common.c7}}
 
 {{s6.p1}}
 
@@ -369,7 +369,7 @@ const user = fabric.call(template, {}, 'Piter')
 
 {{s7.p3}}
 
-{{common.c175}}
+{{s7.p4}}
 
 ~~~js
 user.showName()  // Robert
@@ -386,7 +386,7 @@ ____________________________________________________
 
 _____________________________________________________
 
-## ![ico-20 icon] {{common.c14}}
+## ![ico-20 icon] {{common.c10}}
 
 ◘◘![ico-25 cap] ** 1**◘◘
 ~~~js

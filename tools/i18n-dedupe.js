@@ -7,7 +7,7 @@
  *
  * A page that says "или:" twelve times holds twelve keys, and each one is a
  * separate thing to translate and a separate chance to translate it
- * differently. Afterwards the skeleton points at content/common.json and the
+ * differently. Afterwards the skeleton points at content/phrases.json and the
  * phrase exists once in the whole course.
  *
  * Nothing about the rendered page changes: a reference is only made when the
@@ -16,12 +16,12 @@
 
 const fs = require('fs')
 const path = require('path')
-const { dereference } = require('./lib/common-refs')
+const { dereference } = require('./lib/phrase-refs')
 
 const root = path.join(__dirname, '..')
 const MESSAGES = path.join(root, 'content/messages')
 const LESSONS = path.join(root, 'content/lessons')
-const COMMON = path.join(root, 'content/common.json')
+const PHRASES = path.join(root, 'content/phrases.json')
 
 const write = process.argv.includes('--write')
 
@@ -33,9 +33,9 @@ const readJson = (file) => {
   }
 }
 
-const common = readJson(COMMON)
-if (!common) {
-  console.error('no content/common.json — run npm run common first')
+const book = readJson(PHRASES)
+if (!book) {
+  console.error('no content/phrases.json — run npm run phrases first')
   process.exit(1)
 }
 
@@ -52,7 +52,7 @@ for (const file of fs.readdirSync(MESSAGES).filter((f) => f.endsWith('.json')).s
   const entries = readJson(path.join(MESSAGES, file))
   const wasKeys = Object.keys(entries).length
 
-  const { skeleton, entries: kept, moved, refused } = dereference(before, entries, common)
+  const { skeleton, entries: kept, moved, refused } = dereference(before, entries, book)
 
   if (!moved.length) continue
 
@@ -68,7 +68,7 @@ for (const file of fs.readdirSync(MESSAGES).filter((f) => f.endsWith('.json')).s
 
 rows.sort((a, b) => b.moved - a.moved)
 
-console.log(`\n  ${write ? '' : 'DRY RUN — '}${totalMoved} keys move into content/common.json, from ${rows.length} pages\n`)
+console.log(`\n  ${write ? '' : 'DRY RUN — '}${totalMoved} keys move into content/phrases.json, from ${rows.length} pages\n`)
 console.log('  page                              keys   moved')
 for (const r of rows.slice(0, 20)) {
   console.log(`  ${r.page.padEnd(32)} ${String(r.was).padStart(5)} ${String(r.moved).padStart(7)}`)
