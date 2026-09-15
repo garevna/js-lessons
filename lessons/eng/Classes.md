@@ -347,7 +347,7 @@ const Canvas = class {
 }
 ~~~
 
-^^![ico-20 speech] Let’s add a setter for the property  **~history~**^^
+^^![ico-20 speach] Let’s add a setter for the property  **~history~**^^
 
 ^^Note that there is no constructor for this property (nor should there be)^^
 
@@ -372,7 +372,7 @@ set history (newHistory) {
 ^^This method modifies the contents of the array **canvas._history_** if such a property already exists,^^
 ^^or creates it otherwise^^
 
-^^![ico-20 speech] Now let’s add a getter for the property  ~history~:^^
+^^![ico-20 speach] Now let’s add a getter for the property  ~history~:^^
 
 ~~~js
 get history () {
@@ -380,7 +380,7 @@ get history () {
 }
 ~~~
 
-^^![ico-20 speech] This method returns the array  **canvas._history_**^^
+^^![ico-20 speach] This method returns the array  **canvas._history_**^^
 
 ^^![ico-25 paper] The complete code for the example will now look like this:^^
 
@@ -415,7 +415,7 @@ const Canvas = class {
 let pict = new Canvas()
 ~~~~
 
-^^![ico-20 speech] Let’s create the property  **_history_**  of the  **pict** instance by passing an array of values:^^
+^^![ico-20 speach] Let’s create the property  **_history_**  of the  **pict** instance by passing an array of values:^^
 
 ~~~js
 pict.history = [
@@ -463,7 +463,7 @@ pict.history = true
 
 ••![ico-20 error] History must be array••
 
-^^![ico-20 speech] The value of the **_history_** property has not changed, ^^
+^^![ico-20 speach] The value of the **_history_** property has not changed, ^^
 ^^and the corresponding error messages were displayed in the console^^
 
 ________________________________________________________
@@ -682,7 +682,7 @@ newCanvas.drawCircle({ x: 100, y: 100 }, 100)
 newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }])
 ~~~
 
-^^![ico-20 speech] Note that the method **_~drawCircle()~_** is in the instance prototype^^
+^^![ico-20 speach] Note that the method **_~drawCircle()~_** is in the instance prototype^^
 ^^(which makes sense, as it is an inherited method)^^,
 ^^The method **_~drawLine()~_** of the parent class **Canvas** is located in the prototype’s prototype ^^
 ^^(which corresponds to the prototype model of inheritance – we have obtained a chain of prototypes)^^
@@ -693,9 +693,9 @@ ________________________________________________________
 
 Methods of the parent class are accessible in the child class via the keyword **~super~**
 
-^^![ico-20 speech] Let’s extend the inherited method **~drawLine()~** of the parent class by adding an argument **_~lineWidth~_** (line thickness)^^
+^^![ico-20 speach] Let’s extend the inherited method **~drawLine()~** of the parent class by adding an argument **_~lineWidth~_** (line thickness)^^
 
-^^![ico-20 speech] To do this, let’s define the ‘extended’ method  ~drawLine()~ within the child class,^^
+^^![ico-20 speach] To do this, let’s define the ‘extended’ method  ~drawLine()~ within the child class,^^
 ^^which will call  the method  ~drawLine()~ of the parent class^^
 ^^using the keyword **super**:^^
 
@@ -733,19 +733,19 @@ class ExtendedCanvas extends Canvas {
 }
 ~~~
 
-^^![ico-20 speech] Let’s create an instance of the child class:^^
+^^![ico-20 speach] Let’s create an instance of the child class:^^
 
 ~~~js
 let newCanvas = new ExtendedCanvas()
 ~~~
 
-^^![ico-20 speech] and call its method **~drawLine()~**^^
+^^![ico-20 speach] and call its method **~drawLine()~**^^
 
 ~~~js
 newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }], '#ffaa00', 10)
 ~~~
 
-^^![ico-20 speech] Now the line will be drawn with the specified thickness^^
+^^![ico-20 speach] Now the line will be drawn with the specified thickness^^
 
 ____________________________________________
 
@@ -795,7 +795,7 @@ The keyword **~super~** can be used without declaring classes
 **~super~** is a reference to the object’s prototype
 Therefore, it can be used to access the properties and methods of the prototype object
 
-••![ico-30 speech] _In the examples that follow, we will use objects declared in literal form_••
+••![ico-30 speach] _In the examples that follow, we will use objects declared in literal form_••
 
 ^^The **human** object will serve as the prototype for the **person** object^^
 ^^We will assign the **human** object as the prototype of the **person** object using a method^^
@@ -806,7 +806,7 @@ Object.setPrototypeOf(person, human)
 
 ^^Following this assignment, within the **person** object, the properties and methods of the **human** object will be accessible using the keyword **~super~**^^
 
-^^![ico-20 speech] In the following example, we will call the methods  **_~place()~_**  and  **_~say()~_** of the **human** prototype^^
+^^![ico-20 speach] In the following example, we will call the methods  **_~place()~_**  and  **_~say()~_** of the **human** prototype^^
 ^^in the methods   **_~getPlace()~_**  and  **_~talk()~_** of the  **person** object ^^
 ^^using the keyword **~super~** :^^
 
@@ -868,21 +868,21 @@ person.talk('привет!')
 setTimeout(() => person.talk('Hello, baby!'), 2000)
 ~~~
 
-![ico-20 speech] ^^In this example, the method  **~place()~**  of the prototype  (of the object  **human**) checks for the existence of an element with  ••id === ‘demo’••^^
+![ico-20 speach] ^^In this example, the method  **~place()~**  of the prototype  (of the object  **human**) checks for the existence of an element with  ••id === ‘demo’••^^
 ^^and if such an element is found, it returns a reference to it, ^^
 ^^otherwise, it creates such an element and adds it to the page^^
 
-![ico-20 speech] ^^The  person  object does not initially have the  **_place_** property,^^
+![ico-20 speach] ^^The  person  object does not initially have the  **_place_** property,^^
 ^^but has its own method  **~getPlace()~**, which creates such a property,  ^^
 ^^by calling the method **~place()~** of the prototype (the  **human** object) using the keyword  **~super~**, ^^
 ^^and assigning the value returned by this method to its own property  **~place~**^^
 
-![ico-20 speech] ^^The method  **~talk(_text_)~**  of the object  **person**^^
+![ico-20 speach] ^^The method  **~talk(_text_)~**  of the object  **person**^^
 ^^calls the method  **~getPlace()~**^^
 ^^before calling the method **~say()~**  ^^
 ^^of the prototype  (of the object  **human**)^^
 
-![ico-20 speech] ^^Note that when declaring the method   **~place()~**  of the object  **human** ^^
+![ico-20 speach] ^^Note that when declaring the method   **~place()~**  of the object  **human** ^^
 ^^we used an arrow function, ^^
 ^^whereas when declaring the method  **~say()~**  it cannot be used, ^^
 ^^because within methods declared using arrow functions, ^^
@@ -925,22 +925,22 @@ setTimeout(() => person.talk('Hello, baby!'), 2000)
 ^^This example demonstrates the interchangeability of the keywords **~super~** and **~this~** ^^
 ^^when  referencing prototype properties^^
 
-![ico-20 speech] ^^The method   **_talk()_**  of the  **person** object ^^
+![ico-20 speach] ^^The method   **_talk()_**  of the  **person** object ^^
 ^^calls the  method  **_say()_**  of the prototype^^
 ^^without the keyword  **~super~**^^
 ^^(with the keyword  **~this~**)^^
 
-![ico-20 speech] ^^When the method  **_say()_**  is not found in the  **person**  object, ^^
+![ico-20 speach] ^^When the method  **_say()_**  is not found in the  **person**  object, ^^
 ^^the search will continue in the prototype, ^^
 ^^where it will be successfully found^^
 
-![ico-20 speech] ^^Inside the method   **_say ()_**, called from the method **_talk ()_**, ^^
+![ico-20 speach] ^^Inside the method   **_say ()_**, called from the method **_talk ()_**, ^^
 ^^the call context will be the object  **person**^^
 ^^(i.e.  **~this~**  will  point to the  person object)^^
 ^^nevertheless, the reference   **~this._place_~**  ^^
 ^^will be successfully resolved via the prototype chain^^
 
-![ico-20 speech] ^^If, however, the property names of the object and its prototype match, ^^
+![ico-20 speach] ^^If, however, the property names of the object and its prototype match, ^^
 ^^and you need to retrieve the prototype’s property specifically, ^^
 ^^rather than the object’s own property, ^^
 ^^then for inherited properties you can use  ~__proto__~^^
@@ -956,7 +956,7 @@ const person = {
 }
 ~~~
 
-![ico-20 speech] ^^Clearly, in this case, the code:
+![ico-20 speach] ^^Clearly, in this case, the code:
 
 ~~~js
 super.say(text)
@@ -1014,7 +1014,7 @@ person.place = 'demo-2'
 setTimeout(() => person.talk('Hello, baby!'), 2000)
 ~~~~
 
-![ico-20 speech] ^^In this example, we use getters and setters for object properties^^
+![ico-20 speach] ^^In this example, we use getters and setters for object properties^^
 ^^For computed properties, this is the most correct way to access their values^^
 
 ________________________________________________________
@@ -1185,14 +1185,14 @@ _______________________________________
 Let’s create a class **DrawFigures**, which will create an SVG element
 with two methods: **_setSize()_** and **~drawFigure()~**
 
-![ico-20 speech] The **~setSize()~** method will change the dimensions of the SVG element
-![ico-20 speech] The **~drawFigure()~** method will add elements to the SVG container
+![ico-20 speach] The **~setSize()~** method will change the dimensions of the SVG element
+![ico-20 speach] The **~drawFigure()~** method will add elements to the SVG container
 
 ^^The element name will be passed as the first argument to the method (figure)^^
 ^^Possible values are “line”, “circle”, “path”, “rect”, etc.^^
 ^^The shape parameters will be passed as the second argument to the method (params)^^
 
-![ico-20 speech] As each  svg  element has its own set of attributes, we create a property  **~attrs~** (an object), whose properties will be the names of the svg elements, and whose values will be an array of attributes for each svg element
+![ico-20 speach] As each  svg  element has its own set of attributes, we create a property  **~attrs~** (an object), whose properties will be the names of the svg elements, and whose values will be an array of attributes for each svg element
 
 When creating an SVG element, its attributes will be set using the **~setAttribute()~** method
 
@@ -1233,18 +1233,18 @@ sample
   .setAttribute ('stroke', 'red')
 ~~~
 
-![ico-20 speech] Calling the method   **~drawFigure()~** will create a &lt;line&gt; element and return a reference to it,
+![ico-20 speach] Calling the method   **~drawFigure()~** will create a &lt;line&gt; element and return a reference to it,
 but this element will not be displayed on the page, as the array  **~attrs.line~**
 lacks the “~stroke~” attribute, which specifies the line colour
 
-![ico-20 speech] To see this element on the page, we need to set the value of the ~stroke~ attribute
+![ico-20 speach] To see this element on the page, we need to set the value of the ~stroke~ attribute
 after calling the **_drawFigure()_** method:
 
 ~~~js
 setAttribute('stroke', 'red')
 ~~~
 
-![ico-20 speech] Now we can draw other shapes and customise their attributes:
+![ico-20 speach] Now we can draw other shapes and customise their attributes:
 
 ~~~js
 const circle = sample.drawFigure('circle', { cx: 180, cy: 180, r: 150 })
@@ -1260,21 +1260,21 @@ _____________________________________________________
 
 #### ![ico-20 icon] Subclass
 
-![ico-20 speech] Now let’s create a subclass  **ColouredFigures**,
+![ico-20 speach] Now let’s create a subclass  **ColouredFigures**,
 which extends the functionality of the parent class  **DrawFigures**
 by adding attributes for lines and fills
 ("~stroke~", "~style~", "~fill~")
 and the method for deleting an element  **_erase_**
 
-![ico-20 speech] In the constructor of the child class, we’ll call the method **~super()~**,
+![ico-20 speach] In the constructor of the child class, we’ll call the method **~super()~**,
 to create an &lt;svg&gt; container with the required dimensions,
 and declare the instance property  **~figures~**
 
-![ico-20 speech] The method **~super()~** must be called first in the constructor,
+![ico-20 speach] The method **~super()~** must be called first in the constructor,
 as the value of `this` will not be defined
 within the constructor until it is called
 
-![ico-20 speech] Furthermore, we’ll extend the functionality of the base class **DrawFigures**,
+![ico-20 speach] Furthermore, we’ll extend the functionality of the base class **DrawFigures**,
 by adding the attributes “~stroke~”, “~style~” and “~fill~”
 We’ll do this in the constructor of the  **ColoredFigures** class as well
 
@@ -1314,7 +1314,7 @@ class ColoredFigures extends DrawFigures {
 }
 ~~~
 
-![ico-20 speech] Let’s check how the extended class  **ColoredFigures** works
+![ico-20 speach] Let’s check how the extended class  **ColoredFigures** works
 
 ~~~js
 const canvas = new ColoredFigures(400, 500)
@@ -1337,7 +1337,7 @@ canvas.circle({
 })
 ~~~
 
-![ico-20 speech] Of course, we can create elements by calling the method of the base class  **~drawFigure()~**:
+![ico-20 speach] Of course, we can create elements by calling the method of the base class  **~drawFigure()~**:
 
 ~~~js
 canvas.drawFigure('line', {
@@ -1353,18 +1353,18 @@ canvas.drawFigure('line', {
 ![ico-20 speach] but then the SVG elements created will not be added to the array  **~figures~**
 and they cannot be removed using the method  **~erase()~**
 
-![ico-20 speech] Furthermore, calling the method  **~line()~**  or  **~circle()~**  is more concise
+![ico-20 speach] Furthermore, calling the method  **~line()~**  or  **~circle()~**  is more concise
 
-![ico-25 speech] Please note that the **ColoredFigures** class has a **prototype** property, which an instance does not have (and cannot have)
+![ico-25 speach] Please note that the **ColoredFigures** class has a **prototype** property, which an instance does not have (and cannot have)
 The **~prototype~** property of the **ColoredFigures** class contains the methods **~circle()~**, **~line()~**, **~draw()~** and **~erase()~**
 
-![ico-25 speech] The **ColoredFigures** class also has a property **~__proto__~**
+![ico-25 speach] The **ColoredFigures** class also has a property **~__proto__~**
 This is a reference to the parent class **SVG**
 
-![ico-25 speech] As you might expect, the parent class also has a property **~prototype~**,
+![ico-25 speach] As you might expect, the parent class also has a property **~prototype~**,
 and this property contains the methods **~drawFigure()~** and **~setSize()~**
 
-![ico-25 speech] Neither the **ColoredFigures** class nor the **SVG** class has the properties **~attrs~**, **~canvas~** and **~figures~**
+![ico-25 speach] Neither the **ColoredFigures** class nor the **SVG** class has the properties **~attrs~**, **~canvas~** and **~figures~**
 These are only present in an instance of this class
 
 ________________________________________________________________

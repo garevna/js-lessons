@@ -345,7 +345,7 @@ The fact that we don't use the assignment operator doesn't mean that assignment 
 _________________________________________________
 
 Otherwise, a **TypeError** exception will be generated:
-В противном случае будет сгенерировано исключение **TypeError**:
+Otherwise, a **TypeError** exception will be thrown:
 
 ~~~js
 var func = 10
@@ -356,9 +356,9 @@ func()
     Uncaught TypeError: func is not a function
 ~~~
 
-Движок воспринимает вызов функции как выражение, значение которого нужно вычислить, для чего нужно запустить на исполнение код функции.
-Это означает, что после вычисления выражения ~func()~ в том месте, где оно было встречено, будет некое значение...
-Давайте разберемся, как определяется это значение.
+The engine treats a function call as an expression whose value needs to be evaluated, which requires the function’s code to be executed.
+This means that once the expression ~func()~ has been evaluated, there will be a certain value at the point where it was encountered...
+Let’s look at how this value is determined.
 _________________________________________________
 
 ## ![ico-30 icon] Formal parameters
@@ -385,7 +385,7 @@ Thus, when declaring a function, we use parentheses to list there the names of v
 These variables have no values at the time the function is declared.
 When the function is called, **arguments** will be listed in parentheses, which will become the values of the formal parameters at this moment.
 That is, each time we call the function, we can pass different arguments to it, thus getting different results.
-Т.е. каждый раз при вызове функции мы можем передавать ей различные аргументы, тем самым получая различные результаты.
+In other words, each time we call a function, we can pass it different arguments, thereby obtaining different results.
 
 ### ![ico-25 icon] Default values
 
@@ -429,7 +429,7 @@ If you try to use it outside the function body, an exception will be generated:
 The **~return~** operator interrupts function execution, and if the **~return~** operator has an operand (expression), the value of this expression will be calculated and returned by the function.
 
 If the operand is not explicitly specified, **~undefined~** is implied.
-Если операнд не указан явно, подразумевается **~undefined~**.
+If an operand is not explicitly specified, **~undefined~** is implied.
 
 ____________________________________________________________________
 

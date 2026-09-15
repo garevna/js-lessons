@@ -135,7 +135,7 @@ ___________________________________________________________________________
 
 ••![ico-20 bash] npm install &lt;package name>••
 
-![ico-20 speech] ^^_Local_ – this means the package will be installed in the directory (project folder) you are currently in when you run the command  **~npm~**^^
+![ico-20 speach] ^^_Local_ – this means the package will be installed in the directory (project folder) you are currently in when you run the command  **~npm~**^^
 
 _____________________________________________________________________________________
 
