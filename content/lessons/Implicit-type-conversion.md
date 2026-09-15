@@ -1,4 +1,4 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{common.c32}}
 
 
 ## ![ico-25 icon] {{s2.h1}}
@@ -9,7 +9,7 @@
 
 {{s3.p1}}
 
-{{s3.p2}}
+^^{{common.c156}}^^
 
 ~~~js
 var res = 20 + '5'
@@ -19,7 +19,7 @@ var res = 20 + '5'
 
 {{s3.p4}}
 
-{{s3.p5}}
+^^{{common.c154}}^^
 
 ~~~js
 var res = 20 + 10 + '5'

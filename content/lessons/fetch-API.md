@@ -40,7 +40,7 @@ _____________________________________________________________
 
 ## ![ico-25 icon] Request
 
-{{s0.p13}}
+**{{common.c10}}**
 
 {{s0.p14}}
 
@@ -76,7 +76,7 @@ ________________________________________________
 const request = new Request('https://api.github.com/users')
 ~~~
 
-{{s0.p18}}
+{{common.c194}}
 
 ~~~~Request
 ▼ Request {method: "GET", url: "https://api.github.com/users", headers: Headers, destination: "", referrer: "about:client", …}
@@ -450,7 +450,7 @@ ________________________________________
 {{s4.p15}}
 {{s4.p16}}
 
-^^^[{{s4.spoiler1}}]
+^^^[{{common.c0}} 7]
 
 {{s4.p17}}
 
@@ -481,7 +481,7 @@ fetch('https://api.2ip.ua/geo.json?ip=')
 
 ^^^
 
-^^^[{{s4.spoiler2}}]
+^^^[{{common.c0}} 8]
 
 {{s4.p27}}
 
@@ -590,7 +590,7 @@ console.log(new Blob([
 
 ![ico-25 cap] **12**
 
-{{s4.p43}}
+{{common.c195}}
 
 ~~~~js
 fetch('https://avatars2.githubusercontent.com/u/46?v=4')
@@ -600,7 +600,7 @@ fetch('https://avatars2.githubusercontent.com/u/46?v=4')
 
 ![ico-25 cap] **13**
 
-{{s4.p44}}
+{{common.c195}}
 
 ~~~~js
 fetch('https://api.github.com/users?since=135')
@@ -662,7 +662,7 @@ fetch(request)
   .then(response => console.log(response))
 ~~~~
 
-{{s4.p47}}
+**{{common.c12}}**
 
 ^^^[{{s4.spoiler3}}]
 

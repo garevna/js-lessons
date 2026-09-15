@@ -3,7 +3,7 @@
 **ES6**
 ________________________________________________
 
-{{s1.p1}}
+![ico-25 cap] **{{common.c0}} 1**
 
 ~~~js
 let name = "Ivan", age = 25
@@ -19,7 +19,7 @@ console.log ( user )
 ► { name: "Ivan", age: 25 }
 ~~~
 
-{{s1.p2}}
+![ico-25 cap] **{{common.c0}} 2**
 
 {{s1.p3}}
 

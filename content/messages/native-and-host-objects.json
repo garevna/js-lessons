@@ -24,16 +24,6 @@
     "eng": "Built-in objects",
     "ua": "Вбудовані об’єкти"
   },
-  "s2.p3": {
-    "ru": "**Объекты**",
-    "eng": "**Objects**",
-    "ua": "**Об’єкти**"
-  },
-  "s2.p4": {
-    "ru": "**Конструкторы**",
-    "eng": "**Constructors**",
-    "ua": "**Конструктори**"
-  },
   "s2.p5": {
     "ru": "и объектами, которые создаются в процессе работы кода",
     "eng": "and objects created whilst the code is running",
@@ -53,16 +43,6 @@
     "ru": "host-объекты",
     "eng": "Host objects",
     "ua": "Хост-об’єкти"
-  },
-  "s2.p8": {
-    "ru": "**Объекты**",
-    "eng": "**Objects**",
-    "ua": "**Об’єкти**"
-  },
-  "s2.p9": {
-    "ru": "**Конструкторы**",
-    "eng": "**Constructors**",
-    "ua": "**Конструктори**"
   },
   "s2.p10": {
     "ru": "![ico-20 warn] ^^Поскольку конструкторы - это функции, для получения дерева их свойств нужно использовать метод **⟦f0⟧** ( а не ⟦f1⟧ )^^",
@@ -84,11 +64,6 @@
     "eng": "![ico-20 green-ok] Using a constructor",
     "ua": "![ico-20 green-ok] За допомогою конструктора"
   },
-  "s3.h1": {
-    "ru": "Литерал объекта",
-    "eng": "Object literal",
-    "ua": "Літерал об’єкта"
-  },
   "s3.p1": {
     "ru": "В литеральной нотации объект описывается внутри блока фигурных скобок:",
     "eng": "In literal notation, an object is defined within a block of curly brackets:",
@@ -98,11 +73,6 @@
     "ru": "Все эти свойства доступны извне:",
     "eng": "All these properties are accessible from outside:",
     "ua": "Усі ці властивості доступні ззовні:"
-  },
-  "s3.p3": {
-    "ru": "или так:",
-    "eng": "or like this:",
-    "ua": "або так:"
   },
   "s3.p4": {
     "ru": "![ico-20 pin] Свойства объектов, заданных литералом, являются **публичными**, поскольку они доступны извне",
@@ -369,20 +339,10 @@
     "eng": "![ico-20 pin] For built-in objects that are not constructors (such as _Math_), the prototype chain will be shorter: the property **⟦f8⟧** will be a reference to **⟦f9⟧**",
     "ua": "![ico-20 pin] У вбудованих об’єктів, які не є конструкторами (наприклад, _Math_), ланцюжок прототипів буде коротшим: властивість **⟦f8⟧** буде посиланням на **⟦f9⟧**"
   },
-  "s6.p29": {
-    "ru": "![ico-25 hw] **Упражнение**",
-    "eng": "![ico-25 hw] **Exercise**",
-    "ua": "![ico-25 hw] **Вправа**"
-  },
   "s6.p30": {
     "ru": "выведите в консоль все нативные встроенные объекты и отследите в цепочке прототипов ссылку на **⟦f9⟧**",
     "eng": "Print all native built-in objects to the console and trace the reference to **⟦f9⟧** in the prototype chain",
     "ua": "виведіть у консоль усі нативні вбудовані об’єкти та відстежте у ланцюжку прототипів посилання на **⟦f9⟧**"
-  },
-  "s7.h1": {
-    "ru": "Конструктор",
-    "eng": "Constructor",
-    "ua": "Конструктор"
   },
   "s7.p1": {
     "ru": "Настало время разобраться с тем, что же такое конструктор",
@@ -503,11 +463,6 @@
     "ru": "![ico-25 pin] Конструктор позволяет создавать экземпляры объектов, имеющих не только публичные, но и приватные свойства и методы",
     "eng": "![ico-25 pin] The constructor allows you to create instances of objects that have not only public but also private properties and methods",
     "ua": "![ico-25 pin] Конструктор дозволяє створювати екземпляри об’єктів, що мають не тільки публічні, але й приватні властивості та методи"
-  },
-  "s7.p25": {
-    "ru": "**Конструктор Function**",
-    "eng": "**The Function Constructor**",
-    "ua": "**Конструктор Function**"
   },
   "s8.h1": {
     "ru": "Публичные и приватные свойства",

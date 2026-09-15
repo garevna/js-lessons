@@ -110,7 +110,7 @@ customElements.define('sample-custom-element', SampleCustomElement)
 
 _______________________________________
 
-### ![ico-25 icon] {{s1.h1}}
+### ![ico-25 icon] {{common.c0}} 1
 
 {{s1.p1}}
 
@@ -188,7 +188,7 @@ const elem = document.body
 
 ________________________________________________
 
-### ![ico-25 icon] {{s2.h1}}
+### ![ico-25 icon] {{common.c0}} 2
 
 ~~~~js
 class SampleCustomElement extends HTMLElement {
@@ -243,7 +243,7 @@ window.onresize = elem.resizeCanvas.bind(elem)
 elem.drawLine({ x:20, y:20 }, { x:400, y:200 }, { lineColor: '#008595', lineWidth: 5 })
 ~~~~
 
-### ![ico-25 icon] {{s3.h1}}
+### ![ico-25 icon] {{common.c0}} 3
 
 ~~~html
 <h3>Пример использования Custom Elements</h3>
@@ -296,7 +296,7 @@ customElements.define('words-counter', WordsCounter)
 ~~~~
 __________________________________________________
 
-### ![ico-25 icon] {{s4.h1}}
+### ![ico-25 icon] {{common.c0}} 4
 
 ~~~~js
 class SampleCustomElement extends HTMLElement {

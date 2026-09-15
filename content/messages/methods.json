@@ -1,9 +1,4 @@
 {
-  "s1.h1": {
-    "ru": "Методы",
-    "eng": "Methods",
-    "ua": "Методи"
-  },
   "s1.p1": {
     "ru": "**Метод** - это свойство-функция",
     "eng": "A **method** is a property-function",

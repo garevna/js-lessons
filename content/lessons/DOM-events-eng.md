@@ -1,6 +1,6 @@
 # ![ico-30 study] Document Object Model ( DOM )
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{common.c74}}
 
 {{s1.p1}}
 
@@ -12,7 +12,7 @@
 console.dir(EventTarget)
 ~~~
 
-{{s1.p4}}
+{{common.c75}}
 
 ~~~~console
 
@@ -38,8 +38,8 @@ console.dir(EventTarget)
 • dispatchEvent
 
 {{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
+^^{{common.c78}}^^
+^^{{common.c79}}^^
 
 {{s1.p9}}
 
@@ -56,7 +56,7 @@ for (var prop in HTMLElement.prototype) {
 }
 ~~~
 
-{{s1.p13}}
+^^{{common.c84}}^^
 
 {{s1.p14}}
 
@@ -77,7 +77,7 @@ document.body.ondomnodeinserted = function (event) {
 document.body.appendChild(document.createElement('div'))
 ~~~
 
-{{s1.p16}}
+**{{common.c4}}**
 
 ~~~~console
 
@@ -106,11 +106,11 @@ document.body.appendChild(document.createElement('div'))
 
 ______________________________________________________
 
-{{s1.p17}}
+![ico-20 warn] {{common.c86}}
 
-{{s1.p18}}
+{{common.c87}}
 
-{{s1.p19}}
+{{common.c88}}
 
 ^^^[event type]
 
@@ -127,7 +127,7 @@ ______________________________________________________
 
 ^^^
 
-{{s1.p20}}
+{{common.c89}}
 
 {{s1.p21}}
 
@@ -180,16 +180,16 @@ var divs = pictures.map(picture => {
 
 _________________________________
 
-{{s1.p31}}
+{{common.c100}}
 
 [%%%DOM event%%%](https://www.w3schools.com/jsref/dom_obj_event.asp)
 [%%%JS event%%%](https://www.w3schools.com/js/js_events.asp)
 
 _________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{common.c101}}
 
-{{s2.p1}}
+{{common.c102}}
 
 {{s2.p2}}
 
@@ -201,7 +201,7 @@ ___________________________________
 
 ## ![ico-25 icon] dispatchEvent
 
-{{s2.p3}}
+{{common.c104}}
 
 ◘◘![ico-25 cap] **dispatchEvent**◘◘
 
@@ -315,7 +315,7 @@ ____________________________
 
 <img src="https://github.com/garevna/js-course/blob/master/pictures/event-2.png?raw=true" width="400"/>
 
-{{s2.p19}}
+{{common.c118}}
 
 ![ico-20 green-ok] addEventListener
 ![ico-20 green-ok] removeEventListener
@@ -505,7 +505,7 @@ ____________________________________
 
 _______________________
 
-{{s2.p39}}
+{{common.c128}}
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
@@ -535,7 +535,7 @@ for (var txt of text) {
 
 {{s2.p40}}
 
-{{s2.p41}}
+{{common.c130}}
 
 ~~~js
 event.stopImmediatePropagation()
@@ -561,7 +561,7 @@ ____________________________________________
 
 ___________________
 
-{{s2.p51}}
+{{common.c140}}
 
 ◘◘![ico-25 cap] ** 7**◘◘
 
@@ -579,7 +579,7 @@ document.getElementById('sample')
 
 ___________________________________
 
-{{s2.p52}}
+{{common.c141}}
 
 ◘◘![ico-25 cap] ** 8**◘◘
 
@@ -595,7 +595,7 @@ _________________________
 
 ![ico-25 cap] ** 9**
 
-^^^[{{s2.spoiler1}}]
+^^^[{{common.c24}}]
 
 ~~~html
 <div id="main-frame" class="wrapper">
@@ -623,7 +623,7 @@ _________________________
 
 ^^^
 
-^^^[{{s2.spoiler2}}]
+^^^[{{common.c142}}]
 
 ~~~js
 var collection = document.querySelectorAll('p &#126; *')
@@ -703,7 +703,7 @@ document.body.onclick = bodyClickHandler
 
 ____________________________________________________________
 
-{{s2.p57}}
+{{common.c147}}
 
 [:::mouseover & mouseout:::](https://codepen.io/garevna/pen/jLrReP?editors=1010)
 

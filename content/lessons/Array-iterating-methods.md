@@ -142,7 +142,7 @@ __________________________________________
 {{s1.p34}}
 {{s1.p35}}
 
-☼☼☼ {{s1.slogan1}} ☼☼☼
+☼☼☼ {{common.c45}} ☼☼☼
 
 {{s1.p36}}
 
@@ -348,7 +348,7 @@ _____________________
 
 ____________________
 
-{{s3.p14}}
+![ico-25 memo] {{common.c3}}
 
 {{s3.p15}}
 
@@ -434,7 +434,7 @@ location.search
   .map(x => ({ [x.split('=')[0]] : x.split('=')[1] }))
 ~~~
 
-{{s4.p3}}
+{{common.c47}}
 
 ~~~console
 ▼ (2) [{…}, {…}]
@@ -464,7 +464,7 @@ function getSearchObject () {
 
 {{s4.p6}}
 
-{{s4.p7}}
+{{common.c47}}
 
 ~~~console
 ▼ {name: "garevna", date: "10.07.2018"}
@@ -558,7 +558,7 @@ console.log(usa)
 
 ~~~
 
-{{s4.p11}}
+◘◘**{{common.c1}}**◘◘
 
 ~~~console
 
@@ -610,7 +610,7 @@ var cards = [
 cards.find(card => card.cash > 4000)
 ~~~
 
-{{s4.p14}}
+◘◘**{{common.c1}}**◘◘
 
 ~~~console
 ▼ { num: "457811714", cash: 5000 }
@@ -1086,7 +1086,7 @@ Array.prototype.pow = function () {
 
 ______________________________________
 
-### ![ico-25 hw] {{s6.h1}}
+### ![ico-25 hw] {{common.c15}}
 
 {{s6.p1}}
 
@@ -1145,7 +1145,7 @@ var resArray = sourceArray.sort(function (x, y) {
 })
 ~~~
 
-{{s6.p11}}
+◘◘**{{common.c1}}**◘◘
 
 ~~~console
 ▼ (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
@@ -1171,7 +1171,7 @@ var resArray = sourceArray
   })
 ~~~
 
-{{s6.p13}}
+◘◘**{{common.c1}}**◘◘
 
 ~~~console
 fond - bonus = 30
@@ -1240,7 +1240,7 @@ var cookie = 'name=user; token=Jd7-js15/84; interest=javascript'
 console.log(cookie.split('; ').map(item => item.split('='))
 ~~~
 
-{{s6.p20}}
+◘◘**^^{{common.c1}}^^**◘◘
 
 ~~~console
 ▼ (3) [Array(2), Array(2), Array(2)]
@@ -1259,7 +1259,7 @@ console.log(cookie.split('; ').map(item => item.split('='))
 console.log(cookie.split('; ').flatMap(item => item.split('='))
 ~~~
 
-{{s6.p23}}
+◘◘**^^{{common.c1}}^^**◘◘
 
 ~~~console
 ► (6) ["name", "user", "token", "Jd7-js15/84", "interest", "javascript"]
@@ -1281,8 +1281,8 @@ ____________________________________________________
 
 ## ![ico-25 icon] keys()
 
-{{s6.p27}}
-{{s6.p28}}
+{{common.c48}}
+{{common.c49}}
 
 ◘◘![ico-20 cap] **keys**◘◘
 
@@ -1299,7 +1299,7 @@ do {
 } while (!done)
 ~~~
 
-{{s6.p29}}
+◘◘**^^{{common.c1}}^^**◘◘
 
 ~~~console
 name user
@@ -1312,8 +1312,8 @@ ______________________
 
 ## ![ico-25 icon] values()
 
-{{s6.p30}}
-{{s6.p31}}
+{{common.c48}}
+{{common.c49}}
 
 ◘◘![ico-20 cap] **values**◘◘
 
@@ -1331,7 +1331,7 @@ do {
 } while (!done)
 ~~~
 
-{{s6.p32}}
+◘◘**^^{{common.c1}}^^**◘◘
 
 ~~~console
 ► (2) ["name", "user"]
@@ -1371,7 +1371,7 @@ cards.reduce((result, card) => ({
 }), { num: '457855155', cash: 0 })
 ~~~
 
-{{s8.p3}}
+◘◘**^^{{common.c1}}^^**◘◘
 
 ~~~console
 ▼ { num: "457855155", cash: 10300 }
@@ -1395,7 +1395,7 @@ cards.reduce((result, card) => {
 
 {{s8.p5}}
 
-{{s8.p6}}
+◘◘**^^{{common.c1}}^^**◘◘
 
 ~~~console
 
@@ -1486,7 +1486,7 @@ arr.reduce((result, item) => {
 }, [])
 ~~~
 
-{{s9.p6}}
+◘◘**^^{{common.c1}}^^**◘◘
 
 ~~~console
 ▼ (3) ["google", "mozilla", "ie"]

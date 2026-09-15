@@ -89,7 +89,7 @@ Array.prototype.iterate = function (func) {
 ;[49, 4, 25].iterate(Math.sqrt)
 ~~~
 
-{{s2.p16}}
+{{common.c4}}
 
 ~~~console
 ► (3) [7, 2, 5]
@@ -104,7 +104,7 @@ const squaring = num => Math.pow(num, 2)
 ;[7, 2, 5].iterate(squaring)
 ~~~
 
-{{s2.p20}}
+{{common.c4}}
 
 ~~~console
 ► (3) [49, 4, 25]
@@ -130,7 +130,7 @@ const func = num => num < 10
 ;[108, 24, 5, 17, 1, 7].filtering(func)
 ~~~
 
-{{s2.p25}}
+{{common.c4}}
 
 ~~~console
 ► (3) [5, 1, 7]
@@ -140,7 +140,7 @@ const func = num => num < 10
 [7, 4, 1, 20, 8].filtering(item => item > 5)
 ~~~
 
-{{s2.p26}}
+{{common.c4}}
 
 ~~~console
 ► (3) [7, 20, 8]
@@ -185,7 +185,7 @@ const sample = numbers.iterate(function (item, index, arr) {
 console.log(sample)
 ~~~
 
-{{s4.p4}}
+{{common.c4}}
 
 ~~~console
 ► (4) [15, 9, 9, 18]
@@ -210,7 +210,7 @@ const sample = numbers.iterate(function (item) {
 console.log(sample)
 ~~~
 
-{{s4.p5}}
+{{common.c4}}
 
 ~~~console
 ► (4) [4, 5, 7, 7]
@@ -258,7 +258,7 @@ const sample = numbers.iterate((item, index, arr) => item * index - arr[0])
 console.log(sample)
 ~~~
 
-{{s5.p7}}
+{{common.c4}}
 
 ~~~console
 ► (4) [-8, -4, 10, 13]
@@ -307,7 +307,7 @@ users
 {{s5.p19}}
 {{s5.p20}}
 
-☼☼☼ {{s5.slogan1}} ☼☼☼
+☼☼☼ {{common.c45}} ☼☼☼
 
 {{s5.p21}}
 
@@ -350,7 +350,7 @@ browsers.iterate(storeItem, storeItem)
 console.dir(storeItem)
 ~~~
 
-{{s5.p27}}
+{{common.c2}}
 
 ~~~console
 ▼ ƒ storeItem(item, index, arr)
@@ -399,7 +399,7 @@ Array.prototype.idempotence = function (func) {
 numbers.idempotence(Math.sqrt)
 ~~~
 
-{{s6.p7}}
+{{common.c4}}
 
 ~~~console
 ► (7) [5, 4, 3, 7, 9, 8, 2]
@@ -415,7 +415,7 @@ numbers[6] = 125
 numbers.idempotence(Math.sqrt)
 ~~~
 
-{{s6.p10}}
+{{common.c4}}
 
 ~~~console
 ► (7) [5, 4, 3, 7, 9, 8, 2]
@@ -463,7 +463,7 @@ Array.prototype.idempotence = function (func) {
 numbers.idempotence(Math.sqrt)
 ~~~
 
-{{s6.p17}}
+{{common.c4}}
 
 ~~~console
 '[5,4,3,7,9,8,2]'
@@ -473,7 +473,7 @@ numbers.idempotence(Math.sqrt)
 numbers.idempotence(item => item + Math.floor(Math.random() * 100))
 ~~~
 
-{{s6.p18}}
+{{common.c4}}
 
 ~~~console
 '[5,4,3,7,9,8,2]'
@@ -556,7 +556,7 @@ const randomize = item => item + Math.floor(item + Math.random() * 100)
 
 _____________________________________________
 
-## ![ico-25 icon] {{s7.h1}}
+## ![ico-25 icon] {{common.c14}}
 
 {{s7.p1}}
 
@@ -676,7 +676,7 @@ companList.iterate(test, browsers)
 console.log(browsers)
 ~~~
 
-{{s7.p4}}
+{{common.c2}}
 
 ~~~console
 ▼ (3) [{…}, {…}, {…}]

@@ -30,6 +30,7 @@ const LESSONS = path.join(root, 'public/lessons')
 
 const REFERENCE = 'ru'
 const LANGS = ['ru', 'eng', 'ua']
+const COMMON_PREFIX = 'common.'
 
 const only = process.argv[2]
 
@@ -40,6 +41,8 @@ const readJson = (file) => {
     return null
   }
 }
+
+const common = readJson(path.join(CONTENT, 'common.json')) || {}
 
 const pages = fs.readdirSync(path.join(CONTENT, 'lessons'))
   .filter((f) => f.endsWith('.md'))
@@ -77,7 +80,13 @@ for (const page of pages) {
     }
 
     const page_ = skeleton.replace(/(?<!\{)\{\{([a-zA-Z0-9_.]+)\}\}(?!\})/g, (whole, key) => {
-      const entry = entries[key]
+      // A repeated phrase lives in the shared table, not in the page: the
+      // skeleton points at it so "или:" is one entry and one translation
+      // rather than twelve keys saying the same thing.
+      const entry = key.startsWith(COMMON_PREFIX)
+        ? common[key.slice(COMMON_PREFIX.length)]
+        : entries[key]
+
       if (!entry) {
         problems.push(`${page}.${lang}: {{${key}}} has no text in any language`)
         return whole

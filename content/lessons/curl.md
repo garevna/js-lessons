@@ -4,7 +4,7 @@
 
 [![ico-50 curl]](https://curl.se/docs/tutorial.html)
 
-{{s0.p2}}
+{{common.c62}}
 
 {{s0.p3}}
 
@@ -24,7 +24,7 @@ _______________________
 ![](illustrations/curl-02.png)
 
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{common.c157}}
 
 ^^^[-O]
 

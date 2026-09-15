@@ -30,7 +30,7 @@ document
   .appendChild (section)
 ~~~
 
-{{s1.p6}}
+◘◘{{common.c1}}◘◘
 
 ~~~html
 &ltbody>
@@ -56,7 +56,7 @@ style
   .appendChild(document.createTextNode(`div { color: blue; }`))
 ~~~
 
-{{s1.p7}}
+◘◘{{common.c1}}◘◘
 
 ~~~html
 &lthead>
@@ -109,7 +109,7 @@ var figure = document.querySelector('.figure')
 figure.appendChild(removed)
 ~~~
 
-{{s1.p11}}
+◘◘{{common.c1}}◘◘
 
 ~~~html
 &ltbody>
@@ -140,7 +140,7 @@ var figure = addElement ('figure', main)
 main.insertBefore(document.createElement('p'), section)
 ~~~
 
-{{s1.p12}}
+◘◘{{common.c1}}◘◘
 
 ~~~html
 &ltbody>
@@ -179,7 +179,7 @@ section.insertAdjacentHTML('beforeEnd', '<p>beforeEnd</p>')
 section.insertAdjacentHTML('afterEnd', '<p>afterEnd</p>')
 ~~~
 
-{{s1.p15}}
+◘◘{{common.c1}}◘◘
 
 ~~~html
 &ltbody>
@@ -224,7 +224,7 @@ document.getElementsByTagName('figure')[0]
   .insertAdjacentElement('afterbegin', document.createElement('li'))
 ~~~
 
-{{s1.p16}}
+◘◘{{common.c1}}◘◘
 
 ~~~html
 &ltbody>
@@ -285,7 +285,7 @@ ____________________________
 document.body.childNodes
 ~~~
 
-{{s2.p3}}
+◘◘{{common.c1}}◘◘
 
 ~~~console
 ▼ NodeList(7) [text, div.container, text, h1.header, text, p.paragraph, text]
@@ -308,7 +308,7 @@ document.body.childNodes
 document.querySelector('[title]').childNodes
 ~~~
 
-{{s2.p6}}
+◘◘{{common.c1}}◘◘
 
 ~~~console
 ▼ NodeList(5) [text, a.paragraph, text, img#picture.galleryPicture, text]
@@ -336,7 +336,7 @@ _________________________________
 document.body.children
 ~~~
 
-{{s2.p9}}
+◘◘{{common.c1}}◘◘
 
 ~~~console
 ▼ HTMLCollection(3) [div.container, h1.header, p.paragraph]
@@ -441,7 +441,7 @@ div.setAttribute('style', `
 console.info(div.getBoundingClientRect())
 ~~~
 
-{{s4.p8}}
+◘◘{{common.c1}}◘◘
 
 ~~~console
 ▼ DOMRect {x: 8, y: 8, width: 202, height: 202, top: 8, …}
@@ -484,7 +484,7 @@ var elem = document.body
 elem.tagName = 'div'
 ~~~
 
-→→→ {{s4.quiz1}} | {{s4.quizVariants1}} | {{s4.quizAnswer1}}→→→
+→→→ {{common.c64}} | {{common.c65}} | {{s4.quizAnswer1}}→→→
 
 
 ◘◘** 2**◘◘
@@ -492,7 +492,7 @@ elem.tagName = 'div'
 document.title = 'DOM'
 ~~~
 
-→→→ {{s4.quiz2}} | {{s4.quizVariants2}} | {{s4.quizAnswer2}}→→→
+→→→ {{common.c66}} | {{common.c67}} | {{common.c68}}→→→
 
 ◘◘** 3**◘◘
 ~~~js
@@ -510,12 +510,12 @@ for (var text of paragraph) {
 }
 ~~~
 
-→→→ {{s4.quiz3}} | {{s4.quizVariants3}} | {{s4.quizAnswer3}}→→→
+→→→ {{common.c69}} | {{s4.quizVariants3}} | {{s4.quizAnswer3}}→→→
 
 
 ◘◘** 4**◘◘
 
-→→→ {{s4.quiz4}} | {{s4.quizVariants4}} | {{s4.quizAnswer4}}→→→
+→→→ {{common.c70}} | {{s4.quizVariants4}} | {{s4.quizAnswer4}}→→→
 
 
 ◘◘** 5**◘◘
@@ -537,7 +537,7 @@ elems.forEach(function (elem) {
 })
 ~~~
 
-→→→ {{s4.quiz5}} | {{s4.quizVariants5}} | {{s4.quizAnswer5}}→→→
+→→→ {{common.c71}} | {{s4.quizVariants5}} | {{common.c73}}→→→
 
 _________________________________
 

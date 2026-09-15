@@ -34,11 +34,6 @@
     "eng": "Strings are compared character by character until the first mismatch is found",
     "ua": "Порівняння рядків відбувається посимвольно до першого розбіжності"
   },
-  "s0.p8": {
-    "ru": "Логическое выражение",
-    "eng": "The logical expression",
-    "ua": "Логічний вираз"
-  },
   "s0.p9": {
     "ru": "будет иметь значение **⟦f2⟧**, потому что при сравнении первых символов двух строк будет обнаружено, что код символа \"@\" меньше кода символа \"w\"",
     "eng": "will evaluate to **⟦f2⟧**, because when comparing the first characters of the two strings, it will be found that the code for the character ‘@’ is smaller than that for the character ‘w’",
@@ -48,11 +43,6 @@
     "ru": "далее сравнение проводиться не будет",
     "eng": "no further comparison will be carried out",
     "ua": "далі порівняння не проводитиметься"
-  },
-  "s0.p11": {
-    "ru": "Логическое выражение",
-    "eng": "The logical expression",
-    "ua": "Логічний вираз"
   },
   "s0.p12": {
     "ru": "будет иметь значение **⟦f2⟧**, потому что коды первых символов этих строк совпадают, а десятичный код символа \"g\" ( 103 ) меньше десятичного кода символа \"m\" ( 109 )",

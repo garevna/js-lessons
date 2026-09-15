@@ -91,7 +91,7 @@ Therefore, as a result of executing the code:
 }
 ~~~
 
-an exception will be thrown:
+An exception will be thrown:
 
 ••![ico-25 err] ReferenceError: Cannot access 'x' before initialization••
 

@@ -2,7 +2,7 @@
 
 **ES6**
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{common.c58}}
 
 ![ico-20 error] **_function_**
 
@@ -96,7 +96,7 @@ const getAnswer = question => question === 'who'
       : 'I don\'t undestand your question'
 ~~~
 
-{{s2.p12}}
+{{common.c172}}
 
 ~~~js
 const getAnswer = question => ['who', 'what', 'where'].includes(question)
@@ -170,7 +170,7 @@ const arrowFunc = () => null
 const obj = new arrowFunc()
 ~~~
 
-{{s3.p3}}
+{{common.c5}}
 
 ~~~error
     TypeError: arrowFunc is not a constructor
@@ -228,7 +228,7 @@ testArguments(5, false)
 
 ______________________________________________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] {{common.c27}}
 
 {{s4.p1}}
 
@@ -236,7 +236,7 @@ ______________________________________________________
 
 {{s4.p3}}
 
-#### ![ico-20 icon] {{s5.h1}}
+#### ![ico-20 icon] {{common.c173}}
 
 ~~~js
 window.name = 'Chrome'
@@ -279,7 +279,7 @@ human.showName = () => console.log(this.name)
 {{s5.p11}}
 
 ----------------
-#### ![ico-20 icon] {{s6.h1}}
+#### ![ico-20 icon] {{common.c10}}
 
 {{s6.p1}}
 
@@ -369,7 +369,7 @@ const user = fabric.call(template, {}, 'Piter')
 
 {{s7.p3}}
 
-{{s7.p4}}
+{{common.c175}}
 
 ~~~js
 user.showName()  // Robert
@@ -386,7 +386,7 @@ ____________________________________________________
 
 _____________________________________________________
 
-## ![ico-20 icon] {{s8.h1}}
+## ![ico-20 icon] {{common.c14}}
 
 ◘◘![ico-25 cap] ** 1**◘◘
 ~~~js

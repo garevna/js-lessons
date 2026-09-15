@@ -1,8 +1,8 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{common.c180}}
 
 ____________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{common.c181}}
 
 {{s2.p1}}
 
@@ -29,7 +29,7 @@ func(5, 8, 11, false)
 console.dir(func)
 ~~~
 
-{{s2.p6}}
+**{{common.c2}}**
 
 ~~~console
 ▼ ƒ anonymous(x,y,z )
@@ -43,7 +43,7 @@ console.dir(func)
 
 ________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{common.c60}}
 
 {{s3.p1}}
 
@@ -56,7 +56,7 @@ ________________________________
 console.dir(Function)
 ~~~
 
-^^^[{{s3.spoiler1}}]
+^^^[{{common.c2}}]
 
 ~~~console
 ▼ ƒ Function()
@@ -95,7 +95,7 @@ function func () {
 console.dir(func)
 ~~~
 
-^^^[{{s3.spoiler2}}]
+^^^[{{common.c2}}]
 
 ~~~console
 ▼ ƒ func()
@@ -162,7 +162,7 @@ I'm figure
 
 ____________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] {{common.c27}}
 
 @@@@
 ![](images/funcs-call-girls-ukr.svg)
@@ -220,7 +220,7 @@ getName.getName()
 ~~~
 _____________________________________________
 
-## ![ico-25 icon] {{s5.h1}}
+## ![ico-25 icon] {{common.c180}}
 
 {{s5.p1}}
 {{s5.p2}}
@@ -279,7 +279,7 @@ func.call(figure, 9, false, 'Hello')
 func.call(sample, 5, 1, 'Bye')
 ~~~
 
-{{s5.p10}}
+**{{common.c2}}**
 
 ••figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]••
 ••sample ► Arguments(3) [ 5, 1, "Bye", callee: ƒ, Symbol(Symbol.iterator): ƒ ]••
@@ -305,7 +305,7 @@ func.apply(figure, [9, false, 'Hello'])
 func.apply(sample, [5, 1, 'Bye'])
 ~~~
 
-{{s5.p12}}
+**{{common.c2}}**
 
 ~~~console
 figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
@@ -347,7 +347,7 @@ var objects = [
 objects.forEach(obj => func.apply(obj, args))
 ~~~
 
-{{s5.p15}}
+**{{common.c2}}**
 
 ••![ico-20 warn] ► Who was called before figure (0):••
 ••![ico-20 warn] ► Who was called before sample (1):••
@@ -442,7 +442,7 @@ funcs[1]()
 funcs[2]()
 ~~~
 
-{{s5.p25}}
+**{{common.c2}}**
 
 {{s5.p26}}
 {{s5.p27}}
@@ -470,7 +470,7 @@ bloom.sample()
 bloom.google()
 ~~~
 
-{{s5.p32}}
+**{{common.c2}}**
 
 {{s5.p33}}
 {{s5.p34}}
@@ -492,9 +492,9 @@ bloom.google()
 
 _________________________________________
 
-## ![ico-25 smile] {{s6.h1}}
+## ![ico-25 smile] {{common.c178}}
 
-{{s6.p1}}
+![ico-20 question] {{common.c179}}
 
 ~~~js
 var sample = function () {

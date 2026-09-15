@@ -6,7 +6,7 @@ ________________________________________________________________________________
 
 __________________________________________________________________________________________
 
-## ![ico-30 icon] {{s1.h1}}
+## ![ico-30 icon] {{common.c10}}
 
 {{s1.p1}}
 {{s1.p2}}
@@ -23,7 +23,7 @@ const promise = new Promise(function (...) {
 const promise = new Promise ()
 ~~~
 
-{{s1.p4}}
+![ico-20 err] {{common.c33}}
 
 ~~~error
     Uncaught TypeError: Promise resolver undefined is not a function
@@ -207,7 +207,7 @@ _______________________________________________________
 Promise.resolve('Access granted.').then()
 ~~~
 
-{{s5.p8}}
+{{common.c6}}
 
 ~~~js
 Promise.resolve('Access granted.').then(10)
@@ -704,7 +704,7 @@ Promise.race(promises).then(show)
 {{{promise-race.js}}}
 __________________________________________________________________________________________
 
-## ![ico-25 icon] {{s8.h1}}
+## ![ico-25 icon] {{common.c14}}
 
 {{s8.p1}}
 {{s8.p2}}

@@ -20,7 +20,7 @@
 
 _______________________________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{common.c34}}
 
 {{s2.p1}}
 
@@ -156,7 +156,7 @@ new Date(...new Date().toLocaleDateString().split('.').reverse())
 user.birthday = new Date(...).toLocaleDateString()
 ~~~
 
-{{s5.p8}}
+{{common.c6}}
 
 ~~~js
 user.birthday = '27.05.2001'
@@ -170,7 +170,7 @@ const userBirthday = new Date(...user.birthday.split('.').reverse())
 
 _____________________________________________________________
 
-## ![ico-25 icon] {{s6.h1}}
+## ![ico-25 icon] {{common.c25}}
 
 {{s6.p1}}
 
@@ -486,7 +486,7 @@ ____________________________________________________________________
 
 {{s10.p17}}
 
-{{s10.p18}}
+{{common.c24}}
 
 ◘◘![ico-20 cap] 15 (html)◘◘
 
@@ -542,7 +542,7 @@ const lettersCounter = str => Object.assign({}, ...str
 lettersCounter('htkolkhlfottko')
 ~~~
 
-{{s10.p23}}
+**{{common.c153}}**
 
 ~~~console
 ▼ {h: 2, t: 3, k: 3, o: 3, l: 2, …}
@@ -617,7 +617,7 @@ test({ a: 5, b: 7, c: 8 })  // 20
 
 _________________________
 
-### ![ico-30 hw] {{s11.h1}}
+### ![ico-30 hw] {{common.c3}}
 
 {{s11.p1}}
 

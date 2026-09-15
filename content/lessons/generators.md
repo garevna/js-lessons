@@ -1,4 +1,4 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{common.c30}}
 
 **ES 2015**
 
@@ -686,7 +686,7 @@ document.body.style = `
 ~~~js
 for (const point of canvas) {}
 ~~~
-{{s5.p17}}
+{{common.c13}}
 ~~~js
 console.log(...canvas)
 ~~~

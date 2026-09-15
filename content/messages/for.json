@@ -119,11 +119,6 @@
     "eng": "For the **⟦f3⟧** loop statement, everything relating to the loop variable (initialisation, modification, checking) is placed within round brackets:",
     "ua": "Для оператора циклу **⟦f3⟧** усе, що стосується змінної циклу (ініціалізація, зміна, перевірка), поміщається в круглі дужки:"
   },
-  "s1.p24": {
-    "ru": "Например:",
-    "eng": "For example:",
-    "ua": "Наприклад:"
-  },
   "s1.p25": {
     "ru": "Тогда получаем во такую картину:",
     "eng": "This gives us the following picture:",
@@ -278,11 +273,6 @@
     "ru": "• ^^Это значение будет добавлено к значению переменной ⟦f15⟧, которое станет равно ⟦f17⟧^^",
     "eng": "• ^^This value will be added to the value of the variable ⟦f15⟧, which will then become ⟦f17⟧^^",
     "ua": "• ^^Це значення буде додано до значення змінної ⟦f15⟧, яке стане рівним ⟦f17⟧^^"
-  },
-  "s3.p18": {
-    "ru": "^^И так далее...^^",
-    "eng": "^^And so on...^^",
-    "ua": "^^І так далі...^^"
   },
   "s3.p19": {
     "ru": "В этом примере приращение переменной цикла осуществляется внутри тела цикла.",

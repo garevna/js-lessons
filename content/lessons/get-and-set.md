@@ -1,4 +1,4 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{common.c164}}
 
 {{s1.p1}}
 
@@ -334,7 +334,7 @@ var human = {
 human.showState()
 ~~~
 
-{{s1.p27}}
+**{{common.c4}}**
 
 ~~~console
 Current state: 0 (work)
@@ -353,7 +353,7 @@ human.state = 'swim'
 human.showState()
 ~~~
 
-{{s1.p31}}
+**{{common.c4}}**
 
 ~~~console
 Current state: 3 (swim)

@@ -2,7 +2,7 @@
 
 {{s0.p1}}
 
-{{s0.p2}}
+![ico-25 cap] **{{common.c0}} 1**
 
 {{s0.p3}}
 
@@ -28,7 +28,7 @@ async function getData () {
 getData ()
 ~~~
 
-{{s0.p6}}
+**{{common.c20}}**
 
 ~~~console
 
@@ -55,7 +55,7 @@ function getData () {
 }
 ~~~
 
-{{s0.p10}}
+**{{common.c20}}**
 
 ~~~console
 
@@ -67,7 +67,7 @@ time: 1001.474365234375ms
 
 _________________________________
 
-{{s0.p11}}
+![ico-25 cap] **{{common.c0}} 2**
 
 ~~~~js
 function getData (typ) {
@@ -113,4 +113,4 @@ getAllData('figures', 'colors', 'diameters')
 {{s0.p21}}
 
 _______________________
-{{s0.p22}}
+{{common.c41}}

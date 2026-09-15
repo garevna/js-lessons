@@ -103,7 +103,7 @@ do {
 } while (true)
 ~~~
 
-→→→ {{s1.quiz1}} | {{s1.quizVariants1}} | {{s1.quizAnswer1}}→→→
+→→→ {{common.c273}} | {{s1.quizVariants1}} | {{s1.quizAnswer1}}→→→
 
 ◘◘![ico-25 hw]** 2**◘◘
 ~~~js
@@ -114,7 +114,7 @@ while (Math.random() < .5) {
 }
 ~~~
 
-→→→ {{s1.quiz2}} | {{s1.quizVariants2}} | {{s1.quizAnswer2}}→→→
+→→→ {{common.c273}} | {{s1.quizVariants2}} | {{s1.quizAnswer2}}→→→
 
 ◘◘![ico-25 hw]** 3**◘◘
 ~~~js

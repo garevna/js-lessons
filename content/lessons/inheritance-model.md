@@ -109,7 +109,7 @@ __________________________
 
 {{s1.p29}}
 
-{{s1.p30}}
+{{common.c175}}
 
 ^^^[Object.prototype]
 ~~~console
@@ -330,7 +330,7 @@ obj.say()   // My name is  Google
 
 __________________________________________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{common.c148}}
 
 {{s2.p1}}
 
@@ -356,7 +356,7 @@ __________________________________________________________________________
 
 {{s2.p10}}
 
-{{s2.p11}}
+{{common.c222}}
 
 {{s2.p12}}
 
@@ -382,7 +382,7 @@ var obj = Object.create(null)
 
 {{s3.p6}}
 
-{{s3.p7}}
+{{common.c13}}
 
 ~~~js
 var obj = {}
@@ -442,7 +442,7 @@ var sample = Object.create({ type: 'figure' })
 sample.name = 'circle'
 ~~~
 
-{{s4.p5}}
+{{common.c194}}
 
 ~~~console
 ▼ { name: "circle" }
@@ -562,7 +562,7 @@ console.dir( Object.__proto__.constructor.name)
 
 _____________________________________________________
 
-## ![ico-25 cap] {{s5.h1}}
+## ![ico-25 cap] {{common.c0}}
 
 {{s5.p1}}
 
@@ -707,7 +707,7 @@ for (var student of group) {
 }
 ~~~
 
-{{s5.p17}}
+{{common.c216}}
 
 _____________________________________________________
 

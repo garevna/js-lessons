@@ -19,11 +19,6 @@
     "eng": "The second is an assignment, as a result of which the default call context is determined by the left-hand side:",
     "ua": "Другий варіант — це присвоєння, в результаті якого контекст виклику за замовчуванням визначається лівою частиною:"
   },
-  "s0.p5": {
-    "ru": "**Пример 1**",
-    "eng": "**Example 1**",
-    "ua": "**Приклад 1**"
-  },
   "s0.p6": {
     "ru": "здесь мы определили контекст в левой части оператора присваивания, т.е. контекст вызова - ⟦f4⟧",
     "eng": "Here, we have defined the context on the left-hand side of the assignment operator; that is, the call context is ⟦f4⟧",
@@ -33,11 +28,6 @@
     "ru": "Контекст стрелочной функции устанавливается в момент ее объявления, и присваивание не меняет ее контекст, поскольку он уже четко прописан - это контекст, в котором она была создана (правая часть оператора присваивания):",
     "eng": "The context of an arrow function is established at the moment of its declaration, and assignment does not change its context, as it is already clearly defined – it is the context in which it was created (the right-hand side of the assignment statement):",
     "ua": "Контекст стрілкової функції встановлюється в момент її оголошення, і присвоєння не змінює її контекст, оскільки він уже чітко визначений — це контекст, у якому вона була створена (права частина оператора присвоєння):"
-  },
-  "s0.p8": {
-    "ru": "**Пример 2**",
-    "eng": "**Example 2**",
-    "ua": "**Приклад 2**"
   },
   "s0.p9": {
     "ru": "здесь уже ⟦f5⟧ имеет глобальный контекст 😉",

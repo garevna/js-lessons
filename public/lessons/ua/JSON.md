@@ -222,7 +222,7 @@ var sample = JSON.parse(JSON.stringify(obj))
 var test = Object.assign({}, obj)
 ~~~
 
-Логічний вираз:
+Логічний вираз
 
 ~~~js
 test.position === obj.position

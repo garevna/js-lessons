@@ -76,7 +76,7 @@ names [ i ] ="Сергей",
 lastNames [ i ] = "Коломенцев"
 ~~~
 
-**Результат:**
+**Result:**
 
 ~~~javascript
 newArray [ i ] = "Сергей Коломенцев"

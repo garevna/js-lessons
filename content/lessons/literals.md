@@ -5,7 +5,7 @@
 {{s1.p2}}
 {{s1.p3}}
 
-{{s1.p4}}
+![ico-25 cap] **{{common.c0}} 1**
 
 ~~~js
 var str = "\nПривет,\nменя зовут Дима\n"
@@ -22,7 +22,7 @@ console.log(str.charCodeAt(0))
 console.log(lit.charCodeAt(0))
 ~~~
 
-{{s1.p5}}
+^^{{common.c2}}^^
 
 ![](createPath("illustrations", "string-methods-01.png"))
 
@@ -38,7 +38,7 @@ __________________________________________________________________
 
 {{s1.p10}}
 
-{{s1.p11}}
+![ico-25 cap] **{{common.c0}} 2**
 
 ~~~js
 var cities = ['Неаполь', 'Вашингтон', 'Женева']
@@ -48,7 +48,7 @@ for (var i = 0; i < cities.length; i++) {
 }
 ~~~
 
-{{s1.p12}}
+^^{{common.c2}}^^
 
 {{s1.p13}}
 
@@ -56,7 +56,7 @@ ____________________________________________________________________
 
 {{s1.p14}}
 
-{{s1.p15}}
+![ico-25 cap] **{{common.c0}} 3**
 
 ~~~js
 var cities = [
@@ -76,13 +76,13 @@ for (var x = 0; x < cities.length; x++) {
 console.log(str)
 ~~~
 
-{{s1.p16}}
+^^{{common.c2}}^^
 
 ![](createPath("illustrations", "string-methods-02.png"))
 
 ______________________________________________________________________
 
-{{s1.p17}}
+![ico-25 cap] **{{common.c0}} 4**
 
 {{s1.p18}}
 
@@ -108,7 +108,7 @@ var color = `#${red}${green}${blue}`
 
 ______________________________________________________________________________
 
-{{s1.p25}}
+![ico-25 cap] **{{common.c0}} 5**
 
 {{s1.p26}}
 

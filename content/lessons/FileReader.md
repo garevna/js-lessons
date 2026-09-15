@@ -1,6 +1,6 @@
 # ![ico-30 icon] FileReader
 
-{{s0.p1}}
+**{{common.c10}}**
 
 {{s0.p2}}
 
@@ -11,7 +11,7 @@ var reader = new FileReader()
 {{s0.p3}}
 
 
-^^^[{{s0.spoiler1}}]
+^^^[{{common.c18}}]
 • ~ ƒ~ **~readAsArrayBuffer()~**
 • ~ ƒ~ **~readAsBinaryString()~**
 • ~ ƒ~ **~readAsDataURL()~**
@@ -56,7 +56,7 @@ ______________________________________
 
 ^^^
 
-{{s0.p11}}
+{{common.c35}}
 
 ◘◘![ico-25 cap] ** 1**◘◘
 
@@ -84,7 +84,7 @@ picture.src = URL.createObjectURL(selected)
 
 ____________________________________________________________
 
-{{s0.p13}}
+{{common.c35}}
 
 ◘◘![ico-25 cap] ** 2**◘◘
 
@@ -143,7 +143,7 @@ const fileReader = new FileReader()
 
 _____________________________________________________
 
-{{s0.p14}}
+{{common.c35}}
 
 ◘◘![ico-25 cap] ** 3**◘◘
 

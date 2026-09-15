@@ -1,9 +1,4 @@
 {
-  "s1.h1": {
-    "ru": "Конструктор",
-    "eng": "Function-argument",
-    "ua": "Функція-аргумент"
-  },
   "s1.p1": {
     "ru": "Конструктор **⟦f0⟧** является **функцией высшего порядка**.",
     "eng": "The function-argument of the **⟦f0⟧** constructor is also a **higher-order function**, i.e. its formal parameters are **functions**.",
@@ -18,11 +13,6 @@
     "ru": "Если вызвать конструктор **⟦f0⟧** без аргумента:",
     "eng": "The function-argument will be called when the **⟦f0⟧** instance is created.",
     "ua": "Функція-аргумент буде викликана під час створення екземпляра **⟦f0⟧**."
-  },
-  "s1.p4": {
-    "ru": "![ico-20 err] будет сгенерировано исключение",
-    "eng": "Let's try passing to the **⟦f0⟧** constructor the reference to a function without formal parameters:",
-    "ua": "Спробуємо передати конструктору **⟦f0⟧** без формальних параметрів:"
   },
   "s2.h1": {
     "ru": "Функция-аргумент",
@@ -248,11 +238,6 @@
     "ru": "Т.е. выражение:",
     "eng": "That is, the expression:",
     "ua": "Тобто вираз:"
-  },
-  "s5.p8": {
-    "ru": "или:",
-    "eng": "or:",
-    "ua": "або:"
   },
   "s5.p9": {
     "ru": "будет равносильно выражению:",
@@ -688,11 +673,6 @@
     "ru": "Воспользуемся **Github Users API**:",
     "eng": "Let’s use the **GitHub Users API**:",
     "ua": "Скористаємося **Github Users API**:"
-  },
-  "s8.h1": {
-    "ru": "Примеры",
-    "eng": "Magic box",
-    "ua": "Магічна коробка"
   },
   "s8.p1": {
     "ru": "Используем **Battery API**  для получения инфо о зарядке аккумулятора.",

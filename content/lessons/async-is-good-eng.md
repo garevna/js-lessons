@@ -333,7 +333,7 @@ _____________________
 So, the complete example code:
 
 
-{{s0.p1}}
+◘◘![ico-20 cap] {{common.c0}} 5◘◘
 
 ~~~js
 function getInput ( users ) {

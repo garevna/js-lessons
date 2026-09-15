@@ -91,7 +91,7 @@ _______________________
 }
 ~~~
 
-{{s2.p6}}
+{{common.c5}}
 
 ••![ico-25 err] ReferenceError: Cannot access 'x' before initialization••
 
@@ -117,7 +117,7 @@ function sample () {
 sample ()
 ~~~
 
-{{s2.p8}}
+{{common.c26}}
 
 ![ico-20 err] ~Uncaught SyntaxError: Identifier 'figure' has already been declared~
 
@@ -160,7 +160,7 @@ const XXX = 11
 XXX = 55
 ~~~
 
-{{s2.p15}}
+{{common.c26}}
 
 ![ico-20 err] ~Uncaught TypeError: Assignment to constant variable.~
 
@@ -172,7 +172,7 @@ XXX = 55
 const XXX
 ~~~
 
-{{s2.p17}}
+{{common.c26}}
 
 ••![ico-20 err] Uncaught SyntaxError: Missing initializer in const declaration••
 

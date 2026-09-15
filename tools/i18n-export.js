@@ -123,9 +123,11 @@ if (target === '--common') {
     process.exit(1)
   }
 
+  // Keyed by id, sent as Russian: the index maps the segment number back to
+  // the id, so a phrase can be reworded without orphaning its translation.
   const todo = Object.entries(common)
     .filter(([, v]) => !v[lang])
-    .map(([phrase]) => [phrase, phrase])
+    .map(([id, v]) => [id, v.ru])
 
   if (!todo.length) {
     console.log(`  every repeated phrase already has a ${lang} translation`)
@@ -176,6 +178,12 @@ const canonical = (name) => {
 const pages = target === '--all' ? known : [canonical(target)]
 const common = readJson(COMMON) || {}
 
+// The table is keyed by id; looking a phrase up needs the other direction.
+const commonByText = new Map()
+for (const entry of Object.values(common)) {
+  if (entry && entry.ru) commonByText.set(entry.ru, entry)
+}
+
 let totalSegments = 0
 let totalChars = 0
 let totalFiles = 0
@@ -206,7 +214,7 @@ for (const page of pages) {
 
     // Said before, somewhere else in the course. Take the agreed translation
     // and put it back inside whatever markup this occurrence happens to wear.
-    const phrase = common[core(entry.ru)]
+    const phrase = commonByText.get(core(entry.ru))
     if (phrase && phrase[lang]) {
       entry[lang] = dress(phrase[lang], entry.ru)
       fromCommon += 1

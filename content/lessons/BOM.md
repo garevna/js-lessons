@@ -81,7 +81,7 @@ ________________________________________________
 {{s1.p14}}
 {{s1.p15}}
 
-^^^[{{s1.spoiler1}}]
+^^^[{{common.c3}} 1]
 
 {{s1.p16}}
 
@@ -119,7 +119,7 @@ var props = [
 for (var prop of props) console.log(window[prop])
 ~~~
 
-{{s1.p21}}
+^^**{{common.c2}}**^^
 
 ~~~console
 
@@ -208,9 +208,9 @@ _____________________________________
 
 ![](illustrations/console-methods.png)
 
-^^^[{{s1.spoiler2}}]
+^^^[{{common.c3}} 2]
 
-{{s1.p29}}
+^^{{common.c8}}^^
 ~~~js
 console.time('while')
 
@@ -226,7 +226,7 @@ for (var x = 0; x < 10000; x++) {}
 console.timeEnd('for')
 ~~~
 
-{{s1.p30}}
+{{common.c22}}
 
 ^^^
 
@@ -255,22 +255,22 @@ ______________________________________
 
 ^^^
 
-^^^[{{s1.spoiler4}}]
+^^^[{{common.c3}} 3]
 
-{{s1.p31}}
+^^{{common.c8}}^^
 ~~~js
 var win = window.open('https://css-tricks.com')
 ~~~
 
-{{s1.p32}}
-{{s1.p33}}
+^^{{common.c53}}^^
+^^{{common.c8}}^^
 ~~~js
 console.clear()
 ~~~
 
 {{s1.p34}}
 {{s1.p35}}
-{{s1.p36}}
+^^{{common.c8}}^^
 ~~~js
 location.hash
 ~~~
@@ -278,29 +278,29 @@ location.hash
 {{s1.p37}}
 
 {{s1.p38}}
-{{s1.p39}}
+^^{{common.c8}}^^
 ~~~js
 win.close()
 ~~~
 
-{{s1.p40}}
+{{common.c22}}
 
 ^^^
 
-^^^[{{s1.spoiler5}}]
+^^^[{{common.c3}} 4]
 
-{{s1.p41}}
+^^{{common.c8}}^^
 ~~~js
 var win = window.open()
 ~~~
 
-{{s1.p42}}
-{{s1.p43}}
+^^{{common.c53}}^^
+^^{{common.c8}}^^
 ~~~js
 location.href = 'https://translate.google.com'
 ~~~
 
-{{s1.p44}}
+{{common.c54}}
 
 ^^^
 ______________________________________
@@ -353,9 +353,9 @@ ___________________________________________
 
 ### ![ico-20 icon] document
 
-^^^[{{s1.spoiler6}}]
+^^^[{{common.c3}} 5]
 
-{{s1.p52}}
+^^{{common.c8}}^^
 
 ~~~js
 var newWin = window.open()
@@ -364,13 +364,13 @@ newWin.document.write('<script>document.write(\'<h3>Hello!</h3>\')</script>')
 console.log(newWin.document.body)
 ~~~
 
-{{s1.p53}}
+{{common.c22}}
 
 ^^^
 
-^^^[{{s1.spoiler7}}]
+^^^[{{common.c3}} 6]
 
-{{s1.p54}}
+^^{{common.c8}}^^
 
 ~~~js
 var newWin = window.open()
@@ -380,13 +380,13 @@ console.log(newWin.document.body)
 newWin.close()
 ~~~
 
-{{s1.p55}}
+{{common.c22}}
 
 ^^^
 
-^^^[{{s1.spoiler8}}]
+^^^[{{common.c3}} 7]
 
-{{s1.p56}}
+^^{{common.c8}}^^
 
 ~~~js
 var html = `
@@ -405,7 +405,7 @@ var newWin = window.open('https://www.w3schools.com/')
 newWin.document.write(html)
 ~~~
 
-{{s1.p57}}
+{{common.c54}}
 
 ^^^
 

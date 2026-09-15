@@ -24,6 +24,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const { dereference } = require('./lib/common-refs')
 
 const root = path.join(__dirname, '..')
 const LESSONS = path.join(root, 'public/lessons')
@@ -379,7 +380,6 @@ if (write && !failed) {
     JSON.stringify(sharedFragments, null, 2) + '\n'
   )
 
-  fs.writeFileSync(path.join(skelDir, `${page}.md`), results.ru.skeleton)
 
   const msgFile = path.join(msgDir, `${page}.json`)
   let existing = {}
@@ -448,13 +448,33 @@ if (write && !failed) {
     if (entry.eng || entry.ua) dropped += 1
   }
 
-  fs.writeFileSync(msgFile, JSON.stringify(out, null, 2) + '\n')
+  // Point the skeleton at the shared table wherever a repeated phrase sits,
+  // the same way tools/i18n-dedupe.js does — otherwise re-extracting a page
+  // would spell every "или:" back out into its own key and undo the table.
+  let skeletonOut = results.ru.skeleton
+  let entriesOut = out
+  let referenced = 0
+
+  const commonTable = (() => {
+    try { return JSON.parse(fs.readFileSync(path.join(root, 'content/common.json'), 'utf8')) } catch { return null }
+  })()
+
+  if (commonTable) {
+    const result = dereference(skeletonOut, entriesOut, commonTable)
+    skeletonOut = result.skeleton
+    entriesOut = result.entries
+    referenced = result.moved.length
+  }
+
+  fs.writeFileSync(path.join(skelDir, `${page}.md`), skeletonOut)
+  fs.writeFileSync(msgFile, JSON.stringify(entriesOut, null, 2) + '\n')
 
   console.log(`\n  written: content/lessons/${page}.md + content/messages/${page}.json`)
   if (!structureAgrees) {
     console.log(`  the built ${langs.filter((l) => l !== 'ru').join(' and ')} page${langs.length > 2 ? 's' : ''} no longer match the Russian structure —`)
     console.log('  translations were carried over from the message file by text instead')
   }
+  if (referenced) console.log(`  ${referenced} repeated phrase${referenced === 1 ? '' : 's'} point at content/common.json instead of a key of their own`)
   if (carried) console.log(`  ${carried} translation${carried === 1 ? '' : 's'} followed their Russian text to a new key`)
   if (dropped) console.log(`  ${dropped} translation${dropped === 1 ? '' : 's'} dropped: the Russian they belonged to was edited`)
 } else if (write) {

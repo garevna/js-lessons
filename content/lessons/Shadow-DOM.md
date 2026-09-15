@@ -76,7 +76,7 @@ shadow.appendChild((() => Object.assign(document.createElement('img'), {
 </div>
 ~~~
 
-{{s1.p16}}
+**{{common.c169}}**
 
 ~~~js
 console.dir(elem.shadowRoot)
@@ -119,7 +119,7 @@ console.dir(elem.shadowRoot)
 
 {{s1.p18}}
 
-{{s1.p19}}
+**{{common.c169}}**
 
 ~~~js
 console.dir(elem.shadowRoot) // null

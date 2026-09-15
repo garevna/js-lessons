@@ -7,7 +7,7 @@
 {{s0.p3}}
 {{s0.p4}}
 
-{{s0.p5}}
+**{{common.c0}} 1**
 
 ~~~js
 user.showContext = function () {
@@ -19,7 +19,7 @@ user.showContext = function () {
 
 {{s0.p7}}
 
-{{s0.p8}}
+**{{common.c0}} 2**
 ~~~js
 user.sayHello = () => console.log(this)
 ~~~

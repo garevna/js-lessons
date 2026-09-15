@@ -193,7 +193,7 @@ _____________________
 
 {{s2.p25}}
 
-### ![ico-25 cap] {{s3.h1}}
+### ![ico-25 cap] {{common.c0}}
 
 ~~~js
 var iteratedObject = {
@@ -247,7 +247,7 @@ _____________________________
 
 {{s4.p2}}
 
-### ![ico-25 cap] {{s5.h1}}
+### ![ico-25 cap] {{common.c0}} 1
 
 ~~~js
 var iteratedArray = [7, 8, 9]
@@ -257,7 +257,7 @@ for (var index in iteratedArray) {
 }
 ~~~
 
-{{s5.p1}}
+**{{common.c28}}**
 
 ~~~js
 0  :  7
@@ -276,7 +276,7 @@ for (var index in iteratedString) {
 }
 ~~~
 
-{{s6.p1}}
+**{{common.c28}}**
 
 ~~~js
 0  :  К
@@ -295,7 +295,7 @@ for (var index in iteratedString) {
 
 _____________________________________________
 
-### ![ico-25 cap] {{s7.h1}}
+### ![ico-25 cap] {{common.c0}} 2
 
 ~~~js
 var article = {
@@ -315,7 +315,7 @@ for (var prop in article) {
 
 _______________________________
 
-### ![ico-25 cap] {{s8.h1}}
+### ![ico-25 cap] {{common.c0}} 3
 
 ~~~js
 var obj = {
@@ -452,7 +452,7 @@ for (var city of cities) {
 }
 ~~~
 
-{{s8.p19}}
+**{{common.c28}}**
 
 ~~~console
 Киев
@@ -473,7 +473,7 @@ for (var index in cities) {
 }
 ~~~
 
-{{s8.p21}}
+**{{common.c28}}**
 
 ~~~console
 0

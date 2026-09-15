@@ -113,7 +113,7 @@ ________________________
 {{s1.p19}}
 {{s1.p20}}
 
-^^^[{{s1.spoiler1}}]
+^^^[{{common.c0}} 4]
 
 ~~~js
 function Figure (figType) {
@@ -221,7 +221,7 @@ var Creator = function (id, val) {
 Creator.call(obj, 'sample',  75)
 ~~~
 
-{{s1.p25}}
+**{{common.c153}}**
 
 ![](illustrations/Object-static-props-01.png)
 
@@ -303,7 +303,7 @@ function SubClass () {
 var sample = new SubClass()
 ~~~
 
-{{s1.p29}}
+**{{common.c1}}**
 
 ![](illustrations/Object-static-props-02.png)
 
@@ -532,7 +532,7 @@ Object.defineProperty(sample, 'type', {
 Object.keys(sample)
 ~~~
 
-{{s1.p56}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 ► (3) ["name", "size", "color"]
@@ -542,7 +542,7 @@ ______________________________________________________________________
 
 ### ![ico-20 icon] {{s2.h1}}
 
-{{s2.p1}}
+**{{common.c164}}**
 
 {{s2.p2}}
 
@@ -558,7 +558,7 @@ Object.defineProperty(sample, 'operation', {
 })
 ~~~
 
-{{s2.p4}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 ▼ {name: "figure", size: 100, color: "red", type: "svg"}
@@ -608,7 +608,7 @@ console.log(thing.priceUDS) // 8.928571428571429
 console.log(Object.getOwnPropertyDescriptor(thing, 'priceUAH'))
 ~~~
 
-{{s2.p6}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 ▼ {get: ƒ, set: ƒ, enumerable: true, configurable: true}
@@ -695,7 +695,7 @@ var obj = {
 console.log(Object.entries(obj))
 ~~~
 
-{{s2.p14}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 
@@ -748,7 +748,7 @@ for (var x of Object.entries(obj)) {
 console.info('}')
 ~~~
 
-{{s2.p17}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 
@@ -817,7 +817,7 @@ ____________________________________________________
 
 ^^^[{{s2.spoiler1}}]
 
-{{s2.p25}}
+![ico-25 cap] **{{common.c0}} 18**
 
 ~~~js
 var provider = { name: 'Google' }
@@ -835,7 +835,7 @@ console.log(provider) // { name: "Google" }
 
 ^^^[{{s2.spoiler2}}]
 
-{{s2.p26}}
+![ico-25 cap] **{{common.c0}} 19**
 
 ~~~js
 var provider = { name: 'Google', service: 'API' }
@@ -851,7 +851,7 @@ console.log(provider) // { name: "Google", service: "API" }
 
 ^^^[{{s2.spoiler3}}]
 
-{{s2.p27}}
+![ico-25 cap] **{{common.c0}} 20**
 
 ~~~js
 var provider = { name: "Google", service: "API" }
@@ -933,7 +933,7 @@ Object.defineProperty(provider, 'service', {
 })
 ~~~
 
-{{s2.p36}}
+{{common.c26}}
 
 ••![ico-20 error] Uncaught TypeError: Cannot redefine property: service••
 
@@ -992,7 +992,7 @@ var newObject = {
 Object.getOwnPropertyDescriptor(newObject, 'getName')
 ~~~
 
-{{s3.p11}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 
@@ -1028,7 +1028,7 @@ var obj = {
 Object.getOwnPropertyDescriptors(obj)
 ~~~
 
-{{s3.p16}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 
@@ -1056,7 +1056,7 @@ var newObject = Object.assign({}, { name: 'Егор', age: 25 }, { write: true, 
 Object.getOwnPropertyNames(newObject)
 ~~~
 
-{{s3.p18}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 
@@ -1094,7 +1094,7 @@ console.log(man.employed)  // false
 console.log(Object.keys(man))
 ~~~
 
-{{s3.p22}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 
@@ -1107,7 +1107,7 @@ console.log(Object.keys(man))
 console.log(Object.keys(Human.prototype))
 ~~~
 
-{{s3.p24}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 
@@ -1121,7 +1121,7 @@ man.employed = true
 console.log(Object.keys(man))
 ~~~
 
-{{s3.p26}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 
@@ -1272,7 +1272,7 @@ var obj = {
 console.log(Object.values(obj))
 ~~~
 
-{{s3.p46}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 

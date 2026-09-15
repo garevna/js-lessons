@@ -64,11 +64,6 @@
     "eng": "The object **⟦f0⟧** has a property **_⟦f5⟧_** – a reference to the function being executed (the ‘owner’ function of the object  ⟦f0⟧).",
     "ua": "Об’єкт **⟦f0⟧** має властивість **_⟦f5⟧_** — посилання на функцію, що виконується (функцію-«господаря» об’єкта  ⟦f0⟧)."
   },
-  "s2.spoiler1": {
-    "ru": "Пример 2",
-    "eng": "Example 2",
-    "ua": "Приклад 2"
-  },
   "s2.p11": {
     "ru": "^^Объявим функцию  **⟦f6⟧**:^^",
     "eng": "^^Let’s declare the function **⟦f6⟧**:^^",
@@ -119,11 +114,6 @@
     "eng": "and we’ll get the string ‘Goodbye!’",
     "ua": "і отримаємо рядок «До побачення!»"
   },
-  "s2.spoiler2": {
-    "ru": "Пример 3",
-    "eng": "Example 3",
-    "ua": "Приклад 3"
-  },
   "s2.p21": {
     "ru": "^^Объявим функцию, которая \"сама себя лечит\", т.е. сама добавляет себе свойства и методы:^^",
     "eng": "^^Let’s declare a function that ‘heals itself’, i.e. adds its own properties and methods:^^",
@@ -154,11 +144,6 @@
     "eng": "^^Let’s print the properties **⟦f10⟧** and **⟦f11⟧** of the function **⟦f9⟧** to the console and call its method **⟦f12⟧**^^",
     "ua": "^^Виведемо в консоль властивості **⟦f10⟧** і **⟦f11⟧**   функції  **⟦f9⟧**  та викличемо її метод  **⟦f12⟧**^^"
   },
-  "s2.spoiler3": {
-    "ru": "Пример 4",
-    "eng": "Example 4",
-    "ua": "Приклад 4"
-  },
   "s2.p27": {
     "ru": "^^Создадим функцию, которая \"накапливает\" результаты собственных вычислений^^",
     "eng": "^^Let’s create a function that ‘accumulates’ the results of its own computations^^",
@@ -188,11 +173,6 @@
     "ru": "^^![ico-20 warn] Следующий пример лучше рассмотреть после изучения событий элементов DOM^^",
     "eng": "^^![ico-20 warn] It’s best to look at the next example after studying DOM element events^^",
     "ua": "^^![ico-20 warn] Наступний приклад краще розглянути після вивчення подій елементів DOM^^"
-  },
-  "s2.spoiler4": {
-    "ru": "Пример 5",
-    "eng": "Example 5",
-    "ua": "Приклад 5"
   },
   "s2.p33": {
     "ru": "^^В этом примере создаются анонимные функции, которые обрабатывают событие **⟦f15⟧**  кнопок^^",
@@ -254,11 +234,6 @@
     "eng": "What is inside the ![ico-20 ambulance] is the **execution context**.",
     "ua": "Те, що знаходиться всередині ![ico-20 ambulance] — це **контекст виконання**."
   },
-  "s3.spoiler1": {
-    "ru": "Контекст исполнения",
-    "eng": "Execution context",
-    "ua": "Контекст виконання"
-  },
   "s3.p8": {
     "ru": "| **свойства** ^^(переменные)^^ | **методы** ^^(функции)^^ |",
     "eng": "| **properties** ^^(variables)^^ | **methods** ^^(functions)^^ |",
@@ -274,11 +249,6 @@
     "eng": "^^All of this is carried by the ![ico-20 ambulance]^^",
     "ua": "^^Все це функція ![ico-20 ambulance] везе з собою^^"
   },
-  "s3.spoiler2": {
-    "ru": "Контекст вызова",
-    "eng": "Context of the call",
-    "ua": "Контекст виклику"
-  },
   "s3.p11": {
     "ru": "^^• конкретные условия (частный дом, квартира в многоэтажке, наличие или отсутствие лифта, водопровода и т.д.)^^",
     "eng": "^^• specific conditions (detached house, flat in a block of flats, presence or absence of a lift, running water, etc.)^^",
@@ -288,11 +258,6 @@
     "ru": "^^• конкретный больной с конкретными симптомами, возрастом, историей болезни, характером и т.д.^^",
     "eng": "^^• a specific patient with specific symptoms, age, medical history, personality, etc.^^",
     "ua": "^^• конкретний хворий із конкретними симптомами, віком, історією хвороби, характером тощо^^"
-  },
-  "s4.h1": {
-    "ru": "Контекст вызова",
-    "eng": "Call context",
-    "ua": "Контекст виклику"
   },
   "s4.p1": {
     "ru": "Контекст вызова - это **объект**.",
@@ -323,11 +288,6 @@
     "ru": "Если объект (\"хозяин\" метода) не указан, подразумевается глобальный объект",
     "eng": "If the object (the method’s ‘owner’) is not specified, the global object is implied",
     "ua": "Якщо об’єкт («господар» методу) не вказано, мається на увазі глобальний об’єкт"
-  },
-  "s4.spoiler1": {
-    "ru": "Пример 6",
-    "eng": "Example 6",
-    "ua": "Приклад 6"
   },
   "s4.p7": {
     "ru": "^^Объявим три функции:^^",
@@ -429,11 +389,6 @@
     "eng": "^^If it weren’t for  **⟦f20⟧**, the function would hardly be able to help the ‘patient’ ![ico-20 smile].^^",
     "ua": "^^Якби не  **⟦f20⟧**, навряд чи функція могла б допомогти «хворому» ![ico-20 smile].^^"
   },
-  "s6.h1": {
-    "ru": "Контекст исполнения",
-    "eng": "Execution context",
-    "ua": "Контекст виконання"
-  },
   "s6.p1": {
     "ru": "![ico-20 warn] Каждый вызов функции приводит к созданию нового контекста выполнения.",
     "eng": "![ico-20 warn] Every function call results in the creation of a new execution context.",
@@ -473,11 +428,6 @@
     "ru": "Что же будет в этом контексте?",
     "eng": "So what will be in this context?",
     "ua": "Що ж буде в цьому контексті?"
-  },
-  "s6.p9": {
-    "ru": "![ico-20 green-ok] Цепочка областей видимости",
-    "eng": "![ico-20 green-ok] Scope chain",
-    "ua": "![ico-20 green-ok] Ланцюжок областей видимості"
   },
   "s6.p10": {
     "ru": "^^Когда происходит вызов функции, она активируется.^^",
@@ -569,11 +519,6 @@
     "eng": "This leads to the **hoisting** of variable and function declarations.",
     "ua": "Це призводить до «підняття» (**hoisting**) оголошень змінних і функцій."
   },
-  "s6.spoiler1": {
-    "ru": "Пример 7",
-    "eng": "Example 7",
-    "ua": "Приклад 7"
-  },
   "s6.p28": {
     "ru": "^^Хотя объявление переменных  **_⟦f24⟧_** и **_⟦f25⟧_** стоит в коде после оператора ⟦f21⟧, при формировании контекста исполнения на первом этапе будет формироваться объект активации (Lexical Environment), и все переменные, объявленные внутри функции, будут включены в этот объект.^^",
     "eng": "^^Although the variable declarations **_⟦f24⟧_** and **_⟦f25⟧_** appear in the code after the ⟦f21⟧ statement, when the execution context is formed in the first stage, an activation object (Lexical Environment) will be created, and all variables declared within the function will be included in this object.^^",
@@ -628,11 +573,6 @@
     "ru": "^^не произойдет, поскольку выход из контекста выполнения будет раньше этого кода.^^",
     "eng": "^^will not take place, as the execution context will be exited before this code is reached.^^",
     "ua": "^^не відбудеться, оскільки вихід із контексту виконання відбудеться раніше, ніж цей код.^^"
-  },
-  "s6.spoiler2": {
-    "ru": "Пример 8",
-    "eng": "Example 8",
-    "ua": "Приклад 8"
   },
   "s6.p39": {
     "ru": "^^В этом случае объявление функции  **⟦f28⟧**  попадет в _Lexical Environment_ функции  **⟦f29⟧** на этапе создания ее контекста выполнения, и не затронет переменную  **⟦f28⟧**,  объявленную в глобальном контексте.^^",
@@ -784,11 +724,6 @@
     "eng": "^^![ico-20 warn] All the ‘lockers’ belonging to others that are accessible to it constitute ![ico-20 pin] **_a chain of scopes_** of the function, which forms part of its ![ico-20 pin] **execution context**.^^",
     "ua": "^^![ico-20 warn] Усі доступні їй чужі «шафки» являють собою ![ico-20 pin] **_ланцюжок областей видимості_** функції, яка є частиною її ![ico-20 pin] **контексту виконання**.^^"
   },
-  "s7.spoiler1": {
-    "ru": "Пример 9",
-    "eng": "Example 9",
-    "ua": "Приклад 9"
-  },
   "s7.p27": {
     "ru": "^^переменная **⟦f31⟧**   объявлена в глобальной области видимости, в которой  также объявлена функция **⟦f32⟧**.^^",
     "eng": "^^The variable **⟦f31⟧** is declared in the global scope, in which the function **⟦f32⟧** is also declared.^^",
@@ -828,16 +763,6 @@
     "ru": "^^Цепочка областей видимости включает области видимости всех предыдущих контекстов в стеке.^^",
     "eng": "^^The scope chain includes the scopes of all previous contexts on the stack.^^",
     "ua": "^^Ланцюжок областей видимості включає області видимості всіх попередніх контекстів у стеку.^^"
-  },
-  "s7.spoiler2": {
-    "ru": "Пример 10",
-    "eng": "Example 10",
-    "ua": "Приклад 10"
-  },
-  "s7.p35": {
-    "ru": "**Результат в консоли:**",
-    "eng": "**Output to the console:**",
-    "ua": "**Результат у консолі:**"
   },
   "s7.p36": {
     "ru": "^^В этом примере показано, как работает механизм **hoisting**.^^",
@@ -884,11 +809,6 @@
     "eng": "^^Once the code of the function **⟦f33⟧** has finished executing, its context will be ‘unmounted’, and the global context—in which the variable **⟦f31⟧** has the value 1—will become active again.^^",
     "ua": "^^Після завершення виконання коду функції **⟦f33⟧** її контекст буде «демонтований», і знову активним стане глобальний контекст, у якому  змінна **⟦f31⟧**  має значення 1.^^"
   },
-  "s7.spoiler3": {
-    "ru": "Пример 11",
-    "eng": "Example 11",
-    "ua": "Приклад 11"
-  },
   "s7.p45": {
     "ru": "^^Здесь так же происходит поднятие объявления функции  **⟦f34⟧**.^^",
     "eng": "^^Here, too, the declaration of the function **⟦f34⟧** is brought up.^^",
@@ -928,11 +848,6 @@
     "ru": "^^В этом примере функция **⟦f34⟧** переопределила саму себя (была \"function\", стала \"number\").^^",
     "eng": "^^In this example, the function **⟦f34⟧** has redefined itself (it was a “function”, and has become a “number”).^^",
     "ua": "^^У цьому прикладі функція **⟦f34⟧** перевизначила саму себе (була «function», стала «number»).^^"
-  },
-  "s8.h1": {
-    "ru": "Цепочка областей видимости",
-    "eng": "The scope chain",
-    "ua": "Ланцюжок областей видимості"
   },
   "s8.p1": {
     "ru": "Итак, функция может использовать какие-то переменные, которых нет в ее ⟦f22⟧.",
@@ -1013,11 +928,6 @@
     "ru": "• Для этой цели следует использовать метод **⟦f40⟧**",
     "eng": "• For this purpose, you should use the method **⟦f40⟧**",
     "ua": "• Для цього слід використовувати метод **⟦f40⟧**"
-  },
-  "s8.p17": {
-    "ru": "В консоли мы получим следующую картинку:",
-    "eng": "In the console, we’ll see the following output:",
-    "ua": "У консолі ми отримаємо таке зображення:"
   },
   "s8.p18": {
     "ru": "![ico-25 warn] Обратите внимание на свойство **_⟦f41⟧_**, которое есть **только у функций**.",

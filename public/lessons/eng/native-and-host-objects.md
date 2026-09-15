@@ -73,7 +73,7 @@ There are two ways to create a native JS object:
 
 _________________________________
 
-## ![ico-25 icon] Object literal
+## ![ico-25 icon] arguments
 
 In literal notation, an object is defined within a block of curly brackets:
 
@@ -339,7 +339,7 @@ Print all native built-in objects to the console and trace the reference to **~O
 
 _________________________
 
-## ![ico-25 icon] Constructor
+## ![ico-25 icon] Call context
 
 It’s time to get to grips with what a constructor actually is
 

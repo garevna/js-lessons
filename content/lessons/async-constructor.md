@@ -54,7 +54,7 @@ test instanceof AsyncFunction
 const AsyncFunctionConstructor = test.__proto__.constructor
 ~~~
 
-{{s1.p5}}
+^^{{common.c6}}^^
 
 ~~~js
 const AsyncFunction = (async function () {}).__proto__.constructor
@@ -91,7 +91,7 @@ __________________________________
 
 {{s1.p9}}
 
-{{s1.p10}}
+◘◘![ico-20 cap] {{common.c0}} 1◘◘
 
 ~~~js
 (async function () {})
@@ -117,12 +117,12 @@ console.log('End')
 
 __________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{common.c176}}
 
 {{s2.p1}}
 {{s2.p2}}
 
-{{s2.p3}}
+◘◘![ico-20 cap] {{common.c0}} 2◘◘
 
 ~~~js
 const func = arg => console.log(arg)
@@ -137,4 +137,4 @@ service()   // Firebase
 ~~~
 
 _______________________
-{{s2.p4}}
+{{common.c41}}

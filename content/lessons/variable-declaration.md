@@ -20,7 +20,7 @@ var number
 {{s2.p10}}
 ••window.number••
 
-{{s2.p11}}
+^^{{common.c13}}^^
 
 ••window['number']••
 

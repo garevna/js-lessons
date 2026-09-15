@@ -14,11 +14,6 @@
     "eng": "Modules (ES6) are files with the .js extension that contain code",
     "ua": "Модулі (ES6) — це файли з розширенням .js, що містять код"
   },
-  "s0.p4": {
-    "ru": "![ico-25 bash] **Установка**",
-    "eng": "![ico-25 bash] **Installation**",
-    "ua": "![ico-25 bash] **Встановлення**"
-  },
   "s0.p5": {
     "ru": "Пакет  **webpack**  устанавливается с помощью **⟦f0⟧**",
     "eng": "The **webpack** package is installed using **⟦f0⟧**",
@@ -93,11 +88,6 @@
     "ru": "в командной строке:",
     "eng": "in the command line:",
     "ua": "у командному рядку:"
-  },
-  "s1.h1": {
-    "ru": "Упражнение 1",
-    "eng": "Exercise 1",
-    "ua": "Вправа 1"
   },
   "s1.p1": {
     "ru": "Работаем в созданной ранее папке  _test_  ^^( вы можете назвать свою папку иначе )^^",

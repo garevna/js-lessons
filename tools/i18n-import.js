@@ -67,7 +67,7 @@ const entries = isCommon
   : JSON.parse(fs.readFileSync(path.join(MESSAGES, `${page}.json`), 'utf8'))
 
 const source = {}
-for (const key of Object.keys(entries)) source[key] = isCommon ? key : entries[key].ru
+for (const key of Object.keys(entries)) source[key] = entries[key].ru
 
 const outFiles = fs.readdirSync(OUT)
   .filter((f) => f.startsWith(`${page}.${lang}.`) && f.endsWith('.out.txt'))

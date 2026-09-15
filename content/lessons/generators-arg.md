@@ -1,4 +1,4 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{common.c30}}
 
 **ES 2015**
 
@@ -32,7 +32,7 @@ let param = yield ...
 {{s2.p13}}
 {{s2.p14}}
 
-{{s2.p15}}
+{{common.c196}}
 
 ~~~js
 const iterator = (function * gen (arg) {
@@ -135,7 +135,7 @@ _______________________________________________________
 
 ## ![ico-25 icon] {{s3.h1}}
 
-{{s3.p1}}
+{{common.c200}}
 
 ◘◘![ico-20 cap] ** 25**◘◘
 
@@ -153,7 +153,7 @@ for (const x of [2, 3, 4, 5, 6, 7])
     console.log(iterator.next(x))
 ~~~
 
-{{s3.p2}}
+{{common.c183}}
 
 ~~~js
 function* generator () {

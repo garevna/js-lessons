@@ -53,7 +53,7 @@ static get observedAttributes () {
 
 {{s0.p14}}
 
-#### ![ico-25 icon] {{s1.h1}}
+#### ![ico-25 icon] {{common.c0}}
 
 ~~~~js
 class CircleElement extends HTMLElement {

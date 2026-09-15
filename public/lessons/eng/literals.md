@@ -48,7 +48,7 @@ for (var i = 0; i < cities.length; i++) {
 }
 ~~~
 
-^^The result in the console:^^
+^^Result in the console:^^
 
 ••1: Naples<br>2: Washington<br>3: Geneva••
 

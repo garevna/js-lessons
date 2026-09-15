@@ -180,7 +180,7 @@ _________________________________
 
 {{s1.p39}}
 {{s1.p40}}
-{{s1.p41}}
+{{common.c162}}
 
 {{s1.p42}}
 {{s1.p43}}
@@ -236,7 +236,7 @@ versionchange
 {{s1.p51}}
 {{s1.p52}}
 {{s1.p53}}
-{{s1.p54}}
+{{common.c162}}
 
 {{s1.p55}}
 {{s1.p56}}
@@ -396,7 +396,7 @@ const request = Object.assign(indexedDB.open('sampleDB'), {
 })
 ~~~
 
-{{s1.p85}}
+{{common.c152}}
 
 ~~~console
 upgradeneeded sampleDB

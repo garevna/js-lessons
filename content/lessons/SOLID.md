@@ -34,7 +34,7 @@ ____________________________________________
 
 {{s0.p13}}
 
-{{s0.p14}}
+{{common.c167}}
 
 {{s0.p15}}
 
@@ -113,7 +113,7 @@ const user = new User('Иван')
 user.write('Hello!')
 ~~~
 
-{{s0.p38}}
+{{common.c36}}
 
 ~~~console
 Иван: Hello!
@@ -135,7 +135,7 @@ User.updateMethods('voyage', function (city) {
 user.voyage('London')
 ~~~
 
-{{s0.p42}}
+{{common.c36}}
 
 ~~~console
 Иван: I visit London

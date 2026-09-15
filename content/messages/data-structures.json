@@ -104,16 +104,6 @@
     "eng": "In objects, there is no strict ordering, and instead of a sequence number, the elements of such a collection (structure) have unique identifiers by which we can find them in the collection.",
     "ua": "В об'єктах немає строго порядку слідування, і замість порядкового номера елементи такої колекції (структури) мають унікальні ідентифікатори, за якими ми можемо знайти їх у колекції."
   },
-  "s2.h1": {
-    "ru": "Массивы",
-    "eng": "Arrays",
-    "ua": "Массивы"
-  },
-  "s2.p1": {
-    "ru": "**тип данных: ⟦f2⟧**",
-    "eng": "**data type: ⟦f2⟧**",
-    "ua": "**тип даних: ⟦f2⟧**"
-  },
   "s2.p2": {
     "ru": "• Массив - это упорядоченный набор переменных.",
     "eng": "• An array is an ordered set of variables.",
@@ -219,11 +209,6 @@
     "eng": "then the variable **⟦f5⟧~** will contain a reference to the same array.",
     "ua": "то у змінній **⟦f5⟧** буде посилання на той самий масив."
   },
-  "s2.p23": {
-    "ru": "Проверим?",
-    "eng": "Shall we check?",
-    "ua": "Перевіримо?"
-  },
   "s2.p24": {
     "ru": "Давайте изменим элемент массива **⟦f5⟧**:",
     "eng": "Let's change an element of the array **⟦f5⟧~**:",
@@ -253,16 +238,6 @@
     "ru": "Досту к этому свойству возможен в **точечной нотации** (через точку после имени массива):",
     "eng": "This property can be accessed in **dot notation** (with a dot after the array name):",
     "ua": "Доступ до цієї властивості можливий у **крапковій нотації** (через крапку після імені масиву):"
-  },
-  "s3.h1": {
-    "ru": "Объекты",
-    "eng": "Objects",
-    "ua": "Об'єкти"
-  },
-  "s3.p1": {
-    "ru": "**тип данных: ⟦f2⟧**",
-    "eng": "**data type: ⟦f2⟧**",
-    "ua": "**тип даних: ⟦f2⟧**"
   },
   "s3.p2": {
     "ru": "Если массивы мы создавали с помощью квадратных скобок, то для создания объектов мы будем использовать фигурные скобки ⟦f7⟧.",

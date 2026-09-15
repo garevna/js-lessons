@@ -4,11 +4,6 @@
     "eng": "Arrow functions",
     "ua": "Стрілкові функції"
   },
-  "s2.h1": {
-    "ru": "Синтаксис",
-    "eng": "Syntax",
-    "ua": "Синтаксис"
-  },
   "s2.p1": {
     "ru": "В сигнатуре стрелочной функции нет слова **_function_**:",
     "eng": "In the signature of an arrow function, there's no word **_function_**:",
@@ -64,11 +59,6 @@
     "eng": "And here we can see the advantages of array iterating methods:",
     "ua": "І тут ми можемо переконатися в перевагах ітеруючих методів масивів:"
   },
-  "s2.p12": {
-    "ru": "Или так:",
-    "eng": "◘◘![ico-25 cap] оператор **⟦f19⟧**◘◘",
-    "ua": "◘◘![ico-25 cap] оператор _switch_◘◘"
-  },
   "s2.p13": {
     "ru": "Или так, если использовать замыкание:",
     "eng": "◘◘![ico-25 cap] ternary operator◘◘",
@@ -98,11 +88,6 @@
     "ru": "![ico-20 warn] При попытке вызвать стрелочную функцию с ключевым словом **⟦f3⟧**:",
     "eng": "![ico-20 warn] When attempting to call an arrow function with the keyword **⟦f3⟧**:",
     "ua": "![ico-20 warn] При спробі викликати стрілкову функцію з ключовим словом **⟦f3⟧**:"
-  },
-  "s3.p3": {
-    "ru": "будет сгенерировано исключение:",
-    "eng": "an exception will be thrown:",
-    "ua": "буде згенеровано виняток:"
   },
   "s3.p4": {
     "ru": "У стрелочных функций нет объекта  **⟦f4⟧**.",
@@ -139,11 +124,6 @@
     "eng": "As a result of the code running, the object ⟦f4⟧ of the function **_testArguments_** will be printed to the console:",
     "ua": "У результаті виконання коду в консоль буде виведено об’єкт ⟦f4⟧ функції **_testArguments_**:"
   },
-  "s4.h1": {
-    "ru": "Контекст вызова",
-    "eng": "prototype",
-    "ua": "prototype"
-  },
   "s4.p1": {
     "ru": "У стрелочных функций контекст вызова всегда будет контекстом, в котором функция была объявлена.",
     "eng": "Arrow functions don't have a **⟦f2⟧** object.<br><br>![ico-20 warn] Therefore, arrow functions cannot be constructors.",
@@ -158,11 +138,6 @@
     "ru": "Можно сказать, что у стрелочных функций \"врожденный\" контекст вызова.",
     "eng": "It can be said that arrow functions have an ‘inherent’ call context.",
     "ua": "Можна сказати, що стрілкові функції мають «вроджений» контекст виклику."
-  },
-  "s5.h1": {
-    "ru": "Литерал объекта",
-    "eng": "arguments",
-    "ua": "arguments"
   },
   "s5.p1": {
     "ru": "Разберемся детальнее, что происходит.",
@@ -218,11 +193,6 @@
     "ru": "По приколу я называю это \"правилом буравчика\" ![ico-25 smile]",
     "eng": "Just for fun, I call this the ‘drill rule’ ![ico-25 smile]",
     "ua": ""
-  },
-  "s6.h1": {
-    "ru": "Конструктор",
-    "eng": "Call context",
-    "ua": "Контекст виклику"
   },
   "s6.p1": {
     "ru": "Теперь вспомним, как работает конструктор.",
@@ -339,11 +309,6 @@
     "eng": "On the right side is the literal of the object.",
     "ua": "У правій частині знаходиться літерал об'єкта."
   },
-  "s7.p4": {
-    "ru": "Проверим:",
-    "eng": "1. The engine calls the **⟦f8⟧** constructor.",
-    "ua": "1. Двигун викликає конструктор **⟦f8⟧**."
-  },
   "s7.p5": {
     "ru": "**Вывод**.",
     "eng": "2. The **⟦f8⟧** constructor creates an empty instance and returns a reference to it.",
@@ -368,11 +333,6 @@
     "ru": "В противном случае использование стрелочной функции создаст вам кучу проблем с контекстом вызова метода.",
     "eng": "![ico-20 pin] if there is an **ordinary function** in the right part of the assignment operator, this function receives a reference to the calling context defined in the **left part** of the assignment operator (in our example it is a **⟦f7⟧** instance);",
     "ua": "![ico-20 pin] якщо в правій частині оператора присвоєння знаходиться **звичайна функція**, то вона отримує посилання на контекст виклику, визначений в **лівій частині** оператора присвоєння (в нашому прикладі це об'єкт **⟦f7⟧**);"
-  },
-  "s8.h1": {
-    "ru": "Примеры",
-    "eng": "Constructor",
-    "ua": "Конструктор"
   },
   "s8.p1": {
     "ru": "[![ico-30 hw] Тесты](⟦f17⟧)",

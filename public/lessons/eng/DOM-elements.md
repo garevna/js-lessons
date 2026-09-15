@@ -30,7 +30,7 @@ document
   .appendChild (section)
 ~~~
 
-◘◘Результат◘◘
+◘◘Result◘◘
 
 ~~~html
 &ltbody>
@@ -56,7 +56,7 @@ style
   .appendChild(document.createTextNode(`div { color: blue; }`))
 ~~~
 
-◘◘Результат◘◘
+◘◘Result◘◘
 
 ~~~html
 &lthead>
@@ -109,7 +109,7 @@ var figure = document.querySelector('.figure')
 figure.appendChild(removed)
 ~~~
 
-◘◘Результат◘◘
+◘◘Result◘◘
 
 ~~~html
 &ltbody>
@@ -140,7 +140,7 @@ var figure = addElement ('figure', main)
 main.insertBefore(document.createElement('p'), section)
 ~~~
 
-◘◘Результат◘◘
+◘◘Result◘◘
 
 ~~~html
 &ltbody>
@@ -179,7 +179,7 @@ section.insertAdjacentHTML('beforeEnd', '<p>beforeEnd</p>')
 section.insertAdjacentHTML('afterEnd', '<p>afterEnd</p>')
 ~~~
 
-◘◘Результат◘◘
+◘◘Result◘◘
 
 ~~~html
 &ltbody>
@@ -224,7 +224,7 @@ document.getElementsByTagName('figure')[0]
   .insertAdjacentElement('afterbegin', document.createElement('li'))
 ~~~
 
-◘◘Результат◘◘
+◘◘Result◘◘
 
 ~~~html
 &ltbody>
@@ -285,7 +285,7 @@ ____________________________
 document.body.childNodes
 ~~~
 
-◘◘Результат◘◘
+◘◘Result◘◘
 
 ~~~console
 ▼ NodeList(7) [text, div.container, text, h1.header, text, p.paragraph, text]
@@ -308,7 +308,7 @@ document.body.childNodes
 document.querySelector('[title]').childNodes
 ~~~
 
-◘◘Результат◘◘
+◘◘Result◘◘
 
 ~~~console
 ▼ NodeList(5) [text, a.paragraph, text, img#picture.galleryPicture, text]
@@ -336,7 +336,7 @@ _________________________________
 document.body.children
 ~~~
 
-◘◘Результат◘◘
+◘◘Result◘◘
 
 ~~~console
 ▼ HTMLCollection(3) [div.container, h1.header, p.paragraph]
@@ -441,7 +441,7 @@ div.setAttribute('style', `
 console.info(div.getBoundingClientRect())
 ~~~
 
-◘◘Результат◘◘
+◘◘Result◘◘
 
 ~~~console
 ▼ DOMRect {x: 8, y: 8, width: 202, height: 202, top: 8, …}

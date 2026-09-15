@@ -59,11 +59,6 @@
     "eng": "^^in dot notation:^^",
     "ua": "^^ у точковій нотації:^^"
   },
-  "s2.p11": {
-    "ru": "^^или так:^^",
-    "eng": "^^or like this:^^",
-    "ua": "^^або так:^^"
-  },
   "s2.p12": {
     "ru": "При объявлении переменной ей можно сразу присвоить начальное значение.",
     "eng": "When you declare a variable, you can immediately assign an initial value to it.",

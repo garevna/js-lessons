@@ -9,25 +9,25 @@
 </body>
 ~~~
 
-{{s1.p1}}
+{{common.c224}}
 
 ~~~js
 document.querySelectorAll(':not(:defined)')
 ~~~
 
-{{s1.p2}}
+{{common.c1}}
 
 ~~~console
 ▶ NodeList(2) [hello-element, bye-element]
 ~~~
 
-{{s1.p3}}
+{{common.c224}}
 
 ~~~js
 document.querySelectorAll(':defined')
 ~~~
 
-{{s1.p4}}
+{{common.c1}}
 
 ~~~console
 ▶ NodeList(3) [html, head, body]

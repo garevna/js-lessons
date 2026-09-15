@@ -105,6 +105,22 @@ for (const lang of LANGS) {
   const left = totals.keys - totals[lang]
   console.log(`  ${lang}: ${totals[lang]} of ${totals.keys} translated, ${left} to go`)
 }
+
+// The shared phrases are not in any page's count, and they are the cheapest
+// work on the list: 274 short lines that between them stand in for 877
+// occurrences across the course.
+const common = readJson(path.join(root, 'content/common.json'))
+if (common) {
+  const all = Object.values(common)
+  const short = LANGS.map((l) => `${l} ${all.filter((e) => e[l]).length}/${all.length}`).join(', ')
+  const behind = LANGS.filter((l) => all.some((e) => !e[l]))
+  console.log(`\n  shared phrases (content/common.json): ${short}`)
+  if (behind.length) {
+    console.log(`  these are the cheapest segments in the course — one short line each,`)
+    console.log(`  reused everywhere:  node tools/i18n-export.js --common ${behind[0]}`)
+  }
+}
+
 if (waitingCount) {
   const example = rows.find((r) => LANGS.some((l) => r.per[l].waiting))
   const lang = LANGS.find((l) => example.per[l].waiting)

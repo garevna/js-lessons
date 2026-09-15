@@ -100,7 +100,7 @@ ___________________________________________
 {{s2.p5}}
 {{s2.p6}}
 
-^^^[{{s2.spoiler1}}]
+^^^[{{common.c157}}]
 {{s2.p7}}
 • **multiEntry** (true / false)
 {{s2.p8}}
@@ -145,7 +145,7 @@ async function callUsers () {
 callUsers().then(resp => console.log(resp))
 ~~~
 
-^^^[{{s2.spoiler2}}]
+^^^[{{common.c158}}]
 {{s2.p13}}
 {{s2.p14}}
 {{s2.p15}}
@@ -286,7 +286,7 @@ createLessonsDB()
 
 ![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-index-1.gif)
 
-^^^[{{s2.spoiler3}}]
+^^^[{{common.c158}}]
 
 {{s2.p38}}
 

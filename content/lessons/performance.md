@@ -125,7 +125,7 @@ console.log(`Старт: ${performance.now()}`)
 setTimeout(() => console.log(`Стоп: ${performance.now()}`), 2000)
 ~~~
 
-{{s1.p2}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 Старт: 207385.50000003306
@@ -158,7 +158,7 @@ const items = window.performance.getEntriesByType('mark')
 console.log(items)
 ~~~
 
-{{s1.p5}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 ▼ (2) [PerformanceMark, PerformanceMark]
@@ -218,7 +218,7 @@ performance.clearMarks()
 performance.clearMeasures()
 ~~~
 
-{{s1.p7}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 1: duration: 0.20000000949949026ms
@@ -286,7 +286,7 @@ performance.mark('end')
 console.log(performance.getEntries())
 ~~~
 
-{{s1.p24}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 ▼ (2) [PerformanceMark, PerformanceMark]
@@ -320,7 +320,7 @@ fetch('https://httpbin.org')
   })
 ~~~
 
-^^^[{{s1.spoiler1}}]
+^^^[{{common.c1}}]
 
 ~~~console
 ▼ (4) [PerformanceMark, PerformanceMeasure, PerformanceResourceTiming, PerformanceMark]
@@ -390,7 +390,7 @@ fetch('https://httpbin.org')
   })
 ~~~
 
-^^^[{{s1.spoiler2}}]
+^^^[{{common.c1}}]
 
 ~~~console
 ▼ [ PerformanceResourceTiming ]
@@ -450,7 +450,7 @@ pictures
 console.log(performance.getEntriesByName('start'))
 ~~~
 
-{{s1.p25}}
+◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 ▼ (4) [PerformanceMark, PerformanceMark, PerformanceMark, PerformanceMark]
@@ -472,7 +472,7 @@ _______________________________________________________________
 console.log(performance.getEntriesByType('resource'))
 ~~~
 
-^^^[{{s1.spoiler3}}]
+^^^[{{common.c1}}]
 
 ~~~console
 ▼ [PerformanceResourceTiming]
@@ -515,7 +515,7 @@ fetch('https://httpbin.org/')
   .then(response => console.log(performance.getEntriesByType('resource')))
 ~~~
 
-^^^[{{s1.spoiler4}}]
+^^^[{{common.c1}}]
 
 ~~~console
 ▼ [PerformanceResourceTiming]

@@ -119,11 +119,6 @@
     "eng": "^^In this example, an IIFE and closure are used to create an object whose data is hidden from direct access and is only accessible via an interface provided by the _**getVar**_ method^^",
     "ua": "^^У цьому прикладі за допомогою IIFE та замикання створюється об’єкт, дані якого приховані від безпосереднього доступу й доступні лише через інтерфейс, представлений методом _**getVar**_^^"
   },
-  "s2.p5": {
-    "ru": "^^Выведем объект **google** в консоль:^^",
-    "eng": "^^Let’s print the **google** object to the console:^^",
-    "ua": "^^Виведемо об’єкт **google** у консоль:^^"
-  },
   "s2.p6": {
     "ru": "^^В этом примере мы делаем то же самое, но используя расширение класса _User_^^",
     "eng": "^^In this example, we do the same thing, but using a subclass of the _User_ class^^",
@@ -138,16 +133,6 @@
     "ru": "^^Фабричный метод класса _updateUser_ позволяет расширить функционал класса, создать скрытые данные, доступные через интерфейс ( метод _**getVar**_ )^^",
     "eng": "^^The class’s factory method _updateUser_ allows us to extend the class’s functionality and create hidden data accessible via an interface (the _**getVar**_ method)^^",
     "ua": "^^Фабричний метод класу _updateUser_ дозволяє розширити функціонал класу, створити приховані дані, доступні через інтерфейс (метод _**getVar**_)^^"
-  },
-  "s2.p9": {
-    "ru": "^^Выведем объект **google** в консоль:^^",
-    "eng": "^^Let’s print the **google** object to the console:^^",
-    "ua": "^^Виведемо об’єкт **google** у консоль:^^"
-  },
-  "s3.h1": {
-    "ru": "Полиморфизм",
-    "eng": "Polymorphism",
-    "ua": "Поліморфізм"
   },
   "s3.p1": {
     "ru": "Фабричные методы дают возможность расширять функциональность конструктора, обеспечивая его полиморфизм.",

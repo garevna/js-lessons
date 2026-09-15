@@ -1,4 +1,4 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{common.c176}}
 
 ☼☼☼ {{s1.slogan1}} ☼☼☼
 
@@ -52,7 +52,7 @@ alpha,betta,delta
 alpha('sigma', 'omega')
 ~~~
 
-{{s1.p10}}
+{{common.c177}}
 
 ~~~console
 alpha,sigma,omega
@@ -66,7 +66,7 @@ alpha,sigma,omega
 betta('figure', 'smile')
 ~~~
 
-{{s1.p14}}
+{{common.c177}}
 
 ~~~console
 alpha,betta,figure,smile
@@ -103,7 +103,7 @@ console.log(curried)
 {{s1.p18}}
 {{s1.p19}}
 
-{{s1.p20}}
+**{{common.c2}}**
 
 ~~~console
 ƒ ( second ) {
@@ -150,7 +150,7 @@ rectFunc(50, 50, 150, 150)
 lineFunc(20, 30, 200, 200)
 ~~~
 
-{{s1.p24}}
+**{{common.c2}}**
 
 ~~~console
 Функция func вызвана в контексте объекта figure
@@ -184,7 +184,7 @@ console.log(test[1]('IE'))
 console.log(test[2]('IE'))
 ~~~
 
-{{s1.p25}}
+**{{common.c2}}**
 
 ~~~console
 ► (2) ["Google", "IE"]
@@ -212,7 +212,7 @@ var test = sample('Google', 'Mozilla', 'Safari')
 for (var num of [0, 1, 2]) console.log(test[num]('IE'))
 ~~~
 
-{{s1.p26}}
+**{{common.c2}}**
 
 ~~~console
 ► (2) ["Google", "IE"]
@@ -236,7 +236,7 @@ function func () {
 (eval(`func${'()'.repeat(11)}`))
 ~~~
 
-{{s1.p27}}
+**{{common.c2}}**
 
 ~~~console
 1
@@ -301,9 +301,9 @@ console.log(test ()()()()()().result)  // 64
 ~~~
 _________________________________________
 
-## ![ico-25 smile] {{s2.h1}}
+## ![ico-25 smile] {{common.c178}}
 
-{{s2.p1}}
+![ico-20 question] {{common.c179}}
 
 ~~~js
 var sample = function () {

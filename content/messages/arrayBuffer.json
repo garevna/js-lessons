@@ -59,11 +59,6 @@
     "eng": "To get an array, you can use the **⟦f10⟧** method:",
     "ua": "Для отримання масиву можна використовувати метод **⟦f7⟧**:"
   },
-  "s1.p4": {
-    "ru": "**Результат**",
-    "eng": "**Result**",
-    "ua": "**Результат**"
-  },
   "s1.p5": {
     "ru": "Однако это \"дорога в одну сторону\", поскольку приводит к созданию нового массива **⟦f8⟧**, изменения в котором не отражаются на исходном объекте **⟦f9⟧**.",
     "eng": "However, this is a \"one-way road\" because it creates a new array **⟦f8⟧** where changes are not reflected in the original object **⟦f9⟧**.",

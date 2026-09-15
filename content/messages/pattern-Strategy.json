@@ -1,9 +1,4 @@
 {
-  "s0.p1": {
-    "ru": "Это **поведенческий** паттерн.",
-    "eng": "This is a **behavioral** pattern.",
-    "ua": "Це поведінковий патерн."
-  },
   "s0.p2": {
     "ru": "Он позволяет описать несколько стратегий поведения объекта с возможностью выбора нужной стратегии.",
     "eng": "It allows you to describe several strategies of the object's behavior with the ability to choose the desired strategy.",

@@ -254,11 +254,6 @@
     "eng": "then the value 1 is returned, and we see that value in the console instead of ⟦f5⟧.",
     "ua": "то повертається значення 1, і ми бачимо в консолі це значення замість ⟦f5⟧."
   },
-  "s3.p23": {
-    "ru": "Однако если мы сделаем так:",
-    "eng": "However, if we do this:",
-    "ua": "Однак якщо ми зробимо так:"
-  },
   "s3.p24": {
     "ru": "то мы опять увидим в консоли ⟦f5⟧, потому что присваивание не возвращает значения.",
     "eng": "then we will see ⟦f5⟧ in the console again, because the assignment does not return a value.",
@@ -443,11 +438,6 @@
     "ru": "Итак, код внутри тела функции не был исполнен.",
     "eng": "But all objects, as we already know, are **reference data type**, i.e. a **reference** will be returned to us, which will go into the **⟦f12⟧** variable.",
     "ua": "Отже, код усередині тіла функції не було виконано."
-  },
-  "s4.p29": {
-    "ru": "Проверим?",
-    "eng": "So, the code inside the function body has not been executed.",
-    "ua": "Перевіримо?"
   },
   "s4.p30": {
     "ru": "Обявим переменные **⟦f13⟧** и **⟦f14⟧** до объявления функции.",
@@ -714,11 +704,6 @@
     "eng": "If an operand is not explicitly specified, **⟦f5⟧** is implied.",
     "ua": ""
   },
-  "s8.h1": {
-    "ru": "Тесты",
-    "eng": "Tests",
-    "ua": "Тести"
-  },
   "s8.quiz1": {
     "ru": "Что это такое?",
     "eng": "What's that?",
@@ -734,11 +719,6 @@
     "eng": "function expression",
     "ua": "function expression"
   },
-  "s8.quiz2": {
-    "ru": "Что будет в консоли?",
-    "eng": "What's going to be in the console?",
-    "ua": "Що буде в консолі?"
-  },
   "s8.quizVariants2": {
     "ru": "'\"\"', 'Hi user!', 'Hi undefined!', 'Hi !'",
     "eng": "'\"\"', 'Hi user!', 'Hi undefined!', 'Hi !'",
@@ -749,11 +729,6 @@
     "eng": "Hi undefined!",
     "ua": "Hi undefined!"
   },
-  "s8.quiz3": {
-    "ru": "Что будет в консоли?",
-    "eng": "What's going to be in the console?",
-    "ua": "Що буде в консолі?"
-  },
   "s8.quizVariants3": {
     "ru": "'\"\"', 'Hi !', 'Hi undefined!', 'Hi Human!'",
     "eng": "'\"\"', 'Hi !', 'Hi undefined!', 'Hi Human!'",
@@ -763,11 +738,6 @@
     "ru": "Hi Human!",
     "eng": "Hi Human!",
     "ua": "Hi Human!"
-  },
-  "s8.quiz4": {
-    "ru": "Что будет в консоли?",
-    "eng": "What's going to be in the console?",
-    "ua": "Що буде в консолі?"
   },
   "s8.quizVariants4": {
     "ru": "'Hi !', 'Welcome !', 'Hi undefined!', 'Welcome undefined!', 'Hi Human!', 'Welcome Human!'",

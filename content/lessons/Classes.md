@@ -12,7 +12,7 @@
 
 ____________________________________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{common.c58}}
 
 {{s2.p1}}
 {{s2.p2}}
@@ -180,7 +180,7 @@ const Picture = class {
 console.dir(Picture)
 ~~~
 
-{{s3.p2}}
+◘◘**{{common.c2}}**◘◘
 
 ~~~console
 
@@ -201,7 +201,7 @@ let sample = new Picture
 console.log(sample)
 ~~~
 
-{{s3.p4}}
+◘◘**{{common.c2}}**◘◘
 
 ~~~console
 
@@ -228,7 +228,7 @@ const Picture = class Canvas {
 console.dir(Picture)
 ~~~
 
-{{s3.p6}}
+◘◘**{{common.c2}}**◘◘
 
 ~~~console
 
@@ -249,7 +249,7 @@ const sample = new Picture
 console.log(sample)
 ~~~
 
-{{s3.p8}}
+◘◘**{{common.c2}}**◘◘
 
 ~~~console
 
@@ -451,7 +451,7 @@ pict.history = [
 pict.history = ['***']
 ~~~
 
-{{s3.p33}}
+**{{common.c59}}**
 
 ••![ico-20 error] History must contain path array••
 
@@ -459,7 +459,7 @@ pict.history = ['***']
 pict.history = true
 ~~~
 
-{{s3.p34}}
+**{{common.c59}}**
 
 ••![ico-20 error] History must be array••
 
@@ -482,7 +482,7 @@ const drawLine = pict.drawLine
 drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 ~~~
 
-{{s4.p4}}
+{{common.c5}}
 
 ••![ico-20 error] Uncaught TypeError: Cannot read property 'area' of undefined••
 
@@ -533,7 +533,7 @@ user.addSomeInfo([
 ])
 ~~~
 
-{{s4.p14}}
+**{{common.c1}}**
 
 ••![ico-20 error] Uncaught TypeError: Cannot set property 'age' of undefined••
 
@@ -570,7 +570,7 @@ user.addSomeInfo([
 console.log(user)
 ~~~
 
-{{s4.p18}}
+◘◘**{{common.c1}}**◘◘
 
 ~~~console
 
@@ -586,7 +586,7 @@ console.log(user)
 
 ________________________________________________________
 
-## ![ico-25 icon] {{s5.h1}}
+## ![ico-25 icon] {{common.c60}}
 
 ### ![ico-20 icon] extends
 
@@ -782,7 +782,7 @@ class ExtendedCanvas extends Canvas {
 }
 ~~~
 
-{{s5.p28}}
+{{common.c61}}
 
 ••![ico-20 error] Uncaught ReferenceError: ••
 •• Must call super constructor in derived class before accessing 'this' or returning from derived constructor••
@@ -1082,7 +1082,7 @@ window.onresize = Canvas.resizeCanvas.bind(pict.canvas)
 
 {{s6.p69}}
 
-{{s6.p70}}
+![ico-20 pin] {{common.c23}}
 
 {{s6.p71}}
 {{s6.p72}}
@@ -1135,7 +1135,7 @@ window.onresize = Canvas.resizeCanvas
 ____________________________________________________________________
 
 
-## ![ico-25 cap] {{s7.h1}}
+## ![ico-25 cap] {{common.c0}}
 
 {{s7.p1}}
 

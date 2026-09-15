@@ -152,7 +152,7 @@ fetch('https://garevna-rest-api.glitch.me/users/all')
   .then(response => console.log(response))
 ~~~
 
-{{s3.p2}}
+{{common.c12}}
 
 ~~~console
 ▼ {451789: {…}, 789451: {…}, begemot: {…}}
@@ -174,7 +174,7 @@ fetch('https://garevna-rest-api.glitch.me/user/begemot')
   .then(response => console.log(response))
 ~~~
 
-{{s3.p4}}
+{{common.c12}}
 
 ~~~console
 ▼ {name: "Stephan", age: 36, speciality: "doctor"}
@@ -198,7 +198,7 @@ fetch('https://garevna-rest-api.glitch.me/users/?name=Stephan')
   .then(response => console.log(response))
 ~~~
 
-{{s3.p7}}
+{{common.c165}}
 
 ~~~console
 ▼ [{…}]
@@ -219,7 +219,7 @@ fetch('https://garevna-rest-api.glitch.me/users?age=^18^')
   .then(response => console.log(response))
 ~~~
 
-{{s3.p10}}
+{{common.c165}}
 
 ~~~console
 ▼ [{…}]
@@ -252,7 +252,7 @@ fetch('https://garevna-rest-api.glitch.me/user/987145', {
   .then(response => console.log(response))
 ~~~
 
-{{s3.p11}}
+{{common.c12}}
 
 ~~~console
 ► {name: "Mary", age: 19, speciality: "developer"}
@@ -284,7 +284,7 @@ fetch('https://garevna-rest-api.glitch.me/user/987145', {
   .then(response => console.log(response))
 ~~~
 
-{{s3.p13}}
+{{common.c12}}
 
 ~~~console
 ► {name: "Helen", age: 20, speciality: "florist"}
@@ -308,7 +308,7 @@ fetch('https://garevna-rest-api.glitch.me/user/987145', {
   .then(response => console.log(response))
 ~~~
 
-{{s3.p14}}
+{{common.c12}}
 
 ~~~console
 ► {name: "Helen", age: 20, speciality: "florist", hobby: "flowers"}

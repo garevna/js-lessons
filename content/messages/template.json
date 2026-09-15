@@ -34,11 +34,6 @@
     "eng": "This is a markup template which, if necessary, can be inserted at the right time and in the right place",
     "ua": "Це шаблон розмітки, який за потреби можна вставити в потрібний час у потрібному місці"
   },
-  "s1.h1": {
-    "ru": "Пример 1",
-    "eng": "Example 1",
-    "ua": "Приклад 1"
-  },
   "s1.p1": {
     "ru": "^^Откроем вкладку _Elements_ инструментов разработчика и вставим в элемент ⟦f2⟧ следующий код разметки:^^",
     "eng": "^^Let’s open the _Elements_ tab in the developer tools and insert the following markup code into the ⟦f2⟧ element:^^",
@@ -54,25 +49,10 @@
     "eng": "The _**⟦f3⟧**_ property of the ⟦f4⟧ element contains the markup code located within the ⟦f5⟧ container",
     "ua": "Властивість  _**⟦f3⟧**_  елемента  ⟦f4⟧  містить код розмітки, що знаходиться  у контейнері ⟦f5⟧"
   },
-  "s2.h1": {
-    "ru": "Пример 2",
-    "eng": "Example 2",
-    "ua": "Приклад 2"
-  },
-  "s2.p1": {
-    "ru": "**Шаблон разметки**",
-    "eng": "**Markup template**",
-    "ua": "**Шаблон розмітки**"
-  },
   "s2.p2": {
     "ru": "^^Выведем в консоль свойство ⟦f3⟧^^",
     "eng": "^^Let’s log the ⟦f3⟧ property to the console^^",
     "ua": "^^Виведемо в консоль властивість ⟦f3⟧^^"
-  },
-  "s2.spoiler1": {
-    "ru": "Результат",
-    "eng": "Result",
-    "ua": "Результат"
   },
   "s3.h1": {
     "ru": "Вставка в DOM",
@@ -114,16 +94,6 @@
     "eng": "![ico-20 warn] ⟦f12⟧ indicates a deep copy, i.e. all subnodes of the tree",
     "ua": "![ico-20 warn] ⟦f12⟧ вказує на глибоке копіювання, тобто всіх підвузлів дерева"
   },
-  "s4.h1": {
-    "ru": "Пример 3",
-    "eng": "Example 3",
-    "ua": "Приклад 3"
-  },
-  "s4.p1": {
-    "ru": "**Шаблон разметки**",
-    "eng": "**Markup template**",
-    "ua": "**Шаблон розмітки**"
-  },
   "s4.p2": {
     "ru": "**Класс**",
     "eng": "**Class**",
@@ -133,11 +103,6 @@
     "ru": "**Вставка на страницу**",
     "eng": "**Insert into page**",
     "ua": "**Вставка на сторінку**"
-  },
-  "s5.h1": {
-    "ru": "Пример 4",
-    "eng": "Example 4",
-    "ua": "Приклад 4"
   },
   "s5.p1": {
     "ru": "^^Теперь давайте все сделаем на чистом JS:^^",

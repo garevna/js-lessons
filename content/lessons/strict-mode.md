@@ -57,7 +57,7 @@ _________________________________
 
 ### ![ico-20 warn] {{s3.h1}}
 
-{{s3.p1}}
+**{{common.c9}}**
 
 ~~~js
 function sum (x, y) {
@@ -67,7 +67,7 @@ function sum (x, y) {
 delete sum   // false
 ~~~
 
-{{s3.p2}}
+**{{common.c7}}**
 
 ~~~js
 'use strict'
@@ -79,7 +79,7 @@ function sum (x, y) {
 delete sum
 ~~~
 
-{{s3.p3}}
+**{{common.c5}}**
 
 ••![ico-20 error] Uncaught SyntaxError: Delete of an unqualified identifier in strict mode.••
 
@@ -87,13 +87,13 @@ ________________________________________________
 
 ### ![ico-20 warn] {{s4.h1}}
 
-{{s4.p1}}
+**{{common.c9}}**
 
 ~~~js
 var x = 010   // 8
 ~~~
 
-{{s4.p2}}
+**{{common.c7}}**
 
 ~~~js
 'use strict'
@@ -101,7 +101,7 @@ var x = 010   // 8
 var x = 010
 ~~~
 
-{{s4.p3}}
+**{{common.c5}}**
 
 ••![ico-20 error] Uncaught SyntaxError: Octal literals are not allowed in strict mode.••
 
@@ -109,13 +109,13 @@ __________________________________________________
 
 ### ![ico-20 warn] {{s5.h1}}
 
-{{s5.p1}}
+**{{common.c9}}**
 
 ~~~js
 var x = '\010'   // ""
 ~~~
 
-{{s5.p2}}
+**{{common.c7}}**
 
 ~~~js
 'use strict'
@@ -123,7 +123,7 @@ var x = '\010'   // ""
 var x = '\010'
 ~~~
 
-{{s5.p3}}
+**{{common.c5}}**
 
 ••![ico-20 error] Uncaught SyntaxError: Octal escape sequences are not allowed in strict mode.••
 
@@ -131,7 +131,7 @@ _________________________________________
 
 ### ![ico-20 warn] {{s6.h1}}
 
-{{s6.p1}}
+**{{common.c9}}**
 
 ~~~js
 var sample = Object.defineProperty({}, 'x', {
@@ -142,7 +142,7 @@ var sample = Object.defineProperty({}, 'x', {
 sample.x = 5   // 0
 ~~~
 
-{{s6.p2}}
+**{{common.c7}}**
 
 ~~~js
 'use strict'
@@ -155,7 +155,7 @@ var sample = Object.defineProperty({}, 'x', {
 sample.x = 5
 ~~~
 
-{{s6.p3}}
+**{{common.c5}}**
 
 ••![ico-20 error] Uncaught TypeError: Cannot assign to read only property 'x' of object '#&lt;Object>'••
 
@@ -163,7 +163,7 @@ ________________________________________________
 
 ### ![ico-20 warn] {{s7.h1}}
 
-{{s7.p1}}
+**{{common.c9}}**
 
 ~~~js
 var obj = { 
@@ -175,7 +175,7 @@ var obj = {
 obj.x = 5 // 0
 ~~~
 
-{{s7.p2}}
+**{{common.c7}}**
 
 ~~~js
 'use strict'
@@ -189,7 +189,7 @@ var obj = {
 obj.x = 5
 ~~~
 
-{{s7.p3}}
+**{{common.c5}}**
 
 ••![ico-20 error] Uncaught TypeError: Cannot set property x of #<Object> which has only a getter••
 
@@ -197,13 +197,13 @@ _________________________________________________
 
 ### ![ico-20 warn] {{s8.h1}}
 
-{{s8.p1}}
+**{{common.c9}}**
 
 ~~~js
 delete Object.prototype  // false
 ~~~
 
-{{s8.p2}}
+**{{common.c7}}**
 
 ~~~js
 'use strict'
@@ -211,7 +211,7 @@ delete Object.prototype  // false
 delete Object.prototype
 ~~~
 
-{{s8.p3}}
+**{{common.c5}}**
 
 ••![ico-20 error] Uncaught TypeError: Cannot delete property 'prototype' of function Object() { [native code] }••
 
@@ -219,13 +219,13 @@ _______________________________________________
 
 ### ![ico-20 warn] {{s9.h1}}
 
-{{s9.p1}}
+**{{common.c9}}**
 
 ~~~js
 var eval = 7  // 7
 ~~~
 
-{{s9.p2}}
+**{{common.c7}}**
 
 ~~~js
 'use strict'
@@ -233,7 +233,7 @@ var eval = 7  // 7
 var eval = 7
 ~~~
 
-{{s9.p3}}
+**{{common.c5}}**
 
 ••![ico-20 error] Uncaught SyntaxError: Unexpected eval or arguments in strict mode••
 
@@ -241,13 +241,13 @@ _______________________________________
 
 ### ![ico-20 warn] {{s10.h1}}
 
-{{s10.p1}}
+**{{common.c9}}**
 
 ~~~js
 var arguments = 7  // 7
 ~~~
 
-{{s10.p2}}
+**{{common.c7}}**
 
 ~~~js
 'use strict'
@@ -255,7 +255,7 @@ var arguments = 7  // 7
 var arguments = 7
 ~~~
 
-{{s10.p3}}
+**{{common.c5}}**
 
 ••![ico-20 error] Uncaught SyntaxError: Unexpected eval or arguments in strict mode••
 
@@ -263,7 +263,7 @@ _____________________________________________
 
 ### ![ico-20 warn] {{s11.h1}}
 
-{{s11.p1}}
+**{{common.c9}}**
 
 ~~~js
 function test () {
@@ -273,7 +273,7 @@ function test () {
 test ()
 ~~~
 
-{{s11.p2}}
+**{{common.c2}}**
 
 ~~~console
 
@@ -282,7 +282,7 @@ test ()
 }
 ~~~
 
-{{s11.p3}}
+**{{common.c7}}**
 
 ~~~js
 'use strict'
@@ -294,7 +294,7 @@ function test () {
 test ()
 ~~~
 
-{{s11.p4}}
+**{{common.c5}}**
 
 ![ico-20 error] ~~~console
   
@@ -318,7 +318,7 @@ function test () {
 test ()
 ~~~
 
-{{s11.p5}}
+**{{common.c2}}**
 
 ~~~console
 
@@ -329,7 +329,7 @@ test ()
 }
 ~~~
 
-{{s11.p6}}
+**{{common.c7}}**
 
 ~~~js
 'use strict'
@@ -343,7 +343,7 @@ function test () {
 test ()
 ~~~
 
-{{s11.p7}}
+**{{common.c5}}**
 
 ~~~console
   
@@ -357,7 +357,7 @@ ___________________________________
 
 ### ![ico-20 warn] {{s12.h1}} 
 
-{{s12.p1}}
+**{{common.c9}}**
 
 ~~~js
 var x, y
@@ -374,7 +374,7 @@ with (Math) {
 console.log(y)  // 256
 ~~~
 
-{{s12.p2}}
+**{{common.c7}}**
 
 ~~~js
 'use strict'
@@ -393,7 +393,7 @@ with (Math) {
 console.log(y)
 ~~~
 
-{{s12.p3}}
+**{{common.c5}}**
 
 ••![ico-20 error] Uncaught SyntaxError: Strict mode code may not include a with statement••
 
@@ -403,14 +403,14 @@ _________________________________________________
 
 ###### {{s14.h1}} 
 
-{{s14.p1}}
+**{{common.c9}}**
 
 ~~~js
 eval('var gamma = 2')
 console.log(gamma)
 ~~~
 
-{{s14.p2}}
+**{{common.c7}}**
 
 ~~~js
 'use strict'
@@ -419,7 +419,7 @@ eval('var gamma = 2')
 console.log(gamma)
 ~~~
 
-{{s14.p3}}
+**{{common.c5}}**
 
 ••![ico-20 error] Uncaught ReferenceError: gamma is not defined••
 
@@ -437,6 +437,6 @@ __________________________________________
 | ![ico-20 error] | static |
 | ![ico-20 error] | yield |
 
-{{s15.p1}}
+**{{common.c5}}**
 
 ••![ico-20 error] Uncaught SyntaxError: Unexpected strict mode reserved word••

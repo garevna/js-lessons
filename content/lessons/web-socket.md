@@ -54,7 +54,7 @@ Upgrade: websocket
 
 _____________________________________________
 
-## ![ico-25 hw] {{s1.h1}}
+## ![ico-25 hw] {{common.c3}} 1
 
 
 {{s1.p1}}
@@ -77,14 +77,14 @@ const websocket = new WebSocket(`wss://demo.piesocket.com/v3/channel_1?api_key=$
 
 {{s1.p6}}
 {{s1.p7}}
-{{s1.p8}}
+{{common.c228}}
 
 {{s1.p9}}
 
 {{s1.p10}}
 {{s1.p11}}
 {{s1.p12}}
-{{s1.p13}}
+{{common.c229}}
 
 ◘◘![ico-20 cap]◘◘
 
@@ -112,7 +112,7 @@ websocket.onerror = function (event) {
 }
 ~~~
 
-{{s1.p14}}
+◘◘{{common.c2}}◘◘
 
 ~~~console
 CONNECTED
@@ -122,7 +122,7 @@ DISCONNECTED
 
 _____________________________________________
 
-## ![ico-25 hw] {{s2.h1}}
+## ![ico-25 hw] {{common.c3}} 2
 
 {{s2.p1}}
 
@@ -132,13 +132,13 @@ _____________________________________________
 
 {{s2.p4}}
 
-### ![ico-20 bash] {{s3.h1}}
+### ![ico-20 bash] {{common.c44}}
 
 ••$ npm install ws••
 
 {{s3.p1}}
 
-{{s3.p2}}
+{{common.c233}}
 
 {{s3.p3}}
 
@@ -152,7 +152,7 @@ _____________________________________________
 const socket = require('ws')
 ~~~
 
-{{s3.p7}}
+{{common.c235}}
 
 {{s3.p8}}
 
@@ -166,13 +166,13 @@ const server = new WebSocket.Server({ port: 8080 })
 
 {{s3.p10}}
 
-{{s3.p11}}
+{{common.c236}}
 
 {{s3.p12}}
 
-{{s3.p13}}
+{{common.c238}}
 
-{{s3.p14}}
+{{common.c239}}
 
 ◘◘![ico-20 cap]◘◘
 
@@ -212,7 +212,7 @@ server.on('connection', socket => {
 })
 ~~~
 
-{{s3.p16}}
+![ico-20 bash] {{common.c241}}
 
 ••$ node start.js••
 
@@ -223,7 +223,7 @@ server.on('connection', socket => {
 
 {{s3.p19}}
 
-{{s3.p20}}
+{{common.c243}}
 
 ~~~js
 const socket = new WebSocket('ws://localhost:8080')
@@ -246,7 +246,7 @@ socket.addEventListener('message', event => {
 
 {{s3.p23}}
 
-{{s3.p24}}
+{{common.c16}}
 
 ~~~js
 const socket = new WebSocket('ws://localhost:8080')
@@ -277,7 +277,7 @@ received from a client:
                 Hello, do you listen to me ?
 ~~~
 
-{{s3.p34}}
+◘◘{{common.c249}}◘◘
 
 ~~~console
 ▼ { name: "server", message: "I listen to you" }
@@ -288,11 +288,11 @@ received from a client:
 
 _____________________________________________
 
-## ![ico-25 hw] {{s4.h1}}
+## ![ico-25 hw] {{common.c3}} 3
 
-{{s4.p1}}
+{{common.c250}}
 
-### ![ico-50 node] {{s5.h1}}
+### ![ico-50 node] {{common.c251}}
 
 {{s5.p1}}
 
@@ -306,7 +306,7 @@ const fs = require('fs')
 
 {{s5.p4}}
 
-{{s5.p5}}
+{{common.c252}}
 
 ^^^[users.json]
 
@@ -366,7 +366,7 @@ const fs = require('fs')
 
 ^^^
 
-{{s5.p6}}
+{{common.c253}}
 
 ~~~js
 const users = []
@@ -383,7 +383,7 @@ fs.readFile('users.json', 'utf8', (err, content) => users.push(...JSON.parse(con
 fs.readFile('messages.json', 'utf8', (err, content) => messages.push(...JSON.parse(content)))
 ~~~
 
-{{s5.p9}}
+{{common.c254}}
 
 {{s5.p10}}
 {{s5.p11}}
@@ -400,11 +400,11 @@ const WebSocket = require('ws')
 const server = new WebSocket.Server({ port: 8080 })
 ~~~
 
-{{s5.p17}}
+{{common.c256}}
 
 {{s5.p18}}
 
-{{s5.p19}}
+{{common.c257}}
 
 {{s5.p20}}
 
@@ -416,7 +416,7 @@ server.on('connection', client => {
 
 {{s5.p21}}
 
-{{s5.p22}}
+{{common.c259}}
 
 | • add     | • clear   |
 | • delete  | • entries |
@@ -454,7 +454,7 @@ server.on('connection', client => {
 const randomValue = num => Math.round(Math.random() * num)
 ~~~
 
-{{s5.p26}}
+{{common.c262}}
 
 ◘◘![ico-20 file] start.js◘◘
 
@@ -487,7 +487,7 @@ const randomValue = num => Math.round(Math.random() * num)
 
 __________________________________________________________________________
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] {{common.c263}}
 
 
 ◘◘![ico-20 file] index.html◘◘
@@ -668,23 +668,23 @@ socket.addEventListener('message', event => {
 window.onresize = chat.resize.bind(chat)
 ~~~
 
-{{s6.p9}}
+{{common.c265}}
 
 _________________________________________________________________________
 
-### ![ico-20 icon] {{s7.h1}}
+### ![ico-20 icon] {{common.c266}}
 
-{{s7.p1}}
+![ico-20 bash] {{common.c267}}
 
 ••$ node start.js••
 
-{{s7.p2}}
+{{common.c268}}
 
 {{s7.p3}}
 
 {{s7.p4}}
 
-{{s7.p5}}
+{{common.c271}}
 
 _____________________________________________
 

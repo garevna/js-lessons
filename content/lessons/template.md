@@ -22,7 +22,7 @@ ____________________________________________________________________________
 
 ________________________________________________________________________________
 
-### ![ico-25 cap] {{s1.h1}}
+### ![ico-25 cap] {{common.c0}} 1
 
 {{s1.p1}}
 
@@ -52,9 +52,9 @@ ________________________________________________________________________________
 {{s1.p3}}
 
 
-### ![ico-25 cap] {{s2.h1}}
+### ![ico-25 cap] {{common.c0}} 2
 
-{{s2.p1}}
+**{{common.c226}}**
 
 ~~~html
 <template id="svg">
@@ -78,7 +78,7 @@ const circle = document.querySelector('#svg')
 console.dir(circle.content)
 ~~~
 
-^^^[{{s2.spoiler1}}]
+^^^[{{common.c1}}]
 
 ~~~console
 ▼ #document-fragment
@@ -135,9 +135,9 @@ document.body.appendChild(circle.content.cloneNode(true))
 
 _________________________________________________________________
 
-### ![ico-25 cap] {{s4.h1}}
+### ![ico-25 cap] {{common.c0}} 3
 
-{{s4.p1}}
+**{{common.c226}}**
 
 ~~~html
 <template id="sample">
@@ -177,7 +177,7 @@ customElements.define('canvas-element', CanvasElement)
 
 _______________________________________________________________________
 
-### ![ico-25 cap] {{s5.h1}}
+### ![ico-25 cap] {{common.c0}} 4
 
 {{s5.p1}}
 

@@ -6,7 +6,7 @@
 
 {{s0.p2}}
 
-### ![ico-20 question] {{s1.h1}}
+### ![ico-20 question] {{common.c192}}
 
 {{s1.p1}}
 {{s1.p2}}

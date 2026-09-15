@@ -23,7 +23,7 @@ const promise = sayHello()
 ![](illustrations/queue-microtask.svg)
 @@@@
 
-{{s1.p8}}
+{{common.c21}}
 
 ◘◘![ico-25 cap] ** 1**◘◘
 
@@ -357,4 +357,4 @@ getLogin().then(console.log, console.error)
 {{{async-is-good-5.js}}}
 
 _______________________
-{{s4.p12}}
+{{common.c41}}

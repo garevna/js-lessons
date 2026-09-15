@@ -384,11 +384,6 @@
     "eng": "You can find the path to your global directory ⟦f19⟧ by running",
     "ua": "Ви можете знайти шлях до вашого глобального каталогу ⟦f19⟧, запустивши"
   },
-  "s0.spoiler1": {
-    "ru": "Пример 1",
-    "eng": "Example 1",
-    "ua": "Приклад 1"
-  },
   "s0.p78": {
     "ru": "создание символической ссылки в глобальной папке ( ** ~** ) на пакет в локальной папке",
     "eng": "Creating a symbolic link in the global folder ( ** ~** ) to a package in the local folder",
@@ -398,11 +393,6 @@
     "ru": "Перейдем в папку ⟦f24⟧ и создадим символическую ссылку на пакет **⟦f25⟧** в текущей папке",
     "eng": "Let’s navigate to the folder ⟦f24⟧ and create a symbolic link to the package **⟦f25⟧** in the current folder",
     "ua": "Перейдемо до папки ⟦f24⟧ і створимо символічне посилання на пакет **⟦f25⟧** у поточній папці"
-  },
-  "s0.spoiler2": {
-    "ru": "Пример 2",
-    "eng": "Example 2",
-    "ua": "Приклад 2"
   },
   "s0.p80": {
     "ru": "Теперь перейдем в папку другого проекта ( _⟦f26⟧_ )",

@@ -273,7 +273,7 @@ const user = {
 ~~~
 
 {{s2.p28}}
-{{s2.p29}}
+{{common.c161}}
 
 ◘◘![ico-20 cap] ** 3**◘◘
 
@@ -310,7 +310,7 @@ indexedDB.open('users').onsuccess = event => {
 }
 ~~~
 
-{{s2.p31}}
+{{common.c36}}
 
 ~~~console
 ▼  (3) [{…}, {…}, {…}]
@@ -326,7 +326,7 @@ _____________________________________________________
 #### ![ico-20 icon] delete
 
 {{s2.p32}}
-{{s2.p33}}
+{{common.c161}}
 
 ◘◘![ico-20 cap] ** 5**◘◘
 
@@ -440,7 +440,7 @@ ____________________________
 
 {{s3.p13}}
 {{s3.p14}}
-{{s3.p15}}
+{{common.c37}}
 
 ◘◘![ico-20 cap] ** 7**◘◘
 
@@ -448,7 +448,7 @@ ____________________________
 getDataByIndex('hobbyIndex', 'get', 'footbal')
 ~~~
 
-{{s3.p16}}
+{{common.c38}}
 
 ~~~console
 ▼ {name: "Stephan", birthYear: 1995, family: {…}, hobby: Array(2)}
@@ -471,7 +471,7 @@ ____________________________
 getDataByIndex('hobbyIndex', 'getAll', 'footbal')
 ~~~
 
-{{s3.p20}}
+{{common.c38}}
 
 ~~~console
 ▼ (2) [{…}, {…}]
@@ -483,7 +483,7 @@ getDataByIndex('hobbyIndex', 'getAll', 'footbal')
 ____________________________
 
 {{s3.p21}}
-{{s3.p22}}
+{{common.c37}}
 
 ◘◘![ico-20 cap] ** 9**◘◘
 
@@ -496,7 +496,7 @@ ____________________________________________________
 
 {{s3.p24}}
 {{s3.p25}}
-{{s3.p26}}
+{{common.c37}}
 
 ◘◘![ico-20 cap] **10**◘◘
 

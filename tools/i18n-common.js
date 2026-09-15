@@ -106,14 +106,30 @@ const out = {}
 let harvested = 0
 let kept = 0
 
+// Ids, not the phrase itself, because a skeleton points at them: content/
+// lessons carry {{common.c17}} where a repeated phrase used to be spelled out,
+// and an id that moved would silently change what a page says. An id is
+// assigned once, by Russian text, and never reused.
+const idOf = new Map()
+let nextId = 0
+for (const [id, entry] of Object.entries(existing)) {
+  if (!entry || !entry.ru) continue
+  idOf.set(entry.ru, id)
+  const n = Number(String(id).replace(/^c/, ''))
+  if (Number.isFinite(n) && n >= nextId) nextId = n + 1
+}
+
 for (const [phrase, slot] of repeated) {
-  const entry = { eng: '', ua: '' }
+  const entry = { ru: phrase, eng: '', ua: '' }
+  const id = idOf.get(phrase) || `c${nextId++}`
+  idOf.set(phrase, id)
+  const before = existing[id] || {}
 
   for (const lang of LANGS) {
     // A translation already in the table wins: it was reviewed, the ones
     // scraped off the pages were not.
-    if (existing[phrase] && existing[phrase][lang]) {
-      entry[lang] = existing[phrase][lang]
+    if (before[lang]) {
+      entry[lang] = before[lang]
       kept += 1
       continue
     }
@@ -131,7 +147,13 @@ for (const [phrase, slot] of repeated) {
     }
   }
 
-  out[phrase] = entry
+  out[id] = entry
+}
+
+// A phrase that stopped repeating keeps its entry: a skeleton may still point
+// at it, and dropping the id would break the page rather than tidy the table.
+for (const [id, entry] of Object.entries(existing)) {
+  if (!out[id]) out[id] = entry
 }
 
 if (!conflictsOnly) {

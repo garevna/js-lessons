@@ -10,10 +10,10 @@ _____________________________________________
 
 ^^^[{{s2.spoiler1}}]
 
-{{s2.p3}}
+**{{common.c25}}**
      ^^Math^^
      ^^JSON^^
-{{s2.p4}}
+**{{common.c223}}**
      ^^Array^^
      ^^Boolean^^
      ^^Number^^
@@ -45,14 +45,14 @@ var obj = {
 {{s2.p7}}
 
 ^^^[{{s2.spoiler2}}]
-{{s2.p8}}
+**{{common.c25}}**
      ^^window^^
      ^^document^^
      ^^history^^
      ^^location^^
      ^^console^^
      ...
-{{s2.p9}}
+**{{common.c223}}**
      ^^Event^^
      ^^HTMLElement^^
      ^^XMLHttpRequest^^
@@ -73,7 +73,7 @@ console.dir(XMLHttpRequest)
 
 _________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{common.c173}}
 
 {{s3.p1}}
 
@@ -95,7 +95,7 @@ console.log(figure.radius)
 console.log(figure.color)
 ~~~
 
-{{s3.p3}}
+{{common.c13}}
 
 ~~~js
 console.log(figure['type'])
@@ -333,13 +333,13 @@ console.dir(Array.__proto__.__proto__)  // Object
 
 ____________________________
 
-{{s6.p29}}
+![ico-25 hw] **{{common.c3}}**
 
 {{s6.p30}}
 
 _________________________
 
-## ![ico-25 icon] {{s7.h1}}
+## ![ico-25 icon] {{common.c10}}
 
 {{s7.p1}}
 
@@ -417,7 +417,7 @@ obj.setNewProperty('name', 'Petro')
 
 ___________________________________________
 
-{{s7.p25}}
+**{{common.c181}}**
 
 ◘◘![ico-20 cap] 4◘◘
 

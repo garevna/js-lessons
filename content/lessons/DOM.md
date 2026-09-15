@@ -49,7 +49,7 @@
 
 _________________________________________
 
-## ![ico-30 icon] {{s1.h1}}
+## ![ico-30 icon] {{common.c148}}
 
 {{s1.p1}}
 
@@ -77,7 +77,7 @@ function showProto (elem) {
 showProto(document)
 ~~~
 
-{{s1.p5}}
+{{common.c4}}
 
 ◘◘^^~document~^^◘◘
 
@@ -430,7 +430,7 @@ _______________________________________
   })
 ~~~
 
-{{s2.p5}}
+◘◘^^**{{common.c1}}**^^◘◘
 ~~~console
 images: HTMLCollection
 embeds: HTMLCollection
@@ -872,7 +872,7 @@ parent.appendChild(elem)
 
 {{s3.p18}}
 
-{{s3.p19}}
+{{common.c16}}
 
 ~~~js
 figure.appendChild(paragraph)
@@ -1087,7 +1087,7 @@ console.log(section)
 ~~~
 _____________________________________________
 
-### ![ico-25 icon] {{s5.h1}}
+### ![ico-25 icon] {{common.c149}}
 
 {{s5.p1}}
 
@@ -1120,7 +1120,7 @@ getMethods.call(Document.prototype, 'get')
 
 ![ico-25 coffee] ** 1**
 
-{{s5.p9}}
+◘◘{{common.c24}}◘◘
 
 ~~~html
 &lt;body>
@@ -1142,7 +1142,7 @@ document
   .getElementsByClassName('content')
 ~~~
 
-{{s5.p10}}
+◘◘^^{{common.c4}}^^◘◘
 
 ~~~console
 
@@ -1160,7 +1160,7 @@ ____________________________________________
 {{s5.p11}}
 
 {{s5.p12}}
-{{s5.p13}}
+{{common.c8}}
 
 ~~~js
 document.getElementsByClassName('screen-reader-text', 'visually-hidden')
@@ -1179,7 +1179,7 @@ _________________________________________
 {{s5.p17}}
 ________________________________________
 
-### ![ico-25 icon] {{s6.h1}}
+### ![ico-25 icon] {{common.c149}}
 
 ______________________________________
 
@@ -1216,7 +1216,7 @@ console.dir(document.body.querySelector('[type=\'number\']'))
 console.dir(section.querySelector('[title]'))
 ~~~
 
-{{s6.p3}}
+**{{common.c2}}**
 
 ~~~console
 ► section
@@ -1241,7 +1241,7 @@ ______________________________________________
 section.querySelectorAll('*')
 ~~~
 
-{{s6.p6}}
+◘◘{{common.c2}}◘◘
 ~~~console
 ▼ NodeList(2) [div, figure.promoClass]
   ► 0: div
@@ -1252,7 +1252,7 @@ section.querySelectorAll('*')
 
 _________________________________________________
 
-## ![ico-30 hw] {{s7.h1}}
+## ![ico-30 hw] {{common.c15}}
 
 ◘◘![ico-25 hw]** 1**◘◘
 ~~~js
@@ -1262,7 +1262,7 @@ var elem = document.body
 elem.tagName = 'div'
 ~~~
 
-→→→ {{s7.quiz1}} | {{s7.quizVariants1}} | {{s7.quizAnswer1}}→→→
+→→→ {{common.c64}} | {{common.c65}} | {{s7.quizAnswer1}}→→→
 
 ____________________________________________
 
@@ -1272,7 +1272,7 @@ ____________________________________________
 document.title = 'DOM'
 ~~~
 
-→→→ {{s7.quiz2}} | {{s7.quizVariants2}} | {{s7.quizAnswer2}}→→→
+→→→ {{common.c66}} | {{common.c67}} | {{common.c68}}→→→
 
 _________________________________________________
 
@@ -1292,19 +1292,19 @@ for (var text of paragraph) {
 }
 ~~~
 
-→→→ {{s7.quiz3}} | {{s7.quizVariants3}} | {{s7.quizAnswer3}}→→→
+→→→ {{common.c69}} | {{s7.quizVariants3}} | {{s7.quizAnswer3}}→→→
 
 _________________________________________
 
 ◘◘![ico-25 hw]** 4**◘◘
 
-→→→ {{s7.quiz4}} | {{s7.quizVariants4}} | {{s7.quizAnswer4}}→→→
+→→→ {{common.c70}} | {{s7.quizVariants4}} | {{s7.quizAnswer4}}→→→
 
 _________________________________________________
 
 ![ico-25 hw]** 5**
 
-{{s7.p1}}
+{{common.c17}}
 
 ~~~js
 var paragraph = document.body
@@ -1318,13 +1318,13 @@ paragraph.appendChild(document.createElement('span'))
 document.write('<h3 style="color: #09b">Hello!</h3>')
 ~~~
 
-→→→ {{s7.quiz5}} | {{s7.quizVariants5}} | {{s7.quizAnswer5}}→→→
+→→→ {{common.c150}} | {{s7.quizVariants5}} | {{s7.quizAnswer5}}→→→
 
 _____________________________________________
 
 ![ico-25 hw]** 6**
 
-{{s7.p3}}
+{{common.c17}}
 
 ~~~js
 document.write('<h3 style="color: #09b">Hello!</h3>')
@@ -1333,13 +1333,13 @@ var paragraph = document.body
 paragraph.appendChild(document.createElement('span'))
 ~~~
 
-→→→ {{s7.quiz6}} | {{s7.quizVariants6}} | {{s7.quizAnswer6}}→→→
+→→→ {{common.c150}} | {{s7.quizVariants6}} | {{s7.quizAnswer6}}→→→
 
 _____________________________________________
 
 ![ico-25 hw]** 7**
 
-{{s7.p4}}
+{{common.c17}}
 
 ~~~js
 document.createElement('h3').innerHTML = 'Welcome'
@@ -1354,7 +1354,7 @@ _____________________________________________
 
 ![ico-25 hw]** 8**
 
-{{s7.p5}}
+{{common.c17}}
 
 ~~~js
 var elems = ['h3', 'p', 'div'].map(tag => document.createElement(tag))
@@ -1368,20 +1368,20 @@ for (var elem of document.body.children) {
 }
 ~~~
 
-→→→ {{s7.quiz8}} | {{s7.quizVariants8}} | {{s7.quizAnswer8}}→→→
+→→→ {{common.c151}} | {{s7.quizVariants8}} | {{s7.quizAnswer8}}→→→
 
 _____________________________________________
 
 ![ico-25 hw]** 9**
 
-{{s7.p6}}
+{{common.c17}}
 
 ~~~js
 document.head.innerHTML = `<!-- Comment -->`
 for (var node of document.head.childNodes) console.log(node.nodeType)
 ~~~
 
-→→→ {{s7.quiz9}} | {{s7.quizVariants9}} | {{s7.quizAnswer9}}→→→
+→→→ {{common.c151}} | {{s7.quizVariants9}} | {{s7.quizAnswer9}}→→→
 
 _____________________________________________
 
@@ -1405,7 +1405,7 @@ elems.forEach(function (elem) {
 })
 ~~~
 
-→→→ {{s7.quiz10}} | {{s7.quizVariants10}} | {{s7.quizAnswer10}}→→→
+→→→ {{common.c71}} | {{s7.quizVariants10}} | {{common.c73}}→→→
 
 
 ___________________________________

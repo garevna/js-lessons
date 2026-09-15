@@ -89,26 +89,6 @@
     "eng": "We can use arithmetic operators (+, -, /, *, and the remainder operator %) in such expressions:",
     "ua": "Ми можемо використовувати арифметичні оператори (+, -, /, * та оператор взяття залишку від ділення %) у таких виразах:"
   },
-  "s2.p3": {
-    "ru": "или:",
-    "eng": "or:",
-    "ua": "або:"
-  },
-  "s2.p4": {
-    "ru": "или:",
-    "eng": "or:",
-    "ua": "або:"
-  },
-  "s2.p5": {
-    "ru": "или:",
-    "eng": "or:",
-    "ua": "або:"
-  },
-  "s2.p6": {
-    "ru": "или:",
-    "eng": "or:",
-    "ua": "або:"
-  },
   "s2.p7": {
     "ru": "Как мы видим, в каждом из таких выражений имя переменной появляется как в левой, так и в правой части оператора присваивания.",
     "eng": "As we can see, in each of these expressions, the variable name appears in both the left and right parts of the assignment operator.",
@@ -123,26 +103,6 @@
     "ru": "Не лучше ли сократить такие формы присваивания следующим образом:",
     "eng": "Wouldn't it be better to shorten such assignment forms as follows:",
     "ua": "Чи не краще скоротити такі форми присвоювання таким чином:"
-  },
-  "s2.p10": {
-    "ru": "или:",
-    "eng": "or:",
-    "ua": "або:"
-  },
-  "s2.p11": {
-    "ru": "или:",
-    "eng": "or:",
-    "ua": "або:"
-  },
-  "s2.p12": {
-    "ru": "или:",
-    "eng": "or:",
-    "ua": "або:"
-  },
-  "s2.p13": {
-    "ru": "или:",
-    "eng": "or:",
-    "ua": "або:"
   },
   "s2.p14": {
     "ru": "Согласитесь, что так намного удобнее?",

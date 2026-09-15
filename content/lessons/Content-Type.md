@@ -87,7 +87,7 @@ ___________________
 postData('name=garevna&speciality=frontEnd', 'application/x-www-form-urlencoded')
 ~~~
 
-{{s1.p5}}
+{{common.c2}}
 
 ~~~console
 {
@@ -126,7 +126,7 @@ postData(JSON.stringify({
 }))
 ~~~
 
-{{s1.p6}}
+{{common.c2}}
 
 ~~~console
 {
@@ -165,7 +165,7 @@ It generates weird text that resembles the normal characters or numbers of the a
 postData(text, 'text/plain')
 ~~~
 
-{{s1.p7}}
+{{common.c2}}
 
 ~~~console
 {

@@ -6,7 +6,7 @@ ________________________________________________
 
 {{s1.p1}}
 
-{{s1.p2}}
+![ico-25 cap] **{{common.c0}} 1**
 
 ~~~js
 var bag = {
@@ -21,7 +21,7 @@ console.log(bag.prop3)  // 🎓
 
 __________________________________________
 
-{{s1.p3}}
+![ico-25 cap] **{{common.c0}} 2**
 
 ~~~js
 var prop = 'prop'
@@ -39,7 +39,7 @@ console.log(bag.prop____3)  // 🎓
 
 __________________________________________
 
-{{s1.p4}}
+![ico-25 cap] **{{common.c0}} 3**
 
 ~~~js
 var prop = ['smile', 'clock', 'book']
@@ -55,7 +55,7 @@ console.log(bag.____book)   // 📖
 
 __________________________________________
 
-{{s1.p5}}
+![ico-25 cap] **{{common.c0}} 4**
 
 ~~~js
 var sample = {}
@@ -74,7 +74,7 @@ console.log(sample.chicken)
 
 __________________________________________
 
-{{s1.p6}}
+![ico-25 cap] **{{common.c0}} 5**
 
 ~~~js
 var things = [
@@ -104,7 +104,7 @@ console.log(bag.getFlower())
 console.log(bag.getMashroom())
 ~~~
 
-{{s1.p7}}
+**{{common.c1}}**
 
 ~~~console
 

@@ -129,11 +129,6 @@
     "eng": "Let's compare the results of **⟦f1⟧** and **⟦f2⟧** → **⟦f4⟧**.",
     "ua": "Порівняємо результати  **⟦f1⟧** та **⟦f2⟧** → **⟦f4⟧**"
   },
-  "s2.p7": {
-    "ru": "Логическое выражение",
-    "eng": "Boolean expression:",
-    "ua": "Логічний вираз:"
-  },
   "s2.p8": {
     "ru": "возвращает ⟦f5⟧, поскольку значение свойства  **test.position** является ссылкой на объект **obj.position**",
     "eng": "returns ⟦f5⟧ because the value of the **test.position** property is a reference, and the value of the **obj.position** property is also a reference, and these references point to the same object.",

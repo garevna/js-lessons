@@ -289,20 +289,10 @@
     "eng": "I.e. if we didn't use the **branching** above, the loop would loop infinitely, which is absolutely inadmissible.",
     "ua": "Тобто якби ми не використовували вище розглянуте **гілкування**, то цикл крутився б нескінченно, що абсолютно неприпустимо."
   },
-  "s6.p7": {
-    "ru": "![ico-20 hw] **Упражнение 1**",
-    "eng": "![ico-20 hw] **Exercise 1**",
-    "ua": "![ico-20 hw] **Вправа 1**"
-  },
   "s6.p8": {
     "ru": "^^Нарисуйте блок-схему алгоритма суммирования всех целых чисел от 1 до N^^",
     "eng": "^^Draw a flowchart of the algorithm for summing all integers from 1 to N.^^",
     "ua": "^^Намалюйте блок-схему алгоритму підсумовування всіх цілих чисел від 1 до **⟦f11⟧**.^^"
-  },
-  "s6.p9": {
-    "ru": "![ico-20 hw] **Упражнение 2**",
-    "eng": "![ico-20 hw] **Exercise 2**",
-    "ua": "![ico-20 hw] **Вправа 2**"
   },
   "s6.p10": {
     "ru": "^^Нарисуйте блок-схему алгоритма суммирования всех целых нечетных чисел от 1 до N^^",
@@ -329,11 +319,6 @@
     "eng": "**Flowchart of the algorithm for calculating a Fibonacci series term by its number ⟦f4⟧:**",
     "ua": "**Схема алгоритму обчислення члена ряду Фібоначчі за його номером ⟦f11⟧**:"
   },
-  "s7.p4": {
-    "ru": "![ico-20 hw] **Упражнение 3**",
-    "eng": "![ico-20 hw] **Exercise 3**",
-    "ua": "![ico-20 hw] **Вправа 3**"
-  },
   "s7.p5": {
     "ru": "^^Измените блок-схему алгоритма вычисления члена ряда Фибоначчи по его номеру ** N ** следующим образом:^^",
     "eng": "^^Modify the flowchart of the algorithm for calculating the item of the Fibonacci series by it's number ** N** as follows:^^",
@@ -348,11 +333,6 @@
     "ru": "^^• перенесите инкремент (приращение) переменной ** n ** перед блоком ветвления кода (где сравниваются ** n ** и ** N **)^^",
     "eng": "^^• Move the increment (increment) of the variable ** n** before the code branching block (where ** n** and ** N** are compared).^^",
     "ua": "^^• перенесіть інкремент (приріст) змінної **⟦f12⟧** перед блоком розгалуження коду (де порівнюються **⟦f12⟧** і **⟦f11⟧**).^^"
-  },
-  "s7.p8": {
-    "ru": "![ico-20 hw] **Упражнение 4**",
-    "eng": "![ico-20 hw] **Exercise 4**",
-    "ua": "![ico-20 hw] **Вправа 4**"
   },
   "s7.p9": {
     "ru": "^^Нарисуйте блок-схему алгоритма вычисления факториала числа N.^^",

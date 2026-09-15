@@ -16,7 +16,7 @@ __________________________
 
 ^^^
 
-### ![ico-25 cap] {{s1.h1}}
+### ![ico-25 cap] {{common.c0}} 1
 
 ~~~html
 <html>
@@ -51,7 +51,7 @@ document.all.namedItem('Google')  // null
 document.all.namedItem('fonts')
 ~~~
 
-{{s1.p3}}
+**{{common.c1}}**
 
 ~~~console
 <link name="Google" id="fonts" href="https://fonts.googleapis.com/css?family=Roboto|&amp;display=swap" rel="stylesheet">
@@ -61,7 +61,7 @@ document.all.namedItem('fonts')
 
 _________________________________________
 
-### ![ico-25 cap] {{s2.h1}}
+### ![ico-25 cap] {{common.c0}} 2
 
 {{s2.p1}}
 
@@ -77,7 +77,7 @@ console.log(document.all.namedItem('div'))
 
 ________________________________________________
 
-### ![ico-25 cap] {{s3.h1}}
+### ![ico-25 cap] {{common.c0}} 3
 
 {{s3.p1}}
 

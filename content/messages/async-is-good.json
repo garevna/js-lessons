@@ -39,11 +39,6 @@
     "eng": "The **⟦f0⟧** instance is a **microtask**, and microtasks have their own queue, the priority of which is higher than the priority of the task queue.<br><br>I.e. while the fat and sluggish tasks will stupidly sit in their queue and wait for the ‘office’ (**Call Stack**) to be vacated, microtasks one by one will jump past them into the ‘office’. And until the last microtask from the privileged queue passes through the **Call Stack**, the tasks will wait.",
     "ua": "Екземпляр **⟦f0⟧** є **мікротаском**, а для мікротасків існує своя черга, пріоритет якої вищий за пріоритет черги тасків.<br><br>Т. е. поки товсті та неповороткі таски тупо сидітимуть у своїй черзі та чекатимуть, коли «кабінет» (**Call Stack**) звільниться, мікротаски один за одним проскакуватимуть повз них у «кабінет». І поки останній мікротаск із привілейованої черги не пройде через **Call Stack**, таски чекатимуть."
   },
-  "s1.p8": {
-    "ru": "Например, в результате выполнения следующего кода:",
-    "eng": "For example, as a result of executing the following code:",
-    "ua": "Наприклад, внаслідок виконання такого коду:"
-  },
   "s1.p9": {
     "ru": "в консоли мы увидим:",
     "eng": "we'll see in the console:",
@@ -298,10 +293,5 @@
     "ru": "полный код примера",
     "eng": "Full example code",
     "ua": "повний код прикладу"
-  },
-  "s4.p12": {
-    "ru": "[![ico-30 hw] Тесты](quiz/async )",
-    "eng": "[![ico-30 hw] Quiz](quiz/async )",
-    "ua": "[![ico-30 hw] Quiz](quiz/async )"
   }
 }

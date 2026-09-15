@@ -14,7 +14,7 @@ _________________________________
 
 ![ico-30 cap] ** 1**
 
-{{s0.p4}}
+{{common.c186}}
 
 ~~~js
 document.body.onclick = async () => {
@@ -23,7 +23,7 @@ document.body.onclick = async () => {
 ~~~
 
 {{s0.p5}}
-{{s0.p6}}
+^^{{common.c187}}^^
 
 {{{dynamic-import-1.js}}}
 
@@ -43,7 +43,7 @@ import(`${scriptFile}12.js`)
   .then(setTimeout(() => import(`${scriptPath}22.js`), 10000))
 ~~~
 
-{{s0.p8}}
+^^{{common.c188}}^^
 
 ◘◘![ico-20 paper]◘◘
 
@@ -103,7 +103,7 @@ mod.textContent = `
 `
 ~~~
 
-{{s0.p13}}
+{{common.c189}}
 
 ◘◘^^![ico-20 paper] js/index.js^^◘◘
 
@@ -162,7 +162,7 @@ import { showMessage } from 'https://example.com/js/testESModules.js'
 import { showMessage } from './js/testESModules.js'
 ~~~
 
-{{s0.p17}}
+{{common.c190}}
 
 ________________________________________________________________________
 

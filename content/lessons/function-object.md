@@ -57,7 +57,7 @@ function testArguments () {
 testArguments() // testArguments
 ~~~
 
-^^^[{{s2.spoiler1}}]
+^^^[{{common.c0}} 2]
 
 {{s2.p11}}
 
@@ -95,7 +95,7 @@ x('До свидания!')
 
 ^^^
 
-^^^[{{s2.spoiler2}}]
+^^^[{{common.c0}} 3]
 
 ![ico-25 cap] ** 3 **
 
@@ -130,7 +130,7 @@ setProperty('method', function () {
 
 ^^^
 
-^^^[{{s2.spoiler3}}]
+^^^[{{common.c0}} 4]
 
 ![ico-25 cap] ** 4 **
 
@@ -172,7 +172,7 @@ console.log(factorial.res)
 
 {{s2.p32}}
 
-^^^[{{s2.spoiler4}}]
+^^^[{{common.c0}} 5]
 
 ![ico-25 cap] ** 5 **
 
@@ -240,7 +240,7 @@ _______________________________________________
 {{s3.p6}}
 {{s3.p7}}
 
-^^^[{{s3.spoiler1}}]
+^^^[{{common.c199}}]
 
 ![ico-30 ambulance]
 
@@ -251,7 +251,7 @@ _______________________________________________
 
 ^^^
 
-^^^[{{s3.spoiler2}}]
+^^^[{{common.c27}}]
 
 ![ico-30 ambulance]
 
@@ -260,7 +260,7 @@ _______________________________________________
 
 ^^^
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] {{common.c27}}
 
 {{s4.p1}}
 
@@ -279,7 +279,7 @@ patient.emergency()
 
 _______________________________
 
-^^^[{{s4.spoiler1}}]
+^^^[{{common.c0}} 6]
 
 ![ico-25 cap] ** 6 **
 
@@ -349,7 +349,7 @@ ____________________________
 
 _________________________________________
 
-## ![ico-25 icon] {{s6.h1}}
+## ![ico-25 icon] {{common.c199}}
 
 {{s6.p1}}
 
@@ -367,7 +367,7 @@ _________________________________________
 {{s6.p8}}
 
 ![ico-20 green-ok] LexicalEnvironment
-{{s6.p9}}
+![ico-20 green-ok] {{common.c42}}
 ![ico-20 green-ok] ~this~
 
 _____________________________________________
@@ -405,7 +405,7 @@ ______________________________________________
 {{s6.p26}}
 {{s6.p27}}
 
-^^^[{{s6.spoiler1}}]
+^^^[{{common.c0}} 7]
 
 ![ico-25 cap] ** 7 **
 
@@ -466,7 +466,7 @@ x = 1, y = 1
 
 ^^^
 
-^^^[{{s6.spoiler2}}]
+^^^[{{common.c0}} 8]
 
 ![ico-25 cap] ** 8**
 
@@ -546,7 +546,7 @@ ___________________________
 
 ^^^
 
-^^^[{{s7.spoiler1}}]
+^^^[{{common.c0}} 9]
 
 ![ico-25 cap] ** 9**
 
@@ -582,7 +582,7 @@ sample = 10
 
 ^^^
 
-^^^[{{s7.spoiler2}}]
+^^^[{{common.c0}} 10]
 
 ![ico-25 cap] **10**
 
@@ -604,7 +604,7 @@ console.info('We left the execution context of the function "showSample"')
 console.info(`Now sample === ${sample}`)
 ~~~
 
-{{s7.p35}}
+**{{common.c2}}**
 
 ~~~console
 We are in the execution context of the function "showSample"
@@ -625,7 +625,7 @@ Now sample === 1
 
 ^^^
 
-^^^[{{s7.spoiler3}}]
+^^^[{{common.c0}} 11]
 
 ![ico-25 cap] **11**
 
@@ -664,7 +664,7 @@ console.info(`(global) ${sample}`)
 
 ____________________________________
 
-### ![ico-20 icon] {{s8.h1}}
+### ![ico-20 icon] {{common.c42}}
 
 {{s8.p1}}
 
@@ -771,7 +771,7 @@ function sample () {}
 console.dir(sample)
 ~~~
 
-{{s8.p17}}
+{{common.c197}}
 ~~~console
 ▼ ƒ sample()
       arguments: null

@@ -1,7 +1,7 @@
 # ![ico-30 study] Date()
 
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{common.c10}}
 
 {{s1.p1}}
 
@@ -49,7 +49,7 @@ newData instanceof Date    // true
 
 {{s1.p11}}
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{common.c18}}
 
 {{s2.p1}}
 
@@ -144,7 +144,7 @@ data.setFullYear (data.getFullYear(), data.getMonth(), data.getDate() + 50)
 console.log(`Next date: ${data.toLocaleString()}`)
 ~~~
 
-{{s2.p20}}
+^^{{common.c152}}^^
 
 ~~~console
 Current date: 24.05.2019, 00:00:00

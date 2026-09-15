@@ -24,11 +24,6 @@
     "eng": "However, it should be borne in mind that this is merely a layer of cellophane in which the same old constructor has been wrapped.",
     "ua": "Однак слід пам’ятати, що це всього лише целофан, у який загорнули той самий конструктор."
   },
-  "s2.h1": {
-    "ru": "Синтаксис",
-    "eng": "Syntax",
-    "ua": "Синтаксис"
-  },
   "s2.p1": {
     "ru": "![ico-20 warn] Код внутри тела класса всегда выполняется в **⟦f1⟧**",
     "eng": "![ico-20 warn] Code within the class body is always executed in **⟦f1⟧**",
@@ -139,35 +134,15 @@
     "eng": "Examples of named classes",
     "ua": "Приклади іменованих класів"
   },
-  "s3.p2": {
-    "ru": "◘◘**Результат в консоли:**◘◘",
-    "eng": "◘◘**Result in the console:**◘◘",
-    "ua": "◘◘**Результат у консолі:**◘◘"
-  },
   "s3.p3": {
     "ru": "Однако если мы создадим экземпляр этого класса, и посмотрим на него в консоли, то мы увидим, что имя класса отсутствует",
     "eng": "However, if we create an instance of this class and view it in the console, we will see that the class name is missing",
     "ua": "Однак якщо ми створимо екземпляр цього класу і подивимося на нього в консолі, то побачимо, що ім’я класу відсутнє"
   },
-  "s3.p4": {
-    "ru": "◘◘**Результат в консоли:**◘◘",
-    "eng": "◘◘**Output in the console:**◘◘",
-    "ua": "◘◘**Результат у консолі:**◘◘"
-  },
-  "s3.p6": {
-    "ru": "◘◘**Результат в консоли:**◘◘",
-    "eng": "◘◘**Output in the console:**◘◘",
-    "ua": "◘◘**Результат у консолі:**◘◘"
-  },
   "s3.p7": {
     "ru": "А теперь создадим экземпляр этого класса и выведем его в консоль:",
     "eng": "Now let’s create an instance of this class and print it to the console:",
     "ua": "А тепер створимо екземпляр цього класу та виведемо його в консоль:"
-  },
-  "s3.p8": {
-    "ru": "◘◘**Результат в консоли:**◘◘",
-    "eng": "◘◘**Output in the console:**◘◘",
-    "ua": "◘◘**Результат у консолі:**◘◘"
   },
   "s3.p9": {
     "ru": "Итак, при использовании class expression имя класса становится недоступным извне",
@@ -279,16 +254,6 @@
     "eng": "^^![ico-20 speach] Let’s try to perform the assignment by passing incorrect values:^^",
     "ua": "^^![ico-20 speach] Спробуємо виконати присвоєння, передаючи некоректні значення:^^"
   },
-  "s3.p33": {
-    "ru": "**Результат - исключение:**",
-    "eng": "**Result – an exception:**",
-    "ua": "**Результат — виняток:**"
-  },
-  "s3.p34": {
-    "ru": "**Результат - исключение:**",
-    "eng": "**Result – an exception:**",
-    "ua": "**Результат — виняток:**"
-  },
   "s3.p35": {
     "ru": "^^![ico-20 speach] Значение свойства  **_history_**  не изменилось, ^^",
     "eng": "^^![ico-20 speach] The value of the **_history_** property has not changed, ^^",
@@ -313,11 +278,6 @@
     "ru": "![ico-20 warn] Потеря контекста происходит всегда, если ссылка на метод передается в новую переменную:",
     "eng": "![ico-20 warn] Context loss always occurs if a reference to a method is assigned to a new variable:",
     "ua": "![ico-20 warn] Втрата контексту відбувається завжди, якщо посилання на метод передається в нову змінну:"
-  },
-  "s4.p4": {
-    "ru": "будет сгенерировано исключение:",
-    "eng": "An exception will be thrown:",
-    "ua": "буде згенеровано виняток:"
   },
   "s4.p5": {
     "ru": "Передачу контекста вызова нужно сделать явным образом:",
@@ -359,11 +319,6 @@
     "eng": "^^Let’s create an instance **user** of the **User** class and call the method **_addSomeInfo_** within the context of the **user** object^^",
     "ua": "^^Створимо екземпляр **user** класу **User** і викличемо метод **_addSomeInfo_** у контексті об’єкта **user**^^"
   },
-  "s4.p14": {
-    "ru": "**Результат**",
-    "eng": "**Result**",
-    "ua": "**Результат**"
-  },
   "s4.p15": {
     "ru": "^^![ico-20 yes] Внутри функции **_getProp_** контекст вызова ( **⟦f14⟧** ) оказался ⟦f7⟧^^",
     "eng": "^^![ico-20 yes] Inside the **_getProp_** function, the call context ( **⟦f14⟧** ) turned out to be ⟦f7⟧^^",
@@ -378,16 +333,6 @@
     "ru": "^^Создадим экземпляр **user** и вызовем метод **_addSomeInfo_**^^",
     "eng": "^^Let’s create an instance of **user** and call the **_addSomeInfo_** method^^",
     "ua": "^^Створимо екземпляр **user** і викличемо метод **_addSomeInfo_**^^"
-  },
-  "s4.p18": {
-    "ru": "◘◘**Результат**◘◘",
-    "eng": "◘◘**Result**◘◘",
-    "ua": "◘◘**Результат**◘◘"
-  },
-  "s5.h1": {
-    "ru": "Наследование",
-    "eng": "Inheritance",
-    "ua": "Спадкування"
   },
   "s5.p1": {
     "ru": "Ключевое слово **⟦f15⟧** используется для создания дочернего класса",
@@ -503,11 +448,6 @@
     "ru": "![ico-20 warning] Первое, что нужно выполнить в конструкторе наследующего класса - вызвать метод **super()**",
     "eng": "![ico-20 warning] The first thing you need to do in the constructor of the derived class is to call the **super()** method",
     "ua": "![ico-20 warning] Перше, що потрібно виконати у конструкторі класу, що успадковується, — викликати метод **super()**"
-  },
-  "s5.p28": {
-    "ru": "В противном случае будет сгенерировано исключение:",
-    "eng": "Otherwise, an exception will be thrown:",
-    "ua": "В іншому разі буде згенеровано виняток:"
   },
   "s6.h1": {
     "ru": "super в литералах объектов",
@@ -834,11 +774,6 @@
     "eng": "When the static method **_⟦f29⟧_** is called, the call context is passed to it as the first argument",
     "ua": "При виклику статичного методу **_⟦f29⟧_** першим аргументом йому передається контекст виклику"
   },
-  "s6.p70": {
-    "ru": "![ico-20 pin] Примечание:",
-    "eng": "![ico-20 pin] Note:",
-    "ua": "![ico-20 pin] Примітка:"
-  },
   "s6.p71": {
     "ru": "^^В данном случае объявление метода  **⟦f29⟧**  как статического^^",
     "eng": "^^In this case, declaring the method  **⟦f29⟧**  as static^^",
@@ -888,11 +823,6 @@
     "ru": "на глобальный объект  (⟦f6⟧)",
     "eng": "to the global object  (⟦f6⟧)",
     "ua": "на глобальний об’єкт  (⟦f6⟧)"
-  },
-  "s7.h1": {
-    "ru": "Пример",
-    "eng": "Example",
-    "ua": "Приклад"
   },
   "s7.p1": {
     "ru": "В этом примере мы будем работать с графикой [svg](⟦f32⟧)",

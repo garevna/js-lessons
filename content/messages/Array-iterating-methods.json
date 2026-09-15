@@ -179,11 +179,6 @@
     "eng": "And we know that",
     "ua": "А ми знаємо, що"
   },
-  "s1.slogan1": {
-    "ru": "ссылка - это отмычка",
-    "eng": "reference is a lockpick",
-    "ua": "посилання - це відмичка"
-  },
   "s1.p36": {
     "ru": "Передача ссылки создает возможность мутировать исходный массив:",
     "eng": "Passing a reference creates the ability to mutate the original array:",
@@ -334,11 +329,6 @@
     "eng": "If there is no such element in the array, returns ⟦f15⟧.",
     "ua": "Якщо такого елемента у масиві немає, повертає ⟦f15⟧."
   },
-  "s3.p14": {
-    "ru": "![ico-25 memo] Упражнение",
-    "eng": "◘◘**Result**◘◘",
-    "ua": "◘◘**^^Результат^^**◘◘"
-  },
   "s3.p15": {
     "ru": "^^Разберитесь самостоятельно, что делает следующий код:^^",
     "eng": "Like ⟦f16⟧ method, it searches the array for the first element that satisfies the specified condition.",
@@ -389,11 +379,6 @@
     "eng": "To do this, we definitely need to specify the starting value of the **accumulator variable**, since the value of the first element of the array will be a string, and we want to get an object.",
     "ua": "Для цього нам обов'язково потрібно вказати стартове значення акумулятора, оскільки значення першого елемента масиву буде рядок, а ми хочемо отримати об'єкт."
   },
-  "s4.p3": {
-    "ru": "У вас должен получиться результат:",
-    "eng": "Now let's reduce the array of objects to a string.",
-    "ua": "Тепер зведемо масив об'єктів до рядка."
-  },
   "s4.p4": {
     "ru": "Перейдите по [![ico-20 link] **_ссылке_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )",
     "eng": "Now let's count how many times each character appears in the string and return an object:",
@@ -408,11 +393,6 @@
     "ru": "Вызовите функцию  **⟦f13⟧**.",
     "eng": "The engine uses the exponential form of representing small numbers, i.e. instead of **⟦f21⟧** there will be **⟦f22⟧**.",
     "ua": "Двигун використовує експоненційну форму уявлення малих чисел, тобто. замість **⟦f21⟧** буде **⟦f22⟧**."
-  },
-  "s4.p7": {
-    "ru": "У вас должен получиться результат:",
-    "eng": "For large numbers the same thing happens, i.e. instead of **⟦f23⟧** there will be **⟦f24⟧**.",
-    "ua": "Для великих чисел відбувається те саме, тобто. замість **⟦f23⟧** буде **⟦f24⟧**."
   },
   "s4.p8": {
     "ru": "Метод **⟦f14⟧** итерирует массив, проверяя выполнение заданного условия для каждого элемента массива.",
@@ -429,11 +409,6 @@
     "eng": "With a reference, we can manipulate the original array, making it mutable.",
     "ua": "як і у випадку інших ітеруючих методів методів, може приймати додаткові аргументи - індекс поточного елемента масиву і посилання на сам вихідний масив."
   },
-  "s4.p11": {
-    "ru": "◘◘**Результат**◘◘",
-    "eng": "◘◘![ico-20 cap] ** 7**◘◘",
-    "ua": "Завдяки посиланню ми можемо маніпулювати вихідним масивом, що робить його мутабельним."
-  },
   "s4.p12": {
     "ru": "Метод ищет в массиве и возвращает первый найденный элемент, удовлетворяющий заданному условию.",
     "eng": "The library function **⟦f25⟧** takes only 1 argument (a number), and returns the square root of the received argument.",
@@ -443,11 +418,6 @@
     "ru": "Если такого элемента в массиве нет, возвращает ⟦f15⟧.",
     "eng": "If we do not pass a second argument to the **⟦f20⟧** method when calling, it will use the value of the first element of the array as the starting value of the **accumulator variable**.",
     "ua": "Бібліотечна функція **⟦f25⟧** приймає всього 1 аргумент (число) і повертає квадратний корінь з отриманого аргументу."
-  },
-  "s4.p14": {
-    "ru": "◘◘**Результат**◘◘",
-    "eng": "At each iteration, this value will be replaced by its square root.",
-    "ua": "Якщо під час виклику ми не передаємо методу **⟦f20⟧** другий аргумент, він використовуватиме як стартове значення акумулятора значення першого елемента масиву."
   },
   "s4.p15": {
     "ru": "Подобно методу ⟦f16⟧, ищет в массиве первый элемент, удовлетворяющий заданному условию.",
@@ -824,11 +794,6 @@
     "eng": "",
     "ua": "**Генератор**."
   },
-  "s6.h1": {
-    "ru": "Тесты",
-    "eng": "Tests",
-    "ua": "Приклади та тести"
-  },
   "s6.p1": {
     "ru": "Что вернут следующие выражения:",
     "eng": "What will the following expressions return:",
@@ -879,19 +844,9 @@
     "eng": "Based on the value returned by the function, the method changes the order of the elements in the array.",
     "ua": ""
   },
-  "s6.p11": {
-    "ru": "◘◘**Результат**◘◘",
-    "eng": "◘◘![ico-20 cap] ** 1**◘◘",
-    "ua": ""
-  },
   "s6.p12": {
     "ru": "^^Для понимания механизма сортировки выведем в консоль значения сравниваемых элементов массива на каждой итерации:^^",
     "eng": "^^Для понимания механизма сортировки выведем в консоль значения сравниваемых элементов массива на каждой итерации:^^",
-    "ua": ""
-  },
-  "s6.p13": {
-    "ru": "◘◘**Результат**◘◘",
-    "eng": "^^To understand the sorting mechanism, let’s display the values ​​of the array elements being compared at each iteration to the console:^^",
     "ua": ""
   },
   "s6.spoiler1": {
@@ -929,11 +884,6 @@
     "eng": "There is a line **cookie**:",
     "ua": ""
   },
-  "s6.p20": {
-    "ru": "◘◘**^^Результат^^**◘◘",
-    "eng": "Let's split the string **cookie** and apply the **⟦f31⟧** method to the resulting array.",
-    "ua": ""
-  },
   "s6.p21": {
     "ru": "Мы получили массив, элементы которого являются массивами",
     "eng": "◘◘**^^Result^^**◘◘",
@@ -942,11 +892,6 @@
   "s6.p22": {
     "ru": "Теперь применим метод **⟦f32⟧** к массиву **cookie**",
     "eng": "We have received an array whose elements are arrays.",
-    "ua": ""
-  },
-  "s6.p23": {
-    "ru": "◘◘**^^Результат^^**◘◘",
-    "eng": "Now apply the **⟦f32⟧** method to the array:",
     "ua": ""
   },
   "s6.p24": {
@@ -962,36 +907,6 @@
   "s6.p26": {
     "ru": "мы получили в первом случае массив массивов, а во втором - \"плоский\" массив",
     "eng": "So, using the same function:",
-    "ua": ""
-  },
-  "s6.p27": {
-    "ru": "**Генератор**.",
-    "eng": "in the first case we received an array of arrays, and in the second we received a “flat” array.",
-    "ua": ""
-  },
-  "s6.p28": {
-    "ru": "**Возвращает объект _итератора_**.",
-    "eng": "**Generator**.",
-    "ua": ""
-  },
-  "s6.p29": {
-    "ru": "◘◘**^^Результат^^**◘◘",
-    "eng": "**Returns a _iterator_ object.**.",
-    "ua": ""
-  },
-  "s6.p30": {
-    "ru": "**Генератор**.",
-    "eng": "◘◘**^^Result^^**◘◘",
-    "ua": ""
-  },
-  "s6.p31": {
-    "ru": "**Возвращает объект _итератора_**.",
-    "eng": "**Generator**.",
-    "ua": ""
-  },
-  "s6.p32": {
-    "ru": "◘◘**^^Результат^^**◘◘",
-    "eng": "**Returns a _iterator_ object.**.",
     "ua": ""
   },
   "s7.h1": {
@@ -1014,11 +929,6 @@
     "eng": "Let´s create a new card on which we accumulate the account balances of all cards:",
     "ua": "Однак, як ми бачимо, багато спеціальностей дублюватимуться, що нам абсолютно не потрібно."
   },
-  "s8.p3": {
-    "ru": "◘◘**^^Результат^^**◘◘",
-    "eng": "◘◘**^^Result^^**◘◘",
-    "ua": "Потрібно видалити елементи масиву **⟦f33⟧**, що дублюються."
-  },
   "s8.p4": {
     "ru": "Для чистоты результата дополнительно обнулим остатки на счетах других карт:",
     "eng": "For the purity of the result, we will additionally reset the balances on the accounts of other cards:",
@@ -1028,11 +938,6 @@
     "ru": "**Теперь исходный массив карт будет:**",
     "eng": "Now the original map array will be:",
     "ua": "Але ми вирішили піти складнішим шляхом ![ico-25 wink]."
-  },
-  "s8.p6": {
-    "ru": "◘◘**^^Результат^^**◘◘",
-    "eng": "◘◘**^^Result^^**◘◘",
-    "ua": "◘◘**^^Результат^^**◘◘"
   },
   "s9.h1": {
     "ru": "Чистка от дублей",
@@ -1063,11 +968,6 @@
     "ru": "Но мы решили пойти более сложным путем ![ico-25 wink].",
     "eng": "But we decided to take a more difficult path ![ico-25 wink].",
     "ua": "Тепер ми можемо виконати поставлене завдання:"
-  },
-  "s9.p6": {
-    "ru": "◘◘**^^Результат^^**◘◘",
-    "eng": "◘◘**^^Result^^**◘◘",
-    "ua": ""
   },
   "s10.h1": {
     "ru": "Число отрезков в интервале",

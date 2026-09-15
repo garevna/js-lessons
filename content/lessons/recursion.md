@@ -11,7 +11,7 @@
 
 {{s1.p6}}
 
-^^^[{{s1.spoiler1}}]
+^^^[{{common.c200}}]
 
 ![ico-25 cap] ** 1**
 
@@ -78,7 +78,7 @@ function factor (num) {
 {{s1.p12}}
 {{s1.p13}}
 
-## ![ico-25 hw] {{s2.h1}}
+## ![ico-25 hw] {{common.c3}}
 
 {{s2.p1}}
 

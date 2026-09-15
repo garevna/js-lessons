@@ -21,7 +21,7 @@ console.log(message[4])  // R
 
 {{s1.p4}}
 
-{{s1.p5}}
+^^{{common.c21}}^^
 
 ~~~js
 var  message = 'Привет', user = 'студент'
@@ -44,7 +44,7 @@ console.log(message + ', ' + user)
 
 ^^^[indexOf()]
 
-{{s2.p5}}
+^^{{common.c156}}^^
 
 ~~~js
 console.log('My new book'.indexOf('new'))
@@ -52,7 +52,7 @@ console.log('My new book'.indexOf('new'))
 
 {{s2.p6}}
 
-{{s2.p7}}
+^^{{common.c16}}^^
 
 ~~~js
 var mainString = 'Дела идут неплохо'
@@ -67,7 +67,7 @@ console.log(pos)
 ### slice
 
 {{s2.p9}}
-{{s2.p10}}
+{{common.c40}}
 
 {{s2.p11}}
 {{s2.p12}}
@@ -77,7 +77,7 @@ console.log(pos)
 
 ^^^[slice()]
 
-{{s2.p15}}
+^^{{common.c21}}^^
 
 ~~~js
 var name = 'Меня зовут Мария'.slice(11, 16)
@@ -128,8 +128,8 @@ str.slice(5)             // вернет  "зовут Мария" ( до кон�
 
 ### substring
 
-{{s2.p24}}
-{{s2.p25}}
+{{common.c171}}
+{{common.c40}}
 {{s2.p26}}
 
 ^^^[substring()]
@@ -148,8 +148,8 @@ str.slice(5)             // вернет  "зовут Мария" ( до кон�
 
 ### substr
 
-{{s2.p28}}
-{{s2.p29}}
+{{common.c171}}
+{{common.c40}}
 {{s2.p30}}
 
 ^^^[substr()]
@@ -364,7 +364,7 @@ for (var city of cities) {
 }
 ~~~
 
-{{s2.p58}}
+^^{{common.c2}}^^
 
 ~~~console
 City: Naples           (0)

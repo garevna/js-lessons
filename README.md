@@ -253,6 +253,46 @@ gets its own markup back. It is a translator's aid, not a layer the build
 knows about: the filled-in text is written into the page's own message file,
 so a page still holds every word it shows.
 
+
+### Phrases the pages share
+
+A page that says `или:` twelve times used to hold twelve keys, each with the
+same two characters in it and each translated on its own. Now the skeleton
+points at the shared table:
+
+```
+◘◘{{common.c17}}◘◘
+```
+
+and `content/common.json` holds the phrase once:
+
+```json
+"c17": { "ru": "или:", "eng": "or:", "ua": "або:" }
+```
+
+702 keys across 122 pages moved out this way. Only the words move: the markup
+around them — emphasis, a border, a trailing number — stays in the skeleton, so
+`Результат`, `**Результат**` and `◘◘^^Результат^^◘◘` share one translation and
+keep their own appearance. A reference is only made when putting the markup
+back reproduces the original byte for byte, which is why rebuilding all 167
+Russian pages after the change produced no diff at all.
+
+```
+npm run common               rebuild the table from the pages
+node tools/i18n-dedupe.js    what would move out of the pages (--write to do it)
+```
+
+Ids are assigned once and never reused, because a skeleton points at them. A
+phrase that stops repeating keeps its entry rather than leaving a page pointing
+at nothing.
+
+Long text stays in its page. A paragraph that happens to appear twice is still
+that page's own writing, and two of the lessons are near-duplicates of each
+other — without a limit, 76 of one page's 95 keys would have moved into a table
+of "common phrases". Only phrases of 60 characters or less become references.
+The table still holds the long ones, which is what lets the exporter fill in a
+repeat without asking a translator twice.
+
 ### Translating a page
 
 Five steps. Exporting does **not** translate anything — it only writes the text

@@ -17,7 +17,7 @@ _______________________________________
 
 _______________________________________________________________
 
-### ![ico-20 icon] {{s2.h1}}
+### ![ico-20 icon] {{common.c272}}
 
 {{s2.p1}}
 
@@ -123,7 +123,7 @@ const sample = new Sample()
 __________________________________________________________________________
 
 
-## ![ico-25 hw] {{s6.h1}}
+## ![ico-25 hw] {{common.c3}} 2
 
 {{s6.p1}}
 
@@ -162,7 +162,7 @@ _______________________________________________________
 
 {{s6.p5}}
 
-{{s6.p6}}
+{{common.c186}}
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -174,7 +174,7 @@ document.body.onclick = async () => {
 
 {{s6.p7}}
 
-{{s6.p8}}
+{{common.c187}}
 
 ^^Next demo will show result only once^^
 
@@ -194,7 +194,7 @@ import(`${scriptFile}12.js`)
   .then(() => setTimeout(() => import(`${scriptFile}22.js`), 10000))
 ~~~
 
-{{s6.p10}}
+{{common.c188}}
 
 ◘◘![ico-20 cap] **2(1)**◘◘
 
@@ -254,7 +254,7 @@ mod.textContent = `
 `
 ~~~
 
-{{s6.p15}}
+{{common.c189}}
 
 ◘◘![ico-20 cap] ** 3** (js/index.js)◘◘
 
@@ -308,7 +308,7 @@ import { showMessage } from 'https://example.com/js/testESModules.js'
 import { showMessage } from './js/testESModules.js'
 ~~~
 
-{{s6.p18}}
+{{common.c190}}
 
 
 [:::Live demo:::](https://garevna.github.io/js-samples/#25)

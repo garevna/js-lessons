@@ -9,11 +9,6 @@
     "eng": "☼☼☼ In JS, functions rule, not classes ☼☼☼.",
     "ua": "☼☼☼ В JS рулять функції, а не класи ☼☼☼."
   },
-  "s1.h1": {
-    "ru": "Полиморфизм",
-    "eng": "Polymorphism",
-    "ua": "Поліморфізм"
-  },
   "s1.p1": {
     "ru": "Если вы хотите почувствовать настоящий **полиморфизм**, то вам нужен JS.",
     "eng": "If you want to experience true **polymorphism**, you need JS.",
