@@ -310,12 +310,12 @@ _____________________
   }))
 ~~~
 
-Go to [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )
+Go to [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)
 "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"
 
 In the new tab console, run the code:
 You should get the result:
-Go to [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018 )
+Go to [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)
 Now in the new tab console, declare the function:
 
 {{{Array-iteration-methods-2.js}}}
@@ -1611,7 +1611,7 @@ _____________________________________________
 
 ### ![ico-25 cap] getComputedStyle
 
-Перейдите по [**_ссылке_**](https://en.wikipedia.org/wiki/Idempotence ) и в консоли страницы выполните код:
+Перейдите по [**_ссылке_**](https://en.wikipedia.org/wiki/Idempotence) и в консоли страницы выполните код:
 
 ~~~js
 Array.from(document.getElementsByClassName('interlanguage-link'))

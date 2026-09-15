@@ -131,7 +131,7 @@ __________________________________________________
 
 ## ![ico-30 icon] ECMAScript Specification
 
-The current [%%%language specification%%%](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html ) defines seven data types:
+The current [%%%language specification%%%](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html) defines seven data types:
 
 <span class="tab-2" />• **^^Undefined Type^^**
 <span class="tab-2" />• **^^Null Type^^**

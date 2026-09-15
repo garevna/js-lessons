@@ -131,7 +131,7 @@ __________________________________________________
 
 ## ![ico-30 icon] Специфікація ECMAScript
 
-Сучасна [%%%специфікація мови%%%](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html ) визначає сім типів даних:
+Сучасна [%%%специфікація мови%%%](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html) визначає сім типів даних:
 
 <span class="tab-2" />• **^^Undefined Type^^**
 <span class="tab-2" />• **^^Null Type^^**

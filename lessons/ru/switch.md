@@ -31,6 +31,6 @@ switch (season) {
 
 ______________
 
-[![ico-25 cap] Пример в песочнице](https://jsfiddle.net/garevna/g4roemnL/27/ )
+[![ico-25 cap] Пример в песочнице](https://jsfiddle.net/garevna/g4roemnL/27/)
 [![ico-30 hw] **Quiz**](quiz/switch)
-[![ico-20 link] w3schools](https://www.w3schools.com/js/js_switch.asp )
+[![ico-20 link] w3schools](https://www.w3schools.com/js/js_switch.asp)

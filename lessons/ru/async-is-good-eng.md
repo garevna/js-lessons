@@ -376,4 +376,4 @@ getLogin().then(resolve, reject)
 {{{async-is-good-5.js}}}
 
 _______________________
-[![ico-30 hw] Quiz](quiz/async )
+[![ico-30 hw] Quiz](quiz/async)

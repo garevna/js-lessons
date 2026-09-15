@@ -11,9 +11,9 @@ _______________________________________________________
 [![ico-20 link] features](https://www.w3schools.com/js/js_es6.asp)
 
 [![ico-20 link] Template literals](page/literals)
-[![ico-20 link] Вычисляемые имена свойств](page/calculated-prop-names)
+[![ico-20 link] Вычисляемые имена свойств](page/computed-prop-names)
 [![ico-20 link] Default Parameters](page/default-param-values)
-[![ico-20 link] Краткий синтаксис объявления методов](page/short-form-of-method-declaration)
+[![ico-20 link] Краткий синтаксис объявления методов](page/short-method-syntax)
 [![ico-20 link] String methods **includes**, **startsWith**, **endsWith**](page/String-methods)
 [![ico-20 link] Symbol](page/Symbol)
 ![ico-20 pin] Map constructor
@@ -57,4 +57,4 @@ _______________________________________________________
 
 [![ico-20 link] Dynamic import](page/dynamic-import)
 [![ico-20 link] BigInt](page/BigInt)
-[![ico-20 link] Symbol description](page/Syblol)
+[![ico-20 link] Symbol description](page/Symbol)
