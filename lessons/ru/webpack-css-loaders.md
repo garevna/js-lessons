@@ -200,7 +200,7 @@ ________________________________________________________________
 
 ____________________________________________________________________
 
-[%%%**Regular Expressions**%%%](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_Expressions)
+[%%%**Regular Expressions**%%%](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 
 ________________________________________________________________
 

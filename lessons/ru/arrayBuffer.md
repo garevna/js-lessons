@@ -17,7 +17,7 @@ _________________________________
 
 ## ![ico-25 icon] TypedArray
 
-[**MDN**](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Typed_arrays/)
+[**MDN**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays/)
 
 Типизированные массивы имеют фиксированную длину и используются для хранения данных в двоичном формате ("сырых" данных).
 Доступ к данным в типизированных массивах возможен только через **представления**, прямого доступа нет.

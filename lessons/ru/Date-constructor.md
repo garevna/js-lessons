@@ -66,7 +66,7 @@ newData instanceof Date    // true
 | ![ico-20 green-ok] **getSeconds()** | ^^секунды^^ |
 
 [![ico-20 link] W3School](https://www.w3schools.com/js/js_date_methods.asp)
-[![ico-20 link] MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date)
+[![ico-20 link] MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
 ______________________________________________
 

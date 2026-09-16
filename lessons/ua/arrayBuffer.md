@@ -17,7 +17,7 @@ _________________________________
 
 ## ![ico-25 icon] TypedArray
 
-[**MDN**](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Typed_arrays/)
+[**MDN**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays/)
 
 Типізовані масиви мають фіксовану довжину і використовуються для зберігання даних у двійковому форматі (необроблені дані).
 Доступ до даних в типізованих масивах можливий тільки через **представлення**, прямого доступу немає.

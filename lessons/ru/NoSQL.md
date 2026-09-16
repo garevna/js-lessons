@@ -136,7 +136,7 @@ ________________________________________
 [%%%^^Нормальная форма Бойса — Кодда^^%%%](https://en.wikipedia.org/wiki/Boyce%E2%80%93Codd_normal_form)
 [%%%^^Четвёртая нормальная форма^^%%%](https://en.wikipedia.org/wiki/Fourth_normal_form)
 [%%%^^Пятая нормальная форма^^%%%](https://en.wikipedia.org/wiki/Fifth_normal_form)
-[%%%^^Шестая нормальная форма^^%%%](https://en.wikipedia.org/wiki/Six_normal_form)
+[%%%^^Шестая нормальная форма^^%%%](https://en.wikipedia.org/wiki/Sixth_normal_form)
 
 @@@@
 

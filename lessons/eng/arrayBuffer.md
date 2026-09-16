@@ -17,7 +17,7 @@ _________________________________
 
 ## ![ico-25 icon] TypedArray
 
-[**MDN**](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Typed_arrays/)
+[**MDN**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays/)
 
 Typed arrays have a fixed length and are used to store data in binary format (raw data).
 Data in typed arrays can only be accessed through **views**, there is no direct access.
