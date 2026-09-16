@@ -380,7 +380,6 @@ fileSelector.onchange = function (event) {
 
 **Посмотрим, что ответил сервер**
 
-![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FformData-1.png)
 
 
 Как мы видим, файл изображения был передан на сервер как строка закодированных двичных данных
