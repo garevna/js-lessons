@@ -1,6 +1,6 @@
 name = "js-lessons-sandbox"
 main = "src/index.js"
-compatibility_date = "2025-09-01"
+compatibility_date = "2026-09-01"
 
 # The Worker answers correctly without this: writes fall back to memory, which
 # is per-isolate and short-lived, so a student can POST and then not find it.

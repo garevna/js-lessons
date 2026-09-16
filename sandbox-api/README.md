@@ -21,7 +21,7 @@ Five servers became one Worker, split by prefix:
 ## Deploying it
 
 ```
-cd sandbox-api
+cd z:/js-lessons-gh-pages/sandbox-api
 npm install
 npx wrangler login
 npm run deploy
