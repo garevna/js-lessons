@@ -1084,7 +1084,7 @@ ________________________________
 ◘◘![ico-25 cap] **17**◘◘
 
 ~~~js
-const origin = 'https://garevna-json-server.glitch.me'
+const origin = 'https://js-lessons-sandbox.garevna.workers.dev/json-server'
 
 const users = ['Stephan', 'Andry']
   .reduce(async (result, item) => {
@@ -1119,7 +1119,7 @@ fetch(`${origin}/users?name=Stephan&name=Andry`)
 {{common.c9}}
 
 ~~~js
-const origin = 'https://garevna-json-server.glitch.me'
+const origin = 'https://js-lessons-sandbox.garevna.workers.dev/json-server'
 
 const getEndpoint = userList => userList
   .reduce((result, item, index) => result += `${index > 0 ? '&' : ''}name=${item}`, '')

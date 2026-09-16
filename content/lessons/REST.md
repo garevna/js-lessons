@@ -144,10 +144,10 @@ ___________________________________
 
 {{s3.p1}}
 
-••https://garevna-rest-api.glitch.me/users/all••
+••https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all••
 
 ~~~js
-fetch('https://garevna-rest-api.glitch.me/users/all')
+fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')
   .then(response => response.json())
   .then(response => console.log(response))
 ~~~
@@ -166,10 +166,10 @@ _______________________
 
 {{s3.p3}}
 
-••https://garevna-rest-api.glitch.me/user/begemot••
+••https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/begemot••
 
 ~~~js
-fetch('https://garevna-rest-api.glitch.me/user/begemot')
+fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/begemot')
   .then(response => response.json())
   .then(response => console.log(response))
 ~~~
@@ -190,10 +190,10 @@ _______________________________
 
 {{s3.p6}}
 
-••https://garevna-rest-api.glitch.me/users/?name=Stephan••
+••https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/?name=Stephan••
 
 ~~~js
-fetch('https://garevna-rest-api.glitch.me/users/?name=Stephan')
+fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/?name=Stephan')
   .then(response => response.json())
   .then(response => console.log(response))
 ~~~
@@ -209,12 +209,12 @@ fetch('https://garevna-rest-api.glitch.me/users/?name=Stephan')
 
 {{s3.p8}}
 
-••https://garevna-rest-api.glitch.me/users?age=&#94;18&#94;••
+••https://js-lessons-sandbox.garevna.workers.dev/rest-api/users?age=&#94;18&#94;••
 
 {{s3.p9}}
 
 ~~~js
-fetch('https://garevna-rest-api.glitch.me/users?age=^18^')
+fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users?age=^18^')
   .then(response => response.json())
   .then(response => console.log(response))
 ~~~
@@ -232,12 +232,12 @@ ___________________________________
 
 ### ![ico-20 icon] POST | PUT | PATCH | DELETE
 
-••https://garevna-rest-api.glitch.me/user/_id_••
+••https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/_id_••
 
 ◘◘**POST**◘◘
 
 ~~~js
-fetch('https://garevna-rest-api.glitch.me/user/987145', {
+fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/987145', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
@@ -269,7 +269,7 @@ ___________________________________
 ◘◘**PUT**◘◘
 
 ~~~js
-fetch('https://garevna-rest-api.glitch.me/user/987145', {
+fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/987145', {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json'
@@ -295,7 +295,7 @@ ___________________________________
 ◘◘**PATCH**◘◘
 
 ~~~js
-fetch('https://garevna-rest-api.glitch.me/user/987145', {
+fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/987145', {
   method: 'PATCH',
   headers: {
     'Content-Type': 'application/json'
@@ -319,7 +319,7 @@ ___________________________________
 ◘◘**DELETE**◘◘
 
 ~~~js
-fetch('https://json-server-with-router.glitch.me/user/garevna', {
+fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/garevna', {
   method: 'DELETE',
   headers: {
     'Content-Type': 'application/json'

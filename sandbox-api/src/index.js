@@ -19,7 +19,7 @@
  */
 
 import { users, userList, lessons, forms } from './data.js'
-import { Store } from './store.js'
+import { Store, files } from './store.js'
 
 const CORS = {
   // The lessons run from garevna.github.io and from whatever sandbox a student
@@ -65,7 +65,7 @@ const matches = (record, params) => {
 /* ------------------------------------------------------------- rest-api */
 
 async function restApi (request, path, url, env) {
-  const store = new Store(env.SANDBOX, 'user')
+  const store = new Store(env.DB, 'user')
 
   // GET /users/all — the whole table, keyed by id
   if (path === '/users/all' && request.method === 'GET') {
@@ -155,25 +155,12 @@ async function jsonServer (request, path, url, env) {
 
 /* ----------------------------------------------------------- form-data */
 
-const FILES = 'avatar'
-
-async function readAvatar (env, login) {
-  if (!env.SANDBOX) return null
-  const data = await env.SANDBOX.get(`${FILES}:${login}`, 'arrayBuffer')
-  if (!data) return null
-  const meta = await env.SANDBOX.get(`${FILES}meta:${login}`, 'json')
-  return { data, name: (meta && meta.name) || 'avatar', type: (meta && meta.type) || 'application/octet-stream' }
-}
-
-async function writeAvatar (env, login, file) {
-  if (!env.SANDBOX) return
-  const day = { expirationTtl: 60 * 60 * 24 }
-  await env.SANDBOX.put(`${FILES}:${login}`, await file.arrayBuffer(), day)
-  await env.SANDBOX.put(`${FILES}meta:${login}`, JSON.stringify({ name: file.name, type: file.type }), day)
-}
-
-async function formData (request, path, env) {
-  const store = new Store(env.SANDBOX, 'form')
+// The fourth argument, not the third. Declared with three, this took url as
+// its env, env.DB came back undefined, and the Worker quietly fell through to
+// the in-memory store — so a form POST answered 200 and was never written.
+// Nothing threw and nothing logged; the handler simply had no database.
+async function formData (request, path, url, env) {
+  const store = new Store(env.DB, 'form')
 
   if ((path === '/forms/all' || path === '/forms' || path === '/forms/') && request.method === 'GET') {
     const all = await store.all(forms)
@@ -181,10 +168,10 @@ async function formData (request, path, env) {
     // listing describes the file rather than carrying it.
     const described = {}
     for (const [login, record] of Object.entries(all)) {
-      const file = await readAvatar(env, login)
+      const file = await files.read(env.DB, login)
       described[login] = {
         ...record,
-        avatar: file ? { name: file.name, type: file.type, size: file.data.byteLength } : {}
+        avatar: file ? { name: file.name, type: file.type, size: (file.data.byteLength || file.data.length || 0) } : {}
       }
     }
     return json(described)
@@ -204,8 +191,9 @@ async function formData (request, path, env) {
     form.set('name', String(record.name ?? ''))
     form.set('age', String(record.age ?? ''))
 
-    const file = await readAvatar(env, login)
-    if (file) form.set('avatar', new File([file.data], file.name, { type: file.type }))
+    const file = await files.read(env.DB, login)
+    // D1 hands a BLOB back as an array of bytes, not as a buffer.
+    if (file) form.set('avatar', new File([new Uint8Array(file.data)], file.name, { type: file.type }))
 
     const response = new Response(form)
     for (const [k, v] of Object.entries(CORS)) response.headers.set(k, v)
@@ -223,7 +211,7 @@ async function formData (request, path, env) {
 
     for (const [key, field] of sent) {
       if (typeof field === 'string') { record[key] = field; continue }
-      if (field.size) await writeAvatar(env, login, field)
+      if (field.size) await files.write(env.DB, login, field)
     }
 
     await store.put(login, record)

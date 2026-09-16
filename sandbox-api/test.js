@@ -9,8 +9,27 @@
 
 import worker from './src/index.js'
 
-const base = 'https://sandbox.example'
+// With no argument the Worker runs here, in this process, which is fast and
+// needs nothing deployed. Given a URL it asks the real one instead:
+//
+//   npm test
+//   npm test -- https://js-lessons-sandbox.you.workers.dev
+//
+// The second form is the one that matters after a deploy — it is the only way
+// to find out that the thing students will actually reach behaves like the
+// thing that was tested.
+const live = process.argv[2]
+const base = live ? live.replace(/\/+$/, '') : 'https://sandbox.example'
 const env = {}   // no KV: writes land in memory, which is what a fresh deploy does
+
+if (live) console.log(`\n  asking ${base}`)
+
+// Against a live deployment the store is shared and outlives the run, so the
+// ids the writing checks use have to belong to this run. Fixed ones passed the
+// first time and failed for ever after with "allready exist" — the backend
+// being right and the test being wrong.
+const mine = live ? String(Date.now()).slice(-6) : '987145'
+const who = live ? `bandit${mine}` : 'bandit'
 
 let passed = 0
 const failures = []
@@ -23,7 +42,9 @@ const check = (what, got, want) => {
 }
 
 const call = async (path, init) => {
-  const response = await worker.fetch(new Request(base + path, init), env)
+  const response = live
+    ? await fetch(base + path, init)
+    : await worker.fetch(new Request(base + path, init), env)
   const type = response.headers.get('Content-Type') || ''
   const body = type.includes('json') ? await response.json()
     : type.includes('multipart') ? await response.formData()
@@ -51,21 +72,21 @@ check('GET /users?age=^18^', (await call('/rest-api/users?age=^18^')).body,
 const written = { name: 'Mary', age: 19, speciality: 'developer' }
 const post = (body) => ({ method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
 
-check('POST /user/987145', (await call('/rest-api/user/987145', post(written))).body, written)
-check('POST again', (await call('/rest-api/user/987145', post(written))).body,
-  { error: 475, message: '987145 allready exist' })
-check('GET what was posted', (await call('/rest-api/user/987145')).body, written)
+check('POST a new user', (await call(`/rest-api/user/${mine}`, post(written))).body, written)
+check('POST again', (await call(`/rest-api/user/${mine}`, post(written))).body,
+  { error: 475, message: `${mine} allready exist` })
+check('GET what was posted', (await call(`/rest-api/user/${mine}`)).body, written)
 
 const put = { name: 'Helen', age: 20, speciality: 'florist' }
-check('PUT /user/987145', (await call('/rest-api/user/987145',
+check('PUT it', (await call(`/rest-api/user/${mine}`,
   { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(put) })).body, put)
 
-check('PATCH /user/987145', (await call('/rest-api/user/987145',
+check('PATCH it', (await call(`/rest-api/user/${mine}`,
   { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ hobby: 'flowers' }) })).body,
 { name: 'Helen', age: 20, speciality: 'florist', hobby: 'flowers' })
 
-check('DELETE returns 200', (await call('/rest-api/user/987145', { method: 'DELETE' })).status, 200)
-check('deleted is gone', (await call('/rest-api/user/987145')).status, 404)
+check('DELETE returns 200', (await call(`/rest-api/user/${mine}`, { method: 'DELETE' })).status, 200)
+check('deleted is gone', (await call(`/rest-api/user/${mine}`)).status, 404)
 
 /* ---------------------------------------------------------- json-server */
 
@@ -104,14 +125,19 @@ check('GET /usernames/nobody', (await call('/json-server/usernames/nobody')).bod
   const sent = new FormData()
   sent.set('name', 'Bandit')
   sent.set('age', '7')
-  const { status } = await call('/form-data/form/bandit', { method: 'POST', body: sent })
+  const { status } = await call(`/form-data/form/${who}`, { method: 'POST', body: sent })
   check('POST a form returns 200', status, 200)
 
-  const { body } = await call('/form-data/forms/bandit')
-  check('and it can be read back', body.get('name'), 'Bandit')
+  const back = await call(`/form-data/forms/${who}`)
+  check('and it can be read back', back.type.includes('multipart') ? back.body.get('name') : JSON.stringify(back.body), 'Bandit')
 }
 
 /* --------------------------------------------------------------- done */
+
+if (live) {
+  // Leave the sandbox as it was found: a class writes into this one too.
+  await call(`/rest-api/user/${mine}`, { method: 'DELETE' })
+}
 
 console.log(`\n  ${passed} passed, ${failures.length} failed\n`)
 for (const f of failures) console.log(`  ${f}\n`)

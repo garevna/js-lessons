@@ -223,7 +223,7 @@ __________________________________
 
 ~~~js
 async function getLogin (resolve, reject) {
-  const users = await (await fetch('https://garevna-rest-api.glitch.me/users/all')).json()
+  const users = await (await fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')).json()
 
   const logins = Object.keys(users)
 
@@ -255,7 +255,7 @@ getLogin(res => console.log(res), err => console.error(err))
 ^^To see what logins are in the database, run in the console:^^
 
 ~~~js
-fetch('https://garevna-rest-api.glitch.me/users/all')
+fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')
   .then(response => response.json())
   .then(response => console.log(response))
 ~~~
@@ -303,7 +303,7 @@ Now let's create an asynchronous function **getLogin**, which will send a reques
 
 ~~~js
 async function getLogin () {
-  const users = await (await fetch('https://garevna-rest-api.glitch.me/users/all')).json()
+  const users = await (await fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')).json()
 
   return await getInput(users)
 }
@@ -361,7 +361,7 @@ function getInput ( users ) {
 }
 
 async function getLogin () {
-  const users = await (await fetch('https://garevna-rest-api.glitch.me/users/all')).json()
+  const users = await (await fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')).json()
 
   return await getInput(users)
 }

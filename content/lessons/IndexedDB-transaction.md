@@ -96,7 +96,7 @@ const createUsersDB = users => new Promise((resolve, reject) => {
 })
 
 async function callUsers () {
-  const users = await (await fetch('https://garevna-json-server.glitch.me/users')).json()
+  const users = await (await fetch('https://js-lessons-sandbox.garevna.workers.dev/json-server/users')).json()
   return await createUsersDB(users).catch(error => console.warn(error))
 }
 
