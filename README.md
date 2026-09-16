@@ -211,6 +211,36 @@ a Markdown link title, `[text](url "title")`, which this markup has no notion
 of, so the title becomes part of the address.
 
 
+
+### Links in another language
+
+A lesson linking to `en.wikipedia.org/wiki/Idempotence` should send a Russian
+reader to `ru.wikipedia.org/wiki/Идемпотентность`. The address cannot simply
+have its language swapped — Wikipedia titles its articles differently in every
+language, and MDN has a Russian translation of some pages and not others — so
+each candidate is asked rather than guessed:
+
+```
+node tools/i18n-links.js           what it finds
+node tools/i18n-links.js --write   write src/configs/localizedLinks.js
+```
+
+Wikipedia answers through its langlinks API, which gives the real title. MDN
+answers 200 for `/ru/…` when the page is translated and redirects to `/en-US/…`
+when it is not; there is no Ukrainian MDN at all, so Ukrainian readers get the
+English page.
+
+Write the **English** address in the lesson. The renderer looks it up when it
+draws the link, so one address serves all three languages, and it covers both
+the addresses written in lessons and the ones behind `external/`. A link
+written straight to `/ru/…` would stay Russian on the English page.
+
+Re-run the tool after adding links. It only ever writes what it could prove,
+and it distinguishes three answers that look alike from a distance: no
+translation, the site did not reply, and *there is no such article* — the last
+one is a broken link, and it found one.
+
+
 ## Translation
 
 The lessons live in three languages. Russian is the source; English and

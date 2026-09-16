@@ -7,7 +7,7 @@
 ^^Для организации работы кода с потоками данных используется Streams API^^
 ^^Streams API предоставляет коду ряд интерфейсов ( сервисов ), с помощью которых можно создавать потоки и управлять процессом потоковой передачи данных^^
 
-[![ico-20 link] MDN](https://developer.mozilla.org/ru/docs/Web/API/Streams_API)
+[![ico-20 link] MDN](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API)
 
 ____________________________________________________
 

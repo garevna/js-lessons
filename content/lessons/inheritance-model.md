@@ -715,5 +715,5 @@ _____________________________________________________
 
 __________________________________________________
 
-[![ico-20 link] ^^Global_Objects^^](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects)
-[![ico-20 link] ^^Object-Oriented JavaScript^^](https://developer.mozilla.org/ru/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)
+[![ico-20 link] ^^Global_Objects^^](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
+[![ico-20 link] ^^Object-Oriented JavaScript^^](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)

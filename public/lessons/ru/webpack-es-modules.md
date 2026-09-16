@@ -1,7 +1,7 @@
 # ![ico-30 study] ES6 модули
 
-[%%%**export**%%%](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/export)
-[%%%**import**%%%](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/import)
+[%%%**export**%%%](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
+[%%%**import**%%%](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 
 _______________________________________
 

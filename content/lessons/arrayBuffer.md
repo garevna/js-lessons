@@ -17,7 +17,7 @@ _________________________________
 
 ## ![ico-25 icon] TypedArray
 
-[**MDN**](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Typed_arrays/)
+[**MDN**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays/)
 
 {{s0.p5}}
 {{s0.p6}}

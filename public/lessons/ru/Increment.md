@@ -55,4 +55,4 @@ _______________________________
 
 ______________________________________________________________
 
-[![ico-20 link] ^^MDN^^](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators)
+[![ico-20 link] ^^MDN^^](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators)

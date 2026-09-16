@@ -7,7 +7,7 @@
 {{s0.p4}}
 {{s0.p5}}
 
-[![ico-20 link] MDN](https://developer.mozilla.org/ru/docs/Web/API/Streams_API)
+[![ico-20 link] MDN](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API)
 
 ____________________________________________________
 
