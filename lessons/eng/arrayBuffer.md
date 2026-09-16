@@ -111,7 +111,7 @@ new Int32Array(sample)
 
 Calling the ~Int8Array~, ~Uint8Array~, ~Int16Array~, ~Uint16Array~, ~Int32Array~, ~Uint32Array~ will result in an _iterable object_ with numeric data.
 
-To get an array, you can use the **~Array.from()~** method:
+To get an array, you can use the **~ArrayFrom()~** method:
 
 ~~~js
 var buffer  = new ArrayBuffer(16)

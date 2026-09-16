@@ -376,7 +376,7 @@ user.showName()  // Robert
 ~~~
 ____________________________________________________
 
-Output
+**Output**:
 
 If an instance of the object is created using the constructor,
 using arrow functions in the object’s public methods ensures

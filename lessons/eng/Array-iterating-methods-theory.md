@@ -150,20 +150,20 @@ _____________________________________________
 
 ## ![ico-25 icon] Transferring references
 
-At this point, the functional purity of iterating methods, unfortunately, ends.<br><br>A function can mutate an object by reference.<br><br>In this case, as a rule, **side effects** occur.
-There are two ways to pass references in array iterating methods.
-The first one is passing a reference to the **call context** of the **function-argument** by the second argument of the method.
+Here, unfortunately, the functional purity of iterating methods ends.
+**A reference is a "master key"**, and through the reference, a function can mutate an object.
+As a rule, this leads to **side effects**.
 
-The second is passing the reference to the source array to the **function-argument** itself when calling it.
-Первый - передача ссылки на контекста вызова функции-аргумента вторым аргументом метода.
-Второй - передача ссылки на исходный массив самой функции-аргументу при вызове.
+There are two ways to pass references in array iterating methods.
+The first involves passing a reference to the context of the function call as the second argument to the method.
+The second involves passing a reference to the original array to the function itself when it is called.
 
 ### ![ico-20 icon] The second argument of the method
 
 Each method can take two arguments: a function and a reference to it's call context.
 
-In fact, the second argument of the method saves us from the need to bind the call context to the function-argument.
-◘◘ ![ico-25 cap] ** 4** ◘◘
+Besides the mandatory **function argument**, we can pass a second (optional) argument to the method - a reference to the call context of this function.
+In essence, the second argument frees us from the need to explicitly bind the call context of the function that is passed to the method as an argument.
 
 ◘◘ ![ico-25 cap] ** 4** ◘◘
 ~~~js
@@ -222,19 +222,19 @@ However, there is a **side effect** - the array **~alter~** is now empty:
 console.log(alter) // []
 ~~~
 
-However, _arrow functions_ make the code more concise.
-Однако стрелочные функции делают код более лаконичным.
+Another inconvenience is that we cannot pass arrow functions to the method, since their call context cannot be changed.
+However, arrow functions make the code more concise.
 
 _____________________________________
 
-### ![ico-20 icon] Reference to the source array
+### ![ico-20 icon] Passing a reference to the original array to the function-argument
 
 **function-argument** has three optional formal parameters.
 The first is the **current element** of the array.
 The second is the **index** of the current array element.
 The third is a reference to the original array.
 
-Passing this “master key” to the **function-argument** destroys the functional purity of the method and creates opportunities for **side effects**.
+Passing this ‘master key’ to a function argument severely compromises the method’s functional purity and opens the door to a host of **side effects**
 
 The following example shows how this works.
 
@@ -264,25 +264,25 @@ Result:
 ► (4) [-8, -4, 10, 13]
 ~~~
 
-Result:
+^^The **sample** function stores a reference to the original **numbers** array in the variable **_arr_**.^^
 
 ___________________________________________________
 
 ## ![ico-25 icon] Side effects
 
-^^The function **sample** receives a reference to the source array **numbers** in the variable **arr**.^^
-![ico-20 warn] Pure functions, as iterative methods are supposed to be, do not generate **side effects**, i.e. no _external variables are mutated_.
+![ico-20 warn] Pure functions—which is what iterative methods are supposed to be—do not produce any side effects, i.e. they do not modify any external variables.
 Array iterating methods are **higher-order functions** that iterate over a source array, passing one array element at a time as an argument to the function.
+Thus, the function-argument does not have a reference to the original array itself and cannot mutate it.
 _______________________
 ![ico-20 warn] Except the cases when the elements of the source array have a reference data type, i.e. The function-argument receives not a value but a reference to an array element.
 ______________________
-The original array, as a rule, does not change.
-That is, they were originally supposed to be **pure functions** that do not generate external effects, which distinguishes them from ordinary array methods such as ~push()~, ~concat()~, etc.
-But we have already shown earlier that this functional purity is violated by passing references (the reference to the call context of function-argument or the reference to the source array).
+A new array is always returned (or not an array, as we will see later, or nothing at all).
+The original array is usually not changed.
+That is, initially they were supposed to be pure functions that do not produce any side effects, which distinguishes them from ordinary array methods such as ~push()~, ~concat()~, etc.
 
-Similarly, if we are dealing with **deep data structures**, then it is not values ​​that are passed, but references, which creates the possibility of **side effects**.
+But we have already shown earlier that this functional purity is violated by passing references (to the method - to the context of the function-argument call and to the original array - to the function-argument).
 
-◘◘![ico-20 cap] ** 7**◘◘
+Similarly, if we are dealing with **deep data structures**, then references are passed instead of values, which creates the possibility of side effects.
 
 
 ◘◘![ico-20 cap] ** 7**◘◘
@@ -307,7 +307,7 @@ In this example, we are iterating over an array of objects, i.e. we are dealing 
 At each iteration, the argument function (~user => user.age++~) of the **~iterate~** method receives a reference to the object.
 This gives to it the ability to mutate the original array, since
 
-☼☼☼ ссылка - это отмычка ☼☼☼
+☼☼☼ reference is a lock pick ☼☼☼
 
 As a result of executing the code, the **users** array will look like this:
 
@@ -376,13 +376,13 @@ _____________________________________________
 
 If a method every time being called returns the same result with the same argument values, then it is **_idempotent_**.
 
-In object-oriented languages, method idempotency is practically unattainable if the function arguments have a **reference data type**.
+^^That is, when the method is called again with the same array and function, the result will always be the same.^^
 
-Because arrays have a **reference data type**, array iterating methods operate with a reference.
-The reference remains the same, but from one method call to the next, the contents of the array may have changed, which will affect the result.
+In object-oriented languages, the idempotency of methods is almost impossible to achieve if the function arguments are of reference data type.
+Since arrays are of reference data type, iterating methods work with a reference, not with a collection of data.
+The reference remains the same, but from one method call to another, the contents of the array may have changed, which will be reflected in the result.
+
 Let's try to create an idempotent method:
-
-◘◘![ico-20 cap] ** 9**◘◘
 
 ◘◘![ico-20 cap] ** 9**◘◘
 
@@ -421,9 +421,9 @@ Result:
 ► (7) [5, 4, 3, 7, 9, 8, 2]
 ~~~
 
-For the purity of the experiment, you can return the JSON string:
+Note that each time the method will return a new reference, since with each call the method creates a new array, but the contents of this array will be the same.
 
-However, in this example we used the idempotent function-argument **~Math.sqrt~**.
+For the sake of the experiment, you can return the JSON string of the ~initialState~ property.
 
 ~~~js
 Array.prototype.idempotence = function (func) {
@@ -434,17 +434,17 @@ Array.prototype.idempotence = function (func) {
 }
 ~~~
 
-If we pass a function-argument that is not idempotent to the **~idempotence~** method, the method will not be idempotent because it will return a different result when called with the same set of arguments:
+However, in this example, we used the idempotent method **~Math.sqrt~**.
 
-In this example, you can see that if the function-argument that we pass to the **~idempotence~** method is not _idempotent_, then the result of the method will vary, i.e. the idempotency of a method directly depends on the idempotency of the **function-argument**.
+If we pass a function to the **~idempotence~** method that is not idempotent, then the method will not be idempotent, since when called with the same set of arguments it will return different results:
 
 ~~~js
 numbers.idempotence(item => item + Math.floor(Math.random() * 100))
 ~~~
 
-Let's try to fix this situation:
+In this example, it can be seen that if the function we pass to the **~idempotence~** method is not _idempotent_, then the result of the method will vary, i.e. the idempotency of the method directly depends on the idempotency of the function-argument.
 
-◘◘![ico-20 cap] **10**◘◘
+Let's try to fix this situation:
 
 ◘◘![ico-20 cap] **10**◘◘
 ~~~js
@@ -598,7 +598,7 @@ document.body
 
 _____________________________
 
-◘◘![ico-20 cap] **12**◘◘
+Passing the second (optional) parameter (the index of the current array element) to the function-argument.
 
 ◘◘![ico-20 cap] **12**◘◘
 
@@ -654,7 +654,7 @@ arr.iterate(test)
 __________________________________________
 
 
-◘◘![ico-20 cap] **13**◘◘
+Using the second and third optional parameters of the function-argument:
 
 ◘◘![ico-20 cap] **14**◘◘
 
@@ -690,7 +690,7 @@ Result in the console:
 ________________________________________________________________
 
 
-◘◘![ico-20 cap] **15**◘◘
+[◄◄◄Array Iterating Methods◄◄◄](page/Array-iterating-methods.md)
 
 ________________________________________________________________
 
