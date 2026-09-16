@@ -18,7 +18,10 @@ export function parsePageContent (pageContent) {
 
   delete this.fragments.pageContent
 
-  let insertionPoints = this.pageContent.match(/!!!.[^!!!]+!!!/g)
+  // Precisely a number between the markers. The old expression was
+  // /!!!.[^!!!]+!!!/ — a dot then one or more, so it needed two digits and
+  // would not have matched !!!0!!! at all.
+  let insertionPoints = this.pageContent.match(/!!!\d+!!!/g)
 
   insertionPoints &&
     insertionPoints

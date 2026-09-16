@@ -2,6 +2,16 @@ const generator = function * () {
   const keys = Object.keys(this)
   let fragments, key
 
+  // A block is replaced by a marker and put back later, and the marker used to
+  // carry the offset the block was found at. Offsets move: replacing a block
+  // with a much shorter marker shifts everything after it, so a later block
+  // could land on a number an earlier one already had. The second overwrote
+  // the first, and the page showed a raw !!!9380!!! where the code sample
+  // should have been — three pages of 297 did that.
+  //
+  // A counter cannot collide.
+  let id = 0
+
   while (keys.length) {
     key = keys.shift()
 
@@ -12,22 +22,21 @@ const generator = function * () {
       if (!fragments) break
 
       if (key === 'Table') {
-        const indexes = fragments.map(fragment => this.pageContent.indexOf(fragment))
         for (const fragment of fragments) {
-          const start = this.pageContent.indexOf(fragment)
-          this.pageContent = this.pageContent.replace(fragment, `\n!!!${start}!!!\n`)
+          const at = id++
+          this.pageContent = this.pageContent.replace(fragment, `\n!!!${at}!!!\n`)
           yield {
-            [start]: {
+            [at]: {
               type: key,
               content: fragment
             }
           }
         }
       } else {
-        const start = fragments.index
-        this.pageContent = this.pageContent.replace(fragments[0], `\n!!!${start}!!!\n`)
+        const at = id++
+        this.pageContent = this.pageContent.replace(fragments[0], `\n!!!${at}!!!\n`)
         yield {
-          [start]: {
+          [at]: {
             type: key,
             content: fragments[0]
           }

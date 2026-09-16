@@ -419,7 +419,7 @@ export const versions = {
 	'ua/web-workers.md': 'fc1f3ee8e0bd',
 	'ua/webpack.md': 'a1a7fc46f3dd',
 	'ua/while.md': '88e312bf728d',
-	'index.js': '5e0e36df064f',
+	'index.js': '7356b3f6b779',
 	'content.worker.js': 'e255e2d18acd',
 	'icons.worker.js': 'b5d2b9c5b3cb',
 	'main-menu.js': '165bc27ad07f',
