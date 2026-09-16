@@ -100,4 +100,4 @@ Call the **circle** function
 
 ____________________________
 
-[![ico-30 hw] **Tests**](https://garevna.github.io/js-quiz/#recursion)
+※※※tests https://garevna.github.io/js-quiz/#recursion※※※

@@ -9,6 +9,17 @@ export function parseLine (line) {
     return this.createExampleHeader(number.trim())
   }
 
+  // ※※※tests quiz/var※※※ — the button that sends a reader to the tests or the
+  // exercises. Only the address is written; the icon and the word for the
+  // current language come from the renderer.
+  if (line.match(/^\s*※{3}/)) {
+    const body = (line.split('※※※').find(str => str.trim()) || '').trim()
+    const space = body.indexOf(' ')
+    return space === -1
+      ? this.createLinkButton(body, '')
+      : this.createLinkButton(body.slice(0, space), body.slice(space + 1).trim())
+  }
+
   if (line.match(/[☼]{3}/)) {
     const text = line.split('☼☼☼').find(str => str.length).trim()
     const elem = document.createElement('funny-slogan')

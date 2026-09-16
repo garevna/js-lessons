@@ -63,6 +63,7 @@ Each of these is recognised before anything else and rendered as a unit.
 |---|---|
 | `# … ###### …` | headings, six levels |
 | `♦♦♦4♦♦♦` | the heading of an example block — see Components |
+| `※※※tests quiz/var※※※` | a link button — see Components |
 | `☼☼☼ text ☼☼☼` | a slogan |
 | `→→→ question \| variant, variant \| answer →→→` | a quiz |
 | `§§§§ header \| templateId §§§§` | a live console demo |
@@ -79,6 +80,7 @@ draws the whole thing. The lesson writes only what changes.
 | Syntax | Component | Draws |
 |---|---|---|
 | `♦♦♦4♦♦♦` | `createExampleHeader` | the heading of an example block: bordered panel, coffee cup, the word for the current language, the number |
+| `※※※tests quiz/var※※※` | `createLinkButton` | a button to the tests or the exercises: briefcase icon, the word for the current language, the address you give it |
 | `☼☼☼ text ☼☼☼` | `funny-slogan` | a slogan |
 | `→→→ question \| variants \| answer →→→` | `test-component` | a quiz |
 | `§§§§ header \| templateId §§§§` | `live-demo-spoiler` | a live console demo |
@@ -95,6 +97,17 @@ sent to DeepL without any context — which is how one course ended up with
 "Example", "An example" and "Sample" on neighbouring pages. The word now lives
 in `src/configs/pageLabels.js` and is chosen when the page renders, so it never
 reaches a translator and never appears in a message file.
+
+`※※※` takes a kind — `tests` or `exercises` — and an address, and the address
+is any target a link accepts: `quiz/var`, `page/hw-01`, an http one. It replaces
+
+```
+[![ico-30 hw] **Тесты**](quiz/var)
+```
+
+which was written on thirty pages. Half of them had the word in bold and half
+did not, which nobody meant as a distinction, and each one was a separate thing
+to translate.
 
 Adding a component of your own is three small pieces:
 

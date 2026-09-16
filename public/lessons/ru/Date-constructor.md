@@ -239,4 +239,4 @@ var days = Math.round(hours / 24)
 
 _________________________________________
 
-[![ico-30 hw] Упражнения](test/DateConstructor)
+※※※exercises test/DateConstructor※※※

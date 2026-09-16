@@ -1,12 +1,12 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] Array methods
 
 ______________________________________________________
 
 ### push
 
-{{s1.p1}}
-{{s1.p2}}
-{{s1.p3}}
+This method adds a new element to the end of the array.
+The argument passed to the method when it is called is the element to be added.
+The method returns the new length of the array.
 
 ^^^[push()]
 
@@ -17,12 +17,12 @@ var array = ['Nail', 'Bicycle', 'Processor', 'Disk']
 var length = array.push('Program')
 ~~~
 
-{{s1.p4}}
+^^After executing this code, the **array** will contain the following elements:^^
 
 ••['Nail', 'Bicycle', 'Processor', 'Disk', 'Program']••
 
 
-{{s1.p5}}
+^^and the value of the variable **~length~** will be 5^^
 
 ^^^
 
@@ -32,9 +32,9 @@ ____________________________________________________________________
 
 ^^^[pop()]
 
-{{s1.p6}}
+This method removes the last element of the array and returns the removed element
 
-{{s1.p7}}
+The method has no parameters (arguments).
 
 ![ico-25 cap] ** 1**
 
@@ -43,34 +43,34 @@ var array = ['Nail', 'Bicycle', 'Processor', 'Disk', 'Program']
 var elem = array.pop()
 ~~~
 
-{{s1.p8}}
+^^After executing this code, the **array** will contain:^^
 
 ••['Nail', 'Bicycle', 'Processor', 'Disk']••
 
-{{s1.p9}}
+^^and the value of the variable  ~elem~  will be  “Program”^^
 ^^^
 
 _________________________________________________________________________
 
 ### shift
 
-{{s1.p10}}
-{{s1.p11}}
+This method removes the first element from the array.
+The return value is the removed element.
 
 ^^^[shift()]
 
 ![ico-25 cap] ** 1**
 
-^^{{common.c15}}^^
+^^For example, as a result of executing the following code:^^
 
 ~~~js
 var arrayOfThings = ['Nail', 'Bicycle', 'Processor', 'Disk', 'Program']
 console.log(arrayOfThings.shift())
 ~~~
 
-{{s1.p13}}
+^^The console will display:  _Nail_^^
 
-{{s1.p14}}
+^^and the array **arrayOfThings** will contain the following values:^^
 
 ••['Bicycle', 'Processor', 'Disk', 'Program']••
 
@@ -80,8 +80,8 @@ ______________________________________________________
 
 ### unshift
 
-{{s1.p15}}
-{{s1.p16}}
+This method adds a new element to the beginning of the array.
+The return value is the new length of the array.
 
 ^^^[unshift()]
 
@@ -92,25 +92,25 @@ var drinks = ['coffee', 'tea', 'juice', 'water', 'milk']
 var len = drinks.unshift('beer')
 ~~~
 
-{{s1.p17}}
+^^As a result, the array **drinks** will contain the following elements:^^
 
 ••['beer', 'coffee', 'tea', 'juice', 'water', 'milk']••
 
-{{s1.p18}}
+^^and the variable ~len~ will take the value 6^^
 ^^^
 
 ___________________________________________________________________
 
 ### splice
 
-{{s1.p19}}
-{{s1.p20}}
-{{s1.p21}}
-{{s1.p22}}
+The first argument (a number) specifies the position (index) where the new elements will be inserted.
+The second argument (a number) specifies how many elements (starting from the insertion position) should be removed from the array.
+The third (fourth, fifth, etc.) arguments are the elements to be inserted into the array.
+The method returns the removed elements of the array (an array).
 
 ^^^[splice()]
 
-{{s1.p23}}
+Using the ~splice()~ method, you can replace elements in the array:
 
 ![ico-25 cap] ** 1**
 
@@ -119,12 +119,12 @@ var myArray = [1, 2, 3, 4, 5]
 console.log(myArray.splice(2, 1, '*'))
 ~~~
 
-{{s1.p24}}
+^^As a result, the **myArray** array will be:^^
 
 ••[1, 2, '*', 4, 5]••
 
-{{s1.p25}}
-{{s1.p26}}
+^^and the following will be printed to the console: ~[3]~^^
+^^(an array of elements that have been replaced with “*”)^^
 
 _____________________________________
 
@@ -135,14 +135,14 @@ var myArray = [1, 2, 3, 4, 5]
 console.log(myArray.splice(2, 2, '*', '#', '$', '%'))
 ~~~
 
-{{s1.p27}}
+^^As a result, the array **myArray** will be:^^
 
 
 ••[1, 2, '*', '#', '$', '%', 5]••
 
 
-{{s1.p28}}
-{{s1.p29}}
+^^and the following will be printed to the console: ~[3, 4]~^^
+^^(elements that have been replaced with “*”, “#”, “$”, “%”)^^
 
 ______________________________________
 
@@ -153,14 +153,14 @@ var myArray = [1, 2, 3, 4, 5]
 console.log(myArray.splice(2, 2, [7, 8, 9]))
 ~~~
 
-{{s1.p30}}
+^^As a result, the array **myArray** will consist of four elements:^^
 
 ••[1, 2, Array(3), 5]••
 
 
-{{s1.p31}}
+^^and the following will be printed to the console: ~[3, 4]~^^
 
-{{s1.p32}}
+^^(elements that have been replaced by the array [7, 8, 9])^^
 
 __________________________________________________
 
@@ -171,13 +171,13 @@ var myArray = [1, 2, 3, 4, 5]
 console.log(myArray.splice(2, 0, 'Новый элемент'))
 ~~~
 
-{{s1.p33}}
+^^As a result, the array **myArray** will consist of four elements:^^
 
-{{s1.p34}}
+••[1, 2, 'Новый элемент', 3, 4, 5]••
 
-{{s1.p35}}
+^^and an empty array will be printed to the console: ~[]~^^
 
-{{s1.p36}}
+^^(no elements were removed from the array, as the second argument of the method is zero)^^
 
 ^^^
 
@@ -185,12 +185,12 @@ ____________________________________________________________________
 
 ### slice
 
-{{s1.p37}}
-{{s1.p38}}
-{{s1.p39}}
-{{s1.p40}}
-{{s1.p41}}
-{{s1.p42}}
+The method creates a new array containing a substring of the original array.
+The original array remains unchanged.
+The return value is the new array, which is a segment of the original array.
+The first argument (a number) is the index of the element in the original array at which the segment begins.
+The second argument (a number) is the index of the element in the source array up to which the fragment extends.
+If the second argument is omitted, the segment will extend to the end of the source array.
 
 ^^^[slice()]
 
@@ -242,9 +242,9 @@ _____________________________________________________________________
 
 ### concat
 
-{{s1.p43}}
-{{s1.p44}}
-{{s1.p45}}
+The method merges two or more arrays into a single array.
+The return value is a new array.
+The source arrays remain unchanged.
 
 ^^^[concat()]
 
@@ -278,8 +278,8 @@ ____________________________________________________________________________
 
 ### join
 
-{{s1.p46}}
-{{s1.p47}}
+Concatenates all elements of the array into a string.
+The argument is the delimiter character.
 
 ^^^[join()]
 
@@ -302,7 +302,7 @@ _____________________________________________________________
 
 **ES 2016**
 
-{{s1.p48}}
+The method **~includes()~** returns ~true~ if the value passed as an argument is contained in the array, or ~false~ otherwise.
 
 ^^^[includes()]
 
@@ -319,7 +319,7 @@ _______________________________________________________________
 
 ![ico-25 cap] ** 2**
 
-{{s1.p49}}
+![ico-20 warn] If the array elements are objects, the method will not work, as arrays and objects are reference data types.
 
 ~~~js
 var users = [
@@ -359,4 +359,4 @@ points.includes([100, 20])   // false
 
 _____________________________________________________________________
 
-※※※tests ⟦f10⟧※※※
+※※※tests quiz/arrayMethods※※※

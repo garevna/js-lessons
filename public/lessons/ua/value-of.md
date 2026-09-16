@@ -94,4 +94,4 @@ test == 1 && test == 2 && test == 3
 
 ____________________
 
-[![ico-30 hw] **Тести**](https://garevna.github.io/js-quiz/#valueOf)
+※※※tests https://garevna.github.io/js-quiz/#valueOf※※※

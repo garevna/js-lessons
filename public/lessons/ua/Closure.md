@@ -303,4 +303,4 @@ setInterval(() => globalFunc = closure(), 5)
 
 _____________________________
 
-[![ico-30 hw] Тести](quiz/closures-timers)
+※※※tests quiz/closures-timers※※※

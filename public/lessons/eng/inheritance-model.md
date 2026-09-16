@@ -711,7 +711,7 @@ Print the result to the console
 
 _____________________________________________________
 
-[![ico-30 hw] **Exercises**](https://docs.google.com/forms/d/e/1FAIpQLSf-i0cr7AEXzSJrggqS1AgZz-OBW5ES-l_ntO1R4Q7XZqZaEw/viewform)
+※※※exercises https://docs.google.com/forms/d/e/1FAIpQLSf-i0cr7AEXzSJrggqS1AgZz-OBW5ES-l_ntO1R4Q7XZqZaEw/viewform※※※
 
 __________________________________________________
 

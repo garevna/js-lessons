@@ -293,10 +293,5 @@
     "ru": "полный код примера",
     "eng": "Full example code",
     "ua": "повний код прикладу"
-  },
-  "s4.p12": {
-    "ru": "[![ico-30 hw] Тесты](quiz/async)",
-    "eng": "[![ico-30 hw] Quiz](quiz/async)",
-    "ua": "[![ico-30 hw] Quiz](quiz/async)"
   }
 }

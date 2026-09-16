@@ -127,4 +127,4 @@ console.dir(elem.shadowRoot) // null
 
 ___________________________________________________________
 
-[![ico-30 hw] **Упражнения**](https://docs.google.com/forms/d/e/1FAIpQLSdjCWOSAVFqZqcm4sy-q-KBFmd1i2BbfYQ0pcZaqYb9YZyv5w/viewform)
+※※※exercises https://docs.google.com/forms/d/e/1FAIpQLSdjCWOSAVFqZqcm4sy-q-KBFmd1i2BbfYQ0pcZaqYb9YZyv5w/viewform※※※

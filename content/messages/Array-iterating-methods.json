@@ -271,543 +271,543 @@
   },
   "s3.p1": {
     "ru": "В этом примере мы создаем с помощью метода **forEach** массив функций с именами",
-    "eng": "Go to [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)",
-    "ua": "Перейдіть за [![ico-20 link] **_посиланням_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)"
+    "eng": "In this example, we create an array of functions with names using the **forEach** method",
+    "ua": "У цьому прикладі ми створюємо за допомогою методу **forEach** масив функцій з іменами"
   },
   "s3.p2": {
     "ru": "Каждая из этих функций проверяет тип переданного ей аргумента **_arg_**,",
-    "eng": "In the new tab console, run the code:",
-    "ua": "У консолі нової вкладки виконайте код:"
+    "eng": "Each of these functions checks the type of the argument **_arg_** passed to it,",
+    "ua": "Кожна з цих функцій перевіряє тип переданого їй аргументу **_arg_**,"
   },
   "s3.p3": {
     "ru": "и если это ⟦f9⟧, то вызывает **_arg_**,",
-    "eng": "You should get the result:",
-    "ua": "У вас має вийти результат:"
+    "eng": "and if it is ⟦f9⟧, it calls **_arg_**,",
+    "ua": "і якщо це ⟦f9⟧, то викликає **_arg_**,"
   },
   "s3.p4": {
     "ru": "передавая ей в качестве аргумента свой порядковый номер (0, 1, 2 ...),",
-    "eng": "Go to [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)",
-    "ua": "Перейдіть за [![ico-20 link] **_посиланням_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)"
+    "eng": "passing it as an argument its own sequential number (0, 1, 2 ...),",
+    "ua": "передаючи їй як аргумент свій порядковий номер (0, 1, 2 ...),"
   },
   "s3.p5": {
     "ru": "в противном случае возвращает число - свой порядковый номер (0, 1, 2 ...).",
-    "eng": "Now in the new tab console, declare the function:",
-    "ua": "Тепер у консолі нової вкладки оголосіть функцію:"
+    "eng": "Otherwise, it returns a number - its own sequential number (0, 1, 2 ...).",
+    "ua": "В іншому випадку повертає число - свій порядковий номер (0, 1, 2 ...)."
   },
   "s3.p6": {
     "ru": "В этом примере мы создаем еще один массив функций с именами \"plus\", \"minus\", \"divide\", \"multiply\".",
-    "eng": "Call the **⟦f13⟧** function.",
-    "ua": "Викличте функцію **⟦f13⟧**."
+    "eng": "In this example, we create another array of functions with names \"plus\", \"minus\", \"divide\", \"multiply\".",
+    "ua": "В цьому прикладі ми створюємо ще один масив функцій з іменами \"plus\", \"minus\", \"divide\", \"multiply\"."
   },
   "s3.p7": {
     "ru": "Каждая из этих функций имеет два формальных параметра,",
-    "eng": "You should get the result:",
-    "ua": "У вас має вийти результат:"
+    "eng": "Each of these functions has two formal parameters,",
+    "ua": "Кожна з цих функцій має два формальних параметри,"
   },
   "s3.p8": {
     "ru": "поэтому первым делом она проверяет длину объекта arguments,",
-    "eng": "The **⟦f14⟧** method iterates the array, checking that the specified condition is satisfied for each element of the array.",
-    "ua": "Метод **⟦f14⟧** ітерує масив, перевіряючи виконання заданої умови для кожного елемента масиву."
+    "eng": "Therefore, the first thing it does is check the length of the arguments object,",
+    "ua": "Тому перш за все вона перевіряє довжину об'єкта arguments,"
   },
   "s3.p9": {
     "ru": "и если длина равна 2, то выполняет соответствующую операцию с аргументами",
-    "eng": "The method returns a new array.",
-    "ua": "Метод повертає новий масив."
+    "eng": "If the length is equal to 2, it performs the corresponding operation with the arguments",
+    "ua": "Якщо довжина дорівнює 2, то виконує відповідну операцію з аргументами"
   },
   "s3.p10": {
     "ru": "(складывает, вычитает, умножает, делит).",
-    "eng": "The resulting array will contain only those elements that satisfy the filtering condition.",
-    "ua": "У результуючий масив потраплять лише елементи, які задовольняють умові фільтрації."
+    "eng": "(adds, subtracts, multiplies, divides).",
+    "ua": "(додає, віднімає, множить, ділить)."
   },
   "s3.p11": {
     "ru": "В протичном случае возвращает каррированную функцию,",
-    "eng": "◘◘**Result**◘◘",
-    "ua": "◘◘**^^Результат^^**◘◘"
+    "eng": "In the opposite case, it returns a curried function,",
+    "ua": "В іншому випадку повертає каррированну функцію,"
   },
   "s3.p12": {
     "ru": "у которой первый аргумент уже \"прошит\",",
-    "eng": "The method searches the array and returns the first found element that satisfies the given condition.",
-    "ua": "Метод шукає в масиві та повертає перший знайдений елемент, що задовольняє задану умову."
+    "eng": "whose first argument is already 'hard-coded',",
+    "ua": "у якої перший аргумент вже \"прошитий\","
   },
   "s3.p13": {
     "ru": "и которую можно вызывать с одним (недостающим вторым) аргументом.",
-    "eng": "If there is no such element in the array, returns ⟦f15⟧.",
-    "ua": "Якщо такого елемента у масиві немає, повертає ⟦f15⟧."
+    "eng": "and which can be called with one (missing second) argument.",
+    "ua": "і яку можна викликати з одним (відсутнім другим) аргументом."
   },
   "s3.p15": {
     "ru": "^^Разберитесь самостоятельно, что делает следующий код:^^",
-    "eng": "Like ⟦f16⟧ method, it searches the array for the first element that satisfies the specified condition.",
-    "ua": "Подібно до методу ⟦f16⟧, шукає в масиві перший елемент, що задовольняє задану умову."
+    "eng": "^^Figure out for yourself what the following code does:^^",
+    "ua": "^^Розберіться самостійно, що робить наступний код:^^"
   },
   "s3.p16": {
     "ru": "Этот метод возвращает новый массив.",
-    "eng": "However, it does not return the element itself, but its index.",
-    "ua": "Проте повертає не сам елемент, яке індекс."
+    "eng": "This method returns a new array.",
+    "ua": "Цей метод повертає новий масив."
   },
   "s3.p17": {
     "ru": "Элементами нового массива будут значения, которые возвращает **функция-аргумент** на каждой итерации.",
-    "eng": "If no such element is found in the array, returns **-1**.",
-    "ua": "Якщо такого елемента у масиві не виявлено, повертає **-1**."
+    "eng": "The elements of the new array will be the values returned by the **argument function** on each iteration.",
+    "ua": "Елементами нового масиву будуть значення, які повертає **функція-аргумент** на кожній ітерації."
   },
   "s3.p18": {
     "ru": "Функция-аргумент метода должна возвращать новое значение (должен присутствовать оператор  ⟦f10⟧).",
-    "eng": "The obvious advantage over the **⟦f17⟧** method is that you can work with arrays of elements that have a **reference data type**.",
-    "ua": "Очевидна перевага перед методом **⟦f17⟧** полягає в тому, що можна працювати з масивами елементів, що мають **посилальний тип даних**."
+    "eng": "The argument function of the method must return a new value (the ⟦f10⟧ operator must be present).",
+    "ua": "Функція-аргумент методу повинна повертати нове значення (повинен бути присутній оператор ⟦f10⟧)."
   },
   "s3.p19": {
     "ru": "Так же, как и в методе **⟦f11⟧**, в методе **⟦f12⟧**, функция-аргумент имеет три опциональных формальных параметра.",
-    "eng": "In this example, the array elements are objects, and the **⟦f17⟧** method is not applicable to this array.",
-    "ua": "У цьому прикладі елементами масиву є об'єкти, і метод **⟦f17⟧** до цього масиву незастосовний."
+    "eng": "Just like in the **⟦f11⟧** method, in the **⟦f12⟧** method, the argument function has three optional formal parameters.",
+    "ua": "Так само, як і в методі **⟦f11⟧**, у методі **⟦f12⟧** функція-аргумент має три опціональних формальних параметри."
   },
   "s3.p20": {
     "ru": "![ico-20 green-ok] Аргумент **arr** будет содержать ссылку на исходный массив.",
-    "eng": "Checks the array for elements that **not** satisfy the specified condition.",
-    "ua": "Здійснює перевірку масиву на предмет входження елементів, які **не задовольняють** заданій умові."
+    "eng": "![ico-20 green-ok] The **arr** argument will contain a reference to the original array.",
+    "ua": "![ico-20 green-ok] Аргумент **arr** буде містити посилання на початковий масив."
   },
   "s3.p21": {
     "ru": "![ico-20 green-ok] Аргумент **index**  - это счетчик итераций, или индекс текущего элемента итерируемого массива.",
-    "eng": "Returns a boolean value:",
-    "ua": "Повертає логічне значення:"
+    "eng": "![ico-20 green-ok] The **index** argument is the iteration counter, or the index of the current element of the iterable array.",
+    "ua": "![ico-20 green-ok] Аргумент **index**  - це лічильник ітерацій, або індекс поточного елемента ітерованого масиву."
   },
   "s4.h1": {
-    "ru": "Примеры с методом map",
-    "eng": "Examples with the reduce() method",
-    "ua": "Приклади з методом reduce()"
+    "ru": "Примеры с методом `map`",
+    "eng": "Examples using the `map` method",
+    "ua": "Приклади з методом `map`"
   },
   "s4.p1": {
     "ru": "Перейдите по [![ico-20 link] **_ссылке_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)",
-    "eng": "Let's reduce an array of strings to an object.",
-    "ua": "Давайте зведемо масив рядків до об'єкта."
+    "eng": "Click on [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)",
+    "ua": "Перейдіть по [![ico-20 link] **_посиланню_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)"
   },
   "s4.p2": {
     "ru": "В консоли новой вкладки выполните код:",
-    "eng": "To do this, we definitely need to specify the starting value of the **accumulator variable**, since the value of the first element of the array will be a string, and we want to get an object.",
-    "ua": "Для цього нам обов'язково потрібно вказати стартове значення акумулятора, оскільки значення першого елемента масиву буде рядок, а ми хочемо отримати об'єкт."
+    "eng": "In the new tab’s console, run the following code:",
+    "ua": "У консолі нової вкладки виконайте код:"
   },
   "s4.p3": {
     "ru": "У вас должен получиться результат:",
-    "eng": "Now let's reduce the array of objects to a string.",
-    "ua": "Тепер зведемо масив об'єктів до рядка."
+    "eng": "You should get the following result:",
+    "ua": "У вас повинен вийти результат:"
   },
   "s4.p4": {
     "ru": "Перейдите по [![ico-20 link] **_ссылке_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)",
-    "eng": "Now let's count how many times each character appears in the string and return an object:",
-    "ua": "Тепер порахуємо, скільки разів кожен символ зустрічається в рядку, і повернемо об'єкт:"
+    "eng": "Click on [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)",
+    "ua": "Перейдіть по [![ico-20 link] **_посиланню_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)"
   },
   "s4.p5": {
     "ru": "Теперь в консоли новой вкладки объявите функцию:",
-    "eng": "Now let's count how many residents of each country are on the list.",
-    "ua": "Тепер порахуємо, скільки жителів кожної країни у списку."
+    "eng": "Now in the console of the new tab, declare the function:",
+    "ua": "Тепер у консолі нової вкладки оголосіть функцію:"
   },
   "s4.p6": {
     "ru": "Вызовите функцию  **⟦f13⟧**.",
-    "eng": "The engine uses the exponential form of representing small numbers, i.e. instead of **⟦f21⟧** there will be **⟦f22⟧**.",
-    "ua": "Двигун використовує експоненційну форму уявлення малих чисел, тобто. замість **⟦f21⟧** буде **⟦f22⟧**."
+    "eng": "Call the **⟦f13⟧** function.",
+    "ua": "Викличте функцію  **⟦f13⟧**."
   },
   "s4.p7": {
     "ru": "У вас должен получиться результат:",
-    "eng": "For large numbers the same thing happens, i.e. instead of **⟦f23⟧** there will be **⟦f24⟧**.",
-    "ua": "Для великих чисел відбувається те саме, тобто. замість **⟦f23⟧** буде **⟦f24⟧**."
+    "eng": "You should get the following result:",
+    "ua": "У вас повинен вийти результат:"
   },
   "s4.p8": {
     "ru": "Метод **⟦f14⟧** итерирует массив, проверяя выполнение заданного условия для каждого элемента массива.",
-    "eng": "From here:",
-    "ua": "Звідси:"
+    "eng": "The **⟦f14⟧** method iterates over the array, checking whether the specified condition is met for each element of the array.",
+    "ua": "Метод **⟦f14⟧** ітерує масив, перевіряючи виконання заданої умови для кожного елемента масиву."
   },
   "s4.p9": {
     "ru": "Метод возвращает новый массив.",
-    "eng": "As in the case of other iterating methods, the **function-argument** is it can take additional arguments - the index of the current array element and a link to the original array itself.",
-    "ua": "Функція, що передається методу **⟦f20⟧** як перший обов'язковий аргумент,"
+    "eng": "The method returns a new array.",
+    "ua": "Метод повертає новий масив."
   },
   "s4.p10": {
     "ru": "В результирующий массив попадут только те элементы, которые удовлетворяют условию фильтрации.",
-    "eng": "With a reference, we can manipulate the original array, making it mutable.",
-    "ua": "як і у випадку інших ітеруючих методів методів, може приймати додаткові аргументи - індекс поточного елемента масиву і посилання на сам вихідний масив."
+    "eng": "Only those elements that meet the filtering condition will be included in the resulting array.",
+    "ua": "У результуючий масив потраплять тільки ті елементи, які задовольняють умові фільтрації."
   },
   "s4.p12": {
     "ru": "Метод ищет в массиве и возвращает первый найденный элемент, удовлетворяющий заданному условию.",
-    "eng": "The library function **⟦f25⟧** takes only 1 argument (a number), and returns the square root of the received argument.",
-    "ua": "Простежимо, як працюватиме метод **⟦f20⟧**, якщо передати йому першим аргументом **⟦f25⟧**."
+    "eng": "The method searches the array and returns the first element that satisfies the given condition.",
+    "ua": "Метод шукає в масиві і повертає перший знайдений елемент, що задовольняє задану умову."
   },
   "s4.p13": {
     "ru": "Если такого элемента в массиве нет, возвращает ⟦f15⟧.",
-    "eng": "If we do not pass a second argument to the **⟦f20⟧** method when calling, it will use the value of the first element of the array as the starting value of the **accumulator variable**.",
-    "ua": "Бібліотечна функція **⟦f25⟧** приймає всього 1 аргумент (число) і повертає квадратний корінь з отриманого аргументу."
+    "eng": "If there is no such element in the array, it returns ⟦f15⟧.",
+    "ua": "Якщо такого елемента в масиві немає, повертає ⟦f15⟧."
   },
   "s4.p15": {
     "ru": "Подобно методу ⟦f16⟧, ищет в массиве первый элемент, удовлетворяющий заданному условию.",
-    "eng": "The remaining elements of the array will not participate in the calculations, since **⟦f25⟧** takes only 1 argument, and this will be the current value of the **accumulator variable**.",
-    "ua": "На кожній ітерації це значення замінюватиметься його квадратним коренем."
+    "eng": "Similar to the ⟦f16⟧ method, it searches the array for the first element that satisfies the given condition.",
+    "ua": "Подібно методу ⟦f16⟧, шукає в масиві перший елемент, що задовольняє задану умову."
   },
   "s4.p16": {
     "ru": "Однако возвращает не сам элемент, а его индекс.",
-    "eng": "◘◘![ico-20 cap] ** 8**◘◘",
-    "ua": "Інші елементи масиву в обчисленнях не братимуть участі, оскільки **⟦f25⟧** приймає всього 1 аргумент, і це буде поточне значення змінної-акумулятора."
+    "eng": "However, it returns the index of the element instead of the element itself.",
+    "ua": "Однак повертає не сам елемент, а його індекс."
   },
   "s4.p17": {
     "ru": "Если такого элемента в массиве не обнаружено, возвращает **-1**.",
-    "eng": "••625 -> 25 -> 5••",
-    "ua": "У цьому прикладі з числа 625 двічі було витягнуто квадратний корінь:"
+    "eng": "If there is no such element in the array, it returns **-1**.",
+    "ua": "Якщо такого елемента в масиві немає, повертає **-1**."
   },
   "s4.p18": {
     "ru": "Очевидное преимущество перед методом **⟦f17⟧** заключается в том, что можно работать с массивами элементов, имеющих **ссылочный тип данных**.",
-    "eng": "^^If we add this method **⟦f26⟧** to the prototype of the **⟦f27⟧** constructor, then the result of its call will be the same:^^",
-    "ua": "Чому двічі? Тому що всього елементів у масиві 3, але перший елемент став стартовим значенням змінної-акумулятора."
+    "eng": "The obvious advantage over the **⟦f17⟧** method is that you can work with arrays of elements that have a **reference data type**.",
+    "ua": "Очевидна перевага перед методом **⟦f17⟧** полягає в тому, що можна працювати з масивами елементів, які мають **посилальний тип даних**."
   },
   "s4.p19": {
     "ru": "В данном примере элементами массива являются объекты, и метод **⟦f17⟧** к этому массиву неприменим.",
-    "eng": "◘◘![ico-20 cap] ** 9**◘◘",
-    "ua": "Якщо ми додамо ось такий метод **⟦f26⟧** у прототип конструктора **⟦f27⟧**, то результат його виклику буде тим самим:"
+    "eng": "In this example, the elements of the array are objects, and the **⟦f17⟧** method is not applicable to this array.",
+    "ua": "У цьому прикладі елементами масиву є об'єкти, і метод **⟦f17⟧** до цього масиву непридатний."
   },
   "s4.p20": {
     "ru": "Осуществляет проверку массива на предмет вхождения элементов, **не** удовлетворяющих заданному условию.",
-    "eng": "^^Therefore, the number of iterations (that is, how many times the square root of the **accumulator variable** will be extracted) will be equal to the number of array elements.^^",
-    "ua": "У цьому прикладі ми задаємо стартове значення **змінної-акумулятора** (625 * 625) другим аргументом методу **⟦f20⟧**."
+    "eng": "Checks the array for the presence of elements that **do not** satisfy the given condition.",
+    "ua": "Перевіряє масив на предмет входження елементів, **не** задовольняючих задану умову."
   },
   "s4.p21": {
     "ru": "Возвращает логическое значение:",
-    "eng": "",
-    "ua": "Тому число ітерацій (тобто. скільки разів буде вилучено корінь квадратний з **змінної-акумулятора**) дорівнюватиме кількості елементів масиву."
+    "eng": "Returns a boolean value:",
+    "ua": "Повертає логічне значення:"
   },
   "s4.p22": {
     "ru": "  • если все элементы массива благополучно прошли проверку - **⟦f18⟧**.",
-    "eng": "",
-    "ua": "Тепер передаватимемо методу **⟦f20⟧** першим аргументом бібліотечну функцію **Math.pow** (зведення до ступеня)."
+    "eng": "  • if all elements of the array have passed the check successfully – **⟦f18⟧**.",
+    "ua": "  • якщо всі елементи масиву благополучно пройшли перевірку - **⟦f18⟧**."
   },
   "s4.p23": {
     "ru": "  • если хотя бы один элемент не прошел проверку - **⟦f19⟧**.",
-    "eng": "",
-    "ua": "Ця функція приймає два числові аргументи: число, яке потрібно звести в ступінь, і значення ступеня."
+    "eng": "  • if at least one element of the array has not passed the check – **⟦f19⟧**.",
+    "ua": "  • якщо хоча б один елемент не пройшов перевірку - **⟦f19⟧**."
   },
   "s4.p24": {
     "ru": "Функция, передаваемая методу в качестве первого аргумента, проверяет выполнение заданного условия для каждого элемента массива, и возвращает логическое значение.",
-    "eng": "",
-    "ua": "Якщо ми не передаємо стартове значення **змінної-акумулятора** другим аргументом методу **⟦f20⟧**, то в цій якості буде використано значення першого елемента масиву."
+    "eng": "The function passed to the method as the first argument checks whether the given condition is satisfied for each element of the array and returns a boolean value.",
+    "ua": "Функція, що передається методу як перший аргумент, перевіряє виконання заданої умови для кожного елемента масиву і повертає логічне значення."
   },
   "s4.p25": {
     "ru": "Массив итерируется до тех пор, пока функция не вернет значение **⟦f19⟧**.",
-    "eng": "",
-    "ua": "Інші елементи масиву будуть значеннями ступеня, в який потрібно звести поточне значення **змінної-акумулятора**."
+    "eng": "The array is iterated until the function returns a value of **⟦f19⟧**.",
+    "ua": "Масив ітерується до тих пір, поки функція не поверне значення **⟦f19⟧**."
   },
   "s4.p26": {
     "ru": "В этом случае метод вернет **⟦f19⟧**.",
-    "eng": "",
-    "ua": "Якщо ми передаємо стартове значення **змінної-акумулятора**, то всі елементи масиву будуть розглядатися як ступінь, в яку потрібно звести поточне значення **змінної-акумулятора**."
+    "eng": "In this case, the method will return **⟦f19⟧**.",
+    "ua": "У цьому випадку метод поверне **⟦f19⟧**."
   },
   "s4.p27": {
     "ru": "Если функция вернет **⟦f18⟧** для всех элементов массива, метод вернет **⟦f18⟧**.",
-    "eng": "",
-    "ua": "Якщо ми додамо в прототип конструктора **⟦f27⟧** метод **⟦f28⟧**, цей метод буде працювати аналогічно методу **⟦f20⟧**, викликаному з бібліотечною функцією **⟦f29⟧** і без другого аргументу:"
+    "eng": "If the function returns **⟦f18⟧** for all elements of the array, the method will return **⟦f18⟧**.",
+    "ua": "Якщо функція поверне **⟦f18⟧** для всіх елементів масиву, метод поверне **⟦f18⟧**."
   },
   "s4.p28": {
     "ru": "^^В этом примере массив  **people**  проверяется на наличие в нем жителей **не** Украины.^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^In this example, the array **people** is checked to see if it contains residents who are **not** from Ukraine.^^",
+    "ua": "^^У цьому прикладі масив **people** перевіряється на наявність у ньому мешканців **не** України.^^"
   },
   "s4.p29": {
     "ru": "^^Переменная  **res**  будет иметь значение ⟦f19⟧, поскольку в массиве есть элементы, не удовлетворяющие заданному условию.^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^The variable **res** will have a value of **⟦f19⟧**, since the array contains elements that do not satisfy the given condition.^^",
+    "ua": "^^Змінна  **res**  матиме значення ⟦f19⟧, оскільки в масиві є елементи, які не задовольняють задану умову.^^"
   },
   "s4.p30": {
     "ru": "Осуществляет проверку массива на предмет вхождения элементов, удовлетворяющих заданному условию.",
-    "eng": "",
-    "ua": ""
+    "eng": "Checks the array for the presence of elements that satisfy the given condition.",
+    "ua": "Перевіряє масив на наявність елементів, які задовольняють задану умову."
   },
   "s4.p31": {
     "ru": "Возвращает логическое значение (найдено / не найдено).",
-    "eng": "",
-    "ua": ""
+    "eng": "Returns a boolean value (found / not found).",
+    "ua": "Повертає логічне значення (знайдено / не знайдено)."
   },
   "s4.p32": {
     "ru": "**Функция-аргумент** проверяет выполнение заданного условия для каждого элемента массива, и возвращает логическое значение.",
-    "eng": "",
-    "ua": ""
+    "eng": "The **function-argument** checks whether a given condition is met for each element of the array, and returns a boolean value.",
+    "ua": "**Функція-аргумент** перевіряє виконання заданої умови для кожного елемента масиву та повертає логічне значення."
   },
   "s4.p33": {
     "ru": "Массив итерируется до тех пор, пока функция не вернет значение **⟦f18⟧**.",
-    "eng": "",
-    "ua": ""
+    "eng": "The array is iterated over until the function returns the value **⟦f18⟧**.",
+    "ua": "Масив проходить ітерацію доти, доки функція не поверне значення **⟦f18⟧**."
   },
   "s4.p34": {
     "ru": "В этом случае метод вернет  **⟦f18⟧**.",
-    "eng": "",
-    "ua": ""
+    "eng": "In this case, the method will return **⟦f18⟧**.",
+    "ua": "У цьому випадку метод поверне **⟦f18⟧**."
   },
   "s4.p35": {
     "ru": "Если функция вернет **⟦f19⟧** для всех элементов массива, метод вернет **⟦f19⟧**.",
-    "eng": "",
-    "ua": ""
+    "eng": "If the function returns **⟦f19⟧** for all elements of the array, the method will return **⟦f19⟧**.",
+    "ua": "Якщо функція поверне **⟦f19⟧** для всіх елементів масиву, метод поверне **⟦f19⟧**."
   },
   "s4.p36": {
     "ru": "^^В этом примере массив  **people**  проверяется на наличие в нем жителей Пакистана.^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^In this example, the **people** array is checked to see if it contains any residents of Pakistan.^^",
+    "ua": "^^У цьому прикладі масив **people** перевіряється на наявність у ньому мешканців Пакистану.^^"
   },
   "s4.p37": {
     "ru": "^^Переменная  **res**  будет иметь значение ⟦f19⟧, поскольку таких \"персонажей\" в массиве нет.^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^The variable **res** will have the value ⟦f19⟧, as there are no such ‘characters’ in the array.^^",
+    "ua": "^^Змінна **res** матиме значення ⟦f19⟧, оскільки таких «персонажів» у масиві немає.^^"
   },
   "s4.p38": {
     "ru": "^^Метод **some** можно заменить следущим кодом:^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^The **some** method can be replaced with the following code:^^",
+    "ua": "^^Метод **some** можна замінити таким кодом:^^"
   },
   "s4.p39": {
     "ru": "или таким:",
-    "eng": "",
-    "ua": ""
+    "eng": "or with this:",
+    "ua": "або таким:"
   },
   "s4.p40": {
     "ru": "Этот метод отличается от своих \"коллег\" списком формальных параметров **функции-аргумента**.",
-    "eng": "",
-    "ua": ""
+    "eng": "This method differs from its ‘counterparts’ in the list of formal parameters of the **function-argument**.",
+    "ua": "Цей метод відрізняється від своїх «колег» списком формальних параметрів **функції-аргументу**."
   },
   "s4.p41": {
     "ru": "Конкретно - первым формальным параметром **функции-аргумента** теперь будет не текущий элемент массива, а **переменная-аккумулятор**.",
-    "eng": "",
-    "ua": ""
+    "eng": "Specifically, the first formal parameter of the **function-argument** will now be the **accumulator variable** rather than the current array element.",
+    "ua": "А саме — першим формальним параметром **функції-аргументу** тепер буде не поточний елемент масиву, а **змінна-акумулятор**."
   },
   "s4.p42": {
     "ru": "Значение этой переменной и будет результатом работы метода.",
-    "eng": "",
-    "ua": ""
+    "eng": "The value of this variable will be the result of the method’s execution.",
+    "ua": "Значення цієї змінної і буде результатом роботи методу."
   },
   "s4.p43": {
     "ru": "Гибкость и универсальность этого метода заключается в том, что результат его работы может быть чем угодно: числом, массивом, объектом, строкой, логическим значением и т.д.",
-    "eng": "",
-    "ua": ""
+    "eng": "The flexibility and versatility of this method lie in the fact that its result can be anything: a number, an array, an object, a string, a boolean value, etc.",
+    "ua": "Гнучкість та універсальність цього методу полягає в тому, що результат його роботи може бути чим завгодно: числом, масивом, об’єктом, рядком, логічним значенням тощо."
   },
   "s4.p44": {
     "ru": "Этот результат \"накапливается\" в **переменной-аккумуляторе**.",
-    "eng": "",
-    "ua": ""
+    "eng": "This result is ‘accumulated’ in the **accumulator variable**.",
+    "ua": "Цей результат «накопичується» у **змінній-акумуляторі**."
   },
   "s4.p45": {
     "ru": "Как и все уже рассмотренные итерирующие методы массивов, метод **⟦f20⟧** в качестве первого обязательного аргумента получает функцию.",
-    "eng": "",
-    "ua": ""
+    "eng": "Like all the array iteration methods already discussed, the **⟦f20⟧** method takes a function as its first mandatory argument.",
+    "ua": "Як і всі вже розглянуті ітераційні методи масивів, метод **⟦f20⟧** як перший обов’язковий аргумент отримує функцію."
   },
   "s4.p46": {
     "ru": "Однако второй аргумент метода не является ссылкой на контекст вызова **функции-аргумента**.",
-    "eng": "",
-    "ua": ""
+    "eng": "However, the method’s second argument is not a reference to the call context of the **argument function**.",
+    "ua": "Однак другий аргумент методу не є посиланням на контекст виклику **функції-аргументу**."
   },
   "s4.p47": {
     "ru": "У него совсем другое назначение: он задает стартовое значение **переменной-аккумулятора**.",
-    "eng": "",
-    "ua": ""
+    "eng": "It serves a completely different purpose: it sets the initial value of the **accumulator variable**.",
+    "ua": "Він має зовсім інше призначення: він задає початкове значення **змінної-акумулятора**."
   },
   "s4.p48": {
     "ru": "![ico-20 warn] **Если стартовое значение аккумулятора не установлено, то в качестве стартового значения аккумулятора будет использовано значение первого элемента массива**.",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-20 warn] **If the initial value of the accumulator is not specified, the value of the first element of the array will be used as the initial value of the accumulator**.",
+    "ua": "![ico-20 warn] **Якщо початкове значення акумулятора не встановлено, то як початкове значення акумулятора буде використано значення першого елемента масиву**."
   },
   "s4.p49": {
     "ru": "^^Т.е. если мы не передадим методу второй аргумент, то он установит стартовое значение **переменной-аккумулятора** равным значению первого элемента итерируемого массива.^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^In other words, if we do not pass the second argument to the method, it will set the initial value of the **accumulator variable** equal to the value of the first element of the array being iterated over.^^",
+    "ua": "^^Тобто якщо ми не передамо методу другий аргумент, то він встановить початкове значення **змінної-акумулятора** рівним значенню першого елемента масиву, що ітерується.^^"
   },
   "s4.p50": {
     "ru": "![ico-25 cap] Рассмотрим простейший пример:",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-25 cap] Let’s consider the simplest example:",
+    "ua": "![ico-25 cap] Розглянемо найпростіший приклад:"
   },
   "s4.p51": {
     "ru": "Поскольку стартовое значение аккумулятора не задано, то оно будет равно значению первого элемента массива, т.е. ** 1**.",
-    "eng": "",
-    "ua": ""
+    "eng": "Since the starting value of the accumulator is not specified, it will be equal to the value of the first element of the array, i.e. ** 1**.",
+    "ua": "Оскільки початкове значення акумулятора не задано, то воно дорівнюватиме значенню першого елемента масиву, тобто ** 1**."
   },
   "s4.p52": {
     "ru": "Цикл будет \"крутиться\" до последнего элемента массива, но сами элементы не используются **функцией-аргументом**:",
-    "eng": "",
-    "ua": ""
+    "eng": "The loop will ‘run’ until the last element of the array, but the elements themselves are not used by the **function argument**:",
+    "ua": "Цикл буде «крутитися» до останнього елемента масиву, але самі елементи не використовуються **функцією-аргументом**:"
   },
   "s4.p53": {
     "ru": "Поэтому на каждой итерации значение **переменной-аккумулятора** будет просто удваиваться:",
-    "eng": "",
-    "ua": ""
+    "eng": "Therefore, on each iteration, the value of the **accumulator variable** will simply double:",
+    "ua": "Тому на кожній ітерації значення **змінної-акумулятора** просто подвоюватиметься:"
   },
   "s4.p54": {
     "ru": "![ico-25 cap] Теперь пригласим на эту тусовку второй формальный параметр **функции-аргумента**:",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-25 cap] Now let’s invite the second formal parameter of the **function argument** to join the party:",
+    "ua": "![ico-25 cap] Тепер запросимо на цю вечірку другий формальний параметр **функції-аргументу**:"
   },
   "s4.p55": {
     "ru": "Стартовое значение **переменной-аккумулятора** будет ** 1** ^^(значение первого элемента массива)^^, но на каждой итерации **переменная-аккумулятор** будет умножаться на значение текущего элемента массива:",
-    "eng": "",
-    "ua": ""
+    "eng": "The initial value of the **accumulator variable** will be ** 1** ^^(the value of the first array element)^^, but at each iteration the **accumulator variable** will be multiplied by the value of the current array element:",
+    "ua": "Початкове значення **змінної-акумулятора** дорівнюватиме ** 1** ^^(значення першого елемента масиву)^^, але на кожній ітерації **змінна-акумулятор** буде множитися на значення поточного елемента масиву:"
   },
   "s4.p56": {
     "ru": "![ico-25 cap] Пора ввести в бой стартовое значение **переменной-аккумулятора**:",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-25 cap] It’s time to put the initial value of the **accumulator variable** into action:",
+    "ua": "![ico-25 cap] Час ввести в дію початкове значення **змінної-акумулятора**:"
   },
   "s4.p57": {
     "ru": "Вот такая замечательная машинка теперь в нашем распоряжении.",
-    "eng": "",
-    "ua": ""
+    "eng": "We now have this marvellous little machine at our disposal.",
+    "ua": "Ось така чудова машинка тепер у нашому розпорядженні."
   },
   "s4.p58": {
     "ru": "![ico-25 cap] Копнем глубже. Задействуем третий формальный параметр **функции-аргумента**:",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-25 cap] Let’s dig a bit deeper. Let’s use the third formal parameter of the **function-argument**:",
+    "ua": "![ico-25 cap] Заглибимося далі. Задіємо третій формальний параметр **функції-аргументу**:"
   },
   "s4.p59": {
     "ru": "Здесь метод **⟦f20⟧** выполняет следующую последовательность вычислений:",
-    "eng": "",
-    "ua": ""
+    "eng": "Here, the method **⟦f20⟧** performs the following sequence of calculations:",
+    "ua": "Тут метод **⟦f20⟧** виконує таку послідовність обчислень:"
   },
   "s4.p60": {
     "ru": "До сих пор мы рассматривали массив чисел и числовое значение **переменной-аккумулятора**.",
-    "eng": "",
-    "ua": ""
+    "eng": "So far, we have been looking at an array of numbers and a numerical value for the **accumulator variable**.",
+    "ua": "Досі ми розглядали масив чисел і числове значення **змінної-акумулятора**."
   },
   "s4.p61": {
     "ru": "Однако потенциал этого метода гораздо больше, и его возможности гораздо шире.",
-    "eng": "",
-    "ua": ""
+    "eng": "Однак потенціал цього методу набагато більший, а його можливості — набагато ширші.",
+    "ua": "Однак потенціал цього методу набагато більший, а його можливості — набагато ширші."
   },
   "s5.h1": {
     "ru": "Примеры с методом reduce()",
-    "eng": "Math.pow",
-    "ua": "Тести"
+    "eng": "Examples using the reduce() method",
+    "ua": ""
   },
   "s5.p1": {
     "ru": "Давайте сведем массив строк к объекту.",
-    "eng": "This function takes two numeric arguments: the number to be raised to the power and the value of the power.",
-    "ua": "Що повернуть такі вирази:"
+    "eng": "Let's reduce an array of strings to an object.",
+    "ua": "Давайте зведемо масив рядків до об’єкта."
   },
   "s5.p2": {
     "ru": "Для этого нам обязательно нужно указать стартовое значение аккумулятора, поскольку значением первого элемента массива будет строка, а мы хотим получить объект.",
-    "eng": "If we do not pass the starting value of the **accumulator variable** as the second argument of the **⟦f20⟧** method, then the value of the first element of the array will be used as this value.",
-    "ua": "Число ітерацій буде свідомо більше, ніж кількість елементів масиву."
+    "eng": "To do this, we must specify the initial value of the accumulator, since the value of the first element of the array will be a string, and we want to get an object.",
+    "ua": "Для цього нам обов’язково потрібно вказати початкове значення акумулятора, оскільки значення першого елемента масиву буде рядком, а ми хочемо отримати об’єкт."
   },
   "s5.p3": {
     "ru": "Теперь сведем массив объектов к строке.",
-    "eng": "The remaining elements of the array will be the values ​​of the power to which the current value of the **accumulator variable** needs to be raised.",
-    "ua": "Метод сортує масив згідно з заданою умовою сортування."
+    "eng": "Now let's reduce an array of objects to a string.",
+    "ua": "Тепер зведемо масив об’єктів до рядка."
   },
   "s5.p4": {
     "ru": "Теперь посчитаем, сколько раз каждый символ встречается в строке, и вернем объект:",
-    "eng": "If we pass the starting value of the **accumulator variable**, then all elements of the array will be considered as the power to which we need to raise the current value of the **accumulator variable**.",
-    "ua": "Умову сортування перевіряє **функція-аргумент**, що передається методу."
+    "eng": "Now let's count how many times each character appears in the string and return an object:",
+    "ua": "Тепер підрахуємо, скільки разів кожен символ зустрічається в рядку, і повернемо об’єкт:"
   },
   "s5.p5": {
     "ru": "Теперь посчитаем, сколько жителей каждой страны в списке.",
-    "eng": "◘◘![ico-20 cap] ** 10**◘◘",
-    "ua": "_**Функція-аргумент** має два формальні параметри, значення яких використовуються для порівняння._."
+    "eng": "Now let's count how many residents of each country are in the list.",
+    "ua": "Тепер підрахуємо, скільки мешканців кожної країни в списку."
   },
   "s5.p6": {
     "ru": "Движок использует экспоненциальную форму представления малых чисел, т.е. вместо **⟦f21⟧** будет **⟦f22⟧**.",
-    "eng": "",
-    "ua": "Функція повертає одне із трьох значень:"
+    "eng": "The engine uses an exponential notation for small numbers; that is, **⟦f21⟧** becomes **⟦f22⟧**.",
+    "ua": "Движок використовує експоненційну форму представлення малих чисел, тобто замість **⟦f21⟧** буде **⟦f22⟧**."
   },
   "s5.p7": {
     "ru": "Для больших чисел происходит то же самое, т.е. вместо **⟦f23⟧** будет **⟦f24⟧**.",
-    "eng": "",
-    "ua": "|  0 | елементи збіглися (рівні)         |"
+    "eng": "For large numbers, the same happens; that is, **⟦f23⟧** becomes **⟦f24⟧**.",
+    "ua": "Для великих чисел відбувається те ж саме, т.е. замість **⟦f23⟧** буде **⟦f24⟧**."
   },
   "s5.p8": {
     "ru": "Отсюда:",
-    "eng": "",
-    "ua": "|  1 | перший аргумент більший за другий |"
+    "eng": "Hence:",
+    "ua": ""
   },
   "s5.p9": {
     "ru": "Функция, передаваемая методу **reduce** в качестве первого обязательного аргумента,",
     "eng": "",
-    "ua": "| -1 | другий аргумент більший за перший |"
+    "ua": ""
   },
   "s5.p10": {
     "ru": "как и в случае других итерирующих методов, может принимать дополнительные аргументы - индекс текущего элемента массива и ссылку на сам исходный массив.",
     "eng": "",
-    "ua": "На основі значення, що повертається функцією, метод змінює порядок елементів у масиві."
+    "ua": ""
   },
   "s5.p11": {
     "ru": "Благодаря ссылке, мы можем манипулировать исходным массивом, что делает его мутабельным.",
     "eng": "",
-    "ua": "◘◘**^^Результат^^**◘◘"
+    "ua": ""
   },
   "s5.p12": {
     "ru": "Проследим, как будет работать метод **⟦f20⟧**, если передать ему первым аргументом **⟦f25⟧**.",
     "eng": "",
-    "ua": "^^Щоб зрозуміти механізм сортування, виведемо значення порівнюваних елементів масиву в консолі на кожній ітерації:^^"
+    "ua": ""
   },
   "s5.p13": {
     "ru": "Библиотечная функция **⟦f25⟧** принимает всего 1 аргумент (число), и возвращает квадратный корень из полученного аргумента.",
     "eng": "",
-    "ua": "◘◘**^^Результат^^**◘◘"
+    "ua": ""
   },
   "s5.p14": {
     "ru": "Если при вызове мы не передаем методу **⟦f20⟧** второй аргумент, он будет использовать в качестве стартового значения аккумулятора значение первого элемента массива.",
     "eng": "",
-    "ua": "^^Створимо масив **log**, в якому будемо логувати всі операції в процесі сортування масиву.^^"
+    "ua": "Якщо при виклику ми не передаємо методу **⟦f20⟧** другий аргумент, він буде використовувати як початкове значення акумулятора значення першого елемента масиву."
   },
   "s5.p15": {
     "ru": "На каждой итерации это значение будет заменяться его квадратным корнем.",
     "eng": "",
-    "ua": "Отже, на відміну від інших методів, що ітерують, **функція-аргумент** приймає строго два параметри."
+    "ua": "На кожній ітерації це значення буде замінюватися його квадратним коренем."
   },
   "s5.p16": {
     "ru": "Остальные элементы массива в вычислениях участвовать не будут, поскольку **⟦f25⟧** принимает всего 1 аргумент, и это будет текущее значение переменной-аккумулятора.",
     "eng": "",
-    "ua": "![ico-20 warn] Цьому методу не можна передати посилання на контекст виклику."
+    "ua": "Інші елементи масиву в обчисленнях брати участь не будуть, оскільки **⟦f25⟧** приймає всього 1 аргумент, і це буде поточне значення змінної-акумулятора."
   },
   "s5.p17": {
     "ru": "В этом примере из числа 625 дважды был извлечен квадратный корень:",
     "eng": "",
-    "ua": "![ico-20 require] Самостійно спробуйте намалювати блок-схему алгоритму сортування масиву методом **⟦f30⟧**."
+    "ua": "У цьому прикладі з числа 625 двічі був витягнутий квадратний корінь:"
   },
   "s5.p18": {
     "ru": "Почему дважды? Потому, что всего элементов в массиве 3, но первый элемент стал стартовым значением переменной-аккумулятора.",
     "eng": "",
-    "ua": "Є рядок **cookie**:"
+    "ua": "Чому двічі? Тому що всього елементів у масиві 3, але перший елемент став початковим значенням змінної-акумулятора."
   },
   "s5.p19": {
     "ru": "Если мы добавим вот такой метод **⟦f26⟧** в прототип конструктора **⟦f27⟧**, то результат его вызова будет тем же:",
     "eng": "",
-    "ua": "Сплітимо рядок **cookie** і застосуємо метод **⟦f31⟧** до отриманого масиву."
+    "ua": "Якщо ми додамо ось такий метод **⟦f26⟧** у прототип конструктора **⟦f27⟧**, то результат його виклику буде той самий:"
   },
   "s5.p20": {
     "ru": "В этом примере мы задаем стартовое значение **переменной-аккумулятора** (625 * 625) вторым аргументом метода **⟦f20⟧**.",
     "eng": "",
-    "ua": "◘◘**^^Результат^^**◘◘"
+    "ua": "У цьому прикладі ми задаємо початкове значення **змінної-акумулятора** (625 * 625) другим аргументом методу **⟦f20⟧**."
   },
   "s5.p21": {
     "ru": "Поэтому число итераций (т.е. сколько раз будет извлечен корень квадратный из **переменной-аккумулятора**) будет равно числу элементов массива.",
     "eng": "",
-    "ua": "Ми отримали масив, елементи якого є масивами."
+    "ua": "Тому кількість ітерацій (тобто скільки разів буде витягнутий квадратний корінь із **змінної-акумулятора**) дорівнюватиме кількості елементів масиву."
   },
   "s5.p22": {
     "ru": "Теперь будем передавать методу **⟦f20⟧** первым аргументом библиотечную функцию **Math.pow** (возведение в степень).",
     "eng": "",
-    "ua": "Тепер застосуємо метод **⟦f32⟧** до масиву:"
+    "ua": "Тепер будемо передавати методу **⟦f20⟧** першим аргументом бібліотечну функцію **Math.pow** (піднесення до степеня)."
   },
   "s5.p23": {
     "ru": "Эта функция принимает два числовых аргумента: число, которое нужно возвести в степень, и значение степени.",
     "eng": "",
-    "ua": "◘◘**^^Результат^^**◘◘"
+    "ua": "Ця функція приймає два числових аргументи: число, яке потрібно піднести до степеня, і значення степеня."
   },
   "s5.p24": {
     "ru": "Если мы не передаем стартовое значение **переменной-аккумулятора** вторым аргументом метода **⟦f20⟧**, то в этом качестве будет использовано значение первого элемента массива.",
     "eng": "",
-    "ua": "Ми отримали \"плоский\" масив."
+    "ua": "Якщо ми не передаємо початкове значення **змінної-акумулятора** другим аргументом методу **⟦f20⟧**, то в цьому якості буде використано значення першого елемента масиву."
   },
   "s5.p25": {
     "ru": "Остальные элементы массива будут значениями степени, в которую нужно возвести текущее значение **переменной-аккумулятора**.",
     "eng": "",
-    "ua": "Отже, використовуючи ту саму функцію:"
+    "ua": "Інші елементи масиву будуть значеннями степеня, у який потрібно піднести поточне значення **змінної-акумулятора**."
   },
   "s5.p26": {
     "ru": "Если же мы передаем стартовое значение **переменной-аккумулятора**, то все элементы массива будут рассматриваться как степень, в которую нужно возвести текущее значение **переменной-аккумулятора**.",
     "eng": "",
-    "ua": "ми отримали в першому випадку масив масивів, а в другому - \"плоский\" масив."
+    "ua": "Якщо ж ми передаємо початкове значення **змінної-акумулятора**, то всі елементи масиву будуть розглядатися як степінь, у який потрібно піднести поточне значення **змінної-акумулятора**."
   },
   "s5.p27": {
     "ru": "Если мы добавим в прототип конструктора **⟦f27⟧** метод **⟦f28⟧**, то этот метод будет работать аналогично методу **⟦f20⟧**, вызванному с библиотечной функцией **⟦f29⟧** и без второго аргумента:",
     "eng": "",
-    "ua": "**Генератор**."
+    "ua": "Якщо ми додамо в прототип конструктора **⟦f27⟧** метод **⟦f28⟧**, то цей метод буде працювати аналогічно методу **⟦f20⟧**, викликаному з бібліотечною функцією **⟦f29⟧** і без другого аргументу:"
   },
   "s6.p1": {
     "ru": "Что вернут следующие выражения:",
@@ -816,23 +816,23 @@
   },
   "s6.p2": {
     "ru": "Число итераций будет заведомо больше, чем число элементов массива.",
-    "eng": "◘◘** 1**◘◘",
-    "ua": ""
+    "eng": "The number of iterations will be greater than the number of elements in the array.",
+    "ua": "Кількість ітерацій буде заведомо більшою, ніж кількість елементів масиву."
   },
   "s6.p3": {
     "ru": "Метод сортирует массив согласно заданному условию сортировки.",
     "eng": "The method sorts the array according to the specified sorting condition.",
-    "ua": ""
+    "ua": "Метод сортує масив відповідно до заданого умови сортування."
   },
   "s6.p4": {
     "ru": "Условие сортировки проверяет передаваемая методу функция-аргумент.",
     "eng": "The sorting condition is checked by the **argument function** passed to the method.",
-    "ua": ""
+    "ua": "Умова сортування перевіряється передаваною методу функцією-аргументом."
   },
   "s6.p5": {
     "ru": "_Функция-аргумент имеет два формальных параметра, значения которых используются для сравнения_.",
     "eng": "_The **argument function** has two formal parameters whose values ​​are used for comparison._.",
-    "ua": ""
+    "ua": "_Функція-аргумент має два формальних параметра, значення яких використовуються для порівняння._."
   },
   "s6.p6": {
     "ru": "Функция возвращает одно из трех значений:",
@@ -861,7 +861,7 @@
   },
   "s6.p12": {
     "ru": "^^Для понимания механизма сортировки выведем в консоль значения сравниваемых элементов массива на каждой итерации:^^",
-    "eng": "^^Для понимания механизма сортировки выведем в консоль значения сравниваемых элементов массива на каждой итерации:^^",
+    "eng": "^^To understand the sorting mechanism, let's log the values of the compared elements of the array to the console on each iteration:^^",
     "ua": ""
   },
   "s6.spoiler1": {
@@ -871,202 +871,197 @@
   },
   "s6.p14": {
     "ru": "^^Создадим массив **log**, в котором будем логировать все операции в процессе сортировки массива.^^",
-    "eng": "◘◘**Result**◘◘",
+    "eng": "^^Let's create a **log** array, in which we will log all operations in the process of sorting the array.^^",
     "ua": ""
   },
   "s6.p15": {
     "ru": "Итак, в отличие от других итерирующих методов, функция, передаваемая методу в качестве единственного аргумента, принимает строго два параметра.",
-    "eng": "^^Let's create a **log** array, in which we will log all operations in the process of sorting the array.^^",
+    "eng": "So, unlike other iterative methods, the function passed to the method as its sole argument takes exactly two parameters.",
     "ua": ""
   },
   "s6.p16": {
     "ru": "![ico-20 warn] Этому методу нельзя передать ссылку на контекст вызова.",
-    "eng": "So, unlike other array iterating methods, the **function-argument** has strictly two formal parameters.",
+    "eng": "![ico-20 warn] This method cannot be passed a reference to the call context.",
     "ua": ""
   },
   "s6.p17": {
     "ru": "![ico-20 require] Самостоятельно попробуйте нарисовать блок-схему алгоритма сортировки массива методом  **⟦f30⟧**.",
-    "eng": "![ico-20 warn] This method cannot be passed a reference to the call context.",
+    "eng": "![ico-20 require] Try to draw a block diagram of the algorithm for sorting an array using the **⟦f30⟧** method.",
     "ua": ""
   },
   "s6.p18": {
     "ru": "Есть строка **cookie**:",
-    "eng": "![ico-25 require] Try to draw a block diagram of the algorithm for sorting an array.",
+    "eng": "There is a line **cookie**:",
     "ua": ""
   },
   "s6.p19": {
     "ru": "Сплитим строку **cookie** и применим метод **⟦f31⟧** к полученному массиву.",
-    "eng": "There is a line **cookie**:",
+    "eng": "We split the **cookie** string and apply the **⟦f31⟧** method to the resulting array.",
     "ua": ""
   },
   "s6.p21": {
     "ru": "Мы получили массив, элементы которого являются массивами",
-    "eng": "◘◘**^^Result^^**◘◘",
+    "eng": "We have received an array whose elements are arrays.",
     "ua": ""
   },
   "s6.p22": {
     "ru": "Теперь применим метод **⟦f32⟧** к массиву **cookie**",
-    "eng": "We have received an array whose elements are arrays.",
+    "eng": "Now we apply the **⟦f32⟧** method to the **cookie** array.",
     "ua": ""
   },
   "s6.p24": {
     "ru": "Мы получили \"плоский\" массив.",
-    "eng": "◘◘**^^Result^^**◘◘",
+    "eng": "We got a \"flat\" array.",
     "ua": ""
   },
   "s6.p25": {
     "ru": "Итак, используя одну и ту же функцию:",
-    "eng": "We got a \"flat\" array.",
+    "eng": "So, using the same function:",
     "ua": ""
   },
   "s6.p26": {
     "ru": "мы получили в первом случае массив массивов, а во втором - \"плоский\" массив",
-    "eng": "So, using the same function:",
+    "eng": "in the first case we received an array of arrays, and in the second we received a “flat” array.",
     "ua": ""
   },
   "s6.p27": {
     "ru": "**Генератор**.",
-    "eng": "in the first case we received an array of arrays, and in the second we received a “flat” array.",
+    "eng": "**Generator**",
     "ua": ""
   },
   "s6.p28": {
     "ru": "**Возвращает объект _итератора_**.",
-    "eng": "**Generator**.",
+    "eng": "**Returns an _iterator_ object.**",
     "ua": ""
   },
   "s6.p30": {
     "ru": "**Генератор**.",
-    "eng": "◘◘**^^Result^^**◘◘",
+    "eng": "**Генератор**.",
     "ua": ""
   },
   "s6.p31": {
     "ru": "**Возвращает объект _итератора_**.",
-    "eng": "**Generator**.",
+    "eng": "**Returns an _iterator_ object.**",
     "ua": ""
   },
   "s7.h1": {
     "ru": "Примеры и тесты",
     "eng": "Examples and tests",
-    "ua": "Сума кешу на картах"
+    "ua": "Приклади та тести"
   },
   "s8.h1": {
     "ru": "Сумма кеша на картах",
     "eng": "Cache amount on cards",
-    "ua": "Чищення від дублів"
+    "ua": "Сума кешу на картах"
   },
   "s8.p1": {
     "ru": "Создадим массив банковских карт, и с помощью метода **⟦f20⟧** посчитаем сумму средств на всех картах:",
     "eng": "Let´s create an array of bank cards and use the **⟦f20⟧** method to calculate the amount of funds on all cards:",
-    "ua": "Припустимо, що у нас є масив користувачів, і ми вирішили отримати масив всіх спеціальностей, які є у цих користувачів."
+    "ua": "Створимо масив банківських карток і за допомогою методу **⟦f20⟧** підрахуємо суму коштів на всіх картках:"
   },
   "s8.p2": {
     "ru": "Создадим новую карту, на которую аккумулируем остатки на счетах все карт:",
     "eng": "Let´s create a new card on which we accumulate the account balances of all cards:",
-    "ua": "Однак, як ми бачимо, багато спеціальностей дублюватимуться, що нам абсолютно не потрібно."
+    "ua": "Створимо нову картку, на яку акумулюємо залишки на рахунках всіх карток:"
   },
   "s8.p4": {
     "ru": "Для чистоты результата дополнительно обнулим остатки на счетах других карт:",
     "eng": "For the purity of the result, we will additionally reset the balances on the accounts of other cards:",
-    "ua": "![ico-20 warn] Відразу зауважимо, що найпростіше досягти цього за допомогою конструктора **⟦f34⟧**:"
+    "ua": "Для чистоти результату додатково обнулимо залишки на рахунках інших карток:"
   },
   "s8.p5": {
     "ru": "**Теперь исходный массив карт будет:**",
     "eng": "Now the original map array will be:",
-    "ua": "Але ми вирішили піти складнішим шляхом ![ico-25 wink]."
+    "ua": "**Тепер вихідний масив карток буде:**"
   },
   "s9.h1": {
     "ru": "Чистка от дублей",
     "eng": "Clearing duplicates",
-    "ua": "Число відрізків в інтервалі"
+    "ua": "Очищення від дублікатів"
   },
   "s9.p1": {
     "ru": "Предположим, что у нас есть массив юзеров, и мы решили получить массив всех специальностей, которые есть у этих юзеров.",
     "eng": "Let´s assume that we have an array of users, and we decide to get an array of all the specialties that these users have.",
-    "ua": "Є кілька відрізків на числовій осі:"
+    "ua": "Припустимо, що у нас є масив користувачів, і ми вирішили отримати масив усіх спеціальностей, які є у цих користувачів."
   },
   "s9.p2": {
     "ru": "Однако, как мы видим, многие специальности будут дублироваться, что нам абсолютно не нужно.",
     "eng": "However, as we see, many specialties will be duplicated, which we absolutely do not need.",
-    "ua": "Для кожного відрізка слід порахувати, скільки відрізків виявилося всередині нього."
+    "ua": "Однак, як ми бачимо, багато спеціальностей будуть дублюватися, що нам абсолютно не потрібно."
   },
   "s9.p3": {
     "ru": "Нужно удалить дублирующиеся элементы массива **⟦f33⟧**.",
-    "eng": "◘◘**^^specialities^^**◘◘",
-    "ua": "Для спрощення коду додамо в прототип конструктора **⟦f27⟧** метод **⟦f35⟧**:"
+    "eng": "We need to remove duplicate elements from the **⟦f33⟧** array.",
+    "ua": "Потрібно видалити дублюючі елементи масиву **⟦f33⟧**."
   },
   "s9.p4": {
     "ru": "![ico-20 warn] Сразу заметим, что проще всего достичь этого с помощью конструктора **⟦f34⟧**:",
     "eng": "![ico-20 warn] Let´s immediately note that the easiest way to achieve this is using the **⟦f34⟧** constructor:",
-    "ua": "Тепер можна порівняти два відрізки просто:"
+    "ua": "![ico-20 warn] Відразу зауважимо, що найпростіше досягти цього за допомогою конструктора **⟦f34⟧**:"
   },
   "s9.p5": {
     "ru": "Но мы решили пойти более сложным путем ![ico-25 wink].",
     "eng": "But we decided to take a more difficult path ![ico-25 wink].",
-    "ua": "Тепер ми можемо виконати поставлене завдання:"
+    "ua": "Але ми вирішили піти більш складним шляхом ![ico-25 wink]."
   },
   "s10.h1": {
     "ru": "Число отрезков в интервале",
     "eng": "Number of nested segments",
-    "ua": "Перевірка парних дужок"
+    "ua": "Кількість відрізків в інтервалі"
   },
   "s10.p1": {
     "ru": "Есть несколько отрезков на числовой оси:",
     "eng": "There are several segments on the number axis:",
-    "ua": "Завдання: перевірити парність та правильність розміщення дужок."
+    "ua": "Є кілька відрізків на числовій осі:"
   },
   "s10.p2": {
     "ru": "Для каждого отрезка нужно посчитать, сколько отрезков оказалось внутри него.",
     "eng": "For each segment, you need to count how many segments are inside it.",
-    "ua": "Наприклад, валідація рядка \"({})[([])]\" має пройти нормально (повернути ⟦f18⟧),"
+    "ua": "Для кожного відрізка слід порахувати, скільки відрізків виявилося всередині нього."
   },
   "s10.p3": {
     "ru": "Для упрощения кода добавим в прототип конструктора **⟦f27⟧** метод **⟦f35⟧**:",
     "eng": "To simplify the code, add the **⟦f35⟧** method to the prototype of the **⟦f27⟧** constructor:",
-    "ua": "а валідація рядка \"({(})[([)])]\" має повернути ⟦f19⟧."
+    "ua": "Для спрощення коду додамо в прототип конструктора **⟦f27⟧** метод **⟦f35⟧**:"
   },
   "s10.p4": {
     "ru": "Теперь можно сравнить два отрезка обчень просто:",
     "eng": "Now you can compare two segments very simply:",
-    "ua": "Для зручності використання створимо успадкований метод рядків:"
+    "ua": "Тепер можна порівняти два відрізки дуже просто:"
   },
   "s10.p5": {
     "ru": "Теперь мы можем выполнить поставленную задачу:",
     "eng": "Now we can complete the task:",
-    "ua": "Перейдіть за [**_посиланням_**](https://en.wikipedia.org/wiki/Idempotence) і в консолі сторінки виконайте код:"
+    "ua": "Тепер ми можемо виконати поставлене завдання:"
   },
   "s11.h1": {
     "ru": "Проверка парных скобок",
-    "eng": "location",
-    "ua": ""
+    "eng": "Checking paired brackets",
+    "ua": "Перевірка парних дужок"
   },
   "s11.p1": {
     "ru": "Задача: проверить парность и правильность расстановки скобок.",
-    "eng": "",
-    "ua": ""
+    "eng": "Task: Check the parity and correct placement of brackets.",
+    "ua": "Завдання: перевірити парність та правильність розміщення дужок."
   },
   "s11.p2": {
     "ru": "Например, валидация строки \"({})[([])]\" должна пройти нормально (вернуть ⟦f18⟧),",
-    "eng": "",
-    "ua": ""
+    "eng": "For example, validating the string \"({})[([])]\" should pass normally (return ⟦f18⟧),",
+    "ua": "Наприклад, валідація рядка \"({})[([])]\" має пройти нормально (повернути ⟦f18⟧),"
   },
   "s11.p3": {
     "ru": "а валидация строки \"({(})[([)])]\" должна вернуть ⟦f19⟧.",
-    "eng": "",
-    "ua": ""
+    "eng": "while validating the string \"({(})[([)])]\" should return ⟦f19⟧.",
+    "ua": "а валідація рядка \"({(})[([)])]\" має повернути ⟦f19⟧."
   },
   "s11.p4": {
     "ru": "Для удобства использования создадим наследуемый метод строк:",
-    "eng": "",
-    "ua": ""
+    "eng": "For convenience, we will create an inherited method for strings:",
+    "ua": "Для зручності використання створимо успадкований метод рядків:"
   },
   "s11.p5": {
     "ru": "Перейдите по [**_ссылке_**](https://en.wikipedia.org/wiki/Idempotence) и в консоли страницы выполните код:",
-    "eng": "",
-    "ua": ""
-  },
-  "s11.p6": {
-    "ru": "[![ico-30 hw] **Тесты**](⟦f36⟧)",
-    "eng": "",
-    "ua": ""
+    "eng": "Navigate to [**_link_**](https://en.wikipedia.org/wiki/Idempotence) and execute the code in the page's console:",
+    "ua": "Перейдіть за [**_посиланням_**](https://en.wikipedia.org/wiki/Idempotence) і в консолі сторінки виконайте код:"
   }
 }

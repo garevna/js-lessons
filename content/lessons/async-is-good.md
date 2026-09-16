@@ -357,4 +357,4 @@ getLogin().then(console.log, console.error)
 {{{async-is-good-5.js}}}
 
 _______________________
-{{s4.p12}}
+※※※tests quiz/async※※※

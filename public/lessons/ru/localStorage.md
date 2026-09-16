@@ -194,4 +194,4 @@ window.addEventListener('storage', function () {
 
 ___________________________________
 
-[![ico-30 hw] **Тесты**](https://garevna.github.io/js-quiz/#localStorage)
+※※※tests https://garevna.github.io/js-quiz/#localStorage※※※

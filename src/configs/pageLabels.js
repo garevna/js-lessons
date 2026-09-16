@@ -2,10 +2,11 @@
  * Words the page renders itself, in every language it renders.
  *
  * An example heading is the same sentence 64 times over with a different
- * number on the end, and putting it in the lesson text meant translating
- * "Пример" once per occurrence — with a different answer each time, because a
- * one-word heading carries no context. Here it is written once and chosen at
- * render time, so it never reaches a translator at all.
+ * number on the end, and a "Тесты" button is the same button on thirty pages
+ * with a different address behind it. Putting those words in the lesson text
+ * meant translating each occurrence separately — with a different answer each
+ * time, because a one-word label carries no context. Here they are written
+ * once and chosen at render time, so they never reach a translator at all.
  */
 
 export const pageLabels = {
@@ -13,5 +14,15 @@ export const pageLabels = {
     ru: 'Пример',
     eng: 'Example',
     ua: 'Приклад'
+  },
+  tests: {
+    ru: 'Тесты',
+    eng: 'Tests',
+    ua: 'Тести'
+  },
+  exercises: {
+    ru: 'Упражнения',
+    eng: 'Exercises',
+    ua: 'Вправи'
   }
 }

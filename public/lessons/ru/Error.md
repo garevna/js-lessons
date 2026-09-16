@@ -380,4 +380,4 @@ throw aggregatedError
 
 __________________________________
 
-[![ico-30 hw] **Упражнения**](test/exclusions)
+※※※exercises test/exclusions※※※

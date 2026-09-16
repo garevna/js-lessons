@@ -319,4 +319,4 @@ sample()
 
 _________________________
 
-[![ico-30 hw] Тесты](quiz/call-apply-bind)
+※※※tests quiz/call-apply-bind※※※

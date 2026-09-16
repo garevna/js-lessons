@@ -109,7 +109,7 @@ the value of the variable ** z ** will be 4
 
 ______________________________
 
-[![ico-30 hw] **Упражнения**](https://docs.google.com/forms/d/e/1FAIpQLSfhSiifjcwm7tLhcQftjAXByl-O93y3o31i91wAMr-uvi-MzQ/viewform)
+※※※exercises https://docs.google.com/forms/d/e/1FAIpQLSfhSiifjcwm7tLhcQftjAXByl-O93y3o31i91wAMr-uvi-MzQ/viewform※※※
 
 _________________________________________________________________
 

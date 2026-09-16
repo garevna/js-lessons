@@ -6,6 +6,7 @@ export function getIconList (pageText) {
   // ♦♦♦N♦♦♦ draws the cup without writing an icon marker into the page, so
   // the style for it has to be asked for here or the heading renders blank.
   if (/^[ 	]*♦{3}/m.test(pageText)) names.push('cap')
+  if (/^[ 	]*※{3}/m.test(pageText)) names.push('hw')
 
   const links = pageText.match(/\[(.)+\]\(.+\)/gm)
 

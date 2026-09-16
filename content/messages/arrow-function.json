@@ -151,212 +151,207 @@
   },
   "s5.h1": {
     "ru": "Литерал объекта",
-    "eng": "arguments",
-    "ua": "arguments"
+    "eng": "Object literal",
+    "ua": "Літерал об’єкта"
   },
   "s5.p1": {
     "ru": "Разберемся детальнее, что происходит.",
-    "eng": "Arrow functions don't have an **⟦f4⟧** object.",
-    "ua": "У стрілкових функцій немає об'єкта  **⟦f4⟧**."
+    "eng": "Let’s take a closer look at what’s happening.",
+    "ua": "Розберемося детальніше, що відбувається."
   },
   "s5.p2": {
     "ru": "Прежде, чем выполнить присваивание значения переменной **⟦f7⟧**, движок должен вычислить значение выражения в правой части оператора присваивания.",
-    "eng": "An exception (⟦f5⟧) will be thrown when trying to access the **⟦f4⟧** object from an arrow function.",
-    "ua": "При спробі звернутися до об'єкта **⟦f4⟧** з стрілочної функції буде згенеровано виключення ⟦f5⟧."
+    "eng": "Before assigning a value to the variable **⟦f7⟧**, the engine must evaluate the expression on the right-hand side of the assignment statement.",
+    "ua": "Перш ніж виконати присвоєння значення змінній **⟦f7⟧**, движок повинен обчислити значення виразу в правій частині оператора присвоєння."
   },
   "s5.p3": {
     "ru": "В правой части находится литерал объекта.",
-    "eng": "![ico-20 pin] If an arrow function is declared inside a regular function,",
-    "ua": "![ico-20 pin] Якщо стрілочна функція оголошена всередині звичайної функції,"
+    "eng": "The right-hand side contains an object literal.",
+    "ua": "У правій частині знаходиться літерал об’єкта."
   },
   "s5.p4": {
     "ru": "1. Движок вызывает конструктор **⟦f8⟧**.",
-    "eng": "the context variables of the parent function will be available to the arrow function",
-    "ua": "то змінні контексту батьківської функції будуть доступні для стрілочної функції"
+    "eng": "1. The engine calls the constructor **⟦f8⟧**.",
+    "ua": "1. Движок викликає конструктор **⟦f8⟧**."
   },
   "s5.p5": {
     "ru": "2. Конструктор **⟦f8⟧** создает пустой объект и возвращает ссылку на него.",
-    "eng": "(**⟦f20⟧**),",
-    "ua": "(**⟦f23⟧**),"
+    "eng": "2. The constructor **⟦f8⟧** creates an empty object and returns a reference to it.",
+    "ua": "2. Конструктор **⟦f8⟧** створює порожній об’єкт і повертає посилання на нього."
   },
   "s5.p6": {
     "ru": "3. Движок, получив ссылку на объект, помещает эту ссылку в переменную **⟦f7⟧** и выполняет три присваивания:",
-    "eng": "so the **⟦f4⟧** object of the parent function will be accessible inside it.",
-    "ua": "тому всередині неї буде доступний об'єкт **arguments** батьківської функції."
+    "eng": "3. Having received the reference to the object, the engine stores this reference in the variable **⟦f7⟧** and performs three assignments:",
+    "ua": "3. Движок, отримавши посилання на об’єкт, поміщає це посилання в змінну **⟦f7⟧** і виконує три присвоєння:"
   },
   "s5.p7": {
     "ru": "Отметим, что все три присваивания происходят в глобальной области видимости, т.е. в контексте глобального объекта **⟦f9⟧**.",
-    "eng": "As a result of running the code, the ⟦f4⟧ object of the **⟦f21⟧** function will be printed to the console:",
-    "ua": "◘◘![ico-25 cap] ** 8**◘◘"
+    "eng": "Note that all three assignments take place in the global scope, i.e. within the context of the global object **⟦f9⟧**.",
+    "ua": "Зазначимо, що всі три присвоєння відбуваються в глобальній області видимості, тобто в контексті глобального об’єкта **⟦f9⟧**."
   },
   "s5.p8": {
     "ru": "И вот тут мы видим, как работает передача контекста в процессе присваивания:",
-    "eng": "And here we can see how context passing works during assignment:",
-    "ua": "В результаті роботи коду в консоль буде виведено об'єкт **arguments** функції **_testArguments_**:"
+    "eng": "And here we can see how context passing works during the assignment process:",
+    "ua": "І ось тут ми бачимо, як працює передача контексту в процесі присвоєння:"
   },
   "s5.p9": {
     "ru": "![ico-20 pin] если в правой части оператора присваивания находится **обычная функция**, то она получает ссылку на контекст вызова, определяемую в **левой части** оператора присваивания (в нашем примере это объект **⟦f7⟧**);",
-    "eng": "![ico-20 pin] if there is a **regular function** on the right-hand side of the assignment statement, it receives a reference to the call context defined on the **left-hand side** of the assignment statement (in our example, this is the object **⟦f7⟧**);",
-    "ua": ""
+    "eng": "![ico-20 pin] if the right-hand side of the assignment statement contains a **regular function**, it receives a reference to the call context defined on the **left-hand side** of the assignment statement (in our example, this is the object **⟦f7⟧**);",
+    "ua": "![ico-20 pin] якщо в правій частині оператора присвоєння знаходиться **звичайна функція**, то вона отримує посилання на контекст виклику, що визначається в **лівій частині** оператора присвоєння (у нашому прикладі це об’єкт **⟦f7⟧**);"
   },
   "s5.p10": {
     "ru": "![ico-20 pin] если в правой части оператора присваивания находится **стрелочная функция**, то она получает контекст \"**правой части**\", т.е. того объекта, в контексте которого происходит присваивание (в нашем примере это глобальный объект **⟦f9⟧**).",
-    "eng": "![ico-20 pin] if the right-hand side of the assignment statement contains an **arrow function**, it receives the context of the “**right-hand side**”, i.e. the object in whose context the assignment takes place (in our example, this is the global object **⟦f9⟧**).",
-    "ua": ""
+    "eng": "![ico-20 pin] if there is an **arrow function** on the right-hand side of the assignment statement, it receives the context of the “**right-hand side**”, i.e. the object in whose context the assignment takes place (in our example, this is the global object **⟦f9⟧**).",
+    "ua": "![ico-20 pin] якщо в правій частині оператора присвоєння знаходиться **стрілкова функція**, то вона отримує контекст «**правої частини**», тобто того об’єкта, в контексті якого відбувається присвоєння (у нашому прикладі це глобальний об’єкт **⟦f9⟧**)."
   },
   "s5.p11": {
     "ru": "По приколу я называю это \"правилом буравчика\" ![ico-25 smile]",
     "eng": "Just for fun, I call this the ‘drill rule’ ![ico-25 smile]",
-    "ua": ""
+    "ua": "Заради жарту я називаю це «правилом буравчика» ![ico-25 smile]"
   },
   "s6.p1": {
     "ru": "Теперь вспомним, как работает конструктор.",
-    "eng": "![ico-20 warn] For arrow functions, the call context will always be the context in which the function was declared.",
-    "ua": "У стрілкових функціях контекст виклику завжди буде контекстом, у якому функцію оголошено."
+    "eng": "Now let’s recap how the builder works.",
+    "ua": "Тепер згадаймо, як працює конструктор."
   },
   "s6.p2": {
     "ru": "Когда мы вызываем функцию **⟦f10⟧** с ключевым словом **⟦f3⟧**:",
-    "eng": "![ico-20 warn] It is not possible to change the call context of arrow function.",
-    "ua": "Змінити контекст виклику стрілкової функції неможливо."
+    "eng": "When we call the function **⟦f10⟧** with the keyword **⟦f3⟧**:",
+    "ua": "Коли ми викликаємо функцію **⟦f10⟧** із ключовим словом **⟦f3⟧**:"
   },
   "s6.p3": {
     "ru": "то движок осуществляет следующую последовательность шагов:",
-    "eng": "It can be said that arrow functions have an \"innate\" call context.",
-    "ua": "Можна сказати, що у стрілкових функцій є \"вроджений\" контекст виклику."
+    "eng": "the engine carries out the following sequence of steps:",
+    "ua": "то движок виконує таку послідовність кроків:"
   },
   "s6.p4": {
     "ru": "1. Вызывает конструктор **⟦f8⟧**.",
     "eng": "1. Calls the constructor **⟦f8⟧**.",
-    "ua": ""
+    "ua": "1. Викликає конструктор **⟦f8⟧**."
   },
   "s6.p5": {
     "ru": "2. Конструктор **⟦f8⟧** создает пустой объект и возвращает ссылку на него.",
     "eng": "2. The constructor **⟦f8⟧** creates an empty object and returns a reference to it.",
-    "ua": "1. Викликає конструктор **⟦f8⟧**."
+    "ua": "2. Конструктор **⟦f8⟧** створює порожній об’єкт і повертає посилання на нього."
   },
   "s6.p6": {
     "ru": "3. Движок помещает полученную ссылку в переменную **⟦f11⟧**.",
     "eng": "3. The engine stores the returned reference in the variable **⟦f11⟧**.",
-    "ua": ""
+    "ua": "3. Движок поміщає отримане посилання в змінну **⟦f11⟧**."
   },
   "s6.p7": {
-    "ru": "3. Движок добавляет в этот объект ссылку на свойство **⟦f2⟧** функции **⟦f10⟧**.",
-    "eng": "3. The engine adds a reference to the **⟦f2⟧** property of the **⟦f10⟧** function to this object.",
-    "ua": ""
+    "ru": "4. Движок добавляет в этот объект ссылку на свойство **⟦f2⟧** функции **⟦f10⟧**.",
+    "eng": "4. The engine adds a reference to the **⟦f2⟧** property of the **⟦f10⟧** function to this object.",
+    "ua": "4. Движок додає до цього об’єкта посилання на властивість **⟦f2⟧** функції **⟦f10⟧**."
   },
   "s6.p8": {
-    "ru": "4. Движок вызывает функцию **⟦f10⟧** в контексте объекта **⟦f11⟧**.",
-    "eng": "4. The engine calls the **⟦f10⟧** function within the context of the **⟦f11⟧** object.",
-    "ua": ""
+    "ru": "5. Движок вызывает функцию **⟦f10⟧** в контексте объекта **⟦f11⟧**.",
+    "eng": "5. The engine calls the **⟦f10⟧** function in the context of the **⟦f11⟧** object.",
+    "ua": "5. Движок викликає функцію **⟦f10⟧** у контексті об’єкта **⟦f11⟧**."
   },
   "s6.p9": {
     "ru": "Т.е. к моменту, когда код функции **⟦f10⟧** будет запущен на исполнение, контекст ее вызова будет создан (**⟦f11⟧**), и это будет **экземпляр**.",
     "eng": "In other words, by the time the code of the function **⟦f10⟧** is executed, its call context will have been created (**⟦f11⟧**), and this will be an **instance**.",
-    "ua": ""
+    "ua": "Тобто до моменту, коли код функції **⟦f10⟧** буде запущений на виконання, контекст її виклику буде створено (**⟦f11⟧**), і це буде **екземпляр**."
   },
   "s6.p10": {
     "ru": "Чей экземпляр?",
     "eng": "Whose instance?",
-    "ua": ""
+    "ua": "Чий екземпляр?"
   },
   "s6.p11": {
     "ru": "Движок уже добавил этому экземпляру ссылку на **⟦f2⟧** функции **⟦f10⟧**.",
     "eng": "The engine has already added a reference to **⟦f2⟧** of the function **⟦f10⟧** to this instance.",
-    "ua": ""
+    "ua": "Движок вже додав до цього екземпляра посилання на **⟦f2⟧** функції **⟦f10⟧**."
   },
   "s6.p12": {
     "ru": "А в объекте **⟦f2⟧** функции есть свойство **⟦f12⟧**, содержащее ссылку на эту функцию.",
     "eng": "And the object **⟦f2⟧** of the function has a property **⟦f12⟧** containing a reference to this function.",
-    "ua": ""
+    "ua": "А в об’єкті **⟦f2⟧** функції є властивість **⟦f12⟧**, що містить посилання на цю функцію."
   },
   "s6.p13": {
     "ru": "Т.е. экземпляр уже имеет ссылку на конструктор **⟦f10⟧**:",
     "eng": "In other words, the instance already has a reference to the constructor **⟦f10⟧**:",
-    "ua": ""
+    "ua": "Тобто екземпляр уже має посилання на конструктор **⟦f10⟧**:"
   },
   "s6.p14": {
     "ru": "и теперь он распознается как экземпляр конструктора **⟦f10⟧**:",
     "eng": "and is now recognised as an instance of the constructor **⟦f10⟧**:",
-    "ua": "Тобто екземпляр уже має посилання на конструктор **⟦f10⟧**:"
+    "ua": "і тепер він розпізнається як екземпляр конструктора **⟦f10⟧**:"
   },
   "s6.p15": {
     "ru": "Что главное мы отсюда выносим:",
     "eng": "The key point to take away from this is:",
-    "ua": ""
+    "ua": "Що головне ми з цього розуміємо:"
   },
   "s6.p16": {
     "ru": "Функция **⟦f10⟧** будет работать в контексте создаваемого экземпляра, т.е. в контексте объекта **⟦f11⟧**.",
     "eng": "The function **⟦f10⟧** will operate in the context of the instance being created, i.e. in the context of the object **⟦f11⟧**.",
-    "ua": ""
+    "ua": "Функція **⟦f10⟧** працюватиме в контексті створюваного екземпляра, тобто в контексті об’єкта **⟦f11⟧**."
   },
   "s6.p17": {
     "ru": "Тогда присваивание:",
     "eng": "Therefore, the assignment:",
-    "ua": ""
+    "ua": "Тоді присвоєння:"
   },
   "s6.p18": {
     "ru": "будет происходить в контексте экземпляра **⟦f11⟧**.",
     "eng": "will take place in the context of the instance **⟦f11⟧**.",
-    "ua": ""
+    "ua": "відбуватиметься в контексті екземпляра **⟦f11⟧**."
   },
   "s6.p19": {
     "ru": "Это означает, что стрелочная функция в правой части оператора присваивания получит контекст объекта **⟦f11⟧**.",
     "eng": "This means that the arrow function on the right-hand side of the assignment statement will inherit the context of the object **⟦f11⟧**.",
-    "ua": "відбуватиметься в контексті екземпляра **⟦f11⟧**."
+    "ua": "Це означає, що стрілкова функція у правій частині оператора присвоєння отримає контекст об’єкта **⟦f11⟧**."
   },
   "s7.h1": {
     "ru": "Фабрика",
-    "eng": "Object literal",
-    "ua": "Літерал об'єкта"
+    "eng": "Factory",
+    "ua": "Фабрика"
   },
   "s7.p1": {
     "ru": "Теперь посмотрим, что присходит в случае, когда вместо конструктора мы используем фабрику:",
-    "eng": "Let's take a closer look at what is happening.",
-    "ua": "Давай розберем детальніше, що відбувається."
+    "eng": "Now let’s see what happens when we use a factory instead of a constructor:",
+    "ua": "Тепер подивимося, що відбувається, коли замість конструктора ми використовуємо фабрику:"
   },
   "s7.p2": {
     "ru": "Функция **⟦f13⟧** вызывается в контексте объекта **⟦f14⟧**.",
-    "eng": "Before assigning a value to the **⟦f7⟧** variable, the engine must calculate the value of the expression on the right side of the assignment operator.",
-    "ua": "Перед тим, як виконати присвоєння значення змінній **⟦f7⟧**, двигун має обчислити значення виразу в правій частині оператора присвоєння."
+    "eng": "The function **⟦f13⟧** is called within the context of the object **⟦f14⟧**.",
+    "ua": "Функція **⟦f13⟧** викликається в контексті об’єкта **⟦f14⟧**."
   },
   "s7.p3": {
     "ru": "Согласно нашему \"правилу буравчика\" ![ico-20 smile], метод **⟦f15⟧** получит \"врожденный\" контекст вызова - ссылку на объект **⟦f14⟧**.",
-    "eng": "On the right side is the literal of the object.",
-    "ua": "У правій частині знаходиться літерал об'єкта."
+    "eng": "According to our ‘drill rule’ ![ico-20 smile], the method **⟦f15⟧** will receive the ‘inherent’ call context – a reference to the object **⟦f14⟧**.",
+    "ua": "Згідно з нашим «правилом буравчика» ![ico-20 smile], метод **⟦f15⟧** отримає «вроджений» контекст виклику — посилання на об’єкт **⟦f14⟧**."
   },
   "s7.p4": {
     "ru": "Проверим:",
-    "eng": "1. The engine calls the **⟦f8⟧** constructor.",
-    "ua": "1. Двигун викликає конструктор **⟦f8⟧**."
+    "eng": "Let’s check:",
+    "ua": "Перевіримо:"
   },
   "s7.p5": {
     "ru": "**Вывод**.",
-    "eng": "2. The **⟦f8⟧** constructor creates an empty instance and returns a reference to it.",
-    "ua": "2. Конструктор **⟦f8⟧** створює порожній об'єкт і повертає посилання на нього."
+    "eng": "Output",
+    "ua": "Висновок"
   },
   "s7.p6": {
     "ru": "В случае, если экземпляр объекта создан с помощью конструктора,",
-    "eng": "3. The engine, having received a reference to an instance, places this reference in the **⟦f7⟧** variable and performs three assignments:",
-    "ua": "3. Двигун, отримавши посилання на об'єкт, поміщає це посилання в змінну **⟦f7⟧** і виконує три присвоєння:"
+    "eng": "If an instance of the object is created using the constructor,",
+    "ua": "У разі, якщо екземпляр об’єкта створено за допомогою конструктора,"
   },
   "s7.p7": {
     "ru": "использование стрелочных функций в публичных методах объекта гарантирует,",
-    "eng": "Note that all three assignments occur in the **global scope**, i.e. in the context of the global **⟦f9⟧** object.",
-    "ua": "Варто зазначити, що всі три присвоєння відбуваються в глобальній області видимості, тобто в контексті глобального об'єкта **⟦f9⟧**."
+    "eng": "using arrow functions in the object’s public methods ensures",
+    "ua": "використання стрілкових функцій у публічних методах об’єкта гарантує,"
   },
   "s7.p8": {
     "ru": "что **⟦f16⟧** будет всегда ссылаться на экземпляр.",
-    "eng": "And here's where we see how context transfer happens in the assignment process:",
-    "ua": "І ось тут ми бачимо, як працює передача контексту в процесі присвоєння:"
+    "eng": "that **⟦f16⟧** will always refer to the instance.",
+    "ua": "що **⟦f16⟧** завжди посилатиметься на екземпляр."
   },
   "s7.p9": {
     "ru": "В противном случае использование стрелочной функции создаст вам кучу проблем с контекстом вызова метода.",
-    "eng": "![ico-20 pin] if there is an **ordinary function** in the right part of the assignment operator, this function receives a reference to the calling context defined in the **left part** of the assignment operator (in our example it is a **⟦f7⟧** instance);",
-    "ua": "![ico-20 pin] якщо в правій частині оператора присвоєння знаходиться **звичайна функція**, то вона отримує посилання на контекст виклику, визначений в **лівій частині** оператора присвоєння (в нашому прикладі це об'єкт **⟦f7⟧**);"
-  },
-  "s8.p1": {
-    "ru": "[![ico-30 hw] Тесты](⟦f17⟧)",
-    "eng": "Now let's remember how the constructor works.",
-    "ua": "Тепер згадаємо, як працює конструктор."
+    "eng": "Otherwise, using an arrow function will cause you a whole host of problems with the method’s call context.",
+    "ua": "В іншому випадку використання стрілкової функції створить вам купу проблем із контекстом виклику методу."
   }
 }

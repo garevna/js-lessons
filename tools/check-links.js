@@ -76,6 +76,13 @@ for (const lang of ['ru', 'eng', 'ua']) {
         if (cut.length !== 2) continue
         links.push({ page: `${lang}/${file}`, line: i + 1, label: cut[0], ref: cut[1] })
       }
+
+      // ※※※tests quiz/var※※※ is a link too — the renderer turns it into one —
+      // and its target needs checking like any other.
+      const button = line.match(/^\s*※{3}\s*(\S+)\s+([^※]+?)\s*※{3}\s*$/)
+      if (button) {
+        links.push({ page: `${lang}/${file}`, line: i + 1, label: button[1], ref: button[2] })
+      }
     })
   }
 }

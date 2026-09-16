@@ -236,7 +236,7 @@ an exception will be generated:
 
 It can be said that arrow functions have an ‘inherent’ call context.
 
-#### ![ico-20 icon] arguments
+#### ![ico-20 icon] Object literal
 
 ~~~js
 window.name = 'Chrome'
@@ -253,13 +253,13 @@ human.getName()   // Stephan
 human.showName()  // Chrome
 ~~~
 
-Arrow functions don't have an **~arguments~** object.
+Let’s take a closer look at what’s happening.
 
-An exception (~ReferenceError~) will be thrown when trying to access the **~arguments~** object from an arrow function.
-![ico-20 pin] If an arrow function is declared inside a regular function,
-the context variables of the parent function will be available to the arrow function
-(**~scope chain~**),
-so the **~arguments~** object of the parent function will be accessible inside it.
+Before assigning a value to the variable **~human~**, the engine must evaluate the expression on the right-hand side of the assignment statement.
+The right-hand side contains an object literal.
+1. The engine calls the constructor **~Object~**.
+2. The constructor **~Object~** creates an empty object and returns a reference to it.
+3. Having received the reference to the object, the engine stores this reference in the variable **~human~** and performs three assignments:
 
 ~~~js
 human.name = 'Stephan'
@@ -269,19 +269,19 @@ human.getName = function () {
 human.showName = () => console.log(this.name)
 ~~~
 
-As a result of running the code, the ~arguments~ object of the **~testArguments~** function will be printed to the console:
+Note that all three assignments take place in the global scope, i.e. within the context of the global object **~window~**.
 
-And here we can see how context passing works during assignment:
+And here we can see how context passing works during the assignment process:
 
-![ico-20 pin] if there is a **regular function** on the right-hand side of the assignment statement, it receives a reference to the call context defined on the **left-hand side** of the assignment statement (in our example, this is the object **~human~**);
-![ico-20 pin] if the right-hand side of the assignment statement contains an **arrow function**, it receives the context of the “**right-hand side**”, i.e. the object in whose context the assignment takes place (in our example, this is the global object **~window~**).
+![ico-20 pin] if the right-hand side of the assignment statement contains a **regular function**, it receives a reference to the call context defined on the **left-hand side** of the assignment statement (in our example, this is the object **~human~**);
+![ico-20 pin] if there is an **arrow function** on the right-hand side of the assignment statement, it receives the context of the “**right-hand side**”, i.e. the object in whose context the assignment takes place (in our example, this is the global object **~window~**).
 
 Just for fun, I call this the ‘drill rule’ ![ico-25 smile]
 
 ----------------
 #### ![ico-20 icon] Call context
 
-![ico-20 warn] For arrow functions, the call context will always be the context in which the function was declared.
+Now let’s recap how the builder works.
 
 ~~~js
 function Sample (name) {
@@ -293,13 +293,13 @@ function Sample (name) {
 }
 ~~~
 
-![ico-20 warn] It is not possible to change the call context of arrow function.
+When we call the function **~Sample~** with the keyword **~new~**:
 
 ~~~js
 const user = new Sample('Piter')
 ~~~
 
-It can be said that arrow functions have an "innate" call context.
+the engine carries out the following sequence of steps:
 
 1. Calls the constructor **~Object~**.
 2. The constructor **~Object~** creates an empty object and returns a reference to it.
@@ -307,11 +307,11 @@ It can be said that arrow functions have an "innate" call context.
 ~~~js
 const user = new Object()
 ~~~
-3. The engine adds a reference to the **~prototype~** property of the **~Sample~** function to this object.
+4. The engine adds a reference to the **~prototype~** property of the **~Sample~** function to this object.
 ~~~js
 Object.setPrototypeOf(user, Sample.prototype)
 ~~~
-4. The engine calls the **~Sample~** function within the context of the **~user~** object.
+5. The engine calls the **~Sample~** function in the context of the **~user~** object.
 ~~~js
 Sample.call(user, 'Piter')
 ~~~
@@ -345,9 +345,9 @@ This means that the arrow function on the right-hand side of the assignment stat
 
 __________________________________
 
-#### ![ico-20 icon] Object literal
+#### ![ico-20 icon] Factory
 
-Let's take a closer look at what is happening.
+Now let’s see what happens when we use a factory instead of a constructor:
 ~~~js
 const template = {
   name: 'Robert'
@@ -365,24 +365,24 @@ function fabric (instance, name) {
 const user = fabric.call(template, {}, 'Piter')
 ~~~
 
-Before assigning a value to the **~human~** variable, the engine must calculate the value of the expression on the right side of the assignment operator.
+The function **~fabric~** is called within the context of the object **~template~**.
 
-On the right side is the literal of the object.
+According to our ‘drill rule’ ![ico-20 smile], the method **~showName~** will receive the ‘inherent’ call context – a reference to the object **~template~**.
 
-1. The engine calls the **~Object~** constructor.
+Let’s check:
 
 ~~~js
 user.showName()  // Robert
 ~~~
 ____________________________________________________
 
-2. The **~Object~** constructor creates an empty instance and returns a reference to it.
+Output
 
-3. The engine, having received a reference to an instance, places this reference in the **~human~** variable and performs three assignments:
-Note that all three assignments occur in the **global scope**, i.e. in the context of the global **~window~** object.
-And here's where we see how context transfer happens in the assignment process:
+If an instance of the object is created using the constructor,
+using arrow functions in the object’s public methods ensures
+that **~this~** will always refer to the instance.
 
-![ico-20 pin] if there is an **ordinary function** in the right part of the assignment operator, this function receives a reference to the calling context defined in the **left part** of the assignment operator (in our example it is a **~human~** instance);
+Otherwise, using an arrow function will cause you a whole host of problems with the method’s call context.
 
 _____________________________________________________
 
@@ -441,4 +441,4 @@ const getUser = (getName = prompt.bind(null, 'User name'), getAge = prompt.bind(
 
 ____________________________________________________________________
 
-Now let's remember how the constructor works.
+※※※tests quiz/arrowFunctions※※※

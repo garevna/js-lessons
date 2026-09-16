@@ -226,4 +226,4 @@ groupMembers.onchange = function (ev) {
 
 ___________________________
 
-[![ico-30 hw] **Тесты**](https://garevna.github.io/js-quiz/#forms)
+※※※tests https://garevna.github.io/js-quiz/#forms※※※

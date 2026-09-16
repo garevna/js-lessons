@@ -411,4 +411,4 @@ What happened?
 
 _________________________________________________________
 
-[![ico-30 hw] Exercises](test/bom)
+※※※exercises test/bom※※※

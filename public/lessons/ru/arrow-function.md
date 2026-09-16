@@ -307,11 +307,11 @@ const user = new Sample('Piter')
 ~~~js
 const user = new Object()
 ~~~
-3. Движок добавляет в этот объект ссылку на свойство **~prototype~** функции **~Sample~**.
+4. Движок добавляет в этот объект ссылку на свойство **~prototype~** функции **~Sample~**.
 ~~~js
 Object.setPrototypeOf(user, Sample.prototype)
 ~~~
-4. Движок вызывает функцию **~Sample~** в контексте объекта **~user~**.
+5. Движок вызывает функцию **~Sample~** в контексте объекта **~user~**.
 ~~~js
 Sample.call(user, 'Piter')
 ~~~
@@ -441,4 +441,4 @@ const getUser = (getName = prompt.bind(null, 'User name'), getAge = prompt.bind(
 
 ____________________________________________________________________
 
-[![ico-30 hw] Тесты](quiz/arrowFunctions)
+※※※tests quiz/arrowFunctions※※※
