@@ -198,7 +198,7 @@ Object(array)
 
 ____________________________________________________________________
 
-[![ico-30 hw] **Упражнения**](external/explicit-type-covertion)
+※※※exercises external/explicit-type-covertion※※※
 
 ____________________________________________________________________
 

@@ -357,4 +357,4 @@ getLogin().then(console.log, console.error)
 {{{async-is-good-5.js}}}
 
 _______________________
-[![ico-30 hw] Quiz](quiz/async)
+※※※tests quiz/async※※※

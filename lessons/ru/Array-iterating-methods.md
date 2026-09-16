@@ -420,7 +420,7 @@ users.map((user, index, arr) => {
 
 ______________________________________________
 
-### ![ico-20 icon] Примеры с методом map
+### ![ico-20 icon] Примеры с методом `map`
 
 Перейдите по [![ico-20 link] **_ссылке_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)
 
@@ -1621,4 +1621,4 @@ Array.from(document.getElementsByClassName('interlanguage-link'))
 
 ________________________________________________
 
-[![ico-30 hw] **Тесты**](quiz/arrayIterationMethods)
+※※※tests quiz/arrayIterationMethods※※※

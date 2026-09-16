@@ -100,4 +100,4 @@ var circle = function (radius) {
 
 ____________________________
 
-[![ico-30 hw] **Тести**](https://garevna.github.io/js-quiz/#recursion)
+※※※tests https://garevna.github.io/js-quiz/#recursion※※※

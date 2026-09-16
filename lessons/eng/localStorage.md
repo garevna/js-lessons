@@ -194,4 +194,4 @@ Attach the handler and change the contents of ~localStorage~ in the console
 
 ___________________________________
 
-[![ico-30 hw] **Tests**](https://garevna.github.io/js-quiz/#localStorage)
+※※※tests https://garevna.github.io/js-quiz/#localStorage※※※

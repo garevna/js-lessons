@@ -109,7 +109,7 @@ z = users.push('Henry')
 
 ______________________________
 
-[![ico-30 hw] **Вправи**](https://docs.google.com/forms/d/e/1FAIpQLSfhSiifjcwm7tLhcQftjAXByl-O93y3o31i91wAMr-uvi-MzQ/viewform)
+※※※exercises https://docs.google.com/forms/d/e/1FAIpQLSfhSiifjcwm7tLhcQftjAXByl-O93y3o31i91wAMr-uvi-MzQ/viewform※※※
 
 _________________________________________________________________
 

@@ -303,4 +303,4 @@ this leads to a memory overflow (very quickly, as the timer interval is 5 millis
 
 _____________________________
 
-[![ico-30 hw] Tests](quiz/closures-timers)
+※※※tests quiz/closures-timers※※※

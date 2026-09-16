@@ -411,4 +411,4 @@ newWin.document.write(html)
 
 _________________________________________________________
 
-[![ico-30 hw] Упражнения](test/bom)
+※※※exercises test/bom※※※
