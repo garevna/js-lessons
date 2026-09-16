@@ -19,6 +19,7 @@
  */
 
 import { users, userList, lessons, forms } from './data.js'
+import { chat } from './chat.js'
 import { Store, files } from './store.js'
 
 const CORS = {
@@ -221,6 +222,98 @@ async function formData (request, path, url, env) {
   return json({ error: 404, message: `no route for ${path}` }, 404)
 }
 
+
+/* ---------------------------------------------------------------- chat */
+
+/**
+ * A face for a chat user, drawn rather than fetched.
+ *
+ * The originals were on cdn.glitch.global and went when Glitch did. Anything
+ * else hosted elsewhere would eventually go the same way, so these are
+ * generated from the id: the same name always gets the same two colours and
+ * the same initials.
+ */
+function avatar (id) {
+  let hash = 0
+  for (const ch of id) hash = (hash * 31 + ch.codePointAt(0)) % 360
+
+  const initials = id.split(/[-_ ]/).slice(0, 2).map((w) => w[0] || '').join('').toUpperCase() || '?'
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="8" fill="hsl(${hash} 52% 42%)"/>
+  <text x="32" y="41" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif"
+        font-size="26" font-weight="600" fill="hsl(${hash} 60% 92%)">${initials}</text>
+</svg>`
+
+  return new Response(svg, {
+    headers: { 'Content-Type': 'image/svg+xml; charset=utf-8', 'Cache-Control': 'public, max-age=86400', ...CORS }
+  })
+}
+
+/**
+ * What the hw-16 demo talks to: json-server over chat.json, which is what was
+ * on Glitch. The homework itself asks the student to run json-server locally —
+ * this is the hosted copy the lesson links to so the demo can be seen working
+ * without setting anything up.
+ */
+async function chatApi (request, path, url, env) {
+  const face = path.match(/^\/avatar\/([^/]+)\.svg$/)
+  if (face) return avatar(decodeURIComponent(face[1]))
+
+  const updated = new Store(env.DB, 'chat-updated')
+  const users = new Store(env.DB, 'chat-user')
+  const messages = new Store(env.DB, 'chat-message')
+
+  if (path === '/lastUpdate') {
+    if (request.method === 'GET') {
+      const stored = await updated.get('date')
+      return json(stored || chat.lastUpdate)
+    }
+    if (request.method === 'PUT') {
+      const body = await request.json().catch(() => ({}))
+      await updated.put('date', body)
+      return json(body)
+    }
+  }
+
+  if (path === '/users' && request.method === 'GET') {
+    const all = Object.values(await users.all(Object.fromEntries(chat.users.map((u) => [u.id, u]))))
+    // A user a student adds has no picture in the repository, so the Worker
+    // draws one from the name rather than leaving a broken image.
+    return json(all.map((u) => (u.avatar ? u : { ...u, avatar: `${url.origin}/chat/avatar/${encodeURIComponent(u.id)}.svg` })))
+  }
+
+  const who = path.match(/^\/users\/([^/]+)$/)
+  if (who && ['PATCH', 'PUT'].includes(request.method)) {
+    const id = decodeURIComponent(who[1])
+    const all = await users.all(Object.fromEntries(chat.users.map((u) => [u.id, u])))
+    const body = await request.json().catch(() => ({}))
+    const merged = request.method === 'PATCH' ? { ...(all[id] || { id }), ...body } : { id, ...body }
+    await users.put(id, merged)
+    return json(merged)
+  }
+
+  if (path === '/messages') {
+    const seed = Object.fromEntries(chat.messages.map((m, i) => [String(m.id ?? i), m]))
+
+    if (request.method === 'GET') {
+      const all = Object.values(await messages.all(seed))
+      all.sort((a, b) => (a.date || 0) - (b.date || 0))
+      return json(all)
+    }
+
+    if (request.method === 'POST') {
+      const body = await request.json().catch(() => ({}))
+      const id = String(body.id ?? Date.now())
+      const record = { id, ...body }
+      await messages.put(id, record)
+      return json(record)
+    }
+  }
+
+  return json({ error: 404, message: `no route for ${path}` }, 404)
+}
+
 /* ------------------------------------------------------------- routing */
 
 const INDEX = `js-lessons sandbox API
@@ -239,6 +332,11 @@ const INDEX = `js-lessons sandbox API
   /form-data/forms/<login>       multipart: name, age, avatar
   /form-data/form/<login>        POST PUT PATCH, multipart in
 
+  /chat/lastUpdate               GET PUT
+  /chat/users                    GET, and PATCH /chat/users/<id>
+  /chat/messages                 GET POST
+  /chat/avatar/<id>.svg          a face, drawn from the name
+
 Anything written here is gone within a day. The records the lessons print
 are always here.
 `
@@ -254,7 +352,8 @@ export default {
     for (const [prefix, handler] of [
       ['/rest-api', restApi],
       ['/json-server', jsonServer],
-      ['/form-data', formData]
+      ['/form-data', formData],
+      ['/chat', chatApi]
     ]) {
       if (url.pathname !== prefix && !url.pathname.startsWith(`${prefix}/`)) continue
       const path = url.pathname.slice(prefix.length) || '/'

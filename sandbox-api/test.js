@@ -132,6 +132,46 @@ check('GET /usernames/nobody', (await call('/json-server/usernames/nobody')).bod
   check('and it can be read back', back.type.includes('multipart') ? back.body.get('name') : JSON.stringify(back.body), 'Bandit')
 }
 
+/* ---------------------------------------------------------------- chat */
+
+{
+  const { body } = await call('/chat/users')
+  check('the chat has its eleven users', body.length, 11)
+  check('and they no longer point at a dead CDN',
+    body.every((u) => !/glitch/.test(u.avatar)), true)
+}
+
+{
+  const { body } = await call('/chat/messages')
+  check('the conversation is there', body.length >= 11, true)
+  check('in the order it was said', body.every((m, i, all) => !i || all[i - 1].date <= m.date), true)
+}
+
+check('lastUpdate has a date', typeof (await call('/chat/lastUpdate')).body.date, 'number')
+
+{
+  const said = { user: 'garevna', date: Date.now(), body: 'Проверка связи' }
+  const { body } = await call('/chat/messages',
+    { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(said) })
+  check('a message can be posted', body.body, 'Проверка связи')
+
+  const all = (await call('/chat/messages')).body
+  check('and read back', all.some((m) => m.body === 'Проверка связи'), true)
+}
+
+{
+  const { body } = await call('/chat/users/begemot',
+    { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ active: 1 }) })
+  check('a user can be marked active', body.active, 1)
+  check('without losing the rest of them', body.id, 'begemot')
+}
+
+{
+  const { status, type } = await call('/chat/avatar/begemot.svg')
+  check('an avatar is drawn', status, 200)
+  check('as an svg', type.includes('image/svg'), true)
+}
+
 /* --------------------------------------------------------------- done */
 
 if (live) {
@@ -142,3 +182,4 @@ if (live) {
 console.log(`\n  ${passed} passed, ${failures.length} failed\n`)
 for (const f of failures) console.log(`  ${f}\n`)
 process.exit(failures.length ? 1 : 0)
+
