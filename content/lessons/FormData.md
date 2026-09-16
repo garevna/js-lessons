@@ -380,7 +380,6 @@ fileSelector.onchange = function (event) {
 
 {{s4.p1}}
 
-![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FformData-1.png)
 
 
 {{s4.p2}}

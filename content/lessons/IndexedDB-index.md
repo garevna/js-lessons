@@ -284,7 +284,6 @@ async function createLessonsDB () {
 createLessonsDB()
 ~~~
 
-![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-index-1.gif)
 
 ^^^[{{s2.spoiler3}}]
 

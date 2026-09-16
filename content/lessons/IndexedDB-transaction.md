@@ -210,7 +210,6 @@ ________________________________
 {{s2.p21}}
 {{s2.p22}}
 
-![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-1.gif)
 
 _________________________________
 
@@ -411,7 +410,6 @@ indexedDB.open('users').onsuccess = event => {
 
 **hobbyIndex**
 
-![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-index-2.png)
 
 {{s3.p7}}
 

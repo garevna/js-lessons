@@ -57,7 +57,6 @@ _______________________________
 {{s1.p34}}
 {{s1.p35}}
 
-![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-1.gif)
 
 _________________________________________________
 
@@ -101,7 +100,6 @@ request.onupgradeneeded = event => console.log(event.target.result)
 
 {{s2.p17}}
 
-![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-3-1.gif)
 
 ______________________________________________________
 
@@ -164,7 +162,6 @@ request.onupgradeneeded = event => {
 {{s2.p20}}
 {{s2.p21}}
 
-![](https://cdn.glitch.com/a4e0a9fd-ea7b-47cf-b52a-48fd6359c559%2FindexedDB-3.gif)
 
 {{s2.p22}}
 {{s2.p23}}
