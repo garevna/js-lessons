@@ -32,7 +32,9 @@ const REFERENCE = 'ru'
 const LANGS = ['ru', 'eng', 'ua']
 const { resolve } = require('./lib/phrase-refs')
 
-const only = process.argv[2]
+const args = process.argv.slice(2)
+const check = args.includes('--check')
+const only = args.find((a) => !a.startsWith('--'))
 
 const readJson = (file) => {
   try {
@@ -57,6 +59,7 @@ if (!pages.length) {
 
 let written = 0
 let skipped = 0
+const stale = []
 const problems = []
 
 for (const page of pages) {
@@ -114,11 +117,36 @@ for (const page of pages) {
     // Only write when something changed, so an unchanged page keeps its
     // modification time and the build stays quiet in git.
     const before = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null
-    if (before !== out) {
-      fs.writeFileSync(file, out)
-      written += 1
+    if (before === out) continue
+
+    if (check) {
+      stale.push(`${lang}/${page}.md`)
+      continue
     }
+
+    fs.writeFileSync(file, out)
+    written += 1
   }
+}
+
+if (check) {
+  // A page in public/lessons that does not match what content/ says it should
+  // be. It happens when messages are edited and the build is not run, and it
+  // is invisible: the page renders, it is just out of date. One such page put
+  // an example heading where a paragraph belonged, for weeks.
+  if (stale.length) {
+    console.error(`
+  ${stale.length} built page${stale.length === 1 ? '' : 's'} no longer match content/:
+`)
+    for (const s of stale.slice(0, 20)) console.error(`    ${s}`)
+    if (stale.length > 20) console.error(`    … and ${stale.length - 20} more`)
+    console.error('\n  npm run lessons\n')
+    process.exit(1)
+  }
+  console.log(`
+  ${pages.length} pages: every built page matches content/
+`)
+  process.exit(0)
 }
 
 console.log(`${pages.length} page${pages.length > 1 ? 's' : ''}: ${written} file${written === 1 ? '' : 's'} written, ${skipped} language file${skipped === 1 ? '' : 's'} skipped for having no translation`)

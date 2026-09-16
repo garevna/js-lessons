@@ -25,7 +25,8 @@
     "phrases": "node tools/i18n-phrases.js",
     "i18n-check": "node tools/i18n-check.js",
     "links": "node tools/check-links.js",
-    "lessons": "node tools/i18n-build.js"
+    "lessons": "node tools/i18n-build.js",
+    "lessons-check": "node tools/i18n-build.js --check"
   },
   "keywords": [
     "javascript",

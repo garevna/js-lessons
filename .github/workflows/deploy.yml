@@ -54,6 +54,17 @@ jobs:
         # resolve different versions than the lockfile records.
         run: npm run install:all
 
+      - name: Check the built lessons match content/
+        # public/lessons is generated from content/, and both are committed. If
+        # messages are edited and the build is not run, the two drift and
+        # nothing says so — the page still renders, it is just out of date.
+        # One page spent weeks showing an example heading where a paragraph
+        # belonged, and it was found by eye.
+        #
+        # The deploy rebuilds anyway, so this does not protect the site. It
+        # protects the repository, and with it anyone serving public/ locally.
+        run: node tools/i18n-build.js --check
+
       - name: Build
         # sw-identity -> icons-worker -> content-worker -> root -> service-worker.
         # The order matters: the root bundle prints the service worker version

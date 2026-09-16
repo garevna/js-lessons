@@ -6,12 +6,12 @@ function createWatch () {
   const watch = section
     .appendChild(document.createElement('img'))
   return Object.assign(watch, {
-    src: path + 'icons/sand-watch.png',
+    src: path + 'icons/sand-watch.svg',
     style: `
       position: absolute;
       top: 8px;
       right: 8px;
-      width: 32px;
+      width: 24px;
       transition: all .5s;
   `
   })

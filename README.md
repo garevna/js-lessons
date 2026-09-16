@@ -444,6 +444,45 @@ node tools/i18n-check.js promise --list   the findings themselves
 ```
 
 
+### After editing a message file
+
+The pages the site serves are **built** from `content/`. Editing a message
+changes nothing until the build runs — this is the single most common way to
+lose an afternoon here.
+
+```
+npm run lessons
+```
+
+That is the whole answer for a text change: edit the `ru`, `eng` or `ua` value
+in `content/messages/<page>.json`, run that, reload. It rewrites only the pages
+that changed, so it is quick and quiet in git.
+
+To be sure the two are in step:
+
+```
+npm run lessons-check
+```
+
+It rebuilds every page in memory and compares, without writing anything. A
+page listed there is one where `public/lessons/` disagrees with `content/` —
+which renders perfectly and shows the wrong text. The same check runs in CI, so
+a stale page cannot be pushed.
+
+The full chain, and when each step is needed:
+
+| You changed | Run |
+|---|---|
+| a message, a phrase in the book, a skeleton | `npm run lessons` |
+| a page's structure (added or moved a paragraph) | `node tools/i18n-extract.js <page> --write`, then `npm run lessons` |
+| anything under `src/` | `npm run prod` |
+| a new page, an icon, a sound, anything cached | `npm run full` |
+
+`npm run full` does all of it and is never wrong; the shorter commands are for
+when you know what you touched. Commit `content/` **and** `public/lessons/`
+together — both are in the repository, and the check exists to keep them
+honest.
+
 ### Editing the Russian
 
 Edit the `ru` value in `content/messages/<page>.json` for text, or

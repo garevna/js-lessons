@@ -979,9 +979,9 @@ _________________________________________
 
 _____________________________________
 
-Функция, передаваемая методу **reduce** в качестве первого обязательного аргумента,
-как и в случае других итерирующих методов, может принимать дополнительные аргументы - индекс текущего элемента массива и ссылку на сам исходный массив.
-Благодаря ссылке, мы можем манипулировать исходным массивом, что делает его мутабельным.
+The function passed to the **reduce** method as its first mandatory argument,
+As with other iterative methods, it can take additional arguments – the index of the current array element and a reference to the source array itself.
+Thanks to the reference, we can manipulate the source array, making it mutable.
 
 ◘◘![ico-20 cap] ** 7**◘◘
 
@@ -1001,11 +1001,11 @@ _____________________________________
 
 ### Math.sqrt
 
-Проследим, как будет работать метод **~reduce~**, если передать ему первым аргументом **~Math.sqrt~**.
-Библиотечная функция **~Math.sqrt~** принимает всего 1 аргумент (число), и возвращает квадратный корень из полученного аргумента.
-Если при вызове мы не передаем методу **~reduce~** второй аргумент, он будет использовать в качестве стартового значения аккумулятора значение первого элемента массива.
-На каждой итерации это значение будет заменяться его квадратным корнем.
-Остальные элементы массива в вычислениях участвовать не будут, поскольку **~Math.sqrt~** принимает всего 1 аргумент, и это будет текущее значение переменной-аккумулятора.
+Let’s see how the method **~reduce~** works if we pass **~Math.sqrt~** as its first argument.
+The library function **~Math.sqrt~** takes just one argument (a number) and returns the square root of that argument.
+If, when calling the method **~reduce~**, we do not pass a second argument, it will use the value of the first element of the array as the accumulator’s initial value.
+At each iteration, this value will be replaced by its square root.
+The remaining elements of the array will not be involved in the calculations, as **~Math.sqrt~** takes only one argument, which will be the current value of the accumulator variable.
 
 ◘◘![ico-20 cap] ** 8**◘◘
 
@@ -1013,12 +1013,12 @@ _____________________________________
 ;[625, 5, 10].reduce(Math.sqrt) // 5
 ~~~
 
-В этом примере из числа 625 дважды был извлечен квадратный корень:
+In this example, the square root of 625 was taken twice:
 ••625 -> 25 -> 5••
 
-Почему дважды? Потому, что всего элементов в массиве 3, но первый элемент стал стартовым значением переменной-аккумулятора.
+Why twice? Because there are only 3 elements in the array, but the first element became the initial value of the accumulator variable.
 
-Если мы добавим вот такой метод **~root~** в прототип конструктора **~Array~**, то результат его вызова будет тем же:
+If we add a method like this, **~root~**, to the constructor prototype **~Array~**, the result of calling it will be the same:
 
 ~~~js
 Array.prototype.root = function () {
@@ -1035,8 +1035,8 @@ ____________________________________________
 [0, 0, 0].reduce(Math.sqrt, 625 * 625) // 5
 ~~~
 
-В этом примере мы задаем стартовое значение **переменной-аккумулятора** (625 * 625) вторым аргументом метода **~reduce~**.
-Поэтому число итераций (т.е. сколько раз будет извлечен корень квадратный из **переменной-аккумулятора**) будет равно числу элементов массива.
+In this example, we set the initial value of the **accumulator variable** (625 * 625) as the second argument of the **~reduce~** method.
+Therefore, the number of iterations (i.e. the number of times the square root will be taken of the **accumulator variable**) will be equal to the number of elements in the array.
 
 {{{Array-iteration-methods-reduce-7.js}}}
 
@@ -1044,13 +1044,13 @@ _______________________________
 
 ### Math.pow
 
-Теперь будем передавать методу **~reduce~** первым аргументом библиотечную функцию **Math.pow** (возведение в степень).
-Эта функция принимает два числовых аргумента: число, которое нужно возвести в степень, и значение степени.
+We will now pass the library function **Math.pow** (exponentiation) as the first argument to the method **~reduce~**.
+This function takes two numeric arguments: the number to be raised to a power, and the exponent.
 
-Если мы не передаем стартовое значение **переменной-аккумулятора** вторым аргументом метода **~reduce~**, то в этом качестве будет использовано значение первого элемента массива.
-Остальные элементы массива будут значениями степени, в которую нужно возвести текущее значение **переменной-аккумулятора**.
+If we do not pass the initial value of the **accumulator variable** as the second argument to the **~reduce~** method, the value of the first element of the array will be used instead.
+The remaining elements of the array will be the values of the exponent to which the current value of the **accumulator variable** is to be raised.
 
-Если же мы передаем стартовое значение **переменной-аккумулятора**, то все элементы массива будут рассматриваться как степень, в которую нужно возвести текущее значение **переменной-аккумулятора**.
+If, however, we pass the initial value of the **accumulator variable**, all elements of the array will be treated as the exponent to which the current value of the **accumulator variable** is to be raised.
 
 ◘◘![ico-20 cap] ** 10**◘◘
 
@@ -1070,7 +1070,7 @@ Math.pow(Math.pow(Math.pow(2, 2), 2), 2)   // 256
 
 {{{Array-iteration-methods-reduce-10.js}}}
 
-Если мы добавим в прототип конструктора **~Array~** метод **~pow~**, то этот метод будет работать аналогично методу **~reduce~**, вызванному с библиотечной функцией **~Math.pow~** и без второго аргумента:
+If we add the **~pow~** method to the **~Array~** constructor prototype, this method will behave in the same way as the **~reduce~** method when called with the library function **~Math.pow~** and without a second argument:
 
 ~~~js
 Array.prototype.pow = function () {
@@ -1122,7 +1122,7 @@ _The **argument function** has two formal parameters whose values ​​are used
 
 The function returns one of three values:
 
-|  0 | elements coincided (equal)            |
+|  0 | elements coincided (equal)    |
 |  1 | first argument is greater than second |
 | -1 | second argument is greater than first |
 
@@ -1312,7 +1312,7 @@ ______________________
 
 ## ![ico-25 icon] values()
 
-**Генератор**.
+**Generator**
 **Returns an _iterator_ object.**
 
 ◘◘![ico-20 cap] **values**◘◘
