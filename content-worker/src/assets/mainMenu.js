@@ -366,9 +366,9 @@ export const mainMenu = [
     eng: 'IndexedDB',
     ru: 'IndexedDB',
     items: [
-      { ref: 'IndexedDB', ua: 'ruBFactory API', eng: 'ruBFactory API', ru: 'ruBFactory API' },
+      { ref: 'IndexedDB', ua: 'IDBFactory API', eng: 'IDBFactory API', ru: 'IDBFactory API' },
       { ref: 'IndexedDB-store', ua: 'Сховища даних IndexedDB', eng: 'IndexedDB store', ru: 'Хранилища данных IndexedDB' },
-      { ref: 'IndexedDB-index', ua: 'ruBIndex', eng: 'ruBIndex', ru: 'ruBIndex' },
+      { ref: 'IndexedDB-index', ua: 'IDBIndex', eng: 'IDBIndex', ru: 'IDBIndex' },
       { ref: 'IndexedDB-transaction', ua: 'Transaction', eng: 'Transaction', ru: 'Transaction' },
       { ref: 'NoSQL', ua: 'Засади баз даних', eng: 'Database basics', ru: 'Основы баз данных' }
     ]
