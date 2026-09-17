@@ -17,11 +17,18 @@ export function createAnchors (line, anchors) {
 
     const [refText, ref] = anchor.slice(1, -1).split('](')
 
+    // A new tab for a page, and none for a scheme the operating system
+    // answers. viber:// in a fresh _blank tab leaves the tab blank and the
+    // handler unfired — the browser will not launch an external application
+    // from a page that never loaded. Navigating in place hands it over.
+    const external = /^https?:\/\//i.test(ref)
+
     const link = Object.assign(createElem('a', res), {
-      target: '_blank',
       innerHTML: this.parseIcons(this.formatText(refText)),
       className: 'visible-anchor'
     })
+
+    if (external) link.target = '_blank'
 
     if (ref.split('/')[0] === 'page') {
       const [fileName, hash] = ref.split('/')[1].split('#')
