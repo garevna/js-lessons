@@ -33,14 +33,15 @@ export function createAnchors (line, anchors) {
         href
       })
     } else {
-      // An address stands as written. It used to be sliced one character short
-      // — ref.slice(0, -1) — so every external link landed one character wide
-      // of its target, and the workaround in the lessons was a space at the end
-      // for the slice to eat. Those spaces are gone from the pages now.
+      // An address with a scheme stands as written — http, https, and the ones
+      // a phone answers: mailto:, tel:, viber:, whatsapp:. Only http was
+      // recognised before, so [Viber](viber://chat?number=…) was handed to
+      // createPath, which read "viber:" as a folder alias and sent the reader
+      // to a page that does not exist.
       //
-      // http as well as https: plain http missed this branch entirely and was
-      // handed to createPath, which read "http:" as a folder alias.
-      const address = /^https?:\/\//.test(ref)
+      // Everything without a scheme is one of the aliases — page/, external/,
+      // quiz/, images/ — and goes to createPath as before.
+      const address = /^[a-z][a-z0-9+.-]*:/i.test(ref)
         ? ref
         : createPath(...ref.split('/'))
 

@@ -54,6 +54,33 @@ npm run export -- var eng          right
 npm run export var eng             npm keeps them, the script gets nothing
 ```
 
+## Where to edit
+
+> **Never edit anything under `public/lessons/`.** It is written by the build,
+> and an edit there disappears the next time anything is built — silently, with
+> no error and no mention. If a change had no effect, this is the first thing
+> to check.
+
+Everything is edited under `content/`:
+
+| To change | Edit |
+|---|---|
+| the words of a lesson | `content/messages/<page>.json` |
+| the markup of a lesson | `content/lessons/<page>.md` |
+| a repeated phrase | `content/phrases.json` |
+| the 404 | `content/lessons/404.md` — an ordinary lesson |
+| the "not translated yet" notice | `content/static/<lang>/not-translated.md` |
+| the offline notice | `content/static/offline.md` |
+| a new lesson | `content/drafts/<name>.md`, then extract it |
+
+Then `npm run lessons`, or leave `npm run watch` running and it happens by
+itself.
+
+`npm run lessons:check` answers the question directly: it compares every built
+page with `content/` and names anything that disagrees. CI runs it too, so a
+page built from stale sources cannot reach the repository.
+
+
 ## Writing a lesson
 
 A lesson is a `.md` file in `content/lessons/`, written in the markup below.
@@ -692,10 +719,8 @@ DevTools → Application → Service Workers → Unregister, then Clear site dat
 
 ## Gotchas
 
-**Do not edit `public/lessons/`.** Those files are built from
-`content/lessons/` and `content/messages/` by `npm run lessons`. Edits there
-are overwritten. The reverse is the easier mistake to make: editing `content/`
-and expecting the site to change without building.
+**Do not edit `public/lessons/`.** See [Where to edit](#where-to-edit) — it is
+the mistake this repository invites most, and the one that leaves no trace.
 
 **A language file appears only once the page has a translation.** The build
 writes `public/lessons/eng/<page>.md` when at least one key is translated, not

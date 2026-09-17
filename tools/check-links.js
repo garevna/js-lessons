@@ -139,6 +139,13 @@ function classify (ref) {
 
   if (/^https?:\/\//.test(ref)) return { kind: 'web', broken: false, url: ref }
 
+  // An address a phone answers: mailto:, tel:, viber:, whatsapp:. There is
+  // nothing to check — no file to find and nobody to ask — but it is a link
+  // and not a broken alias.
+  if (/^[a-z][a-z0-9+.-]*:/i.test(ref)) {
+    return { kind: ref.slice(0, ref.indexOf(':')).toLowerCase(), broken: false }
+  }
+
   const [alias, ...rest] = ref.split('/')
   const name = rest.join('/')
 
