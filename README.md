@@ -505,6 +505,36 @@ changed loses its translation, and only that one. It reports how many of each.
 The extractor splits a page and then rebuilds it, comparing the result with the
 original byte for byte. A page that fails that check is not written.
 
+
+### Working on the lessons locally
+
+Two terminals:
+
+```
+npm run watch      rebuilds a page the moment its source changes
+npm start          serves public/ at localhost:8181 and reloads the browser
+```
+
+Edit `content/lessons/<page>.md` or `content/messages/<page>.json`, save, and
+the page is rebuilt — only that page, in a few milliseconds — and live-server
+reloads the tab. Nothing to run by hand.
+
+The watcher writes only when the output actually differs, so a save that
+changes nothing leaves the browser alone.
+
+**The service worker stays out of the way on localhost.** It caches lessons,
+which is the point in production and a trap while writing one: a rebuilt page
+would keep coming back from the cache. On localhost it is not registered, and
+any registration left from an earlier visit is removed. To test it locally
+anyway, in the console:
+
+```
+localStorage.setItem('service-worker', 'on')    // reload
+localStorage.removeItem('service-worker')       // back to out of the way
+```
+
+Nothing about this changes the deployed site.
+
 ### Editing a page's markup
 
 The markup lives in `content/lessons/<page>.md` — the skeleton, with `{{keys}}`
