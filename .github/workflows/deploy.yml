@@ -63,7 +63,7 @@ jobs:
         #
         # The deploy rebuilds anyway, so this does not protect the site. It
         # protects the repository, and with it anyone serving public/ locally.
-        run: node tools/i18n-build.js --check
+        run: npm run lessons:check
 
       - name: Build
         # sw-identity -> icons-worker -> content-worker -> root -> service-worker.

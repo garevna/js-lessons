@@ -5,7 +5,7 @@ words come from keys. These do not, because they have nothing to gain from it â€
 no prose to reuse, no phrase to share, and the markup is the point.
 
 Edit them here, with the markup in place. `npm run lessons` copies them into
-`public/lessons/` unchanged, and `npm run lessons-check` notices if it has not.
+`public/lessons/` unchanged, and `npm run lessons:check` notices if it has not.
 
 | Here | Becomes | Shown when |
 |---|---|---|

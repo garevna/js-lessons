@@ -36,6 +36,24 @@ Deployment is automatic: a push to `master` builds the site in GitHub Actions
 and publishes `public/` to the `gh-pages` branch. `yarn deploy` still works for
 a manual push from a workstation.
 
+
+### The scripts
+
+```
+npm run help
+```
+
+prints what every script is for, grouped, with the argument form. `npm run`
+alone lists the names; `help` says what they do, which is the part that is hard
+to remember three weeks later.
+
+One thing worth knowing before it bites: arguments go after `--`.
+
+```
+npm run export -- var eng          right
+npm run export var eng             npm keeps them, the script gets nothing
+```
+
 ## Writing a lesson
 
 A lesson is a `.md` file in `content/lessons/`, written in the markup below.
@@ -475,8 +493,8 @@ find things no import would accept today — translations written before a check
 existed, and translations filed under the wrong key:
 
 ```
-npm run i18n-check                      counts per file
-node tools/i18n-check.js promise --list   the findings themselves
+npm run i18n:check                      counts per file
+npm run i18n:check -- promise --list   the findings themselves
 ```
 
 
@@ -497,7 +515,7 @@ that changed, so it is quick and quiet in git.
 To be sure the two are in step:
 
 ```
-npm run lessons-check
+npm run lessons:check
 ```
 
 It rebuilds every page in memory and compares, without writing anything. A
