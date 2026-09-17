@@ -85,7 +85,7 @@ function createPoint (x, y, color = '#f50') {
 }
 ~~~
 
-and two more helper functions **~sin~** and **~cos~**:
+and two more helper functions: **~sin~** and **~cos~**:
 
 ~~~js
 const step = Math.PI / 10
@@ -116,12 +116,12 @@ recurse()
 
 {{{async-await-01.js}}}
 
-Here we see the anonymous function **~async () => sin()~**.
+Here we see an anonymous asynchronous function **~async () => sin()~**.
 We already know that it returns **~promise~**.
 
 ^^^[![ico-30 eyes]]
 
-^^Of course, we could have written it this way as well to demonstrate chained computation:^^
+^^Of course, to demonstrate chained calculations, we could have written it like this:^^
 
 ~~~js
 const start = () => (async () => sin())().then(cos)
@@ -161,16 +161,16 @@ start()
 
 ^^^
 
-In this example, we took advantage of the fact that not only the asynchronous function, but also the **~then~** method returns **~promise~**.
-This ensures that each point of each graph is built by a callback function (microtask), meaning that the page does not lose interactivity for the duration of the graphs.
+In this example, we made use of the fact
+that not only the asynchronous function, but also the **~then~** method returns **~promise~**.
 
-And now let's show more clearly how microtasks one by one are coming into the call stack, which gives the impression that the graphs of functions are drawn simultaneously, although in fact one point of the graph of the function ~sin~ is drawn first, followed by one point of the graph of ~cos~, then one point of the graph of ~sin~ again, and so on.
+As a result, every point on every chart is plotted using a promis (micro-task), meaning the page remains interactive whilst the charts are being plotted.
 
 _________________________________________
 
-To make the process more visual, let's use the method of the global object **~requestAnimationFrame~**.
+Now let’s take a closer look at how microtasks take turns passing each other through the call stack, which gives the impression that the function graphs are being drawn simultaneously, although in reality one point on the sine graph is drawn first, followed by one point on the cosine graph, then another point on the sine graph, and so on.
 
-◘◘![ico-25 cap] ** 2**◘◘
+To make the process more visual, we will use the **~requestAnimationFrame~** method of the global object.
 
 ◘◘![ico-25 cap] ** 2**◘◘
 
@@ -201,7 +201,7 @@ recurseCos()
 
 ________________________
 
-and then make sure that drawing function graphs does not block the animation of the figure in our example:
+To make it even more convincing, let's add an animated figure:
 
 ~~~js
 const start = Date.now()
@@ -230,7 +230,7 @@ function createFigure () {
 }
 ~~~
 
-◘◘![ico-25 cap] ** 3**◘◘
+and let's make sure that in our example, drawing function graphs does not block the animation of the figure:
 
 ◘◘![ico-25 cap] ** 3**◘◘
 
@@ -243,41 +243,41 @@ figure.move()
 
 {{{async-await-03.js}}}
 
+Your applause, gentlemen! The asynchronous function has certainly earned it.
 And this is just the beginning.
-И это только начало.
 
 ________________________________________________________________________________________________
 
 ## ![ico-25 icon] await
 
-![ico-20 warn] Ключевое слово  **~await~**  можно использовать только внутри **асинхронных функций**.
+![ico-20 warn] The keyword **~await~** can only be used inside **asynchronous functions**.
 
-^^В противном случае будет сгенерировано исключение:^^
+^^In the opposite case, an exception will be generated:^^
 
 ~~~error
     Uncaught SyntaxError: await is only valid in async function
 ~~~
 
-Давайте разберемся, что делает движок, когда встречает ключевое слово **~await~**.
-Во-первых, за ключевым словом **~await~** всегда следует какое-то выражение.
-Мы знаем, что когда движок встречает в нашем коде выражение, он вычисляет значение этого выражения, и заменяет это выражение на вычисленное значение.
-Итак, разберемся, что может следовать за ключевым словом **~await~**, и как будет вести себя движок в каждом случае.
+Let's take a closer look at what the engine does when it encounters the keyword **~await~**.
+Firstly, the keyword **~await~** is always followed by some kind of expression.
+We know that when the engine encounters an expression in our code, it calculates the value of that expression and replaces it with the calculated value.
+So let's take a closer look at what can follow the keyword **~await~** and how the engine will behave in each case.
 
-Мы рассмотрим варианты, когда за ключевым словом **~await~** следует:
-1.  промис - наша "магическая коробка с двумя дырками";
-2. объект, имеющий метод **~then~**;
-3. любое выражение, значением которого будет ссылка на массив или объект, строка, или число, или логическое значение, а так же ~null~ и ~undefined~.
+We will consider cases where the keyword **~await~** is followed by:
+1.  promis – our 'magic box with two holes';
+2. an object that has a method **~then~**;
+3. any expression whose value will be a reference to an array or object, a string, a number, or a boolean value, as well as ~null~ and ~undefined~.
 
-Почему мы отдельно рассматриваем эти варианты?
-Потому что поведение движка будет различным в каждом из этих случаев.
+Why do we consider these cases separately?
+Because the engine's behavior will be different in each of these cases.
 
 _____________________________________
 
 ### ![ico-20 icon] await &lt;promise>
 
-Первым делом посмотрим, что произойдет, если после ключевого слова **~await~** находится ссылка на нашу "магическую коробку с двумя дырками".
+First of all, let’s see what happens if there is a link to our 'magic box with two holes' after the keyword **~await~**.
 
-Создадим две вспомогательные функции:
+Let's create two helper functions:
 
 ◘◘![ico-25 cap] ** 4**◘◘
 
@@ -289,8 +289,8 @@ const func = (message, resolve) => setTimeout(() => resolve(message), random(500
 const createPromise = message => new Promise(func.bind(null, message))
 ~~~
 
-Итак, мы можем создать "магическую коробку с двумя дырками" методом **~createPromise~**.
-Затем мы можем использовать метод **~then()~** этой "коробки" (промиса) для передачи колбека (функции обратного вызова), который "заберет" результат, которым резолвится промис.
+So, we can create a 'magic box with two holes' using the method **~createPromise~**.
+We can then use the **~then()~** method of this 'box' (promise) to pass a callback, which will 'retrieve' the result that the promise resolves to.
 
 ~~~js
 createPromise('Resolved!').then(console.log)
@@ -299,7 +299,7 @@ createPromise('Resolved!').then(console.log)
 Resolved!
 ~~~
 
-А теперь посмотрим, как можно использовать ключевое слово **~await~**, и чем отличается его работа от работы метода **~then()~** промиса.
+Now let's see how we can use the keyword **~await~** and how its behavior differs from the **~then()~** method of a promise.
 
 ~~~js
 const asyncFunc = async () => console.log(await createPromise('Resolved!'))
@@ -311,7 +311,7 @@ asyncFunc()
 Resolved!
 ~~~
 
-Или так:
+Or like this:
 
 ~~~js
 (async () => console.log(await createPromise('Resolved!')))()
@@ -321,15 +321,15 @@ Resolved!
 Resolved!
 ~~~
 
-Пока никаких отличий не наблюдается.
-Т.е. ключевое слово **~await~** вызывает метод **~then()~** промиса, который стоит после **~await~**.
-Но возникает вопрос: метод **~then()~** промиса должен получить в качестве аргумента ссылку на колбек-функции.
-Однако выражение:
+So far, no differences have been observed.
+That is, the keyword **~await~** calls the **~then()~** method of the promise that follows it.
+But this raises a question: the **~then()~** method of the promise must take a reference to a callback function as an argument.
+However, the expression:
 ~~~js
 await createPromise('Resolved!')
 ~~~
-никакой колбек-функции не содержит. Даже намека.
-Давайте разберемся, что же там происходит.
+does not contain any callback function. Not even a hint.
+Let's see what's happening there.
 
 ~~~js
 new Promise((resolve, reject) => {
@@ -345,18 +345,18 @@ reject:
  ƒ () { [native code] }
 ~~~
 
-При вызове конструктора **~Promise~** ему была передана функция с двумя формальными параметрами.
-Она была вызвана, и получила при вызове в качестве аргументов два колбека.
-Как мы видим, это некие дефолтные колбеки.
-Они "забирают" результат и помещают его в нашу "магическую коробку с двумя дырками".
+When the constructor **~Promise~** was called, a function with two formal parameters was passed to it.
+It was called, and received two callbacks as arguments when called.
+As we can see, these are some default callbacks.
+They 'retrieve' the result and place it in our 'magic box with two holes'.
 
-Поэтому логично предположить, что эти колбеки имеют такой код:
+Therefore, it is logical to assume that these callbacks have the following code:
 
 ~~~js
 result => result
 ~~~
 
-Посмотрим, что делает **~await~**:
+Let’s see what **~await~** does:
 ◘◘resolve◘◘
 ~~~js
 const test = async () => console.log('Result: ', await Promise.resolve('Success.'))
@@ -377,7 +377,7 @@ test()
     Uncaught (in promise) Failure.
 ~~~
 
-Сравним это поведение с явным вызовом метода **~then~** промиса с передачей ему двух колбеков:
+Let us compare this behaviour with an explicit call to the **~then~** method of the promise, passing it two callbacks:
 
 ~~~js
 Promise.reject('Failure.')
@@ -388,10 +388,10 @@ Promise.reject('Failure.')
     Failure.
 ~~~
 
-Как видите, **~await~** вызывает метод **~then~**, но передает ему только один колбек (**~resolve~**).
-В случае реджекта управление будет "перехвачено" движком, который выбросит в консоль исключение.
+As you can see, **~await~** calls the **~then~** method, but passes only one callback (**~resolve~**) to it.
+In case of rejection, control will be 'caught' by the engine, which will throw an exception in the console.
 
-Поэтому для "перехвата" исключений стоит использовать метод **~catch~**:
+Therefore, to 'catch' exceptions, the **~catch~** method should be used:
 
 ~~~js
 const test = async () => {
@@ -407,13 +407,13 @@ test()
 ~~~
 _____________________________________________
 
-Пусть у нас есть такая функция:
+Let’s assume we have a function as follows:
 
 ~~~js
 const func = (resolve, reject) => Math.random() > 0.5 ? resolve('Success.') : reject('Failure.')
 ~~~
 
-Если мы воспользуемся методом **~then~** промиса для передачи второго колбека **~reject~**:
+If we use the **~then~** method of the promise to pass the second callback **~reject~**:
 
 ◘◘**^^Promise^^**◘◘
 
@@ -422,9 +422,9 @@ new Promise(func)
   .then(console.log, console.warn)
 ~~~
 
-то исключение будет "перехвачено", и в консоли будет предупреждение.
+then the exception will be 'caught', and a warning will be displayed in the console.
 
-Если же мы воспользуемся ключевым словом **~await~**:
+If, on the other hand, we use the keyword **~await~**:
 
 ◘◘**^^async function^^**◘◘
 
@@ -434,13 +434,13 @@ async function test () {
 }
 ~~~
 
-Тогда в случае "отказа" промиса будет сгенерировано исключение:
+In that case, if the promise ‘fails’, an exception will be thrown:
 
 ~~~error
     Uncaught (in promise) Failure.
 ~~~
 
-Таким образом, если за ключевым словом **~await~** следует промис, то движок вызовет метод **~then~** этого промиса, но ![ico-20 warn] без передачи второго колбека (**~reject~**).
+Thus, if a promise follows the keyword **~await~**, the engine will call the **~then~** method of that promise, but ![ico-20 warn] without passing the second callback (**~reject~**).
 
 ~~~js
 new Promise(func).then(console.log)
@@ -448,14 +448,14 @@ new Promise(func).then(console.log)
 
 ________________________________________
 
-А если после ключевого слова **~await~** будет не промис, а любой другой объект?
-Или даже не объект, а какая-то строка, или число, или логическое значение?
+But what if, after the keyword **~await~**, there will be any other object rather than a promise?
+Or even not an object, but some string, or a number, or a boolean value?
 
 _____________________________________
 
-### ![ico-20 icon] await
+### ![ico-20 icon] An object with a then method
 
-^^Otherwise an exception will be thrown:^^
+Let's create an object that has a **~then()~** method:
 
 ◘◘![ico-25 cap] ** 5**◘◘
 
@@ -475,9 +475,9 @@ Polina
 finish
 ~~~
 
-Let's understand what the engine does when it encounters the **~await~** keyword.
+Obviously, the object **~user~** is **not** a promise, and no asynchrony is observed yet.
 
-Firstly, the **~await~** keyword is always followed by some expression.
+However, let's see what happens when the code is executed:
 
 ~~~js
 const test = async () => console.log(await user)
@@ -489,34 +489,34 @@ finish
 Polina
 ~~~
 
-We know that when the engine meets an expression in our code, it calculates the value of that expression, and replaces that expression with the calculated value.
-So, let's see what can follow the keyword **~await~**, and how the engine will behave in each case.
+As we can see, the engine, upon encountering the keyword **~await~**, did not get too worked up about what expression follows it, and it was not at all confused by the fact that this is not a promise.
+The engine discovered that this is an object that has a **~then()~** method.
 
-We'll look at cases where the **~await~** keyword is followed by:
+And what do we see? The **~then()~** method of the **~user~** object was called!
 
-1. an instance of ~Promise~ (our ‘magic box with two holes’);
-2. an object that has a **~then~** method;
-3. any expression whose value will be a reference to an array or object, a string, or a number, or a boolean value, as well as ~null~ and ~undefined~.
-Why do we consider these options separately?
-Because the engine behaviour will be different in each of these cases.
+But here is a mystery:
+The **~then()~** method of the **~user~** object is a higher-order function,
+That is, it expects to receive one mandatory argument - a **function** - when called.
+But we did not pass any argument to the **~then()~** method of the **~user~** object.
+Moreover, we did not call it at all!
 
-Получается, что движок не только сам вызвал метод **~then()~** объекта **~user~**,
-но еще и передал ему некую функцию в качестве аргумента.
+It turns out that the engine not only called the **~then()~** method of the **~user~** object itself
+but also passed it a function as an argument.
 
-Вопрос: какой колбек передал движок методу **~then()~** объекта **~user~**?
+Question: Which callback did the engine pass to the **~then()~** method of the **~user~** object?
 
-Судя по поведению метода **~then()~**, он получил вот такой колбек:
+Judging by the behaviour of the method **~then()~**, it received the following callback:
 
 ~~~js
 response => response
 ~~~
 
-т.е. колбек, действующий по принципу: "Что получил - то и отдаю".
+That is, a callback that works on the principle: "What I received, I will return".
 
-Как видите, встретив одно маленькое слово **~await~**, движок развивает довольно бурную деятельность.
+As you can see, upon encountering the word **~await~**, the engine engages in quite lively activity.
 
-Последний "штрих": в предыдущем примере метод **~then~** объекта **~user~** был функцией высшего порядка, т.е принимал в качестве аргумента функцию.
-Давайте посмотрим, что произойдет, если метод **~then~** будет обычной функцией:
+One final 'touch': in the previous example, the method **~then~** of the object **~user~** was a higher-order function, i.e. it took a function as an argument.
+Let's see what happens if the method **~then~** is a regular function:
 
 ~~~js
 const user = {
@@ -539,28 +539,28 @@ finish
 Polina
 ~~~
 
-Как видите, строка
+As you can see, the line
 
 ~~~js
 console.log('Hi from Event Loop')
 ~~~
 
-так и не была выполнена.
-Это означает, что асинхронная функция так и не дождалась возвращения колбека (потому, что его не было), и не смогла возобновить свое выполнение после **~await~**.
-Т.е асинхронная функция могла вернуться из цикла событий только после возвращения оттуда колбека, отправленного туда методом **~then~**.
-Но метод **~then~** не отправил ничего в цикл событий.
-Будьте внимательны!
+was never carried out.
+This means that the asynchronous function never waited for the callback to return (because it was never sent), and could not resume its execution after **~await~**.
+That is, the asynchronous function could only return from the event loop after receiving the callback sent there by the **~then~** method.
+But the method **~then~** did not send anything to the event loop.
+Be careful!
 
 _____________________________________
 
-### ![ico-20 icon] await &lt;promise>
+### ![ico-20 icon] Let's recall promises
 
-Let's create two auxiliary functions:
-◘◘![ico-25 cap] ** 4**◘◘
-We can then use the **~then()~** method of this ‘box’ (instance of ~Promise~) to pass a callback function that will ‘take’ the result that the promise is resolved to.
+We have already mentioned that an instance of the **~Promise~** constructor is a magic box with two holes.
+The **~then()~** and **~catch()~** methods are the 'holes' in the box.
+Through these 'holes', we insert our callbacks, and the box 'promises' us that as soon as it has content, one of our callbacks will receive it.
 
 @@@@ 2
-Now let's see how the **~await~** keyword can be used, and how its operation differs from that of the **~then()~** method of ~Promise~ instance.
+When the box will have content is unknown.<br>What this content will be - a 'white ball' (**response**) or a 'black ball' (**error**) - is also unknown.
 ![](illustrations/white-and-black.png)
 @@@@
 
@@ -579,57 +579,57 @@ const func = ((startTime, callback) => {
 requestAnimationFrame(func)
 ~~~~
 
-Or so:
+It should be noted that the promise box knows that it needs to 'catch' the white or black ball when it arrives.
 
-So far, no differences have been observed.
+And the magic box sends its own callbacks for the white and black balls to the **Event Loop**.
 
-That is, the keyword **~await~** calls the method **~then()~** of the ~Promise~ instance which comes after **~await~**.
-But a question arises: the method **~then()~** of a ~Promise~ instance should get a references to callback functions as an arguments.
-However, the expression:
-does not contain any callback function. Not even a hint.
+The callbacks are already 'sitting' in the event table 'in ambush'.
+They 'catch the balls' for us.
+When they catch it, they will put it in the magic box of the **~Promise~** instance.
+They are bound to the following events:
 
-Let's figure out what is going on there.
+1. "The white ball has arrived" (response)
 
-When the constructor **~Promise~** was called, it was passed a function with two formal parameters.
+2. "The black ball has arrived" (error)
 
-This function was called, and received two references to callback functions as arguments when called.
-As we can see, these are some kind of default callback functions.
+Only one of them will return from the **Event Loop**.
+The content will appear in the box of the **~Promise~** instance.
 
 {{{async-await-05.js}}}
 
-They ‘take’ the result and put it into our ‘magic box with two holes’.
+Now the magic box with two holes is waiting for you to insert your 'hands' (callbacks **~resolve~** and **~reject~**) into these holes, to which the arriving ball can be given.
 
-Therefore, it is logical to assume that these colbeks have this code:
-Let's see what **~await~** does:
+It is possible that you have already 'inserted your hands' earlier, in which case you will receive the ball as soon as it appears in the box of the **~Promise~** instance.
+Otherwise, the ball will lie in the box until you use the **~then()~** and **~catch()~** methods, i.e. until you 'insert your hands' to take the ball.
 
-◘◘resolve◘◘
-As you can see, **~await~** calls **~then~** method, but passes it only one callback (**~resolve~**).
+![ico-30 point_up] Hence, the magic box synchronizes two autonomous asynchronous processes.
+This is the magical power of the box with two holes.
 
-In the case of a rejection, control will be ‘hijacked’ by the engine, which will throw an exception to the console.
+That is, the magic box of the promise sends its own callbacks to 'fetch the ball', and then waits for you to insert your hands (callbacks) into the holes **~then()~** and **~catch()~** to give the ball that is in storage.
 
-That's why you should use the **~catch~** method to ‘catch’ exceptions:
+^^Moreover, you can insert both hands (**~resolve~** and **~reject~**) into one hole **~then()~**, although using the second hole **~catch()~** in some cases saves you from error messages in the console. Try not to make the console blush for you ![ico-20 smile].^^
 
 _________________________________________
 
 ### ![ico-20 icon] await &lt;expression>
 
-Let’s say we have a function **~func~** like this:
-If we'll use the method **~then~** of the ~Promise~ instance to pass the second callback function (**~reject~**):
-◘◘**^^Promise^^**◘◘
+So, the engine encounters the expression ~**await** &lt;expression>~.
+It needs to compute the value of this expression.
+![ico-25 warn] Until it computes it and replaces the expression ~await &lt;expression>~ with the obtained (computed) value, it will not move to the next line of code of the asynchronous function.
 
-If we'll use the keyword **~await~**:
+If the value of ~<expression>~ is a reference to an instance of **~Promise~**, then the engine will call the **~then()~** method of that instance, passing it a callback:
 
 ~~~js
 response => response
 ~~~
-◘◘**^^async function^^**◘◘
+and will suspend the execution of the asynchronous function's code until the callback returns from the **Event Loop** with the 'ball' of the result (~response~) and puts it in the promise box.
 
-Thus, if a **~await~** keyword is followed by a promice, the engine will call the **~then~** method of that promice, but ![ico-20 warn] without passing the second callback function (**~reject~**).
+After the result appears in the box, the engine will take it out of the box and insert it in place of the expression ~await &lt;expression>~.
 
-What if after the keyword **~await~** there is not a ~Promise~ instance but any other object?
-Or even not an object, but some string, or a number, or a logical value?
+We have already asked ourselves what the engine will do if ~&lt;expression>~ is not a promise.
+And we have already figured out what the engine will do if ~&lt;expression>~ is an object that has a **~then()~** method.
 
-Теперь посмотрим, что будет делать движок, если ~&lt;expression>~ будет строкой, или числом, или другим значением.
+Now let’s see what the engine will do if ~&lt;expression>~ is a string, a number or some other value.
 
 ◘◘![ico-25 cap] ** 6**◘◘
 ~~~js
@@ -642,7 +642,7 @@ console.log('Start')
 console.log('Finish')
 ~~~
 
-В этом примере нужно внимательно следить за последовательностью вывода сообщений в консоль:
+In this example, you need to pay close attention to the sequence of messages printed to the console:
 
 ~~~console
 Start
@@ -653,27 +653,27 @@ Async function finished
 undefined
 ~~~
 
-Все, что выведено в консоль после сообщения **_Finish_** - это функции обратного вызова, которые "прошли" через **Event Loop**.
-Если они выведены до ~undefined~ - это **микротаски**.
+Everything printed to the console after the **_Finish_** message is callback functions that have ‘passed through’ the **Event Loop**.
+If they are printed before ~undefined~, they are **microtasks**.
 
-Итак, движок благополучно выводил в консоль ^^**_Start_**^^, затем наткнулся на функциональное выражение ([IIFE](page/Closure#IIFE)) и начал "вычислять" значение выражения в круглых скобках. А в круглых скобках - объявление анонимной асинхронной функции. Движок передает управление конструктору, который создает эту функцию и возвращает ссылку на нее. Движок, получив ссылку на функцию, вызывает ее, поскольку далее следуют курглые скобки (вызов функции).
-Анонимная асинхронная функция начинает выполняться, и в консоль выводится сообщение ^^**_Async function starts_**^^.
-Однако уже в следующей строчке кода функции движок "наткнулся" на выражение:
+So, the engine successfully printed ^^**_Start_**^^ to the console, then encountered a function expression ([IIFE](page/Closure#IIFE)) and began to ‘evaluate’ the expression within the parentheses. And inside the parentheses is a declaration of an anonymous asynchronous function. The engine passes control to the constructor, which creates this function and returns a reference to it. Having received the reference to the function, the engine calls it, as parentheses (a function call) follow next.
+The anonymous asynchronous function begins to execute, and the message ^^**_Async function starts_**^^ is printed to the console.
+However, in the very next line of the function’s code, the engine ‘stumbles upon’ the expression:
 ~~~js
 console.log(await 'Hello!')
 ~~~
-Здесь движок понимает, что нужно послать колбек ~() => 'Hello!'~ в **Event Loop**, и функция должна дождаться его возвращения, чтобы завершить выполнение этой строчки кода. Далее код функции выполняться не может, пока не вернется колбек. А вернуться он может только тогда, когда стек вызовов будет свободен.
-Итак, движку нужно на время "избавиться" от этой функции, но так, чтобы после возвращения колбека ~() => 'Hello!'~ можно было возобновить ее выполнение.
-Как это можно сделать?
+Here, the engine realises that it needs to send the callback ~() => 'Hello!'~ to the **Event Loop**, and the function must wait for it to return before it can complete execution of this line of code. The function’s code cannot proceed until the callback returns. And it can only return once the call stack is free.
+So, the engine needs to ‘get rid of’ this function temporarily, but in such a way that its execution can be resumed once the ~() => 'Hello!'~ callback returns.
+How can this be done?
 
-Например, заменив оставшийся невыполненым код функции:
+For example, by replacing the remaining unexecuted code of the function:
 
 ~~~js
 console.log(await 'Hello!')
 console.log('Async function finished')
 ~~~
 
-на вот такой код:
+with the following code:
 
 ~~~js
 Promise.resolve('Hello!')
@@ -683,13 +683,13 @@ Promise.resolve('Hello!')
   })
 ~~~
 
-И далее движок продолжает выполнять код скрипта со строчки:
+and then the engine continues executing the script from that line:
 
 ~~~js
 console.log('Finish')
 ~~~
 
-после чего стек вызовов освобождается, и из **Event Loop** возвращается колбек:
+after which the call stack is freed, and the callback is returned from the **Event Loop**:
 
 ~~~js
 message => {
@@ -698,9 +698,9 @@ message => {
 }
 ~~~
 
-который получил message со значением 'Hello!'.
+which received a message with the value 'Hello!'.
 
-Таким образом, появление ключевого слова **~await~** приводит к тому, что невыполненный остаток кода асинхронной функции становится колбеком.
+Thus, the appearance of the **~await~** keyword causes the unexecuted remainder of the asynchronous function's code to become a callback.
 
 _____________________________________________
 
@@ -734,8 +734,8 @@ __________________________________________________________________________
 
 ### ![ico-25 cap] 8
 
-◘◘![ico-25 cap] ** 5**◘◘
-However, let's see what happens when this code is executed:
+In this example, the main thread code will execute with the value **5** of the variable ~num~.
+However, calling the asynchronous function ~sample()~ will result in the value of the variable ~num~ being 10 after the main thread code has finished executing.
 
 ◘◘![ico-25 cap] ** 8**◘◘
 
@@ -851,13 +851,13 @@ async
 async-await
 ~~~
 
-As you can see, when the engine detected the keyword **~await~**, it didn't bother much about what expression followed it, and it wasn't bothered at all by the fact that it wasn't a ~Promise~ instance.
+Note that:
 
-The engine detected that it is an object that has a **~then()~** method.
-And what do we see? The **~then()~** method of the **~user~** object was called!
-But there is one mystery here:
+1. The promise returned by the function ~async () => await 'async-await'~ resolved last, even though it is the first line of code.
+2. The first to resolve was ~Promise.resolve('promise')~ (the second line of code).
+3. The second to resolve was the promise returned by the function ~async () => 'async'~ (the third line of code).
 
-The **~then()~** method of the **~user~** object is a higher-order function,
+By swapping the second and third lines of code:
 
 ~~~js
 ;(async () => await 'async-await')().then(console.log)
@@ -867,7 +867,7 @@ The **~then()~** method of the **~user~** object is a higher-order function,
 Promise.resolve('promise').then(console.log)
 ~~~
 
-i.e. it expects to receive one mandatory argument when called - **function**.
+We will see that the order of output to the console has changed accordingly:
 
 ~~~console
 async
@@ -875,17 +875,17 @@ promise
 async-await
 ~~~
 
-But we did not pass any argument to the **~then()~** method of the **~user~** object.
+That is, their callbacks enter the microtask queue in the same sequence in which they appeared in the code.
 
-Moreover, we didn't call it at all!
+But with the function ~async () => await 'async-await'~, it is different.
 
-It turns out that the engine not only called the **~then()~** method of the **~user~** object, but also passed a certain function as an argument to it.
+Let's show that the code:
 
 ~~~js
 ;(async () => await 'async-await-1')().then(console.log)
 ~~~
 
-Question: what callback did the engine pass to the **~then()~** method of the **~user~** object?
+works identically to the code:
 
 ~~~js
 new Promise(resolve => resolve('async-await-2'))
@@ -893,7 +893,7 @@ new Promise(resolve => resolve('async-await-2'))
   .then(console.log)
 ~~~
 
-From the behaviour of the method **~then()~**, it seems that it has received this callback:
+To do this, we will run them first in the following sequence:
 
 ~~~js
 ;(async () => await 'async-await-1')().then(console.log)
@@ -908,7 +908,7 @@ async-await-1
 async-await-2
 ~~~
 
-i.e. callback function, which operates according to the principle: ‘What I get is what I give back’.
+and then we will change the order of their sequence:
 
 ~~~js
 new Promise(resolve => resolve('async-await-2'))
@@ -923,10 +923,10 @@ async-await-2
 async-await-1
 ~~~
 
-As you can see, when the engine meets one small word **~await~**, it starts a flurry of activity.
-One last ‘touch’: in the previous example, the method **~then~** of the **~user~** object was a higher-order function, i.e. it took a function as an argument.
+As we can see, they resolve strictly in the order in which they appear in the code.
+That is, the appearance of the **~await~** keyword lengthens the chain of callbacks passing through the **Event Loop** by 1, which leads to ~;(async () => await 'async-await')().then(console.log)~ being the last to 'finish' in example 12.
 
-Let's see what happens if the **~then~** method is an ordinary function:
+As we have already mentioned earlier, the asynchronous function itself is interrupted at the point where **~await~** is encountered, and the remainder of the code of this function, which has not been executed up to that point, itself becomes a callback and 'goes' into the **Event Loop** to free up the call stack and allow the callback to return with the result. Therefore, the chain is lengthened by 1 microtask.
 
 ______________________________________________
 
@@ -951,7 +951,7 @@ ______________________________________________
 
 ### ![ico-25 cap] 14
 
-As you can see, the string:
+Let's declare a helper function:
 
 ~~~js
 const createElem = tag => document.body.appendChild(document.createElement(tag))
@@ -1011,7 +1011,7 @@ ______________________________________________
 
 ### ![ico-25 cap] 16
 
-was never executed.
+Let's fix the current time value in milliseconds in the variable **~start~** and declare the helper functions **~getRandom~** and **~test~**:
 
 ~~~js
 const start = Date.now()
@@ -1021,7 +1021,7 @@ const getRandom = () => Math.round(Math.random() * 5000)
 const test = ms => Date.now() - start >= ms
 ~~~
 
-This means that the asynchronous function is waiting for the return of the callback function, but there is no callback function at all, and the asynchronous function could not resume its execution after **~await~**.
+Now let's declare the functions **~func~** and **~createPromise~**:
 
 ~~~js
 function func (name, time, callback) {
@@ -1035,7 +1035,7 @@ function createPromise (name, time) {
 }
 ~~~
 
-That is, the asynchronous function could return from the **Event Loop** only after the return of the callback function sent there by the method **~then~**.
+Now let's execute the code:
 
 ◘◘![ico-25 cap] **16**◘◘
 
@@ -1046,11 +1046,11 @@ That is, the asynchronous function could return from the **Event Loop** only aft
 
 {{{async-await-16.js}}}
 
-But the method **~then~** didn't send anything to the event loop.
+As you can see, the messages are printed in a random order, depending on the value returned by the **~getRandom~** function for each promise.
 
-![ico-25 warn] Be careful!
+The task is to synchronize the callbacks entering the call stack so that '**_First_**' is printed to the console first, followed by '**_Second_**', and then '**_Third_**'.
 
-◘◘**цепочка промисов**◘◘
+◘◘**promise chain**◘◘
 
 ~~~js
 createPromise('First', getRandom())
@@ -1059,7 +1059,7 @@ createPromise('First', getRandom())
   .then(() => createPromise('Third', getRandom()).then(console.log))
 ~~~
 
-◘◘**асинхронная функция**◘◘
+◘◘**async function**◘◘
 
 ~~~js
 const showResults = async () => {
@@ -1072,14 +1072,14 @@ const showResults = async () => {
 showResults()
 ~~~
 
-Итак, асинхронная функция может служить "оберткой" для нескольких асинхронных операций, выполнение которых можно упорядочить во времени, т.е. сделать так, чтобы их коллбэки отрабатывали в заданной последовательности.
+So, an async function can serve as a "wrapper" for multiple asynchronous operations, the execution of which can be ordered in time, i.e., make it so that their callbacks are executed in a specified sequence.
 
 ________________________________
 
 ### ![ico-25 cap] 17
 
-Рассмотрим чисто умозрительный вариант
-(на практике такое делать не надо):
+Let’s consider a purely theoretical variant
+(in practice, you shouldn’t do this):
 
 ◘◘![ico-25 cap] **17**◘◘
 
@@ -1095,20 +1095,20 @@ const users = ['Stephan', 'Andry']
   }, [])
 ~~~
 
-На что здесь следует обратить внимание:
+Here are the key points to consider:
 
-методу **reduce** передается асинхронная функция, которая возвращает промис.
-Поэтому после каждой итерации переменная **result** будет промисом,
-и ее надо резолвить с помощью **await**.
+the **reduce** method is passed an asynchronous function that returns a promise.
+Therefore, after each iteration, the **result** variable will be a promise
+and it must be resolved using **await**.
 
-В результате работы скрипта в переменной **users** будет промис.
-Извлечем результат из промиса:
+As a result of the script’s execution, the **users** variable will contain a promise.
+Let’s extract the result from the promise:
 
 ~~~js
 users.then(console.log)
 ~~~
 
-![ico-20 yes] Внимание, чтобы сократь число обращений к серверу, лучше сделать так:
+![ico-20 yes] Please note: to reduce the number of server requests, it is better to do it this way:
 
 ~~~js
 fetch(`${origin}/users?name=Stephan&name=Andry`)
@@ -1163,7 +1163,7 @@ _________________________________________
 
 ### ![ico-25 cap] 19
 
-Расширим прототип конструктора **~Object~** методом **~addElem~**:
+Let’s extend the **~Object~** constructor prototype with the **~addElem~** method:
 
 ◘◘Object◘◘
 ~~~js
@@ -1182,9 +1182,9 @@ Object.prototype.addElem = function (tagName) {
 }
 ~~~
 
-Как мы видим, добавленный элемент будет иметь два метода: **~addChar~** и **~replace~**, позволяющие модифицировать текстовое содержимое элемента.
+As we can see, the added element will have two methods: **~addChar~** and **~replace~**, which allow us to modify the element’s text content.
 
-Теперь расширим прототип конструкторов **~String~** и **~Number~** методом **~then~**:
+Now let’s extend the prototype of the constructors **~String~** and **~Number~** with the method **~then~**:
 
 ◘◘String◘◘
 ~~~js
@@ -1207,7 +1207,7 @@ Number.prototype.then = function () {
 }
 ~~~
 
-Терерь можно создать "простенькие" функции **~typeWritter~** и **~showNumber~**:
+We can now create the ‘simple’ functions **~typeWritter~** and **~showNumber~**:
 
 ◘◘![ico-25 cap] **19**◘◘
 

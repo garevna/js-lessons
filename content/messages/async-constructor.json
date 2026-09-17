@@ -1,72 +1,72 @@
 {
   "p1": {
     "ru": "Конструктор AsyncFunction",
-    "eng": "",
-    "ua": ""
+    "eng": "The constructor AsyncFunction",
+    "ua": "Конструктор AsyncFunction"
   },
   "p2": {
     "ru": "Асинхронная функция является экземпляром класса **AsyncFunction**",
-    "eng": "",
-    "ua": ""
+    "eng": "An asynchronous function is an instance of the **AsyncFunction** class",
+    "ua": "Асинхронна функція є екземпляром класу **AsyncFunction**"
   },
   "p3": {
     "ru": "![ico-20 warn] AsyncFunction **не** является глобальным объектом",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-20 warn] AsyncFunction **is not** a global object",
+    "ua": "![ico-20 warn] AsyncFunction **не** є глобальним об’єктом"
   },
   "p4": {
-    "ru": "^^Попытка отратиться к объекту **AsyncFunction** вызовет исключение:^^",
-    "eng": "",
-    "ua": ""
+    "ru": "^^Попытка обратиться к объекту **AsyncFunction** вызовет исключение:^^",
+    "eng": "^^Attempting to access the **AsyncFunction** object will throw an exception:^^",
+    "ua": "^^Спроба звернутися до об’єкта **AsyncFunction** спричинить виняток:^^"
   },
   "p5": {
     "ru": "^^поэтому получить ссылку на нее можно, например, так:^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^Therefore, you can obtain a reference to it, for example, as follows:^^",
+    "ua": "^^тому отримати посилання на неї можна, наприклад, так:^^"
   },
   "p6": {
     "ru": "^^Теперь исключения не будет:^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^Now there will be no exception:^^",
+    "ua": "^^Тепер винятку не буде:^^"
   },
   "p7": {
     "ru": "^^Более того, мы можем теперь использовать ссылку на конструктор AsyncFunction для создания экземпляра асинхронной функции:^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^Furthermore, we can now use a reference to the AsyncFunction constructor to create an instance of an asynchronous function:^^",
+    "ua": "^^Більше того, ми можемо тепер використовувати посилання на конструктор AsyncFunction для створення екземпляра асинхронної функції:^^"
   },
   "p8": {
     "ru": "^^Но и это еще не все ![ico-20 smile]^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^But that’s not all! [ico-20 smile]^^",
+    "ua": "^^Але й це ще не все ![ico-20 smile]^^"
   },
   "p9": {
     "ru": "^^Давайте добавим в прототип конструктора асинхронных функций метод **waitFor**:^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^Let’s add a **waitFor** method to the prototype of the asynchronous function constructor:^^",
+    "ua": "^^Давайте додамо до прототипу конструктора асинхронних функцій метод **waitFor**:^^"
   },
   "p10": {
     "ru": "^^а теперь создадим асинхронную функцию **sample**:^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^And now let’s create an asynchronous function called **sample**:^^",
+    "ua": "^^а тепер створимо асинхронну функцію **sample**:^^"
   },
   "p11": {
     "ru": "^^Осталось только вызвать функцию **sample**:^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^All that remains is to call the **sample** function:^^",
+    "ua": "^^Залишилося лише викликати функцію **sample**:^^"
   },
   "p12": {
     "ru": "Каррирование",
-    "eng": "",
-    "ua": ""
+    "eng": "Currying",
+    "ua": "Каррування"
   },
   "p13": {
     "ru": "Изменить контекст вызова стрелочной функции с помощью методов ⟦f0⟧, ⟦f1⟧, ⟦f2⟧ невозможно",
-    "eng": "",
-    "ua": ""
+    "eng": "It is not possible to change the context of an arrow function call using the ⟦f0⟧, ⟦f1⟧, ⟦f2⟧ methods",
+    "ua": "Змінити контекст виклику стрілкової функції за допомогою методів ⟦f0⟧, ⟦f1⟧, ⟦f2⟧ неможливо"
   },
   "p14": {
     "ru": "Однако каррирование работает так же, как и у обычных функций",
-    "eng": "",
-    "ua": ""
+    "eng": "However, currying works in exactly the same way as with ordinary functions",
+    "ua": "Однак каррування працює так само, як і у звичайних функцій"
   }
 }

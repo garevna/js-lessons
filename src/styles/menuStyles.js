@@ -16,7 +16,7 @@ let rawSource = `
   position: sticky;
   z-index: 500;
   top: 0;
-  margin-left: -16px;
+  margin-left: 0px;
   width: var(--menu-icon-size);
   height: var(--menu-icon-size);
   background-image: url(--menu-icon-image);

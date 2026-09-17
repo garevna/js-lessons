@@ -55,6 +55,46 @@ const build = (page) => {
 
 const stamp = () => new Date().toTimeString().slice(0, 8)
 
+/**
+ * The set of built pages, so that a page appearing or disappearing can be
+ * noticed.
+ *
+ * A lesson only gets a file in a language once it has a translation, and the
+ * worker learns which languages a page exists in from a registry built by
+ * scanning those folders. Rebuild the page and not the registry, and the site
+ * goes on believing the page is untranslated: Irina translated
+ * async-constructor into both languages, watched it rebuild, and still got the
+ * "not translated yet" notice on localhost.
+ */
+const builtPages = () => {
+  const found = []
+  for (const lang of ['ru', 'eng', 'ua']) {
+    const dir = path.join(root, 'public/lessons', lang)
+    if (!fs.existsSync(dir)) continue
+    for (const f of fs.readdirSync(dir)) if (f.endsWith('.md')) found.push(`${lang}/${f}`)
+  }
+  return found.sort().join('\n')
+}
+
+let known = builtPages()
+
+/** Regenerating the registry costs a few seconds, so it waits to be needed. */
+const refreshRegistry = () => {
+  const now = builtPages()
+  if (now === known) return false
+  known = now
+
+  const started = Date.now()
+  try {
+    execFileSync('npm', ['run', 'content-worker'], { cwd: root, encoding: 'utf8', shell: true, stdio: 'pipe' })
+    console.log(`  ${stamp()}  набор страниц изменился — реестр пересобран (${Date.now() - started} мс)`)
+  } catch (error) {
+    console.log(`  ${stamp()}  реестр пересобрать не удалось:`)
+    console.log(String(error.stdout || error.message).split('\n').filter(Boolean).slice(-4).map((l) => `            ${l}`).join('\n'))
+  }
+  return true
+}
+
 const run = () => {
   timer = null
 
@@ -78,6 +118,8 @@ const run = () => {
       ? `  ${stamp()}  ${name} — пересобрано (${result.wrote}, ${took} мс)`
       : `  ${stamp()}  ${name} — без изменений`)
   }
+
+  refreshRegistry()
 }
 
 const schedule = (page) => {

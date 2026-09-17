@@ -173,7 +173,7 @@ td {
 td > * {
   margin: 0;
   font-size: 0.8rem;
-  text-align: center;
+  text-align: left;
 }
 
 menu-component {

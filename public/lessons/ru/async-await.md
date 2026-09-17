@@ -85,7 +85,7 @@ function createPoint (x, y, color = '#f50') {
 }
 ~~~
 
-и еще две вспомогательные функции **~sin~** и **~cos~**:
+и еще две вспомогательные функции: **~sin~** и **~cos~**:
 
 ~~~js
 const step = Math.PI / 10

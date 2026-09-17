@@ -15,8 +15,8 @@ _________________________
 
 Running on the client, your code constantly uses [**client-side web APIs**](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/)<br>(e.g., **~DOM API~**, **~Audio API~**, **~Fetch API~**, **~File API~**, **~Notification API~**, **~IndexedDB API~**).
 
-[![ico-25 link] Web APIs](https://developer.mozilla.org/en-US/docs/Web/API/)
-You can connect to many web APIs remotely (e.g., [![ico-70 firebase]](https://firebase.google.com/) or [![ico-35 google-maps]](https://developers.google.com/maps/documentation/javascript/)).
+You can connect to many web APIs remotely
+(for example, [![ico-70 firebase]](https://firebase.google.com/) or [![ico-35 google-maps]](https://developers.google.com/maps/documentation/javascript/)).
 _________________________
 
 ## ![ico-25 icon] CRUD
@@ -34,12 +34,12 @@ To identify the type of request, an **access method**, or **verb**, is used to i
 
 | **GET** | **POST** | **PUT** | **PATCH** | **DELETE** | **HEAD** |
 
-| ~read~   | **GET**    | retrieve the data                            |
-| ~create~ | **POST**   | create new resource (new record)             |
-| ~update~ | **PUT**    | update existing resource by id               |
-| ~update~ | **PATCH**  | partial update of an existing resource by id |
-| ~delete~ | **DELETE** | delete resource by id                        |
-| ~read~   | **HEAD**   | retrieve information about the resource      |
+| ~read~  | **GET**   | retrieve the data   |
+| ~create~ | **POST**   | create new resource (new record)          |
+| ~update~ | **PUT**   | update existing resource by id               |
+| ~update~ | **PATCH**  | partial update of an existing resource by id        |
+| ~delete~ | **DELETE** | delete resource by id  |
+| ~read~  | **HEAD**   | retrieve information about the resource      |
 
 ^^You don't care whether the data is stored on the server as separate files or as records in a database.^^
 
@@ -84,7 +84,7 @@ _____________________________________
 
 Each API has documentation and specifications that define how information is transferred.
 
-^^^[![](icons/swagger.png)]
+^^^[![](icons/swagger-logo.svg)]
 ![](illustrations/api-endpoints-01.png)
 ^^^
 
@@ -92,7 +92,7 @@ APIs can use HTTP requests to obtain information from a web application or web s
 
 In the case of a REST API, the request is made over the Internet, and takes the form of a certain web address called **~endpoint~** (access point to the remote API).
 
-^^^[![](icons/endpoint-icon.png)]
+^^^[![](icons/api-endpoints.svg)]
 ^^The term "endpoint" is used not only in the context of REST APIs, but also in a broader sense in the field of information technology and networking.^^
 
 ^^• In network protocols, endpoint can refer to any communication endpoint in a network, whether it is an IP address and port in TCP/IP, or an endpoint in message routing.^^
@@ -116,15 +116,15 @@ Thus, **~endpoint~** is neither a **URL** (because it contains no information ab
 ![ico-25 warn] If some operation on a resource is valid, then there is an **~endpoint~** for it.
 ![ico-25 warn] If there is no such **~endpoint~**, then this operation with the resource is impossible.
 
-^^^[![](icons/swagger.png)]
+^^^[![](icons/swagger-logo.svg)]
 ![](illustrations/api-endpoints-02.png)
 ^^^
 
-^^^[![](icons/swagger.png)]
+^^^[![](icons/swagger-logo.svg)]
 ![](illustrations/api-endpoints-04.png)
 ^^^
 
-^^^[![](icons/coffee.png)]
+^^^[![](icons/coffee.svg)]
 ^^Let's take the example of the ~https://api.example.com~ API.^^
 ^^Suppose you have a database of users stored on a server.^^
 ^^API allows you to get a list of all the users and gives you a **~endpoint~** to do this:^^
@@ -163,10 +163,10 @@ ______________________________________________
 
 **Terms:**
 
-• ^^![ico-20 pin] **SOA** is a service-oriented architecture of web applications (a set of architectural principles).^^
-• ^^![ico-20 pin] **RPC** is a remote procedure call.^^
-• ^^![ico-20 pin] **Service** is a set of operations that accept a Request and issue a Response.^^
-• ^^![ico-20 pin] **Web service**  is a software system identified by a web address with standardized interfaces.^^
+| ^^![ico-20 pin] **SOA** (**_Service-Oriented Architecture_**) — service-oriented architecture for web applications (a set of architectural principles).^^ |
+| ^^![ico-20 pin] **RPC** is a remote procedure call.^^                                 |
+| ^^![ico-20 pin] **Service** is a set of operations that accept a Request and issue a Response.^^                          |
+| ^^![ico-20 pin] **Web service**  is a software system identified by a web address with standardized interfaces.^^       |
 
 Web services can communicate with each other and with other applications using notifications based on specific protocols.
 
@@ -184,9 +184,9 @@ The basic principle of **REST** is to limit the set of operations — only **CRU
 
 The architectural style of **REST** in most cases involves the use of the **HTTP** protocol.
 
-Therefore, **CRUD** commands have been converted to **~POST~** — **~GET~** — **~PUT~** — **~DELETE~** **HTTP** methods.
+Therefore, **CRUD** commands have been converted to **HTTP** methods **POST** — **GET** — **PUT** — **DELETE**.
 
-^^^[![](icons/postman.png)]
+^^^[![](icons/postman.svg)]
 ![](illustrations/api-rest-postman.png)
 ^^^
 

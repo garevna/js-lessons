@@ -153,13 +153,17 @@ table {
 td {
   border: solid 1px #eef;
   padding: 8px 12px;
-  text-align: center;
+  text-align: left;
 }
 
 td > * {
   margin: 0;
   padding: 0;
   font-size: 0.8rem;
+  text-align: left;
+}
+
+th, th > * {
   text-align: center;
 }
 

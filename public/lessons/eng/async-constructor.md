@@ -1,10 +1,10 @@
-## ![ico-25 icon] Конструктор AsyncFunction
+## ![ico-25 icon] The constructor AsyncFunction
 
 [◄◄◄ Async function ◄◄◄](page/async-await)
 
-Асинхронная функция является экземпляром класса **AsyncFunction**
+An asynchronous function is an instance of the **AsyncFunction** class
 
-![ico-20 warn] AsyncFunction **не** является глобальным объектом
+![ico-20 warn] AsyncFunction **is not** a global object
 
 ~~~js
 async function test () {}
@@ -40,7 +40,7 @@ console.dir(test)
         ► __proto__: Object
 ~~~~
 
-^^Попытка обратиться к объекту **AsyncFunction** вызовет исключение:^^
+^^Attempting to access the **AsyncFunction** object will throw an exception:^^
 
 ~~~js
 test instanceof AsyncFunction
@@ -48,25 +48,25 @@ test instanceof AsyncFunction
 
 ••![ico-20 error] Uncaught ReferenceError: AsyncFunction is not defined••
 
-^^поэтому получить ссылку на нее можно, например, так:^^
+^^Therefore, you can obtain a reference to it, for example, as follows:^^
 
 ~~~js
 const AsyncFunctionConstructor = test.__proto__.constructor
 ~~~
 
-^^или:^^
+^^or:^^
 
 ~~~js
 const AsyncFunction = (async function () {}).__proto__.constructor
 ~~~
 
-^^Теперь исключения не будет:^^
+^^Now there will be no exception:^^
 
 ~~~js
 test instanceof AsyncFunction  // true
 ~~~
 
-^^Более того, мы можем теперь использовать ссылку на конструктор AsyncFunction для создания экземпляра асинхронной функции:^^
+^^Furthermore, we can now use a reference to the AsyncFunction constructor to create an instance of an asynchronous function:^^
 
 ~~~js
 const asyncFunc = new AsyncFunction
@@ -83,15 +83,15 @@ async ƒ anonymous(
 }
 ~~~
 
-^^Но и это еще не все ![ico-20 smile]^^
+^^But that’s not all! [ico-20 smile]^^
 
 __________________________________
 
 ## ![ico-25 icon] prototype
 
-^^Давайте добавим в прототип конструктора асинхронных функций метод **waitFor**:^^
+^^Let’s add a **waitFor** method to the prototype of the asynchronous function constructor:^^
 
-◘◘![ico-20 cap] Пример 1◘◘
+◘◘![ico-20 cap] Example 1◘◘
 
 ~~~js
 (async function () {})
@@ -99,13 +99,13 @@ __________________________________
   .waitFor = (message, time) => new Promise(resolve => setTimeout(() => resolve(message), time * 1000))
 ~~~
 
-^^а теперь создадим асинхронную функцию **sample**:^^
+^^And now let’s create an asynchronous function called **sample**:^^
 
 ~~~js
 const sample = async (message, time) => console.log(await sample.waitFor(message, time))
 ~~~
 
-^^Осталось только вызвать функцию **sample**:^^
+^^All that remains is to call the **sample** function:^^
 
 ~~~js
 console.log('Start')
@@ -117,12 +117,12 @@ console.log('End')
 
 __________________________________
 
-## ![ico-25 icon] Каррирование
+## ![ico-25 icon] Currying
 
-Изменить контекст вызова стрелочной функции с помощью методов ~call~, ~apply~, ~bind~ невозможно
-Однако каррирование работает так же, как и у обычных функций
+It is not possible to change the context of an arrow function call using the ~call~, ~apply~, ~bind~ methods
+However, currying works in exactly the same way as with ordinary functions
 
-◘◘![ico-20 cap] Пример 2◘◘
+◘◘![ico-20 cap] Example 2◘◘
 
 ~~~js
 const func = arg => console.log(arg)

@@ -17,18 +17,11 @@ export function createAnchors (line, anchors) {
 
     const [refText, ref] = anchor.slice(1, -1).split('](')
 
-    // A new tab for a page, and none for a scheme the operating system
-    // answers. viber:// in a fresh _blank tab leaves the tab blank and the
-    // handler unfired — the browser will not launch an external application
-    // from a page that never loaded. Navigating in place hands it over.
-    const external = /^https?:\/\//i.test(ref)
 
     const link = Object.assign(createElem('a', res), {
       innerHTML: this.parseIcons(this.formatText(refText)),
       className: 'visible-anchor'
     })
-
-    if (external) link.target = '_blank'
 
     if (ref.split('/')[0] === 'page') {
       const [fileName, hash] = ref.split('/')[1].split('#')
@@ -61,6 +54,16 @@ export function createAnchors (line, anchors) {
       // external/ alike, because it happens after both have been resolved.
       const translated = localizedLinks[address]
       const href = (translated && translated[lang()]) || address
+
+      // A new tab, but only for somewhere else on the web.
+      //
+      // The decision cannot be made from what is written in the lesson:
+      // quiz/async carries no scheme and resolves to another site, while
+      // page/var resolves to this one. It is the resolved address that
+      // decides — and a scheme the operating system answers gets no tab at
+      // all, because a browser will not hand viber:// to the system from a
+      // blank tab that never loaded.
+      if (/^https?:\/\//i.test(href)) link.target = '_blank'
       Object.assign(link, { href })
     }
     return res

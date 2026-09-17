@@ -84,7 +84,7 @@ _____________________________________
 
 {{p30}}
 
-^^^[![](icons/swagger.png)]
+^^^[![](icons/swagger-logo.svg)]
 ![](illustrations/api-endpoints-01.png)
 ^^^
 
@@ -92,7 +92,7 @@ _____________________________________
 
 {{p32}}
 
-^^^[![](icons/endpoint-icon.png)]
+^^^[![](icons/api-endpoints.svg)]
 {{p33}}
 
 {{p34}}
@@ -116,15 +116,15 @@ _____________________________________
 {{p46}}
 {{p47}}
 
-^^^[![](icons/swagger.png)]
+^^^[![](icons/swagger-logo.svg)]
 ![](illustrations/api-endpoints-02.png)
 ^^^
 
-^^^[![](icons/swagger.png)]
+^^^[![](icons/swagger-logo.svg)]
 ![](illustrations/api-endpoints-04.png)
 ^^^
 
-^^^[![](icons/coffee.png)]
+^^^[![](icons/coffee.svg)]
 {{p48}}
 {{p49}}
 {{p50}}
@@ -186,7 +186,7 @@ _________________________________________
 
 {{p68}}
 
-^^^[![](icons/postman.png)]
+^^^[![](icons/postman.svg)]
 ![](illustrations/api-rest-postman.png)
 ^^^
 

@@ -95,9 +95,9 @@
     "ua": "Також створюємо допоміжну функцію **⟦f6⟧**:"
   },
   "p20": {
-    "ru": "и еще две вспомогательные функции **⟦f7⟧** и **⟦f8⟧**:",
-    "eng": "and two more helper functions **⟦f7⟧** and **⟦f8⟧**:",
-    "ua": "і ще дві - **⟦f7⟧** і **⟦f8⟧**:"
+    "ru": "и еще две вспомогательные функции: **⟦f7⟧** и **⟦f8⟧**:",
+    "eng": "and two more helper functions: **⟦f7⟧** and **⟦f8⟧**:",
+    "ua": "та ще дві допоміжні функції: **⟦f7⟧** і **⟦f8⟧**:"
   },
   "p21": {
     "ru": "Обратите внимание, что до сих пор мы не использовали асинхронную функцию.",
@@ -111,7 +111,7 @@
   },
   "p23": {
     "ru": "Здесь мы видим анонимную асинхронную функцию **⟦f9⟧**.",
-    "eng": "Here we see the anonymous function **⟦f9⟧**.",
+    "eng": "Here we see an anonymous asynchronous function **⟦f9⟧**.",
     "ua": "Тут ми бачимо анонімну асинхронну функцію **⟦f9⟧**."
   },
   "p24": {
@@ -121,7 +121,7 @@
   },
   "p25": {
     "ru": "^^Конечно, для демонстрации цепочных вычислений мы могли записать и так:^^",
-    "eng": "^^Of course, we could have written it this way as well to demonstrate chained computation:^^",
+    "eng": "^^Of course, to demonstrate chained calculations, we could have written it like this:^^",
     "ua": "^^Звісно, для демонстрації ланцюгових обчислень ми могли записати й так:^^"
   },
   "p26": {
@@ -131,618 +131,618 @@
   },
   "p27": {
     "ru": "В этом примере мы воспользовались тем,",
-    "eng": "In this example, we took advantage of the fact that not only the asynchronous function, but also the **⟦f11⟧** method returns **⟦f10⟧**.",
+    "eng": "In this example, we made use of the fact",
     "ua": "У цьому прикладі ми скористалися тим,"
   },
   "p28": {
     "ru": "что не только асинхронная функция, но и метод **⟦f11⟧** возвращает **⟦f10⟧**.",
-    "eng": "This ensures that each point of each graph is built by a callback function (microtask), meaning that the page does not lose interactivity for the duration of the graphs.",
+    "eng": "that not only the asynchronous function, but also the **⟦f11⟧** method returns **⟦f10⟧**.",
     "ua": "що не лише асинхронна функція, а й метод **⟦f11⟧** повертає **⟦f10⟧**."
   },
   "p29": {
     "ru": "Благодаря этому каждая точка каждого графика строится колбеком промиса (микротаском), т.е. страница не теряет интерактивность на время построения графиков.",
-    "eng": "And now let's show more clearly how microtasks one by one are coming into the call stack, which gives the impression that the graphs of functions are drawn simultaneously, although in fact one point of the graph of the function ⟦f7⟧ is drawn first, followed by one point of the graph of ⟦f8⟧, then one point of the graph of ⟦f7⟧ again, and so on.",
-    "ua": "Завдяки цьому кожна точка кожного графіка будується колбеком промісу (мікротаском), тобто. сторінка не втрачає інтерактивність під час побудови графіків."
+    "eng": "As a result, every point on every chart is plotted using a promis (micro-task), meaning the page remains interactive whilst the charts are being plotted.",
+    "ua": "Завдяки цьому кожна точка кожного графіка будується колбеком промісу (мікротаском), тобто сторінка не втрачає інтерактивність під час побудови графіків."
   },
   "p30": {
     "ru": "А теперь покажем более наглядно, как микротаски пропускают друг друга по очереди в стек вызовов, от чего складывается впечатление, что графики функций отрисовываются одновременно, хотя на самом деле сначала отрисовывается одна точка графика функции синус, за ней - одна точка графика косинуса, потом опять одна точка синуса, и т.д.",
-    "eng": "To make the process more visual, let's use the method of the global object **⟦f12⟧**.",
+    "eng": "Now let’s take a closer look at how microtasks take turns passing each other through the call stack, which gives the impression that the function graphs are being drawn simultaneously, although in reality one point on the sine graph is drawn first, followed by one point on the cosine graph, then another point on the sine graph, and so on.",
     "ua": "А тепер покажемо наочніше, як мікротаски пропускають один одного по черзі в стек викликів, від чого складається враження, що графіки функцій малюються одночасно, хоча насправді спочатку малюється одна точка графіка функції синус, за нею - одна точка графіка косинуса, потім знову одна точка синуса, і т.д."
   },
   "p31": {
     "ru": "Для того, чтобы сделать процесс более наглядным, воспользуемся методом глобального объекта **⟦f12⟧**.",
-    "eng": "◘◘![ico-25 cap] ** 2**◘◘",
+    "eng": "To make the process more visual, we will use the **⟦f12⟧** method of the global object.",
     "ua": "Для того, щоб зробити процес наочнішим, скористаємося методом глобального об'єкта **⟦f12⟧**."
   },
   "p32": {
     "ru": "Для пущей убедительности добавим еще анимированную фигуру:",
-    "eng": "and then make sure that drawing function graphs does not block the animation of the figure in our example:",
+    "eng": "To make it even more convincing, let's add an animated figure:",
     "ua": "Для більшої переконливості додамо ще анімовану фігуру:"
   },
   "p33": {
     "ru": "и убедимся, что в нашем примере отрисовка графиков функций не блокирует анимацию фигуры:",
-    "eng": "◘◘![ico-25 cap] ** 3**◘◘",
+    "eng": "and let's make sure that in our example, drawing function graphs does not block the animation of the figure:",
     "ua": "і переконаємося, що у нашому прикладі малювання графіків функцій не блокує анімацію фігури:"
   },
   "p34": {
     "ru": "Ваши алодисменты, господа! Асинхронная функция их точно заслужила.",
-    "eng": "And this is just the beginning.",
+    "eng": "Your applause, gentlemen! The asynchronous function has certainly earned it.",
     "ua": "Ваші алодисменти, панове! Асинхронна функція їх точно заслужила."
   },
   "p35": {
     "ru": "И это только начало.",
-    "eng": "",
+    "eng": "And this is just the beginning.",
     "ua": "І це лише початок."
   },
   "p36": {
     "ru": "![ico-20 warn] Ключевое слово  **⟦f13⟧**  можно использовать только внутри **асинхронных функций**.",
-    "eng": "",
+    "eng": "![ico-20 warn] The keyword **⟦f13⟧** can only be used inside **asynchronous functions**.",
     "ua": "![ico-20 warn] Ключове слово **⟦f13⟧** можна використовувати лише всередині **асинхронних функцій**."
   },
   "p37": {
     "ru": "^^В противном случае будет сгенерировано исключение:^^",
-    "eng": "",
+    "eng": "^^In the opposite case, an exception will be generated:^^",
     "ua": "^^В іншому випадку буде згенеровано виняток:^^"
   },
   "p38": {
     "ru": "Давайте разберемся, что делает движок, когда встречает ключевое слово **⟦f13⟧**.",
-    "eng": "",
+    "eng": "Let's take a closer look at what the engine does when it encounters the keyword **⟦f13⟧**.",
     "ua": "Давайте розберемося, що робить двигун, коли зустрічає ключове слово **⟦f13⟧**."
   },
   "p39": {
     "ru": "Во-первых, за ключевым словом **⟦f13⟧** всегда следует какое-то выражение.",
-    "eng": "",
+    "eng": "Firstly, the keyword **⟦f13⟧** is always followed by some kind of expression.",
     "ua": "По-перше, за ключовим словом **⟦f13⟧** завжди слідує якийсь вираз."
   },
   "p40": {
     "ru": "Мы знаем, что когда движок встречает в нашем коде выражение, он вычисляет значение этого выражения, и заменяет это выражение на вычисленное значение.",
-    "eng": "",
+    "eng": "We know that when the engine encounters an expression in our code, it calculates the value of that expression and replaces it with the calculated value.",
     "ua": "Ми знаємо, що коли двигун натрапляє на вираз у нашому коді, він обчислює його значення і замінює цей вираз на обчислене значення."
   },
   "p41": {
     "ru": "Итак, разберемся, что может следовать за ключевым словом **⟦f13⟧**, и как будет вести себя движок в каждом случае.",
-    "eng": "",
+    "eng": "So let's take a closer look at what can follow the keyword **⟦f13⟧** and how the engine will behave in each case.",
     "ua": "Отже, розберемося, що може слідувати за ключовим словом **⟦f13⟧**, і як поводитиметься двигун у кожному випадку."
   },
   "p42": {
     "ru": "Мы рассмотрим варианты, когда за ключевым словом **⟦f13⟧** следует:",
-    "eng": "",
+    "eng": "We will consider cases where the keyword **⟦f13⟧** is followed by:",
     "ua": "Ми розглянемо варіанти, коли за ключовим словом **⟦f13⟧** слідує:"
   },
   "p43": {
     "ru": "1.  промис - наша \"магическая коробка с двумя дырками\";",
-    "eng": "",
+    "eng": "1.  promis – our 'magic box with two holes';",
     "ua": "1. проміс (наша \"магічна коробка з двома дірками\");"
   },
   "p44": {
     "ru": "2. объект, имеющий метод **⟦f11⟧**;",
-    "eng": "",
+    "eng": "2. an object that has a method **⟦f11⟧**;",
     "ua": "2. об'єкт, що має метод **⟦f11⟧**;"
   },
   "p45": {
     "ru": "3. любое выражение, значением которого будет ссылка на массив или объект, строка, или число, или логическое значение, а так же ⟦f14⟧ и ⟦f5⟧.",
-    "eng": "",
+    "eng": "3. any expression whose value will be a reference to an array or object, a string, a number, or a boolean value, as well as ⟦f14⟧ and ⟦f5⟧.",
     "ua": "3. будь-який вираз, значенням якого буде посилання на масив чи об'єкт, рядок, чи число, чи логічне значення, а також ⟦f14⟧ і ⟦f5⟧."
   },
   "p46": {
     "ru": "Почему мы отдельно рассматриваем эти варианты?",
-    "eng": "",
+    "eng": "Why do we consider these cases separately?",
     "ua": "Чому ми окремо розглядаємо ці варіанти?"
   },
   "p47": {
     "ru": "Потому что поведение движка будет различным в каждом из этих случаев.",
-    "eng": "",
+    "eng": "Because the engine's behavior will be different in each of these cases.",
     "ua": "Тому що поведінка движка буде різною в кожному з цих випадків."
   },
   "p48": {
     "ru": "Первым делом посмотрим, что произойдет, если после ключевого слова **⟦f13⟧** находится ссылка на нашу \"магическую коробку с двумя дырками\".",
-    "eng": "",
+    "eng": "First of all, let’s see what happens if there is a link to our 'magic box with two holes' after the keyword **⟦f13⟧**.",
     "ua": "Насамперед подивимося, що станеться, якщо після ключового слова **⟦f13⟧** знаходиться посилання на нашу \"магічну коробку з двома дірками\"."
   },
   "p49": {
     "ru": "Создадим две вспомогательные функции:",
-    "eng": "",
+    "eng": "Let's create two helper functions:",
     "ua": "Створимо дві допоміжні функції:"
   },
   "p50": {
     "ru": "Итак, мы можем создать \"магическую коробку с двумя дырками\" методом **⟦f3⟧**.",
-    "eng": "",
+    "eng": "So, we can create a 'magic box with two holes' using the method **⟦f3⟧**.",
     "ua": "Отже, ми можемо створити \"магічну коробку з двома дірками\" методом **⟦f3⟧**."
   },
   "p51": {
     "ru": "Затем мы можем использовать метод **⟦f15⟧** этой \"коробки\" (промиса) для передачи колбека (функции обратного вызова), который \"заберет\" результат, которым резолвится промис.",
-    "eng": "",
+    "eng": "We can then use the **⟦f15⟧** method of this 'box' (promise) to pass a callback, which will 'retrieve' the result that the promise resolves to.",
     "ua": "Потім ми можемо використовувати метод **⟦f15⟧** цієї \"коробки\" (промісу) для передачі колбека (функції зворотного виклику), який \"забере\" результат, яким резолвується проміс."
   },
   "p52": {
     "ru": "А теперь посмотрим, как можно использовать ключевое слово **⟦f13⟧**, и чем отличается его работа от работы метода **⟦f15⟧** промиса.",
-    "eng": "",
+    "eng": "Now let's see how we can use the keyword **⟦f13⟧** and how its behavior differs from the **⟦f15⟧** method of a promise.",
     "ua": "А тепер подивимося, як можна використовувати ключове слово **⟦f13⟧**, і чим відрізняється його робота від роботи методу **⟦f15⟧** промісу."
   },
   "p53": {
     "ru": "Или так:",
-    "eng": "",
+    "eng": "Or like this:",
     "ua": "Або так:"
   },
   "p54": {
     "ru": "Пока никаких отличий не наблюдается.",
-    "eng": "",
+    "eng": "So far, no differences have been observed.",
     "ua": "Поки що жодних відмінностей не спостерігається."
   },
   "p55": {
     "ru": "Т.е. ключевое слово **⟦f13⟧** вызывает метод **⟦f15⟧** промиса, который стоит после **⟦f13⟧**.",
-    "eng": "",
+    "eng": "That is, the keyword **⟦f13⟧** calls the **⟦f15⟧** method of the promise that follows it.",
     "ua": "Тобто ключове слово **⟦f13⟧** призводить до виклику методу **⟦f15⟧** екземпляра ⟦f2⟧, який стоїть після **⟦f13⟧**."
   },
   "p56": {
     "ru": "Но возникает вопрос: метод **⟦f15⟧** промиса должен получить в качестве аргумента ссылку на колбек-функции.",
-    "eng": "",
+    "eng": "But this raises a question: the **⟦f15⟧** method of the promise must take a reference to a callback function as an argument.",
     "ua": "Але виникає питання: метод **⟦f15⟧** екземпляра ⟦f2⟧ повинен отримати як аргументи посилання на колбек-функції."
   },
   "p57": {
     "ru": "Однако выражение:",
-    "eng": "",
+    "eng": "However, the expression:",
     "ua": "Проте вираз:"
   },
   "p58": {
     "ru": "никакой колбек-функции не содержит. Даже намека.",
-    "eng": "",
+    "eng": "does not contain any callback function. Not even a hint.",
     "ua": "жодної колбек-функції не містить. Навіть натяку."
   },
   "p59": {
     "ru": "Давайте разберемся, что же там происходит.",
-    "eng": "",
+    "eng": "Let's see what's happening there.",
     "ua": "Давайте розберемося, що там відбувається."
   },
   "p60": {
     "ru": "При вызове конструктора **⟦f2⟧** ему была передана функция с двумя формальными параметрами.",
-    "eng": "",
+    "eng": "When the constructor **⟦f2⟧** was called, a function with two formal parameters was passed to it.",
     "ua": "При виклику конструктора **⟦f2⟧** йому було передано функцію з двома формальними параметрами."
   },
   "p61": {
     "ru": "Она была вызвана, и получила при вызове в качестве аргументов два колбека.",
-    "eng": "",
+    "eng": "It was called, and received two callbacks as arguments when called.",
     "ua": "Вона була викликана, і отримала при виклику як аргументи два колбеки."
   },
   "p62": {
     "ru": "Как мы видим, это некие дефолтные колбеки.",
-    "eng": "",
+    "eng": "As we can see, these are some default callbacks.",
     "ua": "Як бачимо, це деякі дефолтні колбеки."
   },
   "p63": {
     "ru": "Они \"забирают\" результат и помещают его в нашу \"магическую коробку с двумя дырками\".",
-    "eng": "",
+    "eng": "They 'retrieve' the result and place it in our 'magic box with two holes'.",
     "ua": "Вони \"забирають\" результат і поміщають його в нашу \"магічну коробку з двома дірками\"."
   },
   "p64": {
     "ru": "Поэтому логично предположить, что эти колбеки имеют такой код:",
-    "eng": "",
+    "eng": "Therefore, it is logical to assume that these callbacks have the following code:",
     "ua": "Тому логічно припустити, що ці колбеки мають такий код:"
   },
   "p65": {
     "ru": "Посмотрим, что делает **⟦f13⟧**:",
-    "eng": "",
+    "eng": "Let’s see what **⟦f13⟧** does:",
     "ua": "Подивимося, що робить **⟦f13⟧**:"
   },
   "p66": {
     "ru": "Сравним это поведение с явным вызовом метода **⟦f11⟧** промиса с передачей ему двух колбеков:",
-    "eng": "",
+    "eng": "Let us compare this behaviour with an explicit call to the **⟦f11⟧** method of the promise, passing it two callbacks:",
     "ua": "Порівняємо цю поведінку з явним викликом методу **⟦f11⟧** промісу з передачею йому двох колбеків:"
   },
   "p67": {
     "ru": "Как видите, **⟦f13⟧** вызывает метод **⟦f11⟧**, но передает ему только один колбек (**⟦f16⟧**).",
-    "eng": "",
+    "eng": "As you can see, **⟦f13⟧** calls the **⟦f11⟧** method, but passes only one callback (**⟦f16⟧**) to it.",
     "ua": "Як бачите, **⟦f13⟧** викликає метод **⟦f11⟧**, але передає йому лише один колбек (**⟦f16⟧**)."
   },
   "p68": {
     "ru": "В случае реджекта управление будет \"перехвачено\" движком, который выбросит в консоль исключение.",
-    "eng": "",
+    "eng": "In case of rejection, control will be 'caught' by the engine, which will throw an exception in the console.",
     "ua": "У разі реджекту управління буде \"перехоплено\" двигуном, який викине в консоль виняток."
   },
   "p69": {
     "ru": "Поэтому для \"перехвата\" исключений стоит использовать метод **⟦f17⟧**:",
-    "eng": "",
+    "eng": "Therefore, to 'catch' exceptions, the **⟦f17⟧** method should be used:",
     "ua": "Тому для \"перехоплення\" винятків варто використати метод **⟦f17⟧**:"
   },
   "p70": {
     "ru": "Пусть у нас есть такая функция:",
-    "eng": "",
+    "eng": "Let’s assume we have a function as follows:",
     "ua": "Нехай у нас є така функція:"
   },
   "p71": {
     "ru": "Если мы воспользуемся методом **⟦f11⟧** промиса для передачи второго колбека **⟦f18⟧**:",
-    "eng": "",
+    "eng": "If we use the **⟦f11⟧** method of the promise to pass the second callback **⟦f18⟧**:",
     "ua": "Якщо ми скористаємося методом **⟦f11⟧** промісу для передачі другого колбека **⟦f18⟧**:"
   },
   "p72": {
     "ru": "то исключение будет \"перехвачено\", и в консоли будет предупреждение.",
-    "eng": "",
+    "eng": "then the exception will be 'caught', and a warning will be displayed in the console.",
     "ua": "то виняток буде \"перехоплено\", і в консолі буде попередження."
   },
   "p73": {
     "ru": "Если же мы воспользуемся ключевым словом **⟦f13⟧**:",
-    "eng": "",
+    "eng": "If, on the other hand, we use the keyword **⟦f13⟧**:",
     "ua": "Якщо ж ми скористаємося ключовим словом **⟦f13⟧**:"
   },
   "p74": {
     "ru": "Тогда в случае \"отказа\" промиса будет сгенерировано исключение:",
-    "eng": "",
+    "eng": "In that case, if the promise ‘fails’, an exception will be thrown:",
     "ua": "тоді у разі \"відмови\" промісу буде згенеровано виняток:"
   },
   "p75": {
     "ru": "Таким образом, если за ключевым словом **⟦f13⟧** следует промис, то движок вызовет метод **⟦f11⟧** этого промиса, но ![ico-20 warn] без передачи второго колбека (**⟦f18⟧**).",
-    "eng": "",
+    "eng": "Thus, if a promise follows the keyword **⟦f13⟧**, the engine will call the **⟦f11⟧** method of that promise, but ![ico-20 warn] without passing the second callback (**⟦f18⟧**).",
     "ua": "Таким чином, якщо за ключовим словом **⟦f13⟧** слідує _проміс_, то двигун викличе метод **⟦f11⟧** цього _промісу_, але ![ico-20 warn] без передачі другого колбека  (**⟦f18⟧**)."
   },
   "p76": {
     "ru": "А если после ключевого слова **⟦f13⟧** будет не промис, а любой другой объект?",
-    "eng": "",
+    "eng": "But what if, after the keyword **⟦f13⟧**, there will be any other object rather than a promise?",
     "ua": "А якщо після ключового слова **⟦f13⟧** буде не _проміс_, а будь-який інший об'єкт?"
   },
   "p77": {
     "ru": "Или даже не объект, а какая-то строка, или число, или логическое значение?",
-    "eng": "",
+    "eng": "Or even not an object, but some string, or a number, or a boolean value?",
     "ua": "Чи навіть не об'єкт, а якийсь рядок, чи число, чи логічне значення?"
   },
   "p78": {
     "ru": "Объект с методом then",
-    "eng": "await",
+    "eng": "An object with a then method",
     "ua": "Об'єкт з методом then"
   },
   "p79": {
     "ru": "Давайте создадим объект, у которого есть метод **⟦f15⟧**:",
-    "eng": "^^Otherwise an exception will be thrown:^^",
+    "eng": "Let's create an object that has a **⟦f15⟧** method:",
     "ua": "Давайте створимо об'єкт, який має метод **⟦f15⟧**:"
   },
   "p80": {
     "ru": "Очевидно, что объект **⟦f19⟧** **не** является промисом, и никакой асинхронщины пока не наблюдается.",
-    "eng": "Let's understand what the engine does when it encounters the **⟦f13⟧** keyword.",
+    "eng": "Obviously, the object **⟦f19⟧** is **not** a promise, and no asynchrony is observed yet.",
     "ua": "Очевидно, що об'єкт **⟦f19⟧**  **не**  є _промісом_, і жодної асинхронщини поки що не спостерігається."
   },
   "p81": {
     "ru": "Однако посмотрим, что произойдет при выполнении кода:",
-    "eng": "Firstly, the **⟦f13⟧** keyword is always followed by some expression.",
+    "eng": "However, let's see what happens when the code is executed:",
     "ua": "Однак подивимося, що станеться під час виконання коду:"
   },
   "p82": {
     "ru": "Как видим, движок, обнаружив ключевое слово **⟦f13⟧**, не сильно напрягался с тем, что за выражение следует за ним, и его ничуть не смутило то, что это не промис.",
-    "eng": "We know that when the engine meets an expression in our code, it calculates the value of that expression, and replaces that expression with the calculated value.",
+    "eng": "As we can see, the engine, upon encountering the keyword **⟦f13⟧**, did not get too worked up about what expression follows it, and it was not at all confused by the fact that this is not a promise.",
     "ua": "Як бачимо, двигун, виявивши ключове слово **⟦f13⟧**, не сильно напружувався з тим, що за вираз слідує за ним, і його анітрохи не збентежило те, що це не _проміс_."
   },
   "p83": {
     "ru": "Движок обнаружил, что это объект, у которого есть метод **⟦f15⟧**.",
-    "eng": "So, let's see what can follow the keyword **⟦f13⟧**, and how the engine will behave in each case.",
+    "eng": "The engine discovered that this is an object that has a **⟦f15⟧** method.",
     "ua": "Двигун виявив, що це об'єкт, який має метод **⟦f15⟧**."
   },
   "p84": {
     "ru": "И что мы видим? Метод **⟦f15⟧** объекта **⟦f19⟧** был вызван!",
-    "eng": "We'll look at cases where the **⟦f13⟧** keyword is followed by:",
+    "eng": "And what do we see? The **⟦f15⟧** method of the **⟦f19⟧** object was called!",
     "ua": "І що ми бачимо? Метод **⟦f15⟧** об'єкта **⟦f19⟧** був викликаний!"
   },
   "p85": {
     "ru": "Но тут есть одна загадка:",
-    "eng": "1. an instance of ⟦f2⟧ (our ‘magic box with two holes’);",
+    "eng": "But here is a mystery:",
     "ua": "Але тут є одна загадка:"
   },
   "p86": {
     "ru": "Метод **⟦f15⟧** объекта **⟦f19⟧** является функцией высшего порядка,",
-    "eng": "2. an object that has a **⟦f11⟧** method;",
+    "eng": "The **⟦f15⟧** method of the **⟦f19⟧** object is a higher-order function,",
     "ua": "Метод **⟦f15⟧** об'єкта **⟦f19⟧** є **функцією вищого порядку**,"
   },
   "p87": {
     "ru": "т.е. он ожидает при вызове получить один обязательный аргумент - **функцию**.",
-    "eng": "3. any expression whose value will be a reference to an array or object, a string, or a number, or a boolean value, as well as ⟦f14⟧ and ⟦f5⟧.",
+    "eng": "That is, it expects to receive one mandatory argument - a **function** - when called.",
     "ua": "тобто він очікує під час виклику отримати один обов'язковий аргумент - **функцію**."
   },
   "p88": {
     "ru": "Но мы не передавали никакого аргумента методу **⟦f15⟧** объекта **⟦f19⟧**.",
-    "eng": "Why do we consider these options separately?",
+    "eng": "But we did not pass any argument to the **⟦f15⟧** method of the **⟦f19⟧** object.",
     "ua": "Але ми не передавали жодного аргументу методу **⟦f15⟧** об'єкта **⟦f19⟧**."
   },
   "p89": {
     "ru": "Более того, мы его вообще не вызывали!",
-    "eng": "Because the engine behaviour will be different in each of these cases.",
+    "eng": "Moreover, we did not call it at all!",
     "ua": "Більше того, ми його взагалі не викликали!"
   },
   "p90": {
     "ru": "Получается, что движок не только сам вызвал метод **⟦f15⟧** объекта **⟦f19⟧**,",
-    "eng": "",
+    "eng": "It turns out that the engine not only called the **⟦f15⟧** method of the **⟦f19⟧** object itself",
     "ua": "Виходить, що двигун не тільки сам викликав метод **⟦f15⟧** об'єкта **⟦f19⟧**,"
   },
   "p91": {
     "ru": "но еще и передал ему некую функцию в качестве аргумента.",
-    "eng": "",
+    "eng": "but also passed it a function as an argument.",
     "ua": "але ще й передав йому якусь функцію як аргумент."
   },
   "p92": {
     "ru": "Вопрос: какой колбек передал движок методу **⟦f15⟧** объекта **⟦f19⟧**?",
-    "eng": "",
+    "eng": "Question: Which callback did the engine pass to the **⟦f15⟧** method of the **⟦f19⟧** object?",
     "ua": "Питання: який колбек передав двигун методу **⟦f15⟧** об'єкта **⟦f19⟧**?"
   },
   "p93": {
     "ru": "Судя по поведению метода **⟦f15⟧**, он получил вот такой колбек:",
-    "eng": "",
+    "eng": "Judging by the behaviour of the method **⟦f15⟧**, it received the following callback:",
     "ua": "Судячи з поведінки методу **⟦f15⟧**, він отримав такий колбек:"
   },
   "p94": {
     "ru": "т.е. колбек, действующий по принципу: \"Что получил - то и отдаю\".",
-    "eng": "",
+    "eng": "That is, a callback that works on the principle: \"What I received, I will return\".",
     "ua": "тобто колбек, який діє за принципом: \"Що отримав - те й віддаю\"."
   },
   "p95": {
     "ru": "Как видите, встретив одно маленькое слово **⟦f13⟧**, движок развивает довольно бурную деятельность.",
-    "eng": "",
+    "eng": "As you can see, upon encountering the word **⟦f13⟧**, the engine engages in quite lively activity.",
     "ua": "Як бачите, зустрівши одне мале слово **⟦f13⟧**, двигун розвиває досить бурхливу діяльність."
   },
   "p96": {
     "ru": "Последний \"штрих\": в предыдущем примере метод **⟦f11⟧** объекта **⟦f19⟧** был функцией высшего порядка, т.е принимал в качестве аргумента функцию.",
-    "eng": "",
+    "eng": "One final 'touch': in the previous example, the method **⟦f11⟧** of the object **⟦f19⟧** was a higher-order function, i.e. it took a function as an argument.",
     "ua": "Останній \"штрих\": у попередньому прикладі метод **⟦f11⟧** об'єкта **⟦f19⟧** був функцією вищого порядку, тобто приймав як аргумент функцію."
   },
   "p97": {
     "ru": "Давайте посмотрим, что произойдет, если метод **⟦f11⟧** будет обычной функцией:",
-    "eng": "",
+    "eng": "Let's see what happens if the method **⟦f11⟧** is a regular function:",
     "ua": "Давайте подивимося, що станеться, якщо метод **⟦f11⟧** буде звичайною функцією:"
   },
   "p98": {
     "ru": "Как видите, строка",
-    "eng": "",
+    "eng": "As you can see, the line",
     "ua": "Як бачите, рядок"
   },
   "p99": {
     "ru": "так и не была выполнена.",
-    "eng": "",
+    "eng": "was never carried out.",
     "ua": "так і не було виконано."
   },
   "p100": {
     "ru": "Это означает, что асинхронная функция так и не дождалась возвращения колбека (потому, что его не было), и не смогла возобновить свое выполнение после **⟦f13⟧**.",
-    "eng": "",
+    "eng": "This means that the asynchronous function never waited for the callback to return (because it was never sent), and could not resume its execution after **⟦f13⟧**.",
     "ua": "Це означає, що асинхронна функція так і не дочекалася повернення колбека (бо його не було), і не змогла відновити своє виконання після **⟦f13⟧**."
   },
   "p101": {
     "ru": "Т.е асинхронная функция могла вернуться из цикла событий только после возвращения оттуда колбека, отправленного туда методом **⟦f11⟧**.",
-    "eng": "",
+    "eng": "That is, the asynchronous function could only return from the event loop after receiving the callback sent there by the **⟦f11⟧** method.",
     "ua": "Тобто асинхронна функція могла повернутися з циклу подій лише після повернення звідти колбека, відправленого туди методом **⟦f11⟧**."
   },
   "p102": {
     "ru": "Но метод **⟦f11⟧** не отправил ничего в цикл событий.",
-    "eng": "",
+    "eng": "But the method **⟦f11⟧** did not send anything to the event loop.",
     "ua": "Але метод **⟦f11⟧** не надіслав нічого до циклу подій."
   },
   "p103": {
     "ru": "Будьте внимательны!",
-    "eng": "",
+    "eng": "Be careful!",
     "ua": "Будьте уважні!"
   },
   "p104": {
     "ru": "Вспомним обещания",
-    "eng": "await &lt;promise>",
+    "eng": "Let's recall promises",
     "ua": "Згадаймо обіцянки"
   },
   "p105": {
     "ru": "Мы с вами уже говорили, что экземпляр конструктора **⟦f2⟧** - это магическая коробка с двумя дырками.",
-    "eng": "Let's create two auxiliary functions:",
+    "eng": "We have already mentioned that an instance of the **⟦f2⟧** constructor is a magic box with two holes.",
     "ua": "Ми з вами вже говорили, що екземпляр конструктора **⟦f2⟧** - це магічна коробка з двома дірками."
   },
   "p106": {
     "ru": "Методы **⟦f15⟧** и **⟦f20⟧** - это и есть \"дырки\" в коробке.",
-    "eng": "◘◘![ico-25 cap] ** 4**◘◘",
+    "eng": "The **⟦f15⟧** and **⟦f20⟧** methods are the 'holes' in the box.",
     "ua": "Методи **⟦f15⟧** та **⟦f20⟧** - це і є \"дірки\" в коробці."
   },
   "p107": {
     "ru": "Через эти \"дырки\" мы всовываем свои колбеки, и коробка \"обещает\" нам, что как только в ней появится содержимое, то один из наших колбеков его получит.",
-    "eng": "We can then use the **⟦f15⟧** method of this ‘box’ (instance of ⟦f2⟧) to pass a callback function that will ‘take’ the result that the promise is resolved to.",
+    "eng": "Through these 'holes', we insert our callbacks, and the box 'promises' us that as soon as it has content, one of our callbacks will receive it.",
     "ua": "Через ці \"дірки\" ми всовуємо свої колбеки, і коробка \"обіцяє\" нам, що як тільки в ній з'явиться вміст, один з наших колбеків його отримає."
   },
   "p108": {
     "ru": "Когда в коробке появится содержимое - неизвестно.<br>Каким будет это содержимое - \"белым шаром\" (**response**) или \"черным шаром\" (**error**) - тоже неизвестно.",
-    "eng": "Now let's see how the **⟦f13⟧** keyword can be used, and how its operation differs from that of the **⟦f15⟧** method of ⟦f2⟧ instance.",
+    "eng": "When the box will have content is unknown.<br>What this content will be - a 'white ball' (**response**) or a 'black ball' (**error**) - is also unknown.",
     "ua": "Коли у коробці з'явиться вміст – невідомо.<br>Яким буде цей вміст - \"білою кулею\" (**response**) або \"чорною кулею\" (**error**) - теж невідомо."
   },
   "p109": {
     "ru": "Надо отметить, что коробка промиса знает, что ей нужно \"поймать\" белый или черный шар, когда он прилетит.",
-    "eng": "Or so:",
+    "eng": "It should be noted that the promise box knows that it needs to 'catch' the white or black ball when it arrives.",
     "ua": "Треба відзначити, що коробка промісу знає, що їй потрібно \"зловити\" білу або чорну кулю, коли вона прилетить."
   },
   "p110": {
     "ru": "И магическая коробка отправляет свои собственные колбеки за белым и черным шаром в **Event Loop**.",
-    "eng": "So far, no differences have been observed.",
+    "eng": "And the magic box sends its own callbacks for the white and black balls to the **Event Loop**.",
     "ua": "І магічна коробка відправляє свої власні колбеки за білою та чорною кулею у **Event Loop**."
   },
   "p111": {
     "ru": "Колбеки уже \"сидят\" в таблице эвентов \"в засаде\".",
-    "eng": "That is, the keyword **⟦f13⟧** calls the method **⟦f15⟧** of the ⟦f2⟧ instance which comes after **⟦f13⟧**.",
+    "eng": "The callbacks are already 'sitting' in the event table 'in ambush'.",
     "ua": "Колбеки вже \"сидять\" у таблиці евентів \"у засідці\"."
   },
   "p112": {
     "ru": "Они \"ловят шары\" за нас.",
-    "eng": "But a question arises: the method **⟦f15⟧** of a ⟦f2⟧ instance should get a references to callback functions as an arguments.",
+    "eng": "They 'catch the balls' for us.",
     "ua": "Вони \"ловлять кулі\" за нас."
   },
   "p113": {
     "ru": "Когда поймают, то положат в магическую коробку экземпляра **⟦f2⟧**.",
-    "eng": "However, the expression:",
+    "eng": "When they catch it, they will put it in the magic box of the **⟦f2⟧** instance.",
     "ua": "Коли спіймають, то покладуть у магічну коробку екземпляра **⟦f2⟧**."
   },
   "p114": {
     "ru": "Они привязаны, соответственно, к таким событиям:",
-    "eng": "does not contain any callback function. Not even a hint.",
+    "eng": "They are bound to the following events:",
     "ua": "Вони прив'язані відповідно до таких подій:"
   },
   "p115": {
     "ru": "1. \"Прилетел белый шар\" (response)",
-    "eng": "Let's figure out what is going on there.",
+    "eng": "1. \"The white ball has arrived\" (response)",
     "ua": "1. \"Прилетіла біла куля\" (response)"
   },
   "p116": {
     "ru": "2. \"Прилетел черный шар\" (error)",
-    "eng": "When the constructor **⟦f2⟧** was called, it was passed a function with two formal parameters.",
+    "eng": "2. \"The black ball has arrived\" (error)",
     "ua": "2. \"Прилетіла чорна куля\" (error)"
   },
   "p117": {
     "ru": "Назад из **Event Loop** вернется только один из них.",
-    "eng": "This function was called, and received two references to callback functions as arguments when called.",
+    "eng": "Only one of them will return from the **Event Loop**.",
     "ua": "Назад з **Event Loop** повернеться лише один із них."
   },
   "p118": {
     "ru": "В коробке экземпляра **⟦f2⟧** появится содержимое.",
-    "eng": "As we can see, these are some kind of default callback functions.",
+    "eng": "The content will appear in the box of the **⟦f2⟧** instance.",
     "ua": "У коробці екземпляра **⟦f2⟧** з'явиться вміст."
   },
   "p119": {
     "ru": "Теперь магическая коробка с двумя дырками ждет, когда вы всунете в эти дырки свои \"руки\" (колбеки **⟦f16⟧** и **⟦f18⟧**), которым можно будет отдать прилетевший шар.",
-    "eng": "They ‘take’ the result and put it into our ‘magic box with two holes’.",
+    "eng": "Now the magic box with two holes is waiting for you to insert your 'hands' (callbacks **⟦f16⟧** and **⟦f18⟧**) into these holes, to which the arriving ball can be given.",
     "ua": "Тепер магічна коробка з двома дірками чекає, коли ви всунете в ці дірки свої \"руки\" (колбеки **⟦f16⟧** і **⟦f18⟧**), яким можна буде віддати кулю, що прилетіла."
   },
   "p120": {
     "ru": "Возможно, что вы уже \"всунули руки\" раньше, тогда вы получите шар, как только он появится в коробке экземпляра **⟦f2⟧**.",
-    "eng": "Therefore, it is logical to assume that these colbeks have this code:",
+    "eng": "It is possible that you have already 'inserted your hands' earlier, in which case you will receive the ball as soon as it appears in the box of the **⟦f2⟧** instance.",
     "ua": "Можливо, ви вже \"всунули руки\" раніше, тоді ви отримаєте кулю, як тільки вона з'явиться в коробці екземпляра **⟦f2⟧**."
   },
   "p121": {
     "ru": "В противном случае шар будет лежать в коробке, пока вы не воспользуетесь методами **⟦f15⟧** и **⟦f20⟧**, т.е. пока вы не \"всунете руки\", чтобы забрать шар.",
-    "eng": "Let's see what **⟦f13⟧** does:",
+    "eng": "Otherwise, the ball will lie in the box until you use the **⟦f15⟧** and **⟦f20⟧** methods, i.e. until you 'insert your hands' to take the ball.",
     "ua": "В іншому випадку куля лежатиме в коробці, поки ви не скористаєтеся методами **⟦f15⟧** і **⟦f20⟧**, тобто поки ви не \"всунете руки\", щоб забрати кулю."
   },
   "p122": {
     "ru": "![ico-30 point_up] Отсюда вытекает, что магическая коробка синхронизирует два автономных асинхронных процесса.",
-    "eng": "◘◘resolve◘◘",
+    "eng": "![ico-30 point_up] Hence, the magic box synchronizes two autonomous asynchronous processes.",
     "ua": "![ico-30 point_up] Звідси випливає, що магічна коробка синхронізує два автономні асинхронні процеси."
   },
   "p123": {
     "ru": "В этом и заключается магическая сила коробки с двумя дырками.",
-    "eng": "As you can see, **⟦f13⟧** calls **⟦f11⟧** method, but passes it only one callback (**⟦f16⟧**).",
+    "eng": "This is the magical power of the box with two holes.",
     "ua": "У цьому полягає магічна сила коробки з двома дірками."
   },
   "p124": {
     "ru": "Т.е. магическая коробка промиса посылает \"сбегать за шариком\" свои собственные колбеки, а потом ждет, когда вы всунете руки (колбеки) в дырки **⟦f15⟧** и **⟦f20⟧**, чтобы отдать находящийся на хранении шарик.",
-    "eng": "In the case of a rejection, control will be ‘hijacked’ by the engine, which will throw an exception to the console.",
+    "eng": "That is, the magic box of the promise sends its own callbacks to 'fetch the ball', and then waits for you to insert your hands (callbacks) into the holes **⟦f15⟧** and **⟦f20⟧** to give the ball that is in storage.",
     "ua": "Тобто магічна коробка _промісу_ посилає \"збігати за кулькою\" свої власні колбеки, а потім чекає, коли ви всунете руки (колбеки) в дірки **⟦f15⟧** і **⟦f20⟧**, щоб віддати кулька, що знаходиться на зберіганні."
   },
   "p125": {
     "ru": "^^Причем в одну дырку **⟦f15⟧** вы можете всунуть обе руки (**⟦f16⟧** и **⟦f18⟧**), хотя использование второй дырки **⟦f20⟧** в некоторых случаях избавляет вас от сообщений об ошибке в консоли. Старайтесь не заставлять консоль краснеть за вас ![ico-20 smile].^^",
-    "eng": "That's why you should use the **⟦f17⟧** method to ‘catch’ exceptions:",
+    "eng": "^^Moreover, you can insert both hands (**⟦f16⟧** and **⟦f18⟧**) into one hole **⟦f15⟧**, although using the second hole **⟦f20⟧** in some cases saves you from error messages in the console. Try not to make the console blush for you ![ico-20 smile].^^",
     "ua": "^^Причому в одну дірку **⟦f15⟧** ви можете всунути обидві руки (**⟦f16⟧** і **⟦f18⟧**), хоча використання другої дірки **⟦f20⟧** у деяких випадках позбавляє вас від повідомлень про помилку в консолі.^^"
   },
   "p126": {
     "ru": "Итак, движок сталкивается с выражением ⟦f21⟧.",
-    "eng": "Let’s say we have a function **⟦f37⟧** like this:",
-    "ua": ""
+    "eng": "So, the engine encounters the expression ⟦f21⟧.",
+    "ua": "Отже, движок натрапляє на вираз ⟦f21⟧."
   },
   "p127": {
     "ru": "Ему нужно вычислить значение этого выражения.",
-    "eng": "If we'll use the method **⟦f11⟧** of the ⟦f2⟧ instance to pass the second callback function (**⟦f18⟧**):",
-    "ua": ""
+    "eng": "It needs to compute the value of this expression.",
+    "ua": "Йому потрібно обчислити значення цього виразу."
   },
   "p128": {
     "ru": "![ico-25 warn] Пока он его не вычислит и не заменит выражение ⟦f22⟧ на полученное (вычисленное) значение, он не сдвинется к следующей строчке кода асинхронной функции.",
-    "eng": "◘◘**^^Promise^^**◘◘",
-    "ua": ""
+    "eng": "![ico-25 warn] Until it computes it and replaces the expression ⟦f22⟧ with the obtained (computed) value, it will not move to the next line of code of the asynchronous function.",
+    "ua": "![ico-25 warn] Доки він не обчислить його та не замінить вираз ⟦f22⟧ на отримане (обчислене) значення, він не перейде до наступного рядка коду асинхронної функції."
   },
   "p129": {
     "ru": "Если значением ⟦f23⟧ будет ссылка на экземпляр **⟦f2⟧**, то движок вызовет метод **⟦f15⟧** этого экземпляра, передаст ему колбек:",
-    "eng": "If we'll use the keyword **⟦f13⟧**:",
-    "ua": ""
+    "eng": "If the value of ⟦f23⟧ is a reference to an instance of **⟦f2⟧**, then the engine will call the **⟦f15⟧** method of that instance, passing it a callback:",
+    "ua": "Якщо значенням ⟦f23⟧ буде посилання на екземпляр **⟦f2⟧**, то движок викличе метод **⟦f15⟧** цього екземпляра та передасть йому колбек:"
   },
   "p130": {
     "ru": "и приостановит выполнение кода асинхронной функции до тех пор, пока колбек не вернется из **Event Loop** с \"шариком\" результата (⟦f24⟧) и не положит его в коробку промиса.",
-    "eng": "◘◘**^^async function^^**◘◘",
-    "ua": ""
+    "eng": "and will suspend the execution of the asynchronous function's code until the callback returns from the **Event Loop** with the 'ball' of the result (⟦f24⟧) and puts it in the promise box.",
+    "ua": "і призупинить виконання коду асинхронної функції до тих пір, поки колбек не повернеться з **Event Loop** з \"кулям\" результату (⟦f24⟧) і не покладе його в коробку промиса."
   },
   "p131": {
     "ru": "После того, как результат появится в коробке, движок вытащит его из коробки и вставит на место выражения ⟦f22⟧.",
-    "eng": "Thus, if a **⟦f13⟧** keyword is followed by a promice, the engine will call the **⟦f11⟧** method of that promice, but ![ico-20 warn] without passing the second callback function (**⟦f18⟧**).",
-    "ua": ""
+    "eng": "After the result appears in the box, the engine will take it out of the box and insert it in place of the expression ⟦f22⟧.",
+    "ua": "Після того, як результат з'явиться в коробці, движок витягне його з коробки і вставить на місце виразу ⟦f22⟧."
   },
   "p132": {
     "ru": "Мы уже задались вопросом, что будет делать движок, если ⟦f25⟧ не будет промисом.",
-    "eng": "What if after the keyword **⟦f13⟧** there is not a ⟦f2⟧ instance but any other object?",
-    "ua": ""
+    "eng": "We have already asked ourselves what the engine will do if ⟦f25⟧ is not a promise.",
+    "ua": "Ми вже задалися питанням, що робитиме движок, якщо ⟦f25⟧ не буде промісом."
   },
   "p133": {
     "ru": "И мы уже разобрались, что будет делать движок, если ⟦f25⟧ будет объектом, у которого есть метод **⟦f15⟧**.",
-    "eng": "Or even not an object, but some string, or a number, or a logical value?",
-    "ua": ""
+    "eng": "And we have already figured out what the engine will do if ⟦f25⟧ is an object that has a **⟦f15⟧** method.",
+    "ua": "І ми вже розібралися, що буде робити движок, якщо ⟦f25⟧ буде об'єктом, у якого є метод **⟦f15⟧**."
   },
   "p134": {
     "ru": "Теперь посмотрим, что будет делать движок, если ⟦f25⟧ будет строкой, или числом, или другим значением.",
-    "eng": "",
-    "ua": ""
+    "eng": "Now let’s see what the engine will do if ⟦f25⟧ is a string, a number or some other value.",
+    "ua": "Тепер подивимося, що робитиме движок, якщо ⟦f25⟧ буде рядком, числом або іншим значенням."
   },
   "p135": {
     "ru": "В этом примере нужно внимательно следить за последовательностью вывода сообщений в консоль:",
-    "eng": "",
-    "ua": ""
+    "eng": "In this example, you need to pay close attention to the sequence of messages printed to the console:",
+    "ua": "У цьому прикладі потрібно уважно стежити за послідовністю виведення повідомлень у консоль:"
   },
   "p136": {
     "ru": "Все, что выведено в консоль после сообщения **_Finish_** - это функции обратного вызова, которые \"прошли\" через **Event Loop**.",
-    "eng": "",
-    "ua": ""
+    "eng": "Everything printed to the console after the **_Finish_** message is callback functions that have ‘passed through’ the **Event Loop**.",
+    "ua": "Усе, що виводиться в консоль після повідомлення **_Finish_**, — це функції зворотного виклику, які «пройшли» через **Event Loop**."
   },
   "p137": {
     "ru": "Если они выведены до ⟦f5⟧ - это **микротаски**.",
-    "eng": "",
-    "ua": ""
+    "eng": "If they are printed before ⟦f5⟧, they are **microtasks**.",
+    "ua": "Якщо вони виведені до ⟦f5⟧ — це **microtasks**."
   },
   "p138": {
     "ru": "Итак, движок благополучно выводил в консоль ^^**_Start_**^^, затем наткнулся на функциональное выражение ([IIFE](⟦f26⟧)) и начал \"вычислять\" значение выражения в круглых скобках. А в круглых скобках - объявление анонимной асинхронной функции. Движок передает управление конструктору, который создает эту функцию и возвращает ссылку на нее. Движок, получив ссылку на функцию, вызывает ее, поскольку далее следуют курглые скобки (вызов функции).",
-    "eng": "",
-    "ua": ""
+    "eng": "So, the engine successfully printed ^^**_Start_**^^ to the console, then encountered a function expression ([IIFE](⟦f26⟧)) and began to ‘evaluate’ the expression within the parentheses. And inside the parentheses is a declaration of an anonymous asynchronous function. The engine passes control to the constructor, which creates this function and returns a reference to it. Having received the reference to the function, the engine calls it, as parentheses (a function call) follow next.",
+    "ua": "Отже, движок успішно вивів у консоль ^^**_Start_**^^, потім натрапив на функціональний вираз ([IIFE](⟦f26⟧)) і почав «обчислювати» значення виразу в круглих дужках. А в круглих дужках — оголошення анонімної асинхронної функції. Рушій передає управління конструктору, який створює цю функцію та повертає посилання на неї. Рушій, отримавши посилання на функцію, викликає її, оскільки далі йдуть круглі дужки (виклик функції)."
   },
   "p139": {
     "ru": "Анонимная асинхронная функция начинает выполняться, и в консоль выводится сообщение ^^**_Async function starts_**^^.",
-    "eng": "",
-    "ua": ""
+    "eng": "The anonymous asynchronous function begins to execute, and the message ^^**_Async function starts_**^^ is printed to the console.",
+    "ua": "Анонімна асинхронна функція починає виконуватися, і в консолі виводиться повідомлення ^^**_Async function starts_**^^."
   },
   "p140": {
     "ru": "Однако уже в следующей строчке кода функции движок \"наткнулся\" на выражение:",
-    "eng": "",
-    "ua": ""
+    "eng": "However, in the very next line of the function’s code, the engine ‘stumbles upon’ the expression:",
+    "ua": "Однак уже в наступному рядку коду функції движок «натрапив» на вираз:"
   },
   "p141": {
     "ru": "Здесь движок понимает, что нужно послать колбек ⟦f27⟧ в **Event Loop**, и функция должна дождаться его возвращения, чтобы завершить выполнение этой строчки кода. Далее код функции выполняться не может, пока не вернется колбек. А вернуться он может только тогда, когда стек вызовов будет свободен.",
-    "eng": "",
-    "ua": ""
+    "eng": "Here, the engine realises that it needs to send the callback ⟦f27⟧ to the **Event Loop**, and the function must wait for it to return before it can complete execution of this line of code. The function’s code cannot proceed until the callback returns. And it can only return once the call stack is free.",
+    "ua": "Тут движок розуміє, що потрібно відправити колбек ⟦f27⟧ у **Event Loop**, і функція повинна дочекатися його повернення, щоб завершити виконання цього рядка коду. Далі код функції не може виконуватися, поки не повернеться колбек. А повернутися він може лише тоді, коли стек викликів буде вільним."
   },
   "p142": {
     "ru": "Итак, движку нужно на время \"избавиться\" от этой функции, но так, чтобы после возвращения колбека ⟦f27⟧ можно было возобновить ее выполнение.",
-    "eng": "",
-    "ua": ""
+    "eng": "So, the engine needs to ‘get rid of’ this function temporarily, but in such a way that its execution can be resumed once the ⟦f27⟧ callback returns.",
+    "ua": "Отже, движку потрібно на деякий час «позбутися» цієї функції, але так, щоб після повернення колбека ⟦f27⟧ можна було відновити її виконання."
   },
   "p143": {
     "ru": "Как это можно сделать?",
-    "eng": "",
-    "ua": ""
+    "eng": "How can this be done?",
+    "ua": "Як це можна зробити?"
   },
   "p144": {
     "ru": "Например, заменив оставшийся невыполненым код функции:",
-    "eng": "",
-    "ua": ""
+    "eng": "For example, by replacing the remaining unexecuted code of the function:",
+    "ua": "Наприклад, замінивши залишковий невиконаним код функції:"
   },
   "p145": {
     "ru": "на вот такой код:",
-    "eng": "",
-    "ua": ""
+    "eng": "with the following code:",
+    "ua": "на такий код:"
   },
   "p146": {
     "ru": "И далее движок продолжает выполнять код скрипта со строчки:",
-    "eng": "",
-    "ua": ""
+    "eng": "and then the engine continues executing the script from that line:",
+    "ua": "І далі движок продовжує виконувати код скрипта з рядка:"
   },
   "p147": {
     "ru": "после чего стек вызовов освобождается, и из **Event Loop** возвращается колбек:",
-    "eng": "",
-    "ua": ""
+    "eng": "after which the call stack is freed, and the callback is returned from the **Event Loop**:",
+    "ua": "після чого стек викликів звільняється, і з **Event Loop** повертається зворотний виклик:"
   },
   "p148": {
     "ru": "который получил message со значением 'Hello!'.",
-    "eng": "",
-    "ua": ""
+    "eng": "which received a message with the value 'Hello!'.",
+    "ua": "який отримав повідомлення з значенням 'Привіт!'."
   },
   "p149": {
     "ru": "Таким образом, появление ключевого слова **⟦f13⟧** приводит к тому, что невыполненный остаток кода асинхронной функции становится колбеком.",
-    "eng": "",
-    "ua": ""
+    "eng": "Thus, the appearance of the **⟦f13⟧** keyword causes the unexecuted remainder of the asynchronous function's code to become a callback.",
+    "ua": "Таким чином, поява ключового слова **⟦f13⟧** призводить до того, що невиконаний залишок коду асинхронної функції перетворюється на зворотний виклик."
   },
   "p150": {
     "ru": "В этом примере мы специально дали имя **⟦f28⟧** функции, чтобы отслеживать ее появление в стеке вызовов.",
@@ -751,197 +751,197 @@
   },
   "p151": {
     "ru": "В этом примере код основного потока отработает при значении ** 5** переменной ⟦f29⟧.",
-    "eng": "◘◘![ico-25 cap] ** 5**◘◘",
-    "ua": "Йому треба вирахувати значення цього виразу."
+    "eng": "In this example, the main thread code will execute with the value **5** of the variable ⟦f29⟧.",
+    "ua": "У цьому прикладі код основного потоку відпрацює при значенні **5** змінної ⟦f29⟧."
   },
   "p152": {
     "ru": "Однако вызов асинхронной функции ⟦f30⟧ приведет к тому, что после завершения работы кода основного потока значение переменной ⟦f29⟧ будет уже 10.",
-    "eng": "However, let's see what happens when this code is executed:",
-    "ua": "![ico-25 warn] Поки він не обчислить і не замінить вираз ⟦f22⟧ на отримане (обчислене) значення, він не зрушить до наступного рядка коду асинхронної функції."
+    "eng": "However, calling the asynchronous function ⟦f30⟧ will result in the value of the variable ⟦f29⟧ being 10 after the main thread code has finished executing.",
+    "ua": "Однак виклик асинхронної функції ⟦f30⟧ призведе до того, що після завершення роботи коду основного потоку значення змінної ⟦f29⟧ буде вже 10."
   },
   "p153": {
     "ru": "Заметим, что:",
-    "eng": "As you can see, when the engine detected the keyword **⟦f13⟧**, it didn't bother much about what expression followed it, and it wasn't bothered at all by the fact that it wasn't a ⟦f2⟧ instance.",
-    "ua": "Якщо значенням ⟦f23⟧ буде посилання на екземпляр **⟦f2⟧**, то двигун викличе метод **⟦f15⟧** цього екземпляра, передасть йому колбек:"
+    "eng": "Note that:",
+    "ua": "Зверніть увагу, що:"
   },
   "p154": {
     "ru": "1. Промис, возвращенный функцией ⟦f31⟧, разрезолвился последним, хотя это первая строчка кода.",
-    "eng": "The engine detected that it is an object that has a **⟦f15⟧** method.",
-    "ua": "і призупинить виконання коду асинхронної функції до тих пір, поки колбек не повернеться з **Event Loop** з \"кулькою\" результату (⟦f24⟧) і не покладе його в \"коробку\" промісу."
+    "eng": "1. The promise returned by the function ⟦f31⟧ resolved last, even though it is the first line of code.",
+    "ua": "1. Промис, повернений функцією ⟦f31⟧, розрізольвався останнім, навіть якщо це перший рядок коду."
   },
   "p155": {
     "ru": "2. Первым разрезолвился ⟦f32⟧ (вторая строчка кода).",
-    "eng": "And what do we see? The **⟦f15⟧** method of the **⟦f19⟧** object was called!",
-    "ua": "Після того, як результат з'явиться в коробці, двигун витягне його з коробки і вставить на місце вираження ⟦f22⟧."
+    "eng": "2. The first to resolve was ⟦f32⟧ (the second line of code).",
+    "ua": "2. Першим розрізольвався ⟦f32⟧ (другий рядок коду)."
   },
   "p156": {
     "ru": "3. Вторым разрезолвился промис, возвращенный функцией ⟦f33⟧ (третья строчка кода).",
-    "eng": "But there is one mystery here:",
-    "ua": "Ми вже ставили собі питання, що буде робити движок, якщо ⟦f25⟧ не буде промісом."
+    "eng": "3. The second to resolve was the promise returned by the function ⟦f33⟧ (the third line of code).",
+    "ua": "3. Другим розрізольвався промис, повернений функцією ⟦f33⟧ (третій рядок коду)."
   },
   "p157": {
     "ru": "Сделав \"рокировку\" второй и третьей строчек кода:",
-    "eng": "The **⟦f15⟧** method of the **⟦f19⟧** object is a higher-order function,",
-    "ua": "І ми вже розібралися, що робитиме двигун, якщо ⟦f25⟧ буде об'єктом, у якого є метод **⟦f15⟧**."
+    "eng": "By swapping the second and third lines of code:",
+    "ua": "Зробивши \"рокіровку\" другого та третього рядків коду:"
   },
   "p158": {
     "ru": "мы увидим, что порядок вывода в консоль изменился соответствующим образом:",
-    "eng": "i.e. it expects to receive one mandatory argument when called - **function**.",
-    "ua": "◘◘![ico-25 cap] ** 6**◘◘"
+    "eng": "We will see that the order of output to the console has changed accordingly:",
+    "ua": "Ми побачимо, що порядок виведення в консоль змінився відповідним чином:"
   },
   "p159": {
     "ru": "то есть их колбеки попадают в очередь микротасков в той же последовательности, в какой они появились в коде.",
-    "eng": "But we did not pass any argument to the **⟦f15⟧** method of the **⟦f19⟧** object.",
-    "ua": "У цьому прикладі слід уважно стежити за послідовністю виведення повідомлень у консоль:"
+    "eng": "That is, their callbacks enter the microtask queue in the same sequence in which they appeared in the code.",
+    "ua": "Тобто їхні колбеки потрапляють у чергу мікротасків у тій же послідовності, в якій вони з'явилися в коді."
   },
   "p160": {
     "ru": "А вот с функцией ⟦f31⟧ все иначе.",
-    "eng": "Moreover, we didn't call it at all!",
-    "ua": "Все, що виведено в консоль після повідомлення **_Finish_** - це функції зворотного виклику, які пройшли через **Event Loop**."
+    "eng": "But with the function ⟦f31⟧, it is different.",
+    "ua": "А ось з функцією ⟦f31⟧ все інакше."
   },
   "p161": {
     "ru": "Покажем, что код:",
-    "eng": "It turns out that the engine not only called the **⟦f15⟧** method of the **⟦f19⟧** object, but also passed a certain function as an argument to it.",
-    "ua": "Якщо вони виведені до ⟦f5⟧ - це **мікротаски**."
+    "eng": "Let's show that the code:",
+    "ua": "Покажемо, що код:"
   },
   "p162": {
     "ru": "работает идентично коду:",
-    "eng": "Question: what callback did the engine pass to the **⟦f15⟧** method of the **⟦f19⟧** object?",
-    "ua": "Отже, двигун благополучно виводив у консоль ^^**_Start_**^^, потім натрапив на функціональний вираз ([IIFE](⟦f26⟧)) і почав \"обчислювати\" значення виразу в круглих дужках. А в круглих дужках – оголошення анонімної асинхронної функції. Двигун передає управління конструктору, який створює цю функцію та повертає посилання на неї. Двигун, отримавши посилання на функцію, викликає її, оскільки далі йдуть дужки (виклик функції)."
+    "eng": "works identically to the code:",
+    "ua": "працює ідентично коду:"
   },
   "p163": {
     "ru": "Для этого запустим их сначала в такой последовательности:",
-    "eng": "From the behaviour of the method **⟦f15⟧**, it seems that it has received this callback:",
-    "ua": "Анонімна асинхронна функція починає виконуватися, і в консоль виводиться повідомлення ^^**_Async function starts_**^^."
+    "eng": "To do this, we will run them first in the following sequence:",
+    "ua": "Для цього запустимо їх спочатку в такій послідовності:"
   },
   "p164": {
     "ru": "а затем поменяем порядок их следования:",
-    "eng": "i.e. callback function, which operates according to the principle: ‘What I get is what I give back’.",
-    "ua": "Однак вже в наступному рядку коду функції двигун \"наткнувся\" на вираз:"
+    "eng": "and then we will change the order of their sequence:",
+    "ua": "а потім поміняємо порядок їх слідування:"
   },
   "p165": {
     "ru": "Как мы видим, они резолвятся строго в порядке их следования в коде.",
-    "eng": "As you can see, when the engine meets one small word **⟦f13⟧**, it starts a flurry of activity.",
-    "ua": "Тут двигун розуміє, що потрібно послати колбек ⟦f27⟧ у **Event Loop**, і функція повинна дочекатися його повернення, щоб завершити виконання цього рядка коду. Далі код функції виконуватися не може, доки не повернеться колбек. А повернутися він може лише тоді, коли стек викликів буде вільним."
+    "eng": "As we can see, they resolve strictly in the order in which they appear in the code.",
+    "ua": "Як ми бачимо, вони розрізольвлюються строго в порядку їх слідування в коді."
   },
   "p166": {
     "ru": "Т.е. появление ключевого слова **⟦f13⟧** удлиняет цепочку проходящих через **Event Loop** колбеков на 1, что и приводит к тому, что в примере 12 последним \"приходит к финишу\" ⟦f34⟧.",
-    "eng": "One last ‘touch’: in the previous example, the method **⟦f11⟧** of the **⟦f19⟧** object was a higher-order function, i.e. it took a function as an argument.",
-    "ua": "Отже, движку потрібно на якийсь час \"позбутися\" цієї функції, але так, щоб після повернення колбека ⟦f27⟧ можна було відновити її виконання."
+    "eng": "That is, the appearance of the **⟦f13⟧** keyword lengthens the chain of callbacks passing through the **Event Loop** by 1, which leads to ⟦f34⟧ being the last to 'finish' in example 12.",
+    "ua": "Тобто поява ключового слова **⟦f13⟧** подовжує ланцюжок колбеків, що проходять через **Event Loop**, на 1, що і призводить до того, що в прикладі 12 останнім \"приходить до фінішу\" ⟦f34⟧."
   },
   "p167": {
     "ru": "Как мы уже говорили ранее, сама асинхронная функция прерывается в точке, где встречается **⟦f13⟧**, и остаток кода этой функции, который не был выполнен до этого, сам становится колбеком и \"уходит\" в **Event Loop**, чтобы освободить стек вызовов и дать возможность колбеку вернуться с результатом. Поэтому цепочка удлиняется на 1 микротаск.",
-    "eng": "Let's see what happens if the **⟦f11⟧** method is an ordinary function:",
-    "ua": "Як це можна зробити?"
+    "eng": "As we have already mentioned earlier, the asynchronous function itself is interrupted at the point where **⟦f13⟧** is encountered, and the remainder of the code of this function, which has not been executed up to that point, itself becomes a callback and 'goes' into the **Event Loop** to free up the call stack and allow the callback to return with the result. Therefore, the chain is lengthened by 1 microtask.",
+    "ua": "Як ми вже говорили раніше, сама асинхронна функція переривається в точці, де зустрічається **⟦f13⟧**, і залишок коду цієї функції, який не був виконаний до цього, сам стає колбеком і \"йде\" в **Event Loop**, щоб звільнити стек викликів і дати можливість колбеку повернутися з результатом. Тому ланцюжок подовжується на 1 мікротаск."
   },
   "p168": {
     "ru": "Объявим вспомогательную функцию:",
-    "eng": "As you can see, the string:",
-    "ua": "Наприклад, замінивши код функції, що залишився невиконаним:"
+    "eng": "Let's declare a helper function:",
+    "ua": "Оголосимо допоміжну функцію:"
   },
   "p169": {
     "ru": "Зафиксируем значение текущего времени в милисекундах в переменной **⟦f35⟧** и объявим вспомогательные функции **⟦f36⟧** и **⟦f28⟧**:",
-    "eng": "was never executed.",
-    "ua": "на такий код:"
+    "eng": "Let's fix the current time value in milliseconds in the variable **⟦f35⟧** and declare the helper functions **⟦f36⟧** and **⟦f28⟧**:",
+    "ua": "Зафіксуємо значення поточного часу в мілісекундах у змінній **⟦f35⟧** та оголосимо допоміжні функції **⟦f36⟧** і **⟦f28⟧**:"
   },
   "p170": {
     "ru": "Теперь объявим функции **⟦f37⟧** и **⟦f3⟧**:",
-    "eng": "This means that the asynchronous function is waiting for the return of the callback function, but there is no callback function at all, and the asynchronous function could not resume its execution after **⟦f13⟧**.",
-    "ua": "І далі двигун продовжує виконувати код скрипта з рядка:"
+    "eng": "Now let's declare the functions **⟦f37⟧** and **⟦f3⟧**:",
+    "ua": "Тепер оголосимо функції **⟦f37⟧** і **⟦f3⟧**:"
   },
   "p171": {
     "ru": "Теперь выполним код:",
-    "eng": "That is, the asynchronous function could return from the **Event Loop** only after the return of the callback function sent there by the method **⟦f11⟧**.",
-    "ua": "після чого стек викликів звільняється, і з **Event Loop** повертається колбек:"
+    "eng": "Now let's execute the code:",
+    "ua": "Тепер виконаємо код:"
   },
   "p172": {
     "ru": "Как вы можете убедиться, сообщения выводятся в случайном порядке, в зависимости от того, какое значение вернула функция **⟦f36⟧** для каждого промиса.",
-    "eng": "But the method **⟦f11⟧** didn't send anything to the event loop.",
-    "ua": "котрий отримав ⟦f53⟧ зі значенням '_Hello_!'."
+    "eng": "As you can see, the messages are printed in a random order, depending on the value returned by the **⟦f36⟧** function for each promise.",
+    "ua": "Як ви можете переконатися, повідомлення виводяться у випадковому порядку, залежно від того, яке значення повернула функція **⟦f36⟧** для кожного промісу."
   },
   "p173": {
     "ru": "Задача - синхронизировать попадание коллбэков в стек вызовов так, чтобы первым в консоль было выведено \"**_First_**\", затем \"**_Second_**\", а затем \"**_Third_**\".",
-    "eng": "![ico-25 warn] Be careful!",
-    "ua": "Таким чином, поява ключового слова **⟦f13⟧** призводить до того, що невиконаний залишок коду асинхронної функції стає колбеком."
+    "eng": "The task is to synchronize the callbacks entering the call stack so that '**_First_**' is printed to the console first, followed by '**_Second_**', and then '**_Third_**'.",
+    "ua": "Завдання - синхронізувати потрапляння колбеків у стек викликів так, щоб першим у консоль було виведено \"**_First_**\", потім \"**_Second_**\", а потім \"**_Third_**\"."
   },
   "p174": {
     "ru": "◘◘**цепочка промисов**◘◘",
-    "eng": "",
-    "ua": "У цьому прикладі ми спеціально дали ім'я **⟦f28⟧** функції, щоб відстежувати її появу у стеку викликів."
+    "eng": "◘◘**promise chain**◘◘",
+    "ua": "◘◘**ланцюг промисів**◘◘"
   },
   "p175": {
     "ru": "◘◘**асинхронная функция**◘◘",
-    "eng": "",
-    "ua": ""
+    "eng": "◘◘**async function**◘◘",
+    "ua": "◘◘**асинхронна функція**◘◘"
   },
   "p176": {
     "ru": "Итак, асинхронная функция может служить \"оберткой\" для нескольких асинхронных операций, выполнение которых можно упорядочить во времени, т.е. сделать так, чтобы их коллбэки отрабатывали в заданной последовательности.",
-    "eng": "",
-    "ua": ""
+    "eng": "So, an async function can serve as a \"wrapper\" for multiple asynchronous operations, the execution of which can be ordered in time, i.e., make it so that their callbacks are executed in a specified sequence.",
+    "ua": "Отже, асинхронна функція може слугувати «оболонкою» для кількох асинхронних операцій, виконання яких можна впорядкувати в часі, тобто зробити так, щоб їхні колбеки виконувалися у заданій послідовності."
   },
   "p177": {
     "ru": "Рассмотрим чисто умозрительный вариант",
-    "eng": "",
-    "ua": ""
+    "eng": "Let’s consider a purely theoretical variant",
+    "ua": "Розглянемо суто гіпотетичний варіант"
   },
   "p178": {
     "ru": "(на практике такое делать не надо):",
-    "eng": "",
-    "ua": ""
+    "eng": "(in practice, you shouldn’t do this):",
+    "ua": "(на практиці так робити не слід):"
   },
   "p179": {
     "ru": "На что здесь следует обратить внимание:",
-    "eng": "",
-    "ua": ""
+    "eng": "Here are the key points to consider:",
+    "ua": "На що тут слід звернути увагу:"
   },
   "p180": {
     "ru": "методу **reduce** передается асинхронная функция, которая возвращает промис.",
-    "eng": "",
-    "ua": ""
+    "eng": "the **reduce** method is passed an asynchronous function that returns a promise.",
+    "ua": "методу **reduce** передається асинхронна функція, яка повертає проміс."
   },
   "p181": {
     "ru": "Поэтому после каждой итерации переменная **result** будет промисом,",
-    "eng": "",
-    "ua": ""
+    "eng": "Therefore, after each iteration, the **result** variable will be a promise",
+    "ua": "Тому після кожної ітерації змінна **result** буде промісом,"
   },
   "p182": {
     "ru": "и ее надо резолвить с помощью **await**.",
-    "eng": "",
-    "ua": ""
+    "eng": "and it must be resolved using **await**.",
+    "ua": "і її треба резолвити за допомогою **await**."
   },
   "p183": {
     "ru": "В результате работы скрипта в переменной **users** будет промис.",
-    "eng": "",
-    "ua": ""
+    "eng": "As a result of the script’s execution, the **users** variable will contain a promise.",
+    "ua": "У результаті роботи скрипта у змінній **users** буде проміс."
   },
   "p184": {
     "ru": "Извлечем результат из промиса:",
-    "eng": "",
-    "ua": ""
+    "eng": "Let’s extract the result from the promise:",
+    "ua": "Витягнемо результат із промісу:"
   },
   "p185": {
     "ru": "![ico-20 yes] Внимание, чтобы сократь число обращений к серверу, лучше сделать так:",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-20 yes] Please note: to reduce the number of server requests, it is better to do it this way:",
+    "ua": "![ico-20 yes] Увага: щоб скоротити кількість звернень до сервера, краще зробити так:"
   },
   "p186": {
     "ru": "Расширим прототип конструктора **⟦f38⟧** методом **⟦f39⟧**:",
-    "eng": "",
-    "ua": ""
+    "eng": "Let’s extend the **⟦f38⟧** constructor prototype with the **⟦f39⟧** method:",
+    "ua": "Розширимо прототип конструктора **⟦f38⟧** методом **⟦f39⟧**:"
   },
   "p187": {
     "ru": "Как мы видим, добавленный элемент будет иметь два метода: **⟦f40⟧** и **⟦f41⟧**, позволяющие модифицировать текстовое содержимое элемента.",
-    "eng": "",
-    "ua": ""
+    "eng": "As we can see, the added element will have two methods: **⟦f40⟧** and **⟦f41⟧**, which allow us to modify the element’s text content.",
+    "ua": "Як бачимо, доданий елемент матиме два методи: **⟦f40⟧** та **⟦f41⟧**, що дозволяють модифікувати текстовий вміст елемента."
   },
   "p188": {
     "ru": "Теперь расширим прототип конструкторов **⟦f42⟧** и **⟦f43⟧** методом **⟦f11⟧**:",
-    "eng": "",
-    "ua": ""
+    "eng": "Now let’s extend the prototype of the constructors **⟦f42⟧** and **⟦f43⟧** with the method **⟦f11⟧**:",
+    "ua": "Тепер розширимо прототип конструкторів **⟦f42⟧** і **⟦f43⟧** методом **⟦f11⟧**:"
   },
   "p189": {
     "ru": "Терерь можно создать \"простенькие\" функции **⟦f44⟧** и **⟦f45⟧**:",
-    "eng": "",
-    "ua": ""
+    "eng": "We can now create the ‘simple’ functions **⟦f44⟧** and **⟦f45⟧**:",
+    "ua": "Тепер можна створити «простенькі» функції **⟦f44⟧** та **⟦f45⟧**:"
   }
 }
