@@ -561,30 +561,49 @@ translated into the language being read. Editing one does not touch the other.
 
 ### Adding a page
 
-Write the lesson as a normal page and let the tools take it apart:
+A new lesson starts as a draft — an ordinary page in Russian, in the markup
+above:
 
 ```
-1.  public/lessons/ru/<name>.md          write it here, in the markup above
+1.  content/drafts/<name>.md             write it here
 2.  node tools/i18n-extract.js <name> --write
 3.  npm run content-worker
 4.  npm run lessons
 ```
 
-Step 2 splits it into `content/lessons/<name>.md` and
-`content/messages/<name>.json`, rebuilding it afterwards and comparing byte for
-byte — a page that fails that check is not written, so a mistake in the markup
-is caught before anything is saved. It also points any repeated phrase at the
-phrase book.
+Step 2 takes it apart into `content/lessons/<name>.md` and
+`content/messages/<name>.json`, then rebuilds it and compares byte for byte —
+a page that fails that check is not written, so a mistake in the markup is
+caught before anything is saved. It also points any repeated phrase at the
+phrase book. The draft can be deleted afterwards; everything it held is in
+`content/` by then.
 
-Step 3 regenerates the page registry from the folders. Until it runs the page
-is not known to the site and asking for it gives the 404.
+Step 3 regenerates the page registry from the folders. Until it runs the site
+does not know the page exists and answers with the 404.
 
 After that the page answers at `?<name>` and can be translated like any other.
 It will **not** be in the menu: `content-worker/src/assets/mainMenu.js` is
 hand-maintained, and a page reaches the menu only by being added there.
 
-`npm run full` does steps 3 and 4 along with everything else, and is the safe
-thing to run when unsure.
+`npm run full` does steps 3 and 4 along with everything else.
+
+### Why there are three copies of every page
+
+`public/lessons/{ru,eng,ua}/` holds a built file per language, and they are
+generated — never edited. The translation lives in one place:
+
+```
+content/messages/<page>.json     one file, all three languages
+        ↓  npm run lessons
+public/lessons/ru/<page>.md      three files, which is what the browser asks for
+public/lessons/eng/<page>.md
+public/lessons/ua/<page>.md
+```
+
+Three copies exist because a lesson is fetched as a plain `.md` by the content
+worker, at `lessons/<lang>/<page>.md`. There is no server to assemble one on
+request — the site is a folder of files on GitHub Pages, so the assembling
+happens at build time and the result is committed.
 
 ## How it is built
 

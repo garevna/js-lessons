@@ -284,15 +284,33 @@ function assemble (skeleton, messages, fragments) {
 
 /* --------------------------------------------------------------------- run */
 
-const langs = ['ru', 'eng', 'ua'].filter((l) =>
-  fs.existsSync(path.join(LESSONS, l, `${page}.md`)))
+// A page being written for the first time has nowhere sensible to live yet:
+// public/lessons is generated, and putting a source file into the output
+// directory to have it read back out is a confusing way to start.
+//
+// So a new page goes in content/drafts/<name>.md, in Russian, written as an
+// ordinary lesson. The extractor takes it apart into a skeleton and messages
+// like any other, and the draft can be deleted afterwards — everything it held
+// is in content/ by then.
+const DRAFTS = path.join(root, 'content/drafts')
+
+const draft = path.join(DRAFTS, `${page}.md`)
+const isDraft = fs.existsSync(draft)
+
+const langs = isDraft
+  ? ['ru']
+  : ['ru', 'eng', 'ua'].filter((l) => fs.existsSync(path.join(LESSONS, l, `${page}.md`)))
+
+const sourceOf = (lang) => isDraft ? draft : path.join(LESSONS, lang, `${page}.md`)
 
 if (!langs.length) {
-  console.error(`no ${page}.md in any language folder`)
+  console.error(`no ${page}.md — looked in content/drafts/ and in public/lessons/{ru,eng,ua}/`)
   process.exit(1)
 }
 
-console.log(`${page}.md — present in: ${langs.join(', ')}\n`)
+console.log(isDraft
+  ? `${page}.md — draft`
+  : `${page}.md — present in: ${langs.join(', ')}\n`)
 
 const results = {}
 let failed = false
@@ -305,7 +323,7 @@ let refDecisions = null
 let sharedFragments = null
 
 for (const lang of langs) {
-  const file = path.join(LESSONS, lang, `${page}.md`)
+  const file = sourceOf(lang)
   const source = fs.readFileSync(file, 'utf8')
 
   const { skeleton, messages, sections, fragments, decisions } =
