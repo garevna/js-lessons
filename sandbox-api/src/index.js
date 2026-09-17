@@ -347,26 +347,40 @@ export default {
       return new Response(null, { status: 204, headers: CORS })
     }
 
+    // A HEAD is a GET whose answer is thrown away, and every checker sends
+    // one. Routing only on GET made /rest-api/users/all answer 404 to a tool
+    // asking whether it exists, while answering a browser perfectly.
+    const asked = request.method
+    if (asked === 'HEAD') request = new Request(request.url, { method: 'GET', headers: request.headers })
+
     const url = new URL(request.url)
 
-    for (const [prefix, handler] of [
-      ['/rest-api', restApi],
-      ['/json-server', jsonServer],
-      ['/form-data', formData],
-      ['/chat', chatApi]
-    ]) {
-      if (url.pathname !== prefix && !url.pathname.startsWith(`${prefix}/`)) continue
-      const path = url.pathname.slice(prefix.length) || '/'
-      try {
-        return await handler(request, path, url, env)
-      } catch (error) {
-        return json({ error: 500, message: error.message }, 500)
+    const answer = async () => {
+      for (const [prefix, handler] of [
+        ['/rest-api', restApi],
+        ['/json-server', jsonServer],
+        ['/form-data', formData],
+        ['/chat', chatApi]
+      ]) {
+        if (url.pathname !== prefix && !url.pathname.startsWith(`${prefix}/`)) continue
+        const path = url.pathname.slice(prefix.length) || '/'
+        try {
+          return await handler(request, path, url, env)
+        } catch (error) {
+          return json({ error: 500, message: error.message }, 500)
+        }
       }
+
+      return new Response(INDEX, {
+        status: url.pathname === '/' ? 200 : 404,
+        headers: { 'Content-Type': 'text/plain; charset=utf-8', ...CORS }
+      })
     }
 
-    return new Response(INDEX, {
-      status: url.pathname === '/' ? 200 : 404,
-      headers: { 'Content-Type': 'text/plain; charset=utf-8', ...CORS }
-    })
+    const response = await answer()
+
+    return asked === 'HEAD'
+      ? new Response(null, { status: response.status, headers: response.headers })
+      : response
   }
 }

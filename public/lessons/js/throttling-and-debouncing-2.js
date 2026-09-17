@@ -22,7 +22,7 @@ function inputHandler (event) {
   }
   const elem = event.target
 
-  fetch(`https://garevna-json-server.glitch.me/usernames/${event.target.value}`)
+  fetch(`https://js-lessons-sandbox.garevna.workers.dev/json-server/usernames/${event.target.value}`)
     .then(response => response.json())
     .then(response => {
       if (response && response.name) {

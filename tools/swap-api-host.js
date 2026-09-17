@@ -40,7 +40,11 @@ let changed = 0
 const touched = new Set()
 const perHost = {}
 
-for (const dir of ['content/lessons', 'content/messages', 'content/fragments']) {
+// public/lessons/js holds the demo scripts, which are source and not built
+// from anything — so they are edited here like content/. Leaving them out is
+// how a lesson came to show the new address in its text while the demo beside
+// it still called the old one and hung waiting.
+for (const dir of ['content/lessons', 'content/messages', 'content/fragments', 'public/lessons/js']) {
   for (const file of fs.readdirSync(path.join(root, dir))) {
     const p = path.join(root, dir, file)
     const before = fs.readFileSync(p, 'utf8')

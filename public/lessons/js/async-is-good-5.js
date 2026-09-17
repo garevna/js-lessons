@@ -3,7 +3,7 @@ let section = document.body
 async function getLogin(resolve, reject) {
   const waitServerAnswer = section.appendChild(document.createElement('p'))
   waitServerAnswer.innerHTML = 'Waiting for server response...'
-  const users = await (await fetch('https://garevna-rest-api.glitch.me/users/all')).json()
+  const users = await (await fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')).json()
   waitServerAnswer.remove()
 
   const logins = Object.keys(users)
