@@ -97,7 +97,7 @@ Result:
 
 As a result, the custom method **~iterate~** will “collect” into the **res** array
 the results of calling the function ~func~ at each iteration,
-and return the **res** array.
+and return the ~res~ array.
 
 ~~~js
 const squaring = num => Math.pow(num, 2)
@@ -114,7 +114,7 @@ _____________________________________________
 
 We can create a custom method that filters the source array in accordance with a given condition.
 The function **~func~** should now return a **boolean value**.
-If the function **~func~** returns ~true~ for the next array element, then this element will be included in the resulting array **res**.
+If the function **~func~** returns ~true~ for the next array element, then this element will be included in the resulting array ~res~.
 Otherwise, no.
 
 ◘◘![ico-20 cap] ** 3**◘◘
@@ -216,7 +216,7 @@ Result:
 ► (4) [4, 5, 7, 7]
 ~~~
 
-However, there is a **side effect** - the array **~alter~** is now empty:
+However, there is a **side effect** - the array ~alter~ is now empty:
 
 ~~~js
 console.log(alter) // []
@@ -274,7 +274,7 @@ ___________________________________________________
 Array iterating methods are **higher-order functions** that iterate over a source array, passing one array element at a time as an argument to the function.
 Thus, the function-argument does not have a reference to the original array itself and cannot mutate it.
 _______________________
-![ico-20 warn] Except the cases when the elements of the source array have a reference data type, i.e. The function-argument receives not a value but a reference to an array element.
+![ico-20 warn] Except the cases when the elements of the source array have a **reference data type**, i.e. The function-argument receives not a value but a reference to an array element.
 ______________________
 A new array is always returned (or not an array, as we will see later, or nothing at all).
 The original array is usually not changed.

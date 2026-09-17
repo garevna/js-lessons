@@ -771,7 +771,7 @@ ____________________________
 
 ## ![ico-25 icon] reduce()
 
-This method differs from its ‘counterparts’ in the list of formal parameters of the **function-argument**.
+This method differs from its 'counterparts' in the list of formal parameters of the **function-argument**.
 Specifically, the first formal parameter of the **function-argument** will now be the **accumulator variable** rather than the current array element.
 The value of this variable will be the result of the method’s execution.
 
@@ -1123,7 +1123,7 @@ _The **argument function** has two formal parameters whose values ​​are used
 The function returns one of three values:
 
 |  0 | elements coincided (equal)    |
-|  1 | first argument is greater than second |
+|  1 | first argument is greater than second  |
 | -1 | second argument is greater than first |
 
 Based on the value returned by the function, the method changes the order of the elements in the array.
