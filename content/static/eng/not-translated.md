@@ -1,0 +1,9 @@
+
+#![ico-70 warn] 404
+
+<h1 style="text-align: center">File Not Found</h1>
+<h2>Unfortunately, the material you requested was not found or does not exist.</h2>
+<h5 style="text-align: center">You can view this topic in ^^russian^^, or wait until the translation will be completed.</h5>
+
+<p>Please contact the developer</p>
+<p>Telegram: @garevna</p>

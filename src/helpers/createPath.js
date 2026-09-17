@@ -25,7 +25,8 @@ export const createPath = (function () {
       case 'files':
         return `${origin}${alias}/${language}.json`
       case '404':
-        return `${origin}lessons/404.md`
+        // Built per language like any other page now.
+        return `${origin}lessons/${lang}/404.md`
       case 'quiz':
       case 'samples':
         return externalLinks[alias](fileName)

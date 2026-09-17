@@ -582,18 +582,19 @@ npm run lessons
 
 Same as for a message: nothing on the site changes until that runs.
 
-Two files under `public/lessons/` are **not** built from `content/` and are
-edited in place, which is worth knowing before wondering why an edit had no
-effect:
+A few pages have no keys, because they have nothing to gain from them. They
+live in `content/static/` and the build copies them across unchanged:
 
-| File | Shown when |
+| Here | Shown when |
 |---|---|
-| `public/lessons/404.md` | the page does not exist at all, in any language |
-| `public/lessons/offline.md` | the service worker has no cached copy and no network |
+| `eng/not-translated.md` `ua/not-translated.md` | the lesson exists but is not translated into the language being read |
+| `offline.md` | the service worker has no cached copy and no network |
 
-`content/lessons/404.md` exists too and builds `public/lessons/<lang>/404.md`,
-which is a different page — the one shown when a lesson exists but has not been
-translated into the language being read. Editing one does not touch the other.
+The 404 is not among them — it is an ordinary lesson with keys, built per
+language like any other. It used to be two files that looked like one: a
+trilingual `public/lessons/404.md` with no source anywhere, and a keyed
+`<lang>/404.md` that was really the untranslated notice. Editing either had no
+effect on the other.
 
 ### Adding a page
 

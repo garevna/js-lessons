@@ -57,6 +57,46 @@ if (!pages.length) {
   process.exit(1)
 }
 
+/**
+ * Pages with no translation system: the 404s and the offline notice.
+ *
+ * They have no skeleton and no keys, because they have nothing to gain from
+ * them — no prose to reuse, no phrase to share, and a 404 says the same short
+ * thing every time. They are written directly in content/static and copied
+ * here unchanged.
+ *
+ * They still go through this rather than being edited in public/lessons, so
+ * there is one rule and not two: content/ is where you write, public/lessons is
+ * what the build produces.
+ */
+function copyStatic () {
+  const from = path.join(CONTENT, 'static')
+  if (!fs.existsSync(from)) return
+
+  const walk = (dir, into) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (entry.name === 'README.md') continue
+
+      const source = path.join(dir, entry.name)
+      if (entry.isDirectory()) { walk(source, path.join(into, entry.name)); continue }
+      if (!entry.name.endsWith('.md')) continue
+
+      const target = path.join(into, entry.name)
+      const out = fs.readFileSync(source, 'utf8')
+      const before = fs.existsSync(target) ? fs.readFileSync(target, 'utf8') : null
+      if (before === out) continue
+
+      if (check) { stale.push(path.relative(LESSONS, target).split(path.sep).join('/')); continue }
+
+      fs.mkdirSync(path.dirname(target), { recursive: true })
+      fs.writeFileSync(target, out)
+      written += 1
+    }
+  }
+
+  walk(from, LESSONS)
+}
+
 let written = 0
 let skipped = 0
 const stale = []
@@ -128,6 +168,10 @@ for (const page of pages) {
     written += 1
   }
 }
+
+// Pages with no keys are copied last, so their result lands in the same
+// count and the same check as everything else.
+if (!only) copyStatic()
 
 if (check) {
   // A page in public/lessons that does not match what content/ says it should
