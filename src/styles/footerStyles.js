@@ -85,9 +85,9 @@ footer {
   transition: .5s ease;
   transform: translate(0,30%) scale(0.0);
   background-color: #fff;
-  background-image: url(${createPath('images', 'garevna-theatre.jpg')});
+  background-image: url(${createPath('images', 'garevna-in-armchair.png')});
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: top center;
   background-size: cover;
   overflow:hidden;
 }

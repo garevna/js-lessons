@@ -505,29 +505,56 @@ changed loses its translation, and only that one. It reports how many of each.
 The extractor splits a page and then rebuilds it, comparing the result with the
 original byte for byte. A page that fails that check is not written.
 
+### Editing a page's markup
+
+The markup lives in `content/lessons/<page>.md` — the skeleton, with `{{keys}}`
+where the prose goes. Edit it, then:
+
+```
+npm run lessons
+```
+
+Same as for a message: nothing on the site changes until that runs.
+
+Two files under `public/lessons/` are **not** built from `content/` and are
+edited in place, which is worth knowing before wondering why an edit had no
+effect:
+
+| File | Shown when |
+|---|---|
+| `public/lessons/404.md` | the page does not exist at all, in any language |
+| `public/lessons/offline.md` | the service worker has no cached copy and no network |
+
+`content/lessons/404.md` exists too and builds `public/lessons/<lang>/404.md`,
+which is a different page — the one shown when a lesson exists but has not been
+translated into the language being read. Editing one does not touch the other.
+
 ### Adding a page
 
-Put the Russian `.md` in `public/lessons/ru/`, then run the extractor on it.
-The page registry and the language lists are generated from the folders during
-the build — they are not maintained by hand.
+Write the lesson as a normal page and let the tools take it apart:
 
-## The Donate section
+```
+1.  public/lessons/ru/<name>.md          write it here, in the markup above
+2.  node tools/i18n-extract.js <name> --write
+3.  npm run content-worker
+4.  npm run lessons
+```
 
-Card numbers, crypto addresses and the payment link live in
-`src/donate/donate.config.js` — one file, and the only one that holds an
-account number. Editing it on GitHub is enough: the push rebuilds and
-redeploys the site.
+Step 2 splits it into `content/lessons/<name>.md` and
+`content/messages/<name>.json`, rebuilding it afterwards and comparing byte for
+byte — a page that fails that check is not written, so a mistake in the markup
+is caught before anything is saved. It also points any repeated phrase at the
+phrase book.
 
-A bank card expires every few years and fails silently when it does — the
-transfer is declined and nobody tells the site's owner. Replacing the number in
-that file is the whole of the fix.
+Step 3 regenerates the page registry from the folders. Until it runs the page
+is not known to the site and asking for it gives the 404.
 
-`payment.url` is for a hosted payment page: the donor clicks and lands on a
-form that already knows who is being paid. Any service handing out a plain link
-fits — a monobank jar, a Ko-fi page, a LiqPay button. A link is all a static
-site can use: there is no server to sign a request or take a callback, and a
-secret key in the bundle would be readable by anyone who opens DevTools. While
-the url is empty the popup shows the cards alone.
+After that the page answers at `?<name>` and can be translated like any other.
+It will **not** be in the menu: `content-worker/src/assets/mainMenu.js` is
+hand-maintained, and a page reaches the menu only by being added there.
+
+`npm run full` does steps 3 and 4 along with everything else, and is the safe
+thing to run when unsure.
 
 ## How it is built
 
