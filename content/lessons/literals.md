@@ -1,9 +1,9 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{p1}}
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
-{{s1.p3}}
+{{p3}}
+{{p4}}
 
 ![ico-25 cap] **{{common.c0}} 1**
 
@@ -26,17 +26,17 @@ console.log(lit.charCodeAt(0))
 
 ![](createPath("illustrations", "string-methods-01.png"))
 
-{{s1.p6}}
+{{p5}}
 
-{{s1.p7}}
+{{p6}}
 
-{{s1.p8}}
+{{p7}}
 
-{{s1.p9}}
+{{p8}}
 
 __________________________________________________________________
 
-{{s1.p10}}
+{{p9}}
 
 ![ico-25 cap] **{{common.c0}} 2**
 
@@ -50,11 +50,11 @@ for (var i = 0; i < cities.length; i++) {
 
 ^^{{common.c2}}^^
 
-{{s1.p13}}
+{{p10}}
 
 ____________________________________________________________________
 
-{{s1.p14}}
+{{p11}}
 
 ![ico-25 cap] **{{common.c0}} 3**
 
@@ -84,17 +84,17 @@ ______________________________________________________________________
 
 ![ico-25 cap] **{{common.c0}} 4**
 
-{{s1.p18}}
+{{p12}}
 
-{{s1.p19}}
+{{p13}}
 
-{{s1.p20}}
+{{p14}}
 
-{{s1.p21}}
+{{p15}}
 
-{{s1.p22}}
+{{p16}}
 
-{{s1.p23}}
+{{p17}}
 
 ~~~js
 var red = Math.round(Math.random() * 255).toString(16)
@@ -104,13 +104,13 @@ var blue = Math.round(Math.random() * 255).toString(16)
 var color = `#${red}${green}${blue}`
 ~~~
 
-{{s1.p24}}
+{{p18}}
 
 ______________________________________________________________________________
 
 ![ico-25 cap] **{{common.c0}} 5**
 
-{{s1.p26}}
+{{p19}}
 
 ~~~js
 var red = Math.round(Math.random() * 255)
@@ -120,4 +120,4 @@ var blue = Math.round(Math.random() * 255)
 var color = `rgb(${red},${green},${blue})`
 ~~~
 
-{{s1.p27}}
+{{p20}}

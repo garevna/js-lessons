@@ -341,11 +341,33 @@ for (const file of outFiles) {
 // the variants character for character, and "0" against „0“ does not.
 const quizProblems = []
 
-for (const key of Object.keys(accepted)) {
-  const m = key.match(/^(.*\.)quizAnswer(\d+)$/)
-  if (!m) continue
+// A quiz is three keys on one line of the skeleton:
+//
+//   →→→ {{p41}} | {{p42}} | {{p43}} →→→
+//          question  variants  answer
+//
+// The pairing used to be read from the key names — quizAnswer3 went with
+// quizVariants3 — which tied it to keys that said where a paragraph was. Ids
+// say nothing now, deliberately, so the relationship is read where it is
+// actually written down. It was always the better place: a rename cannot break
+// it, and the skeleton is what the renderer uses too.
+const quizTriples = (() => {
+  if (isBook) return []
+  let skeleton = ''
+  try { skeleton = fs.readFileSync(path.join(root, 'content/lessons', `${page}.md`), 'utf8') } catch { return [] }
 
-  const variantsKey = `${m[1]}quizVariants${m[2]}`
+  const found = []
+  for (const line of skeleton.split(/\r?\n/)) {
+    if (!/^\s*→{3}/.test(line)) continue
+    const keys = [...line.matchAll(/\{\{([a-zA-Z0-9_.]+)\}\}/g)].map((m) => m[1])
+    if (keys.length === 3) found.push({ variants: keys[1], answer: keys[2] })
+  }
+  return found
+})()
+
+for (const { variants: variantsKey, answer: key } of quizTriples) {
+  if (accepted[key] === undefined) continue
+
   const variants = (accepted[variantsKey] !== undefined ? accepted[variantsKey] : source[variantsKey])
   if (variants === undefined) continue
 

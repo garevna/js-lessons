@@ -1,14 +1,14 @@
 # ![ico-70 node] module.exports & require()
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p3}}
 
-{{s1.p1}}
+{{p4}}
 
-{{s1.p2}}
+{{p5}}
 
 _________________________________________
 
@@ -26,23 +26,23 @@ module.exports = {
 }
 ~~~
 
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
+{{p6}}
+{{p7}}
+{{p8}}
 
 _____________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{p9}}
 
-{{s2.p1}}
+{{p10}}
 
-{{s2.p2}}
+{{p11}}
 
-{{s2.p3}}
+{{p12}}
 
-{{s2.p4}}
-{{s2.p5}}
-{{s2.p6}}
+{{p13}}
+{{p14}}
+{{p15}}
 
 ◘◘![ico-20 file] start.js◘◘
 
@@ -53,7 +53,7 @@ lib.hello()
 lib.message('Вы еще не знакомы с Node.js ?')
 ~~~
 
-{{s2.p7}}
+{{p16}}
 
 ◘◘![ico-20 file] package.json◘◘
 
@@ -75,53 +75,53 @@ lib.message('Вы еще не знакомы с Node.js ?')
 
 ~~~
 
-{{s2.p8}}
+{{p17}}
 
 ••![ico-20 bash] npm run start••
 
-{{s2.p9}}
+{{p18}}
 
 ••![ico-20 bash] node start.js••
 
 **{{common.c4}}**
 
-{{s2.p11}}
+{{p19}}
 
 _______________________________________________________________________________
 
-{{s2.p12}}
-{{s2.p13}}
-{{s2.p14}}
+{{p20}}
+{{p21}}
+{{p22}}
 
-{{s2.p15}}
+{{p23}}
 
 _______________________________________________________________________________
 
 # ![ico-30 webpack] webpack.config.js
 
-{{s2.p16}}
+{{p24}}
 
 _______________________________________________
 
-{{s2.p17}}
+{{p25}}
 
-{{s2.p18}}
+{{p26}}
 
-^^^[{{s2.spoiler1}}]
+^^^[{{p27}}]
 
-{{s2.p19}}
+{{p28}}
 
-{{s2.p20}}
+{{p29}}
 
-{{s2.p21}}
+{{p30}}
 
 ~~~js
 const path = require('path')
 ~~~
 
-{{s2.p22}}
+{{p31}}
 
-{{s2.p23}}
+{{p32}}
 
 ~~~js
 path.resolve(__dirname, 'build')
@@ -152,47 +152,47 @@ ______________________________________________________________
 
 ## ![ico-25 webpack] Loaders
 
-{{s2.p25}}
-{{s2.p26}}
-{{s2.p27}}
-{{s2.p28}}
-{{s2.p29}}
-{{s2.p30}}
-{{s2.p31}}
+{{p33}}
+{{p34}}
+{{p35}}
+{{p36}}
+{{p37}}
+{{p38}}
+{{p39}}
 
-{{s2.p32}}
+{{p40}}
 
 
-{{s2.p33}}
+{{p41}}
 
 | ^^**module.exports**^^ |
-{{s2.p34}}
-{{s2.p35}}
-{{s2.p36}}
-{{s2.p37}}
-{{s2.p38}}
-{{s2.p39}}
+{{p42}}
+{{p43}}
+{{p44}}
+{{p45}}
+{{p46}}
+{{p47}}
 
 
 ________________________________________________________________
 
 
-### ![ico-20 webpack] {{s3.h1}}
+### ![ico-20 webpack] {{p48}}
 
 ![ico-20 webpack] style-loader
 ![ico-20 webpack] css-loader
 
-{{s3.p1}}
+{{p49}}
 
-{{s3.p2}}
+{{p50}}
 
-{{s3.p3}}
+{{p51}}
 
-{{s3.p4}}
+{{p52}}
 
-{{s3.p5}}
+{{p53}}
 
-{{s3.p6}}
+{{p54}}
 
 ~~~js
 ['style-loader', 'css-loader']
@@ -206,9 +206,9 @@ ________________________________________________________________
 
 ## ![ico-25 webpack] {{common.c3}} 5
 
-{{s4.p1}}
+{{p55}}
 
-{{s4.p2}}
+{{p56}}
 
 ◘◘![ico-20 file] main.css◘◘
 
@@ -223,7 +223,7 @@ body {
 
 ![](https://lh5.googleusercontent.com/oSo7naNlVfS1BFfQ3ybg_bemnZmkDEZKTVrbvxsMjvbCye6wc4DQOO68r1PKQv-MfTtBsdgxep9v98fC6QHu6sGAGx_offjUo-FyNI-3-8RD1iQGMpTAchMMuKpHoZmY2bH5YyIse38gFvk)
 
-{{s4.p3}}
+{{p57}}
 
 ◘◘![ico-20 file] script.js◘◘
 
@@ -237,29 +237,29 @@ __________________________________________________
 
 **{{common.c21}}**
 
-{{s4.p5}}
+{{p58}}
 
-{{s4.p6}}
+{{p59}}
 
-{{s4.p7}}
+{{p60}}
 
 ![](https://lh6.googleusercontent.com/9iIWxB9HHuCzZ4ZFlhrUW_GrG3cCX-Y3560mRCPTICdKPAUGNmWgDpwKFuld9rV8dFnVgHIn7Yv0PophBSGy0AqRouju3FG2Jwc6M2ZVNiWRMvpS0sUX7h08HXTsFs_Pzvtjv73t1aqnex8)
 
-{{s4.p8}}
+{{p61}}
 
-{{s4.p9}}
+{{p62}}
 
 _____________________
 
-### ![ico-20 webpack] {{s5.h1}}
+### ![ico-20 webpack] {{p63}}
 
 ••![ico-20 bash] npm install css-loader style-loader --save-dev••
 
 ![](https://lh5.googleusercontent.com/ctLeetPIQ0Bsol7YcR3GC0Qixw4p7xoKnaCivTnevYg86sTwezG9f5vYHAXHGd8Af-M8dVzryfOpC682knlYug_aVafWxnpUxUnpcxmuX1hctX_A1Djj4hNguJYB_ktbmR2SSpTwMW08jAQ)
 
-{{s5.p1}}
+{{p64}}
 
-{{s5.p2}}
+{{p65}}
 
 **package.json**
 
@@ -267,7 +267,7 @@ _____________________
 
 __________________________________
 
-{{s5.p3}}
+{{p66}}
 
 ◘◘![ico-20 file] webpack.config.js◘◘
 
@@ -299,20 +299,20 @@ _________________________________________________________________________
 
 ### ![ico-20 webpack] {{common.c21}}
 
-{{s6.p1}}
+{{p67}}
 
 ![](https://lh6.googleusercontent.com/LrTASIeOuHlf0WgAZ6hjzzePQ9ib4NLHzddAUco_ufKMrdtR6yhZ1LAAyAymQPUcYaESRPWU7gOovrdR2zKf1XCt6FR3mkUBXUL2XomNqYIUw7bct0o6BTHQUpY3TT92S6KKA9O5heABRLQ)
 
-{{s6.p2}}
+{{p68}}
 
-{{s6.p3}}
+{{p69}}
 
-{{s6.p4}}
+{{p70}}
 
-{{s6.p5}}
+{{p71}}
 
 ~~~css
 img { margin: 40px; border: dotted 2px yellow; }
 ~~~
 
-{{s6.p6}}
+{{p72}}

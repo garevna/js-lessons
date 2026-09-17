@@ -1,25 +1,25 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{p1}}
 
 [%%%**export**%%%](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
 [%%%**import**%%%](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 
 _______________________________________
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
+{{p3}}
 
-{{s1.p3}}
+{{p4}}
 
-{{s1.p4}}
+{{p5}}
 
 ## ![ico-25 icon] export
 
 _______________________________________________________________
 
-### ![ico-20 icon] {{s2.h1}}
+### ![ico-20 icon] {{p6}}
 
-{{s2.p1}}
+{{p7}}
 
 ◘◘![ico-20 file] lib.js◘◘
 
@@ -37,10 +37,10 @@ export function elemExist (elemSelector) {
 
 ________________________________________________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{p8}}
 
-{{s3.p1}}
-{{s3.p2}}
+{{p9}}
+{{p10}}
 
 ◘◘![ico-20 file] Sample.js◘◘
 
@@ -71,13 +71,13 @@ ____________________________________________________________
 
 ## ![ico-25 icon] import
 
-{{s3.p3}}
+{{p11}}
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] {{p12}}
  
-{{s4.p1}}
-{{s4.p2}}
-{{s4.p3}}
+{{p13}}
+{{p14}}
+{{p15}}
 
 ◘◘![ico-20 file] main.js:◘◘
 
@@ -93,7 +93,7 @@ const picture = Object.assign(buildElement('img'), {
 console.log(elemExist(picture.tagName))
 ~~~
 
-{{s4.p4}}
+{{p16}}
 
 ◘◘![ico-20 file] main.js:◘◘
 
@@ -111,9 +111,9 @@ console.log(lib.elemExist(picture.tagName))
 
 
 
-### ![ico-20 icon] {{s5.h1}}
+### ![ico-20 icon] {{p17}}
 
-{{s5.p1}}
+{{p18}}
 
 ~~~js
 import Sample from 'Sample'
@@ -125,7 +125,7 @@ __________________________________________________________________________
 
 ## ![ico-25 hw] {{common.c3}} 2
 
-{{s6.p1}}
+{{p19}}
 
 ◘◘![ico-20 file] promise.js◘◘
 
@@ -146,11 +146,11 @@ import promise from './promise.js'
 promise.then(response => document.querySelector('.sampleClass').innerText += response)
 ~~~
 
-{{s6.p2}}
+{{p20}}
 
 ![](https://lh5.googleusercontent.com/zhM1TwRySgAAGrg8ts-n8mvlACifQXHzQudaUs37ce45AtHM9VjMa8CswyohFhG0y9p9sV15jw_rqV8hyOMGX62y5o829hATXLXNLPEN8h779mjS2yC140CdCuwFMvqYGhcu-b9lD1lvquQ)
 
-{{s6.p3}}
+{{p21}}
 
 _______________________________________________________
 
@@ -158,11 +158,11 @@ _______________________________________________________
 
 **ES10 ( 2019 )**
 
-{{s6.p4}}
+{{p22}}
 
-{{s6.p5}}
+{{p23}}
 
-{{s6.p6}}
+{{p24}}
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -172,9 +172,9 @@ document.body.onclick = async () => {
 }
 ~~~
 
-{{s6.p7}}
+{{p25}}
 
-{{s6.p8}}
+{{p26}}
 
 ^^Next demo will show result only once^^
 
@@ -182,7 +182,7 @@ document.body.onclick = async () => {
 
 __________________
 
-{{s6.p9}}
+{{p27}}
 
 ◘◘![ico-20 cap] ** 2**◘◘
 
@@ -194,7 +194,7 @@ import(`${scriptFile}12.js`)
   .then(() => setTimeout(() => import(`${scriptFile}22.js`), 10000))
 ~~~
 
-{{s6.p10}}
+{{p28}}
 
 ◘◘![ico-20 cap] **2(1)**◘◘
 
@@ -214,7 +214,7 @@ scriptImports('https://garevna.github.io/js-samples/js/index')
 
 ____________________________________________
 
-{{s6.p11}}
+{{p29}}
 
 
 
@@ -235,7 +235,7 @@ ____________________________________________
 &lt;/html>
 ~~~
 
-{{s6.p12}}
+{{p30}}
 
 ~~~js
 const mod = document.body
@@ -243,9 +243,9 @@ const mod = document.body
 mod.type = 'module'
 ~~~
 
-{{s6.p13}}
+{{p31}}
 
-{{s6.p14}}
+{{p32}}
 
 ~~~js
 mod.textContent = `
@@ -254,7 +254,7 @@ mod.textContent = `
 `
 ~~~
 
-{{s6.p15}}
+{{p33}}
 
 ◘◘![ico-20 cap] ** 3** (js/index.js)◘◘
 
@@ -296,19 +296,19 @@ export function showMessage (message) {
 }
 ~~~
 
-{{s6.p16}}
+{{p34}}
 
 ~~~js
 import { showMessage } from 'https://example.com/js/testESModules.js'
 ~~~
 
-{{s6.p17}}
+{{p35}}
 
 ~~~js
 import { showMessage } from './js/testESModules.js'
 ~~~
 
-{{s6.p18}}
+{{p36}}
 
 
 [:::Live demo:::](https://garevna.github.io/js-samples/#25)

@@ -1,11 +1,11 @@
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p1}}
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
+{{p3}}
 
-{{s1.p3}}
-{{s1.p4}}
+{{p4}}
+{{p5}}
 
 ~~~js
 const promise = sayHello()
@@ -13,13 +13,13 @@ const promise = sayHello()
 
 @@@@
 ![](illustrations/promise-tin.svg)
-{{s1.p5}}
+{{p6}}
 @@@@
 
-{{s1.p6}}
+{{p7}}
 
 @@@@
-{{s1.p7}}
+{{p8}}
 ![](illustrations/queue-microtask.svg)
 @@@@
 
@@ -41,7 +41,7 @@ console.log(`Finish: ${new Date().getUTCMilliseconds()}`)
 console.timeEnd('Main thread')
 ~~~
 
-{{s1.p9}}
+{{p9}}
 
 ~~~console
 Start: 465
@@ -51,24 +51,24 @@ Hello
 ~~~
 
 @@@@
-{{s1.p10}}
+{{p10}}
 ![](illustrations/promise-modesty.svg)
 @@@@
 
-{{s1.p11}}
-{{s1.p12}}
+{{p11}}
+{{p12}}
 
-{{s1.p13}}
+{{p13}}
 
-{{s1.p14}}
+{{p14}}
 
 __________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{p15}}
 
-{{s2.p1}}
+{{p16}}
 
-{{s2.p2}}
+{{p17}}
 
 ◘◘![ico-20 cap] ** 2**◘◘
 
@@ -78,14 +78,14 @@ new Promise(resolve => setTimeout(() => resolve('Hello'), 1000))
   .then(response => console.log(response))
 ~~~
 
-{{s2.p3}}
-{{s2.p4}}
-{{s2.p5}}
-{{s2.p6}}
+{{p18}}
+{{p19}}
+{{p20}}
+{{p21}}
 
-{{s2.p7}}
+{{p22}}
 
-{{s2.p8}}
+{{p23}}
 
 ~~~js
 function setTimer (message, callback) {
@@ -94,7 +94,7 @@ function setTimer (message, callback) {
 }
 ~~~
 
-{{s2.p9}}
+{{p24}}
 
 ~~~js
 new Promise(callback => setTimer('Hello', callback))
@@ -102,7 +102,7 @@ new Promise(callback => setTimer('Hello', callback))
   .then(response => setTimer(response, console.log))
 ~~~
 
-{{s2.p10}}
+{{p25}}
 
 ~~~console
 568
@@ -112,15 +112,15 @@ new Promise(callback => setTimer('Hello', callback))
 Hello, baby
 ~~~
 
-{{s2.p11}}
+{{p26}}
 
-{{s2.p12}}
+{{p27}}
 
 ~~~js
 const resolve = response => document.body.innerHTML += `<p>${response}</p>`
 ~~~
 
-{{s2.p13}}
+{{p28}}
 
 ~~~js
 function setTimer (message, callback) {
@@ -129,7 +129,7 @@ function setTimer (message, callback) {
 }
 ~~~
 
-{{s2.p14}}
+{{p29}}
 
 ~~~js
 const sayHello = async () => {
@@ -137,30 +137,30 @@ const sayHello = async () => {
   return await new Promise(callback => setTimer(`${res}, baby`, callback))
 }
 ~~~
-{{s2.p15}}
+{{p30}}
 ~~~js
 sayHello().then(resolve)
 ~~~
 
 {{{async-is-good-1.js}}}
 
-{{s2.p16}}
+{{p31}}
 
-{{s2.p17}}
-{{s2.p18}}
-{{s2.p19}}
-{{s2.p20}}
+{{p32}}
+{{p33}}
+{{p34}}
+{{p35}}
 
 _________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{p36}}
 
-{{s3.p1}}
-{{s3.p2}}
+{{p37}}
+{{p38}}
 
-{{s3.p3}}
-{{s3.p4}}
-{{s3.p5}}
+{{p39}}
+{{p40}}
+{{p41}}
 
 ~~~js
 function promise () {
@@ -168,13 +168,13 @@ function promise () {
 }
 ~~~
 
-{{s3.p6}}
+{{p42}}
 
 ~~~js
 const resolve = response => console.log(response)
 ~~~
 
-{{s3.p7}}
+{{p43}}
 
 ~~~js
 promise('Start', 5).then(resolve)
@@ -185,9 +185,9 @@ resolve('Finish')
 
 {{{async-is-good-3-1.js}}}
 
-{{s3.p8}}
+{{p44}}
 
-{{s3.p9}}
+{{p45}}
 
 ◘◘![ico-20 cap] ** 3**◘◘
 
@@ -208,11 +208,11 @@ sigma().then(response => console.log(response))
 
 {{{async-is-good-3-2.js}}}
 
-{{s3.p10}}
+{{p46}}
 
 __________________________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] {{p47}}
 
 ◘◘![ico-20 cap] ** 4**◘◘
 
@@ -247,7 +247,7 @@ getLogin(res => console.log(res), err => console.error(err))
 
 {{{async-is-good-4.js}}}
 
-{{s4.p1}}
+{{p48}}
 
 ~~~js
 fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')
@@ -257,14 +257,14 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')
 
 _________________________________
 
-{{s4.p2}}
+{{p49}}
 
-{{s4.p3}}
-{{s4.p4}}
+{{p50}}
+{{p51}}
 
-{{s4.p5}}
-{{s4.p6}}
-{{s4.p7}}
+{{p52}}
+{{p53}}
+{{p54}}
 
 ◘◘![ico-20 file] getInput◘◘
 
@@ -294,7 +294,7 @@ function getInput (users) {
 }
 ~~~
 
-{{s4.p8}}
+{{p55}}
 
 ◘◘![ico-20 file] getLogin◘◘
 
@@ -306,18 +306,18 @@ async function getLogin () {
 }
 ~~~
 
-{{s4.p9}}
+{{p56}}
 
-{{s4.p10}}
+{{p57}}
 
 ~~~js
 getLogin().then(console.log, console.error)
 ~~~
 
-{{s4.p11}}
+{{p58}}
 
 
-^^^[{{s4.spoiler1}}]
+^^^[{{p59}}]
 ~~~js
 function getInput ( users ) {
   const logins = Object.keys(users)

@@ -1,26 +1,26 @@
 # ![ico-30 study] Exceptions
 
-{{s0.p1}}
-{{s0.p2}}
+{{p1}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
-{{s0.p4}}
+{{p4}}
 
-☼☼☼ {{s0.slogan1}} ☼☼☼
+☼☼☼ {{p5}} ☼☼☼
 
-## ![ico-30 icon] {{s1.h1}}
+## ![ico-30 icon] {{p6}}
 
 ### ![ico-20 icon] Error
 
-{{s1.p1}}
+{{p7}}
 
 ![](illustrations/Error-constructor.png)
 
-{{s1.p2}}
+{{p8}}
 
-{{s1.p3}}
-{{s1.p4}}
+{{p9}}
+{{p10}}
 
 ![ico-25 cap] ** 1**
 
@@ -31,7 +31,7 @@ console.dir(err)
 
 ![](illustrations/Error-example-01.png)
 
-{{s1.p5}}
+{{p11}}
 
 ![ico-25 cap] ** 2**
 
@@ -50,9 +50,9 @@ console.error(error)
 
 _________________
 
-{{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
+{{p12}}
+{{p13}}
+{{p14}}
 
 ### ![ico-20 icon] SyntaxError
 
@@ -115,15 +115,15 @@ console.error(typeError)
 
 ____________________________
 
-## ![ico-30 icon] {{s2.h1}}
+## ![ico-30 icon] {{p15}}
 
-{{s2.p1}}
+{{p16}}
 
-{{s2.p2}}
+{{p17}}
 
-{{s2.p3}}
+{{p18}}
 
-{{s2.p4}}
+{{p19}}
 
 ![ico-25 cap] ** 6**
 
@@ -139,15 +139,15 @@ throw syntaxError
 
 ![](illustrations/SyntaxError-example-02.png)
 
-{{s2.p5}}
+{{p20}}
 
-{{s2.p6}}
+{{p21}}
 
 ________________________
 
 ## ![ico-25 icon] try ... catch
 
-{{s2.p7}}
+{{p22}}
 
 ~~~js
 try {
@@ -157,7 +157,7 @@ try {
 }
 ~~~
 
-{{s2.p8}}
+{{p23}}
 
 ![ico-25 cap] ** 7**
 
@@ -171,15 +171,15 @@ try {
 }
 ~~~
 
-{{s2.p9}}
+{{p24}}
 
 ~~~js
 var x = obj.name
 ~~~
 
-{{s2.p10}}
+{{p25}}
 
-{{s2.p11}}
+{{p26}}
 
 __________________________________
 
@@ -236,7 +236,7 @@ _________________________
 
 ^^^[ES 2019]
 
-{{s2.p12}}
+{{p27}}
 
 ~~~js
 var obj = null
@@ -252,7 +252,7 @@ try {
 
 ### ![ico-20 icon] finally
 
-{{s2.p13}}
+{{p28}}
 
 ![ico-25 cap] **10**
 
@@ -279,7 +279,7 @@ try {
 ____________________________
 ![ico-25 cap] **11**
 
-{{s2.p14}}
+{{p29}}
 
 ~~~js
 try {
@@ -289,7 +289,7 @@ try {
 }
 ~~~
 
-{{s2.p15}}
+{{p30}}
 
 ••![ico-20 error] Error: Arguments not valid••
 

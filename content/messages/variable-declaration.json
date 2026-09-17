@@ -1,225 +1,225 @@
 {
-  "s1.h1": {
+  "p1": {
     "ru": "Объявление переменных",
     "eng": "Variable declaration",
     "ua": "Оголошення змінних"
   },
-  "s2.h1": {
+  "p2": {
     "ru": "Ключевое слово var",
     "eng": "Keyword var",
     "ua": "Ключове слово var"
   },
-  "s2.p1": {
+  "p3": {
     "ru": "Ваши данные (числа, строки и т.д.) будут храниться в памяти компьютера, пока работает ваше приложение, но вам не нужно знать точно, где именно движок хранит их.",
     "eng": "Your data (numbers, strings, etc.) will be stored in computer memory as long as your application is running, but you don't need to know exactly where the engine stores it.",
     "ua": "Ваші дані (числа, рядки тощо) зберігатимуться в пам'яті комп'ютера, поки працює ваш застосунок, але вам не потрібно знати точно, де саме движок зберігає їх."
   },
-  "s2.p2": {
+  "p4": {
     "ru": "Имена переменных - это удобная форма адресации, когда вам не нужно манипулировать физическими адресами памяти.",
     "eng": "Variable names are a convenient form of addressing where you don't have to manipulate physical memory addresses.",
     "ua": "Імена змінних - це зручна форма адресації, коли вам не потрібно маніпулювати фізичними адресами пам'яті."
   },
-  "s2.p3": {
+  "p5": {
     "ru": "Вам достаточно указать движку имя переменной, и в дальнейшем вы сможете использовать это имя для получения доступа к данным.",
     "eng": "You simply tell the engine the name of the variable, and you can then use that name to access the data.",
     "ua": "Вам достатньо вказати движку ім'я змінної, і надалі ви зможете використовувати це ім'я для отримання доступу до даних."
   },
-  "s2.p4": {
+  "p6": {
     "ru": "Для объявления переменной используется ключевое слово **⟦f0⟧**, за которым (через пробел) следует имя переменной.",
     "eng": "To declare a variable, the keyword **⟦f0⟧** is used, followed (with a space) by the variable name.",
     "ua": "Для оголошення змінної використовується ключове слово **⟦f0⟧**, за яким (через пробіл) слідує ім'я змінної."
   },
-  "s2.p5": {
+  "p7": {
     "ru": "Встретив такое объявление, движок резервирует определенный участок памяти компьтера и \"привязывает\" к указанному вами имени переменной адрес памяти, выделенной для ее хранения.",
     "eng": "Upon encountering such a declaration, the engine reserves a certain section of computer memory and \"binds\" the address of the memory allocated for its storage to the variable name you specify.",
     "ua": "Зустрівши таке оголошення, движок резервує певну ділянку пам'яті комп'ютера і «прив'язує» до вказаного вами імені змінної адресу пам'яті, виділеної для її зберігання."
   },
-  "s2.p6": {
+  "p8": {
     "ru": "^^Обратите внимание, что в случае необходимости движок может переместить хранимое значение в другой участок памяти, при этом он автоматически изменит значение адреса, к которому привязано имя переменной, вы даже не узнаете об этом.^^",
     "eng": "^^Note that if necessary, the engine can move the stored value to another memory location, and it will automatically change the value of the address to which the variable name is bound without you even knowing it.^^",
     "ua": "^^Зверніть увагу, що в разі потреби движок може перемістити збережене значення в іншу ділянку пам'яті, водночас він автоматично змінить значення адреси, до якої прив'язане ім'я змінної, ви навіть не дізнаєтесь про це.^^"
   },
-  "s2.p7": {
+  "p9": {
     "ru": "![ico-25 warn] Объявление переменной с помощью ключевого слова **⟦f0⟧** помещает нашу переменную в глобальный объект **⟦f1⟧**.",
     "eng": "![ico-25 warn] Declaring a variable with the **⟦f0⟧** keyword places our variable in a global **⟦f1⟧** object.",
     "ua": "![ico-25 warn] Оголошення змінної за допомогою ключового слова **⟦f0⟧** поміщає нашу змінну в глобальний об'єкт **⟦f1⟧**."
   },
-  "s2.p8": {
+  "p10": {
     "ru": "Что это означает для нас?",
     "eng": "What does this mean for us?",
     "ua": "Що це означає для нас?"
   },
-  "s2.p9": {
+  "p11": {
     "ru": "Что мы можем обратиться к значению этой переменной как напрямую по ее имени, так и опосредованно, через глобальный объект:",
     "eng": "That we can refer to the value of this variable both directly by its name and indirectly through a **global object**:",
     "ua": "Що ми можемо звернутися до значення цієї змінної як безпосередньо за її ім'ям, так і опосередковано, через глобальний об'єкт:"
   },
-  "s2.p10": {
+  "p12": {
     "ru": "^^в точечной нотации:^^",
     "eng": "^^in dot notation:^^",
     "ua": "^^ у точковій нотації:^^"
   },
-  "s2.p12": {
+  "p13": {
     "ru": "При объявлении переменной ей можно сразу присвоить начальное значение.",
     "eng": "When you declare a variable, you can immediately assign an initial value to it.",
     "ua": "Під час оголошення змінної їй можна відразу присвоїти початкове значення."
   },
-  "s2.p13": {
+  "p14": {
     "ru": "Для этого используется самый часто используемый **оператор языка** - оператор присваивания **⟦f2⟧**.",
     "eng": "For this purpose, the assignment operator (**⟦f2⟧** ) is used, which is the most common in any script.",
     "ua": "Для цього використовується найпоширеніший **оператор мови** - оператор присвоювання **⟦f2⟧**."
   },
-  "s2.p14": {
+  "p15": {
     "ru": "В левой части оператора присваивания должно быть имя переменной, в правой - некое **выражение**.",
     "eng": "The left side of the assignment operator should contain the variable name, the right side should contain some **expression**.",
     "ua": "У лівій частині оператора присвоювання має бути ім'я змінної, у правій - якийсь **вираз**."
   },
-  "s2.p15": {
+  "p16": {
     "ru": "Движок вычислит значение выражения в правой части оператора присваивания и поместит вычисленное значение в переменную, имя которой указано в левой части оператора.",
     "eng": "The engine will compute the value of the expression on the right side of the assignment operator, and put the computed value into the variable named on the left side of the operator.",
     "ua": "Движок обчислить значення виразу в правій частині оператора присвоювання і помістить обчислене значення в змінну, ім'я якої вказано в лівій частині оператора."
   },
-  "s2.p16": {
+  "p17": {
     "ru": "После выполнения этого кода в переменной **⟦f3⟧** будет число 9.",
     "eng": "After executing this code, the variable **⟦f3⟧** will have the value 9.",
     "ua": "Після виконання цього коду у змінній **⟦f3⟧** буде число 9."
   },
-  "s2.p17": {
+  "p18": {
     "ru": "Если в левой части оператора присваивания находится выражение, значение которого не является именем переменной:",
     "eng": "If the left side of the assignment statement contains an expression whose value is not the variable name:",
     "ua": "Якщо в лівій частині оператора присвоювання міститься вираз, значення якого не є іменем змінної:"
   },
-  "s2.p18": {
+  "p19": {
     "ru": "то движок сгенерирует исключение:",
     "eng": "the engine will generate an exception:",
     "ua": "то движок згенерує виняток:"
   },
-  "s2.p19": {
+  "p20": {
     "ru": "Однако это не означает, что в левой части оператора присваивания не может быть выражения.",
     "eng": "However, this does not mean that there cannot be an expression in the left part of the assignment operator.",
     "ua": "Однак це не означає, що в лівій частині оператора присвоювання не може бути виразу."
   },
-  "s2.p20": {
+  "p21": {
     "ru": "Рассмотрим пример.",
     "eng": "Let's consider an example.",
     "ua": "Розглянемо приклад."
   },
-  "s2.p21": {
+  "p22": {
     "ru": "^^^[Переменные и глобальный объект",
     "eng": "^^^[Variables and global object",
     "ua": "^^^ Змінні та глобальний об'єкт"
   },
-  "s2.p22": {
+  "p23": {
     "ru": "Объявим переменную **⟦f4⟧** и присвоим ей значение 'Piter':",
     "eng": "Let's declare the variable **⟦f4⟧** and assign the value 'Piter' to it:",
     "ua": "Оголосимо змінну **⟦f4⟧** і присвоїмо їй значення 'Piter':"
   },
-  "s2.p23": {
+  "p24": {
     "ru": "Наша переменная попала в глобальный объект **⟦f1⟧**.",
     "eng": "Our variable is in the global object **⟦f1⟧**.",
     "ua": "Наша змінна потрапила в глобальний об'єкт **⟦f1⟧**."
   },
-  "s2.p24": {
+  "p25": {
     "ru": "Поэтому мы имеем доступ к ней как к переменной **⟦f5⟧**.",
     "eng": "So we have access to it as a **⟦f5⟧** variable.",
     "ua": "Тому ми маємо доступ до неї як до змінної **⟦f5⟧**."
   },
-  "s2.p25": {
+  "p26": {
     "ru": "Или как **⟦f6⟧**.",
     "eng": "Or as **⟦f6⟧**.",
     "ua": "Або як **⟦f6⟧**."
   },
-  "s2.p26": {
+  "p27": {
     "ru": "Поэтому мы можем использовать в левой части оператора присваивания выражение, после вычисления которого движок получит ссылку на переменную:",
     "eng": "Therefore, we can use an expression in the left part of the assignment operator, after calculating it, the engine will get a reference to the variable:",
     "ua": "Тому ми можемо використовувати в лівій частині оператора присвоювання вираз, після обчислення якого движок отримає посилання на змінну:"
   },
-  "s2.p27": {
+  "p28": {
     "ru": "Можете проверить самостоятельно, что значение переменной **⟦f4⟧** изменилось.",
     "eng": "You can check for yourself that the value of the **⟦f4⟧** variable has changed.",
     "ua": "Можете перевірити самостійно, що значення змінної **⟦f4⟧** змінилося."
   },
-  "s2.p28": {
+  "p29": {
     "ru": "^^Когда мы дойдем до деструктуризации, вы увидите, какие еще выражения могут быть в левой части оператора присваивания.^^",
     "eng": "^^When we get to destructuring, you'll see what other expressions can be on the left side of the assignment operator.^^",
     "ua": "^^Коли ми дійдемо до деструктуризації, ви побачите, які ще вирази можуть бути в лівій частині оператора присвоєння.^^"
   },
-  "s2.p29": {
+  "p30": {
     "ru": "![ico-25 warn] Если мы объявим переменные, но не присвоим им начальные значения:",
     "eng": "![ico-25 warn] If we declare variables but don't assign initial values to them:",
     "ua": "![ico-25 warn] Якщо ми оголосимо змінні, але не присвоїмо їм початкові значення:"
   },
-  "s2.p30": {
+  "p31": {
     "ru": "то их значением будет **⟦f7⟧** (не определено).",
     "eng": "then their value will be **⟦f7⟧** (not defined).",
     "ua": "то їхнім значенням буде **⟦f7⟧** (не визначено)."
   },
-  "s2.p31": {
+  "p32": {
     "ru": "![ico-25 warn] Если мы не объявим переменную, но попытаемся обратиться к ней:",
     "eng": "![ico-25 warn] If we do not declare a variable, but try to access it:",
     "ua": "![ico-25 warn] Якщо ми не оголосимо змінну, але спробуємо звернутися до неї:"
   },
-  "s2.p32": {
+  "p33": {
     "ru": "![ico-20 err] то в консоли появится сообщение об ошибке:",
     "eng": "![ico-20 err] an error message will appear in the console:",
     "ua": "![ico-20 err] то в консолі з'явиться повідомлення про помилку:"
   },
-  "s2.p33": {
+  "p34": {
     "ru": "Можно объявить сразу несколько переменных в одной строке, разделяя их запятой:",
     "eng": "You can declare several variables in one line, separating them with a comma:",
     "ua": "Можна оголосити відразу кілька змінних в одному рядку, розділяючи їх комою:"
   },
-  "s3.h1": {
+  "p35": {
     "ru": "Имена переменных",
     "eng": "Variable names",
     "ua": "Імена змінних"
   },
-  "s3.p1": {
+  "p36": {
     "ru": "![ico-25 warn] Имена переменных могут содержать буквы, цифры, символы подчеркивания и знаки доллара.",
     "eng": "![ico-25 warn] Variable names can contain letters, numbers, underscores, and dollar signs.",
     "ua": "![ico-25 warn] Імена змінних можуть містити букви, цифри, символи підкреслення і знаки долара."
   },
-  "s3.p2": {
+  "p37": {
     "ru": "![ico-25 warn] Имена переменных могут начинаться с буквы, сиволов ⟦f8⟧ и ⟦f9⟧.",
     "eng": "![ico-25 warn] Variable names can begin with a letter, the sybols **⟦f8⟧** and **⟦f9⟧**.",
     "ua": "![ico-25 warn] Імена змінних можуть починатися з літери, символів ⟦f8⟧ і ⟦f9⟧."
   },
-  "s3.p3": {
+  "p38": {
     "ru": "Рекомендуется давать длинные и понятные имена переменных и функций, составленные из нескольких слов.",
     "eng": "It is recommended to give long and clear names of variables and functions composed of several words.",
     "ua": "Рекомендується давати довгі та зрозумілі імена змінних і функцій, складені з декількох слів."
   },
-  "s3.p4": {
+  "p39": {
     "ru": "Это улучшает читабельность кода:",
     "eng": "It improves code readability:",
     "ua": "Це покращує читабельність коду:"
   },
-  "s3.p5": {
+  "p40": {
     "ru": "![ico-25 warn] Имена переменных чувствительны к регистру (⟦f10⟧ и ⟦f11⟧ - разные переменные).",
     "eng": "![ico-25 warn] Variable names are case sensitive (⟦f10⟧ and ⟦f11⟧ are different variables).",
     "ua": "![ico-25 warn] Імена змінних чутливі до регістру (⟦f10⟧ і ⟦f11⟧ - різні змінні)."
   },
-  "s3.p6": {
+  "p41": {
     "ru": "**Camel Case** - стиль написания имен переменных, состоящих из нескольких слов, когда каждое следующее слово начинается с литеры в верхнем регистре.<br><br>Первая литера, с которой начинается имя переменной, должно быть в нижнем регистре.",
     "eng": "**Camel Case** - a style of writing multi-word variable names where each successive word begins with an upper case literal.<br><br>The first literal with which a variable name begins must be in lower case.",
     "ua": "**Camel Case** - стиль написання імен змінних, що складаються з декількох слів, коли кожне наступне слово починається з літери у верхньому регістрі.<br><br>Перша літера, з якої починається ім'я змінної, має бути в нижньому регістрі."
   },
-  "s3.p7": {
+  "p42": {
     "ru": "^^С литеры в верхнем регистре принято начинать только имена конструкторов и классов, с которыми мы познакомимся позже.^^",
     "eng": "^^Only constructor and class names, which we will get to know later, should begin with an uppercase letter.^^",
     "ua": "^^З літери у верхньому регістрі заведено починати тільки імена конструкторів і класів, з якими ми познайомимося пізніше.^^"
   },
-  "s3.p8": {
+  "p43": {
     "ru": "^^На будущее: имена **функций** рекомендуется начинать с **глагола**, чтобы отличать их от имен переменных, в которых хранятся данные.^^",
     "eng": "^^For the future: it is recommended to start **function** names with a **verb** to distinguish them from variable names where data is stored.^^",
     "ua": "^^На майбутнє: імена **функцій** рекомендується починати з **дієслова**, щоб відрізняти їх від імен змінних, у яких зберігаються дані.^^"
   },
-  "s3.p9": {
+  "p44": {
     "ru": "[![ico-25 warn] **_Зарезервированные слова_**](https://www.w3schools.com/js/js_reserved.asp) не могут использоваться как имена переменных.",
     "eng": "[![ico-25 warn] **_Reserved words_**](https://www.w3schools.com/js/js_reserved.asp) cannot be used as variable names.",
     "ua": "[![ico-25 warn] **_Зарезервовані слова_**](https://www.w3schools.com/js/js_reserved.asp) не можуть використовуватися як імена змінних."
   },
-  "s3.p10": {
+  "p45": {
     "ru": "![ico-25 warn] Имена переменных не могут начинаться с цифры.",
     "eng": "![ico-25 warn] Variable names cannot start with a number.",
     "ua": "![ico-25 warn] Імена змінних не можуть починатися з цифри."

@@ -2,30 +2,30 @@
 
 **ES10 (2019)**
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
 __________________________________________________________
 
-### ![ico-20 icon] {{s1.h1}}
+### ![ico-20 icon] {{p4}}
 
-{{s1.p1}}
+{{p5}}
 
 ~~~js
 var bigNumber = 78n
 ~~~
 
-{{s1.p2}}
+{{p6}}
 
 ~~~js
 var bigNumber = Number.MAX_SAFE_INTEGER + 5003  // 9007199254745994
 bigNumber = BigInt(bigNumber) // 9007199254745994n
 ~~~
 
-{{s1.p3}}
+{{p7}}
 
 ~~~js
 typeof bigNumber // 'bigint'
@@ -35,7 +35,7 @@ _____________________________________________________________
 
 ### ![ico-20 icon] {{common.c22}}
 
-{{s2.p1}}
+{{p8}}
 
 #### Infinity
 
@@ -43,7 +43,7 @@ _____________________________________________________________
 BigInt(Infinity)
 ~~~
 
-{{s2.p2}}
+{{p9}}
 
 ![ico-20 err]
 
@@ -57,7 +57,7 @@ BigInt(Infinity)
 BigInt(NaN)
 ~~~
 
-{{s2.p3}}
+{{p10}}
 
 ![ico-20 err]
 
@@ -71,7 +71,7 @@ BigInt(NaN)
 BigInt(null)
 ~~~
 
-{{s2.p4}}
+{{p11}}
 
 ![ico-20 err]
 
@@ -104,7 +104,7 @@ BigInt('45' - 11)   // 34n
 BigInt('45' - true) // 44n
 ~~~
 
-{{s2.p5}}
+{{p12}}
 
 ~~~js
 BigInt('45 + 8')
@@ -118,13 +118,13 @@ BigInt('45 + 8')
 
 _____________________________________________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{p13}}
 
-^^^[{{s3.spoiler1}}]
+^^^[{{p14}}]
 
-{{s3.p1}}
+{{p15}}
 
-{{s3.p2}}
+{{p16}}
 
 ~~~js
 bigNumber * 2
@@ -138,7 +138,7 @@ bigNumber * 2
     Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
 ~~~
 
-{{s3.p4}}
+{{p17}}
 
 ~~~js
 Math.sin(bigNumber)
@@ -152,13 +152,13 @@ Math.sin(bigNumber)
     Uncaught TypeError: Cannot convert a BigInt value to a number
 ~~~
 
-{{s3.p6}}
+{{p18}}
 
 ~~~js
 Number(bigNumber) // 9007199254745994
 ~~~
 
-{{s3.p7}}
+{{p19}}
 
 ~~~js
 bigNumber = bigNumber * bigNumber // 81129638414696789717133459048036n
@@ -168,7 +168,7 @@ Number(bigNumber) // 8.112963841469679e+31
 bigNumber.toString() // "81129638414696789717133459048036"
 ~~~
 
-{{s3.p8}}
+{{p20}}
 
 ~~~js
 let bigArray = [
@@ -185,9 +185,9 @@ bigArray[BigInt(1)]  // 9007199254740994n
 
 ____________________________________________________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] {{p21}}
 
-{{s4.p1}}
+{{p22}}
 
 ~~~js
 bigArray[0] ^ bigArray[1]  // 2n

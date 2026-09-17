@@ -1,65 +1,65 @@
 {
-  "s0.p1": {
+  "p1": {
     "ru": "Метод  **_⟦f0⟧_**  наследуется всеми объектами от **⟦f1⟧**",
     "eng": "The method  **_⟦f0⟧_**  is inherited by all objects from **⟦f1⟧**",
     "ua": "Метод  **_⟦f0⟧_**  успадковується всіма об’єктами від **⟦f1⟧**"
   },
-  "s0.p2": {
+  "p2": {
     "ru": "Этот метод вызывается автоматически, когда необходимо вернуть примитивное значение объекта",
     "eng": "This method is called automatically when the primitive value of an object needs to be returned",
     "ua": "Цей метод викликається автоматично, коли потрібно повернути примітивне значення об’єкта"
   },
-  "s0.p3": {
+  "p3": {
     "ru": "Например, если объект сравнивается с числом",
     "eng": "For example, if an object is compared with a number",
     "ua": "Наприклад, якщо об’єкт порівнюється з числом"
   },
-  "s0.p4": {
+  "p4": {
     "ru": "Если теперь мы выполним сравнение:",
     "eng": "If we now perform the comparison:",
     "ua": "Якщо тепер ми виконаємо порівняння:"
   },
-  "s0.p5": {
+  "p5": {
     "ru": "то получим  _⟦f2⟧_",
     "eng": "we will obtain  _⟦f2⟧_",
     "ua": "то отримаємо  _⟦f2⟧_"
   },
-  "s0.p6": {
+  "p6": {
     "ru": "При выполнении сравнения будет вычисляться примитивное значение объекта, т.е. вызываться метод **⟦f0⟧**",
     "eng": "When the comparison is performed, the primitive value of the object will be computed, i.e. the method **⟦f0⟧** will be called",
     "ua": "Під час порівняння обчислюватиметься примітивне значення об’єкта, тобто викликатиметься метод **⟦f0⟧**"
   },
-  "s0.p7": {
+  "p7": {
     "ru": "Если примитивное значение объекта вычислить невозможно, то будет возвращен сам объект",
     "eng": "If the primitive value of the object cannot be computed, the object itself will be returned",
     "ua": "Якщо примітивне значення об’єкта обчислити неможливо, то буде повернено сам об’єкт"
   },
-  "s0.p8": {
+  "p8": {
     "ru": "**⟦f3⟧** - **_унаследованный_** метод любого объекта",
     "eng": "**⟦f3⟧** – the **_inherited_** method of any object",
     "ua": "**⟦f3⟧** — **_успадкований_** метод будь-якого об’єкта"
   },
-  "s0.p9": {
+  "p9": {
     "ru": "Но это не означает, что мы не можем его переопределить",
     "eng": "But this does not mean that we cannot override it",
     "ua": "Але це не означає, що ми не можемо його перевизначити"
   },
-  "s0.p10": {
+  "p10": {
     "ru": "Конечно, так делать не стоит, но все-таки интересно ![ico-20 smile]",
     "eng": "Of course, you shouldn’t do this, but it’s still interesting ![ico-20 smile]",
     "ua": "Звичайно, так робити не варто, але все-таки цікаво ![ico-20 smile]"
   },
-  "s0.p11": {
+  "p11": {
     "ru": "в результате выполнения следующего кода:",
     "eng": "As a result of executing the following code:",
     "ua": "У результаті виконання наступного коду:"
   },
-  "s0.p12": {
+  "p12": {
     "ru": "все нативные объекты JS будут \"ругаться\" соответствующим образом при попытке получить их примитивное значение",
     "eng": "all native JS objects will ‘throw an error’ accordingly when attempting to retrieve their primitive value",
     "ua": "всі нативні об’єкти JS будуть «давати помилку» відповідним чином при спробі отримати їх примітивне значення"
   },
-  "s0.p13": {
+  "p13": {
     "ru": "![ico-25 question] Что вернет выражение:",
     "eng": "![ico-25 question] What will the expression return:",
     "ua": "![ico-25 question] Що поверне вираз:"

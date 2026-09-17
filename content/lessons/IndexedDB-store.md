@@ -2,85 +2,85 @@
 
 ____________________________________________________________
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p1}}
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
+{{p3}}
 
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
+{{p4}}
+{{p5}}
+{{p6}}
 
-{{s1.p6}}
+{{p7}}
 
-{{s1.p7}}
-{{s1.p8}}
-{{s1.p9}}
-{{s1.p10}}
-{{s1.p11}}
+{{p8}}
+{{p9}}
+{{p10}}
+{{p11}}
+{{p12}}
 
-{{s1.p12}}
+{{p13}}
 
-{{s1.p13}}
+{{p14}}
 | **IDBFactory**              | ![ico-20 green-ok] |
 | **IDBDatabase**             | ![ico-20 negation] |
 
-{{s1.p14}}
-{{s1.p15}}
+{{p15}}
+{{p16}}
 
-{{s1.p16}}
-{{s1.p17}}
+{{p17}}
+{{p18}}
 _______________________________
 
-{{s1.p18}}
-{{s1.p19}}
-{{s1.p20}}
-{{s1.p21}}
+{{p19}}
+{{p20}}
+{{p21}}
+{{p22}}
 
-{{s1.p22}}
-{{s1.p23}}
-{{s1.p24}}
+{{p23}}
+{{p24}}
+{{p25}}
 
-{{s1.p25}}
-{{s1.p26}}
+{{p26}}
+{{p27}}
 
-{{s1.p27}}
-{{s1.p28}}
-{{s1.p29}}
-{{s1.p30}}
+{{p28}}
+{{p29}}
+{{p30}}
+{{p31}}
 
-{{s1.p31}}
+{{p32}}
 
-{{s1.p32}}
-{{s1.p33}}
-{{s1.p34}}
-{{s1.p35}}
+{{p33}}
+{{p34}}
+{{p35}}
+{{p36}}
 
 
 _________________________________________________
 
-### ![ico-25 icon] {{s2.h1}}
+### ![ico-25 icon] {{p37}}
 
-{{s2.p1}}
+{{p38}}
 
-{{s2.p2}}
-{{s2.p3}}
-{{s2.p4}}
+{{p39}}
+{{p40}}
+{{p41}}
 
-{{s2.p5}}
+{{p42}}
 
-{{s2.p6}}
-{{s2.p7}}
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
+{{p43}}
+{{p44}}
+{{p45}}
+{{p46}}
+{{p47}}
+{{p48}}
 
-{{s2.p12}}
-{{s2.p13}}
+{{p49}}
+{{p50}}
 
-{{s2.p14}}
+{{p51}}
 
 ~~~js
 const request = indexedDB.open('sampleDB')
@@ -88,9 +88,9 @@ const request = indexedDB.open('sampleDB')
 request.onupgradeneeded = event => console.log(event.target.result)
 ~~~
 
-{{s2.p15}}
+{{p52}}
 
-{{s2.p16}}
+{{p53}}
 
 ~~~js
 const request = indexedDB.open('sampleDB', 2)
@@ -98,14 +98,14 @@ const request = indexedDB.open('sampleDB', 2)
 request.onupgradeneeded = event => console.log(event.target.result)
 ~~~
 
-{{s2.p17}}
+{{p54}}
 
 
 ______________________________________________________
 
 ### ![ico-20 icon] createObjectStore
 
-{{s2.p18}}
+{{p55}}
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -119,7 +119,7 @@ request.onupgradeneeded = event => {
 }
 ~~~
 
-{{s2.p19}}
+{{p56}}
 
 ~~~~console
 ▼ IDBObjectStore {name: "firstStore", keyPath: null, indexNames: DOMStringList, transaction: IDBTransaction, autoIncrement: false}
@@ -159,30 +159,30 @@ request.onupgradeneeded = event => {
       ► __proto__: Object
 ~~~~
 
-{{s2.p20}}
-{{s2.p21}}
+{{p57}}
+{{p58}}
 
 
-{{s2.p22}}
-{{s2.p23}}
-{{s2.p24}}
-{{s2.p25}}
+{{p59}}
+{{p60}}
+{{p61}}
+{{p62}}
 
-{{s2.p26}}
+{{p63}}
 
 • **~autoIncrement~**
 • **~keyPath~**
 
-{{s2.p27}}
+{{p64}}
 
 • **~indexNames~**
 
-{{s2.p28}}
-{{s2.p29}}
+{{p65}}
+{{p66}}
 
 • **~transaction~**
 
-{{s2.p30}}
+{{p67}}
 
 ~~~console
 ▼ IDBObjectStore {name: "First Store", keyPath: null, indexNames: DOMStringList, transaction: IDBTransaction, autoIncrement: false}
@@ -202,23 +202,23 @@ request.onupgradeneeded = event => {
   ► __proto__: IDBObjectStore
 ~~~
 
-{{s2.p31}}
-{{s2.p32}}
-{{s2.p33}}
+{{p68}}
+{{p69}}
+{{p70}}
 
-{{s2.p34}}
+{{p71}}
 
-{{s2.p35}}
-{{s2.p36}}
-{{s2.p37}}
+{{p72}}
+{{p73}}
+{{p74}}
 
-{{s2.p38}}
-{{s2.p39}}
-{{s2.p40}}
+{{p75}}
+{{p76}}
+{{p77}}
 
 __________________________________
 
-{{s2.p41}}
+{{p78}}
 
 | add        | put           |
 | get        | getAll        |
@@ -227,26 +227,26 @@ __________________________________
 | getKey     | getAllKeys    |
 | openCursor | openKeyCursor |
 
-{{s2.p42}}
+{{p79}}
 
 ___________________________________________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{p80}}
 
-{{s3.p1}}
-{{s3.p2}}
+{{p81}}
+{{p82}}
 
-{{s3.p3}}
-{{s3.p4}}
-{{s3.p5}}
+{{p83}}
+{{p84}}
+{{p85}}
 
-{{s3.p6}}
-{{s3.p7}}
+{{p86}}
+{{p87}}
 
-{{s3.p8}}
+{{p88}}
 
-{{s3.p9}}
-{{s3.p10}}
+{{p89}}
+{{p90}}
 
 ◘◘![ico-20 cap] ** 2**◘◘
 
@@ -263,25 +263,25 @@ request.onupgradeneeded = event => {
 }
 ~~~
 
-{{s3.p11}}
-{{s3.p12}}
-{{s3.p13}}
+{{p91}}
+{{p92}}
+{{p93}}
 
 | # | Key            | Value                      |
 | 0 | "firstRecord"  | ► { name: "Google" }       |
 
-{{s3.p14}}
+{{p94}}
 
-{{s3.p15}}
+{{p95}}
 
-{{s3.p16}}
-{{s3.p17}}
+{{p96}}
+{{p97}}
 
 ____________________________
 
-{{s3.p18}}
-{{s3.p19}}
-{{s3.p20}}
+{{p98}}
+{{p99}}
+{{p100}}
 
 ◘◘![ico-20 cap] ** 3**◘◘
 
@@ -298,8 +298,8 @@ const createUsersDB = users => new Promise((resolve, reject) => Object.assign(in
 }))
 ~~~
 
-{{s3.p21}}
-{{s3.p22}}
+{{p101}}
+{{p102}}
 
 ~~~js
 async function callUsers () {
@@ -310,8 +310,8 @@ async function callUsers () {
 callUsers().then(resp => console.log(resp))
 ~~~
 
-{{s3.p23}}
-{{s3.p24}}
+{{p103}}
+{{p104}}
 
 **userStore**
 
@@ -321,11 +321,11 @@ callUsers().then(resp => console.log(resp))
 
 _________________________________________
 
-{{s3.p25}}
-{{s3.p26}}
-{{s3.p27}}
+{{p105}}
+{{p106}}
+{{p107}}
 
-{{s3.p28}}
+{{p108}}
 
 ~~~js
 {
@@ -335,7 +335,7 @@ _________________________________________
 }
 ~~~
 
-{{s3.p29}}
+{{p109}}
 
 ~~~js
 const createStore = function (db, storeName) {
@@ -365,8 +365,8 @@ async function callUsers () {
 callUsers().then(resp => console.log(resp))
 ~~~
 
-{{s3.p30}}
-{{s3.p31}}
+{{p110}}
+{{p111}}
 
 **userStore**
 
@@ -378,8 +378,8 @@ __________________________________________________________________________
 
 ### ![ico-20 icon] objectStoreNames
 
-{{s3.p32}}
-{{s3.p33}}
+{{p112}}
+{{p113}}
 
 ~~~console
 ▼ DOMStringList {length: 0}
@@ -395,15 +395,15 @@ __________________________________________________________________________
       ► __proto__: Object
 ~~~
 
-{{s3.p34}}
+{{p114}}
 
 ~~~js
 DB.objectStoreNames.contains( "lessonStore" )  // false
 ~~~
 
-{{s3.p35}}
+{{p115}}
 
-{{s3.p36}}
+{{p116}}
 
 ◘◘![ico-20 cap] ** 5**◘◘
 
@@ -415,9 +415,9 @@ const openDB = (nameDB, verDB) => new Promise((resolve, reject) => Object.assign
 }))
 ~~~
 
-{{s3.p37}}
-{{s3.p38}}
-{{s3.p39}}
+{{p117}}
+{{p118}}
+{{p119}}
 
 ~~~js
 const createStore = function (db, storeName) {
@@ -433,9 +433,9 @@ const createStore = function (db, storeName) {
 }
 ~~~
 
-{{s3.p40}}
-{{s3.p41}}
-{{s3.p42}}
+{{p120}}
+{{p121}}
+{{p122}}
 
 ~~~js
 let db, lessonStore
@@ -452,18 +452,18 @@ openDB('keywordsDB', 1).then(resolve, reject)
 
 ^^^[DOMException]
 
-{{s3.p43}}
+{{p123}}
 
 ~~~js
 openDB('keywordsDB', 1)
   .then(event => event.target.result.createObjectStore('topicStore'), event => console.warn(event.target.error) || null)
 ~~~
 
-{{s3.p44}}
+{{p124}}
 
 ••![ico-20 error] DOMException: Failed to execute 'createObjectStore' on 'IDBDatabase': The database is not running a version change transaction.••
 
-{{s3.p45}}
+{{p125}}
 
 ~~~js
 let topicStore
@@ -479,9 +479,9 @@ _____________________________________________________
 
 ### ![ico-20 icon] deleteObjectStore
 
-{{s3.p46}}
-{{s3.p47}}
-{{s3.p48}}
+{{p126}}
+{{p127}}
+{{p128}}
 
 ◘◘![ico-20 cap] ** 6**◘◘
 
@@ -490,14 +490,14 @@ indexedDB.open('keywordsDB', 3)
   .onupgradeneeded = event => event.target.result.deleteObjectStore('topicStore')
 ~~~
 
-{{s3.p49}}
+{{p129}}
 
 ~~~js
 indexedDB.open('keywordsDB', 4)
   .onupgradeneeded = event => { store = event.target.result.createObjectStore('topicStore, { keyPath: 'topic' }) }
 ~~~
 
-{{s3.p50}}
+{{p130}}
 
 ~~~~js
 const topics = [
@@ -524,7 +524,7 @@ const topics = [
 ]
 ~~~~
 
-{{s3.p51}}
+{{p131}}
 
 ~~~js
 indexedDB.open('keywordsDB')
@@ -536,8 +536,8 @@ indexedDB.open('keywordsDB')
   }
 ~~~
 
-{{s3.p52}}
-{{s3.p53}}
-{{s3.p54}}
+{{p132}}
+{{p133}}
+{{p134}}
 
 _________________________________________________

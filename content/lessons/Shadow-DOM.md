@@ -1,39 +1,39 @@
 # ![ico-30 study] Shadow DOM
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
-{{s0.p3}}
+{{p2}}
+{{p3}}
 
-{{s0.p4}}
+{{p4}}
 
-## ![ico-20 icon] {{s1.h1}}
+## ![ico-20 icon] {{p5}}
 
-{{s1.p1}}
-{{s1.p2}}
-{{s1.p3}}
-{{s1.p4}}
+{{p6}}
+{{p7}}
+{{p8}}
+{{p9}}
 
 _____________________________________
 
-{{s1.p5}}
+{{p10}}
 
-{{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
+{{p11}}
+{{p12}}
+{{p13}}
 
-{{s1.p9}}
+{{p14}}
 
-{{s1.p10}}
+{{p15}}
 
 _______________________________________
 
 ## ![ico-25 icon] attachShadow()
 
-{{s1.p11}}
-{{s1.p12}}
-{{s1.p13}}
-{{s1.p14}}
+{{p16}}
+{{p17}}
+{{p18}}
+{{p19}}
 
 ~~~js
 const elem = document.createElement('div')
@@ -66,7 +66,7 @@ shadow.appendChild((() => Object.assign(document.createElement('img'), {
 
 ### ![ico-20 icon] mode: 'open'
 
-{{s1.p15}}
+{{p20}}
 
 ~~~html
 ▼ <div>
@@ -76,7 +76,7 @@ shadow.appendChild((() => Object.assign(document.createElement('img'), {
 </div>
 ~~~
 
-{{s1.p16}}
+{{p21}}
 
 ~~~js
 console.dir(elem.shadowRoot)
@@ -115,11 +115,11 @@ console.dir(elem.shadowRoot)
 
 ### ![ico-20 icon] mode: 'closed'
 
-{{s1.p17}}
+{{p22}}
 
-{{s1.p18}}
+{{p23}}
 
-{{s1.p19}}
+{{p24}}
 
 ~~~js
 console.dir(elem.shadowRoot) // null

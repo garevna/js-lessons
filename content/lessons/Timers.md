@@ -1,16 +1,16 @@
-# ![ico-35 study] {{s1.h1}}
+# ![ico-35 study] {{p1}}
 
-{{s1.p1}}
-{{s1.p2}}
+{{p2}}
+{{p3}}
 
 ## ![ico-30 clock] setTimeout
 
-{{s1.p3}}
+{{p4}}
 
-{{s1.p4}}
-{{s1.p5}}
+{{p5}}
+{{p6}}
 
-{{s1.p6}}
+{{p7}}
 
 ◘◘![ico-25 cap] ** 1**◘◘
 
@@ -24,11 +24,11 @@
 })()
 ~~~
 
-{{s1.p7}}
+{{p8}}
 
-{{s1.p8}}
+{{p9}}
 
-{{s1.p9}}
+{{p10}}
 
 ◘◘![ico-25 cap] ** 2**◘◘
 
@@ -59,8 +59,8 @@ ____________________________
 
 ## ![ico-25 clock] setInterval
 
-{{s1.p10}}
-{{s1.p11}}
+{{p11}}
+{{p12}}
 
 ^^^[![ico-25 coffee] 3]
 
@@ -97,18 +97,18 @@ var interval = setInterval(() => {
 
 ^^^
 
-{{s1.p12}}
-{{s1.p13}}
+{{p13}}
+{{p14}}
 
 {{{Timers-3.js}}}
 
 _________________________________________
 
-{{s1.p14}}
+{{p15}}
 
-{{s1.p15}}
+{{p16}}
 
-{{s1.p16}}
+{{p17}}
 
 ◘◘![ico-25 cap] ** 4**◘◘
 
@@ -122,10 +122,10 @@ const interval = setInterval(() => counter++, 1)
 
 ___________________________________________
 
-{{s1.p17}}
-{{s1.p18}}
+{{p18}}
+{{p19}}
 
-{{s1.p19}}
+{{p20}}
 
 ~~~~js
 const style = document.head
@@ -173,14 +173,14 @@ style.textContent = `
 `
 ~~~~
 
-{{s1.p20}}
+{{p21}}
 
 ~~~js
 const createFigure = () => document.body
   .appendChild(document.createElement('div'))
 ~~~
 
-{{s1.p21}}
+{{p22}}
 
 ◘◘![ico-25 cap] ** 5**◘◘
 
@@ -203,23 +203,23 @@ document.body.onclick = () => clearInterval(timer)
 
 {{{Timers-5.js}}}
 
-{{s1.p22}}
-{{s1.p23}}
-{{s1.p24}}
+{{p23}}
+{{p24}}
+{{p25}}
 
-{{s1.p25}}
+{{p26}}
 
-{{s1.p26}}
+{{p27}}
 
 ____________________________________________
 
 ## ![ico-25 icon] requestAnimationFrame
 
-{{s1.p27}}
-{{s1.p28}}
-{{s1.p29}}
+{{p28}}
+{{p29}}
+{{p30}}
 
-{{s1.p30}}
+{{p31}}
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
@@ -238,7 +238,7 @@ showTime()
 
 {{{Timers-6.js}}}
 
-{{s1.p31}}
+{{p32}}
 
 ~~~js
 const showTime = function () {
@@ -248,14 +248,14 @@ const showTime = function () {
 console.log(requestAnimationFrame(showTime))
 ~~~
 
-{{s1.p32}}
-{{s1.p33}}
+{{p33}}
+{{p34}}
 
-{{s1.p34}}
-{{s1.p35}}
-{{s1.p36}}
+{{p35}}
+{{p36}}
+{{p37}}
 
-{{s1.p37}}
+{{p38}}
 
 ~~~~js
 const style = document.head
@@ -297,8 +297,8 @@ style.textContent = `
 `
 ~~~~
 
-{{s1.p38}}
-{{s1.p39}}
+{{p39}}
+{{p40}}
 
 ~~~js
 const makeStep = figure => figure.style.left = figure.offsetLeft + 1 + 'px'
@@ -355,7 +355,7 @@ requestAnimationFrame(recurse.bind(null, message))
 
 __________________________________________
 
-{{s1.p40}}
+{{p41}}
 
 ~~~js
 const messages = [
@@ -366,7 +366,7 @@ const messages = [
 ]
 ~~~
 
-{{s1.p41}}
+{{p42}}
 
 ◘◘![ico-25 cap] ** 9**◘◘
 
@@ -394,19 +394,19 @@ ___________________________________________________
 
 ## ![ico-25 icon] Debounce
 
-{{s1.p42}}
-{{s1.p43}}
-{{s1.p44}}
-{{s1.p45}}
-{{s1.p46}}
+{{p43}}
+{{p44}}
+{{p45}}
+{{p46}}
+{{p47}}
 
-{{s1.p47}}
+{{p48}}
 
-{{s1.p48}}
+{{p49}}
 
-{{s1.p49}}
-{{s1.p50}}
-{{s1.p51}}
+{{p50}}
+{{p51}}
+{{p52}}
 
 ~~~js
 function addElem (back = 'transparent') {
@@ -424,7 +424,7 @@ function addElem (back = 'transparent') {
 }
 ~~~
 
-{{s1.p52}}
+{{p53}}
 
 ◘◘![ico-25 cap] **10**◘◘
 ~~~js

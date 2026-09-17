@@ -1,245 +1,245 @@
 {
-  "s1.h1": {
+  "p1": {
     "ru": "Методы массивов",
     "eng": "Array methods",
     "ua": "Методи масивів"
   },
-  "s1.p1": {
+  "p2": {
     "ru": "Этот метод добавляет новый элемент в конец массива.",
     "eng": "This method adds a new element to the end of the array.",
     "ua": "Цей метод додає новий елемент до кінця масиву."
   },
-  "s1.p2": {
+  "p3": {
     "ru": "Аргументом, который получает метод при вызове, является добавляемый элемент.",
     "eng": "The argument passed to the method when it is called is the element to be added.",
     "ua": "Аргументом, який отримує метод під час виклику, є додаваний елемент."
   },
-  "s1.p3": {
+  "p4": {
     "ru": "Метод возвращает новую длину массива.",
     "eng": "The method returns the new length of the array.",
     "ua": "Метод повертає нову довжину масиву."
   },
-  "s1.p4": {
+  "p5": {
     "ru": "^^После выполнения этого кода в массиве **array** будут элементы:^^",
     "eng": "^^After executing this code, the **array** will contain the following elements:^^",
     "ua": "^^Після виконання цього коду в масиві **array** будуть елементи:^^"
   },
-  "s1.p5": {
+  "p6": {
     "ru": "^^а значение переменной **⟦f0⟧** будет 5^^",
     "eng": "^^and the value of the variable **⟦f0⟧** will be 5^^",
     "ua": "^^а значення змінної **⟦f0⟧** дорівнюватиме 5^^"
   },
-  "s1.p6": {
+  "p7": {
     "ru": "Этот метод удаляет последний элемент массива и возвращает удаленный элемент",
     "eng": "This method removes the last element of the array and returns the removed element",
     "ua": "Цей метод видаляє останній елемент масиву та повертає видалений елемент"
   },
-  "s1.p7": {
+  "p8": {
     "ru": "У метода нет параметров (аргументов)",
     "eng": "The method has no parameters (arguments).",
     "ua": "У методу немає параметрів (аргументів)"
   },
-  "s1.p8": {
+  "p9": {
     "ru": "^^После выполнения этого кода в массиве **array** останутся:^^",
     "eng": "^^After executing this code, the **array** will contain:^^",
     "ua": "^^Після виконання цього коду в масиві **array** залишаться:^^"
   },
-  "s1.p9": {
+  "p10": {
     "ru": "^^а значение переменной  ⟦f1⟧  будет  'Program'^^",
     "eng": "^^and the value of the variable  ⟦f1⟧  will be  “Program”^^",
     "ua": "^^а значення змінної  ⟦f1⟧  буде  “Program”^^"
   },
-  "s1.p10": {
+  "p11": {
     "ru": "Этот метод удаляет первый элемент из массива.",
     "eng": "This method removes the first element from the array.",
     "ua": "Цей метод видаляє перший елемент із масиву."
   },
-  "s1.p11": {
+  "p12": {
     "ru": "Возвращаемое значение - удаленный элемент.",
     "eng": "The return value is the removed element.",
     "ua": "Повернуте значення — видалений елемент."
   },
-  "s1.p13": {
+  "p13": {
     "ru": "^^в консоли будет:  _Nail_^^",
     "eng": "^^The console will display:  _Nail_^^",
     "ua": "^^у консолі буде:  _Nail_^^"
   },
-  "s1.p14": {
+  "p14": {
     "ru": "^^а массив **arrayOfThings** будет содержать значения:^^",
     "eng": "^^and the array **arrayOfThings** will contain the following values:^^",
     "ua": "^^а масив **arrayOfThings** міститиме такі значення:^^"
   },
-  "s1.p15": {
+  "p15": {
     "ru": "Метод добавляет новый элемент в начало массива.",
     "eng": "This method adds a new element to the beginning of the array.",
     "ua": "Цей метод додає новий елемент на початок масиву."
   },
-  "s1.p16": {
+  "p16": {
     "ru": "Возвращаемое значение - новая длина массива (число).",
     "eng": "The return value is the new length of the array.",
     "ua": "Повернуте значення — нова довжина масиву (число)."
   },
-  "s1.p17": {
+  "p17": {
     "ru": "^^В результате массив **drinks** будет содержать элементы:^^",
     "eng": "^^As a result, the array **drinks** will contain the following elements:^^",
     "ua": "^^В результаті масив **drinks** міститиме такі елементи:^^"
   },
-  "s1.p18": {
+  "p18": {
     "ru": "^^а переменная ⟦f2⟧ примет значение 6^^",
     "eng": "^^and the variable ⟦f2⟧ will take the value 6^^",
     "ua": "^^а змінна ⟦f2⟧ прийме значення 6^^"
   },
-  "s1.p19": {
+  "p19": {
     "ru": "Первый аргумент (число) определяет положение (индекс), куда будут вставлены новые элементы.",
     "eng": "The first argument (a number) specifies the position (index) where the new elements will be inserted.",
     "ua": "Перший аргумент (число) визначає позицію (індекс), куди будуть вставлені нові елементи."
   },
-  "s1.p20": {
+  "p20": {
     "ru": "Второй аргумент (число) определяет, сколько элементов (начиная с позиции вставки) должно быть удалено из массива.",
     "eng": "The second argument (a number) specifies how many elements (starting from the insertion position) should be removed from the array.",
     "ua": "Другий аргумент (число) визначає, скільки елементів (починаючи з позиції вставки) має бути видалено з масиву."
   },
-  "s1.p21": {
+  "p21": {
     "ru": "Третий (четвертый, пятый ...) аргументы - это элементы, которые нужно вставить в массив.",
     "eng": "The third (fourth, fifth, etc.) arguments are the elements to be inserted into the array.",
     "ua": "Третій (четвертий, п’ятий ...) аргументи — це елементи, які потрібно вставити в масив."
   },
-  "s1.p22": {
+  "p22": {
     "ru": "Метод возвращает удаленные элементы массива (массив).",
     "eng": "The method returns the removed elements of the array (an array).",
     "ua": "Метод повертає видалені елементи масиву (масив)."
   },
-  "s1.p23": {
+  "p23": {
     "ru": "С помощью метода ⟦f3⟧ можно заменить элементы в массиве:",
     "eng": "Using the ⟦f3⟧ method, you can replace elements in the array:",
     "ua": "За допомогою методу ⟦f3⟧ можна замінити елементи в масиві:"
   },
-  "s1.p24": {
+  "p24": {
     "ru": "^^В результате массив **myArray** будет:^^",
     "eng": "^^As a result, the **myArray** array will be:^^",
     "ua": "^^У результаті масив **myArray** буде:^^"
   },
-  "s1.p25": {
+  "p25": {
     "ru": "^^а в консоль будет выведено: ⟦f4⟧^^",
     "eng": "^^and the following will be printed to the console: ⟦f4⟧^^",
     "ua": "^^а в консоль буде виведено: ⟦f4⟧^^"
   },
-  "s1.p26": {
+  "p26": {
     "ru": "^^(массив элементов, которые были заменены на '*')^^",
     "eng": "^^(an array of elements that have been replaced with “*”)^^",
     "ua": "^^(масив елементів, які були замінені на “*”)^^"
   },
-  "s1.p27": {
+  "p27": {
     "ru": "^^В результате массив **myArray** будет:^^",
     "eng": "^^As a result, the array **myArray** will be:^^",
     "ua": "^^У результаті масив **myArray** буде таким:^^"
   },
-  "s1.p28": {
+  "p28": {
     "ru": "^^а в консоль будет выведено: ⟦f5⟧^^",
     "eng": "^^and the following will be printed to the console: ⟦f5⟧^^",
     "ua": "^^а в консоль буде виведено: ⟦f5⟧^^"
   },
-  "s1.p29": {
+  "p29": {
     "ru": "^^(элементы, которые были заменены элементами '*', '#', '$', '%')^^",
     "eng": "^^(elements that have been replaced with “*”, “#”, “$”, “%”)^^",
     "ua": "^^(елементи, які були замінені елементами “*”, “#”, “$”, “%”)^^"
   },
-  "s1.p30": {
+  "p30": {
     "ru": "^^В результате массив **myArray** будет состоять из четырех элементов:^^",
     "eng": "^^As a result, the array **myArray** will consist of four elements:^^",
     "ua": "^^У результаті масив **myArray** складатиметься з чотирьох елементів:^^"
   },
-  "s1.p31": {
+  "p31": {
     "ru": "^^а в консоль будет выведено: ⟦f5⟧^^",
     "eng": "^^and the following will be printed to the console: ⟦f5⟧^^",
     "ua": "^^а в консоль буде виведено: ⟦f5⟧^^"
   },
-  "s1.p32": {
+  "p32": {
     "ru": "^^(элементы, которые были заменены массивом [7, 8, 9])^^",
     "eng": "^^(elements that have been replaced by the array [7, 8, 9])^^",
     "ua": "^^(елементи, які були замінені масивом [7, 8, 9])^^"
   },
-  "s1.p33": {
+  "p33": {
     "ru": "^^В результате массив **myArray** будет состоять из четырех элементов:^^",
     "eng": "^^As a result, the array **myArray** will consist of four elements:^^",
     "ua": "^^У результаті масив **myArray** складатиметься з чотирьох елементів:^^"
   },
-  "s1.p34": {
+  "p34": {
     "ru": "••[1, 2, 'Новый элемент', 3, 4, 5]••",
     "eng": "••[1, 2, 'Новый элемент', 3, 4, 5]••",
     "ua": "••[1, 2, 'Новый элемент', 3, 4, 5]••"
   },
-  "s1.p35": {
+  "p35": {
     "ru": "^^а в консоль будет выведен пустой массив: ⟦f6⟧^^",
     "eng": "^^and an empty array will be printed to the console: ⟦f6⟧^^",
     "ua": "^^а в консоль буде виведено порожній масив: ⟦f6⟧^^"
   },
-  "s1.p36": {
+  "p36": {
     "ru": "^^(ни одного элемента не было удалено из массива, поскольку второй аргумент метода равен нулю)^^",
     "eng": "^^(no elements were removed from the array, as the second argument of the method is zero)^^",
     "ua": "^^(жодного елемента не було видалено з масиву, оскільки другий аргумент методу дорівнює нулю)^^"
   },
-  "s1.p37": {
+  "p37": {
     "ru": "Метод создает новый массив, содержащий фрагмент исходного массива.",
     "eng": "The method creates a new array containing a substring of the original array.",
     "ua": "Метод створює новий масив, що містить фрагмент вихідного масиву."
   },
-  "s1.p38": {
+  "p38": {
     "ru": "При этом исходный массив не изменяется.",
     "eng": "The original array remains unchanged.",
     "ua": "При цьому вихідний масив не змінюється."
   },
-  "s1.p39": {
+  "p39": {
     "ru": "Возвращаемое значение - новый массив, являющийся фрагментом исходного массива.",
     "eng": "The return value is the new array, which is a segment of the original array.",
     "ua": "Повернуте значення — новий масив, що є фрагментом вихідного масиву."
   },
-  "s1.p40": {
+  "p40": {
     "ru": "Первый аргумент (число) - индекс элемента исходного массива, с которого начинается фрагмент.",
     "eng": "The first argument (a number) is the index of the element in the original array at which the segment begins.",
     "ua": "Перший аргумент (число) — індекс елемента вихідного масиву, з якого починається фрагмент."
   },
-  "s1.p41": {
+  "p41": {
     "ru": "Второй аргумент (число) - индекс элемента исходного массива, до которого продолжается фрагмент.",
     "eng": "The second argument (a number) is the index of the element in the source array up to which the fragment extends.",
     "ua": "Другий аргумент (число) — індекс елемента вихідного масиву, до якого продовжується фрагмент."
   },
-  "s1.p42": {
+  "p42": {
     "ru": "Если опустить второй аргумент, то фрагмент будет взят до конца исходного массива.",
     "eng": "If the second argument is omitted, the segment will extend to the end of the source array.",
     "ua": "Якщо пропустити другий аргумент, то фрагмент буде взятий до кінця вихідного масиву."
   },
-  "s1.p43": {
+  "p43": {
     "ru": "Метод объединяет два или более массива в один массив.",
     "eng": "The method merges two or more arrays into a single array.",
     "ua": "Метод об’єднує два або більше масивів у один масив."
   },
-  "s1.p44": {
+  "p44": {
     "ru": "Возвращаемое значение - новый массив.",
     "eng": "The return value is a new array.",
     "ua": "Повернуте значення — новий масив."
   },
-  "s1.p45": {
+  "p45": {
     "ru": "Исходные массивы не изменятся.",
     "eng": "The source arrays remain unchanged.",
     "ua": "Вихідні масиви не зміняться."
   },
-  "s1.p46": {
+  "p46": {
     "ru": "Объединяет все элементы массива в строку ('string').",
     "eng": "Concatenates all elements of the array into a string.",
     "ua": "Об’єднує всі елементи масиву в рядок ('string')."
   },
-  "s1.p47": {
+  "p47": {
     "ru": "Аргумент - символ-разделитель.",
     "eng": "The argument is the delimiter character.",
     "ua": "Аргумент — символ-роздільник."
   },
-  "s1.p48": {
+  "p48": {
     "ru": "Метод **⟦f7⟧** возвращает ⟦f8⟧, когда значение, переданное аргументом, содержится в массиве, или ⟦f9⟧ в противном случае.",
     "eng": "The method **⟦f7⟧** returns ⟦f8⟧ if the value passed as an argument is contained in the array, or ⟦f9⟧ otherwise.",
     "ua": "Метод **⟦f7⟧** повертає ⟦f8⟧, коли значення, передане аргументом, міститься в масиві, або ⟦f9⟧ в іншому випадку."
   },
-  "s1.p49": {
+  "p49": {
     "ru": "![ico-20 warn] Если элементами массива являются объекты, то метод не будет работать, поскольку массивы и объекты - это ссылочные типы данных.",
     "eng": "![ico-20 warn] If the array elements are objects, the method will not work, as arrays and objects are reference data types.",
     "ua": "![ico-20 warn] Якщо елементами масиву є об’єкти, то метод не працюватиме, оскільки масиви й об’єкти — це типи даних, що посилаються."

@@ -1,25 +1,25 @@
 # ![ico-30 study] Web-workers
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
 ~~~js
 const worker = new Worker('worker.js')
 ~~~
 
-{{s0.p4}}
-{{s0.p5}}
+{{p4}}
+{{p5}}
 
-{{s0.p6}}
-{{s0.p7}}
-{{s0.p8}}
+{{p6}}
+{{p7}}
+{{p8}}
 
-{{s0.p9}}
+{{p9}}
 
-{{s0.p10}}
+{{p10}}
 
 ~~~console
 ▼ ƒ Worker()
@@ -43,18 +43,18 @@ const worker = new Worker('worker.js')
 [[Scopes]]: Scopes[0]
 ~~~
 
-{{s0.p11}}
-{{s0.p12}}
+{{p11}}
+{{p12}}
 
-{{s0.p13}}
+{{p13}}
 
 __________________________________________
 
 ## ![ico-25 icon] onmessage
 
-{{s0.p14}}
-{{s0.p15}}
-{{s0.p16}}
+{{p14}}
+{{p15}}
+{{p16}}
 
 ◘◘worker.js◘◘
 ~~~js
@@ -65,14 +65,14 @@ onmessage = async function (event) {
 
 ## ![ico-25 icon] postMessage
 
-{{s0.p17}}
+{{p17}}
 
 ◘◘worker.js◘◘
 ~~~js
 postMessage('message from worker to script')
 ~~~
 
-{{s0.p18}}
+{{p18}}
 
 ◘◘script.js◘◘
 ~~~js
@@ -117,10 +117,10 @@ onmessage = async function( event ) {
 }
 ~~~
 
-{{s0.p19}}
-{{s0.p20}}
-{{s0.p21}}
-{{s0.p22}}
+{{p19}}
+{{p20}}
+{{p21}}
+{{p22}}
 
 {{{web-worker-sample-1.js}}}
 __________________________________________
@@ -162,10 +162,10 @@ ___________________________________________________
 
 ## ![ico-25 icon] importScripts
 
-{{s0.p23}}
+{{p23}}
 
-{{s0.p24}}
-{{s0.p25}}
+{{p24}}
+{{p25}}
 
 ◘◘![ico-25 cap] ** 3**◘◘
 ~~~js
@@ -176,8 +176,8 @@ onmessage = function (event) {
 }
 ~~~
 
-{{s0.p26}}
-{{s0.p27}}
+{{p26}}
+{{p27}}
 
 {{{web-worker-sample-3.js}}}
 ___________________________________________________

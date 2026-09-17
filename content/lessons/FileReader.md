@@ -2,13 +2,13 @@
 
 **{{common.c7}}**
 
-{{s0.p2}}
+{{p1}}
 
 ~~~js
 var reader = new FileReader()
 ~~~
 
-{{s0.p3}}
+{{p2}}
 
 
 ^^^[{{common.c13}}]
@@ -19,32 +19,32 @@ var reader = new FileReader()
 ^^^
 
 
-^^^[{{s0.spoiler2}}]
+^^^[{{p3}}]
 
 ![ico-20 green-ok] **error**
 
-{{s0.p4}}
+{{p4}}
 
 ______________________________________
 
 ![ico-20 green-ok] **readyState**
 
 
-{{s0.p5}}
-{{s0.p6}}
-{{s0.p7}}
+{{p5}}
+{{p6}}
+{{p7}}
 
 ______________________________________
 
 ![ico-20 green-ok] **result**
 
-{{s0.p8}}
-{{s0.p9}}
-{{s0.p10}}
+{{p8}}
+{{p9}}
+{{p10}}
 
 ^^^
 
-^^^[{{s0.spoiler3}}]
+^^^[{{p11}}]
 
 
 ![ico-20 green-ok] onabort
@@ -56,7 +56,7 @@ ______________________________________
 
 ^^^
 
-{{s0.p11}}
+{{p12}}
 
 ◘◘![ico-25 cap] ** 1**◘◘
 
@@ -76,7 +76,7 @@ var picture = document.body.appendChild(document.createElement('img'))
 var fileReader = new FileReader()
 ~~~
 
-{{s0.p12}}
+{{p13}}
 
 ~~~js
 picture.src = URL.createObjectURL(selected)
@@ -84,7 +84,7 @@ picture.src = URL.createObjectURL(selected)
 
 ____________________________________________________________
 
-{{s0.p13}}
+{{p14}}
 
 ◘◘![ico-25 cap] ** 2**◘◘
 
@@ -143,7 +143,7 @@ const fileReader = new FileReader()
 
 _____________________________________________________
 
-{{s0.p14}}
+{{p15}}
 
 ◘◘![ico-25 cap] ** 3**◘◘
 

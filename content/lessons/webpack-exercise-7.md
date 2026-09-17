@@ -1,21 +1,21 @@
-# ![ico-70 webpack] {{s1.h1}}
+# ![ico-70 webpack] {{p1}}
 
 ________________________________
 
 ## ![ico-25 hw] {{common.c3}} 7
 
-{{s2.p1}}
-{{s2.p2}}
+{{p2}}
+{{p3}}
 
-{{s2.p3}}
-{{s2.p4}}
+{{p4}}
+{{p5}}
 
 ![ico-20 green-ok] export class PictureSlider
 ![ico-20 green-ok] export const Slide
 
-{{s2.p5}}
-{{s2.p6}}
-{{s2.p7}}
+{{p6}}
+{{p7}}
+{{p8}}
 
 ◘◘![ico-20 file] PictureSlider.js◘◘
 
@@ -187,7 +187,7 @@ Object.assign(PictureSlider.prototype, {
 })
 ~~~
 
-{{s2.p8}}
+{{p9}}
 
 ◘◘![ico-20 file] script.js◘◘
 

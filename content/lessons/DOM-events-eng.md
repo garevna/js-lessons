@@ -1,18 +1,18 @@
 # ![ico-30 study] Document Object Model ( DOM )
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p1}}
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
+{{p3}}
 
-{{s1.p3}}
+{{p4}}
 
 ~~~js
 console.dir(EventTarget)
 ~~~
 
-{{s1.p4}}
+{{p5}}
 
 ~~~~console
 
@@ -31,23 +31,23 @@ console.dir(EventTarget)
     ► __proto__: ƒ ()
 ~~~~
 
-{{s1.p5}}
+{{p6}}
 
 • addEventListener
 • removeEventListener
 • dispatchEvent
 
-{{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
+{{p7}}
+{{p8}}
+{{p9}}
 
-{{s1.p9}}
+{{p10}}
 
-{{s1.p10}}
+{{p11}}
 
-{{s1.p11}}
+{{p12}}
 
-{{s1.p12}}
+{{p13}}
 
 ~~~js
 for (var prop in HTMLElement.prototype) {
@@ -56,11 +56,11 @@ for (var prop in HTMLElement.prototype) {
 }
 ~~~
 
-{{s1.p13}}
+{{p14}}
 
-{{s1.p14}}
+{{p15}}
 
-{{s1.p15}}
+{{p16}}
 
 
 <img src="https://github.com/garevna/js-course/blob/master/pictures/event-1.png?raw=true" width="300"/>
@@ -106,11 +106,11 @@ document.body.appendChild(document.createElement('div'))
 
 ______________________________________________________
 
-{{s1.p17}}
+{{p17}}
 
-{{s1.p18}}
+{{p18}}
 
-{{s1.p19}}
+{{p19}}
 
 ^^^[event type]
 
@@ -127,22 +127,22 @@ ______________________________________________________
 
 ^^^
 
-{{s1.p20}}
+{{p20}}
 
-{{s1.p21}}
+{{p21}}
 
-{{s1.p22}}
+{{p22}}
 
-{{s1.p23}}
+{{p23}}
 
-{{s1.p24}}
-{{s1.p25}}
-{{s1.p26}}
-{{s1.p27}}
-{{s1.p28}}
+{{p24}}
+{{p25}}
+{{p26}}
+{{p27}}
+{{p28}}
 
-{{s1.p29}}
-{{s1.p30}}
+{{p29}}
+{{p30}}
 
 ◘◘![ico-25 cap] target & eventPhase◘◘
 
@@ -180,18 +180,18 @@ var divs = pictures.map(picture => {
 
 _________________________________
 
-{{s1.p31}}
+{{p31}}
 
 [%%%DOM event%%%](https://www.w3schools.com/jsref/dom_obj_event.asp)
 [%%%JS event%%%](https://www.w3schools.com/js/js_events.asp)
 
 _________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{p32}}
 
-{{s2.p1}}
+{{p33}}
 
-{{s2.p2}}
+{{p34}}
 
 ~~~js
 var userEvent = new Event( 'user' )
@@ -201,7 +201,7 @@ ___________________________________
 
 ## ![ico-25 icon] dispatchEvent
 
-{{s2.p3}}
+{{p35}}
 
 ◘◘![ico-25 cap] **dispatchEvent**◘◘
 
@@ -216,7 +216,7 @@ _________________________________
 
 ## ![ico-25 icon] CustomEvent
 
-{{s2.p4}}
+{{p36}}
 
 ◘◘![ico-25 cap] **CustomEvent**◘◘
 
@@ -257,51 +257,51 @@ ______________________________________
 
 ## ![ico-25 icon] event handler
 
-{{s2.p5}}
+{{p37}}
 
-{{s2.p6}}
+{{p38}}
 
-{{s2.p7}}
+{{p39}}
 
-{{s2.p8}}
+{{p40}}
 
-{{s2.p9}}
+{{p41}}
 
-{{s2.p10}}
+{{p42}}
 
-{{s2.p11}}
+{{p43}}
 
 ~~~js
 elem.onclick = function (event) { ... }
 elem.onmouseover = function (ev) { ... }
 ~~~
 
-{{s2.p12}}
+{{p44}}
 
 _________________________________________
 
 ### ![ico-20 icon] event.screenX &#124; event.screenY
 
-{{s2.p13}}
+{{p45}}
 
 _________________________________________________
 
 ### ![ico-20 icon] event.clientX &#124; event.clientY
 
-{{s2.p14}}
+{{p46}}
 ( **_viewport_** )
 
-{{s2.p15}}
+{{p47}}
 
-{{s2.p16}}
+{{p48}}
 
 _______________________________
 
 ### ![ico-20 icon] event.pageX &#124; event.pageY
 
-{{s2.p17}}
+{{p49}}
 
-{{s2.p18}}
+{{p50}}
 
 _________________________
 
@@ -315,29 +315,29 @@ ____________________________
 
 <img src="https://github.com/garevna/js-course/blob/master/pictures/event-2.png?raw=true" width="400"/>
 
-{{s2.p19}}
+{{p51}}
 
 ![ico-20 green-ok] addEventListener
 ![ico-20 green-ok] removeEventListener
 
-{{s2.p20}}
+{{p52}}
 
-{{s2.p21}}
+{{p53}}
 
-{{s2.p22}}
+{{p54}}
 
-{{s2.p23}}
+{{p55}}
 
-{{s2.p24}}
+{{p56}}
 
 _________________________________________________________________
 
 ## ![ico-25 icon] addEventListener
 
-{{s2.p25}}
+{{p57}}
 ^^• mouseover<br>• mouseout<br>• input<br>• change<br>**...**^^
 
-{{s2.p26}}
+{{p58}}
 
 _______________________
 
@@ -370,7 +370,7 @@ function clickdHandler (event) {
 elem.addEventListener('click', clickdHandler)
 ~~~
 
-{{s2.p27}}
+{{p59}}
 
 _____________________________
 
@@ -401,13 +401,13 @@ _________________________________________________
 
 ### ![ico-20 icon] preventDefault()
 
-{{s2.p28}}
+{{p60}}
 
-{{s2.p29}}
+{{p61}}
 
-{{s2.p30}}
+{{p62}}
 
-{{s2.p31}}
+{{p63}}
 
 _______________________
 
@@ -431,13 +431,13 @@ ___________________________________
 
 ### ![ico-20 icon] stopPropagation()
 
-{{s2.p32}}
+{{p64}}
 
-{{s2.p33}}
+{{p65}}
 
 __________________
 
-{{s2.p34}}
+{{p66}}
 
 ◘◘![ico-25 cap] ** 5**◘◘
 
@@ -487,25 +487,25 @@ for ( var x = 1; x < 5; x++ ) {
 }
 ~~~~
 
-{{s2.p35}}
+{{p67}}
 
 ~~~js
 event.stopPropagation()
 ~~~
 
-{{s2.p36}}
+{{p68}}
 
 ____________________________________
 
 ### ![ico-20 icon] stopImmediatePropagation()
 
-{{s2.p37}}
+{{p69}}
 
-{{s2.p38}}
+{{p70}}
 
 _______________________
 
-{{s2.p39}}
+{{p71}}
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
@@ -533,35 +533,35 @@ for (var txt of text) {
 }
 ~~~~
 
-{{s2.p40}}
+{{p72}}
 
-{{s2.p41}}
+{{p73}}
 
 ~~~js
 event.stopImmediatePropagation()
 ~~~
 
-{{s2.p42}}
+{{p74}}
 
 ____________________________________________
 
 ## ![ico-25 icon] removeEventListener
 
-{{s2.p43}}
+{{p75}}
 
-{{s2.p44}}
-{{s2.p45}}
-{{s2.p46}}
+{{p76}}
+{{p77}}
+{{p78}}
 
-{{s2.p47}}
+{{p79}}
 
-{{s2.p48}}
-{{s2.p49}}
-{{s2.p50}}
+{{p80}}
+{{p81}}
+{{p82}}
 
 ___________________
 
-{{s2.p51}}
+{{p83}}
 
 ◘◘![ico-25 cap] ** 7**◘◘
 
@@ -579,7 +579,7 @@ document.getElementById('sample')
 
 ___________________________________
 
-{{s2.p52}}
+{{p84}}
 
 ◘◘![ico-25 cap] ** 8**◘◘
 
@@ -623,7 +623,7 @@ _________________________
 
 ^^^
 
-^^^[{{s2.spoiler2}}]
+^^^[{{p85}}]
 
 ~~~js
 var collection = document.querySelectorAll('p &#126; *')
@@ -658,10 +658,10 @@ elem.addEventListener('click', clickHandler)
 
 _______________________________________________________
 
-{{s2.p53}}
-{{s2.p54}}
-{{s2.p55}}
-{{s2.p56}}
+{{p86}}
+{{p87}}
+{{p88}}
+{{p89}}
 
 ◘◘![ico-25 cap] ** 9**◘◘
 
@@ -703,7 +703,7 @@ document.body.onclick = bodyClickHandler
 
 ____________________________________________________________
 
-{{s2.p57}}
+{{p90}}
 
 [:::mouseover & mouseout:::](https://codepen.io/garevna/pen/jLrReP?editors=1010)
 

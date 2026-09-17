@@ -1,11 +1,11 @@
 # ![ico-30 study] Context
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
-{{s0.p4}}
+{{p3}}
+{{p4}}
 
 **{{common.c0}} 1**
 
@@ -15,19 +15,19 @@ user.showContext = function () {
 }
 ~~~
 
-{{s0.p6}}
+{{p5}}
 
-{{s0.p7}}
+{{p6}}
 
 **{{common.c0}} 2**
 ~~~js
 user.sayHello = () => console.log(this)
 ~~~
-{{s0.p9}}
+{{p7}}
 
 -------------------
 
-{{s0.p10}}
+{{p8}}
 ~~~js
 const boy = {
   name: 'Robert',
@@ -36,29 +36,29 @@ const boy = {
   }
 }
 ~~~
-{{s0.p11}}
-{{s0.p12}}
+{{p9}}
+{{p10}}
 
-{{s0.p13}}
+{{p11}}
 ~~~js
 const boy = {
   name: 'Robert',
   showContext: () => console.log(this)
 }
 ~~~
-{{s0.p14}}
+{{p12}}
 
 -------------------
 
-{{s0.p15}}
+{{p13}}
 
 **sample 1**
 
-{{s0.p16}}
-{{s0.p17}}
-{{s0.p18}}
-{{s0.p19}}
-{{s0.p20}}
+{{p14}}
+{{p15}}
+{{p16}}
+{{p17}}
+{{p18}}
 
 ~~~js
 const user = {
@@ -76,9 +76,9 @@ user.create().showContext()  // { name: 'Henry', create: ƒ }
 
 **sample 2**
 
-{{s0.p21}}
-{{s0.p22}}
-{{s0.p23}}
+{{p19}}
+{{p20}}
+{{p21}}
 ~~~js
 const user = {
   name: 'Henry',
@@ -93,7 +93,7 @@ const user = {
 user.create().showContext()  // { name: 'Jeck', showContext: ƒ }
 ~~~
 
-{{s0.p24}}
+{{p22}}
 ~~~js
 const user = {
   name: 'Henry',
@@ -105,7 +105,7 @@ const user = {
   }
 }
 ~~~
-{{s0.p25}}
+{{p23}}
 ~~~js
 const user = {
   name: 'Henry',
@@ -118,6 +118,6 @@ const user = {
 }
 ~~~
 
-{{s0.p26}}
+{{p24}}
 
-{{s0.p27}}
+{{p25}}

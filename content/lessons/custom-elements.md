@@ -1,7 +1,7 @@
 # ![ico-30 study] Custom elements
 
-{{s0.p1}}
-{{s0.p2}}
+{{p1}}
+{{p2}}
 
 ~~~html
 <speaking-club></speaking-club>
@@ -11,13 +11,13 @@
 
 ## ![ico-25 icon] HTMLUnknownElement
 
-{{s0.p3}}
+{{p3}}
 
 ~~~html
 <protuberance></protuberance>
 ~~~
 
-{{s0.p4}}
+{{p4}}
 
 ~~~js
 console.dir(document.querySelector('protuberance').__proto__)
@@ -27,7 +27,7 @@ console.dir(document.querySelector('protuberance').__proto__)
 ► HTMLUnknownElement
 ~~~
 
-{{s0.p5}}
+{{p5}}
 
 ~~~js
 console.dir(HTMLUnknownElement)
@@ -43,16 +43,16 @@ console.dir(HTMLUnknownElement)
     __proto__: ƒ HTMLElement()
 ~~~
 
-{{s0.p6}}
+{{p6}}
 
-{{s0.p7}}
+{{p7}}
 
-{{s0.p8}}
-{{s0.p9}}
+{{p8}}
+{{p9}}
 
 ## ![ico-25 icon] customElements
 
-{{s0.p10}}
+{{p10}}
 
 ~~~js
 console.dir(customElements)
@@ -70,7 +70,7 @@ console.dir(customElements)
       ► __proto__: Object
 ~~~
 
-{{s0.p11}}
+{{p11}}
 
 ~~~js
 console.dir(CustomElementRegistry)
@@ -93,16 +93,16 @@ console.dir(CustomElementRegistry)
   ► __proto__: ƒ ()
 ~~~~
 
-{{s0.p12}}
+{{p12}}
 
 ______________________________________________
 
 ## ![ico-25 icon] customElements.define()
 
-{{s0.p13}}
+{{p13}}
 
-{{s0.p14}}
-{{s0.p15}}
+{{p14}}
+{{p15}}
 
 ~~~js
 customElements.define('sample-custom-element', SampleCustomElement)
@@ -112,7 +112,7 @@ _______________________________________
 
 ### ![ico-25 icon] {{common.c0}} 1
 
-{{s1.p1}}
+{{p16}}
 
 ~~~~js
 class SampleElement extends HTMLElement {
@@ -158,13 +158,13 @@ class SampleElement extends HTMLElement {
 }
 ~~~~
 
-{{s1.p2}}
+{{p17}}
 
 ~~~js
 customElements.define('sample-element', SampleElement)
 ~~~
 
-{{s1.p3}}
+{{p18}}
 
 ~~~js
 customElements.get('sample-element')
@@ -179,7 +179,7 @@ class SampleElement extends HTMLElement {
         this.picture = document.c…
 ~~~
 
-{{s1.p4}}
+{{p19}}
 
 ~~~javascript
 const elem = document.body

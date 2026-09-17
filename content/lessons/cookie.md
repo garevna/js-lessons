@@ -1,18 +1,18 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{p1}}
 
 _______________________________________
 
 ## ![ico-25 icon] Cookie
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
+{{p3}}
 
-{{s1.p3}}
+{{p4}}
 
-{{s1.p4}}
+{{p5}}
 
-{{s1.p5}}
+{{p6}}
 
 ![ico-25 cap] ** 1**
 
@@ -32,24 +32,24 @@ console.log(res)
 
 ![](illustrations/cookie-01.png)
 
-{{s1.p6}}
+{{p7}}
 
-{{s1.p7}}
+{{p8}}
 
-{{s1.p8}}
+{{p9}}
 
-{{s1.p9}}
+{{p10}}
 
-{{s1.p10}}
-{{s1.p11}}
+{{p11}}
+{{p12}}
 
-{{s1.p12}}
+{{p13}}
 
 ~~~console
 "APISID=159NndNJXgdvkeuR/AxzpbVBc2wIvRUKUY; SAPISID=IdbwT_IAY_sf2LU0/AW3V_D0PbOcE6M2Nw; __Secure-1PAPISID=IdbwT_IAY_sf2LU0/AW3V_D0PbOcE6M2Nw; __Secure-3PAPISID=IdbwT_IAY_sf2LU0/AW3V_D0PbOcE6M2Nw; SEARCH_SAMESITE=CgQIn5oB; _ga=GA1.1.1904075603.1709622825; SID=g.a000jwgMbBimGB5upYRX-Kfm5BTyAo30M9TafWQ9KJtyvQS8ZE6TraDNspBgaJxj5VeOfXQf_AACgYKAVASAQASFQHGX2MiqbKoB4jjXV_qJznlPC98jRoVAUF8yKo48nGZIgpwi8HEi7bCtzzH0076; _ga_XPW1QSKFW4=GS1.1.1716438502.20.1.1716438502.0.0.0; 1P_JAR=2024-05-23-09; SIDCC=AKEyXzU3YGRF1qmDi2w50N930i66W0XgsD5El6v-2fWjVqS2NaZoO65pijuA_pz80Hjq6IpLzIc"
 ~~~
 
-{{s1.p13}}
+{{p14}}
 
 ~~~console
 APISID=159NndNJXgdvkeuR/AxzpbVBc2wIvRUKUY
@@ -64,23 +64,23 @@ _ga_XPW1QSKFW4=GS1.1.1716438502.20.1.1716438502.0.0.0
 SIDCC=AKEyXzU3YGRF1qmDi2w50N930i66W0XgsD5El6v-2fWjVqS2NaZoO65pijuA_pz80Hjq6IpLzIc
 ~~~
 
-{{s1.p14}}
+{{p15}}
 
-{{s1.p15}}
-{{s1.p16}}
+{{p16}}
+{{p17}}
 
-{{s1.p17}}
+{{p18}}
 
-{{s1.p18}}
-{{s1.p19}}
+{{p19}}
+{{p20}}
 
-{{s1.p20}}
+{{p21}}
 
 ____________________________
 
 ![ico-25 cap] ** 2**
 
-{{s1.p21}}
+{{p22}}
 
 ~~~js
 console.info(location.href)
@@ -96,25 +96,25 @@ console.log(res)
 
 ![](illustrations/cookie-02.png)
 
-{{s1.p22}}
+{{p23}}
 
 ~~~js
 document.cookie = "userName=Irina"
 ~~~
 
-{{s1.p23}}
+{{p24}}
 
-{{s1.p24}}
+{{p25}}
 
-{{s1.p25}}
+{{p26}}
 
-{{s1.p26}}
+{{p27}}
 
 _____________________________
 
 ![ico-25 cap] ** 3**
 
-{{s1.p27}}
+{{p28}}
 
 ~~~js
 var res = document.cookie
@@ -122,38 +122,38 @@ var res = document.cookie
   .map(x => Object.assign({}, (arr => ({ [arr[0]] : arr[1] }))(x.split('='))))
 ~~~
 
-{{s1.p28}}
+{{p29}}
 
 ~~~js
 arr => ({ [arr[0]] : arr[1] })
 ~~~
 
-{{s1.p29}}
+{{p30}}
 
 ~~~js
 { [arr[0]] : arr[1] }
 ~~~
 
-{{s1.p30}}
-{{s1.p31}}
+{{p31}}
+{{p32}}
 
-{{s1.p32}}
-{{s1.p33}}
-{{s1.p34}}
+{{p33}}
+{{p34}}
+{{p35}}
 
 ~~~js
 Object.assign({}, (arr => ({ [arr[0]] : arr[1] }))(x.split('=')))
 ~~~
 
-{{s1.p35}}
+{{p36}}
 
 _________________________________
 
 ![ico-25 cap] ** 4**
 
-{{s1.p36}}
+{{p37}}
 
-{{s1.p37}}
+{{p38}}
 
 ~~~js
 function getCookies () {
@@ -164,76 +164,76 @@ function getCookies () {
 }
 ~~~
 
-{{s1.p38}}
+{{p39}}
 
 ![](illustrations/cookie-03.png)
 
 ___________________________________
 
-### ![ico-20 icon] {{s2.h1}}
+### ![ico-20 icon] {{p40}}
 
-{{s2.p1}}
+{{p41}}
 
-{{s2.p2}}
+{{p42}}
 
-{{s2.p3}}
+{{p43}}
 
-{{s2.p4}}
+{{p44}}
 
-{{s2.p5}}
+{{p45}}
 
-{{s2.p6}}
+{{p46}}
 
 
 ![ico-25 cap] ** 5**
 
-{{s2.p7}}
+{{p47}}
 
 ~~~js
 var d = new Date(new Date().getTime() + 10 * 1000).toUTCString()
 ~~~
 
-{{s2.p8}}
+{{p48}}
 
-{{s2.p9}}
+{{p49}}
 
 ~~~js
 document.cookie = 'name=Ирина; expires='' + d
 getCookies()
 ~~~
 
-{{s2.p10}}
+{{p50}}
 
-{{s2.p11}}
+{{p51}}
 
 ~~~js
 getCookies()
 ~~~
 
-{{s2.p12}}
+{{p52}}
 
 ______________________________
 
 ### ![ico-20 icon] UTC
 
-{{s2.p13}}
+{{p53}}
 
-{{s2.p14}}
+{{p54}}
 
-{{s2.p15}}
+{{p55}}
 
-{{s2.p16}}
+{{p56}}
 
 _______________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{p57}}
 
-{{s3.p1}}
+{{p58}}
 
 ~~~js
 document.cookie = 'name=; expires=' + new Date(0).toUTCString()
 ~~~
 
-{{s3.p2}}
+{{p59}}
 
-{{s3.p3}}
+{{p60}}

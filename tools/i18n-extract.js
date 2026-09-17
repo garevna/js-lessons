@@ -17,9 +17,19 @@
  *   →→→ q | v | r →→→  the answer must stay identical to one of the variants
  *   # ![ico-30 x] Text the icon belongs to the skeleton, the text does not
  *
- * Keys are the section number plus a running number within it (s3.p2), so a
- * paragraph inserted in one section renumbers only that section — and the key
- * does not depend on the heading text, which is translated.
+ * Keys are ids — p1, p2 — handed out once and never reused, and they say
+ * nothing about where a paragraph sits. The order of the page lives in the
+ * skeleton, where it is visible. Inserting a paragraph renumbers nothing;
+ * deleting one leaves a gap, which costs nothing.
+ *
+ * They used to be positional, s3.p2 meaning the second paragraph of the fourth
+ * section, and that is what let 365 translations end up under keys they did not
+ * translate: re-splitting a page moved every paragraph's address at once while
+ * the translations stayed on the old ones.
+ *
+ * A paragraph is recognised on re-extraction by its Russian text. Edit the
+ * Russian and it is a new paragraph, which is the honest answer — its
+ * translation was of the old words.
  */
 
 const fs = require('fs')
@@ -403,21 +413,29 @@ if (write && !failed) {
   let existing = {}
   try { existing = JSON.parse(fs.readFileSync(msgFile, 'utf8')) } catch {}
 
-  // Translations follow the Russian text, not the key.
-  //
-  // Keys are positional — s5.p9 is the ninth paragraph of the sixth section —
-  // so inserting one sentence into the Russian renumbers everything below it.
-  // Matching on the key alone meant a translation stayed on the number while
-  // the paragraph moved out from under it, and the pages carried 364 values
-  // keyed to paragraphs that no longer existed. Matching on the text means an
-  // edit costs the translation of the paragraph that was edited, and only
-  // that one.
-  const byText = new Map()
-  for (const entry of Object.values(existing)) {
+  // A paragraph is recognised by its Russian text, with the fragment numbers
+  // blurred: ⟦f5⟧ becoming ⟦f6⟧ because a link two paragraphs up started being
+  // hidden is not a different paragraph, and losing an id over it would throw
+  // away the translation for no reason.
+  const shape = (s) => s.replace(/⟦f\d+⟧/g, '⟦f⟧')
+
+  const free = new Map()
+  let next = 1
+
+  for (const [id, entry] of Object.entries(existing)) {
+    const n = Number(String(id).replace(/^p/, ''))
+    if (Number.isFinite(n) && n >= next) next = n + 1
     if (!entry || !entry.ru) continue
-    const slot = byText.get(entry.ru) || {}
-    for (const l of ['eng', 'ua']) if (entry[l] && !slot[l]) slot[l] = entry[l]
-    byText.set(entry.ru, slot)
+    const k = shape(entry.ru)
+    free.set(k, [...(free.get(k) || []), id])
+  }
+
+  // Two paragraphs can hold the same Russian, so ids are taken in the order
+  // they appear rather than by lookup alone.
+  const idFor = (ru) => {
+    const waiting = free.get(shape(ru))
+    if (waiting && waiting.length) return waiting.shift()
+    return `p${next++}`
   }
 
   // Translations extracted from the built pages are only usable while those
@@ -428,49 +446,13 @@ if (write && !failed) {
   const structureAgrees = langs.length === 1 ||
     langs.every((l) => Object.keys(results[l].messages).join('\n') === Object.keys(results.ru.messages).join('\n'))
 
-  const out = {}
-  let carried = 0
-  let dropped = 0
-
-  for (const [key, ru] of Object.entries(results.ru.messages)) {
-    const fromPage = structureAgrees ? results : null
-    const previous = byText.get(ru) || {}
-    const entry = { ru, eng: '', ua: '' }
-
-    for (const l of ['eng', 'ua']) {
-      let extracted = fromPage && fromPage[l] ? fromPage[l].messages[key] : undefined
-
-      // A built page shows Russian wherever the translation is missing, so a
-      // value extracted back out of it that equals the Russian is the
-      // fallback, not a translation. Storing it would count the paragraph as
-      // done and keep it out of every future export — which is how "Например:"
-      // ended up filed as the English for a paragraph of an English lesson.
-      //
-      // Short strings that are genuinely the same in both languages lose
-      // nothing by this: the build falls back to the Russian and emits exactly
-      // the same text, and the exporter copies them over untouched the next
-      // time the page goes out.
-      if (extracted === ru) extracted = undefined
-
-      entry[l] = extracted || previous[l] || ''
-      if (!extracted && previous[l]) carried += 1
-    }
-    out[key] = entry
-  }
-
-  // What the old file had and the new one does not: paragraphs whose Russian
-  // changed, so their translation is about text that is no longer there.
-  const nowPresent = new Set(Object.values(results.ru.messages))
-  for (const entry of Object.values(existing)) {
-    if (!entry || !entry.ru || nowPresent.has(entry.ru)) continue
-    if (entry.eng || entry.ua) dropped += 1
-  }
-
-  // Point the skeleton at the shared table wherever a repeated phrase sits,
-  // the same way tools/i18n-dedupe.js does — otherwise re-extracting a page
-  // would spell every "или:" back out into its own key and undo the table.
+  // Repeated phrases leave the page before ids are handed out, so a phrase
+  // that lives in the book never burns an id — otherwise every re-extraction
+  // would hand out fresh numbers for text that is not going to be kept, and
+  // the numbering would climb for no reason.
   let skeletonOut = results.ru.skeleton
-  let entriesOut = out
+  let entriesOut = {}
+  for (const [key, ru] of Object.entries(results.ru.messages)) entriesOut[key] = { ru, eng: '', ua: '' }
   let referenced = 0
 
   const commonTable = (() => {
@@ -484,8 +466,53 @@ if (write && !failed) {
     referenced = result.moved.length
   }
 
+  // Now the page holds only what it will keep, and each paragraph can be given
+  // its id and its translations.
+  const out = {}
+  const rename = new Map()
+  let carried = 0
+  let dropped = 0
+  let fresh = 0
+
+  for (const key of Object.keys(entriesOut)) {
+    const ru = entriesOut[key].ru
+    const id = idFor(ru)
+    rename.set(key, id)
+    if (!existing[id]) fresh += 1
+
+    const fromPage = structureAgrees ? results : null
+    const previous = existing[id] || {}
+    const entry = { ru, eng: '', ua: '' }
+
+    for (const l of ['eng', 'ua']) {
+      let extracted = fromPage && fromPage[l] ? fromPage[l].messages[key] : undefined
+
+      // A built page shows Russian wherever the translation is missing, so a
+      // value extracted back out of it that equals the Russian is the
+      // fallback, not a translation. Storing it would count the paragraph as
+      // done and keep it out of every future export.
+      if (extracted === ru) extracted = undefined
+
+      entry[l] = extracted || previous[l] || ''
+      if (!extracted && previous[l]) carried += 1
+    }
+    out[id] = entry
+  }
+
+  skeletonOut = skeletonOut.replace(
+    /(?<!\{)\{\{([a-zA-Z0-9_.]+)\}\}(?!\})/g,
+    (whole, key) => (rename.has(key) ? `{{${rename.get(key)}}}` : whole))
+
+  // What the old file had and the new one does not: paragraphs whose Russian
+  // changed, so their translation is about text that is no longer there.
+  const nowPresent = new Set(Object.values(out).map((e) => e.ru))
+  for (const entry of Object.values(existing)) {
+    if (!entry || !entry.ru || nowPresent.has(entry.ru)) continue
+    if (entry.eng || entry.ua) dropped += 1
+  }
+
   fs.writeFileSync(path.join(skelDir, `${page}.md`), skeletonOut)
-  fs.writeFileSync(msgFile, JSON.stringify(entriesOut, null, 2) + '\n')
+  fs.writeFileSync(msgFile, JSON.stringify(out, null, 2) + '\n')
 
   console.log(`\n  written: content/lessons/${page}.md + content/messages/${page}.json`)
   if (!structureAgrees) {
@@ -493,6 +520,7 @@ if (write && !failed) {
     console.log('  translations were carried over from the message file by text instead')
   }
   if (referenced) console.log(`  ${referenced} repeated phrase${referenced === 1 ? '' : 's'} point at the phrase book instead of a key of their own`)
+  if (fresh) console.log(`  ${fresh} new paragraph${fresh === 1 ? '' : 's'} given an id`)
   if (carried) console.log(`  ${carried} translation${carried === 1 ? '' : 's'} followed their Russian text to a new key`)
   if (dropped) console.log(`  ${dropped} translation${dropped === 1 ? '' : 's'} dropped: the Russian they belonged to was edited`)
 } else if (write) {

@@ -1,20 +1,20 @@
 {
-  "s0.p1": {
+  "p1": {
     "ru": "<h2>К сожалению, запрошенный вами материал не найден или не существует.</h2>",
     "eng": "<h2>Unfortunately, the material you requested was not found or does not exist.</h2>",
     "ua": "<h2>На жаль, запитаний вами матеріал не знайдено або не існує.</h2>"
   },
-  "s0.p2": {
+  "p2": {
     "ru": "<h5 style=\"text-align: center\">вы можете посмотреть эту тему на ^^русском^^ языке, или подождать, пока перевод не будет завершен.</h5>",
     "eng": "<h5 style=\"text-align: center\">You can view this topic in ^^russian^^, or wait until the translation will be completed.</h5>",
     "ua": "<h5 style=\"text-align: center\">Ви можете подивитися цю тему ^^російською^^ мовою, якщо вам це не дуже гидко.</h5>"
   },
-  "s0.p3": {
+  "p3": {
     "ru": "Обратитесь к разработчику",
     "eng": "Please contact the developer",
     "ua": ""
   },
-  "s0.p4": {
+  "p4": {
     "ru": "Telegram: @garevna",
     "eng": "Telegram: @garevna",
     "ua": "Telegram: @garevna"

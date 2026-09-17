@@ -2,7 +2,7 @@
 
 ## MutationObserver
 
-{{s0.p1}}
+{{p1}}
 
 Constructor
 

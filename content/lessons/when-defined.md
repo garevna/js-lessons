@@ -2,23 +2,23 @@
 
 ## ![ico-25 icon] .whenDefined()
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
 _____________________
 
-{{s0.p3}}
+{{p3}}
 
-{{s0.p4}}
+{{p4}}
 
-{{s0.p5}}
+{{p5}}
 
-{{s0.p6}}
+{{p6}}
 
 ### ![ico-25 cap] {{common.c0}} 1
 
-{{s1.p1}}
+{{p7}}
 
 ~~~js
 function defineCustomElement () {
@@ -33,7 +33,7 @@ function defineCustomElement () {
 }
 ~~~
 
-{{s1.p2}}
+{{p8}}
 
 ~~~js
 finction insertCustomElements () {
@@ -46,30 +46,30 @@ finction insertCustomElements () {
 }
 ~~~
 
-{{s1.p3}}
+{{p9}}
 
 • **~defineCustomElement~**
 • **~insertCustomElements~**
 
-{{s1.p4}}
+{{p10}}
 
 ~~~js
 insertCustomElements()
 defineCustomElement()
 ~~~
 
-{{s1.p5}}
+{{p11}}
 
-{{s1.p6}}
+{{p12}}
 
 ~~~javascript
 defineCustomElement()
 insertCustomElements()
 ~~~
 
-{{s1.p7}}
+{{p13}}
 
-{{s1.p8}}
+{{p14}}
 
 ~~~js
 function defineCustomElement () {
@@ -105,15 +105,15 @@ defineCustomElement()
 insertCustomElements()
 ~~~
 
-{{s1.p9}}
+{{p15}}
 
-{{s1.p10}}
+{{p16}}
 
 _____________________________________
 
 ### ![ico-25 cap] {{common.c0}} 2
 
-{{s2.p1}}
+{{p17}}
 
 
 ~~~~js
@@ -148,18 +148,18 @@ class CircleElement extends HTMLElement {
 customElements.define('circle-element', CircleElement)
 ~~~~
 
-{{s2.p2}}
+{{p18}}
 
-{{s2.p3}}
-{{s2.p4}}
+{{p19}}
+{{p20}}
 
-{{s2.p5}}
+{{p21}}
 
 ____________________________________________
 
-{{s2.p6}}
+{{p22}}
 
-{{s2.p7}}
+{{p23}}
 
 ~~~html
 <body>
@@ -169,13 +169,13 @@ ____________________________________________
 </body>
 ~~~
 
-{{s2.p8}}
+{{p24}}
 
-{{s2.p9}}
+{{p25}}
 
-{{s2.p10}}
+{{p26}}
 
-{{s2.p11}}
+{{p27}}
 
 ~~~js
 const collection = document.getElementsByTagName('circle-element')
@@ -184,20 +184,20 @@ for (const elem of collection) elem.setStyle()
 
 _________________________
 
-{{s2.p12}}
+{{p28}}
 
-{{s2.p13}}
+{{p29}}
 
-{{s2.p14}}
-{{s2.p15}}
+{{p30}}
+{{p31}}
 
 ________________________________
 
 ### ![ico-25 cap] {{common.c0}} 3
 
-{{s3.p1}}
+{{p32}}
 
-{{s3.p2}}
+{{p33}}
 
 ~~~js
 class CircleElement extends HTMLElement {
@@ -214,7 +214,7 @@ class CircleElement extends HTMLElement {
 customElements.define ( "circle-element", CircleElement )
 ~~~
 
-{{s3.p3}}
+{{p34}}
 
 ~~~js
 for (const x of ['blue', 'red', 'green', 'yellow']) {
@@ -225,7 +225,7 @@ for (const x of ['blue', 'red', 'green', 'yellow']) {
 }
 ~~~
 
-{{s3.p4}}
+{{p35}}
 
 ~~~console
 ▼ #shadow-root (open)
@@ -245,14 +245,14 @@ for (const x of ['blue', 'red', 'green', 'yellow']) {
   </style>
 ~~~
 
-{{s3.p5}}
+{{p36}}
 
 ~~~js
 customElements.whenDefined('circle-element')
   .then(() => elem.setStyle())
 ~~~
 
-{{s3.p6}}
+{{p37}}
 
 ~~~js
 for (const x of ['blue', 'red', 'green', 'yellow']) {
@@ -270,11 +270,11 @@ ___________________________________
 
 [![ico-25 cap]](https://garevna.github.io/js-samples/#22)
 
-{{s3.p7}}
+{{p38}}
 
-{{s3.p8}}
+{{p39}}
 
-{{s3.p9}}
+{{p40}}
 
 ~~~js
 const elems = [
@@ -301,7 +301,7 @@ const elems = [
 ]
 ~~~
 
-{{s3.p10}}
+{{p41}}
 
 ~~~js
 elems.iterator = (async function * () {
@@ -309,24 +309,24 @@ elems.iterator = (async function * () {
 }).call(elems)
 ~~~
 
-{{s3.p11}}
+{{p42}}
 
-{{s3.p12}}
+{{p43}}
 
-{{s3.p13}}
+{{p44}}
 
-{{s3.p14}}
+{{p45}}
 
 • addElem
 • promise
 
-{{s3.p15}}
+{{p46}}
 
-{{s3.p16}}
+{{p47}}
 
-{{s3.p17}}
-{{s3.p18}}
-{{s3.p19}}
+{{p48}}
+{{p49}}
+{{p50}}
 
 ~~~js
 const addElem = (size, color) => {
@@ -338,18 +338,18 @@ const addElem = (size, color) => {
 }
 ~~~
 
-{{s3.p20}}
+{{p51}}
 
-{{s3.p21}}
-{{s3.p22}}
+{{p52}}
+{{p53}}
 
 ~~~js
 const promise = (size, color) => new Promise(resolve => setTimeout(() => resolve(addElem(size, color)), Math.round(Math.random() * 5000)))
 ~~~
 
-{{s3.p23}}
+{{p54}}
 
-{{s3.p24}}
+{{p55}}
 
 ~~~js
 let len = this.length
@@ -361,14 +361,14 @@ while (len --> 0) {
 }
 ~~~
 
-{{s3.p25}}
+{{p56}}
 
-{{s3.p26}}
-{{s3.p27}}
-{{s3.p28}}
-{{s3.p29}}
+{{p57}}
+{{p58}}
+{{p59}}
+{{p60}}
 
-{{s3.p30}}
+{{p61}}
 
 ~~~js
 elems.iterator = (async function * () {
@@ -393,7 +393,7 @@ elems.iterator = (async function * () {
 }).call(elems)
 ~~~
 
-{{s3.p31}}
+{{p62}}
 
 ~~~js
 async function iterateElements () {
@@ -403,6 +403,6 @@ async function iterateElements () {
 iterateElements ()
 ~~~
 
-{{s3.p32}}
+{{p63}}
 
-{{s3.p33}}
+{{p64}}

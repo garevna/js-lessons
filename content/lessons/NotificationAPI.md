@@ -1,10 +1,10 @@
 # ![ico-30 study] Notification API
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
 ~~~console
 ▼ ƒ Notification()
@@ -25,19 +25,19 @@ ___________________________________________
 
 ## ![ico-25 icon] permission
 
-{{s0.p4}}
-{{s0.p5}}
-{{s0.p6}}
+{{p4}}
+{{p5}}
+{{p6}}
 
-{{s0.p7}}
+{{p7}}
 
-{{s0.p8}}
-{{s0.p9}}
-{{s0.p10}}
+{{p8}}
+{{p9}}
+{{p10}}
 
-{{s0.p11}}
-{{s0.p12}}
-{{s0.p13}}
+{{p11}}
+{{p12}}
+{{p13}}
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -47,31 +47,31 @@ Notification.requestPermission(permission => alert(`Вы ${permission ? 'раз�
 
 [:::Live Demo:::](https://garevna.github.io/js-samples/#44)
 
-{{s0.p14}}
+{{p14}}
 
-^^^[{{s0.spoiler1}}]
+^^^[{{p15}}]
 
-{{s0.p15}}
+{{p16}}
 
 ~~~js
 Notification.requestPermission()
   .then(permission => ...)
 ~~~
 
-{{s0.p16}}
+{{p17}}
 
 ^^^
 ____________________________
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p18}}
 
-{{s1.p1}}
+{{p19}}
 
 ~~~js
 const notes = new Notification(title, options)
 ~~~
 
-{{s1.p2}}
+{{p20}}
 
 **Notification.prototype**
 
@@ -125,31 +125,31 @@ const notes = new Notification(title, options)
   ► __proto__: ƒ EventTarget()
 ~~~~
 
-{{s1.p3}}
+{{p21}}
 
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
+{{p22}}
+{{p23}}
+{{p24}}
 
-{{s1.p7}}
+{{p25}}
 
-{{s1.p8}}
+{{p26}}
 
-{{s1.p9}}
-{{s1.p10}}
-{{s1.p11}}
+{{p27}}
+{{p28}}
+{{p29}}
 ![ico-20 green-ok] badge (read-only)
-{{s1.p12}}
-{{s1.p13}}
-{{s1.p14}}
-{{s1.p15}}
-{{s1.p16}}
-{{s1.p17}}
-{{s1.p18}}
-{{s1.p19}}
-{{s1.p20}}
-{{s1.p21}}
-{{s1.p22}}
+{{p30}}
+{{p31}}
+{{p32}}
+{{p33}}
+{{p34}}
+{{p35}}
+{{p36}}
+{{p37}}
+{{p38}}
+{{p39}}
+{{p40}}
 
 
 ◘◘![ico-20 cap] ** 2**◘◘
@@ -179,7 +179,7 @@ ______________________________________________________________
 
 ## ![ico-25 icon] Notification from Worker
 
-{{s1.p23}}
+{{p41}}
 
 ◘◘![ico-20 cap] ** 3**◘◘
 

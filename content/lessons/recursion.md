@@ -1,17 +1,17 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{p1}}
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
+{{p3}}
 
-{{s1.p3}}
-{{s1.p4}}
+{{p4}}
+{{p5}}
 
-{{s1.p5}}
+{{p6}}
 
-{{s1.p6}}
+{{p7}}
 
-^^^[{{s1.spoiler1}}]
+^^^[{{p8}}]
 
 ![ico-25 cap] ** 1**
 
@@ -51,7 +51,7 @@ function factorial (n, result = 1) {
 
 ^^^
 
-{{s1.p7}}
+{{p9}}
 
 ◘◘![ico-25 cap] ** 5**◘◘
 
@@ -65,22 +65,22 @@ function factor (num) {
 }
 ~~~
 
-{{s1.p8}}
+{{p10}}
 
-{{s1.p9}}
+{{p11}}
 
-{{s1.p10}}
+{{p12}}
 
-{{s1.p11}}
+{{p13}}
 
 [![ico-70 youtube]](https://www.youtube.com/watch?time_continue=2&v=nbqLBlanSMk)
 
-{{s1.p12}}
-{{s1.p13}}
+{{p14}}
+{{p15}}
 
 ## ![ico-25 hw] {{common.c3}}
 
-{{s2.p1}}
+{{p16}}
 
 ~~~js
 var circle = function (radius) {
@@ -96,7 +96,7 @@ var circle = function (radius) {
         if ( radius < 300 ) circle ( radius += 20 )
 }
 ~~~
-{{s2.p2}}
+{{p17}}
 
 ____________________________
 

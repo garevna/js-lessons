@@ -1,18 +1,18 @@
 # ![ico-35 study] Document Object Model (DOM)
 
-## ![ico-30 icon] {{s1.h1}}
+## ![ico-30 icon] {{p1}}
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
+{{p3}}
 
-{{s1.p3}}
+{{p4}}
 
-{{s1.p4}}
+{{p5}}
 
 ### ![ico-25 icon] appendChild()
 
-{{s1.p5}}
+{{p6}}
 
 ◘◘![ico-25 cap] ** 1**◘◘
 
@@ -81,11 +81,11 @@ _________________________________________
 
 ### ![ico-25 icon] removeChild()
 
-{{s1.p8}}
+{{p7}}
 
-{{s1.p9}}
+{{p8}}
 
-{{s1.p10}}
+{{p9}}
 
 ____________________________
 
@@ -156,7 +156,7 @@ _____________________________________________
 
 ### ![ico-25 icon] insertAdjacentHTML()
 
-{{s1.p13}}
+{{p10}}
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
@@ -169,7 +169,7 @@ _____________________________________________
 &lt/body>
 ~~~
 
-{{s1.p14}}
+{{p11}}
 
 ~~~js
 var section = document.body.querySelector('section')
@@ -243,13 +243,13 @@ document.getElementsByTagName('figure')[0]
 
 ________________________________________
 
-## ![ico-30 icon] {{s2.h1}}
+## ![ico-30 icon] {{p12}}
 
 ____________________________
 
 ### ![ico-25 icon] childNodes
 
-{{s2.p1}}
+{{p13}}
 
 ◘◘![ico-25 cap] ** 8**◘◘
 
@@ -279,7 +279,7 @@ ____________________________
 &lt/body>
 ~~~
 
-{{s2.p2}}
+{{p14}}
 
 ~~~js
 document.body.childNodes
@@ -300,9 +300,9 @@ document.body.childNodes
   ► __proto__: NodeList
 ~~~
 
-{{s2.p4}}
+{{p15}}
 
-{{s2.p5}}
+{{p16}}
 
 ~~~js
 document.querySelector('[title]').childNodes
@@ -328,9 +328,9 @@ _________________________________
 
 ### ![ico-25 icon] children
 
-{{s2.p7}}
+{{p17}}
 
-{{s2.p8}}
+{{p18}}
 
 ~~~js
 document.body.children
@@ -351,7 +351,7 @@ ___________________________________
 
 ### ![ico-25 icon] parentNode
 
-{{s2.p10}}
+{{p19}}
 
 ◘◘![ico-25 cap] ** 9**◘◘
 
@@ -371,11 +371,11 @@ console.dir(section.parentNode)  // ► div#demo
 
 _____________________________________________
 
-### ![ico-25 icon] {{s3.h1}}
+### ![ico-25 icon] {{p20}}
 
-{{s3.p1}}
+{{p21}}
 
-{{s3.p2}}
+{{p22}}
 
 ◘◘![ico-25 cap] **10**◘◘
 
@@ -395,26 +395,26 @@ _____________________________________
 
 ### ![ico-25 icon] Memory leaks
 
-{{s3.p3}}
-{{s3.p4}}
-{{s3.p5}}
-{{s3.p6}}
-{{s3.p7}}
-{{s3.p8}}
+{{p23}}
+{{p24}}
+{{p25}}
+{{p26}}
+{{p27}}
+{{p28}}
 
 _______________________________________
 
-### ![ico-25 icon] {{s4.h1}}
+### ![ico-25 icon] {{p29}}
 
-{{s4.p1}}
-{{s4.p2}}
-{{s4.p3}}
-{{s4.p4}}
+{{p30}}
+{{p31}}
+{{p32}}
+{{p33}}
 
-{{s4.p5}}
+{{p34}}
 
-{{s4.p6}}
-{{s4.p7}}
+{{p35}}
+{{p36}}
 
 ◘◘![ico-25 cap] **setAttribute** | **getAttribute**◘◘
 
@@ -484,7 +484,7 @@ var elem = document.body
 elem.tagName = 'div'
 ~~~
 
-→→→ {{s4.quiz1}} | {{s4.quizVariants1}} | {{s4.quizAnswer1}}→→→
+→→→ {{p37}} | {{p38}} | {{p39}}→→→
 
 
 ◘◘** 2**◘◘
@@ -492,7 +492,7 @@ elem.tagName = 'div'
 document.title = 'DOM'
 ~~~
 
-→→→ {{s4.quiz2}} | {{s4.quizVariants2}} | {{s4.quizAnswer2}}→→→
+→→→ {{p40}} | {{p41}} | {{p42}}→→→
 
 ◘◘** 3**◘◘
 ~~~js
@@ -510,12 +510,12 @@ for (var text of paragraph) {
 }
 ~~~
 
-→→→ {{s4.quiz3}} | {{s4.quizVariants3}} | {{s4.quizAnswer3}}→→→
+→→→ {{p43}} | {{p44}} | {{p45}}→→→
 
 
 ◘◘** 4**◘◘
 
-→→→ {{s4.quiz4}} | {{s4.quizVariants4}} | {{s4.quizAnswer4}}→→→
+→→→ {{p46}} | {{p47}} | {{p48}}→→→
 
 
 ◘◘** 5**◘◘
@@ -537,7 +537,7 @@ elems.forEach(function (elem) {
 })
 ~~~
 
-→→→ {{s4.quiz5}} | {{s4.quizVariants5}} | {{s4.quizAnswer5}}→→→
+→→→ {{p49}} | {{p50}} | {{p51}}→→→
 
 _________________________________
 

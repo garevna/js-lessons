@@ -4,18 +4,18 @@
 
 ________________________________________________________________________________________________
 
-{{s0.p1}}
+{{p1}}
 
 ________________________________________________________________________________________________
 
-{{s0.p2}}
-{{s0.p3}}
-{{s0.p4}}
-{{s0.p5}}
+{{p2}}
+{{p3}}
+{{p4}}
+{{p5}}
 
 ## ![ico-25 icon] async function
 
-{{s0.p6}}
+{{p6}}
 
 ~~~js
 async function sigma () {
@@ -23,53 +23,53 @@ async function sigma () {
 }
 ~~~
 
-{{s0.p7}}
+{{p7}}
 
 ~~~js
 const sayHello = async () => 'Hello'
 ~~~
 
-{{s0.p8}}
+{{p8}}
 
-{{s0.p9}}
+{{p9}}
 
-{{s0.p10}}
+{{p10}}
 
-{{s0.p11}}
+{{p11}}
 
 ~~~js
 const createPromise = message => new Promise(resolve => resolve(message))
 ~~~
 
-{{s0.p12}}
+{{p12}}
 
 ~~~js
 const createPromise = async message => message
 ~~~
 
-{{s0.p13}}
+{{p13}}
 
-{{s0.p14}}
+{{p14}}
 
 ~~~js
 createPromise('Promise is microtask')
   .then(response => console.log(response))
 ~~~
 
-{{s0.p15}}
-{{s0.p16}}
+{{p15}}
+{{p16}}
 
 ______________________________________________
 
-{{s0.p17}}
-{{s0.p18}}
+{{p17}}
+{{p18}}
 
 ~~~js
 const section = document.body
 section.style = 'padding: 120px;'
 ~~~
 
-{{s0.p19}}
+{{p19}}
 
 ~~~js
 function createPoint (x, y, color = '#f50') {
@@ -85,7 +85,7 @@ function createPoint (x, y, color = '#f50') {
 }
 ~~~
 
-{{s0.p20}}
+{{p20}}
 
 ~~~js
 const step = Math.PI / 10
@@ -94,9 +94,9 @@ const sin = num => createPoint(num * step * 30, Math.sin(num * step) * 100, '#09
 const cos = num => createPoint(num * step * 30, Math.cos(num * step) * 100)
 ~~~
 
-{{s0.p21}}
+{{p21}}
 
-{{s0.p22}}
+{{p22}}
 
 ◘◘![ico-25 cap] ** 1**◘◘
 ~~~js
@@ -116,12 +116,12 @@ recurse()
 
 {{{async-await-01.js}}}
 
-{{s0.p23}}
-{{s0.p24}}
+{{p23}}
+{{p24}}
 
 ^^^[![ico-30 eyes]]
 
-{{s0.p25}}
+{{p25}}
 
 ~~~js
 const start = () => (async () => sin())().then(cos)
@@ -157,20 +157,20 @@ start()
   .then(start)
 ~~~
 
-{{s0.p26}}
+{{p26}}
 
 ^^^
 
-{{s0.p27}}
-{{s0.p28}}
+{{p27}}
+{{p28}}
 
-{{s0.p29}}
+{{p29}}
 
 _________________________________________
 
-{{s0.p30}}
+{{p30}}
 
-{{s0.p31}}
+{{p31}}
 
 ◘◘![ico-25 cap] ** 2**◘◘
 
@@ -201,7 +201,7 @@ recurseCos()
 
 ________________________
 
-{{s0.p32}}
+{{p32}}
 
 ~~~js
 const start = Date.now()
@@ -230,7 +230,7 @@ function createFigure () {
 }
 ~~~
 
-{{s0.p33}}
+{{p33}}
 
 ◘◘![ico-25 cap] ** 3**◘◘
 
@@ -243,41 +243,41 @@ figure.move()
 
 {{{async-await-03.js}}}
 
-{{s0.p34}}
-{{s0.p35}}
+{{p34}}
+{{p35}}
 
 ________________________________________________________________________________________________
 
 ## ![ico-25 icon] await
 
-{{s0.p36}}
+{{p36}}
 
-{{s0.p37}}
+{{p37}}
 
 ~~~error
     Uncaught SyntaxError: await is only valid in async function
 ~~~
 
-{{s0.p38}}
-{{s0.p39}}
-{{s0.p40}}
-{{s0.p41}}
+{{p38}}
+{{p39}}
+{{p40}}
+{{p41}}
 
-{{s0.p42}}
-{{s0.p43}}
-{{s0.p44}}
-{{s0.p45}}
+{{p42}}
+{{p43}}
+{{p44}}
+{{p45}}
 
-{{s0.p46}}
-{{s0.p47}}
+{{p46}}
+{{p47}}
 
 _____________________________________
 
 ### ![ico-20 icon] await &lt;promise>
 
-{{s0.p48}}
+{{p48}}
 
-{{s0.p49}}
+{{p49}}
 
 ◘◘![ico-25 cap] ** 4**◘◘
 
@@ -289,8 +289,8 @@ const func = (message, resolve) => setTimeout(() => resolve(message), random(500
 const createPromise = message => new Promise(func.bind(null, message))
 ~~~
 
-{{s0.p50}}
-{{s0.p51}}
+{{p50}}
+{{p51}}
 
 ~~~js
 createPromise('Resolved!').then(console.log)
@@ -299,7 +299,7 @@ createPromise('Resolved!').then(console.log)
 Resolved!
 ~~~
 
-{{s0.p52}}
+{{p52}}
 
 ~~~js
 const asyncFunc = async () => console.log(await createPromise('Resolved!'))
@@ -311,7 +311,7 @@ asyncFunc()
 Resolved!
 ~~~
 
-{{s0.p53}}
+{{p53}}
 
 ~~~js
 (async () => console.log(await createPromise('Resolved!')))()
@@ -321,15 +321,15 @@ Resolved!
 Resolved!
 ~~~
 
-{{s0.p54}}
-{{s0.p55}}
-{{s0.p56}}
-{{s0.p57}}
+{{p54}}
+{{p55}}
+{{p56}}
+{{p57}}
 ~~~js
 await createPromise('Resolved!')
 ~~~
-{{s0.p58}}
-{{s0.p59}}
+{{p58}}
+{{p59}}
 
 ~~~js
 new Promise((resolve, reject) => {
@@ -345,18 +345,18 @@ reject:
  ƒ () { [native code] }
 ~~~
 
-{{s0.p60}}
-{{s0.p61}}
-{{s0.p62}}
-{{s0.p63}}
+{{p60}}
+{{p61}}
+{{p62}}
+{{p63}}
 
-{{s0.p64}}
+{{p64}}
 
 ~~~js
 result => result
 ~~~
 
-{{s0.p65}}
+{{p65}}
 ◘◘resolve◘◘
 ~~~js
 const test = async () => console.log('Result: ', await Promise.resolve('Success.'))
@@ -377,7 +377,7 @@ test()
     Uncaught (in promise) Failure.
 ~~~
 
-{{s0.p66}}
+{{p66}}
 
 ~~~js
 Promise.reject('Failure.')
@@ -388,10 +388,10 @@ Promise.reject('Failure.')
     Failure.
 ~~~
 
-{{s0.p67}}
-{{s0.p68}}
+{{p67}}
+{{p68}}
 
-{{s0.p69}}
+{{p69}}
 
 ~~~js
 const test = async () => {
@@ -407,13 +407,13 @@ test()
 ~~~
 _____________________________________________
 
-{{s0.p70}}
+{{p70}}
 
 ~~~js
 const func = (resolve, reject) => Math.random() > 0.5 ? resolve('Success.') : reject('Failure.')
 ~~~
 
-{{s0.p71}}
+{{p71}}
 
 ◘◘**^^Promise^^**◘◘
 
@@ -422,9 +422,9 @@ new Promise(func)
   .then(console.log, console.warn)
 ~~~
 
-{{s0.p72}}
+{{p72}}
 
-{{s0.p73}}
+{{p73}}
 
 ◘◘**^^async function^^**◘◘
 
@@ -434,13 +434,13 @@ async function test () {
 }
 ~~~
 
-{{s0.p74}}
+{{p74}}
 
 ~~~error
     Uncaught (in promise) Failure.
 ~~~
 
-{{s0.p75}}
+{{p75}}
 
 ~~~js
 new Promise(func).then(console.log)
@@ -448,14 +448,14 @@ new Promise(func).then(console.log)
 
 ________________________________________
 
-{{s0.p76}}
-{{s0.p77}}
+{{p76}}
+{{p77}}
 
 _____________________________________
 
-### ![ico-20 icon] {{s1.h1}}
+### ![ico-20 icon] {{p78}}
 
-{{s1.p1}}
+{{p79}}
 
 ◘◘![ico-25 cap] ** 5**◘◘
 
@@ -475,9 +475,9 @@ Polina
 finish
 ~~~
 
-{{s1.p2}}
+{{p80}}
 
-{{s1.p3}}
+{{p81}}
 
 ~~~js
 const test = async () => console.log(await user)
@@ -489,34 +489,34 @@ finish
 Polina
 ~~~
 
-{{s1.p4}}
-{{s1.p5}}
+{{p82}}
+{{p83}}
 
-{{s1.p6}}
+{{p84}}
 
-{{s1.p7}}
-{{s1.p8}}
-{{s1.p9}}
-{{s1.p10}}
-{{s1.p11}}
+{{p85}}
+{{p86}}
+{{p87}}
+{{p88}}
+{{p89}}
 
-{{s1.p12}}
-{{s1.p13}}
+{{p90}}
+{{p91}}
 
-{{s1.p14}}
+{{p92}}
 
-{{s1.p15}}
+{{p93}}
 
 ~~~js
 response => response
 ~~~
 
-{{s1.p16}}
+{{p94}}
 
-{{s1.p17}}
+{{p95}}
 
-{{s1.p18}}
-{{s1.p19}}
+{{p96}}
+{{p97}}
 
 ~~~js
 const user = {
@@ -539,28 +539,28 @@ finish
 Polina
 ~~~
 
-{{s1.p20}}
+{{p98}}
 
 ~~~js
 console.log('Hi from Event Loop')
 ~~~
 
-{{s1.p21}}
-{{s1.p22}}
-{{s1.p23}}
-{{s1.p24}}
-{{s1.p25}}
+{{p99}}
+{{p100}}
+{{p101}}
+{{p102}}
+{{p103}}
 
 _____________________________________
 
-### ![ico-20 icon] {{s2.h1}}
+### ![ico-20 icon] {{p104}}
 
-{{s2.p1}}
-{{s2.p2}}
-{{s2.p3}}
+{{p105}}
+{{p106}}
+{{p107}}
 
 @@@@ 2
-{{s2.p4}}
+{{p108}}
 ![](illustrations/white-and-black.png)
 @@@@
 
@@ -579,57 +579,57 @@ const func = ((startTime, callback) => {
 requestAnimationFrame(func)
 ~~~~
 
-{{s2.p5}}
+{{p109}}
 
-{{s2.p6}}
+{{p110}}
 
-{{s2.p7}}
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
+{{p111}}
+{{p112}}
+{{p113}}
+{{p114}}
 
-{{s2.p11}}
+{{p115}}
 
-{{s2.p12}}
+{{p116}}
 
-{{s2.p13}}
-{{s2.p14}}
+{{p117}}
+{{p118}}
 
 {{{async-await-05.js}}}
 
-{{s2.p15}}
+{{p119}}
 
-{{s2.p16}}
-{{s2.p17}}
+{{p120}}
+{{p121}}
 
-{{s2.p18}}
-{{s2.p19}}
+{{p122}}
+{{p123}}
 
-{{s2.p20}}
+{{p124}}
 
-{{s2.p21}}
+{{p125}}
 
 _________________________________________
 
 ### ![ico-20 icon] await &lt;expression>
 
-{{s2.p22}}
-{{s2.p23}}
-{{s2.p24}}
+{{p126}}
+{{p127}}
+{{p128}}
 
-{{s2.p25}}
+{{p129}}
 
 ~~~js
 response => response
 ~~~
-{{s2.p26}}
+{{p130}}
 
-{{s2.p27}}
+{{p131}}
 
-{{s2.p28}}
-{{s2.p29}}
+{{p132}}
+{{p133}}
 
-{{s2.p30}}
+{{p134}}
 
 ◘◘![ico-25 cap] ** 6**◘◘
 ~~~js
@@ -642,7 +642,7 @@ console.log('Start')
 console.log('Finish')
 ~~~
 
-{{s2.p31}}
+{{p135}}
 
 ~~~console
 Start
@@ -653,27 +653,27 @@ Async function finished
 undefined
 ~~~
 
-{{s2.p32}}
-{{s2.p33}}
+{{p136}}
+{{p137}}
 
-{{s2.p34}}
-{{s2.p35}}
-{{s2.p36}}
+{{p138}}
+{{p139}}
+{{p140}}
 ~~~js
 console.log(await 'Hello!')
 ~~~
-{{s2.p37}}
-{{s2.p38}}
-{{s2.p39}}
+{{p141}}
+{{p142}}
+{{p143}}
 
-{{s2.p40}}
+{{p144}}
 
 ~~~js
 console.log(await 'Hello!')
 console.log('Async function finished')
 ~~~
 
-{{s2.p41}}
+{{p145}}
 
 ~~~js
 Promise.resolve('Hello!')
@@ -683,13 +683,13 @@ Promise.resolve('Hello!')
   })
 ~~~
 
-{{s2.p42}}
+{{p146}}
 
 ~~~js
 console.log('Finish')
 ~~~
 
-{{s2.p43}}
+{{p147}}
 
 ~~~js
 message => {
@@ -698,9 +698,9 @@ message => {
 }
 ~~~
 
-{{s2.p44}}
+{{p148}}
 
-{{s2.p45}}
+{{p149}}
 
 _____________________________________________
 
@@ -726,7 +726,7 @@ console.log('Start')
 console.log('Finish')
 ~~~
 
-{{s3.p1}}
+{{p150}}
 
 ![](illustrations/async-await-7.gif)
 
@@ -734,8 +734,8 @@ __________________________________________________________________________
 
 ### ![ico-25 cap] 8
 
-{{s3.p2}}
-{{s3.p3}}
+{{p151}}
+{{p152}}
 
 ◘◘![ico-25 cap] ** 8**◘◘
 
@@ -851,13 +851,13 @@ async
 async-await
 ~~~
 
-{{s3.p4}}
+{{p153}}
 
-{{s3.p5}}
-{{s3.p6}}
-{{s3.p7}}
+{{p154}}
+{{p155}}
+{{p156}}
 
-{{s3.p8}}
+{{p157}}
 
 ~~~js
 ;(async () => await 'async-await')().then(console.log)
@@ -867,7 +867,7 @@ async-await
 Promise.resolve('promise').then(console.log)
 ~~~
 
-{{s3.p9}}
+{{p158}}
 
 ~~~console
 async
@@ -875,17 +875,17 @@ promise
 async-await
 ~~~
 
-{{s3.p10}}
+{{p159}}
 
-{{s3.p11}}
+{{p160}}
 
-{{s3.p12}}
+{{p161}}
 
 ~~~js
 ;(async () => await 'async-await-1')().then(console.log)
 ~~~
 
-{{s3.p13}}
+{{p162}}
 
 ~~~js
 new Promise(resolve => resolve('async-await-2'))
@@ -893,7 +893,7 @@ new Promise(resolve => resolve('async-await-2'))
   .then(console.log)
 ~~~
 
-{{s3.p14}}
+{{p163}}
 
 ~~~js
 ;(async () => await 'async-await-1')().then(console.log)
@@ -908,7 +908,7 @@ async-await-1
 async-await-2
 ~~~
 
-{{s3.p15}}
+{{p164}}
 
 ~~~js
 new Promise(resolve => resolve('async-await-2'))
@@ -923,10 +923,10 @@ async-await-2
 async-await-1
 ~~~
 
-{{s3.p16}}
-{{s3.p17}}
+{{p165}}
+{{p166}}
 
-{{s3.p18}}
+{{p167}}
 
 ______________________________________________
 
@@ -951,7 +951,7 @@ ______________________________________________
 
 ### ![ico-25 cap] 14
 
-{{s3.p19}}
+{{p168}}
 
 ~~~js
 const createElem = tag => document.body.appendChild(document.createElement(tag))
@@ -1011,7 +1011,7 @@ ______________________________________________
 
 ### ![ico-25 cap] 16
 
-{{s3.p20}}
+{{p169}}
 
 ~~~js
 const start = Date.now()
@@ -1021,7 +1021,7 @@ const getRandom = () => Math.round(Math.random() * 5000)
 const test = ms => Date.now() - start >= ms
 ~~~
 
-{{s3.p21}}
+{{p170}}
 
 ~~~js
 function func (name, time, callback) {
@@ -1035,7 +1035,7 @@ function createPromise (name, time) {
 }
 ~~~
 
-{{s3.p22}}
+{{p171}}
 
 ◘◘![ico-25 cap] **16**◘◘
 
@@ -1046,11 +1046,11 @@ function createPromise (name, time) {
 
 {{{async-await-16.js}}}
 
-{{s3.p23}}
+{{p172}}
 
-{{s3.p24}}
+{{p173}}
 
-{{s3.p25}}
+{{p174}}
 
 ~~~js
 createPromise('First', getRandom())
@@ -1059,7 +1059,7 @@ createPromise('First', getRandom())
   .then(() => createPromise('Third', getRandom()).then(console.log))
 ~~~
 
-{{s3.p26}}
+{{p175}}
 
 ~~~js
 const showResults = async () => {
@@ -1072,14 +1072,14 @@ const showResults = async () => {
 showResults()
 ~~~
 
-{{s3.p27}}
+{{p176}}
 
 ________________________________
 
 ### ![ico-25 cap] 17
 
-{{s3.p28}}
-{{s3.p29}}
+{{p177}}
+{{p178}}
 
 ◘◘![ico-25 cap] **17**◘◘
 
@@ -1095,20 +1095,20 @@ const users = ['Stephan', 'Andry']
   }, [])
 ~~~
 
-{{s3.p30}}
+{{p179}}
 
-{{s3.p31}}
-{{s3.p32}}
-{{s3.p33}}
+{{p180}}
+{{p181}}
+{{p182}}
 
-{{s3.p34}}
-{{s3.p35}}
+{{p183}}
+{{p184}}
 
 ~~~js
 users.then(console.log)
 ~~~
 
-{{s3.p36}}
+{{p185}}
 
 ~~~js
 fetch(`${origin}/users?name=Stephan&name=Andry`)
@@ -1163,7 +1163,7 @@ _________________________________________
 
 ### ![ico-25 cap] 19
 
-{{s3.p38}}
+{{p186}}
 
 ◘◘Object◘◘
 ~~~js
@@ -1182,9 +1182,9 @@ Object.prototype.addElem = function (tagName) {
 }
 ~~~
 
-{{s3.p39}}
+{{p187}}
 
-{{s3.p40}}
+{{p188}}
 
 ◘◘String◘◘
 ~~~js
@@ -1207,7 +1207,7 @@ Number.prototype.then = function () {
 }
 ~~~
 
-{{s3.p41}}
+{{p189}}
 
 ◘◘![ico-25 cap] **19**◘◘
 

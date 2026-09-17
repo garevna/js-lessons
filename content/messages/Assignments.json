@@ -1,110 +1,110 @@
 {
-  "s1.h1": {
+  "p1": {
     "ru": "Операторы присваивания",
     "eng": "Assignment operators",
     "ua": "Оператори присвоювання"
   },
-  "s1.p1": {
+  "p2": {
     "ru": "^^![ico-20 warn] не путайте оператор присваивания с оператором сравнения.^^",
     "eng": "^^![ico-20 warn] do not confuse the assignment operator with the comparison operator.^^",
     "ua": "^^![ico-20 warn] не плутайте оператор присвоювання з оператором порівняння.^^"
   },
-  "s1.p2": {
+  "p3": {
     "ru": "Типизация - это установка типа данных переменной.",
     "eng": "Typing is setting the data type of a variable.",
     "ua": "Типізація - це встановлення типу даних змінної."
   },
-  "s1.p3": {
+  "p4": {
     "ru": "Когда вы будете изучать typescript, вы будете устанавливать тип данных явно при объявлении переменной, например:",
     "eng": "When you learn typescript, you will set the data type explicitly when declaring a variable, for example:",
     "ua": "Коли ви будете вивчати typescript, ви будете встановлювати тип даних явно під час оголошення змінної, наприклад:"
   },
-  "s1.p4": {
+  "p5": {
     "ru": "В этом выражении после имени переменной через двоеточие указан тип данных number.",
     "eng": "In this expression, the number data type is specified after the variable name with a colon.",
     "ua": "У цьому виразі після імені змінної через двокрапку вказано тип даних **number**."
   },
-  "s1.p5": {
+  "p6": {
     "ru": "В результате такого объявления переменной **⟦f0⟧** уже невозможно присвоить значение другого типа, например, строку или логическое значение. Это приведет к ошибке на этапе компиляции. Компиляция - это перевод вашего кода с языка typescript в javascript.",
     "eng": "As a result of this declaration, it is no longer possible to assign a value of another type, for example, a string or a logical value, to the variable **⟦f0⟧**. This will cause an error at the compilation stage. Compilation is the translation of your code from typescript to javascript.",
     "ua": "У результаті такого оголошення змінній **⟦f0⟧** уже неможливо присвоїти значення іншого типу, наприклад, рядок або логічне значення. Це призведе до помилки на етапі компіляції. Компіляція - це переклад вашого коду з мови typescript у javascript."
   },
-  "s1.p6": {
+  "p7": {
     "ru": "В typescript есть специальные типы, такие как **⟦f1⟧**, **⟦f2⟧**, **⟦f3⟧**, и много других интересных штук, с которыми вам предстоит познакомиться позднее.",
     "eng": "Typescript has special types such as **⟦f1⟧**, **⟦f2⟧**, **⟦f3⟧**, and many other interesting things that you will get to know later.",
     "ua": "У typescript є спеціальні типи, такі як **⟦f1⟧**, **⟦f2⟧**, **⟦f3⟧**, і багато інших цікавих штук, з якими вам доведеться познайомитися пізніше."
   },
-  "s1.p7": {
+  "p8": {
     "ru": "В JS Мы имеем дело с **динамической типизацией**, когда тип данных переменной устанавливается в процессе присваивания значения.",
     "eng": "In JS we deal with **dynamic typing**, when the data type of a variable is set in the process of assigning a value.",
     "ua": "У JS ми маємо справу з **динамічною типізацією**, коли тип даних змінної встановлюється в процесі присвоювання значення."
   },
-  "s1.p8": {
+  "p9": {
     "ru": "Т.е. в правой части оператора присваивания находится **выражение**, значение которого движок должен вычислить и поместить в переменную, имя которой указано в правой части оператора присваивания.",
     "eng": "That is, in the right part of the assignment statement there is a **expression**, the value of which the engine must calculate and place in the variable whose name is specified in the left part of the assignment statement.",
     "ua": "Тобто в правій частині оператора присвоювання міститься **вираз**, значення якого движок має обчислити і помістити у змінну, ім'я якої вказано у лівій частині оператора присвоювання."
   },
-  "s1.p9": {
+  "p10": {
     "ru": "Самый простой вид выражения - это константа, например, 10:",
     "eng": "The simplest kind of expression is a constant, for example, 10:",
     "ua": "Найпростіший вид виразу - це константа, наприклад, 10:"
   },
-  "s1.p10": {
+  "p11": {
     "ru": "Константа 10 имеет тип данных **⟦f4⟧**, и движок автоматически устанавливает тип данных **⟦f4⟧** нашей переменной **⟦f0⟧**.",
     "eng": "Constant 10 has data type **⟦f4⟧**, and the engine automatically sets the data type **⟦f4⟧** to our variable **⟦f0⟧**.",
     "ua": "Константа 10 має тип даних **⟦f4⟧**, і движок автоматично встановлює тип даних **⟦f4⟧** нашій змінній **⟦f0⟧**."
   },
-  "s1.p11": {
+  "p12": {
     "ru": "Но выражение может быть и более сложным:",
     "eng": "But the expression can be more complex:",
     "ua": "Але вираз може бути і більш складним:"
   },
-  "s1.p12": {
+  "p13": {
     "ru": "Однако и в этом случае переменная **⟦f0⟧** почучит значение 10 и тип данных **⟦f4⟧**.",
     "eng": "However, even in this case, the **⟦f0⟧** variable will have a value of 10 and a data type of **⟦f4⟧**.",
     "ua": "Однак і в цьому випадку змінна **⟦f0⟧** отримає значення 10 і тип даних **⟦f4⟧**."
   },
-  "s1.p13": {
+  "p14": {
     "ru": "А в этом примере в правой части оператора присваивания находится выражение, в результате вычисления значения которого движок получит **ссылку** на объект. И эта ссылка станет значением переменной **⟦f5⟧**. А вот тип данных переменной **⟦f5⟧** при этом станет **⟦f6⟧**.",
     "eng": "In this example, the right part of the assignment operator contains an expression, as a result of calculating the value of which the engine will get a **reference** to the object. And this reference will become the value of the **⟦f5⟧** variable. But the data type of the **⟦f5⟧** variable will become **⟦f6⟧**.",
     "ua": "А в цьому прикладі в правій частині оператора присвоювання міститься вираз, у результаті обчислення значення якого движок отримає **посилання** на об'єкт. І це посилання стане значенням змінної **⟦f5⟧**. А ось тип даних змінної **⟦f5⟧** при цьому стане **⟦f6⟧**."
   },
-  "s1.p14": {
+  "p15": {
     "ru": "Кроме обычного оператора присвания в нашем рапоряжении есть и еще и такие его формы, которые позволяют нам сократить выражение в правой части.",
     "eng": "In addition to the usual assignment operator, we also have such forms that allow us to reduce the expression in the right part.",
     "ua": "Крім звичайного оператора присвоювання в нашому розпорядженні є ще й такі його форми, які дають нам змогу скоротити вираз у правій частині."
   },
-  "s2.h1": {
+  "p16": {
     "ru": "Сокращенные формы присваивания",
     "eng": "Abbreviated forms of assignment",
     "ua": "Скорочені форми присвоювання"
   },
-  "s2.p1": {
+  "p17": {
     "ru": "Пусть у нас есть переменная **⟦f4⟧**:",
     "eng": "Let's say we have a variable **⟦f4⟧**:",
     "ua": "Нехай у нас є змінна **⟦f4⟧**:"
   },
-  "s2.p2": {
+  "p18": {
     "ru": "Мы можем использовать арифметические операторы (+, -, /, * и оператор взятия остатка от деления %) в таких выражениях:",
     "eng": "We can use arithmetic operators (+, -, /, *, and the remainder operator %) in such expressions:",
     "ua": "Ми можемо використовувати арифметичні оператори (+, -, /, * та оператор взяття залишку від ділення %) у таких виразах:"
   },
-  "s2.p7": {
+  "p19": {
     "ru": "Как мы видим, в каждом из таких выражений имя переменной появляется как в левой, так и в правой части оператора присваивания.",
     "eng": "As we can see, in each of these expressions, the variable name appears in both the left and right parts of the assignment operator.",
     "ua": "Як ми бачимо, у кожному з таких виразів ім'я змінної з'являється як у лівій, так і в правій частині оператора присвоювання."
   },
-  "s2.p8": {
+  "p20": {
     "ru": "Такое дублирование несколько раздражает, не так ли?",
     "eng": "Such duplication is a bit annoying, isn't it?",
     "ua": "Таке дублювання дещо дратує, чи не так?"
   },
-  "s2.p9": {
+  "p21": {
     "ru": "Не лучше ли сократить такие формы присваивания следующим образом:",
     "eng": "Wouldn't it be better to shorten such assignment forms as follows:",
     "ua": "Чи не краще скоротити такі форми присвоювання таким чином:"
   },
-  "s2.p14": {
+  "p22": {
     "ru": "Согласитесь, что так намного удобнее?",
     "eng": "Would you agree that this is much more convenient?",
     "ua": "Погодьтеся, що так набагато зручніше?"

@@ -1,38 +1,38 @@
 # ![ico-30 study] XSS
 
-{{s0.p1}}
-{{s0.p2}}
+{{p1}}
+{{p2}}
 
-{{s0.p3}}
-{{s0.p4}}
+{{p3}}
+{{p4}}
 
-{{s0.p5}}
-{{s0.p6}}
-{{s0.p7}}
-{{s0.p8}}
+{{p5}}
+{{p6}}
+{{p7}}
+{{p8}}
 
-{{s0.p9}}
+{{p9}}
 
-{{s0.p10}}
+{{p10}}
 
 ![](illustrations/xss-atack.png)
 
-{{s0.p11}}
+{{p11}}
 
-{{s0.p12}}
+{{p12}}
 
 ~~~html
 &lt;IMG SRC="images/hack.png"
      onerror="document.write(String.fromCharCode(88, 83, 83))"/>
 ~~~
 
-{{s0.p13}}
+{{p13}}
 
-{{s0.p14}}
+{{p14}}
 
 ![](illustrations/xss-atack-cookie.png)
 
-{{s0.p15}}
+{{p15}}
 
 ~~~html
 &lt;IFRAME SRC=js/attack.html
@@ -40,28 +40,28 @@
 </IFRAME>
 ~~~
 
-{{s0.p16}}
+{{p16}}
 
-{{s0.p17}}
+{{p17}}
 
-{{s0.p18}}
+{{p18}}
 
 
 ## ![ico-25 hw] {{common.c8}}
 
-{{s1.p1}}
+{{p19}}
 
-{{s1.p2}}
+{{p20}}
 
 ![](illustrations/xss-atack-breakpoints.png)
 
-{{s1.p3}}
+{{p21}}
 
-{{s1.p4}}
+{{p22}}
 
-{{s1.p5}}
+{{p23}}
 
-{{s1.p6}}
+{{p24}}
 
 __________________________________________________________
 

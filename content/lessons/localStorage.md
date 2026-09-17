@@ -1,12 +1,12 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{p1}}
 
 _______________________________________
 
 ## ![ico-25 icon] localStorage
 
-{{s1.p1}}
-{{s1.p2}}
-{{s1.p3}}
+{{p2}}
+{{p3}}
+{{p4}}
 
 ___________________________________
 
@@ -26,7 +26,7 @@ ____________________________
 
 ^^^[setItem ( key, value )]
 
-{{s2.p1}}
+{{p5}}
 
 ~~~js
 localStorage.setItem('figure', 'circle')
@@ -34,8 +34,8 @@ localStorage.setItem('circle', 100)
 localStorage.setItem('color', 'red')
 ~~~
 
-{{s2.p2}}
-{{s2.p3}}
+{{p6}}
+{{p7}}
 
 ~~~js
 var user = {
@@ -52,7 +52,7 @@ localStorage.setItem('user', JSON.stringify(user))
 
 ^^^[getItem (key)]
 
-{{s2.p4}}
+{{p8}}
 
 ~~~js
 localStorage.getItem('figure')  // "circle"
@@ -60,7 +60,7 @@ localStorage.getItem('circle')  // "100"
 localStorage.getItem('color')   // "red"
 ~~~
 
-{{s2.p5}}
+{{p9}}
 
 ~~~js
 localStorage['figure']  // вернет "circle"
@@ -68,19 +68,19 @@ localStorage['circle']  // вернет "100"
 localStorage['color']   // вернет "red"
 ~~~
 
-{{s2.p6}}
+{{p10}}
 
 ~~~js
 localStorage['user']
 ~~~
 
-{{s2.p7}}
+{{p11}}
 
 ~~~js
 '{ "name": "Иван", "lastVisit": "27.02.2018", "lastPage": "/home/page_07" }'
 ~~~
 
-{{s2.p8}}
+{{p12}}
 
 ~~~js
 JSON.parse(localStorage['user'])
@@ -98,7 +98,7 @@ localStorage.removeItem('circle')
 
 ^^^[clear()]
 
-{{s2.p9}}
+{{p13}}
 
 ^^^
 
@@ -113,7 +113,7 @@ ___________________________
 
 ![ico-25 cap] ** 1**
 
-{{s2.p10}}
+{{p14}}
 
 ~~~js
 let k = 0
@@ -137,13 +137,13 @@ const user = {
 localStorage.setItem('user', JSON.stringify(user))
 ~~~
 
-{{s2.p11}}
+{{p15}}
 
 ~~~js
 for (const key in localStorage) console.log(key)
 ~~~
 
-{{s2.p12}}
+{{p16}}
 
 ~~~console
 circle
@@ -162,7 +162,7 @@ ______________________
 
 ![ico-25 cap] ** 3**
 
-{{s2.p13}}
+{{p17}}
 
 ~~~js
 Storage.prototype.getItemList = function () {
@@ -174,15 +174,15 @@ Storage.prototype.getItemList = function () {
 
 ![](https://lh4.googleusercontent.com/7xyx1vvwXZw0F1hQx7dR3HUca227YXbz5ScaTplal2XqZxsVeGT_OIb-JQomW5Ao0ZVqQSeQvdeUBShrPB4_yRioGo_0MnYiu9GU7WiXvd-2-VyiO4Z-IcFhrogdPtz7JM10SQbKg_OU7gA)
 
-{{s2.p14}}
+{{p18}}
 
 _____________________
 
 ### ![ico-20 icon]  Events
 
-{{s2.p15}}
+{{p19}}
 
-{{s2.p16}}
+{{p20}}
 
 ~~~js
 window.addEventListener('storage', function () {  
@@ -190,7 +190,7 @@ window.addEventListener('storage', function () {
 })
 ~~~
 
-{{s2.p17}}
+{{p21}}
 
 ___________________________________
 

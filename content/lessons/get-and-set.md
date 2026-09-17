@@ -1,8 +1,8 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{p1}}
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
+{{p3}}
 
 ~~~js
 var sample = {
@@ -16,19 +16,19 @@ var sample = {
 }
 ~~~
 
-{{s1.p3}}
+{{p4}}
 
 ~~~js
 console.log(sample.years)
 ~~~
 
-{{s1.p4}}
+{{p5}}
 
 ~~~js
 sample.years = 20
 ~~~
 
-{{s1.p5}}
+{{p6}}
 
 ~~~js
 console.log(sample.birth)
@@ -38,19 +38,19 @@ _______________________________
 
 ## ![ico-25 cap] PriceUAH
 
-{{s1.p6}}
+{{p7}}
 
-{{s1.p7}}
+{{p8}}
 
-{{s1.p8}}
+{{p9}}
 
-{{s1.p9}}
+{{p10}}
 
-{{s1.p10}}
+{{p11}}
 
-{{s1.p11}}
+{{p12}}
 
-{{s1.p12}}
+{{p13}}
 
 ~~~js
 var course = 28
@@ -69,19 +69,19 @@ var commodity = {
 }
 ~~~
 
-{{s1.p13}}
+{{p14}}
 
-{{s1.p14}}
+{{p15}}
 
-{{s1.p15}}
+{{p16}}
 
-{{s1.p16}}
+{{p17}}
 
 ~~~js
 console.log(commodity.priceUAH) // 560
 ~~~
 
-{{s1.p17}}
+{{p18}}
 
 
 ~~~js
@@ -218,9 +218,9 @@ const commodities = [
 ^^^
 _____________________________________________________
 
-{{s1.p18}}
+{{p19}}
 
-{{s1.p19}}
+{{p20}}
 
 ![ico-25 err]
 
@@ -239,7 +239,7 @@ var commodity = {
 }
 ~~~
 
-{{s1.p20}}
+{{p21}}
 
 ~► Uncaught RangeError: Maximum call stack size exceeded~
 
@@ -247,7 +247,7 @@ ____________________________________________________________
 
 ## ![ico-25 cap] Calculator (sample)
 
-{{s1.p21}}
+{{p22}}
 
 ~~~js
 var calculator = {
@@ -271,21 +271,21 @@ var calculator = {
 }
 ~~~
 
-{{s1.p22}}
+{{p23}}
 
-{{s1.p23}}
+{{p24}}
 
 ~~~js
 console.log(calculator.result)
 ~~~
 
-{{s1.p24}}
+{{p25}}
 
 ~~~js
 calculator.result = '5 - 8 '
 ~~~
 
-{{s1.p25}}
+{{p26}}
 
 ~~~console
 ▼ {firstValue: 5, secondValue: 8, operations: Array(5), operation: "-"}
@@ -305,7 +305,7 @@ __________________________________________
 
 ## ![ico-25 cap] Human states
 
-{{s1.p26}}
+{{p27}}
 
 ~~~js
 var human = {
@@ -340,11 +340,11 @@ human.showState()
 Current state: 0 (work)
 ~~~
 
-{{s1.p28}}
+{{p28}}
 
-{{s1.p29}}
+{{p29}}
 
-{{s1.p30}}
+{{p30}}
 
 
 ~~~js

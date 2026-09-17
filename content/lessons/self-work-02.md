@@ -1,8 +1,8 @@
 ## ![ico-25 hw] {{common.c8}} 1
 
-{{s1.p1}}
+{{p1}}
 
-{{s1.p2}}
+{{p2}}
 
 ~~~javascript
 var group = [
@@ -15,9 +15,9 @@ var group = [
 ]
 ~~~
 
-{{s1.p3}}
+{{p3}}
 
-{{s1.p4}}
+{{p4}}
 
 ~~~javascript
 function getStudentsList ( arrayOfStudents ) {
@@ -25,16 +25,16 @@ function getStudentsList ( arrayOfStudents ) {
 }
 ~~~
 
-{{s1.p5}}
+{{p5}}
 
 _________________________________________________
 
 ## ![ico-25 hw] {{common.c8}} 2
 
-{{s2.p1}}
+{{p6}}
 
-{{s2.p2}}
-{{s2.p3}}
+{{p7}}
+{{p8}}
 
 ~~~javascript
 function addNewStudent ( name, lastName, age, notebook ... ) {
@@ -42,34 +42,34 @@ function addNewStudent ( name, lastName, age, notebook ... ) {
 }
 ~~~
 
-{{s2.p4}}
-{{s2.p5}}
+{{p9}}
+{{p10}}
 
 ________________________________________
 
 ## ![ico-25 hw] {{common.c8}} 3
 
-{{s3.p1}}
-{{s3.p2}}
-{{s3.p3}}
-{{s3.p4}}
+{{p11}}
+{{p12}}
+{{p13}}
+{{p14}}
 
 ________________________________________
 
 ## ![ico-25 hw] {{common.c8}} 4
 
-{{s4.p1}}
+{{p15}}
 
-{{s4.p2}}
-{{s4.p3}}
-{{s4.p4}}
+{{p16}}
+{{p17}}
+{{p18}}
 
 ________________________________________
 
 ## ![ico-25 hw] {{common.c8}} 5
 
-{{s5.p1}}
-{{s5.p2}}
+{{p19}}
+{{p20}}
 
 ~~~javascript
 names [ i ] ="Сергей",

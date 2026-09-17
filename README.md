@@ -260,7 +260,7 @@ content/phrases.json             phrases that repeat across the course
 The message file is one entry per paragraph:
 
 ```json
-"s2.p4": {
+"p4": {
   "ru": "Замыкание — это функция вместе с её лексическим окружением.",
   "eng": "A closure is a function together with its lexical environment.",
   "ua": ""
@@ -286,6 +286,42 @@ Russian numbering, so `⟦f5⟧` has to mean the same snippet in every language.
 A missing translation falls back to Russian, so a half-translated page works:
 the translated paragraphs appear in the chosen language and the rest stays
 Russian. There is no need to finish a page in one sitting.
+
+
+### Keys
+
+A key is an id — `p1`, `p2` — handed out once and never reused. It says nothing
+about where the paragraph sits: the order of the page lives in the skeleton,
+where you can see it.
+
+```
+content/lessons/Closure.md        content/messages/Closure.json
+# ![ico-30 study] {{p1}}          "p1": { "ru": "Замыкание", "eng": …, "ua": … }
+{{p2}}                            "p2": { … }
+{{p3}}                            "p3": { … }
+```
+
+Inserting a paragraph renumbers nothing — it gets the next unused number.
+Deleting one leaves a gap, which costs nothing. Moving one changes only the
+skeleton.
+
+Keys used to be positional: `s3.p2` was the second paragraph of the fourth
+section. That is what let 365 translations end up filed under paragraphs they
+did not translate — re-splitting a page into different sections moved every
+address at once while the translations stayed on the old ones. On async-await
+the English for one paragraph sits two sections away from it.
+
+On re-extraction a paragraph is recognised by its Russian text, so it keeps its
+id through any amount of moving. Edit the Russian and it becomes a new
+paragraph, which is the honest answer: its translation was of the old words.
+
+A quiz is three keys on one line, and the relationship is read from there
+rather than from the names:
+
+```
+→→→ {{p41}} | {{p42}} | {{p43}} →→→
+       question  variants  answer
+```
 
 ### What to do next
 

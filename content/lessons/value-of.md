@@ -1,10 +1,10 @@
 # ![ico-30 study] valueOf
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
 ~~~js
 var obj = {
@@ -17,21 +17,21 @@ var obj = {
 }
 ~~~
 
-{{s0.p4}}
+{{p4}}
 
 ~~~js
 obj == 4
 ~~~
 
-{{s0.p5}}
+{{p5}}
 
-{{s0.p6}}
+{{p6}}
 
-{{s0.p7}}
+{{p7}}
 
-{{s0.p8}}
+{{p8}}
 
-{{s0.p9}}
+{{p9}}
 
 ◘◘![ico-25 cap] ** 1 **◘◘
 
@@ -49,9 +49,9 @@ console.info(human + '!') // Ivan: 25!
 
 ___________________
 
-{{s0.p10}}
+{{p10}}
 
-{{s0.p11}}
+{{p11}}
 
 
 ◘◘![ico-25 cap] ** 2 **◘◘
@@ -63,7 +63,7 @@ Object.prototype.valueOf = function () {
 }
 ~~~
 
-{{s0.p12}}
+{{p12}}
 
 ~~~js
 console.info(Number + '')
@@ -86,7 +86,7 @@ const test = {
 }
 ~~~
 
-{{s0.p13}}
+{{p13}}
 
 ~~~js
 test == 1 && test == 2 && test == 3

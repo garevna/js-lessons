@@ -1,18 +1,18 @@
 # ![ico-50 study] curl
 
-{{s0.p1}}
+{{p1}}
 
 [![ico-50 curl]](https://curl.se/docs/tutorial.html)
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
 _______________________
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p4}}
 
-{{s1.p1}}
+{{p5}}
 
 ••![ico-25 bash] $ curl https://github.com••
 
@@ -24,17 +24,17 @@ _______________________
 ![](illustrations/curl-02.png)
 
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{p6}}
 
 ^^^[-O]
 
-{{s2.p1}}
+{{p7}}
 
 ••![ico-25 bash] $ curl  -O  https://garevna.github.io/js-samples/js/index08.js••
 
 ![](illustrations/curl-03.png)
 
-{{s2.p2}}
+{{p8}}
 
 ![](illustrations/curl-04.png)
 
@@ -42,70 +42,70 @@ _______________________
 
 ^^^[-o]
 
-{{s2.p3}}
+{{p9}}
 
 ••![ico-25 bash] $ curl  -o  index-1.html  https://garevna.github.io/js-samples/index.html••
 
 ![](illustrations/curl-05.png)
 
-{{s2.p4}}
+{{p10}}
 
 ![](illustrations/curl-06.png)
 
 ^^^
 
-{{s2.p5}}
-{{s2.p6}}
+{{p11}}
+{{p12}}
 
 __________________
 
 ^^^[-d]
 
-{{s2.p7}}
+{{p13}}
 
 ••![ico-25 bash] $ curl -d  "name=garevna&subject=testing"  http://httpbin.org/post••
 
 ![](illustrations/curl-07.png)
 
-{{s2.p8}}
+{{p14}}
 
 ••"Content-Type": "application/x-www-form-urlencoded"••
 
-{{s2.p9}}
+{{p15}}
 
 ••"name=garevna&subject=testing"••
 
-{{s2.p10}}
+{{p16}}
 
 ^^^
 
 ^^^[-H]
 
-{{s2.p11}}
+{{p17}}
 
-{{s2.p12}}
+{{p18}}
 
-{{s2.p13}}
+{{p19}}
 
 ••Content-Type: application / x-www-form-urlencoded••
 
-{{s2.p14}}
+{{p20}}
 
-{{s2.p15}}
+{{p21}}
 
 ••![ico-25 bash] $ curl -d '{ name:Irina }'  -H  'Content-Type: application/json'  http://httpbin.org/post••
 
-{{s2.p16}}
-{{s2.p17}}
-{{s2.p18}}
+{{p22}}
+{{p23}}
+{{p24}}
 
 ![](illustrations/curl-08.png)
 
 ________________________
 
-{{s2.p19}}
+{{p25}}
 
-{{s2.p20}}
+{{p26}}
 
 ••![ico-25 bash] curl -d @index.html -H 'Content-Type: text/plain' http://httpbin.org/post••
 
@@ -115,13 +115,13 @@ ________________________
 
 ^^^[-u]
 
-{{s2.p21}}
+{{p27}}
 
-{{s2.p22}}
+{{p28}}
 
 ••![ico-25 bash] $ curl http://name:passwd@machine.domain/full/path/to/file••
 
-{{s2.p23}}
+{{p29}}
 
 ••![ico-25 bash] $ curl --user garevna:garevna -d @index.html -H 'Content-Type: text/plain' http://httpbin.org/post••
 

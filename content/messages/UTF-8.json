@@ -1,65 +1,65 @@
 {
-  "s0.p1": {
+  "p1": {
     "ru": "Все символы имеют числовой код",
     "eng": "All characters have a numeric code",
     "ua": "Усі символи мають числовий код"
   },
-  "s0.p2": {
+  "p2": {
     "ru": "Соответствие между символом и его кодом устанавливается в кодировочной таблице",
     "eng": "The correspondence between a character and its code is defined in a character encoding table",
     "ua": "Відповідність між символом та його кодом визначається в таблиці кодування"
   },
-  "s0.p3": {
+  "p3": {
     "ru": "Самый широкий охват символов различных алфавитов представлен в кодировке UTF-8",
     "eng": "UTF-8 encoding offers the widest coverage of characters from various alphabets",
     "ua": "Найширше охоплення символів різних алфавітів представлено в кодуванні UTF-8"
   },
-  "s0.p4": {
+  "p4": {
     "ru": "При сравнении двух строк последовательно сравниваются числовые коды символов этих строк",
     "eng": "When comparing two strings, the numeric codes of the characters in these strings are compared sequentially",
     "ua": "Під час порівняння двох рядків послідовно порівнюються числові коди символів цих рядків"
   },
-  "s0.p5": {
+  "p5": {
     "ru": "^^Например, десятичный код символа ** @** равен 64, а десятичный код символа ** w** равен 119^^",
     "eng": "^^For example, the decimal code for the character ** @** is 64, whilst the decimal code for the character ** w** is 119^^",
     "ua": "^^Наприклад, десятковий код символу ** @** дорівнює 64, а десятковий код символу ** w** дорівнює 119^^"
   },
-  "s0.p6": {
+  "p6": {
     "ru": "^^Логическое выражение ⟦f0⟧ будет иметь значение ⟦f1⟧^^",
     "eng": "^^The logical expression ⟦f0⟧ will evaluate to ⟦f1⟧^^",
     "ua": "^^Логічний вираз ⟦f0⟧ матиме значення ⟦f1⟧^^"
   },
-  "s0.p7": {
+  "p7": {
     "ru": "Сравнение строк происходит посимвольно до первого несовпадения",
     "eng": "Strings are compared character by character until the first mismatch is found",
     "ua": "Порівняння рядків відбувається посимвольно до першого розбіжності"
   },
-  "s0.p9": {
+  "p8": {
     "ru": "будет иметь значение **⟦f2⟧**, потому что при сравнении первых символов двух строк будет обнаружено, что код символа \"@\" меньше кода символа \"w\"",
     "eng": "will evaluate to **⟦f2⟧**, because when comparing the first characters of the two strings, it will be found that the code for the character ‘@’ is smaller than that for the character ‘w’",
     "ua": "матиме значення **⟦f2⟧**, оскільки під час порівняння перших символів двох рядків буде виявлено, що код символу «@» менший за код символу «w»"
   },
-  "s0.p10": {
+  "p9": {
     "ru": "далее сравнение проводиться не будет",
     "eng": "no further comparison will be carried out",
     "ua": "далі порівняння не проводитиметься"
   },
-  "s0.p12": {
+  "p10": {
     "ru": "будет иметь значение **⟦f2⟧**, потому что коды первых символов этих строк совпадают, а десятичный код символа \"g\" ( 103 ) меньше десятичного кода символа \"m\" ( 109 )",
     "eng": "will have the value **⟦f2⟧**, because the codes of the first characters of these strings match, and the decimal code of the character ‘g’ (103) is less than the decimal code of the character ‘m’ (109)",
     "ua": "матиме значення **⟦f2⟧**, оскільки коди перших символів цих рядків збігаються, а десятковий код символу «g» ( 103 ) менший за десятковий код символу «m» ( 109 )"
   },
-  "s0.p13": {
+  "p11": {
     "ru": "Узнать код символа в определенной позиции в строке можно с помощью метода ⟦f3⟧",
     "eng": "You can find out the code of a character at a specific position in a string using the ⟦f3⟧ method",
     "ua": "Дізнатися код символу в певній позиції в рядку можна за допомогою методу ⟦f3⟧"
   },
-  "s1.h1": {
+  "p12": {
     "ru": "[![ico-30 hw] Упражнения](⟦f4⟧)",
     "eng": "[![ico-30 hw] Exercises](⟦f4⟧)",
     "ua": "[![ico-30 hw] Вправи](⟦f4⟧)"
   },
-  "s1.p1": {
+  "p13": {
     "ru": "[![ico-20 link] шестнадцатеричные коды символов](https://www.fileformat.info/info/charset/UTF-8/list.htm)",
     "eng": "[![ico-20 link] hexadecimal character codes](https://www.fileformat.info/info/charset/UTF-8/list.htm)",
     "ua": "[![ico-20 link] шістнадцяткові коди символів](https://www.fileformat.info/info/charset/UTF-8/list.htm)"

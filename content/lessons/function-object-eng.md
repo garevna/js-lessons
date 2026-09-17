@@ -128,7 +128,7 @@ setProperty('method', function () {
 
 ^^Here we pass a function as the second argument to it^^
 ^^Now, let's check that these properties and method have appeared on the **~setProperty~** function^^
-{{s0.p1}}
+{{p1}}
 
 ^^^
 
@@ -456,7 +456,7 @@ console.log(y)
 x = 5, y = 10
 ~~~
 
-{{s0.p2}}
+{{p2}}
 
 ^^Therefore, the function will return the value **25**.^^
 
@@ -662,21 +662,21 @@ showSample()
 console.info(`(global) ${sample}`)
 ~~~
 
-{{s0.p3}}
+{{p3}}
 
-{{s0.p4}}
+{{p4}}
 
-{{s0.p5}}
+{{p5}}
 
-{{s0.p6}}
+{{p6}}
 
-{{s0.p7}}
+{{p7}}
 
-{{s0.p8}}
+{{p8}}
 
-{{s0.p9}}
+{{p9}}
 
-{{s0.p10}}
+{{p10}}
 
 ^^^
 
@@ -684,25 +684,25 @@ ____________________________________
 
 ### ![ico-20 icon] {{topic.t12}}
 
-{{s1.p1}}
+{{p11}}
 
-{{s1.p2}}
-{{s1.p3}}
-{{s1.p4}}
+{{p12}}
+{{p13}}
+{{p14}}
 
-{{s1.p5}}
+{{p15}}
 
-{{s1.p6}}
+{{p16}}
 
 _______________________________________
 
 ### ![ico-20 icon] this
 
-{{s1.p7}}
+{{p17}}
 
-{{s1.p8}}
+{{p18}}
 
-{{s1.p9}}
+{{p19}}
 
 _______________________________
 
@@ -714,9 +714,9 @@ function func () {
 }
 ~~~
 
-{{s1.p10}}
+{{p20}}
 
-{{s1.p11}}
+{{p21}}
 
 ________________________________
 
@@ -738,7 +738,7 @@ ___________________________________
 
 ![ico-25 cap] **14**
 
-{{s1.p12}}
+{{p22}}
 
 ~~~js
 var human = {
@@ -755,7 +755,7 @@ ________________________________
 
 ![ico-25 cap] **15**
 
-{{s1.p13}}
+{{p23}}
 
 ~~~js
 function say () {
@@ -767,7 +767,7 @@ function girl () {
 }
 ~~~
 
-{{s1.p14}}
+{{p24}}
 
 ~~~js
 girl.say = say
@@ -779,8 +779,8 @@ ________________________________________
 
 ## ![ico-25 icon] prototype
 
-{{s1.p15}}
-{{s1.p16}}
+{{p25}}
+{{p26}}
 
 ~~~js
 function sample () {}
@@ -788,7 +788,7 @@ function sample () {}
 console.dir(sample)
 ~~~
 
-{{s1.p17}}
+{{p27}}
 ~~~console
 ▼ ƒ sample()
       arguments: null
@@ -804,23 +804,23 @@ console.dir(sample)
         ▶ 0: Global {type: "global", name: "", object: Window}
 ~~~
 
-{{s1.p18}}
-{{s1.p19}}
-{{s1.p20}}
-{{s1.p21}}
+{{p28}}
+{{p29}}
+{{p30}}
+{{p31}}
 
 _____________________
 
-{{s1.p22}}
-{{s1.p23}}
-{{s1.p24}}
-{{s1.p25}}
-{{s1.p26}}
+{{p32}}
+{{p33}}
+{{p34}}
+{{p35}}
+{{p36}}
 
-{{s1.p27}}
+{{p37}}
 
 ___________________________________
 
-## {{s2.h1}}
+## {{p38}}
 
 [![ico-20 link] ^^w3schools^^](https://www.w3schools.com/js/js_scope.asp)

@@ -4,57 +4,57 @@ _____________________________________
 
 ^^Indexed Database^^
 **NoSQL**
-{{s0.p1}}
-{{s0.p2}}
-{{s0.p3}}
+{{p1}}
+{{p2}}
+{{p3}}
 __________________________________________
 
-{{s0.p4}}
+{{p4}}
 __________________________________________
 
-{{s0.p5}}
-{{s0.p6}}
-{{s0.p7}}
-{{s0.p8}}
-{{s0.p9}}
+{{p5}}
+{{p6}}
+{{p7}}
+{{p8}}
+{{p9}}
 
-{{s0.p10}}
-{{s0.p11}}
-{{s0.p12}}
-{{s0.p13}}
-{{s0.p14}}
-{{s0.p15}}
-{{s0.p16}}
-{{s0.p17}}
-{{s0.p18}}
-{{s0.p19}}
-{{s0.p20}}
+{{p10}}
+{{p11}}
+{{p12}}
+{{p13}}
+{{p14}}
+{{p15}}
+{{p16}}
+{{p17}}
+{{p18}}
+{{p19}}
+{{p20}}
 
-{{s0.p21}}
-{{s0.p22}}
-{{s0.p23}}
+{{p21}}
+{{p22}}
+{{p23}}
 
-{{s0.p24}}
-{{s0.p25}}
+{{p24}}
+{{p25}}
 
-{{s0.p26}}
-{{s0.p27}}
-{{s0.p28}}
+{{p26}}
+{{p27}}
+{{p28}}
 
-{{s0.p29}}
-{{s0.p30}}
+{{p29}}
+{{p30}}
 
 ___________________________________________________
 
 ^^^[Chrome DevTools]
 
-{{s0.p31}}
-{{s0.p32}}
+{{p31}}
+{{p32}}
 
 
 ^^^
 
-{{s0.p33}}
+{{p33}}
 
 ^^^[Firefox ( Mozilla )]
 
@@ -62,11 +62,11 @@ ___________________________________________________
 ^^^
 ___________________________________________________
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p34}}
 
-{{s1.p1}}
+{{p35}}
 
-{{s1.p2}}
+{{p36}}
 
 ~~~console
 ▼ IDBFactory
@@ -80,47 +80,47 @@ ___________________________________________________
       ► __proto__: Object
 ~~~
 
-{{s1.p3}}
+{{p37}}
 
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
+{{p38}}
+{{p39}}
+{{p40}}
 
 
 ______________________________________________
 
 ### ![ico-20 icon] IDBRequest
 
-{{s1.p7}}
+{{p41}}
 
-{{s1.p8}}
+{{p42}}
 
 | ![ico-20 green-ok] | **^^onsuccess^^** | **^^result^^** |
 | ![ico-20 error]    | **^^onerror^^**   | **^^error^^** |
 
-{{s1.p9}}
-{{s1.p10}}
-{{s1.p11}}
-{{s1.p12}}
-{{s1.p13}}
+{{p43}}
+{{p44}}
+{{p45}}
+{{p46}}
+{{p47}}
 
-{{s1.p14}}
-{{s1.p15}}
+{{p48}}
+{{p49}}
 
 _____________________________________
 
 ### ![ico-20 icon] indexedDB.open
 
-{{s1.p16}}
-{{s1.p17}}
-{{s1.p18}}
+{{p50}}
+{{p51}}
+{{p52}}
 
-{{s1.p19}}
-{{s1.p20}}
+{{p53}}
+{{p54}}
 
-{{s1.p21}}
-{{s1.p22}}
-{{s1.p23}}
+{{p55}}
+{{p56}}
+{{p57}}
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -131,7 +131,7 @@ request.onsuccess = event => console.log(event.target.result)
 request.onerror = event => console.warn(event.target.error)
 ~~~
 
-{{s1.p24}}
+{{p58}}
 
 ~~~js
 const request = Object.assign(indexedDB.open('sampleDB'), {
@@ -140,7 +140,7 @@ const request = Object.assign(indexedDB.open('sampleDB'), {
 })
 ~~~
 
-{{s1.p25}}
+{{p59}}
 
 ~~~console
 ▼ IDBDatabase {name: "sampleDB", version: 1, objectStoreNames: DOMStringList, onabort: null, onclose: null, …}
@@ -154,37 +154,37 @@ const request = Object.assign(indexedDB.open('sampleDB'), {
   ► __proto__: IDBDatabase
 ~~~
 
-{{s1.p26}}
-{{s1.p27}}
+{{p60}}
+{{p61}}
 
-{{s1.p28}}
+{{p62}}
 
-{{s1.p29}}
-{{s1.p30}}
-{{s1.p31}}
-{{s1.p32}}
+{{p63}}
+{{p64}}
+{{p65}}
+{{p66}}
 
 _________________________________
 
 #### ![ico-20 icon] upgradeneeded
 
-{{s1.p33}}
-{{s1.p34}}
-{{s1.p35}}
-{{s1.p36}}
-{{s1.p37}}
-{{s1.p38}}
+{{p67}}
+{{p68}}
+{{p69}}
+{{p70}}
+{{p71}}
+{{p72}}
 
-{{s1.p39}}
-{{s1.p40}}
-{{s1.p41}}
+{{p73}}
+{{p74}}
+{{p75}}
 
-{{s1.p42}}
-{{s1.p43}}
-{{s1.p44}}
-{{s1.p45}}
+{{p76}}
+{{p77}}
+{{p78}}
+{{p79}}
 
-{{s1.p46}}
+{{p80}}
 
 ◘◘![ico-20 cap] ** 2**◘◘
 
@@ -205,14 +205,14 @@ const request = Object.assign(indexedDB.open('sampleDB'), {
 })
 ~~~
 
-{{s1.p47}}
+{{p81}}
 
 ~~~console
 upgradeneeded
 success
 ~~~
 
-{{s1.p48}}
+{{p82}}
 
 ~~~js
 Object.assign(indexedDB.open('sampleDB', 2), {
@@ -222,23 +222,23 @@ Object.assign(indexedDB.open('sampleDB', 2), {
 })
 ~~~
 
-{{s1.p49}}
+{{p83}}
 
 ~~~console
 versionchange
 ~~~
 
-{{s1.p50}}
+{{p84}}
 
-{{s1.p51}}
-{{s1.p52}}
-{{s1.p53}}
-{{s1.p54}}
+{{p85}}
+{{p86}}
+{{p87}}
+{{p88}}
 
-{{s1.p55}}
-{{s1.p56}}
+{{p89}}
+{{p90}}
 
-{{s1.p57}}
+{{p91}}
 
 ~~~console
 ▼ IDBDatabase { name: "sampleDB", version: 2, objectStoreNames: DOMStringList, onabort: null, onclose: null, …}
@@ -252,12 +252,12 @@ versionchange
   ► __proto__: IDBDatabase
 ~~~
 
-{{s1.p58}}
-{{s1.p59}}
-{{s1.p60}}
-{{s1.p61}}
-{{s1.p62}}
-{{s1.p63}}
+{{p92}}
+{{p93}}
+{{p94}}
+{{p95}}
+{{p96}}
+{{p97}}
 
 ~~~~console
 ▼ IDBDatabase {…}
@@ -288,14 +288,14 @@ versionchange
   ► __proto__: EventTarget
 ~~~~
 
-{{s1.p64}}
+{{p98}}
 
-{{s1.p65}}
-{{s1.p66}}
-{{s1.p67}}
-{{s1.p68}}
+{{p99}}
+{{p100}}
+{{p101}}
+{{p102}}
 
-{{s1.p69}}
+{{p103}}
 
 ◘◘![ico-20 cap] ** 3**◘◘
 
@@ -308,21 +308,21 @@ const openDB = dbName => new Promise((resolve, reject) => Object.assign(indexedD
 openDB().then(db => { console.log(db); db.close() }, err => console.warn(err))
 ~~~
 
-{{s1.p70}}
-{{s1.p71}}
+{{p104}}
+{{p105}}
 
 _______________________________________________
 
 ### ![ico-20 icon] indexedDB.databases
 
-{{s1.p72}}
+{{p106}}
 
 ~~~js
 indexedDB.databases()
   .then(response => console.log(response))
 ~~~
 
-{{s1.p73}}
+{{p107}}
 
 ~~~console
 ▼ (2) [{…}, {…}]
@@ -336,7 +336,7 @@ ______________________________________________________________
 
 ### ![ico-20 icon] indexedDB.deleteDatabase
 
-{{s1.p74}}
+{{p108}}
 
 ~~~js
 const callback = event => console.log(event.type)
@@ -349,7 +349,7 @@ Object.assign(indexedDB.deleteDatabase('sampleDB'), {
 })
 ~~~
 
-{{s1.p75}}
+{{p109}}
 
 ~~~console
 ▼ IDBOpenDBRequest {onblocked: ƒ, onupgradeneeded: ƒ, source: null, transaction: null, readyState: "pending", …}
@@ -365,17 +365,17 @@ Object.assign(indexedDB.deleteDatabase('sampleDB'), {
   ► __proto__: IDBOpenDBRequest
 ~~~
 
-{{s1.p76}}
+{{p110}}
 
-{{s1.p77}}
-{{s1.p78}}
-{{s1.p79}}
-{{s1.p80}}
-{{s1.p81}}
-{{s1.p82}}
+{{p111}}
+{{p112}}
+{{p113}}
+{{p114}}
+{{p115}}
+{{p116}}
 
-{{s1.p83}}
-{{s1.p84}}
+{{p117}}
+{{p118}}
 
 ◘◘![ico-20 cap] ** 4**◘◘
 
@@ -393,14 +393,14 @@ const request = Object.assign(indexedDB.open('sampleDB'), {
 })
 ~~~
 
-{{s1.p85}}
+{{p119}}
 
 ~~~console
 upgradeneeded sampleDB
 success sampleDB
 ~~~
 
-{{s1.p86}}
+{{p120}}
 
 ~~~js
 Object.assign(indexedDB.deleteDatabase('sampleDB'), {
@@ -411,19 +411,19 @@ Object.assign(indexedDB.deleteDatabase('sampleDB'), {
 })
 ~~~
 
-{{s1.p87}}
-{{s1.p88}}
+{{p121}}
+{{p122}}
 
-{{s1.p89}}
+{{p123}}
 
 ~~~console
 versionchange ...
 blocked
 ~~~
 
-{{s1.p90}}
-{{s1.p91}}
-{{s1.p92}}
+{{p124}}
+{{p125}}
+{{p126}}
 
 ~~~console
 success
@@ -431,7 +431,7 @@ success
 
 _____________________________________________________
 
-{{s1.p93}}
+{{p127}}
 
 | **IDBFactory** | **open**  | => | **IDBDatabase** |
-{{s1.p94}}
+{{p128}}

@@ -1,185 +1,185 @@
 {
-  "s1.h1": {
+  "p1": {
     "ru": "Конструктор Promise",
     "eng": "The Promise constructor",
     "ua": "Конструктор Promise"
   },
-  "s1.p1": {
+  "p2": {
     "ru": "Для более глубокого понимания того, как работает конструктор Promise,",
     "eng": "To gain a deeper understanding of how the Promise constructor works,",
     "ua": "Щоб глибше зрозуміти, як працює конструктор Promise,"
   },
-  "s1.p2": {
+  "p3": {
     "ru": "мы можем напилить собственный код, который будет делать практически то же самое",
     "eng": "we can write our own code that does practically the same thing",
     "ua": "ми можемо написати власний код, який робитиме практично те саме"
   },
-  "s1.p3": {
+  "p4": {
     "ru": "Поскольку колбэки промиса являются микротасками, мы будем использовать **MutationObserver**",
     "eng": "Since Promise callbacks are microtasks, we will use **MutationObserver**",
     "ua": "Оскільки колбеки Promise є мікрозавданнями, ми використовуватимемо **MutationObserver**"
   },
-  "s1.p4": {
+  "p5": {
     "ru": "Для этого вспомним, что это такое",
     "eng": "To do this, let’s recall what it is",
     "ua": "Для цього згадаємо, що це таке"
   },
-  "s1.p5": {
+  "p6": {
     "ru": "Экземпляр **⟦f0⟧** отслеживает изменения элементов DOM",
     "eng": "An instance of **⟦f0⟧** monitors changes to DOM elements",
     "ua": "Екземпляр **⟦f0⟧** відстежує зміни елементів DOM"
   },
-  "s1.p6": {
+  "p7": {
     "ru": "Создать такой экземпляр легко с помощью конструктора **⟦f0⟧**:",
     "eng": "It is easy to create such an instance using the **⟦f0⟧** constructor:",
     "ua": "Створити такий екземпляр легко за допомогою конструктора **⟦f0⟧**:"
   },
-  "s1.p7": {
+  "p8": {
     "ru": "В качестве аргумента конструктору **⟦f0⟧** передается колбэк-функция, ",
     "eng": "A callback function is passed as an argument to the **⟦f0⟧** constructor,",
     "ua": "Як аргумент конструктору **⟦f0⟧** передається функція-колбек,"
   },
-  "s1.p8": {
+  "p9": {
     "ru": "которая станет микротаском при наступлении события мутации отслеживаемого элемента DOM",
     "eng": "which will become a microtask when a mutation event occurs on the monitored DOM element",
     "ua": "яка стане мікрозадачею при настанні події мутації відстежуваного елемента DOM"
   },
-  "s1.p9": {
+  "p10": {
     "ru": "Итак, созданный объект **observer** унаследовал метод **⟦f1⟧**,",
     "eng": "So, the created **observer** object has inherited the **⟦f1⟧** method,",
     "ua": "Отже, створений об’єкт **observer** успадкував метод **⟦f1⟧**,"
   },
-  "s1.p10": {
+  "p11": {
     "ru": "с помощью которого мы можем установить наблюдение за мутациями любого элемента DOM:",
     "eng": "which we can use to set up monitoring of mutations on any DOM element:",
     "ua": "за допомогою якого ми можемо встановити спостереження за мутаціями будь-якого елемента DOM:"
   },
-  "s1.p11": {
+  "p12": {
     "ru": "Объект ⟦f2⟧ содержит инфо для обозревателя, что именно отслеживать при мутациях данного элемента",
     "eng": "The object ⟦f2⟧ contains information for the observer on exactly what to monitor when this element changes",
     "ua": "Об’єкт ⟦f2⟧ містить інформацію для спостерігача про те, що саме слід відстежувати під час змін даного елемента"
   },
-  "s1.p12": {
+  "p13": {
     "ru": "Можно ослеживать добавление / удаление потомков, мутации текстового содержимого элемента и т.д.",
     "eng": "You can monitor the addition or removal of descendants, changes to the element’s text content, and so on",
     "ua": "Можна відстежувати додавання/видалення нащадків, зміни текстового вмісту елемента тощо"
   },
-  "s1.p13": {
+  "p14": {
     "ru": "Мы будем отслеживать добавление или удаление дочерних элементов, ",
     "eng": "We will monitor the addition or removal of child elements,",
     "ua": "Ми будемо відстежувати додавання або видалення дочірніх елементів,"
   },
-  "s1.p14": {
+  "p15": {
     "ru": "включая текстовые узлы (text nodes) ",
     "eng": "including text nodes",
     "ua": "включаючи текстові вузли (text nodes)"
   },
-  "s1.p15": {
+  "p16": {
     "ru": "с помощью такой конфигурации: ",
     "eng": "using the following configuration:",
     "ua": "за допомогою такої конфігурації:"
   },
-  "s1.p16": {
+  "p17": {
     "ru": "Теперь осталось определить элементы, мутации которых мы будем отслеживать",
     "eng": "Now we need to specify the elements whose changes we will monitor",
     "ua": "Тепер залишилося визначити елементи, зміни яких ми будемо відстежувати"
   },
-  "s1.p17": {
+  "p18": {
     "ru": "Дело в том, что при создании промиса функция, которая передается конструктору **Promise**, должна быть исполнена сразу",
     "eng": "The thing is that when creating a promise, the function passed to the **Promise** constructor must be executed immediately",
     "ua": "Справа в тому, що під час створення промісу функція, яка передається конструктору **Promise**, має бути виконана одразу"
   },
-  "s1.p18": {
+  "p19": {
     "ru": "Но в теле функции происходит вызов колбэков **⟦f3⟧** | **⟦f4⟧**,",
     "eng": "However, within the body of the function, the callbacks **⟦f3⟧** | **⟦f4⟧** are called,",
     "ua": "Але в тілі функції відбувається виклик колбеків **⟦f3⟧** | **⟦f4⟧**,"
   },
-  "s1.p19": {
+  "p20": {
     "ru": "которые еще не определены на момент создания экземпляра **Promise**",
     "eng": "which have not yet been defined at the time the **Promise** instance is created",
     "ua": "які ще не визначені на момент створення екземпляра **Promise**"
   },
-  "s1.p20": {
+  "p21": {
     "ru": "и являются формальными параметрами этой функции",
     "eng": "and are formal parameters of this function",
     "ua": "і є формальними параметрами цієї функції"
   },
-  "s1.p21": {
+  "p22": {
     "ru": "Поэтому при вызове этой функции в конструкторе **CustomPromise**",
     "eng": "Therefore, when calling this function in the **CustomPromise** constructor",
     "ua": "Тому під час виклику цієї функції в конструкторі **CustomPromise**"
   },
-  "s1.p22": {
+  "p23": {
     "ru": "мы передадим этой функции собственные колбэки,",
     "eng": "we will pass our own callbacks to this function,",
     "ua": "ми передамо цій функції власні колбеки,"
   },
-  "s1.p23": {
+  "p24": {
     "ru": "которые будут получать результат или ошибку и сохранять в каких-то переменных...",
     "eng": "which will receive the result or an error and store them in some variables...",
     "ua": "які отримуватимуть результат або помилку та зберігатимуть їх у певних змінних..."
   },
-  "s1.p24": {
+  "p25": {
     "ru": "Однако переменные не отслеживаются экзумпляром **observer** - ",
     "eng": "However, variables are not monitored by the **observer** instance –",
     "ua": "Однак змінні не відстежуються екземпляром **observer** —"
   },
-  "s1.p25": {
+  "p26": {
     "ru": "он может отслеживать только мутации элементов DOM",
     "eng": "it can only monitor mutations of DOM elements",
     "ua": "він може відстежувати лише зміни елементів DOM"
   },
-  "s1.p26": {
+  "p27": {
     "ru": "Поэтому поместим ответ, который вернет функция, в элементы-контейнеры",
     "eng": "Therefore, we will place the response returned by the function into the container elements",
     "ua": "Тому помістимо відповідь, яку поверне функція, в елементи-контейнери"
   },
-  "s1.p27": {
+  "p28": {
     "ru": "**⟦f5⟧** и **⟦f6⟧**:",
     "eng": "**⟦f5⟧** and **⟦f6⟧**:",
     "ua": "**⟦f5⟧** та **⟦f6⟧**:"
   },
-  "s1.p28": {
+  "p29": {
     "ru": "а затем установим наблюдение за мутациями этих элементов:",
     "eng": "and then set up observation for mutations of these elements:",
     "ua": "а потім встановимо спостереження за змінами цих елементів:"
   },
-  "s1.p29": {
+  "p30": {
     "ru": "Конечно, эти элементы-контейнеры нужно создать, и сделать невидимыми",
     "eng": "Of course, these container elements need to be created and made invisible",
     "ua": "Звісно, ці елементи-контейнери потрібно створити та зробити невидимими"
   },
-  "s1.p30": {
+  "p31": {
     "ru": "Для этого мы создадим унаследованный метод нашего конструктора **CustomPromise**:",
     "eng": "To do this, we’ll create an inherited method of our **CustomPromise** constructor:",
     "ua": "Для цього ми створимо успадкований метод нашого конструктора **CustomPromise**:"
   },
-  "s1.p31": {
+  "p32": {
     "ru": "Нам остается только вызвать это метод в конструкторе, чтобы создать нужные элементы-контейнеры:",
     "eng": "All that remains is to call this method in the constructor to create the required container elements:",
     "ua": "Нам залишається лише викликати цей метод у конструкторі, щоб створити потрібні елементи-контейнери:"
   },
-  "s2.h1": {
+  "p33": {
     "ru": "Кастомный конструктор",
     "eng": "Custom constructor",
     "ua": "Кастомний конструктор"
   },
-  "s3.h1": {
+  "p34": {
     "ru": "Пример использования",
     "eng": "Example of use",
     "ua": "Приклад використання"
   },
-  "s3.p1": {
+  "p35": {
     "ru": "Теперь используем конструктор **CustomPromise** для создания промиса:",
     "eng": "Now let’s use the **CustomPromise** constructor to create a promise:",
     "ua": "Тепер використовуємо конструктор **CustomPromise** для створення промісу:"
   },
-  "s3.p2": {
+  "p36": {
     "ru": "и передадим колбэки:",
     "eng": "and pass in the callbacks:",
     "ua": "і передамо колбеки:"
   },
-  "s3.p3": {
+  "p37": {
     "ru": "[%%%Тесты%%%](⟦f7⟧)",
     "eng": "[%%%Tests%%%](⟦f7⟧)",
     "ua": "[%%%Тести%%%](⟦f7⟧)"

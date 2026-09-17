@@ -1,4 +1,4 @@
-# ![ico-70 webpack] {{s1.h1}}
+# ![ico-70 webpack] {{p1}}
 
 ________________________________
 
@@ -6,17 +6,17 @@ ________________________________
 
 ### ![ico-20 icon] Google Fonts
 
-{{s2.p1}}
+{{p2}}
 
-{{s2.p2}}
+{{p3}}
 
 ~~~css
 @import url("https://fonts.googleapis.com/css?family=Hanalei+Fill|Roboto");
 ~~~
 
-{{s2.p3}}
-{{s2.p4}}
-{{s2.p5}}
+{{p4}}
+{{p5}}
+{{p6}}
 
 ______________________________________________________
 
@@ -62,7 +62,7 @@ body {
 }
 ~~~
 
-{{s2.p6}}
+{{p7}}
 
 ________________________________________________
 
@@ -70,16 +70,16 @@ ________________________________________________
 
 [%%%Font Awesome%%%](https://fontawesome.com)
 
-{{s2.p7}}
+{{p8}}
 
 ~~~css
 @import url("https://use.fontawesome.com/releases/v5.2.0/css/all.css");
 ~~~
 
-{{s2.p8}}
+{{p9}}
 
 ~~~html
 &lt;i class="fas fa-ambulance">&lt;/i>
 ~~~
 
-{{s2.p9}}
+{{p10}}

@@ -1,44 +1,44 @@
-# ![ico-70 webpack] {{s1.h1}}
+# ![ico-70 webpack] {{p1}}
 
 ![ico-20 green-ok] file-loader
 ![ico-20 green-ok]  url-loader
 
 ## ![ico-20 icon] url-loader
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
+{{p3}}
 
-{{s1.p3}}
+{{p4}}
 
-{{s1.p4}}
+{{p5}}
 
-{{s1.p5}}
+{{p6}}
 
-{{s1.p6}}
+{{p7}}
 
-{{s1.p7}}
+{{p8}}
 
-{{s1.p8}}
+{{p9}}
 
-{{s1.p9}}
+{{p10}}
 
-{{s1.p10}}
+{{p11}}
 
 __________________________________________
 
 ## ![ico-25 hw] {{common.c3}} 6
 
 
-{{s2.p1}}
+{{p12}}
 
 ![](https://lh5.googleusercontent.com/dqODscqbar15EGD-mAhay0YwoS0VzKDKpmUKb3_oYfzyLD-I2JbMNGM_6gBhpWsrr5H9_hLWhIDpwsN_w1UMvE38-ccafSB_FiUrrZ_17b-BiM7cItjm2Ku1WFEix9oWFIXUQ8aiI7mmTDM)
 
-{{s2.p2}}
-{{s2.p3}}
+{{p13}}
+{{p14}}
 
-{{s2.p4}}
-{{s2.p5}}
+{{p15}}
+{{p16}}
 
 ◘◘![ico-20 file] script.js◘◘
 
@@ -94,11 +94,11 @@ _________________________________
 
 ### ![ico-20 npm] file-loader
 
-{{s2.p6}}
+{{p17}}
 
 ••![ico-20 bash] npm install --save-dev file-loader••
 
-{{s2.p7}}
+{{p18}}
 
 ◘◘![ico-20 webpack] webpack.config.js◘◘
 
@@ -141,16 +141,16 @@ ___________________________________
 
 ![ico-20 webpack] **{{common.c21}}**
 
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
-{{s2.p12}}
+{{p19}}
+{{p20}}
+{{p21}}
+{{p22}}
 
 ![](https://lh6.googleusercontent.com/FLcLBZEePLxKPVswXVtkXHofTK2I1wShlFTaWFenTxPXaZRzf1yPSyX8S8mF_sonwERGkos305ZJssSk6Yz04nwPhwK8BVz2jg87eOicg479pjgNiVesfU2x4UH8mOaWJshcN-pZLewfgLI)
 
 _________________________________
 
-{{s2.p13}}
+{{p23}}
 
 ~~~js
 {
@@ -164,13 +164,13 @@ _________________________________
 }
 ~~~
 
-{{s2.p14}}
+{{p24}}
 
-{{s2.p15}}
+{{p25}}
 
-{{s2.p16}}
+{{p26}}
 
-{{s2.p17}}
+{{p27}}
 
 ◘◘![ico-25 cap] webpack.config.js◘◘
 
@@ -208,13 +208,13 @@ module.exports = {
 }
 ~~~
 
-{{s2.p18}}
+{{p28}}
 
-{{s2.p19}}
+{{p29}}
 
 ![](https://lh6.googleusercontent.com/H1x8wj8f_gxr6uvn__fH1R2XII_xG7VXN7XzEaqeSAsTUxTpaUkcN2OeA4CuXJfBrl7GC0Z1JDBAfSJNfzVA5FMGXbqGKRvDOslSsBXMxE7tTXIOyd3zh0wFCOhFzLzUgV6hmNwQbqnE5Gc)
 
-{{s2.p20}}
+{{p30}}
 
 _______________________________________________________________
 

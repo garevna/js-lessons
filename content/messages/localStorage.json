@@ -1,105 +1,105 @@
 {
-  "s1.h1": {
+  "p1": {
     "ru": "Данные на клиенте",
     "eng": "Data on the client",
     "ua": "Дані на клієнті"
   },
-  "s1.p1": {
+  "p2": {
     "ru": "**Локальное хранилище данных на клиенте**",
     "eng": "**Local data storage on the client**",
     "ua": "**Локальне сховище даних на клієнті**"
   },
-  "s1.p2": {
+  "p3": {
     "ru": "^^Свойство глобального объекта window^^",
     "eng": "^^A property of the global `window` object^^",
     "ua": "^^Властивість глобального об’єкта window^^"
   },
-  "s1.p3": {
+  "p4": {
     "ru": "^^Объем 5Mb^^",
     "eng": "^^5 Mb capacity^^",
     "ua": "^^Об’єм 5 Мб^^"
   },
-  "s2.p1": {
+  "p5": {
     "ru": "^^поместить данные в хранилище^^",
     "eng": "^^Store data in the storage^^",
     "ua": "^^записати дані у сховище^^"
   },
-  "s2.p2": {
+  "p6": {
     "ru": "В ⟦f0⟧ можно хранить только строки",
     "eng": "Only strings can be stored in ⟦f0⟧",
     "ua": "У ⟦f0⟧ можна зберігати лише рядки"
   },
-  "s2.p3": {
+  "p7": {
     "ru": "Поэтому для сохранения объекта нужно превратить его в строку:",
     "eng": "Therefore, to save an object, you need to convert it to a string:",
     "ua": "Тому для збереження об’єкта потрібно перетворити його на рядок:"
   },
-  "s2.p4": {
+  "p8": {
     "ru": "^^получить данные из хранилища^^",
     "eng": "^^Retrieve data from storage^^",
     "ua": "^^отримати дані зі сховища^^"
   },
-  "s2.p5": {
+  "p9": {
     "ru": "К данным в хранилище можно получить доступ и так:",
     "eng": "Data in storage can also be accessed as follows:",
     "ua": "До даних у сховищі можна отримати доступ і так:"
   },
-  "s2.p6": {
+  "p10": {
     "ru": "Теперь, если прочитать данные их хранилища",
     "eng": "Now, if we read the data from storage",
     "ua": "Тепер, якщо прочитати дані зі сховища"
   },
-  "s2.p7": {
+  "p11": {
     "ru": "то мы получим строку",
     "eng": "we will get a string",
     "ua": "то ми отримаємо рядок"
   },
-  "s2.p8": {
+  "p12": {
     "ru": "Чтобы получить объект user, нужно распарсить эту строку:",
     "eng": "To retrieve the `user` object, we need to parse this string:",
     "ua": "Щоб отримати об’єкт user, потрібно розібрати цей рядок:"
   },
-  "s2.p9": {
+  "p13": {
     "ru": "очищает хранилище",
     "eng": "Clears storage",
     "ua": "очищає сховище"
   },
-  "s2.p10": {
+  "p14": {
     "ru": "Получим все имена ключей:",
     "eng": "Let’s retrieve all the key names:",
     "ua": "Отримаємо всі імена ключів:"
   },
-  "s2.p11": {
+  "p15": {
     "ru": "Если вывести в косоль свойства объекта localStorage:",
     "eng": "If we log the properties of the `localStorage` object to the console:",
     "ua": "Якщо вивести в консоль властивості об’єкта localStorage:"
   },
-  "s2.p12": {
+  "p16": {
     "ru": "то в консоли мы увидим не только имена помещенных нами в хранилище данных, но и имена прототипных свойств и методов объекта ⟦f0⟧:",
     "eng": "then in the console we will see not only the names of the data we stored, but also the names of the prototype properties and methods of the `⟦f0⟧` object:",
     "ua": "то в консолі ми побачимо не тільки імена даних, які ми помістили в сховище, а й імена прототипних властивостей та методів об’єкта ⟦f0⟧:"
   },
-  "s2.p13": {
+  "p17": {
     "ru": "Мы можем добавить новые методы объекту ⟦f0⟧, используя свойство ⟦f1⟧ конструктора ⟦f2⟧",
     "eng": "We can add new methods to the ⟦f0⟧ object using the ⟦f1⟧ property of the ⟦f2⟧ constructor",
     "ua": "Ми можемо додати нові методи до об’єкта ⟦f0⟧, використовуючи властивість ⟦f1⟧ конструктора ⟦f2⟧"
   },
-  "s2.p14": {
+  "p18": {
     "ru": "^^Как видите, мы можем расширять функциональность объекта ⟦f0⟧^^",
     "eng": "^^As you can see, we can extend the functionality of the ⟦f0⟧ object^^",
     "ua": "^^Як бачите, ми можемо розширювати функціональність об’єкта ⟦f0⟧^^"
   },
-  "s2.p15": {
+  "p19": {
     "ru": "При изменении содержимого ⟦f0⟧ в браузере генерируется событие  **_⟦f3⟧_**",
     "eng": "When the contents of ⟦f0⟧ are changed in the browser, the event **_⟦f3⟧_** is generated",
     "ua": "При зміні вмісту ⟦f0⟧ у браузері генерується подія  **_⟦f3⟧_**"
   },
-  "s2.p16": {
+  "p20": {
     "ru": "Это событие может быть перехвачено объектом ⟦f4⟧, если \"повесить\" прослушивателя события **_⟦f3⟧_**:",
     "eng": "This event can be intercepted by the object ⟦f4⟧ by ‘attaching’ an event listener to **_⟦f3⟧_**:",
     "ua": "Цю подію може перехопити об’єкт ⟦f4⟧, якщо «підвісити» слухач події **_⟦f3⟧_**:"
   },
-  "s2.p17": {
+  "p21": {
     "ru": "Повесьте обработчика и измените содержимое ⟦f0⟧ в консоли",
     "eng": "Attach the handler and change the contents of ⟦f0⟧ in the console",
     "ua": "Прикріпіть обробник і змініть вміст ⟦f0⟧ у консолі"

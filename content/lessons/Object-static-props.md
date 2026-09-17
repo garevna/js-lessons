@@ -1,21 +1,21 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{p1}}
 
 __________________________________
 
 ## ![ico-25 icon] Object.assign()
 
-{{s1.p1}}
-{{s1.p2}}
+{{p2}}
+{{p3}}
 
-{{s1.p3}}
+{{p4}}
 
 ~~~js
 Object.assign(target, ...sources)
 ~~~
 
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
+{{p5}}
+{{p6}}
+{{p7}}
 
 _________________________________________________
 
@@ -75,10 +75,10 @@ target.position[0] = 100
 target.attrs.color = '#fa0'
 ~~~
 
-{{s1.p9}}
-{{s1.p10}}
-{{s1.p11}}
-{{s1.p12}}
+{{p8}}
+{{p9}}
+{{p10}}
+{{p11}}
 
 ![](illustrations/Object-assign-01.png)
 
@@ -86,12 +86,12 @@ _______________________
 
 ## ![ico-25 icon] Object.create()
 
-{{s1.p13}}
+{{p12}}
 
-{{s1.p14}}
+{{p13}}
 
-{{s1.p15}}
-{{s1.p16}}
+{{p14}}
+{{p15}}
 
 ♦♦♦3♦♦♦
 
@@ -102,7 +102,7 @@ var figure = {
 var circle = Object.create(figure)
 ~~~
 
-{{s1.p18}}
+{{p16}}
 
 ~~~js
 var emptyObject = Object.create(null)
@@ -110,8 +110,8 @@ var emptyObject = Object.create(null)
 
 ________________________
 
-{{s1.p19}}
-{{s1.p20}}
+{{p17}}
+{{p18}}
 
 ^^^[{{common.c0}} 4]
 
@@ -191,7 +191,7 @@ var proto = {
 var obj = Object.create(proto)
 ~~~
 
-{{s1.p22}}
+{{p19}}
 
 ◘◘obj◘◘
 
@@ -206,7 +206,7 @@ var obj = Object.create(proto)
       ► __proto__: Object
 ~~~
 
-{{s1.p23}}
+{{p20}}
 
 ~~~js
 var Creator = function (id, val) {
@@ -215,13 +215,13 @@ var Creator = function (id, val) {
 }
 ~~~
 
-{{s1.p24}}
+{{p21}}
 
 ~~~js
 Creator.call(obj, 'sample',  75)
 ~~~
 
-{{s1.p25}}
+{{p22}}
 
 ![](illustrations/Object-static-props-01.png)
 
@@ -265,7 +265,7 @@ var worker = Object.create(new Human('Иван', 'рыбалка'))
 ~~~
 
 
-{{s1.p27}}
+{{p23}}
 
 ~~~js
 worker instanceof Human   // true
@@ -308,7 +308,7 @@ var sample = new SubClass()
 ![](illustrations/Object-static-props-02.png)
 
 
-{{s1.p30}}
+{{p24}}
 
 ~~~js
 sample instanceof SubClass    // true
@@ -316,7 +316,7 @@ sample instanceof SuperClass  // false
 sample instanceof Object      // true
 ~~~
 
-{{s1.p31}}
+{{p25}}
 
 ____________________________________________________
 
@@ -350,20 +350,20 @@ function Cup (color) {
 }
 ~~~
 
-{{s1.p33}}
-{{s1.p34}}
+{{p26}}
+{{p27}}
 
 ~~~js
 Cup.prototype = Object.create(Dishes.prototype)
 ~~~
 
-{{s1.p35}}
+{{p28}}
 
 ~~~js
 Dishes.call(Cup.prototype)
 ~~~
 
-{{s1.p36}}
+{{p29}}
 
 ~~~js
 var redCup = new Cup('red')
@@ -387,8 +387,8 @@ var redCup = new Cup('red')
 ~~~
 
 
-{{s1.p37}}
-{{s1.p38}}
+{{p30}}
+{{p31}}
 
 ~~~js
 redCup instanceof Cup        // true
@@ -396,9 +396,9 @@ redCup instanceof Dishes     // true
 greenCup instanceof Object   // true
 ~~~
 
-{{s1.p39}}
-{{s1.p40}}
-{{s1.p41}}
+{{p32}}
+{{p33}}
+{{p34}}
 
 ~~~js
 redCup.use()  // The tableware has been used and it's dirty now.
@@ -406,7 +406,7 @@ redCup.use()  // The tableware has been used and it's dirty now.
 redCup.wash() // The tableware has been washed.
 ~~~
 
-{{s1.p42}}
+{{p35}}
 
 _________________________________________________________________________
 
@@ -455,7 +455,7 @@ console.log('*** cup:\n', yellowCup)
 
 ![](illustrations/Object-static-props-03.png)
 
-{{s1.p44}}
+{{p36}}
 
 ~~~js
 console.log(Object.getPrototypeOf(yellowCup))
@@ -469,27 +469,27 @@ console.log(Object.getPrototypeOf(Object.getPrototypeOf(yellowCup)))
 
 ![](illustrations/Object-static-props-05.png)
 
-{{s1.p45}}
+{{p37}}
 
 ~~~js
 this.__proto__.constructor = Dishes
 ~~~
 
-{{s1.p46}}
+{{p38}}
 
 ~~~js
 this.__proto__ = new Kitchenware()  
 ~~~
 
-{{s1.p47}}
+{{p39}}
 
-{{s1.p48}}
+{{p40}}
 
 ~~~js
 this.__proto__.constructor = Cup
 ~~~
 
-{{s1.p49}}
+{{p41}}
 
 ~~~js
 yellowCup instanceof Kitchenware  // true
@@ -498,7 +498,7 @@ yellowCup instanceof Cup          // false
 yellowCup instanceof Object       // true
 ~~~
 
-{{s1.p50}}
+{{p42}}
 
 _____________________________________________________________________________
 
@@ -508,11 +508,11 @@ _____________________________________________________________________________
 
 ## ![ico-25 icon] Object.defineProperty()
 
-{{s1.p51}}
+{{p43}}
 
-{{s1.p52}}
-{{s1.p53}}
-{{s1.p54}}
+{{p44}}
+{{p45}}
+{{p46}}
 
 ♦♦♦10♦♦♦
 
@@ -540,11 +540,11 @@ Object.keys(sample)
 
 ______________________________________________________________________
 
-### ![ico-20 icon] {{s2.h1}}
+### ![ico-20 icon] {{p47}}
 
-{{s2.p1}}
+{{p48}}
 
-{{s2.p2}}
+{{p49}}
 
 ♦♦♦11♦♦♦
 
@@ -623,9 +623,9 @@ ____________________________
 
 ## ![ico-25 icon] Object.defineProperties()
 
-{{s2.p7}}
+{{p50}}
 
-{{s2.p8}}
+{{p51}}
 
 ~~~html
 <body>
@@ -637,7 +637,7 @@ ____________________________
 </body>
 ~~~
 
-{{s2.p9}}
+{{p52}}
 
 ~~~js
 var sample = {
@@ -662,11 +662,11 @@ Object.defineProperties(sample, {
 
 ![](illustrations/Object-static-props-06.png)
 
-{{s2.p10}}
+{{p53}}
 
 ![](illustrations/Object-static-props-07.png)
 
-{{s2.p11}}
+{{p54}}
 
 ~~~js
 sample.owner = sample
@@ -680,8 +680,8 @@ ____________________________
 
 **ES8 (2017)**
 
-{{s2.p12}}
-{{s2.p13}}
+{{p55}}
+{{p56}}
 
 ~~~js
 var obj = {
@@ -767,7 +767,7 @@ ____________________________
 
 ## ![ico-25 icon] Object.freeze()
 
-{{s2.p18}}
+{{p57}}
 
 ♦♦♦15♦♦♦
 
@@ -781,7 +781,7 @@ console.log(string) // "Welcome to JS!"
 
 _______________________________________________________________________
 
-{{s2.p20}}
+{{p58}}
 
 ♦♦♦16♦♦♦
 
@@ -795,7 +795,7 @@ console.log(food) // ["milk", "apple", "soup", "meat"]
 
 _______________________________________________________________________
 
-{{s2.p22}}
+{{p59}}
 
 ♦♦♦17♦♦♦
 
@@ -813,9 +813,9 @@ console.log(provider) // { name: "Google", browser: "Chrome" }
 
 ____________________________________________________
 
-{{s2.p24}}
+{{p60}}
 
-^^^[{{s2.spoiler1}}]
+^^^[{{p61}}]
 
 ![ico-25 cap] **{{common.c0}} 18**
 
@@ -833,7 +833,7 @@ console.log(provider) // { name: "Google" }
 
 ^^^
 
-^^^[{{s2.spoiler2}}]
+^^^[{{p62}}]
 
 ![ico-25 cap] **{{common.c0}} 19**
 
@@ -849,7 +849,7 @@ console.log(provider) // { name: "Google", service: "API" }
 
 ^^^
 
-^^^[{{s2.spoiler3}}]
+^^^[{{p63}}]
 
 ![ico-25 cap] **{{common.c0}} 20**
 
@@ -865,9 +865,9 @@ console.log ( provider.name ) // Google
 
 ^^^
 
-^^^[{{s2.spoiler4}}]
+^^^[{{p64}}]
 
-{{s2.p28}}
+{{p65}}
 
 ♦♦♦21♦♦♦
 
@@ -888,9 +888,9 @@ for (var prop in provider) {
 // service: API
 ~~~
 
-{{s2.p30}}
+{{p66}}
 
-{{s2.p31}}
+{{p67}}
 
 ~~~js
 provider.name = 'Mozilla'
@@ -898,7 +898,7 @@ provider.name = 'Mozilla'
 console.log(provider.name) // "Google"
 ~~~
 
-{{s2.p32}}
+{{p68}}
 
 ~~~js
 Object.defineProperty(provider, 'name', {
@@ -909,7 +909,7 @@ Object.defineProperty(provider, 'name', {
 provider.name = 'Mozilla'
 ~~~
 
-{{s2.p33}}
+{{p69}}
 
 ~~~js
 for (var prop in provider) {
@@ -920,9 +920,9 @@ for (var prop in provider) {
 // service: API
 ~~~
 
-{{s2.p34}}
+{{p70}}
 
-{{s2.p35}}
+{{p71}}
 
 ~~~js
 Object.freeze(provider)
@@ -937,9 +937,9 @@ Object.defineProperty(provider, 'service', {
 
 ••![ico-20 error] Uncaught TypeError: Cannot redefine property: service••
 
-{{s2.p37}}
+{{p72}}
 
-{{s2.p38}}
+{{p73}}
 
 ~~~js
 Object.getOwnPropertyDescriptor(provider, 'service')
@@ -947,34 +947,34 @@ Object.getOwnPropertyDescriptor(provider, 'service')
 
 ••► { value: "API", writable: false, enumerable: true, configurable: false }••
 
-{{s2.p39}}
+{{p74}}
 
-{{s2.p40}}
+{{p75}}
 
-{{s2.p41}}
+{{p76}}
 
 ^^^
 _________________________________________________________________________________________________
 
 ## ![ico-25 icon] Object.getOwnPropertyDescriptor()
 
-{{s2.p42}}
-{{s2.p43}}
-{{s2.p44}}
-{{s2.p45}}
+{{p77}}
+{{p78}}
+{{p79}}
+{{p80}}
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{p81}}
 
-{{s3.p1}}
-{{s3.p2}}
+{{p82}}
+{{p83}}
 
-{{s3.p3}}
-{{s3.p4}}
-{{s3.p5}}
-{{s3.p6}}
-{{s3.p7}}
-{{s3.p8}}
-{{s3.p9}}
+{{p84}}
+{{p85}}
+{{p86}}
+{{p87}}
+{{p88}}
+{{p89}}
+{{p90}}
 
 _________________________________________________________________
 
@@ -1011,10 +1011,10 @@ ____________________________
 
 **ES8 (2017)**
 
-{{s3.p12}}
-{{s3.p13}}
-{{s3.p14}}
-{{s3.p15}}
+{{p91}}
+{{p92}}
+{{p93}}
+{{p94}}
 
 ~~~js
 var obj = {
@@ -1045,7 +1045,7 @@ ____________________________
 
 ## ![ico-25 icon] Object.getOwnPropertyNames()
 
-{{s3.p17}}
+{{p95}}
 
 ~~~js
 var funcObject = {
@@ -1066,8 +1066,8 @@ ____________________________
 
 ## ![ico-25 icon] Object.keys()
 
-{{s3.p19}}
-{{s3.p20}}
+{{p96}}
+{{p97}}
 
 ♦♦♦23♦♦♦
 
@@ -1101,7 +1101,7 @@ console.log(Object.keys(man))
 (3) [ "name", "age", "speciality" ]
 ~~~
 
-{{s3.p23}}
+{{p98}}
 
 ~~~js
 console.log(Object.keys(Human.prototype))
@@ -1114,7 +1114,7 @@ console.log(Object.keys(Human.prototype))
 (2) [ "setSpeciality", "employed" ]
 ~~~
 
-{{s3.p25}}
+{{p99}}
 
 ~~~js
 man.employed = true
@@ -1128,7 +1128,7 @@ console.log(Object.keys(man))
 (4) [ "name", "age", "speciality", "employed" ]
 ~~~
 
-{{s3.p27}}
+{{p100}}
 
 ~~~js
 console.log(man.employed)           // true
@@ -1138,8 +1138,8 @@ ____________________________
 
 ## ![ico-25 icon] Object.setPrototypeOf()
 
-{{s3.p28}}
-{{s3.p29}}
+{{p101}}
+{{p102}}
 
 ♦♦♦24♦♦♦
 
@@ -1156,15 +1156,15 @@ const proto = {
 }
 ~~~
 
-{{s3.p31}}
+{{p103}}
 
-{{s3.p32}}
-{{s3.p33}}
+{{p104}}
+{{p105}}
 
-{{s3.p34}}
+{{p106}}
 
 
-{{s3.p35}}
+{{p107}}
 
 ~~~js
 const admin = {
@@ -1173,7 +1173,7 @@ const admin = {
 }
 ~~~
 
-{{s3.p36}}
+{{p108}}
 
 ◘◘admin◘◘
 
@@ -1199,13 +1199,13 @@ const admin = {
 ~~~
 
 
-{{s3.p37}}
+{{p109}}
 
 ~~~js
 Object.setPrototypeOf(admin, proto)
 ~~~
 
-{{s3.p38}}
+{{p110}}
 
 ◘◘admin◘◘
 
@@ -1221,14 +1221,14 @@ Object.setPrototypeOf(admin, proto)
 ~~~
 
 
-{{s3.p39}}
+{{p111}}
 
 ~~~js
 console.log(admin.getName()) // Stephan
 console.log(admin.valueOf()) // 25
 ~~~
 
-{{s3.p40}}
+{{p112}}
 
 ~~~js
 const user = {
@@ -1237,15 +1237,15 @@ const user = {
 }
 ~~~
 
-{{s3.p41}}
+{{p113}}
 
-{{s3.p42}}
+{{p114}}
 
 ~~~js
 Object.setPrototypeOf(user, proto)
 ~~~
 
-{{s3.p43}}
+{{p115}}
 
 ~~~js
 console.log(user.getName()) // user
@@ -1257,8 +1257,8 @@ ____________________________
 
 **ES8 (2017)**
 
-{{s3.p44}}
-{{s3.p45}}
+{{p116}}
+{{p117}}
 
 ~~~js
 var obj = {

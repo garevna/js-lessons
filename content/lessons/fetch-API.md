@@ -6,35 +6,35 @@ _____________________________________________________
 
 ^^^[Cross-Origin Resource Sharing]
 
-{{s0.p1}}
-{{s0.p2}}
-{{s0.p3}}
+{{p1}}
+{{p2}}
+{{p3}}
 ______________________
-{{s0.p4}}
+{{p4}}
 
 ^^^
 ______________
 
 # ![ico-30 icon] Fetch API
 
-{{s0.p5}}
+{{p5}}
 
-{{s0.p6}}
+{{p6}}
 
-{{s0.p7}}
+{{p7}}
 
-{{s0.p8}}
+{{p8}}
 
 ~~~js
 fetch('message.txt')
   .then(response => { ... })
 ~~~
 
-{{s0.p9}}
-{{s0.p10}}
-{{s0.p11}}
+{{p9}}
+{{p10}}
+{{p11}}
 
-{{s0.p12}}
+{{p12}}
 
 _____________________________________________________________
 
@@ -42,13 +42,13 @@ _____________________________________________________________
 
 **{{common.c7}}**
 
-{{s0.p14}}
+{{p13}}
 
 ^^^[Request]
 
-{{s0.p15}}
+{{p14}}
 
-{{s0.p16}}
+{{p15}}
 | ^^**bodyUsed**^^            | ^^**arrayBuffer()**^^ |
 | ^^cache^^                   | ^^**blob()**^^        |
 | ^^**credentials**^^         | ^^clone()^^           |
@@ -70,13 +70,13 @@ ________________________________________________
 
 ![ico-25 cap] ** 1**
 
-{{s0.p17}}
+{{p16}}
 
 ~~~js
 const request = new Request('https://api.github.com/users')
 ~~~
 
-{{s0.p18}}
+{{p17}}
 
 ~~~~Request
 ▼ Request {method: "GET", url: "https://api.github.com/users", headers: Headers, destination: "", referrer: "about:client", …}
@@ -98,9 +98,9 @@ const request = new Request('https://api.github.com/users')
   ► __proto__: Request
 ~~~~
 
-{{s0.p19}}
+{{p18}}
 
-{{s0.p20}}
+{{p19}}
 
 ~~~js
 const request = new Request('https://api.github.com/users', {
@@ -114,7 +114,7 @@ const request = new Request('https://api.github.com/users', {
 request.headers.get('Content-Type')
 ~~~
 
-{{s0.p21}}
+{{p20}}
 
 ~~~~Request
 ▼ Request {method: "GET", url: "https://api.github.com/users", headers: Headers, destination: "", referrer: "about:client", …}
@@ -136,13 +136,13 @@ request.headers.get('Content-Type')
   ► __proto__: Request
 ~~~~
 
-{{s0.p22}}
+{{p21}}
 
 ~~~console
 ► headers: Headers {}
 ~~~
 
-{{s0.p23}}
+{{p22}}
 
 ~~~~Headers
 ▼ Headers {}
@@ -162,13 +162,13 @@ request.headers.get('Content-Type')
       ► __proto__: Object
 ~~~~
 
-{{s0.p24}}
+{{p23}}
 
 ~~~js
 request.headers.get('Content-Type') // "application/json"
 ~~~
 
-{{s0.p25}}
+{{p24}}
 
 ~~~js
 const request = new Request('https://api.github.com/users', {
@@ -180,24 +180,24 @@ const request = new Request('https://api.github.com/users', {
 })
 ~~~
 
-{{s0.p26}}
+{{p25}}
 
-{{s0.p27}}
-{{s0.p28}}
+{{p26}}
+{{p27}}
 | **~mode~** | ^^**cors**<br>**no-cors**<br>**same-origin**^^ |
-{{s0.p29}}
-{{s0.p30}}
-{{s0.p31}}
+{{p28}}
+{{p29}}
+{{p30}}
 
 _______________________________________________
 
-### ![ico-20 icon] {{s1.h1}}
+### ![ico-20 icon] {{p31}}
 
-{{s1.p1}}
+{{p32}}
 
-{{s1.p2}}
+{{p33}}
 ^^**URI** (_Uniform Resource Identifier_)^^
-{{s1.p3}}
+{{p34}}
 
 ~~~js
 const request = new Request('https://httpbin.org/post', {
@@ -207,17 +207,17 @@ const request = new Request('https://httpbin.org/post', {
 
 _______________________________________________
 
-### ![ico-20 icon] {{s2.h1}}
+### ![ico-20 icon] {{p35}}
 
-{{s2.p1}}
+{{p36}}
 
 ^^^[same-origin]
 
-{{s2.p2}}
+{{p37}}
 
 ![ico-25 cap] ** 2**
 
-{{s2.p3}}
+{{p38}}
 
 ~~~js
 const request = new Request('https://avatars2.githubusercontent.com/u/46?v=4', {
@@ -228,7 +228,7 @@ fetch(request)
   .then(response => console.log(response))
 ~~~
 
-{{s2.p4}}
+{{p39}}
 
 ~~~console
 Fetch API cannot load https://avatars2.githubusercontent.com/u/46?v=4
@@ -236,8 +236,8 @@ Request mode is "same-origin"
 but the URL's origin is not same as the request origin null
 ~~~
 
-{{s2.p5}}
-{{s2.p6}}
+{{p40}}
+{{p41}}
 
 ![ico-20 error] ~Promise {<rejected>: TypeError: Failed to fetch~
 
@@ -245,7 +245,7 @@ but the URL's origin is not same as the request origin null
 
 ^^^[no-cors]
 
-{{s2.p7}}
+{{p42}}
 
 _________________________________________________________
 
@@ -261,22 +261,22 @@ fetch(request)
   .then(response => console.log(response))
 ~~~
 
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
+{{p43}}
+{{p44}}
+{{p45}}
 
 ^^^
 
 ^^^[cors]
 
-{{s2.p11}}
-{{s2.p12}}
+{{p46}}
+{{p47}}
 
 ________________________________________________
 
 ![ico-25 cap] ** 4**
 
-{{s2.p13}}
+{{p48}}
 
 ~~~js
 const request = new Request('http://bm.img.com.ua/img/prikol/images/large/0/0/307600.jpg', {
@@ -286,7 +286,7 @@ fetch(request)
   .then(response => console.log(response))
 ~~~
 
-{{s2.p14}}
+{{p49}}
 
 ~~~console
 Failed to load http://bm.img.com.ua/img/prikol/images/large/0/0/307600.jpg:
@@ -296,16 +296,16 @@ If an opaque response serves your needs,
 set the request's mode to 'no-cors' to fetch the resource with CORS disabled
 ~~~
 
-{{s2.p15}}
+{{p50}}
 
 ~~~console
 Uncaught (in promise) TypeError: Failed to fetch
 ~~~
 
-{{s2.p16}}
-{{s2.p17}}
+{{p51}}
+{{p52}}
 
-{{s2.p18}}
+{{p53}}
 
 ^^^
 
@@ -341,34 +341,34 @@ fetch(request)
 
 ______________________________________
 
-{{s2.p19}}
+{{p54}}
 
 ~~~js
 const request = new Request('http://bm.img.com.ua/img/prikol/images/large/0/0/307600.jpg')
 console.log(request.mode) // cors
 ~~~
 
-{{s2.p20}}
-{{s2.p21}}
-{{s2.p22}}
+{{p55}}
+{{p56}}
+{{p57}}
 
 _____________________________________________________
 
 ## ![ico-25 icon] Response
 
-{{s2.p23}}
-{{s2.p24}}
-{{s2.p25}}
-{{s2.p26}}
-{{s2.p27}}
-{{s2.p28}}
-{{s2.p29}}
+{{p58}}
+{{p59}}
+{{p60}}
+{{p61}}
+{{p62}}
+{{p63}}
+{{p64}}
 
 ____________________________________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{p65}}
 
-{{s3.p1}}
+{{p66}}
 
 ~~~~Headers
 ▼ Headers
@@ -388,13 +388,13 @@ ____________________________________________________
       ► __proto__: Object
 ~~~~
 
-{{s3.p2}}
+{{p67}}
 
 ___________________________________________
 
 ![ico-25 cap] ** 6**
 
-{{s3.p3}}
+{{p68}}
 
 ~~~js
 fetch('https://api.github.com/users/5', { method: 'HEAD'})
@@ -412,63 +412,63 @@ github.v3; format=json
 1560761075
 ~~~~
 
-{{s3.p4}}
+{{p69}}
 ______________________________________________________________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] {{p70}}
 
-{{s4.p1}}
+{{p71}}
 
-{{s4.p2}}
+{{p72}}
 
-{{s4.p3}}
+{{p73}}
 
-{{s4.p4}}
+{{p74}}
 
-{{s4.p5}}
+{{p75}}
 
-{{s4.p6}}
+{{p76}}
 
 _____________________________________
 
 ### ![ico-20 icon] body
 
-{{s4.p7}}
+{{p77}}
 
-{{s4.p8}}
-{{s4.p9}}
-{{s4.p10}}
-{{s4.p11}}
-{{s4.p12}}
-{{s4.p13}}
-{{s4.p14}}
+{{p78}}
+{{p79}}
+{{p80}}
+{{p81}}
+{{p82}}
+{{p83}}
+{{p84}}
 
 ________________________________________
 
 #### ![ico-20icon] json()
 
-{{s4.p15}}
-{{s4.p16}}
+{{p85}}
+{{p86}}
 
 ^^^[{{common.c0}} 7]
 
-{{s4.p17}}
+{{p87}}
 
 ~https://api.2ip.ua/geo.json?ip=~
 
-{{s4.p18}}
-{{s4.p19}}
+{{p88}}
+{{p89}}
 
 ~~~js
 fetch('https://api.2ip.ua/geo.json?ip=')
   .then(response => { ... })
 ~~~
 
-{{s4.p20}}
-{{s4.p21}}
-{{s4.p22}}
-{{s4.p23}}
-{{s4.p24}}
+{{p90}}
+{{p91}}
+{{p92}}
+{{p93}}
+{{p94}}
 
 ~~~js
 fetch('https://api.2ip.ua/geo.json?ip=')
@@ -476,14 +476,14 @@ fetch('https://api.2ip.ua/geo.json?ip=')
   .then(response => ...)
 ~~~
 
-{{s4.p25}}
-{{s4.p26}}
+{{p95}}
+{{p96}}
 
 ^^^
 
 ^^^[{{common.c0}} 8]
 
-{{s4.p27}}
+{{p97}}
 
 ~~~js
 fetch('https://api.github.com/users?since=135')
@@ -506,18 +506,18 @@ _____________________________________
 
 #### ![ico-20 icon] blob()
 
-{{s4.p28}}
+{{p98}}
 
 ![ico-25 cap] ** 9**
 
-{{s4.p29}}
+{{p99}}
 
 ~~~js
 const picture = document.body
   .appendChild(document.createElement('img'))
 ~~~
 
-{{s4.p30}}
+{{p100}}
 
 ~~~js
 fetch('https://avatars2.githubusercontent.com/u/46?v=4')
@@ -528,32 +528,32 @@ fetch('https://avatars2.githubusercontent.com/u/46?v=4')
   }))
 ~~~
 
-{{s4.p31}}
+{{p101}}
 
 ~~~console
 ► Blob(35635) { size: 35635, type: "image/jpeg" }
 ~~~
 
-{{s4.p32}}
+{{p102}}
 
-{{s4.p33}}
+{{p103}}
 
-{{s4.p34}}
+{{p104}}
 
 ______________________________________________________
 
 #### ![ico-20 icon] arrayBuffer()
 
-{{s4.p35}}
+{{p105}}
 
-{{s4.p36}}
+{{p106}}
 
-{{s4.p37}}
+{{p107}}
 
-{{s4.p38}}
-{{s4.p39}}
+{{p108}}
+{{p109}}
 
-{{s4.p40}}
+{{p110}}
 
 ![ico-25 cap] **10**
 
@@ -571,11 +571,11 @@ _________________________________________________________
 
 #### ![ico-20 icon] arrayBuffer → blob
 
-{{s4.p41}}
+{{p111}}
 
 ![ico-25 cap] **11**
 
-{{s4.p42}}
+{{p112}}
 
 ~~~~js
 console.log(new Blob([
@@ -590,7 +590,7 @@ console.log(new Blob([
 
 ![ico-25 cap] **12**
 
-{{s4.p43}}
+{{p113}}
 
 ~~~~js
 fetch('https://avatars2.githubusercontent.com/u/46?v=4')
@@ -600,7 +600,7 @@ fetch('https://avatars2.githubusercontent.com/u/46?v=4')
 
 ![ico-25 cap] **13**
 
-{{s4.p44}}
+{{p114}}
 
 ~~~~js
 fetch('https://api.github.com/users?since=135')
@@ -614,7 +614,7 @@ fetch('https://api.github.com/users?since=135')
   .then(images => images.forEach(image => document.body.appendChild(image).width = 120))
 ~~~~
 
-{{s4.p45}}
+{{p115}}
 
 ________________________________________________________________________
 
@@ -644,7 +644,7 @@ _________________________________________________________
 
 ![ico-25 cap] **15**
 
-{{s4.p46}}
+{{p116}}
 
 ~~~~js
 const request = new Request('https://httpbin.org/post', {
@@ -664,7 +664,7 @@ fetch(request)
 
 **{{topic.t3}}**
 
-^^^[{{s4.spoiler3}}]
+^^^[{{p117}}]
 
 ~~~console
 ▼ Response {type: "cors", url: "https://httpbin.org/post", redirected: false, status: 200, ok: true, …}
@@ -682,7 +682,7 @@ fetch(request)
 
 ^^^
 
-^^^[{{s4.spoiler4}}]
+^^^[{{p118}}]
 
 ~~~console
 ▼ {args: {…}, data: "Hello, students!", files: {…}, form: {…}, headers: {…}, …}

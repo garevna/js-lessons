@@ -2,29 +2,29 @@
 
 _____________________________________________________________________________
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
 ____________________________________________________________________________
 
 ## ![ico-25 icon] DocumentFragment
 
-{{s0.p4}}
+{{p4}}
 
-{{s0.p5}}
+{{p5}}
 
-{{s0.p6}}
+{{p6}}
 
-{{s0.p7}}
+{{p7}}
 
 ________________________________________________________________________________
 
 ### ![ico-25 cap] {{common.c0}} 1
 
-{{s1.p1}}
+{{p8}}
 
 ~~~html
 <body>
@@ -35,7 +35,7 @@ ________________________________________________________________________________
 </body>
 ~~~
 
-{{s1.p2}}
+{{p9}}
 
 ~~~html
 ▼ <template id="sample">
@@ -49,12 +49,12 @@ ________________________________________________________________________________
 
 ## ![ico-25 icon] content
 
-{{s1.p3}}
+{{p10}}
 
 
 ### ![ico-25 cap] {{common.c0}} 2
 
-{{s2.p1}}
+{{p11}}
 
 ~~~html
 <template id="svg">
@@ -69,7 +69,7 @@ ________________________________________________________________________________
 </template>
 ~~~
 
-{{s2.p2}}
+{{p12}}
 
 **content**
 
@@ -105,39 +105,39 @@ console.dir(circle.content)
 
 ^^^
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{p13}}
 
-{{s3.p1}}
+{{p14}}
 
 ~~~javascript
 document.body.appendChild(circle.content)
 ~~~
 
-{{s3.p2}}
+{{p15}}
 
-{{s3.p3}}
+{{p16}}
 
 ~~~javascript
 console.dir(circle.content)
 ~~~
 
-{{s3.p4}}
+{{p17}}
 
-{{s3.p5}}
+{{p18}}
 
-{{s3.p6}}
+{{p19}}
 
 ~~~javascript
 document.body.appendChild(circle.content.cloneNode(true))
 ~~~
 
-{{s3.p7}}
+{{p20}}
 
 _________________________________________________________________
 
 ### ![ico-25 cap] {{common.c0}} 3
 
-{{s4.p1}}
+{{p21}}
 
 ~~~html
 <template id="sample">
@@ -155,7 +155,7 @@ _________________________________________________________________
 </template>
 ~~~
 
-{{s4.p2}}
+{{p22}}
 
 ~~~javascript
 class CanvasElement extends HTMLElement {
@@ -169,7 +169,7 @@ class CanvasElement extends HTMLElement {
 customElements.define('canvas-element', CanvasElement)
 ~~~
 
-{{s4.p3}}
+{{p23}}
 
 ~~~html
 <canvas-element></canvas-element>
@@ -179,7 +179,7 @@ _______________________________________________________________________
 
 ### ![ico-25 cap] {{common.c0}} 4
 
-{{s5.p1}}
+{{p24}}
 
 ~~~~js
 const template = document.body
@@ -203,11 +203,11 @@ customElements.define('sample-element', class extends HTMLElement {
 })
 ~~~~
 
-{{s5.p2}}
+{{p25}}
 
 ~~~javascript
 document.body
   .appendChild(document.createElement('sample-element'))
 ~~~
 
-{{s5.p3}}
+{{p26}}

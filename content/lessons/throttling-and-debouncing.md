@@ -1,23 +1,23 @@
 # ![ico-30 icon] Throttling and Debouncing
 
-{{s0.p1}}
-{{s0.p2}}
-{{s0.p3}}
-{{s0.p4}}
+{{p1}}
+{{p2}}
+{{p3}}
+{{p4}}
 
 [%%%lodash%%%](https://lodash.com/)
 
-{{s0.p5}}
+{{p5}}
 
 _____________________________________________________________
 
 ## ![ico-25 icon] Throttling
 
-{{s0.p6}}
-{{s0.p7}}
-{{s0.p8}}
+{{p6}}
+{{p7}}
+{{p8}}
 
-{{s0.p9}}
+{{p9}}
 
 ◘◘![ico-20 file] throttle◘◘
 
@@ -42,18 +42,18 @@ const throttle = function (func, interval) {
 }
 ~~~
 
-{{s0.p10}}
-{{s0.p11}}
-{{s0.p12}}
-{{s0.p13}}
-{{s0.p14}}
-{{s0.p15}}
-{{s0.p16}}
-{{s0.p17}}
+{{p10}}
+{{p11}}
+{{p12}}
+{{p13}}
+{{p14}}
+{{p15}}
+{{p16}}
+{{p17}}
 
-{{s0.p18}}
+{{p18}}
 
-{{s0.p19}}
+{{p19}}
 
 ◘◘![ico-20 file] showPicture◘◘
 
@@ -66,13 +66,13 @@ function showPicture () {
 }
 ~~~
 
-{{s0.p20}}
+{{p20}}
 
 ~~~js
 const showPictureThrottle = throttle(showPicture, 1000)
 ~~~
 
-{{s0.p21}}
+{{p21}}
 
 ~~~js
 const btn = nav.appendChild(document.createElement('button'))
@@ -81,7 +81,7 @@ btn.innerText = 'Add picture once per 1 sec'
 btn.onclick = showPictureThrottle
 ~~~
 
-{{s0.p22}}
+{{p22}}
 
 {{{throttling-and-debouncing-1.js}}}
 
@@ -89,8 +89,8 @@ _____________________________________________________________
 
 ## ![ico-25 icon] Debouncing
 
-{{s0.p23}}
-{{s0.p24}}
+{{p23}}
+{{p24}}
 
 ◘◘![ico-20 file] debounce◘◘
 
@@ -112,7 +112,7 @@ const debounce = function (func, interval) {
 }
 ~~~
 
-{{s0.p25}}
+{{p25}}
 
 ◘◘![ico-20 cap] inputHandler◘◘
 
@@ -135,16 +135,16 @@ function inputHandler (event) {
 }
 ~~~
 
-{{s0.p26}}
+{{p26}}
 
 ~~~js
 const inputHandlerDebounced = debounce(inputHandler, 1000)
 ~~~
 
-{{s0.p27}}
-{{s0.p28}}
+{{p27}}
+{{p28}}
 
-{{s0.p29}}
+{{p29}}
 
 ~~~js
 const style = document.head
@@ -164,10 +164,10 @@ style.textContent = `
 `
 ~~~
 
-{{s0.p30}}
-{{s0.p31}}
+{{p30}}
+{{p31}}
 
-{{s0.p32}}
+{{p32}}
 
 ~~~js
 const createInput = () => {

@@ -6,17 +6,17 @@ _______________________________________________________
 
 ## ![ico-25 icon] yield*
 
-{{s1.p1}}
+{{p1}}
 
-{{s1.p2}}
+{{p2}}
 
-{{s1.p3}}
+{{p3}}
 
 _______________________________________________________
 
-{{s1.p4}}
+{{p4}}
 
-{{s1.p5}}
+{{p5}}
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -38,7 +38,7 @@ document.body.onclick = function (event) {
 
 ___________________________________________________
 
-{{s1.p6}}
+{{p6}}
 
 ◘◘![ico-20 cap] ** 2**◘◘
 
@@ -56,17 +56,17 @@ function * generator2 () {
 }
 ~~~
 
-{{s1.p7}}
+{{p7}}
 
-{{s1.p8}}
+{{p8}}
 
-{{s1.p9}}
+{{p9}}
 
 ~~~js
 const iterator = generator2(3)
 ~~~
 
-{{s1.p10}}
+{{p10}}
 
 ~~~js
 document.body.onclick = event => console.log(iterator.next().value)
@@ -74,11 +74,11 @@ document.body.onclick = event => console.log(iterator.next().value)
 
 ________________________________
 
-{{s1.p11}}
+{{p11}}
 
-{{s1.p12}}
+{{p12}}
 
-{{s1.p13}}
+{{p13}}
 
 ~~~js
 const generator = function * () {
@@ -86,7 +86,7 @@ const generator = function * () {
 }
 ~~~
 
-{{s1.p14}}
+{{p14}}
 
 ~~~js
 const generator = function * () {
@@ -118,7 +118,7 @@ _________________________________________________
 
 ## ![ico-25 icon] return()
 
-{{s1.p15}}
+{{p15}}
 
 ◘◘![ico-20 cap] ** 4**◘◘
 

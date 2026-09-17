@@ -1,15 +1,15 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{p1}}
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
+{{p3}}
 
-{{s1.p3}}
+{{p4}}
 
-{{s1.p4}}
-{{s1.p5}}
+{{p5}}
+{{p6}}
 
-{{s1.p6}}
+{{p7}}
 
 ~~~js
 var sample = {
@@ -22,7 +22,7 @@ console.log('type' in sample)     // true
 console.log('valueOf' in sample)  // true
 ~~~
 
-{{s1.p7}}
+{{p8}}
 
 ___________________________________
 
@@ -40,9 +40,9 @@ var arr = [1, 2, 3]
 
 _________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{p9}}
 
-{{s3.p1}}
+{{p10}}
 
 ~~~js
 var sample = String('Welcome to the hell')
@@ -68,7 +68,7 @@ var bool = Object(false)
 'valueOf' in bool  // true
 ~~~
 
-{{s3.p3}}
+{{p11}}
 
 ~~~js
 var sample = 'Welcome to the hell'
@@ -85,7 +85,7 @@ __________________________________
 
 ## ![ico-25 icon] null | undefined
 
-{{s3.p4}}
+{{p12}}
 
 ~~~js
 var sample = Object(null)

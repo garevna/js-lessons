@@ -8,8 +8,8 @@ ________________________________________________________________________________
 
 ## ![ico-30 icon] {{common.c7}}
 
-{{s1.p1}}
-{{s1.p2}}
+{{p1}}
+{{p2}}
 
 ~~~js
 const promise = new Promise(function (...) {
@@ -17,7 +17,7 @@ const promise = new Promise(function (...) {
 })
 ~~~
 
-{{s1.p3}}
+{{p3}}
 
 ~~~js
 const promise = new Promise ()
@@ -31,13 +31,13 @@ const promise = new Promise ()
 
 __________________________________________________________________________________________
 
-### ![ico-25 icon] {{s2.h1}}
+### ![ico-25 icon] {{p4}}
 
-{{s2.p1}}
-{{s2.p2}}
+{{p5}}
+{{p6}}
 
-{{s2.p3}}
-{{s2.p4}}
+{{p7}}
+{{p8}}
 
 ~~~js
 console.log('Start')
@@ -47,7 +47,7 @@ new Promise(() => console.log('Promise starts'))
 console.log('End')
 ~~~
 
-{{s2.p5}}
+{{p9}}
 
 ~~~console
 Start
@@ -55,14 +55,14 @@ Promise starts
 End
 ~~~
 
-{{s2.p6}}
-{{s2.p7}}
+{{p10}}
+{{p11}}
 
 _____________________________________
 
-### ![ico-25 icon] {{s3.h1}}
+### ![ico-25 icon] {{p12}}
 
-{{s3.p1}}
+{{p13}}
 
 ~~~js
 const promise = new Promise(() => console.log('Promise starts'))
@@ -84,16 +84,16 @@ Promise starts
     [[PromiseResult]]: undefined
 ~~~
 
-{{s3.p2}}
-{{s3.p3}}
+{{p14}}
+{{p15}}
 
-{{s3.p4}}
+{{p16}}
 
 __________________________________________
 
-### ![ico-25 icon] {{s4.h1}}
+### ![ico-25 icon] {{p17}}
 
-{{s4.p1}}
+{{p18}}
 
 ~~~js
 console.dir(Promise)
@@ -118,7 +118,7 @@ console.dir(Promise)
   ► [[Prototype]]: ƒ ()
 ~~~
 
-{{s4.p2}}
+{{p19}}
 
 ~~~js
 const promise = Promise.resolve('Hello')
@@ -132,8 +132,8 @@ console.log(promise)
     [[PromiseResult]]: "Hello"
 ~~~
 
-{{s4.p3}}
-{{s4.p4}}
+{{p20}}
+{{p21}}
 
 ~~~js
 const promise = Promise.reject('Access denied.')
@@ -147,61 +147,61 @@ console.log(promise)
     [[PromiseResult]]: "Access denied."
 ~~~
 
-{{s4.p5}}
-{{s4.p6}}
+{{p22}}
+{{p23}}
 
-{{s4.p7}}
-{{s4.p8}}
+{{p24}}
+{{p25}}
 
-{{s4.p9}}
+{{p26}}
 
 | **pending** | **fulfilled** | **rejected** |
-{{s4.p10}}
+{{p27}}
 
 _________________________________________
 
 ![ico-35 coffee]
 
-{{s4.p11}}
+{{p28}}
 
-{{s4.p12}}
-{{s4.p13}}
-{{s4.p14}}
-{{s4.p15}}
+{{p29}}
+{{p30}}
+{{p31}}
+{{p32}}
 
-{{s4.p16}}
+{{p33}}
 
-{{s4.p17}}
-{{s4.p18}}
-{{s4.p19}}
+{{p34}}
+{{p35}}
+{{p36}}
 
 | **~PromiseState~** | **~PromiseResult~** |
 | **~pending~**      | ![ico-25 wait]      |
 | **~fulfilled~**    | ![ico-40 egg]       |
 | **~rejected~**     | ![ico-25 error]     |
 
-{{s4.p20}}
-{{s4.p21}}
+{{p37}}
+{{p38}}
 
-{{s4.p22}}
+{{p39}}
 
-{{s4.p23}}
+{{p40}}
 
 _______________________________________________________
 
-### ![ico-25 icon] {{s5.h1}}
+### ![ico-25 icon] {{p41}}
 
-{{s5.p1}}
+{{p42}}
 
-{{s5.p2}}
-{{s5.p3}}
+{{p43}}
+{{p44}}
 
-{{s5.p4}}
+{{p45}}
 
-{{s5.p5}}
+{{p46}}
 
-{{s5.p6}}
-{{s5.p7}}
+{{p47}}
+{{p48}}
 
 ~~~js
 Promise.resolve('Access granted.').then()
@@ -213,21 +213,21 @@ Promise.resolve('Access granted.').then()
 Promise.resolve('Access granted.').then(10)
 ~~~
 
-{{s5.p9}}
+{{p49}}
 
 ~~~js
 Promise.resolve('Access granted.')
 ~~~
 
-{{s5.p10}}
+{{p50}}
 
-{{s5.p11}}
+{{p51}}
 
-{{s5.p12}}
+{{p52}}
 
 #### ![ico-20 icon] catch
 
-{{s5.p13}}
+{{p53}}
 
 ~~~js
 const promise = Promise.reject('Access denied.')
@@ -237,10 +237,10 @@ const promise = Promise.reject('Access denied.')
     Uncaught (in promise) Access denied.
 ~~~
 
-{{s5.p14}}
-{{s5.p15}}
+{{p54}}
+{{p55}}
 
-☼☼☼ {{s5.slogan1}} ☼☼☼
+☼☼☼ {{p56}} ☼☼☼
 
 ~~~js
 const promise = Promise.reject('Access denied.').catch(console.log)
@@ -252,7 +252,7 @@ const promise = Promise.reject('Access denied.').catch(console.log)
 
 #### ![ico-20 icon] then
 
-{{s5.p16}}
+{{p57}}
 
 ~~~js
 console.log('Start')
@@ -270,7 +270,7 @@ Access denied.
 
 #### ![ico-20 icon] finally
 
-{{s5.p17}}
+{{p58}}
 
 ~~~js
 console.log('Start')
@@ -290,30 +290,30 @@ Finally
 ~~~
 ______________________________________________
 
-## ![ico-30 icon] {{s6.h1}}
+## ![ico-30 icon] {{p59}}
 
-{{s6.p1}}
-{{s6.p2}}
-{{s6.p3}}
-{{s6.p4}}
+{{p60}}
+{{p61}}
+{{p62}}
+{{p63}}
 
-{{s6.p5}}
+{{p64}}
 
-{{s6.p6}}
-{{s6.p7}}
+{{p65}}
+{{p66}}
 
-{{s6.p8}}
-{{s6.p9}}
-{{s6.p10}}
-{{s6.p11}}
-{{s6.p12}}
-{{s6.p13}}
-{{s6.p14}}
+{{p67}}
+{{p68}}
+{{p69}}
+{{p70}}
+{{p71}}
+{{p72}}
+{{p73}}
 
-{{s6.p15}}
+{{p74}}
 
-{{s6.p16}}
-{{s6.p17}}
+{{p75}}
+{{p76}}
 
 ~~~js
 const promise = new Promise(function (resolve, reject) {
@@ -321,12 +321,12 @@ const promise = new Promise(function (resolve, reject) {
 })
 ~~~
 
-{{s6.p18}}
-{{s6.p19}}
+{{p77}}
+{{p78}}
 
-{{s6.p20}}
-{{s6.p21}}
-{{s6.p22}}
+{{p79}}
+{{p80}}
+{{p81}}
 
 ◘◘![ico-25 coffee] ** 2**◘◘
 ~~~js
@@ -345,25 +345,25 @@ const promise = (function (startTime) {
 promise.then(console.log)
 ~~~
 
-{{s6.p23}}
-{{s6.p24}}
+{{p82}}
+{{p83}}
 
-{{s6.p25}}
-{{s6.p26}}
+{{p84}}
+{{p85}}
 
-{{s6.p27}}
+{{p86}}
 
 ~~~js
 var test = new Promise(resolve => resolve(`Time: ${new Date().getSeconds()}/`))
 ~~~
 
-{{s6.p28}}
+{{p87}}
 
 ~~~js
 test.then(data => console.log(data, new Date().getSeconds()))
 ~~~
 
-{{s6.p29}}
+{{p88}}
 
 ~~~console
 Start
@@ -371,13 +371,13 @@ End
 Time: 24/ 36
 ~~~
 
-{{s6.p30}}
-{{s6.p31}}
+{{p89}}
+{{p90}}
 
-{{s6.p32}}
-{{s6.p33}}
+{{p91}}
+{{p92}}
 
-{{s6.p34}}
+{{p93}}
 
 ~~~js
 function createPromise (startTime, title) {
@@ -392,7 +392,7 @@ function createPromise (startTime, title) {
 }
 ~~~
 
-{{s6.p35}}
+{{p94}}
 
 ◘◘![ico-25 cap] ** 3**◘◘
 ~~~js
@@ -405,12 +405,12 @@ second.then(console.log)
 third.then(console.log)
 ~~~
 
-{{s6.p36}}
+{{p95}}
 
 {{{promise-03.js}}}
 
-{{s6.p37}}
-{{s6.p38}}
+{{p96}}
+{{p97}}
 
 ◘◘![ico-25 cap] ** 4**◘◘
 ~~~js
@@ -425,23 +425,23 @@ first.then(() => second.then(console.log).then(third))
 
 __________________________________________________________________________________________
 
-## ![ico-25 icon] {{s7.h1}}
+## ![ico-25 icon] {{p98}}
 
-{{s7.p1}}
-{{s7.p2}}
+{{p99}}
+{{p100}}
 
-{{s7.p3}}
+{{p101}}
 
 @@@@
-{{s7.p4}}
+{{p102}}
 ![](illustrations/promise-all.jpg)
 @@@@
 
-{{s7.p5}}
-{{s7.p6}}
-{{s7.p7}}
+{{p103}}
+{{p104}}
+{{p105}}
 
-{{s7.p8}}
+{{p106}}
 
 ~~~js
 const data = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth']
@@ -454,7 +454,7 @@ promises.forEach(promise => promise.then(console.log))
 
 {{{promise-arrays-01.js}}}
 
-{{s7.p9}}
+{{p107}}
 
 ~~~js
 const data = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth']
@@ -471,11 +471,11 @@ promises
 
 {{{promise-arrays-02.js}}}
 
-{{s7.p10}}
-{{s7.p11}}
+{{p108}}
+{{p109}}
 
-{{s7.p12}}
-{{s7.p13}}
+{{p110}}
+{{p111}}
 
 ◘◘![ico-25 cap] ** 5**◘◘
 
@@ -502,10 +502,10 @@ const promise = new Promise(resolve => recurse(resolve))
 promise.then(console.log)
 ~~~
 
-{{s7.p14}}
+{{p112}}
 
 @@@@
-{{s7.p15}}
+{{p113}}
 ![](illustrations/promises-collection.png)
 @@@@
 
@@ -513,8 +513,8 @@ __________________________________________
 
 ### ![ico-20 icon] Promise.all
 
-{{s7.p16}}
-{{s7.p17}}
+{{p114}}
+{{p115}}
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
@@ -532,7 +532,7 @@ Promise.all(promises)
   .then(responses => responses.forEach(show))
 ~~~
 
-{{s7.p18}}
+{{p116}}
 
 ~~~js
 const executor = (resolve, reject) => Math.random() > 0.5 ? resolve('success') : reject(new Error('ups...'))
@@ -545,7 +545,7 @@ Promise.all(promises)
 
 {{{promise-all-01.js}}}
 
-{{s7.p19}}
+{{p117}}
 
 ◘◘![ico-25 cap] ** 7**◘◘
 
@@ -568,13 +568,13 @@ ______________________________________________
 
 ### ![ico-20 icon] Promise.allSettled
 
-{{s7.p20}}
-{{s7.p21}}
-{{s7.p22}}
+{{p118}}
+{{p119}}
+{{p120}}
 
-{{s7.p23}}
-{{s7.p24}}
-{{s7.p25}}
+{{p121}}
+{{p122}}
+{{p123}}
 
 ~~~js
 const promises = ['map', 'google', 'research', 'store'].map(item => Promise.resolve(item))
@@ -590,7 +590,7 @@ ______________________________________________
 
 ### ![ico-20 icon] Promise.any
 
-{{s7.p26}}
+{{p124}}
 
 ~~~js
 const freePort = 4000
@@ -601,8 +601,8 @@ const promises = [3000, 3256, 4000, 3040, 5000]
 Promise.any(promises).then(console.log)
 ~~~
 
-{{s7.p27}}
-{{s7.p28}}
+{{p125}}
+{{p126}}
 
 ◘◘![ico-25 cap] ** 8**◘◘
 
@@ -627,13 +627,13 @@ function testURL (src) {
 const promises = getURLs('coffee.png').map(url => testURL(url))
 ~~~
 
-{{s7.p29}}
+{{p127}}
 
 ~~~js
 Promise.allSettled(promises).then(console.log)
 ~~~
 
-{{s7.p30}}
+{{p128}}
 
 ~~~console
 ▼ (4) [{…}, {…}, {…}, {…}]
@@ -645,25 +645,25 @@ Promise.allSettled(promises).then(console.log)
   ► [[Prototype]]: Array(0)
 ~~~
 
-{{s7.p31}}
+{{p129}}
 
 ~~~js
 Promise.any(promises)
   .then(img => document.body.appendChild(img))
 ~~~
 
-{{s7.p32}}
+{{p130}}
 ______________________________________________
 
 ### ![ico-20 icon] Promise.race
 
-{{s7.p33}}
-{{s7.p34}}
-{{s7.p35}}
+{{p131}}
+{{p132}}
+{{p133}}
 
-{{s7.p36}}
+{{p134}}
 
-{{s7.p37}}
+{{p135}}
 
 ◘◘![ico-25 cap] ** 9**◘◘
 
@@ -706,9 +706,9 @@ ________________________________________________________________________________
 
 ## ![ico-25 icon] {{common.c10}}
 
-{{s8.p1}}
-{{s8.p2}}
-{{s8.p3}}
+{{p136}}
+{{p137}}
+{{p138}}
 
 
 ◘◘![ico-25 cap] **10**◘◘
@@ -764,7 +764,7 @@ new Promise(resolve => resolve())
 
 ______________________________________________________________
 
-{{s8.p4}}
+{{p139}}
 
 ~~~~js
 Object.defineProperty(Error.prototype, 'name', {
@@ -803,7 +803,7 @@ Object.assign(Error.prototype, {
 })
 ~~~~
 
-{{s8.p5}}
+{{p140}}
 
 ~~~~js
 Object.assign(console, {
@@ -813,7 +813,7 @@ Object.assign(console, {
 })
 ~~~~
 
-{{s8.p6}}
+{{p141}}
 
 ◘◘![ico-25 cap] **12**◘◘
 

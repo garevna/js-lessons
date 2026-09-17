@@ -1,180 +1,180 @@
 {
-  "s0.p1": {
+  "p1": {
     "ru": "Формат хранения объектов JS  в виде текстовой строки удобен с точки зрения обмена данными с сервером и хранения данных сложной структры",
     "eng": "The storing of JS objects in the form of a text string is convenient from the point of view of exchanging data with the server and storing data of a complex structure.",
     "ua": "Формат зберігання JS-об'єктів у вигляді текстового рядка зручний з точки зору обміну даними з сервером і зберігання даних складної структури."
   },
-  "s0.p2": {
+  "p2": {
     "ru": "Он является более компактной альтернативой формату **XML** (e<b>X</b>tensible ** M**arkup ** L**anguage)",
     "eng": "It is a more compact alternative to the **XML** format (e<b>X</b>tensible ** M**arkup ** L**anguage).",
     "ua": "Це більш компактна альтернатива формату **XML** (e<b>X</b>tensible ** M**arkup ** L**anguage)."
   },
-  "s0.p3": {
+  "p3": {
     "ru": "**⟦f0⟧** - это встроенный нативный объект (![ico-20 warn] не конструктор)",
     "eng": "**⟦f0⟧** - is a built-in native object (![ico-20 warn] not a constructor).",
     "ua": "**⟦f0⟧** - є вбудованим нативним об'єктом (![ico-20 warn] не конструктор)."
   },
-  "s0.p4": {
+  "p4": {
     "ru": "Имеет всего два метода:",
     "eng": "It has only two methods:",
     "ua": "У нього всього два методи:"
   },
-  "s0.p5": {
+  "p5": {
     "ru": "Единственный обязательный аргумент метода - ссылка на объект или массив, причем глубина структуры данных не ограничена",
     "eng": "The only required argument of the method is a reference to an object or array, and the depth of the data structure is not limited.",
     "ua": "Обов'язковим аргументом методу є посилання на об'єкт або масив, а глибина структури даних не обмежена."
   },
-  "s0.p6": {
+  "p6": {
     "ru": "Два дополнительных формальных параметра являются опциональными.",
     "eng": "^^Two additional formal parameters are optional.^^",
     "ua": "^^Два додаткові формальні параметри є необов'язковими.^^"
   },
-  "s0.p7": {
+  "p7": {
     "ru": "Возвращаемое значение -  JSON-строка",
     "eng": "Return value is JSON string.",
     "ua": "Значення, що повертається - рядок JSON."
   },
-  "s0.p8": {
+  "p8": {
     "ru": "Второй (опциональный) формальный параметр может быть использован, например, следующим образом:",
     "eng": "◘◘![ico-25 cap] ** 2**◘◘",
     "ua": "Другий (необов'язковий) формальний параметр можна використовувати, наприклад, наступним чином:"
   },
-  "s0.p9": {
+  "p9": {
     "ru": "Третий (опциональный) формальный параметр нужен для форматирования результата:",
     "eng": "◘◘![ico-25 cap] ** 3**◘◘",
     "ua": "Третій (необов'язковий) формальний параметр потрібен для форматування результату:"
   },
-  "s1.h1": {
+  "p10": {
     "ru": "Ограничения",
     "eng": "Restrictions",
     "ua": "Обмеження"
   },
-  "s1.p1": {
+  "p11": {
     "ru": "Делов в том, что сериализация объектов не всегда возможна.",
     "eng": "The thing is, object serialization is not always possible.",
     "ua": "Справа в тому, що серіалізація об'єктів не завжди можлива."
   },
-  "s1.p2": {
+  "p12": {
     "ru": "Есть так называемые несериализуемые объекты, содержащие циклические ссылки.",
     "eng": "There are so-called **non-serializable** objects that contain **cyclic references**.",
     "ua": "Є так звані об'єкти, що не серіалізуються, тому що містять циклічні посилання."
   },
-  "s1.p3": {
+  "p13": {
     "ru": "Например, при попытке сериализовать объект **window** мы получим _TypeError_:",
     "eng": "For example, when we try to serialize the **window** object, we will receive a _TypeError_:",
     "ua": "Наприклад, при спробі серіалізувати об'єкт **window** ми отримаємо _TypeError_:"
   },
-  "s1.p4": {
+  "p14": {
     "ru": "Попробуем сериализовать объект, содержащий следующие свойства:",
     "eng": "Let's try to serialize an object containing the following properties:",
     "ua": "Спробуємо серіалізувати об'єкт, що містить такі властивості:"
   },
-  "s1.p5": {
+  "p15": {
     "ru": "Как видно из примера, **Infinity**, **undefined** и **Symbol**, а так же методы объекта отбрасываются при сериализации.",
     "eng": "As can be seen from the example, **Infinity**, **undefined** and **Symbol**, as well as object methods, are discarded during serialization.",
     "ua": "Як видно з прикладу, **Infinity**, **undefined** та **Symbol**, а також **методи** об'єкта відкидаються при серіалізації."
   },
-  "s1.p6": {
+  "p16": {
     "ru": "Единственный обязательный аргумент метода - JSON-строка",
     "eng": "The only required argument of the method is a JSON string.",
     "ua": "Єдиний обов'язковий аргумент методу – JSON-рядок."
   },
-  "s1.p7": {
+  "p17": {
     "ru": "Возвращаемое значение - структура данных JS ( массив или объект )",
     "eng": "The return value is a JS data structure (array or object).",
     "ua": "Значення, що повертається - структура даних JS (масив або об'єкт)."
   },
-  "s1.p8": {
+  "p18": {
     "ru": "![ico-20 warn] В строке  JSON  все строчные значения ( включая имена свойств )  заключаются в **двойные** кавычки",
     "eng": "![ico-20 warn] In a JSON string, all string values ​​(including property names) are enclosed in **double quotes**.",
     "ua": "![ico-20 warn] У рядку JSON всі малі значення (включаючи назви властивостей) заключені в **подвійні** лапки."
   },
-  "s1.p9": {
+  "p19": {
     "ru": "![ico-20 warn] Числовые и логические значения, массивы и объекты в кавычки не заключаются",
     "eng": "![ico-20 warn] Numeric and logical values, arrays and objects are not quoted.",
     "ua": "![ico-20 warn] Числові та логічні значення, масиви й об'єкти в лапки не беруться."
   },
-  "s2.h1": {
+  "p20": {
     "ru": "Глубокое копирование",
     "eng": "Deep copy",
     "ua": "Глибоке копіювання"
   },
-  "s2.p1": {
+  "p21": {
     "ru": "Известно, что массивы и объекты передаются по ссылке",
     "eng": "It is known that arrays and objects are passed by reference.",
     "ua": "Відомо, що масиви та об'єкти передаються за посиланням."
   },
-  "s2.p2": {
+  "p22": {
     "ru": "Если объект имеет плоскую структуру, то получить точную копию этого объекта можно с помощью метода **⟦f1⟧**",
     "eng": "If an object has a flat structure, then you can get an exact copy of this object using the **⟦f1⟧** method.",
     "ua": "Якщо об'єкт має плоску структуру, отримати точну копію цього об'єкта можна за допомогою методу **⟦f1⟧**."
   },
-  "s2.p3": {
+  "p23": {
     "ru": "Однако если свойства объекта являются объектами или массивами, то **⟦f1⟧** скопирует ссылки на эти вложенные объекты",
     "eng": "However, if the object's properties are objects or arrays, then **⟦f1⟧** will copy references to those nested objects.",
     "ua": "Однак якщо властивості об'єкта є об'єктами або масивами, **⟦f1⟧** скопіює посилання на ці вкладені об'єкти."
   },
-  "s2.p4": {
+  "p24": {
     "ru": "Если же выполнить сначала **⟦f2⟧**, а затем **⟦f3⟧**, то в результате мы получим точную копию объекта, а не ссылку",
     "eng": "If we first execute **⟦f2⟧**, and then **⟦f3⟧**, the result will be the clone of the object, not a reference.",
     "ua": "Якщо ж виконати спочатку **⟦f2⟧**, а потім **⟦f3⟧**, то в результаті ми отримаємо клони вкладених об'єктів і масивів, а не посилання на них."
   },
-  "s2.p5": {
+  "p25": {
     "ru": "В переменной **sample** теперь находится точная копия объекта **obj**, включая значения элементов массива **position**, а не ссылка на него",
     "eng": "The **sample** variable now contains the clone of the **obj** object, including the values ​​of the elements of array **position**, rather than a reference to it.",
     "ua": "У змінній **sample** тепер знаходиться точна копія об'єкта **obj**, включаючи значення елементів масиву **position**, а не посилання на нього."
   },
-  "s2.p6": {
+  "p26": {
     "ru": "Сравним результаты  **⟦f1⟧** и  **⟦f2⟧** → **⟦f4⟧**",
     "eng": "Let's compare the results of **⟦f1⟧** and **⟦f2⟧** → **⟦f4⟧**.",
     "ua": "Порівняємо результати  **⟦f1⟧** та **⟦f2⟧** → **⟦f4⟧**"
   },
-  "s2.p8": {
+  "p27": {
     "ru": "возвращает ⟦f5⟧, поскольку значение свойства  **test.position** является ссылкой на объект **obj.position**",
     "eng": "returns ⟦f5⟧ because the value of the **test.position** property is a reference, and the value of the **obj.position** property is also a reference, and these references point to the same object.",
     "ua": "повертає ⟦f5⟧, оскільки значення властивості  **test.position** є посиланням на об'єкт **obj.position**."
   },
-  "s2.p9": {
+  "p28": {
     "ru": "А вот логическое выражение",
     "eng": "And here is the logical expression:",
     "ua": "А ось логічний вираз:"
   },
-  "s2.p10": {
+  "p29": {
     "ru": "вернет  ⟦f6⟧, потому что **sample.position** является другим объектом, ссылка на который не совпадает со ссылкой на объект **obj.position**",
     "eng": "will return ⟦f6⟧ because **sample.position** is a different object whose reference is not the same as the **obj.position** object reference.",
     "ua": "поверне ⟦f6⟧, тому що **sample.position** є іншим об'єктом, посилання на який не збігається з посиланням на об'єкт **obj.position**."
   },
-  "s3.h1": {
+  "p30": {
     "ru": "Лайфхак",
     "eng": "Lifehack",
     "ua": "Лайфхак"
   },
-  "s3.p1": {
+  "p31": {
     "ru": "Поставим задачу сериализации объекта, включая его методы.",
     "eng": "Let's set the task of serializing an object, including its methods.",
     "ua": "Поставимо завдання серіалізації об'єкта, включаючи його методи."
   },
-  "s3.p2": {
+  "p32": {
     "ru": "Для этого, прежде всего, добавим конструктору Function в prototype метод **toJSON**:",
     "eng": "To do this, first of all, add the **⟦f7⟧** method to the prototype of constructor **Function**:",
     "ua": "Для цього, перш за все, додамо конструктору **⟦f9⟧** у prototype метод **toJSON**:"
   },
-  "s3.p3": {
+  "p33": {
     "ru": "Теперь сериализация объекта пройдет нормально, но метод будет включен в json-строку как текстовая строка:",
     "eng": "Now the object will be serialized normally, but the method will be included in the json string as a text string:",
     "ua": "Тепер серіалізація об'єкта пройде нормально, але метод буде включений в json-рядок як текстовий рядок:"
   },
-  "s3.p4": {
+  "p34": {
     "ru": "Запишем объявление метода несколько иначе:",
     "eng": "Let's write the method declaration a little differently:",
     "ua": "Запишемо оголошення методу трохи інакше:"
   },
-  "s3.p5": {
+  "p35": {
     "ru": "и добавим метод **parseFuncs** объекту **JSON**:",
     "eng": "and add the method **⟦f8⟧** to the **JSON** object:",
     "ua": "і додамо метод **⟦f8⟧** до об'єкту **JSON**:"
   },
-  "s3.p6": {
+  "p36": {
     "ru": "Теперь мы можем смело сериализовать объект _user_ и затем парсить результат методом **parseFuncs**:",
     "eng": "Now we can safely serialize the object **user** and then parse the result using the **⟦f8⟧** method:",
     "ua": "Тепер ми можем з впевненістю серіалізувати об'єкт **user**, а потім розібрати результат за допомогою методу **⟦f8⟧**:"

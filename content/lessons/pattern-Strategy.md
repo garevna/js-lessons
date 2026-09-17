@@ -4,13 +4,13 @@ _____________________________________
 
 ### ![ico-20 icon] Strategy
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
 _______________________________
 
-{{s0.p3}}
+{{p3}}
 
 ^^^[helpers/validStrategyNames.js]
 ~~~js
@@ -22,7 +22,7 @@ export const validStrategyNames = [
 ~~~
 ^^^
 
-{{s0.p4}}
+{{p4}}
 
 ^^^[helpers/strategyError.js]
 ~~~js
@@ -124,15 +124,15 @@ export function testStrategy (strategyName, data, key) {
 ^^^
 ____________________________________
 
-{{s0.p5}}
-{{s0.p6}}
-{{s0.p7}}
+{{p5}}
+{{p6}}
+{{p7}}
 
-{{s0.p8}}
-{{s0.p9}}
-{{s0.p10}}
+{{p8}}
+{{p9}}
+{{p10}}
 
-{{s0.p11}}
+{{p11}}
 
 ^^^[class SortStrategy]
 ~~~js
@@ -189,7 +189,7 @@ class SortStrategy  {
 ~~~
 ^^^
 
-{{s0.p12}}
+{{p12}}
 
 ^^^[salary]
 ~~~js
@@ -233,12 +233,12 @@ const users = [
 ~~~
 ^^^
 
-{{s0.p13}}
+{{p13}}
 ~~~js
 const sortStrategy = new SortStrategy
 ~~~
 
-{{s0.p14}}
+{{p14}}
 
 ~~~js
 function sort (algorithm, data, key) {

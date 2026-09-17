@@ -4,18 +4,18 @@ _____________________________________
 
 ## ![ico-20 icon] Decorator
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
 _____________________________________
 
-{{s0.p3}}
+{{p3}}
 
-### ![ico-20 icon] {{s1.h1}}
+### ![ico-20 icon] {{p4}}
 
-{{s1.p1}}
-{{s1.p2}}
+{{p5}}
+{{p6}}
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -38,8 +38,8 @@ sayHelloOnce('Sasha')
 sayHelloOnce('Mary')
 ~~~
 
-{{s1.p3}}
-{{s1.p4}}
+{{p7}}
+{{p8}}
 
 ◘◘![ico-20 cap] ** 2**◘◘
 
@@ -67,11 +67,11 @@ function showTime () {
 document.body.onclick = event => showTime()
 ~~~
 
-{{s1.p5}}
-{{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
-{{s1.p9}}
+{{p9}}
+{{p10}}
+{{p11}}
+{{p12}}
+{{p13}}
 
 ~~~js
 decoratorThrottling = function (func, interval) {
@@ -85,7 +85,7 @@ decoratorThrottling = function (func, interval) {
 }
 ~~~
 
-{{s1.p10}}
+{{p14}}
 
 ~~~js
 decoratedShowTime = decoratorThrottling(showTime, 2000)

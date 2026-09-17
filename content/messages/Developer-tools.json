@@ -1,75 +1,75 @@
 {
-  "s1.h1": {
+  "p1": {
     "ru": "Панель веб-разработчика",
     "eng": "Web Developer's Dashboard",
     "ua": "Панель веб-розробника"
   },
-  "s1.p1": {
+  "p2": {
     "ru": "Если вы воспользуетесь сочетанием клавиш **⟦f0⟧** или клавишей **⟦f1⟧**, то откроется примерно такая панель разработки:",
     "eng": "If you use the keyboard shortcut **⟦f0⟧** or the **⟦f1⟧** key, it will open up a development panel like this:",
     "ua": "Якщо ви скористаєтеся поєднанням клавіш **⟦f0⟧** або клавішею **⟦f1⟧**, то відкриється приблизно така панель розробки:"
   },
-  "s1.p2": {
+  "p3": {
     "ru": "Как видите, в панели разработки есть несколько вкладок:",
     "eng": "As you can see, there are several tabs in the development panel:",
     "ua": "Як бачите, в панелі розробки є кілька вкладок:"
   },
-  "s1.p3": {
+  "p4": {
     "ru": "Если вы изучали верстку, то вкладка **Elements** вам уже знакома. Здесь вы можете увидеть разметку страницы и стили элементов.",
     "eng": "If you have studied layout, you are already familiar with the **Elements** tab. Here you can see the page layout and element styles.",
     "ua": "Якщо ви вивчали верстку, то вкладка **Elements** вам уже знайома. Тут ви можете побачити розмітку сторінки та стилі елементів."
   },
-  "s1.p4": {
+  "p5": {
     "ru": "Однако теперь нам предстоит постепенно осваивать остальные вкладки, и начнем мы с вкладки **Console**.",
     "eng": "However, now we will gradually learn the rest of the tabs, and we will start with the **Console** tab.",
     "ua": "Однак тепер нам належить поступово освоювати інші вкладки, і почнемо ми з вкладки **Console**."
   },
-  "s2.h1": {
+  "p6": {
     "ru": "Консоль браузера",
     "eng": "Browser Console",
     "ua": "Консоль браузера"
   },
-  "s2.p1": {
+  "p7": {
     "ru": "В консоли мы видим промпт **⟦f2⟧** (приглашение), т.е. консоль ждет ввода любой команды, которуя будет выполнена как только вы нажмете **⟦f3⟧**:",
     "eng": "In the console we see the prompt **⟦f2⟧**, i.e. the console is waiting for you to enter any command, which will be executed as soon as you press **⟦f3⟧**:",
     "ua": "У консолі ми бачимо запрошення **⟦f2⟧**, тобто консоль чекає введення будь-якої команди, яку буде виконано, щойно ви натиснете **⟦f3⟧**:"
   },
-  "s2.p2": {
+  "p8": {
     "ru": "Благодаря тому, у каждого браузера есть движок JS (V8), мы можем исполнять любой скрипт прямо в консоли.",
     "eng": "Due to the fact that every browser has the JS engine (V8), we can execute any script directly in the console.",
     "ua": "Завдяки тому, що кожен браузер має движок JS (V8), ми можемо виконувати будь-який скрипт прямо в консолі."
   },
-  "s2.p3": {
+  "p9": {
     "ru": "Если вам нужно ввести многострочный фрагмент кода, в конце каждой строки нажимайте **⟦f4⟧** вместо **⟦f3⟧**, поскольку **⟦f3⟧** сразу исполняет введенный код, а **⟦f4⟧** позволяет перейти к новой строчке кода без запуска на исполнение.",
     "eng": "^^If you need to enter a multi-line code fragment, at the end of each line press **⟦f4⟧** instead of **⟦f3⟧**, because **⟦f3⟧** executes the entered code immediately, and **⟦f4⟧** allows you to jump to a new line of code without starting execution.^^",
     "ua": "Якщо вам потрібно ввести багаторядковий фрагмент коду, наприкінці кожного рядка натискайте **⟦f4⟧** замість **⟦f3⟧**, оскільки **⟦f3⟧** відразу виконує введений код, а **⟦f4⟧** дає змогу перейти до нового рядка коду без запуску на виконання."
   },
-  "s2.p4": {
+  "p10": {
     "ru": "Вообще говоря, консоль предназначена для вывода сообщений в процессе испольнения нашего кода.",
     "eng": "Generally speaking, the console is intended for displaying messages when our code is being executed.",
     "ua": "Взагалі кажучи, консоль призначена для виведення повідомлень у процесі виконання нашого коду."
   },
-  "s2.p5": {
+  "p11": {
     "ru": "Например, когда в нашем коде встречаются ошибки, то движок будет генерировать **исключение** и выбрасывать в консоль сообщение об ошибке.",
     "eng": "For example, when we encounter errors in our code, the engine will generate an **exception** and throw an error message to the console.",
     "ua": "Наприклад, коли в нашому коді трапляються помилки, то движок генеруватиме **виняток** і викидатиме в консоль повідомлення про помилку."
   },
-  "s2.p6": {
+  "p12": {
     "ru": "Все исключения группируются в три основных кластера:",
     "eng": "All exceptions are grouped into three main clusters:",
     "ua": "Усі винятки групуються в три основні кластери:"
   },
-  "s2.p7": {
+  "p13": {
     "ru": "Исключение означает прерывание выполения кода на той строке, в которой есть ошибка.",
     "eng": "Exception means interrupting code execution on the line where there is an error.",
     "ua": "![ico-25 warn] Виняток означає переривання виконання коду на тому рядку, в якому є помилка."
   },
-  "s2.p8": {
+  "p14": {
     "ru": "Более того, мы можем обращаться к консоли \"по имени\" (**⟦f5⟧**) и использовать ее команды для вывода в консоль каких-то сообщений:",
     "eng": "Moreover, we can access the console \"by name\" (**⟦f5⟧**) and use its commands to output some messages to the console:",
     "ua": "Ба більше, ми можемо звертатися до консолі «на ім'я» (**⟦f5⟧**) і використовувати її команди для виведення в консоль якихось повідомлень:"
   },
-  "s2.p9": {
+  "p15": {
     "ru": "![ico-25 smile] Пока на этом изучение панели разработчика мы приостановим, но далее нам предстоит использовать и другие ее вкладки, и вы, надеюсь, оцените по достоинству возможности, которые предоставляет вам эта панель.",
     "eng": "![ico-25 smile] We will stop studying the Developer Toolbar for now, but we will use its other tabs later on, and I hope you will appreciate the possibilities this panel provides you with.",
     "ua": "![ico-25 smile] Поки що на цьому вивчення панелі розробника ми призупинимо, але далі нам доведеться використовувати й інші її вкладки, і ви, сподіваюся, оціните по достоїнству можливості, які надає вам ця панель."

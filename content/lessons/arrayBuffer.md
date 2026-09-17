@@ -1,12 +1,12 @@
 # ![ico-30 study] ArrayBuffer
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
-{{s0.p4}}
+{{p4}}
 
 ~~~js
 var buffer  = new ArrayBuffer(16)
@@ -19,11 +19,11 @@ _________________________________
 
 [**MDN**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays/)
 
-{{s0.p5}}
-{{s0.p6}}
+{{p5}}
+{{p6}}
 
-{{s0.p7}}
-{{s0.p8}}
+{{p7}}
+{{p8}}
 
 ~~~js
 const buffer = new ArrayBuffer(8)
@@ -83,9 +83,9 @@ Object.getOwnPropertyNames(typedArrayPrototype)
 
 _____________________________________
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p9}}
 
-{{s1.p1}}
+{{p10}}
 
 ![ico-20 green-ok] DataView
 ![ico-20 green-ok] Int8Array
@@ -109,9 +109,9 @@ new Int32Array(sample)
 // ► Int32Array(8) [0, 0, 0, 0, 0, 0, 0, 0]
 ~~~
 
-{{s1.p2}}
+{{p11}}
 
-{{s1.p3}}
+{{p12}}
 
 ~~~js
 var buffer  = new ArrayBuffer(16)
@@ -126,13 +126,13 @@ console.log(sample)
 
 •• ► (16) [50, 0, 0, 255, 178, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]••
 
-{{s1.p5}}
+{{p13}}
 
 ______________________________________________
 
 ### ![ico-20 icon] DataView
 
-{{s1.p6}}
+{{p14}}
 
 ~~~js
 var buffer = new ArrayBuffer(16)

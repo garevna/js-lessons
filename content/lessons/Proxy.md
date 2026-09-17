@@ -1,6 +1,6 @@
 # ![ico-30 study] Proxy
 
-{{s0.p1}}
+{{p1}}
 ~~~js
 const permissions = Symbol.for(JSON.stringify({
   read: true,
@@ -8,9 +8,9 @@ const permissions = Symbol.for(JSON.stringify({
   config: false
 }))
 ~~~
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 ~~~js
 const handler = {
   get(target, key) {
@@ -36,7 +36,7 @@ const handler = {
 }
 ~~~
 
-{{s0.p4}}
+{{p4}}
 ~~~js
 const user = new Proxy({
   name: 'Piter',
@@ -45,11 +45,11 @@ const user = new Proxy({
 }, handler)
 ~~~
 
-{{s0.p5}}
+{{p5}}
 
-{{s0.p6}}
+{{p6}}
 
-{{s0.p7}}
+{{p7}}
 
 ~~~js
 const permissions = Symbol.for(JSON.stringify({
@@ -59,7 +59,7 @@ const permissions = Symbol.for(JSON.stringify({
 }))
 ~~~
 
-{{s0.p8}}
+{{p8}}
 
 ~~~js
 const permissions = Symbol.for(JSON.stringify({
@@ -70,7 +70,7 @@ const permissions = Symbol.for(JSON.stringify({
 ~~~
 
 {{common.c16}}
-{{s0.p10}}
+{{p9}}
 
 • setPrototypeOf
 • defineProperty

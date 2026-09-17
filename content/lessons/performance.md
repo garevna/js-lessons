@@ -1,15 +1,15 @@
 # ![ico-30 study] Performance
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 ^^• **Performance Timeline API**^^
 ^^• **High Resolution Time API**^^
 ^^• **Navigation Timing API**^^
 ^^• **User Timing API**^^
 ^^• **Resource Timing API**^^
 
-{{s0.p3}}
+{{p3}}
 
 ^^^[performance]
 
@@ -51,22 +51,22 @@
 
 ^^^
 
-{{s0.p4}}
-{{s0.p5}}
+{{p4}}
+{{p5}}
 
-{{s0.p6}}
-{{s0.p7}}
+{{p6}}
+{{p7}}
 
 _____________________________________________
 
 ## ![ico-25 icon] performance.timing
 
-{{s0.p8}}
+{{p8}}
 
 | **document.readyState**                                                                                                     | **performance.timing** |
-{{s0.p9}}
-{{s0.p10}}
-{{s0.p11}}
+{{p9}}
+{{p10}}
+{{p11}}
 
 ~~~js
 const { domComplete, domInteractive, domLoading } = performance.timing
@@ -77,7 +77,7 @@ console.log(domInteractive - domLoading)
 
 _____________________________________________________
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p12}}
 
 ^^^[Performance.prototype]
 
@@ -116,7 +116,7 @@ _______________________________________________________________
 
 ### ![ico-20 icon] now
 
-{{s1.p1}}
+{{p13}}
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -132,7 +132,7 @@ setTimeout(() => console.log(`Стоп: ${performance.now()}`), 2000)
 Стоп: 209385.9999999986
 ~~~
 
-{{s1.p3}}
+{{p14}}
 
 ~~~console
 209385.9999999986 - 207385.50000003306 = 2000.499999965541 (ms)
@@ -142,7 +142,7 @@ _______________________________________________________________
 
 ### ![ico-20 icon] mark
 
-{{s1.p4}}
+{{p15}}
 
 ◘◘![ico-20 cap] ** 2**◘◘
 
@@ -182,7 +182,7 @@ _______________________________________________________________
 
 ### ![ico-20 icon] measure
 
-{{s1.p6}}
+{{p16}}
 
 ◘◘![ico-20 cap] ** 3**◘◘ 
 
@@ -225,7 +225,7 @@ performance.clearMeasures()
 2: duration: 0.20000000949949026ms
 ~~~
 
-{{s1.p8}}
+{{p17}}
 
 • clearMarks()
 • clearMeasures()
@@ -238,37 +238,37 @@ _______________________________________________________________
 • getEntriesByName()
 • getEntriesByType()
 
-{{s1.p9}}
+{{p18}}
 
-{{s1.p10}}
+{{p19}}
 
-{{s1.p11}}
+{{p20}}
 
 | entryType | name |
-{{s1.p12}}
-{{s1.p13}}
-{{s1.p14}}
-{{s1.p15}}
-{{s1.p16}}
+{{p21}}
+{{p22}}
+{{p23}}
+{{p24}}
+{{p25}}
 
 _______________________________________________________________
 
 #### ![ico-20 icon] getEntries
 
-{{s1.p17}}
+{{p26}}
 
 • PerformanceResourceTiming
 • PerformancePaintTiming
 • PerformanceMark
 • PerformanceMeasure
 
-{{s1.p18}}
-{{s1.p19}}
-{{s1.p20}}
+{{p27}}
+{{p28}}
+{{p29}}
 
-{{s1.p21}}
-{{s1.p22}}
-{{s1.p23}}
+{{p30}}
+{{p31}}
+{{p32}}
 
 ◘◘![ico-20 cap] ** 4**◘◘
 
@@ -553,21 +553,21 @@ _______________________________________________________________
 
 ### ![ico-20 icon] PerformanceResourceTiming
 
-{{s1.p26}}
+{{p33}}
 
 #### ![ico-20 icon] initiatorType
 
-{{s1.p27}}
+{{p34}}
 
-{{s1.p28}}
-{{s1.p29}}
-{{s1.p30}}
-{{s1.p31}}
-{{s1.p32}}
+{{p35}}
+{{p36}}
+{{p37}}
+{{p38}}
+{{p39}}
 
 #### ![ico-20 icon] name
 
-{{s1.p33}}
+{{p40}}
 
 ◘◘![ico-20 cap] **10**◘◘
 
@@ -608,7 +608,7 @@ Promise.all(promises)
 
 ______________________________________________________________________
 
-{{s1.p34}}
+{{p41}}
 
 ________________________________
 

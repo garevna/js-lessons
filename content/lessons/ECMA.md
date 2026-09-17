@@ -11,9 +11,9 @@ _______________________________________________________
 [![ico-20 link] features](https://www.w3schools.com/js/js_es6.asp)
 
 [![ico-20 link] Template literals](page/literals)
-{{s0.p1}}
+{{p1}}
 [![ico-20 link] Default Parameters](page/default-param-values)
-{{s0.p2}}
+{{p2}}
 [![ico-20 link] String methods **includes**, **startsWith**, **endsWith**](page/String-methods)
 [![ico-20 link] Symbol](page/Symbol)
 ![ico-20 pin] Map constructor
@@ -29,7 +29,7 @@ _______________________________________________________
 
 ### [7ᵗʰ Edition / June 2016](https://262.ecma-international.org/7.0/)
 
-{{s0.p3}}
+{{p3}}
 ~~~js
 a**b // то же, что и Math.pow(a, b) )
 ~~~
@@ -45,7 +45,7 @@ _______________________________________________________
 [![ico-20 link] Object.getOwnPropertyDescriptors](page/Object-static-props#Object.getOwnPropertyDescriptors)
 [![ico-20 link] Object.entries](page/Object-static-props#Object.entries)
 [![ico-20 link] Object.values](page/Object-static-props#Object.values)
-{{s0.p4}}
+{{p4}}
 
 _______________________________________________________
 

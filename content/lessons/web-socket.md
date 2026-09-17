@@ -1,16 +1,16 @@
 # ![ico-30 study] WebSocket
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
-{{s0.p4}}
-{{s0.p5}}
+{{p3}}
+{{p4}}
+{{p5}}
 
-{{s0.p6}}
+{{p6}}
 
-{{s0.p7}}
+{{p7}}
 
 ^^^[Request Headers]
 
@@ -29,7 +29,7 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 
 ^^^
 
-{{s0.p8}}
+{{p8}}
 
 ^^^[Response Headers]
 
@@ -48,20 +48,20 @@ Upgrade: websocket
 
 ^^^
 
-{{s0.p9}}
+{{p9}}
 
-{{s0.p10}}
+{{p10}}
 
 _____________________________________________
 
 ## ![ico-25 hw] {{common.c3}} 1
 
 
-{{s1.p1}}
+{{p11}}
 
-{{s1.p2}}
+{{p12}}
 
-{{s1.p3}}
+{{p13}}
 
 ~~~js
 const apiKey = 'oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm'
@@ -69,22 +69,22 @@ const apiKey = 'oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm'
 const websocket = new WebSocket(`wss://demo.piesocket.com/v3/channel_1?api_key=${apiKey}`)
 ~~~
 
-{{s1.p4}}
+{{p14}}
 
 
-{{s1.p5}}
+{{p15}}
 
 
-{{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
+{{p16}}
+{{p17}}
+{{p18}}
 
-{{s1.p9}}
+{{p19}}
 
-{{s1.p10}}
-{{s1.p11}}
-{{s1.p12}}
-{{s1.p13}}
+{{p20}}
+{{p21}}
+{{p22}}
+{{p23}}
 
 ◘◘![ico-20 cap]◘◘
 
@@ -124,37 +124,37 @@ _____________________________________________
 
 ## ![ico-25 hw] {{common.c3}} 2
 
-{{s2.p1}}
+{{p24}}
 
-{{s2.p2}}
+{{p25}}
 
-{{s2.p3}}
+{{p26}}
 
-{{s2.p4}}
+{{p27}}
 
 ### ![ico-20 bash] {{common.c24}}
 
 ••$ npm install ws••
 
-{{s3.p1}}
+{{p28}}
 
-{{s3.p2}}
+{{p29}}
 
-{{s3.p3}}
+{{p30}}
 
-{{s3.p4}}
+{{p31}}
 
-{{s3.p5}}
+{{p32}}
 
-{{s3.p6}}
+{{p33}}
 
 ~~~js
 const socket = require('ws')
 ~~~
 
-{{s3.p7}}
+{{p34}}
 
-{{s3.p8}}
+{{p35}}
 
 ◘◘![ico-20 cap]◘◘
 
@@ -162,17 +162,17 @@ const socket = require('ws')
 const server = new WebSocket.Server({ port: 8080 })
 ~~~
 
-{{s3.p9}}
+{{p36}}
 
-{{s3.p10}}
+{{p37}}
 
-{{s3.p11}}
+{{p38}}
 
-{{s3.p12}}
+{{p39}}
 
-{{s3.p13}}
+{{p40}}
 
-{{s3.p14}}
+{{p41}}
 
 ◘◘![ico-20 cap]◘◘
 
@@ -190,7 +190,7 @@ server.on('connection', socket => {
 })
 ~~~
 
-{{s3.p15}}
+{{p42}}
 
 ◘◘![ico-20 cap] start.js◘◘
 
@@ -212,18 +212,18 @@ server.on('connection', socket => {
 })
 ~~~
 
-{{s3.p16}}
+{{p43}}
 
 ••$ node start.js••
 
-{{s3.p17}}
+{{p44}}
 ~http://localhost:8080/~
 
-{{s3.p18}}
+{{p45}}
 
-{{s3.p19}}
+{{p46}}
 
-{{s3.p20}}
+{{p47}}
 
 ~~~js
 const socket = new WebSocket('ws://localhost:8080')
@@ -240,11 +240,11 @@ socket.addEventListener('message', event => {
 })
 ~~~
 
-{{s3.p21}}
+{{p48}}
 
-{{s3.p22}}
+{{p49}}
 
-{{s3.p23}}
+{{p50}}
 
 {{common.c12}}
 
@@ -252,23 +252,23 @@ socket.addEventListener('message', event => {
 const socket = new WebSocket('ws://localhost:8080')
 ~~~
 
-{{s3.p25}}
+{{p51}}
 
-{{s3.p26}}
+{{p52}}
 
-{{s3.p27}}
+{{p53}}
 
-{{s3.p28}}
+{{p54}}
 
-{{s3.p29}}
+{{p55}}
 
-{{s3.p30}}
+{{p56}}
 
-{{s3.p31}}
+{{p57}}
 
-{{s3.p32}}
+{{p58}}
 
-{{s3.p33}}
+{{p59}}
 
 ~~~console
 $ node start.js
@@ -277,7 +277,7 @@ received from a client:
                 Hello, do you listen to me ?
 ~~~
 
-{{s3.p34}}
+{{p60}}
 
 ~~~console
 ▼ { name: "server", message: "I listen to you" }
@@ -290,23 +290,23 @@ _____________________________________________
 
 ## ![ico-25 hw] {{common.c3}} 3
 
-{{s4.p1}}
+{{p61}}
 
-### ![ico-50 node] {{s5.h1}}
+### ![ico-50 node] {{p62}}
 
-{{s5.p1}}
+{{p63}}
 
-{{s5.p2}}
+{{p64}}
 
-{{s5.p3}}
+{{p65}}
 
 ~~~js
 const fs = require('fs')
 ~~~
 
-{{s5.p4}}
+{{p66}}
 
-{{s5.p5}}
+{{p67}}
 
 ^^^[users.json]
 
@@ -366,16 +366,16 @@ const fs = require('fs')
 
 ^^^
 
-{{s5.p6}}
+{{p68}}
 
 ~~~js
 const users = []
 const messages = []
 ~~~
 
-{{s5.p7}}
+{{p69}}
 
-{{s5.p8}}
+{{p70}}
 
 ~~~js
 fs.readFile('users.json', 'utf8', (err, content) => users.push(...JSON.parse(content)))
@@ -383,30 +383,30 @@ fs.readFile('users.json', 'utf8', (err, content) => users.push(...JSON.parse(con
 fs.readFile('messages.json', 'utf8', (err, content) => messages.push(...JSON.parse(content)))
 ~~~
 
-{{s5.p9}}
+{{p71}}
 
-{{s5.p10}}
-{{s5.p11}}
-{{s5.p12}}
-{{s5.p13}}
-{{s5.p14}}
+{{p72}}
+{{p73}}
+{{p74}}
+{{p75}}
+{{p76}}
 
-{{s5.p15}}
+{{p77}}
 
-{{s5.p16}}
+{{p78}}
 
 ~~~js
 const WebSocket = require('ws')
 const server = new WebSocket.Server({ port: 8080 })
 ~~~
 
-{{s5.p17}}
+{{p79}}
 
-{{s5.p18}}
+{{p80}}
 
-{{s5.p19}}
+{{p81}}
 
-{{s5.p20}}
+{{p82}}
 
 ~~~js
 server.on('connection', client => {
@@ -414,16 +414,16 @@ server.on('connection', client => {
 }
 ~~~
 
-{{s5.p21}}
+{{p83}}
 
-{{s5.p22}}
+{{p84}}
 
 | • add     | • clear   |
 | • delete  | • entries |
 | • forEach | • has     |
 | • keys    | • values  |
 
-{{s5.p23}}
+{{p85}}
 
 ~~~js
 server.on('connection', client => {
@@ -433,7 +433,7 @@ server.on('connection', client => {
 }
 ~~~
 
-{{s5.p24}}
+{{p86}}
 
 ~~~js
 server.on('connection', client => {
@@ -448,13 +448,13 @@ server.on('connection', client => {
 }
 ~~~
 
-{{s5.p25}}
+{{p87}}
 
 ~~~js
 const randomValue = num => Math.round(Math.random() * num)
 ~~~
 
-{{s5.p26}}
+{{p88}}
 
 ◘◘![ico-20 file] start.js◘◘
 
@@ -487,7 +487,7 @@ const randomValue = num => Math.round(Math.random() * num)
 
 __________________________________________________________________________
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] {{p89}}
 
 
 ◘◘![ico-20 file] index.html◘◘
@@ -512,11 +512,11 @@ __________________________________________________________________________
 &lt;/html>
 ~~~
 
-{{s6.p1}}
+{{p90}}
 
-{{s6.p2}}
+{{p91}}
 
-{{s6.p3}}
+{{p92}}
 
 ◘◘![ico-20 file] chat.js◘◘
 
@@ -634,13 +634,13 @@ class ChatElement extends HTMLElement {
 customElements.define('chat-element', ChatElement)
 ~~~
 
-{{s6.p4}}
+{{p93}}
 
-{{s6.p5}}
-{{s6.p6}}
-{{s6.p7}}
+{{p94}}
+{{p95}}
+{{p96}}
 
-{{s6.p8}}
+{{p97}}
 
 ◘◘![ico-20 file] index.js◘◘
 
@@ -668,23 +668,23 @@ socket.addEventListener('message', event => {
 window.onresize = chat.resize.bind(chat)
 ~~~
 
-{{s6.p9}}
+{{p98}}
 
 _________________________________________________________________________
 
-### ![ico-20 icon] {{s7.h1}}
+### ![ico-20 icon] {{p99}}
 
-{{s7.p1}}
+{{p100}}
 
 ••$ node start.js••
 
-{{s7.p2}}
+{{p101}}
 
-{{s7.p3}}
+{{p102}}
 
-{{s7.p4}}
+{{p103}}
 
-{{s7.p5}}
+{{p104}}
 
 _____________________________________________
 

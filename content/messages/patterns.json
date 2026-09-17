@@ -1,130 +1,130 @@
 {
-  "s0.p1": {
+  "p1": {
     "ru": "Если нужен велосипед, не нужно его изобретать",
     "eng": "If you need a bicycle, there’s no need to reinvent the wheel",
     "ua": "Якщо потрібен велосипед, не треба його винаходити"
   },
-  "s0.p2": {
+  "p2": {
     "ru": "Паттерны проектирования - это готовые конструкции \"велосипедов\" для различных ситуаций",
     "eng": "Design patterns are ready-made ‘bicycle’ designs for various situations",
     "ua": "Паттерни проектування — це готові конструкції «велосипедів» для різних ситуацій"
   },
-  "s0.p3": {
+  "p3": {
     "ru": "В разработке часто встречаются одни и те же проблемы, и многие такие проблемы имеют уже готовый шаблон решения, поскольку многим уже пришлось сталкиваться с аналогичной проблемой до вас",
     "eng": "The same problems often arise in software development, and many of these problems already have a ready-made solution template, as many people have already had to deal with a similar problem before you",
     "ua": "У розробці часто трапляються одні й ті самі проблеми, і для багатьох таких проблем уже існує готовий шаблон вирішення, оскільки багатьом до вас уже доводилося стикатися з аналогічною проблемою"
   },
-  "s0.p4": {
+  "p4": {
     "ru": "Для создания паттерна проблему нужно формализовать, т.е. описать формальным языком суть проблемы",
     "eng": "To create a pattern, you need to formalise the problem, i.e. describe the essence of the problem using a formal language",
     "ua": "Для створення патерну проблему потрібно формалізувати, тобто описати формальною мовою суть проблеми"
   },
-  "s0.p5": {
+  "p5": {
     "ru": "Следующий шаг - описание принципа решения этой проблемы",
     "eng": "The next step is to describe the principle behind solving this problem",
     "ua": "Наступний крок — опис принципу вирішення цієї проблеми"
   },
-  "s0.p6": {
+  "p6": {
     "ru": "Первым, кто описал концепцию паттернов, был Кристофер Александер",
     "eng": "Christopher Alexander was the first to describe the concept of patterns",
     "ua": "Першим, хто описав концепцію патернів, був Крістофер Александер"
   },
-  "s0.p7": {
+  "p7": {
     "ru": "Применительно к сфере разработки программного обеспечения эту концепцию \"адаптировали\" Эрих Гамм, Ричард Хелм, Ральф Джонсон и Джон Влиссидес",
     "eng": "In the context of software development, this concept was ‘adapted’ by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides",
     "ua": "Стосовно сфери розробки програмного забезпечення цю концепцію «адаптували» Еріх Гамм, Річард Хелм, Ральф Джонсон і Джон Вліссідес"
   },
-  "s0.p8": {
+  "p8": {
     "ru": "В их книге **Design Patterns: Elements of Reusable Object-Oriented Software** ( 1995 ) описаны 23 паттерна в ООП",
     "eng": "Their book **Design Patterns: Elements of Reusable Object-Oriented Software** (1995) describes 23 patterns in OOP",
     "ua": "У їхній книзі **Design Patterns: Elements of Reusable Object-Oriented Software** (1995) описано 23 патерни в ООП"
   },
-  "s1.h1": {
+  "p9": {
     "ru": "Поведенческие паттерны",
     "eng": "Behavioural patterns",
     "ua": "Поведінкові патерни"
   },
-  "s1.p1": {
+  "p10": {
     "ru": "К числу поведенческих паттернов относится уже знакомый нам **итератор**",
     "eng": "The **iterator**, with which we are already familiar, is one such behavioural pattern",
     "ua": "До поведінкових патернів належить уже знайомий нам **ітератор**"
   },
-  "s1.p2": {
+  "p11": {
     "ru": "Какую проблему общего порядка решает этот паттерн ?",
     "eng": "What general problem does this pattern solve?",
     "ua": "Яку проблему загального характеру вирішує цей патерн?"
   },
-  "s1.p3": {
+  "p12": {
     "ru": "Во-первых, он обеспечивает механизм последовательного доступа к элементам структуры данных",
     "eng": "Firstly, it provides a mechanism for sequential access to the elements of a data structure",
     "ua": "По-перше, він забезпечує механізм послідовного доступу до елементів структури даних"
   },
-  "s1.p4": {
+  "p13": {
     "ru": "Во-вторых, итератор работает с \"черным ящиком\" - снаружи не видно, что именно он итерирует, до тех пор, пока не будут выполнены все итерации",
     "eng": "Secondly, the iterator operates as a ‘black box’ – from the outside, it is not apparent exactly what it is iterating over until all iterations have been completed",
     "ua": "По-друге, ітератор працює з «чорною скринькою» — зовні не видно, що саме він ітерує, доти, доки не будуть виконані всі ітерації"
   },
-  "s1.p5": {
+  "p14": {
     "ru": "В-третьих, итератор опосредует доступ к структуре данных, задавая строгий порядок операций с ее элементами",
     "eng": "Thirdly, the iterator mediates access to the data structure, specifying a strict order of operations on its elements",
     "ua": "По-третє, ітератор опосередковує доступ до структури даних, задаючи суворий порядок операцій з її елементами"
   },
-  "s1.p6": {
+  "p15": {
     "ru": "Наконец, структура данных может и не быть структурой данных - это может быть цепочка неких операций, вызовов функций и т.д.",
     "eng": "Finally, the data structure need not be a data structure at all – it could be a sequence of operations, function calls, etc.",
     "ua": "Нарешті, структура даних може й не бути структурою даних — це може бути ланцюжок певних операцій, викликів функцій тощо"
   },
-  "s2.h1": {
+  "p16": {
     "ru": "Делегирование",
     "eng": "Delegation",
     "ua": "Делегування"
   },
-  "s2.p1": {
+  "p17": {
     "ru": "В прототипной модели наследования, по-сути, отсутствует сам механизм наследования, поскольку он подменяется механизмом **делегирования**",
     "eng": "In the prototype model of inheritance, the mechanism of inheritance itself is, in essence, absent, as it is replaced by the mechanism of **delegation**",
     "ua": "У прототипній моделі успадкування, по суті, відсутній сам механізм успадкування, оскільки він замінюється механізмом **делегування**"
   },
-  "s2.p2": {
+  "p18": {
     "ru": "Действительно, что такое прототип ? - это объект, отличный от того объекта, прототипом которого он является",
     "eng": "Indeed, what is a prototype? It is an object that is distinct from the object of which it is the prototype",
     "ua": "Дійсно, що таке прототип? — це об’єкт, відмінний від того об’єкта, прототипом якого він є"
   },
-  "s2.p3": {
+  "p19": {
     "ru": "Давайте создадим два объекта: **proto** и **media**",
     "eng": "Let’s create two objects: **proto** and **media**",
     "ua": "Давайте створимо два об’єкти: **proto** та **media**"
   },
-  "s2.p4": {
+  "p20": {
     "ru": "и сделаем объект **proto** прототипом объекта **media**",
     "eng": "and make the **proto** object the prototype of the **media** object",
     "ua": "і зробимо об’єкт **proto** прототипом об’єкта **media**"
   },
-  "s2.p5": {
+  "p21": {
     "ru": "Если теперь мы вызовем метод **_showPicture_** объекта **media**:",
     "eng": "If we now call the **_showPicture_** method of the **media** object:",
     "ua": "Якщо тепер ми викличемо метод **_showPicture_** об’єкта **media**:"
   },
-  "s2.p6": {
+  "p22": {
     "ru": "то, по-сути, мы делегируем объекту **proto** то, что не может сделать объект **media**,",
     "eng": "then, in essence, we are delegating to the **proto** object what the **media** object cannot do,",
     "ua": "то, по суті, ми делегуємо об’єкту **proto** те, чого не може зробити об’єкт **media**,"
   },
-  "s2.p7": {
+  "p23": {
     "ru": "поскольку у него нет такого метода",
     "eng": "as it does not have such a method",
     "ua": "оскільки у нього немає такого методу"
   },
-  "s2.p8": {
+  "p24": {
     "ru": "Поэтому вся цепочка прототипов является, по-сути, цепочкой делегирования, а не наследования",
     "eng": "Therefore, the entire prototype chain is, in essence, a chain of delegation rather than inheritance",
     "ua": "Тому весь ланцюжок прототипів є, по суті, ланцюжком делегування, а не успадкування"
   },
-  "s2.p9": {
+  "p25": {
     "ru": "Если рассматиривать делегирование как паттерн проектирования в ООП, то можно привести и другие примеры",
     "eng": "If we consider delegation as a design pattern in OOP, we can cite other examples as well",
     "ua": "Якщо розглядати делегування як шаблон проектування в ООП, то можна навести й інші приклади"
   },
-  "s2.p10": {
+  "p26": {
     "ru": "^^Преимущества делегирования (прототипного наследования) по сравнению с классической моделью наследования отлично показаны^^ [^^Henry Lieberman^^](⟦f0⟧)",
     "eng": "^^The advantages of delegation (prototype inheritance) compared to the classical inheritance model are clearly demonstrated^^ [^^Henry Lieberman^^](⟦f0⟧)",
     "ua": "^^Переваги делегування (прототипного успадкування) порівняно з класичною моделлю успадкування чудово проілюстровано^^ [^^Henry Lieberman^^](⟦f0⟧)"

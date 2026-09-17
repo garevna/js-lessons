@@ -1,30 +1,30 @@
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p1}}
 
-{{s1.p1}}
-{{s1.p2}}
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
-{{s1.p9}}
+{{p2}}
+{{p3}}
+{{p4}}
+{{p5}}
+{{p6}}
+{{p7}}
+{{p8}}
+{{p9}}
+{{p10}}
 
 ### ![ico-20 icon] **scrollHeight**
 
-{{s1.p10}}
+{{p11}}
 
 ### ![ico-20 icon] **scrollWidth**
 
-{{s1.p11}}
+{{p12}}
 
 ### ![ico-20 icon] **clientHeight**
 
-{{s1.p12}}
+{{p13}}
 
 ### ![ico-20 icon] **clientWidth**
 
-{{s1.p13}}
+{{p14}}
 
 
 ### ![ico-20 icon] offsetHeight
@@ -34,27 +34,27 @@
 
 ### ![ico-20 icon] **offsetWidth**
 
-{{s1.p14}}
+{{p15}}
 
 {{{offset-left.js}}}
 
 ### ![ico-20 icon] **scrollTop**
 
-{{s1.p15}}
+{{p16}}
 
 ### ![ico-20 icon] **scrollLeft**
 
-{{s1.p16}}
+{{p17}}
 
 _____________________________________
 
-{{s1.p17}}
+{{p18}}
 
 _____________________________________
 
 ### ![ico-30 hw] {{common.c3}}
 
-{{s2.p1}}
+{{p19}}
 
 ~~~~js
 const section = document.body
@@ -150,15 +150,15 @@ __________________________________________________
 
 ## ![ico-20 icon] getBoundingClientRect()
 
-{{s2.p2}}
+{{p20}}
 
-{{s2.p3}}
+{{p21}}
 
 
-{{s2.p4}}
+{{p22}}
 
-{{s2.p5}}
-{{s2.p6}}
+{{p23}}
+{{p24}}
 
 ~~~js
 document.querySelector ( "p" )
@@ -178,4 +178,4 @@ document.querySelector ( "p" )
   ► __proto__: DOMRect
 ~~~
 
-{{s2.p7}}
+{{p25}}

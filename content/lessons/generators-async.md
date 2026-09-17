@@ -8,8 +8,8 @@ _____________________________________________________________________________
 
 **2018**
 
-{{s1.p1}}
-{{s1.p2}}
+{{p1}}
+{{p2}}
 
 ◘◘![ico-25 cap] ** 1**◘◘
 ~~~js
@@ -31,7 +31,7 @@ async function sample() {
 sample()
 ~~~
 
-{{s1.p3}}
+{{p3}}
 
 ◘◘![ico-25 cap] ** 2**◘◘
 ~~~js
@@ -53,17 +53,17 @@ async function showBrowsers () {
 showBrowsers()
 ~~~
 
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
-{{s1.p7}}
+{{p4}}
+{{p5}}
+{{p6}}
+{{p7}}
 
 _____________________________________________________
 
-{{s1.p8}}
-{{s1.p9}}
+{{p8}}
+{{p9}}
 
-{{s1.p10}}
+{{p10}}
 
 ◘◘![ico-25 cap] ** 3**◘◘
 ~~~js
@@ -91,17 +91,17 @@ _____________________________________________________________________________
 
 **2018**
 
-{{s1.p11}}
-{{s1.p12}}
+{{p11}}
+{{p12}}
 
-{{s1.p13}}
+{{p13}}
 
 ◘◘promise◘◘
 ~~~js
 const promise = val => new Promise(resolve => setTimeout(() => resolve(val), 1000))
 ~~~
 
-{{s1.p14}}
+{{p14}}
 
 ◘◘browsers◘◘
 ~~~js
@@ -118,24 +118,24 @@ const browsers = {
 }
 ~~~
 
-{{s1.p15}}
-{{s1.p16}}
+{{p15}}
+{{p16}}
 
-{{s1.p17}}
+{{p17}}
 
 ~~~js
 browsers.show()
 ~~~
 
-{{s1.p18}}
+{{p18}}
 
-{{s1.p19}}
+{{p19}}
 
-{{s1.p20}}
-{{s1.p21}}
+{{p20}}
+{{p21}}
 
 
-{{s1.p22}}
+{{p22}}
 
 ◘◘browsers◘◘
 ~~~js
@@ -152,11 +152,11 @@ const browsers = {
 }
 ~~~
 
-{{s1.p23}}
-{{s1.p24}}
-{{s1.p25}}
+{{p23}}
+{{p24}}
+{{p25}}
 
-{{s1.p26}}
+{{p26}}
 
 ~~~js
 const promise = val => new Promise(resolve => setTimeout(() => resolve(val), 1000))
@@ -188,13 +188,13 @@ console.log(...browsers)
 Array.from(browsers).forEach(browser => console.log(browser))
 ~~~
 
-{{s1.p27}}
-{{s1.p28}}
+{{p27}}
+{{p28}}
 _____________________________________________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{p29}}
 
-{{s2.p1}}
+{{p30}}
 
 ◘◘![ico-25 cap] ** 4**◘◘
 
@@ -207,11 +207,11 @@ async function * messageGenerator (arr) {
 }
 ~~~
 
-{{s2.p2}}
+{{p31}}
 
-{{s2.p3}}
+{{p32}}
 
-{{s2.p4}}
+{{p33}}
 
 ~~~js
 async function showMessage (message) {
@@ -226,7 +226,7 @@ async function showMessage (message) {
 }
 ~~~
 
-{{s2.p5}}
+{{p34}}
 
 ~~~js
 showMessage('Привет, студент!')
@@ -235,7 +235,7 @@ showMessage('Привет, студент!')
 {{{generators-12.js}}}
 
 {{common.c16}}
-{{s2.p7}}
+{{p35}}
 
 ◘◘![ico-25 cap] ** 5**◘◘
 
@@ -256,7 +256,7 @@ async function * messageGenerator (arr) {
 }
 ~~~
 
-{{s2.p8}}
+{{p36}}
 
 _______________________________________________________
 
@@ -305,7 +305,7 @@ show()
 
 ______________________________________________________
 
-### ![ico-25 cap] {{s3.h1}}
+### ![ico-25 cap] {{p37}}
 
 @@@@ 4
 
@@ -317,11 +317,11 @@ ______________________________________________________
 @@@@
 
 
-^^^[{{s3.spoiler1}}]
+^^^[{{p38}}]
 
-{{s3.p1}}
+{{p39}}
 
-{{s3.p2}}
+{{p40}}
 
 ~~~js
 const pictures = [
@@ -336,7 +336,7 @@ const pictures = [
 ]
 ~~~
 
-{{s3.p3}}
+{{p41}}
 
 ~~~js
 pictures.createSlide = function () {
@@ -363,37 +363,37 @@ pictures.createSlide = function () {
 }
 ~~~
 
-{{s3.p4}}
+{{p42}}
 
-{{s3.p5}}
+{{p43}}
 
-{{s3.p6}}
+{{p44}}
 
-{{s3.p7}}
+{{p45}}
 
-{{s3.p8}}
+{{p46}}
 
 ~~~js
 pictures.iterator = (function * () { ... }).call(pictures)
 ~~~
 
-{{s3.p9}}
+{{p47}}
 
-{{s3.p10}}
+{{p48}}
 
-{{s3.p11}}
+{{p49}}
 
 _________________________
 
-{{s3.p12}}
+{{p50}}
 
-{{s3.p13}}
+{{p51}}
 
-{{s3.p14}}
+{{p52}}
 
-{{s3.p15}}
+{{p53}}
 
-{{s3.p16}}
+{{p54}}
 
 ~~~js
 function moveSlide (slide, active) {
@@ -405,9 +405,9 @@ function moveSlide (slide, active) {
 
 __________________________
 
-{{s3.p17}}
+{{p55}}
 
-{{s3.p18}}
+{{p56}}
 
 ~~~js
 const getNextPictureNum = function () {
@@ -417,7 +417,7 @@ const getNextPictureNum = function () {
 
 ____________________________
 
-{{s3.p19}}
+{{p57}}
 
 ~~~js
 const slides = [
@@ -426,14 +426,14 @@ const slides = [
 ]
 ~~~
 
-{{s3.p20}}
+{{p58}}
 
 ___________________________________
 
-{{s3.p21}}
+{{p59}}
 
-{{s3.p22}}
-{{s3.p23}}
+{{p60}}
+{{p61}}
 
 ~~~js
 let currentSlide = 0
@@ -442,17 +442,17 @@ this.currentPicture = 0
 
 _________________________________
 
-{{s3.p24}}
+{{p62}}
 
-{{s3.p25}}
-{{s3.p26}}
-{{s3.p27}}
+{{p63}}
+{{p64}}
+{{p65}}
 
 ~~~js
 Math.abs(currentSlide - 1)
 ~~~
 
-{{s3.p28}}
+{{p66}}
 
 ~~~js
 while (true) {
@@ -473,7 +473,7 @@ while (true) {
 
 ^^^
 
-{{s3.p29}}
+{{p67}}
 
 ~~~~js
 const pictures = [

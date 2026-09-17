@@ -1,12 +1,12 @@
 # ![ico-30 study] JSON
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
-{{s0.p4}}
+{{p4}}
 
 ![ico-20 green-ok] **JSON.stringify()**
 ![ico-20 green-ok] **JSON.parse()**
@@ -36,9 +36,9 @@ _____________________
 
 ## ![ico-25 icon] JSON.stringify()
 
-{{s0.p5}}
-{{s0.p6}}
-{{s0.p7}}
+{{p5}}
+{{p6}}
+{{p7}}
 
 ![ico-25 cap] ** 1**
 
@@ -60,7 +60,7 @@ JSON.stringify(obj)
 
 ![ico-25 cap] ** 2**
 
-{{s0.p8}}
+{{p8}}
 
 ~~~js
 var obj = {
@@ -80,7 +80,7 @@ JSON.stringify(obj, ['name', 'type', 'color'])
 
 ![ico-25 cap] ** 3**
 
-{{s0.p9}}
+{{p9}}
 
 ~~~js
 var obj = {
@@ -107,12 +107,12 @@ console.log(JSON.stringify(obj, null, 2))
 }
 ~~~
 
-### {{s1.h1}}
+### {{p10}}
 
-{{s1.p1}}
-{{s1.p2}}
+{{p11}}
+{{p12}}
 
-{{s1.p3}}
+{{p13}}
 
 ![ico-25 cap] ** 4**
 
@@ -122,7 +122,7 @@ console.log(JSON.stringify(window, null, 2))
 
 ••![ico-20 error] Uncaught TypeError: Converting circular structure to JSON••
 
-{{s1.p4}}
+{{p14}}
 
 ![ico-25 cap] ** 5**
 
@@ -149,17 +149,17 @@ console.log(JSON.stringify(user, null, 2))
 }
 ~~~
 
-{{s1.p5}}
+{{p15}}
 
 _____________________
 
 ## ![ico-25 icon] JSON.parse()
 
-{{s1.p6}}
-{{s1.p7}}
+{{p16}}
+{{p17}}
 
-{{s1.p8}}
-{{s1.p9}}
+{{p18}}
+{{p19}}
 
 ![ico-25 cap] ** 6**
 
@@ -191,15 +191,15 @@ JSON.parse(x)
 
 ___________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{p20}}
 
-{{s2.p1}}
+{{p21}}
 
-{{s2.p2}}
+{{p22}}
 
-{{s2.p3}}
+{{p23}}
 
-{{s2.p4}}
+{{p24}}
 
 ![ico-25 cap] ** 7**
 
@@ -214,9 +214,9 @@ var obj = {
 var sample = JSON.parse(JSON.stringify(obj))
 ~~~
 
-{{s2.p5}}
+{{p25}}
 
-{{s2.p6}}
+{{p26}}
 
 ~~~js
 var test = Object.assign({}, obj)
@@ -227,25 +227,25 @@ var test = Object.assign({}, obj)
 ~~~js
 test.position === obj.position
 ~~~
-{{s2.p8}}
+{{p27}}
 
-{{s2.p9}}
+{{p28}}
 
 ~~~js
 sample.position === obj.position
 ~~~
 
-{{s2.p10}}
+{{p29}}
 
 ------------------------------------
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{p30}}
 
-{{s3.p1}}
+{{p31}}
 
 ![ico-25 cap] ** 8**
 
-{{s3.p2}}
+{{p32}}
 
 ~~~js
 Function.prototype.toJSON = function () {
@@ -253,7 +253,7 @@ Function.prototype.toJSON = function () {
 }
 ~~~
 
-{{s3.p3}}
+{{p33}}
 
 ~~~js
 var user = {
@@ -277,7 +277,7 @@ console.log(JSON.stringify(user, null, 2))
 }
 ~~~
 
-{{s3.p4}}
+{{p34}}
 
 ~~~js
 var user = {
@@ -290,7 +290,7 @@ var user = {
 }
 ~~~
 
-{{s3.p5}}
+{{p35}}
 
 ~~~js
 JSON.parseFuncs = function (obj) {
@@ -303,7 +303,7 @@ JSON.parseFuncs = function (obj) {
 }
 ~~~
 
-{{s3.p6}}
+{{p36}}
 
 ~~~js
 const piter = JSON.parseFuncs(JSON.stringify(user))

@@ -1,175 +1,175 @@
 {
-  "s0.p1": {
+  "p1": {
     "ru": "**Webpack **создает граф зависимостей приложения",
     "eng": "**Webpack** creates a dependency graph for the application",
     "ua": "**Webpack** створює граф залежностей додатка"
   },
-  "s0.p2": {
+  "p2": {
     "ru": "Каждый модуль приложения может иметь зависимости - модули, необходимые для его нормальной работы",
     "eng": "Each module in the application may have dependencies – modules required for it to function correctly",
     "ua": "Кожен модуль додатка може мати залежності — модулі, необхідні для його нормальної роботи"
   },
-  "s0.p3": {
+  "p3": {
     "ru": "Модули ( ES6 ) - это файлы с расширением js, содержащие код",
     "eng": "Modules (ES6) are files with the .js extension that contain code",
     "ua": "Модулі (ES6) — це файли з розширенням .js, що містять код"
   },
-  "s0.p5": {
+  "p4": {
     "ru": "Пакет  **webpack**  устанавливается с помощью **⟦f0⟧**",
     "eng": "The **webpack** package is installed using **⟦f0⟧**",
     "ua": "Пакет **webpack** встановлюється за допомогою **⟦f0⟧**"
   },
-  "s0.p6": {
+  "p5": {
     "ru": "Команда",
     "eng": "The command",
     "ua": "Команда"
   },
-  "s0.p7": {
+  "p6": {
     "ru": "установит  ⟦f1⟧ и  ⟦f2⟧  глобально ",
     "eng": "will install ⟦f1⟧ and ⟦f2⟧ globally",
     "ua": "встановить ⟦f1⟧ та ⟦f2⟧ глобально"
   },
-  "s0.p8": {
+  "p7": {
     "ru": "^^Сокращение для команды ⟦f3⟧^^",
     "eng": "^^Abbreviation for the command ⟦f3⟧^^",
     "ua": "^^Скорочення для команди ⟦f3⟧^^"
   },
-  "s0.p9": {
+  "p8": {
     "ru": "установит  ⟦f1⟧ и  ⟦f2⟧  в текущей папке",
     "eng": "will install  ⟦f1⟧ and  ⟦f2⟧  in the current directory",
     "ua": "встановить  ⟦f1⟧ та  ⟦f2⟧  у поточній папці"
   },
-  "s0.p10": {
+  "p9": {
     "ru": "![ico-20 warn] webpack-cli раньше по умолчанию устанавливался как часть самого **Webpack**",
     "eng": "![ico-20 warn] webpack-cli used to be installed by default as part of **Webpack** itself",
     "ua": "![ico-20 warn] webpack-cli раніше за замовчуванням встановлювався як частина самого **Webpack**"
   },
-  "s0.p11": {
+  "p10": {
     "ru": "Теперь вынесен в отдельный модуль, и его нужно устанавливать",
     "eng": "It has now been moved to a separate module and needs to be installed",
     "ua": "Тепер він винесений в окремий модуль, і його потрібно встановлювати"
   },
-  "s0.p12": {
+  "p11": {
     "ru": "Нужен, чтобы чтобы запускать сборку из командной строки или через менеджер пакетов",
     "eng": "It is required to run the build from the command line or via a package manager",
     "ua": "Потрібен для запуску збірки з командного рядка або через менеджер пакетів"
   },
-  "s0.p13": {
+  "p12": {
     "ru": "Из коробки webpack не потребует от вас использования файла конфигурации",
     "eng": "Out of the box, webpack does not require you to use a configuration file",
     "ua": "У стандартній конфігурації webpack не вимагатиме від вас використання файлу конфігурації"
   },
-  "s0.p14": {
+  "p13": {
     "ru": "Однако при этом предполагается, что точкой входа вашего проекта является ⟦f4⟧,",
     "eng": "However, it assumes that the entry point of your project is ⟦f4⟧,",
     "ua": "Однак при цьому передбачається, що точкою входу вашого проєкту є ⟦f4⟧,"
   },
-  "s0.p15": {
+  "p14": {
     "ru": "а результат будет выведен в ⟦f5⟧, минимизированный и оптимизированный для производства",
     "eng": "and that the output will be written to ⟦f5⟧, minimised and optimised for production",
     "ua": "а результат буде виведений у ⟦f5⟧, мінімізований та оптимізований для виробництва"
   },
-  "s0.p16": {
+  "p15": {
     "ru": "Обычно проектам нужна расширенная функциональность",
     "eng": "Projects usually require extended functionality",
     "ua": "Зазвичай проєктам потрібна розширена функціональність"
   },
-  "s0.p17": {
+  "p16": {
     "ru": "для этого нужно создать в корневой папке файл настроек ![ico-20 file] **⟦f6⟧**, который будет по умолчанию использован webpack для конфигурирования сборки",
     "eng": "To achieve this, you need to create a configuration file in the root folder ! [ico-20 file] **⟦f6⟧**, which webpack will use by default to configure the build",
     "ua": "для цього потрібно створити в кореневій папці файл налаштувань ! [ico-20 file] **⟦f6⟧**, який webpack використовуватиме за замовчуванням для конфігурації збірки"
   },
-  "s0.p18": {
+  "p17": {
     "ru": "Если вы хотите использовать различные файлы конфигурации в зависимости от ситуации, это можно настроить с помощью флага ⟦f7⟧",
     "eng": "If you wish to use different configuration files depending on the situation, this can be configured using the ⟦f7⟧ flag",
     "ua": "Якщо ви хочете використовувати різні файли конфігурації залежно від ситуації, це можна налаштувати за допомогою прапора ⟦f7⟧"
   },
-  "s0.p19": {
+  "p18": {
     "ru": "в командной строке:",
     "eng": "in the command line:",
     "ua": "у командному рядку:"
   },
-  "s1.p1": {
+  "p19": {
     "ru": "Работаем в созданной ранее папке  _test_  ^^( вы можете назвать свою папку иначе )^^",
     "eng": "We’ll be working in the  _test_  folder created earlier  ^^(you can name your folder something else)^^",
     "ua": "Працюємо у створеній раніше папці  _test_  ^^(ви можете назвати свою папку інакше)^^"
   },
-  "s1.p2": {
+  "p20": {
     "ru": "Создаем файлы и папки:",
     "eng": "Let’s create some files and folders:",
     "ua": "Створюємо файли та папки:"
   },
-  "s1.p3": {
+  "p21": {
     "ru": "Cоздайте папку  **src**  и поместите туда файл ![ico-20 file] **⟦f8⟧**",
     "eng": "Create a folder called **src** and place the file ![ico-20 file] **⟦f8⟧** in it",
     "ua": "Створіть папку  **src**  і помістіть туди файл ![ico-20 file] **⟦f8⟧**"
   },
-  "s1.p4": {
+  "p22": {
     "ru": "а теперь выполните в консоли команду:",
     "eng": "Now run the following command in the console:",
     "ua": "а тепер виконайте в консолі команду:"
   },
-  "s1.p5": {
+  "p23": {
     "ru": "webpack был вызван нами без каких-либо параметров и опций",
     "eng": "We have called webpack without any parameters or options",
     "ua": "Ми запустили webpack без жодних параметрів та опцій"
   },
-  "s1.p6": {
+  "p24": {
     "ru": "В консоли видно предупреждение, что опция  **⟦f9⟧** отсутствует,",
     "eng": "A warning appears in the console stating that the option  **⟦f9⟧** is missing,",
     "ua": "У консолі видно попередження, що опція  **⟦f9⟧** відсутня,"
   },
-  "s1.p7": {
+  "p25": {
     "ru": "поэтому использовано значение по умолчанию - **_⟦f10⟧_**",
     "eng": "so the default value – **_⟦f10⟧_** – is used",
     "ua": "тому використано значення за замовчуванням — **_⟦f10⟧_**"
   },
-  "s1.p8": {
+  "p26": {
     "ru": "Обратите внимание, что в папке проекта появилась новая папка  ![ico-20 folder] **dist**,",
     "eng": "Note that a new folder,  ![ico-20 folder] **dist**, has appeared in the project folder,",
     "ua": "Зверніть увагу, що в папці проєкту з’явилася нова папка  ![ico-20 folder] **dist**,"
   },
-  "s1.p9": {
+  "p27": {
     "ru": "а в этой папке - минифицированный файл  ![ico-20 file] **_main.js_**",
     "eng": "and within this folder is the minified file  ![ico-20 file] **_main.js_**",
     "ua": "а в цій папці — мініфікований файл  ![ico-20 file] **_main.js_**"
   },
-  "s1.p10": {
+  "p28": {
     "ru": "Как видите, мы обошлись без файла конфигурации, поскольку  Webpack 4  позволяет это _при условии использования дефолтных имен файлов и папок_:",
     "eng": "",
     "ua": "Як бачите, ми обійшлися без файлу конфігурації, оскільки  Webpack 4  дозволяє це _за умови використання імен файлів і папок за замовчуванням_:"
   },
-  "s1.p11": {
+  "p29": {
     "ru": "![ico-20 warn] Исходный файл должен находиться в папке ![ico-20 folder] **src** и называться ![ico-20 file] **_index.js_**",
     "eng": "![ico-20 warn] The source file must be located in the ![ico-20 folder] **src** folder and be named ![ico-20 file] **_index.js_**",
     "ua": "![ico-20 warn] Вихідний файл має знаходитися в папці ![ico-20 folder] **src** і називатися ![ico-20 file] **_index.js_**"
   },
-  "s1.p12": {
+  "p30": {
     "ru": "![ico-20 warn] Результат сборки будет помещен в папку ![ico-20 folder] **dist** под именем  ![ico-20 file] **_main.js_**",
     "eng": "![ico-20 warn] The build output will be placed in the ![ico-20 folder] **dist** folder under the name ![ico-20 file] **_main.js_**",
     "ua": "![ico-20 warn] Результат збірки буде розміщено в папці ![ico-20 folder] **dist** під назвою  ![ico-20 file] **_main.js_**"
   },
-  "s1.p13": {
+  "p31": {
     "ru": "Теперь откройте файл  **_index.html_**  в браузере",
     "eng": "Now open the **_index.html_** file in your browser",
     "ua": "Тепер відкрийте файл  **_index.html_**  у браузері"
   },
-  "s2.h1": {
+  "p32": {
     "ru": "Опция --watch",
     "eng": "The --watch option",
     "ua": "Опція --watch"
   },
-  "s2.p1": {
+  "p33": {
     "ru": "webpack будет следить за изменениями в исходных файлах и оперативно пересобирать приложение при каждом обновлении",
     "eng": "webpack will monitor changes to the source files and rebuild the application immediately whenever an update is made",
     "ua": "webpack стежитиме за змінами у вихідних файлах і оперативно перекомпілюватиме додаток при кожному оновленні"
   },
-  "s2.p2": {
+  "p34": {
     "ru": "Внесем изменения в файл **_index.js_**",
     "eng": "Let’s make some changes to the **_index.js_** file",
     "ua": "Внесемо зміни до файлу **_index.js_**"
   },
-  "s2.p3": {
+  "p35": {
     "ru": "В консоли видно, что вебпак автоматически пересобрал приложение",
     "eng": "The console shows that webpack has automatically rebuilt the application",
     "ua": "У консолі видно, що webpack автоматично перекомпілював додаток"

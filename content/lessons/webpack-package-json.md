@@ -1,16 +1,16 @@
 ## ![ico-25 webpack] {{common.c3}} 4
 
-### ![ico-20 webpack] {{s2.h1}}
+### ![ico-20 webpack] {{p1}}
 
-{{s2.p1}}
+{{p2}}
 
-{{s2.p2}}
+{{p3}}
 
-{{s2.p3}}
+{{p4}}
 
-{{s2.p4}}
+{{p5}}
 
-{{s2.p5}}
+{{p6}}
 
 ◘◘![ico-20 file] package.json◘◘
 
@@ -23,12 +23,12 @@
 
 ![](https://lh4.googleusercontent.com/t3HMzsLvURk-jymxhIhITlzHUVfrkuS1UagnldLwLccys2iZH8rBOFWdLf16gh1UqinQ8gjibPgIlqkp5PvYtAaC0hBwA32nscUHScKfZGFdgiWJHwMOyP7NU70qhWGZF87lOjmc7TfY4L8)
 
-{{s2.p6}}
+{{p7}}
 
-{{s2.p7}}
-{{s2.p8}}
+{{p8}}
+{{p9}}
 
-{{s2.p9}}
+{{p10}}
 
 ![](https://lh4.googleusercontent.com/mzuMRK4yXEhLJ1AW0sBaSswsz35bNA9srOzeQQx0EjWI2xUK7zzeADS9SdFh7g2heeuuBAQLMQYNI4xvVuiVOak-GOMQ88SpmSYE4ERCcYvRtFxg8prqo1pOyl5vy-mDY__8weNvaQ-wXhw)
 
@@ -36,25 +36,25 @@ ______________________________________________________________________
 
 ### ![ico-20 webpack] {{common.c21}}
 
-{{s3.p1}}
+{{p11}}
 
 ••![ico-20 bash] npm run dev••
 
-{{s3.p2}}
+{{p12}}
 
 ••![ico-20 bash] npm run build••
 
-{{s3.p3}}
+{{p13}}
 
-{{s3.p4}}
+{{p14}}
 _______________________________________________________________________
 
 ••![ico-20 bash] npm run dev --watch••
 
-{{s3.p5}}
-{{s3.p6}}
+{{p15}}
+{{p16}}
 
-{{s3.p7}}
+{{p17}}
 
 ◘◘![ico-20 file] script.js◘◘
 
@@ -68,8 +68,8 @@ document.body
   .src = 'https://sites.google.com/site/eternalfallout/alienhead-detailed.jpg'
 ~~~
 
-{{s3.p8}}
-{{s3.p9}}
-{{s3.p10}}
+{{p18}}
+{{p19}}
+{{p20}}
 
-{{s3.p11}}
+{{p21}}

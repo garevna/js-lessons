@@ -1,16 +1,16 @@
 # ![ico-30 study] String
 
-{{s0.p1}}
-{{s0.p2}}
+{{p1}}
+{{p2}}
 
 ## ![ico-25 icon] String.fromCharCode()
 
-{{s0.p3}}
+{{p3}}
 
-{{s0.p4}}
+{{p4}}
 
-{{s0.p5}}
-{{s0.p6}}
+{{p5}}
+{{p6}}
 
 ![ico-25 cap] ** 1 **
 
@@ -36,4 +36,4 @@ for (var x = 97; x < 105; x++) {
 console.log(str) // abcdefgh
 ~~~
 
-{{s0.p7}}
+{{p7}}

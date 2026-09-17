@@ -1,31 +1,31 @@
 
-# ![ico-35 study] {{s1.h1}}
+# ![ico-35 study] {{p1}}
 
-## ![ico-30 icon] {{s2.h1}}
+## ![ico-30 icon] {{p2}}
 
-{{s2.p1}}
-{{s2.p2}}
-{{s2.p3}}
+{{p3}}
+{{p4}}
+{{p5}}
 
-{{s2.p4}}
-{{s2.p5}}
+{{p6}}
+{{p7}}
 
-{{s2.p6}}
+{{p8}}
 
-{{s2.p7}}
+{{p9}}
 
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
+{{p10}}
+{{p11}}
+{{p12}}
+{{p13}}
 
-{{s2.p12}}
+{{p14}}
 
 ~~~js
 var num = 10
 ~~~
 
-{{s2.p13}}
+{{p15}}
 
 ~~~js
 typeof num
@@ -37,10 +37,10 @@ typeof num
 'number'
 ~~~
 
-{{s2.p15}}
-{{s2.p16}}
+{{p16}}
+{{p17}}
 
-{{s2.p17}}
+{{p18}}
 
 ~~~js
 var companyName = 'Google'
@@ -52,9 +52,9 @@ typeof companyName
 'string'
 ~~~
 
-{{s2.p18}}
+{{p19}}
 
-{{s2.p19}}
+{{p20}}
 
 ~~~js
 var boolean = false
@@ -66,19 +66,19 @@ typeof boolean
 'boolean'
 ~~~
 
-{{s2.p20}}
+{{p21}}
 
 ~~~js
 typeof typeof boolean
 ~~~
 
-{{s2.p21}}
+{{p22}}
 
 ~~~console
 'string'
 ~~~
 
-{{s2.p22}}
+{{p23}}
 
 • ~string~
 • ~number~
@@ -89,13 +89,13 @@ typeof typeof boolean
 • ~function~
 • ~symbol~
 
-{{s2.p23}}
+{{p24}}
 
 ## ![ico-30 icon] null
 
-{{s2.p24}}
+{{p25}}
 
-{{s2.p25}}
+{{p26}}
 
 §§§§ Demo | var_null_template §§§§
 
@@ -129,9 +129,9 @@ __________________________________________________
 
 __________________________________________________
 
-## ![ico-30 icon] {{s4.h1}}
+## ![ico-30 icon] {{p27}}
 
-{{s4.p1}}
+{{p28}}
 
 <span class="tab-2" />• **^^Undefined Type^^**
 <span class="tab-2" />• **^^Null Type^^**
@@ -143,8 +143,8 @@ __________________________________________________
 <span class="tab-4" />• **^^BigInt Type^^**
 <span class="tab-2" />• **^^Object Type^^**
 
-{{s4.p2}}
-{{s4.p3}}
+{{p29}}
+{{p30}}
 
-{{s4.p4}}
-{{s4.p5}}
+{{p31}}
+{{p32}}

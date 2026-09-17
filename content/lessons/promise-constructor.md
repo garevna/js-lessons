@@ -1,17 +1,17 @@
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p1}}
 
-{{s1.p1}}
-{{s1.p2}}
+{{p2}}
+{{p3}}
 
-{{s1.p3}}
+{{p4}}
 
-{{s1.p4}}
+{{p5}}
 
 ### ![ico-20 icon] MutationObserver
 
-{{s1.p5}}
+{{p6}}
 
-{{s1.p6}}
+{{p7}}
 
 ~~~js
 const observer = new MutationObserver(function (mutations) {
@@ -19,61 +19,61 @@ const observer = new MutationObserver(function (mutations) {
 })
 ~~~
 
-{{s1.p7}}
-{{s1.p8}}
+{{p8}}
+{{p9}}
 
-{{s1.p9}}
-{{s1.p10}}
+{{p10}}
+{{p11}}
 
 ~~~js
 observer.observe(element, options)
 ~~~
 
-{{s1.p11}}
-{{s1.p12}}
+{{p12}}
+{{p13}}
 
-{{s1.p13}}
-{{s1.p14}}
-{{s1.p15}}
+{{p14}}
+{{p15}}
+{{p16}}
 
 ~~~js
 const config = { childList: true }
 ~~~
 
-{{s1.p16}}
+{{p17}}
 
 _______________________________________________________________
 
 ### ![ico-20 icon] resolve | reject
 
-{{s1.p17}}
-{{s1.p18}}
-{{s1.p19}}
-{{s1.p20}}
+{{p18}}
+{{p19}}
+{{p20}}
+{{p21}}
 
-{{s1.p21}}
-{{s1.p22}}
-{{s1.p23}}
+{{p22}}
+{{p23}}
+{{p24}}
 
-{{s1.p24}}
-{{s1.p25}}
+{{p25}}
+{{p26}}
 
-{{s1.p26}}
-{{s1.p27}}
+{{p27}}
+{{p28}}
 
 ~~~js
 func(response => this.response.textContent = JSON.stringify(response), error => this.error.textContent = JSON.stringify(error))
 ~~~
 
-{{s1.p28}}
+{{p29}}
 
 ~~~js
 this.observer.observe(this.response, config)
 this.observer.observe(this.error, config)
 ~~~
 
-{{s1.p29}}
-{{s1.p30}}
+{{p30}}
+{{p31}}
 
 ~~~js
 CustomPromise.prototype.createContainer = function (containerName) {
@@ -87,7 +87,7 @@ CustomPromise.prototype.createContainer = function (containerName) {
 }
 ~~~
 
-{{s1.p31}}
+{{p32}}
 
 ~~~js
 this.createContainer('response')
@@ -96,7 +96,7 @@ this.createContainer('error')
 
 _____________________________________________________________________
 
-### ![ico-20 icon] {{s2.h1}}
+### ![ico-20 icon] {{p33}}
 
 
 ◘◘CustomPromise◘◘ 
@@ -148,9 +148,9 @@ CustomPromise.prototype.getObserver = function () {
 
 _____________________________________________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{p34}}
 
-{{s3.p1}}
+{{p35}}
 
 ~~~js
 const user = { name: 'Stephan', age: 25, hobby: 'football' }
@@ -160,7 +160,7 @@ const time = Math.random() * 5000
 const promise = new CustomPromise((resolve, reject) => setTimeout(() => Math.random() > 0.5 ? resolve(user) : reject(errorCode), time))
 ~~~
 
-{{s3.p2}}
+{{p36}}
 
 ~~~js
 promise
@@ -171,4 +171,4 @@ promise
 
 ________________________________________________
 
-{{s3.p3}}
+{{p37}}

@@ -1,10 +1,10 @@
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p1}}
 
 [◄◄◄ Async function ◄◄◄](page/async-await)
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
+{{p3}}
 
 ~~~js
 async function test () {}
@@ -40,7 +40,7 @@ console.dir(test)
         ► __proto__: Object
 ~~~~
 
-{{s1.p3}}
+{{p4}}
 
 ~~~js
 test instanceof AsyncFunction
@@ -48,7 +48,7 @@ test instanceof AsyncFunction
 
 ••![ico-20 error] Uncaught ReferenceError: AsyncFunction is not defined••
 
-{{s1.p4}}
+{{p5}}
 
 ~~~js
 const AsyncFunctionConstructor = test.__proto__.constructor
@@ -60,13 +60,13 @@ const AsyncFunctionConstructor = test.__proto__.constructor
 const AsyncFunction = (async function () {}).__proto__.constructor
 ~~~
 
-{{s1.p6}}
+{{p6}}
 
 ~~~js
 test instanceof AsyncFunction  // true
 ~~~
 
-{{s1.p7}}
+{{p7}}
 
 ~~~js
 const asyncFunc = new AsyncFunction
@@ -83,13 +83,13 @@ async ƒ anonymous(
 }
 ~~~
 
-{{s1.p8}}
+{{p8}}
 
 __________________________________
 
 ## ![ico-25 icon] prototype
 
-{{s1.p9}}
+{{p9}}
 
 ◘◘![ico-20 cap] {{common.c0}} 1◘◘
 
@@ -99,13 +99,13 @@ __________________________________
   .waitFor = (message, time) => new Promise(resolve => setTimeout(() => resolve(message), time * 1000))
 ~~~
 
-{{s1.p11}}
+{{p10}}
 
 ~~~js
 const sample = async (message, time) => console.log(await sample.waitFor(message, time))
 ~~~
 
-{{s1.p12}}
+{{p11}}
 
 ~~~js
 console.log('Start')
@@ -117,10 +117,10 @@ console.log('End')
 
 __________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{p12}}
 
-{{s2.p1}}
-{{s2.p2}}
+{{p13}}
+{{p14}}
 
 ◘◘![ico-20 cap] {{common.c0}} 2◘◘
 

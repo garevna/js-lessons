@@ -2,19 +2,19 @@
 
 **ES6**
 
-{{s0.p1}}
-{{s0.p2}}
+{{p1}}
+{{p2}}
 
-{{s0.p3}}
-{{s0.p4}}
+{{p3}}
+{{p4}}
 
 **{{common.c7}}**
 
 
 ## WeakMap
 
-{{s0.p6}}
-{{s0.p7}}
+{{p5}}
+{{p6}}
 
 ~~~js
 const dog = new WeakMap()

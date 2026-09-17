@@ -1,41 +1,41 @@
-# ![ico-35 icon] {{s1.h1}}
+# ![ico-35 icon] {{p1}}
 
-{{s1.p1}}
+{{p2}}
 
 ![](illustrations/developer-tools-console-tabs.png)
 
-{{s1.p2}}
+{{p3}}
 
 | **Elements** | **Console** | **Sources** | **Application** | **Network** | **Performance** | **Memory** | ... |
 
-{{s1.p3}}
+{{p4}}
 
-{{s1.p4}}
+{{p5}}
 _______________________________________________________________
 
-## ![ico-30 icon] {{s2.h1}}
+## ![ico-30 icon] {{p6}}
 
-{{s2.p1}}
+{{p7}}
 
 §§§§ Demo | developer_tools_01_template §§§§
 
-{{s2.p2}}
+{{p8}}
 
-{{s2.p3}}
+{{p9}}
 
-{{s2.p4}}
-{{s2.p5}}
+{{p10}}
+{{p11}}
 
-{{s2.p6}}
+{{p12}}
 
 • **SyntaxError**
 • **ReferenceError**
 • **TypeError**
 
-{{s2.p7}}
+{{p13}}
 
-{{s2.p8}}
+{{p14}}
 
 §§§§ Demo | developer_tools_02_template §§§§
 
-{{s2.p9}}
+{{p15}}

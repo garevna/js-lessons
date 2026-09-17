@@ -1,39 +1,39 @@
-# ![ico-35 study] {{s1.h1}}
+# ![ico-35 study] {{p1}}
 
-{{s1.p1}}
+{{p2}}
 
-## ![ico-30 icon] {{s2.h1}}
+## ![ico-30 icon] {{p3}}
 
-{{s2.p1}}
+{{p4}}
 
 ![](illustrations/logical-expressions.svg)
 
-{{s2.p2}}
-{{s2.p3}}
-{{s2.p4}}
-{{s2.p5}}
-{{s2.p6}}
-{{s2.p7}}
+{{p5}}
+{{p6}}
+{{p7}}
+{{p8}}
+{{p9}}
+{{p10}}
 
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
+{{p11}}
+{{p12}}
+{{p13}}
 
-{{s2.p11}}
-{{s2.p12}}
+{{p14}}
+{{p15}}
 
-{{s2.p13}}
-{{s2.p14}}
+{{p16}}
+{{p17}}
 
 ______________________________________
 
-## ![ico-30 icon] {{s3.h1}}
+## ![ico-30 icon] {{p18}}
 
-{{s3.p1}}
+{{p19}}
 
 ![](illustrations/logical-expressions-1.svg)
 
-{{s3.p2}}
+{{p20}}
 
 ◘◘ ![ico-25 coffee] ** 1**◘◘
 ~~~js
@@ -43,9 +43,9 @@ var apple = {
 }
 ~~~
 
-{{s3.p3}}
+{{p21}}
 
-{{s3.p4}}
+{{p22}}
 
 | apple.color | apple.shape | appleIsRed | appleIsRound | appleIsRedAndRound |
 |   'red'     |   'round'   |   ~true~   | ~true~       |   ~true~           |
@@ -53,39 +53,39 @@ var apple = {
 |   'red'     |   'square'  |   ~true~   | ~false~      |   ~false~          |
 |   'green'   |   'square'  |   ~false~  | ~false~      |   ~false~          |
 
-{{s3.p5}}
+{{p23}}
 
-{{s3.p6}}
+{{p24}}
 
-{{s3.p7}}
+{{p25}}
 
-{{s3.p8}}
+{{p26}}
 
-{{s3.p9}}
+{{p27}}
 
 _________________________________________________________________________
 
-### ![ico-25 icon] {{s4.h1}}
+### ![ico-25 icon] {{p28}}
 
-{{s4.p1}}
-{{s4.p2}}
-{{s4.p3}}
-{{s4.p4}}
-{{s4.p5}}
+{{p29}}
+{{p30}}
+{{p31}}
+{{p32}}
+{{p33}}
 
-{{s4.p6}}
-{{s4.p7}}
-{{s4.p8}}
-{{s4.p9}}
-{{s4.p10}}
-{{s4.p11}}
-{{s4.p12}}
-{{s4.p13}}
-{{s4.p14}}
+{{p34}}
+{{p35}}
+{{p36}}
+{{p37}}
+{{p38}}
+{{p39}}
+{{p40}}
+{{p41}}
+{{p42}}
 
-{{s4.p15}}
-{{s4.p16}}
-{{s4.p17}}
+{{p43}}
+{{p44}}
+{{p45}}
 
 §§§§ Demo | boolean_01_template §§§§
 
@@ -111,7 +111,7 @@ _________________________________________________________________________
 
 ◘◘![ico-25 hw]** 5**◘◘
 
-→→→ {{s5.quiz1}} | {{s5.quizVariants1}} | {{s5.quizAnswer1}}→→→
+→→→ {{p46}} | {{p47}} | {{p48}}→→→
 
 ◘◘![ico-25 hw]** 6**◘◘
 
@@ -127,33 +127,33 @@ _________________________________________________________________________
 
 __________________________________________________________________________
 
-## ![ico-30 icon] {{s6.h1}}
+## ![ico-30 icon] {{p49}}
 
-{{s6.p1}}
+{{p50}}
 
-{{s6.p2}}
-{{s6.p3}}
+{{p51}}
+{{p52}}
 
-{{s6.p4}}
-{{s6.p5}}
+{{p53}}
+{{p54}}
 
-{{s6.p6}}
-{{s6.p7}}
+{{p55}}
+{{p56}}
 
-{{s6.p8}}
+{{p57}}
 
-{{s6.p9}}
-{{s6.p10}}
-{{s6.p11}}
-{{s6.p12}}
+{{p58}}
+{{p59}}
+{{p60}}
+{{p61}}
 
 _____________________________________________
 
-### ![ico-25 icon] {{s7.h1}}
+### ![ico-25 icon] {{p62}}
 
-{{s7.p1}}
-{{s7.p2}}
-{{s7.p3}}
+{{p63}}
+{{p64}}
+{{p65}}
 
 ~~~js
 var apple = {
@@ -165,16 +165,16 @@ var appleIsRed = apple.color === 'red'
 var appleIsRound = apple.shape === 'round'
 ~~~
 
-{{s7.p4}}
+{{p66}}
 
-{{s7.p5}}
+{{p67}}
 
 ~~~js
 var appleIsNotRed = !appleIsRed
 ~~~
 
-{{s7.p6}}
-{{s7.p7}}
+{{p68}}
+{{p69}}
 
 ◘◘![ico-25 coffee] ** 2**◘◘
 
@@ -202,11 +202,11 @@ var appleIsNotRed = !appleIsRed
 
 ____________________________________________________________
 
-### ![ico-25 icon] {{s8.h1}}
+### ![ico-25 icon] {{p70}}
 
-{{s8.p1}}
+{{p71}}
 
-{{s8.p2}}
+{{p72}}
 
 ~~~js
 var apple = {
@@ -218,7 +218,7 @@ var appleIsRed = apple.color === 'red'
 var appleIsRound = apple.shape === 'round'
 ~~~
 
-{{s8.p3}}
+{{p73}}
 
 ~~~js
 var appleIsRedAndRound = appleIsRed && appleIsRound
@@ -226,8 +226,8 @@ var appleIsRedAndRound = appleIsRed && appleIsRound
 
 §§§§ Demo | boolean_03_template §§§§
 
-{{s8.p4}}
-{{s8.p5}}
+{{p74}}
+{{p75}}
 
 ◘◘![ico-25 coffee] ** 4**◘◘
 
@@ -273,25 +273,25 @@ z < y            // true,
 true && true     // true
 ~~~
 
-{{s8.p6}}
-{{s8.p7}}
+{{p76}}
+{{p77}}
 
 §§§§ Demo | boolean_04_template §§§§
 
-{{s8.p8}}
+{{p78}}
 
 ![](illustrations/logical-operators.svg)
 
-{{s8.p9}}
-{{s8.p10}}
+{{p79}}
+{{p80}}
 
 §§§§ Demo | boolean_05_template §§§§
 
 _________________________________________________
 
-### ![ico-25 icon] {{s9.h1}}
+### ![ico-25 icon] {{p81}}
 
-{{s9.p1}}
+{{p82}}
 
 §§§§ Demo | boolean_06_template §§§§
 
@@ -345,7 +345,7 @@ z > y            // false,
 false || false   // false
 ~~~
 
-{{s9.p2}}
+{{p83}}
 
 ![](illustrations/logical-operators-1.svg)
 
@@ -366,7 +366,7 @@ true
 ~~~
 _________________________________________________________________________
 
-{{s9.p3}}
+{{p84}}
 
 ~~~js
 !test || !!test    // всегда  true

@@ -1,33 +1,33 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{p1}}
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
+{{p3}}
+{{p4}}
+{{p5}}
+{{p6}}
+{{p7}}
 
 ______________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{p8}}
 
-{{s2.p1}}
+{{p9}}
 
-{{s2.p2}}
-{{s2.p3}}
+{{p10}}
+{{p11}}
 
-{{s2.p4}}
+{{p12}}
 
 ____________________________________
 
 ## ![ico-25 icon] for...of
 
-{{s2.p5}}
+{{p13}}
 
-{{s2.p6}}
+{{p14}}
 
-{{s2.p7}}
+{{p15}}
 
 ~~~js
 var iteratedObject = {
@@ -41,13 +41,13 @@ for (var item of iteratedObject) {
 }
 ~~~
 
-{{s2.p8}}
+{{p16}}
 
 ![ico-20 err]  ~Uncaught TypeError: iteratedObject is not iterable~
 
-{{s2.p9}}
+{{p17}}
 
-{{s2.p10}}
+{{p18}}
 
 ____________________________________________
 
@@ -62,7 +62,7 @@ for (var num of iteratedArray) {
 }
 ~~~
 
-{{s2.p11}}
+{{p19}}
 
 _________________________
 
@@ -76,12 +76,12 @@ for (var char of iteratedString) {
 }
 ~~~
 
-{{s2.p12}}
+{{p20}}
 
 ________________________
 
-{{s2.p13}}
-{{s2.p14}}
+{{p21}}
+{{p22}}
 
 ~~~js
 function testBrackets ( string ) {
@@ -120,15 +120,15 @@ function showArguments () {
 showArguments('begemot', false, 3)
 ~~~
 
-{{s2.p15}}
+{{p23}}
 
 ___________________________
 
 ### ![ico-25 icon] ~continue~ | ~break~
 
-{{s2.p16}}
+{{p24}}
 
-{{s2.p17}}
+{{p25}}
 
 ~~~js
 var cities = [
@@ -148,7 +148,7 @@ for (var city of cities) {
 }
 ~~~
 
-{{s2.p18}}
+{{p26}}
 
 ~~~js
 Киев
@@ -160,7 +160,7 @@ for (var city of cities) {
 Лондон
 ~~~
 
-{{s2.p19}}
+{{p27}}
 
 ~~~js
 for (var city of cities) {
@@ -169,7 +169,7 @@ for (var city of cities) {
 }
 ~~~
 
-{{s2.p20}}
+{{p28}}
 
 ~~~js
 Киев
@@ -179,19 +179,19 @@ for (var city of cities) {
 Монреаль
 ~~~
 
-{{s2.p21}}
+{{p29}}
 
-{{s2.p22}}
+{{p30}}
 
 _____________________
 
 ## ![ico-25 icon] for...in
 
-{{s2.p23}}
+{{p31}}
 
-{{s2.p24}}
+{{p32}}
 
-{{s2.p25}}
+{{p33}}
 
 ### ![ico-25 cap] {{common.c0}}
 
@@ -207,9 +207,9 @@ for (var prop in iteratedObject) {
 }
 ~~~
 
-{{s3.p1}}
+{{p34}}
 
-{{s3.p2}}
+{{p35}}
 
 ~~~js
 for (var propName in iteratedObject) {
@@ -217,13 +217,13 @@ for (var propName in iteratedObject) {
 }
 ~~~
 
-{{s3.p3}}
+{{p36}}
 
 ~~~js
 Begemot, true, 3
 ~~~
 
-{{s3.p4}}
+{{p37}}
 
 ~~~js
 for (var propName in iteratedObject) {
@@ -231,7 +231,7 @@ for (var propName in iteratedObject) {
 }
 ~~~
 
-{{s3.p5}}
+{{p38}}
 
 ~~~js
 name  :  Begemot
@@ -241,11 +241,11 @@ age  :  3
 
 _____________________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] {{p39}}
 
-{{s4.p1}}
+{{p40}}
 
-{{s4.p2}}
+{{p41}}
 
 ### ![ico-25 cap] {{common.c0}} 1
 
@@ -267,7 +267,7 @@ for (var index in iteratedArray) {
 
 __________________________
 
-### ![ico-20 icon] {{s6.h1}}
+### ![ico-20 icon] {{p42}}
 
 ~~~js
 iteratedString = 'Котенок'
@@ -288,10 +288,10 @@ for (var index in iteratedString) {
 6  :  к
 ~~~
 
-{{s6.p2}}
+{{p43}}
 
-{{s6.p3}}
-{{s6.p4}}
+{{p44}}
+{{p45}}
 
 _____________________________________________
 
@@ -309,9 +309,9 @@ for (var prop in article) {
 }
 ~~~
 
-{{s7.p1}}
-{{s7.p2}}
-{{s7.p3}}
+{{p46}}
+{{p47}}
+{{p48}}
 
 _______________________________
 
@@ -329,7 +329,7 @@ for (var prop in obj) {
 }
 ~~~
 
-{{s8.p1}}
+{{p49}}
 
 ~~~js
 false
@@ -343,7 +343,7 @@ _________________________________
 
 ### ![ico-25 cap] continue
 
-{{s8.p2}}
+{{p50}}
 
 ~~~js
 var obj = {
@@ -358,20 +358,20 @@ for (var prop in obj) {
 }
 ~~~
 
-{{s8.p3}}
+{{p51}}
 
 ~~~js
 11
 05
 ~~~
 
-{{s8.p4}}
+{{p52}}
 
 __________________________
 
 ### ![ico-25 cap] break
 
-{{s8.p5}}
+{{p53}}
 
 ~~~js
 for (var prop in obj) {
@@ -380,15 +380,15 @@ for (var prop in obj) {
 }
 ~~~
 
-{{s8.p6}}
+{{p54}}
 
-{{s8.p7}}
+{{p55}}
 
 ---------------------------------
 
 ## ![ico-25 icon] for...of vs for...in
 
-{{s8.p8}}
+{{p56}}
 
 ~~~js
 var cities = [
@@ -403,29 +403,29 @@ var cities = [
 ]
 ~~~
 
-{{s8.p9}}
+{{p57}}
 
-{{s8.p10}}
+{{p58}}
 
-{{s8.p11}}
+{{p59}}
 
-{{s8.p12}}
+{{p60}}
 
-{{s8.p13}}
+{{p61}}
 
-{{s8.p14}}
+{{p62}}
 
 ~~~js
 cities.whereYouLive = 'Париж'
 ~~~
 
-{{s8.p15}}
+{{p63}}
 
 ~~~js
 console.log(cities)
 ~~~
 
-{{s8.p16}}
+{{p64}}
 
 ~~~js
 ▼ (8) ['Киев', 'Львов', 'Харьков', 'Одесса', 'Монреаль', 'Копенгаген', 'Вена', 'Лондон', whereYouLive: 'Париж']
@@ -442,9 +442,9 @@ console.log(cities)
   ► __proto__: Array(0)
 ~~~
 
-{{s8.p17}}
+{{p65}}
 
-{{s8.p18}}
+{{p66}}
 
 ~~~js
 for (var city of cities) {
@@ -465,7 +465,7 @@ for (var city of cities) {
 Лондон
 ~~~
 
-{{s8.p20}}
+{{p67}}
 
 ~~~js
 for (var index in cities) {
@@ -487,21 +487,21 @@ for (var index in cities) {
 whereYouLive
 ~~~
 
-{{s8.p22}}
+{{p68}}
 
-{{s8.p23}}
+{{p69}}
 
-{{s8.p24}}
+{{p70}}
 
-{{s8.p25}}
+{{p71}}
 
-{{s8.p26}}
+{{p72}}
 
 ~~~js
 cities['whereYouLive']
 ~~~
 
-{{s8.p27}}
+{{p73}}
 
 ________________
 

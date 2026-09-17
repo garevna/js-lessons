@@ -1,10 +1,10 @@
 # ![ico-30 study] Document Object Model (DOM)
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p1}}
 
 @@@@
 
-{{s1.p1}}
+{{p2}}
 ![](images/object-constructor.svg)
 
 @@@@
@@ -13,7 +13,7 @@
 console.dir(EventTarget)
 ~~~
 
-{{s1.p2}}
+{{p3}}
 
 ~~~~console
 
@@ -32,23 +32,23 @@ console.dir(EventTarget)
     ► __proto__: ƒ ()
 ~~~~
 
-{{s1.p3}}
+{{p4}}
 
 • addEventListener
 • removeEventListener
 • dispatchEvent
 
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
+{{p5}}
+{{p6}}
+{{p7}}
 
-{{s1.p7}}
+{{p8}}
 
-{{s1.p8}}
+{{p9}}
 
-{{s1.p9}}
+{{p10}}
 
-{{s1.p10}}
+{{p11}}
 
 ~~~js
 for (var prop in HTMLElement.prototype) {
@@ -57,11 +57,11 @@ for (var prop in HTMLElement.prototype) {
 }
 ~~~
 
-{{s1.p11}}
+{{p12}}
 
-{{s1.p12}}
+{{p13}}
 
-{{s1.p13}}
+{{p14}}
 
 __________________________________________________________________
 
@@ -104,11 +104,11 @@ document.body.appendChild(document.createElement('div'))
 
 ______________________________________________________
 
-{{s1.p15}}
+{{p15}}
 
-{{s1.p16}}
+{{p16}}
 
-{{s1.p17}}
+{{p17}}
 
 ^^^[event type]
 
@@ -127,25 +127,25 @@ ______________________________________________________
 
 ^^^
 
-{{s1.p18}}
+{{p18}}
 
 ![](illustrations/event-1.png)
-{{s1.p19}}
+{{p19}}
 
-{{s1.p20}}
+{{p20}}
 
-{{s1.p21}}
+{{p21}}
 
 ________________________
 
-{{s1.p22}}
-{{s1.p23}}
-{{s1.p24}}
-{{s1.p25}}
-{{s1.p26}}
+{{p22}}
+{{p23}}
+{{p24}}
+{{p25}}
+{{p26}}
 
-{{s1.p27}}
-{{s1.p28}}
+{{p27}}
+{{p28}}
 
 ◘◘![ico-25 cap] target & eventPhase◘◘
 
@@ -183,18 +183,18 @@ var divs = pictures.map(picture => {
 
 _________________________________
 
-{{s1.p29}}
+{{p29}}
 
 [HTML DOM Events](external/mdn-dom-events)
 [JavaScript Events](external/w3-dom-events)
 
 _________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{p30}}
 
-{{s2.p1}}
+{{p31}}
 
-{{s2.p2}}
+{{p32}}
 
 ~~~js
 var userEvent = new Event('user')
@@ -204,7 +204,7 @@ ___________________________________
 
 ## ![ico-25 icon] dispatchEvent
 
-{{s2.p3}}
+{{p33}}
 
 ◘◘![ico-25 cap] **dispatchEvent**◘◘
 
@@ -219,7 +219,7 @@ _________________________________
 
 ## ![ico-25 icon] CustomEvent
 
-{{s2.p4}}
+{{p34}}
 
 ◘◘![ico-25 cap] **CustomEvent**◘◘
 
@@ -260,50 +260,50 @@ ______________________________________
 
 ## ![ico-25 icon] event handler
 
-{{s2.p5}}
+{{p35}}
 
-{{s2.p6}}
+{{p36}}
 
-{{s2.p7}}
+{{p37}}
 
-{{s2.p8}}
+{{p38}}
 
-{{s2.p9}}
+{{p39}}
 
-{{s2.p10}}
+{{p40}}
 
-{{s2.p11}}
+{{p41}}
 
 ~~~js
 elem.onclick = function (event) { ... }
 elem.onmouseover = function (ev) { ... }
 ~~~
 
-{{s2.p12}}
+{{p42}}
 
 _________________________________________
 
 ### ![ico-20 icon] event.screenX &#124; event.screenY
 
-{{s2.p13}}
+{{p43}}
 
 _________________________________________________
 
 ### ![ico-20 icon] event.clientX &#124; event.clientY
 
-{{s2.p14}}
+{{p44}}
 
 [:::clientX | clientY:::](external/clientX-clientY)
 
-{{s2.p15}}
+{{p45}}
 
 _______________________________
 
 ### ![ico-20 icon] event.pageX &#124; event.pageY
 
-{{s2.p16}}
+{{p46}}
 
-{{s2.p17}}
+{{p47}}
 
 _________________________
 
@@ -315,36 +315,36 @@ ____________________________
 
 ## ![ico-25 icon] eventListener
 
-{{s2.p18}}
-{{s2.p19}}
-{{s2.p20}}
-{{s2.p21}}
+{{p48}}
+{{p49}}
+{{p50}}
+{{p51}}
 
 ![](illustrations/event-2.png)
 
-{{s2.p22}}
+{{p52}}
 
 ![ico-20 green-ok] addEventListener
 ![ico-20 green-ok] removeEventListener
 
-{{s2.p23}}
+{{p53}}
 
-{{s2.p24}}
+{{p54}}
 
-{{s2.p25}}
+{{p55}}
 
-{{s2.p26}}
+{{p56}}
 
-{{s2.p27}}
+{{p57}}
 
 _________________________________________________________________
 
 ## ![ico-25 icon] addEventListener
 
-{{s2.p28}}
+{{p58}}
 ^^• mouseover<br>• mouseout<br>• input<br>• change<br>**...**^^
 
-{{s2.p29}}
+{{p59}}
 
 _______________________
 
@@ -386,13 +386,13 @@ circle.addEventListener('click', function (event) {
 })
 ~~~
 
-{{s2.p30}}
+{{p60}}
 
 {{{DOM-events-2.js}}}
 
 _______________________
 
-{{s2.p31}}
+{{p61}}
 
 _____________________________
 
@@ -423,13 +423,13 @@ _________________________________________________
 
 ### ![ico-20 icon] preventDefault()
 
-{{s2.p32}}
+{{p62}}
 
-{{s2.p33}}
+{{p63}}
 
-{{s2.p34}}
+{{p64}}
 
-{{s2.p35}}
+{{p65}}
 
 _______________________
 
@@ -453,13 +453,13 @@ ___________________________________
 
 ### ![ico-20 icon] stopPropagation()
 
-{{s2.p36}}
+{{p66}}
 
-{{s2.p37}}
+{{p67}}
 
 __________________
 
-{{s2.p38}}
+{{p68}}
 
 ◘◘![ico-25 cap] ** 5**◘◘
 ~~~js
@@ -508,26 +508,26 @@ for ( var x = 1; x < 5; x++ ) {
 }
 ~~~
 
-{{s2.p39}}
+{{p69}}
 
 ~~~js
 event.stopPropagation()
 ~~~
 
-{{s2.p40}}
+{{p70}}
 
 
 ____________________________________
 
 ### ![ico-20 icon] stopImmediatePropagation()
 
-{{s2.p41}}
+{{p71}}
 
-{{s2.p42}}
+{{p72}}
 
 _______________________
 
-{{s2.p43}}
+{{p73}}
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
@@ -555,35 +555,35 @@ for (var txt of text) {
 }
 ~~~
 
-{{s2.p44}}
+{{p74}}
 
-{{s2.p45}}
+{{p75}}
 
 ~~~js
 event.stopImmediatePropagation()
 ~~~
 
-{{s2.p46}}
+{{p76}}
 
 ____________________________________________
 
 ## ![ico-25 icon] removeEventListener
 
-{{s2.p47}}
+{{p77}}
 
-{{s2.p48}}
-{{s2.p49}}
-{{s2.p50}}
+{{p78}}
+{{p79}}
+{{p80}}
 
-{{s2.p51}}
+{{p81}}
 
-{{s2.p52}}
-{{s2.p53}}
-{{s2.p54}}
+{{p82}}
+{{p83}}
+{{p84}}
 
 ___________________
 
-{{s2.p55}}
+{{p85}}
 
 ◘◘![ico-25 cap] ** 7**◘◘
 
@@ -601,7 +601,7 @@ document.getElementById('sample')
 
 ___________________________________
 
-{{s2.p56}}
+{{p86}}
 
 ◘◘![ico-25 cap] ** 8**◘◘
 
@@ -645,7 +645,7 @@ _________________________
 
 ^^^
 
-^^^[{{s2.spoiler2}}]
+^^^[{{p87}}]
 
 ~~~js
 var collection = document.querySelectorAll('p &#126; *')
@@ -680,10 +680,10 @@ elem.addEventListener('click', clickHandler)
 
 _______________________________________________________
 
-{{s2.p57}}
-{{s2.p58}}
-{{s2.p59}}
-{{s2.p60}}
+{{p88}}
+{{p89}}
+{{p90}}
+{{p91}}
 
 ◘◘![ico-25 cap] ** 9**◘◘
 
@@ -725,7 +725,7 @@ document.body.onclick = bodyClickHandler
 
 ____________________________________________________________
 
-{{s2.p61}}
+{{p92}}
 
 [:::mouseover & mouseout:::](external/mouseover-mouseout)
 

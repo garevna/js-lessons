@@ -1,19 +1,19 @@
 # ![ico-30 study] Streams API
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
-{{s0.p3}}
-{{s0.p4}}
-{{s0.p5}}
+{{p2}}
+{{p3}}
+{{p4}}
+{{p5}}
 
 [![ico-20 link] MDN](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API)
 
 ____________________________________________________
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p6}}
 
-{{s1.p1}}
+{{p7}}
 
 ^^^[Readable Streams]
 ![ico-20 green-ok] ReadableStream
@@ -30,9 +30,9 @@ ____________________________________________________
 
 **{{common.c7}}**
 
-{{s1.p3}}
+{{p8}}
 
-{{s1.p4}}
+{{p9}}
 
 ^^• cancel()^^
 ^^• getReader()^^
@@ -40,7 +40,7 @@ ____________________________________________________
 ^^• pipeTo()^^
 ^^• tee()^^
 
-{{s1.p5}}
+{{p10}}
 
 ~~~~ReadableStream
 ▼ ƒ ReadableStream
@@ -61,7 +61,7 @@ ____________________________________________________
   ► __proto__: ƒ ()
 ~~~~
 
-{{s1.p6}}
+{{p11}}
 
 ~~~js
 const textStream = new ReadableStream({
@@ -69,15 +69,15 @@ const textStream = new ReadableStream({
 })
 ~~~
 
-{{s1.p7}}
+{{p12}}
 
-{{s1.p8}}
+{{p13}}
 
-{{s1.p9}}
+{{p14}}
 
 ![ico-25 cap] ** 1**
 
-{{s1.p10}}
+{{p15}}
 
 ~~~js
 const textStream = new ReadableStream({
@@ -87,7 +87,7 @@ const textStream = new ReadableStream({
 })
 ~~~
 
-{{s1.p11}}
+{{p16}}
 
 ~~~~ReadableStreamDefaultController
 ▼ ReadableStreamDefaultController
@@ -102,17 +102,17 @@ const textStream = new ReadableStream({
       ► __proto__: Object
 ~~~~
 
-{{s1.p12}}
+{{p17}}
 
 ________________________________________
 
 ![ico-25 cap] ** 2**
 
-{{s1.p13}}
-{{s1.p14}}
-{{s1.p15}}
-{{s1.p16}}
-{{s1.p17}}
+{{p18}}
+{{p19}}
+{{p20}}
+{{p21}}
+{{p22}}
 
 ~~~~js
 const textStream = new ReadableStream({
@@ -132,7 +132,7 @@ const textStream = new ReadableStream({
 })
 ~~~~
 
-{{s1.p18}}
+{{p23}}
 
 ~~~~textStream
 ▼ ReadableStream {locked: false}
@@ -150,10 +150,10 @@ const textStream = new ReadableStream({
       ► __proto__: Object
 ~~~~
 
-{{s1.p19}}
-{{s1.p20}}
-{{s1.p21}}
-{{s1.p22}}
+{{p24}}
+{{p25}}
+{{p26}}
+{{p27}}
 
 ~~~js
 const reader = textStream.getReader()
@@ -161,9 +161,9 @@ const reader = textStream.getReader()
 console.log(reader)
 ~~~
 
-{{s1.p23}}
-{{s1.p24}}
-{{s1.p25}}
+{{p28}}
+{{p29}}
+{{p30}}
 
 ~~~~ReadableStreamDefaultReader
 ▼ ReadableStreamDefaultReader {}
@@ -178,16 +178,16 @@ console.log(reader)
       ► __proto__: Object
 ~~~~
 
-{{s1.p26}}
+{{p31}}
 
 ~~~js
 console.log(reader.read())  // ► Promise {<resolved>: {…}}
 ~~~
 
-{{s1.p27}}
-{{s1.p28}}
+{{p32}}
+{{p33}}
 
-{{s1.p29}}
+{{p34}}
 
 ~~~~js
 const messageBox = document.body
@@ -199,10 +199,10 @@ messageBox.putChank = function (chank) {
 }
 ~~~~
 
-{{s1.p30}}
-{{s1.p31}}
-{{s1.p32}}
-{{s1.p33}}
+{{p35}}
+{{p36}}
+{{p37}}
+{{p38}}
 
 ~~~~js
 function readStream (stream, container) {
@@ -217,11 +217,11 @@ function readStream (stream, container) {
 }
 ~~~~
 
-{{s1.p34}}
+{{p39}}
 
 [![ico-70 youtube]](https://youtu.be/hZJByg_KcX4)
 
-{{s1.p35}}
+{{p40}}
 
 ~~~js
 async function readStream (stream, container) {
@@ -233,7 +233,7 @@ async function readStream (stream, container) {
 }
 ~~~
 
-{{s1.p36}}
+{{p41}}
 
 [![ico-70 youtube]](https://youtu.be/OJOOBgqbsmk)
 
@@ -241,7 +241,7 @@ _______________________________________________
 
 ![ico-25 cap] ** 3**
 
-{{s1.p37}}
+{{p42}}
 
 ~~~~js
 const stream = new ReadableStream({
@@ -256,7 +256,7 @@ const stream = new ReadableStream({
 })
 ~~~~
 
-{{s1.p38}}
+{{p43}}
 
 ~~~~js
 async function readStream (stream, container) {
@@ -268,7 +268,7 @@ async function readStream (stream, container) {
 }
 ~~~~
 
-{{s1.p39}}
+{{p44}}
 
 ~~~~js
 const avatars = document.body
@@ -279,7 +279,7 @@ avatars.pushUser = function (chank) {
 }
 ~~~~
 
-{{s1.p40}}
+{{p45}}
 
 ~~~js
 readStream(stream, avatars)
@@ -289,7 +289,7 @@ ____________________________________________
 
 ## ![ico-25 icon] fetch
 
-{{s1.p41}}
+{{p46}}
 
 ![ico-25 cap] ** 4**
 
@@ -317,7 +317,7 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
 
 ^^^
 
-{{s1.p42}}
+{{p47}}
 
 ~~~js
 fetch('http://ptsv2.com/t/garevna/d/980001/json')
@@ -341,7 +341,7 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
 
 ^^^
 
-{{s1.p43}}
+{{p48}}
 
 ~~~js
 fetch('http://ptsv2.com/t/garevna/d/980001/json')
@@ -360,9 +360,9 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
 
 ^^^
 
-{{s1.p44}}
+{{p49}}
 
-{{s1.p45}}
+{{p50}}
 
 ~~~~js
 fetch('http://ptsv2.com/t/garevna/d/980001/json')
@@ -383,7 +383,7 @@ ArrayBuffer(1401) {0: 123, 1: 34, 2: 84, 3: 105, 4: 109, 5: 101, 6: 115, 7: 116
 
 ^^^
 
-{{s1.p46}}
+{{p51}}
 
 ~~~~js
 fetch('http://ptsv2.com/t/garevna/d/980001/json')
@@ -413,7 +413,7 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
 
 ^^^
 
-{{s1.p47}}
+{{p52}}
 
 ~~~~js
 const blob = new Blob(['body { background-color: #dde; }' ], { type: 'text/css' })

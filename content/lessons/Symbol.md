@@ -2,14 +2,14 @@
 
 **^^ES6 (2015)^^**
 
-{{s0.p1}}
-{{s0.p2}}
-{{s0.p3}}
-{{s0.p4}}
-{{s0.p5}}
-{{s0.p6}}
-{{s0.p7}}
-{{s0.p8}}
+{{p1}}
+{{p2}}
+{{p3}}
+{{p4}}
+{{p5}}
+{{p6}}
+{{p7}}
+{{p8}}
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -29,14 +29,14 @@ toString: Symbol(Я - новый символ, который ты только 
 
 _____________________________________
 
-## ![ico-25 study] {{s1.h1}}
+## ![ico-25 study] {{p9}}
 
-{{s1.p1}}
+{{p10}}
 
-{{s1.p2}}
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
+{{p11}}
+{{p12}}
+{{p13}}
+{{p14}}
 
 ◘◘![ico-20 cap] ** 2**◘◘
 
@@ -73,7 +73,7 @@ Google
 obj[symb]()    // Hello
 ~~~
 
-{{s1.p6}}
+{{p15}}
 
 ◘◘![ico-20 cap] ** 3**◘◘
 
@@ -91,21 +91,21 @@ ___________________________________________
 
 ## ![ico-25 study] Symbol.for
 
-{{s1.p7}}
-{{s1.p8}}
+{{p16}}
+{{p17}}
 
-{{s1.p9}}
+{{p18}}
 
 ~~~js
 Symbol.for('Google')
 ~~~
 
-{{s1.p10}}
-{{s1.p11}}
-{{s1.p12}}
+{{p19}}
+{{p20}}
+{{p21}}
 
-{{s1.p13}}
-{{s1.p14}}
+{{p22}}
+{{p23}}
 
 ~~~js
 Symbol.for('Google')
@@ -131,7 +131,7 @@ const user = {
 const session = Symbol.for(JSON.stringify(user))
 ~~~
 
-{{s1.p15}}
+{{p24}}
 
 ~~~js
 const source = [
@@ -208,8 +208,8 @@ usersInterface = {
 console.log(usersInterface.users)  // null
 ~~~
 
-{{s1.p16}}
-{{s1.p17}}
+{{p25}}
+{{p26}}
 
 ~~~js
 usersInterface.users = source

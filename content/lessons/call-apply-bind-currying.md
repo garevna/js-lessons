@@ -1,13 +1,13 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{p1}}
 
-☼☼☼ {{s1.slogan1}} ☼☼☼
+☼☼☼ {{p2}} ☼☼☼
 
 ____________________________________________
 
 
 ## ![ico-25 icon] Currying
 
-{{s1.p1}}
+{{p3}}
 
 ![ico-25 cap] ** 1**
 
@@ -18,9 +18,9 @@ function reminder (arg) {
     : Array.from(arguments)
 }
 ~~~
-{{s1.p2}}
-{{s1.p3}}
-{{s1.p4}}
+{{p4}}
+{{p5}}
+{{p6}}
 
 ~~~js
 function sample () {
@@ -40,41 +40,41 @@ alpha,betta
 alpha,betta,delta
 ~~~
 
-{{s1.p5}}
-{{s1.p6}}
+{{p7}}
+{{p8}}
 
-{{s1.p7}}
-{{s1.p8}}
+{{p9}}
+{{p10}}
 
-{{s1.p9}}
+{{p11}}
 
 ~~~js
 alpha('sigma', 'omega')
 ~~~
 
-{{s1.p10}}
+{{p12}}
 
 ~~~console
 alpha,sigma,omega
 ~~~
 
-{{s1.p11}}
-{{s1.p12}}
-{{s1.p13}}
+{{p13}}
+{{p14}}
+{{p15}}
 
 ~~~js
 betta('figure', 'smile')
 ~~~
 
-{{s1.p14}}
+{{p16}}
 
 ~~~console
 alpha,betta,figure,smile
 ~~~
 
-{{s1.p15}}
+{{p17}}
 
-{{s1.p16}}
+{{p18}}
 
 _______________________________________________________
 
@@ -99,9 +99,9 @@ var curried = currying('Google')
 console.log(curried)
 ~~~
 
-{{s1.p17}}
-{{s1.p18}}
-{{s1.p19}}
+{{p19}}
+{{p20}}
+{{p21}}
 
 **{{common.c2}}**
 
@@ -112,13 +112,13 @@ console.log(curried)
 }
 ~~~
 
-{{s1.p21}}
+{{p22}}
 
 ~~~js
 curried()  // null
 ~~~
 
-{{s1.p22}}
+{{p23}}
 
 ~~~js
 curried('Mozilla')   // ► (2) ["Google", "Mozilla"]
@@ -126,7 +126,7 @@ curried('Mozilla')   // ► (2) ["Google", "Mozilla"]
 
 ____________________
 
-{{s1.p23}}
+{{p24}}
 
 ◘◘![ico-25 cap] **12**◘◘
 
@@ -301,9 +301,9 @@ console.log(test ()()()()()().result)  // 64
 ~~~
 _________________________________________
 
-## ![ico-25 smile] {{s2.h1}}
+## ![ico-25 smile] {{p25}}
 
-{{s2.p1}}
+{{p26}}
 
 ~~~js
 var sample = function () {

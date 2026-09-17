@@ -2,21 +2,21 @@
 
 ## ![ico-25 icon]
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-### ![ico-25 cap] {{s1.h1}}
+### ![ico-25 cap] {{p3}}
 
-{{s1.p1}}
+{{p4}}
 
-{{s1.p2}}
+{{p5}}
 
 ~~~html
 <slot name="script">Default script</slot>
 ~~~
 
-{{s1.p3}}
+{{p6}}
 
 ~~~javascript
 const template = document.body.appendChild (
@@ -34,9 +34,9 @@ template.innerHTML = `
 `
 ~~~
 
-{{s1.p4}}
+{{p7}}
 
-{{s1.p5}}
+{{p8}}
 
 ~~~js
 customElements.define('sample-element', class extends HTMLElement {
@@ -49,13 +49,13 @@ customElements.define('sample-element', class extends HTMLElement {
 })
 ~~~
 
-{{s1.p6}}
+{{p9}}
 
 ~~~js
 const codeText = `function sayHello () { console.log('Hello!') }`
 ~~~
 
-{{s1.p7}}
+{{p10}}
 
 ~~~js
 document.body
@@ -66,11 +66,11 @@ document.body
   }))(codeText))
 ~~~
 
-{{s1.p8}}
+{{p11}}
 
 ___________________________________________________________
 
-{{s1.p9}}
+{{p12}}
 
 ~~~~js
 const template = document.body

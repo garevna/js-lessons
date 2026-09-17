@@ -1,28 +1,28 @@
-# ![ico-40 icon] {{s1.h1}}
+# ![ico-40 icon] {{p1}}
 
 **ES6**
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
+{{p3}}
 
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
+{{p4}}
+{{p5}}
+{{p6}}
 
-{{s1.p6}}
+{{p7}}
 
-{{s1.p7}}
+{{p8}}
 
-{{s1.p8}}
+{{p9}}
 
-{{s1.p9}}
+{{p10}}
 
 _______________________________________________________________
 
 ## ![ico-25 icon] {{common.c23}}
 
-{{s2.p1}}
+{{p11}}
 
 ◘◘![ico-20 cap] 1◘◘
 
@@ -48,11 +48,11 @@ console.info(cos30)  // 0.5
 
 ___________________________________________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{p12}}
 
-{{s3.p1}}
+{{p13}}
 
-{{s3.p2}}
+{{p14}}
 
 ◘◘![ico-20 cap] 2◘◘
 
@@ -68,11 +68,11 @@ console.info(z)  // 5
 
 ___________________________________________________________
 
-### ![ico-20 icon] {{s4.h1}}
+### ![ico-20 icon] {{p15}}
 
-{{s4.p1}}
+{{p16}}
 
-{{s4.p2}}
+{{p17}}
 
 ◘◘![ico-20 cap] 3◘◘
 
@@ -98,15 +98,15 @@ console.log(calcAngleData(Math.PI/3))
 
 ___________________________
 
-### ![ico-20 icon] {{s5.h1}}
+### ![ico-20 icon] {{p18}}
 
-{{s5.p1}}
+{{p19}}
 
 ~~~js
 const array = [5, 1, 4, 9, 3, 8, 0]
 ~~~
 
-{{s5.p2}}
+{{p20}}
 
 ◘◘![ico-20 cap] 4◘◘
 
@@ -122,21 +122,21 @@ array.forEach((item, index, arr) => {
 })
 ~~~
 
-{{s5.p3}}
+{{p21}}
 
 ~~~console
 [0, 1, 3, 4, 5, 8, 9]
 ~~~
 
-{{s5.p4}}
+{{p22}}
 
 ~~~js
 const array = ['undefined', 'number', 'boolean', 'string', 'function', 'symbol', 'object']
 ~~~
 
-{{s5.p5}}
+{{p23}}
 
-{{s5.p6}}
+{{p24}}
 
 ~~~console
 ["boolean", "function", "number", "object", "string", "symbol", "undefined"]
@@ -150,7 +150,7 @@ _____________________________________________________________
 new Date(...new Date().toLocaleDateString().split('.').reverse())
 ~~~
 
-{{s5.p7}}
+{{p25}}
 
 ~~~js
 user.birthday = new Date(...).toLocaleDateString()
@@ -162,7 +162,7 @@ user.birthday = new Date(...).toLocaleDateString()
 user.birthday = '27.05.2001'
 ~~~
 
-{{s5.p9}}
+{{p26}}
 
 ~~~js
 const userBirthday = new Date(...user.birthday.split('.').reverse())
@@ -172,10 +172,10 @@ _____________________________________________________________
 
 ## ![ico-25 icon] {{common.c18}}
 
-{{s6.p1}}
+{{p27}}
 
-{{s6.p2}}
-{{s6.p3}}
+{{p28}}
+{{p29}}
 
 ◘◘![ico-20 cap] 5◘◘
 
@@ -193,7 +193,7 @@ console.info(role)   // "admin"
 console.info(stars)  // 5
 ~~~
 
-{{s6.p4}}
+{{p30}}
 
 ~~~js
 let name, age
@@ -201,14 +201,14 @@ let name, age
 ({ name, age } = { name: 'Ivan', age: 25 })
 ~~~
 
-{{s6.p5}}
+{{p31}}
 
 ~~~console
 ⛔️ Uncaught SyntaxError: Unexpected token =
 ~~~
 
-{{s6.p6}}
-{{s6.p7}}
+{{p32}}
+{{p33}}
 
 ◘◘![ico-20 cap] 6◘◘
 
@@ -228,9 +228,9 @@ console.log(userName)   // "Ivan"
 console.log(employed)   // true
 ~~~
 
-{{s6.p8}}
+{{p34}}
 
-{{s6.p9}}
+{{p35}}
 
 ____________________________________________________________________
 
@@ -248,7 +248,7 @@ console.log(speciality)  // "слесарь"
 
 ----------------------------------------------------------------------
 
-## ![ico-25 icon] {{s7.h1}}
+## ![ico-25 icon] {{p36}}
 
 ◘◘![ico-20 cap] 8◘◘
 
@@ -317,11 +317,11 @@ console.log(motherLastHobby)  // walks
 ____________________________________________________________________
 
 
-## ![ico-25 icon] {{s8.h1}}
+## ![ico-25 icon] {{p37}}
 
-{{s8.p1}}
-{{s8.p2}}
-{{s8.p3}}
+{{p38}}
+{{p39}}
+{{p40}}
 
 ◘◘![ico-20 cap] 10◘◘
 
@@ -344,10 +344,10 @@ show(...getAngleData(Math.PI/3))
 0.808448792630022
 ~~~
 
-{{s8.p4}}
+{{p41}}
 
-{{s8.p5}}
-{{s8.p6}}
+{{p42}}
+{{p43}}
 
 ~~~js
 const [sin30, ...rest30] = getAngleData(Math.PI/3)
@@ -362,7 +362,7 @@ console.log(rest30)
 
 _______________________________________
 
-### ![ico-20 icon] {{s9.h1}}
+### ![ico-20 icon] {{p44}}
 
 ◘◘![ico-20 cap] 11◘◘
 
@@ -394,13 +394,13 @@ console.log (userWithoutPass)
 
 _______________________________________
 
-### ![ico-20 icon] {{s10.h1}}
+### ![ico-20 icon] {{p45}}
 
-{{s10.p1}}
-{{s10.p2}}
-{{s10.p3}}
-{{s10.p4}}
-{{s10.p5}}
+{{p46}}
+{{p47}}
+{{p48}}
+{{p49}}
+{{p50}}
 
 ◘◘![ico-20 cap] 12◘◘
 
@@ -410,9 +410,9 @@ const array = [1, 2, 3, 4, 5]
 const clone = new Array(...array)
 ~~~
 
-{{s10.p6}}
-{{s10.p7}}
-{{s10.p8}}
+{{p51}}
+{{p52}}
+{{p53}}
 
 ~~~js
 const first = [1, 2, 3, 4, 5]
@@ -425,10 +425,10 @@ ___________________________
 
 ## ![ico-20 icon] Immutability
 
-{{s10.p9}}
-{{s10.p10}}
-{{s10.p11}}
-{{s10.p12}}
+{{p54}}
+{{p55}}
+{{p56}}
+{{p57}}
 
 ◘◘![ico-20 cap] 13◘◘
 
@@ -445,8 +445,8 @@ const summation = () => {
 }
 ~~~
 
-{{s10.p13}}
-{{s10.p14}}
+{{p58}}
+{{p59}}
 
 ~~~js
 console.log((summation())([...numbers]))
@@ -456,9 +456,9 @@ console.log(result)
 
 ____________________________________________________________
 
-{{s10.p15}}
+{{p60}}
 
-{{s10.p16}}
+{{p61}}
 
 ◘◘![ico-20 cap] 14 (html)◘◘
 
@@ -484,7 +484,7 @@ console.log(forth)   // <p class="paragraph">4</p>
 
 ____________________________________________________________________
 
-{{s10.p17}}
+{{p62}}
 
 {{common.c17}}
 
@@ -505,7 +505,7 @@ ____________________________________________________________________
 </body>
 ~~~
 
-{{s10.p19}}
+{{p63}}
 
 ◘◘![ico-20 cap] 15 (JS)◘◘
 
@@ -518,7 +518,7 @@ const passElem = document.getElementById('pass')
 const title = document.getElementById('title')
 ~~~
 
-{{s10.p20}}
+{{p64}}
 
 ~~~js
 const [demo, btnReg, btnSignIn, nameElem, passElem, title] = ['demo', 'registration', 'sign-in', 'name', 'pass', 'title']
@@ -527,9 +527,9 @@ const [demo, btnReg, btnSignIn, nameElem, passElem, title] = ['demo', 'registrat
 
 _______________________________________________________________________
 
-{{s10.p21}}
+{{p65}}
 
-{{s10.p22}}
+{{p66}}
 
 ◘◘![ico-20 cap] 16◘◘
 
@@ -542,7 +542,7 @@ const lettersCounter = str => Object.assign({}, ...str
 lettersCounter('htkolkhlfottko')
 ~~~
 
-{{s10.p23}}
+{{p67}}
 
 ~~~console
 ▼ {h: 2, t: 3, k: 3, o: 3, l: 2, …}
@@ -559,7 +559,7 @@ ___________________________________________________________________
 
 ### ![ico-30 icon] Other samples
 
-{{s10.p24}}
+{{p68}}
 
 ◘◘![ico-20 cap] 17◘◘
 
@@ -619,7 +619,7 @@ _________________________
 
 ### ![ico-30 hw] {{common.c3}}
 
-{{s11.p1}}
+{{p69}}
 
 ~~~js
 function first () {

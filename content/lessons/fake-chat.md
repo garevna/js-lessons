@@ -4,11 +4,11 @@ _____________________________
 
 ## ![ico-25 icon] db.json
 
-{{s0.p1}}
+{{p1}}
 
 ![ico-20 green-ok] **lastUpdate**
 
-{{s0.p2}}
+{{p2}}
 
 ~~~js
 "lastUpdate": {
@@ -17,13 +17,13 @@ _____________________________
 }
 ~~~
 
-{{s0.p3}}
-{{s0.p4}}
-{{s0.p5}}
+{{p3}}
+{{p4}}
+{{p5}}
 
 ![ico-20 green-ok] **posts**
 
-{{s0.p6}}
+{{p6}}
 
 ~~~js
 "posts": [
@@ -43,11 +43,11 @@ __________________________________________
 
 ## ![ico-25 icon] json-server
 
-{{s0.p7}}
+{{p7}}
 
 ••son-server &#45;&#45;watch db.json••
 
-{{s0.p8}}
+{{p8}}
 
 ~~~console
 Resources
@@ -62,17 +62,17 @@ Home
 
 __________________________
 
-{{s0.p9}}
-{{s0.p10}}
-{{s0.p11}}
+{{p9}}
+{{p10}}
+{{p11}}
 
 ____________________
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p12}}
 
 #### ![ico-20 green-ok] lastUpdate
 
-{{s1.p1}}
+{{p13}}
 
 ~~~js
 let lastUpdate
@@ -80,7 +80,7 @@ let lastUpdate
 
 #### ![ico-20 green-ok] getData
 
-{{s1.p2}}
+{{p14}}
 
 ~~~js
 const getData = function (ref) {
@@ -94,12 +94,12 @@ const getData = function (ref) {
 
 #### ![ico-20 green-ok] appElem
 
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
+{{p15}}
+{{p16}}
+{{p17}}
+{{p18}}
+{{p19}}
+{{p20}}
 
 ~~~js
 const addElem = (tagName, container = document.body) => container.appendChild(document.createElement(tagName))
@@ -107,15 +107,15 @@ const addElem = (tagName, container = document.body) => container.appendChild(do
 
 #### ![ico-20 green-ok] chat
 
-{{s1.p9}}
+{{p21}}
 
 #### ![ico-20 green-ok] posts & users
 
-{{s1.p10}}
+{{p22}}
 
 #### ![ico-20 green-ok] currentUser
 
-{{s1.p11}}
+{{p23}}
 
 ~~~js
 let currentUser
@@ -123,7 +123,7 @@ let currentUser
 
 #### ![ico-20 green-ok] chatInput
 
-{{s1.p12}}
+{{p24}}
 
 ~~~js
 const chatInput = Object.assign(addElem('input'), {
@@ -141,7 +141,7 @@ const chatInput = Object.assign(addElem('input'), {
 
 #### ![ico-20 green-ok] buildChat
 
-{{s1.p13}}
+{{p25}}
 
 ~~~js
 const buildChat = function () {
@@ -165,19 +165,19 @@ const chat = buildChat()
 
 #### ![ico-20 green-ok] initChat
 
-{{s1.p14}}
+{{p26}}
 
-{{s1.p15}}
-{{s1.p16}}
-{{s1.p17}}
+{{p27}}
+{{p28}}
+{{p29}}
 
-{{s1.p18}}
+{{p30}}
 
-{{s1.p19}}
+{{p31}}
 
-{{s1.p20}}
+{{p32}}
 
-{{s1.p21}}
+{{p33}}
 
 ~~~~js
 const initChat = async function () {
@@ -203,34 +203,34 @@ __________________________
 
 #### ![ico-20 green-ok] updateChat
 
-{{s1.p22}}
+{{p34}}
 
-{{s1.p23}}
-{{s1.p24}}
-{{s1.p25}}
+{{p35}}
+{{p36}}
+{{p37}}
 
-{{s1.p26}}
-{{s1.p27}}
-{{s1.p28}}
-{{s1.p29}}
-{{s1.p30}}
+{{p38}}
+{{p39}}
+{{p40}}
+{{p41}}
+{{p42}}
 
-{{s1.p31}}
+{{p43}}
 
 ~~~js
 [getData('users'), getData('posts')]
 ~~~
 
-{{s1.p32}}
-{{s1.p33}}
+{{p44}}
+{{p45}}
 
-{{s1.p34}}
-{{s1.p35}}
-{{s1.p36}}
-{{s1.p37}}
-{{s1.p38}}
+{{p46}}
+{{p47}}
+{{p48}}
+{{p49}}
+{{p50}}
 
-{{s1.p39}}
+{{p51}}
 
 ~~~~js
 const updateChat = async function () {
@@ -252,33 +252,33 @@ const updateChat = async function () {
 }
 ~~~~
 
-{{s1.p40}}
-{{s1.p41}}
+{{p52}}
+{{p53}}
 
 ~~~js
 chat.scrollTop = chat.offsetTop
 ~~~
 
-{{s1.p42}}
-{{s1.p43}}
+{{p54}}
+{{p55}}
 
 
 _______________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{p56}}
 
-{{s2.p1}}
-{{s2.p2}}
-{{s2.p3}}
+{{p57}}
+{{p58}}
+{{p59}}
 
-{{s2.p4}}
-{{s2.p5}}
-{{s2.p6}}
+{{p60}}
+{{p61}}
+{{p62}}
 
-{{s2.p7}}
-{{s2.p8}}
+{{p63}}
+{{p64}}
 
-{{s2.p9}}
+{{p65}}
 
 ~~~~js
 const chat = buildChat()
@@ -308,7 +308,7 @@ chatInput.onchange = function (event) {
 
 ___________________________
 
-## ![ico-20 file] {{s3.h1}}
+## ![ico-20 file] {{p66}}
 
 ~~~~js
 document.body.style = `

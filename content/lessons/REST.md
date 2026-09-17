@@ -4,19 +4,19 @@
 
 __________________________________
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
 ![ico-25 cap] **POST**: ^^http://ptsv2.com/t/garevna/post^^
-{{s0.p4}}
-{{s0.p5}}
+{{p4}}
+{{p5}}
 
 ________________________________________
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p6}}
 
 @@@@
 
@@ -29,58 +29,58 @@ ______________________________
 
 ## ![ico-25 icon] HATEOAS
 
-{{s1.p1}}
-{{s1.p2}}
+{{p7}}
+{{p8}}
 
-{{s1.p3}}
+{{p9}}
 
-{{s1.p4}}
+{{p10}}
 
-{{s1.p5}}
-{{s1.p6}}
+{{p11}}
+{{p12}}
 
-{{s1.p7}}
+{{p13}}
 
-{{s1.p8}}
+{{p14}}
 
-{{s1.p9}}
+{{p15}}
 
-{{s1.p10}}
+{{p16}}
 
 ___________________________________
 
-{{s1.p11}}
+{{p17}}
 
 _____________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{p18}}
 
 ^^^[endpoint]
 
-{{s2.p1}}
+{{p19}}
 
-{{s2.p2}}
-{{s2.p3}}
-{{s2.p4}}
-{{s2.p5}}
-{{s2.p6}}
-{{s2.p7}}
+{{p20}}
+{{p21}}
+{{p22}}
+{{p23}}
+{{p24}}
+{{p25}}
 
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
+{{p26}}
+{{p27}}
+{{p28}}
 
 ^^^
 
-{{s2.p11}}
-{{s2.p12}}
+{{p29}}
+{{p30}}
 
-{{s2.p13}}
+{{p31}}
 
-{{s2.p14}}
-{{s2.p15}}
+{{p32}}
+{{p33}}
 
-{{s2.p16}}
+{{p34}}
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -91,10 +91,10 @@ const img = document.body.appendChild(new Image())
 img.src = 'https://picsum.photos/900/400?random'
 ~~~
 
-{{s2.p17}}
-{{s2.p18}}
+{{p35}}
+{{p36}}
 
-{{s2.p19}}
+{{p37}}
 
 ◘◘![ico-20 cap] ** 2**◘◘
 
@@ -120,29 +120,29 @@ showImage()
 
 ___________________________________
 
-{{s2.p20}}
+{{p38}}
 
-{{s2.p21}}
+{{p39}}
 
-{{s2.p22}}
+{{p40}}
 
-{{s2.p23}}
+{{p41}}
 
 ~~~console
 http://api.weatherstack.com/current?access_key=xxxxxxxx&query=Kharkiv
 ~~~
 
 @@@@
-{{s2.p24}}
+{{p42}}
 ![](illustrations/REST-01.webp)
 @@@@
 ___________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{p43}}
 
 ### ![ico-20 icon] GET
 
-{{s3.p1}}
+{{p44}}
 
 ••https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all••
 
@@ -164,7 +164,7 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')
 
 _______________________
 
-{{s3.p3}}
+{{p45}}
 
 ••https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/begemot••
 
@@ -186,9 +186,9 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/begemot')
 
 _______________________________
 
-{{s3.p5}}
+{{p46}}
 
-{{s3.p6}}
+{{p47}}
 
 ••https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/?name=Stephan••
 
@@ -198,7 +198,7 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/?name=Steph
   .then(response => console.log(response))
 ~~~
 
-{{s3.p7}}
+{{p48}}
 
 ~~~console
 ▼ [{…}]
@@ -207,11 +207,11 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/?name=Steph
   ► __proto__: Array(0)
 ~~~
 
-{{s3.p8}}
+{{p49}}
 
 ••https://js-lessons-sandbox.garevna.workers.dev/rest-api/users?age=&#94;18&#94;••
 
-{{s3.p9}}
+{{p50}}
 
 ~~~js
 fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users?age=^18^')
@@ -219,7 +219,7 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users?age=^18^')
   .then(response => console.log(response))
 ~~~
 
-{{s3.p10}}
+{{p51}}
 
 ~~~console
 ▼ [{…}]
@@ -258,7 +258,7 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/987145', {
 ► {name: "Mary", age: 19, speciality: "developer"}
 ~~~
 
-{{s3.p12}}
+{{p52}}
 
 ~~~console
 ► {error: 475, message: "987145 allready exist"}
@@ -327,4 +327,4 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/garevna', {
 }).then(response => console.log(response.status))
 ~~~
 
-{{s3.p15}}
+{{p53}}

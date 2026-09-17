@@ -2,34 +2,34 @@
 
 **ES 2015**
 
-{{s1.p1}}
-{{s1.p2}}
-{{s1.p3}}
+{{p1}}
+{{p2}}
+{{p3}}
 
 __________________________________________
 
-{{s1.p4}}
+{{p4}}
 
 ## ![ico-25 icon] Symbol.iterator
 
-{{s1.p5}}
+{{p5}}
 
-{{s1.p6}}
+{{p6}}
 
-{{s1.p7}}
+{{p7}}
 
 ______________________________
 
-{{s1.p8}}
-{{s1.p9}}
-{{s1.p10}}
+{{p8}}
+{{p9}}
+{{p10}}
 
 ___________________________
 
 **Design pattern "~Iterator~"**
 
-{{s1.p11}}
-{{s1.p12}}
+{{p11}}
+{{p12}}
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -53,7 +53,7 @@ const browsers = {
 }
 ~~~
 
-{{s1.p13}}
+{{p13}}
 
 ~~~js
 for (const name of browsers) {
@@ -64,7 +64,7 @@ for (const name of browsers) {
 {{{generators-1.js}}}
 
 
-{{s1.p14}}
+{{p14}}
 
 ~~~js
 console.log(...browsers)
@@ -74,46 +74,46 @@ console.log(...browsers)
 Google Mozilla Safari
 ~~~
 
-{{s1.p15}}
+{{p15}}
 
-{{s1.p16}}
+{{p16}}
 
 ______________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{p17}}
 
-{{s2.p1}}
-{{s2.p2}}
-{{s2.p3}}
+{{p18}}
+{{p19}}
+{{p20}}
 
-{{s2.p4}}
+{{p21}}
 
-{{s2.p5}}
+{{p22}}
 
-{{s2.p6}}
-{{s2.p7}}
-{{s2.p8}}
+{{p23}}
+{{p24}}
+{{p25}}
 
 ~~~js
 const iterator = generator(...)
 ~~~
 
-{{s2.p9}}
+{{p26}}
 
-{{s2.p10}}
+{{p27}}
 
-{{s2.p11}}
+{{p28}}
 
-{{s2.p12}}
-{{s2.p13}}
-{{s2.p14}}
+{{p29}}
+{{p30}}
+{{p31}}
 
-{{s2.p15}}
+{{p32}}
 
-{{s2.p16}}
-{{s2.p17}}
-{{s2.p18}}
-{{s2.p19}}
+{{p33}}
+{{p34}}
+{{p35}}
+{{p36}}
 
 
 ~~~js
@@ -126,7 +126,7 @@ function* generator (...) {
 }
 ~~~
 
-{{s2.p20}}
+{{p37}}
 
 ____________________
 
@@ -142,7 +142,7 @@ const browsers = {
 }
 ~~~
 
-{{s2.p21}}
+{{p38}}
 
 _________________
 
@@ -161,29 +161,29 @@ for (const x of [1, 2, 3, 4]) setTimeout(() => console.log(browsers.next().value
 
 {{{generators-3.js}}}
 
-{{s2.p22}}
-{{s2.p23}}
-{{s2.p24}}
+{{p39}}
+{{p40}}
+{{p41}}
 
 ___________________________
 
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{p42}}
 
-{{s3.p1}}
-{{s3.p2}}
-{{s3.p3}}
-{{s3.p4}}
+{{p43}}
+{{p44}}
+{{p45}}
+{{p46}}
 
-{{s3.p5}}
+{{p47}}
 
-{{s3.p6}}
+{{p48}}
 
-{{s3.p7}}
+{{p49}}
 
 ### lazy evaluation
 
-{{s3.p8}}
+{{p50}}
 
 ~~~js
 function recurse (arg) {
@@ -194,11 +194,11 @@ function recurse (arg) {
 recurse(1)
 ~~~
 
-{{s3.p9}}
+{{p51}}
 
-{{s3.p10}}
+{{p52}}
 
-{{s3.p11}}
+{{p53}}
 
 ~~~js
 const lazyEvaluatedInfiniteList = (function * recurse (arg) {
@@ -210,26 +210,26 @@ for (let x = 0; x < 12000; x++) {
 }
 ~~~
 
-{{s3.p12}}
+{{p54}}
 
-{{s3.p13}}
-{{s3.p14}}
-{{s3.p15}}
-{{s3.p16}}
-{{s3.p17}}
+{{p55}}
+{{p56}}
+{{p57}}
+{{p58}}
+{{p59}}
 
 ______________________________________________________________
 
 ## ![ico-25 icon] next()
 
-{{s3.p18}}
+{{p60}}
 
-{{s3.p19}}
+{{p61}}
 
-{{s3.p20}}
+{{p62}}
 
-{{s3.p21}}
-{{s3.p22}}
+{{p63}}
+{{p64}}
 
 _____________________________________________________________
 
@@ -257,7 +257,7 @@ for (let x=0; x < 100; x++) {
 
 {{{generators-4.js}}}
 
-{{s3.p23}}
+{{p65}}
 
 ~~~js
 const colorIterator = (function * () {
@@ -266,7 +266,7 @@ const colorIterator = (function * () {
 })()
 ~~~
 
-{{s3.p24}}
+{{p66}}
 
 ◘◘![ico-20 cap] ** 4.1**◘◘
 
@@ -283,7 +283,7 @@ function createColoredElement (w, h) {
 }
 ~~~
 
-{{s3.p25}}
+{{p67}}
 
 ~~~js
 for (let x = 0; x < 75; x++) {
@@ -296,9 +296,9 @@ for (let x = 0; x < 75; x++) {
 
 ________________________________________________________________
 
-{{s3.p26}}
-{{s3.p27}}
-{{s3.p28}}
+{{p68}}
+{{p69}}
+{{p70}}
 
 ◘◘![ico-20 cap] ** 5**◘◘
 
@@ -340,7 +340,7 @@ showColors(50)
 
 ________________________________________________________________
 
-{{s3.p29}}
+{{p71}}
 
 ◘◘![ico-20 cap] ** 6**◘◘
 
@@ -364,7 +364,7 @@ document.body.onmousewheel = () => iterator.next()
 
 ________________________________________
 
-{{s3.p30}}
+{{p72}}
 
 ◘◘![ico-20 cap] ** 7**◘◘
 
@@ -399,7 +399,7 @@ const user = {
 }
 ~~~~
 
-{{s3.p31}}
+{{p73}}
 
 ~~~js
 user.generator = function * () {
@@ -409,28 +409,28 @@ user.generator = function * () {
 }
 ~~~
 
-{{s3.p32}}
+{{p74}}
 
 ~~~js
 user.iterator = user.generator ()
 ~~~
 
-{{s3.p33}}
+{{p75}}
 
 ~~~js
 while (!user.iterator.next().done) {}
 ~~~
 
-{{s3.p34}}
+{{p76}}
 
-{{s3.p35}}
+{{p77}}
 
-{{s3.p36}}
-{{s3.p37}}
+{{p78}}
+{{p79}}
 
-{{s3.p38}}
+{{p80}}
 
-{{s3.p39}}
+{{p81}}
 
 ~~~js
 user[Symbol.iterator] = function * () {
@@ -440,13 +440,13 @@ user[Symbol.iterator] = function * () {
 }
 ~~~
 
-{{s3.p40}}
+{{p82}}
 
 ~~~js
 for (const prop of user) {}
 ~~~
 
-{{s3.p41}}
+{{p83}}
 
 ~~~js
 console.log(...user)
@@ -486,7 +486,7 @@ console.log(...elements)
 
 ___________________________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] {{p84}}
 
 ◘◘![ico-20 cap] ** 9**◘◘
 
@@ -532,7 +532,7 @@ console.log(...points)
 
 ___________________________________________________
 
-{{s4.p1}}
+{{p85}}
 
 ◘◘![ico-20 cap] ** 10**◘◘
 
@@ -547,11 +547,11 @@ const objects = [
 ]
 ~~~
 
-{{s4.p2}}
+{{p86}}
 
-{{s4.p3}}
+{{p87}}
 
-{{s4.p4}}
+{{p88}}
 
 ~~~js
 function * someGenerator (objs) {
@@ -566,19 +566,19 @@ function * someGenerator (objs) {
 }
 ~~~
 
-{{s4.p5}}
+{{p89}}
 
-{{s4.p6}}
+{{p90}}
 
 ~~~js
 const iterator = someGenerator(objects)
 ~~~
 
-{{s4.p7}}
+{{p91}}
 
 ______________________________________
 
-{{s4.p8}}
+{{p92}}
 
 ~~~js
 objects[Symbol.iterator] = function * () {
@@ -593,13 +593,13 @@ objects[Symbol.iterator] = function * () {
 }
 ~~~
 
-{{s4.p9}}
+{{p93}}
 
 ~~~js
 for (const obj of objects) console.log(obj)
 ~~~
 
-{{s4.p10}}
+{{p94}}
 
 ~~~js
 const [a, b, c, d] = objects
@@ -607,16 +607,16 @@ const [a, b, c, d] = objects
 
 _________________________________________________________
 
-## ![ico-25 icon] {{s5.h1}}
+## ![ico-25 icon] {{p95}}
 
-{{s5.p1}}
-{{s5.p2}}
+{{p96}}
+{{p97}}
 
-{{s5.p3}}
+{{p98}}
 
-{{s5.p4}}
+{{p99}}
 
-{{s5.p5}}
+{{p100}}
 
 ~~~js
 const canvas = document.body
@@ -627,21 +627,21 @@ const ctx = canvas.getContext('2d')
 const imageData = ctx.getImageData(left, top, width, height)
 ~~~
 
-{{s5.p6}}
+{{p101}}
 
 ~~~js
 const data = imageData.data
 ~~~
 
-{{s5.p7}}
-{{s5.p8}}
-{{s5.p9}}
-{{s5.p10}}
+{{p102}}
+{{p103}}
+{{p104}}
+{{p105}}
 
-{{s5.p11}}
+{{p106}}
 
-{{s5.p12}}
-{{s5.p13}}
+{{p107}}
+{{p108}}
 
 
 ◘◘![ico-20 cap] ** 11**◘◘
@@ -670,9 +670,9 @@ canvas[Symbol.iterator] = function * () {
 }
 ~~~
 
-{{s5.p14}}
+{{p109}}
 
-{{s5.p15}}
+{{p110}}
 
 ~~~js
 document.body.style = `
@@ -682,7 +682,7 @@ document.body.style = `
 `
 ~~~
 
-{{s5.p16}}
+{{p111}}
 ~~~js
 for (const point of canvas) {}
 ~~~
@@ -691,11 +691,11 @@ for (const point of canvas) {}
 console.log(...canvas)
 ~~~
 
-{{s5.p18}}
+{{p112}}
 
 {{{generators-11.js}}}
 
-{{s5.p19}}
+{{p113}}
 
 ~~~js
 const canvas = Object.assign(document.body.appendChild(document.createElement('canvas')), {
@@ -722,7 +722,7 @@ for (const x of canvas) {}
 
 {{{generators-11-1.js}}}
 
-{{s5.p20}}
+{{p114}}
 
 ~~~js
 const canvas = document.body

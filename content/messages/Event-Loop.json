@@ -1,725 +1,725 @@
 {
-  "s1.h1": {
+  "p1": {
     "ru": "Базовые понятия",
     "eng": "Basic concepts",
     "ua": "Основні поняття"
   },
-  "s1.p1": {
+  "p2": {
     "ru": "![ico-20 pin] **Процесс** — это экземпляр исполняемой программы, которому выделены системные ресурсы (время процессора и память).",
     "eng": "![ico-20 pin] A **process** is an instance of an executable program that is allocated system resources (CPU time and memory).",
     "ua": "![ico-20 pin] **Процес** — це екземпляр виконуваної програми, на який виділяються системні ресурси (процесорний час і пам'ять)."
   },
-  "s1.p2": {
+  "p3": {
     "ru": "![ico-20 pin] **Поток** (thread) — это последовательность команд (операторов языка, вызовов функций и т.д.), которые выполняются последовательно друг за другом.",
     "eng": "![ico-20 pin] A **thread** is a sequence of commands (language statements, function calls, etc.) that are executed sequentially one after the other.",
     "ua": "![ico-20 pin] **Потік** (thread) – це послідовність команд (операторів мови, викликів функцій тощо), які виконуються послідовно одна за одною."
   },
-  "s1.p3": {
+  "p4": {
     "ru": "Несколько потоков могут существовать в рамках одного и того же процесса и совместно использовать ресурсы (память).",
     "eng": "Multiple threads can exist within the same process and share resources (memory).",
     "ua": "Кілька потоків можуть існувати в межах одного процесу і спільно використовувати ресурси (пам'ять)."
   },
-  "s1.spoiler1": {
+  "p5": {
     "ru": "Процесс и поток",
     "eng": "Process and thread",
     "ua": "Процес і потік"
   },
-  "s1.p4": {
+  "p6": {
     "ru": "^^![ico-20 warn] Каждый процесс выполняется в отдельном адресном пространстве.^^",
     "eng": "^^![ico-20 warn] Each process runs in a separate address space.^^",
     "ua": "^^![ico-20 warn] Кожен процес виконується в окремому адресному просторі.^^"
   },
-  "s1.p5": {
+  "p7": {
     "ru": "^^![ico-20 warn] Один процесс не может получить доступ к данным другого процесса.^^",
     "eng": "^^![ico-20 warn] One process cannot access the data of another process.^^",
     "ua": "^^![ico-20 warn] Один процес не може отримати доступ до даних іншого процесу.^^"
   },
-  "s1.p6": {
+  "p8": {
     "ru": "^^![ico-20 warn] Каждая программа создает по меньшей мере один основной поток, который запускает функцию **⟦f0⟧**.^^",
     "eng": "^^![ico-20 warn] Each program creates at least one main thread that runs the function **⟦f0⟧**.^^",
     "ua": "^^![ico-20 warn] Кожна програма створює щонайменше один основний потік, який запускає функцію **⟦f0⟧**.^^"
   },
-  "s1.p7": {
+  "p9": {
     "ru": "^^![ico-20 warn] Программа, использующая только основной поток, является **_однопоточной_**.^^",
     "eng": "^^![ico-20 warn] A program that uses only the main thread is **_single-threaded_**.^^",
     "ua": "^^![ico-20 warn] Програма, що використовує тільки основний потік, є **_однопотоковою_**.^^"
   },
-  "s1.p8": {
+  "p10": {
     "ru": "^^Многопоточные языки используют несколько потоков.^^",
     "eng": "^^Multithreaded languages use multiple threads.^^",
     "ua": "^^Багатопотокові мови використовують кілька потоків.^^"
   },
-  "s1.p9": {
+  "p11": {
     "ru": "^^В многопроцессорных (многоядерных) системах каждый процессор (ядро) обслуживает отдельный поток, поэтому потоки действительно выполняются параллельно (одновременно).^^",
     "eng": "^^In multiprocessor (multi-core) systems, each processor (core) serves a separate thread, so threads do run in parallel (concurrently).^^",
     "ua": "^^У багатопроцесорних (багатоядерних) системах кожен процесор (ядро) обслуговує окремий потік, тому потоки дійсно виконуються паралельно (одночасно).^^"
   },
-  "s1.p10": {
+  "p12": {
     "ru": "^^При наличии только одного процессора ему приходится довольно часто переключаться с одного потока на другой, чтобы создать иллюзию одновременного выполнения кода во всех потоках.^^",
     "eng": "^^If there is only one processor, it has to switch from one thread to another quite often to create an illusion of simultaneous code execution in all threads.^^",
     "ua": "^^За наявності лише одного процесора йому доводиться доволі часто перемикатися з одного потоку на інший, щоб створити ілюзію одночасного виконання коду в усіх потоках.^^"
   },
-  "s1.p11": {
+  "p13": {
     "ru": "**Стек** — это \"быстрый\" кусок оперативной памяти.",
     "eng": "A **stack** is a \"fast\" chunk of RAM.",
     "ua": "**Стек** — це «швидкий» шматок оперативної пам'яті."
   },
-  "s1.p12": {
+  "p14": {
     "ru": "^^Стек создаётся _для каждого потока_ в многопоточных языках.^^",
     "eng": "^^A stack is created for each thread in multithreaded languages.^^",
     "ua": "^^Стек створюється для кожного потоку в багатопотокових мовах.^^"
   },
-  "s1.p13": {
+  "p15": {
     "ru": "^^Стек организован по принципу LIFO (последним пришел - первым ушел).^^",
     "eng": "^^The stack is organised according to the LIFO principle (last in, first out).^^",
     "ua": "^^Стек організований за принципом LIFO (останнім прийшов - першим пішов).^^"
   },
-  "s1.p14": {
+  "p16": {
     "ru": "^^Размер стека ограничен.^^",
     "eng": "^^The stack size is limited.^^",
     "ua": "^^Розмір стека обмежений.^^"
   },
-  "s1.p15": {
+  "p17": {
     "ru": "^^Он задаётся при создании потока.^^",
     "eng": "^^It is set when creating a thread.^^",
     "ua": "^^Він задається під час створення потоку.^^"
   },
-  "s1.p16": {
+  "p18": {
     "ru": "^^Переменные, находящиеся в стеке, всегда являются _локальными_ (**приватными**).^^",
     "eng": "^^Variables in the stack are always local (**private**).^^",
     "ua": "^^Змінні, що знаходяться в стеку, завжди є локальними (**приватними**).^^"
   },
-  "s1.p17": {
+  "p19": {
     "ru": "**Heap** (\"куча\") — это оперативная память, где хранятся глобальные переменные.",
     "eng": "**Heap** is RAM where **global variables** are stored.",
     "ua": "**Heap** (\"купа\") — це оперативна пам'ять, в якій зберігаються глобальні змінні."
   },
-  "s1.p18": {
+  "p20": {
     "ru": "^^\"Куча\" допускает динамическое выделение памяти.^^",
     "eng": "^^The **heap** allows dynamic memory allocation.^^",
     "ua": "^^«Купа» допускає динамічне виділення пам'яті.^^"
   },
-  "s1.p19": {
+  "p21": {
     "ru": "^^Доступ к данным, хранящимся в \"куче\", обеспечивается посредством ссылок - переменных, значения которых являются адресами других переменных.^^",
     "eng": "^^Access to data stored in the **heap** is provided by means of references - variables whose values are addresses of other variables.^^",
     "ua": "^^Доступ до даних, що зберігаються в «купі», забезпечується за допомогою посилань - змінних, значення яких є адресами інших змінних.^^"
   },
-  "s1.p20": {
+  "p22": {
     "ru": "^^Поэтому \"куча\" работает медленнее, чем стек.^^",
     "eng": "^^That is why the heap is slower than the stack.^^",
     "ua": "^^Тому «купа» працює повільніше, ніж стек.^^"
   },
-  "s1.p21": {
+  "p23": {
     "ru": "^^Процессор не контролирует \"кучу\" (в отличие от стека), поэтому для освобождения памяти \"кучи\" от ненужных переменных требуются  \"сборщики мусора\".^^",
     "eng": "^^The processor does not control the **heap** (unlike the **stack**), so **⟦f14⟧** are required to free the heap memory from unnecessary variables.^^",
     "ua": "^^Процесор не контролює «купу» (на відміну від стека), тому для звільнення пам'яті «купи» від непотрібних змінних потрібні «збирачі сміття».^^"
   },
-  "s1.p22": {
+  "p24": {
     "ru": "![ico-25 warn] JS однопоточный язык, поэтому у нас только один стек (**⟦f1⟧**).",
     "eng": "![ico-25 warn] JS is a single-threaded language, so we only have one stack (**⟦f1⟧**).",
     "ua": "![ico-25 warn] JS є однопотоковою мовою, тому у нас є лише один стек (**⟦f1⟧**)."
   },
-  "s2.h1": {
+  "p25": {
     "ru": "Асинхронщина",
     "eng": "Async stuff",
     "ua": "Асинхронність"
   },
-  "s2.slogan1": {
+  "p26": {
     "ru": "Асинхронщина - это господство событий",
     "eng": "Asynchrony is event domination",
     "ua": "Асинхронщина - це панування подій"
   },
-  "s2.p1": {
+  "p27": {
     "ru": "Одно из главных свойств событий - время их наступления непредсказуемо.",
     "eng": "One of the main properties of events is that the time of their occurrence is unpredictable.",
     "ua": "Однією з головних властивостей подій є те, що час їх настання непередбачувано."
   },
-  "s2.p2": {
+  "p28": {
     "ru": "Что невозможно предсказать, то невозможно синхронизировать.",
     "eng": "What cannot be predicted is impossible to synchronize.",
     "ua": "Те, що неможливо передбачити, неможливо синхронізувати."
   },
-  "s2.p3": {
+  "p29": {
     "ru": "Мы не знаем заранее, когда пользователь кликнет на кнопке, и клинет ли вообще.",
     "eng": "We don't know in advance when the user will click on the button, or if he or she will click at all.",
     "ua": "Ми не знаємо заздалегідь, коли користувач клацне на кнопці, і чи клацне взагалі."
   },
-  "s2.p4": {
+  "p30": {
     "ru": "Посылая запрос на сервер, мы не можем предсказать, через сколько миллисекунд мы получим ответ сервера.",
     "eng": "When sending a request to the server, we cannot predict how many milliseconds it will take for us to receive a response from the server.",
     "ua": "Відправляючи запит на сервер, ми не можемо передбачити, скільки мілісекунд нам знадобиться, щоб отримати відповідь від сервера."
   },
-  "s2.p5": {
+  "p31": {
     "ru": "Второе свойство большинства событий - результат наступления события недетерминирован.",
     "eng": "The second property of most events is that the result of the occurrence of the event is not determined.",
     "ua": "Друга властивість більшості подій - результат події недетермінований."
   },
-  "s2.p6": {
+  "p32": {
     "ru": "Мы не можем с уверенностью предсказать, будет ли статус ответа сервера успешым, или же сервер вернет нам код http-ошибки.",
     "eng": "We can't predict with certainty whether the server's response status will be successful, or if the server will return an http error code to us.",
     "ua": "Ми не можемо з упевненістю передбачити, чи буде статус відповіді сервера успішним, чи сервер поверне нам код http-помилки."
   },
-  "s2.p7": {
+  "p33": {
     "ru": "Если мы не можем управлять событиями, то мы можем дать событиям управлять нашим кодом.",
     "eng": "If we can't manage events, then we can let the events control our code.",
     "ua": "Якщо ми не можемо керувати подіями, ми можемо дозволити подіям керувати нашим кодом."
   },
-  "s2.p8": {
+  "p34": {
     "ru": "Асинхронное программирование - это привязка функций к определенным событиям.",
     "eng": "Asynchronous programming is all about binding functions to specific events.",
     "ua": "Асинхронне програмування полягає у прив'язці функцій до конкретних подій."
   },
-  "s2.p9": {
+  "p35": {
     "ru": "Это так называемое событийно-ориентированное прораммирование (**Event-Driven Programming**).",
     "eng": "This is the so-called **event-driven programming**.",
     "ua": "Це так зване подієво-орієнтоване прораммування (**Event-Driven Programming**)."
   },
-  "s2.p10": {
+  "p36": {
     "ru": "Понятное дело, что в той среде (платформе), где будет работать ваше приложение, должен быть механизм, который обеспечивает реакцию на события.",
     "eng": "Clearly, the environment (platform) where your application will run must have a mechanism that provides event reactivity.",
     "ua": "Зрозуміло, в середовищі (платформі), де буде запускатися ваш додаток, повинен бути механізм, що забезпечує реакцію на події."
   },
-  "s2.p11": {
+  "p37": {
     "ru": "Т.е такой механизм должен предоставить вашему приложению некий **Event API** (<b>A</b>pplication <b>P</b>rogramme <b>I</b>nterface), сервисы которого позволят привязать ваши функции к определенным событиям.",
     "eng": "That is, such a mechanism should provide your application with some kind of **Event API** (<b>A</b>pplication <b>P</b>rogramme <b>I</b>nterface), the services of which will allow you to bind your functions to certain events.",
     "ua": "Тобто такий механізм повинен забезпечити ваш додаток певним **Event API** (<b>A</b>pplication <b>P</b>rogramme <b>I</b>nterface), сервіси якого дозволять прив'язати ваші функції до певних подій."
   },
-  "s2.p12": {
+  "p38": {
     "ru": "Этот же механизм должен обеспечить запуск на исполнение ваших функций при наступлении соответствующего события.",
     "eng": "The same mechanism should ensure that your functions are launched for execution when the corresponding event occurs.",
     "ua": "Цей же механізм повинен забезпечити запуск виконання ваших функцій при настанні відповідної події."
   },
-  "s2.p13": {
+  "p39": {
     "ru": "В браузере такой механизм есть, и называется он **Event Loop**.",
     "eng": "The browser has such a mechanism, and it is called **Event Loop**.",
     "ua": "У браузері такий механізм є і називається він **Event Loop**."
   },
-  "s2.p14": {
+  "p40": {
     "ru": "**_Event Loop_** - это бесконечный цикл выполнения задач.",
     "eng": "**_Event Loop_** is an endless loop of task execution.",
     "ua": "**_Event Loop_** - це нескінченний цикл виконання завдань."
   },
-  "s2.p15": {
+  "p41": {
     "ru": "![ico-20 warn] **В JS исполняются только функции**.",
     "eng": "![ico-20 warn] **Only functions are executed in JS.**.",
     "ua": "![ico-20 warn] **У JS виконуються лише функції**."
   },
-  "s2.p16": {
+  "p42": {
     "ru": "Для исполнения скрипта сначала нужно создать контекст выполнения, который будет помещен в **стек вызовов**.",
     "eng": "To execute a script, you first need to create an execution context, which will be placed on the **Call Stack**.",
     "ua": "Для виконання скрипту спочатку потрібно створити контекст виконання, який буде поміщений у **стек викликів**."
   },
-  "s2.p17": {
+  "p43": {
     "ru": "Поэтому он и называется **стек вызовов** (**Call Stack**).",
     "eng": "That's why it's called **Call Stack**.",
     "ua": "Тому він і називається **стек викликів** (**Call Stack**)."
   },
-  "s2.p18": {
+  "p44": {
     "ru": "А что можно вызвать? - только **функцию**.",
     "eng": "What can you call? - only **⟦f15⟧**.",
     "ua": "А що можна викликати? - тільки **функцію**."
   },
-  "s2.p19": {
+  "p45": {
     "ru": "Есть два способа вызвать функцию: это **прямой вызов** и **обратный вызов**.",
     "eng": "There are two ways to call a function: **direct call** and **callback**.",
     "ua": "Є два способи викликати функцію: це **прямий виклик** та **зворотний виклик**."
   },
-  "s2.p20": {
+  "p46": {
     "ru": "**Прямой вызов** - когда функцию вызывают по имени из того скрипта, который исполняется в данный момент.",
     "eng": "**Direct call** - when a function is called by name from the script that is currently being executed.",
     "ua": "**Прямий виклик** - коли функцію викликають на ім'я з того скрипта, який виконується в даний момент."
   },
-  "s2.p21": {
+  "p47": {
     "ru": "Исполняется - значит, какой-то скрипт уже \"сидит\" в **Call Stack**.",
     "eng": "Executing means that some script is already “sitting” in **Call Stack**.",
     "ua": "Виконується - значить, якийсь скрипт уже \"сидить\" у **Call Stack**."
   },
-  "s2.p22": {
+  "p48": {
     "ru": "Он может сделать прямой вызов любой другой функции.",
     "eng": "It can make a **direct call** to any other function.",
     "ua": "Він може зробити прямий виклик будь-якої іншої функції."
   },
-  "s2.p23": {
+  "p49": {
     "ru": "Но как он сам попал в **Call Stack**?",
     "eng": "But how did it get into **Call Stack**?",
     "ua": "Але як він сам потрапив до **Call Stack**?"
   },
-  "s2.p24": {
+  "p50": {
     "ru": "![ico-20 yes] Первым в Call Stack всегда попадает **callback** - _функция обратного вызова_.",
     "eng": "![ico-20 yes] The first thing in the **Call Stack** is always **callback** function.",
     "ua": "![ico-20 yes] Першим у Call Stack завжди потрапляє **callback** - _функція зворотного виклику_."
   },
-  "s2.p25": {
+  "p51": {
     "ru": "**Callback** - это функция, привязанная к событию, которая попадет в стек вызовов через механизм **Event Loop**.",
     "eng": "**Callback** is an event-bound function that will be pushed onto the **Call Stack** through the **Event Loop** mechanism.",
     "ua": "**Callback** - це функція, прив'язана до події, яка потрапить у стек викликів через механізм **Event Loop**."
   },
-  "s2.p26": {
+  "p52": {
     "ru": "^^Здесь скрипт сниппета был \"завернут\" в некую функцию **⟦f2⟧**, привязан к событию \"запустить скрипт ⟦f2⟧\", после чего это событие было инициировано.^^",
     "eng": "^^Here the snippet script was “wrapped” in a certain function **⟦f2⟧**, tied to the “run script ⟦f2⟧” event, after which this event was fired.^^",
     "ua": "^^Тут скрипт сніппета був \"загорнутий\" в якусь функцію **⟦f2⟧**, прив'язаний до події \"запустити скрипт ⟦f2⟧\", після чого ця подія була ініційована.^^"
   },
-  "s2.p27": {
+  "p53": {
     "ru": "^^В результате скрипт **⟦f2⟧** \"оккупировал\" Call Stack и начал исполняться.^^",
     "eng": "^^As a result, the script **⟦f2⟧** “occupied” the Call Stack and began to be executed.^^",
     "ua": "^^В результаті скрипт **⟦f2⟧** \"окупував\" **Call Stack** і почав виконуватися.^^"
   },
-  "s2.p28": {
+  "p54": {
     "ru": "^^Функция **⟦f2⟧** стала колбеком и прошла через **Event Loop**.^^",
     "eng": "^^The **⟦f2⟧** function became a callback and went through the **Event Loop**.^^",
     "ua": "^^Функція **⟦f2⟧** стала колбеком і пройшла через **Event Loop**.^^"
   },
-  "s2.p29": {
+  "p55": {
     "ru": "^^Теперь **⟦f2⟧** из стека вызовов может осуществлять **прямой вызов** других функций.^^",
     "eng": "^^Now **⟦f2⟧** from the call stack can make **direct calls** to other functions.^^",
     "ua": "^^Тепер **⟦f2⟧** із стека викликів може здійснювати прямий виклик інших функцій.^^"
   },
-  "s2.p30": {
+  "p56": {
     "ru": "^^Функция **parent** была вызвана из скрипта **anonimous**. Это **прямой вызов**.^^",
     "eng": "^^The **⟦f16⟧** function was called from the **⟦f17⟧** script. This is a **direct call**.^^",
     "ua": "^^Функція **⟦f16⟧** була викликана зі скрипту **⟦f2⟧**. Це **прямий виклик**.^^"
   },
-  "s2.p31": {
+  "p57": {
     "ru": "^^Функция **demo** была вызвана из скрипта **parent**. Это **прямой вызов**.^^",
     "eng": "^^The **⟦f18⟧** function was called from the **⟦f16⟧** script. This is a **direct call**.^^",
     "ua": "^^Функція **⟦f18⟧** була викликана зі скрипту **⟦f16⟧**. Це **прямий виклик**.^^"
   },
-  "s2.p32": {
+  "p58": {
     "ru": "^^Как мы видим, все они одновременно \"сидят\" в стеке вызовов.^^",
     "eng": "^^As we can see, they all “sit” on the call stack at the same time.^^",
     "ua": "^^Як бачимо, всі вони одночасно \" сидять \" у стеку викликів.^^"
   },
-  "s2.p33": {
+  "p59": {
     "ru": "^^Сверху всегда находится функция, которая исполняется в данный момент.^^",
     "eng": "^^At the top there is always the function that is currently being executed.^^",
     "ua": "^^Зверху завжди знаходиться функція, яка виконується зараз.^^"
   },
-  "s2.p34": {
+  "p60": {
     "ru": "^^Функция **parent** и функция **demo** попали в стек вызовов по непосредственному \"приглашению\" от скрипта **anonimous**.^^",
     "eng": "^^The **⟦f16⟧** function and the **⟦f18⟧** function hit the call stack by direct \"invitation\".^^",
     "ua": "^^Функція **⟦f16⟧** та функція **⟦f18⟧** потрапили у стік викликів на безпосереднє \"запрошення\".^^"
   },
-  "s2.p35": {
+  "p61": {
     "ru": "Но у нас есть еще одна - анонимная - функция, которую мы назначили обработчиком события **⟦f3⟧** элемента ⟦f4⟧.",
     "eng": "But we have one more (anonymous) function, which we assigned as a handler for the **⟦f3⟧** event of the ⟦f4⟧ element.",
     "ua": "Але ми маємо ще одну - анонімну - функцію, яку ми призначили обробником події **⟦f3⟧** елемента ⟦f4⟧."
   },
-  "s2.p36": {
+  "p62": {
     "ru": "Эта функция по определению является функцией обратного вызова (**callback**).",
     "eng": "This function is by definition a **callback** function.",
     "ua": "Ця функція є **функцією зворотного виклику** (**callback**)."
   },
-  "s2.p37": {
+  "p63": {
     "ru": "Заметим, что колбеку имя не нужно. Обычно это анонимная функция.",
     "eng": "Note that the callback does not need a name. This is usually an anonymous function.",
     "ua": "Зауважимо, що колбеку ім'я не потрібне. Зазвичай це анонімна функція."
   },
-  "s2.p38": {
+  "p64": {
     "ru": "Он привязан к событию.",
     "eng": "It is tied to the event.",
     "ua": "**Callback** прив'язаний до події."
   },
-  "s2.p39": {
+  "p65": {
     "ru": "Его может запустить на исполнение только механизм **Event Loop**.",
     "eng": "It can only be started for execution by the **Event Loop** mechanism.",
     "ua": "Його може запустити лише механізм **Event Loop**."
   },
-  "s2.p40": {
+  "p66": {
     "ru": "Если это событие произойдет, то она получит шанс попасть в стек вызовов.",
     "eng": "If the event happens, the callback will get a chance to go on the Call Stack.",
     "ua": "Якщо ця подія відбудеться, то **⟦f19⟧** отримає шанс потрапити до стеку викликів."
   },
-  "s2.p41": {
+  "p67": {
     "ru": "Однако тут придётся постоять в очереди, потому что событий много, и коллбеки, связанные с ними, образуют очередь задач (**task queue**).",
     "eng": "However, it will have to queue up, because there may be many events, and the callbacks associated with them form a **task queue**.",
     "ua": "Однак тут доведеться постояти в черзі, тому що подій багато, і коллбеки, пов'язані з ними, утворюють чергу завдань (**task queue**)."
   },
-  "s2.p42": {
+  "p68": {
     "ru": "Итак, мы видим, что первым в **Call Stack** всегда попадает колбек.",
     "eng": "So, we see that the **callback** always gets into Call Stack first.",
     "ua": "Отже, ми бачимо, що першим у **Call Stack** завжди потрапляє **⟦f19⟧**."
   },
-  "s2.p43": {
+  "p69": {
     "ru": "И, находясь в стеке вызовов, он может вызывать другие функции.",
     "eng": "And being in the Call Stack, it can call other functions.",
     "ua": "І, перебуваючи в стеку викликів, він може викликати інші функції."
   },
-  "s2.p44": {
+  "p70": {
     "ru": "И каждая вызванная им функция будет одновременно с ним стеке вызовов.",
     "eng": "And each function being started by **dicrect call** will be in the **Call Stack** at the same time with script that called it.",
     "ua": "І кожна функція, що викликана ним, буде одночасно з ним стеку викликів."
   },
-  "s2.p45": {
+  "p71": {
     "ru": "Эта функция может вызвать другую функцию, контекст исполнения которой также появится в стеке вызовов.",
     "eng": "This function can call another function, whose execution context will also appear on the call stack.",
     "ua": "Ця функція може викликати іншу функцію, контекст виконання якої також з'явиться у стеку викликів."
   },
-  "s2.p46": {
+  "p72": {
     "ru": "Так они будут там образовывать \"слоеный пирог\".",
     "eng": "So they will form a “layer cake” in Call Stack.",
     "ua": "Так вони там утворюватимуть \"шаровий пиріг\"."
   },
-  "s2.p47": {
+  "p73": {
     "ru": "Функция, вызванная последней, будет в стеке вызовов сверху.",
     "eng": "The function called last will be at the top of the Call Stack.",
     "ua": "Функція викликана останньою буде в стеку викликів зверху."
   },
-  "s2.p48": {
+  "p74": {
     "ru": "Она же первая покинет **Call Stack**.",
     "eng": "It will be the first to leave Call Stack.",
     "ua": "Вона ж перша покине **Call Stack**."
   },
-  "s2.p49": {
+  "p75": {
     "ru": "Последним покинет стек вызовов колбек, который и породил всю эту пирамиду.",
     "eng": "The last one to leave the **Call Stack** is the **callback**, which gave birth to this entire \"pyramid\".",
     "ua": "Останнім залишить стек викликів колбек, який і породив усю цю піраміду."
   },
-  "s2.p50": {
+  "p76": {
     "ru": "Обратите внимание, что каждый колбек занимает наш единственный **Call Stack** до тех пор, пока весь его код не будет выполнен до последней строчки.",
     "eng": "Please note that each callback will occupy our single **Call Stack** until all its code will be executed to the last line.",
     "ua": "Зверніть увагу, що кожен колбек займає наш єдиний **Call Stack** до того часу, поки весь його код не буде виконаний до останнього рядка."
   },
-  "s2.p51": {
+  "p77": {
     "ru": "Он может вызывать сколько угодно функций, которые так же могут вызывать функции.",
     "eng": "It can call any number of functions, which can also call functions.",
     "ua": "Він може викликати скільки завгодно функцій, які можуть викликати функції."
   },
-  "s2.p52": {
+  "p78": {
     "ru": "Пока вся эта бригада не покинет **Call Stack**, в очереди задач будут томиться другие колбеки.",
     "eng": "Until this entire team leaves **Call Stack**, other callbacks will languish in the **task queue**.",
     "ua": "Поки вся ця бригада не залишить **Call Stack**, у черзі завдань будуть нудитися інші колбеки."
   },
-  "s2.p53": {
+  "p79": {
     "ru": "Итак, разница между двумя способами для функции попасть в стек вызовов:",
     "eng": "So, the difference between the two ways for a function to get into the **Call Stack**:",
     "ua": "Отже, різниця між двома способами для функції потрапити у стек викликів:"
   },
-  "s2.p54": {
+  "p80": {
     "ru": "| **Прямой вызов** | **Обратный вызов** |",
     "eng": "| **Direct call** | **Callback** |",
     "ua": "| **Прямий виклик** | **Зворотній виклик** |"
   },
-  "s2.p55": {
+  "p81": {
     "ru": "| Функция будет запущена на исполнение немедленно | Колбек попадет в очередь задач |",
     "eng": "| The function will be executed immediately | The callback will be added to the task queue |",
     "ua": "| Функцію буде запущено на виконання негайно | Колбек потрапить у чергу завдань |"
   },
-  "s2.p56": {
+  "p82": {
     "ru": "| Ее контекст исполнения будет в стеке вызовов одновременно с контекстом исполнения вызвавшего ее скрипта | Контекст исполнения попадет в стек вызовов, когда тот освободится |",
     "eng": "| Function will get in the Call Stack when the script that called this function is there | Callback will get in the Call Stack only when Call Stack will be free |",
     "ua": "| Її контекст виконання буде в стеку викликів одночасно з контекстом виконання скрипту, що викликав її | Контекст виконання потрапить у стек викликів, коли той звільниться |"
   },
-  "s2.p57": {
+  "p83": {
     "ru": "Как мы видим, не только модель наследования, но и асинхронщина в JS держится на функциях (конструкторах).<br><br>В прототипной модели наследования рулят функции-конструкторы, а в асинхронщине - функции- колбеки.",
     "eng": "As we can see, not only the inheritance model, but also asynchrony in JS is based on functions.<br><br>In the prototypical inheritance model, **constructor** functions rule, and in asynchronous inheritance, **callback** functions rule.",
     "ua": "Як бачимо, не тільки модель успадкування, а й асинхронщина в JS тримається на функціях (конструкторах).<br><br>У прототипній моделі успадкування керують функції-**конструктори**, а в асинхронщині – функції-**колбеки**."
   },
-  "s2.slogan2": {
+  "p84": {
     "ru": "В JS функции реально рулят!",
     "eng": "functions actually rule in JS!",
     "ua": "У JS функції реально рулять!"
   },
-  "s2.p58": {
+  "p85": {
     "ru": "По понятным причинам движок JS не отслеживает события.<br><br>Это делает браузер.",
     "eng": "For obvious reasons, the JS engine does not track events.<br><br>The browser does this.",
     "ua": "Зі зрозумілих причин двигун JS не відстежує події.<br><br>Це робить браузер."
   },
-  "s2.p59": {
+  "p86": {
     "ru": "^^Браузер - посредник между операционкой и движком, отслеживает события клавиатуры, мыши, системные часы и т.д.^^",
     "eng": "^^The browser is an intermediary between the operating system and the engine, it tracks keyboard events, mouse events, system clock, etc.^^",
     "ua": "^^Браузер - посередник між операційної системою і двигуном, відстежує події клавіатури, миші, системний годинник та ін.^^"
   },
-  "s2.p60": {
+  "p87": {
     "ru": "Браузер может отправлять запросы в сеть и получать ответы.",
     "eng": "The browser can send requests to the network and receive responses.",
     "ua": "Браузер може надсилати запити до мережі та отримувати відповіді."
   },
-  "s2.p61": {
+  "p88": {
     "ru": "Как \"посредник\", браузер предлагает программный интерфейс (**API**), который обеспечивает JS-приложению доступ к мощным возможностям браузера.<br><br>В браузере есть API для работы с событиями, и его можно назвать **Event API**.",
     "eng": "As a \"middleman\", the browser offers an application programming interface (**API**) that allows the JS application to access the powerful capabilities of the browser.<br><br>The browser has an API for working with events, and it can be called **Event API**.",
     "ua": "Як \"посередник\", браузер пропонує програмний інтерфейс (**API**), який забезпечує JS-додатку доступ до потужних можливостей браузера.<br><br>У браузері є API для роботи з подіями, і його можна назвати **Event API**."
   },
-  "s2.p62": {
+  "p89": {
     "ru": " Этот термин охватывает различные интерфейсы и методы, которые позволяют работать с событиями в веб-приложениях (более распространенные названия: **Event Handling API** или **Event Listener API**).",
     "eng": "This term covers various interfaces and methods that allow you to work with events in web applications (more common names:  **Event Handling API** or **Event Listener API**).",
     "ua": "Цей термін охоплює різні інтерфейси та методи, які дозволяють працювати з подіями у веб-додатках (найпоширеніші назви: **Event Handling API** или **Event Listener API**)."
   },
-  "s2.p63": {
+  "p90": {
     "ru": "Самый простой пример браузерного API - метод глобального объекта **⟦f5⟧**.",
     "eng": "The simplest example of a browser API is the global object method **⟦f5⟧**.",
     "ua": "Найпростіший приклад браузерного API – метод глобального об'єкта **⟦f5⟧**."
   },
-  "s2.p64": {
+  "p91": {
     "ru": "С его помощью мы передаем браузеру коллбек и указываем, через сколько миллисекунд этот коллбек должен попасть в очередь задач.",
     "eng": "With its help, we pass a callback to the browser and indicate how many milliseconds later this callback should get into the **task queue**.",
     "ua": "З його допомогою ми передаємо браузеру callback і вказуємо, через скільки мілісекунд цей callback повинен потрапити в чергу завдань."
   },
-  "s2.p65": {
+  "p92": {
     "ru": "Дальше движок \"умывает руки\", потому что события отслеживает браузер. Таймер установлен, и браузер своевременно сообщит движку о том, что время истекло.",
     "eng": "Next, the engine ‘washes its hands of it’ because the events are tracked by the browser. The timer is set, and the browser will promptly inform the engine that the time has expired.",
     "ua": "Далі двигун \"умиває руки\", тому що події відстежує браузер. Таймер встановлений, і браузер вчасно повідомить движку про те, що час минув."
   },
-  "s2.p66": {
+  "p93": {
     "ru": "По истечении времени коллбек таймера будет помещён в очередь задач.",
     "eng": "When the timer expires, the timer callback will be placed to the end of the **task queue**.",
     "ua": "Після закінчення часу callback таймера буде поміщений у чергу завдань."
   },
-  "s2.p67": {
+  "p94": {
     "ru": "Не факт, что он попадет в стек вызовов достаточно быстро.",
     "eng": "It's not a fact that it will get onto the Call Stack quickly enough.",
     "ua": "Не факт, що він потрапить у стек викликів досить швидко."
   },
-  "s2.p68": {
+  "p95": {
     "ru": "В очереди задач может быть много колбеков, и колбеку таймера придется ждать своей очереди.",
     "eng": "There may be many callbacks in the **task queue**, and the timer callback will have to wait for its turn.",
     "ua": "У черзі завдань може бути багато колбеків, і колбеку таймера доведеться чекати на свою чергу."
   },
-  "s2.p69": {
+  "p96": {
     "ru": "Из очереди задач движок вытянет этот коллбек, когда наступит его очередь и стек вызовов будет свободен.",
     "eng": "The engine will pull this callback from the **task queue** when it is its turn and the **Call Stack** is free.",
     "ua": "З черги завдань двигун витягне цей колббек, коли настане його черга і стек викликів буде вільний."
   },
-  "s2.p70": {
+  "p97": {
     "ru": "Обратите внимание, что все таймеры были установлены на 500 милисекунд.",
     "eng": "Note that all timers were set to 500 milliseconds.",
     "ua": "Зауважте, що всі таймери були встановлені на 500 мілісекунд."
   },
-  "s2.p71": {
+  "p98": {
     "ru": "Однако большое число колбеков таймеров в очереди задач привело к тому, что задежка запуска очередного колбека возростала по мере продвижения очереди задач, и в конечном итоге последний колбек вошел в стек вызовов не через 500 милисекунд, а значительно позже.",
     "eng": "However, the large number of timer callbacks in the task queue led to the fact that the delay in next callback execution increased as the task queue progressed, and ultimately the last callback entered the call stack not after 500 milliseconds, but much later.",
     "ua": "Однак велика кількість колбеків таймерів у черзі завдань призвела до того, що зачіпка запуску чергового колбека зростала в міру просування черги завдань, і зрештою останній колбек увійшов у стек викликів не через 500 мілісекунд, а значно пізніше."
   },
-  "s3.h1": {
+  "p99": {
     "ru": "Блокирующие операции",
     "eng": "Blocking operations",
     "ua": "Блокуючі операції"
   },
-  "s3.p1": {
+  "p100": {
     "ru": "![ico-20 warn] **\"Тяжелые\" таски блокируют перерисовку страницы браузером и делают страницу не интерактивной, т.е. не реагирующей на действия пользователя.**",
     "eng": "![ico-20 warn] **“Heavy” tasks block the browser from redrawing the page and make the page non-interactive, i.e. not responding to user actions.**",
     "ua": "![ico-20 warn] **\"Тяжкі\" таски блокують перемальовування сторінки браузером і роблять сторінку не інтерактивною, тобто. яка не реагує на дії користувача.**"
   },
-  "s3.p2": {
+  "p101": {
     "ru": "\"Тяжелый\" таск - это таск, который надолго займет колстек и может серьезно задержать выполнение других задач в очереди, которые имели несчастье попасть туда после него...",
     "eng": "A \"heavy\" task is a task that will occupy the stack for a long time and can seriously delay the execution of other tasks in the queue that had the misfortune of getting there after it...",
     "ua": "\"Тяжкий\" таск - це callback, який надовго займе стек викликів і може серйозно затримати виконання інших завдань у черзі, які мали нещастя потрапити туди після нього."
   },
-  "s3.p3": {
+  "p102": {
     "ru": "^^Это похоже на очередь к врачу в тупой совковой системе.<br>У вас таллон на 14:00, уже 15:25 и перед вами в очереди еще 5 человек.<br>^^",
     "eng": "^^It's like waiting in line at a doctor's office in a clunky Soviet system.<br>You have an appointment at 2:00 PM, it's already 3:25 PM, and there are still five people ahead of you.<br>^^",
     "ua": "^^Це схоже на чергу до лікаря в тупій совковій системі.<br>У вас талон на 14:00, уже 15:25 і перед вами в черзі ще 5 осіб.<br>^^"
   },
-  "s3.p4": {
+  "p103": {
     "ru": "^^О чем это говорит?<br>О том, что код напилен крайне хреново.^^",
     "eng": "^^What does this tell you?<br>It tells you the code is extremely poorly written.^^",
     "ua": "^^Про що це говорить?<br>Про те, що код напиляно вкрай хреново.^^"
   },
-  "s3.p5": {
+  "p104": {
     "ru": "^^<br>Да, совок был хреново напиленным кодом.^^",
     "eng": "^^<br>Yes, the Soviet system was poorly written code.^^",
     "ua": "^^<br>Так, совок був хреново напиляним кодом.^^"
   },
-  "s3.p6": {
+  "p105": {
     "ru": "Пишите код так, чтобы стек вызовов не был занят надолго.",
     "eng": "Write code so that no function takes up the Call Stack for long.",
     "ua": "Пишіть код так, щоб стек викликів не був зайнятий надовго."
   },
-  "s3.p7": {
+  "p106": {
     "ru": "Иначе ваша страница перестанет реагировать на события, потому что коллбеки не смогут попасть в стек вызовов.",
     "eng": "Otherwise, your page will stop responding to events because the callbacks won't be able to get into the call stack.",
     "ua": "Інакше ваша сторінка перестане реагувати на події, тому що колбеки не зможуть потрапити у стек викликів."
   },
-  "s3.p8": {
+  "p107": {
     "ru": "В этом примере таймер был установлен на задержку 0 сек.",
     "eng": "In this example, the timer was set to a delay of 0 seconds.",
     "ua": "У цьому прикладі таймер встановлено на затримку 0 сек."
   },
-  "s3.p9": {
+  "p108": {
     "ru": "Посмотрите, что получилось",
     "eng": "Look what happened",
     "ua": "Подивіться, що вийшло."
   },
-  "s3.p10": {
+  "p109": {
     "ru": "Объявим вспомогательные функции **⟦f6⟧** и **⟦f7⟧**:",
     "eng": "Let's declare the auxiliary functions **⟦f6⟧** and **⟦f7⟧**:",
     "ua": "Оголосимо допоміжні функції **⟦f6⟧** та **⟦f7⟧**:"
   },
-  "s3.p11": {
+  "p110": {
     "ru": "чтобы использовать ее в следующих примерах.",
     "eng": "to use them in the following examples.",
     "ua": "щоб використовувати їх у наступних прикладах."
   },
-  "s3.p12": {
+  "p111": {
     "ru": "Таск, запущенный таймером, занимает стек вызовов и блокирует даже перерисовку страницы и вывод сообщений в консоль.",
     "eng": "A task launched by a timer occupies the call stack for a long and blocks page redrawing and message output to the console.",
     "ua": "Таск, запущений таймером, займає стек викликів і блокує навіть перемальовування сторінки та виведення повідомлень у консоль."
   },
-  "s3.p13": {
+  "p112": {
     "ru": "Сделайте вывод из этого примера, и тогда вы поймете, почему мы не можем создавать модальные окна.",
     "eng": "Take a lesson from this example and then you will understand why we cannot create modal windows.",
     "ua": "Зробіть висновок із цього прикладу, і тоді ви зрозумієте, чому ми не можемо створювати модальні вікна."
   },
-  "s3.p14": {
+  "p113": {
     "ru": "Браузер работает в многопоточном режиме, и каждый поток имеет свой стек вызовов, поэтому для него модальные окна не проблема.",
     "eng": "The browser is multi-threaded and each thread has its own call stack, so modal windows are not a problem for it.",
     "ua": "Браузер працює у багатопотоковому режимі, і кожен потік має свій стек викликів, тому для нього модальні вікна не проблема."
   },
-  "s3.p15": {
+  "p114": {
     "ru": "Но у нас всего один стек вызовов.",
     "eng": "But we only have one call stack.",
     "ua": "Але у нас лише один стек викликів."
   },
-  "s3.p16": {
+  "p115": {
     "ru": "Исправим ситуацию:",
     "eng": "Let's fix the problem:",
     "ua": "Виправимо ситуацію:"
   },
-  "s3.p17": {
+  "p116": {
     "ru": "Как видите, цикл работает как будто \"в фоновом режиме\", не блокируя перерисовку экрана и другие операции.",
     "eng": "As you can see, the loop works as if “in the background”, without blocking screen redraw and other operations.",
     "ua": "Як бачите, цикл працює начебто \"у фоновому режимі\", не блокуючи перемальовку екрана та інші операції."
   },
-  "s3.p18": {
+  "p117": {
     "ru": "Однако \"фоновый режим\" у нас невозможен, поскольку JS - однопоточный, с одним стеком вызовов.",
     "eng": "However, “background mode” is not possible for us, since JS is single-threaded, with one call stack.",
     "ua": "Однак \"фоновий режим\" у нас неможливий, оскільки JS – однопотоковий, з одним стеком викликів."
   },
-  "s3.p19": {
+  "p118": {
     "ru": "Поэтому мы имитируем \"многопоточность\" с помощью **Event Loop**.",
     "eng": "Therefore, we simulate \"multithreading\" using **Event Loop**.",
     "ua": "Тому ми імітуємо \"багатопоточність\" за допомогою Event Loop."
   },
-  "s3.p20": {
+  "p119": {
     "ru": "Позже мы познакомимся с асинхронными генераторами, которые делают нечто подобное.",
     "eng": "Later we'll look at asynchronous generators, which do something similar.",
     "ua": "Пізніше ми познайомимося з асинхронними генераторами, які роблять щось подібне."
   },
-  "s3.slogan1": {
+  "p120": {
     "ru": "Мікротаски - це нахабні хлопці, які лізуть позачергово",
     "eng": "Microtasks are cheeky guys ignoring queue",
     "ua": "Мікротаски - це нахабні хлопці, які лізуть позачергово"
   },
-  "s3.p21": {
+  "p121": {
     "ru": "Колбеки таймеров и обработчики событий UI - это таски (tasks).",
     "eng": "Timer callbacks and UI event handlers are **tasks**.",
     "ua": "Колбеки таймерів та обробники подій UI – це таски (tasks)."
   },
-  "s3.p22": {
+  "p122": {
     "ru": "Но у нас есть еще \"магические коробки с двумя дырками\" - промисы.",
     "eng": "But we also have “magic boxes with two holes” - **promises**!",
     "ua": "Але ми маємо ще \"магічні коробки з двома дірками\" - проміси."
   },
-  "s3.p23": {
+  "p123": {
     "ru": "Метод **⟦f8⟧** промиса тоже принимает колбек.",
     "eng": "The method **⟦f8⟧** of the **promise** is a higher-order function that takes two callbacks as the arguments.",
     "ua": "Метод **⟦f8⟧** промісу теж приймає колбек."
   },
-  "s3.p24": {
+  "p124": {
     "ru": "И тут в цикле событий происходят вот такие чудеса:",
     "eng": "And here in the Event Loop the following miracles happen:",
     "ua": "І тут у циклі подій відбуваються такі дива:"
   },
-  "s3.p25": {
+  "p125": {
     "ru": "Колбеки таймеров попадают в очередь задач раноше, чем колбеки промисов (у таймеров не установлено время, т.е. по умочанию это 0).",
     "eng": "Timer callbacks get into the **task queue** earlier than promise callbacks (timers do not have a time set, i.e., by default it is 0).",
     "ua": "Колбеки таймерів потрапляють у **чергу завдань** раніше, ніж колбеки промісів (у таймерів не встановлений час, тобто за умоченням це 0)."
   },
-  "s3.p26": {
+  "p126": {
     "ru": "Так почему колбеки промисов попадают в стек вызовов раньше?",
     "eng": "So why do promise callbacks get into the **Call Stack** earlier than timer callbacks?",
     "ua": "То чому колбеки промісів потрапляють у **стек викликів** раніше?"
   },
-  "s3.p27": {
+  "p127": {
     "ru": "Потому, что колбеки промисов - это **микротаски**, и у них своя отдельная очередь.",
     "eng": "Because promise callbacks are **microtasks**, and they have their own separate queue.",
     "ua": "![icp-25 yes] Тому що колбеки промісів - це **мікротаски**, і у них своя окрема черга."
   },
-  "s3.p28": {
+  "p128": {
     "ru": "Когда стек вызовов освобождается, то движок просматривает сначала очередь микротасков.",
     "eng": "When the call stack is freed, the engine first looks through the **microtask queue**.",
     "ua": "Коли стек викликів звільняється, то движок переглядає спочатку чергу мікротасків."
   },
-  "s3.p29": {
+  "p129": {
     "ru": "Если там есть колбеки, то они будут один за одним отправляться в стек вызовов, пока очередь микротасков не опустеет.",
     "eng": "If there are callbacks there they will be sent to the **Call Stack** one by one until the **microtask queue** becomes empty.",
     "ua": "Якщо там є колбеки, то вони будуть один за одним відправлятися в стек викликів, поки черга мікротасків не спорожніє."
   },
-  "s3.p30": {
+  "p130": {
     "ru": "Только тогда движок перейдет к очереди тасков.",
     "eng": "Only then the engine will move on to the task queue.",
     "ua": "Тільки тоді движок перейде до черги тасків."
   },
-  "s3.p31": {
+  "p131": {
     "ru": "Пока таски сидят в и ожидают своей очереди, чтобы попасть в Call Stack, шустрые микротаски проскакивают туда у них под носом ![ico-25 smile]",
     "eng": "While the tasks are sitting in the task queue and waiting for their turn to get into the Call Stack, nimble micro-tasks slip there under their noses. ![ico-25 smile]",
     "ua": "Поки таски сидять і чекають своєї черги, щоб потрапити в Call Stack, спритні мікротаски проскакують туди у них під носом. ![ico-25 smile]"
   },
-  "s3.slogan2": {
+  "p132": {
     "ru": "Микротаски - это нахальные ребята, которые лезут в Call Stack без очереди",
     "eng": "Microtasks are cheeky little guys who jump into the Call Stack without waiting in line",
     "ua": ""
   },
-  "s3.p32": {
+  "p133": {
     "ru": "Как только мы запускаем скрипт на исполнение, мы стартуем таск.",
     "eng": "As soon as we run a script for execution, we start a task.",
     "ua": "Щойно ми запускаємо скрипт на виконання, ми стартуємо таск."
   },
-  "s3.p33": {
+  "p134": {
     "ru": "В следующем примере это вызов функции **message**, установка таймеров и обработчика события ⟦f3⟧ на _document.body_.",
     "eng": "The following example starts a task that declares the **message** function, sets timers and a ⟦f3⟧ event handler on the _document.body_ element.",
     "ua": "У наступному прикладі це виклик функції **⟦f7⟧**, встановлення таймерів та обробника події ⟦f3⟧ на _document.body_."
   },
-  "s3.p34": {
+  "p135": {
     "ru": "Кроме того, мы запускаем три асинхронных операции, используя **Fetch API** браузера.",
     "eng": "In addition, this task runs three asynchronous operations using the browser's **Fetch API**.",
     "ua": "Крім того, ми запускаємо три асинхронні операції, використовуючи **Fetch API** браузера."
   },
-  "s3.p35": {
+  "p136": {
     "ru": "Мы в курсе, что метод **⟦f9⟧** возвращает промис.",
     "eng": "We are aware that the **⟦f9⟧** method returns a **promise**.",
     "ua": "Ми знаємо, що метод **⟦f9⟧** повертає проміс."
   },
-  "s3.p36": {
+  "p137": {
     "ru": "Колбэк, передаваемый методу **⟦f10⟧** промиса, является **микро-таском**.",
     "eng": "The callback passed to the method  **⟦f10⟧** of promise is a **micro-task**.",
     "ua": "Колбек, який передається методу **⟦f10⟧** промісу, є **мікро-таском**."
   },
-  "s3.p37": {
+  "p138": {
     "ru": "А у микро-тасков своя очередь, которая имеет более высокий приоритет и обслуживается раньше, чем очередь тасков.",
     "eng": "And **micro-tasks** have their own queue, which has a higher priority and is serviced earlier than the **task queue**.",
     "ua": "Таким чином, як тільки стек викликів звільниться, по черзі будуть виконані всі колбеки, які вже потрапили до черги мікротасків до цього моменту."
   },
-  "s3.p38": {
+  "p139": {
     "ru": "Таким образом, как только стек вызовов освободится, поочередно будут выполнены все колбеки, которые уже попали в очередь микротасков к этому моменту.",
     "eng": "Thus, as soon as the Call Stack is free, all the callbacks that are already in the **microtask queue** at that moment will be executed in turn.",
     "ua": "І лише потім виконуватимуться колбеки із **task queue**."
   },
-  "s3.p39": {
+  "p140": {
     "ru": "И только потом будут выполняться колбеки из очереди тасков.",
     "eng": "And only then the callbacks from the **task queue** will be executed.",
     "ua": "◘◘![ico-20 cap] ** 6**◘◘"
   },
-  "s3.p40": {
+  "p141": {
     "ru": "В этом примере, посылая **⟦f9⟧**-запрос на сервер, мы получаем промис, и передаем методу **⟦f10⟧** этого промиса микротаск, который получает экземпляр конструктора **Response**, который нужно распарсить методом **⟦f11⟧**, чтобы получить содержимое ⟦f12⟧.",
     "eng": "In this example, by sending a **⟦f9⟧** request to the server, we receive a **promise** and pass the callback to the **⟦f10⟧** method of this promise.",
     "ua": "У цьому прикладі, посилаючи **⟦f9⟧**-запит на сервер, ми отримуємо проміс, і передаємо методу **⟦f10⟧** цього промісу мікротаск, який отримує екземпляр конструктора **Response**, який потрібно розпарсити методом **⟦f11⟧**, щоб отримати вміст ⟦f12⟧."
   },
-  "s3.p41": {
+  "p142": {
     "ru": "Метод **⟦f11⟧** опять возвращает промис, методу **⟦f10⟧** которого мы передаем второй микротаск, который уже получит содержимое ответа сервера.",
     "eng": "This callback receives an instance of the **Response** constructor, which needs to be parsed using the **⟦f11⟧** method to get the contents of body.",
     "ua": "Таким чином, спочатку до черги мікротасків потрапить перший колбек, і тільки після того, як він «відпрацює», до черги мікротасків буде відправлено другий колбек."
   },
-  "s3.p42": {
+  "p143": {
     "ru": "Таким образом, сначала в очередь микротасков попадет первый колбек, и только после того, как он \"отработает\", в очередь микротасков будет отправлен второй колбек.",
     "eng": "The **⟦f11⟧** method again returns a **promise**, and we pass the second callback to it's **⟦f10⟧** method.",
     "ua": "Якби ми відправили методом **⟦f13⟧** тільки один колбек у чергу тасків, то всі колбеки таймерів потрапили б до стека викликів раніше, ніж останній мікротаск потрапив би до черги мікротасків."
   },
-  "s3.p43": {
+  "p144": {
     "ru": "Если бы мы отправили методом **⟦f13⟧** только один колбек в очередь тасков, то все колбеки таймеров попали бы в стек вызовов раньше, чем последний микротаск попал бы в очередь микротасков.",
     "eng": "Last callback will already receive the contents of the server response.",
     "ua": "Щоб «зрівняти шанси», колбек таймера знову встановлює таймер. Тоді в черзі тасків ситуація буде схожа з чергою мікротасків."
   },
-  "s3.p44": {
+  "p145": {
     "ru": "Чтобы \"уравнять шансы\" тасков и микротасков, колбек таймера опять устанавливает таймер. Тогда в очереди тасков ситуация будет схожая с очередью микротасков.",
     "eng": "Thus, the first callback will be sent to the **microtask queue** first, and only after it ‘works out’ will the second callback be sent to the **microtask queue**.",
     "ua": ""

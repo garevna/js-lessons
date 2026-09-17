@@ -1,345 +1,345 @@
 {
-  "s1.h1": {
+  "p1": {
     "ru": "Блок схема алгоритма",
     "eng": "Algorithm flowchart",
     "ua": "Блок-схема алгоритму"
   },
-  "s2.h1": {
+  "p2": {
     "ru": "Алгоритм",
     "eng": "Algorithm",
     "ua": "Алгоритм"
   },
-  "s2.p1": {
+  "p3": {
     "ru": "В основе структурного программирования лежит триада:",
     "eng": "Structural programming is based on the triad:",
     "ua": "В основі структурного програмування лежить тріада:"
   },
-  "s2.p2": {
+  "p4": {
     "ru": "• **Последовательность** - выполнение действий одно за другим.",
     "eng": "- **Sequence** - execution of actions one after another.",
     "ua": "• **Послідовність** - виконання дій одна за одною."
   },
-  "s2.p3": {
+  "p5": {
     "ru": "• **Ветвление** - выбор действия в зависимости от выполнения условия.",
     "eng": "- **Branching** - selection of an action depending on the fulfilment of a condition.",
     "ua": "• **Перемикання** - вибір дії залежно від виконання умови."
   },
-  "s2.p4": {
+  "p6": {
     "ru": "• **Цикл** - неоднократное повторение одной и той же последовательности действий.",
     "eng": "- **Cycle** - multiple repetition of the same sequence of actions.",
     "ua": "• **Цикл** - неодноразове повторення однієї й тієї самої послідовності дій."
   },
-  "s2.p5": {
+  "p7": {
     "ru": "Программирование начинается с _описания алгоритма_.",
     "eng": "Programming begins with _description of an algorithm_.",
     "ua": "Програмування починається з _опису алгоритму_."
   },
-  "s2.p6": {
+  "p8": {
     "ru": "**Алгоритм** - это пошаговая система инструкций, определяющих процесс перехода от исходных данных (на входе) к искомому результату (на выходе).",
     "eng": "**Algorithm** is a step-by-step system of instructions defining the process of transition from the initial data (input) to the desired result (output).",
     "ua": "**Алгоритм** - це покрокова система інструкцій, що визначають процес переходу від вихідних даних (на вході) до шуканого результату (на виході)."
   },
-  "s2.p7": {
+  "p9": {
     "ru": "| **⟦f0⟧** | ** ➔** | **⟦f1⟧** | ** ➔** | **⟦f2⟧** |",
     "eng": "| **⟦f5⟧** | ** ➔** | **⟦f6⟧** | ** ➔** | **⟦f7⟧** |",
     "ua": "| **⟦f8⟧** | ** ➔** | **⟦f9⟧** | ** ➔** | **⟦f10⟧** |"
   },
-  "s2.p8": {
+  "p10": {
     "ru": "Если результат существует, алгоритм выполняется за конечное число шагов.",
     "eng": "If the output result exists, the algorithm is executed in a finite number of steps.",
     "ua": "Якщо результат існує, алгоритм виконується за кінцеве число кроків."
   },
-  "s2.p9": {
+  "p11": {
     "ru": "Если искомого результата не существует, алгоритм или никогда не завершает работу, либо заходит в тупик.",
     "eng": "If the desired result does not exist, the algorithm either never completes or reaches a dead end.",
     "ua": "Якщо шуканого результату не існує, алгоритм або ніколи не завершує роботу, або заходить у глухий кут."
   },
-  "s2.p10": {
+  "p12": {
     "ru": "Иногда алгорим достаточно прост, и вы его держите в уме, когда пилите скрипт.",
     "eng": "Sometimes the algorithm is simple enough that you keep it in mind when you write a script.",
     "ua": "Іноді алгорим досить простий, і ви його тримаєте в голові, коли пиляєте скрипт."
   },
-  "s2.p11": {
+  "p13": {
     "ru": "Но иногда он бывает настолько сложным, что вы хотите визуализировать его, чтобы ничего не забыть и не перепутать.",
     "eng": "But sometimes it's so complex that you want to have a visualisation it so you don't forget or confuse anything.",
     "ua": "Але іноді він буває настільки складним, що ви хочете візуалізувати його, щоб нічого не забути і не переплутати."
   },
-  "s2.p12": {
+  "p14": {
     "ru": "Одним из способов описания алгоритма является **блок-схема**.",
     "eng": "One way to describe an algorithm is a **flowchart**.",
     "ua": "Одним зі способів опису алгоритму є **блок-схема**."
   },
-  "s3.h1": {
+  "p15": {
     "ru": "Блок-схема",
     "eng": "Flowchart",
     "ua": "Блок-схема"
   },
-  "s3.p1": {
+  "p16": {
     "ru": "Блок-схемы являются незаменимыми инструментами для визуализации сложных процессов.",
     "eng": "Flowcharts are indispensable tools for visualising complex processes.",
     "ua": "Блок-схеми є незамінними інструментами для візуалізації складних процесів."
   },
-  "s3.p2": {
+  "p17": {
     "ru": "Для того, чтобы какой-то процесс изобразить схематически, нам нужны определенные графические формы.",
     "eng": "In order to depict a process schematically, we need certain graphical forms.",
     "ua": "Для того, щоб якийсь процес зобразити схематично, нам потрібні певні графічні форми."
   },
-  "s3.p3": {
+  "p18": {
     "ru": "Простейшими из таких форм являются:",
     "eng": "The simplest of such forms are:",
     "ua": "Найпростішими з таких форм є:"
   },
-  "s3.p4": {
+  "p19": {
     "ru": "Алгоритм должен иметь начало и конец.",
     "eng": "The algorithm must have the beginning and the end.",
     "ua": "Алгоритм повинен мати початок і кінець."
   },
-  "s3.p5": {
+  "p20": {
     "ru": "Переход от одного действия к другому изображается стрелками.",
     "eng": "Transition from one action to another is represented by arrows.",
     "ua": "Перехід від однієї дії до іншої зображується стрілками."
   },
-  "s3.p6": {
+  "p21": {
     "ru": "Блок операций - прямоугольник - позволяет вам использовать различный уровень детализации. В один такой блок можно вписать сразу целую последовательность простых действий, а можно каждое такое простое действие поместить в отдельный блок.",
     "eng": "The block of operations (a rectangle) allows you to use different level of detail. A whole sequence of simple actions can be written into one such block, or each such simple action can be placed in a separate block.",
     "ua": "Блок операцій - прямокутник - дозволяє вам використовувати різний рівень деталізації. В один такий блок можна вписати одразу цілу послідовність простих дій, а можна кожну таку просту дію помістити в окремий блок."
   },
-  "s3.p7": {
+  "p22": {
     "ru": "<div class=\"flowchart-process\">Взять штаны<div>",
     "eng": "<div class=\"flowchart-process\">Get your trousers<div>",
     "ua": "<div class=\"flowchart-process\">Взяти штани<div>"
   },
-  "s3.p8": {
+  "p23": {
     "ru": "<div class=\"flowchart-process\">Почистить штаны<div>",
     "eng": "<div class=\"flowchart-process\">Clean your trousers<div>",
     "ua": "<div class=\"flowchart-process\">Почистити штани<div>"
   },
-  "s3.p9": {
+  "p24": {
     "ru": "<div class=\"flowchart-process\">Пришить пуговицу<div>",
     "eng": "<div class=\"flowchart-process\">Sew on a button<div>",
     "ua": "<div class=\"flowchart-process\">Пришити ґудзик<div>"
   },
-  "s3.p10": {
+  "p25": {
     "ru": "<div class=\"flowchart-process\">Погладить штаны<div>",
     "eng": "<div class=\"flowchart-process\">Iron the trousers<div>",
     "ua": "<div class=\"flowchart-process\">Попрасувати штани<div>"
   },
-  "s3.p11": {
+  "p26": {
     "ru": "<div class=\"flowchart-process\">Надеть штаны<div>",
     "eng": "<div class=\"flowchart-process\">Put the trousers on<div>",
     "ua": "<div class=\"flowchart-process\">Одягти штани<div>"
   },
-  "s3.p12": {
+  "p27": {
     "ru": "Каждый из блоков \"Почистить штаны\" или \"Пришить пуговицу\" можно развернуть в отдельную последовательность действий.",
     "eng": "Each of the ‘Clean trousers’ or ‘Sew on a button’ blocks can be expanded into a separate sequence of actions.",
     "ua": "Кожен із блоків «Почистити штани» або «Пришити ґудзик» можна розгорнути в окрему послідовність дій."
   },
-  "s3.p13": {
+  "p28": {
     "ru": "Можно переставить местами блоки \"Почистить штаны\" и \"Пришить пуговицу\", однако точно не стоит менять положение блока \"Надеть штаны\", поскольку в этом случае все остальные операции значительно усложнятся.",
     "eng": "You can rearrange the ‘Clean trousers’ and ‘Sew on a button’ blocks, but you should definitely not rearrange the ‘Put on trousers’ block, as this will make all other operations much more complicated.",
     "ua": "Можна переставити місцями блоки «Почистити штани» і «Пришити ґудзик», однак точно не варто змінювати положення блоку «Одягти штани», оскільки в цьому випадку всі інші операції значно ускладняться."
   },
-  "s3.p14": {
+  "p29": {
     "ru": "^^Для рисования блок-схемы можно воспользоваться^^ [^^**бесплатным сервисом**^^ ![ico-25 draw-io]](⟦f3⟧)",
     "eng": "^^To draw a flowchart, you can use^^ [^^**free service**^^ ![ico-25 draw-io]](⟦f3⟧)",
     "ua": "^^Для малювання блок-схеми можна скористатися^^ [^^**безкоштовним сервісом**^^ ![ico-25 draw-io]](⟦f3⟧)"
   },
-  "s4.h1": {
+  "p30": {
     "ru": "Последовательность",
     "eng": "Sequence",
     "ua": "Послідовність"
   },
-  "s4.p1": {
+  "p31": {
     "ru": "Возможно, вы не отдаете себе в этом отчет, но вся ваша жизнь - это процесс, который заключается в определенной последовательности действий.",
     "eng": "You may not realise it, but your whole life is a process that consists of a certain sequence of actions.",
     "ua": "Можливо, ви не усвідомлюєте цього, але все ваше життя - це процес, який полягає в певній послідовності дій."
   },
-  "s4.p2": {
+  "p32": {
     "ru": "Утром вы встаете, затем идете в ванную комнату, потом (скорее всего) - на кухню, где готовите себе кофе, и т.д.",
     "eng": "You get up in the morning, then go to the bathroom, then (most likely) to the kitchen where you make your coffee, etc.",
     "ua": "Вранці ви встаєте, потім йдете у ванну кімнату, потім (найімовірніше) - на кухню, де готуєте собі каву, тощо."
   },
-  "s4.p3": {
+  "p33": {
     "ru": "Перед выходом на работу вы одеваетесь.",
     "eng": "Before going to work, you get dressed.",
     "ua": "Перед виходом на роботу ви одягаєтеся."
   },
-  "s4.p4": {
+  "p34": {
     "ru": "Наверное, было бы странно, если бы вы вышли на улицу прямо из душа. Хотя всякое случается ![ico-25 wink].",
     "eng": "It would probably be weird if you went outside straight from the shower. Although stuff happens ![ico-25 wink].",
     "ua": "Напевно, було б дивно, якби ви вийшли на вулицю просто з душу. Хоча всяке трапляється ![ico-25 wink]."
   },
-  "s4.p5": {
+  "p35": {
     "ru": "Т.е. если в вашей последовательности действий убрать какое-то звено, или переставить местами две отдельных операции, то результат может быть очень неприятным.",
     "eng": "I.e. if you remove some link in your sequence of actions, or rearrange two separate operations, the result can be very unpleasant.",
     "ua": "Тобто якщо у вашій послідовності дій прибрати якусь ланку, або переставити місцями дві окремі операції, то результат може бути дуже неприємним."
   },
-  "s4.p6": {
+  "p36": {
     "ru": "Предположим, вы делаете себе чай, пьете его, и только потом накладываете в чашку сахар. Думаю, вы пили несладкий чай. Добавление сахара после чаепития ситуацию явно не исправит.",
     "eng": "Suppose you make yourself tea, drink it, and only then put sugar in your cup. My guess is that you have been drinking unsweetened tea. Adding sugar after tea drinking is obviously not going to fix the situation.",
     "ua": "Припустимо, ви робите собі чай, п'єте його, і тільки потім накладаєте в чашку цукор. Думаю, ви пили несолодкий чай. Додавання цукру після чаювання ситуацію явно не виправить."
   },
-  "s4.p7": {
+  "p37": {
     "ru": "Итак, последовательность действий очень важна.",
     "eng": "So, consistency is very important.",
     "ua": "Отже, послідовність дій дуже важлива."
   },
-  "s4.p8": {
+  "p38": {
     "ru": "Когда вы пишете программу, вы задаете компьютеру четкую последовательность действий.",
     "eng": "When you write a programme, you give the computer a clear sequence of actions.",
     "ua": "Коли ви пишете програму, ви задаєте комп'ютеру чітку послідовність дій."
   },
-  "s4.p9": {
+  "p39": {
     "ru": "Эту последовательность можно изобразить схематично в виде блок-схемы:",
     "eng": "This sequence can be represented schematically in the form of a flowchart:",
     "ua": "Цю послідовність можна зобразити схематично у вигляді блок-схеми:"
   },
-  "s4.p10": {
+  "p40": {
     "ru": "Как видите, строго соблюдается направление сверху вниз.",
     "eng": "As you can see, the direction from top to bottom is strictly observed.",
     "ua": "Як бачите, суворо виконується напрямок зверху вниз."
   },
-  "s4.p11": {
+  "p41": {
     "ru": "Только после завершения предыдущего действия начинается следующее.",
     "eng": "Only after the previous action is completed does the next one begin.",
     "ua": "Тільки після завершення попередньої операції починається наступна."
   },
-  "s5.h1": {
+  "p42": {
     "ru": "Ветвление",
     "eng": "Branching",
     "ua": "Гілкування"
   },
-  "s5.p1": {
+  "p43": {
     "ru": "Очень часто мы вынуждены принимать решение, что делать.",
     "eng": "Very often we are forced to make a decision about what to do.",
     "ua": "Дуже часто ми змушені приймати рішення, що робити."
   },
-  "s5.p2": {
+  "p44": {
     "ru": "Если вам задерживают выплату зарплаты, вы не можете сделать запланированную покупку.",
     "eng": "If your salary is delayed, you cannot make a planned purchase.",
     "ua": "Якщо вам затримують виплату зарплати, ви не можете зробити заплановану покупку."
   },
-  "s5.p3": {
+  "p45": {
     "ru": "Получение зарплаты - условие, если оно выполнено - вы можете покупать то, что запланировали.",
     "eng": "Getting your salary is a condition, if it is fulfilled - you can buy what you planned.",
     "ua": "Отримання зарплати - умова, якщо її виконано - ви можете купувати те, що запланували."
   },
-  "s5.p4": {
+  "p46": {
     "ru": "Ваш код будет оперировать данными, которое динамично меняются.",
     "eng": "Your code will operate on data that changes dynamically.",
     "ua": "Ваш код оперуватиме даними, які динамічно змінюються."
   },
-  "s5.p5": {
+  "p47": {
     "ru": "В зависимости от значения каких-то данных ваш код будет выполнять различные операции.",
     "eng": "Depending on the value of some data, your code will perform different operations.",
     "ua": "Залежно від значення якихось даних ваш код виконуватиме різні операції."
   },
-  "s5.p6": {
+  "p48": {
     "ru": "Например, юзер открыл ваше приложение.",
     "eng": "For example, a user opened your application.",
     "ua": "Наприклад, юзер відкрив ваш застосунок."
   },
-  "s5.p7": {
+  "p49": {
     "ru": "Он мог зарегистрироваться, авторизоваться или войти как незарегистрированный пользователь.",
     "eng": "He may have registered, logged in or logged in as an unregistered user.",
     "ua": "Він міг зареєструватися, авторизуватися або увійти як незареєстрований користувач."
   },
-  "s5.p8": {
+  "p50": {
     "ru": "Если это зарегистрированый пользователь, то он может войти в персональный кабинет.",
     "eng": "If he is a registered user, he can log in to his personal account.",
     "ua": "Якщо це зареєстрований користувач, то він може увійти в персональний кабінет."
   },
-  "s5.p9": {
+  "p51": {
     "ru": "В противном случае такой возможности у него нет.",
     "eng": "Otherwise, he can't.",
     "ua": "В іншому разі такої можливості в нього немає."
   },
-  "s6.h1": {
+  "p52": {
     "ru": "Цикл",
     "eng": "Cycle",
     "ua": "Цикл"
   },
-  "s6.p1": {
+  "p53": {
     "ru": "Повторение одной и той же последовательности действий несколько раз - это цикл.",
     "eng": "Repeating the same sequence of actions several times is a cycle.",
     "ua": "Повторення однієї і тієї ж послідовності дій кілька разів - це цикл."
   },
-  "s6.p2": {
+  "p54": {
     "ru": "Мытье посуды вручную - это цикл (тарелка за тарелкой, чашка за чашкой - пока вся посуда не будет вымыта).",
     "eng": "Washing dishes by hand is a cycle (plate after plate, cup after cup - until all the dishes are washed).",
     "ua": "Миття посуду вручну - це цикл (тарілка за тарілкою, чашка за чашкою - поки весь посуд не буде вимито)."
   },
-  "s6.p3": {
+  "p55": {
     "ru": "Ходьба - это цикл: поднимается левая нога, выносится вперед, опускается, вы переносите вес тела на левую ногу и поднимаете правую, которая так же выносится вперед и опускается, и так до тех пор, пока вы не придете в точку назначения или вам не надоест выполнять эти упражнения.",
     "eng": "Walking is a cycle: you lift your left leg, carry it forward, lower it, you shift your body weight to the left leg and lift the right leg, which is also carried forward and lowered, and so on until you reach the destination point or you get bored with these exercises.",
     "ua": "Ходьба - це цикл: піднімається ліва нога, виноситься вперед, опускається, ви переносите вагу тіла на ліву ногу і піднімаєте праву, яка так само виноситься вперед і опускається, і так доти, доки ви не прийдете до точки призначення або вам не набридне виконувати ці вправи."
   },
-  "s6.p4": {
+  "p56": {
     "ru": "На блок-схеме алгоритма цикл будет выглядеть примерно так:",
     "eng": "In a flowchart of the algorithm, the cycle would look something like this:",
     "ua": "На блок-схемі алгоритму цикл матиме приблизно такий вигляд:"
   },
-  "s6.p5": {
+  "p57": {
     "ru": "Как видите, есть некое условие, выполнение которого проверяется на каждой **итерации** цикла.",
     "eng": "As you can see, there is some condition whose fulfilment is checked at each **iteration** of the loop.",
     "ua": "Як бачите, є якась умова, виконання якої перевіряється на кожній **ітерації** циклу."
   },
-  "s6.p6": {
+  "p58": {
     "ru": "Т.е. если бы мы не использовали выше рассмотренное **ветвление**, то цикл крутился бы бесконечно, что абсолютно недопустимо.",
     "eng": "I.e. if we didn't use the **branching** above, the loop would loop infinitely, which is absolutely inadmissible.",
     "ua": "Тобто якби ми не використовували вище розглянуте **гілкування**, то цикл крутився б нескінченно, що абсолютно неприпустимо."
   },
-  "s6.p8": {
+  "p59": {
     "ru": "^^Нарисуйте блок-схему алгоритма суммирования всех целых чисел от 1 до N^^",
     "eng": "^^Draw a flowchart of the algorithm for summing all integers from 1 to N.^^",
     "ua": "^^Намалюйте блок-схему алгоритму підсумовування всіх цілих чисел від 1 до **⟦f11⟧**.^^"
   },
-  "s6.p10": {
+  "p60": {
     "ru": "^^Нарисуйте блок-схему алгоритма суммирования всех целых нечетных чисел от 1 до N^^",
     "eng": "^^raw a flowchart of the algorithm for summing all odd integers from 1 to N.^^",
     "ua": "^^Намалюйте блок-схему алгоритму підсумовування всіх цілих непарних чисел від 1 до **⟦f11⟧**.^^"
   },
-  "s7.h1": {
+  "p61": {
     "ru": "Ряд Фибоначчи",
     "eng": "Fibonacci series",
     "ua": "Ряд Фібоначчі"
   },
-  "s7.p1": {
+  "p62": {
     "ru": "^^Ряд Фибоначчи - это последовательность чисел, каждое из которых равно сумме двух предыдущих.^^",
     "eng": "^^The Fibonacci series is a sequence of numbers, each of which is equal to the sum of the two preceding numbers.^^",
     "ua": "^^Ряд Фібоначчі - це послідовність чисел, кожне з яких дорівнює сумі двох попередніх.^^"
   },
-  "s7.p2": {
+  "p63": {
     "ru": "^^Первый и второй члены ряда Фибоначчи равны 1.^^",
     "eng": "^^The first and second terms of the Fibonacci series are equal to 1.^^",
     "ua": "^^Перший і другий члени ряду Фібоначчі дорівнюють 1.^^"
   },
-  "s7.p3": {
+  "p64": {
     "ru": "**Схема алгоритма вычисления члена ряда Фибоначчи по его номеру ⟦f4⟧**",
     "eng": "**Flowchart of the algorithm for calculating a Fibonacci series term by its number ⟦f4⟧:**",
     "ua": "**Схема алгоритму обчислення члена ряду Фібоначчі за його номером ⟦f11⟧**:"
   },
-  "s7.p5": {
+  "p65": {
     "ru": "^^Измените блок-схему алгоритма вычисления члена ряда Фибоначчи по его номеру ** N ** следующим образом:^^",
     "eng": "^^Modify the flowchart of the algorithm for calculating the item of the Fibonacci series by it's number ** N** as follows:^^",
     "ua": "^^Змініть блок-схему алгоритму обчислення члена ряду Фібоначчі за його номером **⟦f11⟧** наступним чином:^^"
   },
-  "s7.p6": {
+  "p66": {
     "ru": "^^• измените стартовые значения переменных^^",
     "eng": "^^• Change the starting values of the variables.^^",
     "ua": "^^• змініть стартові значення змінних;^^"
   },
-  "s7.p7": {
+  "p67": {
     "ru": "^^• перенесите инкремент (приращение) переменной ** n ** перед блоком ветвления кода (где сравниваются ** n ** и ** N **)^^",
     "eng": "^^• Move the increment (increment) of the variable ** n** before the code branching block (where ** n** and ** N** are compared).^^",
     "ua": "^^• перенесіть інкремент (приріст) змінної **⟦f12⟧** перед блоком розгалуження коду (де порівнюються **⟦f12⟧** і **⟦f11⟧**).^^"
   },
-  "s7.p9": {
+  "p68": {
     "ru": "^^Нарисуйте блок-схему алгоритма вычисления факториала числа N.^^",
     "eng": "^^Draw a flowchart of the algorithm for calculating the factorial of a number N.^^",
     "ua": "^^Намалюйте блок-схему алгоритму обчислення факторіалу числа **⟦f11⟧**.^^"
   },
-  "s7.p10": {
+  "p69": {
     "ru": "^^**Факториал** числа N - это произведение всех чисел от 1 до N.^^",
     "eng": "^^**Factorial** of **N ** is the product of all numbers from 1 to ** N**.^^",
     "ua": "^^**Факторіал** числа **⟦f11⟧** - це добуток усіх чисел від 1 до **⟦f11⟧**.^^"

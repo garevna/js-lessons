@@ -1,25 +1,25 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{p1}}
 
 | ![](illustrations/douglas-crockford.jpg) | «_I think the lack of classes is one of JavaScript's great strengths_»<hr>[Douglas Crockford](external/crockford) |
 
-☼☼☼ {{s1.slogan1}} ☼☼☼
+☼☼☼ {{p2}} ☼☼☼
 
-{{s1.p1}}
+{{p3}}
 
-{{s1.p2}}
+{{p4}}
 
 ~~~js
 const creator = (name, age) => ({ name, age })
 ~~~
 
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
+{{p5}}
+{{p6}}
+{{p7}}
 
-{{s1.p6}}
-{{s1.p7}}
+{{p8}}
+{{p9}}
 
-{{s1.p8}}
+{{p10}}
 
 ![ico-25 cap] ** 1**
 
@@ -29,7 +29,7 @@ function creator = (name, age) {
 }
 ~~~
 
-{{s1.p9}}
+{{p11}}
 
 ~~~js
 const user = new creator('Piter', 25)
@@ -39,9 +39,9 @@ console.log(user instanceof creator) // false
 console.log(user instanceof Object) // true
 ~~~
 
-{{s1.p10}}
+{{p12}}
 
-{{s1.p11}}
+{{p13}}
 
 ____________________________
 
@@ -57,8 +57,8 @@ const obj = new creator(5, 8, 7)
 obj instanceof creator  // false
 ~~~
 
-{{s1.p12}}
-{{s1.p13}}
+{{p14}}
+{{p15}}
 
 ____________________________
 
@@ -74,24 +74,24 @@ const obj = new simple
 obj instanceof simple  // true
 ~~~
 
-{{s1.p14}}
-{{s1.p15}}
+{{p16}}
+{{p17}}
 
-{{s1.p16}}
+{{p18}}
 
-{{s1.p17}}
+{{p19}}
 ______________________________
 
-## ![ico-20 icon] {{s2.h1}}
+## ![ico-20 icon] {{p20}}
 
-{{s2.p1}}
-{{s2.p2}}
+{{p21}}
+{{p22}}
 
 ![ico-25 cap] ** 4**
 
-{{s2.p3}}
+{{p23}}
 
-{{s2.p4}}
+{{p24}}
 
 ~~~js
 const google = (function (params, pin) {
@@ -109,7 +109,7 @@ console.log(google.getVar('token'))            // No access
 console.log(google.getVar('name', '789541'))   // Google
 ~~~
 
-{{s2.p5}}
+{{p25}}
 
 ~~~console
 
@@ -124,9 +124,9 @@ _____________________________
 
 ![ico-25 cap] ** 5**
 
-{{s2.p6}}
-{{s2.p7}}
-{{s2.p8}}
+{{p26}}
+{{p27}}
+{{p28}}
 
 ~~~~js
 class User {
@@ -152,7 +152,7 @@ google.getVar('token', '789451')  // "AfG78-1nm*15ph"
 google.getVar('cash', '789451')   // 25000
 ~~~~
 
-{{s2.p9}}
+{{p29}}
 
 ~~~console
 
@@ -174,15 +174,15 @@ google.getVar('cash', '789451')   // 25000
 
 __________________________________
 
-## ![ico-25 icon] {{s3.h1}}
+## ![ico-25 icon] {{p30}}
 
-{{s3.p1}}
+{{p31}}
 
-{{s3.p2}}
-{{s3.p3}}
+{{p32}}
+{{p33}}
 
-{{s3.p4}}
-{{s3.p5}}
+{{p34}}
+{{p35}}
 
 ![ico-25 cap] ** 6**
 
@@ -279,9 +279,9 @@ console.dir(currentUser.__proto__.constructor)
 
 ~~~
 
-{{s3.p6}}
+{{p36}}
 
-{{s3.p7}}
+{{p37}}
 
 ~~~js
 class User {
@@ -298,6 +298,6 @@ class User {
   }
 }
 ~~~
-{{s3.p8}}
-{{s3.p9}}
-{{s3.p10}}
+{{p38}}
+{{p39}}
+{{p40}}

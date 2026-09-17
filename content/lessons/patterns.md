@@ -1,51 +1,51 @@
 # ![ico-30 study] Design Patterns
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
-{{s0.p4}}
+{{p4}}
 
-{{s0.p5}}
+{{p5}}
 
 ________________________________________
 
 @@@@
 
 ![](https://img.artlebedev.ru/everything/izdal/yazyk-shablonov/yazyk-shablonov-cover.jpg)
-{{s0.p6}}
-{{s0.p7}}
+{{p6}}
+{{p7}}
 [%%%Gang of Four%%%](http://www.sugardas.lt/~p2d/books/Priemioop.pdf)
 ![](https://i.pinimg.com/originals/0b/c7/f0/0bc7f0c5ab814da316948fd2c9dd39aa.jpg)
-{{s0.p8}}
+{{p8}}
 @@@@
 _____________________________________________________
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p9}}
 
-{{s1.p1}}
+{{p10}}
 
-{{s1.p2}}
+{{p11}}
 
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
+{{p12}}
+{{p13}}
+{{p14}}
 
-{{s1.p6}}
+{{p15}}
 
 _____________________________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{p16}}
 
-{{s2.p1}}
+{{p17}}
 
-{{s2.p2}}
+{{p18}}
 
-{{s2.p3}}
+{{p19}}
 
-{{s2.p4}}
+{{p20}}
 
 ◘◘![ico-25 cap] ** 1**◘◘
 
@@ -69,18 +69,18 @@ const media = {
 Object.setPrototypeOf(media, proto)
 ~~~
 
-{{s2.p5}}
+{{p21}}
 
 ~~~js
 media.showPicture()
 ~~~
 
-{{s2.p6}}
-{{s2.p7}}
+{{p22}}
+{{p23}}
 
-{{s2.p8}}
+{{p24}}
 
-{{s2.p9}}
+{{p25}}
 
 ◘◘![ico-25 cap] ** 2**◘◘
 
@@ -114,6 +114,6 @@ const dispetcher = {
 
 {{{pattern-1.js}}}
 
-{{s2.p10}}
+{{p26}}
 
 _____________________________________________________

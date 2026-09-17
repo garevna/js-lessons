@@ -1,85 +1,85 @@
 {
-  "s0.p1": {
+  "p1": {
     "ru": "Теперь у нас есть выбор между статическим (**⟦f0⟧**) и динамическим (**⟦f1⟧**) импортом.",
     "eng": "Now we have a choice between static (**⟦f0⟧**) and dynamic (**⟦f1⟧**) imports.",
     "ua": "Тепер у нас є вибір між статичним (**⟦f0⟧**) та динамічним (**⟦f1⟧**) імпортом."
   },
-  "s0.p2": {
+  "p2": {
     "ru": "Динамический импорт представлен новой функцией **⟦f1⟧**, возвращающей промис.",
     "eng": "Dynamic import is represented by a new **⟦f1⟧** function that returns a promise.",
     "ua": "Динамічний імпорт представлений новою функцією **⟦f1⟧**, яка повертає проміс."
   },
-  "s0.p3": {
+  "p3": {
     "ru": "![ico-25 warn] Строго говоря, **⟦f1⟧** не является функцией в смысле наследования от **⟦f2⟧**, это вообще не объект.",
     "eng": "![ico-25 warn] Strictly speaking, **⟦f1⟧** is not a function in the sense of inheriting from **⟦f2⟧**, it is not an object at all.",
     "ua": "![ico-25 warn] Строго кажучи, **⟦f1⟧** не є функцією в сенсі успадкування від **⟦f2⟧**, це взагалі не об'єкт."
   },
-  "s0.p4": {
+  "p4": {
     "ru": "Запустите в консоли **Chrome** следующий код:",
     "eng": "Run the following code in the console:",
     "ua": "Запустіть у консолі наведений нижче код."
   },
-  "s0.p5": {
+  "p5": {
     "ru": "^^![ico-20 speach] Примечательно то, что в файле **_index21.js_** нет директивы **_⟦f3⟧_**^^",
     "eng": "^^![ico-20 speach] Notably, there is no **_⟦f3⟧_** directive in the **_index21.js_**file.^^",
     "ua": "^^![ico-20 speach] Примітно, що у файлі **⟦f13⟧** немає директиви **_⟦f3⟧_**.^^"
   },
-  "s0.p6": {
+  "p6": {
     "ru": "^^Однако импорт сработал, и скрипт запустился^^",
     "eng": "^^However, the import worked, and the script ran.^^",
     "ua": "^^Однак імпорт спрацював, і скрипт запустився.^^"
   },
-  "s0.p7": {
+  "p7": {
     "ru": "^^В этом примере скрипты импортируются динамически, последовательно, с задержкой в несколько секунд^^",
     "eng": "^^In this example, the scripts are imported dynamically, sequentially, with a delay of a few seconds.^^",
     "ua": "^^У цьому прикладі скрипти імпортуються динамічно, послідовно, із затримкою в кілька секунд.^^"
   },
-  "s0.p8": {
+  "p8": {
     "ru": "^^Используем асинхронную функцию для упрощения кода:^^",
     "eng": "^^Let's use an asynchronous function to simplify the code:^^",
     "ua": "^^Використовуємо асинхронну функцію для спрощення коду:^^"
   },
-  "s0.p9": {
+  "p9": {
     "ru": "Предположим, в разметке мы подключили скрипт **⟦f4⟧**",
     "eng": "Suppose we include the script **⟦f4⟧** in the markup:",
     "ua": "Припустимо, що у розмітці ми підключили скрипт **⟦f4⟧**"
   },
-  "s0.p10": {
+  "p10": {
     "ru": "Код файла **⟦f4⟧** создает элемент ⟦f5⟧ с атрибутом **⟦f6⟧** и вставляет его на страницу",
     "eng": "The code in the file **⟦f4⟧** creates an element ⟦f5⟧ with the attribute **⟦f12⟧** and inserts it into the page:",
     "ua": "Код файлу **⟦f4⟧** створює елемент ⟦f5⟧ з атрибутом **⟦f12⟧** і вставляє його на сторінку:"
   },
-  "s0.p11": {
+  "p11": {
     "ru": "В элемент ⟦f5⟧ помещается код, который импортирует функцию **_⟦f7⟧_** из файла **⟦f8⟧**",
     "eng": "The ⟦f5⟧ element contains code that imports the **_⟦f7⟧_** function from the file **⟦f8⟧**",
     "ua": "В елемент ⟦f5⟧ міститься код, який імпортує функцію **_⟦f7⟧_** з файлу **⟦f8⟧**"
   },
-  "s0.p12": {
+  "p12": {
     "ru": "и вызывает ее с текстом \"_Hi, students! Welcome to new age of ES Modules!_\"",
     "eng": "and calls it with the text \"_Hi, students! Welcome to new age of ES Modules!_\"",
     "ua": "і викликає її з текстом \"_Hi, students! Welcome to new age of ES Modules!_\"."
   },
-  "s0.p13": {
+  "p13": {
     "ru": "Полный код:",
     "eng": "Full code:",
     "ua": "Повний код:"
   },
-  "s0.p14": {
+  "p14": {
     "ru": "Именованый экспорт в файле **⟦f8⟧**",
     "eng": "Named export in file **⟦f8⟧**:",
     "ua": "Іменований експорт у файлі **⟦f8⟧**:"
   },
-  "s0.p15": {
+  "p15": {
     "ru": "![ico-20 warn] При импорте модулей следует указывать или полный путь:",
     "eng": "![ico-20 warn] When importing modules, you should specify either the full path:",
     "ua": "![ico-20 warn] При імпорті модулів слід зазначати або повний шлях:"
   },
-  "s0.p16": {
+  "p16": {
     "ru": "или относительный путь, начинающийся с ⟦f9⟧, ⟦f10⟧ или ⟦f11⟧:",
     "eng": "or a relative path starting with ⟦f9⟧, ⟦f10⟧ or ⟦f11⟧:",
     "ua": "або відносний шлях, що починається з ⟦f9⟧, ⟦f10⟧ або ⟦f11⟧:"
   },
-  "s0.p17": {
+  "p17": {
     "ru": "В противном случае импорт завершится неудачей",
     "eng": "Otherwise the import will fail.",
     "ua": "Інакше імпорт завершиться невдачею."

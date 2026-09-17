@@ -1,130 +1,130 @@
 {
-  "s0.p1": {
+  "p1": {
     "ru": "Открываем [**страницу**](⟦f0⟧)",
     "eng": "Open the [**page**](⟦f0⟧).",
     "ua": "Відкриваємо [**сторінку**](⟦f0⟧)"
   },
-  "s0.p2": {
+  "p2": {
     "ru": "Переходим на вкладку **Sources** панели разработчика:",
     "eng": "Go to the **Sources** tab of the developer panel:",
     "ua": "Переходимо на вкладку **Sources** панелі розробника:"
   },
-  "s0.p3": {
+  "p3": {
     "ru": "Слева видим панель навигации:",
     "eng": "On the left we see the navigation panel:",
     "ua": "Зліва бачимо панель навігації:"
   },
-  "s0.p4": {
+  "p4": {
     "ru": "<br><br>Для просмотра кода загруженной страницы используем кнопку **⟦f1⟧** и открываем **_Pages_**.<br>Теперь в панели навигации вы видите структуру проекта, и можете выбрать файл для просмотра.<br>Выбираем файл проекта, содержимое которого будет отображаться в центре (**index02.js**).",
     "eng": "<br><br>To view the code of the loaded page, use the button **⟦f1⟧** and open **_Pages_**.<br>Now you can see the project structure in the navigation panel and you can select a file to view.<br>Select the project file, the contents of which will be displayed in the center (**index02.js**).",
     "ua": "<br><br>Щоб переглянути код завантаженої сторінки, використовуйте кнопку **⟦f1⟧** і відкриваємо **_Pages_**.<br>Тепер ви можете побачити структуру проекту у панелі навігації, а також вибрати файл, який хочете переглянути.<br>Виберіть файл проекту, вміст якого буде відображатися по центру (**index02.js**)."
   },
-  "s0.p5": {
+  "p5": {
     "ru": "В правой части вы видите панель самого дебаггера:",
     "eng": "On the right side you see the panel of the debugger itself:",
     "ua": "З правого боку можна побачити панель самого відладчика:"
   },
-  "s0.p6": {
+  "p6": {
     "ru": "В отладчике можно не только работать с кодом открытой страницы.",
     "eng": "You can work not only with the code of an open page in the debugger.",
     "ua": "У відладчику можна не тільки працювати з кодом відкритої сторінки."
   },
-  "s0.p7": {
+  "p7": {
     "ru": "Можно создать свой фрагмент кода, который хотите отладить.",
     "eng": "You can create your own piece of code that you want to debug.",
     "ua": "Ви можете створити власний фрагмент коду, який потрібно налагодити."
   },
-  "s0.p8": {
+  "p8": {
     "ru": "С помощью той же кнопки **⟦f1⟧** в панели навигации выберем **_Snippets_**.",
     "eng": "Using the same **⟦f1⟧** button in the navigation panel, select **_Snippets_**.",
     "ua": "Використовуйте ту саму кнопку **⟦f1⟧** у панелі навігації, щоб вибрати **_Snippets_**."
   },
-  "s0.p9": {
+  "p9": {
     "ru": "**Snippet** - это фрагмент кода, который достаточно долго сохраняется в браузере под тем именем, которое вы ему дадите.",
     "eng": "**Snippet** - is a piece of code that is stored in the browser for quite a long time under the name you give it.",
     "ua": "**Snippet** - це фрагмент коду, який довго зберігається в браузері під тим ім'ям, яке ви йому даєте."
   },
-  "s0.p10": {
+  "p10": {
     "ru": "Для добавления нового фрагмента кода кликните на кнопке •• + New Snippet •• в панели навигации слева, и дайте название своему сниппету.",
     "eng": "To add a new code fragment, click on the button •• + New Snippet •• in the left navigation bar and give your snippet a title.",
     "ua": "Щоб додати новий фрагмент коду, натисніть на кнопку •• + New Snippet •• у панелі навігації ліворуч і введіть назву фрагмента."
   },
-  "s0.p11": {
+  "p11": {
     "ru": "Далее вы сможете вставить код сниппета в центре, сохранить изменения (Ctrl+S) и запустить код сниппета на исполнение ► **Ctrl + Enter**.<br><br>^^Если изменения не были сохранены, то в панели навигации (слева) измененный сниппет будет отмечен символом ⟦f2⟧.^^",
     "eng": "Next, you can paste the snippet code in the center, save the changes (Ctrl+S) and run the snippet code for execution ► **Ctrl + Enter**.<br><br>^^If the changes have not been saved, then the modified snippet will be displayed in the navigation panel (on the left) marked with ⟦f2⟧.^^",
     "ua": "Далі ви можете вставити код фрагмента по центру, зберегти зміни (**Ctrl+S**) і запустити код снипета на виконання ► **Ctrl + Enter**.<br><br>^^Якщо зміни не були збережені, то на панелі навігації (ліворуч) змінений фрагмент буде позначений символом ⟦f2⟧.^^"
   },
-  "s0.p12": {
+  "p12": {
     "ru": "Наиболее важные секции отладчика, которые вы должны будете освоить в первую очередь:",
     "eng": "The most important sections of the debugger that you will need to master first are:",
     "ua": "Найважливішими розділами налагоджувача, які вам потрібно буде освоїти в першу чергу, є:"
   },
-  "s0.p13": {
+  "p13": {
     "ru": "Для отслеживания значений переменных используем секцию **Watch**.",
     "eng": "To track the values ​​of variables, we use the section **Watch**.",
     "ua": "Для відстеження значень змінних використовується розділ **Watch**."
   },
-  "s0.p14": {
+  "p14": {
     "ru": "В этой секции вы можете добавить имена переменных, значения которых хотите отслеживать.",
     "eng": "In this section you can add the names of the variables whose values ​​you want to track.",
     "ua": "У цьому розділі ви можете додати назви змінних, значення яких ви хочете відстежувати."
   },
-  "s0.p15": {
+  "p15": {
     "ru": "Но для того, чтобы видеть, как меняются эти значения в процессе выполнения кода, нужно расставить точки останова (**⟦f3⟧**).",
     "eng": "But in order to see how these values ​​change during code execution, you need to set **⟦f6⟧**.",
     "ua": "Але для того, щоб побачити, як ці значення змінюються під час виконання коду, вам потрібно встановити **⟦f3⟧**."
   },
-  "s0.p16": {
+  "p16": {
     "ru": "Это достаточно легко сделать непосредственно в коде сниппета.<br>Все строки кода пронумерованы, и достаточно кликнуть на номере строки, чтобы установить точку останова.",
     "eng": "This is quite easy to do directly in the snippet code.<br>All lines of code are numbered, and just click on the line number to set a breakpoint.",
     "ua": "Це досить легко зробити прямо в коді сніпета.<br>Всі рядки коду пронумеровані, і вам просто потрібно натиснути на номер рядка, щоб встановити точку зупинки."
   },
-  "s0.p17": {
+  "p17": {
     "ru": "После запуска кода сниппета (► **Ctrl + Enter**) движок будет выполнять строчку за строчкой, пока не дойдет до очередной точки прерывания (**⟦f4⟧**).",
     "eng": "After running the snippet (► **Ctrl + Enter**) , the engine will execute line by line until it reaches the next **⟦f9⟧**.",
     "ua": "Після запуску коду фрагмента (► **Ctrl + Enter**) двигун буде виконувати рядок за рядком, поки не досягне наступної (**⟦f4⟧**)."
   },
-  "s0.p18": {
+  "p18": {
     "ru": "Здесь движок приостановит выполение кода, вы получите возможность посмотреть текущие значения переменных, которые вы отслеживаете, а затем возобновить выполение кода с того места, на котором вы остановились.",
     "eng": "Here the engine will pause executing the code, and you will be able to see the current values ​​of the variables you are watching, and then resume executing the code from where you left off.",
     "ua": "Тут двигун призупинить виконання коду, ви зможете побачити поточні значення змінних, які ви відстежуєте, а потім відновити виконання коду з того місця, де зупинилися."
   },
-  "s0.p19": {
+  "p19": {
     "ru": "Также можно внести изменения в код, сохранить внесенные изменения (**⟦f5⟧**) и возобновить выполнение кода. После возобновления будет работать новая версия кода.",
     "eng": "You can also make changes to the code, save your changes (**⟦f5⟧**) and resume code execution.",
     "ua": "Ви також можете вносити зміни в код, зберігати зміни (**⟦f5⟧**) і відновлювати виконання коду. Після відновлення нова версія коду запрацює."
   },
-  "s0.p20": {
+  "p20": {
     "ru": "Для возобновления выполнения кода используем кнопку ![ico-40 debug-button].",
     "eng": "After resuming, the new version of the code will work.",
     "ua": "Щоб відновити виконання коду, скористайтеся кнопкою ![ico-40 debug-button]."
   },
-  "s0.p21": {
+  "p21": {
     "ru": "![ico-25 warn] После установки ⟦f6⟧ нужно перезагрузить страницу ![reload].",
     "eng": "To resume the execution of the code, use the button ![ico-40 debug-button].",
     "ua": "![ico20] Можна відслідковувати зміни значень змінних ще й у секції **⟦f7⟧** дебагера:"
   },
-  "s0.p22": {
+  "p22": {
     "ru": "![ico20] Mожно отслеживать изменение значений переменных еще и  в секции  **⟦f7⟧**  дебаггера:",
     "eng": "![ico-25 warn] After setting the ⟦f6⟧, you need to reload the page ![reload].",
     "ua": "• Local - локальні змінні виконуваної функції."
   },
-  "s0.p23": {
+  "p23": {
     "ru": "• Local - локальные переменные исполняемой функции.",
     "eng": "![ico20] You can also track changes in variable values in the **⟦f7⟧** section of the debugger:",
     "ua": "• Block - змінні контексту виклику виконуваної функції."
   },
-  "s0.p24": {
+  "p24": {
     "ru": "• Block - переменные контекста вызова исполняемой функции.",
     "eng": "• Local - local variables of the function being executed.",
     "ua": "![ico-20 warn] Слідкуйте за тим, яка функція зараз запущена в розділі **⟦f8⟧**."
   },
-  "s0.p25": {
+  "p25": {
     "ru": "![ico-20 warn] Следите, какая функция сейчас выполняется, в секции **⟦f8⟧**.",
     "eng": "• Block - variables of the call context of the executable function.",
     "ua": ""
   },
-  "s0.p26": {
+  "p26": {
     "ru": "В  **Chrome DevTools**  можно также приостанавливать выполнение кода, когда происходят события DOM",
     "eng": "",
     "ua": ""

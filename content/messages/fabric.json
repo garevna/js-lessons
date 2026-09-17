@@ -1,200 +1,200 @@
 {
-  "s1.h1": {
+  "p1": {
     "ru": "Фабричные методы",
     "eng": "Factory methods",
     "ua": "Фабричні методи"
   },
-  "s1.slogan1": {
+  "p2": {
     "ru": "Лише скажи 'new' і кожна function поверне об'єкт",
     "eng": "Just say ‘new’ and every function will return an object",
     "ua": "Просто скажи «new», і кожна функція поверне об’єкт"
   },
-  "s1.p1": {
+  "p3": {
     "ru": "^^Причем не важно, есть или нет в теле функции оператор ⟦f0⟧.^^",
     "eng": "^^It doesn’t matter whether or not the function body contains the ⟦f0⟧ operator.^^",
     "ua": "^^Причому не має значення, чи є в тілі функції оператор ⟦f0⟧.^^"
   },
-  "s1.p2": {
+  "p4": {
     "ru": "Если она делает это без использования ключевого слова **_⟦f1⟧_**, то такая функция является **фабрикой**:",
     "eng": "If it does this without using the keyword **_⟦f1⟧_**, then such a function is a **factory**:",
     "ua": "Якщо вона робить це без використання ключового слова **_⟦f1⟧_**, то така функція є **фабрикою**:"
   },
-  "s1.p3": {
+  "p5": {
     "ru": "В этом примере мы используем стрелочную функцию, которая по определению не может быть конструктором ввиду отсутствия у нее свойства **⟦f2⟧**.",
     "eng": "In this example, we are using an arrow function, which by definition cannot be a constructor as it lacks the **⟦f2⟧** property.",
     "ua": "У цьому прикладі ми використовуємо стрілкову функцію, яка за визначенням не може бути конструктором через відсутність у неї властивості **⟦f2⟧**."
   },
-  "s1.p4": {
+  "p6": {
     "ru": "Она является фабрикой, потому что возвращает объект.",
     "eng": "It is a factory because it returns an object.",
     "ua": "Вона є фабрикою, тому що повертає об’єкт."
   },
-  "s1.p5": {
+  "p7": {
     "ru": "И этот объект не будет ничего знать о функции **⟦f3⟧**. Он будет экземпляром **⟦f4⟧**.",
     "eng": "And this object will know nothing about the function **⟦f3⟧**. It will be an instance of **⟦f4⟧**.",
     "ua": "І цей об’єкт нічого не знатиме про функцію **⟦f3⟧**. Він буде екземпляром **⟦f4⟧**."
   },
-  "s1.p6": {
+  "p8": {
     "ru": "![ico-20 warn] Функция может быть либо фабрикой, либо конструктором.",
     "eng": "![ico-20 warn] A function can be either a factory or a constructor.",
     "ua": "![ico-20 warn] Функція може бути або фабрикою, або конструктором."
   },
-  "s1.p7": {
+  "p9": {
     "ru": "Докажем это утверждение.",
     "eng": "Let’s prove this statement.",
     "ua": "Доведемо це твердження."
   },
-  "s1.p8": {
+  "p10": {
     "ru": "Необходимым, но недостаточным (![ico-20 warn]) условием того, чтобы функция стала фабрикой, является наличие оператора **⟦f0⟧**.",
     "eng": "A necessary but insufficient (![ico-20 warn]) condition for a function to be a factory is the presence of the operator **⟦f0⟧**.",
     "ua": "Необхідною, але недостатньою (![ico-20 warn]) умовою того, щоб функція стала фабрикою, є наявність оператора **⟦f0⟧**."
   },
-  "s1.p9": {
+  "p11": {
     "ru": "В этом примере функция **⟦f3⟧** возвращает объект. Отлично, посмотрим, что она вернет, если мы вызовем ее с ключевым словом **⟦f1⟧**:",
     "eng": "In this example, the function **⟦f3⟧** returns an object. Great, let’s see what it returns if we call it with the keyword **⟦f1⟧**:",
     "ua": "У цьому прикладі функція **⟦f3⟧** повертає об’єкт. Чудово, подивимося, що вона поверне, якщо ми викличемо її з ключовим словом **⟦f1⟧**:"
   },
-  "s1.p10": {
+  "p12": {
     "ru": "Функция **⟦f3⟧** уже не может быть конструктором, и использование ключевого слова **⟦f1⟧** никак не влияет на ее поведение.",
     "eng": "The function **⟦f3⟧** can no longer be a constructor, and using the keyword **⟦f1⟧** has no effect on its behaviour.",
     "ua": "Функція **⟦f3⟧** вже не може бути конструктором, і використання ключового слова **⟦f1⟧** жодним чином не впливає на її поведінку."
   },
-  "s1.p11": {
+  "p13": {
     "ru": "Функция **⟦f3⟧** создает экземпляры конструктора **⟦f4⟧**.",
     "eng": "The function **⟦f3⟧** creates instances of the constructor **⟦f4⟧**.",
     "ua": "Функція **⟦f3⟧** створює екземпляри конструктора **⟦f4⟧**."
   },
-  "s1.p12": {
+  "p14": {
     "ru": "В этом примере функция **⟦f3⟧** возвращает массив.",
     "eng": "In this example, the function **⟦f3⟧** returns an array.",
     "ua": "У цьому прикладі функція **⟦f3⟧** повертає масив."
   },
-  "s1.p13": {
+  "p15": {
     "ru": "Но массив является объектом, поэтому функция **⟦f3⟧** обречена быть фабрикой, и никогда не сможет стать конструктором.",
     "eng": "However, an array is an object, so the function **⟦f3⟧** is destined to be a factory and can never become a constructor.",
     "ua": "Але масив є об’єктом, тому функція **⟦f3⟧** приречена бути фабрикою і ніколи не зможе стати конструктором."
   },
-  "s1.p14": {
+  "p16": {
     "ru": "Функция **⟦f5⟧** возвращает число (возможно, NaN или ⟦f6⟧). Можно ли сказать, что она является фабрикой? - Нет, поскольку она возвращает **не объект**.",
     "eng": "The function **⟦f5⟧** returns a number (possibly NaN or ⟦f6⟧). Can we say that it is a factory? – No, because it returns **not an object**.",
     "ua": "Функція **⟦f5⟧** повертає число (можливо, NaN або ⟦f6⟧). Чи можна сказати, що вона є фабрикою? — Ні, оскільки вона повертає **не об’єкт**."
   },
-  "s1.p15": {
+  "p17": {
     "ru": "Будучи вызвана с ключевым словом **⟦f1⟧**, она возвращает экземпляр **⟦f5⟧**.",
     "eng": "When called with the keyword **⟦f1⟧**, it returns an instance of **⟦f5⟧**.",
     "ua": "При виклику з ключовим словом **⟦f1⟧** вона повертає екземпляр **⟦f5⟧**."
   },
-  "s1.p16": {
+  "p18": {
     "ru": "Аналогичная ситуация будет в случае, если функция возвращает строку, или ⟦f7⟧, или ⟦f8⟧. Можете проверить самостоятельно.",
     "eng": "The same applies if the function returns a string, or ⟦f7⟧, or ⟦f8⟧. You can check this for yourself.",
     "ua": "Аналогічна ситуація буде у випадку, якщо функція повертає рядок, або ⟦f7⟧, або ⟦f8⟧. Можете перевірити самостійно."
   },
-  "s1.p17": {
+  "p19": {
     "ru": "Т.е. функция будет фабрикой только в том случае, если она возвращает экземпляр **⟦f4⟧**.",
     "eng": "In other words, the function will be a factory only if it returns an instance of **⟦f4⟧**.",
     "ua": "Тобто функція буде фабрикою лише в тому випадку, якщо вона повертає екземпляр **⟦f4⟧**."
   },
-  "s2.h1": {
+  "p20": {
     "ru": "ООП-объекты и структуры данных",
     "eng": "OOP objects and data structures",
     "ua": "ООП-об’єкти та структури даних"
   },
-  "s2.p1": {
+  "p21": {
     "ru": "••^^Роберт Мартин, «Чистый код»:^^••",
     "eng": "••^^Robert Martin, ‘Clean Code’:^^••",
     "ua": "••^^Роберт Мартін, «Чистий код»:^^••"
   },
-  "s2.p2": {
+  "p22": {
     "ru": "••_Объекты предоставляют поведение и скрывают данные<br/>Структуры данных предоставляют данные,<br/>но не обладают сколько-нибудь значительным поведением_••",
     "eng": "••_Objects provide behaviour and hide data<br/>Data structures provide data,<br/>but do not possess any significant behaviour_••",
     "ua": "••_Об’єкти забезпечують поведінку та приховують дані<br/>Структури даних надають дані,<br/>але не мають жодної значущої поведінки_••"
   },
-  "s2.p3": {
+  "p23": {
     "ru": "**Паттерн \"_Модуль_\"**",
     "eng": "**The ‘_Module_’ pattern**",
     "ua": "**Паттерн «_Модуль_»**"
   },
-  "s2.p4": {
+  "p24": {
     "ru": "^^В этом примере с помощью IIFE и замыкания создается объект, данные которого скрыты от непосредственного доступа и доступны только через интерфейс, представленный методом _**getVar**_^^",
     "eng": "^^In this example, an IIFE and closure are used to create an object whose data is hidden from direct access and is only accessible via an interface provided by the _**getVar**_ method^^",
     "ua": "^^У цьому прикладі за допомогою IIFE та замикання створюється об’єкт, дані якого приховані від безпосереднього доступу й доступні лише через інтерфейс, представлений методом _**getVar**_^^"
   },
-  "s2.p5": {
+  "p25": {
     "ru": "^^Выведем объект **google** в консоль:^^",
     "eng": "^^Let’s print the **google** object to the console:^^",
     "ua": "^^Виведемо об’єкт **google** у консоль:^^"
   },
-  "s2.p6": {
+  "p26": {
     "ru": "^^В этом примере мы делаем то же самое, но используя расширение класса _User_^^",
     "eng": "^^In this example, we do the same thing, but using a subclass of the _User_ class^^",
     "ua": "^^У цьому прикладі ми робимо те саме, але використовуємо розширення класу _User_^^"
   },
-  "s2.p7": {
+  "p27": {
     "ru": "^^Конструктор класса создает публичное свойство _name_^^",
     "eng": "^^The class’s constructor creates a public property _name_^^",
     "ua": "^^Конструктор класу створює публічну властивість _name_^^"
   },
-  "s2.p8": {
+  "p28": {
     "ru": "^^Фабричный метод класса _updateUser_ позволяет расширить функционал класса, создать скрытые данные, доступные через интерфейс ( метод _**getVar**_ )^^",
     "eng": "^^The class’s factory method _updateUser_ allows us to extend the class’s functionality and create hidden data accessible via an interface (the _**getVar**_ method)^^",
     "ua": "^^Фабричний метод класу _updateUser_ дозволяє розширити функціонал класу, створити приховані дані, доступні через інтерфейс (метод _**getVar**_)^^"
   },
-  "s2.p9": {
+  "p29": {
     "ru": "^^Выведем объект **google** в консоль:^^",
     "eng": "^^Let’s print the **google** object to the console:^^",
     "ua": "^^Виведемо об’єкт **google** у консоль:^^"
   },
-  "s3.h1": {
+  "p30": {
     "ru": "Полиморфизм",
     "eng": "Polymorphism",
     "ua": "Поліморфізм"
   },
-  "s3.p1": {
+  "p31": {
     "ru": "Фабричные методы дают возможность расширять функциональность конструктора, обеспечивая его полиморфизм.",
     "eng": "Factory methods make it possible to extend the functionality of the constructor, ensuring its polymorphism.",
     "ua": "Фабричні методи дають можливість розширювати функціональність конструктора, забезпечуючи його поліморфізм."
   },
-  "s3.p2": {
+  "p32": {
     "ru": "В следующем примере конструктор  **User**  имеет фабричный метод   **_createNewUser_**,",
     "eng": "In the following example, the **User** constructor has a factory method **_createNewUser_**,",
     "ua": "У наступному прикладі конструктор  **User**  має фабричний метод   **_createNewUser_**,"
   },
-  "s3.p3": {
+  "p33": {
     "ru": "позволяющий создавать экземпляры класса с различным набором свойств и методов.",
     "eng": "which allows instances of the class to be created with different sets of properties and methods.",
     "ua": "що дозволяє створювати екземпляри класу з різним набором властивостей і методів."
   },
-  "s3.p4": {
+  "p34": {
     "ru": "экземпляры  **visitor**  и  **currentUser**,  созданные конструктором  **User**,",
     "eng": "Instances of **visitor** and **currentUser**, created by the **User** constructor,",
     "ua": "екземпляри  **visitor**  та  **currentUser**,  створені конструктором  **User**,"
   },
-  "s3.p5": {
+  "p35": {
     "ru": "имеют различные свойства и методы.",
     "eng": "have different properties and methods.",
     "ua": "мають різні властивості та методи."
   },
-  "s3.p6": {
+  "p36": {
     "ru": "Получили _перечислимый_ статический метод **_createNewUser_** конструктора.",
     "eng": "We have obtained an _enumerable_ static method **_createNewUser_** from the constructor.",
     "ua": "Отримали _перелічуваний_ статичний метод **_createNewUser_** конструктора."
   },
-  "s3.p7": {
+  "p37": {
     "ru": "Сделаем то же самое с помощью класса:",
     "eng": "Let’s do the same using a class:",
     "ua": "Зробимо те саме за допомогою класу:"
   },
-  "s3.p8": {
+  "p38": {
     "ru": "В этом случае статический метод класса **_createNewUser_** будет неперечислимым,<br/>",
     "eng": "In this case, the class’s static method **_createNewUser_** will be non-enumerable,<br/>",
     "ua": "У цьому випадку статичний метод класу **_createNewUser_** буде неперелічуваним,<br/>"
   },
-  "s3.p9": {
+  "p39": {
     "ru": "а в остальном все будет аналогично варианту с конструктором<br/>",
     "eng": "whilst everything else will be similar to the constructor-based variant<br/>",
     "ua": "а в іншому все буде аналогічно варіанту з конструктором<br/>"
   },
-  "s3.p10": {
+  "p40": {
     "ru": "^^Так что \"под капотом\" работает все то же прототипное наследование, только с косметическими \"добавками\".^^",
     "eng": "^^So, ‘under the bonnet’, it’s still the same prototype-based inheritance at work, just with a few cosmetic ‘additions’.^^",
     "ua": "^^Тож «під капотом» працює те саме прототипне успадкування, тільки з косметичними «добавками».^^"

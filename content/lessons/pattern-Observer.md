@@ -4,31 +4,31 @@ _____________________________________
 
 ## ![ico-25 icon] Pattern Observer
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
-{{s0.p4}}
+{{p4}}
 
-{{s0.p5}}
+{{p5}}
 
-{{s0.p6}}
+{{p6}}
 
-{{s0.p7}}
+{{p7}}
 
 _______________________________
 
 ## ![ico-30 cap] Example 1
 
-{{s0.p8}}
+{{p8}}
 
 ~~~js
 const inputs = ['author', 'topic', 'message']
 ~~~
 
-{{s0.p9}}
+{{p9}}
 
 ~~~js
 const addElem = (tag = 'input', container = document.body) => (container.nodeType === 1 ? container : document.body)
@@ -37,7 +37,7 @@ const addElem = (tag = 'input', container = document.body) => (container.nodeTyp
 
 ## ![ico-25 cap] observed
 
-{{s0.p10}}
+{{p10}}
 
 ~~~js
 const observed = inputs  
@@ -51,13 +51,13 @@ const observed = inputs
   })
 ~~~
 
-{{s0.p11}}
+{{p11}}
 
 _________________________________________________________
 
 ### ![ico-25 cap] createSubscriber
 
-{{s0.p12}}
+{{p12}}
 
 ~~~js
 function createSubscriber (prop, tagName, container = section) {
@@ -74,7 +74,7 @@ ___________________________________________
 
 ### ![ico-25 cap] Class Observer
 
-{{s0.p13}}
+{{p13}}
 
 ~~~js
 class Observer {
@@ -106,28 +106,28 @@ class Observer {
 }
 ~~~
 
-{{s0.p14}}
+{{p14}}
 
-{{s0.p15}}
+{{p15}}
 
-{{s0.p16}}
+{{p16}}
 
-{{s0.p17}}
-{{s0.p18}}
+{{p17}}
+{{p18}}
 
-{{s0.p19}}
-{{s0.p20}}
-{{s0.p21}}
+{{p19}}
+{{p20}}
+{{p21}}
 
 ### ![ico-25 cap] Observer instance
 
-{{s0.p22}}
+{{p22}}
 
 ~~~js
 const observer = new Observer(observed)
 ~~~
 
-{{s0.p23}}
+{{p23}}
 
 ~~~js
 observer.subscribe(createSubscriber('topic', 'h3')),
@@ -135,25 +135,25 @@ observer.subscribe(createSubscriber('message', 'p')),
 observer.subscribe(createSubscriber('author', 'small'))
 ~~~
 
-{{s0.p24}}
+{{p24}}
 
 _____________________________________
 
-{{s0.p25}}
+{{p25}}
 
 ~~~js
 observer.subscribe(outputDevice.write)
 ~~~
 
-{{s0.p26}}
+{{p26}}
 
-{{s0.p27}}
+{{p27}}
 
 ~~~js
 observer.subscibe(null)
 ~~~
 
-{{s0.p28}}
+{{p28}}
 
 ••Invalide subscriber••
 
@@ -240,17 +240,17 @@ ____________________________________________________
 
 ## ![ico-30 cap] Example 2
 
-{{s0.p29}}
-{{s0.p30}}
-{{s0.p31}}
+{{p29}}
+{{p30}}
+{{p31}}
 
-{{s0.p32}}
+{{p32}}
 
 ~~~js
 const observed = ['topic', 'message', 'author']
 ~~~
 
-{{s0.p33}}
+{{p33}}
 
 ### ![ico-25 cap] Class Observer
 
@@ -296,8 +296,8 @@ class Observer {
 const observer = new Observer(observed)
 ~~~
 
-{{s0.p34}}
-{{s0.p35}}
+{{p34}}
+{{p35}}
 
 ~~~js
 observer.subscribe(createSubscriber(0, 'h3')),
@@ -305,8 +305,8 @@ observer.subscribe(createSubscriber(1, 'p')),
 observer.subscribe(createSubscriber(2, 'small'))
 ~~~
 
-{{s0.p36}}
-{{s0.p37}}
+{{p36}}
+{{p37}}
 
 ~~~js
 const getRandom = num => Math.max(Math.round(Math.random() * num), 1000)
@@ -316,7 +316,7 @@ setTimeout(() => { observed[1] = 'new message' }, getRandom(7000))
 setTimeout(() => { observed[2] = 'new author' }, getRandom(8000))
 ~~~
 
-{{s0.p38}}
+{{p38}}
 
 ### ![ico-25 slider-button] Demo 2
 

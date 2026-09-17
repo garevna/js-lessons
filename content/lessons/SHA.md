@@ -1,38 +1,38 @@
 # ![ico-30 study] Secure Hash Algorithm
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
-{{s0.p4}}
+{{p4}}
 
-{{s0.p5}}
+{{p5}}
 
-{{s0.p6}}
+{{p6}}
 
-{{s0.p7}}
+{{p7}}
 
 ^^^[SHA]
 
-{{s0.p8}}
+{{p8}}
 
-{{s0.p9}}
-{{s0.p10}}
-{{s0.p11}}
+{{p9}}
+{{p10}}
+{{p11}}
 
-{{s0.p12}}
+{{p12}}
 
 ^^^
 
 ## ![ico-25 icon] SHA-1
 
-{{s0.p13}}
+{{p13}}
 
 ![ico-25 cap] **SHA-1**
 
-{{s0.p14}}
+{{p14}}
 
 ~~~js
 for (var x of arr) {
@@ -40,15 +40,15 @@ for (var x of arr) {
 }
 ~~~
 
-{{s0.p15}}
+{{p15}}
 
 ••15E84BC669EC1F264F68CF0329A3DE12788EBC7D••
 
-{{s0.p16}}
+{{p16}}
 
 _________________________
 
-### ![ico-25 icon] {{s1.h1}}
+### ![ico-25 icon] {{p17}}
 
 [%%%SHA1%%%](https://passwordsgenerator.net/sha1-hash-generator/) 
 [%%%SHA2%%%](https://passwordsgenerator.net/sha256-hash-generator/)
@@ -57,7 +57,7 @@ ___________________
 
 ### ![ico-30 git] js-sha1
 
-{{s1.p1}}
+{{p18}}
 
 ••![ico-30 bash] $ npm install js-sha1••
 
@@ -65,21 +65,21 @@ _________________
 
 ## ![ico-25 icon] SHA256
 
-{{s1.p2}}
+{{p19}}
 
 ~~~html
 <script src="https://cdn.rawgit.com/chrisveness/crypto/4e93a4d/sha256.js"></script>
 ~~~
 
-{{s1.p3}}
+{{p20}}
 
 ~~~js
 var hash = Sha256.hash(text)
 ~~~
 
-{{s1.p4}}
+{{p21}}
 
-{{s1.p5}}
+{{p22}}
 
 ^^^[sha256sum]
 
@@ -91,13 +91,13 @@ _______________________
 
 ## ![ico-25 icon] SHA384
 
-{{s1.p6}}
+{{p23}}
 
-{{s1.p7}}
+{{p24}}
 
-{{s1.p8}}
+{{p25}}
 
-{{s1.p9}}
+{{p26}}
 
 ~~~js
 var script = document.createElement('script')
@@ -111,35 +111,35 @@ ______________________________
 
 ## ![ico-25 icon] integrity
 
-{{s1.p10}}
+{{p27}}
 
-{{s1.p11}}
+{{p28}}
 
-{{s1.p12}}
+{{p29}}
 
 ![](https://lh3.googleusercontent.com/JUoOnSODv-YbGzZ_qsAWeSB4MRjYiAL62kmeb6eOSQZvMbVFKgUzC8XAdJq4GRtoWT-8N4AVAbWnXdZfHmLcGRgI-DOuvqANAPLjvLHfvAsC6m0Yas_mNZQ_Mb-w2dwnVh4Zth6ZOwxUYew)
 
-{{s1.p13}}
-{{s1.p14}}
-{{s1.p15}}
-{{s1.p16}}
-{{s1.p17}}
+{{p30}}
+{{p31}}
+{{p32}}
+{{p33}}
+{{p34}}
 
 ___________________________________
 
-## ![ico-25 hw] {{s2.h1}}
+## ![ico-25 hw] {{p35}}
 
-{{s2.p1}}
+{{p36}}
 
-{{s2.p2}}
+{{p37}}
 
-{{s2.p3}}
+{{p38}}
 
-{{s2.p4}}
+{{p39}}
 
-{{s2.p5}}
+{{p40}}
 
-{{s2.p6}}
+{{p41}}
 
 ~~~~js
 var users = [
@@ -159,16 +159,16 @@ var users = [
 ]
 ~~~~
 
-{{s2.p7}}
+{{p42}}
 
 ^^^[Sign In]
 
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
-{{s2.p12}}
+{{p43}}
+{{p44}}
+{{p45}}
+{{p46}}
+{{p47}}
 
 ^^^
 
-{{s2.p13}}
+{{p48}}

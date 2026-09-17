@@ -1,12 +1,12 @@
 # ![ico-30 study] Content-Type
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
-^^^[{{s0.spoiler1}}]
+^^^[{{p4}}]
 
 ![ico-20 green-ok] application
 ![ico-20 green-ok] audio
@@ -18,13 +18,13 @@
 
 _______________________
 
-{{s0.p4}}
+{{p5}}
 
 ^^^
 
-{{s0.p5}}
+{{p6}}
 
-^^^[{{s0.spoiler2}}]
+^^^[{{p7}}]
 
 ^^• **application/msword**^^
 ^^• **application/pdf**^^
@@ -41,23 +41,23 @@ _______________________
 
 ___________________
 
-{{s0.p6}}
-{{s0.p7}}
-{{s0.p8}}
+{{p8}}
+{{p9}}
+{{p10}}
 
 ^^^
 
 ________________________________________
 
-## ![ico-25 icon] {{s1.h1}}
+## ![ico-25 icon] {{p11}}
 
-{{s1.p1}}
+{{p12}}
 
 [![ico-25 link] https://httpbin.org](https://httpbin.org)
 
-{{s1.p2}}
+{{p13}}
 
-{{s1.p3}}
+{{p14}}
 
 ~~~js
 function postData (data, contentType = 'application/json') {
@@ -77,7 +77,7 @@ function postData (data, contentType = 'application/json') {
 }
 ~~~
 
-{{s1.p4}}
+{{p15}}
 
 ___________________
 

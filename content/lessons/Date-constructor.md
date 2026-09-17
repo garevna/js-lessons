@@ -3,67 +3,67 @@
 
 ## ![ico-25 icon] {{common.c7}}
 
-{{s1.p1}}
+{{p1}}
 
 ~~~js
 var myData = new Date(year,  month, day, hours, minutes, seconds, milliseconds)
 ~~~
 
-{{s1.p2}}
+{{p2}}
 
-{{s1.p3}}
+{{p3}}
 
-{{s1.p4}}
+{{p4}}
 
 ~~~js
 var newData = new Date(год, месяц, число)
 ~~~
 
-{{s1.p5}}
+{{p5}}
 
-{{s1.p6}}
+{{p6}}
 
-{{s1.p7}}
+{{p7}}
 
 ~~~js
 var newData = new Date(2017,  11,  10)
 ~~~
 
-{{s1.p8}}
+{{p8}}
 
 ~~~js
 Sun Dec 10 2017 00:00:00 GMT+0200 (Финляндия (зима))
 ~~~
 
-{{s1.p9}}
+{{p9}}
 
 ~~~js
 typeof  newData    // "object"
 ~~~
 
-{{s1.p10}}
+{{p10}}
 
 ~~~js
 newData instanceof Date    // true
 ~~~
 
-{{s1.p11}}
+{{p11}}
 
 ## ![ico-25 icon] {{common.c13}}
 
-{{s2.p1}}
+{{p12}}
 
-{{s2.p2}}
-{{s2.p3}}
-{{s2.p4}}
-{{s2.p5}}
-{{s2.p6}}
-{{s2.p7}}
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
-{{s2.p12}}
+{{p13}}
+{{p14}}
+{{p15}}
+{{p16}}
+{{p17}}
+{{p18}}
+{{p19}}
+{{p20}}
+{{p21}}
+{{p22}}
+{{p23}}
 
 [![ico-20 link] W3School](https://www.w3schools.com/js/js_date_methods.asp)
 [![ico-20 link] MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
@@ -103,14 +103,14 @@ data.toLocaleString().split(', ')[0] // "24.05.2019"
 data.toLocaleString().split(', ')[1] // "07:20:30"
 ~~~
 
-{{s2.p13}}
+{{p24}}
 
 ~~~js
 new new Date(2019, 4, 24, 7, 20, 30)
   .toLocaleDateString()  // "24.05.2019"
 ~~~
 
-{{s2.p14}}
+{{p25}}
 
 ~~~js
 new Date(2019, 4, 24, 7, 20, 30)
@@ -119,9 +119,9 @@ new Date(2019, 4, 24, 7, 20, 30)
 
 ### ![ico-25 icon] setFullYear()
 
-{{s2.p15}}
+{{p26}}
 
-{{s2.p16}}
+{{p27}}
 
 ~~~js
 var data = new Date ( 2000, 10, 5 )
@@ -129,13 +129,13 @@ var data = new Date ( 2000, 10, 5 )
 data.setFullYear ( 2019 )
 ~~~
 
-{{s2.p17}}
+{{p28}}
 
-{{s2.p18}}
+{{p29}}
 
 ![ico-25 cap] ** 4 **
 
-{{s2.p19}}
+{{p30}}
 
 ~~~js
 var data = new Date(2019, 4, 24)
@@ -144,14 +144,14 @@ data.setFullYear (data.getFullYear(), data.getMonth(), data.getDate() + 50)
 console.log(`Next date: ${data.toLocaleString()}`)
 ~~~
 
-{{s2.p20}}
+{{p31}}
 
 ~~~console
 Current date: 24.05.2019, 00:00:00
 Next date:    13.07.2019, 00:00:00
 ~~~
 
-{{s2.p21}}
+{{p32}}
 
 ~~~js
 function calcDate (currentDate, days) {
@@ -161,9 +161,9 @@ function calcDate (currentDate, days) {
 }
 ~~~
 
-{{s2.p22}}
+{{p33}}
 
-{{s2.p23}}
+{{p34}}
 
 ~~~js
 calcDate(new Date(), 50)
@@ -188,9 +188,9 @@ getRelativeData(new Date(), 15)
 
 _________________________________________________________
 
-### ![ico-25 icon] {{s3.h1}}
+### ![ico-25 icon] {{p35}}
 
-{{s3.p1}}
+{{p36}}
 
 ~~~js
 var birthday = new Date(1990, 11, 2)
@@ -207,35 +207,35 @@ console.log(`До дня рождения осталось ${days} дней`)
 
 {{{Date-constructor-1.js}}}
 
-{{s3.p2}}
+{{p37}}
 
 ~~~js
 birthday.setFullYear(new Date().getFullYear())
 ~~~
 
-{{s3.p3}}
+{{p38}}
 
-{{s3.p4}}
+{{p39}}
 
 ~~~js
 var ms = birthday.setFullYear(new Date().getFullYear()) - new Date()
 ~~~
 
-{{s3.p5}}
-{{s3.p6}}
-{{s3.p7}}
+{{p40}}
+{{p41}}
+{{p42}}
 
 ~~~js
 var hours = Math.round(ms / 3600000)
 ~~~
 
-{{s3.p8}}
+{{p43}}
 
 ~~~js
 var days = Math.round(hours / 24)
 ~~~
 
-{{s3.p9}}
+{{p44}}
 
 _________________________________________
 

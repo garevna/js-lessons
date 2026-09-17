@@ -1,94 +1,94 @@
-# ![ico-35 study] {{s1.h1}}
+# ![ico-35 study] {{p1}}
 
-{{s1.p1}}
-{{s1.p2}}
+{{p2}}
+{{p3}}
 
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
-{{s1.p6}}
-{{s1.p7}}
+{{p4}}
+{{p5}}
+{{p6}}
+{{p7}}
+{{p8}}
 
-{{s1.p8}}
+{{p9}}
 
-{{s1.p9}}
-{{s1.p10}}
+{{p10}}
+{{p11}}
 
-{{s1.p11}}
+{{p12}}
 
-{{s1.p12}}
+{{p13}}
 
-{{s1.p13}}
+{{p14}}
 
 ~~~js
 var students = group
 ~~~
 
-{{s1.p14}}
-{{s1.p15}}
+{{p15}}
+{{p16}}
 
 @@@@
 ![](images/reference-is-a-lockpick.svg)
-{{s1.p16}}
+{{p17}}
 @@@@
 
-{{s1.p17}}
-{{s1.p18}}
-{{s1.p19}}
-{{s1.p20}}
+{{p18}}
+{{p19}}
+{{p20}}
+{{p21}}
 
 _________________________________________________
 
 ## ![ico-30 icon] {{common.c23}}
 
-{{s2.p1}}
+{{p22}}
 
-{{s2.p2}}
-{{s2.p3}}
-{{s2.p4}}
+{{p23}}
+{{p24}}
+{{p25}}
 
-{{s2.p5}}
+{{p26}}
 
-{{s2.p6}}
+{{p27}}
 
 ~~~js
 var array = [3.14, false, 'mother', null, undefined]
 ~~~
 
-{{s2.p7}}
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
-{{s2.p12}}
-{{s2.p13}}
+{{p28}}
+{{p29}}
+{{p30}}
+{{p31}}
+{{p32}}
+{{p33}}
+{{p34}}
 
-{{s2.p14}}
+{{p35}}
 
 ~~~js
 array[2]
 ~~~
 
-{{s2.p15}}
-{{s2.p16}}
+{{p36}}
+{{p37}}
 
 | 0    | 1     | 2        | 3    | 4         |
 | 3.14 | false | 'mother' | null | undefined |
 
-{{s2.p17}}
+{{p38}}
 
 ~~~console
 'mother'
 ~~~
 
-{{s2.p18}}
-{{s2.p19}}
+{{p39}}
+{{p40}}
 
 ~~~js
 array[4] = 'father'
 ~~~
 
-{{s2.p20}}
+{{p41}}
 
 ~~~console
 ► (5) [3.14, false, 'mother', null, 'father']
@@ -96,23 +96,23 @@ array[4] = 'father'
 
 ___________________________________
 
-{{s2.p21}}
+{{p42}}
 
 ~~~js
 var collection = array
 ~~~
 
-{{s2.p22}}
+{{p43}}
 
-{{s2.p23}}
+{{p44}}
 
-{{s2.p24}}
+{{p45}}
 
 ~~~js
 collection[3] = 'brother'
 ~~~
 
-{{s2.p25}}
+{{p46}}
 
 ~~~js
 array
@@ -122,14 +122,14 @@ array
 ► (5) [3.14, false, 'mother', 'brother', 'father']
 ~~~
 
-{{s2.p26}}
-{{s2.p27}}
+{{p47}}
+{{p48}}
 
 ### ![ico-25 icon] length
 
-{{s2.p28}}
+{{p49}}
 
-{{s2.p29}}
+{{p50}}
 
 ~~~js
 collection.length
@@ -202,17 +202,17 @@ _____________________________________________________________
 
 ## ![ico-25 icon] {{common.c18}}
 
-{{s3.p1}}
+{{p51}}
 
-{{s3.p2}}
-{{s3.p3}}
-{{s3.p4}}
-{{s3.p5}}
-{{s3.p6}}
-{{s3.p7}}
-{{s3.p8}}
+{{p52}}
+{{p53}}
+{{p54}}
+{{p55}}
+{{p56}}
+{{p57}}
+{{p58}}
 
-{{s3.p9}}
+{{p59}}
 
 ◘◘![ico-25 cap] 5◘◘
 
@@ -224,10 +224,10 @@ var human = {
 }
 ~~~
 
-{{s3.p10}}
+{{p60}}
 
-{{s3.p11}}
-{{s3.p12}}
+{{p61}}
+{{p62}}
 
 ~~~js
 human.name
@@ -237,7 +237,7 @@ human.name
 'Frodo'
 ~~~
 
-{{s3.p13}}
+{{p63}}
 
 ~~~js
 human['name']
@@ -247,15 +247,15 @@ human['name']
 'Frodo'
 ~~~
 
-{{s3.p14}}
+{{p64}}
 
-{{s3.p15}}
+{{p65}}
 
 ~~~js
 var propName = 'name'
 ~~~
 
-{{s3.p16}}
+{{p66}}
 
 ~~~js
 human[propName]
@@ -265,13 +265,13 @@ human[propName]
 'Frodo'
 ~~~
 
-{{s3.p17}}
+{{p67}}
 
 ~~~js
 human.hobby = ['sport', 'reading']
 ~~~
 
-{{s3.p18}}
+{{p68}}
 
 ~~~console
 ▼ {name: 'Frodo', age: 35, employed: true, hobby: Array(2)}
@@ -282,15 +282,15 @@ human.hobby = ['sport', 'reading']
   ► [[Prototype]]: Object
 ~~~
 
-{{s3.p19}}
+{{p69}}
 
-{{s3.p20}}
+{{p70}}
 
 ~~~js
 delete human.hobby
 ~~~
 
-{{s3.p21}}
+{{p71}}
 
 ________________________________________________________
 

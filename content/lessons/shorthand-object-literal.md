@@ -1,4 +1,4 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{p1}}
 
 **ES6**
 ________________________________________________
@@ -21,7 +21,7 @@ console.log ( user )
 
 ![ico-25 cap] **{{common.c0}} 2**
 
-{{s1.p3}}
+{{p2}}
 
 ~~~js
 let name = "Ivan", age = 25

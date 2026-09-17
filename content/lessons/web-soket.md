@@ -1,15 +1,15 @@
 # ![ico-70 webpack] WebSocket
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
-{{s0.p3}}
+{{p2}}
+{{p3}}
 
 __________________________________
 
-{{s0.p4}}
+{{p4}}
 
-{{s0.p5}}
+{{p5}}
 
 ^^^[Request Headers]
 
@@ -30,7 +30,7 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 
 ^^^
 
-{{s0.p6}}
+{{p6}}
 
 ^^^[Response Headers]
 
@@ -51,9 +51,9 @@ Upgrade: websocket
 
 ^^^
 
-{{s0.p7}}
+{{p7}}
 
-{{s0.p8}}
+{{p8}}
 
 _______________________________________________
 
@@ -61,11 +61,11 @@ _______________________________________________
 
 <img src="https://www.piesocket.com/img/logo.png" height="40"/>
 
-{{s1.p1}}
+{{p9}}
 
-{{s1.p2}}
+{{p10}}
 
-{{s1.p3}}
+{{p11}}
 
 ~~~js
 const apiKey = 'oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm'
@@ -73,17 +73,17 @@ const apiKey = 'oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm'
 const websocket = new WebSocket(`wss://demo.piesocket.com/v3/channel_1?api_key=${apiKey}`)
 ~~~
 
-{{s1.p4}}
+{{p12}}
 
 
-{{s1.p5}}
-{{s1.p6}}
-{{s1.p7}}
+{{p13}}
+{{p14}}
+{{p15}}
 
-{{s1.p8}}
-{{s1.p9}}
-{{s1.p10}}
-{{s1.p11}}
+{{p16}}
+{{p17}}
+{{p18}}
+{{p19}}
 
 ~~~js
 const apiKey = 'oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm'
@@ -124,13 +124,13 @@ ________________________________________________________________________________
 ## ![ico-25 hw] {{common.c3}} 2
 
 
-{{s2.p1}}
+{{p20}}
 
-{{s2.p2}}
+{{p21}}
 
-{{s2.p3}}
+{{p22}}
 
-{{s2.p4}}
+{{p23}}
 
 ### ![ico-20 bash] {{common.c24}}
 
@@ -138,25 +138,25 @@ ________________________________________________________________________________
 ••$ npm install ws••
 
 
-{{s3.p1}}
+{{p24}}
 
-{{s3.p2}}
+{{p25}}
 
-{{s3.p3}}
+{{p26}}
 
-{{s3.p4}}
+{{p27}}
 
-{{s3.p5}}
+{{p28}}
 
-{{s3.p6}}
+{{p29}}
 
 ~~~js
 const socket = require('ws')
 ~~~
 
-{{s3.p7}}
+{{p30}}
 
-{{s3.p8}}
+{{p31}}
 
 ◘◘server◘◘
 
@@ -167,17 +167,17 @@ const server = new WebSocket
   })
 ~~~
 
-{{s3.p9}}
+{{p32}}
 
-{{s3.p10}}
+{{p33}}
 
-{{s3.p11}}
+{{p34}}
 
-{{s3.p12}}
+{{p35}}
 
-{{s3.p13}}
+{{p36}}
 
-{{s3.p14}}
+{{p37}}
 
 ~~~js
 server.on('connection', socket => {
@@ -193,7 +193,7 @@ server.on('connection', socket => {
 })
 ~~~
 
-{{s3.p15}}
+{{p38}}
 
 ◘◘![ico-20 file] start.js◘◘
 
@@ -218,20 +218,20 @@ server.on('connection', socket => {
 })
 ~~~
 
-{{s3.p16}}
+{{p39}}
 
 •• ![ico-20 bash] $ node start.js••
 
 
-{{s3.p17}}
+{{p40}}
 
 **~http://localhost:8080/~**
 
-{{s3.p18}}
+{{p41}}
 
-{{s3.p19}}
+{{p42}}
 
-{{s3.p20}}
+{{p43}}
 
 ~~~js
 const socket = new WebSocket('ws://localhost:8080')
@@ -246,11 +246,11 @@ socket.addEventListener('open', () => {
 socket.addEventListener('message', event => console.log(JSON.parse(event.data)))
 ~~~
 
-{{s3.p21}}
+{{p44}}
 
-{{s3.p22}}
+{{p45}}
 
-{{s3.p23}}
+{{p46}}
 
 {{common.c12}}
 
@@ -258,16 +258,16 @@ socket.addEventListener('message', event => console.log(JSON.parse(event.data)))
 const socket = new WebSocket('ws://localhost:8080')
 ~~~
 
-{{s3.p25}}
-{{s3.p26}}
+{{p47}}
+{{p48}}
 
-{{s3.p27}}
+{{p49}}
 
-{{s3.p28}}
-{{s3.p29}}
-{{s3.p30}}
+{{p50}}
+{{p51}}
+{{p52}}
 
-{{s3.p31}}
+{{p53}}
 
 ◘◘^^![ico-20 bash] {{common.c14}}^^◘◘
 ~~~console
@@ -277,7 +277,7 @@ received from a client:
                 Hello, do you listen to me ?
 ~~~
 
-{{s3.p33}}
+{{p54}}
 
 ~~~console
 ▼ { name: "server", message: "I listen to you" }
@@ -290,26 +290,26 @@ ________________________________________________________________________________
 
 ## ![ico-25 hw] {{common.c3}} 3
 
-{{s4.p1}}
+{{p55}}
 
-### ![ico-20 ico] {{s5.h1}}
+### ![ico-20 ico] {{p56}}
 
-{{s5.p1}}
+{{p57}}
 
 ![ico-70 node] 
 
-{{s5.p2}}
+{{p58}}
 ^^(**~File System~**)^^
 
-{{s5.p3}}
+{{p59}}
 
 ~~~js
 const fs = require('fs')
 ~~~
 
-{{s5.p4}}
+{{p60}}
 
-{{s5.p5}}
+{{p61}}
 
 ^^^[users.json]
 
@@ -368,16 +368,16 @@ const fs = require('fs')
 
 ^^^
 
-{{s5.p6}}
+{{p62}}
 
 ~~~js
 const users = []
 const messages = []
 ~~~
 
-{{s5.p7}}
+{{p63}}
 
-{{s5.p8}}
+{{p64}}
 
 ~~~js
 fs.readFile('users.json', 'utf8', (err, content) => users = JSON.parse(content))
@@ -385,30 +385,30 @@ fs.readFile('users.json', 'utf8', (err, content) => users = JSON.parse(content))
 fs.readFile('messages.json', 'utf8', (err, content) => messages = JSON.parse(content))
 ~~~
 
-{{s5.p9}}
+{{p65}}
 
-{{s5.p10}}
-{{s5.p11}}
-{{s5.p12}}
-{{s5.p13}}
-{{s5.p14}}
+{{p66}}
+{{p67}}
+{{p68}}
+{{p69}}
+{{p70}}
 
-{{s5.p15}}
+{{p71}}
 
-{{s5.p16}}
+{{p72}}
 
 ~~~js
 const WebSocket = require('ws')
 const server = new WebSocket.Server({ port: 8080 })
 ~~~
 
-{{s5.p17}}
+{{p73}}
 
-{{s5.p18}}
+{{p74}}
 
-{{s5.p19}}
+{{p75}}
 
-{{s5.p20}}
+{{p76}}
 
 ~~~js
 server.on('connection', client => {
@@ -416,16 +416,16 @@ server.on('connection', client => {
 }
 ~~~
 
-{{s5.p21}}
+{{p77}}
 
-{{s5.p22}}
+{{p78}}
 
 | add     | forEach |
 | delete  | clear   |
 | has     | entries |
 | keys    | values  |
 
-{{s5.p23}}
+{{p79}}
 
 ~~~js
 server.on('connection', client => {
@@ -437,7 +437,7 @@ server.on('connection', client => {
 }
 ~~~
 
-{{s5.p24}}
+{{p80}}
 
 ~~~js
 server.on('connection', client => {
@@ -452,13 +452,13 @@ server.on('connection', client => {
 }
 ~~~
 
-{{s5.p25}}
+{{p81}}
 
 ~~~js
 const randomValue = num => Math.round(Math.random() * num)
 ~~~
 
-{{s5.p26}}
+{{p82}}
 
 ^^^[start.js]
 
@@ -494,7 +494,7 @@ const randomValue = num => Math.round(Math.random() * num)
 
 ______________________________________________________________
 
-### ![ico-20 ico] {{s6.h1}}
+### ![ico-20 ico] {{p83}}
 
 ◘◘![ico-20 file] index.html◘◘
 
@@ -518,11 +518,11 @@ ______________________________________________________________
 &lt;/html>
 ~~~
 
-{{s6.p1}}
+{{p84}}
 
-{{s6.p2}}
+{{p85}}
 
-{{s6.p3}}
+{{p86}}
 
 ◘◘![ico-20 file] chat.js◘◘
 
@@ -640,15 +640,15 @@ class ChatElement extends HTMLElement {
 customElements.define('chat-element', ChatElement)
 ~~~
 
-{{s6.p4}}
+{{p87}}
 
-{{s6.p5}}
+{{p88}}
 
-{{s6.p6}}
+{{p89}}
 
-{{s6.p7}}
+{{p90}}
 
-{{s6.p8}}
+{{p91}}
 
 ◘◘![ico-20 file] index.js◘◘
   
@@ -676,21 +676,21 @@ socket.addEventListener('message', event => {
 window.onresize = chat.resize.bind(chat)
 ~~~
 
-{{s6.p9}}
+{{p92}}
 
 ___________________________
 
-{{s6.p10}}
+{{p93}}
 
-{{s6.p11}}
+{{p94}}
 
 ••![ico-20 bash] $ node start.js••
 
 
-{{s6.p12}}
+{{p95}}
 
-{{s6.p13}}
+{{p96}}
 
-{{s6.p14}}
+{{p97}}
 
-{{s6.p15}}
+{{p98}}

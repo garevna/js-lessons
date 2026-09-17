@@ -1,41 +1,41 @@
-# {{s1.h1}}
+# {{p1}}
 
 ## ![ico-30 study] RAIL
 
-{{s1.p1}}
-{{s1.p2}}
-{{s1.p3}}
+{{p2}}
+{{p3}}
+{{p4}}
 
-{{s1.p4}}
-{{s1.p5}}
+{{p5}}
+{{p6}}
 
 |  **Response**  |  **Animation**  |  **Idle**  |  **Load**  |
 
-{{s1.p6}}
+{{p7}}
 
-{{s1.p7}}
-{{s1.p8}}
-{{s1.p9}}
-{{s1.p10}}
-{{s1.p11}}
-{{s1.p12}}
-{{s1.p13}}
+{{p8}}
+{{p9}}
+{{p10}}
+{{p11}}
+{{p12}}
+{{p13}}
+{{p14}}
 
-{{s1.p14}}
+{{p15}}
 
 _____________________________________________________________
 
 ## ![ico-25 icon] JavaScript Profiler
 
-{{s1.p15}}
-{{s1.p16}}
+{{p16}}
+{{p17}}
 
 ![](createPath('images', 'js-profiler.png'))
 
-{{s1.p17}}
-{{s1.p18}}
-{{s1.p19}}
-{{s1.p20}}
+{{p18}}
+{{p19}}
+{{p20}}
+{{p21}}
 
 ~~~console
     Self Time                  Total Time                Function
@@ -55,34 +55,34 @@ _____________________________________________________________
 
 ## ![ico-25 icon] Audits
 
-{{s1.p21}}
-{{s1.p22}}
+{{p22}}
+{{p23}}
 
 ![](createPath('images', 'audits.png'))
 
-{{s1.p23}}
-{{s1.p24}}
-{{s1.p25}}
+{{p24}}
+{{p25}}
+{{p26}}
 
 ### ![ico-20 icon] Performance
 
-{{s1.p26}}
-{{s1.p27}}
-{{s1.p28}}
-{{s1.p29}}
-{{s1.p30}}
-{{s1.p31}}
-{{s1.p32}}
-{{s1.p33}}
-{{s1.p34}}
-{{s1.p35}}
-{{s1.p36}}
-{{s1.p37}}
-{{s1.p38}}
-{{s1.p39}}
-{{s1.p40}}
+{{p27}}
+{{p28}}
+{{p29}}
+{{p30}}
+{{p31}}
+{{p32}}
+{{p33}}
+{{p34}}
+{{p35}}
+{{p36}}
+{{p37}}
+{{p38}}
+{{p39}}
+{{p40}}
+{{p41}}
 
-{{s1.p41}}
+{{p42}}
 
 ![](createPath('images', 'performance.png'))
 
@@ -95,7 +95,7 @@ _____________________________________________________________
 [%%%How to Record Heap Snapshots%%%](https://developers.google.com/web/tools/chrome-devtools/memory-problems/heap-snapshots)
 [%%%Fix Memory Problems%%%](https://developers.google.com/web/tools/chrome-devtools/memory-problems/)
 
-{{s1.p42}}
+{{p43}}
 
 ~~~~js
 const segments = [[1, 8], [2, 3], [4, 7], [5, 6], [2, 8], [3, 7], [4, 6], [1, 5], [1, 6]]
@@ -109,9 +109,9 @@ function countInnerIntervals (intervals) {
 }
 ~~~~
 
-{{s1.p43}}
+{{p44}}
 
-{{s1.p44}}
+{{p45}}
 
 ~~~~js
 const button = document.body
@@ -127,9 +127,9 @@ button.onclick = function (event) {
 }
 ~~~~
 
-{{s1.p45}}
+{{p46}}
 
-{{s1.p46}}
+{{p47}}
 
 ^^^[{{common.c14}}]
 
@@ -150,19 +150,19 @@ segments: 0.459228515625ms
 
 ^^^
 
-{{s1.p47}}
+{{p48}}
 
-{{s1.p48}}
+{{p49}}
 
 [![ico-70 youtube]](https://youtu.be/nDNEiu_xwf0)
 
-{{s1.p49}}
-{{s1.p50}}
-{{s1.p51}}
+{{p50}}
+{{p51}}
+{{p52}}
 
-{{s1.p52}}
+{{p53}}
 
-{{s1.p53}}
-{{s1.p54}}
-{{s1.p55}}
-{{s1.p56}}
+{{p54}}
+{{p55}}
+{{p56}}
+{{p57}}

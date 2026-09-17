@@ -1,10 +1,10 @@
 ## ![ico-25 icon] async function vs Promise.all
 
-{{s0.p1}}
+{{p1}}
 
 ![ico-25 cap] **{{common.c0}} 1**
 
-{{s0.p3}}
+{{p2}}
 
 ~~~js
 const getNames = () => new Promise(resolve => setTimeout(() => resolve('Names'), 1000))
@@ -12,9 +12,9 @@ const getNames = () => new Promise(resolve => setTimeout(() => resolve('Names'),
 const getPosts = () => new Promise(resolve => setTimeout(() => resolve('Posts'), 1000))
 ~~~
 
-{{s0.p4}}
+{{p3}}
 
-{{s0.p5}}
+{{p4}}
 
 ~~~js
 async function getData () {
@@ -38,11 +38,11 @@ time: 2002.258056640625ms
 
 ~~~
 
-{{s0.p7}}
+{{p5}}
 
-{{s0.p8}}
+{{p6}}
 
-{{s0.p9}}
+{{p7}}
 
 ~~~js
 function getData () {
@@ -92,25 +92,25 @@ function getAllData () {
 getAllData('figures', 'colors', 'diameters')
 ~~~~
 
-{{s0.p12}}
+{{p8}}
 
-{{s0.p13}}
+{{p9}}
 
-{{s0.p14}}
+{{p10}}
 
-{{s0.p15}}
+{{p11}}
 
-{{s0.p16}}
+{{p12}}
 
-{{s0.p17}}
+{{p13}}
 
-{{s0.p18}}
+{{p14}}
 
-{{s0.p19}}
+{{p15}}
 
-{{s0.p20}}
+{{p16}}
 
-{{s0.p21}}
+{{p17}}
 
 _______________________
 ※※※tests quiz/async※※※

@@ -6,81 +6,81 @@ _______________________
 
 **Cross-origin resource sharing**
 
-☼☼☼ {{s0.slogan1}} ☼☼☼
+☼☼☼ {{p1}} ☼☼☼
 
-{{s0.p1}}
+{{p2}}
 
-{{s0.p2}}
+{{p3}}
 
-{{s0.p3}}
+{{p4}}
 ^^(**_same-origin policy_**)^^
-{{s0.p4}}
+{{p5}}
 
 ____________________________________
 
 ### ![ico-20 icon] Preflight request
 
-{{s0.p5}}
+{{p6}}
 
-{{s0.p6}}
+{{p7}}
 
 | ![ico-20 green-ok] ^^Access-Control-Request-Method^^<br>![ico-20 green-ok] ^^Access-Control-Request-Headers^^<br>![ico-20 green-ok] ^^Origin^^ |
 
  ^^^[Access-Control-Request-Method]
 
-{{s0.p7}}
-{{s0.p8}}
+{{p8}}
+{{p9}}
 
 ^^^
 
 ^^^[Access-Control-Request-Headers]
 
-{{s0.p9}}
-{{s0.p10}}
+{{p10}}
+{{p11}}
 
 ^^^
 
 ^^^[Origin]
 
-{{s0.p11}}
-{{s0.p12}}
+{{p12}}
+{{p13}}
 
-{{s0.p13}}
+{{p14}}
 
-{{s0.p14}}
-{{s0.p15}}
-{{s0.p16}}
+{{p15}}
+{{p16}}
+{{p17}}
 
 ^^^
 
 _______________________________________________
 
-### ![ico-20 icon] {{s1.h1}}
+### ![ico-20 icon] {{p18}}
 
-{{s1.p1}}
+{{p19}}
 
 ^^^[Access-Control-Allow-Origin]
 
-{{s1.p2}}
+{{p20}}
 
 __________________
 
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
+{{p21}}
+{{p22}}
+{{p23}}
 
 ^^^
 
 ^^^[Access-Control-Expose-Headers]
 
-{{s1.p6}}
+{{p24}}
 ________________________
 
-{{s1.p7}}
-{{s1.p8}}
-{{s1.p9}}
+{{p25}}
+{{p26}}
+{{p27}}
 
-{{s1.p10}}
+{{p28}}
 | ![ico-20 green-ok] Cache-Control |
 | ![ico-20 green-ok] Content-Language |
 | ![ico-20 green-ok] Content-Type |
@@ -88,17 +88,17 @@ ________________________
 | ![ico-20 green-ok] Last-Modified |
 | ![ico-20 green-ok] Pragma |
 
-{{s1.p11}}
+{{p29}}
 
 ^^^
 
 ^^^[Access-Control-Allow-Credentials]
 
-{{s1.p12}}
+{{p30}}
 
 ________________________
 
-{{s1.p13}}
+{{p31}}
 
 
 ![ico-20 pin] **XMLWttpRequest**
@@ -117,19 +117,19 @@ fetch(url, {
 })
 ~~~
 
-{{s1.p14}}
+{{p32}}
 
-{{s1.p15}}
-{{s1.p16}}
-{{s1.p17}}
+{{p33}}
+{{p34}}
+{{p35}}
 
 ^^^
 
 ^^^[Origin, Host, Referer]
 
-{{s1.p18}}
-{{s1.p19}}
-{{s1.p20}}
+{{p36}}
+{{p37}}
+{{p38}}
 
 ^^^
 
@@ -137,7 +137,7 @@ __________________________________
 
 ## ![ico-25 icon] Proxy for CORS request
 
-{{s1.p21}}
+{{p39}}
 
 ~~~js
 fetch('http://humor.fm/uploads/posts/2016-03/17/umndflr0wjc.jpg')
@@ -145,13 +145,13 @@ fetch('http://humor.fm/uploads/posts/2016-03/17/umndflr0wjc.jpg')
   .then(response => console.log(response))
 ~~~
 
-{{s1.p22}}
+{{p40}}
 
 ~~~console
 Access to fetch at 'http://humor.fm/uploads/posts/2016-03/17/umndflr0wjc.jpg' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
 ~~~
 
-{{s1.p23}}
+{{p41}}
 
 ~~~console
 ▼ Response Headers
@@ -166,11 +166,11 @@ Access to fetch at 'http://humor.fm/uploads/posts/2016-03/17/umndflr0wjc.jpg' fr
     Server: nginx/1.12.2
 ~~~
 
-{{s1.p24}}
+{{p42}}
 
-{{s1.p25}}
+{{p43}}
 
-{{s1.p26}}
+{{p44}}
 
 ~~~js
 fetch('https://cors-anywhere.herokuapp.com/http://humor.fm/uploads/posts/2016-03/17/umndflr0wjc.jpg')
@@ -178,7 +178,7 @@ fetch('https://cors-anywhere.herokuapp.com/http://humor.fm/uploads/posts/2016-03
   .then(blob => document.body.appendChild(document.createElement('img')).src = URL.createObjectURL(blob))
 ~~~
 
-{{s1.p27}}
+{{p45}}
 
 ~~~~console
 ▼ Response Headers
@@ -200,4 +200,4 @@ fetch('https://cors-anywhere.herokuapp.com/http://humor.fm/uploads/posts/2016-03
     X-Request-Url: http://humor.fm/uploads/posts/2016-03/17/umndflr0wjc.jpg
 ~~~~
 
-{{s1.p28}}
+{{p46}}

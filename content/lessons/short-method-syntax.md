@@ -1,10 +1,10 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{p1}}
 
 **ES6**
 
 ______________________________________________________
 
-{{s1.p1}}
+{{p2}}
 
 ~~~js
 var user = {
@@ -20,7 +20,7 @@ user.sayHello ()
 user.sayBye ()
 ~~~
 
-{{s1.p2}}
+{{p3}}
 
 ~~~js
 sayHello: function () {
@@ -28,7 +28,7 @@ sayHello: function () {
 }
 ~~~
 
-{{s1.p3}}
+{{p4}}
 
 ~~~js
 sayHello () {
@@ -36,7 +36,7 @@ sayHello () {
 }
 ~~~
 
-{{s1.p4}}
+{{p5}}
 
 ~~~js
 var bag = {

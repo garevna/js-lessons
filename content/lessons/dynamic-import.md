@@ -4,17 +4,17 @@
 
 __________________________________________________
 
-{{s0.p1}}
+{{p1}}
 
-{{s0.p2}}
+{{p2}}
 
-{{s0.p3}}
+{{p3}}
 
 _________________________________
 
 ![ico-30 cap] ** 1**
 
-{{s0.p4}}
+{{p4}}
 
 ~~~js
 document.body.onclick = async () => {
@@ -22,8 +22,8 @@ document.body.onclick = async () => {
 }
 ~~~
 
-{{s0.p5}}
-{{s0.p6}}
+{{p5}}
+{{p6}}
 
 {{{dynamic-import-1.js}}}
 
@@ -31,7 +31,7 @@ ____________________________________
 
 ![ico-30 cap] ** 2**
 
-{{s0.p7}}
+{{p7}}
 
 ◘◘![ico-20 paper]◘◘
 
@@ -43,7 +43,7 @@ import(`${scriptFile}12.js`)
   .then(setTimeout(() => import(`${scriptPath}22.js`), 10000))
 ~~~
 
-{{s0.p8}}
+{{p8}}
 
 ◘◘![ico-20 paper]◘◘
 
@@ -65,7 +65,7 @@ _____________________________________________________
 
 ![ico-30 cap] ** 3**
 
-{{s0.p9}}
+{{p9}}
 
 ◘◘^^![ico-20 paper] index.html^^◘◘
 
@@ -84,7 +84,7 @@ _____________________________________________________
 &lt;/html>
 ~~~
 
-{{s0.p10}}
+{{p10}}
 
 ~~~js
 const mod = document.body
@@ -92,9 +92,9 @@ const mod = document.body
 mod.type = 'module'
 ~~~
 
-{{s0.p11}}
+{{p11}}
 
-{{s0.p12}}
+{{p12}}
 
 ~~~js
 mod.textContent = `
@@ -103,7 +103,7 @@ mod.textContent = `
 `
 ~~~
 
-{{s0.p13}}
+{{p13}}
 
 ◘◘^^![ico-20 paper] js/index.js^^◘◘
 
@@ -119,7 +119,7 @@ mod.textContent = `
 `
 ~~~
 
-{{s0.p14}}
+{{p14}}
 
 ◘◘^^![ico-20 paper] js/testESModules.js^^◘◘
 
@@ -150,19 +150,19 @@ export function showMessage (message) {
 
 __________________________________________________________
 
-{{s0.p15}}
+{{p15}}
 
 ~~~js
 import { showMessage } from 'https://example.com/js/testESModules.js'
 ~~~
 
-{{s0.p16}}
+{{p16}}
 
 ~~~js
 import { showMessage } from './js/testESModules.js'
 ~~~
 
-{{s0.p17}}
+{{p17}}
 
 ________________________________________________________________________
 

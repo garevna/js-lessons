@@ -1,12 +1,12 @@
 # ![ico-30 study] FormData
 
-{{s0.p1}}
+{{p1}}
 
 _______________________________________
 
 ## ![ico-25 icon] {{common.c7}}
 
-{{s1.p1}}
+{{p2}}
 
 ~~~js
 const formData = new FormData()
@@ -32,17 +32,17 @@ formData instanceof FormData   // true
       ► __proto__: Object
 ~~~~
 
-{{s1.p2}}
-{{s1.p3}}
+{{p3}}
+{{p4}}
 
-{{s1.p4}}
+{{p5}}
 _____________________________________
 
-## ![ico-25 icon] {{s2.h1}}
+## ![ico-25 icon] {{p6}}
 
-{{s2.p1}}
+{{p7}}
 
-{{s2.p2}}
+{{p8}}
 
 ![ico-25 cap] ** 1**
 
@@ -196,10 +196,10 @@ ________________________________________________
 
 ________________________________________________
 
-{{s2.p3}}
+{{p9}}
 
-{{s2.p4}}
-{{s2.p5}}
+{{p10}}
+{{p11}}
 
 ____________________________________________
 
@@ -207,11 +207,11 @@ ____________________________________________
 
 ![ico-20 icon] append()
 
-{{s3.p1}}
+{{p12}}
 
-{{s3.p2}}
+{{p13}}
 
-{{s3.p3}}
+{{p14}}
 
 ~~~js
 const formData = new FormData()
@@ -234,7 +234,7 @@ formData.get('token')     // "HgTY78-jdfhj91*/jskdfj"
 
 ![ico-20 icon] getAll()
 
-{{s3.p4}}
+{{p15}}
 
 ~~~js
 formData.append('pictures', 'http://icecream.me/uploads/b0d4d73f21508dd67e0c57a590f582f0.png')
@@ -245,9 +245,9 @@ formData.getAll('pictures')
 
 ![ico-20 icon] set()
 
-{{s3.p5}}
+{{p16}}
 
-{{s3.p6}}
+{{p17}}
 
 ~~~js
 formData.set('token', 'gF&op*i91/54gkjHU')
@@ -263,7 +263,7 @@ formData.get('token')    // null
 
 ![ico-20 icon] keys()
 
-{{s3.p7}}
+{{p18}}
 
 ![ico-25 cap] ** 2**
 
@@ -276,7 +276,7 @@ iterator.next()
 
 ![ico-20 icon] entries()
 
-{{s3.p8}}
+{{p19}}
 
 ![ico-25 cap] ** 3**
 
@@ -325,7 +325,7 @@ console.log(result)
 
 _____________________________________________
 
-## ![ico-25 icon] {{s4.h1}}
+## ![ico-25 icon] {{p20}}
 
 ### ![ico-20 icon] fetch
 
@@ -378,27 +378,27 @@ fileSelector.onchange = function (event) {
 }
 ~~~
 
-{{s4.p1}}
+{{p21}}
 
 
 
-{{s4.p2}}
+{{p22}}
 
 ~~~console
 data:[<media type>][;base64],<data>
 ~~~
 
-{{s4.p3}}
+{{p23}}
 
 ______________________________________________________
 
 ![ico-25 cap] ** 7**
 
-{{s4.p4}}
+{{p24}}
 
-{{s4.p5}}
+{{p25}}
 
-{{s4.p6}}
+{{p26}}
 
 ~~~js
 const fileSelector = document.body
@@ -417,7 +417,7 @@ fileSelector.onchange = function (event) {
 }
 ~~~
 
-{{s4.p7}}
+{{p27}}
 
 ~~~js
 const request = new XMLHttpRequest()
@@ -431,15 +431,15 @@ request.onreadystatechange = function (event) {
 request.send()
 ~~~
 
-{{s4.p8}}
+{{p28}}
 
 ![](http://ptsv2.com/static/ToiletLogo.jpg)
 
-{{s4.p9}}
+{{p29}}
 
 ______________________________________________________________________________
 
-## ![ico-25 icon] {{s5.h1}}
+## ![ico-25 icon] {{p30}}
 
 ••https://js-lessons-sandbox.garevna.workers.dev/form-data/forms/&lt;id>••
 
@@ -573,7 +573,7 @@ ________________________________________________________
 <button id="submit">Submit</button>
 ~~~
 
-{{s5.p1}}
+{{p31}}
 
 ~~~js
 const login = 'bandit'
@@ -586,9 +586,9 @@ fetch(`https://js-lessons-sandbox.garevna.workers.dev/form-data/form/${login}`, 
 }).then(response => console.log(response.status))
 ~~~
 
-{{s5.p2}}
-{{s5.p3}}
-{{s5.p4}}
+{{p32}}
+{{p33}}
+{{p34}}
 
 ________________________________________________________
 

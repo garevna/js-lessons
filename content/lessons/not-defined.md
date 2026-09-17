@@ -1,4 +1,4 @@
-# ![ico-30 study] {{s1.h1}}
+# ![ico-30 study] {{p1}}
 
 ![ico-25 cap] ** 1 **
 
@@ -9,7 +9,7 @@
 </body>
 ~~~
 
-{{s1.p1}}
+{{p2}}
 
 ~~~js
 document.querySelectorAll(':not(:defined)')
@@ -21,7 +21,7 @@ document.querySelectorAll(':not(:defined)')
 ▶ NodeList(2) [hello-element, bye-element]
 ~~~
 
-{{s1.p3}}
+{{p3}}
 
 ~~~js
 document.querySelectorAll(':defined')

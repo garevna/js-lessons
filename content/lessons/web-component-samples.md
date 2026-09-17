@@ -1,4 +1,4 @@
-## ![ico-30 icon] {{s1.h1}}
+## ![ico-30 icon] {{p1}}
 
 [![ico-30 cap] Slider](https://garevna.github.io/js-samples/#19)
 

@@ -6,11 +6,11 @@ ________________________
 
 ## ![ico-25 icon] let
 
-### ![ico-25 icon] {{s1.h1}}
+### ![ico-25 icon] {{p1}}
 
-{{s1.p1}}
+{{p2}}
 
-{{s1.p2}}
+{{p3}}
 
 ◘◘![ico-25 cap] ** 1**◘◘
 
@@ -25,9 +25,9 @@ var x = 5
 console.log(x)  // 5
 ~~~
 
-{{s1.p3}}
+{{p4}}
 
-{{s1.p4}}
+{{p5}}
 
 ◘◘![ico-25 cap] ** 2**◘◘
 
@@ -39,7 +39,7 @@ for (let i of [1, 2, 3, 4, 5]) {
 
 __________________________________________________________
 
-{{s1.p5}}
+{{p6}}
 
 ◘◘![ico-25 cap] **var**◘◘
 
@@ -69,17 +69,17 @@ funcs[2]()  // omega
 ~~~
 _______________________
 
-### ![ico-25 icon] {{s2.h1}}
+### ![ico-25 icon] {{p7}}
 
-{{s2.p1}}
+{{p8}}
 
-{{s2.p2}}
+{{p9}}
 
-{{s2.p3}}
+{{p10}}
 
-{{s2.p4}}
+{{p11}}
 
-{{s2.p5}}
+{{p12}}
 
 ◘◘![ico-25 cap] ** 3**◘◘
 
@@ -98,7 +98,7 @@ _______________________
 _________________________
 
 
-{{s2.p7}}
+{{p13}}
 
 ◘◘![ico-25 cap] ** 4**◘◘
 
@@ -121,7 +121,7 @@ sample ()
 
 ![ico-20 err] ~Uncaught SyntaxError: Identifier 'figure' has already been declared~
 
-{{s2.p9}}
+{{p14}}
 
 ~~~js
 const sample = { a: 'img', b: 'div', c: 'p' }
@@ -133,7 +133,7 @@ for (const prop in sample) {
 }
 ~~~
 
-{{s2.p10}}
+{{p15}}
 
 ◘◘![ico-25 cap] ** 5**◘◘
 
@@ -148,10 +148,10 @@ ______________________
 
 ## ![ico-25 icon] const
 
-{{s2.p11}}
-{{s2.p12}}
-{{s2.p13}}
-{{s2.p14}}
+{{p16}}
+{{p17}}
+{{p18}}
+{{p19}}
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
@@ -164,7 +164,7 @@ XXX = 55
 
 ![ico-20 err] ~Uncaught TypeError: Assignment to constant variable.~
 
-{{s2.p16}}
+{{p20}}
 
 ◘◘![ico-25 cap] ** 7**◘◘
 
@@ -176,7 +176,7 @@ const XXX
 
 ••![ico-20 err] Uncaught SyntaxError: Missing initializer in const declaration••
 
-{{s2.p18}}
+{{p21}}
 
 ◘◘![ico-25 cap] ** 8**◘◘
 
@@ -193,7 +193,7 @@ user.role = 'user'
 user.rights = ['read']
 ~~~
 
-{{s2.p19}}
+{{p22}}
 
 ◘◘![ico-25 cap] ** 9**◘◘
 

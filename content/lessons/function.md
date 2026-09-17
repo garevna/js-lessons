@@ -1,38 +1,38 @@
-# ![ico-35 study] {{s1.h1}}
+# ![ico-35 study] {{p1}}
 
 @@@@
-{{s1.p1}}
+{{p2}}
 ![](images/funcs-are-our-jam.svg)
 @@@@
 
-{{s1.p2}}
+{{p3}}
 
-{{s1.p3}}
-{{s1.p4}}
-{{s1.p5}}
+{{p4}}
+{{p5}}
+{{p6}}
 
-{{s1.p6}}
-{{s1.p7}}
+{{p7}}
+{{p8}}
 
-## ![ico-30 icon] {{s2.h1}}
+## ![ico-30 icon] {{p9}}
 
-{{s2.p1}}
-{{s2.p2}}
+{{p10}}
+{{p11}}
 
-{{s2.p3}}
+{{p12}}
 
 ### ![ico-25 icon] console.log
 
-{{s2.p4}}
-{{s2.p5}}
+{{p13}}
+{{p14}}
 
 §§§§ Demo | function_console_template §§§§
 
-{{s2.p6}}
+{{p15}}
 
 §§§§ Demo | function_console_01_template §§§§
 
-{{s2.p7}}
+{{p16}}
 
 §§§§ Demo | function_console_02_template §§§§
 
@@ -40,44 +40,44 @@ _________________________________________________
 
 ### ![ico-25 icon] parseInt
 
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
-{{s2.p11}}
+{{p17}}
+{{p18}}
+{{p19}}
+{{p20}}
 
 §§§§ Demo | function_parseInt_template §§§§
 
-{{s2.p12}}
+{{p21}}
 
 ~~~js
 parseInt()
 ~~~
 
-{{s2.p13}}
+{{p22}}
 
-{{s2.p14}}
-{{s2.p15}}
-{{s2.p16}}
-{{s2.p17}}
-{{s2.p18}}
+{{p23}}
+{{p24}}
+{{p25}}
+{{p26}}
+{{p27}}
 
 §§§§ Demo | function_parseInt_01_template §§§§
 
-{{s2.p19}}
+{{p28}}
 
 _____________________________________________________________________
 
-### ![ico-25 icon] {{s3.h1}}
+### ![ico-25 icon] {{p29}}
 
-{{s3.p1}}
+{{p30}}
 
-{{s3.p2}}
+{{p31}}
 
 ~~~js
 console.log(Math)
 ~~~
 
-{{s3.p3}}
+{{p32}}
 
 ~~~~console
 ▼ Math {abs: ƒ, acos: ƒ, acosh: ƒ, asin: ƒ, asinh: ƒ, …}
@@ -128,100 +128,100 @@ console.log(Math)
   ► [[Prototype]]: Object
 ~~~~
 
-{{s3.p4}}
-{{s3.p5}}
+{{p33}}
+{{p34}}
 
 ~~~console
 round: ƒ round()
 ~~~
 
-{{s3.p6}}
+{{p35}}
 
 §§§§ Demo | function_math_template §§§§
 
-{{s3.p7}}
-{{s3.p8}}
+{{p36}}
+{{p37}}
 
 ~~~console
 Math.sqrt(16)
 ~~~
 
-{{s3.p9}}
+{{p38}}
 
-{{s3.p10}}
+{{p39}}
 
-{{s3.p11}}
+{{p40}}
 
 ~~~js
 var sin = Math.sin(Math.PI / 2)
 ~~~
 
-{{s3.p12}}
-{{s3.p13}}
-{{s3.p14}}
-{{s3.p15}}
+{{p41}}
+{{p42}}
+{{p43}}
+{{p44}}
 
 §§§§ Demo | function_math_01_template §§§§
 
-{{s3.p16}}
+{{p45}}
 
 ~~~console
 var argument = Math.PI / 2
 ~~~
 
-{{s3.p17}}
+{{p46}}
 
-{{s3.p18}}
+{{p47}}
 
-{{s3.p19}}
+{{p48}}
 
 ~~~console
 argument
 ~~~
 
-{{s3.p20}}
+{{p49}}
 
-{{s3.p21}}
+{{p50}}
 
 ~~~console
 Math.sin(argument)
 ~~~
 
-{{s3.p22}}
+{{p51}}
 
-{{s3.p23}}
+{{p52}}
 
 ~~~console
 var sin = Math.sin(argument)
 ~~~
 
-{{s3.p24}}
+{{p53}}
 
 ______________________________________________
 
-{{s3.p25}}
-{{s3.p26}}
-{{s3.p27}}
+{{p54}}
+{{p55}}
+{{p56}}
 
-{{s3.p28}}
-{{s3.p29}}
-{{s3.p30}}
+{{p57}}
+{{p58}}
+{{p59}}
 
-{{s3.p31}}
+{{p60}}
 
 §§§§ Demo | function_console_03_template §§§§
 
 ______________________________________________
 
-## ![ico-30 icon] {{s4.h1}}
+## ![ico-30 icon] {{p61}}
 
-{{s4.p1}}
-{{s4.p2}}
+{{p62}}
+{{p63}}
 
-{{s4.p3}}
+{{p64}}
 
-{{s4.p4}}
-{{s4.p5}}
+{{p65}}
+{{p66}}
 
 ~~~js
 {
@@ -230,17 +230,17 @@ ______________________________________________
 }
 ~~~
 
-{{s4.p6}}
-{{s4.p7}}
-{{s4.p8}}
+{{p67}}
+{{p68}}
+{{p69}}
 
 §§§§ Demo | function_00_template §§§§
 
-{{s4.p9}}
-{{s4.p10}}
-{{s4.p11}}
+{{p70}}
+{{p71}}
+{{p72}}
 
-{{s4.p12}}
+{{p73}}
 
 ~~~js
 var func = {
@@ -249,20 +249,20 @@ var func = {
 }
 ~~~
 
-{{s4.p13}}
-{{s4.p14}}
-{{s4.p15}}
-{{s4.p16}}
+{{p74}}
+{{p75}}
+{{p76}}
+{{p77}}
 
 ~~~error
     Uncaught SyntaxError: Unexpected identifier 'number'
 ~~~
 
-{{s4.p17}}
+{{p78}}
 
-{{s4.p18}}
+{{p79}}
 
-{{s4.p19}}
+{{p80}}
 
 ~~~js
 var func = function {
@@ -271,18 +271,18 @@ var func = function {
 }
 ~~~
 
-{{s4.p20}}
+{{p81}}
 
 ~~~error
     Uncaught SyntaxError: Unexpected token '{'
 ~~~
 
-{{s4.p21}}
-{{s4.p22}}
+{{p82}}
+{{p83}}
 
-{{s4.p23}}
+{{p84}}
 
-{{s4.p24}}
+{{p85}}
 
 ~~~js
 var func = function () {
@@ -291,23 +291,23 @@ var func = function () {
 }
 ~~~
 
-{{s4.p25}}
+{{p86}}
 
-{{s4.p26}}
-{{s4.p27}}
+{{p87}}
+{{p88}}
 
-{{s4.p28}}
-{{s4.p29}}
+{{p89}}
+{{p90}}
 
-{{s4.p30}}
+{{p91}}
 
 §§§§ Demo | function_01_template §§§§
 
-{{s4.p31}}
-{{s4.p32}}
-{{s4.p33}}
+{{p92}}
+{{p93}}
+{{p94}}
 
-{{s4.p34}}
+{{p95}}
 
 ~~~js
 func()
@@ -315,37 +315,37 @@ func()
 
 §§§§ Demo | function_02_template §§§§
 
-{{s4.p35}}
+{{p96}}
 
 ~~~js
 var func = function () {}
 ~~~
 
-{{s4.p36}}
+{{p97}}
 
-{{s4.p37}}
+{{p98}}
 
-{{s4.p38}}
+{{p99}}
 
 _____________________________________________________________________
 
-{{s4.p39}}
+{{p100}}
 
 ~~~js
 function func () {}
 ~~~
 
-{{s4.p40}}
-{{s4.p41}}
-{{s4.p42}}
+{{p101}}
+{{p102}}
+{{p103}}
 
-{{s4.p43}}
-{{s4.p44}}
+{{p104}}
+{{p105}}
 
 _________________________________________________
 
-{{s4.p45}}
-{{s4.p46}}
+{{p106}}
+{{p107}}
 
 ~~~js
 var func = 10
@@ -356,62 +356,62 @@ func()
     Uncaught TypeError: func is not a function
 ~~~
 
-{{s4.p47}}
-{{s4.p48}}
-{{s4.p49}}
+{{p108}}
+{{p109}}
+{{p110}}
 _________________________________________________
 
-## ![ico-30 icon] {{s5.h1}}
+## ![ico-30 icon] {{p111}}
 
-{{s5.p1}}
-{{s5.p2}}
+{{p112}}
+{{p113}}
 
-{{s5.p3}}
+{{p114}}
 
-{{s5.p4}}
-{{s5.p5}}
-{{s5.p6}}
-{{s5.p7}}
-{{s5.p8}}
+{{p115}}
+{{p116}}
+{{p117}}
+{{p118}}
+{{p119}}
 
-{{s5.p9}}
-{{s5.p10}}
-{{s5.p11}}
-{{s5.p12}}
+{{p120}}
+{{p121}}
+{{p122}}
+{{p123}}
 
 §§§§ Demo | function_parameters_template §§§§
 
-{{s5.p13}}
-{{s5.p14}}
-{{s5.p15}}
-{{s5.p16}}
-{{s5.p17}}
+{{p124}}
+{{p125}}
+{{p126}}
+{{p127}}
+{{p128}}
 
-### ![ico-25 icon] {{s6.h1}}
+### ![ico-25 icon] {{p129}}
 
-{{s6.p1}}
-{{s6.p2}}
+{{p130}}
+{{p131}}
 
 §§§§ Demo | function_parameters_01_template §§§§
 
-{{s6.p3}}
+{{p132}}
 
 §§§§ Demo | function_parameters_02_template §§§§
 
-{{s6.p4}}
+{{p133}}
 
 §§§§ Demo | function_parameters_03_template §§§§
 
-{{s6.p5}}
+{{p134}}
 
 __________________________________________________________________
 
-## ![ico-30 icon] {{s7.h1}}
+## ![ico-30 icon] {{p135}}
 
-{{s7.p1}}
+{{p136}}
 
-{{s7.p2}}
-{{s7.p3}}
+{{p137}}
+{{p138}}
 
 ~~~js
 var calcs = function (x = 1, y = x * 2, z = 0) {
@@ -419,17 +419,17 @@ var calcs = function (x = 1, y = x * 2, z = 0) {
 }
 ~~~
 
-{{s7.p4}}
-{{s7.p5}}
+{{p139}}
+{{p140}}
 
 ~~~error
     Uncaught SyntaxError: Illegal return statement
 ~~~
 
-{{s7.p6}}
+{{p141}}
 
-{{s7.p7}}
-{{s7.p8}}
+{{p142}}
+{{p143}}
 
 ____________________________________________________________________
 
@@ -442,7 +442,7 @@ var func = function (arg) {
 }
 ~~~
 
-→→→ {{s8.quiz1}} | {{s8.quizVariants1}} | {{s8.quizAnswer1}}→→→
+→→→ {{p144}} | {{p145}} | {{p146}}→→→
 
 ◘◘** 2**◘◘
 ~~~js
@@ -453,7 +453,7 @@ function greeting (userName) {
 console.log(greeting())
 ~~~
 
-→→→ {{topic.t13}} | {{s8.quizVariants2}} | {{s8.quizAnswer2}}→→→
+→→→ {{topic.t13}} | {{p147}} | {{p148}}→→→
 
 ◘◘** 3**◘◘
 ~~~js
@@ -464,7 +464,7 @@ function greeting (userName = 'Human') {
 console.log(greeting())
 ~~~
 
-→→→ {{topic.t13}} | {{s8.quizVariants3}} | {{s8.quizAnswer3}}→→→
+→→→ {{topic.t13}} | {{p149}} | {{p150}}→→→
 
 
 ◘◘** 4**◘◘
@@ -477,7 +477,7 @@ function greeting (userName = 'Human') {
 console.log(greeting())
 ~~~
 
-→→→ {{topic.t13}} | {{s8.quizVariants4}} | {{s8.quizAnswer4}}→→→
+→→→ {{topic.t13}} | {{p151}} | {{p152}}→→→
 
 ◘◘** 5**◘◘
 ~~~js

@@ -4,11 +4,11 @@ ______________________________________________________
 
 ## ![ico-25 icon] transaction
 
-{{s0.p1}}
+{{p1}}
 |                | _open_                |                 | _transaction_         |                    |
 | **IDBFactory** | ![ico-25 arrow-right] | **IDBDatabase** | ![ico-25 arrow-right] | **IDBObjectStore** |
 
-{{s0.p2}}
+{{p2}}
 
 ~~~js
 console.dir(IDBTransaction)
@@ -47,32 +47,32 @@ console.dir(IDBTransaction)
   ► __proto__: ƒ EventTarget()
 ~~~~
 
-{{s0.p3}}
+{{p3}}
 
-{{s0.p4}}
-{{s0.p5}}
-{{s0.p6}}
-{{s0.p7}}
-{{s0.p8}}
-{{s0.p9}}
-{{s0.p10}}
-{{s0.p11}}
-{{s0.p12}}
-{{s0.p13}}
-{{s0.p14}}
+{{p4}}
+{{p5}}
+{{p6}}
+{{p7}}
+{{p8}}
+{{p9}}
+{{p10}}
+{{p11}}
+{{p12}}
+{{p13}}
+{{p14}}
 
-{{s0.p15}}
+{{p15}}
 ___________________________________________________________
 
-### ![ico-20 icon] {{s1.h1}}
+### ![ico-20 icon] {{p16}}
 
-{{s1.p1}}
-{{s1.p2}}
-{{s1.p3}}
+{{p17}}
+{{p18}}
+{{p19}}
 
-{{s1.p4}}
+{{p20}}
 
-{{s1.p5}}
+{{p21}}
 
 ~~~~js
 const createUsersDB = users => new Promise((resolve, reject) => {
@@ -103,22 +103,22 @@ async function callUsers () {
 callUsers().then(resp => console.log(resp))
 ~~~~
 
-{{s1.p6}}
-{{s1.p7}}
-{{s1.p8}}
-{{s1.p9}}
-{{s1.p10}}
-{{s1.p11}}
-{{s1.p12}}
-{{s1.p13}}
-{{s1.p14}}
+{{p22}}
+{{p23}}
+{{p24}}
+{{p25}}
+{{p26}}
+{{p27}}
+{{p28}}
+{{p29}}
+{{p30}}
 
 ______________________________________________
 
 #### ![ico-20 icon] deleteIndex
 
-{{s1.p15}}
-{{s1.p16}}
+{{p31}}
+{{p32}}
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -130,18 +130,18 @@ const openDB = (dbName, ver, storeName) => new Promise((resolve, reject) => Obje
 }))
 ~~~
 
-{{s1.p17}}
-{{s1.p18}}
-{{s1.p19}}
+{{p33}}
+{{p34}}
+{{p35}}
 
-{{s1.p20}}
+{{p36}}
 
 ~~~js
 openDB('users', 2, 'userStore')
   .then(response => console.log(response))
 ~~~
 
-{{s1.p21}}
+{{p37}}
 
 ~~~console
 ▼ IDBObjectStore {name: "userStore", keyPath: null, indexNames: DOMStringList, transaction: IDBTransaction, autoIncrement: true}
@@ -155,7 +155,7 @@ openDB('users', 2, 'userStore')
 
 ________________________________________________
 
-{{s1.p22}}
+{{p38}}
 
 ~~~js
 openDB('users', 3, 'userStore')
@@ -163,62 +163,62 @@ openDB('users', 3, 'userStore')
 )
 ~~~
 
-{{s1.p23}}
+{{p39}}
 
 ___________________________________________
 
-{{s1.p24}}
-{{s1.p25}}
-{{s1.p26}}
+{{p40}}
+{{p41}}
+{{p42}}
 
-{{s1.p27}}
+{{p43}}
 _____________________________________________
 
-### ![ico-20 icon] {{s2.h1}}
+### ![ico-20 icon] {{p44}}
 
-{{s2.p1}}
-{{s2.p2}}
+{{p45}}
+{{p46}}
 
-{{s2.p3}}
-{{s2.p4}}
-{{s2.p5}}
-{{s2.p6}}
+{{p47}}
+{{p48}}
+{{p49}}
+{{p50}}
 ___________________________
 
-{{s2.p7}}
-{{s2.p8}}
-{{s2.p9}}
-{{s2.p10}}
+{{p51}}
+{{p52}}
+{{p53}}
+{{p54}}
 _________________________________
 
-{{s2.p11}}
-{{s2.p12}}
-{{s2.p13}}
-{{s2.p14}}
+{{p55}}
+{{p56}}
+{{p57}}
+{{p58}}
 ________________________________
 
-{{s2.p15}}
+{{p59}}
 
-{{s2.p16}}
-{{s2.p17}}
+{{p60}}
+{{p61}}
 
-{{s2.p18}}
-{{s2.p19}}
+{{p62}}
+{{p63}}
 
-{{s2.p20}}
+{{p64}}
 
-{{s2.p21}}
-{{s2.p22}}
+{{p65}}
+{{p66}}
 
 
 _________________________________
 
 #### ![ico-20 icon] get
 
-{{s2.p23}}
-{{s2.p24}}
+{{p67}}
+{{p68}}
 
-{{s2.p25}}
+{{p69}}
 
 ◘◘![ico-20 cap] ** 2**◘◘
 
@@ -234,7 +234,7 @@ indexedDB.open('users').onsuccess = event => {
 }
 ~~~
 
-{{s2.p26}}
+{{p70}}
 
 ~~~console
 ▼ {name: "Andry", birthYear: 1998, family: {…}, hobby: Array(1)}
@@ -249,7 +249,7 @@ __________________________________________________
 
 #### ![ico-20 icon] add
 
-{{s2.p27}}
+{{p71}}
 
 ~~~js
 const user = {
@@ -271,8 +271,8 @@ const user = {
 }
 ~~~
 
-{{s2.p28}}
-{{s2.p29}}
+{{p72}}
+{{p73}}
 
 ◘◘![ico-20 cap] ** 3**◘◘
 
@@ -289,7 +289,7 @@ indexedDB.open('users')
   }
 ~~~
 
-{{s2.p30}}
+{{p74}}
 
 __________________________________________________
 
@@ -324,8 +324,8 @@ _____________________________________________________
 
 #### ![ico-20 icon] delete
 
-{{s2.p32}}
-{{s2.p33}}
+{{p75}}
+{{p76}}
 
 ◘◘![ico-20 cap] ** 5**◘◘
 
@@ -344,11 +344,11 @@ indexedDB.open('users')
 
 ____________________________________________________
 
-### ![ico-20 icon] {{s3.h1}}
+### ![ico-20 icon] {{p77}}
 
-{{s3.p1}}
-{{s3.p2}}
-{{s3.p3}}
+{{p78}}
+{{p79}}
+{{p80}}
 
 ◘◘![ico-20 cap] ** 6**◘◘
 
@@ -362,7 +362,7 @@ indexedDB.open('users').onsuccess = event => {
 }
 ~~~
 
-{{s3.p4}}
+{{p81}}
 
 ~~~console
 ▼ IDBIndex {name: "hobbyIndex", objectStore: IDBObjectStore, keyPath: "hobby", multiEntry: true, unique: false}
@@ -374,9 +374,9 @@ indexedDB.open('users').onsuccess = event => {
   ► __proto__: IDBIndex
 ~~~
 
-{{s3.p5}}
+{{p82}}
 
-{{s3.p6}}
+{{p83}}
 
 ~~~js
 const user = {
@@ -411,9 +411,9 @@ indexedDB.open('users').onsuccess = event => {
 **hobbyIndex**
 
 
-{{s3.p7}}
+{{p84}}
 
-{{s3.p8}}
+{{p85}}
 
 ~~~js
 const **getDataByIndex** = (indexName, method, keyVal) => indexedDB.open('users')
@@ -429,16 +429,16 @@ const **getDataByIndex** = (indexName, method, keyVal) => indexedDB.open('users'
   }
 ~~~
 
-{{s3.p9}}
-{{s3.p10}}
-{{s3.p11}}
-{{s3.p12}}
+{{p86}}
+{{p87}}
+{{p88}}
+{{p89}}
 
 ____________________________
 
-{{s3.p13}}
-{{s3.p14}}
-{{s3.p15}}
+{{p90}}
+{{p91}}
+{{p92}}
 
 ◘◘![ico-20 cap] ** 7**◘◘
 
@@ -459,9 +459,9 @@ getDataByIndex('hobbyIndex', 'get', 'footbal')
 
 ____________________________
 
-{{s3.p17}}
-{{s3.p18}}
-{{s3.p19}}
+{{p93}}
+{{p94}}
+{{p95}}
 
 ◘◘![ico-20 cap] ** 8**◘◘
 
@@ -480,8 +480,8 @@ getDataByIndex('hobbyIndex', 'getAll', 'footbal')
 ~~~
 ____________________________
 
-{{s3.p21}}
-{{s3.p22}}
+{{p96}}
+{{p97}}
 
 ◘◘![ico-20 cap] ** 9**◘◘
 
@@ -489,12 +489,12 @@ ____________________________
 getDataByIndex('hobbyIndex', 'getKey', 'footbal')
 ~~~
 
-{{s3.p23}}
+{{p98}}
 ____________________________________________________
 
-{{s3.p24}}
-{{s3.p25}}
-{{s3.p26}}
+{{p99}}
+{{p100}}
+{{p101}}
 
 ◘◘![ico-20 cap] **10**◘◘
 
@@ -502,7 +502,7 @@ ____________________________________________________
 getDataByIndex('hobbyIndex', 'getAllKeys', 'footbal')
 ~~~
 
-{{s3.p27}}
+{{p102}}
 
 ~~~console
 ▼ (2) [1, 4]

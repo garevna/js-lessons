@@ -1,375 +1,375 @@
 {
-  "s0.p1": {
+  "p1": {
     "ru": "**_Application Programming Interface_** (**API**) позволяет двум системам взаимодействовать друг с другом.",
     "eng": "**_Application Programming Interface_** (**API**) allows two systems to communicate with each other.",
     "ua": "**_Application Programming Interface_** (**API**) дає змогу двом системам взаємодіяти одна з одною."
   },
-  "s0.p2": {
+  "p2": {
     "ru": "Предположим, существует некий внешний по отношению к вашему приложению набор сервисов, которые значительно расширяют функциональность вашего приложения.",
     "eng": "Suppose there is a set of services external to your application that greatly extend the functionality of your application.",
     "ua": "Припустімо, існує якийсь зовнішній щодо вашого додатка набір сервісів, які значно розширюють функціональність вашого додатка."
   },
-  "s0.p3": {
+  "p3": {
     "ru": "Если существует некий программный интерфейс, обеспечивающий вам доступ к этим сервисам, то это и есть **API**.<br>Т.е. вам не нужно включать эти сервисы в свое приложение, вам не важно, на каком языке они написаны, вам важно только знать, каким способом их активировать.",
     "eng": "If there is some kind of API that provides you with access to these services, then this is an API.<br>That is, you do not need to include these services in your application, it does not matter to you what language they are written in, you only need to know how to activate them.",
     "ua": "Якщо існує якийсь програмний інтерфейс, що забезпечує вам доступ до цих сервісів, то це і є **API**."
   },
-  "s0.p4": {
+  "p4": {
     "ru": "Работая на клиенте, ваш код постоянно использует **браузерные API**<br>(например, **⟦f0⟧**, **⟦f1⟧**, **⟦f2⟧**, **⟦f3⟧**, **⟦f4⟧**, **⟦f5⟧**).",
     "eng": "Running on the client, your code constantly uses [**client-side web APIs**](⟦f32⟧)<br>(e.g., **⟦f0⟧**, **⟦f1⟧**, **⟦f2⟧**, **⟦f3⟧**, **⟦f4⟧**, **⟦f5⟧**).",
     "ua": "Тобто вам не потрібно включати ці сервіси у свій застосунок, вам не важливо, якою мовою вони написані, вам важливо тільки знати, яким способом їх активувати."
   },
-  "s0.p5": {
+  "p5": {
     "ru": "Ко многим веб-API вы можете подключиться удаленно",
     "eng": "[![ico-25 link] Web APIs](⟦f33⟧)",
     "ua": "![ico-20 pin] Працюючи на клієнті, ваш код постійно використовує браузерні API<br>(наприклад, ⟦f0⟧, ⟦f1⟧, ⟦f2⟧, ⟦f3⟧, ⟦f4⟧, ⟦f5⟧)."
   },
-  "s0.p6": {
+  "p6": {
     "ru": "(например, [![ico-70 firebase]](⟦f6⟧) or [![ico-35 google-maps]](⟦f7⟧)).",
     "eng": "You can connect to many web APIs remotely (e.g., [![ico-70 firebase]](⟦f6⟧) or [![ico-35 google-maps]](⟦f7⟧)).",
     "ua": "![ico-20 pin] До багатьох веб-API ви можете підключитися віддалено<br>(наприклад, [![ico-70 firebase]](⟦f6⟧) або [![ico-35 google-maps]](⟦f7⟧))."
   },
-  "s0.p7": {
+  "p7": {
     "ru": "Как правило, любое приложение взаимодействует со своим бекенд-API на сервере.",
     "eng": "As a rule, any application interacts with its backend API on the server.",
     "ua": "Як правило, будь-який додаток взаємодіє зі своїм бекенд-апі, розташованим на сервері."
   },
-  "s0.p8": {
+  "p8": {
     "ru": "Бекенд-апи обеспечивает приложению доступ к данным, которые хранятся на сервере, с помощью методов **CRUD**.",
     "eng": "A backend API provides an application with access to data stored on the server using **CRUD** methods.",
     "ua": "Бекенд-апі забезпечує додатку доступ до даних, які зберігаються на сервері, за допомогою методів **CRUD**."
   },
-  "s0.p9": {
+  "p9": {
     "ru": "**CRUD** (_create_, _read_, _update_, _delete_) — четыре основных типа запросов к серверу.",
     "eng": "**CRUD** (_create_, _read_, _update_, _delete_) are the four basic types of requests to the server.",
     "ua": "**CRUD** (_create_, _read_, _update_, _delete_) — це чотири основних типи запитів до сервера."
   },
-  "s0.p10": {
+  "p10": {
     "ru": "Для идентификации типа запроса используется **метод доступа**, или **глагол**, который идентифицирует операцию с ресурсом.",
     "eng": "To identify the type of request, an **access method**, or **verb**, is used to identify the operation on the resource.",
     "ua": "| **GET** | **POST** | **PUT** | **PATCH** | **DELETE** | **HEAD** |"
   },
-  "s0.p11": {
+  "p11": {
     "ru": "| ⟦f8⟧   | **GET**    | получить данные                                     |",
     "eng": "| ⟦f8⟧   | **GET**    | retrieve the data                            |",
     "ua": "| ⟦f8⟧   | **GET**    | отримати дані                                |"
   },
-  "s0.p12": {
+  "p12": {
     "ru": "| ⟦f9⟧ | **POST**   | создание нового ресурса (новой записи)              |",
     "eng": "| ⟦f9⟧ | **POST**   | create new resource (new record)             |",
     "ua": "| ⟦f9⟧ | **POST**   | створення нового ресурсу (нового запису)     |"
   },
-  "s0.p13": {
+  "p13": {
     "ru": "| ⟦f10⟧ | **PUT**    | обновление существующего ресурса (записи)           |",
     "eng": "| ⟦f10⟧ | **PUT**    | update existing resource by id               |",
     "ua": "| ⟦f10⟧ | **PUT**    | повне оновлення наявного ресурсу (запису)    |"
   },
-  "s0.p14": {
+  "p14": {
     "ru": "| ⟦f10⟧ | **PATCH**  | частичное обновление существующего ресурса (записи) |",
     "eng": "| ⟦f10⟧ | **PATCH**  | partial update of an existing resource by id |",
     "ua": "| ⟦f10⟧ | **PATCH**  | часткове оновлення наявного ресурсу (запису) |"
   },
-  "s0.p15": {
+  "p15": {
     "ru": "| ⟦f11⟧ | **DELETE** | удаление ресурса                                    |",
     "eng": "| ⟦f11⟧ | **DELETE** | delete resource by id                        |",
     "ua": "| ⟦f11⟧ | **DELETE** | видалення ресурсу                            |"
   },
-  "s0.p16": {
+  "p16": {
     "ru": "| ⟦f8⟧   | **HEAD**   | получение информации о ресурсе                      |",
     "eng": "| ⟦f8⟧   | **HEAD**   | retrieve information about the resource      |",
     "ua": "| ⟦f8⟧   | **HEAD**   | отримання інформації про ресурс              |"
   },
-  "s0.p17": {
+  "p17": {
     "ru": "^^При этом вас абсолютно не касается, как именно данные хранятся на сервере: в виде отдельных файлов, или в виде записей в базе данных.^^",
     "eng": "^^You don't care whether the data is stored on the server as separate files or as records in a database.^^",
     "ua": "Головне під час взаємодії з серверним API - визначити зміст поняття \"ресурс\" і присвоїти кожному ресурсу унікальний ідентифікатор."
   },
-  "s0.p18": {
+  "p18": {
     "ru": "Любой API работают по принципу «запрос» — «ответ».",
     "eng": "Any API works on the principle of \"request\" — \"response\".",
     "ua": "^^Наприклад, як ресурс може виступати інформація про користувача. Знаючи унікальний ідентифікатор юзера, ви можете надіслати запит серверному API на отримання даних юзера (**GET**), на зміну даних юзера (**PUT** або **PATCH**), на створення нового юзера (**POST**).^^"
   },
-  "s0.p19": {
+  "p19": {
     "ru": "Ваше приложение посылает запрос, и если запрос валидный, то API присылает приложению ответ.",
     "eng": "Your application sends a request, and if the request is valid, the API sends a response to the application.",
     "ua": "Таким чином, під час взаємодії з віддаленим API під терміном \"ресурс\" ми маємо на увазі якийсь **фрагмент інформації, що має унікальний ідентифікатор.**"
   },
-  "s0.p20": {
+  "p20": {
     "ru": "Форма запроса зависит от API.",
     "eng": "The form of the request depends on the API.",
     "ua": "Різниця між **⟦f34⟧** (⟦f35⟧) і **⟦f36⟧** (⟦f37⟧) полягає якраз у тому, що **⟦f34⟧** вказує точне місце розташування ресурсу на сервері, а **⟦f36⟧** вказує тільки ідентифікатор ресурсу, що забезпечує більшу гнучкість серверного API в плані розміщення даних і форми їх зберігання."
   },
-  "s0.p21": {
+  "p21": {
     "ru": "Это может быть метод, например, **⟦f12⟧** или **⟦f13⟧**.",
     "eng": "This can be a method such as, **⟦f12⟧** or **⟦f13⟧**.",
     "ua": "Наприклад, на сервері може зберігатися файл зображення, але те саме зображення може зберігатися в базі даних у вигляді текстового рядка у форматі [**Base64**](⟦f18⟧)."
   },
-  "s0.p22": {
+  "p22": {
     "ru": "Это может быть объект, свойства и методы которого обеспечивают вам доступ к возможностям браузерного API. Все объекты **⟦f14⟧** и **⟦f15⟧** являются элементами браузерного API.",
     "eng": "This can be an object whose properties and methods give you access to the capabilities of the browser API. All **⟦f14⟧** and **⟦f15⟧** objects are elements of the browser API.",
     "ua": "Будь-який API працює за принципом \"запит\" - \"відповідь\"."
   },
-  "s0.p23": {
+  "p23": {
     "ru": "Это может быть конструктор, с помощью которого вы создаете объекты, обеспечивающие вам доступ к возможностям браузерного API. Например, конструктор **⟦f16⟧** или конструктор **⟦f17⟧**.",
     "eng": "This can be a constructor that you use to create objects that give you access to the capabilities of the browser API. For example, the **⟦f16⟧** constructor or the **⟦f17⟧**.",
     "ua": "Ваш застосунок надсилає запит, і якщо запит валідний, то API надсилає застосунку відповідь."
   },
-  "s0.p24": {
+  "p24": {
     "ru": "Главное при взаимодействии с серверным API - определить содержание понятия \"ресурс\" и присвоить каждому ресурсу уникальный идентификатор.",
     "eng": "The main thing when interacting with the server API is to determine the concept “resource” and assign a unique identifier to each resource.",
     "ua": "Форма запиту залежить від API."
   },
-  "s0.p25": {
+  "p25": {
     "ru": "^^Например, в качестве ресурса может выступать информация о юзере. Тогда, зная уникальный идентификатор ресурса, вы можете послать запрос серверному АПИ на получение данных юзера по его идентификатору (**GET**), можете послать запрос на изменение данных юзера (**PUT** или **PATCH**) или же отправить запрос на создание нового юзера (**POST**).^^",
     "eng": "^^For example, the resource can be information about the user. Then, knowing the unique identifier of the resource, you can send a request to the server API to obtain user data by its identifier (**GET**), you can send a request to change user data (**PUT** or **PATCH**) or send a request to create a new user (**POST**).^^",
     "ua": "Це може бути метод, наприклад, **⟦f12⟧** або **⟦f13⟧**."
   },
-  "s0.p26": {
+  "p26": {
     "ru": "Таким образом, при взаимодействии с удаленным API под термином \"ресурс\" мы подразумеваем **некий фрагмент информации, имеющий уникальный идентификатор.**",
     "eng": "Thus, when interacting with a remote API, by the term “resource” we mean a **certain piece of information that has a unique identifier**.",
     "ua": "Це може бути об'єкт, властивості та методи якого забезпечують вам доступ до можливостей браузерного API. Усі об'єкти **BOM** і **DOM** є елементами браузерного API."
   },
-  "s0.p27": {
+  "p27": {
     "ru": "^^Различие между **URL** (Uniform Resource Locator) и **URI** (Uniform Resource Identifier) заключается как раз в том, что URL указывает точное место расположения ресурса на сервере, а URI указывает только идентификатор ресурса, что обечпечивает большую гибкость серверного API в плане размещения данных и формы их хранения.^^",
     "eng": "^^The difference between **URL** (Uniform Resource Locator) and **URI** (Uniform Resource Identifier) ​​is precisely that the **URL** specifies the exact location of the resource on the server, while the **URI** specifies only the resourceid. **URI** provides greater flexibility of the server API in terms of data placement and the form of its storage.^^",
     "ua": "Це може бути конструктор, за допомогою якого ви створюєте об'єкти, що забезпечують вам доступ до можливостей браузерного API. Наприклад, конструктор **⟦f16⟧** або конструктор **⟦f17⟧**."
   },
-  "s0.p28": {
+  "p28": {
     "ru": "Ресурсом может быть файл, хранящийся на сервере, или отдельная запись в базу данных.",
     "eng": "A resource can be a file stored on a server or a single record in a database.",
     "ua": "[** ♫**](⟦f38⟧)"
   },
-  "s0.p29": {
+  "p29": {
     "ru": "Например, на сервере может храниться файл изображения, но то же самое изображение может храниться в базе данных в виде текстовой строки в формате [**Base64**](⟦f18⟧).",
     "eng": "For example, an image file may be stored on the server, but the same image may be stored in the database as a text string in the format of [**Base64**](⟦f18⟧).",
     "ua": "^^^[![](⟦f39⟧)]"
   },
-  "s0.p30": {
+  "p30": {
     "ru": "Каждый API имеет документацию и спецификации, которые определяют способ передачи информации.",
     "eng": "Each API has documentation and specifications that define how information is transferred.",
     "ua": "API-інтерфейси можуть використовувати HTTP-запити для отримання інформації від веб-додатка або веб-сервера."
   },
-  "s0.p31": {
+  "p31": {
     "ru": "API-интерфейсы могут использовать HTTP-запросы для получения информации от веб-приложения или веб-сервера.",
     "eng": "APIs can use HTTP requests to obtain information from a web application or web server.",
     "ua": "Понятие \"endpoint\" используется не только в контексте REST API, но и в более широком смысле в сфере информационных технологий и сетевых взаимодействий."
   },
-  "s0.p32": {
+  "p32": {
     "ru": "В случае REST API запрос осуществляется через интернет, и, принимает форму некоего веб-адреса, который называется **⟦f19⟧** (точка доступа к удаленному API).",
     "eng": "In the case of a REST API, the request is made over the Internet, and takes the form of a certain web address called **⟦f19⟧** (access point to the remote API).",
     "ua": "• В сетевых протоколах endpoint может обозначать любую конечную точку связи в сети, будь то IP-адрес и порт в TCP/IP, или конечная точка в маршрутизации сообщений."
   },
-  "s0.p33": {
+  "p33": {
     "ru": "^^Понятие \"endpoint\" используется не только в контексте REST API, но и в более широком смысле в сфере информационных технологий и сетевых взаимодействий.^^",
     "eng": "^^The term \"endpoint\" is used not only in the context of REST APIs, but also in a broader sense in the field of information technology and networking.^^",
     "ua": "• В SOAP (Simple Object Access Protocol) API endpoint также обозначает URL-адрес, к которому отправляются SOAP-сообщения. Это похоже на REST API, но используется в других протоколах и форматах данных."
   },
-  "s0.p34": {
+  "p34": {
     "ru": "^^• В сетевых протоколах endpoint может обозначать любую конечную точку связи в сети, будь то IP-адрес и порт в TCP/IP, или конечная точка в маршрутизации сообщений.^^",
     "eng": "^^• In network protocols, endpoint can refer to any communication endpoint in a network, whether it is an IP address and port in TCP/IP, or an endpoint in message routing.^^",
     "ua": "• В GraphQL API endpoint представляет собой одну конечную точку, через которую клиент может запрашивать конкретные данные, используя сложные запросы."
   },
-  "s0.p35": {
+  "p35": {
     "ru": "^^• В SOAP (Simple Object Access Protocol) API endpoint также обозначает URL-адрес, к которому отправляются SOAP-сообщения. Это похоже на REST API, но используется в других протоколах и форматах данных.^^",
     "eng": "^^• In SOAP (Simple Object Access Protocol) API endpoint also denotes the URL to which SOAP messages are sent. This is similar to the REST API, but is used in other protocols and data formats.^^",
     "ua": "• В микросервисах endpoint может обозначать любую точку входа для взаимодействия с отдельным микросервисом. Каждый микросервис может иметь свои собственные endpoints для различных функциональностей."
   },
-  "s0.p36": {
+  "p36": {
     "ru": "^^• В GraphQL API endpoint представляет собой одну конечную точку, через которую клиент может запрашивать конкретные данные, используя сложные запросы.^^",
     "eng": "^^• In the GraphQL API endpoint represents a single endpoint through which a client can request specific data using complex queries.^^",
     "ua": "• В более широком смысле, endpoint может обозначать любую точку, через которую осуществляется доступ к ресурсу или службе, будь то внутри системы или между различными системами."
   },
-  "s0.p37": {
+  "p37": {
     "ru": "^^• В микросервисах endpoint может обозначать любую точку входа для взаимодействия с отдельным микросервисом. Каждый микросервис может иметь свои собственные endpoints для различных функциональностей.^^",
     "eng": "^^• In microservices, an endpoint can denote any entry point for interacting with an individual microservice. Each microservice can have its own endpoints for different functionality.^^",
     "ua": "**⟦f19⟧** - це URI-подібний рядок, який вам надає API для віддаленого доступу до ресурсів."
   },
-  "s0.p38": {
+  "p38": {
     "ru": "^^• В более широком смысле, endpoint может обозначать любую точку, через которую осуществляется доступ к ресурсу или службе, будь то внутри системы или между различными системами.^^",
     "eng": "^^• More generally, an endpoint can refer to any point through which a resource or service is accessed, whether within a system or between different systems.^^",
     "ua": "Давайте розберемося, що ж включає цей рядок."
   },
-  "s0.p39": {
+  "p39": {
     "ru": "**⟦f19⟧** - это URI-подобная строка, которую вам предоставляет API для удаленного доступа к ресурсам.",
     "eng": "**⟦f19⟧** is a URI-like string that the API provides to you to access resources remotely.",
     "ua": "Почнемо з того, що сам **API** має **URL**, наприклад: https://api.example.com."
   },
-  "s0.p40": {
+  "p40": {
     "ru": "Давайте разберемся, что же включает эта строка.",
     "eng": "Let's figure out what this line includes.",
     "ua": "І цей **URL** буде обов'язково присутній у кожному **⟦f19⟧**."
   },
-  "s0.p41": {
+  "p41": {
     "ru": "Начнем с того, что сам **API** имеет **URL**,  например: https://api.example.com. И этот URL будет обязательно присутствовать в каждом **⟦f19⟧**.",
     "eng": "Let's start with the fact that API itself has **URL**, for example: ⟦f20⟧. And this **URL** will be present in every endpoint.",
     "ua": "Однак для доступу до ресурсів потрібно вказати, який саме ресурс вас цікавить, і що ви хочете зробити з цим ресурсом (отримати ресурс, створити новий, видалити або оновити наявний)."
   },
-  "s0.p42": {
+  "p42": {
     "ru": "Однако для доступа к ресурсу нужно указать, какой именно ресурс вас интересует, и что вы хотите сделать с этим ресурсом (получить ресурс, создать новый, удалить или обновить существущий).",
     "eng": "However, to access a resource, you need to specify which resource you are interested in and what you want to do with this resource (get a resource, create a new one, delete or update an existing one).",
     "ua": "**⟦f19⟧** містить всю цю інформацію."
   },
-  "s0.p43": {
+  "p43": {
     "ru": "**⟦f19⟧** содержит всю эту информацию.",
     "eng": "**⟦f19⟧** contains all this information.",
     "ua": "Як ми вже говорили раніше, кожен ресурс має унікальний ідентифікатор і з кожним ресурсом може бути виконано низку різних операцій (читання, створення, видалення, оновлення/зміна)."
   },
-  "s0.p44": {
+  "p44": {
     "ru": "Как мы уже говорили ранее, каждый ресурс имеет уникальный идентификатор и с каждым ресурсом может быть выполнен ряд различных операций (чтение, создание, удаление, обновление/изменение).",
     "eng": "As we said earlier, each resource has a unique identifier and a number of different operations can be performed on each resource (read, create, delete, update/change).",
     "ua": "Таким чином, **⟦f19⟧** не є ні URL (оскільки не містить інформації про розміщення ресурсу), ні URI (оскільки містить у собі не тільки ідентифікатор ресурсу, а й інформацію про операцію з ресурсом)."
   },
-  "s0.p45": {
+  "p45": {
     "ru": "Таким образом, **⟦f19⟧** не является ни URL (поскольку не содержит информации о размещении ресурса), ни URI (поскольку включает в себя не только идентификатор ресурса, но и информацию об операции с ресурсом).",
     "eng": "Thus, **⟦f19⟧** is neither a **URL** (because it contains no information about the location of the resource) nor a **URI** (because it includes not only the resource identifier, but also information about the operation of the resource).",
     "ua": "^^^[![](⟦f39⟧)]"
   },
-  "s0.p46": {
+  "p46": {
     "ru": "![ico-25 warn] Если какая-то операция с ресурсом допустима, то для нее есть **⟦f19⟧**.",
     "eng": "![ico-25 warn] If some operation on a resource is valid, then there is an **⟦f19⟧** for it.",
     "ua": "^^^[![ico-30 cap]]"
   },
-  "s0.p47": {
+  "p47": {
     "ru": "![ico-25 warn] Если такого **⟦f19⟧** нет, то данная операция с ресурсом невозможна.",
     "eng": "![ico-25 warn] If there is no such **⟦f19⟧**, then this operation with the resource is impossible.",
     "ua": "^^Розглянемо приклад API https://api.example.com.^^"
   },
-  "s0.p48": {
+  "p48": {
     "ru": "^^Рассмотрим пример с API ⟦f20⟧.^^",
     "eng": "^^Let's take the example of the ⟦f20⟧ API.^^",
     "ua": "^^API дає змогу отримати список усіх юзерів і надає вам для цього **⟦f19⟧**:^^"
   },
-  "s0.p49": {
+  "p49": {
     "ru": "^^Предположим, на сервере хранится база данных юзеров.^^",
     "eng": "^^Suppose you have a database of users stored on a server.^^",
     "ua": "^^Для отримання інформації конкретного юзера з унікальним ідентифікатором **iserId** ендпойнт буде вже іншим:^^"
   },
-  "s0.p50": {
+  "p50": {
     "ru": "^^API позволяет получить список всех юзеров и предоставляет вам для этого **⟦f19⟧**:^^",
     "eng": "^^API allows you to get a list of all the users and gives you a **⟦f19⟧** to do this:^^",
     "ua": "^^Для створення нового юзера (**POST**):^^"
   },
-  "s0.p51": {
+  "p51": {
     "ru": "^^Для получения информации конкретного юзера с уникальным идентификатором **iserId** эндпойнт будет уже другим:^^",
     "eng": "^^To get the information of a specific user with a unique identifier **iserId** the endpoint will be different:^^",
     "ua": "^^Для повної заміни всіх даних користувача (**PUT**):^^"
   },
-  "s0.p52": {
+  "p52": {
     "ru": "^^Для создания нового юзера (**POST**):^^",
     "eng": "^^To create a new user (**POST**):^^",
     "ua": "^^Для часткової модифікації даних користувача (**PATCH**):^^"
   },
-  "s0.p53": {
+  "p53": {
     "ru": "^^Для полной замены всех данных юзера (**PUT**):^^",
     "eng": "^^For complete replacement of all user data (**PUT**):^^",
     "ua": "^^І для видалення юзера (**DELETE**):^^"
   },
-  "s0.p54": {
+  "p54": {
     "ru": "^^Для частичной модификации данных юзера (**PATCH**):^^",
     "eng": "^^For partial modification of user data (**PATCH**):^^",
     "ua": "••https://api.example.com/user/remove/${iserId}••"
   },
-  "s0.p55": {
+  "p55": {
     "ru": "^^И для удаления юзера (**DELETE**):^^",
     "eng": "^^And to delete a user (**DELETE**):^^",
     "ua": "^^Серверний API парсить адресу запиту, і якщо цей рядок відповідає одному з допустимих варіантів, і якщо у вас є права на виконання таких операцій, то ваш запит виконується.^^"
   },
-  "s0.p56": {
+  "p56": {
     "ru": "^^Серверный API парсит адрес запроса, и если эта строка соответствует одному из допустимых вариантов, и если у вас есть права на выполение таких операций, то ваш запрос выполняется.^^",
     "eng": "^^The server API parses the request address, and if this string matches one of the valid options, and if you have permissions to perform such operations, your request is executed.^^",
     "ua": "Він являє собою не просто URL-адресу, а сукупність адреси API і маршруту, який включає ідентифікатор ресурсу та інформацію про те, яку дію треба виконати. Це як веб-адреса, але з додатковими частинами, які вказують, що саме потрібно зробити з даними."
   },
-  "s0.p57": {
+  "p57": {
     "ru": "Endpoint в REST API - это точка, к которой обращается клиент, чтобы взаимодействовать с сервером.",
     "eng": "An endpoint in a REST API is the point that the client accesses to interact with the server.",
     "ua": ""
   },
-  "s0.p58": {
+  "p58": {
     "ru": "Он представляет собой не просто URL-адрес, а совокупность адреса API и маршрута, который включает идентификатор ресурса и информацию о том, какое действие надо выполнить. Это как веб-адрес, но с дополнительными частями, которые указывают, что именно нужно сделать с данными.",
     "eng": "It is not just a URL, but a combination of an API address and a route, which includes a resource identifier and information about what action to perform. It's like a web address, but with extra parts that specify what exactly needs to be done with the data.",
     "ua": ""
   },
-  "s0.p59": {
+  "p59": {
     "ru": "**Терміни:**",
     "eng": "**Terms:**",
     "ua": ""
   },
-  "s0.p60": {
+  "p60": {
     "ru": "| ^^![ico-20 pin] **SOA** (**_Service Oriented Architecture_**) — сервис-ориентированная архитектура веб-приложений (набор архитектурных принципов).^^ |",
     "eng": "• ^^![ico-20 pin] **SOA** is a service-oriented architecture of web applications (a set of architectural principles).^^",
     "ua": ""
   },
-  "s0.p61": {
+  "p61": {
     "ru": "| ^^![ico-20 pin] **RPC** (**_Remote Procedure Call_**) — удаленный вызов процедуры.^^ |",
     "eng": "• ^^![ico-20 pin] **RPC** is a remote procedure call.^^",
     "ua": ""
   },
-  "s0.p62": {
+  "p62": {
     "ru": "| ^^![ico-20 pin] **Сервис** (service) — набор операций, которые принимают запрос (_Request_) и выдают ответ (_Response_).^^ |",
     "eng": "• ^^![ico-20 pin] **Service** is a set of operations that accept a Request and issue a Response.^^",
     "ua": ""
   },
-  "s0.p63": {
+  "p63": {
     "ru": "| ^^![ico-20 pin] **Веб-сервис** — идентифицируемая веб-адресом программная система со стандартизироваными интерфейсами.^^ |",
     "eng": "• ^^![ico-20 pin] **Web service**  is a software system identified by a web address with standardized interfaces.^^",
     "ua": ""
   },
-  "s0.p64": {
+  "p64": {
     "ru": "Веб-сервисы могут взаимодействовать друг с другом и с другими приложениями с помощью уведомлений, основанных на определенных протоколах.",
     "eng": "Web services can communicate with each other and with other applications using notifications based on specific protocols.",
     "ua": ""
   },
-  "s0.p65": {
+  "p65": {
     "ru": "Наибольшее распространение получили следующие протоколы реализации **_веб-сервисов_**:",
     "eng": "The most widely used protocols for implementing web services are:",
     "ua": ""
   },
-  "s0.p66": {
+  "p66": {
     "ru": "Основной принцип **REST** заключается в ограничении набора операций — используются только операции **CRUD** (⟦f21⟧ ⟦f22⟧ ⟦f23⟧ ⟦f24⟧).",
     "eng": "The basic principle of **REST** is to limit the set of operations — only **CRUD** (⟦f21⟧ ⟦f22⟧ ⟦f23⟧ ⟦f24⟧) operations are used.",
     "ua": ""
   },
-  "s0.p67": {
+  "p67": {
     "ru": "Архитектурный стиль **REST** в большинстве случаев подразумевает использование протокола HTTP.",
     "eng": "The architectural style of **REST** in most cases involves the use of the **HTTP** protocol.",
     "ua": ""
   },
-  "s0.p68": {
+  "p68": {
     "ru": "Поэтому команды CRUD преобразованы в  HTTP-методы  **POST** — **GET** — **PUT** — **DELETE**.",
     "eng": "Therefore, **CRUD** commands have been converted to **⟦f26⟧** — **⟦f25⟧** — **⟦f27⟧** — **⟦f28⟧** **HTTP** methods.",
     "ua": ""
   },
-  "s0.p69": {
+  "p69": {
     "ru": "**_API_** обычно классифицируются как **SOAP** или **REST**, и оба используются для доступа к веб-сервисам",
     "eng": "APIs are typically classified as **SOAP** or **REST**, and both are used to access web services.",
     "ua": ""
   },
-  "s0.p70": {
+  "p70": {
     "ru": "![ico-20 green-ok] **SOAP**: для обмена сообщениями используется формат XML",
     "eng": "![ico-20 green-ok] **SOAP**: XML is used for messaging.",
     "ua": ""
   },
-  "s0.p71": {
+  "p71": {
     "ru": "![ico-20 green-ok] **REST**:  для получения или отправки информации используются URL-адреса",
     "eng": "![ico-20 green-ok] **REST**: URLs are used to receive or send information.",
     "ua": ""
   },
-  "s0.p72": {
+  "p72": {
     "ru": "**REST** использует четыре разных HTTP 1.1 глагола (⟦f25⟧, ⟦f26⟧, ⟦f27⟧ и ⟦f28⟧)",
     "eng": "**REST** uses four different HTTP 1.1 verbs (⟦f25⟧, ⟦f26⟧, ⟦f27⟧ и ⟦f28⟧).",
     "ua": ""
   },
-  "s0.p73": {
+  "p73": {
     "ru": "В отличие от ⟦f29⟧, ⟦f30⟧ не обязательно должен использовать ⟦f31⟧ для предоставления ответа",
     "eng": "Unlike SOAP, REST doesn't have to use XML to provide a response.",
     "ua": ""
   },
-  "s0.p74": {
+  "p74": {
     "ru": "Существуют веб-сервисы на основе REST, которые выводят данные в формате:",
     "eng": "There are REST-based web services that output data in the following format:",
     "ua": ""
   },
-  "s0.p75": {
+  "p75": {
     "ru": "^^Можно получить результат в формате, который легче парсить на языке вашего приложения^^",
     "eng": "^^You can get the result in a format that is easier to parse in the language of your application.^^",
     "ua": ""

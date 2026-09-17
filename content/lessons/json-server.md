@@ -1,12 +1,12 @@
 ## ![ico-30 icon] JSON server
 
-### ![ico-25 bash] {{s1.h1}}
+### ![ico-25 bash] {{p1}}
 
 ~npm install -g json-server~
 
-### ![ico-30 db] {{s2.h1}}
+### ![ico-30 db] {{p2}}
 
-{{s2.p1}}
+{{p3}}
 
 ^^^[db.json]
 
@@ -105,24 +105,24 @@
 
 ^^^
 
-### ![ico-25 bash] {{s3.h1}}
+### ![ico-25 bash] {{p4}}
 
-{{s3.p1}}
+{{p5}}
 
-{{s3.p2}}
+{{p6}}
 
-{{s3.p3}}
+{{p7}}
 
-{{s3.p4}}
+{{p8}}
 
-{{s3.p5}}
-{{s3.p6}}
+{{p9}}
+{{p10}}
 
-^^^[{{s3.spoiler1}}]
+^^^[{{p11}}]
 
-{{s3.p7}}
-{{s3.p8}}
-{{s3.p9}}
+{{p12}}
+{{p13}}
+{{p14}}
 ~json-server  z:/home/test/users.json –w~
 
 ^^^
@@ -131,20 +131,20 @@ _______________________________________
 
 ### ![ico-20 icon] endpoints
 
-{{s3.p10}}
+{{p15}}
 
 | ![ico-20 bash] | ~http://localhost:3000/users<br>http://localhost:3000/posts<br>http://localhost:3000/comments~ |
 
-{{s3.p11}}
+{{p16}}
 
-{{s3.p12}}
-{{s3.p13}}
+{{p17}}
+{{p18}}
 
 _____________________________________
 
 ### ![ico-20 icon] fetch
 
-{{s3.p14}}
+{{p19}}
 
 ##### ![ico-25 cap] GET (1)
 
@@ -158,9 +158,9 @@ ___________________________________________
 
 ##### ![ico-25 cap] GET (2)
 
-{{s3.p15}}
+{{p20}}
 
-{{s3.p16}}
+{{p21}}
 
 ~~~js
 function getData (ref) {
@@ -182,7 +182,7 @@ ___________________________________________
 
 ##### ![ico-25 cap] POST
 
-{{s3.p17}}
+{{p22}}
 
 ~~~js
 fetch('http://localhost:3000/comments', {
@@ -199,11 +199,11 @@ fetch('http://localhost:3000/comments', {
     .then ( response => console.log ( 'response: ', response ) )
 ~~~
 
-{{s3.p18}}
-{{s3.p19}}
-{{s3.p20}}
+{{p23}}
+{{p24}}
+{{p25}}
 
-{{s3.p21}}
+{{p26}}
 
 ~~~js
 fetch ( 'http://localhost:3000/comments?postId=1&id=4' )
@@ -215,7 +215,7 @@ _________________________________________
 
 ##### ![ico-25 cap] PUT
 
-{{s3.p22}}
+{{p27}}
 
 ~~~js
 fetch ( 'http://localhost:3000/posts/1', {
@@ -236,7 +236,7 @@ _________________________________________
 
 ##### ![ico-25 cap] PATCH
 
-{{s3.p23}}
+{{p28}}
 
 ~~~js
 fetch ( 'http://localhost:3000/posts/1', {
@@ -251,17 +251,17 @@ fetch ( 'http://localhost:3000/posts/1', {
    .then ( response => console.log ( 'response: ', response ) )
 ~~~
 
-{{s3.p24}}
-{{s3.p25}}
-{{s3.p26}}
+{{p29}}
+{{p30}}
+{{p31}}
 
 _______________________________________
 
 ##### ![ico-25 cap] DELETE
 
-{{s3.p27}}
+{{p32}}
 
-{{s3.p28}}
+{{p33}}
 
 ~~~js
 fetch ( 'http://localhost:3000/comments/1', {
