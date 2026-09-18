@@ -9,11 +9,11 @@ Let’s consider how the browser presents itself to us.
 
 @@@@
 
-![](images/users-see-pixels-ukr.svg)
+![](slogans/users-see-pixels.svg)
 When a user opens a page in a browser, they see pixels.<br>These pixels are rendered for them by the browser.<br><br>When a front-end developer creates a page, they see tags. <br>And the browser generates pixels for the user from these tags.<br><br>We, however, see the browser as a **window** object.<br>Because we see everything as objects.
 
 <br>But wait—the browser isn’t an object, it’s a large and complex application! <br><br>So what do we actually see?<br><br>We see the **browser model**, which it creates specifically for us.<br>The **object model**.
-![](images/users-see-pixels.svg)
+![](slogans/adam-of-all.svg)
 
 @@@@
 
@@ -39,7 +39,7 @@ Whereas you and I see the object.
 @@@@
 
 <br><br>And we have access to this object’s properties and methods via the reference.
-![](images/reference-is-a-lockpick.svg)
+![](slogans/reference-is-a-lockpick.svg)
 
 @@@@
 

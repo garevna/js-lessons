@@ -1,12 +1,12 @@
-# ![ico-30 study] Изменение контекста
+# ![ico-30 study] Changing the context
 
 ____________________________________________
 
-## ![ico-25 icon] Конструктор Function
+## ![ico-25 icon] The Function constructor
 
-Функции можно создавать путем явного вызова конструктора **Function** с ключевым словом **_~new~_**
+Functions can be created by explicitly calling the **Function** constructor with the keyword **_~new~_**
 
-![ico-20 warn] Однако следует помнить, что созданные таким образом функции будут анонимными
+![ico-20 warn] However, it should be noted that functions created in this way will be anonymous
 ( "_anonymous_" )
 
 ◘◘![ico-25 cap] ** 1**◘◘
@@ -21,15 +21,15 @@ var func = new Function('x', 'y', `
 func(5, 8, 11, false)
 ~~~
 
-^^В результате в консоль будут выведены 5, 8^^
-^^затем - глобальный объект ~window~^^
-^^затем - объект ~arguments~ функции, содержащий 5, 8, 11, ~false~^^
+^^As a result, 5 and 8 will be printed to the console^^
+^^followed by the global object ~window~^^
+^^followed by the ~arguments~ function object, containing 5, 8, 11, ~false~^^
 
 ~~~js
 console.dir(func)
 ~~~
 
-**Результат в консоли:**
+**Result in the console:**
 
 ~~~console
 ▼ ƒ anonymous(x,y,z )
@@ -43,20 +43,20 @@ console.dir(func)
 
 ________________________________
 
-## ![ico-25 icon] Наследование
+## ![ico-25 icon] Inheritance
 
-Итак, любая функция в JS является _экземпляром_ класса **Function**
+So, every function in JS is an _instance_ of the **Function** class
 
-Отсюда следует:
-![ico-20 pin] любая функция является объектом
-![ico-20 pin] все функции наследуют свойства и методы объекта **_prototype_** конструктора **Function**
+It follows that:
+![ico-20 pin] every function is an object
+![ico-20 pin] all functions inherit properties and methods from the **_prototype_** object of the **Function** constructor
 
 
 ~~~js
 console.dir(Function)
 ~~~
 
-^^^[Результат в консоли:]
+^^^[Result in the console:]
 
 ~~~console
 ▼ ƒ Function()
@@ -85,7 +85,7 @@ console.dir(Function)
 
 ^^^
 
-![ico-20 warn] Свойство **~&#95;&#95;proto&#95;&#95;~** любой функции является ссылкой на свойство **_prototype_** конструктора **Function**
+![ico-20 warn] The **~&#95;&#95;proto&#95;&#95;~** property of any function is a reference to the **_prototype_** property of the **Function** constructor
 
 ~~~js
 function func () {
@@ -95,7 +95,7 @@ function func () {
 console.dir(func)
 ~~~
 
-^^^[Результат в консоли:]
+^^^[Result in the console:]
 
 ~~~console
 ▼ ƒ func()
@@ -124,16 +124,16 @@ console.dir(func)
 
 ^^^
 
-![ico-20 pin] Поскольку конструктор **Function** также является функцией, его свойство **_~__proto__~_** тоже является ссылкой на собственное свойство **_~prototype~_**
+![ico-20 pin] Since the **Function** constructor is also a function, its **_~__proto__~_** property is likewise a reference to its own **_~prototype~_** property
 
 _________________________________
 
-Функция в JS:
+A function in JS:
 
-![ico-20 pin] всегда является методом (т.е. свойством какого-либо объекта)
-![ico-20 pin] всегда вызывается в контексте какого-либо объекта
+![ico-20 pin] is always a method (i.e. a property of some object)
+![ico-20 pin] is always called within the context of some object
 
-^^Покажем, что функции, объявленные в глобальной области видимости, по умолчанию являются свойствами глобального объекта ~window~^^
+^^Let’s show that functions declared in the global scope are, by default, properties of the global object ~window~^^
 
 ◘◘![ico-25 cap] ** 2**◘◘
 
@@ -153,7 +153,7 @@ for (var func of funcs) {
 }
 ~~~
 
-^^Все функции, имена которых перечислены в массиве **_funcs_**, будут вызваны и в консоль будет выведено^^
+^^All functions whose names are listed in the array **_funcs_** will be called and the output will be displayed in the console^^
 
 ~~~console
 I'm sample
@@ -162,15 +162,15 @@ I'm figure
 
 ____________________________________
 
-## ![ico-25 icon] Контекст вызова
+## ![ico-25 icon] prototype
 
 @@@@
 ![](slogans/funcs-call-girls.svg)
 
-Как мы уже знаем, каждая функция в момент вызова получает ссылку на контекст вызова **_~this~_**.<br><br>Если контекст не указан явно при вызове, то по умолчанию подразумевается глобальный объект (~window~).
+As we already know, at the moment of invocation, each function receives a reference to the call context **_~this~_**.<br><br>If the context is not explicitly specified during the call, the global object (~window~) is implied by default.
 @@@@
 
-Явное указание контекста вызова происходит при обращении к методам какого-либо объекта:
+Explicit context specification occurs when accessing methods of a particular object:
 
 ◘◘![ico-25 cap] ** 3**◘◘
 
@@ -184,8 +184,8 @@ var obj = {
 obj.say()   // google
 ~~~
 
-^^Здесь перед именем метода **_say()_** явным образом указан контекст вызова **obj**,^^
-^^поэтому _**~this~**_ внутри метода **_say()_** является ссылкой на **obj**^^
+^^Here, the call context **obj** is explicitly specified before the method name **_say()_**^^
+^^Therefore, _**~this~**_ inside the **_say()_** method is a reference to **obj**^^
 
 ~~~js
 window.name = 'window'
@@ -205,7 +205,7 @@ obj.say()   // google
 
 _____________________________________________
 
-Разберитесь самостоятельно с контекстом вызова метода ~getName~ функции ~getName~:
+Work out for yourself the context of the method call ~getName~ within the function ~getName~:
 
 ◘◘![ico-25 cap] ** 4**◘◘
 
@@ -220,28 +220,28 @@ getName.getName()
 ~~~
 _____________________________________________
 
-## ![ico-25 icon] Изменение контекста
+## ![ico-25 icon] Changing the context
 
-Заглянув в свойство **_~prototype~_** конструктора **Function** или в свойство **_~&#95;&#95;proto&#95;&#95;~_** экземпляра функции,
-можно обнаружить три метода, которые наследуют все функции от своего создателя:
+By looking at the **_~prototype~_** property of the **Function** constructor or the **_~&#95;&#95;proto&#95;&#95;~_** property of a function instance
+you will find three methods that all functions inherit from their creator:
 
 ![ico-20 green-ok] **~apply()~**
 ![ico-20 green-ok] **~call()~**
 ![ico-20 green-ok] **~bind()~**
 
-Эти методы обеспечивают возможность гибко манипулировать контекстом вызова функции
+These methods provide the ability to flexibly manipulate the context of a function call
 
-Методы **~apply~** и **~call~** позволяют одноразово вызвать функцию в заданном контексте
+The methods **~apply~** and **~call~** allow a function to be called once in a given context
 
-Они отличаются только способом передачи аргументов
+They differ only in the way arguments are passed
 
-Метод **~bind~** создает новый экземпляр функции с жестко установленным контекстом вызова, который невозможно изменить или 'потерять' при повторных вызовах
+The method **~bind~** creates a new instance of the function with a fixed call context, which cannot be changed or ‘lost’ during subsequent calls
 
-Кроме этого, **~bind~** позволяет так же жестко привязать аргументы к новому экземпляру: фактически, указанные аргументы станут постоянными для нового экземпляра функции
+Furthermore, **~bind~** also allows arguments to be rigidly bound to the new instance: in effect, the specified arguments will become constant for the new instance of the function
 
 ### ![ico-20 icon] call()
 
-Первым обязательным аргументом метода является ссылка на объект, в контексте которого будет вызвана функция
+The first mandatory argument of the method is a reference to the object in whose context the function will be called
 
 ◘◘![ico-25 cap] ** 5**◘◘
 
@@ -265,7 +265,7 @@ func.call(figure)    // figure
 func.call(sample)    // sample
 ~~~
 
-Далее может следовать перечень аргументов:
+This may be followed by a list of arguments:
 
 ~~~js
 function func () {
@@ -279,7 +279,7 @@ func.call(figure, 9, false, 'Hello')
 func.call(sample, 5, 1, 'Bye')
 ~~~
 
-**Результат в консоли:**
+**Result in the console:**
 
 ••figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]••
 ••sample ► Arguments(3) [ 5, 1, "Bye", callee: ƒ, Symbol(Symbol.iterator): ƒ ]••
@@ -289,7 +289,7 @@ ________________________________________
 
 ### ![ico-20 icon] apply()
 
-Метод **_apply()_** отличается от метода **_call()_** только способом передачи аргументов - теперь их нужно передавать массивом:
+The **_apply()_** method differs from the **_call()_** method only in the way arguments are passed – they must now be passed as an array:
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
@@ -305,7 +305,7 @@ func.apply(figure, [9, false, 'Hello'])
 func.apply(sample, [5, 1, 'Bye'])
 ~~~
 
-**Результат в консоли:**
+**Result in the console:**
 
 ~~~console
 figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
@@ -315,8 +315,8 @@ sample ► Arguments(3) [ 5, 1, "Bye", callee: ƒ, Symbol(Symbol.iterator): ƒ 
 __________________________________________________
 
 
-Передача массива аргументов вместо перечня их значений обеспечивает определенную гибкость,
-поскольку массивы передаются по ссылке, и содержимое массива может динамически обновляться от вызова к вызову
+Passing an array of arguments rather than a list of their values provides a certain degree of flexibility
+as arrays are passed by reference, and the contents of the array may be dynamically updated from one call to the next
 
 ◘◘![ico-25 cap] ** 7**◘◘
 
@@ -347,7 +347,7 @@ var objects = [
 objects.forEach(obj => func.apply(obj, args))
 ~~~
 
-**Результат в консоли:**
+**Result in the console:**
 
 ••![ico-20 warn] ► Who was called before figure (0):••
 ••![ico-20 warn] ► Who was called before sample (1):••
@@ -358,8 +358,8 @@ objects.forEach(obj => func.apply(obj, args))
 
 _____________________________
 
-^^Вызовы функции **_func_** логируются в массиве **args**^^
-^^При каждом вызове функция **_func_** получает в аргументах полный отчет о том, сколько раз она была вызвана до этого, и с каким контекстом^^
+^^Calls to the **_func_** function are logged in the **args** array^^
+^^With each call, the **_func_** function receives, as arguments, a complete record of how many times it has been called previously and in what context^^
 ^^Поменяйте местами вызовы функций, или добавьте повторный вызов любой из функций, и посмотрите результат^^
 
 ______________________________________________________________________________
@@ -442,7 +442,7 @@ funcs[1]()
 funcs[2]()
 ~~~
 
-**Результат в консоли:**
+**Result in the console:**
 
 ••![ico-20 warn] ► Функция func вызвана 1 раз в контексте объекта figure••
 ••![ico-20 warn] ► Функция func вызвана 2 раз в контексте объекта sample••
@@ -470,7 +470,7 @@ bloom.sample()
 bloom.google()
 ~~~
 
-**Результат в консоли:**
+**Result in the console:**
 
 ••![ico-20 warn] ► Функция func вызвана 4 раз в контексте объекта figure••
 ••![ico-20 warn] ► Функция func вызвана 5 раз в контексте объекта sample••

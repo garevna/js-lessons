@@ -13,7 +13,11 @@ function * avaGenerator () {
   while (++num < 99) {
     yield Object.assign(document.createElement('img'), {
       src: `https://www.shareicon.net/data/2015/12/14/2078${num}_face_300x300.png`,
-      width: 80
+      width: 80,
+      onerror: function () {
+        this.onerror = null
+        this.src = 'images/207817_face_300x300.png'
+      }
     })
   }
 }

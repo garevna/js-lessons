@@ -2,7 +2,7 @@
 
 @@@@
 Now we'll learn how to work with another very important type of data: **~function~**.<br>Our entire "JS universe" is based on functions.<br><br>**Functions are a reference type of data.**.<br><br>This means that after declaring a function, we will have a variable in our hands that will be a reference to the function.
-![](images/funcs-are-our-jam.svg)
+![](slogans/funcs-are-our-jam.svg)
 @@@@
 
 When someone is sick, a doctor will be called, when there are problems with water supply or sewerage, a plumber will be called, and when there are problems with wiring in the house, we call an electrician. It's good that there are doctors, plumbers and electricians. Please note that they do not live in our house and do not do their work all the time. Otherwise, there would be hell in our house, crowds of people who are doing something all the time... No, no, we call them only when the need arises. They come, do their job and leave. But we still have a phone or another way to call them if the problem arises again.

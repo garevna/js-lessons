@@ -177,7 +177,7 @@ So, the difference between the two ways for a function to get into the **Call St
 _____________________
 
 @@@@
-![](images/funcs-rule.svg)
+![](slogans/funcs-rule.svg)
 As we can see, not only the inheritance model, but also asynchrony in JS is based on functions.<br><br>In the prototypical inheritance model, **constructor** functions rule, and in asynchronous inheritance, **callback** functions rule.
 @@@@
 

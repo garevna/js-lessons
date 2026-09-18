@@ -22,7 +22,7 @@ So goodbye, class inheritance model! and long live the
 
 @@@@
 **JS** incorporates many nice features from **functional programming languages** (such as _chaining computations_, _currying_).<br><br>Func-style in JS is a direct consequence of the aforementioned, and importantly, it forms the foundation of asynchrony.
-![](images/funcs-are-our-jam.svg)
+![](slogans/funcs-are-our-jam.svg)
 
 @@@@
 

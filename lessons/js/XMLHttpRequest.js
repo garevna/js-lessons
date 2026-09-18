@@ -39,7 +39,7 @@ let request = Object.assign (
         make: function ( endpoint, method, data ) {
             let methods = [ "GET", "POST", "PUT", "DELETE", "PATCH" ]
             method = methods.indexOf ( method ) === -1 ? "GET" : method
-            this.open ( method, `https://json-server-with-router.glitch.me/${endpoint}` )
+            this.open ( method, `https://js-lessons-sandbox.garevna.workers.dev/rest-api/${endpoint}` )
             this.setRequestHeader( "Content-Type", "application/json" )
             method !== "GET" && data ? this.send ( JSON.stringify ( data ) ) : this.send()
         }

@@ -28,7 +28,7 @@ variable **~students~** will contain a reference to the same data structure.
 No new data structure is created, only the **reference** is passed.
 
 @@@@
-![](images/reference-is-a-lockpick.svg)
+![](slogans/reference-is-a-lockpick.svg)
 <br>If you have a reference to a data structure, you access the contents of that data structure by reference.<br>
 @@@@
 
