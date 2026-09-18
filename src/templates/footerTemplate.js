@@ -1,4 +1,4 @@
-const { copyrightText, copyrightSign, footerSlogan, serviceWorkerVersion, serviceWorkerDate } = require('../configs').default
+const { copyrightText, copyrightSign, footerSlogan, serviceWorkerVersion, serviceWorkerDate, authorLink } = require('../configs').default
 
 export const footerTemplate = `
 <footer>
@@ -6,7 +6,7 @@ export const footerTemplate = `
     <donate-component size="64"></donate-component>
   </div>
   <div id="copyright-text" class="footer-text">
-    <small> ${copyrightText} <br><br> ${copyrightSign} </small>
+    <small> ${copyrightText} <br><br> ${copyrightSign} · <a href="${authorLink}" target="_blank" rel="noopener">CV</a> </small>
   </div>
   <div id="author-photo" class="footer-picture">
     <figure class="overshadow">

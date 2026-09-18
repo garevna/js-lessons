@@ -58,6 +58,17 @@ footer {
   padding-top: 4px;
 }
 
+.footer-text a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: dotted 1px currentColor;
+  opacity: 0.75;
+}
+
+.footer-text a:hover {
+  opacity: 1;
+}
+
 .footer-picture {
   grid-area: picture;
   align-items: end;
