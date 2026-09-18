@@ -9,11 +9,11 @@
 
 @@@@
 
-![](images/users-see-pixels-ukr.svg)
+![](slogans/users-see-pixels.svg)
 {{p4}}
 
 {{p5}}
-![](images/users-see-pixels.svg)
+![](slogans/adam-of-all.svg)
 
 @@@@
 
@@ -39,7 +39,7 @@ _____________________________
 @@@@
 
 {{p13}}
-![](images/reference-is-a-lockpick.svg)
+![](slogans/reference-is-a-lockpick.svg)
 
 @@@@
 

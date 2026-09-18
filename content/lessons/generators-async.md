@@ -325,14 +325,14 @@ ______________________________________________________
 
 ~~~js
 const pictures = [
-  'https://cdn.pixabay.com/photo/2023/10/06/07/14/plant-8297610_1280.jpg',
-  'https://cdn.pixabay.com/photo/2023/10/12/14/41/town-8310950_1280.jpg',
-  'https://cdn.pixabay.com/photo/2017/01/18/16/46/hong-kong-1990268__340.jpg',
-  'https://cdn.pixabay.com/photo/2013/03/02/02/41/city-89197__340.jpg',
-  'https://cdn.pixabay.com/photo/2017/12/10/17/40/prague-3010407__340.jpg',
-  'https://cdn.pixabay.com/photo/2018/01/31/12/16/architecture-3121009__340.jpg',
-  'https://cdn.pixabay.com/photo/2015/02/24/13/23/city-647400__340.jpg',
-  'https://cdn.pixabay.com/photo/2018/11/29/21/19/hamburg-3846525__340.jpg'
+  'images/plant-8297610_1280.jpg',
+  'images/town-8310950_1280.jpg',
+  'images/hong-kong-1990268__340.jpg',
+  'images/city-89197__340.jpg',
+  'images/prague-3010407__340.jpg',
+  'images/architecture-3121009__340.jpg',
+  'images/city-647400__340.jpg',
+  'images/hamburg-3846525__340.jpg'
 ]
 ~~~
 
@@ -477,14 +477,14 @@ while (true) {
 
 ~~~~js
 const pictures = [
-  'https://cdn.pixabay.com/photo/2023/10/06/07/14/plant-8297610_1280.jpg',
-  'https://cdn.pixabay.com/photo/2023/10/12/14/41/town-8310950_1280.jpg',
-  'https://cdn.pixabay.com/photo/2017/01/18/16/46/hong-kong-1990268__340.jpg',
-  'https://cdn.pixabay.com/photo/2013/03/02/02/41/city-89197__340.jpg',
-  'https://cdn.pixabay.com/photo/2017/12/10/17/40/prague-3010407__340.jpg',
-  'https://cdn.pixabay.com/photo/2018/01/31/12/16/architecture-3121009__340.jpg',
-  'https://cdn.pixabay.com/photo/2015/02/24/13/23/city-647400__340.jpg',
-  'https://cdn.pixabay.com/photo/2018/11/29/21/19/hamburg-3846525__340.jpg'
+  'images/plant-8297610_1280.jpg',
+  'images/town-8310950_1280.jpg',
+  'images/hong-kong-1990268__340.jpg',
+  'images/city-89197__340.jpg',
+  'images/prague-3010407__340.jpg',
+  'images/architecture-3121009__340.jpg',
+  'images/city-647400__340.jpg',
+  'images/hamburg-3846525__340.jpg'
 ]
 
 class PictureSlider {
@@ -573,7 +573,11 @@ function* avaGenerator () {
   while (++num < 99) {
     yield Object.assign(document.createElement('img'), {
       src: `https://www.shareicon.net/data/2015/12/14/2078${num}_face_300x300.png`,
-      width: 80
+      width: 80,
+      onerror: function () {
+        this.onerror = null
+        this.src = 'images/207817_face_300x300.png'
+      }
     })
   }
 }

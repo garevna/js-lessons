@@ -684,7 +684,7 @@ _______________________________________
 
 {{p180}}
 
-![](images/reference-is-a-lockpick.svg)
+![](slogans/reference-is-a-lockpick.svg)
 
 {{p181}}
 
@@ -788,7 +788,7 @@ console.dir(sample)
 ~~~
 
 {{p190}}
-![](images/function-balls.svg)
+![](slogans/function-balls.svg)
 {{p191}}
 {{p192}}
 {{p193}}

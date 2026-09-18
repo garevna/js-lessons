@@ -371,7 +371,7 @@ ________________________________________
 ~~~~js
 const user = {
   login: 'Сергей',
-  avatar: 'https://www.shareicon.net/data/2015/12/14/207817_face_300x300.png',
+  avatar: 'images/207817_face_300x300.png',
   email: 'serg789@gmail.com',
 
   place (tagName) {

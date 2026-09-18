@@ -2,7 +2,7 @@
 
 @@@@
 {{p2}}
-![](images/funcs-are-our-jam.svg)
+![](slogans/funcs-are-our-jam.svg)
 @@@@
 
 {{p3}}

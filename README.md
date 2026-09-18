@@ -200,11 +200,28 @@ are.
 ```
 ![](illustrations/dog.png)      images/lessons/dog.png
 ![](images/car.gif)             images/car.gif
+![](slogans/funcs-rule.svg)     images/slogans/funcs-rule-en.svg
 ```
 
 Paths are resolved through `createPath`, which knows a handful of aliases:
-`images`, `illustrations`, `icons`, `sounds`, `lessons`, `help`, `files`,
-`page`, `external`.
+`images`, `illustrations`, `slogans`, `icons`, `sounds`, `lessons`, `help`,
+`files`, `page`, `external`.
+
+**`slogans` chooses the language for you.** Every slogan is one drawing
+lettered twice and lives in `public/images/slogans/` as a pair:
+
+```
+funcs-rule-en.svg    funcs-rule-ua.svg
+```
+
+The lesson names the drawing, never a copy — `![](slogans/funcs-rule.svg)` —
+and the reader's language picks the file: `-ua` in Ukrainian, `-en` everywhere
+else, Russian included. A slogan that has not been lettered in Ukrainian yet
+falls back to `-en`, so a missing file leaves the page whole rather than empty.
+
+To add one, drop the two files into `public/images/slogans/` and refer to the
+bare name. There is no list to update — except `initialCachedFiles.js`, if you
+want the drawing available offline on a first visit.
 
 ### Icons
 

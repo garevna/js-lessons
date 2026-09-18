@@ -3,7 +3,7 @@ let section = document.body
 var btn = document.createElement('button')
 btn.innerText = 'OK'
 btn.style = `
-  background-image: url(https://cdn2.iconfinder.com/data/icons/user-23/512/User_Yuppie_2.png);
+  background-image: url(images/User_Yuppie_2.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left center;

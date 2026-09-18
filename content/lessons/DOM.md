@@ -11,7 +11,7 @@
 {{p6}}
 
 @@@@ 1
-![](images/users-see-pixels.svg)
+![](slogans/users-see-pixels.svg)
 @@@@
 
 {{p7}}
@@ -55,7 +55,7 @@ _________________________________________
 
 @@@@
 {{p31}}
-![](images/object-constructor.svg)
+![](slogans/object-constructor.svg)
 @@@@
 
 ☼☼☼ {{p32}} ☼☼☼
@@ -138,7 +138,7 @@ Object
 
 @@@@
 {{p41}}
-![](images/object-adam.svg)
+![](slogans/object-adam.svg)
 @@@@
 
 {{p42}}

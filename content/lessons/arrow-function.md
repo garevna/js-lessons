@@ -131,7 +131,7 @@ ____________________________________________________
 
 @@@@
 {{p18}}
-![](images/arrow-funcs-neutered-kitties.svg)
+![](slogans/arrow-funcs-neutered-kitties.svg)
 @@@@
 
 ☼☼☼ {{p19}} ☼☼☼

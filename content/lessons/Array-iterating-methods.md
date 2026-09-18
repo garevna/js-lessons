@@ -281,7 +281,7 @@ const attrs = [
     innerText: 'Welcome, students!'
   },
   {
-    src: 'https://pictogrammers.com/images/libraries/mdi.svg',
+    src: 'icons/mdi.svg',
     width: 64
   }
 ]

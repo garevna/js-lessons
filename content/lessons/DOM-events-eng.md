@@ -148,10 +148,10 @@ ______________________________________________________
 
 ~~~js
 var pictures = [
-  'https://www.insidescience.org/sites/default/files/5_heic1808a_crop.jpg',
-  'https://gobelmont.ca/Portals/0/xBlog/uploads/2017/9/6/dancing-156041_960_720.png',
-  'https://i2-prod.mirror.co.uk/incoming/article11840943.ece/ALTERNATES/s615/PAY-MATING-BUGS.jpg',
-  'https://i.redd.it/otqqqga0ip211.jpg'
+  'images/hong-kong-1990268__340.jpg',
+  'images/dancing-cat.gif',
+  'images/PAY-MATING-BUGS.avif',
+  'images/prague-3010407__340.jpg'
 ]
 
 var divs = pictures.map(picture => {
@@ -380,7 +380,7 @@ _____________________________
 var btn = document.createElement('button')
 btn.innerText = 'OK'
 btn.style = `
-  background-image: url(https://cdn2.iconfinder.com/data/icons/user-23/512/User_Yuppie_2.png);
+  background-image: url(images/User_Yuppie_2.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left center;

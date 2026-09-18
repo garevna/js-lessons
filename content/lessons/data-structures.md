@@ -28,7 +28,7 @@ var students = group
 {{p16}}
 
 @@@@
-![](images/reference-is-a-lockpick.svg)
+![](slogans/reference-is-a-lockpick.svg)
 {{p17}}
 @@@@
 

@@ -1,132 +1,132 @@
 {
   "p1": {
     "ru": "Каррирование",
-    "eng": "",
-    "ua": ""
+    "eng": "Carrying",
+    "ua": "Каррірування"
   },
   "p2": {
     "ru": "функциональщина",
-    "eng": "",
-    "ua": ""
+    "eng": "FP Goodies",
+    "ua": "функціоналізм"
   },
   "p3": {
-    "ru": "Каррирование (currying) — это процесс преобразования функции, которая принимает несколько аргументов, в последовательность функций, каждая из которых принимает один аргумент.",
-    "eng": "",
-    "ua": ""
+    "ru": "Каррирование (Currying) имеет одинаковую фундаментальную математическую суть как в чистых функциональных языках (например, Haskell), так и в JavaScript: это преобразование функции, принимающей несколько аргументов, в последовательность функций, каждая из которых принимает ровно один аргумент. В Haskell каррирование встроено в саму природу языка. Функций с несколькими аргументами технически вообще не существует. В JavaScript функции по умолчанию принимают список аргументов. Чтобы сделать функцию каррируемой, её нужно специально спроектировать с помощью замыканий (closures).",
+    "eng": "Currying has the same fundamental mathematical essence in both pure functional languages (such as Haskell) and JavaScript: it is the transformation of a function that takes several arguments into a sequence of functions, each of which takes exactly one argument. In Haskell, currying is built into the very nature of the language. Functions with multiple arguments do not technically exist at all. In JavaScript, functions take a list of arguments by default. To make a function currying-capable, it must be specifically designed using closures.",
+    "ua": "Каррування (Currying) має однакову фундаментальну математичну суть як у чистокровних функціональних мовах (наприклад, Haskell), так і в JavaScript: це перетворення функції, яка приймає кілька аргументів, на послідовність функцій, кожна з яких приймає рівно один аргумент. У Haskell каррування вбудоване в саму природу мови. Функцій із кількома аргументами технічно взагалі не існує. У JavaScript функції за замовчуванням приймають список аргументів. Щоб зробити функцію каррованою, її потрібно спеціально спроектувати через замикання (closures)."
   },
   "p4": {
-    "ru": "Для каррирования используется тот же декоратор **bind**, который мы использовали для создания экземпляров функций со статическим контекстом вызова.",
-    "eng": "",
-    "ua": ""
+    "ru": "Для каррирования используется тот же декоратор **~bind~**, который мы применяли для создания экземпляров функций со статическим контекстом вызова.\nПроблема **~bind(context, ...args)~**: этот метод был создан в JS в первую очередь для привязки контекста (ООП-задача), а частичное применение аргументов (каррирование) добавили туда как «попутную фичу».\nИспользование ~bind~ с объектом вместо ~null~ действительно нарушает чистую концепцию, поскольку превращает функцию в 'метод объекта', добавляя скрытый побочный эффект в виде мутируемого состояния (~this~).",
+    "eng": "For currying, we use the same **~bind~** decorator that we used to create function instances with a static call context.\nThe problem with **~bind(context, ...args)~**: This method was created in JavaScript primarily for context binding (an OOP task), whilst partial argument application (currying) was added as a ‘side feature’.\nUsing ~bind~ with an object instead of ~null~ does indeed undermine the pure concept, as it turns the function into an 'object method', introducing a hidden side effect in the form of mutable state (~this~).",
+    "ua": "Для каррірування використовується той самий декоратор **~bind~**, який ми застосовували для створення екземплярів функцій зі статичним контекстом виклику.\nПроблема **~bind(context, ...args)~**: Цей метод був створений в JS насамперед для прив'язки контексту (ООП-задача), а часткове застосування аргументів (каррування) додали туди як 'попутну фічу'.\nВикористання ~bind~ з об'єктом замість ~null~ дійсно руйнує чисту концепцію, оскільки перетворює функцію на 'метод об'єкта', додаючи прихований побічний ефект у вигляді мутабельного стану (~this~)."
   },
   "p5": {
-    "ru": "Поэтому первым аргументом по-прежнему передается ссылка на объект, который будет статическим контекстом вызова нового экземпляра функции.",
-    "eng": "",
-    "ua": ""
+    "ru": "Поэтому первым аргументом, как и раньше, передаётся ссылка на объект, который будет статическим контекстом вызова нового экземпляра функции.\n**~bind(null, ...)~** — это отличный способ искусственно «укротить» ООП, явно отказавшись от контекста и вернув функцию в русло чистоты.",
+    "eng": "Therefore, as before, the first argument passes a reference to the object that will serve as the static context for calling a new instance of the function.\n**~bind(null, ...)~** is a brilliant way to artificially ‘tame’ OOP, explicitly abandoning context and returning the function to the path of purity.",
+    "ua": "Тому першим аргументом, як і раніше, передається посилання на об’єкт, який буде статичним контекстом виклику нового екземпляра функції.\n**~bind(null, ...)~** - це чудовий спосіб штучно 'приборкати' ООП, явно відмовившись від контексту та повернувши функцію в русло чистоти."
   },
   "p6": {
-    "ru": "Однако теперь мы можем передать дополнительные аргументы, которые станут статическими аргументами нового экземпляра функции.",
-    "eng": "",
-    "ua": ""
+    "ru": "Теперь мы можем передать дополнительные аргументы, которые станут статическими аргументами нового экземпляра функции.",
+    "eng": "We can now pass additional arguments, which will become static arguments for the new instance of the function.",
+    "ua": "Тепер ми можемо передати додаткові аргументи, які стануть статичними аргументами нового екземпляра функції."
   },
   "p7": {
     "ru": "Как видите, мы вызвали функции **_alpha_**, **_betta_** и **_delta_** без аргументов, но каждая функция вывела в консоль содержимое своего объекта **arguments**,",
-    "eng": "",
-    "ua": ""
+    "eng": "As you can see, we called the functions **_alpha_**, **_betta_** and **_delta_** without any arguments, but each function printed the contents of its **arguments** object to the console",
+    "ua": "Як бачите, ми викликали функції **_alpha_**, **_betta_** та **_delta_** без аргументів, але кожна функція вивела в консоль вміст свого об’єкта **arguments**,"
   },
   "p8": {
     "ru": "и это содержимое соотвествует тому, что было передано декоратору **bind** вторым аргументом при создании экземпляра функции.",
-    "eng": "",
-    "ua": ""
+    "eng": "and this content corresponds to what was passed to the **bind** decorator as the second argument when the function instance was created.",
+    "ua": "і цей вміст відповідає тому, що було передано декоратору **bind** другим аргументом під час створення екземпляра функції."
   },
   "p9": {
-    "ru": "Т.е. когда создавался экземпляр **_alpha_**, вторым аргументом методу **bind** была передана строка \"alpha\".",
-    "eng": "",
-    "ua": ""
+    "ru": "Т.е. когда создавался экземпляр **_alpha_**, вторым аргументом методу **bind** была передана строка 'alpha'.",
+    "eng": "In other words, when the instance **_alpha_** was created, the string 'alpha' was passed as the second argument to the **bind** method.",
+    "ua": "Тобто коли створювався екземпляр **_alpha_**, другим аргументом методу **bind** було передано рядок «alpha»."
   },
   "p10": {
     "ru": "Эта строка стала статическим первым аргументом функции **_alpha_**.",
-    "eng": "",
-    "ua": ""
+    "eng": "This line has become the first static argument of the **_alpha_** function.",
+    "ua": "Цей рядок став статичним першим аргументом функції **_alpha_**."
   },
   "p11": {
     "ru": "Если мы теперь вызовем функцию **_alpha_** с дополнительными аргументами:",
-    "eng": "",
-    "ua": ""
+    "eng": "If we now call the **_alpha_** function with additional arguments:",
+    "ua": "Якщо ми тепер викличемо функцію **_alpha_** з додатковими аргументами:"
   },
   "p12": {
     "ru": "то мы увидим в консоли:",
-    "eng": "",
-    "ua": ""
+    "eng": "we will see the following in the console:",
+    "ua": "то ми побачимо в консолі:"
   },
   "p13": {
     "ru": "При создании экземпляра **_betta_** мы применили декоратор **bind** к экземпляру **_alpha_**, у которого уже есть один статический аргумент,",
-    "eng": "",
-    "ua": ""
+    "eng": "When creating an instance of **_betta_**, we applied the **bind** decorator to the **_alpha_** instance, which already has one static argument",
+    "ua": "Під час створення екземпляра **_betta_** ми застосували декоратор **bind** до екземпляра **_alpha_**, у якого вже є один статичний аргумент,"
   },
   "p14": {
-    "ru": "и мы добавили экземпляру **_betta_** еще один статический аргумент - строку \"betta\"",
-    "eng": "",
-    "ua": ""
+    "ru": "и мы добавили экземпляру **_betta_** еще один статический аргумент - строку 'betta'",
+    "eng": "and we added another static argument to the **_betta_** instance – the string 'betta'.",
+    "ua": "і ми додали екземпляру **_betta_** ще один статичний аргумент — рядок 'betta'."
   },
   "p15": {
     "ru": "Теперь если вызвать экземпляр **_betta_** с любыми дополнительными аргументами:",
-    "eng": "",
-    "ua": ""
+    "eng": "Now, if you call an instance of **_betta_** with any additional arguments:",
+    "ua": "Тепер, якщо викликати екземпляр **_betta_** з будь-якими додатковими аргументами:"
   },
   "p16": {
     "ru": "то мы увидим в консоли:",
-    "eng": "",
-    "ua": ""
+    "eng": "we will see the following in the console:",
+    "ua": "то ми побачимо в консолі:"
   },
   "p17": {
     "ru": "т.е. у экземпляра **_betta_** уже два статических аргумента",
-    "eng": "",
-    "ua": ""
+    "eng": "i.e. the **_betta_** instance already has two static arguments",
+    "ua": "тобто екземпляр **_betta_** вже має два статичні аргументи"
   },
   "p18": {
     "ru": "ну, и так далее...",
-    "eng": "",
-    "ua": ""
+    "eng": "and so on...",
+    "ua": "ну, і так далі..."
   },
   "p19": {
-    "ru": "При вызове функции **_currying_** ей был передан всего 1 аргумент - строка \"Google\",",
-    "eng": "",
-    "ua": ""
+    "ru": "При вызове функции **_currying_** ей был передан всего 1 аргумент - строка 'Google',",
+    "eng": "When the **_currying_** function was called, only one argument was passed to it – the string 'Google'",
+    "ua": "Під час виклику функції **_currying_** їй було передано лише 1 аргумент — рядок 'Google',"
   },
   "p20": {
-    "ru": "поэтому она вернула новый экземпляр функции со статическим аргументом \"Google\",",
-    "eng": "",
-    "ua": ""
+    "ru": "поэтому она вернула новый экземпляр функции со статическим аргументом 'Google',",
+    "eng": "so it returned a new instance of the function with the static argument 'Google'",
+    "ua": "тому вона повернула новий екземпляр функції зі статичним аргументом 'Google',"
   },
   "p21": {
     "ru": "ссылку на который мы поместили в переменную **_curried_**",
-    "eng": "",
-    "ua": ""
+    "eng": "a reference to which we stored in the variable **_curried_**",
+    "ua": "посилання на який ми помістили у змінну **_curried_**"
   },
   "p22": {
     "ru": "Если вызвать новый экземпляр **_curried_** без аргументов, то она вернет ⟦f0⟧:",
-    "eng": "",
-    "ua": ""
+    "eng": "If we call the new instance **_curried_** without any arguments, it will return ⟦f0⟧:",
+    "ua": "Якщо викликати новий екземпляр **_curried_** без аргументів, то він поверне ⟦f0⟧:"
   },
   "p23": {
-    "ru": "Если же при вызове экземпляра **_curried_** мы передадим ей недостающий второй аргумент, например, строку \"Mozilla\", то в консоль будут выведены оба аргумента:",
-    "eng": "",
-    "ua": ""
+    "ru": "Если же при вызове экземпляра **_curried_** мы передадим ей недостающий второй аргумент, например, строку 'Mozilla', то в консоль будут выведены оба аргумента:",
+    "eng": "However, if, when calling the **_curried_** instance, we pass it the missing second argument – for example, the string “Mozilla” – then both arguments will be printed to the console:",
+    "ua": "Якщо ж під час виклику екземпляра **_curried_** ми передамо їй відсутній другий аргумент, наприклад, рядок “Mozilla”, то в консоль будуть виведені обидва аргументи:"
   },
   "p24": {
     "ru": "Воспользуемся приемом **_Currying_** для создания функций с заданным контекстом и фиксированным значением первого аргумента",
-    "eng": "",
-    "ua": ""
+    "eng": "Let’s use the **_Currying_** technique to create functions with a specified context and a fixed value for the first argument",
+    "ua": "Скористаємося прийомом **_Currying_** для створення функцій із заданим контекстом і фіксованим значенням першого аргументу"
   },
   "p25": {
     "ru": "Тест на вынос мозга",
-    "eng": "",
-    "ua": ""
+    "eng": "A brain-teaser",
+    "ua": "Тест на винесення мозку"
   },
   "p26": {
     "ru": "![ico-20 question] Что произойдет в результате запуска кода:",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-20 question] What will happen when the following code is run:",
+    "ua": "![ico-20 question] Що відбудеться в результаті запуску коду:"
   }
 }

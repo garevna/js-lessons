@@ -684,7 +684,7 @@ _______________________________________
 
 **~this~** is a reference to the context in which the function was called.
 
-![](images/reference-is-a-lockpick.svg)
+![](slogans/reference-is-a-lockpick.svg)
 
 Using the keyword **~this~**, a function (or method) can access the properties of the object in whose context the function was called.
 
@@ -788,7 +788,7 @@ In the console, we’ll see the following output:
 ~~~
 
 ![ico-25 warn] Note the property **_~prototype~_**, which is **only present in functions**.
-![](images/function-balls.svg)
+![](slogans/function-balls.svg)
 ![ico-20 pin] The **_~prototype~_** property of functions is an object.
 ![ico-20 pin] This object has a **~constructor~** property.
 ![ico-20 pin] The property **~constructor~** is a reference to the function **_~sample()~_** itself.

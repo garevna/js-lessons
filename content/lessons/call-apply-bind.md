@@ -165,7 +165,7 @@ ____________________________________
 ## ![ico-25 icon] {{common.c19}}
 
 @@@@
-![](images/funcs-call-girls-ukr.svg)
+![](slogans/funcs-call-girls.svg)
 
 {{p20}}
 @@@@

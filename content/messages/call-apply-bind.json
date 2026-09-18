@@ -1,198 +1,198 @@
 {
   "p1": {
     "ru": "Изменение контекста",
-    "eng": "",
-    "ua": ""
+    "eng": "Changing the context",
+    "ua": "Зміна контексту"
   },
   "p2": {
     "ru": "Конструктор Function",
-    "eng": "",
-    "ua": ""
+    "eng": "The Function constructor",
+    "ua": "Конструктор Function"
   },
   "p3": {
     "ru": "Функции можно создавать путем явного вызова конструктора **Function** с ключевым словом **_⟦f0⟧_**",
-    "eng": "",
-    "ua": ""
+    "eng": "Functions can be created by explicitly calling the **Function** constructor with the keyword **_⟦f0⟧_**",
+    "ua": "Функції можна створювати шляхом явного виклику конструктора **Function** із ключовим словом **_⟦f0⟧_**"
   },
   "p4": {
     "ru": "![ico-20 warn] Однако следует помнить, что созданные таким образом функции будут анонимными",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-20 warn] However, it should be noted that functions created in this way will be anonymous",
+    "ua": "![ico-20 warn] Однак слід пам’ятати, що функції, створені таким чином, будуть анонімними"
   },
   "p5": {
     "ru": "^^В результате в консоль будут выведены 5, 8^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^As a result, 5 and 8 will be printed to the console^^",
+    "ua": "^^У результаті в консолі будуть виведені 5, 8^^"
   },
   "p6": {
     "ru": "^^затем - глобальный объект ⟦f1⟧^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^followed by the global object ⟦f1⟧^^",
+    "ua": "^^потім — глобальний об’єкт ⟦f1⟧^^"
   },
   "p7": {
     "ru": "^^затем - объект ⟦f2⟧ функции, содержащий 5, 8, 11, ⟦f3⟧^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^followed by the ⟦f2⟧ function object, containing 5, 8, 11, ⟦f3⟧^^",
+    "ua": "^^потім — об’єкт ⟦f2⟧ функції, що містить 5, 8, 11, ⟦f3⟧^^"
   },
   "p8": {
     "ru": "Наследование",
-    "eng": "",
-    "ua": ""
+    "eng": "Inheritance",
+    "ua": "Спадкування"
   },
   "p9": {
     "ru": "Итак, любая функция в JS является _экземпляром_ класса **Function**",
-    "eng": "",
-    "ua": ""
+    "eng": "So, every function in JS is an _instance_ of the **Function** class",
+    "ua": "Отже, будь-яка функція в JS є _екземпляром_ класу **Function**"
   },
   "p10": {
     "ru": "Отсюда следует:",
-    "eng": "",
-    "ua": ""
+    "eng": "It follows that:",
+    "ua": "Звідси випливає:"
   },
   "p11": {
     "ru": "![ico-20 pin] любая функция является объектом",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-20 pin] every function is an object",
+    "ua": "![ico-20 pin] будь-яка функція є об’єктом"
   },
   "p12": {
     "ru": "![ico-20 pin] все функции наследуют свойства и методы объекта **_prototype_** конструктора **Function**",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-20 pin] all functions inherit properties and methods from the **_prototype_** object of the **Function** constructor",
+    "ua": "![ico-20 pin] усі функції успадковують властивості та методи об’єкта **_prototype_** конструктора **Function**"
   },
   "p13": {
     "ru": "![ico-20 warn] Свойство **⟦f4⟧** любой функции является ссылкой на свойство **_prototype_** конструктора **Function**",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-20 warn] The **⟦f4⟧** property of any function is a reference to the **_prototype_** property of the **Function** constructor",
+    "ua": "![ico-20 warn] Властивість **⟦f4⟧** будь-якої функції є посиланням на властивість **_prototype_** конструктора **Function**"
   },
   "p14": {
     "ru": "![ico-20 pin] Поскольку конструктор **Function** также является функцией, его свойство **_⟦f5⟧_** тоже является ссылкой на собственное свойство **_⟦f6⟧_**",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-20 pin] Since the **Function** constructor is also a function, its **_⟦f5⟧_** property is likewise a reference to its own **_⟦f6⟧_** property",
+    "ua": "![ico-20 pin] Оскільки конструктор **Function** також є функцією, його властивість **_⟦f5⟧_** теж є посиланням на власну властивість **_⟦f6⟧_**"
   },
   "p15": {
     "ru": "Функция в JS:",
-    "eng": "",
-    "ua": ""
+    "eng": "A function in JS:",
+    "ua": "Функція в JS:"
   },
   "p16": {
     "ru": "![ico-20 pin] всегда является методом (т.е. свойством какого-либо объекта)",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-20 pin] is always a method (i.e. a property of some object)",
+    "ua": "![ico-20 pin] завжди є методом (тобто властивістю якогось об’єкта)"
   },
   "p17": {
     "ru": "![ico-20 pin] всегда вызывается в контексте какого-либо объекта",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-20 pin] is always called within the context of some object",
+    "ua": "![ico-20 pin] завжди викликається в контексті якогось об’єкта"
   },
   "p18": {
     "ru": "^^Покажем, что функции, объявленные в глобальной области видимости, по умолчанию являются свойствами глобального объекта ⟦f1⟧^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^Let’s show that functions declared in the global scope are, by default, properties of the global object ⟦f1⟧^^",
+    "ua": "^^Покажемо, що функції, оголошені в глобальній області видимості, за замовчуванням є властивостями глобального об’єкта ⟦f1⟧^^"
   },
   "p19": {
     "ru": "^^Все функции, имена которых перечислены в массиве **_funcs_**, будут вызваны и в консоль будет выведено^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^All functions whose names are listed in the array **_funcs_** will be called and the output will be displayed in the console^^",
+    "ua": "^^Усі функції, імена яких перелічені в масиві **_funcs_**, будуть викликані, і в консолі буде виведено^^"
   },
   "p20": {
     "ru": "Как мы уже знаем, каждая функция в момент вызова получает ссылку на контекст вызова **_⟦f7⟧_**.<br><br>Если контекст не указан явно при вызове, то по умолчанию подразумевается глобальный объект (⟦f1⟧).",
-    "eng": "",
-    "ua": ""
+    "eng": "As we already know, at the moment of invocation, each function receives a reference to the call context **_⟦f7⟧_**.<br><br>If the context is not explicitly specified during the call, the global object (⟦f1⟧) is implied by default.",
+    "ua": "Як ми вже знаємо, кожна функція в момент виклику отримує посилання на контекст виклику **_⟦f7⟧_**.<br><br>Якщо контекст не вказано явно під час виклику, то за замовчуванням мається на увазі глобальний об’єкт (⟦f1⟧)."
   },
   "p21": {
     "ru": "Явное указание контекста вызова происходит при обращении к методам какого-либо объекта:",
-    "eng": "",
-    "ua": ""
+    "eng": "Explicit context specification occurs when accessing methods of a particular object:",
+    "ua": "Явне вказування контексту виклику відбувається при зверненні до методів якого-небудь об’єкта:"
   },
   "p22": {
     "ru": "^^Здесь перед именем метода **_say()_** явным образом указан контекст вызова **obj**,^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^Here, the call context **obj** is explicitly specified before the method name **_say()_**^^",
+    "ua": "^^Тут перед ім’ям методу **_say()_** явним чином вказан контекст виклику **obj**,^^"
   },
   "p23": {
     "ru": "^^поэтому _**⟦f7⟧**_ внутри метода **_say()_** является ссылкой на **obj**^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^Therefore, _**⟦f7⟧**_ inside the **_say()_** method is a reference to **obj**^^",
+    "ua": "^^тому _**⟦f7⟧**_ всередині методу **_say()_** є посиланням на **obj**^^"
   },
   "p24": {
     "ru": "Разберитесь самостоятельно с контекстом вызова метода ⟦f8⟧ функции ⟦f8⟧:",
-    "eng": "",
-    "ua": ""
+    "eng": "Work out for yourself the context of the method call ⟦f8⟧ within the function ⟦f8⟧:",
+    "ua": "Розберіться самостійно з контекстом виклику методу ⟦f8⟧ функції ⟦f8⟧:"
   },
   "p25": {
     "ru": "Изменение контекста",
-    "eng": "",
-    "ua": ""
+    "eng": "Changing the context",
+    "ua": "Зміна контексту"
   },
   "p26": {
     "ru": "Заглянув в свойство **_⟦f6⟧_** конструктора **Function** или в свойство **_⟦f4⟧_** экземпляра функции,",
-    "eng": "",
-    "ua": ""
+    "eng": "By looking at the **_⟦f6⟧_** property of the **Function** constructor or the **_⟦f4⟧_** property of a function instance",
+    "ua": "Заглянувши у властивість **_⟦f6⟧_** конструктора **Function** або у властивість **_⟦f4⟧_** екземпляра функції,"
   },
   "p27": {
     "ru": "можно обнаружить три метода, которые наследуют все функции от своего создателя:",
-    "eng": "",
-    "ua": ""
+    "eng": "you will find three methods that all functions inherit from their creator:",
+    "ua": "можна виявити три методи, які успадковують усі функції від свого творця:"
   },
   "p28": {
     "ru": "Эти методы обеспечивают возможность гибко манипулировать контекстом вызова функции",
-    "eng": "",
-    "ua": ""
+    "eng": "These methods provide the ability to flexibly manipulate the context of a function call",
+    "ua": "Ці методи забезпечують можливість гнучко маніпулювати контекстом виклику функції"
   },
   "p29": {
     "ru": "Методы **⟦f9⟧** и **⟦f10⟧** позволяют одноразово вызвать функцию в заданном контексте",
-    "eng": "",
-    "ua": ""
+    "eng": "The methods **⟦f9⟧** and **⟦f10⟧** allow a function to be called once in a given context",
+    "ua": "Методи **⟦f9⟧** та **⟦f10⟧** дозволяють одноразово викликати функцію у заданому контексті"
   },
   "p30": {
     "ru": "Они отличаются только способом передачи аргументов",
-    "eng": "",
-    "ua": ""
+    "eng": "They differ only in the way arguments are passed",
+    "ua": "Вони відрізняються лише способом передачі аргументів"
   },
   "p31": {
-    "ru": "Метод **⟦f11⟧** создает новый экземпляр функции с жестко установленным контекстом вызова, который невозможно изменить или \"потерять\"",
-    "eng": "",
-    "ua": ""
+    "ru": "Метод **⟦f11⟧** создает новый экземпляр функции с жестко установленным контекстом вызова, который невозможно изменить или 'потерять' при повторных вызовах",
+    "eng": "The method **⟦f11⟧** creates a new instance of the function with a fixed call context, which cannot be changed or ‘lost’ during subsequent calls",
+    "ua": "Метод **⟦f11⟧** створює новий екземпляр функції з жорстко встановленим контекстом виклику, який неможливо змінити або «втратити» під час повторних викликів"
   },
   "p32": {
     "ru": "Кроме этого, **⟦f11⟧** позволяет так же жестко привязать аргументы к новому экземпляру: фактически, указанные аргументы станут постоянными для нового экземпляра функции",
-    "eng": "",
-    "ua": ""
+    "eng": "Furthermore, **⟦f11⟧** also allows arguments to be rigidly bound to the new instance: in effect, the specified arguments will become constant for the new instance of the function",
+    "ua": "Крім цього, **⟦f11⟧** дозволяє так само жорстко прив’язати аргументи до нового екземпляра: фактично, зазначені аргументи стануть постійними для нового екземпляра функції"
   },
   "p33": {
     "ru": "Первым обязательным аргументом метода является ссылка на объект, в контексте которого будет вызвана функция",
-    "eng": "",
-    "ua": ""
+    "eng": "The first mandatory argument of the method is a reference to the object in whose context the function will be called",
+    "ua": "Першим обов’язковим аргументом методу є посилання на об’єкт, у контексті якого буде викликана функція"
   },
   "p34": {
     "ru": "Далее может следовать перечень аргументов:",
-    "eng": "",
-    "ua": ""
+    "eng": "This may be followed by a list of arguments:",
+    "ua": "Далі може йти перелік аргументів:"
   },
   "p35": {
     "ru": "Метод **_apply()_** отличается от метода **_call()_** только способом передачи аргументов - теперь их нужно передавать массивом:",
-    "eng": "",
-    "ua": ""
+    "eng": "The **_apply()_** method differs from the **_call()_** method only in the way arguments are passed – they must now be passed as an array:",
+    "ua": "Метод **_apply()_** відрізняється від методу **_call()_** лише способом передачі аргументів — тепер їх потрібно передавати масивом:"
   },
   "p36": {
     "ru": "Передача массива аргументов вместо перечня их значений обеспечивает определенную гибкость,",
-    "eng": "",
-    "ua": ""
+    "eng": "Passing an array of arguments rather than a list of their values provides a certain degree of flexibility",
+    "ua": "Передача масиву аргументів замість переліку їхніх значень забезпечує певну гнучкість,"
   },
   "p37": {
     "ru": "поскольку массивы передаются по ссылке, и содержимое массива может динамически обновляться от вызова к вызову",
-    "eng": "",
-    "ua": ""
+    "eng": "as arrays are passed by reference, and the contents of the array may be dynamically updated from one call to the next",
+    "ua": "оскільки масиви передаються за посиланням, і вміст масиву може динамічно оновлюватися від виклику до виклику"
   },
   "p38": {
     "ru": "^^Вызовы функции **_func_** логируются в массиве **args**^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^Calls to the **_func_** function are logged in the **args** array^^",
+    "ua": "^^Виклики функції **_func_** реєструються в масиві **args**^^"
   },
   "p39": {
     "ru": "^^При каждом вызове функция **_func_** получает в аргументах полный отчет о том, сколько раз она была вызвана до этого, и с каким контекстом^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^With each call, the **_func_** function receives, as arguments, a complete record of how many times it has been called previously and in what context^^",
+    "ua": "^^При кожному виклику функція **_func_** отримує в аргументах повний звіт про те, скільки разів вона була викликана до цього, і з яким контекстом^^"
   },
   "p40": {
     "ru": "^^Поменяйте местами вызовы функций, или добавьте повторный вызов любой из функций, и посмотрите результат^^",

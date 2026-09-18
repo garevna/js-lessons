@@ -1,87 +1,87 @@
 {
   "p1": {
     "ru": "![ico-20 warn] Синхронизация асинхронных процессов приводит к увеличению суммарного времени их выполнения",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-20 warn] Synchronising asynchronous processes increases their total execution time",
+    "ua": "![ico-20 warn] Синхронізація асинхронних процесів призводить до збільшення загального часу їх виконання"
   },
   "p2": {
     "ru": "^^Предположим, есть две функции, возвращающие промис:^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^Let’s assume there are two functions that return a Promise:^^",
+    "ua": "^^Припустимо, є дві функції, які повертають промис:^^"
   },
   "p3": {
     "ru": "^^Каждый вызов длится 1 секунду^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^Each call takes 1 second^^",
+    "ua": "^^Кожен виклик триває 1 секунду^^"
   },
   "p4": {
     "ru": "^^Если мы будем использовать асинхронную функцию для последовательного вызова **getNames** и **getPosts**, то суммарная продолжительность выполнения этих двух асинхронных операций составит не менее 2 сек^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^If we use an asynchronous function to call **getNames** and **getPosts** sequentially, the total execution time for these two asynchronous operations will be at least 2 seconds^^",
+    "ua": "^^Якщо ми будемо використовувати асинхронну функцію для послідовного виклику **getNames** та **getPosts**, то сумарна тривалість виконання цих двох асинхронних операцій становитиме не менше 2 секунд^^"
   },
   "p5": {
     "ru": "^^Что плохо?^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^What’s the problem?^^",
+    "ua": "^^Що в цьому поганого?^^"
   },
   "p6": {
     "ru": "^^То, что несвязанные между собой асинхронные процессы выстраиваются в очередь^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^The fact that unrelated asynchronous processes are queued up^^",
+    "ua": "^^Те, що непов’язані між собою асинхронні процеси стають у чергу^^"
   },
   "p7": {
     "ru": "^^Посмотрим на альтернативный вариант^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^Let’s look at an alternative^^",
+    "ua": "^^Розглянемо альтернативний варіант^^"
   },
   "p8": {
     "ru": "^^Функция  **getData()**  возвращает промис^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^The **getData()** function returns a promise^^",
+    "ua": "^^Функція  **getData()**  повертає проміс^^"
   },
   "p9": {
     "ru": "^^Промис будет разрешен через 1 сек^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^The promise will resolve after 1 second^^",
+    "ua": "^^Проміс буде вирішений через 1 секунду^^"
   },
   "p10": {
     "ru": "^^Функция  **getAllData()** формирует  массив промисов  **promises** и запускает сразу все асинхронные процессы с помощью метода  **_Promise.all ()_**^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^The **getAllData()** function creates an array of promises **promises** and runs all the asynchronous processes at once using the **_Promise.all()_** method^^",
+    "ua": "^^Функція  **getAllData()** формує  масив промісів  **promises** і запускає одразу всі асинхронні процеси за допомогою методу  **_Promise.all ()_**^^"
   },
   "p11": {
     "ru": "^^Что происходит в этом случае:^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^What happens in this case:^^",
+    "ua": "^^Що відбувається в цьому випадку:^^"
   },
   "p12": {
     "ru": "^^Мы не выстраиваем очередь, а запускаем сразу все асинхронные процессы параллельно^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^We do not queue the operations, but run all asynchronous processes in parallel immediately^^",
+    "ua": "^^Ми не формуємо чергу, а запускаємо відразу всі асинхронні процеси паралельно^^"
   },
   "p13": {
     "ru": "^^Однако упорядоченность возвращаемых данных контролирует **_Promise.all ()_**^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^However, the order of the returned data is controlled by **_Promise.all ()_**^^",
+    "ua": "^^Однак впорядкованість даних, що повертаються, контролює **_Promise.all ()_**^^"
   },
   "p14": {
     "ru": "^^В возвращаемом массиве данные будут упорядочены в той последовательности, в которой упорядочены промисы в массиве промисов^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^In the returned array, the data will be ordered in the same sequence as the promises in the array of promises^^",
+    "ua": "^^У масиві, що повертається, дані будуть впорядковані в тій послідовності, в якій впорядковані проміси в масиві промісів^^"
   },
   "p15": {
     "ru": "^^В этом случае **_Promise.all ()_** является удобной альтернативой асинхронной функции^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^In this case, **_Promise.all()_** is a convenient alternative to an asynchronous function^^",
+    "ua": "^^У цьому випадку **_Promise.all ()_** є зручною альтернативою асинхронній функції^^"
   },
   "p16": {
     "ru": "^^Общая продолжительность операции не будет суммой продолжительности всех асинхронных процессов^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^The total duration of the operation will not be the sum of the durations of all the asynchronous processes^^",
+    "ua": "^^Загальна тривалість операції не буде сумою тривалості всіх асинхронних процесів^^"
   },
   "p17": {
     "ru": "^^В этом примере вместо 3 секунд, которые выполнялся бы код в случае последовательной обработки запросов, общая продолжительность составила 1 сек^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^In this example, instead of the 3 seconds it would have taken for the code to run if the requests had been processed sequentially, the total duration was 1 second^^",
+    "ua": "^^У цьому прикладі замість 3 секунд, які б знадобилися на виконання коду в разі послідовної обробки запитів, загальна тривалість склала 1 секунду^^"
   }
 }
