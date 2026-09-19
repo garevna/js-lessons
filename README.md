@@ -72,6 +72,7 @@ Everything is edited under `content/`:
 | the "not translated yet" notice | `content/static/<lang>/not-translated.md` |
 | the offline notice | `content/static/offline.md` |
 | a new lesson | `content/drafts/<name>.md`, then extract it |
+| the look of anything | `src/styles/<name>.js` — see below |
 
 Then `npm run lessons`, or leave `npm run watch` running and it happens by
 itself.
@@ -632,6 +633,41 @@ localStorage.removeItem('service-worker')       // back to out of the way
 ```
 
 Nothing about this changes the deployed site.
+
+### Editing the styles
+
+The styles are not CSS files the browser fetches. They are template strings in
+`src/styles/*.js`, compiled into `public/index.js` and handed to each
+component — most of them render into a shadow root, which is why there is one
+file per component rather than one stylesheet:
+
+```
+src/styles/pageStyles.js       the lesson body
+src/styles/footerStyles.js     the footer
+src/styles/menuStyles.js       the navigation
+src/styles/codeOutputStyles.js the example blocks
+src/styles/errorAndWarning.js  console output in an example
+```
+
+`src/css/main.css` and `src/css/for-rainbow.css` are ordinary stylesheets,
+imported by `src/start.js` and bundled the same way.
+
+**So an edit here is invisible until webpack runs.** `npm run watch` watches
+`src/` as well as `content/` and rebuilds the bundles — about two seconds —
+so with the watcher running there is nothing to do but save. Without it:
+
+```
+npm run prod
+```
+
+Two things that look like styles and are not. `public/for-rainbow.css` is a
+stray copy that nothing loads — the file that counts is `src/css/`. And
+`public/index.js` is build output: editing it works until the next build.
+
+> Do not leave `npm run dev` behind. It watches `src/` too, but writes a
+> development bundle — the same code 170 KB larger — and `public/index.js` is
+> committed, so that bundle would go to the live site. `npm run watch` builds
+> in production mode for exactly this reason.
 
 ### Editing a page's markup
 

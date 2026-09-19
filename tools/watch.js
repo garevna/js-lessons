@@ -9,6 +9,12 @@
  * and the build has to run. Running it by hand after every edit is the part
  * that makes editing feel broken, so this watches and runs it.
  *
+ * The same is true of src/, which is where the styles are. They are not CSS
+ * files the browser fetches — they are template strings compiled into
+ * public/index.js — so a change to a colour is invisible until webpack runs.
+ * That is watched too, and rebuilt in production mode, because the bundles are
+ * committed and a development build must never reach the live site.
+ *
  * It only rebuilds the page that changed, which takes a few milliseconds, and
  * only writes when the output actually differs — so live-server reloads the
  * browser exactly when something changed and stays quiet otherwise.
@@ -31,6 +37,9 @@ const WATCHED = [
 ]
 
 const SINGLE = ['content/phrases.json']
+
+/** Styles, components and helpers — everything webpack compiles. */
+const SOURCE = 'src'
 
 // A save often arrives as several events — the editor writes, truncates, and
 // renames — so the work is deferred a moment and collapsed.
@@ -129,6 +138,43 @@ const schedule = (page) => {
   timer = setTimeout(run, PAUSE)
 }
 
+/**
+ * Styles and components are not content, and they are not files the browser
+ * reads: src/styles/*.js and src/css/*.css are compiled into public/index.js,
+ * so editing one changes nothing until webpack runs. Watching content/ alone
+ * made that look like the edit had no effect.
+ *
+ * It rebuilds in production mode on purpose. A development build is the same
+ * code but 170 KB larger, and public/index.js is committed — so a watch that
+ * left a development bundle behind would put it on the live site.
+ */
+let bundling = false
+let bundleAgain = false
+
+const bundle = () => {
+  if (bundling) { bundleAgain = true; return }
+  bundling = true
+
+  const started = Date.now()
+  try {
+    execFileSync('npm', ['run', 'prod'], { cwd: root, encoding: 'utf8', shell: true, stdio: 'pipe' })
+    console.log(`  ${stamp()}  src/ — бандлы пересобраны (${Date.now() - started} мс)`)
+  } catch (error) {
+    console.log(`  ${stamp()}  бандлы не собрались:`)
+    console.log(String(error.stdout || error.message).split('\n').filter(Boolean).slice(-6).map((l) => `            ${l}`).join('\n'))
+  }
+
+  bundling = false
+  if (bundleAgain) { bundleAgain = false; bundle() }
+}
+
+let bundleTimer = null
+
+const scheduleBundle = () => {
+  clearTimeout(bundleTimer)
+  bundleTimer = setTimeout(bundle, PAUSE)
+}
+
 /** content/messages/var.json and content/lessons/var.md are both "var". */
 const pageOf = (file) => {
   const name = path.basename(file).replace(/\.(md|json)$/, '')
@@ -155,8 +201,34 @@ for (const file of SINGLE) {
   fs.watch(full, { persistent: true }, () => schedule(null))
 }
 
+// Recursive watching is supported on Windows and macOS but not on Linux, so
+// fall back to one watch per folder there rather than silently watching only
+// the top level.
+const watchSource = () => {
+  const full = path.join(root, SOURCE)
+  if (!fs.existsSync(full)) return
+
+  const onChange = (event, file) => {
+    if (!file || /~$|\.tmp$|^\./.test(file)) return
+    scheduleBundle()
+  }
+
+  try {
+    fs.watch(full, { persistent: true, recursive: true }, onChange)
+  } catch {
+    const folders = [full]
+    for (const entry of fs.readdirSync(full, { withFileTypes: true })) {
+      if (entry.isDirectory()) folders.push(path.join(full, entry.name))
+    }
+    for (const folder of folders) fs.watch(folder, { persistent: true }, onChange)
+  }
+}
+
+watchSource()
+
 console.log(`
   Слежу за content/ — правь, страница пересоберётся сама.
+  И за src/ — стили и компоненты пересоберутся в бандлы (~2 с).
   Рядом, в другом терминале:  npm start   →  localhost:8181
 
   ⚠  Service worker кэширует уроки и на локалхосте. Если пересобранная
