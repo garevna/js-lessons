@@ -1,14 +1,14 @@
-## ![ico-25 icon] Размеры и прокрутка элемента⟪Element_dimensions_and_scrolling⟫
+## ![ico-25 icon] Element dimensions and scrolling⟪Element_dimensions_and_scrolling⟫
 
-| **Свойство**       |          | Значение (**в пикселях**) |
-| **~scrollHeight~**  | ^^readonly^^ | полная высота элемента        |
-| **~scrollWidth~**   | ^^readonly^^ | полная ширина элемента      |
-| **~clientHeight~**  | ^^readonly^^ | высота видимой части элемента (за вычетом полосы прокрутки)         |
-| **~clientWidth~**   | ^^readonly^^ | ширина видимой части элемента (за вычетом полосы прокрутки)        |
-| **~offsetHeight~**  | ^^readonly^^ | высота элемента (включая границы, отступы и горизонтальные полосы прокрутки). Если элемент скрыт (style.display: none), то возвращается 0. |
-| **~offsetWidth~**   | ^^readonly^^ | ширина видимой части элемента (с учетом полосы прокрутки)                |
-| **~scrollTop~**   | ^^readonly^^ | высота прокрученной части элемента (сверху)                   |
-| **~scrollLeft~**    | ^^readonly^^ | ширина прокрученной части элемента (слева)                    |
+| **Property**      |          | Value (**in pixels**)     |
+| **~scrollHeight~** | ^^readonly^^ | total height of the element   |
+| **~scrollWidth~**  | ^^readonly^^ | total width of the element  |
+| **~clientHeight~** | ^^readonly^^ | height of the visible part of the element (excluding the scrollbar) |
+| **~clientWidth~**  | ^^readonly^^ | width of the visible part of the element (excluding the scrollbar) |
+| **~offsetHeight~** | ^^readonly^^ | element height (including borders, padding and horizontal scrollbars). If the element is hidden (style.display: none), 0 is returned.      |
+| **~offsetWidth~**  | ^^readonly^^ | the width of the visible part of the element (including the scrollbar)   |
+| **~scrollTop~**  | ^^readonly^^ | the height of the scrolled part of the element (from the top) |
+| **~scrollLeft~**   | ^^readonly^^ | the width of the scrolled part of the element (from the left) |
 
 ### ![ico-20 icon] offsetHeight⟪offsetHeight⟫
 
@@ -20,13 +20,13 @@
 
 _____________________________________
 
-[:::Пример 1:::](https://garevna.github.io/js-samples/chanks/scroll.html)
+[:::Example 1:::](https://garevna.github.io/js-samples/chanks/scroll.html)
 
 _____________________________________
 
-### ![ico-30 hw] Упражнение⟪Exercise⟫
+### ![ico-30 hw] Exercise⟪Exercise⟫
 
-Выполните код в консоли
+Run the code in the console
 
 ~~~~js
 const section = document.body
@@ -122,14 +122,14 @@ __________________________________________________
 
 ## ![ico-20 icon] getBoundingClientRect()⟪getBoundingClientRect⟫
 
-Все элементы DOM наследуют от ~Element~
+All DOM elements inherit from ~Element~
 
-У объекта ~Element._prototype_~ есть метод **~getBoundingClientRect()~**
+The ~Element._prototype_~ object has a method **~getBoundingClientRect()~**
 
-Метод возвращает объект класса ~DOMRect~
+The method returns an object of class ~DOMRect~
 
-Координаты ~top~, ~left~, ~bottom~, ~right~ элемента определяются относительно верхнего левого угла viewport
-При прокрутке страницы эти координаты изменяются
+The coordinates ~top~, ~left~, ~bottom~, ~right~ of the element are defined relative to the top-left corner of the viewport
+When you scroll down the page, these coordinates change
 
 ~~~js
 document.querySelector('p')
@@ -149,4 +149,4 @@ document.querySelector('p')
   ► [[Prototype]]: DOMRect
 ~~~
 
-[:::Пример 2:::](https://garevna.github.io/js-samples/chanks/getBoundingClientRect.html)
+[:::Example 2:::](https://garevna.github.io/js-samples/chanks/getBoundingClientRect.html)
