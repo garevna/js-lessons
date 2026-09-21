@@ -440,5 +440,5 @@ export const versions = {
 	'icons.worker.js': '11e842feee51',
 	'main-menu.js': 'dfdff1c15f7d',
 	'donate.js': 'cb69848582a2',
-	'registerServiceWorker.js': 'fd907210f59f'
+	'registerServiceWorker.js': 'ed71cdcea03a'
 }

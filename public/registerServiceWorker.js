@@ -38,10 +38,36 @@ const registerServiceWorker = async () => {
     return
   }
 
+  // Whether anything was already in charge. On a first visit nothing is, and
+  // the worker taking over is not news — it is the normal course of events.
+  const hadController = !!navigator.serviceWorker.controller
+
+  // What a page shows is decided by the version map, and the map lives inside
+  // the worker that has the page. So a deploy reaches nobody until the new
+  // worker is in charge, and by then the page in front of the reader has
+  // already been assembled by the old one out of the old cache: bundles,
+  // lessons and all. That is why a change would appear only on the second
+  // reload, and why "it works locally, the site still shows the old one" was
+  // the recurring complaint.
+  //
+  // Reload once, when the new worker actually takes over. Once: a flag, and
+  // only where something was in charge to begin with.
+  let reloading = false
+
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!hadController || reloading) return
+    reloading = true
+    console.log('SW: new version took over — reloading once')
+    location.reload()
+  })
+
   try {
     const registration = await navigator.serviceWorker.register('service-worker.js', { scope: './' })
     const status = Object.keys(messages).find(key => registration[key])
     status && console.log('SW STATUS:', messages[status])
+
+    // Ask now rather than waiting for the next navigation.
+    registration.update().catch(() => {})
   } catch (error) {
     console.error(`ServiceWorker registration failed with ${error}`)
   }
