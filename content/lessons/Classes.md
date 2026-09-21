@@ -313,8 +313,8 @@ const Sample = class Canvas {
   }
 
   resizeCanvas (event) {
-    this.canvas.width = window.innerWidth - 30
-    this.canvas.height = window.innerHeight - 20
+    this.canvas.width = window.innerWidth - 64
+    this.canvas.height = window.innerHeight - 64
   }
 
   drawLine (points) {
@@ -343,17 +343,15 @@ ________________________________________________________
 
 ## ![ico-25 icon] get & set
 
-{{p34}}
-
 {{p35}}
-
 {{p36}}
-
-{{p37}}
-
 {{p38}}
 
+•••• none
+{{p34}}
+{{p37}}
 {{p39}}
+••••
 
 {{p40}}
 
@@ -1220,16 +1218,18 @@ _______________________________________
 {{p184}}
 {{p185}}
 
+•••• none
 {{p186}}
 {{p187}}
-
 {{p188}}
 {{p189}}
 {{p190}}
+••••
 
+••••
 {{p191}}
-
 {{p192}}
+••••
 
 ~~~js
 const DrawFigures = class SVG {
@@ -1268,12 +1268,16 @@ sample
   .setAttribute ('stroke', 'red')
 ~~~
 
+•••• none
 {{p194}}
 {{p195}}
 {{p196}}
+••••
 
+•••• none
 {{p197}}
 {{p198}}
+••••
 
 ~~~js
 setAttribute('stroke', 'red')
@@ -1298,14 +1302,17 @@ _____________________________________________________
 {{p202}}
 {{p203}}
 {{p204}}
-("~stroke~", "~style~", "~fill~")
+
 {{p205}}
 
 {{p206}}
 {{p207}}
 {{p208}}
 
+••••
 {{p209}}
+••••
+
 {{p210}}
 {{p211}}
 

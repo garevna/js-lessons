@@ -1000,24 +1000,24 @@
     "ua": "Базовий клас"
   },
   "p184": {
-    "ru": "Создадим класс  **DrawFigures**, который будет создавать  элемент  svg",
-    "eng": "Let’s create a class **DrawFigures**, which will create an SVG element",
-    "ua": "Створимо клас **DrawFigures**, який буде створювати елемент svg"
+    "ru": "Создадим класс **~DrawFigures~**, который будет создавать  элемент **svg**",
+    "eng": "Let’s create a class **~DrawFigures~**, which will create an SVG element",
+    "ua": "Створимо клас **~DrawFigures~**, який буде створювати елемент **svg**"
   },
   "p185": {
-    "ru": "с двумя методами:   **_setSize()_**  и  **~⟦f35⟧~**",
-    "eng": "with two methods: **_setSize()_** and **~⟦f35⟧~**",
-    "ua": "з двома методами: **_setSize()_** та **~⟦f35⟧~**"
+    "ru": "с двумя методами:   **~setSize()~**  и  **~⟦f35⟧~**",
+    "eng": "with two methods: **~setSize()~** and **~⟦f35⟧~**",
+    "ua": "з двома методами: **~setSize()~** та **~⟦f35⟧~**"
   },
   "p186": {
-    "ru": "![ico-20 speach] Метод **~⟦f36⟧~** будет изменять размеры элемента  svg",
-    "eng": "![ico-20 speach] The **~⟦f36⟧~** method will change the dimensions of the SVG element",
-    "ua": "![ico-20 speach] Метод **~⟦f36⟧~** змінюватиме розміри елемента  svg"
+    "ru": "![ico-20 speach] Метод **_⟦f36⟧_** будет изменять размеры элемента  svg",
+    "eng": "![ico-20 speach] The **_⟦f36⟧_** method will change the dimensions of the SVG element",
+    "ua": "![ico-20 speach] Метод **_⟦f36⟧_** змінюватиме розміри елемента  svg"
   },
   "p187": {
-    "ru": "![ico-20 speach] Метод **~⟦f35⟧~** будет добавлять элементы в контейнер  svg",
-    "eng": "![ico-20 speach] The **~⟦f35⟧~** method will add elements to the SVG container",
-    "ua": "![ico-20 speach] Метод **~⟦f35⟧~** додаватиме елементи до контейнера  svg"
+    "ru": "![ico-20 speach] Метод **_⟦f35⟧_** будет добавлять элементы в контейнер  svg",
+    "eng": "![ico-20 speach] The **_⟦f35⟧_** method will add elements to the SVG container",
+    "ua": "![ico-20 speach] Метод **_⟦f35⟧_** додаватиме елементи до контейнера  svg"
   },
   "p188": {
     "ru": "^^Имя элемента будет передано первым аргументом метода  (figure)^^",
@@ -1035,14 +1035,14 @@
     "ua": "^^Параметри фігури будуть передані другим аргументом методу (params)^^"
   },
   "p191": {
-    "ru": "![ico-20 speach] Поскольку у каждого элемента  svg  свой набор атрибутов, создаем свойство  **~⟦f37⟧~** (объект), свойства которого будут именами svg-элементов, а значения - массивом атрибутов каждого svg-элемента",
-    "eng": "![ico-20 speach] As each  svg  element has its own set of attributes, we create a property  **~⟦f37⟧~** (an object), whose properties will be the names of the svg elements, and whose values will be an array of attributes for each svg element",
-    "ua": "![ico-20 speach] Оскільки кожен елемент  svg  має власний набір атрибутів, створюємо властивість  **~⟦f37⟧~** (об’єкт), властивості якої будуть іменами svg-елементів, а значення — масивом атрибутів кожного svg-елемента"
+    "ru": "![ico-20 speach] Поскольку у каждого элемента  svg  свой набор атрибутов, создаем свойство  **_⟦f37⟧_** (объект), свойства которого будут именами svg-элементов, а значения - массивом атрибутов каждого svg-элемента",
+    "eng": "![ico-20 speach] As each  svg  element has its own set of attributes, we create a property  **_⟦f37⟧_** (an object), whose properties will be the names of the svg elements, and whose values will be an array of attributes for each svg element",
+    "ua": "![ico-20 speach] Оскільки кожен елемент  svg  має власний набір атрибутів, створюємо властивість  **_⟦f37⟧_** (об’єкт), властивості якої будуть іменами svg-елементів, а значення — масивом атрибутів кожного svg-елемента"
   },
   "p192": {
-    "ru": "При создании svg-элемента его атрибуты будут установлены с помощью метода  **~⟦f38⟧~**",
-    "eng": "When creating an SVG element, its attributes will be set using the **~⟦f38⟧~** method",
-    "ua": "Під час створення svg-елемента його атрибути будуть встановлені за допомогою методу  **~⟦f38⟧~**"
+    "ru": "При создании svg-элемента его атрибуты будут установлены с помощью метода  **_⟦f38⟧_**",
+    "eng": "When creating an SVG element, its attributes will be set using the **_⟦f38⟧_** method",
+    "ua": "Під час створення svg-елемента його атрибути будуть встановлені за допомогою методу **_⟦f38⟧_**"
   },
   "p193": {
     "ru": "Протестировать работу класса можно так:",
@@ -1050,29 +1050,29 @@
     "ua": "Перевірити роботу класу можна так:"
   },
   "p194": {
-    "ru": "![ico-20 speach] Вызов метода   **~⟦f35⟧~** создаст элемент &lt;line> и вернет ссылку на него,",
-    "eng": "![ico-20 speach] Calling the method   **~⟦f35⟧~** will create a &lt;line&gt; element and return a reference to it,",
-    "ua": "![ico-20 speach] Виклик методу   **~⟦f35⟧~** створить елемент &lt;line> і поверне посилання на нього,"
+    "ru": "![ico-20 speach] Вызов метода **_⟦f35⟧_** создаст элемент &lt;line> и вернет ссылку на него,",
+    "eng": "![ico-20 speach] Calling the method **_⟦f35⟧_** will create a &lt;line&gt; element and return a reference to it,",
+    "ua": "![ico-20 speach] Виклик методу **_⟦f35⟧_** створить елемент &lt;line> і поверне посилання на нього,"
   },
   "p195": {
-    "ru": "но этот элемент не отобразится на странице, поскольку в массиве  **~⟦f39⟧~**",
-    "eng": "but this element will not be displayed on the page, as the array  **~⟦f39⟧~**",
-    "ua": "але цей елемент не відобразиться на сторінці, оскільки в масиві  **~⟦f39⟧~**"
+    "ru": "но этот элемент не отобразится на странице, поскольку в массиве **_⟦f39⟧_** нет атрибута _⟦f40⟧_, задающего цвет линии.",
+    "eng": "but this element will not be displayed on the page, as the array **_⟦f39⟧_** lacks the _⟦f40⟧_ attribute, which specifies the line colour.",
+    "ua": "але цей елемент не відобразиться на сторінці, оскільки в масиві  **_⟦f39⟧_** немає атрибута _⟦f40⟧_, що задає колір лінії."
   },
   "p196": {
-    "ru": "нет атрибута \"~⟦f40⟧~\", задающего цвет линии",
-    "eng": "lacks the “~⟦f40⟧~” attribute, which specifies the line colour",
-    "ua": "немає атрибута «~⟦f40⟧~», що задає колір лінії"
+    "ru": "",
+    "eng": "",
+    "ua": ""
   },
   "p197": {
-    "ru": "![ico-20 speach] Чтобы увидеть этот элемент на странице, нам приходится устанавливать значение атрибута ~⟦f40⟧~",
-    "eng": "![ico-20 speach] To see this element on the page, we need to set the value of the ~⟦f40⟧~ attribute",
-    "ua": "![ico-20 speach] Щоб побачити цей елемент на сторінці, нам доводиться встановлювати значення атрибута ~⟦f40⟧~"
+    "ru": "![ico-20 speach] Чтобы увидеть этот элемент на странице, нам приходится устанавливать значение атрибута _⟦f40⟧_ после вызова метода **_drawFigure()_**:",
+    "eng": "![ico-20 speach] To see this element on the page, we need to set the value of the _⟦f40⟧_ attribute after calling the **_drawFigure()_** method:",
+    "ua": "![ico-20 speach] Щоб побачити цей елемент на сторінці, нам доводиться встановлювати значення атрибута _⟦f40⟧_ після виклику методу **_drawFigure()_**:"
   },
   "p198": {
-    "ru": "после вызова метода **_drawFigure()_**:",
-    "eng": "after calling the **_drawFigure()_** method:",
-    "ua": "після виклику методу **_drawFigure()_**:"
+    "ru": "",
+    "eng": "",
+    "ua": ""
   },
   "p199": {
     "ru": "![ico-20 speach] Теперь можно рисовать и другие фигуры, и настраивать их атрибуты:",
@@ -1090,49 +1090,49 @@
     "ua": "Дочірній клас"
   },
   "p202": {
-    "ru": "![ico-20 speach] Теперь создадим дочерний класс  **ColoredFigures**,",
-    "eng": "![ico-20 speach] Now let’s create a subclass  **ColouredFigures**,",
-    "ua": "![ico-20 speach] Тепер створимо дочірній клас  **ColoredFigures**,"
+    "ru": "![ico-20 speach] Теперь создадим дочерний класс **~ColoredFigures~**, расширяющий функционал родительского класса **~DrawFigures~** путем добавления ",
+    "eng": "![ico-20 speach] Now let’s create a subclass **~ColouredFigures~** which extends the functionality of the parent class **~DrawFigures~** by adding",
+    "ua": "![ico-20 speach] Тепер створимо дочірній клас **~ColoredFigures~**, який розширює функціонал батьківського класу **~DrawFigures~** шляхом додавання"
   },
   "p203": {
-    "ru": "расширяющий функционал родительского класса  **DrawFigures**",
-    "eng": "which extends the functionality of the parent class  **DrawFigures**",
-    "ua": "який розширює функціонал батьківського класу  **DrawFigures**"
+    "ru": "• атрибутов линий и заливки фигур (~stroke~, ~style~, ~fill~)",
+    "eng": "• attributes for lines and fills (~stroke~, ~style~, ~fill~)",
+    "ua": "• атрибутів ліній і заливки фігур (~stroke~, ~style~, ~fill~)"
   },
   "p204": {
-    "ru": "путем добавления атрибутов линий и заливки фигур",
-    "eng": "by adding attributes for lines and fills",
-    "ua": "шляхом додавання атрибутів ліній і заливки фігур"
+    "ru": "• метода удаления элемента **~erase~**",
+    "eng": "• the method for deleting an element **~erase~**",
+    "ua": "• методу видалення елемента  **~erase~**"
   },
   "p205": {
-    "ru": "и метода удаления элемента  **_erase_**",
-    "eng": "and the method for deleting an element  **_erase_**",
-    "ua": "та методу видалення елемента  **_erase_**"
+    "ru": "",
+    "eng": "",
+    "ua": ""
   },
   "p206": {
-    "ru": "![ico-20 speach] В конструкторе дочернего класса вызовем метод **~⟦f42⟧~**,",
-    "eng": "![ico-20 speach] In the constructor of the child class, we’ll call the method **~⟦f42⟧~**,",
-    "ua": "![ico-20 speach] У конструкторі дочірнього класу викличемо метод **~⟦f42⟧~**,"
+    "ru": "![ico-20 speach] В конструкторе дочернего класса вызовем метод **~⟦f42⟧~**, чтобы был создан контейнер &lt;svg> с нужными размерами,",
+    "eng": "![ico-20 speach] In the constructor of the child class, we’ll call the method **~⟦f42⟧~** to create an &lt;svg&gt; container with the required dimensions",
+    "ua": "![ico-20 speach] У конструкторі дочірнього класу викличемо метод **~⟦f42⟧~**, щоб було створено контейнер &lt;svg> з потрібними розмірами,"
   },
   "p207": {
-    "ru": "чтобы был создан контейнер &lt;svg> с нужными размерами,",
-    "eng": "to create an &lt;svg&gt; container with the required dimensions,",
-    "ua": "щоб було створено контейнер &lt;svg> з потрібними розмірами,"
+    "ru": "",
+    "eng": "",
+    "ua": ""
   },
   "p208": {
-    "ru": "и объявим свойство экземпляра  **~⟦f43⟧~**",
-    "eng": "and declare the instance property  **~⟦f43⟧~**",
-    "ua": "і оголосимо властивість екземпляра  **~⟦f43⟧~**"
+    "ru": "и объявим свойство экземпляра  **~⟦f43⟧~**.",
+    "eng": "and declare the instance property  **~⟦f43⟧~**.",
+    "ua": "і оголосимо властивість екземпляра  **~⟦f43⟧~**."
   },
   "p209": {
-    "ru": "![ico-20 speach] Метод **~⟦f42⟧~** должен быть вызван первым в конструкторе,",
-    "eng": "![ico-20 speach] The method **~⟦f42⟧~** must be called first in the constructor,",
-    "ua": "![ico-20 speach] Метод **~⟦f42⟧~** має бути викликаний першим у конструкторі,"
+    "ru": "![ico-20 speach] Метод **_⟦f42⟧_** должен быть вызван первым в конструкторе, поскольку до его вызова  значение _this_  не будет определено.",
+    "eng": "![ico-20 speach] The method **_⟦f42⟧_** must be called first in the constructor, as the value of _this_ will not be defined.",
+    "ua": "![ico-20 speach] Метод **_⟦f42⟧_** має бути викликаний першим у конструкторі, оскільки до його виклику значення _this_ не буде визначено."
   },
   "p210": {
-    "ru": "поскольку до его вызова  значение  `this`  не будет определено",
-    "eng": "as the value of `this` will not be defined",
-    "ua": "оскільки до його виклику значення `this` не буде визначено"
+    "ru": "",
+    "eng": "",
+    "ua": ""
   },
   "p211": {
     "ru": "внутри конструктора",
