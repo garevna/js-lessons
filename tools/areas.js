@@ -29,6 +29,8 @@ const BASICS = 'Основы'
 const PROTOTYPES = 'Прототипное наследование'
 const FUNCTIONAL = 'Функциональщина'
 const ASYNC = 'Асинхронщина'
+const BROWSER = 'Браузер'
+const TOOLS = 'Инструменты'
 
 /**
  * A first guess, by section. Where a section spans two areas it gets both —
@@ -49,29 +51,56 @@ const BY_SECTION = {
   'Прототипное наследование': [PROTOTYPES],
   'Изменение контекста. Замыкание': [BASICS, FUNCTIONAL],
   'Функциональщина': [FUNCTIONAL],
-  'BOM & DOM': [],
-  'Асинхронщина': [ASYNC],
+  'BOM & DOM': [BROWSER],
+  'Асинхронщина': [ASYNC, BROWSER],
   'События объектов DOM': [],
   'Замыкание. Рекурсия. Таймеры.': [FUNCTIONAL, ASYNC],
   'Итерирование массивов. SHA': [FUNCTIONAL],
   'Статические методы конструктора Object': [PROTOTYPES],
-  'AJAX. Promise': [ASYNC],
-  'Fetch API. CORS': [ASYNC],
-  'File API. FormData': [ASYNC],
+  'AJAX. Promise': [ASYNC, BROWSER],
+  'Fetch API. CORS': [ASYNC, BROWSER],
+  'File API. FormData': [ASYNC, BROWSER],
   'Асинхронная функция': [ASYNC],
-  'REST API': [ASYNC],
+  'REST API': [ASYNC, BROWSER],
   'Классы': [PROTOTYPES],
   'Генераторы и итераторы': [FUNCTIONAL, ASYNC],
-  'Веб-компоненты': [],
-  'Webpack': [],
-  'Final project': [],
+  'Веб-компоненты': [BROWSER],
+  'Webpack': [TOOLS],
+  'Final project': [BROWSER],
   'Other important': [BASICS],
   'Design Patterns': [FUNCTIONAL, PROTOTYPES],
-  'IndexedDB': [ASYNC],
+  'IndexedDB': [ASYNC, BROWSER],
   'Дополнительный материал': [],
-  'Справочный материал': [],
+  'Справочный материал': [TOOLS],
   'ECMAScript': [BASICS]
 }
+
+/**
+ * Where the section is the wrong answer for one of its lessons. Chrome
+ * DevTools sits among the basics because that is when it is taught, but it is
+ * not the language; curl and json-server sit among promises and REST for the
+ * same reason.
+ */
+const BY_PAGE = {
+  'Developer-tools': [TOOLS],
+  'Chrome-dev-tools': [TOOLS],
+  curl: [TOOLS],
+  'json-server': [TOOLS],
+  'JSON-placeholder': [TOOLS],
+  // import() is a language feature taught in the webpack chapter.
+  'dynamic-import': [BASICS, TOOLS],
+  // Measured with the Performance API and read in a DevTools panel.
+  performance: [BROWSER, TOOLS],
+  'web-workers': [BROWSER, ASYNC],
+  'web-socket': [BROWSER, ASYNC],
+  NotificationAPI: [BROWSER],
+  'throttling-and-debouncing': [FUNCTIONAL],
+  // Principles of design, the same ground the patterns chapter stands on.
+  SOLID: [FUNCTIONAL, PROTOTYPES],
+  // How a network works, underneath everything and part of none of it.
+  'tcp-ip': []
+}
+
 
 const menu = fs.readFileSync(MENU, 'utf8')
 const sections = menu.split(/\n {2}\{/).slice(1).map((block) => ({
@@ -81,7 +110,7 @@ const sections = menu.split(/\n {2}\{/).slice(1).map((block) => ({
 
 const existing = fs.existsSync(AREAS)
   ? JSON.parse(fs.readFileSync(AREAS, 'utf8'))
-  : { areas: [BASICS, PROTOTYPES, FUNCTIONAL, ASYNC], pages: {} }
+  : { areas: [BASICS, PROTOTYPES, FUNCTIONAL, ASYNC, BROWSER, TOOLS], pages: {} }
 
 const pages = { ...existing.pages }
 const added = []
@@ -103,7 +132,7 @@ for (const section of sections) {
     // Never touch what is already there: the draft is a starting point, and
     // the corrections are the valuable part.
     if (pages[page] !== undefined) continue
-    pages[page] = [...guess]
+    pages[page] = [...(BY_PAGE[page] || guess)]
     added.push(page)
   }
 }
