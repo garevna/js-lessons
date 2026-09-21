@@ -23,6 +23,7 @@
     "orphans": "node tools/orphan-pages.js",
     "order": "node tools/lesson-order.js",
     "areas": "node tools/areas.js",
+    "keywords": "node tools/keywords.js",
     "console-headers": "node tools/console-headers.js",
     "black-blocks": "node tools/black-blocks.js",
     "sort-messages": "node tools/sort-messages.js",
