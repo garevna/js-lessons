@@ -44,7 +44,9 @@ const pages = fs.readdirSync(LESSONS)
 const linkedFrom = new Map()
 
 const readLinks = (text, from) => {
-  for (const m of text.matchAll(/\]\(page\/([^)#\s]+)/g)) {
+  // Not anchored to "](": in a fragment table the target stands alone,
+  // "page/Closure#IIFE", with the brackets left behind in the message.
+  for (const m of text.matchAll(/page\/([^)#\s"']+)/g)) {
     const target = m[1].replace(/\.md$/, '')
     if (!linkedFrom.has(target)) linkedFrom.set(target, new Set())
     linkedFrom.get(target).add(from)
@@ -53,6 +55,14 @@ const readLinks = (text, from) => {
 
 for (const page of pages) {
   readLinks(fs.readFileSync(path.join(LESSONS, `${page}.md`), 'utf8'), page)
+
+  // A link's target is hidden from translators, so most of them are not in
+  // the skeleton at all — they sit in the page's fragment table as ⟦fN⟧.
+  // Reading only the skeleton made pages look unreachable that are linked.
+  const fragmentFile = path.join(root, 'content/fragments', `${page}.json`)
+  if (fs.existsSync(fragmentFile)) {
+    readLinks(fs.readFileSync(fragmentFile, 'utf8'), page)
+  }
 }
 
 // The static pages link too — the 404 offers a way back, and the

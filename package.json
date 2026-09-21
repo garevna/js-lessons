@@ -21,6 +21,7 @@
     "repair": "node tools/i18n-repair.js",
     "links": "node tools/check-links.js",
     "orphans": "node tools/orphan-pages.js",
+    "order": "node tools/lesson-order.js",
     "console-headers": "node tools/console-headers.js",
     "black-blocks": "node tools/black-blocks.js",
     "sort-messages": "node tools/sort-messages.js",
