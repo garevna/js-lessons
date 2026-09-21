@@ -1,6 +1,6 @@
-## ![ico-25 icon] Размеры и прокрутка элемента⟪Element_dimensions_and_scrolling⟫
+## ![ico-25 icon] Element dimensions and scrolling⟪Element_dimensions_and_scrolling⟫
 
-| **Свойство**       |          | Значение (**в пикселях**) |
+| **Property**      |          | Value (**in pixels**)     |
 | **~scrollHeight~** | readonly | полная высота элемента                                      |
 | **~scrollWidth~**  | readonly | полная ширина элемента                                      |
 | **~clientHeight~** | readonly | высота видимой части элемента (за вычетом полосы прокрутки) |
@@ -52,7 +52,7 @@ _____________________________________
 
 _____________________________________
 
-### ![ico-30 hw] Упражнение⟪Exercise⟫
+### ![ico-30 hw] Exercise⟪Exercise⟫
 
 Выполните код в консоли
 

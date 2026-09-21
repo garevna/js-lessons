@@ -1,5 +1,7 @@
 ## ![ico-25 icon] Promises⟪Promises⟫
 
+[![ico-20 link] Event Loop](page/Event-Loop)
+
 An asynchronous function call returns an instance of **~Promise~**.
 
 Let's recall some valuable properties of **~Promise~** instances.

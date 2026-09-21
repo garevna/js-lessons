@@ -21,6 +21,7 @@ export const mainMenu = [
       { ref: 'variable-declaration', ua: 'Оголошення змінних', eng: 'Variable declaration', ru: 'Объявление переменных' },
       { ref: 'var', ua: 'Примітивні типи даних', eng: 'Primitive data types', ru: 'Примитивные типы данных' },
       { ref: 'typeof', ua: 'Оператор typeof', eng: 'Operator typeof', ru: 'Оператор typeof' },
+      { ref: 'NaN-null-Infinity', ua: 'NaN / null / Infinity', eng: 'NaN / null / Infinity', ru: 'NaN / null / Infinity' },
       { ref: 'data-structures', ua: 'Структури даних', eng: 'Data structures', ru: 'Структуры данных' },
       { ref: 'Boolean', ua: 'Логічні конструкції', eng: 'Logical constructs', ru: 'Логические конструкции' },
       { ref: 'function', ua: 'Функції', eng: 'Functions', ru: 'Функции' },
@@ -100,13 +101,12 @@ export const mainMenu = [
   },
   {
     ref: 'Change-call-context',
-    ua: 'Зміна контексту. Замикання',
-    eng: 'Changing call context. Closure',
-    ru: 'Изменение контекста. Замыкание',
+    ua: 'Зміна контексту виклику',
+    eng: 'Changing the call context',
+    ru: 'Изменение контекста вызова',
     items: [
       { ref: 'get-and-set', ua: 'Обчислювані властивості', eng: 'Computed properties', ru: 'Вычисляемые свойства' },
       { ref: 'call-apply-bind', ua: 'Зміна контексту виклику', eng: 'Changing the call context', ru: 'Изменение контекста вызова' },
-      { ref: 'Closure', ua: 'Замикання', eng: 'Closure', ru: 'Замыкание' },
       { ref: 'hw-05', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
   },
@@ -160,14 +160,12 @@ export const mainMenu = [
   },
   {
     ref: 'closure-recursion-timers',
-    ua: 'Замикання. Рекурсія. Таймери.',
-    eng: 'Closures. Recursion. Timers.',
-    ru: 'Замыкание. Рекурсия. Таймеры.',
+    ua: 'Контекст. Замикання',
+    eng: 'Context. Closure',
+    ru: 'Контекст. Замыкание',
     items: [
-      { ref: 'functionality', ua: 'Функціональщина', eng: 'Functional programming stuff', ru: 'Функциональщина' },
       { ref: 'Closure', ua: 'Замикання', eng: 'Closure', ru: 'Замыкание' },
-      { ref: 'recursion', ua: 'Рекурсія', eng: 'Recursion', ru: 'Рекурсия' },
-      { ref: 'hw-08', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'Context', ua: 'Контекст виклику', eng: 'Call context', ru: 'Контекст вызова' }
     ]
   },
   {
@@ -243,7 +241,6 @@ export const mainMenu = [
     eng: 'Asynchronous function',
     ru: 'Асинхронная функция',
     items: [
-      { ref: 'Event-Loop', ua: 'Event Loop', eng: 'Event Loop', ru: 'Event Loop' },
       { ref: 'async-is-good', ua: 'Чим корисні обіцянки?', eng: 'Why are promises good?', ru: 'Чем хороши обещания?' },
       { ref: 'async-await', ua: 'async | await', eng: 'async | await', ru: 'async | await' },
       { ref: 'async-constructor', ua: 'Конструктор асинхронної функції', eng: 'Asynchronous function constructor', ru: 'Конструктор асинхронной функции' },
@@ -341,12 +338,14 @@ export const mainMenu = [
   },
   {
     ref: 'other-important',
-    ua: 'Other important',
-    eng: 'Other important',
-    ru: 'Other important',
+    ua: 'Вбудовані об\'єкти',
+    eng: 'Built-in objects',
+    ru: 'Встроенные объекты',
     items: [
       { ref: 'Symbol', ua: 'Symbol', eng: 'Symbol', ru: 'Symbol' },
-      { ref: 'Set', ua: 'Конструктор Set', eng: 'Set constructor', ru: 'Конструктор Set' }
+      { ref: 'Set', ua: 'Конструктор Set', eng: 'Set constructor', ru: 'Конструктор Set' },
+      { ref: 'Map', ua: 'Конструктор Map', eng: 'Map constructor', ru: 'Конструктор Map' },
+      { ref: 'Proxy', ua: 'Конструктор Proxy', eng: 'Proxy constructor', ru: 'Конструктор Proxy' }
     ]
   },
   {
