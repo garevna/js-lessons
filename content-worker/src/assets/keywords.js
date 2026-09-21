@@ -154,7 +154,7 @@ export const keywords = {
   'git-bash': ['git', 'bash', 'cli', 'command', 'interpreter', 'command line', 'interpreter'],
   'tcp-ip': ['protocol', 'tcp', 'ip', 'port', 'datagram', 'package', 'internet'],
   localhost: ['protocol', 'http', 'ip', 'port', 'dns', 'domen', 'host', 'internet', 'www', 'localhost', 'url', 'uri', 'package'],
-  ECMA: ['ecma', 'specification', 'language', 'ecmascript', 'edition', 'standard', 'js']
+  ECMA: ['ecma', 'specification', 'language', 'ecmascript', 'edition', 'standard', 'js'],
   Map: ['Map', 'WeakMap', 'конструктор', 'constructor', 'object', 'iterable', 'ітерабельний', 'итерабельный'],
   Proxy: ['Proxy', 'target', 'handler', 'конструктор', 'constructor', 'object'],
   Context: ['Context', 'context', 'call', 'apply', 'create'],
