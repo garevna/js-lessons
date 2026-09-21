@@ -1,4 +1,4 @@
-# ![ico-30 study] Variables in literals
+# ![ico-30 study] Variables in literals⟪Variables_in_literals⟫
 
 ![ico-20 warn] A string literal is enclosed in backticks **~`...`~**
 
@@ -50,7 +50,11 @@ for (var i = 0; i < cities.length; i++) {
 
 ^^Result in the console:^^
 
-••1: Naples<br>2: Washington<br>3: Geneva••
+•••• none
+1: Naples
+2: Washington
+3: Geneva
+••••
 
 ____________________________________________________________________
 

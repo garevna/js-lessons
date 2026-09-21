@@ -1,4 +1,4 @@
-# ![ico-70 webpack] Webpack
+# ![ico-70 webpack] Webpack⟪Webpack⟫
 
 **Webpack** creates a dependency graph for the application
 
@@ -59,7 +59,7 @@ in the command line:
 
 _____________________________________________________________
 
-## ![ico-25 hw] Exercise 1
+## ![ico-25 hw] Exercise 1⟪Exercise_1⟫
 
 ( zero-config )
 
@@ -126,7 +126,7 @@ Now open the **_index.html_** file in your browser
 ___________________________________________________________________________
 
 
-## ![ico-25 webpack] The --watch option
+## ![ico-25 webpack] The --watch option⟪The_--watch_option⟫
 
 webpack will monitor changes to the source files and rebuild the application immediately whenever an update is made
 

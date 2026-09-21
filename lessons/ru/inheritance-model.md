@@ -1,4 +1,4 @@
-# ![ico-30 study] Модель наследования JS
+# ![ico-30 study] Модель наследования JS⟪The_JS_inheritance_model⟫
 
 Модель наследования **_JS_** основана на понятии **прототипа**
 
@@ -42,7 +42,7 @@ __________________________________
 
 _____________________________________________________________
 
-## ![ico-25 icon] prototype
+## ![ico-25 icon] prototype⟪prototype⟫
 
 Для создания объекта в JS нам достаточно сделать следующее:
 
@@ -59,7 +59,7 @@ var sample = {
 ~~~console
 ▼ { name: "master" }
     name: "master"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 Это свойство является ссылкой на объект **~prototype~**, который реально существует
@@ -87,7 +87,7 @@ __________________________
 ~~~~console
 ▼ { name: "master" }
     name: "master"
-  ► __proto__:
+  ► [[Prototype]]:
       ► constructor: ƒ Object()
       ► hasOwnProperty: ƒ hasOwnProperty()
       ► isPrototypeOf: ƒ isPrototypeOf()
@@ -152,7 +152,7 @@ sample.hasOwnProperty('name')   // true
 
 _________________________________________________________________
 
-## ![ico-25 icon] constructor
+## ![ico-25 icon] constructor⟪constructor⟫
 
 Теперь обратим внимание на первое, что мы видим в объекте **~prototype~** конструктора и в свойстве **_~&#95;&#95;proto&#95;&#95;~_** экземпляра
 
@@ -199,8 +199,8 @@ console.dir(function Sigma () {})
     name: "Sigma"
   ▼ prototype:
     ► constructor: ƒ Sigma()
-    ► __proto__: Object
-  ► __proto__: ƒ ()
+    ► [[Prototype]]: Object
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 Куда показывает свойство **~constructor~** ? - на функцию **_~Sigma~_**
@@ -275,7 +275,7 @@ obj.say()
 
 _________________________________________________________________________
 
-## ![ico-25 icon] this
+## ![ico-25 icon] this⟪this⟫
 
 Итак, мы уже поняли, что любая функция в JS является конструктором по своей сути, поскольку имеет контейнер для "наследства" - свойство **_~prototype~_**
 
@@ -330,17 +330,17 @@ obj.say()   // My name is  Google
 
 __________________________________________________________________________
 
-## ![ico-25 icon] Цепочка прототипов
+## ![ico-25 icon] Цепочка прототипов⟪The_prototype_chain⟫
 
 Обратите внимание, что в предыдущем примере мы создали объект **~obj~** с двумя вложенными свойствами **_~&#95;&#95;proto&#95;&#95;~_**
 
 ~~~console
 ▼ Sigma {name: "Google"}
     name: "Google"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
     ► say: ƒ ()
     ► constructor: ƒ Sigma()
-    ► __proto__: Object
+    ► [[Prototype]]: Object
 ~~~
 
 первое свойство **_~&#95;&#95;proto&#95;&#95;~_** является ссылкой на **_объект_**, который содержит:
@@ -364,7 +364,7 @@ __________________________________________________________________________
 
 ________________________________________________________
 
-## ![ico-25 icon] Конструктор Object
+## ![ico-25 icon] Конструктор Object⟪The_Object_constructor⟫
 
 **~Object~** - это "Адам" всех объектов в JS
 
@@ -392,7 +392,7 @@ obj.__proto__ = null
 _____________________________________________________
 
 
-### ![ico-20 icon] Статические свойства Object
+### ![ico-20 icon] Статические свойства Object⟪Static_properties_of_Object⟫
 
 **собственные свойства конструктора ~Object~**
 
@@ -426,7 +426,7 @@ _____________________________________________________
   ► seal: ƒ seal()
   ► setPrototypeOf: ƒ setPrototypeOf()
   ► values: ƒ values()
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 ~~~~
 
 Поскольку они не передаются экземплярам, их называют **_статическими_**
@@ -447,9 +447,9 @@ sample.name = 'circle'
 ~~~console
 ▼ { name: "circle" }
     name: "circle"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
         type: "figure"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 Как видите, мы опять обошлись без ключевого слова **~new~**,
@@ -486,11 +486,11 @@ test.draw = function () {
 ~~~console
 ▼ { draw: ƒ }
     draw: ƒ ()
-  ▼ __proto__:
+  ▼ [[Prototype]]:
         name: "circle"
-      ► __proto__:
+      ► [[Prototype]]:
             type: "figure"
-          ► __proto__: Object
+          ► [[Prototype]]: Object
 ~~~
 
 Правда, при этом у нас нет имитации классов ( в цепочке прототипов отсутствует свойство **~constructor~** ) и оператор **~instanceof~** становится бесполезен
@@ -499,12 +499,12 @@ test.draw = function () {
 
 _______________________________________________________________________
 
-### ![ico-20 icon] Object.&#95;&#95;proto&#95;&#95;
+### ![ico-20 icon] Object.&#95;&#95;proto&#95;&#95;⟪Object.&#95;&#95;proto&#95;&#95;⟫
 
 Выведем в консоль свойство **_~&#95;&#95;proto&#95;&#95;~_** конструктора **~Object~**
 
 ~~~~console
-▼ __proto__: ƒ ()
+▼ [[Prototype]]: ƒ ()
     ► apply: ƒ ()
       arguments: (...)
     ► bind: ƒ ()
@@ -519,7 +519,7 @@ _______________________________________________________________________
     ► set arguments: ƒ ()
     ► get caller: ƒ ()
     ► set caller: ƒ ()
-    ► __proto__: Object
+    ► [[Prototype]]: Object
 ~~~~
 
 а теперь выведем в консоль свойство **~prototype~** конструктора **Function**
@@ -540,7 +540,7 @@ _______________________________________________________________________
     ► set arguments: ƒ ()
     ► get caller: ƒ ()
     ► set caller: ƒ ()
-    ► __proto__: Object
+    ► [[Prototype]]: Object
 ~~~~
 
 Очевидно, что **~Object~** наследует от **~Function~**, что логично, поскольку **~Object~** - это конструктор, т.е. функция
@@ -562,7 +562,7 @@ console.dir( Object.__proto__.constructor.name)
 
 _____________________________________________________
 
-## ![ico-25 cap] Пример
+## ![ico-25 cap] Пример⟪Example⟫
 
 host-объект  **~console~**  имеет свойства   ~log~,  ~dir~,  ~info~,  ~warn~,  ~error~...
 

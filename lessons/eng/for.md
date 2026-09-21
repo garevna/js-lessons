@@ -1,4 +1,4 @@
-# ![ico-35 study] Operator for
+# ![ico-35 study] Operator for⟪Operator_for⟫
 
 Well, now we have reached the third fundamental principle of structural programming - loops.
 As I hope we already know, a loop is a repetition of the same actions several times.
@@ -31,7 +31,7 @@ The **~for~** loop operator requires a counter variable (loop variable), which m
 
 We begin our journey through loops with the **~for~** loop statement.
 
-## ![ico-30 icon] Syntax
+## ![ico-30 icon] Syntax⟪Syntax⟫
 
 For the **~for~** loop statement, everything relating to the loop variable (initialisation, modification, checking) is placed within round brackets:
 
@@ -63,7 +63,7 @@ All that remains is to fill the loop body with code.
 
 _____________________________________________________________________
 
-## ![ico-30 icon] Syntax
+## ![ico-30 icon] Syntax⟪Syntax⟫
 
 The **~for~** loop statement requires a counter variable (loop variable) that must:
 
@@ -97,7 +97,7 @@ Here, the condition on the loop variable has been omitted, which would lead to a
 
 _____________________________________________________________________
 
-## ![ico-25 icon] Directive break
+## ![ico-25 icon] Directive break⟪Directive_break⟫
 
 Interrupts the loop execution.
 
@@ -126,7 +126,7 @@ Not a very nice solution, is it?
 
 ______________________________________________________
 
-## ![ico-30 icon] Examples
+## ![ico-30 icon] Examples⟪Examples⟫
 
 ◘◘![ico-25 cap]** 1**◘◘
 
@@ -235,7 +235,7 @@ for (var i = 1; i < 20; i += 2) {
 
 ______________________________________________________
 
-## ![ico-30 icon] Tests
+## ![ico-30 icon] Tests⟪Tests⟫
 
 ◘◘![ico-25 hw]** 1**◘◘
 

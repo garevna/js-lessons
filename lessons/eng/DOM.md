@@ -1,4 +1,4 @@
-# ![ico-35 study] Document Object Model (DOM)
+# ![ico-35 study] Document Object Model (DOM)⟪Document_Object_Model_(DOM)⟫
 
 Давате разберемся, что же стоит за словами "**Объектная модель документа**".
 
@@ -49,7 +49,7 @@
 
 _________________________________________
 
-## ![ico-30 icon] Цепочка прототипов
+## ![ico-30 icon] Цепочка прототипов⟪tsepochka_prototypov⟫
 
 Каждый объект является экземпляром, созданным каким-то конструктором.
 
@@ -77,10 +77,6 @@ function showProto (elem) {
 showProto(document)
 ~~~
 
-Result:
-
-◘◘^^~document~^^◘◘
-
 ~~~console
 HTMLDocument
 Document
@@ -102,7 +98,6 @@ showProto(document.head)
 
 то мы получим такую цепочку протипов:
 
-◘◘^^~document.head~^^◘◘
 ~~~console
 HTMLHeadElement
 HTMLElement
@@ -120,7 +115,6 @@ showProto(document.body)
 
 цепочка протипов будет такой:
 
-◘◘^^~document.body~^^◘◘
 ~~~console
 HTMLBodyElement
 HTMLElement
@@ -383,12 +377,12 @@ console.dir(document)
 ~~~~
 ______________________
 
-## ![ico-30 icon] Свойства объекта document
+## ![ico-30 icon] Свойства объекта document⟪svoistva_obъekta_document⟫
 
 Разберем содержимое объекта **~document~** "по косточкам".
 ![ico-20 warn] ^^Для этого нужно открыть любую страницу, потому что далее мы будем итерировать свойства объекта **~document~**, а у него есть свойство **~cookie~**, которое недоступно на пустой странице (~about:blank~).^^
 
-### ![ico-25 icon] HTMLElement
+### ![ico-25 icon] HTMLElement⟪HTMLElement⟫
 
 "Вытянем" из объекта **~document~** все свойства, являющиеся экземплярами конструктора **HTMLElement**:
 
@@ -399,8 +393,6 @@ for (var prop in document) {
     console.log(`${prop}: HTMLElement`)
 }
 ~~~
-
-◘◘^^**HTMLElement**^^◘◘
 
 ~~~console
 documentElement: HTMLElement
@@ -415,7 +407,7 @@ lastChild: HTMLElement
 
 _______________________________________
 
-### ![ico-25 icon] HTMLCollection vs NodeList
+### ![ico-25 icon] HTMLCollection vs NodeList⟪HTMLCollection_vs_NodeList⟫
 
 Теперь посмотрим, какие свойства документа являются ссылками на экземпляры конструкторов **HTMLCollection** и **NodeList**:
 
@@ -430,7 +422,6 @@ _______________________________________
   })
 ~~~
 
-◘◘^^**Result**^^◘◘
 ~~~console
 images: HTMLCollection
 embeds: HTMLCollection
@@ -545,7 +536,7 @@ console.log(document.body.childNodes)
 
 ______________________________________________________
 
-### ![ico-25 icon] Strings
+### ![ico-25 icon] Strings⟪Strings⟫
 
 ~~~js
 function getStrings (hostObject) {
@@ -593,7 +584,7 @@ console.log(getStrings(document))
 
 ______________________________________________________
 
-### ![ico-25 icon] Other objects
+### ![ico-25 icon] Other objects⟪Other_objects⟫
 
 С помощью функции **~getObjects~** найдем в объекте **~document~** все свойства, являющиеся объектами, но не являющихся экземплярами конструкторов **HTMLElement**, **HTMLCollection** и **NodeList**, а так же не являющихся методами объекта **~document~**:
 
@@ -616,7 +607,6 @@ function getObjects () {
 console.log(getObjects())
 ~~~
 
-◘◘^^**Result**^^◘◘
 ~~~console
 ▼ {location: 'Location', implementation: 'DOMImplementation', doctype: 'DocumentType', defaultView: 'Window', all: 'HTMLAllCollection', …}
   adoptedStyleSheets: "Array"
@@ -635,7 +625,7 @@ console.log(getObjects())
 
 _________________________________________________
 
-### ![ico-25 icon] Event handlers
+### ![ico-25 icon] Event handlers⟪Event_handlers⟫
 
 Главное отличие хост-объектов от нативных объектов JS заключается в способности реагировать на события.
 Не трудно догадаться, что такая способность обеспечивается конструктором **EventTarget**, название которого говорит само за себя.
@@ -677,8 +667,6 @@ document.onscroll = console.log
 и прокрутите страницу.
 В результате вы увидите в консоли объект события, который получила функция **~console.log~** в качестве аргумента при вызове:
 
-◘◘ **^^result^^** ◘◘
-
 ~~~console
 ▼ Event {isTrusted: true, type: 'scroll', target: document, currentTarget: document, eventPhase: 2, …}
     isTrusted: true
@@ -704,7 +692,7 @@ document.onscroll = console.log
 
 ____________________________________________
 
-## ![ico-30 icon] Constructor Node
+## ![ico-30 icon] Constructor Node⟪Constructor_Node⟫
 
 Этот конструктор принимает участие в создании всех объектов DOM, включая объект **~document~**.
 
@@ -786,7 +774,7 @@ console.dir(Node.prototype)
 
 _________________________________________
 
-### ![ico-25 icon] Типы узлов дерева DOM
+### ![ico-25 icon] Типы узлов дерева DOM⟪typi_uzlov_dereva_DOM⟫
 
 Первое, что мы видим в прототайпе конструктора **~Node~** - это перечень констант.
 
@@ -830,7 +818,7 @@ document.body.nodeType
 ~~~
 _______________________________________
 
-### ![ico-25 icon] Node.prototype methods
+### ![ico-25 icon] Node.prototype methods⟪Node.prototype_methods⟫
 
 Как уже было сказано ранее, эти методы наследуют **все элементы DOM**, включая само объект **~document~**.
 В данный момент нас интересуют два метода:
@@ -859,7 +847,6 @@ parent.appendChild(elem)
 
 Например, пусть во вкладке **~Elements~** консоли мы видим такую картину:
 
-◘◘^^**Elements**^^◘◘
 ~~~console
 &lt;body>
   &lt;section>
@@ -880,7 +867,6 @@ figure.appendChild(paragraph)
 
 наша разметка (в) будет выглядеть уже иначе:
 
-◘◘^^**Elements**^^◘◘
 ~~~console
 &lt;body>
   &lt;section>&lt;/section>
@@ -901,7 +887,7 @@ parent.removeChild(elem)
 
 ____________________________________________
 
-## ![ico-30 icon] Методы объекта document
+## ![ico-30 icon] Методы объекта document⟪metodi_obъekta_document⟫
 
 Есть вещи, которые может делать только объект **~document~**.
 Не трудно догадаться, где искать эти методы.
@@ -944,7 +930,7 @@ getMethods.call(Document.prototype)
 
 Здесь мы уже видим внушительный список методов, и самое время включить фильтр.
 
-### ![ico-25 icon] create
+### ![ico-25 icon] create⟪create⟫
 
 Посмотрим, что наш хост-объект **~document~** умеет создавать:
 
@@ -977,7 +963,7 @@ getMethods.call(Document.prototype, 'create')
 ![ico-25 warn] Это еще не означает, что созданные объекты будут вставлены на страницу.
 Для добавления узлов дерева DOM на страницу мы будем использовать метод **~appendChild~**, который у всех объектов DOM, поскольку унаследован от конструктора **Node**.
 
-#### ![ico-20 icon] document.createElement
+#### ![ico-20 icon] document.createElement⟪document.createElement⟫
 
 Создает элемент DOM и возвращает ссылку на него.
 
@@ -1001,7 +987,7 @@ Tag name:  DIV
 
 ____________________________________________
 
-#### ![ico-20 icon] document.createTextNode
+#### ![ico-20 icon] document.createTextNode⟪document.createTextNode⟫
 
 Этот метод создает текстовый узел и возвращает ссылку на него.
 
@@ -1039,7 +1025,7 @@ script.appendChild(document.createTextNode(`alert('Hello')`))
 
 ____________________________________________
 
-#### ![ico-20 icon] document.createComment
+#### ![ico-20 icon] document.createComment⟪document.createComment⟫
 
 Этот метод создает узел комментария и возвращает ссылку на него.
 
@@ -1053,7 +1039,7 @@ console.log(comment)
 ~~~
 ____________________________________________
 
-#### ![ico-20 icon] document.createDocumentFragment
+#### ![ico-20 icon] document.createDocumentFragment⟪document.createDocumentFragment⟫
 
 ◘◘^^function **addElem**^^◘◘
 ~~~js
@@ -1087,7 +1073,7 @@ console.log(section)
 ~~~
 _____________________________________________
 
-### ![ico-25 icon] Методы поиска элементов
+### ![ico-25 icon] Методы поиска элементов⟪metodi_poyska_alementov⟫
 
 Посмотрим, что можно получить с помощью хост-объекта **~document~**:
 
@@ -1142,15 +1128,13 @@ document
   .getElementsByClassName('content')
 ~~~
 
-◘◘^^Result:^^◘◘
-
 ~~~console
 
 ▼ HTMLCollection(2) [div.content, figure.content]
   ► 0: div.content
   ► 1: figure.content
     length: 2
-  ► __proto__: HTMLCollection
+  ► [[Prototype]]: HTMLCollection
 ~~~
 
 ____________________________________________
@@ -1170,7 +1154,7 @@ document.getElementsByClassName('screen-reader-text', 'visually-hidden')
 
 ____________________________________________
 
-#### ![ico-20 icon] append | remove
+#### ![ico-20 icon] append | remove⟪append___remove⟫
 
 _________________________________________
 
@@ -1179,11 +1163,11 @@ _________________________________________
 Проверьте их сначала на [**MDN**](https://developer.mozilla.org/en-US/docs/Web/API/Document).
 ________________________________________
 
-### ![ico-25 icon] Методы поиска элементов
+### ![ico-25 icon] Методы поиска элементов⟪metodi_poyska_alementov⟫
 
 ______________________________________
 
-### ![ico-25 icon] element.querySelector
+### ![ico-25 icon] element.querySelector⟪element.querySelector⟫
 
 ^^Возвращает первый найденный элемент по указанному CSS-селектору^^
 ^^Поиск осуществляется в пределах элемента, в контексте которого вызван метод (~element~)^^
@@ -1216,8 +1200,6 @@ console.dir(document.body.querySelector('[type=\'number\']'))
 console.dir(section.querySelector('[title]'))
 ~~~
 
-**Result in the console:**
-
 ~~~console
 ► section
 ► h3#demo
@@ -1228,7 +1210,7 @@ console.dir(section.querySelector('[title]'))
 
 ______________________________________________
 
-### ![ico-25 icon] element.querySelectorAll
+### ![ico-25 icon] element.querySelectorAll⟪element.querySelectorAll⟫
 
 Возвращает итерабельный объект класса **~NodeList~**, содержащий все элементы, соответствующие указанному селектору.
 
@@ -1241,18 +1223,17 @@ ______________________________________________
 section.querySelectorAll('*')
 ~~~
 
-◘◘Result in the console:◘◘
 ~~~console
 ▼ NodeList(2) [div, figure.promoClass]
   ► 0: div
   ► 1: figure.promoClass
     length: 2
-  ► __proto__: NodeList
+  ► [[Prototype]]: NodeList
 ~~~
 
 _________________________________________________
 
-## ![ico-30 hw] Tests
+## ![ico-30 hw] Tests⟪Tests⟫
 
 ◘◘![ico-25 hw]** 1**◘◘
 ~~~js
@@ -1265,7 +1246,6 @@ elem.tagName = 'div'
 →→→ Какой элемент появится в DOM? | p, div, 'будет сгенерировано исключение' | p→→→
 
 ____________________________________________
-
 
 ◘◘![ico-25 hw]** 2**◘◘
 ~~~js
@@ -1406,7 +1386,6 @@ elems.forEach(function (elem) {
 ~~~
 
 →→→ Что итерирует функция showProto? | 'массив html-элементов', 'свойства html-элемента', 'цепочку прототипов html-элемента' | цепочку прототипов html-элемента→→→
-
 
 ___________________________________
 

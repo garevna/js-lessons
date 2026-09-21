@@ -1,4 +1,4 @@
-# ![ico-35 study] While and do...while loops
+# ![ico-35 study] While and do...while loops⟪While_and_do...while_loops⟫
 
 Very often the number of loop iterations is unknown in advance and it depends on the fulfilment of some condition.
 As the army saying goes, ‘dig from the fence to lunch’.
@@ -7,7 +7,7 @@ That is why we cannot use the iteration counter because we cannot set a limit on
 
 In this case, we use one of the **~while~** or **~do...while~** loop operators.
 
-## ![ico-30 icon] while
+## ![ico-30 icon] while⟪while⟫
 
 Syntactically, the **~while~** operator includes three mandatory parts: the word **~while~** itself, followed by parentheses in which the logical expression (the loop condition) will be written, and then the body of the loop enclosed in curly braces:
 
@@ -67,7 +67,7 @@ Obviously, this loop will not be infinite, because sooner or later the value of 
 
 ______________________
 
-## ![ico-30 icon] do...while
+## ![ico-30 icon] do...while⟪do...while⟫
 
 This loop first executes the code in curly braces and then checks if the condition is fulfilled.
 
@@ -93,7 +93,7 @@ do {
 
 ______________________________________________________
 
-## ![ico-30 icon] Tests
+## ![ico-30 icon] Tests⟪Tests⟫
 
 ◘◘![ico-25 hw]** 1**◘◘
 ~~~js

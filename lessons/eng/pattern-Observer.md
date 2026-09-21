@@ -1,8 +1,8 @@
-# ![ico-30 study] Design Patterns
+# ![ico-30 study] Design Patterns⟪Design_Patterns⟫
 
 _____________________________________
 
-## ![ico-25 icon] Pattern Observer
+## ![ico-25 icon] Pattern Observer⟪Pattern_Observer⟫
 
 This is a **behavioral** pattern.
 
@@ -20,7 +20,7 @@ How do we notify the module responsible for presenting data to the user about ch
 
 _______________________________
 
-## ![ico-30 cap] Example 1
+## ![ico-30 cap] Example 1⟪Example_1⟫
 
 Suppose there is an array of identifiers for the elements:
 
@@ -35,7 +35,7 @@ const addElem = (tag = 'input', container = document.body) => (container.nodeTyp
   .appendChild(document.createElement(tag))
 ~~~
 
-## ![ico-25 cap] observed
+## ![ico-25 cap] observed⟪observed⟫
 
 Let's create an array of ~input~ elements:
 
@@ -55,7 +55,7 @@ So, the user can change the model data at any time.
 
 _________________________________________________________
 
-### ![ico-25 cap] createSubscriber
+### ![ico-25 cap] createSubscriber⟪createSubscriber⟫
 
 Let's declare **~createSubscriber~** function:
 
@@ -72,7 +72,7 @@ function createSubscriber (prop, tagName, container = section) {
 
 ___________________________________________
 
-### ![ico-25 cap] Class Observer
+### ![ico-25 cap] Class Observer⟪Class_Observer⟫
 
 and finally, the **~Observer~** class:
 
@@ -119,7 +119,7 @@ References to them will be stored in the **~subscribers~** array.
 • In order to unsubscribe from observer notifications, you need to call its **~unsubscibe~** method.
 • There is a **~broadcast~** method to notify subscribers.
 
-### ![ico-25 cap] Observer instance
+### ![ico-25 cap] Observer instance⟪Observer_instance⟫
 
 The only thing left to do is to create an instance of **~Observer~**, passing it references to observed elements:
 
@@ -159,12 +159,12 @@ we'll get a message from the observer:
 
 _________________________________________
 
-### ![ico-25 slider-button] Demo 1
+### ![ico-25 slider-button] Demo 1⟪Demo_1⟫
 
 {{{pattern-observer.js}}}
 ____________________________________________________
 
-### ![ico-25 icon] Full code snippet
+### ![ico-25 icon] Full code snippet⟪Full_code_snippet⟫
 
 ~~~~js
 const inputs = ['topic', 'message', 'author']
@@ -238,7 +238,7 @@ observer.subscribe(createSubscriber('author', 'small'))
 
 ____________________________________________________
 
-## ![ico-30 cap] Example 2
+## ![ico-30 cap] Example 2⟪Example_2⟫
 
 Let's change the statement of the problem.
 Changes to model data values are not always initiated by the user.
@@ -252,7 +252,7 @@ const observed = ['topic', 'message', 'author']
 
 **~createSubscriber~** function can be borrowed from the previous example, but the **~Observer~** class is slightly different.
 
-### ![ico-25 cap] Class Observer
+### ![ico-25 cap] Class Observer⟪Class_Observer⟫
 
 ~~~js
 class Observer {
@@ -318,6 +318,6 @@ setTimeout(() => { observed[2] = 'new author' }, getRandom(8000))
 
 and see how our solution works.
 
-### ![ico-25 slider-button] Demo 2
+### ![ico-25 slider-button] Demo 2⟪Demo_2⟫
 
 {{{pattern-observer-1.js}}}

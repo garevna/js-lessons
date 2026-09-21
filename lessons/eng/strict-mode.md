@@ -1,4 +1,4 @@
-# ![ico-30 study] strict mode
+# ![ico-30 study] strict mode⟪strict_mode⟫
 
 ~~~js
 'use strict'
@@ -19,10 +19,9 @@ The ~'use strict'~ directive switches the script’s execution to strict mode ( 
 
 ________________________________________________
 
-## ![ico-25 error] In strict mode, you cannot:
+## ![ico-25 error] In strict mode, you cannot:⟪In_strict_mode,_you_cannot:⟫
 
-
-### ![ico-20 warn] use undeclared variables 
+### ![ico-20 warn] use undeclared variables⟪use_undeclared_variables⟫
 
 ~~~js
 'use strict'
@@ -55,7 +54,7 @@ then in normal (non-strict) mode, the variable ~someText~ will be created in the
 
 _________________________________
 
-### ![ico-20 warn] Delete variables and functions using the `delete` statement
+### ![ico-20 warn] Delete variables and functions using the `delete` statement⟪Delete_variables_and_functions_using_the_-delete-_statement⟫
 
 **Normal mode:**
 
@@ -85,7 +84,7 @@ delete sum
 
 ________________________________________________
 
-### ![ico-20 warn] Assigning octal values
+### ![ico-20 warn] Assigning octal values⟪Assigning_octal_values⟫
 
 **Normal mode:**
 
@@ -107,7 +106,7 @@ var x = 010
 
 __________________________________________________
 
-### ![ico-20 warn] Use escaped octal values
+### ![ico-20 warn] Use escaped octal values⟪Use_escaped_octal_values⟫
 
 **Normal mode:**
 
@@ -129,7 +128,7 @@ var x = '\010'
 
 _________________________________________
 
-### ![ico-20 warn] Modify the values of non-rewritable properties
+### ![ico-20 warn] Modify the values of non-rewritable properties⟪Modify_the_values_of_non-rewritable_properties⟫
 
 **Normal mode:**
 
@@ -161,7 +160,7 @@ sample.x = 5
 
 ________________________________________________
 
-### ![ico-20 warn] modifying the values of properties with a getter (but no setter)
+### ![ico-20 warn] modifying the values of properties with a getter (but no setter)⟪modifying_the_values_of_properties_with_a_getter_(but_no_setter)⟫
 
 **Normal mode:**
 
@@ -195,7 +194,7 @@ obj.x = 5
 
 _________________________________________________
 
-### ![ico-20 warn] Delete non-deletable properties
+### ![ico-20 warn] Delete non-deletable properties⟪Delete_non-deletable_properties⟫
 
 **Normal mode:**
 
@@ -217,7 +216,7 @@ delete Object.prototype
 
 _______________________________________________
 
-### ![ico-20 warn] Use **_eval_** as a variable name
+### ![ico-20 warn] Use **_eval_** as a variable name⟪Use_**_eval_**_as_a_variable_name⟫
 
 **Normal mode:**
 
@@ -239,7 +238,7 @@ var eval = 7
 
 _______________________________________
 
-### ![ico-20 warn] Use **_arguments_** as a variable name
+### ![ico-20 warn] Use **_arguments_** as a variable name⟪Use_**_arguments_**_as_a_variable_name⟫
 
 **Normal mode:**
 
@@ -261,7 +260,7 @@ var arguments = 7
 
 _____________________________________________
 
-### ![ico-20 warn] Use **_arguments.callee_**
+### ![ico-20 warn] Use **_arguments.callee_**⟪Use_**_arguments.callee_**⟫
 
 **Normal mode:**
 
@@ -272,8 +271,6 @@ function test () {
 
 test ()
 ~~~
-
-**Result in the console:**
 
 ~~~console
 
@@ -304,7 +301,7 @@ may not be accessed on strict mode functions or the arguments objects for calls 
 
 _________________________________________
 
-### ![ico-20 warn] использовать свойство **_caller_**
+### ![ico-20 warn] использовать свойство **_caller_**⟪yspolʹzovatʹ_svoistvo_**_caller_**⟫
 
 **обычный режим:**
 
@@ -317,8 +314,6 @@ function test () {
 
 test ()
 ~~~
-
-**Result in the console:**
 
 ~~~console
 
@@ -355,7 +350,7 @@ or the arguments objects for calls to them
 
 ___________________________________
 
-### ![ico-20 warn] Use the _**with**_ expression 
+### ![ico-20 warn] Use the _**with**_ expression⟪Use_the__**with**__expression⟫
 
 **Normal mode:**
 
@@ -399,9 +394,9 @@ console.log(y)
 
 _________________________________________________
 
-### ![ico-20 warn] The **_eval ()_** method cannot create variables in the scope in which it was called
+### ![ico-20 warn] The **_eval ()_** method cannot create variables in the scope in which it was called⟪The_**_eval__**_method_cannot_create_variables_in_the_scope_in_which_it_was_called⟫
 
-###### for security reasons 
+###### for security reasons⟪for_security_reasons⟫
 
 **Normal mode:**
 
@@ -425,7 +420,7 @@ console.log(gamma)
 
 __________________________________________
 
-### ![ico-20 warn] using keywords as variable names:
+### ![ico-20 warn] using keywords as variable names:⟪using_keywords_as_variable_names:⟫
 
 | ![ico-20 error] | implements |
 | ![ico-20 error] | interface |

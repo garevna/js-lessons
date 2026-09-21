@@ -1,6 +1,6 @@
-# ![ico-30 icon] localhost
+# ![ico-30 icon] localhost⟪localhost⟫
 
-## ![ico-25 icon] IP
+## ![ico-25 icon] IP⟪IP⟫
 
 Everything connected to the Internet has an **_IP_** address, which uniquely identifies the Internet-connected device
 
@@ -15,13 +15,13 @@ For example, ~192.168.1.100~ is a private IP address
 It will never be a public IP address,
 and there are millions of IP addresses like ~192.168.1.100~ in the world
 
-## ![ico-25 icon] Router
+## ![ico-25 icon] Router⟪Router⟫
 
 A device called a **router** is responsible for exchanging data packets between the local network and the public Internet
 
 The router has a function which, for every Internet message (packet), creates a local IP address that uniquely corresponds to a public IP address, and vice versa (for returning packets)
 
-## ![ico-25 icon] Domain Name System
+## ![ico-25 icon] Domain Name System⟪Domain_Name_System⟫
 
 Most public IP addresses have names known as DNS hostnames,
 and so do many local IP addresses
@@ -52,7 +52,7 @@ The optional prefix **_www_** in a website’s hostname implies that the interne
 
 There are many types of applications that run on the Internet, not just on the World Wide Web, including, for example, email and FTP (File Transfer Protocol)
 
-## ![ico-25 icon] Port
+## ![ico-25 icon] Port⟪Port⟫
 
 Data packets arriving at a device from the Internet almost always have a **port** allocated to them
 

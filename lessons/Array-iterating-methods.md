@@ -340,7 +340,7 @@ location.search
   ► 0: {name: "garevna"}
   ► 1: {date: "10.07.2018"}
     length: 2
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ______________________________________________
@@ -369,7 +369,7 @@ function getSearchObject () {
 ▼ {name: "garevna", date: "10.07.2018"}
     date: "10.07.2018"
     name: "garevna"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ______________________________________________
@@ -465,7 +465,7 @@ console.log(usa)
   ► 1: {name: "Маргарет Джонсон", country: "США"}
   ► 2: {name: "Роберт Трамп", country: "США"}
     length: 3
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 _________________________________
@@ -498,7 +498,7 @@ cards.find(card => card.cash > 4000)
 ▼ { num: "457811714", cash: 5000 }
     cash: 5000
     num: "457811714"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 
 ~~~
 

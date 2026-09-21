@@ -1,11 +1,10 @@
-# ![ico-30 study] Carrying
+# ![ico-30 study] Carrying⟪Carrying⟫
 
 ☼☼☼ FP Goodies ☼☼☼
 
 ____________________________________________
 
-
-## ![ico-25 icon] Currying
+## ![ico-25 icon] Currying⟪Currying⟫
 
 Currying has the same fundamental mathematical essence in both pure functional languages (such as Haskell) and JavaScript: it is the transformation of a function that takes several arguments into a sequence of functions, each of which takes exactly one argument. In Haskell, currying is built into the very nature of the language. Functions with multiple arguments do not technically exist at all. In JavaScript, functions take a list of arguments by default. To make a function currying-capable, it must be specifically designed using closures.
 
@@ -81,7 +80,6 @@ and so on...
 
 _______________________________________________________
 
-
 ◘◘![ico-25 cap] **11**◘◘
 
 ~~~js
@@ -105,8 +103,6 @@ console.log(curried)
 When the **_currying_** function was called, only one argument was passed to it – the string 'Google'
 so it returned a new instance of the function with the static argument 'Google'
 a reference to which we stored in the variable **_curried_**
-
-**Result in the console:**
 
 ~~~console
 ƒ ( second ) {
@@ -153,8 +149,6 @@ rectFunc(50, 50, 150, 150)
 lineFunc(20, 30, 200, 200)
 ~~~
 
-**Result in the console:**
-
 ~~~console
 Функция func вызвана в контексте объекта figure
      c аргументами circle,100,120,80
@@ -187,8 +181,6 @@ console.log(test[1]('IE'))
 console.log(test[2]('IE'))
 ~~~
 
-**Result in the console:**
-
 ~~~console
 ► (2) ["Google", "IE"]
 ► (3) ["Google", "Mozilla", "IE"]
@@ -215,14 +207,11 @@ var test = sample('Google', 'Mozilla', 'Safari')
 for (var num of [0, 1, 2]) console.log(test[num]('IE'))
 ~~~
 
-**Result in the console:**
-
 ~~~console
 ► (2) ["Google", "IE"]
 ► (3) ["Google", "Mozilla", "IE"]
 ► (4) ["Google", "Mozilla", "Safari", "IE"]
 ~~~
-
 
 _____________________________________
 
@@ -238,8 +227,6 @@ function func () {
 // func()()()()()()()()()()()
 (eval(`func${'()'.repeat(11)}`))
 ~~~
-
-**Result in the console:**
 
 ~~~console
 1
@@ -289,7 +276,6 @@ _____________________________________
 
 ◘◘![ico-25 cap] **17**◘◘
 
-
 ~~~js
 function test () {
   return Object.assign(this.bind(this, arguments[0] * 2), {
@@ -299,12 +285,11 @@ function test () {
 
 test = test.bind(test, 1)
 
-
 console.log(test ()()()()()().result)  // 64
 ~~~
 _________________________________________
 
-## ![ico-25 smile] A brain-teaser
+## ![ico-25 smile] A brain-teaser⟪A_brain-teaser⟫
 
 ![ico-20 question] What will happen when the following code is run:
 

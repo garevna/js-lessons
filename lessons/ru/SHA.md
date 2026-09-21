@@ -1,4 +1,4 @@
-# ![ico-30 study] Secure Hash Algorithm
+# ![ico-30 study] Secure Hash Algorithm⟪Secure_Hash_Algorithm⟫
 
 **криптографический алгоритм компьютерной безопасности**
 
@@ -26,7 +26,7 @@ _является частью стандарта цифровой подпис�
 
 ^^^
 
-## ![ico-25 icon] SHA-1
+## ![ico-25 icon] SHA-1⟪SHA-1⟫
 
 SHA-1 генерирует почти уникальную 160-битную ( 20-байтную ) подпись для текста
 
@@ -48,14 +48,14 @@ for (var x of arr) {
 
 _________________________
 
-### ![ico-25 icon] Онлайн-генераторы цифровой подписи SHA
+### ![ico-25 icon] Онлайн-генераторы цифровой подписи SHA⟪onlain-heneratori_tsyfrovoi_podpysy_SHA⟫
 
 [%%%SHA1%%%](https://passwordsgenerator.net/sha1-hash-generator/) 
 [%%%SHA2%%%](https://passwordsgenerator.net/sha256-hash-generator/)
 
 ___________________
 
-### ![ico-30 git] js-sha1
+### ![ico-30 git] js-sha1⟪js-sha1⟫
 
 Можно установить пакет [**~js-sha1~**](https://github.com/emn178/js-sha1) из CDN
 
@@ -63,7 +63,7 @@ ___________________
 
 _________________
 
-## ![ico-25 icon] SHA256
+## ![ico-25 icon] SHA256⟪SHA256⟫
 
 Вы можете подключить скрипт **~sha256~** к своей странице:
 
@@ -89,7 +89,7 @@ var hash = Sha256.hash(text)
 
 _______________________
 
-## ![ico-25 icon] SHA384
+## ![ico-25 icon] SHA384⟪SHA384⟫
 
 Откройте пустое окно (_blank_)
 
@@ -109,7 +109,7 @@ document.head.appendChild(script)
 
 ______________________________
 
-## ![ico-25 icon] integrity
+## ![ico-25 icon] integrity⟪integrity⟫
 
 **_Subresource Integrity_** (**SRI**) - это функция безопасности, которая позволяет браузерам проверять файлы, загружаемые из внешних источников (например, из CDN)
 
@@ -127,7 +127,7 @@ ______________________________
 
 ___________________________________
 
-## ![ico-25 hw] Самостоятельная работа
+## ![ico-25 hw] Самостоятельная работа⟪samostoyatelʹnaya_rabota⟫
 
 Посмотрите код [![ico-25 cap] **примера**](https://garevna.github.io/js-samples/#09) в отладчике
 

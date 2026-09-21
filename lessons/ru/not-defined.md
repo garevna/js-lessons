@@ -1,4 +1,4 @@
-# ![ico-30 study] Селектор :not(:defined)
+# ![ico-30 study] Селектор :not(:defined)⟪selektor_:not(:defined)⟫
 
 ![ico-25 cap] ** 1 **
 
@@ -15,8 +15,6 @@
 document.querySelectorAll(':not(:defined)')
 ~~~
 
-Результат
-
 ~~~console
 ▶ NodeList(2) [hello-element, bye-element]
 ~~~
@@ -26,8 +24,6 @@ document.querySelectorAll(':not(:defined)')
 ~~~js
 document.querySelectorAll(':defined')
 ~~~
-
-Результат
 
 ~~~console
 ▶ NodeList(3) [html, head, body]

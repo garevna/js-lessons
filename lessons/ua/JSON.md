@@ -1,4 +1,4 @@
-# ![ico-30 study] JSON
+# ![ico-30 study] JSON⟪JSON⟫
 
 Формат зберігання JS-об'єктів у вигляді текстового рядка зручний з точки зору обміну даними з сервером і зберігання даних складної структури.
 
@@ -16,7 +16,7 @@
     ► parse: ƒ parse()
     ► stringify: ƒ stringify()
       Symbol(Symbol.toStringTag): "JSON"
-    ▼ __proto__:
+    ▼ [[Prototype]]:
         ► constructor: ƒ Object()
         ► hasOwnProperty: ƒ hasOwnProperty()
         ► isPrototypeOf: ƒ isPrototypeOf()
@@ -34,7 +34,7 @@
 
 _____________________
 
-## ![ico-25 icon] JSON.stringify()
+## ![ico-25 icon] JSON.stringify()⟪JSON.stringify⟫
 
 Обов'язковим аргументом методу є посилання на об'єкт або масив, а глибина структури даних не обмежена.
 ^^Два додаткові формальні параметри є необов'язковими.^^
@@ -107,7 +107,7 @@ console.log(JSON.stringify(obj, null, 2))
 }
 ~~~
 
-### Обмеження
+### Обмеження⟪Restrictions⟫
 
 Справа в тому, що серіалізація об'єктів не завжди можлива.
 Є так звані об'єкти, що не серіалізуються, тому що містять циклічні посилання.
@@ -153,7 +153,7 @@ console.log(JSON.stringify(user, null, 2))
 
 _____________________
 
-## ![ico-25 icon] JSON.parse()
+## ![ico-25 icon] JSON.parse()⟪JSON.parse⟫
 
 Єдиний обов'язковий аргумент методу – JSON-рядок.
 Значення, що повертається - структура даних JS (масив або об'єкт).
@@ -183,15 +183,15 @@ JSON.parse(x)
         color: "green"
       ► position: (2) [250, 250]
         size: 200
-      ► __proto__: Object
+      ► [[Prototype]]: Object
     name: "sample"
     type: "figure"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ___________________
 
-## ![ico-25 icon] Глибоке копіювання
+## ![ico-25 icon] Глибоке копіювання⟪Deep_copy⟫
 
 Відомо, що масиви та об'єкти передаються за посиланням.
 
@@ -239,7 +239,7 @@ sample.position === obj.position
 
 ------------------------------------
 
-## ![ico-25 icon] Лайфхак
+## ![ico-25 icon] Лайфхак⟪Lifehack⟫
 
 Поставимо завдання серіалізації об'єкта, включаючи його методи.
 

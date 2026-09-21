@@ -1,4 +1,4 @@
-# ![ico-30 study] Methods
+# ![ico-30 study] Methods⟪Methods⟫
 
 A **method** is a property-function
 
@@ -49,7 +49,7 @@ window.year       //  вернет 2019
 
 _________________________________________________________
 
-### ![ico-20 file] The charCodeAt() method
+### ![ico-20 file] The charCodeAt() method⟪The_charCodeAt_method⟫
 
 The ~charCodeAt()~ method only works with strings
 
@@ -76,7 +76,7 @@ _________________________________________________________________________
 
 ___________________________________________________________________________
 
-### ![ico-20 file] The push() method
+### ![ico-20 file] The push() method⟪The_push_method⟫
 
 Метод  ~push ()~  работает только с массивами
 

@@ -1,8 +1,8 @@
-# ![ico-70 webpack] Именованный экспорт
+# ![ico-70 webpack] Именованный экспорт⟪ymenovannii_aksport⟫
 
 ________________________________
 
-## ![ico-25 hw] Упражнение 7
+## ![ico-25 hw] Упражнение 7⟪Exercise_7⟫
 
 Создадим новый файл ![ico-20 file] **_~PictureSlider.js~_**
 в папке ![ico-20 folder] **~js~**

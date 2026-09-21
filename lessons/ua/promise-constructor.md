@@ -1,4 +1,4 @@
-## ![ico-25 icon] Конструктор Promise
+## ![ico-25 icon] Конструктор Promise⟪The_Promise_constructor⟫
 
 Щоб глибше зрозуміти, як працює конструктор Promise,
 ми можемо написати власний код, який робитиме практично те саме
@@ -7,7 +7,7 @@
 
 Для цього згадаємо, що це таке
 
-### ![ico-20 icon] MutationObserver
+### ![ico-20 icon] MutationObserver⟪MutationObserver⟫
 
 Екземпляр **~MutationObserver~** відстежує зміни елементів DOM
 
@@ -44,7 +44,7 @@ const config = { childList: true }
 
 _______________________________________________________________
 
-### ![ico-20 icon] resolve | reject
+### ![ico-20 icon] resolve | reject⟪resolve___reject⟫
 
 Справа в тому, що під час створення промісу функція, яка передається конструктору **Promise**, має бути виконана одразу
 Але в тілі функції відбувається виклик колбеків **~resolve~** | **~reject~**,
@@ -96,7 +96,7 @@ this.createContainer('error')
 
 _____________________________________________________________________
 
-### ![ico-20 icon] Кастомний конструктор
+### ![ico-20 icon] Кастомний конструктор⟪Custom_constructor⟫
 
 
 ◘◘CustomPromise◘◘ 
@@ -148,7 +148,7 @@ CustomPromise.prototype.getObserver = function () {
 
 _____________________________________________________________
 
-### ![ico-20 icon] Приклад використання
+### ![ico-20 icon] Приклад використання⟪Example_of_use⟫
 
 Тепер використовуємо конструктор **CustomPromise** для створення промісу:
 

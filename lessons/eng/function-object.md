@@ -1,7 +1,6 @@
-# ![ico-30 study] The function object
+# ![ico-30 study] The function object⟪The_function_object⟫
 
 _______________________________________
-
 
 **A function is a callable _object_**
 **A function associated with an object via a property is called a _method_**
@@ -10,7 +9,7 @@ _______________________________________
 
 _______________________________________________
 
-## ![ico-25 icon] The arguments object
+## ![ico-25 icon] The arguments object⟪The_arguments_object⟫
 
 JavaScript functions have a built-in object **~arguments~**.
 It has a property **~length~**, just like an array.
@@ -45,7 +44,7 @@ testArguments(27, false, 'Fill', [7, 4, 5], null)
 
 ______________________________________
 
-### ![ico-20 icon] arguments.callee
+### ![ico-20 icon] arguments.callee⟪arguments.callee⟫
 
 The object **~arguments~** has a property **_~callee~_** – a reference to the function being executed (the ‘owner’ function of the object  ~arguments~).
 
@@ -226,7 +225,7 @@ for (var n = 0; n < 5; n++) {
 
 _______________________________________________
 
-## ![ico-25 icon] The calling object
+## ![ico-25 icon] The calling object⟪The_calling_object⟫
 
 In this sense, a function can be compared to ![ico-30 ambulance]
 Just like ![ico-20 ambulance], a function can move from one object to another (from where it is called).
@@ -260,7 +259,7 @@ What is inside the ![ico-20 ambulance] is the **execution context**.
 
 ^^^
 
-## ![ico-25 icon] prototype
+## ![ico-25 icon] prototype⟪prototype⟫
 
 The call context is an **object**.
 
@@ -325,7 +324,7 @@ for (var funcName of ['first', 'second', 'third']) window[funcName]()
 
 ____________________________
 
-### ![ico-20 icon] Reference to the call context
+### ![ico-20 icon] Reference to the call context⟪Reference_to_the_call_context⟫
 
 When an ambulance crew is called out, they receive a reference to the call object.
 
@@ -349,7 +348,7 @@ Within a function, the keyword **~this~** is a reference to the object in whose 
 
 _________________________________________
 
-## ![ico-25 icon] Execution context
+## ![ico-25 icon] Execution context⟪Execution_context⟫
 
 ![ico-20 warn] Every function call results in the creation of a new execution context.
 
@@ -372,7 +371,7 @@ So what will be in this context?
 
 _____________________________________________
 
-### ![ico-20 icon] Lexical Environment
+### ![ico-20 icon] Lexical Environment⟪Lexical_Environment⟫
 
 ^^When a function is called, it is activated.^^
 ^^It needs somewhere safe to ‘store’ the data it will be working with.^^
@@ -391,7 +390,7 @@ In the language specification, this object is called **~LexicalEnvironment~.**
 
 ______________________________________________
 
-### ![ico-20 icon] hoisting
+### ![ico-20 icon] hoisting⟪hoisting⟫
 
 So, after a function is called:
 
@@ -495,7 +494,7 @@ console.log(treg)  // 5
 
 ________________________________
 
-### ![ico-20 icon] Scope
+### ![ico-20 icon] Scope⟪Scope⟫
 
 Scope (**~scope~**) limits the scope of variable and function identifiers.
 
@@ -604,8 +603,6 @@ console.info('We left the execution context of the function "showSample"')
 console.info(`Now sample === ${sample}`)
 ~~~
 
-**Result in the console:**
-
 ~~~console
 We are in the execution context of the function "showSample"
 sample === function sample () {}
@@ -664,7 +661,7 @@ console.info(`(global) ${sample}`)
 
 ____________________________________
 
-### ![ico-20 icon] Scope chain
+### ![ico-20 icon] Scope chain⟪Scope_chain⟫
 
 So, a function may use variables that are not present in its ~LexicalEnvironment~.
 
@@ -678,7 +675,7 @@ So, a function may use variables that are not present in its ~LexicalEnvironment
 
 _______________________________________
 
-### ![ico-20 icon] this
+### ![ico-20 icon] this⟪this⟫
 
 **~this~** is another component of the function’s execution context.
 
@@ -760,7 +757,7 @@ girl()         // window
 
 ________________________________________
 
-## ![ico-25 icon] prototype
+## ![ico-25 icon] prototype⟪prototype⟫
 
 • A function as an **_object_** cannot be called using the method ~console.log~
 • For this purpose, you should use the method **~console.dir~**
@@ -780,8 +777,8 @@ In the console, we’ll see the following output:
       name: "sample"
     ▼ prototype:
         ▶ constructor: ƒ sample()
-        ▶ __proto__: Object
-    ▶ __proto__: ƒ ()
+        ▶ [[Prototype]]: Object
+    ▶ [[Prototype]]: ƒ ()
       [[FunctionLocation]]: VM476:1
     ▼ [[Scopes]]: Scopes[1]
         ▶ 0: Global {type: "global", name: "", object: Window}
@@ -807,6 +804,6 @@ Please also note the property **~&#95;&#95;proto&#95;&#95;~**, which we will exa
 
 ___________________________________
 
-## [![ico-30 hw] Exercises](test/functionObject)
+## [![ico-30 hw] Exercises](test/functionObject)⟪Exercises⟫
 
 [![ico-20 link] ^^w3schools^^](https://www.w3schools.com/js/js_scope.asp)

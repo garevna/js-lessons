@@ -1,8 +1,8 @@
-# ![ico-30 study] Arrow functions
+# ![ico-30 study] Arrow functions⟪Arrow_functions⟫
 
 **ES6**
 
-## ![ico-25 icon] Syntax
+## ![ico-25 icon] Syntax⟪Syntax⟫
 
 ![ico-20 error] **_function_**
 
@@ -125,9 +125,9 @@ const getAnswer = getAnswerTemplate
 
 ____________________________________________________
 
-## ![ico-25 icon] Key features of arrow functions
+## ![ico-25 icon] Key features of arrow functions⟪Key_features_of_arrow_functions⟫
 
-### ![ico-20 icon] prototype
+### ![ico-20 icon] prototype⟪prototype⟫
 
 @@@@
 Arrow functions do not have an object **~prototype~**.<br><br>![ico-20 warn] Therefore, arrow functions cannot be constructors.
@@ -192,7 +192,7 @@ const obj = new (() => {})
 
 ______________________________________________________
 
-### ![ico-25 icon] arguments
+### ![ico-25 icon] arguments⟪arguments⟫
 
 Arrow functions do not have an object **~arguments~**.
 
@@ -228,7 +228,7 @@ As a result of the code running, the object ~arguments~ of the function **_testA
 
 ______________________________________________________
 
-### ![ico-20 icon] prototype
+### ![ico-20 icon] prototype⟪prototype⟫
 
 Arrow functions don't have a **~prototype~** object.<br><br>![ico-20 warn] Therefore, arrow functions cannot be constructors.
 
@@ -236,7 +236,7 @@ an exception will be generated:
 
 It can be said that arrow functions have an ‘inherent’ call context.
 
-#### ![ico-20 icon] Object literal
+#### ![ico-20 icon] Object literal⟪Object_literal⟫
 
 ~~~js
 window.name = 'Chrome'
@@ -279,7 +279,7 @@ And here we can see how context passing works during the assignment process:
 Just for fun, I call this the ‘drill rule’ ![ico-25 smile]
 
 ----------------
-#### ![ico-20 icon] Call context
+#### ![ico-20 icon] Call context⟪Call_context⟫
 
 Now let’s recap how the builder works.
 
@@ -345,7 +345,7 @@ This means that the arrow function on the right-hand side of the assignment stat
 
 __________________________________
 
-#### ![ico-20 icon] Factory
+#### ![ico-20 icon] Factory⟪Factory⟫
 
 Now let’s see what happens when we use a factory instead of a constructor:
 ~~~js
@@ -386,7 +386,7 @@ Otherwise, using an arrow function will cause you a whole host of problems with 
 
 _____________________________________________________
 
-## ![ico-20 icon] Examples
+## ![ico-20 icon] Examples⟪Examples⟫
 
 ◘◘![ico-25 cap] ** 1**◘◘
 ~~~js

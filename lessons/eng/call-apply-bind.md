@@ -1,8 +1,8 @@
-# ![ico-30 study] Changing the context
+# ![ico-30 study] Changing the context⟪Changing_the_context⟫
 
 ____________________________________________
 
-## ![ico-25 icon] The Function constructor
+## ![ico-25 icon] The Function constructor⟪The_Function_constructor⟫
 
 Functions can be created by explicitly calling the **Function** constructor with the keyword **_~new~_**
 
@@ -29,8 +29,6 @@ func(5, 8, 11, false)
 console.dir(func)
 ~~~
 
-**Result in the console:**
-
 ~~~console
 ▼ ƒ anonymous(x,y,z )
     arguments: null
@@ -38,19 +36,18 @@ console.dir(func)
     length: 3
     name: "anonymous"
   ► prototype: {constructor: ƒ}
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 ________________________________
 
-## ![ico-25 icon] Inheritance
+## ![ico-25 icon] Inheritance⟪Inheritance⟫
 
 So, every function in JS is an _instance_ of the **Function** class
 
 It follows that:
 ![ico-20 pin] every function is an object
 ![ico-20 pin] all functions inherit properties and methods from the **_prototype_** object of the **Function** constructor
-
 
 ~~~js
 console.dir(Function)
@@ -79,8 +76,8 @@ console.dir(Function)
       ► set arguments: ƒ ()
       ► get caller: ƒ ()
       ► set caller: ƒ ()
-      ► __proto__: Object
-  ► __proto__: ƒ ()
+      ► [[Prototype]]: Object
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 ^^^
@@ -104,7 +101,7 @@ console.dir(func)
     length: 0
     name: "func"
   ► prototype: {constructor: ƒ}
-  ▼ __proto__: ƒ ()
+  ▼ [[Prototype]]: ƒ ()
       ► apply: ƒ apply()
         arguments: (...)
       ► bind: ƒ bind()
@@ -119,12 +116,12 @@ console.dir(func)
       ► set arguments: ƒ ()
       ► get caller: ƒ ()
       ► set caller: ƒ ()
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 ^^^
 
-![ico-20 pin] Since the **Function** constructor is also a function, its **_~__proto__~_** property is likewise a reference to its own **_~prototype~_** property
+![ico-20 pin] Since the **Function** constructor is also a function, its **~__proto__~** property is likewise a reference to its own **~prototype~** property
 
 _________________________________
 
@@ -162,7 +159,7 @@ I'm figure
 
 ____________________________________
 
-## ![ico-25 icon] prototype
+## ![ico-25 icon] prototype⟪prototype⟫
 
 @@@@
 ![](slogans/funcs-call-girls.svg)
@@ -220,7 +217,7 @@ getName.getName()
 ~~~
 _____________________________________________
 
-## ![ico-25 icon] Changing the context
+## ![ico-25 icon] Changing the context⟪Changing_the_context⟫
 
 By looking at the **_~prototype~_** property of the **Function** constructor or the **_~&#95;&#95;proto&#95;&#95;~_** property of a function instance
 you will find three methods that all functions inherit from their creator:
@@ -239,7 +236,7 @@ The method **~bind~** creates a new instance of the function with a fixed call c
 
 Furthermore, **~bind~** also allows arguments to be rigidly bound to the new instance: in effect, the specified arguments will become constant for the new instance of the function
 
-### ![ico-20 icon] call()
+### ![ico-20 icon] call()⟪call⟫
 
 The first mandatory argument of the method is a reference to the object in whose context the function will be called
 
@@ -279,17 +276,16 @@ func.call(figure, 9, false, 'Hello')
 func.call(sample, 5, 1, 'Bye')
 ~~~
 
-**Result in the console:**
-
-••figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]••
-••sample ► Arguments(3) [ 5, 1, "Bye", callee: ƒ, Symbol(Symbol.iterator): ƒ ]••
-
+~~~console
+figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
+sample ► Arguments(3) [ 5, 1, "Bye", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
+~~~
 
 ________________________________________
 
-### ![ico-20 icon] apply()
+### ![ico-20 icon] apply()⟪apply⟫
 
-The **_apply()_** method differs from the **_call()_** method only in the way arguments are passed – they must now be passed as an array:
+The **~apply()~** method differs from the **~call()~** method only in the way arguments are passed – they must now be passed as an array:
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
@@ -305,15 +301,12 @@ func.apply(figure, [9, false, 'Hello'])
 func.apply(sample, [5, 1, 'Bye'])
 ~~~
 
-**Result in the console:**
-
 ~~~console
 figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
 sample ► Arguments(3) [ 5, 1, "Bye", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
 ~~~
 
 __________________________________________________
-
 
 Passing an array of arguments rather than a list of their values provides a certain degree of flexibility
 as arrays are passed by reference, and the contents of the array may be dynamically updated from one call to the next
@@ -347,28 +340,30 @@ var objects = [
 objects.forEach(obj => func.apply(obj, args))
 ~~~
 
-**Result in the console:**
+~~~console
 
-••![ico-20 warn] ► Who was called before figure (0):••
-••![ico-20 warn] ► Who was called before sample (1):••
-••figure••
-••![ico-20 warn] ► Who was called before google (2):••
-••figure••
-••sample••
+<p class="warning-message">Who was called before figure (0):</p>
+<p class="warning-message">Who was called before sample (1):</p>
+figure
+<p class="warning-message">Who was called before google (2):</p>
+figure
+sample
+
+~~~
 
 _____________________________
 
 ^^Calls to the **_func_** function are logged in the **args** array^^
 ^^With each call, the **_func_** function receives, as arguments, a complete record of how many times it has been called previously and in what context^^
-^^Поменяйте местами вызовы функций, или добавьте повторный вызов любой из функций, и посмотрите результат^^
+^^Swap the order of the function calls, or add a repeat call to any of the functions, and see what happens^^
 
 ______________________________________________________________________________
 
-### ![ico-20 icon] bind()
+### ![ico-20 icon] bind()⟪bind⟫
 
-По сути, метод **~bind~** является декоратором, поскольку он создает обертку для исходной функции
+Essentially, the **~bind~** method is a decorator, as it creates a wrapper for the original function
 
-Функция-wrapper, в которую "заворачивается" исходная функция, вызывает ее в нужном контексте:
+The wrapper function, into which the original function is wrapped, calls it in the required context:
 
 ◘◘![ico-25 cap] ** 8**◘◘
 
@@ -386,9 +381,9 @@ var user = { name: 'Фигаро' }
 bindContext(sample, user, 'Hello')
 ~~~
 
-Чтобы функция-wrapper возвращала новый экземпляр, немного изменим код,
-а так же обеспечим возможность привязки не только контекста вызова,
-но и аргументов ( этот прием программирования называется **_Currying_**, или каррирование ):
+To ensure the wrapper function returns a new instance, let’s make a slight change to the code,
+and also allow us to bind not only the call context,
+but also the arguments (this programming technique is called **_Currying_**):
 
 ~~~js
 function bindContext (func, context, props) {
@@ -401,17 +396,17 @@ function sample (message) {
   console.log(`${this.name}: ${message}`)
 }
 
-var user = { name: 'Фигаро' }
+var user = { name: 'Figaro' }
 
 var userSayHello = bindContext(sample, user, 'Hello')
 
 var userSay = bindContext(sample, user)
 
-userSayHello()     // Фигаро: Hello
-userSay('Bye')  // Фигаро: Bye
+userSayHello()     // Figaro: Hello
+userSay('Bye')  // Figaro: Bye
 ~~~
 
-Вот и весь механизм работы метода **~bind~**
+That’s the whole mechanism behind the **~bind~** method
 
 ____________________________
 
@@ -426,7 +421,7 @@ var test = (function () {
 })()
 
 function func () {
-  console.warn(`Функция func вызвана ${this.test()} раз в контексте объекта ${this.name}`)
+  console.warn(`The function func is called ${this.test()} times within the context of the object ${this.name}`)
 }
 
 var objects = [
@@ -442,20 +437,20 @@ funcs[1]()
 funcs[2]()
 ~~~
 
-**Result in the console:**
-
-••![ico-20 warn] ► Функция func вызвана 1 раз в контексте объекта figure••
-••![ico-20 warn] ► Функция func вызвана 2 раз в контексте объекта sample••
-••![ico-20 warn] ► Функция func вызвана 3 раз в контексте объекта google••
+~~~console
+<p class="warning-message">The function func is called 1 times within the context of the object figure</p>
+<p class="warning-message">The function func is called 2 times within the context of the object sample</p>
+<p class="warning-message">The function func is called 3 times within the context of the object google</p>
+~~~
 
 _____________________________
 
-^^Теперь контекст вызова экземпляров **_figureFunc()_**, **_sampleFunc()_** и **_googleFunc()_** изменить невозможно,
-и при вызове этих функций не нужно явно указывать, в каком контексте они вызываются^^
+^^It is now impossible to change the call context of the instances **~figureFunc()~**, **~sampleFunc()~** and **~googleFunc()~**,^^
+^^and when calling these functions, there is no need to explicitly specify the context in which they are called^^
 
 ____________________________________
 
-Добавим еще один объект **bloom** с методами **_figure()_**, **_sample()_** и **_google()_**:
+Let’s add another object **bloom** with the methods **~figure()~**, **~sample()~** and **~google()~**:
 
 ◘◘![ico-25 cap] **10**◘◘
 
@@ -470,15 +465,15 @@ bloom.sample()
 bloom.google()
 ~~~
 
-**Result in the console:**
-
-••![ico-20 warn] ► Функция func вызвана 4 раз в контексте объекта figure••
-••![ico-20 warn] ► Функция func вызвана 5 раз в контексте объекта sample••
-••![ico-20 warn] ► Функция func вызвана 6 раз в контексте объекта google••
+~~~console
+<p class="warning-message">The function func is called 4 times within the context of the object figure</p>
+<p class="warning-message">The function func is called 5 times within the context of the object sample</p>
+<p class="warning-message">The function func is called 6 times within the context of the object google</p>
+~~~
 
 _______________________________
 
-Несмотря на явное указание контекста при вызове методов:
+Despite explicitly specifying the context when calling methods:
 
 ~~~js
 bloom.figure()
@@ -486,15 +481,14 @@ bloom.sample()
 bloom.google()
 ~~~
 
-они отрабатывают в том контексте, который мы им "прибиндили" до этого
-"Прибиндить" можно не только контекст вызова, но также и аргументы
-
+they are executed in the context that we bound to them previously
+You can attach not only the call context but also the arguments
 
 _________________________________________
 
-## ![ico-25 smile] Тест на вынос мозга
+## ![ico-25 smile] A mind-bending test⟪A_mind-bending_test⟫
 
-![ico-20 question] Что произойдет в результате запуска кода:
+![ico-20 question] What will happen when the following code is run:
 
 ~~~js
 var sample = function () {

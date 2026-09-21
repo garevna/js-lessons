@@ -1,7 +1,7 @@
-# ![ico-30 study] NaN / null / Infinity
+# ![ico-30 study] NaN / null / Infinity⟪NaN_/_null_/_Infinity⟫
 
 
-## ![ico-25 icon] Значення NaN
+## ![ico-25 icon] Значення NaN⟪The_value_NaN⟫
 
 **Тип даних ~number~**
 
@@ -44,7 +44,7 @@ Number.isNaN('привет' / 10)   //  true
 
 _____________________________________________________________
 
-## ![ico-25 icon] Значення null
+## ![ico-25 icon] Значення null⟪The_value_null⟫
 
 **Тип даних ~object~**
 
@@ -66,7 +66,7 @@ null == []                // false
 
 _____________________________________________________________
 
-## ![ico-25 icon] Значення Infinity
+## ![ico-25 icon] Значення Infinity⟪The_value_Infinity⟫
 
 **Тип даних ~number~**
 

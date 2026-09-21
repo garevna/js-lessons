@@ -1,4 +1,4 @@
-# ![ico-70 webpack] WebSocket
+# ![ico-70 webpack] WebSocket⟪WebSocket⟫
 
 **WebSockets API** позволяет веб-приложениям использовать протокол ~WebSockets~ для двусторонней связи с удаленным хостом
 
@@ -57,7 +57,7 @@ Upgrade: websocket
 
 _______________________________________________
 
-## ![ico-25 hw] Упражнение 1
+## ![ico-25 hw] Упражнение 1⟪Exercise_1⟫
 
 <img src="https://www.piesocket.com/img/logo.png" height="40"/>
 
@@ -74,7 +74,6 @@ const websocket = new WebSocket(`wss://demo.piesocket.com/v3/channel_1?api_key=$
 ~~~
 
 При вызове конструктора **_WebSocket_** необходимо передать ему обязательный аргумент ~протокол://домен:порт~
-
 
 • протокол может быть ~ws~ или ~wss~
 • домен будет ~demo.piesocket.com~ (точнее говоря, это субдомен demo домена piesocket.com)
@@ -109,8 +108,6 @@ websocket.onerror = function (event) {
 }
 ~~~
 
-◘◘^^Результат в консоли^^◘◘
-
 ~~~console
 CONNECTED
 Happy New Year!
@@ -121,8 +118,7 @@ DISCONNECTED
 
 ______________________________________________________________________________________
 
-## ![ico-25 hw] Упражнение 2
-
+## ![ico-25 hw] Упражнение 2⟪Exercise_2⟫
 
 Для получения некоторого экспириенса с веб-сокетами нам придется познакомиться с серверным JS
 
@@ -132,11 +128,9 @@ ________________________________________________________________________________
 
 В **Node.js** нет встроенной поддержки ~WebSocket~, поэтому установим плагин **~ws~**
 
-### ![ico-20 bash] Установка
-
+### ![ico-20 bash] Установка⟪Installation⟫
 
 ••$ npm install ws••
-
 
 Теперь создадим вебсокет-сервер 
 
@@ -222,7 +216,6 @@ server.on('connection', socket => {
 
 •• ![ico-20 bash] $ node start.js••
 
-
 Теперь откроем новую вкладку и введем в адресной строке браузера:
 
 **~http://localhost:8080/~**
@@ -283,16 +276,16 @@ received from a client:
 ▼ { name: "server", message: "I listen to you" }
     message: "I listen to you"
     name: "server"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ______________________________________________________________________________________
 
-## ![ico-25 hw] Упражнение 3
+## ![ico-25 hw] Упражнение 3⟪Exercise_3⟫
 
 Создадим простенький чат
 
-### ![ico-20 ico] Серверная часть
+### ![ico-20 ico] Серверная часть⟪servernaya_chastʹ⟫
 
 Теперь серверный скрипт будет немного сложнее, поэтому углубимся в **Node.js**
 
@@ -494,7 +487,7 @@ const randomValue = num => Math.round(Math.random() * num)
 
 ______________________________________________________________
 
-### ![ico-20 ico] Клиентская часть
+### ![ico-20 ico] Клиентская часть⟪klyentskaya_chastʹ⟫
 
 ◘◘![ico-20 file] index.html◘◘
 
@@ -685,7 +678,6 @@ ___________________________
 В первую очередь стартуем сервер:
 
 ••![ico-20 bash] $ node start.js••
-
 
 Теперь откроем в браузере файл **index.html**
 

@@ -1,4 +1,4 @@
-## ![ico-25 icon] The Promise constructor
+## ![ico-25 icon] The Promise constructor⟪The_Promise_constructor⟫
 
 To gain a deeper understanding of how the Promise constructor works,
 we can write our own code that does practically the same thing
@@ -7,7 +7,7 @@ Since Promise callbacks are microtasks, we will use **MutationObserver**
 
 To do this, let’s recall what it is
 
-### ![ico-20 icon] MutationObserver
+### ![ico-20 icon] MutationObserver⟪MutationObserver⟫
 
 An instance of **~MutationObserver~** monitors changes to DOM elements
 
@@ -44,7 +44,7 @@ Now we need to specify the elements whose changes we will monitor
 
 _______________________________________________________________
 
-### ![ico-20 icon] resolve | reject
+### ![ico-20 icon] resolve | reject⟪resolve___reject⟫
 
 The thing is that when creating a promise, the function passed to the **Promise** constructor must be executed immediately
 However, within the body of the function, the callbacks **~resolve~** | **~reject~** are called,
@@ -96,7 +96,7 @@ this.createContainer('error')
 
 _____________________________________________________________________
 
-### ![ico-20 icon] Custom constructor
+### ![ico-20 icon] Custom constructor⟪Custom_constructor⟫
 
 
 ◘◘CustomPromise◘◘ 
@@ -148,7 +148,7 @@ CustomPromise.prototype.getObserver = function () {
 
 _____________________________________________________________
 
-### ![ico-20 icon] Example of use
+### ![ico-20 icon] Example of use⟪Example_of_use⟫
 
 Now let’s use the **CustomPromise** constructor to create a promise:
 

@@ -1,4 +1,4 @@
-# ![ico-30 study] UTF-8
+# ![ico-30 study] UTF-8⟪UTF-8⟫
 
 Усі символи мають числовий код
 
@@ -44,7 +44,7 @@
 
 ________________________________________________________
 
-### [![ico-30 hw] Вправи](https://docs.google.com/forms/d/e/1FAIpQLSdsKuS6kG1r5O3H62G_m32NK8a88jmFmJ5e4N2uAiDLAb31xQ/viewform)
+### [![ico-30 hw] Вправи](https://docs.google.com/forms/d/e/1FAIpQLSdsKuS6kG1r5O3H62G_m32NK8a88jmFmJ5e4N2uAiDLAb31xQ/viewform)⟪Exercises⟫
 
 _____________________________________________________________
 

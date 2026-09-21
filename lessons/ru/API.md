@@ -1,4 +1,4 @@
-# ![ico-30 study] API
+# ![ico-30 study] API⟪API⟫
 
 [** ♫**](sounds/ua/api.mp3)
 
@@ -19,7 +19,7 @@ _________________________
 (например, [![ico-70 firebase]](https://firebase.google.com/) or [![ico-35 google-maps]](https://developers.google.com/maps/documentation/javascript/)).
 _________________________
 
-## ![ico-25 icon] CRUD
+## ![ico-25 icon] CRUD⟪CRUD⟫
 
 [** ♫**](sounds/ua/api-crud.mp3)
 
@@ -46,7 +46,7 @@ _________________________
 ^^^
 ____________________
 
-## ![ico-25 icon] Request & Response
+## ![ico-25 icon] Request & Response⟪Request_&_Response⟫
 
 [** ♫**](sounds/ua/api-request-response.mp3)
 
@@ -60,7 +60,7 @@ ____________________
 
 __________________________________
 
-### ![ico-25 icon] Resource
+### ![ico-25 icon] Resource⟪Resource⟫
 
 [** ♫**](sounds/ua/api-resource.mp3)
 
@@ -78,7 +78,7 @@ __________________________________
 
 _____________________________________
 
-## ![ico-25 icon] API endpoints
+## ![ico-25 icon] API endpoints⟪API_endpoints⟫
 
 [** ♫**](sounds/ua/api-endpoints.mp3)
 
@@ -159,7 +159,7 @@ Endpoint в REST API - это точка, к которой обращается
 Он представляет собой не просто URL-адрес, а совокупность адреса API и маршрута, который включает идентификатор ресурса и информацию о том, какое действие надо выполнить. Это как веб-адрес, но с дополнительными частями, которые указывают, что именно нужно сделать с данными.
 ______________________________________________
 
-## ![ico-25 icon] web service
+## ![ico-25 icon] web service⟪web_service⟫
 
 **Термины:**
 
@@ -178,7 +178,7 @@ ______________________________________________
 
 _________________________________________
 
-### ![ico-20 icon] REST API
+### ![ico-20 icon] REST API⟪REST_API⟫
 
 Основной принцип **REST** заключается в ограничении набора операций — используются только операции **CRUD** (~Create~ ~Read~ ~Update~ ~Delete~).
 
@@ -192,7 +192,7 @@ _________________________________________
 
 ___________________________________________
 
-### ![ico-20 icon] SOAP vs REST
+### ![ico-20 icon] SOAP vs REST⟪SOAP_vs_REST⟫
 
 **_API_** обычно классифицируются как **SOAP** или **REST**, и оба используются для доступа к веб-сервисам
 

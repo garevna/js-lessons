@@ -1,4 +1,4 @@
-# ![ico-30 study] Вычисляемые имена свойств
+# ![ico-30 study] Вычисляемые имена свойств⟪vichyslyaemie_ymena_svoistv⟫
 
 **ES6**
 
@@ -103,8 +103,6 @@ console.log(bag.getRose())
 console.log(bag.getFlower())
 console.log(bag.getMashroom())
 ~~~
-
-**Результат**
 
 ~~~console
 

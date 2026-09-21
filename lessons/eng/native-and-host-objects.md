@@ -1,8 +1,8 @@
-# ![ico-30 study] JS objects
+# ![ico-30 study] JS objects⟪JS_objects⟫
 
 _____________________________________________
 
-## ![ico-25 icon] Native and host JS objects
+## ![ico-25 icon] Native and host JS objects⟪Native_and_host_JS_objects⟫
 
 Native objects are defined by the language specification
 
@@ -73,7 +73,7 @@ There are two ways to create a native JS object:
 
 _________________________________
 
-## ![ico-25 icon] Object literal
+## ![ico-25 icon] Object literal⟪Object_literal⟫
 
 In literal notation, an object is defined within a block of curly brackets:
 
@@ -140,8 +140,7 @@ sample.page()
 
 ____________________________________________
 
-
-### ![ico-20 icon] Inherent properties
+### ![ico-20 icon] Inherent properties⟪Inherent_properties⟫
 
 Instance properties are _encapsulated_ within the instance
 
@@ -174,7 +173,7 @@ figure2.type      // "triangle"
 
 __________________________________________
 
-### ![ico-20 icon] Iterable properties
+### ![ico-20 icon] Iterable properties⟪Iterable_properties⟫
 
 **Iterable** properties of an instance are properties that can be iterated over using the loop operator  **~for...in~**
 
@@ -203,7 +202,7 @@ Clearly, each of these terms has an antonym; that is, there must be _private_, _
 
 ________________________
 
-### ![ico-20 icon] Inherited properties
+### ![ico-20 icon] Inherited properties⟪Inherited_properties⟫
 
 ◘◘![ico-25 cap] 2◘◘
 
@@ -222,7 +221,7 @@ If you ‘unpack’ an instance of **figure** in the console, then in addition t
     color:"red"
     radius:100
     type:"Окружность"
-  ► __proto__:Object
+  ► [[Prototype]]:Object
 ~~~
 
 The output is a **non-enumerable** property
@@ -236,7 +235,7 @@ If we expand the property **~&#95;&#95;proto&#95;&#95;~**, we will see the follo
 ^^^[__proto__]
 
 ~~~console
-▼ __proto__
+▼ [[Prototype]]
    ► constructor: ƒ Object()
    ► hasOwnProperty: ƒ hasOwnProperty()
    ► isPrototypeOf: ƒ isPrototypeOf()
@@ -339,7 +338,7 @@ Print all native built-in objects to the console and trace the reference to **~O
 
 _________________________
 
-## ![ico-25 icon] Call context
+## ![ico-25 icon] Call context⟪Call_context⟫
 
 It’s time to get to grips with what a constructor actually is
 
@@ -367,9 +366,9 @@ Let’s print the instance **obj** to the console:
 
 ~~~console
 ▼ Sample {}
-    ▼ __proto__:
+    ▼ [[Prototype]]:
         ► constructor: ƒ Sample( params )
-        ► __proto__: Object
+        ► [[Prototype]]: Object
 ~~~
 
 • We have created an empty object of the **Sample** class ^^(more precisely, we have created an instance of the object)^^
@@ -388,7 +387,7 @@ Sample.prototype
 ~~~console
 ▼ {constructor: ƒ}
     ► constructor: ƒ Sample(params)
-    ► __proto__: Object
+    ► [[Prototype]]: Object
 ~~~
 
 We can add properties to **~prototype~** of the **Sample** constructor
@@ -434,8 +433,6 @@ console.log(func)
 func()
 ~~~
 
-**Result:**
-
 ~~~console
 ƒ anonymous(
 ) {
@@ -448,7 +445,7 @@ Hello, baby
 
 ___________________________________
 
-## ![ico-25 icon] Public and private properties
+## ![ico-25 icon] Public and private properties⟪Public_and_private_properties⟫
 
 A constructor is a function; it follows, therefore, that a constructor can be used to ‘hide’ variables and functions
 Where can they be hidden? – Within an instance created using that constructor

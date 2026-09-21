@@ -1,4 +1,4 @@
-# ![ico-30 study] &lt;template>
+# ![ico-30 study] &lt;template>⟪template_⟫
 
 _____________________________________________________________________________
 
@@ -10,7 +10,7 @@ The ~<template>~ element is intended to store a markup template
 
 ____________________________________________________________________________
 
-## ![ico-25 icon] DocumentFragment
+## ![ico-25 icon] DocumentFragment⟪DocumentFragment⟫
 
 This is a document fragment that has no parent in the DOM tree
 
@@ -22,7 +22,7 @@ This is a markup template which, if necessary, can be inserted at the right time
 
 ________________________________________________________________________________
 
-### ![ico-25 cap] Example 1
+### ![ico-25 cap] Example 1⟪Example_1⟫
 
 ^^Let’s open the _Elements_ tab in the developer tools and insert the following markup code into the ~body~ element:^^
 
@@ -47,12 +47,12 @@ ________________________________________________________________________________
 
 ________________________________________________________________________________
 
-## ![ico-25 icon] content
+## ![ico-25 icon] content⟪content⟫
 
 The _**~content~**_ property of the ~template~ element contains the markup code located within the ~<template>...</template>~ container
 
 
-### ![ico-25 cap] Example 2
+### ![ico-25 cap] Example 2⟪Example_2⟫
 
 **Markup template**
 
@@ -100,12 +100,12 @@ console.dir(circle.content)
     parentNode: null
     previousSibling: null
     textContent: "↵        Template header↵        Template text↵    "
-  ► __proto__: DocumentFragment
+  ► [[Prototype]]: DocumentFragment
 ~~~
 
 ^^^
 
-## ![ico-25 icon] Inserting into the DOM
+## ![ico-25 icon] Inserting into the DOM⟪Inserting_into_the_DOM⟫
 
 ^^If we run the code:^^
 
@@ -135,7 +135,7 @@ document.body.appendChild(circle.content.cloneNode(true))
 
 _________________________________________________________________
 
-### ![ico-25 cap] Example 3
+### ![ico-25 cap] Example 3⟪Example_3⟫
 
 **Markup template**
 
@@ -177,7 +177,7 @@ customElements.define('canvas-element', CanvasElement)
 
 _______________________________________________________________________
 
-### ![ico-25 cap] Example 4
+### ![ico-25 cap] Example 4⟪Example_4⟫
 
 ^^Now let’s do it all in pure JS:^^
 

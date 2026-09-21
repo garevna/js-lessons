@@ -1,6 +1,6 @@
-# ![ico-35 study] Document Object Model (DOM)
+# ![ico-35 study] Document Object Model (DOM)⟪Document_Object_Model_(DOM)⟫
 
-## ![ico-30 icon] Методы объектов DOM
+## ![ico-30 icon] Методы объектов DOM⟪metodi_obъektov_DOM⟫
 
 Вот тут и начинается самое прикольное: открывая и закрывая дверцы модели машинки, мы будем заставлять браузер открывать и закрывать дверцы оригинала.
 
@@ -10,7 +10,7 @@
 
 Это методы как самого объекта **~document~**, так и всех **элементов DOM**.
 
-### ![ico-25 icon] appendChild()
+### ![ico-25 icon] appendChild()⟪appendChild⟫
 
 Добавляет элементу дочерний элемент.
 
@@ -79,7 +79,7 @@ document.body.appendChild(script)
 
 _________________________________________
 
-### ![ico-25 icon] removeChild()
+### ![ico-25 icon] removeChild()⟪removeChild⟫
 
 Удаление элемента
 
@@ -123,7 +123,7 @@ figure.appendChild(removed)
 
 _______________________________
 
-### ![ico-25 icon] insertBefore()
+### ![ico-25 icon] insertBefore()⟪insertBefore⟫
 
 ◘◘![ico-25 cap] ** 5**◘◘
 
@@ -154,7 +154,7 @@ main.insertBefore(document.createElement('p'), section)
 
 _____________________________________________
 
-### ![ico-25 icon] insertAdjacentHTML()
+### ![ico-25 icon] insertAdjacentHTML()⟪insertAdjacentHTML⟫
 
 Вставим в разметку элементы _~main~_, _~section~_ и _~figure~_ следующим образом:
 
@@ -197,7 +197,7 @@ section.insertAdjacentHTML('afterEnd', '<p>afterEnd</p>')
 
 ______________________________________________
 
-### ![ico-25 icon] insertAdjacentElement()
+### ![ico-25 icon] insertAdjacentElement()⟪insertAdjacentElement⟫
 
 ◘◘![ico-25 cap] ** 7**◘◘
 
@@ -243,11 +243,11 @@ document.getElementsByTagName('figure')[0]
 
 ________________________________________
 
-## ![ico-30 icon] Свойства элементов DOM
+## ![ico-30 icon] Свойства элементов DOM⟪svoistva_alementov_DOM⟫
 
 ____________________________
 
-### ![ico-25 icon] childNodes
+### ![ico-25 icon] childNodes⟪childNodes⟫
 
 Объект **~NodeList~**
 
@@ -285,8 +285,6 @@ ____________________________
 document.body.childNodes
 ~~~
 
-◘◘Результат◘◘
-
 ~~~console
 ▼ NodeList(7) [text, div.container, text, h1.header, text, p.paragraph, text]
     0: text
@@ -297,7 +295,7 @@ document.body.childNodes
   ► 5: p.paragraph
   ► 6: text
     length: 7
-  ► __proto__: NodeList
+  ► [[Prototype]]: NodeList
 ~~~
 
 ![ico-20 warn] Обратите внимание, что все переводы строк (и пустые строки) рассматриваются как тестовые узлы документа.
@@ -308,8 +306,6 @@ document.body.childNodes
 document.querySelector('[title]').childNodes
 ~~~
 
-◘◘Результат◘◘
-
 ~~~console
 ▼ NodeList(5) [text, a.paragraph, text, img#picture.galleryPicture, text]
     0: text
@@ -318,7 +314,7 @@ document.querySelector('[title]').childNodes
   ► 3: img#picture.galleryPicture
   ► 4: text
     length: 5
-  ► __proto__: NodeList
+  ► [[Prototype]]: NodeList
 ~~~
 ___________________
 
@@ -326,7 +322,7 @@ ___________________
 
 _________________________________
 
-### ![ico-25 icon] children
+### ![ico-25 icon] children⟪children⟫
 
 Объект **~HTMLCollection~**
 
@@ -336,20 +332,18 @@ _________________________________
 document.body.children
 ~~~
 
-◘◘Результат◘◘
-
 ~~~console
 ▼ HTMLCollection(3) [div.container, h1.header, p.paragraph]
   ► 0: div.container
   ► 1: h1.header
   ► 2: p.paragraph
     length: 3
-  ► __proto__: HTMLCollection
+  ► [[Prototype]]: HTMLCollection
 ~~~
 
 ___________________________________
 
-### ![ico-25 icon] parentNode
+### ![ico-25 icon] parentNode⟪parentNode⟫
 
 ^^Ссылка на родительский элемент (контейнер, в котором находится элемент).^^
 
@@ -371,7 +365,7 @@ console.dir(section.parentNode)  // ► div#demo
 
 _____________________________________________
 
-### ![ico-25 icon] on + тип события
+### ![ico-25 icon] on + тип события⟪on_+_typ_sobityya⟫
 
 Все свойства элементов DOM, начинающиеся на **~on~**, являются потенциальными ссылками на обработчика соответствующего события
 
@@ -393,7 +387,7 @@ for (var prop in section) {
 
 _____________________________________
 
-### ![ico-25 icon] Memory leaks
+### ![ico-25 icon] Memory leaks⟪Memory_leaks⟫
 
 Предположим, вы сохраняете ссылку на конкретную ячейку таблицы (тег &lt;td>) в своем коде.
 В какой-то момент в будущем вы решите удалить таблицу из DOM, но забываете удалить ссылку на эту ячейку.
@@ -404,7 +398,7 @@ _____________________________________
 
 _______________________________________
 
-### ![ico-25 icon] Атрибуты тегов
+### ![ico-25 icon] Атрибуты тегов⟪atrybuti_tehov⟫
 
 Почти все атрибуты тегов, предусмотренные в спецификации языка HTML5, благополучно маппируются в одноименные свойства объектов DOM.
 Например, в разметке присутствует тег **~&lt;img />~** с атрибутом **~src~**. В объектной модели документа ему будет соответствовать объект, имеющий свойство **~src~**. Значение этого свойства будет таким же, как и у атрибута **~src~**.
@@ -441,8 +435,6 @@ div.setAttribute('style', `
 console.info(div.getBoundingClientRect())
 ~~~
 
-◘◘Результат◘◘
-
 ~~~console
 ▼ DOMRect {x: 8, y: 8, width: 202, height: 202, top: 8, …}
     bottom: 210
@@ -453,7 +445,7 @@ console.info(div.getBoundingClientRect())
     width: 202
     x: 8
     y: 8
-  ► __proto__: DOMRect
+  ► [[Prototype]]: DOMRect
 ~~~
 ___________________________
 
@@ -474,7 +466,7 @@ document.body.appendChild(btn)
 
 _________________________________________
 
-## ![ico-30 hw] Tests
+## ![ico-30 hw] Tests⟪Tests⟫
 
 ◘◘** 1**◘◘
 ~~~js
@@ -485,7 +477,6 @@ elem.tagName = 'div'
 ~~~
 
 →→→ Какой элемент появится в DOM? | p, div, 'будет сгенерировано исключение' | p→→→
-
 
 ◘◘** 2**◘◘
 ~~~js
@@ -512,11 +503,9 @@ for (var text of paragraph) {
 
 →→→ Сколько элементов будет добавлено на страницу? | 0, 3, 1, 4 | 4→→→
 
-
 ◘◘** 4**◘◘
 
 →→→ Какой тип данных у свойства innerHTML элемента DOM? | 'boolean', 'undefined', 'string', 'function', 'number', 'object' | string→→→
-
 
 ◘◘** 5**◘◘
 ~~~js

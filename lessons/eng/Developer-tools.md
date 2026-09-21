@@ -1,4 +1,4 @@
-# ![ico-35 icon] Web Developer's Dashboard
+# ![ico-35 icon] Web Developer's Dashboard⟪Web_Developer-s_Dashboard⟫
 
 If you use the keyboard shortcut **~Ctrl + Shift + I~** or the **~F12~** key, it will open up a development panel like this:
 
@@ -13,7 +13,7 @@ If you have studied layout, you are already familiar with the **Elements** tab. 
 However, now we will gradually learn the rest of the tabs, and we will start with the **Console** tab.
 _______________________________________________________________
 
-## ![ico-30 icon] Browser Console
+## ![ico-30 icon] Browser Console⟪Browser_Console⟫
 
 In the console we see the prompt **~ > ~**, i.e. the console is waiting for you to enter any command, which will be executed as soon as you press **~Enter~**:
 

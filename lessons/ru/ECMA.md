@@ -1,4 +1,4 @@
-# ![ico-30 study] ECMAScript
+# ![ico-30 study] ECMAScript⟪ECMAScript⟫
 
 ![](illustrations/ecma-logo.jpg)
 
@@ -6,7 +6,7 @@
 
 _______________________________________________________
 
-### [6th Edition / June 2015](https://262.ecma-international.org/6.0/)
+### [6th Edition / June 2015](https://262.ecma-international.org/6.0/)⟪6th_Edition_/_June_2015⟫
 
 [![ico-20 link] features](https://www.w3schools.com/js/js_es6.asp)
 
@@ -27,7 +27,7 @@ _______________________________________________________
 
 _______________________________________________________
 
-### [7ᵗʰ Edition / June 2016](https://262.ecma-international.org/7.0/)
+### [7ᵗʰ Edition / June 2016](https://262.ecma-international.org/7.0/)⟪7ᵗʰ_Edition_/_June_2016⟫
 
 **Оператор возведения в степень**
 ~~~js
@@ -36,7 +36,7 @@ a**b // то же, что и Math.pow(a, b) )
 
 _______________________________________________________
 
-### ECMAScript 2017
+### ECMAScript 2017⟪ECMAScript_2017⟫
 
 [![ico-20 link] async | await](page/async-await)
 
@@ -49,11 +49,11 @@ _______________________________________________________
 
 _______________________________________________________
 
-### ECMAScript 2018
+### ECMAScript 2018⟪ECMAScript_2018⟫
 
 _______________________________________________________
 
-### ECMAScript 2019
+### ECMAScript 2019⟪ECMAScript_2019⟫
 
 [![ico-20 link] Dynamic import](page/dynamic-import)
 [![ico-20 link] BigInt](page/BigInt)

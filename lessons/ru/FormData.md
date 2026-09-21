@@ -1,10 +1,10 @@
-# ![ico-30 study] FormData
+# ![ico-30 study] FormData⟪FormData⟫
 
 Объекты класса **FormData** предоставляют интефейс для манипулирования данными форм и могут быть отправлены на сервер с помощью ~XMLHttpRequest~ или ~Fetch API~
 
 _______________________________________
 
-## ![ico-25 icon] Конструктор
+## ![ico-25 icon] Конструктор⟪Call_context⟫
 
 Конструктор FormData() создает объект класса **_FormData_**
 
@@ -15,7 +15,7 @@ formData instanceof FormData   // true
 
 ~~~~console
 ▼ FormData {}
-  ▼ __proto__: FormData
+  ▼ [[Prototype]]: FormData
       ► append: ƒ append()
       ► delete: ƒ delete()
       ► entries: ƒ entries()
@@ -29,7 +29,7 @@ formData instanceof FormData   // true
       ► constructor: ƒ FormData()
       ► Symbol(Symbol.iterator): ƒ entries()
         Symbol(Symbol.toStringTag): "FormData"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~~
 
 Обратие внимание, что у экземпляра FormData есть ряд унаследованных методов:
@@ -38,7 +38,7 @@ formData instanceof FormData   // true
 Эти методы обеспечивают интерфейс для доступа к данным
 _____________________________________
 
-## ![ico-25 icon] Работа с формами
+## ![ico-25 icon] Работа с формами⟪rabota_s_formamy⟫
 
 Собрать данные из формы в экземпляр класса _FormData_ очень легко - достаточно при создании экземпляра передать конструктору ~FormData()~ в качестве аргумента ссылку на элемент формы
 
@@ -203,7 +203,7 @@ ________________________________________________
 
 ____________________________________________
 
-## ![ico-25 icon] Методы
+## ![ico-25 icon] Методы⟪Methods⟫
 
 ![ico-20 icon] append()
 
@@ -325,9 +325,9 @@ console.log(result)
 
 _____________________________________________
 
-## ![ico-25 icon] Отправка данных на сервер
+## ![ico-25 icon] Отправка данных на сервер⟪otpravka_dannikh_na_server⟫
 
-### ![ico-20 icon] fetch
+### ![ico-20 icon] fetch⟪fetch⟫
 
 ![ico-25 cap] ** 5**
 
@@ -353,7 +353,7 @@ fileSelector.onchange = function (event) {
 
 ____________________________________
 
-### ![ico-20 icon] XMLHttpRequest
+### ![ico-20 icon] XMLHttpRequest⟪XMLHttpRequest⟫
 
 ![ico-25 cap] ** 6**
 
@@ -439,11 +439,11 @@ request.send()
 
 ______________________________________________________________________________
 
-## ![ico-25 icon] Endpoints для самостоятельной работы
+## ![ico-25 icon] Endpoints для самостоятельной работы⟪Endpoints_dlya_samostoyatelʹnoi_raboti⟫
 
 ••https://js-lessons-sandbox.garevna.workers.dev/form-data/forms/&lt;id>••
 
-### ![ico-20 icon] GET
+### ![ico-20 icon] GET⟪GET⟫
 
 ◘◘![ico-20 cap] 8◘◘
 
@@ -461,7 +461,7 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/form-data/forms/all')
   ► garevna: {name: "Irina", age: "16", avatar: {…}}
   ► goblin: {name: "Grig", age: "21", avatar: {…}}
   ► safari: {name: "Grig", age: "25", avatar: {…}}
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ◘◘![ico-20 cap] 9◘◘
@@ -486,7 +486,7 @@ Frodo
     size: 15068
     type: "image/jpeg"
     webkitRelativePath: ""
-  ► __proto__: File
+  ► [[Prototype]]: File
 ~~~
 
 ◘◘![ico-20 cap] 10◘◘
@@ -543,7 +543,7 @@ status === 200 && document.body.appendChild(result.avatar)
 
 ________________________________________________________
 
-### ![ico-20 icon] POST | PUT | PATCH
+### ![ico-20 icon] POST | PUT | PATCH⟪POST___PUT___PATCH⟫
 
 ••https://js-lessons-sandbox.garevna.workers.dev/form-data/form/&lt;id>••
 

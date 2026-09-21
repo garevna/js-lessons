@@ -1,8 +1,8 @@
-# ![ico-30 icon] Algorithm flowchart
+# ![ico-30 icon] Algorithm flowchart⟪Algorithm_flowchart⟫
 
 ______________________________________________________________________
 
-## ![ico-25 icon] Algorithm
+## ![ico-25 icon] Algorithm⟪Algorithm⟫
 
 Structural programming is based on the triad:
 
@@ -30,7 +30,7 @@ One way to describe an algorithm is a **flowchart**.
 
 ________________________________________________________________________________
 
-## ![ico-25 icon] Flowchart
+## ![ico-25 icon] Flowchart⟪Flowchart⟫
 
 Flowcharts are indispensable tools for visualising complex processes.
 
@@ -74,7 +74,7 @@ _______________________________________________________
 
 _______________________________________________________
 
-### ![ico-20 icon] Sequence
+### ![ico-20 icon] Sequence⟪Sequence⟫
 
 You may not realise it, but your whole life is a process that consists of a certain sequence of actions.
 
@@ -104,7 +104,7 @@ Only after the previous action is completed does the next one begin.
 
 _______________________________________________________
 
-### ![ico-20 icon] Branching
+### ![ico-20 icon] Branching⟪Branching⟫
 
 Very often we are forced to make a decision about what to do.
 If your salary is delayed, you cannot make a planned purchase.
@@ -123,7 +123,7 @@ Otherwise, he can't.
 
 _______________________________________________________
 
-### ![ico-20 icon] Cycle
+### ![ico-20 icon] Cycle⟪Cycle⟫
 
 Repeating the same sequence of actions several times is a cycle.
 
@@ -153,7 +153,7 @@ _______________________________________________________
 
 __________________________________________________________________
 
-### ![ico-25 cap] Fibonacci series
+### ![ico-25 cap] Fibonacci series⟪Fibonacci_series⟫
 
 ^^The Fibonacci series is a sequence of numbers, each of which is equal to the sum of the two preceding numbers.^^
 

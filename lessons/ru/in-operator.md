@@ -1,4 +1,4 @@
-# ![ico-30 study] Оператор in
+# ![ico-30 study] Оператор in⟪operator_in⟫
 
 Первым операндом оператора **~in~** является _имя свойства_ (строка)
 
@@ -26,7 +26,7 @@ console.log('valueOf' in sample)  // true
 
 ___________________________________
 
-## ![ico-25 icon] Массивы
+## ![ico-25 icon] Массивы⟪Arrays⟫
 
 ~~~js
 var arr = [1, 2, 3]
@@ -40,7 +40,7 @@ var arr = [1, 2, 3]
 
 _________________________________
 
-## ![ico-25 icon] Строки, числа и логические значения
+## ![ico-25 icon] Строки, числа и логические значения⟪stroky,_chysla_y_lohycheskye_znachenyya⟫
 
 Их нужно "завернуть" в объект так:
 
@@ -83,7 +83,7 @@ var bool = true
 
 __________________________________
 
-## ![ico-25 icon] null | undefined
+## ![ico-25 icon] null | undefined⟪null___undefined⟫
 
 "Завернуть" в объект можно также **_~null~_** и **_~undefined~_**
 

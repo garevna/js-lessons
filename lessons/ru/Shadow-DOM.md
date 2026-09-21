@@ -1,4 +1,4 @@
-# ![ico-30 study] Shadow DOM
+# ![ico-30 study] Shadow DOM⟪Shadow_DOM⟫
 
 **Shadow DOM** - это суверенное дерево DOM-узлов элемента
 
@@ -7,7 +7,7 @@
 
 **~Shadow DOM API~**  обеспечивает возможность привязать **Shadow DOM** к отдельному элементу
 
-## ![ico-20 icon] Термины
+## ![ico-20 icon] Термины⟪termyni⟫
 
 • _Shadow host_ - элемент DOM, к которому привязан shadow DOM
 • _Shadow tree_ - дерево элементов DOM внутри shadow DOM>
@@ -28,7 +28,7 @@ _____________________________________
 
 _______________________________________
 
-## ![ico-25 icon] attachShadow()
+## ![ico-25 icon] attachShadow()⟪attachShadow⟫
 
 Добавить элементу его собственный **~shadow DOM~** очень легко
 Для этого существует метод **~attachShadow()~**
@@ -64,7 +64,7 @@ shadow.appendChild((() => Object.assign(document.createElement('img'), {
 ~~~
 
 
-### ![ico-20 icon] mode: 'open'
+### ![ico-20 icon] mode: 'open'⟪mode:_-open-⟫
 
 Значение  **_~open~_**  означает, что ~shadow DOM~  данного элемента будет доступен в контексте страницы через его свойство **~shadowRoot~**
 
@@ -110,10 +110,10 @@ console.dir(elem.shadowRoot)
     previousSibling: null
   ► styleSheets: StyleSheetList {0: CSSStyleSheet, length: 1}
     textContent: "img { width: 200px; }"
-  ► __proto__: ShadowRoot
+  ► [[Prototype]]: ShadowRoot
 ~~~~
 
-### ![ico-20 icon] mode: 'closed'
+### ![ico-20 icon] mode: 'closed'⟪mode:_-closed-⟫
 
 Значение  **_~closed~_**  делает shadow DOM  данного элемента недоступным для скриптов
 

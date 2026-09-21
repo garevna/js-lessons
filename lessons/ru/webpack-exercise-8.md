@@ -1,10 +1,10 @@
-# ![ico-70 webpack] Подключение шрифтов
+# ![ico-70 webpack] Подключение шрифтов⟪podklyuchenye_shryftov⟫
 
 ________________________________
 
-## ![ico-25 hw] Упражнение 8
+## ![ico-25 hw] Упражнение 8⟪Exercise_8⟫
 
-### ![ico-20 icon] Google Fonts
+### ![ico-20 icon] Google Fonts⟪Google_Fonts⟫
 
 Для начала импортируем некоторые шрифты [%%%Google%%%](https://fonts.google.com), используя внешний URL
 
@@ -66,7 +66,7 @@ body {
 
 ________________________________________________
 
-### ![ico-20 icon] Font Awesome
+### ![ico-20 icon] Font Awesome⟪Font_Awesome⟫
 
 [%%%Font Awesome%%%](https://fontawesome.com)
 

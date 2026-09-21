@@ -1,4 +1,4 @@
-# ![ico-30 study] ArrayBuffer
+# ![ico-30 study] ArrayBuffer⟪ArrayBuffer⟫
 
 **Constructor**
 
@@ -15,7 +15,7 @@ console.log(buffer.byteLength)  // 16
 
 _________________________________
 
-## ![ico-25 icon] TypedArray
+## ![ico-25 icon] TypedArray⟪TypedArray⟫
 
 [**MDN**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays/)
 
@@ -83,7 +83,7 @@ Object.getOwnPropertyNames(typedArrayPrototype)
 
 _____________________________________
 
-## ![ico-25 icon] Accessors
+## ![ico-25 icon] Accessors⟪Accessors⟫
 
 To work with **~ArrayBuffer~** instance data, you must use constructors that instantiate **accessors**.
 
@@ -130,7 +130,7 @@ However, this is a "one-way road" because it creates a new array **~sample~** wh
 
 ______________________________________________
 
-### ![ico-20 icon] DataView
+### ![ico-20 icon] DataView⟪DataView⟫
 
 This constructor is used to create an accessor instance that provides flexible access to the data in the original **~ArrayBuffer~** instance.
 
@@ -170,12 +170,12 @@ console.log(dataView.__proto__)
   ► get buffer: ƒ buffer()
   ► get byteLength: ƒ byteLength()
   ► get byteOffset: ƒ byteOffset()
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 _________________________________
 
-### ![ico-20 icon] Int16Array
+### ![ico-20 icon] Int16Array⟪Int16Array⟫
 
 ~~~js
 const buffer = new ArrayBuffer(8)
@@ -206,7 +206,7 @@ console.log(new Int16Array(buffer))
 ~~~
 _________________________________________
 
-### ![ico-20 icon] setInt8
+### ![ico-20 icon] setInt8⟪setInt8⟫
 
 ~~~js
 var buffer = new ArrayBuffer(16)
@@ -217,7 +217,6 @@ dataView.setInt8(5, 55)
 console.log(buffer)
 ~~~
 
-◘◘**^^Result^^**◘◘
 ~~~console
 ▼ ArrayBuffer(16) {}
   ► [[Int8Array]]: Int8Array(16) [0, 0, 78, 94, 0, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -225,12 +224,12 @@ console.log(buffer)
   ► [[Int32Array]]: Int32Array(4) [1582170112, 14080, 0, 0]
   ► [[Uint8Array]]: Uint8Array(16) [0, 0, 78, 94, 0, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     byteLength: (...)
-  ► __proto__: ArrayBuffer
+  ► [[Prototype]]: ArrayBuffer
 ~~~
 
 ________________________________________
 
-### ![ico-25 icon] setInt16
+### ![ico-25 icon] setInt16⟪setInt16⟫
 
 ~~~js
 var buffer = new ArrayBuffer(16)
@@ -241,7 +240,6 @@ dataView.setInt16(5, 55)
 console.log(buffer)
 ~~~
 
-◘◘**^^Result^^**◘◘
 ~~~console
 ▼ ArrayBuffer(16) {}
   ► [[Int8Array]]: Int8Array(16) [0, 0, 78, 0, 94, 0, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -249,12 +247,12 @@ console.log(buffer)
   ► [[Int32Array]]: Int32Array(4) [5111808, 3604574, 0, 0]
   ► [[Uint8Array]]: Uint8Array(16) [0, 0, 78, 0, 94, 0, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     byteLength: (...)
-  ► __proto__: ArrayBuffer
+  ► [[Prototype]]: ArrayBuffer
 ~~~
 
 ________________________________________
 
-### ![ico-25 icon] setInt32
+### ![ico-25 icon] setInt32⟪setInt32⟫
 
 ~~~js
 var buffer = new ArrayBuffer(16)
@@ -265,7 +263,6 @@ dataView.setInt16(11, 55)
 console.log(buffer)
 ~~~
 
-◘◘**^^Result^^**◘◘
 ~~~console
 ▼ ArrayBuffer(16) {}
   ► [[Int8Array]]: Int8Array(16) [0, 0, 0, 0, 78, 0, 0, 0, 94, 0, 0, 0, 55, 0, 0, 0]
@@ -273,12 +270,12 @@ console.log(buffer)
   ► [[Int32Array]]: Int32Array(4) [0, 78, 94, 55]
   ► [[Uint8Array]]: Uint8Array(16) [0, 0, 0, 0, 78, 0, 0, 0, 94, 0, 0, 0, 55, 0, 0, 0]
     byteLength: (...)
-  ► __proto__: ArrayBuffer
+  ► [[Prototype]]: ArrayBuffer
 ~~~
 
 ________________________________________
 
-## ![ico-25 icon] Examples
+## ![ico-25 icon] Examples⟪Examples⟫
 
 ◘◘![ico-25 cap] ** 1**◘◘
 
@@ -309,7 +306,6 @@ console.log(new Int8Array(buffer))
 console.log(new Int16Array(buffer))
 ~~~
 
-◘◘**^^Int8Array^^**◘◘
 ~~~console
 ▼ Int8Array(8) [0, 5, 9, 0, 8, 0, 0, 0, buffer: ArrayBuffer(8), byteLength: 8, byteOffset: 0, length: 8, Symbol(Symbol.toStringTag): 'Int8Array']
     0: 0
@@ -328,7 +324,6 @@ console.log(new Int16Array(buffer))
   ► [[Prototype]]: TypedArray
 ~~~
 
-◘◘**^^Int16Array^^**◘◘
 ~~~console
 ▼ Int16Array(4) [1280, 9, 8, 0, buffer: ArrayBuffer(8), byteLength: 8, byteOffset: 0, length: 4, Symbol(Symbol.toStringTag): 'Int16Array']
     0: 1280
@@ -384,8 +379,6 @@ setTimeout(() => {
   console.log(result.reduce((res, item) => Object.assign(res, item), {}))
 }, 2000)
 ~~~
-
-◘◘**^^Result^^**◘◘
 
 ~~~console
 ▼ {0: '11111111', 1: '10000000', 7: '00010000', 8: '11100000', 9: '00000010', 12: '00011010', 13: '10001000'}

@@ -1,8 +1,8 @@
-# ![ico-30 study] indexedDB
+# ![ico-30 study] indexedDB⟪indexedDB⟫
 
 ____________________________________________________________
 
-## ![ico-25 icon] Хранилища данных
+## ![ico-25 icon] Хранилища данных⟪khranylyshcha_dannikh⟫
 
 Экземпляр **IDBDatabase** - это интерфейс "второго уровня", обеспечивающий доступ к базе данных
 
@@ -60,7 +60,7 @@ _______________________________
 
 _________________________________________________
 
-### ![ico-25 icon] Запросы
+### ![ico-25 icon] Запросы⟪zaprosi⟫
 
 Запрос - это объект, у которого есть:
 
@@ -103,7 +103,7 @@ request.onupgradeneeded = event => console.log(event.target.result)
 
 ______________________________________________________
 
-### ![ico-20 icon] createObjectStore
+### ![ico-20 icon] createObjectStore⟪createObjectStore⟫
 
 Теперь создадим первое хранилище:
 
@@ -128,7 +128,7 @@ request.onupgradeneeded = event => {
     keyPath: null
     name: "firstStore"
   ► transaction: IDBTransaction {objectStoreNames: DOMStringList, mode: "versionchange", db: IDBDatabase, error: null, onabort: null, …}
-  ► __proto__: IDBObjectStore
+  ► [[Prototype]]: IDBObjectStore
       ► add: ƒ add()
         autoIncrement: (...)
       ► clear: ƒ clear()
@@ -156,7 +156,7 @@ request.onupgradeneeded = event => {
       ► get name: ƒ name()
       ► set name: ƒ name()
       ► get transaction: ƒ transaction()
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~~
 
 ... и это опять интерфейс!
@@ -198,8 +198,8 @@ request.onupgradeneeded = event => {
         onabort: null
         oncomplete: null
         onerror: null
-      ► __proto__: IDBTransaction
-  ► __proto__: IDBObjectStore
+      ► [[Prototype]]: IDBTransaction
+  ► [[Prototype]]: IDBObjectStore
 ~~~
 
 Свойство **~mode~** транзакции имеет значение **_~versionchange~_**
@@ -231,7 +231,7 @@ __________________________________
 
 ___________________________________________________________
 
-### ![ico-20 icon] Ключи записей
+### ![ico-20 icon] Ключи записей⟪klyuchy_zapysei⟫
 
 База данных - это способ организации данных как коллекции записей,
 каждая из которых идентифицируется **_уникальным ключом_**
@@ -376,7 +376,7 @@ callUsers().then(resp => console.log(resp))
 
 __________________________________________________________________________
 
-### ![ico-20 icon] objectStoreNames
+### ![ico-20 icon] objectStoreNames⟪objectStoreNames⟫
 
 Имена всех хранилищ базы данных находятся в собственном свойстве **objectStoreNames** экземпляра **IDBDatabase**
 Заглянем "под капот" объекта **objectStoreNames**:
@@ -384,7 +384,7 @@ __________________________________________________________________________
 ~~~console
 ▼ DOMStringList {length: 0}
     length: 0
-  ▼ __proto__: DOMStringList
+  ▼ [[Prototype]]: DOMStringList
       ► contains: ƒ contains()
       ► item: ƒ item()
         length: (...)
@@ -392,7 +392,7 @@ __________________________________________________________________________
         Symbol(Symbol.iterator): ƒ values()
         Symbol(Symbol.toStringTag): "DOMStringList"
       ► get length: ƒ length()
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 Метод **contains** проверяет наличие в базе данных хранилища, имя которого указано аргументом:
@@ -477,7 +477,7 @@ openDB('keywordsDB', 2)
 
 _____________________________________________________
 
-### ![ico-20 icon] deleteObjectStore
+### ![ico-20 icon] deleteObjectStore⟪deleteObjectStore⟫
 
 Удалим хранилище **topicStore**
 Для этого нужно открыть соединение с базой данных с более высоким номером версии,

@@ -1,4 +1,4 @@
-## ![ico-25 icon] Promises
+## ![ico-25 icon] Promises⟪Promises⟫
 
 An asynchronous function call returns an instance of **~Promise~**.
 
@@ -64,7 +64,7 @@ Because the **~sayHello()~** function call returned a promise to say hello, but 
 
 __________________________________
 
-## ![ico-25 icon] More than just a promise
+## ![ico-25 icon] More than just a promise⟪More_than_just_a_promise⟫
 
 Sometimes you may want to streamline the execution of several asynchronous operations.
 
@@ -153,7 +153,7 @@ What we see from this example:
 
 _________________________
 
-### ![ico-20 icon] Queue Manager
+### ![ico-20 icon] Queue Manager⟪Queue_Manager⟫
 
 The asynchronous function is an excellent queue organiser.
 It strictly enforces the order of the microtask queue ![ico-20 smile].
@@ -212,7 +212,7 @@ Now they're strictly following the queue ![ico-20 smile]
 
 __________________________________
 
-### ![ico-20 icon] Organiser of asynchronous processes
+### ![ico-20 icon] Organiser of asynchronous processes⟪Organiser_of_asynchronous_processes⟫
 
 ◘◘![ico-20 cap] ** 4**◘◘
 

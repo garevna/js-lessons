@@ -1,16 +1,16 @@
-# ![ico-30 study] Custom elements
+# ![ico-30 study] Custom elements⟪Custom_elements⟫
 
-## ![ico-25 icon] lifecycle hooks
+## ![ico-25 icon] lifecycle hooks⟪lifecycle_hooks⟫
 
 Кастомные элементы имеют жизненный цикл - от вставки на страницу до удаления из DOM
 Этапы жизненного цикла - это события в жизни компонента
 На каждое такое событие компонента можно повесить колбэк
 
-### ![ico-20 icon] connectedCallback()
+### ![ico-20 icon] connectedCallback()⟪connectedCallback⟫
 
 Срабатывает каждый раз при вставке кастомного элемента в DOM
 
-### ![ico-20 icon] disconnectedCallback()
+### ![ico-20 icon] disconnectedCallback()⟪disconnectedCallback⟫
 
 Срабатывает при удалении кастомного элемента
 Самое удобное время для удаление прослушивателей событий
@@ -27,7 +27,7 @@ window.onbeforeunload = function (event) {
 ~~~
 
 
-### ![ico-20 icon] attributeChangedCallback()
+### ![ico-20 icon] attributeChangedCallback()⟪attributeChangedCallback⟫
 
 Срабатывает каждый раз при изменении значений отслеживаемых html-атрибутов элемента
 
@@ -53,7 +53,7 @@ static get observedAttributes () {
 
 Браузер вызывает **~attributeChangedCallback()~** при изменении значения любого атрибута, включенного в массив отслеживаемых атрибутов **_~observedAttributes~_**
 
-#### ![ico-25 icon] Пример
+#### ![ico-25 icon] Пример⟪Example⟫
 
 ~~~~js
 class CircleElement extends HTMLElement {

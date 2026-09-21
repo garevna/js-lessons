@@ -1,6 +1,6 @@
-# ![ico-35 study] Variable declaration
+# ![ico-35 study] Variable declaration⟪Variable_declaration⟫
 
-## ![ico-30 icon] Keyword var
+## ![ico-30 icon] Keyword var⟪Keyword_var⟫
 
 Your data (numbers, strings, etc.) will be stored in computer memory as long as your application is running, but you don't need to know exactly where the engine stores it.
 Variable names are a convenient form of addressing where you don't have to manipulate physical memory addresses.
@@ -109,7 +109,7 @@ var person = 'Piter',  hobby = 'football',  age = 30
 
 ______________________________________________________________
 
-## ![ico-30 icon] Variable names
+## ![ico-30 icon] Variable names⟪Variable_names⟫
 
 ![ico-25 warn] Variable names can contain letters, numbers, underscores, and dollar signs.
 

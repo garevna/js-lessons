@@ -1,4 +1,4 @@
-# ![ico-30 study] Вычисляемые свойства
+# ![ico-30 study] Вычисляемые свойства⟪vichyslyaemie_svoistva⟫
 
 У объекта могут быть свойства, значения которых вычисляются на основании значений других свойств
 
@@ -36,7 +36,7 @@ console.log(sample.birth)
 
 _______________________________
 
-## ![ico-25 cap] PriceUAH
+## ![ico-25 cap] PriceUAH⟪PriceUAH⟫
 
 Предположим, есть объект **~commodity~**, описывающий товар.
 
@@ -82,7 +82,6 @@ console.log(commodity.priceUAH) // 560
 ~~~
 
 Каждый раз, когда мы будем присваивать новое значение свойству **~commodity.priceUAH~**, на самом деле будет вызываться функция-сеттер, которая будет изменять значение свойства **~commodity.priceUSD~**.
-
 
 ~~~js
 commodity.priceUAH = 250
@@ -245,7 +244,7 @@ var commodity = {
 
 ____________________________________________________________
 
-## ![ico-25 cap] Calculator (sample)
+## ![ico-25 cap] Calculator (sample)⟪Calculator_(sample)⟫
 
 Создадим простенький объект-калькулятор:
 
@@ -296,14 +295,14 @@ calculator.result = '5 - 8 '
     secondValue: 8
   ► get result: ƒ result()
   ► set result: ƒ result( newValue )
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 {{{get-and-set-calculator.js}}}
 
 __________________________________________
 
-## ![ico-25 cap] Human states
+## ![ico-25 cap] Human states⟪Human_states⟫
 
 Создадим вычисляемое свойство **_~state~_** объекта **~human~**
 
@@ -334,8 +333,6 @@ var human = {
 human.showState()
 ~~~
 
-**Результат:**
-
 ~~~console
 Current state: 0 (work)
 ~~~
@@ -346,14 +343,11 @@ Current state: 0 (work)
 
 Затем сеттер свойства **_~state~_** устанавливает значение свойства **~human~**.**_~currentState~_** равным индексу элемента массива **~human~**.**_~states~_**, значение которого будет отображать геттер свойства **_~state~_**.
 
-
 ~~~js
 human.state = 'swim'
 
 human.showState()
 ~~~
-
-**Результат:**
 
 ~~~console
 Current state: 3 (swim)

@@ -1,4 +1,4 @@
-# ![ico-30 study] JSON
+# ![ico-30 study] JSON⟪JSON⟫
 
 The storing of JS objects in the form of a text string is convenient from the point of view of exchanging data with the server and storing data of a complex structure.
 
@@ -16,7 +16,7 @@ It has only two methods:
     ► parse: ƒ parse()
     ► stringify: ƒ stringify()
       Symbol(Symbol.toStringTag): "JSON"
-    ▼ __proto__:
+    ▼ [[Prototype]]:
         ► constructor: ƒ Object()
         ► hasOwnProperty: ƒ hasOwnProperty()
         ► isPrototypeOf: ƒ isPrototypeOf()
@@ -34,7 +34,7 @@ It has only two methods:
 
 _____________________
 
-## ![ico-25 icon] JSON.stringify()
+## ![ico-25 icon] JSON.stringify()⟪JSON.stringify⟫
 
 The only required argument of the method is a reference to an object or array, and the depth of the data structure is not limited.
 ^^Two additional formal parameters are optional.^^
@@ -107,7 +107,7 @@ console.log(JSON.stringify(obj, null, 2))
 }
 ~~~
 
-### Restrictions
+### Restrictions⟪Restrictions⟫
 
 The thing is, object serialization is not always possible.
 There are so-called **non-serializable** objects that contain **cyclic references**.
@@ -153,7 +153,7 @@ As can be seen from the example, **Infinity**, **undefined** and **Symbol**, as 
 
 _____________________
 
-## ![ico-25 icon] JSON.parse()
+## ![ico-25 icon] JSON.parse()⟪JSON.parse⟫
 
 The only required argument of the method is a JSON string.
 The return value is a JS data structure (array or object).
@@ -183,15 +183,15 @@ JSON.parse(x)
         color: "green"
       ► position: (2) [250, 250]
         size: 200
-      ► __proto__: Object
+      ► [[Prototype]]: Object
     name: "sample"
     type: "figure"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ___________________
 
-## ![ico-25 icon] Deep copy
+## ![ico-25 icon] Deep copy⟪Deep_copy⟫
 
 It is known that arrays and objects are passed by reference.
 
@@ -239,7 +239,7 @@ will return ~false~ because **sample.position** is a different object whose refe
 
 ------------------------------------
 
-## ![ico-25 icon] Lifehack
+## ![ico-25 icon] Lifehack⟪Lifehack⟫
 
 Let's set the task of serializing an object, including its methods.
 

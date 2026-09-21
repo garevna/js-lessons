@@ -1,5 +1,4 @@
-# ![ico-30 study] Browser Object Model (BOM)
-
+# ![ico-30 study] Browser Object Model (BOM)⟪Browser_Object_Model_(BOM)⟫
 
 На стороні клієнта ми працюємо в браузері, а браузер працює в операційній системі.
 
@@ -19,7 +18,7 @@
 
 _____________________________
 
-## ![ico-25 icon] Об’єкт window
+## ![ico-25 icon] Об’єкт window⟪The_**window**_object⟫
 
 Багато властивостей об’єкта **window** є посиланнями на інші об’єкти, які, у свою чергу, є об’єктними моделями.
 Розглянемо, наприклад, об’єкт **document**.
@@ -119,8 +118,6 @@ var props = [
 for (var prop of props) console.log(window[prop])
 ~~~
 
-^^**Результат у консолі:**^^
-
 ~~~console
 
 ► console {debug: ƒ, error: ƒ, info: ƒ, log: ƒ, warn: ƒ, …}
@@ -131,34 +128,29 @@ for (var prop of props) console.log(window[prop])
 ► Navigator {vendorSub: "", productSub: "20030107", vendor: "Google Inc.", maxTouchPoints: 0, hardwareConcurrency: 8, …}
 ~~~
 
-
 Кожен із цих об’єктів має свої властивості та методи
 
 _____________________________________
 
-### ![ico-20 icon] navigator
+### ![ico-20 icon] navigator⟪navigator⟫
 
-#### navigator.geolocation
-
-◘◘geolocation◘◘
+#### navigator.geolocation⟪navigator.geolocation⟫
 
 ~~~console
 ▼ Geolocation {}
-  ▼ __proto__: Geolocation
+  ▼ [[Prototype]]: Geolocation
       ► clearWatch: ƒ clearWatch()
       ► getCurrentPosition: ƒ getCurrentPosition()
       ► watchPosition: ƒ watchPosition()
       ► constructor: ƒ Geolocation()
         Symbol(Symbol.toStringTag): "Geolocation"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 Метод **getCurrentPosition** має три формальні параметри
 
 Перший формальний параметр (обов’язковий) — це функція, яка буде викликана у разі успішного завершення операції
 Вона отримає як аргумент об’єкт такої структури:
-
-◘◘Position◘◘
 
 ~~~console
 ▼ Position {coords: Coordinates, timestamp: 1564355238231}
@@ -170,9 +162,9 @@ _____________________________________
         latitude: 50.0159007
         longitude: 36.2216816
         speed: null
-      ► __proto__: Coordinates
+      ► [[Prototype]]: Coordinates
     timestamp: 1564355238231
-  ► __proto__: Position
+  ► [[Prototype]]: Position
 ~~~
 
 Другий формальний параметр (опціональний) — теж функція, яка буде викликана у разі невдалого завершення геолокації
@@ -202,7 +194,7 @@ if (!navigator.geolocation) {
 
 _____________________________________
 
-### ![ico-20 icon] console
+### ![ico-20 icon] console⟪console⟫
 
 Ми вже користувалися методами об’єкта  **~console~**
 
@@ -232,12 +224,12 @@ console.timeEnd('for')
 
 ______________________________________
 
-### ![ico-20 icon] screen
+### ![ico-20 icon] screen⟪screen⟫
 
 ![](illustrations/screen-properties.png)
 ______________________________________
 
-### ![ico-20 icon] location
+### ![ico-20 icon] location⟪location⟫
 
 ![](illustrations/location-properties.png)
 
@@ -305,7 +297,7 @@ location.href = 'https://translate.google.com'
 ^^^
 ______________________________________
 
-### ![ico-20 icon] history
+### ![ico-20 icon] history⟪history⟫
 
 Подивимося на об’єкт **~history~** у консолі:
 
@@ -314,7 +306,7 @@ ______________________________________
       length: 2
       scrollRestoration: "auto"
       state: null
-    ▼__proto__: History
+    ▼[[Prototype]]: History
         ► back: ƒ back()
         ► forward: ƒ forward()
         ► go: ƒ go()
@@ -329,7 +321,7 @@ ______________________________________
         ► get scrollRestoration: ƒ ()
         ► set scrollRestoration: ƒ ()
         ► get state: ƒ ()
-        ► __proto__: Object
+        ► [[Prototype]]: Object
 ~~~~
 
 ![ico-20 green-ok] Властивість **history._state_** (рядок) містить адресу поточної сторінки
@@ -351,7 +343,7 @@ window.history.go(-2)
 
 ___________________________________________
 
-### ![ico-20 icon] document
+### ![ico-20 icon] document⟪document⟫
 
 ^^^[Вправа 5]
 

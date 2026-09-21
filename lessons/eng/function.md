@@ -1,4 +1,4 @@
-# ![ico-35 study] Функции
+# ![ico-35 study] Функции⟪funktsyy⟫
 
 @@@@
 Now we'll learn how to work with another very important type of data: **~function~**.<br>Our entire "JS universe" is based on functions.<br><br>**Functions are a reference type of data.**.<br><br>This means that after declaring a function, we will have a variable in our hands that will be a reference to the function.
@@ -14,14 +14,14 @@ Each function can be called when the need arises.
 Let's first learn how to call them.
 ^^Indeed, if you have a ready-made drill, then you should learn how to use it ![ico-20 wink].^^
 
-## ![ico-30 icon] Function call
+## ![ico-30 icon] Function call⟪Function_call⟫
 
 We have a lot of built-in functions and there are also functions that the browser provides us.
 A function call consists of two parts: the function name and parentheses following the function name, in which **arguments** can be passed, i.e. some data that the function will use in its work.
 
 There are functions that do not require passing arguments when called. In this case, you can call such a function with empty parentheses, but parentheses are required. If you pass arguments to such a function, it will simply ignore them because they are not needed for it to work. If you pass more arguments than necessary, unnecessary arguments will be discarded.
 
-### ![ico-25 icon] console.log
+### ![ico-25 icon] console.log⟪console.log⟫
 
 For example, we use the browser console, and the code we type in the console is automatically executed after pressing _Enter_.
 But until now, we didn't know that we could access the console directly (**~console~**) and call one of its functions:
@@ -38,7 +38,7 @@ Now, using ~_Shift_ + _Enter_~ we can declare the object:
 
 _________________________________________________
 
-### ![ico-25 icon] parseInt
+### ![ico-25 icon] parseInt⟪parseInt⟫
 
 We also have some very useful built-in functions at our disposal, such as **~parseInt~**, which passes the argument passed to it as an integer.
 If it is a string starting with digits, the rest of the string is discarded and the integer part of the number consisting of these digits is returned.
@@ -67,7 +67,7 @@ If you pass 16 as the second argument, the first argument will be treated as a n
 
 _____________________________________________________________________
 
-### ![ico-25 icon] Math library
+### ![ico-25 icon] Math library⟪Math_library⟫
 
 We also have a built-in library of mathematical functions **Math**.
 
@@ -213,7 +213,7 @@ Finally, let's see what the **~typeof~** operator returns:
 
 ______________________________________________
 
-## ![ico-30 icon] Declaring a function
+## ![ico-30 icon] Declaring a function⟪Declaring_a_function⟫
 
 We have already learnt how to call functions. It's time to learn how to create them, or more precisely, how to declare functions.
 Exactly declare, because our goal is not to immediately call a function where we have declared it.
@@ -361,7 +361,7 @@ This means that once the expression ~func()~ has been evaluated, there will be a
 Let’s look at how this value is determined.
 _________________________________________________
 
-## ![ico-30 icon] Formal parameters
+## ![ico-30 icon] Formal parameters⟪Formal_parameters⟫
 
 Let's go back to the fact that parentheses are required when declaring a function.
 When calling a function, parentheses are also required.
@@ -387,7 +387,7 @@ When the function is called, **arguments** will be listed in parentheses, which 
 That is, each time we call the function, we can pass different arguments to it, thus getting different results.
 In other words, each time we call a function, we can pass it different arguments, thereby obtaining different results.
 
-### ![ico-25 icon] Default values
+### ![ico-25 icon] Default values⟪Default_values⟫
 
 Obviously, the big problem for us was errors related to passing incorrect values of arguments.
 In arithmetic operations, in case of an error we will get the insidious value **~NaN~**, which will cause us a lot of trouble.
@@ -406,7 +406,7 @@ Furthermore, you can make the default values of the function parameters **calcul
 
 __________________________________________________________________
 
-## ![ico-30 icon] Return operator
+## ![ico-30 icon] Return operator⟪Return_operator⟫
 
 The functions we've declared so far have been kind of "incomplete" because they didn't return anything, so we kept seeing that annoying **~undefined~** in the console.
 
@@ -433,7 +433,7 @@ If an operand is not explicitly specified, **~undefined~** is implied.
 
 ____________________________________________________________________
 
-## ![ico-25 icon] Tests
+## ![ico-25 icon] Tests⟪Tests⟫
 
 ◘◘** 1**◘◘
 ~~~js

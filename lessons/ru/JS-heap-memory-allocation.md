@@ -1,6 +1,6 @@
-# Тестирование производительности
+# Тестирование производительности⟪testyrovanye_proyzvodytelʹnosty⟫
 
-## ![ico-30 study] RAIL
+## ![ico-30 study] RAIL⟪RAIL⟫
 
 Сколько приложение "кушает" памяти на клиенте ?
 ![ico-20 warn] Если объем используемой памяти растет пропорционально времени работы приложения, то имеют место утечки памяти
@@ -25,7 +25,7 @@
 
 _____________________________________________________________
 
-## ![ico-25 icon] JavaScript Profiler
+## ![ico-25 icon] JavaScript Profiler⟪JavaScript_Profiler⟫
 
 В новой вкладке браузера запустите приложение, которое вы хотите проверить
 Откройте вкладку **JavaScript Profiler** в Chrome DevTools
@@ -53,7 +53,7 @@ _______________________________________________________________________
 
 _____________________________________________________________
 
-## ![ico-25 icon] Audits
+## ![ico-25 icon] Audits⟪Audits⟫
 
 Перейдите по URL приложения, которое вы хотите проверить
 Откройте вкладку **Audits** в Chrome DevTools
@@ -64,7 +64,7 @@ DevTools показывает список видов аудита
 Оставьте все виды аудита выбранными
 Нажмите кнопку Run audits
 
-### ![ico-20 icon] Performance
+### ![ico-20 icon] Performance⟪Performance⟫
 
 **First Contentful Paint** - время до того момента, когда первый текст или изображение покажется на странице
 **First Meaningful Paint** - время, необходимое для отображения основного содержимого страницы пользователю
@@ -90,7 +90,7 @@ DevTools показывает список видов аудита
 
 _____________________________________________________________
 
-## ![ico-25 icon] Memory
+## ![ico-25 icon] Memory⟪Memory⟫
 
 [%%%How to Record Heap Snapshots%%%](https://developers.google.com/web/tools/chrome-devtools/memory-problems/heap-snapshots)
 [%%%Fix Memory Problems%%%](https://developers.google.com/web/tools/chrome-devtools/memory-problems/)

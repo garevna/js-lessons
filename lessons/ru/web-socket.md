@@ -1,4 +1,4 @@
-# ![ico-30 study] WebSocket
+# ![ico-30 study] WebSocket⟪WebSocket⟫
 
 **WebSockets API** позволяет веб-приложениям использовать протокол ~WebSockets~ для двусторонней связи с удаленным хостом
 
@@ -54,8 +54,7 @@ Upgrade: websocket
 
 _____________________________________________
 
-## ![ico-25 hw] Упражнение 1
-
+## ![ico-25 hw] Упражнение 1⟪Exercise_1⟫
 
 <img src="https://www.piesocket.com/blog/wp-content/uploads/2021/12/websocket-for-free.png" height="150"/> Воспользуемся готовым WebSocket-сервером **~https://www.piesocket.com/~**, который возвращает назад сообщение, отправленное ему с клиента
 
@@ -71,9 +70,7 @@ const websocket = new WebSocket(`wss://demo.piesocket.com/v3/channel_1?api_key=$
 
 При вызове конструктора **WebSocket** необходимо передать ему обязательный аргумент 
 
-
 ••протокол://домен:порт••
-
 
 • протокол может быть ~ws~ или ~wss~
 • домен будет ~demo.piesocket.com~ (точнее говоря, это субдомен demo домена piesocket.com)
@@ -112,8 +109,6 @@ websocket.onerror = function (event) {
 }
 ~~~
 
-◘◘Результат в консоли:◘◘
-
 ~~~console
 CONNECTED
 Happy New Year!
@@ -122,7 +117,7 @@ DISCONNECTED
 
 _____________________________________________
 
-## ![ico-25 hw] Упражнение 2
+## ![ico-25 hw] Упражнение 2⟪Exercise_2⟫
 
 Для получения некоторого экспириенса с веб-сокетами нам придется познакомиться с серверным JS
 
@@ -132,7 +127,7 @@ _____________________________________________
 
 В **~Node.js~** нет встроенной поддержки ~WebSocket~, поэтому установим плагин **~ws~**
 
-### ![ico-20 bash] Установка
+### ![ico-20 bash] Установка⟪Installation⟫
 
 ••$ npm install ws••
 
@@ -283,16 +278,16 @@ received from a client:
 ▼ { name: "server", message: "I listen to you" }
     message: "I listen to you"
     name: "server"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 _____________________________________________
 
-## ![ico-25 hw] Упражнение 3
+## ![ico-25 hw] Упражнение 3⟪Exercise_3⟫
 
 Создадим простенький чат
 
-### ![ico-50 node] Серверная часть
+### ![ico-50 node] Серверная часть⟪servernaya_chastʹ⟫
 
 Теперь серверный скрипт будет немного сложнее, поэтому углубимся в **~Node.js~**
 
@@ -336,7 +331,6 @@ const fs = require('fs')
 ~~~
 
 ^^^
-
 
 ^^^[messages.json]
 
@@ -487,8 +481,7 @@ const randomValue = num => Math.round(Math.random() * num)
 
 __________________________________________________________________________
 
-### ![ico-20 icon] Клиентская часть
-
+### ![ico-20 icon] Клиентская часть⟪klyentskaya_chastʹ⟫
 
 ◘◘![ico-20 file] index.html◘◘
 
@@ -672,7 +665,7 @@ window.onresize = chat.resize.bind(chat)
 
 _________________________________________________________________________
 
-### ![ico-20 icon] Запуск чата
+### ![ico-20 icon] Запуск чата⟪zapusk_chata⟫
 
 ![ico-20 bash] В первую очередь стартуем сервер:
 

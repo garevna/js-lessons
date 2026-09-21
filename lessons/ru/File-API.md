@@ -1,4 +1,4 @@
-# ![ico-30 study] File API
+# ![ico-30 study] File API⟪File_API⟫
 
 **обеспечивает доступ к файлам на стороне клиента**
 ^^(добавлен к DOM в HTML5)^^

@@ -1,4 +1,4 @@
-# ![ico-30 study] Shorthand syntax for declaring methods
+# ![ico-30 study] Shorthand syntax for declaring methods⟪Shorthand_syntax_for_declaring_methods⟫
 
 **ES6**
 

@@ -1,8 +1,8 @@
-# ![ico-30 hw] Fake chat
+# ![ico-30 hw] Fake chat⟪Fake_chat⟫
 
 _____________________________
 
-## ![ico-25 icon] db.json
+## ![ico-25 icon] db.json⟪db.json⟫
 
 Внесем некоторые изменения в базу данных **db.json**
 
@@ -41,7 +41,7 @@ _____________________________
 
 __________________________________________
 
-## ![ico-25 icon] json-server
+## ![ico-25 icon] json-server⟪json-server⟫
 
 ![ico-25 bash] Запускаем  json-server
 
@@ -68,9 +68,9 @@ __________________________
 
 ____________________
 
-## ![ico-25 icon] Переменные и функции
+## ![ico-25 icon] Переменные и функции⟪peremennie_y_funktsyy⟫
 
-#### ![ico-20 green-ok] lastUpdate
+#### ![ico-20 green-ok] lastUpdate⟪lastUpdate⟫
 
 Объявляем переменную **_~lastUpdate~_**, в которой будем хранить дату и время модификации загруженных данных
 
@@ -78,7 +78,7 @@ ____________________
 let lastUpdate
 ~~~
 
-#### ![ico-20 green-ok] getData
+#### ![ico-20 green-ok] getData⟪getData⟫
 
 Объявляем переменную **_~getData~_**, в которой будет ссылка на функцию, загружающую данные с сервера по имени ресурса ( **_~lastUpdate~_**, **_~users~_**, **_~posts~_**, **_~comments~_** )
 
@@ -92,7 +92,7 @@ const getData = function (ref) {
 }
 ~~~
 
-#### ![ico-20 green-ok] appElem
+#### ![ico-20 green-ok] appElem⟪appElem⟫
 
 Объявляем переменную **_~appElem~_**
 В этой переменной будет ссылка на анонимную стрелочную функцию
@@ -105,15 +105,15 @@ const getData = function (ref) {
 const addElem = (tagName, container = document.body) => container.appendChild(document.createElement(tagName))
 ~~~
 
-#### ![ico-20 green-ok] chat
+#### ![ico-20 green-ok] chat⟪chat⟫
 
 ссылка на элемент DOM, который будет контейнером для сообщений чата
 
-#### ![ico-20 green-ok] posts & users
+#### ![ico-20 green-ok] posts & users⟪posts_&_users⟫
 
 В переменные ~posts~ и ~users~ будем получать данные из базы данных на сервере
 
-#### ![ico-20 green-ok] currentUser
+#### ![ico-20 green-ok] currentUser⟪currentUser⟫
 
 объект активного пользователя чата (от лица которого мы будем писать в чат)
 
@@ -121,7 +121,7 @@ const addElem = (tagName, container = document.body) => container.appendChild(do
 let currentUser
 ~~~
 
-#### ![ico-20 green-ok] chatInput
+#### ![ico-20 green-ok] chatInput⟪chatInput⟫
 
 Создаем элемент ~input~ (поле для ввода текста сообщения) и стилизуем элемент:
 
@@ -139,7 +139,7 @@ const chatInput = Object.assign(addElem('input'), {
 })
 ~~~
 
-#### ![ico-20 green-ok] buildChat
+#### ![ico-20 green-ok] buildChat⟪buildChat⟫
 
 Ссылка на функцию, создающую элемент section (это будет чат)
 
@@ -163,7 +163,7 @@ const buildChat = function () {
 const chat = buildChat()
 ~~~
 
-#### ![ico-20 green-ok] initChat
+#### ![ico-20 green-ok] initChat⟪initChat⟫
 
 После вызова функции **~buildChat~** в переменной **~chat~** будет ссылка на элемент **~section~**, который будет контейнером для сообщений в чате
 
@@ -201,7 +201,7 @@ const initChat = async function () {
 
 __________________________
 
-#### ![ico-20 green-ok] updateChat
+#### ![ico-20 green-ok] updateChat⟪updateChat⟫
 
 Объявляем переменную **~updateChat~**, в которую помещаем ссылку на асинхронную анонимную функцию **~updateChat~**
 
@@ -265,7 +265,7 @@ chat.scrollTop = chat.offsetTop
 
 _______________________________________________
 
-## ![ico-25 icon] Запуск
+## ![ico-25 icon] Запуск⟪zapusk⟫
 
 • вызваем **~buildChat()~**, чтобы создать контейнер для чата
 • вызваем **~updateChat()~**, чтобы заполнить контейнер данными
@@ -308,7 +308,7 @@ chatInput.onchange = function (event) {
 
 ___________________________
 
-## ![ico-20 file] Полный код сниппета
+## ![ico-20 file] Полный код сниппета⟪polnii_kod_snyppeta⟫
 
 ~~~~js
 document.body.style = `

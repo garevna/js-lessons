@@ -1,7 +1,7 @@
-# ![ico-30 study] Date()
+# ![ico-30 study] Date()⟪Date⟫
 
 
-## ![ico-25 icon] Конструктор
+## ![ico-25 icon] Конструктор⟪Call_context⟫
 
 Создать объект даты и времени можно с помощью конструктора **Date()**
 
@@ -49,7 +49,7 @@ newData instanceof Date    // true
 
 ^^т.е. создан конструктором Date()^^
 
-## ![ico-25 icon] Методы
+## ![ico-25 icon] Методы⟪Methods⟫
 
 Все экземпляры класса **Date** имеют ряд свойств и методов
 
@@ -78,7 +78,7 @@ console.log(newData)
 // Sun Dec 10 2017 00:00:00 GMT+0200 (Восточная Европа, стандартное время)
 ~~~
 
-### ![ico-25 icon] toLocaleString()
+### ![ico-25 icon] toLocaleString()⟪toLocaleString⟫
 
 ![ico-25 cap] ** 2 **
 
@@ -117,7 +117,7 @@ new Date(2019, 4, 24, 7, 20, 30)
   .toLocaleTimeString() // "07:20:30"
 ~~~
 
-### ![ico-25 icon] setFullYear()
+### ![ico-25 icon] setFullYear()⟪setFullYear⟫
 
 Этот метод удобен для вычисления нужной даты, поскольку принимает не только год, но также ему можно передать и месяц, и день месяца
 
@@ -171,7 +171,7 @@ calcDate(new Date(), 50)
 
 _____________________________________________________
 
-### ![ico-25 icon] setDate()
+### ![ico-25 icon] setDate()⟪setDate⟫
 
 ~~~js
 function getRelativeData (data, days) {
@@ -188,7 +188,7 @@ getRelativeData(new Date(), 15)
 
 _________________________________________________________
 
-### ![ico-25 icon] Разность дат
+### ![ico-25 icon] Разность дат⟪raznostʹ_dat⟫
 
 Вычислим, сколько дней осталось до дня рождения:
 

@@ -1,8 +1,8 @@
-# ![ico-30 study] Design Patterns
+# ![ico-30 study] Design Patterns⟪Design_Patterns⟫
 
 _____________________________________
 
-### ![ico-20 icon] Strategy
+### ![ico-20 icon] Strategy⟪Strategy⟫
 
 Это **поведенческий** паттерн.
 

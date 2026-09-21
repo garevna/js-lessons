@@ -1,4 +1,4 @@
-# ![ico-30 study] ES6 модули
+# ![ico-30 study] ES6 модули⟪ES6_moduly⟫
 
 [%%%**export**%%%](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
 [%%%**import**%%%](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
@@ -13,11 +13,11 @@ _______________________________________
 
 ^^( при использовании  **webpack**  для сборки приложения поддержка браузерами ES6 модулей не имеет значения - вебпак сделает все правильно ![ico-20 wink] )^^
 
-## ![ico-25 icon] export
+## ![ico-25 icon] export⟪export⟫
 
 _______________________________________________________________
 
-### ![ico-20 icon] Именованный экспорт
+### ![ico-20 icon] Именованный экспорт⟪ymenovannii_aksport⟫
 
 **(несколько экспортов из одного файла)**
 
@@ -37,7 +37,7 @@ export function elemExist (elemSelector) {
 
 ________________________________________________________________
 
-### ![ico-20 icon] Дефолтный экспорт
+### ![ico-20 icon] Дефолтный экспорт⟪defoltnii_aksport⟫
 
 **Экспорт по умолчанию - это экспорт единственного объекта**
 ^^( один "главный" объект в модуле )^^
@@ -69,11 +69,11 @@ export default Sample
 
 ____________________________________________________________
 
-## ![ico-25 icon] import
+## ![ico-25 icon] import⟪import⟫
 
 При импорте из **_js_**-файлов расширение файла указывать не обязательно
 
-### ![ico-20 icon] Импорт именованного экспорта
+### ![ico-20 icon] Импорт именованного экспорта⟪ymport_ymenovannoho_aksporta⟫
  
 Предположим, нам нужно использовать функции  **_buildElement_**  и  **_elemExist_**  
 из файла  **lib.js**  ( см. выше )
@@ -111,7 +111,7 @@ console.log(lib.elemExist(picture.tagName))
 
 
 
-### ![ico-20 icon] Импорт дефолтного экспорта
+### ![ico-20 icon] Импорт дефолтного экспорта⟪ymport_defoltnoho_aksporta⟫
 
 Теперь импортируем из файла  **sample.js**  (см. выше) в файл  **main.js**:
 
@@ -123,7 +123,7 @@ const sample = new Sample()
 __________________________________________________________________________
 
 
-## ![ico-25 hw] Упражнение 2
+## ![ico-25 hw] Упражнение 2⟪Exercise_2⟫
 
 Создадим новый файл ![ico-20 file]  **_promise.js_**  в папке ![ico-20 folder]  **src**
 
@@ -154,7 +154,7 @@ promise.then(response => document.querySelector('.sampleClass').innerText += res
 
 _______________________________________________________
 
-## ![ico-25 icon] Dynamic import 
+## ![ico-25 icon] Dynamic import⟪Dynamic_import⟫
 
 **ES10 ( 2019 )**
 

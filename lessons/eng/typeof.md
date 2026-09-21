@@ -1,7 +1,7 @@
 
-# ![ico-35 study] Variables. Data types
+# ![ico-35 study] Variables. Data types⟪Variables._Data_types⟫
 
-## ![ico-30 icon] Operator typeof
+## ![ico-30 icon] Operator typeof⟪Operator_typeof⟫
 
 ^^Another language operator that you're getting to know today.^^
 ^^The first one, as you remember, is the **assignment operator**.^^
@@ -91,7 +91,7 @@ Possible values ​​(strings) returned by the **~typeof~** operator:
 
 As you can see, there are data types on this list that we haven't covered yet and that we have yet to explore.
 
-## ![ico-30 icon] null
+## ![ico-30 icon] null⟪null⟫
 
 The value **~null~** means that the variable has no value. This value is inconsistent in the sense that such a value refers to primitive data types, while the **~typeof null~** operator returns ‘~object~’. And all data of type ‘~object~’ (except **~null~**) is of **reference type**. This bug should be kept in mind when we use the **~typeof~** operator.
 
@@ -101,7 +101,7 @@ Another peculiarity of **~null~** value is that if you use strict equality, then
 
 __________________________________________________
 
-## ![ico-30 icon] Tests
+## ![ico-30 icon] Tests⟪Tests⟫
 
 ◘◘** 1**◘◘
 
@@ -129,7 +129,7 @@ __________________________________________________
 
 __________________________________________________
 
-## ![ico-30 icon] ECMAScript Specification
+## ![ico-30 icon] ECMAScript Specification⟪ECMAScript_Specification⟫
 
 The current [%%%language specification%%%](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html) defines seven data types:
 

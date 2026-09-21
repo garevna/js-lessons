@@ -1,8 +1,8 @@
-# ![ico-30 study] AJAX
+# ![ico-30 study] AJAX⟪AJAX⟫
 
 _____________________________________________________
 
-## ![ico-25 icon] CORS
+## ![ico-25 icon] CORS⟪CORS⟫
 
 ^^^[Cross-Origin Resource Sharing]
 
@@ -15,7 +15,7 @@ ______________________
 ^^^
 ______________
 
-# ![ico-30 icon] Fetch API
+# ![ico-30 icon] Fetch API⟪Fetch_API⟫
 
 ^^Fetch API является продвинутой альтернативой XMLHttpRequest.^^
 
@@ -38,7 +38,7 @@ fetch('message.txt')
 
 _____________________________________________________________
 
-## ![ico-25 icon] Request
+## ![ico-25 icon] Request⟪Request⟫
 
 **Конструктор**
 
@@ -95,7 +95,7 @@ const request = new Request('https://api.github.com/users')
     referrerPolicy: ""
   ► signal: AbortSignal {aborted: false, onabort: null}
     url: "https://api.github.com/users"
-  ► __proto__: Request
+  ► [[Prototype]]: Request
 ~~~~
 
 Мы видим дефолтные значения опций запроса, которые мы не устанавливали.
@@ -133,7 +133,7 @@ request.headers.get('Content-Type')
     referrerPolicy: ""
   ► signal: AbortSignal {aborted: false, onabort: null}
     url: "https://api.github.com/users"
-  ► __proto__: Request
+  ► [[Prototype]]: Request
 ~~~~
 
 Обратите внимание, что в консоли мы видим как бы "пустой" объект заголовков:
@@ -146,7 +146,7 @@ request.headers.get('Content-Type')
 
 ~~~~Headers
 ▼ Headers {}
-  ▼ __proto__: Headers
+  ▼ [[Prototype]]: Headers
       ► append: ƒ append()
       ► delete: ƒ delete()
       ► entries: ƒ entries()
@@ -159,7 +159,7 @@ request.headers.get('Content-Type')
       ► constructor: ƒ Headers()
       ► Symbol(Symbol.iterator): ƒ entries()
         Symbol(Symbol.toStringTag): "Headers"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~~
 
 Воспользуемся методом ~get()~ для получения значения заголовка _Content-Type_:
@@ -191,7 +191,7 @@ const request = new Request('https://api.github.com/users', {
 
 _______________________________________________
 
-### ![ico-20 icon] Опция method
+### ![ico-20 icon] Опция method⟪optsyya_method⟫
 
 **Метод доступа к ресурсу** (CRUD)
 
@@ -207,7 +207,7 @@ const request = new Request('https://httpbin.org/post', {
 
 _______________________________________________
 
-### ![ico-20 icon] Опция mode
+### ![ico-20 icon] Опция mode⟪optsyya_mode⟫
 
 Режим запроса
 
@@ -354,7 +354,7 @@ console.log(request.mode) // cors
 
 _____________________________________________________
 
-## ![ico-25 icon] Response
+## ![ico-25 icon] Response⟪Response⟫
 
 | Свойства | объекта Response |
 | **~type~** | ^^строка, информирующая о том, откуда пришел ресурс<br>**basic** - запрос с того же домена<br>**cors** - данные получены с другого домена с использованием CORS-заголовков<br>**opaque** - непрозрачный ответ на запрос другого происхождения, который не возвращает заголовки CORS<br>не позволяет прочитать возвращенные данные или просмотреть статус запроса ( нет возможности проверить успешность запроса )^^ |
@@ -366,13 +366,13 @@ _____________________________________________________
 
 ____________________________________________________
 
-### ![ico-20 icon] Заголовки ответа
+### ![ico-20 icon] Заголовки ответа⟪zaholovky_otveta⟫
 
 Объект **~headers~** ответа сервера имеет ряд унаследованных методов
 
 ~~~~Headers
 ▼ Headers
-  ▼ __proto__: Headers
+  ▼ [[Prototype]]: Headers
       ► append: ƒ append()
       ► delete: ƒ delete()
       ► entries: ƒ entries()
@@ -385,7 +385,7 @@ ____________________________________________________
       ► constructor: ƒ Headers()
       ► Symbol(Symbol.iterator): ƒ entries()
         Symbol(Symbol.toStringTag): "Headers"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~~
 
 Воспользуемся методом ~forEach~ для получения значений всех возвращаемых сервером заголовков ответа
@@ -415,7 +415,7 @@ github.v3; format=json
 ^^Пока мы не можем посмотреть, как работают методы keys и entries, поскольку оба эти метода возвращают объект итератора, что мы будем изучать позже^^
 ______________________________________________________________________
 
-### ![ico-20 icon] Тип ответа
+### ![ico-20 icon] Тип ответа⟪typ_otveta⟫
 
 Ответ (Response) имеет свойство **~type~**, которое может иметь значения _~basic~_, _~cors~_ или _~opaque~_
 
@@ -431,7 +431,7 @@ ______________________________________________________________________
 
 _____________________________________
 
-### ![ico-20 icon] body
+### ![ico-20 icon] body⟪body⟫
 
 Это объект _~ReadableStream~_, доступ к которому обеспечивают следующие методы объекта **_~Response~_**:
 
@@ -445,7 +445,7 @@ _____________________________________
 
 ________________________________________
 
-#### ![ico-20icon] json()
+#### ![ico-20icon] json()⟪json⟫
 
 Воспользуемся [**сервисом**](https://api.2ip.ua) для получения полной информации о пользователе
 ^^( в данном случае - о самом себе )^^
@@ -504,7 +504,7 @@ fetch('https://api.github.com/users?since=135')
 
 _____________________________________
 
-#### ![ico-20 icon] blob()
+#### ![ico-20 icon] blob()⟪blob⟫
 
 ^^Давайте посмотрим, что такое объект Blob^^
 
@@ -542,7 +542,7 @@ fetch('https://avatars2.githubusercontent.com/u/46?v=4')
 
 ______________________________________________________
 
-#### ![ico-20 icon] arrayBuffer()
+#### ![ico-20 icon] arrayBuffer()⟪arrayBuffer⟫
 
 Этот формат ответа сервера представляет собой строку из нулей и единиц
 
@@ -569,7 +569,7 @@ fetch('https://avatars2.githubusercontent.com/u/46?v=4')
 
 _________________________________________________________
 
-#### ![ico-20 icon] arrayBuffer → blob
+#### ![ico-20 icon] arrayBuffer → blob⟪arrayBuffer_→_blob⟫
 
 Можно получить  объект **~Blob~**  из объекта **~arrayBuffer~** с помощью конструктора  **~Blob~**, которому нужно передать объект **~arrayBuffer~**, "завернутый" в массив
 
@@ -637,7 +637,7 @@ fetch('https://httpbin.org/get')
    Origin: "null"
    Save-Data: "on"
    User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
- ► __proto__: Object
+ ► [[Prototype]]: Object
 ~~~~
 
 _________________________________________________________
@@ -677,7 +677,7 @@ fetch(request)
     statusText: "OK"
     type: "cors"
     url: "https://httpbin.org/post"
-  ► __proto__: Response
+  ► [[Prototype]]: Response
 ~~~
 
 ^^^
@@ -694,7 +694,7 @@ fetch(request)
     json: null
     origin: "185.38.217.69"
     url: "https://httpbin.org/post"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ^^^

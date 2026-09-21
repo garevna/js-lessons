@@ -1,4 +1,4 @@
-# ![ico-30 icon] FileReader
+# ![ico-30 icon] FileReader⟪FileReader⟫
 
 **Конструктор**
 

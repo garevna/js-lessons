@@ -1,8 +1,8 @@
-# ![ico-30 study] AJAX
+# ![ico-30 study] AJAX⟪AJAX⟫
 
 _______________________
 
-## ![ico-25 icon] CORS
+## ![ico-25 icon] CORS⟪CORS⟫
 
 **Cross-origin resource sharing**
 
@@ -18,7 +18,7 @@ _______________________
 
 ____________________________________
 
-### ![ico-20 icon] Preflight request
+### ![ico-20 icon] Preflight request⟪Preflight_request⟫
 
 [Предварительный запрос](external/mdn-preflight-request) автоматически отправляется браузером
 
@@ -55,7 +55,7 @@ ____________________________________
 
 _______________________________________________
 
-### ![ico-20 icon] CORS-заголовки ответа
+### ![ico-20 icon] CORS-заголовки ответа⟪CORS-zaholovky_otveta⟫
 
 Все CORS-заголовки **_ответа_** сервера имеют префикс «**Access-Control-**»
 
@@ -135,7 +135,7 @@ fetch(url, {
 
 __________________________________
 
-## ![ico-25 icon] Proxy for CORS request
+## ![ico-25 icon] Proxy for CORS request⟪Proxy_for_CORS_request⟫
 
 Попробуйте запустить следующий код в консоли пустой вкладки (about:blank)
 
