@@ -20,7 +20,6 @@ export const mainMenu = [
     items: [
       { ref: 'variable-declaration', ua: 'Оголошення змінних', eng: 'Variable declaration', ru: 'Объявление переменных' },
       { ref: 'var', ua: 'Примітивні типи даних', eng: 'Primitive data types', ru: 'Примитивные типы данных' },
-      { ref: 'let-const', ua: 'let | const', eng: 'let | const', ru: 'let | const' },
       { ref: 'typeof', ua: 'Оператор typeof', eng: 'Operator typeof', ru: 'Оператор typeof' },
       { ref: 'NaN-null-Infinity', ua: 'NaN / null / Infinity', eng: 'NaN / null / Infinity', ru: 'NaN / null / Infinity' },
       { ref: 'data-structures', ua: 'Структури даних', eng: 'Data structures', ru: 'Структуры данных' },
@@ -188,6 +187,7 @@ export const mainMenu = [
     eng: 'Static methods of the Object constructor',
     ru: 'Статические методы конструктора Object',
     items: [
+      { ref: 'let-const', ua: 'let | const', eng: 'let | const', ru: 'let | const' },
       { ref: 'Object-static-props', ua: 'Статичні методи конструктора Object', eng: 'Static methods of the Object constructor', ru: 'Статические методы конструктора Object' },
       { ref: 'hw-10', ua: 'Homework', ru: 'Homework', eng: 'Homework' }
     ]
