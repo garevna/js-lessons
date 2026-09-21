@@ -1,0 +1,427 @@
+{
+  "areas": [
+    "Основы",
+    "Прототипное наследование",
+    "Функциональщина",
+    "Асинхронщина"
+  ],
+  "pages": {
+    "Block-diagram": [
+      "Основы"
+    ],
+    "Developer-tools": [
+      "Основы"
+    ],
+    "Chrome-dev-tools": [
+      "Основы"
+    ],
+    "global-object-and-memory": [
+      "Основы"
+    ],
+    "hw-flowchart": [
+      "Основы"
+    ],
+    "variable-declaration": [
+      "Основы"
+    ],
+    "var": [
+      "Основы"
+    ],
+    "typeof": [
+      "Основы"
+    ],
+    "data-structures": [
+      "Основы"
+    ],
+    "Boolean": [
+      "Основы"
+    ],
+    "function": [
+      "Основы"
+    ],
+    "Assignments": [
+      "Основы"
+    ],
+    "Explicit-type-conversion": [
+      "Основы"
+    ],
+    "Implicit-type-conversion": [
+      "Основы"
+    ],
+    "BigInt": [
+      "Основы"
+    ],
+    "literals": [
+      "Основы"
+    ],
+    "hw-type-coercion": [
+      "Основы"
+    ],
+    "Conditional-operators": [
+      "Основы"
+    ],
+    "Increment": [
+      "Основы"
+    ],
+    "switch": [
+      "Основы"
+    ],
+    "for": [
+      "Основы"
+    ],
+    "while": [
+      "Основы"
+    ],
+    "for-of-for-in": [
+      "Основы"
+    ],
+    "hw-operators": [
+      "Основы"
+    ],
+    "methods": [
+      "Основы"
+    ],
+    "String-methods": [
+      "Основы"
+    ],
+    "String-fromCharCode": [
+      "Основы"
+    ],
+    "UTF-8": [
+      "Основы"
+    ],
+    "Array-methods": [
+      "Основы"
+    ],
+    "Date-constructor": [
+      "Основы"
+    ],
+    "self-work-02": [
+      "Основы"
+    ],
+    "practice-with-XSS": [
+      "Основы"
+    ],
+    "hw-functions": [
+      "Основы"
+    ],
+    "function-object": [
+      "Основы",
+      "Прототипное наследование"
+    ],
+    "practice-03": [
+      "Основы",
+      "Прототипное наследование"
+    ],
+    "hw-03": [
+      "Основы",
+      "Прототипное наследование"
+    ],
+    "native-and-host-objects": [
+      "Прототипное наследование"
+    ],
+    "inheritance-model": [
+      "Прототипное наследование"
+    ],
+    "value-of": [
+      "Прототипное наследование"
+    ],
+    "in-operator": [
+      "Прототипное наследование"
+    ],
+    "Error": [
+      "Прототипное наследование"
+    ],
+    "hw-04": [
+      "Прототипное наследование"
+    ],
+    "get-and-set": [
+      "Основы",
+      "Функциональщина"
+    ],
+    "call-apply-bind": [
+      "Основы",
+      "Функциональщина"
+    ],
+    "Closure": [
+      "Основы",
+      "Функциональщина"
+    ],
+    "hw-05": [
+      "Основы",
+      "Функциональщина"
+    ],
+    "arrow-function": [
+      "Функциональщина"
+    ],
+    "functionality": [
+      "Функциональщина"
+    ],
+    "recursion": [
+      "Функциональщина"
+    ],
+    "call-apply-bind-currying": [
+      "Функциональщина"
+    ],
+    "hw-08": [
+      "Функциональщина"
+    ],
+    "BOM": [],
+    "DOM": [],
+    "DOM-elements": [],
+    "hw-06": [],
+    "Event-Loop": [
+      "Асинхронщина"
+    ],
+    "Timers": [
+      "Асинхронщина"
+    ],
+    "BOM-postMessage": [
+      "Асинхронщина"
+    ],
+    "DOM-events": [
+      "Асинхронщина"
+    ],
+    "DOM-MutationObserver": [
+      "Асинхронщина"
+    ],
+    "forms": [
+      "Асинхронщина"
+    ],
+    "hw-07": [
+      "Асинхронщина"
+    ],
+    "Array-iterating-methods": [
+      "Функциональщина"
+    ],
+    "JS-heap-memory-allocation": [
+      "Функциональщина"
+    ],
+    "throttling-and-debouncing": [
+      "Функциональщина"
+    ],
+    "SHA": [
+      "Функциональщина"
+    ],
+    "hw-09": [
+      "Функциональщина"
+    ],
+    "let-const": [
+      "Прототипное наследование"
+    ],
+    "Object-static-props": [
+      "Прототипное наследование"
+    ],
+    "hw-10": [
+      "Прототипное наследование"
+    ],
+    "JSON": [
+      "Асинхронщина"
+    ],
+    "curl": [
+      "Асинхронщина"
+    ],
+    "XMLHttpRequest": [
+      "Асинхронщина"
+    ],
+    "Content-Type": [
+      "Асинхронщина"
+    ],
+    "promise": [
+      "Асинхронщина"
+    ],
+    "promise-constructor": [
+      "Асинхронщина"
+    ],
+    "hw-11": [
+      "Асинхронщина"
+    ],
+    "fetch-API": [
+      "Асинхронщина"
+    ],
+    "CORS": [
+      "Асинхронщина"
+    ],
+    "cookie": [
+      "Асинхронщина"
+    ],
+    "localStorage": [
+      "Асинхронщина"
+    ],
+    "hw-12": [
+      "Асинхронщина"
+    ],
+    "named-item": [
+      "Асинхронщина"
+    ],
+    "readableStream": [
+      "Асинхронщина"
+    ],
+    "arrayBuffer": [
+      "Асинхронщина"
+    ],
+    "FileReader": [
+      "Асинхронщина"
+    ],
+    "File-API": [
+      "Асинхронщина"
+    ],
+    "FormData": [
+      "Асинхронщина"
+    ],
+    "hw-13": [
+      "Асинхронщина"
+    ],
+    "async-is-good": [
+      "Асинхронщина"
+    ],
+    "async-await": [
+      "Асинхронщина"
+    ],
+    "async-constructor": [
+      "Асинхронщина"
+    ],
+    "async-vs-Promise-all": [
+      "Асинхронщина"
+    ],
+    "hw-14": [
+      "Асинхронщина"
+    ],
+    "API": [
+      "Асинхронщина"
+    ],
+    "REST": [
+      "Асинхронщина"
+    ],
+    "REST-status": [
+      "Асинхронщина"
+    ],
+    "JSON-placeholder": [
+      "Асинхронщина"
+    ],
+    "json-server": [
+      "Асинхронщина"
+    ],
+    "fake-chat": [
+      "Асинхронщина"
+    ],
+    "hw-15": [
+      "Асинхронщина"
+    ],
+    "strict-mode": [
+      "Прототипное наследование"
+    ],
+    "computed-prop-names": [
+      "Прототипное наследование"
+    ],
+    "short-method-syntax": [
+      "Прототипное наследование"
+    ],
+    "shorthand-object-literal": [
+      "Прототипное наследование"
+    ],
+    "Classes": [
+      "Прототипное наследование"
+    ],
+    "hw-16": [
+      "Прототипное наследование"
+    ],
+    "fabric": [
+      "Функциональщина",
+      "Асинхронщина"
+    ],
+    "Destructuring": [
+      "Функциональщина",
+      "Асинхронщина"
+    ],
+    "generators": [
+      "Функциональщина",
+      "Асинхронщина"
+    ],
+    "generators-async": [
+      "Функциональщина",
+      "Асинхронщина"
+    ],
+    "generators-yield": [
+      "Функциональщина",
+      "Асинхронщина"
+    ],
+    "generators-arg": [
+      "Функциональщина",
+      "Асинхронщина"
+    ],
+    "hw-17": [
+      "Функциональщина",
+      "Асинхронщина"
+    ],
+    "not-defined": [],
+    "Shadow-DOM": [],
+    "custom-elements": [],
+    "life-cycle-hooks": [],
+    "when-defined": [],
+    "template": [],
+    "slots": [],
+    "web-component-samples": [],
+    "hw-18": [],
+    "npm": [],
+    "webpack": [],
+    "webpack-es-modules": [],
+    "dynamic-import": [],
+    "webpack-mode": [],
+    "webpack-package-json": [],
+    "webpack-css-loaders": [],
+    "webpack-exercise-6": [],
+    "webpack-exercise-7": [],
+    "webpack-exercise-8": [],
+    "Final-project": [],
+    "Symbol": [
+      "Основы"
+    ],
+    "Set": [
+      "Основы"
+    ],
+    "patterns": [
+      "Функциональщина",
+      "Прототипное наследование"
+    ],
+    "pattern-Observer": [
+      "Функциональщина",
+      "Прототипное наследование"
+    ],
+    "pattern-Decorator": [
+      "Функциональщина",
+      "Прототипное наследование"
+    ],
+    "pattern-Strategy": [
+      "Функциональщина",
+      "Прототипное наследование"
+    ],
+    "IndexedDB": [
+      "Асинхронщина"
+    ],
+    "IndexedDB-store": [
+      "Асинхронщина"
+    ],
+    "IndexedDB-index": [
+      "Асинхронщина"
+    ],
+    "IndexedDB-transaction": [
+      "Асинхронщина"
+    ],
+    "NoSQL": [
+      "Асинхронщина"
+    ],
+    "SOLID": [],
+    "web-workers": [],
+    "NotificationAPI": [],
+    "performance": [],
+    "web-socket": [],
+    "git": [],
+    "git-bash": [],
+    "tcp-ip": [],
+    "localhost": [],
+    "ECMA": [
+      "Основы"
+    ]
+  }
+}
