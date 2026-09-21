@@ -33,7 +33,9 @@ console.log(x)  // 5
 
 ~~~js
 for (let i of [1, 2, 3, 4, 5]) {
-  setTimeout(() => console.log(i), 1000 * i)
+  setTimeout(function () {
+    console.log(i), 1000 * i
+  })
 }
 ~~~
 
@@ -47,11 +49,19 @@ __________________________________________________________
 const funcs = []
 
 for (var item of ['alpha', 'sigma', 'omega']) {
-  funcs.push(() => console.log(item))
+  funcs.push(function () {
+    console.log(item)
+  })
 }
 funcs[0]()  // omega
 funcs[1]()  // omega
 funcs[2]()  // omega
+~~~
+
+~~~console
+omega
+omega
+omega
 ~~~
 
 ◘◘![ico-25 cap] **let**◘◘
@@ -60,13 +70,22 @@ funcs[2]()  // omega
 const funcs = []
 
 for (const item of ['alpha', 'sigma', 'omega']) {
-  funcs.push(() => console.log(item))
+  funcs.push(function () {
+    console.log(item)
+  })
 }
 
-funcs[0]()  // omega
-funcs[1]()  // omega
+funcs[0]()  // alpha
+funcs[1]()  // sigma
 funcs[2]()  // omega
 ~~~
+
+~~~console
+alpha
+sigma
+omega
+~~~
+
 _______________________
 
 ### ![ico-25 icon] {{p7}}

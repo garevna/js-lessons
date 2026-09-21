@@ -116,6 +116,7 @@ export const mainMenu = [
     eng: 'Functional stuff',
     ru: 'Функциональщина',
     items: [
+      { ref: 'let-const', ua: 'let | const', eng: 'let | const', ru: 'let | const' },
       { ref: 'arrow-function', ua: 'Стрілочні функції', eng: 'Arrow functions', ru: 'Стрелочные функции' },
       { ref: 'functionality', ua: 'Функціональщина', eng: 'Functional programming stuff', ru: 'Функциональщина' },
       { ref: 'recursion', ua: 'Рекурсія', eng: 'Recursion', ru: 'Рекурсия' },
@@ -187,7 +188,6 @@ export const mainMenu = [
     eng: 'Static methods of the Object constructor',
     ru: 'Статические методы конструктора Object',
     items: [
-      { ref: 'let-const', ua: 'let | const', eng: 'let | const', ru: 'let | const' },
       { ref: 'Object-static-props', ua: 'Статичні методи конструктора Object', eng: 'Static methods of the Object constructor', ru: 'Статические методы конструктора Object' },
       { ref: 'hw-10', ua: 'Homework', ru: 'Homework', eng: 'Homework' }
     ]
