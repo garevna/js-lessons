@@ -1,6 +1,6 @@
-# ![ico-30 icon] Event Loop
+# ![ico-30 icon] Event Loop⟪Event_Loop⟫
 
-## ![ico-25 icon] Basic concepts
+## ![ico-25 icon] Basic concepts⟪Basic_concepts⟫
 
 ![ico-20 pin] A **process** is an instance of an executable program that is allocated system resources (CPU time and memory).
 
@@ -48,7 +48,7 @@ A **stack** is a "fast" chunk of RAM.
 
 ____________________________________
 
-## ![ico-25 icon] Async stuff
+## ![ico-25 icon] Async stuff⟪Async_stuff⟫
 
 ☼☼☼ Asynchrony is event domination ☼☼☼
 
@@ -68,7 +68,7 @@ We can't predict with certainty whether the server's response status will be suc
 
 If we can't manage events, then we can let the events control our code.
 
-## ![ico-25 icon] Event-Driven Programming
+## ![ico-25 icon] Event-Driven Programming⟪Event-Driven_Programming⟫
 
 Asynchronous programming is all about binding functions to specific events.
 This is the so-called **event-driven programming**.
@@ -85,7 +85,7 @@ The browser has such a mechanism, and it is called **Event Loop**.
 
 ________________________________________
 
-## ![ico-25 icon] Callback
+## ![ico-25 icon] Callback⟪Callback⟫
 
 ![ico-20 warn] **Only functions are executed in JS.**.
 To execute a script, you first need to create an execution context, which will be placed on the **Call Stack**.
@@ -185,7 +185,7 @@ As we can see, not only the inheritance model, but also asynchrony in JS is base
 
 ___________________________________________
 
-## ![ico-25 icon] Event API
+## ![ico-25 icon] Event API⟪Event_API⟫
 
 @@@@ 3
 For obvious reasons, the JS engine does not track events.<br><br>The browser does this.
@@ -227,7 +227,7 @@ However, the large number of timer callbacks in the task queue led to the fact t
 
 __________________________________________
 
-## ![ico-25 icon] Blocking operations
+## ![ico-25 icon] Blocking operations⟪Blocking_operations⟫
 
 ![ico-20 warn] **“Heavy” tasks block the browser from redrawing the page and make the page non-interactive, i.e. not responding to user actions.**
 A "heavy" task is a task that will occupy the stack for a long time and can seriously delay the execution of other tasks in the queue that had the misfortune of getting there after it...
@@ -364,7 +364,7 @@ Therefore, we simulate "multithreading" using **Event Loop**.
 Later we'll look at asynchronous generators, which do something similar.
 ______________________________
 
-## ![ico-25 icon] Microtask
+## ![ico-25 icon] Microtask⟪Microtask⟫
 
 ☼☼☼ Microtasks are cheeky guys ignoring queue ☼☼☼
 

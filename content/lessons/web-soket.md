@@ -75,7 +75,6 @@ const websocket = new WebSocket(`wss://demo.piesocket.com/v3/channel_1?api_key=$
 
 {{p12}}
 
-
 {{p13}}
 {{p14}}
 {{p15}}
@@ -109,8 +108,6 @@ websocket.onerror = function (event) {
 }
 ~~~
 
-◘◘^^{{common.c14}}^^◘◘
-
 ~~~console
 CONNECTED
 Happy New Year!
@@ -123,7 +120,6 @@ ________________________________________________________________________________
 
 ## ![ico-25 hw] {{common.c3}} 2
 
-
 {{p20}}
 
 {{p21}}
@@ -134,9 +130,7 @@ ________________________________________________________________________________
 
 ### ![ico-20 bash] {{common.c24}}
 
-
 ••$ npm install ws••
-
 
 {{p24}}
 
@@ -222,7 +216,6 @@ server.on('connection', socket => {
 
 •• ![ico-20 bash] $ node start.js••
 
-
 {{p40}}
 
 **~http://localhost:8080/~**
@@ -283,7 +276,7 @@ received from a client:
 ▼ { name: "server", message: "I listen to you" }
     message: "I listen to you"
     name: "server"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ______________________________________________________________________________________
@@ -685,7 +678,6 @@ ___________________________
 {{p94}}
 
 ••![ico-20 bash] $ node start.js••
-
 
 {{p95}}
 

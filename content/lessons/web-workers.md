@@ -38,8 +38,8 @@ const worker = new Worker('worker.js')
       ► set onerror: ƒ onerror()
       ► get onmessage: ƒ onmessage()
       ► set onmessage: ƒ onmessage()
-      ► __proto__: EventTarget
-  ► __proto__: ƒ EventTarget()
+      ► [[Prototype]]: EventTarget
+  ► [[Prototype]]: ƒ EventTarget()
 [[Scopes]]: Scopes[0]
 ~~~
 

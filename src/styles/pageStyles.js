@@ -66,11 +66,12 @@ hr {
 
 .bordered  {
   border:  solid 1px #bbb;
-  padding:  4px 16px 8px;
+  padding:  4px 16px 16px;
   margin:  8px 0 -24px 0;
   box-shadow:  1px -1px 3px #00000050;
   border-top-left-radius:  4px;
   width:  max-content;
+  font-size: 0.8rem;
 }
 
 .slogan  {

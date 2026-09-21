@@ -1,4 +1,4 @@
-## ![ico-25 icon] Конструктор Promise
+## ![ico-25 icon] Конструктор Promise⟪The_Promise_constructor⟫
 
 Для более глубокого понимания того, как работает конструктор Promise,
 мы можем напилить собственный код, который будет делать практически то же самое
@@ -7,7 +7,7 @@
 
 Для этого вспомним, что это такое
 
-### ![ico-20 icon] MutationObserver
+### ![ico-20 icon] MutationObserver⟪MutationObserver⟫
 
 Экземпляр **~MutationObserver~** отслеживает изменения элементов DOM
 
@@ -44,7 +44,7 @@ const config = { childList: true }
 
 _______________________________________________________________
 
-### ![ico-20 icon] resolve | reject
+### ![ico-20 icon] resolve | reject⟪resolve___reject⟫
 
 Дело в том, что при создании промиса функция, которая передается конструктору **Promise**, должна быть исполнена сразу
 Но в теле функции происходит вызов колбэков **~resolve~** | **~reject~**,
@@ -96,7 +96,7 @@ this.createContainer('error')
 
 _____________________________________________________________________
 
-### ![ico-20 icon] Кастомный конструктор
+### ![ico-20 icon] Кастомный конструктор⟪Custom_constructor⟫
 
 
 ◘◘CustomPromise◘◘ 
@@ -148,7 +148,7 @@ CustomPromise.prototype.getObserver = function () {
 
 _____________________________________________________________
 
-### ![ico-20 icon] Пример использования
+### ![ico-20 icon] Пример использования⟪Example_of_use⟫
 
 Теперь используем конструктор **CustomPromise** для создания промиса:
 

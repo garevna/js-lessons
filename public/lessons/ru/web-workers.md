@@ -1,4 +1,4 @@
-# ![ico-30 study] Web-workers
+# ![ico-30 study] Web-workers⟪Web-workers⟫
 
 Фоновые ( параллельные ) потоки в JS эмулируются с помощью worker-ов
 
@@ -38,8 +38,8 @@ const worker = new Worker('worker.js')
       ► set onerror: ƒ onerror()
       ► get onmessage: ƒ onmessage()
       ► set onmessage: ƒ onmessage()
-      ► __proto__: EventTarget
-  ► __proto__: ƒ EventTarget()
+      ► [[Prototype]]: EventTarget
+  ► [[Prototype]]: ƒ EventTarget()
 [[Scopes]]: Scopes[0]
 ~~~
 
@@ -50,7 +50,7 @@ const worker = new Worker('worker.js')
 
 __________________________________________
 
-## ![ico-25 icon] onmessage
+## ![ico-25 icon] onmessage⟪onmessage⟫
 
 • в коде **worker**-а нужно установить обработчика события **_message_**, который будет срабатывать при получении сообщений от главного скрипта
 как и все обработчики событий, он получает объект события
@@ -63,7 +63,7 @@ onmessage = async function (event) {
 }
 ~~~
 
-## ![ico-25 icon] postMessage
+## ![ico-25 icon] postMessage⟪postMessage⟫
 
 • можно отправить сообщение из **worker**-а скрипту в основном потоке (который запустил **worker**-а)
 
@@ -160,7 +160,7 @@ onmessage = function (event) {
 {{{web-worker-sample-2.js}}}
 ___________________________________________________
 
-## ![ico-25 icon] importScripts
+## ![ico-25 icon] importScripts⟪importScripts⟫
 
 Метод importScripts позволяет импортировать скрипты в тело worker-а
 
@@ -182,7 +182,7 @@ worker импортирует скрипт Sha256, который и испол�
 {{{web-worker-sample-3.js}}}
 ___________________________________________________
 
-## ![ico-25 icon] MessageChannel
+## ![ico-25 icon] MessageChannel⟪MessageChannel⟫
 
 ◘◘![ico-25 cap] ** 4**◘◘
 

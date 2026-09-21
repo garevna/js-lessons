@@ -61,8 +61,8 @@ console.dir(IDBIndex)
       ► set name: ƒ name()
       ► get objectStore: ƒ objectStore()
       ► get unique: ƒ unique()
-      ► __proto__: Object
-  ► __proto__: ƒ ()
+      ► [[Prototype]]: Object
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 ^^^

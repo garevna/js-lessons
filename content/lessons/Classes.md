@@ -14,9 +14,6 @@ ____________________________________________________________________
 
 ## ![ico-25 icon] {{p6}}
 
-{{p7}}
-{{p8}}
-
 {{p9}}
 
 ~~~js
@@ -49,14 +46,23 @@ class User {
 }
 ~~~
 
+••••
+{{p7}}
+{{p8}}
+••••
+
 {{p12}}
+
+•••• memo
 {{p13}}
 {{p14}}
 {{p15}}
+••••
 
+•••• none
 {{p16}}
 {{p17}}
-
+••••
 ____________________________________
 
 ♦♦♦1♦♦♦
@@ -67,29 +73,37 @@ class User {
     const privateVar = prompt('Set privateVar value:')
 
     function showPrivate () {
-      console.log(`Ай-яй-яй, у меня контекст вызова ${this}`)
-      console.log(`Зато я вижу приватную переменную: ${privateVar}`)
+      console.log(`Oh dear, my call context is ${this}`)
+      console.log(`But I can see the private variable: ${privateVar}`)
     }
-    this.name = name || 'Бегемот'
+    this.name = name || 'Hippopotamus'
     this.show = function () {
       showPrivate ()
     }
   }
 }
 
-const user = new User('Крокодил')
+const user = new User('Crocodile')
 user.show()
 ~~~
 
-◘◘**Result**◘◘
-
-~~~console
-
-Ай-яй-яй, у меня контекст вызова undefined
-Зато я вижу приватную переменную: 789
-~~~
+{{{Classes-1-class.js}}}
 
 {{p18}}
+
+~~~js
+console.log(user)
+~~~
+
+~~~console
+▼ User {name: 'Crocodile', show: ƒ}
+    name: "Crocodile"
+  ► show: ƒ ()
+  ▼ [[Prototype]]: Object
+    ► constructor: class User
+    ► [[Prototype]]: Object
+~~~
+
 {{p19}}
 
 ~~~js
@@ -97,35 +111,39 @@ user.show()
 function User (name) {
   const privateVar = prompt('Set privateVar value:')
   function showPrivate () {
-    console.log(`Ай-яй-яй, у меня контекст вызова ${this}`)
-    console.log(`Зато я вижу приватную переменную: ${privateVar}`)
+    console.log(`Oh dear, my call context is ${this}`)
+    console.log(`But I can see the private variable: ${privateVar}`)
   }
-  this.name = name || 'Бегемот'
+  this.name = name || 'Hippopotamus'
   this.show = function () {
     showPrivate ()
   }
 }
 
-const user = new User('Крокодил')
+const user = new User('Crocodile')
 user.show()
 ~~~
 
-◘◘**Result**◘◘
-
-~~~console
-
-Ай-яй-яй, у меня контекст вызова [object Window]
-Зато я вижу приватную переменную: 789
-~~~
+{{{Classes-1-function.js}}}
 
 {{p20}}
 
-••constructor: class User    /    constructor: ƒ User(name)••
+~~~js
+console.log(user)
+~~~
+
+~~~console
+▼ User {name: 'Crocodile', show: ƒ}
+    name: "Crocodile"
+  ► show: ƒ ()
+  ▼ [[Prototype]]: Object
+    ► constructor: ƒ User(name)
+    ► [[Prototype]]: Object
+~~~
 
 _______________________________________________
 
 ## ![ico-25 icon] class declaration
-
 
 ![ico-20 error] **hoisting**
 
@@ -140,22 +158,33 @@ class Picture {
   constructor (url, width) {
     this.elem = document.createElement('img')
     this.elem.src = url
-    this.width = width
+    this.elem.width = width
   }
 }
 
-typeof Picture  // "function"
+const x = new Picture('images/hong-kong-1990268__340.jpg', 200)
+document.body.appendChild(x.elem)
 ~~~
 
+{{{Classes-2.js}}}
+
+•••• none
 {{p23}}
 {{p24}}
-
 {{p25}}
 {{p26}}
+••••
 
 ~~~js
-const x = new Picture('http://www.radioactiva.cl/wp-content/uploads/2018/05/pikachu.jpg', 200)
-document.body.appendChild(x.elem)
+const x = Picture('images/hong-kong-1990268__340.jpg', 200)
+~~~
+
+~~~console
+<p class="error-message">Uncaught TypeError&colon; Class constructor Picture cannot be invoked without 'new'</p>
+~~~
+
+~~~js
+typeof Picture  // "function"
 ~~~
 
 __________________________________________________
@@ -180,17 +209,14 @@ const Picture = class {
 console.dir(Picture)
 ~~~
 
-◘◘**{{common.c2}}**◘◘
-
 ~~~console
-
 ▼ class Picture
     arguments: (...)
     caller: (...)
     length: 0
     name: "Picture"
   ► prototype: {constructor: ƒ}
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 {{p29}}
@@ -201,15 +227,12 @@ let sample = new Picture
 console.log(sample)
 ~~~
 
-◘◘**{{common.c2}}**◘◘
-
 ~~~console
-
 ▼ Picture {elem: img}
     elem: img
-  ▼ __proto__:
-      ► constructor: class
-      ► __proto__: Object
+  ▼ [[Prototype]]:
+      ► constructor: class 
+      ► [[Prototype]]: Object
 ~~~
 
 _____________________________________________________________
@@ -228,17 +251,14 @@ const Picture = class Canvas {
 console.dir(Picture)
 ~~~
 
-◘◘**{{common.c2}}**◘◘
-
 ~~~console
-
 ▼ class Canvas
     arguments: (...)
     caller: (...)
     length: 0
     name: "Canvas"
   ► prototype: {constructor: ƒ}
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 {{p30}}
@@ -249,15 +269,12 @@ const sample = new Picture
 console.log(sample)
 ~~~
 
-◘◘**{{common.c2}}**◘◘
-
 ~~~console
-
 ▼ Canvas {elem: img}
     elem: img
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ► constructor: class Canvas
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 ~~~js
@@ -268,7 +285,9 @@ sample instanceof Picture   // true
 sample instanceof Canvas
 ~~~
 
-••![ico-20 error] Uncaught ReferenceError: Canvas is not defined••
+~~~console
+<p class="error-message">Uncaught ReferenceError&colon; Canvas is not defined</p>
+~~~
 
 {{p31}}
 
@@ -289,6 +308,7 @@ const Sample = class Canvas {
       .appendChild(document.createElement('canvas'))
     this.resizeCanvas()
     this.canvas.style.border = '1px solid #000000'
+    this.canvas.style.background = '#ffffff'
     this.area = this.canvas.getContext('2d')
   }
 
@@ -311,6 +331,8 @@ pict.drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 pict.drawLine([{ x: 250, y: 250 }, { x: 100, y: 250 }])
 ~~~
 
+{{{Classes-5.js}}}
+
 {{p33}}
 
 ~~~js
@@ -318,7 +340,6 @@ console.log ( Sample.name ) // "Canvas"
 ~~~
 
 ________________________________________________________
-
 
 ## ![ico-25 icon] get & set
 
@@ -426,10 +447,7 @@ pict.history = [
 ]
 ~~~
 
-◘◘pict◘◘
-
 ~~~console
-
 ▼ Canvas {canvas: canvas, area: CanvasRenderingContext2D}
   ► area: CanvasRenderingContext2D {canvas: canvas, globalAlpha: 1, globalCompositeOperation: "source-over", filter: "none", imageSmoothingEnabled: true, …}
   ► canvas: canvas
@@ -437,8 +455,8 @@ pict.history = [
     ► 0: {path: Array(2), lineColor: "red"}
     ► 1: {path: Array(2), lineColor: "green"}
       length: 2
-    ► __proto__: Array(0)
-  ► __proto__: Object
+    ► [[Prototype]]: Array(0)
+  ► [[Prototype]]: Object
 ~~~
 
 {{p49}}
@@ -453,7 +471,9 @@ pict.history = ['***']
 
 {{p53}}
 
-••![ico-20 error] History must contain path array••
+~~~console
+<p class="error-message">History must contain path array</p>
+~~~
 
 ~~~js
 pict.history = true
@@ -461,7 +481,9 @@ pict.history = true
 
 {{p54}}
 
-••![ico-20 error] History must be array••
+~~~console
+<p class="error-message">History must be array</p>
+~~~
 
 {{p55}}
 {{p56}}
@@ -484,7 +506,9 @@ drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 
 {{common.c5}}
 
-••![ico-20 error] Uncaught TypeError: Cannot read property 'area' of undefined••
+~~~console
+<p class="error-message">Uncaught TypeError&colon; Cannot read property 'area' of undefined</p>
+~~~
 
 {{p60}}
 
@@ -494,8 +518,10 @@ const drawLine = pict.drawLine.bind(pict)
 
 {{p61}}
 {{p62}}
-{{p63}}
-{{p64}}
+•••• none
+{{p232}}
+{{p233}}
+••••
 
 ______________________________________________________
 
@@ -521,8 +547,10 @@ class User {
 }
 ~~~
 
-{{p65}}
-{{p66}}
+•••• none
+{{p234}}
+{{p235}}
+••••
 {{p67}}
 
 ~~~js
@@ -533,9 +561,9 @@ user.addSomeInfo([
 ])
 ~~~
 
-**{{common.c1}}**
-
-••![ico-20 error] Uncaught TypeError: Cannot set property 'age' of undefined••
+~~~console
+<p class="error-message">Uncaught TypeError&colon; Cannot set property 'age' of undefined</p>
+~~~
 
 {{p68}}
 
@@ -570,18 +598,15 @@ user.addSomeInfo([
 console.log(user)
 ~~~
 
-◘◘**{{common.c1}}**◘◘
-
 ~~~console
-
 ▼ User {name: "Grig", age: 25, hobby: Array(2)}
     age: 25
   ► hobby: (2) ["football", "fishing"]
     name: "Grig"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ► addSomeInfo: addSomeInfo ( props ) { if ( !Array.isArray ( props ) ) return var getProp = prop => {…}
       ► constructor: class User
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 ________________________________________________________
@@ -621,8 +646,6 @@ let provider = new Provider
 
 {{p77}}
 
-◘◘provider◘◘
-
 ~~~console
 
 ▼ Provider(5) ["Google", "Mozilla", "Opera", "Safari", "IE"]
@@ -632,10 +655,10 @@ let provider = new Provider
     3: "Safari"
     4: "IE"
     length: 5
-  ▼ __proto__: Array
+  ▼ [[Prototype]]: Array
       ► constructor: class Provider
       ► valueOf: ƒ valueOf()
-      ► __proto__: Array(0)
+      ► [[Prototype]]: Array(0)
 ~~~
 
 {{p78}}
@@ -682,10 +705,12 @@ newCanvas.drawCircle({ x: 100, y: 100 }, 100)
 newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }])
 ~~~
 
-{{p79}}
-{{p80}}
-{{p81}}
-{{p82}}
+••••
+{{p236}}
+{{p237}}
+{{p238}}
+{{p239}}
+••••
 
 ________________________________________________________
 
@@ -749,7 +774,7 @@ newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }], '#ffaa00', 10)
 
 ____________________________________________
 
-### ![ico-20 icon] super ()
+### ![ico-20 icon] super()
 
 {{p92}}
 
@@ -784,8 +809,9 @@ class ExtendedCanvas extends Canvas {
 
 {{p95}}
 
-••![ico-20 error] Uncaught ReferenceError: ••
-•• Must call super constructor in derived class before accessing 'this' or returning from derived constructor••
+~~~console
+<p class="error-message">Uncaught ReferenceError&colon; Must call super constructor in derived class before accessing 'this' or returning from derived constructor</p>
+~~~
 
 _________________________________________________________
 
@@ -795,9 +821,11 @@ _________________________________________________________
 {{p98}}
 {{p99}}
 
-{{p100}}
+•••• none
+{{p240}}
+{{p241}}
+••••
 
-{{p101}}
 {{p102}}
 
 ~~~js
@@ -806,9 +834,12 @@ Object.setPrototypeOf(person, human)
 
 {{p103}}
 
-{{p104}}
-{{p105}}
-{{p106}}
+••••
+{{p228}}
+{{p229}}
+{{p230}}
+{{p231}}
+••••
 
 ♦♦♦13♦♦♦
 
@@ -868,25 +899,31 @@ person.talk('привет!')
 setTimeout(() => person.talk('Hello, baby!'), 2000)
 ~~~
 
-{{p107}}
-{{p108}}
-{{p109}}
+••••
+{{p242}}
+{{p243}}
+{{p244}}
+{{p245}}
+••••
 
-{{p110}}
-{{p111}}
-{{p112}}
-{{p113}}
+••••
+{{p246}}
+{{p247}}
+{{p248}}
+{{p249}}
+••••
 
-{{p114}}
-{{p115}}
-{{p116}}
-{{p117}}
+••••
+{{p250}}
+{{p251}}
+••••
 
-{{p118}}
-{{p119}}
-{{p120}}
-{{p121}}
-{{p122}}
+••••
+{{p252}}
+{{p253}}
+{{p254}}
+{{p255}}
+••••
 
 ______________________________________________________
 
@@ -1098,7 +1135,6 @@ drawLine (points) {
 
 {{p164}}
 
-
 ________________________________________________________
 
 ♦♦♦18♦♦♦
@@ -1133,7 +1169,6 @@ window.onresize = Canvas.resizeCanvas
 {{p170}}
 
 ____________________________________________________________________
-
 
 ## ![ico-25 cap] {{common.c0}}
 

@@ -1,8 +1,8 @@
-# ![ico-30 study] Array methods
+# ![ico-30 study] Array methods⟪Array_methods⟫
 
 ______________________________________________________
 
-### push
+### push⟪push⟫
 
 This method adds a new element to the end of the array.
 The argument passed to the method when it is called is the element to be added.
@@ -28,7 +28,7 @@ var length = array.push('Program')
 
 ____________________________________________________________________
 
-### pop
+### pop⟪pop⟫
 
 ^^^[pop()]
 
@@ -52,7 +52,7 @@ var elem = array.pop()
 
 _________________________________________________________________________
 
-### shift
+### shift⟪shift⟫
 
 This method removes the first element from the array.
 The return value is the removed element.
@@ -78,7 +78,7 @@ console.log(arrayOfThings.shift())
 
 ______________________________________________________
 
-### unshift
+### unshift⟪unshift⟫
 
 This method adds a new element to the beginning of the array.
 The return value is the new length of the array.
@@ -101,7 +101,7 @@ var len = drinks.unshift('beer')
 
 ___________________________________________________________________
 
-### splice
+### splice⟪splice⟫
 
 The first argument (a number) specifies the position (index) where the new elements will be inserted.
 The second argument (a number) specifies how many elements (starting from the insertion position) should be removed from the array.
@@ -183,7 +183,7 @@ console.log(myArray.splice(2, 0, 'Новый элемент'))
 
 ____________________________________________________________________
 
-### slice
+### slice⟪slice⟫
 
 The method creates a new array containing a substring of the original array.
 The original array remains unchanged.
@@ -240,7 +240,7 @@ var result = array.slice(4, 3) // []
 
 _____________________________________________________________________
 
-### concat
+### concat⟪concat⟫
 
 The method merges two or more arrays into a single array.
 The return value is a new array.
@@ -276,7 +276,7 @@ result = result.concat(numbers, additional)
 
 ____________________________________________________________________________
 
-### join
+### join⟪join⟫
 
 Concatenates all elements of the array into a string.
 The argument is the delimiter character.
@@ -298,7 +298,7 @@ var menu = drinks.join(' | ')
 
 _____________________________________________________________
 
-### includes
+### includes⟪includes⟫
 
 **ES 2016**
 

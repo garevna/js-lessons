@@ -1,12 +1,12 @@
-# ![ico-30 study] let | const
+# ![ico-30 study] let | const⟪let___const⟫
 
 **ES6 ( 2015 )**
 
 ________________________
 
-## ![ico-25 icon] let
+## ![ico-25 icon] let⟪let⟫
 
-### ![ico-25 icon] Functional and block scope
+### ![ico-25 icon] Functional and block scope⟪Functional_and_block_scope⟫
 
 The scope of variables declared using the **_var_** directive can only be restricted by ‘wrapping’ them within a function
 
@@ -69,7 +69,7 @@ funcs[2]()  // omega
 ~~~
 _______________________
 
-### ![ico-25 icon] Hoisting and the ‘temporary dead zone’
+### ![ico-25 icon] Hoisting and the ‘temporary dead zone’⟪Hoisting_and_the_‘temporary_dead_zone’⟫
 
 **Hoisting** means that variables are ‘hoisted’ from their point of declaration in the code to the top of their scope
 
@@ -146,7 +146,7 @@ window.z    //  undefined
 
 ______________________
 
-## ![ico-25 icon] const
+## ![ico-25 icon] const⟪const⟫
 
 ![ico-20 pin] Block scope (as with ~let~)
 ![ico-20 pin] Duplicate declarations are not permitted (as with ~let~)

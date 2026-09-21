@@ -1,8 +1,8 @@
-# ![ico-30 study] indexedDB
+# ![ico-30 study] indexedDB⟪indexedDB⟫
 
 ______________________________________________________
 
-## ![ico-25 icon] transaction
+## ![ico-25 icon] transaction⟪transaction⟫
 
 ^^Переход к интерфейсу "третьего уровня"^^
 |                | _open_                |                 | _transaction_         |                    |
@@ -43,8 +43,8 @@ console.dir(IDBTransaction)
       ► set oncomplete: ƒ oncomplete()
       ► get onerror: ƒ onerror()
       ► set onerror: ƒ onerror()
-      ► __proto__: EventTarget
-  ► __proto__: ƒ EventTarget()
+      ► [[Prototype]]: EventTarget
+  ► [[Prototype]]: ƒ EventTarget()
 ~~~~
 
 Транзакция - это объект:
@@ -64,7 +64,7 @@ console.dir(IDBTransaction)
 ^^Свойства **objectStoreNames** и **mode** транзакции устанавливаются при ее создании^^
 ___________________________________________________________
 
-### ![ico-20 icon] Транзакция versionchange
+### ![ico-20 icon] Транзакция versionchange⟪tranzaktsyya_versionchange⟫
 
 Эта транзакция не может быть создана нами
 Она создается автоматически при подключении к базе данных
@@ -115,7 +115,7 @@ callUsers().then(resp => console.log(resp))
 
 ______________________________________________
 
-#### ![ico-20 icon] deleteIndex
+#### ![ico-20 icon] deleteIndex⟪deleteIndex⟫
 
 Напилим функцию, которая делает запрос на соединение с базой данных по ее имени и номеру версии,
 и в случае апгрейда возвращает ссылку на хранилище, имя которого передано третьим аргументом:
@@ -150,7 +150,7 @@ openDB('users', 2, 'userStore')
     keyPath: null
     name: "userStore"
   ► transaction: IDBTransaction {objectStoreNames: DOMStringList, mode: "versionchange", db: IDBDatabase, error: null, onabort: null, …}
-  ► __proto__: IDBObjectStore
+  ► [[Prototype]]: IDBObjectStore
 ~~~
 
 ________________________________________________
@@ -174,7 +174,7 @@ ___________________________________________
 т.е. можно сказать, что это самая "мощная" транзакция ![ico-20 smile]
 _____________________________________________
 
-### ![ico-20 icon] Метод transaction
+### ![ico-20 icon] Метод transaction⟪metod_transaction⟫
 
 Метод **~transaction~** интерфейса **IDBDatabase** дает возможность создать объект транзакции,
 т.е. обеспечить доступ к интерфейсу "третьего уровня" **IDBObjectStore**  
@@ -213,7 +213,7 @@ ________________________________
 
 _________________________________
 
-#### ![ico-20 icon] get
+#### ![ico-20 icon] get⟪get⟫
 
 Вернемся к исходному состоянию базы данных **users** из предыдущего примера,
 т.е. к версии 1 с одним хранилищем и двумя индексами
@@ -242,12 +242,12 @@ indexedDB.open('users').onsuccess = event => {
   ► family: {mother: {…}, father: {…}}
   ► hobby: ["dancing"]
     name: "Andry"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 __________________________________________________
 
-#### ![ico-20 icon] add
+#### ![ico-20 icon] add⟪add⟫
 
 Создадим объект **user**:
 
@@ -293,7 +293,7 @@ indexedDB.open('users')
 
 __________________________________________________
 
-#### ![ico-20 icon] getAll
+#### ![ico-20 icon] getAll⟪getAll⟫
 
 ◘◘![ico-20 cap] ** 4**◘◘
 
@@ -317,12 +317,12 @@ indexedDB.open('users').onsuccess = event => {
   ► 1: {name: "Andry", birthYear: 1998, family: {…}, hobby: Array(1)}
   ► 2: {name: "Piter", birthYear: 2001, family: {…}, hobby: Array(2)}
     length: 3
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 _____________________________________________________
 
-#### ![ico-20 icon] delete
+#### ![ico-20 icon] delete⟪delete⟫
 
 Теперь удалим запись с ключом 2, используя метод **delete** хранилища
 ( при создании транзакции нужно установить режим **~readwrite~** )
@@ -344,7 +344,7 @@ indexedDB.open('users')
 
 ____________________________________________________
 
-### ![ico-20 icon] Интерфейс IDBIndex
+### ![ico-20 icon] Интерфейс IDBIndex⟪ynterfeis_IDBIndex⟫
 
 Для получения ссылки на объект индекса хранилища по его имени
 интерфейс **IDBObjectStore**
@@ -371,7 +371,7 @@ indexedDB.open('users').onsuccess = event => {
     name: "hobbyIndex"
   ► objectStore: IDBObjectStore {name: "userStore", keyPath: null, indexNames: DOMStringList, transaction: IDBTransaction, autoIncrement: true}
     unique: false
-  ► __proto__: IDBIndex
+  ► [[Prototype]]: IDBIndex
 ~~~
 
 Как мы уже знаем, у этого объекта есть унаследованные методы **count**, **get**, **getAll**, **getKey**, **getAllKeys**, **openCursor** и **openKeyCursor**
@@ -454,7 +454,7 @@ getDataByIndex('hobbyIndex', 'get', 'footbal')
   ► family: {mother: {…}, father: {…}}
   ► hobby: (2) ["footbal", "fishing"]
     name: "Stephan"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ____________________________
@@ -476,7 +476,7 @@ getDataByIndex('hobbyIndex', 'getAll', 'footbal')
   ► 0: {name: "Stephan", birthYear: 1995, family: {…}, hobby: Array(2)}
   ► 1: {name: "Иван", birthYear: 2004, family: {…}, hobby: Array(2)}
     length: 2
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 ____________________________
 

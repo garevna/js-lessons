@@ -1,4 +1,4 @@
-# ![ico-25 study] Dynamic import
+# ![ico-25 study] Dynamic import⟪Dynamic_import⟫
 
 **ES 2019**
 

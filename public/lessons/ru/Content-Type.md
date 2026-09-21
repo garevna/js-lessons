@@ -1,4 +1,4 @@
-# ![ico-30 study] Content-Type
+# ![ico-30 study] Content-Type⟪Content-Type⟫
 
 Этот заголовок определяет тип пересылаемого контента
 
@@ -49,7 +49,7 @@ ___________________
 
 ________________________________________
 
-## ![ico-25 icon] Примеры POST-запросов
+## ![ico-25 icon] Примеры POST-запросов⟪prymeri_POST-zaprosov⟫
 
 Далее мы будем использовать фейковый сервер для апробирования методов  **~XMLHttpRequest()~**
 
@@ -81,13 +81,11 @@ function postData (data, contentType = 'application/json') {
 
 ___________________
 
-### ![ico-25 cap] application/x-www-form-urlencoded
+### ![ico-25 cap] application/x-www-form-urlencoded⟪application/x-www-form-urlencoded⟫
 
 ~~~js
 postData('name=garevna&speciality=frontEnd', 'application/x-www-form-urlencoded')
 ~~~
-
-Результат в консоли:
 
 ~~~console
 {
@@ -116,7 +114,7 @@ postData('name=garevna&speciality=frontEnd', 'application/x-www-form-urlencoded'
 
 ___________________
 
-### ![ico-25 cap] application/json
+### ![ico-25 cap] application/json⟪application/json⟫
 
 ~~~js
 postData(JSON.stringify({
@@ -125,8 +123,6 @@ postData(JSON.stringify({
   speciality: 'dev'
 }))
 ~~~
-
-Результат в консоли:
 
 ~~~console
 {
@@ -155,8 +151,7 @@ postData(JSON.stringify({
 ~~~
 _______________________________
 
-
-### ![ico-25 cap] text/plain
+### ![ico-25 cap] text/plain⟪text/plain⟫
 
 ~~~js
 var text = `The weird text generator enables you to convert your normal text into weird text by using different unusual Unicode symbols.
@@ -164,8 +159,6 @@ It generates weird text that resembles the normal characters or numbers of the a
 
 postData(text, 'text/plain')
 ~~~
-
-Результат в консоли:
 
 ~~~console
 {

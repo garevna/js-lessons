@@ -28,8 +28,6 @@ async function getData () {
 getData ()
 ~~~
 
-**{{common.c14}}**
-
 ~~~console
 
 Names | Posts
@@ -54,8 +52,6 @@ function getData () {
     })
 }
 ~~~
-
-**{{common.c14}}**
 
 ~~~console
 

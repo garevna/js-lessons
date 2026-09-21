@@ -110,7 +110,7 @@ console.dir(elem.shadowRoot)
     previousSibling: null
   ► styleSheets: StyleSheetList {0: CSSStyleSheet, length: 1}
     textContent: "img { width: 200px; }"
-  ► __proto__: ShadowRoot
+  ► [[Prototype]]: ShadowRoot
 ~~~~
 
 ### ![ico-20 icon] mode: 'closed'

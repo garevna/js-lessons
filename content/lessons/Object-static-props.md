@@ -25,8 +25,6 @@ _________________________________________________
 var newObject = Object.assign({}, { name: 'Егор', age: 25 }, { write: true, read: true })
 ~~~
 
-◘◘**^^newObject^^**◘◘
-
 ~~~console
 {
   name: "Егор",
@@ -37,7 +35,6 @@ var newObject = Object.assign({}, { name: 'Егор', age: 25 }, { write: true, 
 ~~~
 
 _________________________________
-
 
 ♦♦♦2♦♦♦
 
@@ -146,30 +143,25 @@ var circle = Object.create(new Figure('circle'), {
 
 ^^^
 
-
-◘◘circle◘◘
-
 ~~~console
 
 ▼ Figure {x: undefined, y: undefined, radius: undefined}
     radius: undefined
     x: undefined
     y: undefined
-  ▼ __proto__: Figure
+  ▼ [[Prototype]]: Figure
         type: "circle"
-      ▼ __proto__:
+      ▼ [[Prototype]]:
             className: "Figure"
           ► constructor: ƒ Figure( figType )
-          ► __proto__: Object
+          ► [[Prototype]]: Object
 ~~~
-
 
 ~~~js
 circle instanceof Figure  // true
 ~~~
 
 _________________________________________________________
-
 
 ♦♦♦5♦♦♦
 
@@ -193,17 +185,15 @@ var obj = Object.create(proto)
 
 {{p19}}
 
-◘◘obj◘◘
-
 ~~~console
 
 ▼ {}
-   ▼ __proto__:
+   ▼ [[Prototype]]:
       ► changeFigure: ƒ(newFigure)
         clip: false
         figure: "circle"
         size: 100
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 {{p20}}
@@ -225,9 +215,7 @@ Creator.call(obj, 'sample',  75)
 
 ![](illustrations/Object-static-props-01.png)
 
-
 ________________________________________________________
-
 
 ♦♦♦6♦♦♦
 
@@ -250,20 +238,17 @@ Human.prototype = {
 var worker = Object.create(new Human('Иван', 'рыбалка'))
 ~~~
 
-◘◘worker◘◘
-
 ~~~console
 
 ▼ {}
-  ▼ __proto__:
+  ▼ [[Prototype]]:
         hobby: "рыбалка"
         name: "Иван"
-      ▼ __proto__:
+      ▼ [[Prototype]]:
             age: 20
             speciality: "монтажник"
-          ► __proto__: Object
+          ► [[Prototype]]: Object
 ~~~
-
 
 {{p23}}
 
@@ -273,7 +258,6 @@ worker instanceof Object  // true
 ~~~
 
 _______________________________________________________
-
 
 ♦♦♦7♦♦♦
 
@@ -307,7 +291,6 @@ var sample = new SubClass()
 
 ![](illustrations/Object-static-props-02.png)
 
-
 {{p24}}
 
 ~~~js
@@ -319,7 +302,6 @@ sample instanceof Object      // true
 {{p25}}
 
 ____________________________________________________
-
 
 ♦♦♦8♦♦♦
 
@@ -369,23 +351,20 @@ Dishes.call(Cup.prototype)
 var redCup = new Cup('red')
 ~~~
 
-◘◘redCup◘◘
-
 ~~~console
 
 ▼ Cup {type: "cup", color: "red", clean: true}
     clean: true
     color: "red"
     type: "cup"
-  ▼ __proto__: Dishes
+  ▼ [[Prototype]]: Dishes
         type: "dishes"
-      ▼ __proto__:
+      ▼ [[Prototype]]:
           ► use: ƒ ()
           ► wash: ƒ ()
           ► constructor: ƒ Dishes(type)
-          ► __proto__: Object
+          ►[[Prototype]]: Object
 ~~~
-
 
 {{p30}}
 {{p31}}
@@ -411,7 +390,6 @@ redCup.wash() // The tableware has been washed.
 _________________________________________________________________________
 
 ~&#95;&#95;proto&#95;&#95;~  vs  ~Object.create()~
-
 
 ♦♦♦9♦♦♦
 
@@ -532,8 +510,6 @@ Object.defineProperty(sample, 'type', {
 Object.keys(sample)
 ~~~
 
-◘◘^^{{common.c1}}^^◘◘
-
 ~~~console
 ► (3) ["name", "size", "color"]
 ~~~
@@ -558,8 +534,6 @@ Object.defineProperty(sample, 'operation', {
 })
 ~~~
 
-◘◘^^{{common.c1}}^^◘◘
-
 ~~~console
 ▼ {name: "figure", size: 100, color: "red", type: "svg"}
     color: "red"
@@ -569,7 +543,7 @@ Object.defineProperty(sample, 'operation', {
     type: "svg"
   ► get operation: () => {…}
   ► set operation: newVal => this.operation = newVal + "***"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ___________________________________________________________
@@ -608,15 +582,13 @@ console.log(thing.priceUDS) // 8.928571428571429
 console.log(Object.getOwnPropertyDescriptor(thing, 'priceUAH'))
 ~~~
 
-◘◘^^{{common.c1}}^^◘◘
-
 ~~~console
 ▼ {get: ƒ, set: ƒ, enumerable: true, configurable: true}
     configurable: true
     enumerable: true
   ► get: ƒ priceUAH()
   ► set: ƒ priceUAH( newPriceUAH )
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ____________________________
@@ -695,8 +667,6 @@ var obj = {
 console.log(Object.entries(obj))
 ~~~
 
-◘◘^^{{common.c1}}^^◘◘
-
 ~~~console
 
 ▼ (5) [Array(2), Array(2), Array(2), Array(2), Array(2)]
@@ -706,7 +676,7 @@ console.log(Object.entries(obj))
   ► 3: (2) ["radius", 100]
   ► 4: (2) ["center", Array(2)]
     length: 5
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ________________________________________
@@ -737,7 +707,6 @@ ____________________
 
 ♦♦♦14♦♦♦
 
-
 ~~~js
 // Выведем все свойства объекта obj в консоль
 
@@ -747,8 +716,6 @@ for (var x of Object.entries(obj)) {
 }
 console.info('}')
 ~~~
-
-◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 
@@ -992,8 +959,6 @@ var newObject = {
 Object.getOwnPropertyDescriptor(newObject, 'getName')
 ~~~
 
-◘◘^^{{common.c1}}^^◘◘
-
 ~~~console
 
 ▼ {value: ƒ, writable: true, enumerable: true, configurable: true}
@@ -1001,9 +966,8 @@ Object.getOwnPropertyDescriptor(newObject, 'getName')
     enumerable: true
   ► value: ƒ getName()
     writable: true
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
-
 
 ____________________________
 
@@ -1028,8 +992,6 @@ var obj = {
 Object.getOwnPropertyDescriptors(obj)
 ~~~
 
-◘◘^^{{common.c1}}^^◘◘
-
 ~~~console
 
 ▼ {name: {…}, type: {…}, color: {…}, radius: {…}, center: {…}}
@@ -1038,7 +1000,7 @@ Object.getOwnPropertyDescriptors(obj)
   ► name: {value: "first", writable: true, enumerable: true, configurable: true}
   ► radius: {value: 100, writable: true, enumerable: true, configurable: true}
   ► type: {value: "circle", writable: true, enumerable: true, configurable: true}
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ____________________________
@@ -1055,8 +1017,6 @@ var funcObject = {
 var newObject = Object.assign({}, { name: 'Егор', age: 25 }, { write: true, read: true }, funcObject)
 Object.getOwnPropertyNames(newObject)
 ~~~
-
-◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 
@@ -1094,8 +1054,6 @@ console.log(man.employed)  // false
 console.log(Object.keys(man))
 ~~~
 
-◘◘^^{{common.c1}}^^◘◘
-
 ~~~console
 
 (3) [ "name", "age", "speciality" ]
@@ -1106,8 +1064,6 @@ console.log(Object.keys(man))
 ~~~js
 console.log(Object.keys(Human.prototype))
 ~~~
-
-◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 
@@ -1120,8 +1076,6 @@ console.log(Object.keys(Human.prototype))
 man.employed = true
 console.log(Object.keys(man))
 ~~~
-
-◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 
@@ -1163,7 +1117,6 @@ const proto = {
 
 {{p106}}
 
-
 {{p107}}
 
 ~~~js
@@ -1175,14 +1128,12 @@ const admin = {
 
 {{p108}}
 
-◘◘admin◘◘
-
 ~~~console
 
 ▼ { name: "Stephan", age: 25 }
     age: 25
     name: "Stephan"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ► constructor: ƒ Object()
       ► hasOwnProperty: ƒ hasOwnProperty()
       ► isPrototypeOf: ƒ isPrototypeOf()
@@ -1198,7 +1149,6 @@ const admin = {
       ► set __proto__: ƒ __proto__()
 ~~~
 
-
 {{p109}}
 
 ~~~js
@@ -1207,19 +1157,16 @@ Object.setPrototypeOf(admin, proto)
 
 {{p110}}
 
-◘◘admin◘◘
-
 ~~~console
 
 ▼ { name: "Stephan", age: 25 }
     age: 25
     name: "Stephan"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ► getName: getName() { return this[ Object.keys ( this ) .find ( key => {…}
       ► valueOf: valueOf() { let prop = Object.keys ( this ) .find ( key => {…}
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
-
 
 {{p111}}
 
@@ -1271,8 +1218,6 @@ var obj = {
 
 console.log(Object.values(obj))
 ~~~
-
-◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 

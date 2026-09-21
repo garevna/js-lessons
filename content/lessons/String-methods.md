@@ -31,7 +31,6 @@ console.log(message + ', ' + user)
 
 {{p9}}
 
-
 ## ![ico-25 icon] {{p10}}
 
 {{p11}}
@@ -163,7 +162,6 @@ console.log(str.substr(8, 5))
 
 {{p39}}
 
-
 ![ico-25 cap] ** 2 **
 
 ~~~js
@@ -215,7 +213,6 @@ console.log(str.toUpperCase())
 {{p46}}
 {{p47}}
 {{p48}}
-
 
 ^^^[split()]
 
@@ -363,8 +360,6 @@ for (var city of cities) {
   console.log(`City: ${city.padEnd(16)} (${cities.indexOf(city)})`)
 }
 ~~~
-
-^^{{common.c2}}^^
 
 ~~~console
 City: Naples           (0)

@@ -1,4 +1,4 @@
-# ![ico-30 study] Closure
+# ![ico-30 study] Closure⟪Closure⟫
 
 [Closure](external/w3-closures) is an effect that allows variables in the context of the parent function—which returns the function—to be ‘hidden’.
 
@@ -98,7 +98,7 @@ The result will be: ••‘H*a*p*p*y* *N*e*w* *Y*e*a*r*!’••
 
 _______________________
 
-## ![ico-25 icon] IIFE
+## ![ico-25 icon] IIFE⟪IIFE⟫
 
 **_Immediately Invoked Function Expression_**
 
@@ -151,7 +151,7 @@ As the function declared within the parentheses returns an object, the result wi
     id: 1562225761228
     name: undefined
     visit: "04.07.2019"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 As we do not store the resulting reference to the function, the garbage collector will remove the function object from memory during its next pass.
@@ -180,7 +180,7 @@ As a result, the variable `user` will become an object:
     id: 1562226083644
     name: "Семен"
     visit: "04.07.2019"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 The anonymous function was called only once, after which it is removed from memory (as the reference to it is not retained).
@@ -222,7 +222,7 @@ The closure effect is often used to protect variables, but it is important to re
 
 -----------------------------
 
-## ![ico-25 icon] The ‘Module’ pattern
+## ![ico-25 icon] The ‘Module’ pattern⟪The_‘Module’_pattern⟫
 
 Combining IIFE with the closure effect gives us one of the design patterns known as the ‘Module’ pattern, which, unfortunately, is widely used in development as well as when building applications.
 
@@ -234,7 +234,7 @@ I recommend that you familiarise yourself thoroughly with currying, a technique 
 
 _____________________________
 
-## ![ico-25 warn] Function
+## ![ico-25 warn] Function⟪Function⟫
 
 ![ico-20 err] Functions created using the **Function** constructor do not create closures
 
@@ -261,7 +261,7 @@ functionDeclaration()()   // Closured Scope
 
 _____________________________
 
-## ![ico-25 warn] Memory Leaks
+## ![ico-25 warn] Memory Leaks⟪Memory_Leaks⟫
 
 ![ico-20 warn] Closures can lead to memory leaks.
 

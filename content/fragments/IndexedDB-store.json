@@ -1,14 +1,14 @@
 [
-  "~success~",
-  "~error~",
-  "~upgradeneeded~",
-  "~IDBFactory~",
-  "~IDBDatabase~",
-  "~null~",
-  "~mode~",
-  "~versionchange~",
-  "~Key~",
-  "~Value~",
-  "~true~",
-  "~keyPath~"
+  "success",
+  "error",
+  "upgradeneeded",
+  "IDBFactory",
+  "IDBDatabase",
+  "null",
+  "mode",
+  "versionchange",
+  "Key",
+  "Value",
+  "true",
+  "keyPath"
 ]

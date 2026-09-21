@@ -104,8 +104,6 @@ console.log(bag.getFlower())
 console.log(bag.getMashroom())
 ~~~
 
-**{{common.c1}}**
-
 ~~~console
 
 ► {name: "👜", putContent: ƒ}

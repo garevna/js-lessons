@@ -1,12 +1,12 @@
 [
   "samples/02",
-  "~>>~",
-  "~ * ~",
-  "~Breakpoints~",
-  "~Breakpoint~",
-  "~Ctrl + S~",
-  "~breakpoints~",
-  "~Scope~",
-  "~Call Stack~",
-  "~breakpoint~"
+  ">>",
+  " * ",
+  "Breakpoints",
+  "Breakpoint",
+  "Ctrl + S",
+  "breakpoints",
+  "Scope",
+  "Call Stack",
+  "breakpoint"
 ]

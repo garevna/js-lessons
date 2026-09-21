@@ -1,4 +1,4 @@
-# ![ico-35 study] Promise
+# ![ico-35 study] Promise⟪Promise⟫
 
 __________________________________________________________________________________________
 
@@ -6,7 +6,7 @@ ________________________________________________________________________________
 
 __________________________________________________________________________________________
 
-## ![ico-30 icon] Call context
+## ![ico-30 icon] Call context⟪Call_context⟫
 
 The function-argument of the **~Promise~** constructor is also a **higher-order function**, i.e. its formal parameters are **functions**.
 ^^Moreover, its formal parameters are callback functions.^^
@@ -31,7 +31,7 @@ const promise = new Promise ()
 
 __________________________________________________________________________________________
 
-### ![ico-25 icon] Instance
+### ![ico-25 icon] Instance⟪Instance⟫
 
 Let's see what the **~Promise~** constructor creates:
 So we have an instance that has a ~[[[PromiseState]]~ property set to "**~pending~**" and a ~[[PromiseResult]]~ property set to **~undefined~**.
@@ -60,7 +60,7 @@ No asynchronous behaviour so far.
 
 _____________________________________
 
-### ![ico-25 icon] Static methods
+### ![ico-25 icon] Static methods⟪Static_methods⟫
 
 Let's also see what static methods the **~Promise~** constructor has.
 
@@ -91,7 +91,7 @@ And the result is no longer ~undefined~, but "**Hello**".
 
 __________________________________________
 
-### ![ico-25 icon] Prototypal methods
+### ![ico-25 icon] Prototypal methods⟪Prototypal_methods⟫
 
 Each instance created by the **~Promise~** constructor “inherits” the methods **~then~**, **~catch~** and **~finally~** from the “daddy”.
 
@@ -189,7 +189,7 @@ Let’s try out the prototype methods available to the constructor instance **~P
 
 _______________________________________________________
 
-### ![ico-25 icon] catch
+### ![ico-25 icon] catch⟪catch⟫
 
 Let's take exception handling seriously.
 
@@ -225,7 +225,7 @@ This makes sense, as the purpose of the method is to pass a callback to the **Ev
 
 In other words, once you have created an instance of **~Promise~**, you will no longer be able to ‘break out’ of this ‘vicious circle’; that is, whatever you do, the result will always be a new instance of **~Promise~**.
 
-#### ![ico-20 icon] catch
+#### ![ico-20 icon] catch⟪catch⟫
 
 The function we pass to the **~catch~** method will catch an error message if the request is rejected, and the state of our ‘box’ will become **~rejected~**.
 
@@ -250,7 +250,7 @@ const promise = Promise.reject('Access denied.').catch(console.log)
     ► Uncaught (in promise) Access denied.
 ~~~
 
-#### ![ico-20 icon] then
+#### ![ico-20 icon] then⟪then⟫
 
 Through the **~then~** hole, you can slip in two hands at once: one to retrieve the result, the other to catch the error message:
 
@@ -268,7 +268,7 @@ Access granted.
 Access denied.
 ~~~
 
-#### ![ico-20 icon] finally
+#### ![ico-20 icon] finally⟪finally⟫
 
 I think this method is quite straightforward.
 
@@ -290,7 +290,7 @@ Finally
 ~~~
 ______________________________________________
 
-## ![ico-30 icon] then
+## ![ico-30 icon] then⟪then⟫
 
 So, using the **~Promise~** constructor, you can create a magic box with two holes.
 As we’ve already seen, it’s simply impossible to look inside this box ‘here and now’.
@@ -425,7 +425,7 @@ first.then(() => second.then(console.log).then(third))
 
 __________________________________________________________________________________________
 
-## ![ico-25 icon] finally
+## ![ico-25 icon] finally⟪finally⟫
 
 As we continue to explore the static methods of the **~Promise~** constructor, we discover that, in addition to **~Promise.resolve~** and **~Promise.reject~**, there are a number of other useful methods with which we can handle entire collections of promises at once.
 The main thing is that these collections are **iterable**.
@@ -511,7 +511,7 @@ In other words, we will ‘pack’ several ‘magic boxes’ into a single ‘ma
 
 __________________________________________
 
-### ![ico-20 icon] Promise.all
+### ![ico-20 icon] Promise.all⟪Promise.all⟫
 
 This method takes an iterable collection of promises and returns a single promise, which resolves to an array of results once all the promises have resolved.
 What’s remarkable is that the order of the results in the array strictly corresponds to the order of the promises in the original array of promises.
@@ -566,7 +566,7 @@ Promise.all(promises)
 
 ______________________________________________
 
-### ![ico-20 icon] Promise.allSettled
+### ![ico-20 icon] Promise.allSettled⟪Promise.allSettled⟫
 
 Returns a promise that resolves to an array of objects.
 Each promise in the source array corresponds to an object in the resulting array.
@@ -588,7 +588,7 @@ Promise.allSettled(promises)
 
 ______________________________________________
 
-### ![ico-20 icon] Promise.any
+### ![ico-20 icon] Promise.any⟪Promise.any⟫
 
 This static method of the **~Promise~** constructor finds the first successfully resolved promise in the ‘batch’ of promises and returns it.
 
@@ -655,7 +655,7 @@ Promise.any(promises)
 and then we’ll see the correct image on the page.
 ______________________________________________
 
-### ![ico-20 icon] Promise.race
+### ![ico-20 icon] Promise.race⟪Promise.race⟫
 
 “Race” – which of the promises resolves first.
 It doesn’t matter what the result is.
@@ -704,7 +704,7 @@ Promise.race(promises).then(show)
 {{{promise-race.js}}}
 __________________________________________________________________________________________
 
-## ![ico-25 icon] Examples
+## ![ico-25 icon] Examples⟪Examples⟫
 
 So, using the **~Promise~** constructor, you can create a magic box with two holes.
 As we already realized, it's just impossible to peek into this box "here and now."

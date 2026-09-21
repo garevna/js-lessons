@@ -1,4 +1,4 @@
-# ![ico-30 study] Factory methods
+# ![ico-30 study] Factory methods⟪Factory_methods⟫
 
 | ![](illustrations/douglas-crockford.jpg) | «_I think the lack of classes is one of JavaScript's great strengths_»<hr>[Douglas Crockford](external/crockford) |
 
@@ -82,10 +82,14 @@ The same applies if the function returns a string, or ~null~, or ~undefined~. Yo
 In other words, the function will be a factory only if it returns an instance of **~Object~**.
 ______________________________
 
-## ![ico-20 icon] OOP objects and data structures
+## ![ico-20 icon] OOP objects and data structures⟪OOP_objects_and_data_structures⟫
 
 ••^^Robert Martin, ‘Clean Code’:^^••
-••_Objects provide behaviour and hide data<br/>Data structures provide data,<br/>but do not possess any significant behaviour_••
+•••• none
+_Objects provide behaviour and hide data
+Data structures provide data,
+but do not possess any significant behaviour_
+••••
 
 ![ico-25 cap] ** 4**
 
@@ -116,7 +120,7 @@ console.log(google.getVar('name', '789541'))   // Google
 ▼ User {name: "Google", getVar: ƒ}
   ► getVar: ƒ getVar( varName, pincode )
     name: "Google"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 
 ~~~
 
@@ -159,7 +163,7 @@ google.getVar('cash', '789451')   // 25000
 ▼ User {name: "Google", getVar: ƒ}
   ► getVar: ƒ getVar( varName, pincode )
     name: "Google"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ▼ constructor: class User
           ► updateUser: ƒ ( user, params, pin )
             arguments: (...)
@@ -167,14 +171,14 @@ google.getVar('cash', '789451')   // 25000
             length: 1
             name: "User"
             prototype: {constructor: ƒ}
-          ► __proto__: ƒ ()
-      ► __proto__: Object
+          ► [[Prototype]]: ƒ ()
+      ► [[Prototype]]: Object
 
 ~~~
 
 __________________________________
 
-## ![ico-25 icon] Polymorphism
+## ![ico-25 icon] Polymorphism⟪Polymorphism⟫
 
 Factory methods make it possible to extend the functionality of the constructor, ensuring its polymorphism.
 
@@ -227,21 +231,17 @@ currentUser.write(`I'm here since ${new Date().toLocaleString()}`)
 
 _____________________________
 
-**visitor**
-
 ~~~console
 
 ▼ User {talk: ƒ, name: "migrant", timeVisit: "01.11.2018, 13:40:41"}
     name: "migrant"
   ► talk: ƒ ( key )
     timeVisit: "01.11.2018, 13:40:41"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 
 ~~~
 
 ______________________________
-
-**currentUser**
 
 ~~~console
 
@@ -251,16 +251,15 @@ ______________________________
     name: "Nick"
   ▼ posts:
         01.11.2018, 13:40:51: "I'm here since 01.11.2018, 13:40:51"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
   ► registered: (2) ["01.11.2018", "13:40:51"]
   ► talk: ƒ ( key )
   ► write: ƒ ( text )
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 
 ~~~
 
 _________________________________________
-
 
 ~~~js
 console.dir(currentUser.__proto__.constructor)
@@ -275,7 +274,7 @@ console.dir(currentUser.__proto__.constructor)
     length: 0
     name: "User"
     prototype: {constructor: ƒ}
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 
 ~~~
 

@@ -1,37 +1,41 @@
+const errorBefore = `url`
+
 export const errorAndWarning = `
 .error-message, .warning-message {
   font-family: monospace;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  padding: 0px 8px 4px;
+  margin: -4px 0;
+  text-wrap: wrap;
 }
 
 .error-message {
   background: #533;
   color: #fee;
-  background-image: url(--error);
-  background-repeat: no-repeat;
-  background-size: 16px 14px;
-  background-position: 4px center;
+  /* background-image: url(--error); */
 }
 
 .warning-message {
   background: #550;
-  color: #fea;
+  color: #ffc;
   background-image: url(--warning);
-  background-repeat: no-repeat;
-  background-size: 16px 16px;
-  background-position: 4px center;
 }
 
 .error-message:before, .warning-message:before {
-  content: '►';
+  content: '   ►';
   display: inline-block;
-  padding: 1.5px 4px 0;
+  background-size: 13px 13px !important;
+  background-position: 4px 6px !important;
+  background-repeat: no-repeat !important;
+  padding: 4px 0 0 0;
   margin-right: 8px;
-  margin-left: 24px;
-  margin-top: 4px;
-  color: #bbb;
-  font-size: 14px;
-  font-weight: bold;
+}
+.error-message:before {
+  background-image: url(--error);
+}
+.warning-message:before {
+  background-image: url(--warning);
 }
 `
+

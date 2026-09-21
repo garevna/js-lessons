@@ -1,4 +1,4 @@
-# ![ico-35 study] Primitive data types
+# ![ico-35 study] Primitive data types⟪Primitive_data_types⟫
 
 In JS, every variable has a value. A **primitive** data type is the data type of a variable with its name directly attached to its value.
 
@@ -15,7 +15,7 @@ Primitive data types include:
 • [%%%null%%%](page/typeof#null)
 ______________________________________________________________
 
-## ![ico-30 icon] String
+## ![ico-30 icon] String⟪String⟫
 
 A string is an ordered set of characters that are enclosed in double (~"My name is Piter"~) or single (~'My name is Piter'~) quotes.
 
@@ -70,7 +70,7 @@ This creates some inconvenience, since we are more used to treating it as an **a
 
 ______________________________________________________________
 
-## ![ico-30 icon] Number
+## ![ico-30 icon] Number⟪Number⟫
 
 **data type: "number"**.
 
@@ -96,7 +96,7 @@ The **~number~** type includes integers, decimal numbers (floating-point numbers
 
 There’s a limit on the size of the number, which is related to the memory allocation for storing data of the **~number~** type.
 
-### ![ico-25 icon] Integer
+### ![ico-25 icon] Integer⟪Integer⟫
 
 A **safe integer** can have a maximum of 15 digits.
 
@@ -104,7 +104,7 @@ A **safe integer** can have a maximum of 15 digits.
 
 Please note that after 20 digits, the number is automatically displayed in exponential form.
 
-### ![ico-25 icon] Exponential form
+### ![ico-25 icon] Exponential form⟪Exponential_form⟫
 
 Whole numbers with a lot of zeros (500000000000000) or very small floating-point numbers (0.000000001) are much easier to write in exponential form.
 
@@ -130,7 +130,7 @@ To get the number in a format we're used to, you need to multiply the significan
 
 _____________________________________
 
-### ![ico-25 icon] Infinity
+### ![ico-25 icon] Infinity⟪Infinity⟫
 
 However, "under the hood," the engine itself converts the number to exponential form to save memory.
 
@@ -147,7 +147,7 @@ var z = x / y
 
 _____________________________________
 
-### ![ico-25 icon] NaN
+### ![ico-25 icon] NaN⟪NaN⟫
 
 ![ico-20 warn] Значение **~NaN~** может получиться при попытке выполнения арифметических операций с операндами, которые не являются числами и не приводятся к числу, например:  ~5 * 'total'~, а так же при попытке разделить ноль на ноль: ~0/0~.
 
@@ -168,7 +168,7 @@ _____________________________________
 
 __________________________________________________
 
-### ![ico-25 icon] Infinity
+### ![ico-25 icon] Infinity⟪Infinity⟫
 
 ![ico-20 warn] The value **~Infinity~** can occur when dividing by zero:
 
@@ -178,7 +178,7 @@ Generally speaking, **~Infinity~** is a constant that has a specific value, whic
 
 _____________________________________
 
-### ![ico-25 icon] NaN
+### ![ico-25 icon] NaN⟪NaN⟫
 
 ◘◘** 1**◘◘
 
@@ -218,7 +218,7 @@ _____________________________________
 
 ______________________________________________________________
 
-## ![ico-30 icon] Boolean
+## ![ico-30 icon] Boolean⟪Boolean⟫
 
 ![ico-20 warn] The value **~NaN~** can occur when trying to perform arithmetic operations with operands that aren't numbers and can't be converted to a number, like ~5 * 'total'~, as well as when attempting to divide zero by zero: ~0/0~.
 
@@ -260,7 +260,7 @@ var bool = 5 > 8
 
 ______________________________________________________________
 
-## ![ico-30 icon] undefined
+## ![ico-30 icon] undefined⟪undefined⟫
 
 **тип данных: "undefined"**.
 

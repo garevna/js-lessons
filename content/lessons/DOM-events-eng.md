@@ -27,8 +27,8 @@ console.dir(EventTarget)
         ► removeEventListener: ƒ removeEventListener()
         ► constructor: ƒ EventTarget()
           Symbol(Symbol.toStringTag): "EventTarget"
-        ► __proto__: Object
-    ► __proto__: ƒ ()
+        ► [[Prototype]]: Object
+    ► [[Prototype]]: ƒ ()
 ~~~~
 
 {{p6}}
@@ -101,7 +101,7 @@ document.body.appendChild(document.createElement('div'))
   ► target: div
     timeStamp: 12720.100000005914
     type: "DOMNodeInserted"
-  ► __proto__: MutationEvent
+  ► [[Prototype]]: MutationEvent
 ~~~~
 
 ______________________________________________________

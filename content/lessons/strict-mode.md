@@ -21,7 +21,6 @@ ________________________________________________
 
 ## ![ico-25 error] {{p4}}
 
-
 ### ![ico-20 warn] {{p5}} 
 
 ~~~js
@@ -273,8 +272,6 @@ function test () {
 test ()
 ~~~
 
-**{{common.c2}}**
-
 ~~~console
 
 ƒ test () {
@@ -317,8 +314,6 @@ function test () {
 
 test ()
 ~~~
-
-**{{common.c2}}**
 
 ~~~console
 

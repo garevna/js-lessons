@@ -1,6 +1,5 @@
 # ![ico-30 study] Browser Object Model (BOM)
 
-
 {{p1}}
 
 {{p2}}
@@ -119,8 +118,6 @@ var props = [
 for (var prop of props) console.log(window[prop])
 ~~~
 
-^^**{{common.c2}}**^^
-
 ~~~console
 
 ► console {debug: ƒ, error: ƒ, info: ƒ, log: ƒ, warn: ƒ, …}
@@ -131,7 +128,6 @@ for (var prop of props) console.log(window[prop])
 ► Navigator {vendorSub: "", productSub: "20030107", vendor: "Google Inc.", maxTouchPoints: 0, hardwareConcurrency: 8, …}
 ~~~
 
-
 {{p27}}
 
 _____________________________________
@@ -140,25 +136,21 @@ _____________________________________
 
 #### navigator.geolocation
 
-◘◘geolocation◘◘
-
 ~~~console
 ▼ Geolocation {}
-  ▼ __proto__: Geolocation
+  ▼ [[Prototype]]: Geolocation
       ► clearWatch: ƒ clearWatch()
       ► getCurrentPosition: ƒ getCurrentPosition()
       ► watchPosition: ƒ watchPosition()
       ► constructor: ƒ Geolocation()
         Symbol(Symbol.toStringTag): "Geolocation"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 {{p28}}
 
 {{p29}}
 {{p30}}
-
-◘◘Position◘◘
 
 ~~~console
 ▼ Position {coords: Coordinates, timestamp: 1564355238231}
@@ -170,9 +162,9 @@ _____________________________________
         latitude: 50.0159007
         longitude: 36.2216816
         speed: null
-      ► __proto__: Coordinates
+      ► [[Prototype]]: Coordinates
     timestamp: 1564355238231
-  ► __proto__: Position
+  ► [[Prototype]]: Position
 ~~~
 
 {{p31}}
@@ -314,7 +306,7 @@ ______________________________________
       length: 2
       scrollRestoration: "auto"
       state: null
-    ▼__proto__: History
+    ▼[[Prototype]]: History
         ► back: ƒ back()
         ► forward: ƒ forward()
         ► go: ƒ go()
@@ -329,7 +321,7 @@ ______________________________________
         ► get scrollRestoration: ƒ ()
         ► set scrollRestoration: ƒ ()
         ► get state: ƒ ()
-        ► __proto__: Object
+        ► [[Prototype]]: Object
 ~~~~
 
 {{p43}}

@@ -1,4 +1,4 @@
-# ![ico-30 study] valueOf
+# ![ico-30 study] valueOf⟪valueOf⟫
 
 The method  **_~valueOf()~_**  is inherited by all objects from **~Object~**
 

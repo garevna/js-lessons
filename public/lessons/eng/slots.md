@@ -1,4 +1,4 @@
-# ![ico-30 study] slot
+# ![ico-30 study] slot⟪slot⟫
 
 ## ![ico-25 icon]
 
@@ -6,7 +6,7 @@ A brilliant feature that allows you to dynamically change an element’s content
 
 ![ico-20 warn] Browser support is not yet complete; **Edge** is still catching up with the evergreen browsers
 
-### ![ico-25 cap] An example using a named slot
+### ![ico-25 cap] An example using a named slot⟪An_example_using_a_named_slot⟫
 
 It’s all very straightforward here:
 

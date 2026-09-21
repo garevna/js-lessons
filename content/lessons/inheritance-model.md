@@ -59,7 +59,7 @@ var sample = {
 ~~~console
 ▼ { name: "master" }
     name: "master"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 {{p21}}
@@ -87,7 +87,7 @@ __________________________
 ~~~~console
 ▼ { name: "master" }
     name: "master"
-  ► __proto__:
+  ► [[Prototype]]:
       ► constructor: ƒ Object()
       ► hasOwnProperty: ƒ hasOwnProperty()
       ► isPrototypeOf: ƒ isPrototypeOf()
@@ -199,8 +199,8 @@ console.dir(function Sigma () {})
     name: "Sigma"
   ▼ prototype:
     ► constructor: ƒ Sigma()
-    ► __proto__: Object
-  ► __proto__: ƒ ()
+    ► [[Prototype]]: Object
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 {{p56}}
@@ -337,10 +337,10 @@ __________________________________________________________________________
 ~~~console
 ▼ Sigma {name: "Google"}
     name: "Google"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
     ► say: ƒ ()
     ► constructor: ƒ Sigma()
-    ► __proto__: Object
+    ► [[Prototype]]: Object
 ~~~
 
 {{p101}}
@@ -426,7 +426,7 @@ _____________________________________________________
   ► seal: ƒ seal()
   ► setPrototypeOf: ƒ setPrototypeOf()
   ► values: ƒ values()
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 ~~~~
 
 {{p123}}
@@ -447,9 +447,9 @@ sample.name = 'circle'
 ~~~console
 ▼ { name: "circle" }
     name: "circle"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
         type: "figure"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 {{p126}}
@@ -486,11 +486,11 @@ test.draw = function () {
 ~~~console
 ▼ { draw: ƒ }
     draw: ƒ ()
-  ▼ __proto__:
+  ▼ [[Prototype]]:
         name: "circle"
-      ► __proto__:
+      ► [[Prototype]]:
             type: "figure"
-          ► __proto__: Object
+          ► [[Prototype]]: Object
 ~~~
 
 {{p134}}
@@ -504,7 +504,7 @@ _______________________________________________________________________
 {{p136}}
 
 ~~~~console
-▼ __proto__: ƒ ()
+▼ [[Prototype]]: ƒ ()
     ► apply: ƒ ()
       arguments: (...)
     ► bind: ƒ ()
@@ -519,7 +519,7 @@ _______________________________________________________________________
     ► set arguments: ƒ ()
     ► get caller: ƒ ()
     ► set caller: ƒ ()
-    ► __proto__: Object
+    ► [[Prototype]]: Object
 ~~~~
 
 {{p137}}
@@ -540,7 +540,7 @@ _______________________________________________________________________
     ► set arguments: ƒ ()
     ► get caller: ƒ ()
     ► set caller: ƒ ()
-    ► __proto__: Object
+    ► [[Prototype]]: Object
 ~~~~
 
 {{p138}}

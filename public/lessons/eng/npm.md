@@ -1,4 +1,4 @@
-# ![ico-50 npm] npm
+# ![ico-50 npm] npm⟪npm⟫
 
 The **npm** package manager is the world’s largest software repository
 (around 3 billion downloads per week)
@@ -10,7 +10,7 @@ to share and borrow packages
 
 _______________________________________________________________________________________________
 
-## ![ico-25 icon] Installation
+## ![ico-25 icon] Installation⟪Installation⟫
 
 As **npm** is included with **Node.js**, you need to install [![ico-70 node]](https://nodejs.org)
 
@@ -18,7 +18,7 @@ Next, open a ![ico-25 bash]
 
 ___________________________________________________________________________________________________
 
-## ![ico-40 npm] Commands
+## ![ico-40 npm] Commands⟪Commands⟫
 
 ![ico-20 bash] which npm
 
@@ -37,7 +37,7 @@ The folder for global package installation
 
 _____________________________________________________________________________________________
 
-### ![ico-40 npm] npm init
+### ![ico-40 npm] npm init⟪npm_init⟫
 
 This command will create the file [**~package.json~**](https://docs.npmjs.com/files/package.json) in the current folder
 ^^You must first create a new folder for the project and navigate to it^^
@@ -69,7 +69,7 @@ This command will create the file [**~package.json~**](https://docs.npmjs.com/fi
 
 _________________________________________________________________________________________________
 
-### ![ico-40 npm] package.json
+### ![ico-40 npm] package.json⟪package.json⟫
 
 Now, whenever a package is installed, an entry for that package will be automatically added to the **_~dependencies~_**
 of the **~package.json~** file
@@ -81,7 +81,7 @@ All packages required for the project will be listed in the sections
 
 ____________________________________________________________________________________________
 
-### ![ico-40 npm] .npmrc
+### ![ico-40 npm] .npmrc⟪.npmrc⟫
 
 The configuration file from which (along with ~package.json~) npm will read the settings
 
@@ -107,7 +107,7 @@ and to save dependencies specifying the exact package version:
 
 ___________________________________________________________________________________
 
-### ![ico-40 npm] npm install
+### ![ico-40 npm] npm install⟪npm_install⟫
 
 In your projects, you’ll use various packages that make life easier ![ico-20 wink]
 
@@ -152,7 +152,7 @@ ________________________________________________________________________________
 
 _____________________________________________________________________
 
-### ![ico-30 folder] node_modules
+### ![ico-30 folder] node_modules⟪node_modules⟫
 
 All locally installed packages will be located in the ![ico-20 dir] **~node_modules~** folder of the current project
 
@@ -172,7 +172,7 @@ All locally installed packages will be located in the ![ico-20 dir] **~node_modu
 
 _______________________________________________________________________________________________________
 
-### ![ico-40 npm] npm run
+### ![ico-40 npm] npm run⟪npm_run⟫
 
 Before using this command, you need to make certain changes to the **~package.json~** file
 
@@ -198,7 +198,7 @@ This command runs the specified script
 
 _______________________________________________________________________________________
 
-### ![ico-40 npm] npm list
+### ![ico-40 npm] npm list⟪npm_list⟫
 
 **Displaying a list of installed packages**
 
@@ -216,7 +216,7 @@ To display a brief list (without details for each package), use the **~--depth=0
 
 __________________________________________________________________________________________________
 
-### ![ico-40 npm] npm search
+### ![ico-40 npm] npm search⟪npm_search⟫
 
 **Searching for packages**
 
@@ -226,7 +226,7 @@ ________________________________________________________________________________
 
 ____________________________________________________________________________
 
-### ![ico-40 npm] npm link
+### ![ico-40 npm] npm link⟪npm_link⟫
 
 **Creating symbolic links**
 
@@ -270,7 +270,7 @@ To remove an established link, use the command:
 
 ____________________________________________________________________________________
 
-## ![ico-40 npm] package-lock.json
+## ![ico-40 npm] package-lock.json⟪package-lock.json⟫
 
 Every time a new dependency is installed, npm automatically updates the lock file named **_~package-lock.json~_**
 
@@ -290,7 +290,7 @@ Every time a new dependency is installed, npm automatically updates the lock fil
 
 ____________________________________________________________________________________________________________________
 
-## ![ico-40 npm] npm shrinkwrap
+## ![ico-40 npm] npm shrinkwrap⟪npm_shrinkwrap⟫
 
 Every time the application is deployed ( _deploy_ ), Node.js runs **_npm_**
 

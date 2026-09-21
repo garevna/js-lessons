@@ -220,7 +220,6 @@ _________________________________________________
 
 {{p48}}
 
-
 ◘◘![ico-25 cap] ** 7**◘◘
 
 ~~~js
@@ -319,7 +318,6 @@ _____________________
 {{p59}}
 
 {{{Array-iteration-methods-2.js}}}
-
 
 ◘◘![ico-25 cap] **10**◘◘
 
@@ -441,7 +439,7 @@ location.search
   ► 0: {name: "garevna"}
   ► 1: {date: "10.07.2018"}
     length: 2
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ______________________________________________
@@ -470,7 +468,7 @@ function getSearchObject () {
 ▼ {name: "garevna", date: "10.07.2018"}
     date: "10.07.2018"
     name: "garevna"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ______________________________________________
@@ -558,8 +556,6 @@ console.log(usa)
 
 ~~~
 
-◘◘**{{common.c1}}**◘◘
-
 ~~~console
 
 ▼ (3) [{…}, {…}, {…}]
@@ -567,7 +563,7 @@ console.log(usa)
   ► 1: {name: "Margaret Johnson", country: "USA"}
   ► 2: {name: "Robert Trump", country: "USA"}
     length: 3
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ◘◘![ico-25 cap] ** 2**◘◘
@@ -610,13 +606,11 @@ var cards = [
 cards.find(card => card.cash > 4000)
 ~~~
 
-◘◘**{{common.c1}}**◘◘
-
 ~~~console
 ▼ { num: "457811714", cash: 5000 }
     cash: 5000
     num: "457811714"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ___________________________
@@ -786,7 +780,6 @@ ____________________________
 
 {{p122}}
 
-
 {{p123}}
 
 ~~~js
@@ -850,7 +843,6 @@ _________________________________________
 
 {{p136}}
 {{p137}}
-
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -966,7 +958,6 @@ parseInt(5000000000000000000000) // 5
 {{{Array-iteration-methods-reduce-3.js}}}
 
 _________________________________________
-
 
 ◘◘![ico-20 cap] ** 6**◘◘
 
@@ -1145,8 +1136,6 @@ var resArray = sourceArray.sort(function (x, y) {
 })
 ~~~
 
-◘◘**{{common.c1}}**◘◘
-
 ~~~console
 ▼ (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
   ► 0: {title: "bonus", value: 70}
@@ -1157,7 +1146,7 @@ var resArray = sourceArray.sort(function (x, y) {
   ► 5: {title: "salary", value: 400}
   ► 6: {title: "debt", value: 700}
     length: 7
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 {{p173}}
@@ -1170,8 +1159,6 @@ var resArray = sourceArray
     return  x.value - y.value
   })
 ~~~
-
-◘◘**{{common.c1}}**◘◘
 
 ~~~console
 fond - bonus = 30
@@ -1195,7 +1182,7 @@ var resArray = sourceArray
     return  x.value - y.value
   })
 ~~~
-**log**
+
 ~~~console
 ▼ (13) [...]
   ► 0: {id: 'salary > fond', res: true}
@@ -1212,7 +1199,7 @@ var resArray = sourceArray
   ► 11: {id: 'income > debt', res: false}
   ► 12: {id: 'income > salary', res: false}
     length: 13
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 ^^^
 
@@ -1240,15 +1227,13 @@ var cookie = 'name=user; token=Jd7-js15/84; interest=javascript'
 console.log(cookie.split('; ').map(item => item.split('='))
 ~~~
 
-◘◘**^^{{common.c1}}^^**◘◘
-
 ~~~console
 ▼ (3) [Array(2), Array(2), Array(2)]
   ► 0: (2) ["name", "user"]
   ► 1: (2) ["token", "Jd7-js15/84"]
   ► 2: (2) ["interest", "javascript"]
     length: 3
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 {{p181}}
@@ -1258,8 +1243,6 @@ console.log(cookie.split('; ').map(item => item.split('='))
 ~~~js
 console.log(cookie.split('; ').flatMap(item => item.split('='))
 ~~~
-
-◘◘**^^{{common.c1}}^^**◘◘
 
 ~~~console
 ► (6) ["name", "user", "token", "Jd7-js15/84", "interest", "javascript"]
@@ -1299,14 +1282,11 @@ do {
 } while (!done)
 ~~~
 
-◘◘**^^{{common.c1}}^^**◘◘
-
 ~~~console
 name user
 token Jd7-js15/84
 interest javascript
 ~~~
-
 
 ______________________
 
@@ -1330,8 +1310,6 @@ do {
   done || console.log(value)
 } while (!done)
 ~~~
-
-◘◘**^^{{common.c1}}^^**◘◘
 
 ~~~console
 ► (2) ["name", "user"]
@@ -1371,13 +1349,11 @@ cards.reduce((result, card) => ({
 }), { num: '457855155', cash: 0 })
 ~~~
 
-◘◘**^^{{common.c1}}^^**◘◘
-
 ~~~console
 ▼ { num: "457855155", cash: 10300 }
     cash: 10300
     num: "457855155"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 {{p194}}
@@ -1395,8 +1371,6 @@ cards.reduce((result, card) => {
 
 {{p195}}
 
-◘◘**^^{{common.c1}}^^**◘◘
-
 ~~~console
 
 ▼ (4) [{…}, {…}, {…}, {…}]
@@ -1405,7 +1379,7 @@ cards.reduce((result, card) => {
   ► 2: {num: "457855780", cash: 0}
   ► 3: {num: "457811714", cash: 0}
     length: 4
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 
 ~~~
 
@@ -1435,7 +1409,6 @@ const specialities = users.map(user => user.speciality)
 
 {{p198}}
 
-◘◘**^^specialities^^**◘◘
 ~~~console
 ▼ [...]
    0: "developer"
@@ -1486,15 +1459,13 @@ arr.reduce((result, item) => {
 }, [])
 ~~~
 
-◘◘**^^{{common.c1}}^^**◘◘
-
 ~~~console
 ▼ (3) ["google", "mozilla", "ie"]
     0: "google"
     1: "mozilla"
     2: "ie"
     length: 3
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 _________________________________________________
@@ -1526,7 +1497,6 @@ intervals
   .map((segment, index, array) => array.filter(interval => segment.interior(interval)).length)
 ~~~
 
-◘◘**^^Result^^**◘◘
 ~~~console
 ► (9) [2, 6, 0, 5, 1, 0, 2, 0, 0]
 ~~~

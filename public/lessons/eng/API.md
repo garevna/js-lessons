@@ -1,4 +1,4 @@
-# ![ico-30 study] API
+# ![ico-30 study] API⟪API⟫
 
 [** ♫**](sounds/ua/api.mp3)
 
@@ -19,7 +19,7 @@ You can connect to many web APIs remotely
 (for example, [![ico-70 firebase]](https://firebase.google.com/) or [![ico-35 google-maps]](https://developers.google.com/maps/documentation/javascript/)).
 _________________________
 
-## ![ico-25 icon] CRUD
+## ![ico-25 icon] CRUD⟪CRUD⟫
 
 [** ♫**](sounds/ua/api-crud.mp3)
 
@@ -46,7 +46,7 @@ To identify the type of request, an **access method**, or **verb**, is used to i
 ^^^
 ____________________
 
-## ![ico-25 icon] Request & Response
+## ![ico-25 icon] Request & Response⟪Request_&_Response⟫
 
 [** ♫**](sounds/ua/api-request-response.mp3)
 
@@ -60,7 +60,7 @@ This can be a constructor that you use to create objects that give you access to
 
 __________________________________
 
-### ![ico-25 icon] Resource
+### ![ico-25 icon] Resource⟪Resource⟫
 
 [** ♫**](sounds/ua/api-resource.mp3)
 
@@ -78,7 +78,7 @@ For example, an image file may be stored on the server, but the same image may b
 
 _____________________________________
 
-## ![ico-25 icon] API endpoints
+## ![ico-25 icon] API endpoints⟪API_endpoints⟫
 
 [** ♫**](sounds/ua/api-endpoints.mp3)
 
@@ -159,7 +159,7 @@ An endpoint in a REST API is the point that the client accesses to interact with
 It is not just a URL, but a combination of an API address and a route, which includes a resource identifier and information about what action to perform. It's like a web address, but with extra parts that specify what exactly needs to be done with the data.
 ______________________________________________
 
-## ![ico-25 icon] web service
+## ![ico-25 icon] web service⟪web_service⟫
 
 **Terms:**
 
@@ -178,7 +178,7 @@ The most widely used protocols for implementing web services are:
 
 _________________________________________
 
-### ![ico-20 icon] REST API
+### ![ico-20 icon] REST API⟪REST_API⟫
 
 The basic principle of **REST** is to limit the set of operations — only **CRUD** (~Create~ ~Read~ ~Update~ ~Delete~) operations are used.
 
@@ -192,7 +192,7 @@ Therefore, **CRUD** commands have been converted to **HTTP** methods **POST** �
 
 ___________________________________________
 
-### ![ico-20 icon] SOAP vs REST
+### ![ico-20 icon] SOAP vs REST⟪SOAP_vs_REST⟫
 
 APIs are typically classified as **SOAP** or **REST**, and both are used to access web services.
 

@@ -70,24 +70,24 @@
     "ua": "у циклі спрацює, оскільки явно присутній блок {...}"
   },
   "p15": {
-    "ru": "![ico-25 pin] ⟦f0⟧ не создает свойств в глобальном объекте",
-    "eng": "![ico-25 pin] ⟦f0⟧ does not create properties in the global object",
-    "ua": "![ico-25 pin] ⟦f0⟧ не створює властивостей у глобальному об’єкті"
+    "ru": "![ico-25 pin] ~⟦f0⟧~ не создает свойств в глобальном объекте",
+    "eng": "![ico-25 pin] ~⟦f0⟧~ does not create properties in the global object",
+    "ua": "![ico-25 pin] ~⟦f0⟧~ не створює властивостей у глобальному об’єкті"
   },
   "p16": {
-    "ru": "![ico-20 pin] Блочная область видимости ( как у ⟦f0⟧ )",
-    "eng": "![ico-20 pin] Block scope (as with ⟦f0⟧)",
-    "ua": "![ico-20 pin] Блокова область видимості (як у ⟦f0⟧)"
+    "ru": "![ico-20 pin] Блочная область видимости ( как у ~⟦f0⟧~ )",
+    "eng": "![ico-20 pin] Block scope (as with ~⟦f0⟧~)",
+    "ua": "![ico-20 pin] Блокова область видимості (як у ~⟦f0⟧~)"
   },
   "p17": {
-    "ru": "![ico-20 pin] Невозможно дублирование объявления ( как у ⟦f0⟧ )",
-    "eng": "![ico-20 pin] Duplicate declarations are not permitted (as with ⟦f0⟧)",
-    "ua": "![ico-20 pin] Неможливе дублювання оголошення (як у ⟦f0⟧)"
+    "ru": "![ico-20 pin] Невозможно дублирование объявления ( как у ~⟦f0⟧~ )",
+    "eng": "![ico-20 pin] Duplicate declarations are not permitted (as with ~⟦f0⟧~)",
+    "ua": "![ico-20 pin] Неможливе дублювання оголошення (як у ~⟦f0⟧~)"
   },
   "p18": {
-    "ru": "![ico-20 pin] В общем, все, как у ⟦f0⟧, только:",
-    "eng": "![ico-20 pin] Generally, everything is the same as with ⟦f0⟧, except:",
-    "ua": "![ico-20 pin] Загалом, усе, як у ⟦f0⟧, тільки:"
+    "ru": "![ico-20 pin] В общем, все, как у ~⟦f0⟧~, только:",
+    "eng": "![ico-20 pin] Generally, everything is the same as with ~⟦f0⟧~, except:",
+    "ua": "![ico-20 pin] Загалом, усе, як у ~⟦f0⟧~, тільки:"
   },
   "p19": {
     "ru": "![ico-20 warn] Изменить значение нельзя",

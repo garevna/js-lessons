@@ -285,8 +285,6 @@ ____________________________
 document.body.childNodes
 ~~~
 
-◘◘{{common.c1}}◘◘
-
 ~~~console
 ▼ NodeList(7) [text, div.container, text, h1.header, text, p.paragraph, text]
     0: text
@@ -297,7 +295,7 @@ document.body.childNodes
   ► 5: p.paragraph
   ► 6: text
     length: 7
-  ► __proto__: NodeList
+  ► [[Prototype]]: NodeList
 ~~~
 
 {{p15}}
@@ -308,8 +306,6 @@ document.body.childNodes
 document.querySelector('[title]').childNodes
 ~~~
 
-◘◘{{common.c1}}◘◘
-
 ~~~console
 ▼ NodeList(5) [text, a.paragraph, text, img#picture.galleryPicture, text]
     0: text
@@ -318,7 +314,7 @@ document.querySelector('[title]').childNodes
   ► 3: img#picture.galleryPicture
   ► 4: text
     length: 5
-  ► __proto__: NodeList
+  ► [[Prototype]]: NodeList
 ~~~
 ___________________
 
@@ -336,15 +332,13 @@ _________________________________
 document.body.children
 ~~~
 
-◘◘{{common.c1}}◘◘
-
 ~~~console
 ▼ HTMLCollection(3) [div.container, h1.header, p.paragraph]
   ► 0: div.container
   ► 1: h1.header
   ► 2: p.paragraph
     length: 3
-  ► __proto__: HTMLCollection
+  ► [[Prototype]]: HTMLCollection
 ~~~
 
 ___________________________________
@@ -441,8 +435,6 @@ div.setAttribute('style', `
 console.info(div.getBoundingClientRect())
 ~~~
 
-◘◘{{common.c1}}◘◘
-
 ~~~console
 ▼ DOMRect {x: 8, y: 8, width: 202, height: 202, top: 8, …}
     bottom: 210
@@ -453,7 +445,7 @@ console.info(div.getBoundingClientRect())
     width: 202
     x: 8
     y: 8
-  ► __proto__: DOMRect
+  ► [[Prototype]]: DOMRect
 ~~~
 ___________________________
 
@@ -486,7 +478,6 @@ elem.tagName = 'div'
 
 →→→ {{p37}} | {{p38}} | {{p39}}→→→
 
-
 ◘◘** 2**◘◘
 ~~~js
 document.title = 'DOM'
@@ -512,11 +503,9 @@ for (var text of paragraph) {
 
 →→→ {{p43}} | {{p44}} | {{p45}}→→→
 
-
 ◘◘** 4**◘◘
 
 →→→ {{p46}} | {{p47}} | {{p48}}→→→
-
 
 ◘◘** 5**◘◘
 ~~~js

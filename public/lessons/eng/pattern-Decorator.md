@@ -1,8 +1,8 @@
-# ![ico-30 study] Design Patterns
+# ![ico-30 study] Design Patterns⟪Design_Patterns⟫
 
 _____________________________________
 
-## ![ico-20 icon] Decorator
+## ![ico-20 icon] Decorator⟪Decorator⟫
 
 The ‘Decorator’ pattern allows specific ‘features’ to be added to a target object
 
@@ -12,7 +12,7 @@ _____________________________________
 
 Suppose we want to control calls to certain functions
 
-### ![ico-20 icon] A single call
+### ![ico-20 icon] A single call⟪A_single_call⟫
 
 A decorator that ensures a function is used only once
 (repeated calls will be ignored)
@@ -55,7 +55,7 @@ calcSumOnce(0.1, 0.2)
 
 __________________________________________
 
-### ![ico-20 icon] Debounce
+### ![ico-20 icon] Debounce⟪Debounce⟫
 
 ◘◘![ico-20 cap] ** 3**◘◘
 

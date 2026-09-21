@@ -1,4 +1,4 @@
-## ![ico-25 icon] Конструктор AsyncFunction
+## ![ico-25 icon] Конструктор AsyncFunction⟪The_constructor_AsyncFunction⟫
 
 [◄◄◄ Async function ◄◄◄](page/async-await)
 
@@ -17,12 +17,12 @@ console.dir(test)
     caller: (...)
     length: 0
     name: "test"
-  ▼ __proto__: AsyncFunction
+  ▼ [[Prototype]]: AsyncFunction
         arguments: (...)
         caller: (...)
       ► constructor: ƒ AsyncFunction()
         Symbol(Symbol.toStringTag): "AsyncFunction"
-      ▼ __proto__: ƒ ()
+      ▼ [[Prototype]]: ƒ ()
         ► apply: ƒ apply()
           arguments: (...)
         ► bind: ƒ bind()
@@ -37,7 +37,7 @@ console.dir(test)
         ► set arguments: ƒ ()
         ► get caller: ƒ ()
         ► set caller: ƒ ()
-        ► __proto__: Object
+        ► [[Prototype]]: Object
 ~~~~
 
 ^^Попытка обратиться к объекту **AsyncFunction** вызовет исключение:^^
@@ -74,8 +74,6 @@ const asyncFunc = new AsyncFunction
 console.log(asyncFunc)
 ~~~
 
-**Result**
-
 ~~~console
 async ƒ anonymous(
 ) {
@@ -87,7 +85,7 @@ async ƒ anonymous(
 
 __________________________________
 
-## ![ico-25 icon] prototype
+## ![ico-25 icon] prototype⟪prototype⟫
 
 ^^Давайте добавим в прототип конструктора асинхронных функций метод **waitFor**:^^
 
@@ -117,7 +115,7 @@ console.log('End')
 
 __________________________________
 
-## ![ico-25 icon] Каррирование
+## ![ico-25 icon] Каррирование⟪Currying⟫
 
 Изменить контекст вызова стрелочной функции с помощью методов ~call~, ~apply~, ~bind~ невозможно
 Однако каррирование работает так же, как и у обычных функций

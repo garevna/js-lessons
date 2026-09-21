@@ -1,8 +1,8 @@
-# ![ico-30 study] Изменение контекста
+# ![ico-30 study] Изменение контекста⟪Changing_the_context⟫
 
 ____________________________________________
 
-## ![ico-25 icon] Конструктор Function
+## ![ico-25 icon] Конструктор Function⟪The_Function_constructor⟫
 
 Функции можно создавать путем явного вызова конструктора **Function** с ключевым словом **_~new~_**
 
@@ -29,8 +29,6 @@ func(5, 8, 11, false)
 console.dir(func)
 ~~~
 
-**Результат в консоли:**
-
 ~~~console
 ▼ ƒ anonymous(x,y,z )
     arguments: null
@@ -38,19 +36,18 @@ console.dir(func)
     length: 3
     name: "anonymous"
   ► prototype: {constructor: ƒ}
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 ________________________________
 
-## ![ico-25 icon] Наследование
+## ![ico-25 icon] Наследование⟪Inheritance⟫
 
 Итак, любая функция в JS является _экземпляром_ класса **Function**
 
 Отсюда следует:
 ![ico-20 pin] любая функция является объектом
 ![ico-20 pin] все функции наследуют свойства и методы объекта **_prototype_** конструктора **Function**
-
 
 ~~~js
 console.dir(Function)
@@ -79,8 +76,8 @@ console.dir(Function)
       ► set arguments: ƒ ()
       ► get caller: ƒ ()
       ► set caller: ƒ ()
-      ► __proto__: Object
-  ► __proto__: ƒ ()
+      ► [[Prototype]]: Object
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 ^^^
@@ -104,7 +101,7 @@ console.dir(func)
     length: 0
     name: "func"
   ► prototype: {constructor: ƒ}
-  ▼ __proto__: ƒ ()
+  ▼ [[Prototype]]: ƒ ()
       ► apply: ƒ apply()
         arguments: (...)
       ► bind: ƒ bind()
@@ -119,12 +116,12 @@ console.dir(func)
       ► set arguments: ƒ ()
       ► get caller: ƒ ()
       ► set caller: ƒ ()
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 ^^^
 
-![ico-20 pin] Поскольку конструктор **Function** также является функцией, его свойство **_~__proto__~_** тоже является ссылкой на собственное свойство **_~prototype~_**
+![ico-20 pin] Поскольку конструктор **Function** также является функцией, его свойство **~__proto__~** тоже является ссылкой на собственное свойство **~prototype~**
 
 _________________________________
 
@@ -162,7 +159,7 @@ I'm figure
 
 ____________________________________
 
-## ![ico-25 icon] Контекст вызова
+## ![ico-25 icon] Контекст вызова⟪prototype⟫
 
 @@@@
 ![](slogans/funcs-call-girls.svg)
@@ -220,7 +217,7 @@ getName.getName()
 ~~~
 _____________________________________________
 
-## ![ico-25 icon] Изменение контекста
+## ![ico-25 icon] Изменение контекста⟪Changing_the_context⟫
 
 Заглянув в свойство **_~prototype~_** конструктора **Function** или в свойство **_~&#95;&#95;proto&#95;&#95;~_** экземпляра функции,
 можно обнаружить три метода, которые наследуют все функции от своего создателя:
@@ -239,7 +236,7 @@ _____________________________________________
 
 Кроме этого, **~bind~** позволяет так же жестко привязать аргументы к новому экземпляру: фактически, указанные аргументы станут постоянными для нового экземпляра функции
 
-### ![ico-20 icon] call()
+### ![ico-20 icon] call()⟪call⟫
 
 Первым обязательным аргументом метода является ссылка на объект, в контексте которого будет вызвана функция
 
@@ -279,17 +276,16 @@ func.call(figure, 9, false, 'Hello')
 func.call(sample, 5, 1, 'Bye')
 ~~~
 
-**Результат в консоли:**
-
-••figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]••
-••sample ► Arguments(3) [ 5, 1, "Bye", callee: ƒ, Symbol(Symbol.iterator): ƒ ]••
-
+~~~console
+figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
+sample ► Arguments(3) [ 5, 1, "Bye", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
+~~~
 
 ________________________________________
 
-### ![ico-20 icon] apply()
+### ![ico-20 icon] apply()⟪apply⟫
 
-Метод **_apply()_** отличается от метода **_call()_** только способом передачи аргументов - теперь их нужно передавать массивом:
+Метод **~apply()~** отличается от метода **~call()~** только способом передачи аргументов - теперь их нужно передавать массивом:
 
 ◘◘![ico-25 cap] ** 6**◘◘
 
@@ -305,15 +301,12 @@ func.apply(figure, [9, false, 'Hello'])
 func.apply(sample, [5, 1, 'Bye'])
 ~~~
 
-**Результат в консоли:**
-
 ~~~console
 figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
 sample ► Arguments(3) [ 5, 1, "Bye", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
 ~~~
 
 __________________________________________________
-
 
 Передача массива аргументов вместо перечня их значений обеспечивает определенную гибкость,
 поскольку массивы передаются по ссылке, и содержимое массива может динамически обновляться от вызова к вызову
@@ -347,14 +340,16 @@ var objects = [
 objects.forEach(obj => func.apply(obj, args))
 ~~~
 
-**Результат в консоли:**
+~~~console
 
-••![ico-20 warn] ► Who was called before figure (0):••
-••![ico-20 warn] ► Who was called before sample (1):••
-••figure••
-••![ico-20 warn] ► Who was called before google (2):••
-••figure••
-••sample••
+<p class="warning-message">Who was called before figure (0):</p>
+<p class="warning-message">Who was called before sample (1):</p>
+figure
+<p class="warning-message">Who was called before google (2):</p>
+figure
+sample
+
+~~~
 
 _____________________________
 
@@ -364,11 +359,11 @@ _____________________________
 
 ______________________________________________________________________________
 
-### ![ico-20 icon] bind()
+### ![ico-20 icon] bind()⟪bind⟫
 
 По сути, метод **~bind~** является декоратором, поскольку он создает обертку для исходной функции
 
-Функция-wrapper, в которую "заворачивается" исходная функция, вызывает ее в нужном контексте:
+Функция-wrapper, в которую 'заворачивается' исходная функция, вызывает ее в нужном контексте:
 
 ◘◘![ico-25 cap] ** 8**◘◘
 
@@ -388,7 +383,7 @@ bindContext(sample, user, 'Hello')
 
 Чтобы функция-wrapper возвращала новый экземпляр, немного изменим код,
 а так же обеспечим возможность привязки не только контекста вызова,
-но и аргументов ( этот прием программирования называется **_Currying_**, или каррирование ):
+но и аргументов (этот прием программирования называется **_Currying_**, или каррирование):
 
 ~~~js
 function bindContext (func, context, props) {
@@ -401,14 +396,14 @@ function sample (message) {
   console.log(`${this.name}: ${message}`)
 }
 
-var user = { name: 'Фигаро' }
+var user = { name: 'Figaro' }
 
 var userSayHello = bindContext(sample, user, 'Hello')
 
 var userSay = bindContext(sample, user)
 
-userSayHello()     // Фигаро: Hello
-userSay('Bye')  // Фигаро: Bye
+userSayHello()     // Figaro: Hello
+userSay('Bye')  // Figaro: Bye
 ~~~
 
 Вот и весь механизм работы метода **~bind~**
@@ -426,7 +421,7 @@ var test = (function () {
 })()
 
 function func () {
-  console.warn(`Функция func вызвана ${this.test()} раз в контексте объекта ${this.name}`)
+  console.warn(`The function func is called ${this.test()} times within the context of the object ${this.name}`)
 }
 
 var objects = [
@@ -442,20 +437,20 @@ funcs[1]()
 funcs[2]()
 ~~~
 
-**Результат в консоли:**
-
-••![ico-20 warn] ► Функция func вызвана 1 раз в контексте объекта figure••
-••![ico-20 warn] ► Функция func вызвана 2 раз в контексте объекта sample••
-••![ico-20 warn] ► Функция func вызвана 3 раз в контексте объекта google••
+~~~console
+<p class="warning-message">The function func is called 1 times within the context of the object figure</p>
+<p class="warning-message">The function func is called 2 times within the context of the object sample</p>
+<p class="warning-message">The function func is called 3 times within the context of the object google</p>
+~~~
 
 _____________________________
 
-^^Теперь контекст вызова экземпляров **_figureFunc()_**, **_sampleFunc()_** и **_googleFunc()_** изменить невозможно,
-и при вызове этих функций не нужно явно указывать, в каком контексте они вызываются^^
+^^Теперь контекст вызова экземпляров **~figureFunc()~**, **~sampleFunc()~** и **~googleFunc()~** изменить невозможно,^^
+^^и при вызове этих функций не нужно явно указывать, в каком контексте они вызываются^^
 
 ____________________________________
 
-Добавим еще один объект **bloom** с методами **_figure()_**, **_sample()_** и **_google()_**:
+Добавим еще один объект **bloom** с методами **~figure()~**, **~sample()~** и **~google()~**:
 
 ◘◘![ico-25 cap] **10**◘◘
 
@@ -470,11 +465,11 @@ bloom.sample()
 bloom.google()
 ~~~
 
-**Результат в консоли:**
-
-••![ico-20 warn] ► Функция func вызвана 4 раз в контексте объекта figure••
-••![ico-20 warn] ► Функция func вызвана 5 раз в контексте объекта sample••
-••![ico-20 warn] ► Функция func вызвана 6 раз в контексте объекта google••
+~~~console
+<p class="warning-message">The function func is called 4 times within the context of the object figure</p>
+<p class="warning-message">The function func is called 5 times within the context of the object sample</p>
+<p class="warning-message">The function func is called 6 times within the context of the object google</p>
+~~~
 
 _______________________________
 
@@ -486,13 +481,12 @@ bloom.sample()
 bloom.google()
 ~~~
 
-они отрабатывают в том контексте, который мы им "прибиндили" до этого
-"Прибиндить" можно не только контекст вызова, но также и аргументы
-
+они отрабатывают в том контексте, который мы им 'прибиндили' до этого
+'Прибиндить' можно не только контекст вызова, но также и аргументы
 
 _________________________________________
 
-## ![ico-25 smile] Тест на вынос мозга
+## ![ico-25 smile] Тест на вынос мозга⟪A_mind-bending_test⟫
 
 ![ico-20 question] Что произойдет в результате запуска кода:
 

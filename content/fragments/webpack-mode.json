@@ -1,7 +1,7 @@
 [
-  "~webpack~",
-  "~--mode~",
-  "~development~",
-  "~production~",
-  "~scripts~"
+  "webpack",
+  "--mode",
+  "development",
+  "production",
+  "scripts"
 ]

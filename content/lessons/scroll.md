@@ -175,7 +175,7 @@ document.querySelector ( "p" )
     width: 520
     x: 166.5
     y: -2905
-  ► __proto__: DOMRect
+  ► [[Prototype]]: DOMRect
 ~~~
 
 {{p25}}

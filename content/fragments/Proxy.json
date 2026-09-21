@@ -1,5 +1,5 @@
 [
-  "~permissions~",
-  "~target~",
-  "~handler~"
+  "permissions",
+  "target",
+  "handler"
 ]

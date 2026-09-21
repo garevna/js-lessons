@@ -1,4 +1,4 @@
-# ![ico-30 icon] Throttling and Debouncing
+# ![ico-30 icon] Throttling and Debouncing⟪Throttling_and_Debouncing⟫
 
 Certain resource-intensive functions,
 functions that take long enough to execute that frequent calls to them would affect the application’s performance,
@@ -11,7 +11,7 @@ To limit the number of calls to such a function, you can use the **throttling** 
 
 _____________________________________________________________
 
-## ![ico-25 icon] Throttling
+## ![ico-25 icon] Throttling⟪Throttling⟫
 
 The aim is to limit the number of function calls
 by setting a time interval,
@@ -87,7 +87,7 @@ You can now click the button – the image will be displayed no more than once p
 
 _____________________________________________________________
 
-## ![ico-25 icon] Debouncing
+## ![ico-25 icon] Debouncing⟪Debouncing⟫
 
 There will be a slight difference here from the previous version of the decorator function
 The **debounce** function also checks the time interval that has elapsed since the last call

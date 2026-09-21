@@ -1,13 +1,13 @@
 [
-  "~ArrayBuffer~",
-  "~Int8Array~",
-  "~Uint8Array~",
-  "~Int16Array~",
-  "~Uint16Array~",
-  "~Int32Array~",
-  "~Uint32Array~",
-  "~ArrayFrom()~",
-  "~sample~",
-  "~buffer~",
-  "~Array.from()~"
+  "ArrayBuffer",
+  "Int8Array",
+  "Uint8Array",
+  "Int16Array",
+  "Uint16Array",
+  "Int32Array",
+  "Uint32Array",
+  "ArrayFrom()",
+  "sample",
+  "buffer",
+  "Array.from()"
 ]

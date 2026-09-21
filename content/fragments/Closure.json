@@ -2,10 +2,10 @@
   "external/w3-closures",
   "external/mdn-closures",
   "external/mdn-iife",
-  "~closure~",
-  "~globalFunc~",
-  "~data~",
-  "~func~",
-  "~innerFunc~",
+  "closure",
+  "globalFunc",
+  "data",
+  "func",
+  "innerFunc",
   "quiz/closures-timers"
 ]

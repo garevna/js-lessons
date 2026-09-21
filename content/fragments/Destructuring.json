@@ -1,12 +1,12 @@
 [
-  "~Date~",
-  "~spread~",
-  "~show~",
-  "~getAngleData~",
-  "~rest30~",
-  "~rest~",
-  "~NodeList~",
-  "~HTMLCollection~",
-  "~id~",
-  "~str~"
+  "Date",
+  "spread",
+  "show",
+  "getAngleData",
+  "rest30",
+  "rest",
+  "NodeList",
+  "HTMLCollection",
+  "id",
+  "str"
 ]

@@ -1,4 +1,4 @@
-# ![ico-30 study] indexedDB
+# ![ico-30 study] indexedDB⟪indexedDB⟫
 
 _____________________________________
 
@@ -62,7 +62,7 @@ ___________________________________________________
 ^^^
 ___________________________________________________
 
-## ![ico-25 icon] Интерфейс IDBFactory API
+## ![ico-25 icon] Интерфейс IDBFactory API⟪ynterfeis_IDBFactory_API⟫
 
 **indexedDB** - это интерфейс **IDBFactory**
 
@@ -70,14 +70,14 @@ ___________________________________________________
 
 ~~~console
 ▼ IDBFactory
-  ▼ __proto__: IDBFactory
+  ▼ [[Prototype]]: IDBFactory
       ► cmp: ƒ cmp()
       ► databases: ƒ databases()
       ► deleteDatabase: ƒ deleteDatabase()
       ► open: ƒ open()
       ► constructor: ƒ IDBFactory()
         Symbol(Symbol.toStringTag): "IDBFactory"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 Этот интерфейс позволяет:
@@ -89,7 +89,7 @@ ___________________________________________________
 
 ______________________________________________
 
-### ![ico-20 icon] IDBRequest
+### ![ico-20 icon] IDBRequest⟪IDBRequest⟫
 
 В процессе работы с базой данных нам придется делать запросы к API
 
@@ -109,7 +109,7 @@ ______________________________________________
 
 _____________________________________
 
-### ![ico-20 icon] indexedDB.open
+### ![ico-20 icon] indexedDB.open⟪indexedDB.open⟫
 
 Создание запроса на соединение с базой данных
 ![ico-20 warn] Метод **open** создает _объект запроса_ **IDBOpenDBRequest**
@@ -151,7 +151,7 @@ const request = Object.assign(indexedDB.open('sampleDB'), {
     onerror: null
   ► onversionchange: null
     version: 1
-  ► __proto__: IDBDatabase
+  ► [[Prototype]]: IDBDatabase
 ~~~
 
 Экземпляр **IDBDatabase** представляет собой интерфейс, или сервисную оболочку,
@@ -166,7 +166,7 @@ const request = Object.assign(indexedDB.open('sampleDB'), {
 
 _________________________________
 
-#### ![ico-20 icon] upgradeneeded
+#### ![ico-20 icon] upgradeneeded⟪upgradeneeded⟫
 
 Объект запроса на соединение с базой данных имеет еще одно событие - ![ico-20 warn] **~upgradeneeded~**
 Это событие возникает в двух случаях:
@@ -249,7 +249,7 @@ versionchange
     onerror: null
     onversionchange: null
     version: 2
-  ► __proto__: IDBDatabase
+  ► [[Prototype]]: IDBDatabase
 ~~~
 
 Надо сказать, что сам экземпляр ~IDBDatabase~ не особо содержателен:
@@ -285,7 +285,7 @@ versionchange
   ► get onversionchange: ƒ onversionchange()
   ► set onversionchange: ƒ onversionchange()
   ► get version: ƒ version()
-  ► __proto__: EventTarget
+  ► [[Prototype]]: EventTarget
 ~~~~
 
 Здесь привлекают внимание следующие методы:
@@ -313,7 +313,7 @@ openDB().then(db => { console.log(db); db.close() }, err => console.warn(err))
 
 _______________________________________________
 
-### ![ico-20 icon] indexedDB.databases
+### ![ico-20 icon] indexedDB.databases⟪indexedDB.databases⟫
 
 Интерфейс ~IDBFactory~ предоставляет нам возможность получить перечень всех баз данных, которые уже существуют для домена:
 
@@ -329,12 +329,12 @@ indexedDB.databases()
   ► 0: {name: "sampleDB", version: 2}
   ► 1: {name: "users", version: 1}
     length: 2
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ______________________________________________________________
 
-### ![ico-20 icon] indexedDB.deleteDatabase
+### ![ico-20 icon] indexedDB.deleteDatabase⟪indexedDB.deleteDatabase⟫
 
 Интерфейс ~IDBFactory~ позволяет сделать запрос на удаление базы данных с указанным именем
 

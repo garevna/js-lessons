@@ -18,7 +18,7 @@
   ► prototype: Notification {…}
   ► get maxActions: ƒ maxActions()
   ► get permission: ƒ permission()
-  ► __proto__: ƒ EventTarget()
+  ► [[Prototype]]: ƒ EventTarget()
 ~~~
 
 ___________________________________________
@@ -122,7 +122,7 @@ const notes = new Notification(title, options)
   ► get timestamp: ƒ timestamp()
   ► get title: ƒ title()
   ► get vibrate: ƒ vibrate()
-  ► __proto__: ƒ EventTarget()
+  ► [[Prototype]]: ƒ EventTarget()
 ~~~~
 
 {{p21}}

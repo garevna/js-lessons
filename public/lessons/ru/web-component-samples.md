@@ -1,4 +1,4 @@
-## ![ico-30 icon] Примеры веб-компонентов
+## ![ico-30 icon] Примеры веб-компонентов⟪prymeri_veb-komponentov⟫
 
 [![ico-30 cap] Slider](https://garevna.github.io/js-samples/#19)
 

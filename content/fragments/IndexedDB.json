@@ -1,9 +1,9 @@
 [
-  "~IDBFactory API~",
-  "~upgradeneeded~",
-  "~versionchange~",
-  "~onversionchange~",
-  "~IDBDatabase~",
-  "~IDBFactory~",
-  "~undefined~"
+  "IDBFactory API",
+  "upgradeneeded",
+  "versionchange",
+  "onversionchange",
+  "IDBDatabase",
+  "IDBFactory",
+  "undefined"
 ]

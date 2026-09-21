@@ -130,6 +130,8 @@ draws the whole thing. The lesson writes only what changes.
 | `☼☼☼ text ☼☼☼` | `funny-slogan` | a slogan |
 | `→→→ question \| variants \| answer →→→` | `test-component` | a quiz |
 | `§§§§ header \| templateId §§§§` | `live-demo-spoiler` | a live console demo |
+| a `~~~console` block | `createConsoleHeader` | the heading above console output: bordered panel, console icon, the words for the current language |
+| `••••` … `••••` | `createBlackBlock` | several lines on the black ground |
 
 `♦♦♦4♦♦♦` replaces what the lessons used to spell out by hand:
 
@@ -167,6 +169,49 @@ Adding a component of your own is three small pieces:
 Pick a symbol nothing else uses, and repeat it three or four times the way the
 existing ones do — the parser looks at the start of a line, so a stray `♦` in
 prose is harmless but a line starting with one is not.
+
+`••••` is the block form of `••one line••`. The inline one holds a single line,
+so anything longer had to be written as one message with `<br />` between its
+lines:
+
+```json
+"p104": {
+  "ru": "••![ico-20 speach] В следующем примере<br />вызовем методы …<br />…••"
+}
+```
+
+— unreadable in the message file, and a translator had to take the whole
+paragraph in one bite. Fenced instead, every line is an ordinary line: its own
+key, its own translation, with bold, icons and inline code as anywhere else.
+
+```
+••••
+{{p228}}
+{{p229}}
+{{p230}}
+••••
+```
+
+A blank line between them is spacing. The fences are markup, so the extractor
+steps over them the way it steps over `@@@@`. A component like this one is a
+block rather than a line, so it is registered in `src/configs/pageRegExpr.js`
+instead of `parseLine.js` — the dispatcher calls `create<Name>` for whatever
+the entry is called.
+
+The block opens with a speech bubble by itself, so it need not be written out.
+The opening fence names something else when something else is wanted, the way
+`@@@@3` names a column count:
+
+```
+••••          ![ico-20 speach], the default
+•••• bash     a terminal
+•••• none     no icon
+```
+
+Of the 207 black lines in the course 75 carry a terminal icon and 106 carry
+none, so this really is a default and not a rule. A first line that writes its
+own `![ico-NN name]` keeps it and the default stays out of the way, which is
+how a size other than 20 is asked for.
 
 One thing to remember: icon styles are requested by scanning the page text for
 `![ico-NN name]` markers. A component that draws an icon without writing such a
@@ -343,6 +388,20 @@ Inside a message, anything a translator must not touch — inline code, a link's
 target — is replaced by a `⟦f0⟧` mark and kept in the fragments file. One table
 serves all three languages: a translation imported from DeepL carries the
 Russian numbering, so `⟦f5⟧` has to mean the same snippet in every language.
+
+The table is `content/fragments/<page>.json` — a plain list, the number in
+`⟦f7⟧` being the index. Open it to see what a mark stands for:
+
+```json
+["**class**", "strict mode", "use strict", "{ }", "constructor", "window"]
+```
+
+**It holds the word, not the way it is drawn.** `~⟦f7⟧~` is a code box in
+prose; `**_⟦f7⟧_**` is what the same word looks like inside a black block,
+where a code box would be light and a size larger than everything around it.
+The fragment used to carry its own `~ ~`, which made the formatting a property
+of the word — so on the black ground there was nothing to do but spell the
+identifier out, which is exactly what the table exists to prevent.
 
 `public/lessons/{ru,eng,ua}/*.md` are built from these. Do not edit them.
 

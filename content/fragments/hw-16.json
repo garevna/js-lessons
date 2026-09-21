@@ -1,6 +1,6 @@
 [
-  "~ClimaticZones~",
-  "~region~",
-  "~climates~",
-  "~getClimate()~"
+  "ClimaticZones",
+  "region",
+  "climates",
+  "getClimate()"
 ]

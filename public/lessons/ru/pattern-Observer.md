@@ -1,8 +1,8 @@
-# ![ico-30 study] Design Patterns
+# ![ico-30 study] Design Patterns⟪Design_Patterns⟫
 
 _____________________________________
 
-## ![ico-25 icon] Pattern Observer
+## ![ico-25 icon] Pattern Observer⟪Pattern_Observer⟫
 
 Это **поведенческий** паттерн.
 
@@ -20,7 +20,7 @@ _____________________________________
 
 _______________________________
 
-## ![ico-30 cap] Example 1
+## ![ico-30 cap] Example 1⟪Example_1⟫
 
 Пусть есть массив идентификаторов для элементов:
 
@@ -35,7 +35,7 @@ const addElem = (tag = 'input', container = document.body) => (container.nodeTyp
   .appendChild(document.createElement(tag))
 ~~~
 
-## ![ico-25 cap] observed
+## ![ico-25 cap] observed⟪observed⟫
 
 Создадим массив элементов _~input~_:
 
@@ -55,7 +55,7 @@ const observed = inputs
 
 _________________________________________________________
 
-### ![ico-25 cap] createSubscriber
+### ![ico-25 cap] createSubscriber⟪createSubscriber⟫
 
 Объявим функцию **~createSubscriber~**:
 
@@ -72,7 +72,7 @@ function createSubscriber (prop, tagName, container = section) {
 
 ___________________________________________
 
-### ![ico-25 cap] Class Observer
+### ![ico-25 cap] Class Observer⟪Class_Observer⟫
 
 и, наконец, класс **~Observer~**:
 
@@ -119,7 +119,7 @@ class Observer {
 • Для того, чтобы отписаться от уведомлений обозревателя, нужно вызвать его метод **_~unsubscibe~_**.
 • Для оповещения подписчиков есть метод **_~broadcast~_**.
 
-### ![ico-25 cap] Observer instance
+### ![ico-25 cap] Observer instance⟪Observer_instance⟫
 
 Осталось только создать экземпляр обозревателя **~observer~**, передав ему ссылки на отслеживаемые элементы **_~observed~_**:
 
@@ -159,12 +159,12 @@ observer.subscibe(null)
 
 _________________________________________
 
-### ![ico-25 slider-button] Demo 1
+### ![ico-25 slider-button] Demo 1⟪Demo_1⟫
 
 {{{pattern-observer.js}}}
 ____________________________________________________
 
-### ![ico-25 icon] Full code snippet
+### ![ico-25 icon] Full code snippet⟪Full_code_snippet⟫
 
 ~~~~js
 const inputs = ['topic', 'message', 'author']
@@ -238,7 +238,7 @@ observer.subscribe(createSubscriber('author', 'small'))
 
 ____________________________________________________
 
-## ![ico-30 cap] Example 2
+## ![ico-30 cap] Example 2⟪Example_2⟫
 
 Изменим постановку задачи.
 Инициатором изменения значений данных модели не всегда является пользователь.
@@ -252,7 +252,7 @@ const observed = ['topic', 'message', 'author']
 
 Функцию **~createSubscriber~** можно позаимствовать из предыдущего примера, а вот класс **~Observer~** несколько изменится.
 
-### ![ico-25 cap] Class Observer
+### ![ico-25 cap] Class Observer⟪Class_Observer⟫
 
 ~~~js
 class Observer {
@@ -318,6 +318,6 @@ setTimeout(() => { observed[2] = 'new author' }, getRandom(8000))
 
 и посмотрим, как работает наше решение.
 
-### ![ico-25 slider-button] Demo 2
+### ![ico-25 slider-button] Demo 2⟪Demo_2⟫
 
 {{{pattern-observer-1.js}}}

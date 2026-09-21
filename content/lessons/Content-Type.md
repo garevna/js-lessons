@@ -87,8 +87,6 @@ ___________________
 postData('name=garevna&speciality=frontEnd', 'application/x-www-form-urlencoded')
 ~~~
 
-{{common.c2}}
-
 ~~~console
 {
   "args": {},
@@ -126,8 +124,6 @@ postData(JSON.stringify({
 }))
 ~~~
 
-{{common.c2}}
-
 ~~~console
 {
   "args": {},
@@ -155,7 +151,6 @@ postData(JSON.stringify({
 ~~~
 _______________________________
 
-
 ### ![ico-25 cap] text/plain
 
 ~~~js
@@ -164,8 +159,6 @@ It generates weird text that resembles the normal characters or numbers of the a
 
 postData(text, 'text/plain')
 ~~~
-
-{{common.c2}}
 
 ~~~console
 {

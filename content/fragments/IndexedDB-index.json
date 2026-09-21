@@ -1,10 +1,10 @@
 [
-  "~keyPath~",
-  "~prototype~",
-  "~string~",
-  "~boolean~",
-  "~true~",
-  "~false~",
-  "~https://js-lessons-sandbox.garevna.workers.dev/json-server/lessons~",
-  "~success~"
+  "keyPath",
+  "prototype",
+  "string",
+  "boolean",
+  "true",
+  "false",
+  "https://js-lessons-sandbox.garevna.workers.dev/json-server/lessons",
+  "success"
 ]

@@ -174,7 +174,7 @@ Object(5 + 8 + false)
 
 ~~~console
 ▼ Number {13}
-  ► __proto__: Number
+  ► [[Prototype]]: Number
     [[PrimitiveValue]]: 13
 ~~~
 
@@ -185,7 +185,7 @@ Object(num)
 
 ~~~console
 ▼ Number {10}
-  ► __proto__: Number
+  ► [[Prototype]]: Number
     [[PrimitiveValue]]: 10
 ~~~
 

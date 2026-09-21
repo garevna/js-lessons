@@ -1,7 +1,7 @@
 [
-  "~GET~",
-  "~PUT~",
-  "~PATCH~",
-  "~DELETE~",
-  "~POST~"
+  "GET",
+  "PUT",
+  "PATCH",
+  "DELETE",
+  "POST"
 ]

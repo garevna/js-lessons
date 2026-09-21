@@ -1,10 +1,10 @@
 [
-  "~tags~",
-  "~classes~",
-  "~style~",
-  "~head~",
-  "~body~",
-  "~script~",
-  "~classList~",
+  "tags",
+  "classes",
+  "style",
+  "head",
+  "body",
+  "script",
+  "classList",
   "external/mdn-class-list"
 ]

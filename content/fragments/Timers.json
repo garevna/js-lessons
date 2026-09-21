@@ -1,13 +1,13 @@
 [
-  "~setTimeout~",
-  "~window~",
-  "~setInterval~",
-  "~@keyframes~",
-  "~requestAnimationFrame~",
-  "~createFigure~",
-  "~makeStep~",
-  "~addElem~",
-  "~background~",
-  "~back~",
-  "~transparent~"
+  "setTimeout",
+  "window",
+  "setInterval",
+  "@keyframes",
+  "requestAnimationFrame",
+  "createFigure",
+  "makeStep",
+  "addElem",
+  "background",
+  "back",
+  "transparent"
 ]

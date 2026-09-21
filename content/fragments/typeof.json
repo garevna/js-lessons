@@ -1,12 +1,12 @@
 [
-  "~typeof~",
-  "~ =~",
-  "~ >~",
-  "~ <~",
-  "~num~",
-  "~**typeof** num~",
-  "~null~",
-  "~typeof null~",
-  "~object~",
-  "~undefined~"
+  "typeof",
+  " =",
+  " >",
+  " <",
+  "num",
+  "**typeof** num",
+  "null",
+  "typeof null",
+  "object",
+  "undefined"
 ]

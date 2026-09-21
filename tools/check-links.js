@@ -89,18 +89,9 @@ for (const lang of ['ru', 'eng', 'ua']) {
 
 // Headings become anchors through the same table the renderer uses, so a
 // page/lesson#heading link can be checked against the headings that exist.
-const TRANSLIT = (() => {
-  const src = fs.readFileSync(path.join(root, 'src/configs/convertStringForAnchor.js'), 'utf8')
-  const table = {}
-  for (const [, from, to] of src.matchAll(/'(.+?)':\s*'(.*?)'/g)) table[from] = to
-  return table
-})()
-
-const toAnchor = (s) => s.trim().replaceAll('()', '').trim().split('')
-  .map((c) => (TRANSLIT[c] !== undefined ? TRANSLIT[c] : c))
-  .join('')
-  .replaceAll('|', '_')
-  .replaceAll('&lt;', '')
+// The table is required rather than scraped: the file is CommonJS so that the
+// build, this and the browser all run the one function.
+const { convertStringForAnchor: toAnchor } = require('../src/configs/convertStringForAnchor')
 
 const anchorsOf = (page) => {
   const file = path.join(LESSONS, 'ru', `${page}.md`)
@@ -108,7 +99,15 @@ const anchorsOf = (page) => {
   const set = new Set()
   for (const line of fs.readFileSync(file, 'utf8').split(/\r?\n/)) {
     const m = line.match(/^#{1,6}\s+(.*)$/)
-    if (m) set.add(toAnchor(m[1].replace(/!\[[^\]]*\]/g, '').trim()))
+    if (!m) continue
+
+    // A built page carries the anchor the build settled on — made from the
+    // English heading, the same in all three languages. Only a page with no
+    // marker has to be transliterated here.
+    const stamped = m[1].match(/⟪([^⟫]*)⟫/)
+    if (stamped) { set.add(stamped[1]); continue }
+
+    set.add(toAnchor(m[1].replace(/!\[[^\]]*\]/g, '').trim()))
   }
   return set
 }

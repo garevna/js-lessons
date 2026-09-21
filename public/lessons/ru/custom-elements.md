@@ -1,4 +1,4 @@
-# ![ico-30 study] Custom elements
+# ![ico-30 study] Custom elements⟪Custom_elements⟫
 
 Создание кастомных элементов DOM
 ![ico-20 warn] Имена кастомных тегов обязательно должны состоять минимум из двух частей, разделенных дефисом, например:
@@ -9,7 +9,7 @@
 <mystery-man></mystery-man>
 ~~~
 
-## ![ico-25 icon] HTMLUnknownElement
+## ![ico-25 icon] HTMLUnknownElement⟪HTMLUnknownElement⟫
 
 Если просто вставить на страницу тег с отфанарным именем:
 
@@ -40,7 +40,7 @@ console.dir(HTMLUnknownElement)
     length: 0
     name: "HTMLUnknownElement"
     prototype: HTMLUnknownElement {constructor: ƒ, Symbol(Symbol.toStringTag): "HTMLUnknownElement"}
-    __proto__: ƒ HTMLElement()
+    [[Prototype]]: ƒ HTMLElement()
 ~~~
 
 Поэтому элемент _protuberance_ унаследует все свойства и методы, которые мы обнаружим в свойстве ~prototype~ конструктора _HTMLElement_
@@ -50,7 +50,7 @@ console.dir(HTMLUnknownElement)
 ![ico-20 warn] При создании класса пользовательских элементов в качестве родительского класса (**super**) можно  использовать HTMLElement
 Тогда создаваемый нами элемент будет наследовать свойства и методы родительского класса _HTMLElement.prototype_
 
-## ![ico-25 icon] customElements
+## ![ico-25 icon] customElements⟪customElements⟫
 
 Свойство **~customElements~** (_read-only_) глобального объекта ~Window~ содержит ссылку на объект **~CustomElementRegistry~**
 
@@ -60,14 +60,14 @@ console.dir(customElements)
 
 ~~~console
 ▼ CustomElementRegistry
-  ▼ __proto__: CustomElementRegistry
+  ▼ [[Prototype]]: CustomElementRegistry
       ► define: ƒ define()
       ► get: ƒ ()
       ► upgrade: ƒ upgrade()
       ► whenDefined: ƒ whenDefined()
       ► constructor: ƒ CustomElementRegistry()
         Symbol(Symbol.toStringTag): "CustomElementRegistry"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 Можно посмотреть, чьим "наследником" является **~customElements~**
@@ -89,15 +89,15 @@ console.dir(CustomElementRegistry)
       ► whenDefined: ƒ whenDefined()
       ► constructor: ƒ CustomElementRegistry()
         Symbol(Symbol.toStringTag): "CustomElementRegistry"
-      ► __proto__: Object
-  ► __proto__: ƒ ()
+      ► [[Prototype]]: Object
+  ► [[Prototype]]: ƒ ()
 ~~~~
 
 Мы будем использовать **~CustomElementRegistry~** для регистрации собственных (кастомных) элементов, а так же для получения информации об уже зарегистрированных элементах
 
 ______________________________________________
 
-## ![ico-25 icon] customElements.define()
+## ![ico-25 icon] customElements.define()⟪customElements.define⟫
 
 Метод  **~define~** глобального объекта **customElements** имеет два обязательных параметра:
 
@@ -110,7 +110,7 @@ customElements.define('sample-custom-element', SampleCustomElement)
 
 _______________________________________
 
-### ![ico-25 icon] Пример 1
+### ![ico-25 icon] Пример 1⟪Example_1⟫
 
 ^^Объявим класс **SampleElement**, расширяющий класс HTMLElement^^
 
@@ -188,7 +188,7 @@ const elem = document.body
 
 ________________________________________________
 
-### ![ico-25 icon] Пример 2
+### ![ico-25 icon] Пример 2⟪Example_2⟫
 
 ~~~~js
 class SampleCustomElement extends HTMLElement {
@@ -243,7 +243,7 @@ window.onresize = elem.resizeCanvas.bind(elem)
 elem.drawLine({ x:20, y:20 }, { x:400, y:200 }, { lineColor: '#008595', lineWidth: 5 })
 ~~~~
 
-### ![ico-25 icon] Пример 3
+### ![ico-25 icon] Пример 3⟪Example_3⟫
 
 ~~~html
 <h3>Пример использования Custom Elements</h3>
@@ -296,7 +296,7 @@ customElements.define('words-counter', WordsCounter)
 ~~~~
 __________________________________________________
 
-### ![ico-25 icon] Пример 4
+### ![ico-25 icon] Пример 4⟪Example_4⟫
 
 ~~~~js
 class SampleCustomElement extends HTMLElement {

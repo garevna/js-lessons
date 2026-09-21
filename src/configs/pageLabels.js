@@ -15,6 +15,11 @@ export const pageLabels = {
     eng: 'Example',
     ua: 'Приклад'
   },
+  consoleOutput: {
+    ru: 'Результат в консоли',
+    eng: 'Result in the console',
+    ua: 'Результат у консолі'
+  },
   tests: {
     ru: 'Тесты',
     eng: 'Tests',

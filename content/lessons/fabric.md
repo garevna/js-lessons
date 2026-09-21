@@ -85,7 +85,11 @@ ______________________________
 ## ![ico-20 icon] {{p20}}
 
 {{p21}}
-{{p22}}
+•••• none
+{{p41}}
+{{p42}}
+{{p43}}
+••••
 
 ![ico-25 cap] ** 4**
 
@@ -116,7 +120,7 @@ console.log(google.getVar('name', '789541'))   // Google
 ▼ User {name: "Google", getVar: ƒ}
   ► getVar: ƒ getVar( varName, pincode )
     name: "Google"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 
 ~~~
 
@@ -159,7 +163,7 @@ google.getVar('cash', '789451')   // 25000
 ▼ User {name: "Google", getVar: ƒ}
   ► getVar: ƒ getVar( varName, pincode )
     name: "Google"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ▼ constructor: class User
           ► updateUser: ƒ ( user, params, pin )
             arguments: (...)
@@ -167,8 +171,8 @@ google.getVar('cash', '789451')   // 25000
             length: 1
             name: "User"
             prototype: {constructor: ƒ}
-          ► __proto__: ƒ ()
-      ► __proto__: Object
+          ► [[Prototype]]: ƒ ()
+      ► [[Prototype]]: Object
 
 ~~~
 
@@ -227,21 +231,17 @@ currentUser.write(`I'm here since ${new Date().toLocaleString()}`)
 
 _____________________________
 
-**visitor**
-
 ~~~console
 
 ▼ User {talk: ƒ, name: "migrant", timeVisit: "01.11.2018, 13:40:41"}
     name: "migrant"
   ► talk: ƒ ( key )
     timeVisit: "01.11.2018, 13:40:41"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 
 ~~~
 
 ______________________________
-
-**currentUser**
 
 ~~~console
 
@@ -251,16 +251,15 @@ ______________________________
     name: "Nick"
   ▼ posts:
         01.11.2018, 13:40:51: "I'm here since 01.11.2018, 13:40:51"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
   ► registered: (2) ["01.11.2018", "13:40:51"]
   ► talk: ƒ ( key )
   ► write: ƒ ( text )
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 
 ~~~
 
 _________________________________________
-
 
 ~~~js
 console.dir(currentUser.__proto__.constructor)
@@ -275,7 +274,7 @@ console.dir(currentUser.__proto__.constructor)
     length: 0
     name: "User"
     prototype: {constructor: ƒ}
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 
 ~~~
 

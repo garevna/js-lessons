@@ -1,4 +1,4 @@
-# ![ico-30 icon] SOLID
+# ![ico-30 icon] SOLID⟪SOLID⟫
 
 **Принципы проектирования в ООП**
 
@@ -57,7 +57,7 @@ ____________________________________________
 __________________________________________________
 
 
-## ![ico-25 icon] Single responsibility
+## ![ico-25 icon] Single responsibility⟪Single_responsibility⟫
 
 Этот принцип обеспечивает четкое разграничение функций ( обязанностей ) модулей
 
@@ -84,7 +84,7 @@ _Один модуль отвечает только за что-то одно_
 _______________________________________________________
 
 
-## ![ico-25 icon] Open-closed
+## ![ico-25 icon] Open-closed⟪Open-closed⟫
 
 Пример выше отлично иллюстрирует также и этот приницип
 
@@ -145,7 +145,7 @@ user.voyage('London')
 
 ____________________________________
 
-## ![ico-25 icon] Liskov substitution
+## ![ico-25 icon] Liskov substitution⟪Liskov_substitution⟫
 
 Принцип подстановки Барбары Лисков заключается в следующем:
 
@@ -192,7 +192,7 @@ user = new RegisteredUser('Иван', 'xJgb-809/**1Bh')
 
 ______________________________________
 
-## ![ico-25 icon] Interface segregation
+## ![ico-25 icon] Interface segregation⟪Interface_segregation⟫
 
 Как мы уже поняли ![ico-20 wink], модули взаимодействуют друг с другом через интерфейсы
 
@@ -283,7 +283,7 @@ const card = (function (pin) {
 
 ____________________________________________
 
-## ![ico-25 icon] Dependency Invertion
+## ![ico-25 icon] Dependency Invertion⟪Dependency_Invertion⟫
 
 Зависимости...
 

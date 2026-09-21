@@ -100,7 +100,7 @@ console.dir(circle.content)
     parentNode: null
     previousSibling: null
     textContent: "↵        Template header↵        Template text↵    "
-  ► __proto__: DocumentFragment
+  ► [[Prototype]]: DocumentFragment
 ~~~
 
 ^^^

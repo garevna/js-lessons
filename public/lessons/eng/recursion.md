@@ -1,4 +1,4 @@
-# ![ico-30 study] Recursion
+# ![ico-30 study] Recursion⟪Recursion⟫
 
 Recursion is a process in which a function calls itself, either directly or indirectly
 
@@ -78,7 +78,7 @@ It will return a recursive call to itself
 If tail recursion is deep enough, this can lead to a stack overflow and the generation of an exception ![ico-20 err] **~RangeError~**
 ^^The **~RangeError~** exception occurs when the depth of recursion exceeds 10,000^^
 
-## ![ico-25 hw] Exercise
+## ![ico-25 hw] Exercise⟪Exercise⟫
 
 Analyse the code for the **circle** function
 

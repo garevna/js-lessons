@@ -1,6 +1,6 @@
-# ![ico-30 study] Document Object Model (DOM)
+# ![ico-30 study] Document Object Model (DOM)⟪Document_Object_Model_(DOM)⟫
 
-## ![ico-25 icon] События элементов DOM
+## ![ico-25 icon] События элементов DOM⟪sobityya_alementov_DOM⟫
 
 @@@@
 
@@ -28,8 +28,8 @@ console.dir(EventTarget)
         ► removeEventListener: ƒ removeEventListener()
         ► constructor: ƒ EventTarget()
           Symbol(Symbol.toStringTag): "EventTarget"
-        ► __proto__: Object
-    ► __proto__: ƒ ()
+        ► [[Prototype]]: Object
+    ► [[Prototype]]: ƒ ()
 ~~~~
 
 Здесь мы видим три метода, которые унаследуют все объекты, имеющие в цепочке прототипов  **~EventTarget~**
@@ -99,7 +99,7 @@ document.body.appendChild(document.createElement('div'))
   ► target: div
     timeStamp: 12720.100000005914
     type: "DOMNodeInserted"
-  ► __proto__: MutationEvent
+  ► [[Prototype]]: MutationEvent
 ~~~~
 
 ______________________________________________________
@@ -190,7 +190,7 @@ _________________________________
 
 _________________________________________
 
-## ![ico-25 icon] host-объект Event
+## ![ico-25 icon] host-объект Event⟪host-obъekt_Event⟫
 
 Конструктор, с помощью которого создаются все события DOM
 
@@ -202,7 +202,7 @@ var userEvent = new Event('user')
 
 ___________________________________
 
-## ![ico-25 icon] dispatchEvent
+## ![ico-25 icon] dispatchEvent⟪dispatchEvent⟫
 
 Метод **dispatchEvent** вызывает событие на элементе
 
@@ -217,7 +217,7 @@ document.body.dispatchEvent(new Event('click'))
 
 _________________________________
 
-## ![ico-25 icon] CustomEvent
+## ![ico-25 icon] CustomEvent⟪CustomEvent⟫
 
 Конструктор **CustomEvent** создает кастомное событие c дополнительными параметрами
 
@@ -258,7 +258,7 @@ btn.onclick = function (event) {
 
 ______________________________________
 
-## ![ico-25 icon] event handler
+## ![ico-25 icon] event handler⟪event_handler⟫
 
 У всех элементов есть свойства с именами, начинающимися с  "**_on_**"
 
@@ -283,13 +283,13 @@ elem.onmouseover = function (ev) { ... }
 
 _________________________________________
 
-### ![ico-20 icon] event.screenX &#124; event.screenY
+### ![ico-20 icon] event.screenX &#124; event.screenY⟪event.screenX_&#124;_event.screenY⟫
 
 Координаты указателя мышки относительно левого верхнего угла физического экрана
 
 _________________________________________________
 
-### ![ico-20 icon] event.clientX &#124; event.clientY
+### ![ico-20 icon] event.clientX &#124; event.clientY⟪event.clientX_&#124;_event.clientY⟫
 
 Координаты указателя мышки относительно верхнего левого края видимой части окна браузера (**~viewport~**)
 
@@ -299,7 +299,7 @@ _________________________________________________
 
 _______________________________
 
-### ![ico-20 icon] event.pageX &#124; event.pageY
+### ![ico-20 icon] event.pageX &#124; event.pageY⟪event.pageX_&#124;_event.pageY⟫
 
 Координаты указателя мышки относительно верхнего левого края страницы
 
@@ -307,13 +307,13 @@ _______________________________
 
 _________________________
 
-### ![ico-20 icon] eventPhase
+### ![ico-20 icon] eventPhase⟪eventPhase⟫
 
 [:::eventPhase:::](external/event-phase)
 
 ____________________________
 
-## ![ico-25 icon] eventListener
+## ![ico-25 icon] eventListener⟪eventListener⟫
 
 Этот сервис браузерного API позволяет повесить на одно и то же событие одного и того же элемента несколько коллбеков.
 Для этой цели создается "посредник" между событием элемента и коллбеком.
@@ -339,7 +339,7 @@ eventListener-ов может быть сколько угодно для одн
 
 _________________________________________________________________
 
-## ![ico-25 icon] addEventListener
+## ![ico-25 icon] addEventListener⟪addEventListener⟫
 
 Первый аргумент метода addEventListener - это тип события ( строка ), например:
 ^^• mouseover<br>• mouseout<br>• input<br>• change<br>**...**^^
@@ -421,7 +421,7 @@ document.body.addEventListener('click', callback, true)
 
 _________________________________________________
 
-### ![ico-20 icon] preventDefault()
+### ![ico-20 icon] preventDefault()⟪preventDefault⟫
 
 Иногда мы не хотим, чтобы при наступлении события элемент HTML вел себя так, как он должен себя вести по умолчанию
 
@@ -451,7 +451,7 @@ elem.addEventListener('click', function (event) {
 
 ___________________________________
 
-### ![ico-20 icon] stopPropagation()
+### ![ico-20 icon] stopPropagation()⟪stopPropagation⟫
 
 Предотвращает "всплытие" события, т.е. срабатывание обработчиков этого события на элементах, внутри которых находится целевой элемент
 
@@ -519,7 +519,7 @@ event.stopPropagation()
 
 ____________________________________
 
-### ![ico-20 icon] stopImmediatePropagation()
+### ![ico-20 icon] stopImmediatePropagation()⟪stopImmediatePropagation⟫
 
 Если у элемента есть несколько прослушивателей одного и того же события, они будут вызваны в том порядке, в котором они были добавлены
 
@@ -567,7 +567,7 @@ event.stopImmediatePropagation()
 
 ____________________________________________
 
-## ![ico-25 icon] removeEventListener
+## ![ico-25 icon] removeEventListener⟪removeEventListener⟫
 
 Прослушивателей событий желательно удалять перед удалением элемента
 

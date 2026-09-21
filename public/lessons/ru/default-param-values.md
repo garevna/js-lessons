@@ -1,4 +1,4 @@
-# ![ico-30 study] Параметры функции по умолчанию
+# ![ico-30 study] Параметры функции по умолчанию⟪parametri_funktsyy_po_umolchanyyu⟫
 
 **ES6**
 

@@ -1,4 +1,4 @@
-## ![ico-25 icon] Promises
+## ![ico-25 icon] Promises⟪Promises⟫
 
 
 Calling an asynchronous function returns a promise
@@ -68,7 +68,7 @@ but when it is convenient for the main thread ![ico-20 smile]
 
 __________________________________
 
-## ![ico-25 icon] More than just a promise
+## ![ico-25 icon] More than just a promise⟪More_than_just_a_promise⟫
 
 Sometimes you need to streamline the execution of several asynchronous operations.
 We can already solve this problem using a promise and a chain of calls to the **~then~** method:
@@ -158,7 +158,7 @@ What we see from this example:
 
 _________________________
 
-### ![ico-20 icon] Queue Manager
+### ![ico-20 icon] Queue Manager⟪Queue_Manager⟫
 
 The asynchronous function is an excellent queue organizer.
 It strictly ensures that no one jumps over the queue at the Call Stack ![ico-20 smile]
@@ -217,7 +217,7 @@ Now they strictly keep the order of queue! ![ico-20 smile]
 
 __________________________________
 
-### ![ico-20 icon] Organizer of asynchronous processes
+### ![ico-20 icon] Organizer of asynchronous processes⟪Organizer_of_asynchronous_processes⟫
 
 ◘◘![ico-20 cap] Example 4◘◘
 

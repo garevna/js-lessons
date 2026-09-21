@@ -4,12 +4,12 @@
 
 pre {
   box-shadow: 0 0 4px #00000050;
-  border: solid 16px transparent;
+  /* border: solid 16px transparent;
   border-top-width: 12px;
-  border-bottom-width: 16px;
+  border-bottom-width: 16px; */
   margin: 8px 8px 16px 0px;
-  padding: 0 4px 4px 0;
-  overflow: auto;
+  padding: 12px;
+  overflow-x: auto;
   font-family: monospace;
 }
 

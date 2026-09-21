@@ -77,10 +77,6 @@ function showProto (elem) {
 showProto(document)
 ~~~
 
-{{common.c4}}
-
-◘◘^^~document~^^◘◘
-
 ~~~console
 HTMLDocument
 Document
@@ -102,7 +98,6 @@ showProto(document.head)
 
 {{p37}}
 
-◘◘^^~document.head~^^◘◘
 ~~~console
 HTMLHeadElement
 HTMLElement
@@ -120,7 +115,6 @@ showProto(document.body)
 
 {{p39}}
 
-◘◘^^~document.body~^^◘◘
 ~~~console
 HTMLBodyElement
 HTMLElement
@@ -400,8 +394,6 @@ for (var prop in document) {
 }
 ~~~
 
-◘◘^^**HTMLElement**^^◘◘
-
 ~~~console
 documentElement: HTMLElement
 body: HTMLElement
@@ -430,7 +422,6 @@ _______________________________________
   })
 ~~~
 
-◘◘^^**{{common.c1}}**^^◘◘
 ~~~console
 images: HTMLCollection
 embeds: HTMLCollection
@@ -616,7 +607,6 @@ function getObjects () {
 console.log(getObjects())
 ~~~
 
-◘◘^^**Result**^^◘◘
 ~~~console
 ▼ {location: 'Location', implementation: 'DOMImplementation', doctype: 'DocumentType', defaultView: 'Window', all: 'HTMLAllCollection', …}
   adoptedStyleSheets: "Array"
@@ -676,8 +666,6 @@ document.onscroll = console.log
 
 {{p76}}
 {{p77}}
-
-◘◘ **^^result^^** ◘◘
 
 ~~~console
 ▼ Event {isTrusted: true, type: 'scroll', target: document, currentTarget: document, eventPhase: 2, …}
@@ -859,7 +847,6 @@ parent.appendChild(elem)
 
 {{p100}}
 
-◘◘^^**Elements**^^◘◘
 ~~~console
 &lt;body>
   &lt;section>
@@ -880,7 +867,6 @@ figure.appendChild(paragraph)
 
 {{p102}}
 
-◘◘^^**Elements**^^◘◘
 ~~~console
 &lt;body>
   &lt;section>&lt;/section>
@@ -1142,15 +1128,13 @@ document
   .getElementsByClassName('content')
 ~~~
 
-◘◘^^{{common.c4}}^^◘◘
-
 ~~~console
 
 ▼ HTMLCollection(2) [div.content, figure.content]
   ► 0: div.content
   ► 1: figure.content
     length: 2
-  ► __proto__: HTMLCollection
+  ► [[Prototype]]: HTMLCollection
 ~~~
 
 ____________________________________________
@@ -1216,8 +1200,6 @@ console.dir(document.body.querySelector('[type=\'number\']'))
 console.dir(section.querySelector('[title]'))
 ~~~
 
-**{{common.c2}}**
-
 ~~~console
 ► section
 ► h3#demo
@@ -1241,13 +1223,12 @@ ______________________________________________
 section.querySelectorAll('*')
 ~~~
 
-◘◘{{common.c2}}◘◘
 ~~~console
 ▼ NodeList(2) [div, figure.promoClass]
   ► 0: div
   ► 1: figure.promoClass
     length: 2
-  ► __proto__: NodeList
+  ► [[Prototype]]: NodeList
 ~~~
 
 _________________________________________________
@@ -1265,7 +1246,6 @@ elem.tagName = 'div'
 →→→ {{p149}} | {{p150}} | {{p151}}→→→
 
 ____________________________________________
-
 
 ◘◘![ico-25 hw]** 2**◘◘
 ~~~js
@@ -1406,7 +1386,6 @@ elems.forEach(function (elem) {
 ~~~
 
 →→→ {{p182}} | {{p183}} | {{p184}}→→→
-
 
 ___________________________________
 

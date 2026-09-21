@@ -40,7 +40,7 @@ console.dir(HTMLUnknownElement)
     length: 0
     name: "HTMLUnknownElement"
     prototype: HTMLUnknownElement {constructor: ƒ, Symbol(Symbol.toStringTag): "HTMLUnknownElement"}
-    __proto__: ƒ HTMLElement()
+    [[Prototype]]: ƒ HTMLElement()
 ~~~
 
 {{p6}}
@@ -60,14 +60,14 @@ console.dir(customElements)
 
 ~~~console
 ▼ CustomElementRegistry
-  ▼ __proto__: CustomElementRegistry
+  ▼ [[Prototype]]: CustomElementRegistry
       ► define: ƒ define()
       ► get: ƒ ()
       ► upgrade: ƒ upgrade()
       ► whenDefined: ƒ whenDefined()
       ► constructor: ƒ CustomElementRegistry()
         Symbol(Symbol.toStringTag): "CustomElementRegistry"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 {{p11}}
@@ -89,8 +89,8 @@ console.dir(CustomElementRegistry)
       ► whenDefined: ƒ whenDefined()
       ► constructor: ƒ CustomElementRegistry()
         Symbol(Symbol.toStringTag): "CustomElementRegistry"
-      ► __proto__: Object
-  ► __proto__: ƒ ()
+      ► [[Prototype]]: Object
+  ► [[Prototype]]: ƒ ()
 ~~~~
 
 {{p12}}

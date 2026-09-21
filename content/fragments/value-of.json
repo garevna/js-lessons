@@ -1,7 +1,7 @@
 [
-  "~valueOf()~",
-  "~Object~",
-  "~true~",
-  "~valueOf ()~",
+  "valueOf()",
+  "Object",
+  "true",
+  "valueOf ()",
   "https://garevna.github.io/js-quiz/#valueOf"
 ]

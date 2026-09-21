@@ -51,8 +51,6 @@ document.all.namedItem('Google')  // null
 document.all.namedItem('fonts')
 ~~~
 
-**{{common.c1}}**
-
 ~~~console
 <link name="Google" id="fonts" href="https://fonts.googleapis.com/css?family=Roboto|&amp;display=swap" rel="stylesheet">
 ~~~

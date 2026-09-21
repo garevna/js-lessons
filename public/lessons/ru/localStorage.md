@@ -1,8 +1,8 @@
-# ![ico-30 study] Данные на клиенте
+# ![ico-30 study] Данные на клиенте⟪Data_on_the_client⟫
 
 _______________________________________
 
-## ![ico-25 icon] localStorage
+## ![ico-25 icon] localStorage⟪localStorage⟫
 
 **Локальное хранилище данных на клиенте**
 ^^Свойство глобального объекта window^^
@@ -22,7 +22,7 @@ ________________________________
 
 ____________________________
 
-### ![ico-20 icon] Методы
+### ![ico-20 icon] Методы⟪Methods⟫
 
 ^^^[setItem ( key, value )]
 
@@ -178,7 +178,7 @@ Storage.prototype.getItemList = function () {
 
 _____________________
 
-### ![ico-20 icon]  Events
+### ![ico-20 icon]  Events⟪Events⟫
 
 При изменении содержимого ~localStorage~ в браузере генерируется событие  **_~storage~_**
 

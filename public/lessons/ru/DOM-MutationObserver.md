@@ -1,6 +1,6 @@
-# Document Object Model
+# Document Object Model⟪Document_Object_Model⟫
 
-## MutationObserver
+## MutationObserver⟪MutationObserver⟫
 
 Этот раздел лучше изучать в конце курса, когда вы уже разберетесь с итерирующими методами массивов, замыканием, статическими методами конструктора Object и т.д.
 

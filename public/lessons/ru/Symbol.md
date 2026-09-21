@@ -1,4 +1,4 @@
-# ![ico-30 study] Symbol
+# ![ico-30 study] Symbol⟪Symbol⟫
 
 **^^ES6 (2015)^^**
 
@@ -29,7 +29,7 @@ toString: Symbol(Я - новый символ, который ты только 
 
 _____________________________________
 
-## ![ico-25 study] Имена свойств объекта
+## ![ico-25 study] Имена свойств объекта⟪ymena_svoistv_obъekta⟫
 
 В качестве имен свойств объекта символы удобны тем, что
 
@@ -61,12 +61,12 @@ Google
 ▼ ["name"]
     0: "name"
     length: 1
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
   
 ▼ ["name"]
     0: "name"
     length: 1
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ~~~js
@@ -84,12 +84,12 @@ console.log(JSON.parse(JSON.stringify(obj)))
 ~~~console
 ▼ {name: "Google"}
     name: "Google"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ___________________________________________
 
-## ![ico-25 study] Symbol.for
+## ![ico-25 study] Symbol.for⟪Symbol.for⟫
 
 Позволяет добавить символ в глобальный реестр символов
 Символы в глобальном реестре имеют _уникальные ключи_
@@ -160,22 +160,17 @@ const usersInterface = {
 console.log(usersInterface)
 ~~~
 
-◘◘usersInterface◘◘
-
 ~~~console
 ▼ {Symbol(users): Symbol([{"name":"Stephan","age":30,"works":7,"children":2},{"name":"Georg","age":25,"works":2,"chil…}
     users: (...)
     Symbol(users): Symbol([{"name":"Stephan","age":30,"works":7,"children":2},{"name":"Georg","age":25,"works":2,"children":1},{"name":"Mary","age":34,"works":10,"children":1},{"name":"Piter","age":50,"works":25,"children":3},{"name":"Helen","age":40,"works":20,"children":3},{"name":"Michael","age":38,"works":16,"children":2},{"name":"Andry","age":45,"works":20,"children":2}])
   ► get users: ƒ users()
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
-
 
 ~~~js
 console.log(usersInterface.users)
 ~~~
-
-◘◘usersInterface.users◘◘
 
 ~~~console
 ▼ (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
@@ -187,10 +182,9 @@ console.log(usersInterface.users)
   ► 5: {name: "Michael", age: 38, works: 16, children: 2}
   ► 6: {name: "Andry", age: 45, works: 20, children: 2}
     length: 7
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 __________________________
-
 
 ◘◘![ico-20 cap] ** 6**◘◘
 
@@ -217,8 +211,6 @@ usersInterface.users = source
 console.log(usersInterface.users)
 ~~~
 
-◘◘usersInterface.users◘◘
-
 ~~~console
 ▼ (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
   ► 0: {name: "Andry", age: 45, works: 20, children: 2}
@@ -229,7 +221,7 @@ console.log(usersInterface.users)
   ► 5: {name: "Piter", age: 50, works: 25, children: 3}
   ► 6: {name: "Stephan", age: 30, works: 7, children: 2}
     length: 7
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ____________________________________________

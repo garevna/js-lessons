@@ -85,6 +85,13 @@ const SPOILER_CLOSE = /^\^{3}\s*$/
 // its contents go through the line rules like anything else.
 const GRID_DELIMITER = /^@{4}\s*$/
 
+// A run of lines on the black ground is fenced by •••• on a line of its own
+// (pageRegExpr.BlackBlock). Like a grid, only the fences are markup: what sits
+// between them is the prose the block exists to show, one key per line.
+// The opening fence may name an icon — •••• bash, •••• none — the way a grid
+// fence names a column count, so the name is markup too.
+const BLACK_DELIMITER = /^\s*•{4}\s*[a-z_-]*\s*$/
+
 // A line that is nothing but an HTML tag — <img src="…" width="120"/>. The
 // letters live in the attribute names and the URL, so without a rule it reads
 // as prose.
@@ -138,7 +145,12 @@ function extract (source, sectionNames, refDecisions, sharedFragments) {
   }
 
   const protect = (text) => text
-    .replace(/~[^~\n]+~/g, hide)
+    // The word is hidden, the markers around it are not. A fragment that
+    // carried its own ~ ~ made the formatting a property of the word instead
+    // of the place it appears, and on the black ground a code box is exactly
+    // wrong — light, and larger than the text around it. Kept outside, the
+    // same fragment reads ~⟦f7⟧~ in prose and **_⟦f7⟧_** inside a black block.
+    .replace(/~([^~\n]+)~/g, (_, inner) => `~${hide(inner)}~`)
     // Only the target inside the parentheses is hidden, not the parentheses
     // themselves: the message then still reads as a link, [label](⟦f0⟧),
     // instead of leaving a dangling bracket for the translator to puzzle over.
@@ -182,6 +194,7 @@ function extract (source, sectionNames, refDecisions, sharedFragments) {
     if (IMAGE_LINK.test(line.trim())) return line
     if (SPOILER_CLOSE.test(line)) return line
     if (GRID_DELIMITER.test(line)) return line
+    if (BLACK_DELIMITER.test(line)) return line
     if (HTML_ONLY.test(line.trim())) return line
 
     // Everything past this point is a content line: not a separator, not an

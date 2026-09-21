@@ -1,15 +1,15 @@
 [
-  "~for ... of~",
-  "~arguments~",
-  "~iteratedArray~",
-  "~continue~",
-  "~break~",
-  "~for...of~",
-  "~for...in~",
-  "~for ... in~",
-  "~11~",
-  "~prop == 1~",
-  "~length~",
-  "~cities.length~",
-  "~whereYouLive~"
+  "for ... of",
+  "arguments",
+  "iteratedArray",
+  "continue",
+  "break",
+  "for...of",
+  "for...in",
+  "for ... in",
+  "11",
+  "prop == 1",
+  "length",
+  "cities.length",
+  "whereYouLive"
 ]

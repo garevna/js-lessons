@@ -56,6 +56,20 @@ export const pageRegExpr = {
   ScriptSnippet: /~~~.[^~~~]+~~~/,
   Spoiler: /(\^{3})([\s\S]+?)\1/m,
   Slider: /!!\[.[^\]]+\]/,
+  // ••••  …  ••••  — several lines on the black ground.
+  //
+  // ••one line•• has always been inline, so a paragraph on black had to be
+  // written as one message with <br /> between its lines: unreadable in the
+  // message file and impossible to translate a line at a time. Four bullets
+  // on a line of their own open and close a block instead, and the lines
+  // between are ordinary lines — one key each.
+  //
+  // The opening fence may name an icon, the way @@@@3 names a column count:
+  // •••• bash, or •••• none for no icon at all.
+  //
+  // Anchored to whole lines so it cannot be confused with the inline form,
+  // and lazy so two blocks on a page stay two blocks.
+  BlackBlock: /^[ \t]*•{4}[ \t]*[a-z_-]*[ \t]*$[\s\S]*?^[ \t]*•{4}[ \t]*$/m,
   Grid: /\@\@\@\@\s+\S+[^\@\@\@\@]*]*\@\@\@\@/m,
   Table: /\n\n\|(.+|\n[^\n\n])+/gm,
   [Symbol.iterator]: generator

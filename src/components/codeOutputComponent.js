@@ -76,10 +76,19 @@ class CodeOutput extends HTMLElement {
     fetch(`${createPath('demo', newVal)}`)
       .then(response => response.text())
       .then(response => {
-        response = response.replace(/document.body/g, 'this.section')
-        response = response.replace(/document.head/g, 'this.section')
+        // The demo writes into the block below the button, not into the page,
+        // so document.body has to mean that block.
+        //
+        // It used to become "this.section", which is only right at the top of
+        // the file: inside a class or a method, this is the demo's own object
+        // and this.section is undefined. A demo that built a canvas in its
+        // constructor died on the first line. Binding it once, by a name
+        // nothing else uses, makes the substitution work at any depth.
+        const code = response
+          .replace(/document\.body/g, '__section')
+          .replace(/document\.head/g, '__section')
 
-        Object.assign(this, { code: response })
+        Object.assign(this, { code: `const __section = this.section;\n${code}` })
       })
     }
 }

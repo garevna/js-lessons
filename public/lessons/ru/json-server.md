@@ -1,10 +1,10 @@
-## ![ico-30 icon] JSON server
+## ![ico-30 icon] JSON server⟪JSON_server⟫
 
-### ![ico-25 bash] Установка пакета
+### ![ico-25 bash] Установка пакета⟪ustanovka_paketa⟫
 
 ~npm install -g json-server~
 
-### ![ico-30 db] База данных
+### ![ico-30 db] База данных⟪baza_dannikh⟫
 
 Создадим папку ( например, **_test_** ) и поместим в нее файл  **db.json**:
 
@@ -105,7 +105,7 @@
 
 ^^^
 
-### ![ico-25 bash] Запуск сервера
+### ![ico-25 bash] Запуск сервера⟪zapusk_servera⟫
 
 Перейдем в ![ico-20 bash] Bush и запустим  **JSON Server**  с базой данных **_db.json_**
 
@@ -129,7 +129,7 @@
 
 _______________________________________
 
-### ![ico-20 icon] endpoints
+### ![ico-20 icon] endpoints⟪endpoints⟫
 
 Сервер сгенерировал нам **_endpoints_**:
 
@@ -142,11 +142,11 @@ _______________________________________
 
 _____________________________________
 
-### ![ico-20 icon] fetch
+### ![ico-20 icon] fetch⟪fetch⟫
 
 Теперь проверим, как работают наши запросы, из консоли браузера
 
-##### ![ico-25 cap] GET (1)
+##### ![ico-25 cap] GET (1)⟪GET_(1)⟫
 
 ~~~js
 fetch('http://localhost:3000/comments')
@@ -156,7 +156,7 @@ fetch('http://localhost:3000/comments')
 
 ___________________________________________
 
-##### ![ico-25 cap] GET (2)
+##### ![ico-25 cap] GET (2)⟪GET_(2)⟫
 
 Теперь получим данные из базы данных в переменные  **_users_**,  **_posts_** и  **_comments_**, используя функцию  **getData**
 
@@ -180,7 +180,7 @@ Promise.all([
 
 ___________________________________________
 
-##### ![ico-25 cap] POST
+##### ![ico-25 cap] POST⟪POST⟫
 
 Добавим новый комментарий:
 
@@ -213,7 +213,7 @@ fetch ( 'http://localhost:3000/comments?postId=1&id=4' )
 
 _________________________________________
 
-##### ![ico-25 cap] PUT
+##### ![ico-25 cap] PUT⟪PUT⟫
 
 Изменим содержание первого поста :
 
@@ -234,7 +234,7 @@ fetch ( 'http://localhost:3000/posts/1', {
 
 _________________________________________
 
-##### ![ico-25 cap] PATCH
+##### ![ico-25 cap] PATCH⟪PATCH⟫
 
 Внесем частичные изменения в содержание первого поста:
 
@@ -257,7 +257,7 @@ fetch ( 'http://localhost:3000/posts/1', {
 
 _______________________________________
 
-##### ![ico-25 cap] DELETE
+##### ![ico-25 cap] DELETE⟪DELETE⟫
 
 Удалим первый комментарий
 
@@ -275,7 +275,7 @@ fetch ( 'http://localhost:3000/comments/1', {
 
 ______________________________________________
 
-### ![ico-20 icon] XMLHttpRequest
+### ![ico-20 icon] XMLHttpRequest⟪XMLHttpRequest⟫
 
 ~~~js
 function workWithData ( method, url, data ) {
@@ -291,7 +291,7 @@ function workWithData ( method, url, data ) {
 }
 ~~~
 
-##### ![ico-25 cap] GET
+##### ![ico-25 cap] GET⟪GET⟫
 
 ~~~js
 workWithData (
@@ -300,7 +300,7 @@ workWithData (
 )
 ~~~
 
-##### ![ico-25 cap] POST
+##### ![ico-25 cap] POST⟪POST⟫
 
 ~~~js
 workWithData (
@@ -314,7 +314,7 @@ workWithData (
 )
 ~~~
 
-##### ![ico-25 cap] DELETE
+##### ![ico-25 cap] DELETE⟪DELETE⟫
 
 ~~~js
 workWithData (
@@ -323,7 +323,7 @@ workWithData (
 )
 ~~~
 
-##### ![ico-25 cap] PUT
+##### ![ico-25 cap] PUT⟪PUT⟫
 
 ~~~js
 workWithData (

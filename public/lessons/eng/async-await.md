@@ -1,4 +1,4 @@
-# ![ico-30 study] async | await
+# ![ico-30 study] async | await⟪async___await⟫
 
 **ECMAScript 2017**
 
@@ -13,7 +13,7 @@ Two words that trigger a powerful mechanism for controlling the element of event
 Words that completely liberated us from the slavery of events, allowed us to "saddle" the wild horse of asynchronousness.
 In short, the magic continues... Promises were only the beginning.
 
-## ![ico-25 icon] async function
+## ![ico-25 icon] async function⟪async_function⟫
 
 To declare an asynchronous function, use **~async~** keyword before the **_function_** keyword:
 
@@ -248,7 +248,7 @@ And this is just the beginning.
 
 ________________________________________________________________________________________________
 
-## ![ico-25 icon] await
+## ![ico-25 icon] await⟪await⟫
 
 ![ico-20 warn] The keyword **~await~** can only be used inside **asynchronous functions**.
 
@@ -273,7 +273,7 @@ Because the engine's behavior will be different in each of these cases.
 
 _____________________________________
 
-### ![ico-20 icon] await &lt;promise>
+### ![ico-20 icon] await &lt;promise>⟪await_promise_⟫
 
 First of all, let’s see what happens if there is a link to our 'magic box with two holes' after the keyword **~await~**.
 
@@ -453,7 +453,7 @@ Or even not an object, but some string, or a number, or a boolean value?
 
 _____________________________________
 
-### ![ico-20 icon] An object with a then method
+### ![ico-20 icon] An object with a then method⟪An_object_with_a_then_method⟫
 
 Let's create an object that has a **~then()~** method:
 
@@ -553,7 +553,7 @@ Be careful!
 
 _____________________________________
 
-### ![ico-20 icon] Let's recall promises
+### ![ico-20 icon] Let's recall promises⟪Let-s_recall_promises⟫
 
 We have already mentioned that an instance of the **~Promise~** constructor is a magic box with two holes.
 The **~then()~** and **~catch()~** methods are the 'holes' in the box.
@@ -611,7 +611,7 @@ That is, the magic box of the promise sends its own callbacks to 'fetch the ball
 
 _________________________________________
 
-### ![ico-20 icon] await &lt;expression>
+### ![ico-20 icon] await &lt;expression>⟪await_expression_⟫
 
 So, the engine encounters the expression ~**await** &lt;expression>~.
 It needs to compute the value of this expression.
@@ -704,9 +704,9 @@ Thus, the appearance of the **~await~** keyword causes the unexecuted remainder 
 
 _____________________________________________
 
-## ![ico-20 icon] Examples
+## ![ico-20 icon] Examples⟪Examples⟫
 
-### ![ico-25 cap] 7
+### ![ico-25 cap] 7⟪7⟫
 
 ◘◘![ico-25 cap] ** 7**◘◘
 
@@ -732,7 +732,7 @@ Let's create an object which has the method **~then()~**:
 
 __________________________________________________________________________
 
-### ![ico-25 cap] 8
+### ![ico-25 cap] 8⟪8⟫
 
 In this example, the main thread code will execute with the value **5** of the variable ~num~.
 However, calling the asynchronous function ~sample()~ will result in the value of the variable ~num~ being 10 after the main thread code has finished executing.
@@ -757,7 +757,7 @@ console.log('Start value: ', num)
 
 _________________________________
 
-### ![ico-25 cap] 9
+### ![ico-25 cap] 9⟪9⟫
 
 ◘◘![ico-25 cap] ** 9**◘◘
 
@@ -776,7 +776,7 @@ getUser(5)
 
 _____________________________________
 
-### ![ico-25 cap] 10
+### ![ico-25 cap] 10⟪10⟫
 
 ◘◘![ico-25 cap] **10**◘◘
 
@@ -811,7 +811,7 @@ showBrowsers ()
 
 ____________________________________________________________
 
-### ![ico-25 cap] 11
+### ![ico-25 cap] 11⟪11⟫
 
 ◘◘![ico-25 cap] **11**◘◘
 
@@ -833,7 +833,7 @@ ____________________________________________________________
 
 ____________________________________________________________
 
-### ![ico-25 cap] 12
+### ![ico-25 cap] 12⟪12⟫
 
 ◘◘![ico-25 cap] **12**◘◘
 
@@ -930,7 +930,7 @@ As we have already mentioned earlier, the asynchronous function itself is interr
 
 ______________________________________________
 
-### ![ico-25 cap] 13
+### ![ico-25 cap] 13⟪13⟫
 
 ◘◘![ico-25 cap] **13**◘◘
 
@@ -949,7 +949,7 @@ test().then(response => console.log(response))
 
 ______________________________________________
 
-### ![ico-25 cap] 14
+### ![ico-25 cap] 14⟪14⟫
 
 Let's declare a helper function:
 
@@ -982,7 +982,7 @@ func().then(response => console.log(response))
 
 ______________________________________________
 
-### ![ico-25 cap] 15
+### ![ico-25 cap] 15⟪15⟫
 
 ◘◘![ico-25 cap] **15**◘◘
 
@@ -1009,7 +1009,7 @@ func().then(console.log)
 
 ______________________________________________
 
-### ![ico-25 cap] 16
+### ![ico-25 cap] 16⟪16⟫
 
 Let's fix the current time value in milliseconds in the variable **~start~** and declare the helper functions **~getRandom~** and **~test~**:
 
@@ -1076,7 +1076,7 @@ So, an async function can serve as a "wrapper" for multiple asynchronous operati
 
 ________________________________
 
-### ![ico-25 cap] 17
+### ![ico-25 cap] 17⟪17⟫
 
 Let’s consider a purely theoretical variant
 (in practice, you shouldn’t do this):
@@ -1132,7 +1132,7 @@ getUsers(['Stephan', 'Andry'])
 
 ___________________________________________
 
-### ![ico-25 cap] 18
+### ![ico-25 cap] 18⟪18⟫
 
 ~~~js
 const origin = 'https://api.github.com'
@@ -1161,7 +1161,7 @@ getUsersData('garevna').then(console.log)
 
 _________________________________________
 
-### ![ico-25 cap] 19
+### ![ico-25 cap] 19⟪19⟫
 
 Let’s extend the **~Object~** constructor prototype with the **~addElem~** method:
 

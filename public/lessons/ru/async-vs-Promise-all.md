@@ -1,4 +1,4 @@
-## ![ico-25 icon] async function vs Promise.all
+## ![ico-25 icon] async function vs Promise.all⟪async_function_vs_Promise.all⟫
 
 ![ico-20 warn] Синхронизация асинхронных процессов приводит к увеличению суммарного времени их выполнения
 
@@ -28,8 +28,6 @@ async function getData () {
 getData ()
 ~~~
 
-**Результат в консоли**
-
 ~~~console
 
 Names | Posts
@@ -54,8 +52,6 @@ function getData () {
     })
 }
 ~~~
-
-**Результат в консоли**
 
 ~~~console
 

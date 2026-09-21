@@ -1,5 +1,4 @@
-# ![ico-30 study] Browser Object Model (BOM)
-
+# ![ico-30 study] Browser Object Model (BOM)⟪Browser_Object_Model_(BOM)⟫
 
 On the client side, we operate within a browser, and the browser runs on the operating system.
 
@@ -19,7 +18,7 @@ When a user opens a page in a browser, they see pixels.<br>These pixels are rend
 
 _____________________________
 
-## ![ico-25 icon] The **window** object
+## ![ico-25 icon] The **window** object⟪The_**window**_object⟫
 
 Many properties of the **window** object are references to other objects, which, in turn, are object models.
 Let’s consider, for example, the **document** object.
@@ -119,8 +118,6 @@ var props = [
 for (var prop of props) console.log(window[prop])
 ~~~
 
-^^**Result in the console:**^^
-
 ~~~console
 
 ► console {debug: ƒ, error: ƒ, info: ƒ, log: ƒ, warn: ƒ, …}
@@ -131,34 +128,29 @@ for (var prop of props) console.log(window[prop])
 ► Navigator {vendorSub: "", productSub: "20030107", vendor: "Google Inc.", maxTouchPoints: 0, hardwareConcurrency: 8, …}
 ~~~
 
-
 Each of these objects has its own properties and methods
 
 _____________________________________
 
-### ![ico-20 icon] navigator
+### ![ico-20 icon] navigator⟪navigator⟫
 
-#### navigator.geolocation
-
-◘◘geolocation◘◘
+#### navigator.geolocation⟪navigator.geolocation⟫
 
 ~~~console
 ▼ Geolocation {}
-  ▼ __proto__: Geolocation
+  ▼ [[Prototype]]: Geolocation
       ► clearWatch: ƒ clearWatch()
       ► getCurrentPosition: ƒ getCurrentPosition()
       ► watchPosition: ƒ watchPosition()
       ► constructor: ƒ Geolocation()
         Symbol(Symbol.toStringTag): "Geolocation"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 The **getCurrentPosition** method has three formal parameters
 
 The first formal parameter (required) is a function that will be called if the operation completes successfully
 It will receive an object with the following structure as an argument:
-
-◘◘Position◘◘
 
 ~~~console
 ▼ Position {coords: Coordinates, timestamp: 1564355238231}
@@ -170,9 +162,9 @@ It will receive an object with the following structure as an argument:
         latitude: 50.0159007
         longitude: 36.2216816
         speed: null
-      ► __proto__: Coordinates
+      ► [[Prototype]]: Coordinates
     timestamp: 1564355238231
-  ► __proto__: Position
+  ► [[Prototype]]: Position
 ~~~
 
 The second formal parameter (optional) is also a function that will be called if the geolocation fails
@@ -202,7 +194,7 @@ if (!navigator.geolocation) {
 
 _____________________________________
 
-### ![ico-20 icon] console
+### ![ico-20 icon] console⟪console⟫
 
 We have already used the methods of the **~console~** object
 
@@ -232,12 +224,12 @@ What happened?
 
 ______________________________________
 
-### ![ico-20 icon] screen
+### ![ico-20 icon] screen⟪screen⟫
 
 ![](illustrations/screen-properties.png)
 ______________________________________
 
-### ![ico-20 icon] location
+### ![ico-20 icon] location⟪location⟫
 
 ![](illustrations/location-properties.png)
 
@@ -305,7 +297,7 @@ What happened?
 ^^^
 ______________________________________
 
-### ![ico-20 icon] history
+### ![ico-20 icon] history⟪history⟫
 
 Let’s look at the object **~history~** in the console:
 
@@ -314,7 +306,7 @@ Let’s look at the object **~history~** in the console:
       length: 2
       scrollRestoration: "auto"
       state: null
-    ▼__proto__: History
+    ▼[[Prototype]]: History
         ► back: ƒ back()
         ► forward: ƒ forward()
         ► go: ƒ go()
@@ -329,7 +321,7 @@ Let’s look at the object **~history~** in the console:
         ► get scrollRestoration: ƒ ()
         ► set scrollRestoration: ƒ ()
         ► get state: ƒ ()
-        ► __proto__: Object
+        ► [[Prototype]]: Object
 ~~~~
 
 ![ico-20 green-ok] The property **history._state_** (string) contains the address of the current page
@@ -351,7 +343,7 @@ Note that the **~history.&#95;&#95;proto&#95;&#95;~** property is a link to **~H
 
 ___________________________________________
 
-### ![ico-20 icon] document
+### ![ico-20 icon] document⟪document⟫
 
 ^^^[Exercise 5]
 

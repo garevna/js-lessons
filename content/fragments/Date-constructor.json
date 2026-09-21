@@ -1,5 +1,5 @@
 [
-  "~toLocaleDateString()~",
-  "~toLocaleTimeString()~",
+  "toLocaleDateString()",
+  "toLocaleTimeString()",
   "test/DateConstructor"
 ]

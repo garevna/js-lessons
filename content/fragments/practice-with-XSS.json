@@ -1,9 +1,9 @@
 [
   "samples/03",
-  "~Chrome DevTools~",
-  "~breakpoints~",
-  "~input~",
-  "~body~",
-  "~js/index03.js~",
-  "~testUserText~"
+  "Chrome DevTools",
+  "breakpoints",
+  "input",
+  "body",
+  "js/index03.js",
+  "testUserText"
 ]

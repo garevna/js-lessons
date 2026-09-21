@@ -1,15 +1,15 @@
 [
-  "~10, false, \"google\"~",
-  "~userInfo~",
-  "~data~",
-  "~registered~",
-  "~true~",
-  "~name~",
-  "~getInfo~",
-  "~users~",
-  "~posts~",
-  "~comments~",
+  "10, false, \"google\"",
+  "userInfo",
+  "data",
+  "registered",
+  "true",
+  "name",
+  "getInfo",
+  "users",
+  "posts",
+  "comments",
   "samples/02",
-  "~getPostComments~",
-  "~postId~"
+  "getPostComments",
+  "postId"
 ]

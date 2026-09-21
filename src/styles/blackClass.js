@@ -2,12 +2,10 @@ export const blackClass = `
 .black  {
   background-color: #000;
   color:  #dde;
-  padding:  0 12px;
-  margin:  12px 0;
   font-family:  Monospace, monospace, Monaco, Roboto, Arial;
   font-size:  0.8rem;
-  line-height:  1.8;
   overflow-y: auto;
+  padding: 16px;
 }
 
 .black .console-func-symbol:before {

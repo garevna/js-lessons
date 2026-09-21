@@ -77,7 +77,7 @@ const translation = {
   '>': '_'
 }
 
-export function convertStringForAnchor (string) {
+function convertStringForAnchor (string) {
   // "()" is listed in the table above, but the table is applied one character
   // at a time, so a two-character key could never match and headings kept
   // their parentheses in the id. A link cannot carry them back: the anchor
@@ -90,3 +90,8 @@ export function convertStringForAnchor (string) {
     .replaceAll('|', '_')
     .replaceAll('&lt;', '')
 }
+
+// CommonJS on purpose. The build has to produce the same anchor the renderer
+// will, and the build is plain Node — it can require this file only if the
+// file speaks its language. Webpack reads it either way.
+module.exports = { convertStringForAnchor }

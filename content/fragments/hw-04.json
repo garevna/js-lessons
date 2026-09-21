@@ -1,12 +1,12 @@
 [
-  "~readerData~",
-  "~readerName~",
-  "~null~",
-  "~giveTheBook (client)~",
-  "~bookTitle~",
+  "readerData",
+  "readerName",
+  "null",
+  "giveTheBook (client)",
+  "bookTitle",
   "samples/10",
-  "~title~",
-  "~year~",
-  "~author~",
-  "~addProperty~"
+  "title",
+  "year",
+  "author",
+  "addProperty"
 ]

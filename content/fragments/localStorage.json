@@ -1,8 +1,8 @@
 [
-  "~localStorage~",
-  "~prototype~",
-  "~Storage~",
-  "~storage~",
-  "~window~",
+  "localStorage",
+  "prototype",
+  "Storage",
+  "storage",
+  "window",
   "https://garevna.github.io/js-quiz/#localStorage"
 ]

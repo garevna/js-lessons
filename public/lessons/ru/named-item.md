@@ -1,4 +1,4 @@
-## ![ico-25 icon] namedItem
+## ![ico-25 icon] namedItem⟪namedItem⟫
 
 С помощью метода **~namedItem~** можно получить ссылку на именованный элемент DOM
 
@@ -16,7 +16,7 @@ __________________________
 
 ^^^
 
-### ![ico-25 cap] Пример 1
+### ![ico-25 cap] Пример 1⟪Example_1⟫
 
 ~~~html
 <html>
@@ -51,8 +51,6 @@ document.all.namedItem('Google')  // null
 document.all.namedItem('fonts')
 ~~~
 
-**Результат**
-
 ~~~console
 <link name="Google" id="fonts" href="https://fonts.googleapis.com/css?family=Roboto|&amp;display=swap" rel="stylesheet">
 ~~~
@@ -61,7 +59,7 @@ document.all.namedItem('fonts')
 
 _________________________________________
 
-### ![ico-25 cap] Пример 2
+### ![ico-25 cap] Пример 2⟪Example_2⟫
 
 Посмотрим на поведение метода **_~namedItem~_** с другими элементами:
 
@@ -77,7 +75,7 @@ console.log(document.all.namedItem('div'))
 
 ________________________________________________
 
-### ![ico-25 cap] Пример 3
+### ![ico-25 cap] Пример 3⟪Example_3⟫
 
 Для получения инфо о том, как работает метод **_~namedItem~_** с различными элементами DOM, воспользуемся функцией:
 

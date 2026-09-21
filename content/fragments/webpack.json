@@ -1,13 +1,13 @@
 [
-  "~npm~",
-  "~webpack~",
-  "~webpack-cli~",
-  "~install ( i )~",
-  "~src/index.js~",
-  "~dist/main.js~",
-  "~webpack.config.js~",
-  "~--config~",
-  "~index.js~",
-  "~mode~",
-  "~production~"
+  "npm",
+  "webpack",
+  "webpack-cli",
+  "install ( i )",
+  "src/index.js",
+  "dist/main.js",
+  "webpack.config.js",
+  "--config",
+  "index.js",
+  "mode",
+  "production"
 ]

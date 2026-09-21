@@ -2,7 +2,6 @@
 
 _______________________________________
 
-
 {{p2}}
 {{p3}}
 
@@ -604,8 +603,6 @@ console.info('We left the execution context of the function "showSample"')
 console.info(`Now sample === ${sample}`)
 ~~~
 
-**{{common.c2}}**
-
 ~~~console
 We are in the execution context of the function "showSample"
 sample === function sample () {}
@@ -780,8 +777,8 @@ console.dir(sample)
       name: "sample"
     ▼ prototype:
         ▶ constructor: ƒ sample()
-        ▶ __proto__: Object
-    ▶ __proto__: ƒ ()
+        ▶ [[Prototype]]: Object
+    ▶ [[Prototype]]: ƒ ()
       [[FunctionLocation]]: VM476:1
     ▼ [[Scopes]]: Scopes[1]
         ▶ 0: Global {type: "global", name: "", object: Window}

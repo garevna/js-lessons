@@ -1,10 +1,10 @@
-# ![ico-30 study] Элементы форм
+# ![ico-30 study] Элементы форм⟪alementi_form⟫
 
 Элементы форм имеют свойство   **~value~** и **~onchange~**
 
 **~onchange~** может содержать ссылку на колбэк-функцию обработчика события изменения свойства **~value~**
 
-## ![ico-25 icon] input
+## ![ico-25 icon] input⟪input⟫
 
 Элемент ~input~ имеет свойства  **~type~** и  **~value~**
 
@@ -49,7 +49,7 @@
 
 ____________________
 
-## ![ico-25 icon] Event Handlers
+## ![ico-25 icon] Event Handlers⟪Event_Handlers⟫
 
 Обработка событий элементов форм
 
@@ -67,7 +67,7 @@ document.body.appendChild(demo)
 
 ____________________________
 
-### ![ico-20 icon] Secondary functions
+### ![ico-20 icon] Secondary functions⟪Secondary_functions⟫
 
 Две объявленные ниже функции будут обработчиками событий элементов форм в дальнейших примерах
 
@@ -91,7 +91,7 @@ function inputClickHandler (event) {
 
 __________________________________
 
-### ![ico-20 icon] text
+### ![ico-20 icon] text⟪text⟫
 
 ♦♦♦2♦♦♦
 
@@ -104,7 +104,7 @@ document.body.appendChild(inp)
 inp.onchange = inputValueChangedHandler
 ~~~
 
-### ![ico-20 icon] color
+### ![ico-20 icon] color⟪color⟫
 
 ♦♦♦3♦♦♦
 
@@ -119,7 +119,7 @@ clr.onchange = inputValueChangedHandler
 
 _____________________________
 
-## ![ico-25 icon] Переключатели
+## ![ico-25 icon] Переключатели⟪pereklyuchately⟫
 
 Свойство  ~value~  этих элементов можно установить любым
 
@@ -133,7 +133,7 @@ _____________________________
 
 ![ico-20 warn] свойство  ~value~  при этом не меняется
 
-### ![ico-20 icon] radio
+### ![ico-20 icon] radio⟪radio⟫
 
 ♦♦♦4♦♦♦
 
@@ -156,7 +156,7 @@ ________________________
 
 __________________________________
 
-### ![ico-20 icon] checkbox
+### ![ico-20 icon] checkbox⟪checkbox⟫
 
 ♦♦♦6♦♦♦
 
@@ -178,7 +178,7 @@ _____________________________
 
 _____________________________
 
-## ![ico-25 icon] select
+## ![ico-25 icon] select⟪select⟫
 
 Элемент ~select~ - выпадающий список
 Элемент ~option~ - элемент выпадающего списка

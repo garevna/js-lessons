@@ -1,15 +1,15 @@
 [
-  "~js-sha1~",
+  "js-sha1",
   "https://github.com/emn178/js-sha1",
-  "~sha256~",
-  "~Sha256.hash()~",
+  "sha256",
+  "Sha256.hash()",
   "https://garevna.github.io/js-samples/#07",
-  "~sha256sum~",
+  "sha256sum",
   "https://www.youtube.com/watch?v=xg9qsryE8Hk",
-  "~integrity~",
+  "integrity",
   "https://www.srihash.org/",
-  "~Hash!~",
+  "Hash!",
   "https://garevna.github.io/js-samples/#09",
-  "~breakpoints~",
-  "~Watch~"
+  "breakpoints",
+  "Watch"
 ]

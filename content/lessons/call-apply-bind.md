@@ -29,8 +29,6 @@ func(5, 8, 11, false)
 console.dir(func)
 ~~~
 
-**{{common.c2}}**
-
 ~~~console
 ▼ ƒ anonymous(x,y,z )
     arguments: null
@@ -38,7 +36,7 @@ console.dir(func)
     length: 3
     name: "anonymous"
   ► prototype: {constructor: ƒ}
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 ________________________________
@@ -50,7 +48,6 @@ ________________________________
 {{p10}}
 {{p11}}
 {{p12}}
-
 
 ~~~js
 console.dir(Function)
@@ -79,8 +76,8 @@ console.dir(Function)
       ► set arguments: ƒ ()
       ► get caller: ƒ ()
       ► set caller: ƒ ()
-      ► __proto__: Object
-  ► __proto__: ƒ ()
+      ► [[Prototype]]: Object
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 ^^^
@@ -104,7 +101,7 @@ console.dir(func)
     length: 0
     name: "func"
   ► prototype: {constructor: ƒ}
-  ▼ __proto__: ƒ ()
+  ▼ [[Prototype]]: ƒ ()
       ► apply: ƒ apply()
         arguments: (...)
       ► bind: ƒ bind()
@@ -119,7 +116,7 @@ console.dir(func)
       ► set arguments: ƒ ()
       ► get caller: ƒ ()
       ► set caller: ƒ ()
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 ^^^
@@ -279,11 +276,10 @@ func.call(figure, 9, false, 'Hello')
 func.call(sample, 5, 1, 'Bye')
 ~~~
 
-**{{common.c2}}**
-
-••figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]••
-••sample ► Arguments(3) [ 5, 1, "Bye", callee: ƒ, Symbol(Symbol.iterator): ƒ ]••
-
+~~~console
+figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
+sample ► Arguments(3) [ 5, 1, "Bye", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
+~~~
 
 ________________________________________
 
@@ -305,15 +301,12 @@ func.apply(figure, [9, false, 'Hello'])
 func.apply(sample, [5, 1, 'Bye'])
 ~~~
 
-**{{common.c2}}**
-
 ~~~console
 figure ► Arguments(3) [ 9, false, "Hello", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
 sample ► Arguments(3) [ 5, 1, "Bye", callee: ƒ, Symbol(Symbol.iterator): ƒ ]
 ~~~
 
 __________________________________________________
-
 
 {{p36}}
 {{p37}}
@@ -347,14 +340,16 @@ var objects = [
 objects.forEach(obj => func.apply(obj, args))
 ~~~
 
-**{{common.c2}}**
+~~~console
 
-••![ico-20 warn] ► Who was called before figure (0):••
-••![ico-20 warn] ► Who was called before sample (1):••
-••figure••
-••![ico-20 warn] ► Who was called before google (2):••
-••figure••
-••sample••
+<p class="warning-message">Who was called before figure (0):</p>
+<p class="warning-message">Who was called before sample (1):</p>
+figure
+<p class="warning-message">Who was called before google (2):</p>
+figure
+sample
+
+~~~
 
 _____________________________
 
@@ -401,14 +396,14 @@ function sample (message) {
   console.log(`${this.name}: ${message}`)
 }
 
-var user = { name: 'Фигаро' }
+var user = { name: 'Figaro' }
 
 var userSayHello = bindContext(sample, user, 'Hello')
 
 var userSay = bindContext(sample, user)
 
-userSayHello()     // Фигаро: Hello
-userSay('Bye')  // Фигаро: Bye
+userSayHello()     // Figaro: Hello
+userSay('Bye')  // Figaro: Bye
 ~~~
 
 {{p46}}
@@ -426,7 +421,7 @@ var test = (function () {
 })()
 
 function func () {
-  console.warn(`Функция func вызвана ${this.test()} раз в контексте объекта ${this.name}`)
+  console.warn(`The function func is called ${this.test()} times within the context of the object ${this.name}`)
 }
 
 var objects = [
@@ -442,11 +437,11 @@ funcs[1]()
 funcs[2]()
 ~~~
 
-**{{common.c2}}**
-
-{{p47}}
-{{p48}}
-{{p49}}
+~~~console
+<p class="warning-message">The function func is called 1 times within the context of the object figure</p>
+<p class="warning-message">The function func is called 2 times within the context of the object sample</p>
+<p class="warning-message">The function func is called 3 times within the context of the object google</p>
+~~~
 
 _____________________________
 
@@ -470,11 +465,11 @@ bloom.sample()
 bloom.google()
 ~~~
 
-**{{common.c2}}**
-
-{{p53}}
-{{p54}}
-{{p55}}
+~~~console
+<p class="warning-message">The function func is called 4 times within the context of the object figure</p>
+<p class="warning-message">The function func is called 5 times within the context of the object sample</p>
+<p class="warning-message">The function func is called 6 times within the context of the object google</p>
+~~~
 
 _______________________________
 
@@ -488,7 +483,6 @@ bloom.google()
 
 {{p57}}
 {{p58}}
-
 
 _________________________________________
 

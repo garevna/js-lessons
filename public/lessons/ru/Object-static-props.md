@@ -1,8 +1,8 @@
-# ![ico-30 study] Статические методы конструктора Object
+# ![ico-30 study] Статические методы конструктора Object⟪statycheskye_metodi_konstruktora_Object⟫
 
 __________________________________
 
-## ![ico-25 icon] Object.assign()
+## ![ico-25 icon] Object.assign()⟪Object.assign⟫
 
 Метод копирует значения всех собственных перечислимых свойств
 из одного или более исходных объектов  **~sources~**  в целевой объект **~target~**
@@ -25,8 +25,6 @@ _________________________________________________
 var newObject = Object.assign({}, { name: 'Егор', age: 25 }, { write: true, read: true })
 ~~~
 
-◘◘**^^newObject^^**◘◘
-
 ~~~console
 {
   name: "Егор",
@@ -37,7 +35,6 @@ var newObject = Object.assign({}, { name: 'Егор', age: 25 }, { write: true, 
 ~~~
 
 _________________________________
-
 
 ♦♦♦2♦♦♦
 
@@ -84,7 +81,7 @@ target.attrs.color = '#fa0'
 
 _______________________
 
-## ![ico-25 icon] Object.create()
+## ![ico-25 icon] Object.create()⟪Object.create⟫
 
 ^^Этот метод использовался для доступа к прототипу объекта до того, как в спецификации ES6 (2015) появилось свойство **~&#95;&#95;proto&#95;&#95;~**^^
 
@@ -146,30 +143,25 @@ var circle = Object.create(new Figure('circle'), {
 
 ^^^
 
-
-◘◘circle◘◘
-
 ~~~console
 
 ▼ Figure {x: undefined, y: undefined, radius: undefined}
     radius: undefined
     x: undefined
     y: undefined
-  ▼ __proto__: Figure
+  ▼ [[Prototype]]: Figure
         type: "circle"
-      ▼ __proto__:
+      ▼ [[Prototype]]:
             className: "Figure"
           ► constructor: ƒ Figure( figType )
-          ► __proto__: Object
+          ► [[Prototype]]: Object
 ~~~
-
 
 ~~~js
 circle instanceof Figure  // true
 ~~~
 
 _________________________________________________________
-
 
 ♦♦♦5♦♦♦
 
@@ -193,17 +185,15 @@ var obj = Object.create(proto)
 
 ^^Все свойства и методы объекта **proto**, взятого в качестве прототипа, стали  унаследованными  свойствами и методами экземпляра **obj**^^
 
-◘◘obj◘◘
-
 ~~~console
 
 ▼ {}
-   ▼ __proto__:
+   ▼ [[Prototype]]:
       ► changeFigure: ƒ(newFigure)
         clip: false
         figure: "circle"
         size: 100
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 ^^Теперь создадим простой конструктор:^^
@@ -225,9 +215,7 @@ Creator.call(obj, 'sample',  75)
 
 ![](illustrations/Object-static-props-01.png)
 
-
 ________________________________________________________
-
 
 ♦♦♦6♦♦♦
 
@@ -250,20 +238,17 @@ Human.prototype = {
 var worker = Object.create(new Human('Иван', 'рыбалка'))
 ~~~
 
-◘◘worker◘◘
-
 ~~~console
 
 ▼ {}
-  ▼ __proto__:
+  ▼ [[Prototype]]:
         hobby: "рыбалка"
         name: "Иван"
-      ▼ __proto__:
+      ▼ [[Prototype]]:
             age: 20
             speciality: "монтажник"
-          ► __proto__: Object
+          ► [[Prototype]]: Object
 ~~~
-
 
 ^^А теперь проверим, что **worker** является экземпляром **_Human_**^^
 
@@ -273,7 +258,6 @@ worker instanceof Object  // true
 ~~~
 
 _______________________________________________________
-
 
 ♦♦♦7♦♦♦
 
@@ -307,7 +291,6 @@ var sample = new SubClass()
 
 ![](illustrations/Object-static-props-02.png)
 
-
 ^^Обратите внимание, что **_SuperClass_** передал унаследованные свойства экземпляру, но при этом сам не появился в цепочке наследования:^^
 
 ~~~js
@@ -319,7 +302,6 @@ sample instanceof Object      // true
 ^^В данном примере **_SuperClass_** выполняет функцию **_декоратора_**^^
 
 ____________________________________________________
-
 
 ♦♦♦8♦♦♦
 
@@ -369,23 +351,20 @@ Dishes.call(Cup.prototype)
 var redCup = new Cup('red')
 ~~~
 
-◘◘redCup◘◘
-
 ~~~console
 
 ▼ Cup {type: "cup", color: "red", clean: true}
     clean: true
     color: "red"
     type: "cup"
-  ▼ __proto__: Dishes
+  ▼ [[Prototype]]: Dishes
         type: "dishes"
-      ▼ __proto__:
+      ▼ [[Prototype]]:
           ► use: ƒ ()
           ► wash: ƒ ()
           ► constructor: ƒ Dishes(type)
-          ► __proto__: Object
+          ►[[Prototype]]: Object
 ~~~
-
 
 ^^Итак, мы построили цепочку прототипов^^
 ^^Для проверки, что наш экземпляр  **redCup**  принадлежит  одновременно классам  **_Cup_**  и  **_Dishes_**, воспользуемся оператором  **~instanceof~**:^^
@@ -411,7 +390,6 @@ redCup.wash() // The tableware has been washed.
 _________________________________________________________________________
 
 ~&#95;&#95;proto&#95;&#95;~  vs  ~Object.create()~
-
 
 ♦♦♦9♦♦♦
 
@@ -506,7 +484,7 @@ _____________________________________________________________________________
 
 _____________________________________________________________________________
 
-## ![ico-25 icon] Object.defineProperty()
+## ![ico-25 icon] Object.defineProperty()⟪Object.defineProperty⟫
 
 Этот метод позволяет создать объекту свойство с дескриптором
 
@@ -532,15 +510,13 @@ Object.defineProperty(sample, 'type', {
 Object.keys(sample)
 ~~~
 
-◘◘^^Результат^^◘◘
-
 ~~~console
 ► (3) ["name", "size", "color"]
 ~~~
 
 ______________________________________________________________________
 
-### ![ico-20 icon] геттер и сеттер свойства
+### ![ico-20 icon] геттер и сеттер свойства⟪hetter_y_setter_svoistva⟫
 
 **Вычисляемые свойства**
 
@@ -558,8 +534,6 @@ Object.defineProperty(sample, 'operation', {
 })
 ~~~
 
-◘◘^^Результат^^◘◘
-
 ~~~console
 ▼ {name: "figure", size: 100, color: "red", type: "svg"}
     color: "red"
@@ -569,7 +543,7 @@ Object.defineProperty(sample, 'operation', {
     type: "svg"
   ► get operation: () => {…}
   ► set operation: newVal => this.operation = newVal + "***"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ___________________________________________________________
@@ -608,20 +582,18 @@ console.log(thing.priceUDS) // 8.928571428571429
 console.log(Object.getOwnPropertyDescriptor(thing, 'priceUAH'))
 ~~~
 
-◘◘^^Результат^^◘◘
-
 ~~~console
 ▼ {get: ƒ, set: ƒ, enumerable: true, configurable: true}
     configurable: true
     enumerable: true
   ► get: ƒ priceUAH()
   ► set: ƒ priceUAH( newPriceUAH )
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ____________________________
 
-## ![ico-25 icon] Object.defineProperties()
+## ![ico-25 icon] Object.defineProperties()⟪Object.defineProperties⟫
 
 Можно добавить объекту сразу несколько свойств с дескрипторами
 
@@ -676,7 +648,7 @@ sample.owner = sample
 
 ____________________________
 
-## ![ico-25 icon] Object.entries()
+## ![ico-25 icon] Object.entries()⟪Object.entries⟫
 
 **ES8 (2017)**
 
@@ -695,8 +667,6 @@ var obj = {
 console.log(Object.entries(obj))
 ~~~
 
-◘◘^^Результат^^◘◘
-
 ~~~console
 
 ▼ (5) [Array(2), Array(2), Array(2), Array(2), Array(2)]
@@ -706,7 +676,7 @@ console.log(Object.entries(obj))
   ► 3: (2) ["radius", 100]
   ► 4: (2) ["center", Array(2)]
     length: 5
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ________________________________________
@@ -737,7 +707,6 @@ ____________________
 
 ♦♦♦14♦♦♦
 
-
 ~~~js
 // Выведем все свойства объекта obj в консоль
 
@@ -747,8 +716,6 @@ for (var x of Object.entries(obj)) {
 }
 console.info('}')
 ~~~
-
-◘◘^^Результат^^◘◘
 
 ~~~console
 
@@ -765,7 +732,7 @@ obj = {
 
 ____________________________
 
-## ![ico-25 icon] Object.freeze()
+## ![ico-25 icon] Object.freeze()⟪Object.freeze⟫
 
 Числа, строки и булевы значения в JS **_неиммутабельны_**, т.е. их значения не меняются при операциях с ними, но каждый раз возвращается новое значение
 
@@ -956,14 +923,14 @@ Object.getOwnPropertyDescriptor(provider, 'service')
 ^^^
 _________________________________________________________________________________________________
 
-## ![ico-25 icon] Object.getOwnPropertyDescriptor()
+## ![ico-25 icon] Object.getOwnPropertyDescriptor()⟪Object.getOwnPropertyDescriptor⟫
 
 Этот метод позволяет получить дескриптор собственного свойства объекта
 Возвращает **объект дескриптора** свойства
 ![ico-20 pin] первым аргументом метода является объект ( ссылка )
 ![ico-20 pin] второй аргумент - имя свойства объекта ( строка )
 
-### ![ico-20 icon] Дескрипторы свойств
+### ![ico-20 icon] Дескрипторы свойств⟪deskryptori_svoistv⟫
 
 Для каждого свойства объекта существует **дескриптор свойства**
 Дескриптор свойства - это **_объект_**, который содержит атрибуты свойства:
@@ -992,8 +959,6 @@ var newObject = {
 Object.getOwnPropertyDescriptor(newObject, 'getName')
 ~~~
 
-◘◘^^Результат^^◘◘
-
 ~~~console
 
 ▼ {value: ƒ, writable: true, enumerable: true, configurable: true}
@@ -1001,13 +966,12 @@ Object.getOwnPropertyDescriptor(newObject, 'getName')
     enumerable: true
   ► value: ƒ getName()
     writable: true
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
-
 
 ____________________________
 
-## ![ico-25 icon] Object.getOwnPropertyDescriptors()
+## ![ico-25 icon] Object.getOwnPropertyDescriptors()⟪Object.getOwnPropertyDescriptors⟫
 
 **ES8 (2017)**
 
@@ -1028,8 +992,6 @@ var obj = {
 Object.getOwnPropertyDescriptors(obj)
 ~~~
 
-◘◘^^Результат^^◘◘
-
 ~~~console
 
 ▼ {name: {…}, type: {…}, color: {…}, radius: {…}, center: {…}}
@@ -1038,12 +1000,12 @@ Object.getOwnPropertyDescriptors(obj)
   ► name: {value: "first", writable: true, enumerable: true, configurable: true}
   ► radius: {value: 100, writable: true, enumerable: true, configurable: true}
   ► type: {value: "circle", writable: true, enumerable: true, configurable: true}
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ____________________________
 
-## ![ico-25 icon] Object.getOwnPropertyNames()
+## ![ico-25 icon] Object.getOwnPropertyNames()⟪Object.getOwnPropertyNames⟫
 
 Возвращает имена собственных свойств ( методов ) объекта
 
@@ -1056,15 +1018,13 @@ var newObject = Object.assign({}, { name: 'Егор', age: 25 }, { write: true, 
 Object.getOwnPropertyNames(newObject)
 ~~~
 
-◘◘^^Результат^^◘◘
-
 ~~~console
 
 (6) ["name", "age", "write", "read", "getName", "setName"]
 ~~~
 ____________________________
 
-## ![ico-25 icon] Object.keys()
+## ![ico-25 icon] Object.keys()⟪Object.keys⟫
 
 возвращает массив всех **_собственных перечислимых_** свойств экземпляра
 аргумент - ссылка на экземпляр
@@ -1094,8 +1054,6 @@ console.log(man.employed)  // false
 console.log(Object.keys(man))
 ~~~
 
-◘◘^^Результат^^◘◘
-
 ~~~console
 
 (3) [ "name", "age", "speciality" ]
@@ -1106,8 +1064,6 @@ console.log(Object.keys(man))
 ~~~js
 console.log(Object.keys(Human.prototype))
 ~~~
-
-◘◘^^Результат^^◘◘
 
 ~~~console
 
@@ -1120,8 +1076,6 @@ console.log(Object.keys(Human.prototype))
 man.employed = true
 console.log(Object.keys(man))
 ~~~
-
-◘◘^^Результат^^◘◘
 
 ~~~console
 
@@ -1136,7 +1090,7 @@ console.log(man.__proto__.employed) // false
 ~~~
 ____________________________
 
-## ![ico-25 icon] Object.setPrototypeOf()
+## ![ico-25 icon] Object.setPrototypeOf()⟪Object.setPrototypeOf⟫
 
 Метод добавляет в цепочку прототипов объекта, указанного первым аргументом,
 ссылку на другой объект, указанный вторым аргументом
@@ -1163,7 +1117,6 @@ const proto = {
 
 ^^Метод **_getName()_** ищет среди свойств объекта свойство **_name_**, и если находит, то возвращает его значение, в противном случае возвращает "_user_"^^
 
-
 Создадим объект **admin**:
 
 ~~~js
@@ -1175,14 +1128,12 @@ const admin = {
 
 Легко убедиться, что в цепочке прототипов объекта **admin** есть только ссылка на объект **~prototype~** конструктора **_Object_**
 
-◘◘admin◘◘
-
 ~~~console
 
 ▼ { name: "Stephan", age: 25 }
     age: 25
     name: "Stephan"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ► constructor: ƒ Object()
       ► hasOwnProperty: ƒ hasOwnProperty()
       ► isPrototypeOf: ƒ isPrototypeOf()
@@ -1198,7 +1149,6 @@ const admin = {
       ► set __proto__: ƒ __proto__()
 ~~~
 
-
 С помощью метода **~Object.setPrototypeOf~** передадим объекту **admin** в наследство объект **proto**:
 
 ~~~js
@@ -1207,19 +1157,16 @@ Object.setPrototypeOf(admin, proto)
 
 Выведем объект **admin** в консоль и убедимся, что в его цепочке прототипов появилось еще одно звено - ссылка на объект **proto**:
 
-◘◘admin◘◘
-
 ~~~console
 
 ▼ { name: "Stephan", age: 25 }
     age: 25
     name: "Stephan"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ► getName: getName() { return this[ Object.keys ( this ) .find ( key => {…}
       ► valueOf: valueOf() { let prop = Object.keys ( this ) .find ( key => {…}
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
-
 
 Вызовем унаследованные объектом **admin** методы объекта **proto**
 
@@ -1253,7 +1200,7 @@ console.log(user.valueOf()) // 0
 ~~~
 ____________________________
 
-## ![ico-25 icon] Object.values()
+## ![ico-25 icon] Object.values()⟪Object.values⟫
 
 **ES8 (2017)**
 
@@ -1271,8 +1218,6 @@ var obj = {
 
 console.log(Object.values(obj))
 ~~~
-
-◘◘^^Результат^^◘◘
 
 ~~~console
 

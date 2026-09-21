@@ -1,14 +1,14 @@
 [
-  "~number~",
-  "~NaN~",
-  "~window~",
-  "~Number~",
-  "~isNaN()~",
-  "~Number.isNaN()~",
-  "~true~",
-  "~object~",
-  "~null~",
-  "~undefined~",
-  "~-Infinity~",
-  "~Infinity~"
+  "number",
+  "NaN",
+  "window",
+  "Number",
+  "isNaN()",
+  "Number.isNaN()",
+  "true",
+  "object",
+  "null",
+  "undefined",
+  "-Infinity",
+  "Infinity"
 ]

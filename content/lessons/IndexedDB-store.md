@@ -128,7 +128,7 @@ request.onupgradeneeded = event => {
     keyPath: null
     name: "firstStore"
   ► transaction: IDBTransaction {objectStoreNames: DOMStringList, mode: "versionchange", db: IDBDatabase, error: null, onabort: null, …}
-  ► __proto__: IDBObjectStore
+  ► [[Prototype]]: IDBObjectStore
       ► add: ƒ add()
         autoIncrement: (...)
       ► clear: ƒ clear()
@@ -156,7 +156,7 @@ request.onupgradeneeded = event => {
       ► get name: ƒ name()
       ► set name: ƒ name()
       ► get transaction: ƒ transaction()
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~~
 
 {{p57}}
@@ -198,8 +198,8 @@ request.onupgradeneeded = event => {
         onabort: null
         oncomplete: null
         onerror: null
-      ► __proto__: IDBTransaction
-  ► __proto__: IDBObjectStore
+      ► [[Prototype]]: IDBTransaction
+  ► [[Prototype]]: IDBObjectStore
 ~~~
 
 {{p68}}
@@ -384,7 +384,7 @@ __________________________________________________________________________
 ~~~console
 ▼ DOMStringList {length: 0}
     length: 0
-  ▼ __proto__: DOMStringList
+  ▼ [[Prototype]]: DOMStringList
       ► contains: ƒ contains()
       ► item: ƒ item()
         length: (...)
@@ -392,7 +392,7 @@ __________________________________________________________________________
         Symbol(Symbol.iterator): ƒ values()
         Symbol(Symbol.toStringTag): "DOMStringList"
       ► get length: ƒ length()
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 {{p114}}

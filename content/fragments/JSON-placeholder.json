@@ -1,12 +1,12 @@
 [
-  "~REST API~",
-  "~JSONPlaceholder~",
-  "~POST~",
-  "~PUT~",
-  "~PATCH~",
-  "~DELETE~",
-  "~endpoint~",
-  "~endpoints~",
-  "~curl~",
-  "~fetch~"
+  "REST API",
+  "JSONPlaceholder",
+  "POST",
+  "PUT",
+  "PATCH",
+  "DELETE",
+  "endpoint",
+  "endpoints",
+  "curl",
+  "fetch"
 ]

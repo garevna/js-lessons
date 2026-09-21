@@ -1,4 +1,4 @@
-# ![ico-30 study] Set
+# ![ico-30 study] Set⟪Set⟫
 
 **ES6**
 
@@ -41,10 +41,10 @@ console.log(Array.from(sample))
   ► Symbol(Symbol.iterator): ƒ values()
     Symbol(Symbol.toStringTag): "Set"
   ► get size: ƒ size()
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~~
 
-## ![ico-25 icon] values()
+## ![ico-25 icon] values()⟪values⟫
 
 **~sample.values()~** создает и возвращает объект итератора
 
@@ -63,7 +63,7 @@ while (!done) {
 
 ________________________________
 
-## ![ico-25 icon] add()
+## ![ico-25 icon] add()⟪add⟫
 
 Добавляет новое значение в объект, если его там нет
 
@@ -83,7 +83,7 @@ console.log(sample)
 
 ____________________________
 
-## ![ico-25 icon] delete()
+## ![ico-25 icon] delete()⟪delete⟫
 
 Удаляет значение, если оно есть в объекте, и возвращает ~true~
 
@@ -102,7 +102,7 @@ console.log(sample)
 
 ______________________________________
 
-## ![ico-25 cap] Пример 1
+## ![ico-25 cap] Пример 1⟪Example_1⟫
 
 Мы знаем, что массивы и объекты передаются по ссылке
 
@@ -158,7 +158,7 @@ console.log(usersNewSet)
 
 _______________________________________________________
 
-## ![ico-25 icon] Пример 2
+## ![ico-25 icon] Пример 2⟪Example_2⟫
 
 Создадим итерабельный объект **~human~** и убедимся, что дублирующиеся значения будут исключены:  
 
@@ -186,7 +186,7 @@ console.log(humanSet)
 ~~~~humanSet
 ▼ Set(6) {"Alex", "Mary", "Helen", "Nicolas", "Jeck", …}
     size: 6
-  ► __proto__: Set
+  ► [[Prototype]]: Set
   ▼ [[Entries]]: Array(6)
      ▼ 0: "Alex"
           value: "Alex"
@@ -200,7 +200,7 @@ console.log(humanSet)
 
 _____________________________________________________________
 
-## ![ico-25 cap] Пример 3
+## ![ico-25 cap] Пример 3⟪Example_3⟫
 
 Создадим функцию, которая будет создавать структуру данных с уникальными элементами из переданного ей "материала"
 
@@ -239,7 +239,7 @@ console.log(createSet('A9h4G8=45*hG///19*74-78'))
 ~~~~Result
 // ▼ Set(13) {"A", "9", "h", "4", "G", …}
 //     size: (...)
-//   ► __proto__: Set
+//   ► [[Prototype]]: Set
 //   ▼ [[Entries]]: Array(13)
 //       ► 0: "A"
 //       ► 1: "9"
@@ -268,7 +268,7 @@ ___________________________________________________
 
 Но остается вопрос, как заставить работать Set с объектами в качестве элементов структуры данных
 
-## ![ico-25 cap] Пример 4
+## ![ico-25 cap] Пример 4⟪Example_4⟫
 
 Поиграем с массивом объектов **~clients~**
 
@@ -312,7 +312,7 @@ console.log(uniqueClients)
 ~~~~Результат
 ▼ Set(2) {"{"name":"Stephan","job":"java-developer"}", "{"name":"Margaret","job":"markup-developer"}"}
     size: 2
-  ►  __proto__: Set
+  ►  [[Prototype]]: Set
   ▼ [[Entries]]: Array(2)
       ▼ 0: "{"name":"Stephan","job":"java-developer"}"
           value: "{"name":"Stephan","job":"java-developer"}"

@@ -1,4 +1,4 @@
-# ![ico-30 study] Exceptions
+# ![ico-30 study] Exceptions⟪Exceptions⟫
 
 Исключения приводят к прерыванию выполнения текущей функции.
 Однако мы можем "перехватывать" исключения и не допускать прерывания выполнения кода.
@@ -9,9 +9,9 @@
 
 ☼☼☼ Бачиш об'єкт? - шукай конструктор ☼☼☼
 
-## ![ico-30 icon] Конструкторы исключений
+## ![ico-30 icon] Конструкторы исключений⟪konstruktori_ysklyuchenyi⟫
 
-### ![ico-20 icon] Error
+### ![ico-20 icon] Error⟪Error⟫
 
 Конструктор **Error** создаёт кастомный объект **~Error~**.
 
@@ -54,7 +54,7 @@ _________________
 Для каждого типа исключения есть свой конструктор.
 Однако каждый конструктор конкретного типа исключения наследует от конструктора ~Error~.
 
-### ![ico-20 icon] SyntaxError
+### ![ico-20 icon] SyntaxError⟪SyntaxError⟫
 
 ![](illustrations/SyntaxError.png)
 
@@ -75,7 +75,7 @@ console.error(syntaxError)
 
 _________________________
 
-### ![ico-20 icon] ReferenceError
+### ![ico-20 icon] ReferenceError⟪ReferenceError⟫
 
 ![](illustrations/ReferenceError.png)
 
@@ -94,7 +94,7 @@ console.error(referenceError)
 ![](illustrations/ReferenceError-example-01.png)
 ________________________
 
-### ![ico-20 icon] TypeError
+### ![ico-20 icon] TypeError⟪TypeError⟫
 
 ![](illustrations/TypeError.png)
 
@@ -115,7 +115,7 @@ console.error(typeError)
 
 ____________________________
 
-## ![ico-30 icon] Оператор throw
+## ![ico-30 icon] Оператор throw⟪operator_throw⟫
 
 Вы можете сами сгенерировать исключение с помощью оператора throw.
 
@@ -145,7 +145,7 @@ throw syntaxError
 
 ________________________
 
-## ![ico-25 icon] try ... catch
+## ![ico-25 icon] try ... catch⟪try_..._catch⟫
 
 Оператор   ~try ... catch~   позволяет перехватить исключения, возникающие в процессе выполнения кода.
 
@@ -250,7 +250,7 @@ try {
 
 ^^^
 
-### ![ico-20 icon] finally
+### ![ico-20 icon] finally⟪finally⟫
 
 Этот блок кода отработает назависимо от того, чем завершился `try...catch`
 
@@ -348,7 +348,7 @@ try {
 
 _________________________
 
-## AggregateError
+## AggregateError⟪AggregateError⟫
 
 ![ico-25 cap] **15**
 

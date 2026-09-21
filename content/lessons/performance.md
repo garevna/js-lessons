@@ -19,7 +19,7 @@
         jsHeapSizeLimit: 2217857988
         totalJSHeapSize: 33243136
         usedJSHeapSize: 19358120
-      ► __proto__: MemoryInfo
+      ► [[Prototype]]: MemoryInfo
   ► navigation: PerformanceNavigation {type: 0, redirectCount: 0}
     onresourcetimingbufferfull: null
     timeOrigin: 1546006432906.767
@@ -45,8 +45,8 @@
         secureConnectionStart: 1546006433015
         unloadEventEnd: 0
         unloadEventStart: 0
-      ► __proto__: PerformanceTiming
-  ► __proto__: Performance
+      ► [[Prototype]]: PerformanceTiming
+  ► [[Prototype]]: Performance
 ~~~
 
 ^^^
@@ -107,7 +107,7 @@ _____________________________________________________
   ► set onresourcetimingbufferfull: ƒ onresourcetimingbufferfull()
   ► get timeOrigin: ƒ timeOrigin()
   ► get timing: ƒ timing()
-  ► __proto__: EventTarget
+  ► [[Prototype]]: EventTarget
 ~~~
 
 ^^^
@@ -124,8 +124,6 @@ _______________________________________________________________
 console.log(`Старт: ${performance.now()}`)
 setTimeout(() => console.log(`Стоп: ${performance.now()}`), 2000)
 ~~~
-
-◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 Старт: 207385.50000003306
@@ -158,8 +156,6 @@ const items = window.performance.getEntriesByType('mark')
 console.log(items)
 ~~~
 
-◘◘^^{{common.c1}}^^◘◘
-
 ~~~console
 ▼ (2) [PerformanceMark, PerformanceMark]
   ▼ 0: PerformanceMark
@@ -167,15 +163,15 @@ console.log(items)
         entryType: "mark"
         name: "start"
         startTime: 2677.5999999954365
-      ► __proto__: PerformanceMark
+      ► [[Prototype]]: PerformanceMark
   ▼ 1: PerformanceMark
         duration: 0
         entryType: "mark"
         name: "end"
         startTime: 2725.9000000049127
-      ► __proto__: PerformanceMark
+      ► [[Prototype]]: PerformanceMark
     length: 2
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 _______________________________________________________________
@@ -217,8 +213,6 @@ console.log(`2: duration: ${measures[1].duration}ms`)
 performance.clearMarks()
 performance.clearMeasures()
 ~~~
-
-◘◘^^{{common.c1}}^^◘◘
 
 ~~~console
 1: duration: 0.20000000949949026ms
@@ -286,8 +280,6 @@ performance.mark('end')
 console.log(performance.getEntries())
 ~~~
 
-◘◘^^{{common.c1}}^^◘◘
-
 ~~~console
 ▼ (2) [PerformanceMark, PerformanceMark]
   ▼ 0: PerformanceMark
@@ -295,17 +287,16 @@ console.log(performance.getEntries())
         entryType: "mark"
         name: "start"
         startTime: 3348.8999999826774
-      ► __proto__: PerformanceMark
+      ► [[Prototype]]: PerformanceMark
   ▼ 1: PerformanceMark
         duration: 0
         entryType: "mark"
         name: "end"
         startTime: 3349.099999992177
-      ► __proto__: PerformanceMark
+      ► [[Prototype]]: PerformanceMark
     length: 2
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
-
 
 ◘◘![ico-20 cap] ** 5**◘◘
 
@@ -329,13 +320,13 @@ fetch('https://httpbin.org')
         entryType: "mark"
         name: "start"
         startTime: 2684.400000027381
-      ► __proto__: PerformanceMark
+      ► [[Prototype]]: PerformanceMark
   ▼ 1: PerformanceMeasure
         duration: 453.5999999498017
         entryType: "measure"
         name: "fetchDuration"
         startTime: 2684.400000027381
-      ► __proto__: PerformanceMeasure
+      ► [[Prototype]]: PerformanceMeasure
   ▼ 2: PerformanceResourceTiming
         connectEnd: 0
         connectStart: 0
@@ -359,15 +350,15 @@ fetch('https://httpbin.org')
         startTime: 2684.5999999786727
         transferSize: 0
         workerStart: 0
-      ► __proto__: PerformanceResourceTiming
+      ► [[Prototype]]: PerformanceResourceTiming
   ▼ 3: PerformanceMark
         duration: 0
         entryType: "mark"
         name: "end"
         startTime: 3137.9999999771826
-      ► __proto__: PerformanceMark
+      ► [[Prototype]]: PerformanceMark
     length: 4
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ^^^
@@ -375,7 +366,6 @@ fetch('https://httpbin.org')
 _______________________________________________________________
 
 #### ![ico-20 icon] getEntriesByName
-
 
 ◘◘![ico-20 cap] ** 6**◘◘
 
@@ -417,9 +407,9 @@ fetch('https://httpbin.org')
         startTime: 6048.500000033528
         transferSize: 0
         workerStart: 0
-      ► __proto__: PerformanceMark
+      ► [[Prototype]]: PerformanceMark
     length: 1
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ^^^
@@ -450,8 +440,6 @@ pictures
 console.log(performance.getEntriesByName('start'))
 ~~~
 
-◘◘^^{{common.c1}}^^◘◘
-
 ~~~console
 ▼ (4) [PerformanceMark, PerformanceMark, PerformanceMark, PerformanceMark]
   ► 0: PerformanceMark {name: "start", entryType: "mark", startTime: 2465.700000000652, duration: 0}
@@ -459,7 +447,7 @@ console.log(performance.getEntriesByName('start'))
   ► 2: PerformanceMark {name: "start", entryType: "mark", startTime: 2467.1000000089407, duration: 0}
   ► 3: PerformanceMark {name: "start", entryType: "mark", startTime: 2467.30000001844, duration: 0}
     length: 4
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 _______________________________________________________________
@@ -499,9 +487,9 @@ console.log(performance.getEntriesByType('resource'))
         startTime: 19113.49999997765
         transferSize: 0
         workerStart: 0
-      ► __proto__: PerformanceResourceTiming
+      ► [[Prototype]]: PerformanceResourceTiming
         length: 1
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ^^^
@@ -542,9 +530,9 @@ fetch('https://httpbin.org/')
         startTime: 24782.19999995781
         transferSize: 0
         workerStart: 0
-      ► __proto__: PerformanceResourceTiming
+      ► [[Prototype]]: PerformanceResourceTiming
         length: 1
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ^^^

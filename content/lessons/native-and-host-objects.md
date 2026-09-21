@@ -140,7 +140,6 @@ sample.page()
 
 ____________________________________________
 
-
 ### ![ico-20 icon] {{p25}}
 
 {{p26}}
@@ -222,7 +221,7 @@ var figure = {
     color:"red"
     radius:100
     type:"Окружность"
-  ► __proto__:Object
+  ► [[Prototype]]:Object
 ~~~
 
 {{p45}}
@@ -236,7 +235,7 @@ var figure = {
 ^^^[__proto__]
 
 ~~~console
-▼ __proto__
+▼ [[Prototype]]
    ► constructor: ƒ Object()
    ► hasOwnProperty: ƒ hasOwnProperty()
    ► isPrototypeOf: ƒ isPrototypeOf()
@@ -367,9 +366,9 @@ var obj = new Sample()
 
 ~~~console
 ▼ Sample {}
-    ▼ __proto__:
+    ▼ [[Prototype]]:
         ► constructor: ƒ Sample( params )
-        ► __proto__: Object
+        ► [[Prototype]]: Object
 ~~~
 
 {{p83}}
@@ -388,7 +387,7 @@ Sample.prototype
 ~~~console
 ▼ {constructor: ƒ}
     ► constructor: ƒ Sample(params)
-    ► __proto__: Object
+    ► [[Prototype]]: Object
 ~~~
 
 {{p91}}
@@ -433,8 +432,6 @@ var func = new Function(funcText)
 console.log(func)
 func()
 ~~~
-
-**Result:**
 
 ~~~console
 ƒ anonymous(

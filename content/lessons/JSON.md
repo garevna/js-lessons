@@ -16,7 +16,7 @@
     ► parse: ƒ parse()
     ► stringify: ƒ stringify()
       Symbol(Symbol.toStringTag): "JSON"
-    ▼ __proto__:
+    ▼ [[Prototype]]:
         ► constructor: ƒ Object()
         ► hasOwnProperty: ƒ hasOwnProperty()
         ► isPrototypeOf: ƒ isPrototypeOf()
@@ -183,10 +183,10 @@ JSON.parse(x)
         color: "green"
       ► position: (2) [250, 250]
         size: 200
-      ► __proto__: Object
+      ► [[Prototype]]: Object
     name: "sample"
     type: "figure"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ___________________

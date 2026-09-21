@@ -31,6 +31,30 @@ const LESSONS = path.join(root, 'public/lessons')
 const REFERENCE = 'ru'
 const LANGS = ['ru', 'eng', 'ua']
 const { resolve } = require('./lib/phrase-refs')
+const { convertStringForAnchor } = require('../src/configs/convertStringForAnchor')
+
+const HEADING = /^#{1,6}\s+\S/
+
+/**
+ * The anchor a heading answers to, written into the page at build time.
+ *
+ *   ## ![ico-25 icon] Супер в литералах объектов⟪super_in_object_literals⟫
+ *
+ * The id used to be made from whatever the heading said in the language being
+ * read, so the same section was #super_v_lyteralakh_obъektov in Russian and
+ * #super_in_object_literals in English. Switch language with a section open
+ * and the address in the bar no longer pointed at anything.
+ *
+ * The build is the only place that can settle this, because it is the only
+ * place that has all three languages at once. Every language gets the English
+ * anchor; where a heading has no English yet it gets the Russian one, which is
+ * still the same in all three.
+ */
+const headingText = (line) => line
+  .replace(/^#{1,6}\s+/, '')
+  .replace(/!\[[^\]]*\]/g, '')
+  .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+  .trim()
 
 const args = process.argv.slice(2)
 const check = args.includes('--check')
@@ -113,6 +137,47 @@ for (const page of pages) {
   // one line per key, from the lookup below.
   const entries = readJson(path.join(CONTENT, 'messages', `${page}.json`)) || {}
 
+  const render = (lang, report) => skeleton
+    .replace(/(?<!\{)\{\{([a-zA-Z0-9_.]+)\}\}(?!\})/g, (whole, key) => {
+      // A repeated phrase lives in the shared table, not in the page: the
+      // skeleton points at it so "или:" is one entry and one translation
+      // rather than twelve keys saying the same thing.
+      const entry = resolve(book, key) || entries[key]
+
+      if (!entry) {
+        if (report) problems.push(`${page}.${lang}: {{${key}}} has no text in any language`)
+        return whole
+      }
+      // An empty string is a key nobody has translated yet, not a paragraph
+      // that is meant to be blank — the extractor never makes a key for one.
+      return entry[lang] || entry[REFERENCE]
+    })
+    .replace(/⟦f(\d+)⟧/g, (whole, i) => {
+      const value = fragments[Number(i)]
+      if (value === undefined) {
+        if (report) problems.push(`${page}.${lang}: ⟦f${i}⟧ is not in the fragment table`)
+        return whole
+      }
+      return value
+    })
+
+  // Worked out once from the English page and then written into all three, so
+  // the three files agree on where a section lives.
+  const anchors = render('eng', false)
+    .split(/\r?\n/)
+    .filter((line) => HEADING.test(line))
+    .map((line) => convertStringForAnchor(headingText(line)))
+
+  const stamp = (text) => {
+    const eol = text.includes('\r\n') ? '\r\n' : '\n'
+    let n = 0
+    return text.split(/\r?\n/).map((line) => {
+      if (!HEADING.test(line)) return line
+      const anchor = anchors[n++]
+      return anchor ? `${line.trimEnd()}⟪${anchor}⟫` : line
+    }).join(eol)
+  }
+
   for (const lang of LANGS) {
     const translated = lang === REFERENCE
       ? 1
@@ -123,29 +188,7 @@ for (const page of pages) {
       continue
     }
 
-    const page_ = skeleton.replace(/(?<!\{)\{\{([a-zA-Z0-9_.]+)\}\}(?!\})/g, (whole, key) => {
-      // A repeated phrase lives in the shared table, not in the page: the
-      // skeleton points at it so "или:" is one entry and one translation
-      // rather than twelve keys saying the same thing.
-      const entry = resolve(book, key) || entries[key]
-
-      if (!entry) {
-        problems.push(`${page}.${lang}: {{${key}}} has no text in any language`)
-        return whole
-      }
-      // An empty string is a key nobody has translated yet, not a paragraph
-      // that is meant to be blank — the extractor never makes a key for one.
-      return entry[lang] || entry[REFERENCE]
-    })
-
-    const out = page_.replace(/⟦f(\d+)⟧/g, (whole, i) => {
-      const value = fragments[Number(i)]
-      if (value === undefined) {
-        problems.push(`${page}.${lang}: ⟦f${i}⟧ is not in the fragment table`)
-        return whole
-      }
-      return value
-    })
+    const out = stamp(render(lang, true))
 
     if (out.includes('⟦')) {
       problems.push(`${page}.${lang}: a marker survived assembly`)

@@ -1,7 +1,7 @@
 [
-  "~transaction~",
-  "~objectStoreNames~",
-  "~mode~",
-  "~readwrite~",
-  "~index~"
+  "transaction",
+  "objectStoreNames",
+  "mode",
+  "readwrite",
+  "index"
 ]

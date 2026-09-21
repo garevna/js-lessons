@@ -1,13 +1,13 @@
 [
-  "~length~",
-  "~elem~",
-  "~len~",
-  "~splice()~",
-  "~[3]~",
-  "~[3, 4]~",
-  "~[]~",
-  "~includes()~",
-  "~true~",
-  "~false~",
+  "length",
+  "elem",
+  "len",
+  "splice()",
+  "[3]",
+  "[3, 4]",
+  "[]",
+  "includes()",
+  "true",
+  "false",
   "quiz/arrayMethods"
 ]

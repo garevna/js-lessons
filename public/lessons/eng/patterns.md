@@ -1,4 +1,4 @@
-# ![ico-30 study] Design Patterns
+# ![ico-30 study] Design Patterns⟪Design_Patterns⟫
 
 If you need a bicycle, there’s no need to reinvent the wheel
 
@@ -23,7 +23,7 @@ Their book **Design Patterns: Elements of Reusable Object-Oriented Software** (1
 @@@@
 _____________________________________________________
 
-## ![ico-25 icon] Behavioural patterns
+## ![ico-25 icon] Behavioural patterns⟪Behavioural_patterns⟫
 
 The **iterator**, with which we are already familiar, is one such behavioural pattern
 
@@ -37,7 +37,7 @@ Finally, the data structure need not be a data structure at all – it could be 
 
 _____________________________________________________
 
-## ![ico-25 icon] Delegation
+## ![ico-25 icon] Delegation⟪Delegation⟫
 
 In the prototype model of inheritance, the mechanism of inheritance itself is, in essence, absent, as it is replaced by the mechanism of **delegation**
 

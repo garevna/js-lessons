@@ -1,4 +1,4 @@
-# ![ico-30 study] Скорочена форма оголошення методів
+# ![ico-30 study] Скорочена форма оголошення методів⟪Shorthand_syntax_for_declaring_methods⟫
 
 **ES6**
 

@@ -1,6 +1,6 @@
-# ![ico-35 study] Introduction. Basics
+# ![ico-35 study] Introduction. Basics⟪Introduction._Basics⟫
 
-## ![ico-30 icon] Global object
+## ![ico-30 icon] Global object⟪Global_object⟫
 
 A little ahead of time, let us introduce the concept of a **global object**.
 A **global object** is the environment in which we "live" (operate) and beyond which we cannot go.
@@ -20,7 +20,7 @@ Next we will talk about variables, i.e. the memory that will be used by our appl
 
 For our code, access to the global object is provided by the **~window~** variable.
 
-## ![ico-30 icon] Memory and data
+## ![ico-30 icon] Memory and data⟪Memory_and_data⟫
 
 Memory is a huge number of cells, each of which can contain 0 or 1.
 
@@ -65,7 +65,7 @@ You need to come up with a name for each data item, and tell the engine what dat
 This is how a **variable** is created.
 So, **variables** make it easier for you to manipulate your data and keep your operating system and running applications safe.
 
-## ![ico-30 icon] Data types
+## ![ico-30 icon] Data types⟪Data_types⟫
 
 As you have already realised, any data is stored in computer memory as a set of zeros and ones.
 In order for the engine to correctly interpret this set of zeros and ones, it must know what was stored at the given address: a number, a string or something else.

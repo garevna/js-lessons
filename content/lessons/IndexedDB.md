@@ -70,14 +70,14 @@ ___________________________________________________
 
 ~~~console
 ▼ IDBFactory
-  ▼ __proto__: IDBFactory
+  ▼ [[Prototype]]: IDBFactory
       ► cmp: ƒ cmp()
       ► databases: ƒ databases()
       ► deleteDatabase: ƒ deleteDatabase()
       ► open: ƒ open()
       ► constructor: ƒ IDBFactory()
         Symbol(Symbol.toStringTag): "IDBFactory"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 {{p37}}
@@ -151,7 +151,7 @@ const request = Object.assign(indexedDB.open('sampleDB'), {
     onerror: null
   ► onversionchange: null
     version: 1
-  ► __proto__: IDBDatabase
+  ► [[Prototype]]: IDBDatabase
 ~~~
 
 {{p60}}
@@ -249,7 +249,7 @@ versionchange
     onerror: null
     onversionchange: null
     version: 2
-  ► __proto__: IDBDatabase
+  ► [[Prototype]]: IDBDatabase
 ~~~
 
 {{p92}}
@@ -285,7 +285,7 @@ versionchange
   ► get onversionchange: ƒ onversionchange()
   ► set onversionchange: ƒ onversionchange()
   ► get version: ƒ version()
-  ► __proto__: EventTarget
+  ► [[Prototype]]: EventTarget
 ~~~~
 
 {{p98}}
@@ -329,7 +329,7 @@ indexedDB.databases()
   ► 0: {name: "sampleDB", version: 2}
   ► 1: {name: "users", version: 1}
     length: 2
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ______________________________________________________________

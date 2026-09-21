@@ -1,4 +1,4 @@
-# ![ico-30 study] The JS inheritance model
+# ![ico-30 study] The JS inheritance model⟪The_JS_inheritance_model⟫
 
 The **_JS_** inheritance model is based on the concept of a **prototype**
 
@@ -42,7 +42,7 @@ In other words, **JS** is a very concrete language ![ico-25 smile]
 
 _____________________________________________________________
 
-## ![ico-25 icon] prototype
+## ![ico-25 icon] prototype⟪prototype⟫
 
 To create an object in JS, we simply need to do the following:
 
@@ -59,7 +59,7 @@ When we do this, our object ‘magically’ acquires a property called **_~&#95;
 ~~~console
 ▼ { name: "master" }
     name: "master"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 This property is a reference to the object **~prototype~**, which actually exists
@@ -87,7 +87,7 @@ To see what exactly **~sample~** inherited from **~Object~**, let’s expand its
 ~~~~console
 ▼ { name: "master" }
     name: "master"
-  ► __proto__:
+  ► [[Prototype]]:
       ► constructor: ƒ Object()
       ► hasOwnProperty: ƒ hasOwnProperty()
       ► isPrototypeOf: ƒ isPrototypeOf()
@@ -152,7 +152,7 @@ So, let’s summarise:
 
 _________________________________________________________________
 
-## ![ico-25 icon] constructor
+## ![ico-25 icon] constructor⟪constructor⟫
 
 Now let’s look at the first thing we see in the constructor’s **~prototype~** object and in the instance’s **_~&#95;&#95;proto&#95;&#95;~_** property
 
@@ -199,8 +199,8 @@ which contains the property **~constructor~**
     name: "Sigma"
   ▼ prototype:
     ► constructor: ƒ Sigma()
-    ► __proto__: Object
-  ► __proto__: ƒ ()
+    ► [[Prototype]]: Object
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 Where does the property **~constructor~** point to? – to the function **_~Sigma~_**
@@ -275,7 +275,7 @@ Let’s take another look
 
 _________________________________________________________________________
 
-## ![ico-25 icon] this
+## ![ico-25 icon] this⟪this⟫
 
 So, we’ve already understood that any function in JS is essentially a constructor, as it has a container for ‘inheritance’ – the **_~prototype~_** property
 
@@ -330,17 +330,17 @@ Got it? ![ico-25 smile]
 
 __________________________________________________________________________
 
-## ![ico-25 icon] The prototype chain
+## ![ico-25 icon] The prototype chain⟪The_prototype_chain⟫
 
 Please note that in the previous example, we created an object **~obj~** with two nested properties **_~&#95;&#95;proto&#95;&#95;~_**
 
 ~~~console
 ▼ Sigma {name: "Google"}
     name: "Google"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
     ► say: ƒ ()
     ► constructor: ƒ Sigma()
-    ► __proto__: Object
+    ► [[Prototype]]: Object
 ~~~
 
 The first property **_~&#95;&#95;proto&#95;&#95;~_** is a reference to **_an object_**, which contains:
@@ -364,7 +364,7 @@ This means that if a property with that name exists at several levels, the value
 
 ________________________________________________________
 
-## ![ico-25 icon] The Object constructor
+## ![ico-25 icon] The Object constructor⟪The_Object_constructor⟫
 
 **~Object~** is the ‘Adam’ of all objects in JS
 
@@ -392,7 +392,7 @@ obj.__proto__ = null
 _____________________________________________________
 
 
-### ![ico-20 icon] Static properties of Object
+### ![ico-20 icon] Static properties of Object⟪Static_properties_of_Object⟫
 
 **constructor’s own properties ~Object~**
 
@@ -426,7 +426,7 @@ Properties and methods of the **Object** object that are not contained within th
   ► seal: ƒ seal()
   ► setPrototypeOf: ƒ setPrototypeOf()
   ► values: ƒ values()
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 ~~~~
 
 As they are not passed to instances, they are referred to as **_static_**
@@ -447,9 +447,9 @@ and print it to the console:
 ~~~console
 ▼ { name: "circle" }
     name: "circle"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
         type: "figure"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 As you can see, we have once again managed without the keyword **~new~**,
@@ -486,11 +486,11 @@ The new instance ~test~ inherits everything from the object ~sample~, including 
 ~~~console
 ▼ { draw: ƒ }
     draw: ƒ ()
-  ▼ __proto__:
+  ▼ [[Prototype]]:
         name: "circle"
-      ► __proto__:
+      ► [[Prototype]]:
             type: "figure"
-          ► __proto__: Object
+          ► [[Prototype]]: Object
 ~~~
 
 Admittedly, we don’t have any class emulation here (the **~constructor~** property is missing from the prototype chain) and the **~instanceof~** statement becomes useless
@@ -499,12 +499,12 @@ But at least it’s all above board! [ico-25 smile]
 
 _______________________________________________________________________
 
-### ![ico-20 icon] Object.&#95;&#95;proto&#95;&#95;
+### ![ico-20 icon] Object.&#95;&#95;proto&#95;&#95;⟪Object.&#95;&#95;proto&#95;&#95;⟫
 
 Let’s print the **_~&#95;&#95;proto&#95;&#95;~_** property of the **~Object~** constructor to the console
 
 ~~~~console
-▼ __proto__: ƒ ()
+▼ [[Prototype]]: ƒ ()
     ► apply: ƒ ()
       arguments: (...)
     ► bind: ƒ ()
@@ -519,7 +519,7 @@ Let’s print the **_~&#95;&#95;proto&#95;&#95;~_** property of the **~Object~**
     ► set arguments: ƒ ()
     ► get caller: ƒ ()
     ► set caller: ƒ ()
-    ► __proto__: Object
+    ► [[Prototype]]: Object
 ~~~~
 
 and now let’s print the **~prototype~** property of the **Function** constructor to the console
@@ -540,7 +540,7 @@ and now let’s print the **~prototype~** property of the **Function** construct
     ► set arguments: ƒ ()
     ► get caller: ƒ ()
     ► set caller: ƒ ()
-    ► __proto__: Object
+    ► [[Prototype]]: Object
 ~~~~
 
 It is clear that **~Object~** inherits from **~Function~**, which makes sense, since **~Object~** is a constructor, i.e. a function
@@ -562,7 +562,7 @@ Now that’s what I call ‘Siamese twins’! [ico-25 smile]
 
 _____________________________________________________
 
-## ![ico-25 cap] Example
+## ![ico-25 cap] Example⟪Example⟫
 
 The host object  **~console~**  has properties   ~log~,  ~dir~,  ~info~,  ~warn~,  ~error~...
 

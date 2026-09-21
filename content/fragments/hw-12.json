@@ -1,10 +1,10 @@
 [
-  "~pageId~",
-  "~startTime~",
-  "~hashchange~",
-  "~window~",
-  "~localStorage~",
-  "~click~",
-  "~winner~",
-  "~src~"
+  "pageId",
+  "startTime",
+  "hashchange",
+  "window",
+  "localStorage",
+  "click",
+  "winner",
+  "src"
 ]

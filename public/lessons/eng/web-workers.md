@@ -1,4 +1,4 @@
-# ![ico-30 study] Web-workers
+# ![ico-30 study] Web-workers⟪Web-workers⟫
 
 Background (parallel) threads in JavaScript are emulated using workers
 
@@ -38,8 +38,8 @@ To understand how it does this, let’s take a look at the prototype of its cons
       ► set onerror: ƒ onerror()
       ► get onmessage: ƒ onmessage()
       ► set onmessage: ƒ onmessage()
-      ► __proto__: EventTarget
-  ► __proto__: ƒ EventTarget()
+      ► [[Prototype]]: EventTarget
+  ► [[Prototype]]: ƒ EventTarget()
 [[Scopes]]: Scopes[0]
 ~~~
 
@@ -50,7 +50,7 @@ So it’s all very simple:
 
 __________________________________________
 
-## ![ico-25 icon] onmessage
+## ![ico-25 icon] onmessage⟪onmessage⟫
 
 • in the **worker**’s code, you need to set up an **_message_** event handler, which will be triggered when messages are received from the main script
 Like all event handlers, it receives an event object
@@ -63,7 +63,7 @@ onmessage = async function (event) {
 }
 ~~~
 
-## ![ico-25 icon] postMessage
+## ![ico-25 icon] postMessage⟪postMessage⟫
 
 • You can send a message from the **worker** to the script in the main thread (which launched the **worker**)
 
@@ -160,7 +160,7 @@ onmessage = function (event) {
 {{{web-worker-sample-2.js}}}
 ___________________________________________________
 
-## ![ico-25 icon] importScripts
+## ![ico-25 icon] importScripts⟪importScripts⟫
 
 The importScripts method allows scripts to be imported into the body of the worker
 
@@ -182,7 +182,7 @@ The generated digest is sent back to the main script
 {{{web-worker-sample-3.js}}}
 ___________________________________________________
 
-## ![ico-25 icon] MessageChannel
+## ![ico-25 icon] MessageChannel⟪MessageChannel⟫
 
 ◘◘![ico-25 cap] ** 4**◘◘
 

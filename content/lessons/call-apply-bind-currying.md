@@ -4,7 +4,6 @@
 
 ____________________________________________
 
-
 ## ![ico-25 icon] Currying
 
 {{p3}}
@@ -78,7 +77,6 @@ alpha,betta,figure,smile
 
 _______________________________________________________
 
-
 ◘◘![ico-25 cap] **11**◘◘
 
 ~~~js
@@ -102,8 +100,6 @@ console.log(curried)
 {{p19}}
 {{p20}}
 {{p21}}
-
-**{{common.c2}}**
 
 ~~~console
 ƒ ( second ) {
@@ -150,8 +146,6 @@ rectFunc(50, 50, 150, 150)
 lineFunc(20, 30, 200, 200)
 ~~~
 
-**{{common.c2}}**
-
 ~~~console
 Функция func вызвана в контексте объекта figure
      c аргументами circle,100,120,80
@@ -184,8 +178,6 @@ console.log(test[1]('IE'))
 console.log(test[2]('IE'))
 ~~~
 
-**{{common.c2}}**
-
 ~~~console
 ► (2) ["Google", "IE"]
 ► (3) ["Google", "Mozilla", "IE"]
@@ -212,14 +204,11 @@ var test = sample('Google', 'Mozilla', 'Safari')
 for (var num of [0, 1, 2]) console.log(test[num]('IE'))
 ~~~
 
-**{{common.c2}}**
-
 ~~~console
 ► (2) ["Google", "IE"]
 ► (3) ["Google", "Mozilla", "IE"]
 ► (4) ["Google", "Mozilla", "Safari", "IE"]
 ~~~
-
 
 _____________________________________
 
@@ -235,8 +224,6 @@ function func () {
 // func()()()()()()()()()()()
 (eval(`func${'()'.repeat(11)}`))
 ~~~
-
-**{{common.c2}}**
 
 ~~~console
 1
@@ -286,7 +273,6 @@ _____________________________________
 
 ◘◘![ico-25 cap] **17**◘◘
 
-
 ~~~js
 function test () {
   return Object.assign(this.bind(this, arguments[0] * 2), {
@@ -295,7 +281,6 @@ function test () {
 }
 
 test = test.bind(test, 1)
-
 
 console.log(test ()()()()()().result)  // 64
 ~~~

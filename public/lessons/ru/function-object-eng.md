@@ -1,7 +1,6 @@
-# ![ico-30 study] Object 'function'
+# ![ico-30 study] Object 'function'⟪Object_-function-⟫
 
 _______________________________________
-
 
 **The function is a _callable object_**
 **A function associated with an object through a property is called a _method_**
@@ -10,7 +9,7 @@ _______________________________________
 
 _______________________________________________
 
-## ![ico-25 icon] arguments
+## ![ico-25 icon] arguments⟪arguments⟫
 
 JavaScript functions have a built-in **~arguments~** object
 
@@ -49,7 +48,7 @@ testArguments(27, false, 'Fill', [7, 4, 5], null)
 
 ______________________________________
 
-### ![ico-20 icon] arguments.callee
+### ![ico-20 icon] arguments.callee⟪arguments.callee⟫
 
 The **~arguments~** object has a property **_~callee~_** - a link to the function being executed (the “master” function of the ~arguments~ object)
 
@@ -228,7 +227,7 @@ for (var n = 0; n < 5; n++) {
 
 _______________________________________________
 
-## ![ico-25 icon] Callable object
+## ![ico-25 icon] Callable object⟪Callable_object⟫
 
 In this sense, the function can be compared to ![ico-30 ambulance]
 
@@ -263,7 +262,7 @@ What's inside ![ico-20 ambulance] is the **execution context**
 
 ^^^
 
-## ![ico-25 icon] Call context
+## ![ico-25 icon] Call context⟪Call_context⟫
 
 The calling context is **object**
 
@@ -328,7 +327,7 @@ for (var funcName of ['first', 'second', 'third']) window[funcName]()
 
 ____________________________
 
-### ![ico-20 icon] Call context reference
+### ![ico-20 icon] Call context reference⟪Call_context_reference⟫
 
 When an ambulance is called, it receives a link to the call object.
 
@@ -352,7 +351,7 @@ For example, for the function ![ico-20 ambulance]
 
 _________________________________________
 
-## ![ico-25 icon] Execution context
+## ![ico-25 icon] Execution context⟪Execution_context⟫
 
 ![ico-20 warn] Each function call results in the creation of a new execution context.
 
@@ -375,7 +374,7 @@ What will be present in this context?
 
 _____________________________________________
 
-### ![ico-20 icon] Lexical Environment
+### ![ico-20 icon] Lexical Environment⟪Lexical_Environment⟫
 
 ^^When a function is called, it is activated^^
 ^^It needs somewhere to safely “place” its data with which it will work^^
@@ -395,7 +394,7 @@ This object is called **~LexicalEnvironment~**.
 
 ______________________________________________
 
-### ![ico-20 icon] hoisting
+### ![ico-20 icon] hoisting⟪hoisting⟫
 
 So, after calling the function:
 
@@ -499,7 +498,7 @@ console.log(treg)  // 5
 
 ________________________________
 
-### ![ico-20 icon] Scope
+### ![ico-20 icon] Scope⟪Scope⟫
 
 **~Scope~** limits the access and visibility of variable and function identifiers.
 
@@ -606,8 +605,6 @@ console.info('Exited the execution context of the function showSample')
 console.info(`Now sample === ${sample}`)
 ~~~
 
-**The result of code execution:**
-
 ~~~console
 Entered the execution context of the function showSample
 sample === function sample () {}
@@ -682,7 +679,7 @@ console.info(`(global) ${sample}`)
 
 ____________________________________
 
-### ![ico-20 icon] Цепочка областей видимости
+### ![ico-20 icon] Цепочка областей видимости⟪Scope_chain⟫
 
 Итак, функция может использовать какие-то переменные, которых нет в ее ~LexicalEnvironment~
 
@@ -696,7 +693,7 @@ ____________________________________
 
 _______________________________________
 
-### ![ico-20 icon] this
+### ![ico-20 icon] this⟪this⟫
 
 **~this~** - это еще одна составляющая контекста исполнения функции
 
@@ -777,7 +774,7 @@ girl()         // window
 
 ________________________________________
 
-## ![ico-25 icon] prototype
+## ![ico-25 icon] prototype⟪prototype⟫
 
 • Функцию как **_объект_** нельзя вывести с помощью метода ~console.log~
 • Для этой цели следует использовать метод **~console.dir~**
@@ -797,8 +794,8 @@ console.dir(sample)
       name: "sample"
     ▼ prototype:
         ▶ constructor: ƒ sample()
-        ▶ __proto__: Object
-    ▶ __proto__: ƒ ()
+        ▶ [[Prototype]]: Object
+    ▶ [[Prototype]]: ƒ ()
       [[FunctionLocation]]: VM476:1
     ▼ [[Scopes]]: Scopes[1]
         ▶ 0: Global {type: "global", name: "", object: Window}
@@ -821,6 +818,6 @@ _____________________
 
 ___________________________________
 
-## [![ico-30 hw] Упражнения](test/functionObject)
+## [![ico-30 hw] Упражнения](test/functionObject)⟪uprazhnenyya⟫
 
 [![ico-20 link] ^^w3schools^^](https://www.w3schools.com/js/js_scope.asp)

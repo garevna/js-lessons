@@ -1,4 +1,4 @@
-# Deeper into iterating methods
+# Deeper into iterating methods⟪Deeper_into_iterating_methods⟫
 
 [◄◄◄ Array iterating methods ◄◄◄](page/Array-iterating-methods.md)
 
@@ -27,7 +27,7 @@ This will remind you that ![ico-20 warn] the **first and required argument of an
 
 _____________________________________________
 
-## ![ico-25 icon] Cycle decorator
+## ![ico-25 icon] Cycle decorator⟪Cycle_decorator⟫
 
 The advantages of methods over loop operators are obvious.
 For example, with the help of methods, we organize chain calculations, and loop operators "break" a beautiful chain, breaking the harmony of our code.
@@ -39,7 +39,6 @@ Loops ~for...of~ and ~for...in~ greatly facilitated the work of iterating on arr
 When we wrap a loop in a function (method), we enable on-chain computing.
 
 So, iterative methods can be interpreted as functional "wrappers" for **~for...of~** operator.
-
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -89,8 +88,6 @@ Array.prototype.iterate = function (func) {
 ;[49, 4, 25].iterate(Math.sqrt)
 ~~~
 
-Result:
-
 ~~~console
 ► (3) [7, 2, 5]
 ~~~
@@ -103,8 +100,6 @@ and return the ~res~ array.
 const squaring = num => Math.pow(num, 2)
 ;[7, 2, 5].iterate(squaring)
 ~~~
-
-Result:
 
 ~~~console
 ► (3) [49, 4, 25]
@@ -130,8 +125,6 @@ const func = num => num < 10
 ;[108, 24, 5, 17, 1, 7].filtering(func)
 ~~~
 
-Result:
-
 ~~~console
 ► (3) [5, 1, 7]
 ~~~
@@ -140,15 +133,13 @@ Result:
 [7, 4, 1, 20, 8].filtering(item => item > 5)
 ~~~
 
-Result:
-
 ~~~console
 ► (3) [7, 20, 8]
 ~~~
 
 _____________________________________________
 
-## ![ico-25 icon] Transferring references
+## ![ico-25 icon] Transferring references⟪Transferring_references⟫
 
 Here, unfortunately, the functional purity of iterating methods ends.
 **A reference is a "master key"**, and through the reference, a function can mutate an object.
@@ -158,7 +149,7 @@ There are two ways to pass references in array iterating methods.
 The first involves passing a reference to the context of the function call as the second argument to the method.
 The second involves passing a reference to the original array to the function itself when it is called.
 
-### ![ico-20 icon] The second argument of the method
+### ![ico-20 icon] The second argument of the method⟪The_second_argument_of_the_method⟫
 
 Each method can take two arguments: a function and a reference to it's call context.
 
@@ -185,8 +176,6 @@ const sample = numbers.iterate(function (item, index, arr) {
 console.log(sample)
 ~~~
 
-Result:
-
 ~~~console
 ► (4) [15, 9, 9, 18]
 ~~~
@@ -210,8 +199,6 @@ const sample = numbers.iterate(function (item) {
 console.log(sample)
 ~~~
 
-Result:
-
 ~~~console
 ► (4) [4, 5, 7, 7]
 ~~~
@@ -227,7 +214,7 @@ However, arrow functions make the code more concise.
 
 _____________________________________
 
-### ![ico-20 icon] Passing a reference to the original array to the function-argument
+### ![ico-20 icon] Passing a reference to the original array to the function-argument⟪Passing_a_reference_to_the_original_array_to_the_function-argument⟫
 
 **function-argument** has three optional formal parameters.
 The first is the **current element** of the array.
@@ -237,7 +224,6 @@ The third is a reference to the original array.
 Passing this ‘master key’ to a function argument severely compromises the method’s functional purity and opens the door to a host of **side effects**
 
 The following example shows how this works.
-
 
 ◘◘![ico-20 cap] ** 6**◘◘
 
@@ -258,8 +244,6 @@ const sample = numbers.iterate((item, index, arr) => item * index - arr[0])
 console.log(sample)
 ~~~
 
-Result:
-
 ~~~console
 ► (4) [-8, -4, 10, 13]
 ~~~
@@ -268,7 +252,7 @@ Result:
 
 ___________________________________________________
 
-## ![ico-25 icon] Side effects
+## ![ico-25 icon] Side effects⟪Side_effects⟫
 
 ![ico-20 warn] Pure functions—which is what iterative methods are supposed to be—do not produce any side effects, i.e. they do not modify any external variables.
 Array iterating methods are **higher-order functions** that iterate over a source array, passing one array element at a time as an argument to the function.
@@ -283,7 +267,6 @@ That is, initially they were supposed to be pure functions that do not produce a
 But we have already shown earlier that this functional purity is violated by passing references (to the method - to the context of the function-argument call and to the original array - to the function-argument).
 
 Similarly, if we are dealing with **deep data structures**, then references are passed instead of values, which creates the possibility of side effects.
-
 
 ◘◘![ico-20 cap] ** 7**◘◘
 
@@ -350,8 +333,6 @@ browsers.iterate(storeItem, storeItem)
 console.dir(storeItem)
 ~~~
 
-Result in the console:
-
 ~~~console
 ▼ ƒ storeItem(item, index, arr)
   ▼ history: Array(5)
@@ -361,18 +342,18 @@ Result in the console:
       3: "Safari"
       4: "Edge"
       length: 5
-    ► __proto__: Array(0)
+    ► [[Prototype]]: Array(0)
     arguments: null
     caller: null
     length: 3
     name: "storeItem"
   ► prototype: {constructor: ƒ}
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 _____________________________________________
 
-## ![ico-25 icon] Idempotency
+## ![ico-25 icon] Idempotency⟪Idempotency⟫
 
 If a method every time being called returns the same result with the same argument values, then it is **_idempotent_**.
 
@@ -399,8 +380,6 @@ Array.prototype.idempotence = function (func) {
 numbers.idempotence(Math.sqrt)
 ~~~
 
-Result:
-
 ~~~console
 ► (7) [5, 4, 3, 7, 9, 8, 2]
 ~~~
@@ -414,8 +393,6 @@ numbers[6] = 125
 
 numbers.idempotence(Math.sqrt)
 ~~~
-
-Result:
 
 ~~~console
 ► (7) [5, 4, 3, 7, 9, 8, 2]
@@ -463,8 +440,6 @@ Array.prototype.idempotence = function (func) {
 numbers.idempotence(Math.sqrt)
 ~~~
 
-Result:
-
 ~~~console
 '[5,4,3,7,9,8,2]'
 ~~~
@@ -472,8 +447,6 @@ Result:
 ~~~js
 numbers.idempotence(item => item + Math.floor(Math.random() * 100))
 ~~~
-
-Result:
 
 ~~~console
 '[5,4,3,7,9,8,2]'
@@ -556,7 +529,7 @@ const randomize = item => item + Math.floor(item + Math.random() * 100)
 
 _____________________________________________
 
-## ![ico-25 icon] Examples
+## ![ico-25 icon] Examples⟪Examples⟫
 
 Passing the Call Context
 
@@ -653,7 +626,6 @@ arr.iterate(test)
 ~~~
 __________________________________________
 
-
 Using the second and third optional parameters of the function-argument:
 
 ◘◘![ico-20 cap] **14**◘◘
@@ -676,19 +648,16 @@ companList.iterate(test, browsers)
 console.log(browsers)
 ~~~
 
-Result in the console:
-
 ~~~console
 ▼ (3) [{…}, {…}, {…}]
   ► 0: {Google: "Chrome"}
   ► 1: {Mozilla: "Firefox"}
   ► 2: {Microsoft: "Edge"}
     length: 3
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ________________________________________________________________
-
 
 [◄◄◄Array Iterating Methods◄◄◄](page/Array-iterating-methods.md)
 

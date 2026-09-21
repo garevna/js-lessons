@@ -1,5 +1,5 @@
 [
-  "~'use strict'~",
-  "~strict mode~",
-  "~someText~"
+  "'use strict'",
+  "strict mode",
+  "someText"
 ]

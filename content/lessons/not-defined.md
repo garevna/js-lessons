@@ -15,8 +15,6 @@
 document.querySelectorAll(':not(:defined)')
 ~~~
 
-{{common.c1}}
-
 ~~~console
 ▶ NodeList(2) [hello-element, bye-element]
 ~~~
@@ -26,8 +24,6 @@ document.querySelectorAll(':not(:defined)')
 ~~~js
 document.querySelectorAll(':defined')
 ~~~
-
-{{common.c1}}
 
 ~~~console
 ▶ NodeList(3) [html, head, body]

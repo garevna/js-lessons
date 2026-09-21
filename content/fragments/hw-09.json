@@ -1,8 +1,8 @@
 [
-  "~typeMessage~",
-  "~setUserPresent~",
-  "~showPresent~",
-  "~showAbsent~",
-  "~changeClass~",
-  "~second-level-menu~"
+  "typeMessage",
+  "setUserPresent",
+  "showPresent",
+  "showAbsent",
+  "changeClass",
+  "second-level-menu"
 ]

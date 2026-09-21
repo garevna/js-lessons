@@ -43,8 +43,8 @@ console.dir(IDBTransaction)
       ► set oncomplete: ƒ oncomplete()
       ► get onerror: ƒ onerror()
       ► set onerror: ƒ onerror()
-      ► __proto__: EventTarget
-  ► __proto__: ƒ EventTarget()
+      ► [[Prototype]]: EventTarget
+  ► [[Prototype]]: ƒ EventTarget()
 ~~~~
 
 {{p3}}
@@ -150,7 +150,7 @@ openDB('users', 2, 'userStore')
     keyPath: null
     name: "userStore"
   ► transaction: IDBTransaction {objectStoreNames: DOMStringList, mode: "versionchange", db: IDBDatabase, error: null, onabort: null, …}
-  ► __proto__: IDBObjectStore
+  ► [[Prototype]]: IDBObjectStore
 ~~~
 
 ________________________________________________
@@ -242,7 +242,7 @@ indexedDB.open('users').onsuccess = event => {
   ► family: {mother: {…}, father: {…}}
   ► hobby: ["dancing"]
     name: "Andry"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 __________________________________________________
@@ -317,7 +317,7 @@ indexedDB.open('users').onsuccess = event => {
   ► 1: {name: "Andry", birthYear: 1998, family: {…}, hobby: Array(1)}
   ► 2: {name: "Piter", birthYear: 2001, family: {…}, hobby: Array(2)}
     length: 3
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 _____________________________________________________
@@ -371,7 +371,7 @@ indexedDB.open('users').onsuccess = event => {
     name: "hobbyIndex"
   ► objectStore: IDBObjectStore {name: "userStore", keyPath: null, indexNames: DOMStringList, transaction: IDBTransaction, autoIncrement: true}
     unique: false
-  ► __proto__: IDBIndex
+  ► [[Prototype]]: IDBIndex
 ~~~
 
 {{p82}}
@@ -454,7 +454,7 @@ getDataByIndex('hobbyIndex', 'get', 'footbal')
   ► family: {mother: {…}, father: {…}}
   ► hobby: (2) ["footbal", "fishing"]
     name: "Stephan"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ____________________________
@@ -476,7 +476,7 @@ getDataByIndex('hobbyIndex', 'getAll', 'footbal')
   ► 0: {name: "Stephan", birthYear: 1995, family: {…}, hobby: Array(2)}
   ► 1: {name: "Иван", birthYear: 2004, family: {…}, hobby: Array(2)}
     length: 2
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 ____________________________
 

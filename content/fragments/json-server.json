@@ -1,7 +1,7 @@
 [
-  "~users.json~",
-  "~z:/home/test~",
-  "~Ctrl + C~",
-  "~id~",
-  "~title~"
+  "users.json",
+  "z:/home/test",
+  "Ctrl + C",
+  "id",
+  "title"
 ]

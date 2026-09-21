@@ -151,7 +151,7 @@ _______________________
     id: 1562225761228
     name: undefined
     visit: "04.07.2019"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 {{p20}}
@@ -180,7 +180,7 @@ var user = (function (userName) {
     id: 1562226083644
     name: "Семен"
     visit: "04.07.2019"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 {{p26}}

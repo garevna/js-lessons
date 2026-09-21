@@ -1,7 +1,7 @@
 [
-  "~strategyError~",
-  "~dataError~",
-  "~keyError~",
-  "~keyPropError~",
-  "~arrayFieldError~"
+  "strategyError",
+  "dataError",
+  "keyError",
+  "keyPropError",
+  "arrayFieldError"
 ]

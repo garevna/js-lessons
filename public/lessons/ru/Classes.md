@@ -1,23 +1,20 @@
-# ![ico-30 study] Классы
+# ![ico-30 study] Классы⟪Classes⟫
 
 **ES6 (ECMAScript 2015)**
 
-^^Прокси для работы с прототипной моделью наследования^^
+••Прокси для упрощения работы с прототипной моделью наследования••
 
 Поскольку прототипная модель наследования базируется на функции (конструкторе), то прокси-объект ~**class**~ является, по сути, оберткой для этой функции-конструктора.
 
 Эта обертка значительно облегчает построение довольно сложных цепочек наследования за счет более простого и удобного интерфейса прокси-объекта.
 
-Однако следует помнить, что это всего лишь целлофан, в который завернули все тот же конструктор.
+Однако следует помнить, что это всего лишь 'целлофан', в который завернули все тот же конструктор.
 
 ____________________________________________________________________
 
-## ![ico-25 icon] Синтаксис
+## ![ico-25 icon] Синтаксис⟪Syntax⟫
 
-![ico-20 warn] Код внутри тела класса всегда выполняется в **~strict mode~**
-^^даже если вы не использовали директиву **_~use strict~_**^^
-
-![ico-20 memo] "Тело" класса всегда заключено в фигурные скобки ~{ }~
+![ico-20 memo] 'Тело' класса всегда заключено в фигурные скобки ~{ }~
 
 ~~~js
 class User {
@@ -25,7 +22,7 @@ class User {
 }
 ~~~
 
-![ico-20 memo] Внутри фигурных скобок объявляется конструктор (**~constructor~**)
+![ico-20 memo] Внутри фигурных скобок, как правило, объявляется конструктор (**~constructor~**)
 
 ~~~js
 class User {
@@ -49,14 +46,23 @@ class User {
 }
 ~~~
 
-![ico-20 memo] Метод **_constructor_** создает и инициализирует экземпляра класса
-![ico-20 memo] Все собственные свойства экземпляра должны быть объявлены в конструкторе  **~constructor()~**
-![ico-20 memo] Создаваемые в конструкторе класса свойства и методы могут быть **приватными** и **публичными**
-^^( как и в обычном конструкторе )^^
+••••
+![ico-20 warn] Код внутри тела класса всегда выполняется в **_strict mode_**
+^^даже если вы не использовали директиву **_use strict_**^^
+••••
 
-В обычном конструкторе контекстом вызова приватных методов будет глобальный объект ~window~
-![ico-20 warn] В конструкторе класса контекстом вызова приватных методов будет ~undefined~
+![ico-20 memo] Метод **~constructor~** создает и инициализирует экземпляра класса.
 
+•••• memo
+![ico-20 memo] Все собственные свойства экземпляра должны быть объявлены в конструкторе **_constructor()_**.
+![ico-20 memo] Создаваемые в конструкторе класса свойства и методы
+могут быть **приватными** и **публичными** ^^(как и в обычном конструкторе)^^
+••••
+
+•••• none
+![ico-20 memo]В обычном конструкторе контекстом вызова приватных методов будет глобальный объект **_window_**
+![ico-20 warn] В конструкторе класса контекстом вызова приватных методов будет **_undefined_**
+••••
 ____________________________________
 
 ♦♦♦1♦♦♦
@@ -67,65 +73,77 @@ class User {
     const privateVar = prompt('Set privateVar value:')
 
     function showPrivate () {
-      console.log(`Ай-яй-яй, у меня контекст вызова ${this}`)
-      console.log(`Зато я вижу приватную переменную: ${privateVar}`)
+      console.log(`Oh dear, my call context is ${this}`)
+      console.log(`But I can see the private variable: ${privateVar}`)
     }
-    this.name = name || 'Бегемот'
+    this.name = name || 'Hippopotamus'
     this.show = function () {
       showPrivate ()
     }
   }
 }
 
-const user = new User('Крокодил')
+const user = new User('Crocodile')
 user.show()
 ~~~
 
-◘◘**Result**◘◘
+{{{Classes-1-class.js}}}
 
-~~~console
+Выведем в консоль экземпляр класса **User**:
 
-Ай-яй-яй, у меня контекст вызова undefined
-Зато я вижу приватную переменную: 789
+~~~js
+console.log(user)
 ~~~
 
-Для того, чтобы избавиться от иллюзий по поводу "классов" в JS,
-создадим аналогичный экземпляр с помощью обычного конструктора
+~~~console
+▼ User {name: 'Crocodile', show: ƒ}
+    name: "Crocodile"
+  ► show: ƒ ()
+  ▼ [[Prototype]]: Object
+    ► constructor: class User
+    ► [[Prototype]]: Object
+~~~
+
+Для того, чтобы избавиться от иллюзий по поводу "классов" в JS, создадим аналогичный экземпляр с помощью обычного конструктора:
 
 ~~~js
 
 function User (name) {
   const privateVar = prompt('Set privateVar value:')
   function showPrivate () {
-    console.log(`Ай-яй-яй, у меня контекст вызова ${this}`)
-    console.log(`Зато я вижу приватную переменную: ${privateVar}`)
+    console.log(`Oh dear, my call context is ${this}`)
+    console.log(`But I can see the private variable: ${privateVar}`)
   }
-  this.name = name || 'Бегемот'
+  this.name = name || 'Hippopotamus'
   this.show = function () {
     showPrivate ()
   }
 }
 
-const user = new User('Крокодил')
+const user = new User('Crocodile')
 user.show()
 ~~~
 
-◘◘**Result**◘◘
+{{{Classes-1-function.js}}}
 
-~~~console
+Выведем в консоль экземпляр **user**, созданный конструктором, и посмотрим на то, чем он отличается от экземляра класса: ![ico-20 smile]
 
-Ай-яй-яй, у меня контекст вызова [object Window]
-Зато я вижу приватную переменную: 789
+~~~js
+console.log(user)
 ~~~
 
-Выведем в консоль оба варианта **user** и найдем те косметические отличия, которые там должны быть ![ico-20 smile]
-
-••constructor: class User    /    constructor: ƒ User(name)••
+~~~console
+▼ User {name: 'Crocodile', show: ƒ}
+    name: "Crocodile"
+  ► show: ƒ ()
+  ▼ [[Prototype]]: Object
+    ► constructor: ƒ User(name)
+    ► [[Prototype]]: Object
+~~~
 
 _______________________________________________
 
-## ![ico-25 icon] class declaration
-
+## ![ico-25 icon] class declaration⟪class_declaration⟫
 
 ![ico-20 error] **hoisting**
 
@@ -140,31 +158,42 @@ class Picture {
   constructor (url, width) {
     this.elem = document.createElement('img')
     this.elem.src = url
-    this.width = width
+    this.elem.width = width
   }
 }
 
-typeof Picture  // "function"
+const x = new Picture('images/hong-kong-1990268__340.jpg', 200)
+document.body.appendChild(x.elem)
 ~~~
 
-• ![ico-20 warn] ^^объявленный класс невозможно удалить динамически, без перезагрузки страницы^^
-• ^^В этом примере идентификатор  **_~Picture~_**  уже занят, и никакие магические заклинания не помогут переопределить его  содержание^^
+{{{Classes-2.js}}}
 
-^^если обычный конструктор JS можно вызвать и как функцию, и как конструктор ( с ключевым словом **~new~** ), ^^
-^^то конструктор класса вызвать без ключевого слова **~new~**  нельзя - будет сгенерировано исключение **_~TypeError~_**^^
+•••• none
+![ico-20 warn] объявленный класс невозможно удалить динамически, без перезагрузки страницы.
+![ico-20 warn] Идентификатор класса невозможно переопределить (т.е. невозможно объявить переменную с таким же именем).
+![ico-20 warn] Если обычный конструктор JS можно вызвать и как функцию, и как конструктор (с ключевым словом **_new_**), то конструктор класса вызвать без ключевого слова **_new_**  нельзя - будет сгенерировано исключение **_TypeError_**
+
+••••
 
 ~~~js
-const x = new Picture('http://www.radioactiva.cl/wp-content/uploads/2018/05/pikachu.jpg', 200)
-document.body.appendChild(x.elem)
+const x = Picture('images/hong-kong-1990268__340.jpg', 200)
+~~~
+
+~~~console
+<p class="error-message">Uncaught TypeError&colon; Class constructor Picture cannot be invoked without 'new'</p>
+~~~
+
+~~~js
+typeof Picture  // "function"
 ~~~
 
 __________________________________________________
 
-## ![ico-25 icon] class expression
+## ![ico-25 icon] class expression⟪class_expression⟫
 
 **class expression может быть именованным или аниномным**
 
-### ![ico-20 icon] Примеры именованных классов
+### ![ico-20 icon] Примеры именованных классов⟪Examples_of_named_classes⟫
 
 ♦♦♦3♦♦♦
 
@@ -180,17 +209,14 @@ const Picture = class {
 console.dir(Picture)
 ~~~
 
-◘◘**Результат в консоли:**◘◘
-
 ~~~console
-
 ▼ class Picture
     arguments: (...)
     caller: (...)
     length: 0
     name: "Picture"
   ► prototype: {constructor: ƒ}
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 Однако если мы создадим экземпляр этого класса, и посмотрим на него в консоли, то мы увидим, что имя класса отсутствует
@@ -201,15 +227,12 @@ let sample = new Picture
 console.log(sample)
 ~~~
 
-◘◘**Результат в консоли:**◘◘
-
 ~~~console
-
 ▼ Picture {elem: img}
     elem: img
-  ▼ __proto__:
-      ► constructor: class
-      ► __proto__: Object
+  ▼ [[Prototype]]:
+      ► constructor: class 
+      ► [[Prototype]]: Object
 ~~~
 
 _____________________________________________________________
@@ -228,17 +251,14 @@ const Picture = class Canvas {
 console.dir(Picture)
 ~~~
 
-◘◘**Результат в консоли:**◘◘
-
 ~~~console
-
 ▼ class Canvas
     arguments: (...)
     caller: (...)
     length: 0
     name: "Canvas"
   ► prototype: {constructor: ƒ}
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 А теперь создадим экземпляр этого класса и выведем его в консоль:
@@ -249,15 +269,12 @@ const sample = new Picture
 console.log(sample)
 ~~~
 
-◘◘**Результат в консоли:**◘◘
-
 ~~~console
-
 ▼ Canvas {elem: img}
     elem: img
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ► constructor: class Canvas
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 ~~~js
@@ -268,7 +285,9 @@ sample instanceof Picture   // true
 sample instanceof Canvas
 ~~~
 
-••![ico-20 error] Uncaught ReferenceError: Canvas is not defined••
+~~~console
+<p class="error-message">Uncaught ReferenceError&colon; Canvas is not defined</p>
+~~~
 
 Итак, при использовании class expression имя класса становится недоступным извне
 
@@ -289,6 +308,7 @@ const Sample = class Canvas {
       .appendChild(document.createElement('canvas'))
     this.resizeCanvas()
     this.canvas.style.border = '1px solid #000000'
+    this.canvas.style.background = '#ffffff'
     this.area = this.canvas.getContext('2d')
   }
 
@@ -311,6 +331,8 @@ pict.drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 pict.drawLine([{ x: 250, y: 250 }, { x: 100, y: 250 }])
 ~~~
 
+{{{Classes-5.js}}}
+
 ![ico-20 pin] Чтобы получить имя класса, нужно использовать его свойство  **name**:
 
 ~~~js
@@ -319,8 +341,7 @@ console.log ( Sample.name ) // "Canvas"
 
 ________________________________________________________
 
-
-## ![ico-25 icon] get & set
+## ![ico-25 icon] get & set⟪get_&_set⟫
 
 ^^![ico-20 warn] Свойства, объявленные в конструкторе, будут собственными свойствами экземпляра^^
 
@@ -426,10 +447,7 @@ pict.history = [
 ]
 ~~~
 
-◘◘pict◘◘
-
 ~~~console
-
 ▼ Canvas {canvas: canvas, area: CanvasRenderingContext2D}
   ► area: CanvasRenderingContext2D {canvas: canvas, globalAlpha: 1, globalCompositeOperation: "source-over", filter: "none", imageSmoothingEnabled: true, …}
   ► canvas: canvas
@@ -437,8 +455,8 @@ pict.history = [
     ► 0: {path: Array(2), lineColor: "red"}
     ► 1: {path: Array(2), lineColor: "green"}
       length: 2
-    ► __proto__: Array(0)
-  ► __proto__: Object
+    ► [[Prototype]]: Array(0)
+  ► [[Prototype]]: Object
 ~~~
 
 ^^в массив  **canvas._history_**  попали только первые два элемента ^^
@@ -453,7 +471,9 @@ pict.history = ['***']
 
 **Результат - исключение:**
 
-••![ico-20 error] History must contain path array••
+~~~console
+<p class="error-message">History must contain path array</p>
+~~~
 
 ~~~js
 pict.history = true
@@ -461,14 +481,16 @@ pict.history = true
 
 **Результат - исключение:**
 
-••![ico-20 error] History must be array••
+~~~console
+<p class="error-message">History must be array</p>
+~~~
 
 ^^![ico-20 speach] Значение свойства  **_history_**  не изменилось, ^^
 ^^а в консоль были выданы соответствующие сообщения об ошибке^^
 
 ________________________________________________________
 
-## ![ico-25 icon] Потеря контекста
+## ![ico-25 icon] Потеря контекста⟪Loss_of_context⟫
 
 ![ico-20 pin] В строгом режиме не происходит неявной передачи контекста вызова
 
@@ -484,7 +506,9 @@ drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 
 будет сгенерировано исключение:
 
-••![ico-20 error] Uncaught TypeError: Cannot read property 'area' of undefined••
+~~~console
+<p class="error-message">Uncaught TypeError&colon; Cannot read property 'area' of undefined</p>
+~~~
 
 Передачу контекста вызова нужно сделать явным образом:
 
@@ -492,10 +516,12 @@ drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 const drawLine = pict.drawLine.bind(pict)
 ~~~
 
-![ico-20 pin] ^^Потеря контекста ( ~undefined~ ) происходит вследствие того, что весь код внутри тела класса выполняется в  **_strict mode_**, хотя явного указания  'use strict'  в коде класса нет^^
-^^При отсутствии явного указания на объект, вызывающий метод, ^^
-^^в строгом режиме ~this~ не будет ссылкой на глобальный объект ~window~^^
-^^В строгом режиме ~this~ будет  ~undefined~
+![ico-20 pin] ^^Потеря контекста (~undefined~) происходит вследствие того, что весь код внутри тела класса выполняется в **~strict mode~**, хотя явного указания 'use strict'  в коде класса нет.^^
+^^При отсутствии явного указания на объект, вызывающий метод:^^
+•••• none
+в строгом режиме _this_ не будет ссылкой на глобальный объект _window_.
+В строгом режиме _this_ будет _undefined_
+••••
 
 ______________________________________________________
 
@@ -521,9 +547,11 @@ class User {
 }
 ~~~
 
-^^В этом примере контекст теряется в функции **_getProp()_**,  объявленной внутри метода **_addSomeInfo_**^^
-^^(внутренняя функция не наследует контекст вызова родительской)^^
-^^Создадим экземпляр **user** класса **User** и вызовем метод **_addSomeInfo_** в контексте объекта **user**^^
+•••• none
+В этом примере контекст теряется в функции **_getProp()_**, объявленной внутри метода **_addSomeInfo_**
+(внутренняя функция не наследует контекст вызова родительской)
+••••
+^^Создадим экземпляр **user** класса **User** и вызовем метод **~addSomeInfo~** в контексте объекта **user**^^
 
 ~~~js
 var user = new User('Grig')
@@ -533,13 +561,13 @@ user.addSomeInfo([
 ])
 ~~~
 
-**Результат**
+~~~console
+<p class="error-message">Uncaught TypeError&colon; Cannot set property 'age' of undefined</p>
+~~~
 
-••![ico-20 error] Uncaught TypeError: Cannot set property 'age' of undefined••
+^^![ico-20 yes] Внутри функции **~getProp~** контекст вызова (**~this~**) оказался ~undefined~^^
 
-^^![ico-20 yes] Внутри функции **_getProp_** контекст вызова ( **~this~** ) оказался ~undefined~^^
-
-^^Теперь используем стрелочную функцию **_getProp_**, которая не теряет контекст ![ico-20 smile]^^
+^^Теперь используем стрелочную функцию **~getProp~**, которая не теряет контекст ![ico-20 smile]^^
 
 ~~~js
 class User {
@@ -555,7 +583,7 @@ class User {
 }
 ~~~
 
-^^Создадим экземпляр **user** и вызовем метод **_addSomeInfo_**^^
+^^Создадим экземпляр **user** и вызовем метод **~addSomeInfo~**^^
 
 ~~~js
 const user = new User('Grig')
@@ -570,25 +598,22 @@ user.addSomeInfo([
 console.log(user)
 ~~~
 
-◘◘**Результат**◘◘
-
 ~~~console
-
 ▼ User {name: "Grig", age: 25, hobby: Array(2)}
     age: 25
   ► hobby: (2) ["football", "fishing"]
     name: "Grig"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ► addSomeInfo: addSomeInfo ( props ) { if ( !Array.isArray ( props ) ) return var getProp = prop => {…}
       ► constructor: class User
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 ________________________________________________________
 
-## ![ico-25 icon] Наследование
+## ![ico-25 icon] Наследование⟪Inheritance⟫
 
-### ![ico-20 icon] extends
+### ![ico-20 icon] extends⟪extends⟫
 
 Ключевое слово **~extends~** используется для создания дочернего класса
 Фактически мы передаем с помощью **~extends~** ссылку на прототип
@@ -611,7 +636,7 @@ class Provider extends Array {
 }
 ~~~
 
-^^Обратите внимание, что в конструкторе класса первым делом с помощью **super()** мы вызываем конструктор родительского класса^^
+^^Обратите внимание, что в конструкторе класса первым делом с помощью **~super()~** мы вызываем конструктор родительского класса^^
 
 ^^Создадим экземпляр класса **Provider**^^
 
@@ -620,8 +645,6 @@ let provider = new Provider
 ~~~
 
 ^^Посмотрим на цепочку прототипов ^^
-
-◘◘provider◘◘
 
 ~~~console
 
@@ -632,10 +655,10 @@ let provider = new Provider
     3: "Safari"
     4: "IE"
     length: 5
-  ▼ __proto__: Array
+  ▼ [[Prototype]]: Array
       ► constructor: class Provider
       ► valueOf: ƒ valueOf()
-      ► __proto__: Array(0)
+      ► [[Prototype]]: Array(0)
 ~~~
 
 ^^Теперь протестируем экземпляр:^^
@@ -682,18 +705,20 @@ newCanvas.drawCircle({ x: 100, y: 100 }, 100)
 newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }])
 ~~~
 
-^^![ico-20 speach] Обратите внимание, что метод **_~drawCircle()~_** находится в прототипе экземпляра^^
-^^( что логично, поскольку это унаследованный метод )^^,
-^^а метод **_~drawLine()~_** родительского класса  **Canvas** находится в прототипе прототипа ^^
-^^( что соответствует прототипной модели наследования - мы получили цепочку прототипов )^^
+••••
+Обратите внимание, что метод **_drawCircle()_** находится в прототипе экземпляра
+(что логично, поскольку это унаследованный метод)
+а метод **_drawLine()_** родительского класса  **Canvas** находится в прототипе прототипа
+(что соответствует прототипной модели наследования - мы получили цепочку прототипов)
+••••
 
 ________________________________________________________
 
-### ![ico-20 icon] super
+### ![ico-20 icon] super⟪super⟫
 
 Методы родительского класса доступны в дочернем классе посредством ключевого слова **~super~**
 
-^^![ico-20 speach] Расширим унаследованный метод **~drawLine()~**  родительского класса, добавив аргумент **_~lineWidth~_**  ( толщину линии )^^
+^^![ico-20 speach] Расширим унаследованный метод **~drawLine()~**  родительского класса, добавив аргумент **_~lineWidth~_** (толщину линии)^^
 
 ^^![ico-20 speach] Для этого определим "расширенный" метод  ~drawLine()~ внутри дочернего класса,^^
 ^^который будет вызывать  метод  ~drawLine()~ родительского класса^^
@@ -749,13 +774,13 @@ newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }], '#ffaa00', 10)
 
 ____________________________________________
 
-### ![ico-20 icon] super ()
+### ![ico-20 icon] super()⟪super⟫
 
 В предыдущих примерах мы не использовали конструктор наследующего класса
 
 ![ico-20 warning] Когда нужно добавить собственные свойства экземпляру наследующего класса, без конструктора это сделать невозможно
 
-![ico-20 warning] Первое, что нужно выполнить в конструкторе наследующего класса - вызвать метод **super()**
+![ico-20 warning] Первое, что нужно выполнить в конструкторе наследующего класса - вызвать метод **~super()~**
 
 ♦♦♦12♦♦♦
 
@@ -784,31 +809,37 @@ class ExtendedCanvas extends Canvas {
 
 В противном случае будет сгенерировано исключение:
 
-••![ico-20 error] Uncaught ReferenceError: ••
-•• Must call super constructor in derived class before accessing 'this' or returning from derived constructor••
+~~~console
+<p class="error-message">Uncaught ReferenceError&colon; Must call super constructor in derived class before accessing 'this' or returning from derived constructor</p>
+~~~
 
 _________________________________________________________
 
-### ![ico-20 icon] super в литералах объектов
+### ![ico-20 icon] super в литералах объектов⟪super_in_object_literals⟫
 
 Ключевое слово  **~super~**  можно использовать без объявления классов
 **~super~** является ссылкой на прототип объекта
 Поэтому можно использовать его для доступа к свойствам и методам объекта-прототипа
 
-••![ico-30 speach] _В примерах далее мы будем использовать объекты, объявленные в литеральной форме_••
+•••• none
+![ico-30 speach] _В примерах далее мы будем использовать объекты, объявленные в литеральной форме_
+В качестве прототипа объекта  **person**  будет выступать объект  **human**
+••••
 
-^^В качестве прототипа объекта  **person**  будет выступать объект  **human**^^
 ^^Назначать объект  **human**  прототипом объекта  **person** мы будем с помощью метода^^
 
 ~~~js
 Object.setPrototypeOf(person, human)
 ~~~
 
-^^После такого назначения внутри объекта  **person** свойства и методы объекта  **human** будут доступны с помощью ключевого слова  **~super~**^^
+^^После такого назначения внутри объекта  **person** свойства и методы объекта **human** будут доступны с помощью ключевого слова  **~super~**^^
 
-^^![ico-20 speach] В следующем примере вызовем методы  **_~place()~_**  и  **_~say()~_** прототипа **human**^^
-^^в методах   **_~getPlace()~_**  и  **_~talk()~_** объекта  **person** ^^
-^^с помощью ключевого слова **~super~** :^^
+••••
+![ico-20 speach] В следующем примере
+вызовем методы **_place()_** и **_say()_** прототипа **human**
+в методах **_getPlace()_** и **_talk()_** объекта  **person**
+с помощью ключевого слова **super**
+••••
 
 ♦♦♦13♦♦♦
 
@@ -868,25 +899,31 @@ person.talk('привет!')
 setTimeout(() => person.talk('Hello, baby!'), 2000)
 ~~~
 
-![ico-20 speach] ^^В этом примере метод  **~place()~**  прототипа  (объекта  **human**) проверяет наличие элемента с  ••id === "demo"••^^
-^^и если такой элемент найден, возвращает ссылку на него, ^^
-^^в противном случае создает такой элемент, добавляет его на страницу^^
+••••
+В этом примере
+метод **_place()_** прототипа (объекта **human**) проверяет наличие элемента с id === 'demo'
+и если такой элемент найден, возвращает ссылку на него,
+в противном случае создает такой элемент, добавляет его на страницу
+••••
 
-![ico-20 speach] ^^Объект  person  изначально не имеет свойства  **_place_**,^^
-^^но имеет собственный метод  **~getPlace()~**, который создает такое свойство,  ^^
-^^вызывая с помощью ключевого слова  **~super~** метод **~place()~**  прототипа  (объекта  **human**), ^^
-^^и присваивая возвращенное этим методом значение собственному свойству  **~place~**^^
+••••
+Объект **person** изначально не имеет свойства **_place_**
+но имеет собственный метод **_getPlace()_**, который создает такое свойство
+вызывая с помощью ключевого слова **super** метод **_place()_** прототипа (объекта **human**)
+и присваивая возвращенное этим методом значение собственному свойству **_place_**
+••••
 
-![ico-20 speach] ^^Метод  **~talk(_text_)~**  объекта  **person**^^
-^^вызывает метод  **~getPlace()~**^^
-^^до вызова метода **~say()~**  ^^
-^^прототипа  (объекта  **human**)^^
+••••
+Метод **_talk(text)_** объекта **person** вызывает метод **_getPlace()_**
+до вызова метода **_say()_** прототипа (объекта **human**)
+••••
 
-![ico-20 speach] ^^Обратите внимание, что при объявлении метода   **~place()~**  объекта  **human** ^^
-^^мы использовали стрелочную функцию, ^^
-^^а при объявлении метода  **~say()~**  ее использовать нельзя, ^^
-^^поскольку внутри методов, объявленных с помощью стрелочных функций, ^^
-^^контектом вызова будет глобальный объект^^
+••••
+Обратите внимание, что при объявлении метода **_place()_** объекта **human**
+мы использовали стрелочную функцию, а при объявлении метода **_say()_** ее использовать нельзя,
+поскольку внутри методов, объявленных с помощью стрелочных функций,
+контектом вызова будет глобальный объект.
+••••
 
 ______________________________________________________
 
@@ -1019,7 +1056,7 @@ setTimeout(() => person.talk('Hello, baby!'), 2000)
 
 ________________________________________________________
 
-## ![ico-25 icon] static
+## ![ico-25 icon] static⟪static⟫
 
 Статические методы класса объявляются с помощью ключевого слова **static**
 
@@ -1098,7 +1135,6 @@ drawLine (points) {
 
 ^^чтобы контекстом вызова был экземпляр, создаваемый конструктором^^
 
-
 ________________________________________________________
 
 ♦♦♦18♦♦♦
@@ -1134,12 +1170,11 @@ window.onresize = Canvas.resizeCanvas
 
 ____________________________________________________________________
 
-
-## ![ico-25 cap] Пример
+## ![ico-25 cap] Пример⟪Example⟫
 
 В этом примере мы будем работать с графикой [svg](external/svg)
 
-#### ![ico-20 icon] createElementNS()
+#### ![ico-20 icon] createElementNS()⟪createElementNS⟫
 
 ![ico-20 warn] Для динамического создания элементов SVG нужно использовать метод **~createElementNS()~**
 с указанием ссылки на пространство имен ( **_NS_** )
@@ -1180,7 +1215,7 @@ console.log(picture.namespaceURI)  // "http://www.w3.org/2000/svg"
 
 _______________________________________
 
-#### ![ico-20 icon] Базовый класс
+#### ![ico-20 icon] Базовый класс⟪Base_class⟫
 
 Создадим класс  **DrawFigures**, который будет создавать  элемент  svg
 с двумя методами:   **_setSize()_**  и  **~drawFigure()~**
@@ -1258,7 +1293,7 @@ circle.setAttribute('stroke-width', 8)
 
 _____________________________________________________
 
-#### ![ico-20 icon] Дочерний класс
+#### ![ico-20 icon] Дочерний класс⟪Subclass⟫
 
 ![ico-20 speach] Теперь создадим дочерний класс  **ColoredFigures**,
 расширяющий функционал родительского класса  **DrawFigures**

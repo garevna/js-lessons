@@ -1,4 +1,4 @@
-# ![ico-35 study] Array iterating methods
+# ![ico-35 study] Array iterating methods⟪Array_iterating_methods⟫
 
 These methods teach us to think within the **functional paradigm**.
 
@@ -19,7 +19,7 @@ The **function-argument** of the method has three optional formal parameters:
 
 _____________________________________________________
 
-## ![ico-30 icon] forEach()
+## ![ico-30 icon] forEach()⟪forEach⟫
 
 ![ico-20 warn] This method does not return any value.
 Let's compare the behaviour of this method with the functioning of the **~for...of~** loop.
@@ -214,12 +214,11 @@ Stephan: 41
 
 _________________________________________________
 
-### ![ico-25 icon] Function-argument call context
+### ![ico-25 icon] Function-argument call context⟪Function-argument_call_context⟫
 
 The **~forEach~** method, like almost all other array iterating methods, can take an additional argument - a reference to the ~call context~ to the **function-argument**.
 
 ![ico-20 warn] However, the function passed to the method as an argument must not be an arrow function.
-
 
 ◘◘![ico-25 cap] ** 7**◘◘
 
@@ -299,7 +298,7 @@ tags.forEach((tag, index) => {
 
 _____________________
 
-### ![ico-20 icon] Examples with the ~map~ method
+### ![ico-20 icon] Examples with the ~map~ method⟪Examples_with_the_~map~_method⟫
 
 ◘◘![ico-25 cap] **10**◘◘
 
@@ -319,7 +318,6 @@ passing it as an argument its own sequential number (0, 1, 2 ...),
 Otherwise, it returns a number - its own sequential number (0, 1, 2 ...).
 
 {{{Array-iteration-methods-2.js}}}
-
 
 ◘◘![ico-25 cap] **10**◘◘
 
@@ -361,7 +359,7 @@ Array.from(document.styleSheets)
 
 ______________________
 
-## ![ico-30 icon] map()
+## ![ico-30 icon] map()⟪map⟫
 
 This method returns a new array.
 The elements of the new array will be the values returned by the **argument function** on each iteration.
@@ -420,7 +418,7 @@ users.map((user, index, arr) => {
 
 ______________________________________________
 
-### ![ico-20 icon] Examples using the `map` method
+### ![ico-20 icon] Examples using the `map` method⟪Examples_using_the_-map-_method⟫
 
 Click on [![ico-20 link] **_link_**](https://developer.mozilla.org/en-US/docs/Web/API/Window/location?name=garevna,date=10.07.2018)
 
@@ -441,7 +439,7 @@ You should get the following result:
   ► 0: {name: "garevna"}
   ► 1: {date: "10.07.2018"}
     length: 2
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ______________________________________________
@@ -470,7 +468,7 @@ You should get the following result:
 ▼ {name: "garevna", date: "10.07.2018"}
     date: "10.07.2018"
     name: "garevna"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ______________________________________________
@@ -533,7 +531,7 @@ funcs
 ~~~
 __________________________
 
-## ![ico-25 icon] filter()
+## ![ico-25 icon] filter()⟪filter⟫
 
 The **~filter()~** method iterates over the array, checking whether the specified condition is met for each element of the array.
 The method returns a new array.
@@ -558,8 +556,6 @@ console.log(usa)
 
 ~~~
 
-◘◘**Result**◘◘
-
 ~~~console
 
 ▼ (3) [{…}, {…}, {…}]
@@ -567,7 +563,7 @@ console.log(usa)
   ► 1: {name: "Margaret Johnson", country: "USA"}
   ► 2: {name: "Robert Trump", country: "USA"}
     length: 3
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ◘◘![ico-25 cap] ** 2**◘◘
@@ -591,7 +587,7 @@ getTransactionMode('getAllKeys')  // 'readonly'
 
 _________________________________
 
-## ![ico-25 icon] find()
+## ![ico-25 icon] find()⟪find⟫
 
 The method searches the array and returns the first element that satisfies the given condition.
 
@@ -610,13 +606,11 @@ var cards = [
 cards.find(card => card.cash > 4000)
 ~~~
 
-◘◘**Result**◘◘
-
 ~~~console
 ▼ { num: "457811714", cash: 5000 }
     cash: 5000
     num: "457811714"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ___________________________
@@ -642,7 +636,7 @@ getTransactionMode('getAllKeys')  // 'readonly'
 
 _________________________
 
-## ![ico-25 icon] findIndex()
+## ![ico-25 icon] findIndex()⟪findIndex⟫
 
 Similar to the ~find()~ method, it searches the array for the first element that satisfies the given condition.
 However, it returns the index of the element instead of the element itself.
@@ -681,7 +675,7 @@ functions.findIndex(func => func.toString() === sample.toString())
 
 _______________________
 
-## ![ico-25 icon] every()
+## ![ico-25 icon] every()⟪every⟫
 
 Checks the array for the presence of elements that **do not** satisfy the given condition.
 
@@ -719,7 +713,7 @@ console.log(res)
 
 ______________________________________________
 
-## ![ico-25 icon] some()
+## ![ico-25 icon] some()⟪some⟫
 
 Checks the array for the presence of elements that satisfy the given condition.
 
@@ -769,7 +763,7 @@ people
 
 ____________________________
 
-## ![ico-25 icon] reduce()
+## ![ico-25 icon] reduce()⟪reduce⟫
 
 This method differs from its 'counterparts' in the list of formal parameters of the **function-argument**.
 Specifically, the first formal parameter of the **function-argument** will now be the **accumulator variable** rather than the current array element.
@@ -785,7 +779,6 @@ It serves a completely different purpose: it sets the initial value of the **acc
 ![ico-20 warn] **If the initial value of the accumulator is not specified, the value of the first element of the array will be used as the initial value of the accumulator**.
 
 ^^In other words, if we do not pass the second argument to the method, it will set the initial value of the **accumulator variable** equal to the value of the first element of the array being iterated over.^^
-
 
 ![ico-25 cap] Let’s consider the simplest example:
 
@@ -846,11 +839,10 @@ So far, we have been looking at an array of numbers and a numerical value for th
 
 Однак потенціал цього методу набагато більший, а його можливості — набагато ширші.
 
-### ![ico-20 icon] Examples using the reduce() method
+### ![ico-20 icon] Examples using the reduce() method⟪Examples_using_the_reduce_method⟫
 
 Let's reduce an array of strings to an object.
 To do this, we must specify the initial value of the accumulator, since the value of the first element of the array will be a string, and we want to get an object.
-
 
 ◘◘![ico-20 cap] ** 1**◘◘
 
@@ -967,7 +959,6 @@ parseInt(5000000000000000000000) // 5
 
 _________________________________________
 
-
 ◘◘![ico-20 cap] ** 6**◘◘
 
 ~~~js
@@ -999,7 +990,7 @@ array.reduce((res, item, index, arr) => {
 
 _____________________________________
 
-### Math.sqrt
+### Math.sqrt⟪Math.sqrt⟫
 
 Let’s see how the method **~reduce~** works if we pass **~Math.sqrt~** as its first argument.
 The library function **~Math.sqrt~** takes just one argument (a number) and returns the square root of that argument.
@@ -1042,7 +1033,7 @@ Therefore, the number of iterations (i.e. the number of times the square root wi
 
 _______________________________
 
-### Math.pow
+### Math.pow⟪Math.pow⟫
 
 We will now pass the library function **Math.pow** (exponentiation) as the first argument to the method **~reduce~**.
 This function takes two numeric arguments: the number to be raised to a power, and the exponent.
@@ -1086,7 +1077,7 @@ Array.prototype.pow = function () {
 
 ______________________________________
 
-### ![ico-25 hw] Tests
+### ![ico-25 hw] Tests⟪Tests⟫
 
 What will the following expressions return:
 
@@ -1112,7 +1103,7 @@ What will the following expressions return:
 
 _________________________________
 
-## ![ico-25 icon] sort()
+## ![ico-25 icon] sort()⟪sort⟫
 
 The number of iterations will be greater than the number of elements in the array.
 
@@ -1145,8 +1136,6 @@ var resArray = sourceArray.sort(function (x, y) {
 })
 ~~~
 
-◘◘**Result**◘◘
-
 ~~~console
 ▼ (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
   ► 0: {title: "bonus", value: 70}
@@ -1157,7 +1146,7 @@ var resArray = sourceArray.sort(function (x, y) {
   ► 5: {title: "salary", value: 400}
   ► 6: {title: "debt", value: 700}
     length: 7
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ^^To understand the sorting mechanism, let's log the values of the compared elements of the array to the console on each iteration:^^
@@ -1170,8 +1159,6 @@ var resArray = sourceArray
     return  x.value - y.value
   })
 ~~~
-
-◘◘**Result**◘◘
 
 ~~~console
 fond - bonus = 30
@@ -1195,7 +1182,7 @@ var resArray = sourceArray
     return  x.value - y.value
   })
 ~~~
-**log**
+
 ~~~console
 ▼ (13) [...]
   ► 0: {id: 'salary > fond', res: true}
@@ -1212,7 +1199,7 @@ var resArray = sourceArray
   ► 11: {id: 'income > debt', res: false}
   ► 12: {id: 'income > salary', res: false}
     length: 13
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 ^^^
 
@@ -1224,7 +1211,7 @@ So, unlike other iterative methods, the function passed to the method as its sol
 
 __________________________
 
-## ![ico-25 icon] flatMap()
+## ![ico-25 icon] flatMap()⟪flatMap⟫
 
 There is a line **cookie**:
 
@@ -1240,15 +1227,13 @@ We split the **cookie** string and apply the **~map~** method to the resulting a
 console.log(cookie.split('; ').map(item => item.split('='))
 ~~~
 
-◘◘**^^Result^^**◘◘
-
 ~~~console
 ▼ (3) [Array(2), Array(2), Array(2)]
   ► 0: (2) ["name", "user"]
   ► 1: (2) ["token", "Jd7-js15/84"]
   ► 2: (2) ["interest", "javascript"]
     length: 3
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 We have received an array whose elements are arrays.
@@ -1258,8 +1243,6 @@ Now we apply the **~flatMap~** method to the **cookie** array.
 ~~~js
 console.log(cookie.split('; ').flatMap(item => item.split('='))
 ~~~
-
-◘◘**^^Result^^**◘◘
 
 ~~~console
 ► (6) ["name", "user", "token", "Jd7-js15/84", "interest", "javascript"]
@@ -1279,7 +1262,7 @@ in the first case we received an array of arrays, and in the second we received 
 
 ____________________________________________________
 
-## ![ico-25 icon] keys()
+## ![ico-25 icon] keys()⟪keys⟫
 
 **Generator**
 **Returns an _iterator_ object.**
@@ -1299,18 +1282,15 @@ do {
 } while (!done)
 ~~~
 
-◘◘**^^Result^^**◘◘
-
 ~~~console
 name user
 token Jd7-js15/84
 interest javascript
 ~~~
 
-
 ______________________
 
-## ![ico-25 icon] values()
+## ![ico-25 icon] values()⟪values⟫
 
 **Generator**
 **Returns an _iterator_ object.**
@@ -1331,8 +1311,6 @@ do {
 } while (!done)
 ~~~
 
-◘◘**^^Result^^**◘◘
-
 ~~~console
 ► (2) ["name", "user"]
 ► (2) ["token", "Jd7-js15/84"]
@@ -1341,11 +1319,11 @@ do {
 
 _____________________________________________
 
-## ![ico-30 icon] Examples and tests
+## ![ico-30 icon] Examples and tests⟪Examples_and_tests⟫
 
 _________________________________________
 
-### ![ico-25 cap] Cache amount on cards
+### ![ico-25 cap] Cache amount on cards⟪Cache_amount_on_cards⟫
 
 Let´s create an array of bank cards and use the **~reduce~** method to calculate the amount of funds on all cards:
 
@@ -1371,13 +1349,11 @@ cards.reduce((result, card) => ({
 }), { num: '457855155', cash: 0 })
 ~~~
 
-◘◘**^^Result^^**◘◘
-
 ~~~console
 ▼ { num: "457855155", cash: 10300 }
     cash: 10300
     num: "457855155"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 For the purity of the result, we will additionally reset the balances on the accounts of other cards:
@@ -1395,8 +1371,6 @@ cards.reduce((result, card) => {
 
 Now the original map array will be:
 
-◘◘**^^Result^^**◘◘
-
 ~~~console
 
 ▼ (4) [{…}, {…}, {…}, {…}]
@@ -1405,13 +1379,13 @@ Now the original map array will be:
   ► 2: {num: "457855780", cash: 0}
   ► 3: {num: "457811714", cash: 0}
     length: 4
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 
 ~~~
 
 __________________________________________
 
-### ![ico-25 cap] Clearing duplicates
+### ![ico-25 cap] Clearing duplicates⟪Clearing_duplicates⟫
 
 Let´s assume that we have an array of users, and we decide to get an array of all the specialties that these users have.
 ~~~js
@@ -1435,7 +1409,6 @@ const specialities = users.map(user => user.speciality)
 
 However, as we see, many specialties will be duplicated, which we absolutely do not need.
 
-◘◘**^^specialities^^**◘◘
 ~~~console
 ▼ [...]
    0: "developer"
@@ -1486,20 +1459,18 @@ arr.reduce((result, item) => {
 }, [])
 ~~~
 
-◘◘**^^Result^^**◘◘
-
 ~~~console
 ▼ (3) ["google", "mozilla", "ie"]
     0: "google"
     1: "mozilla"
     2: "ie"
     length: 3
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 _________________________________________________
 
-### ![ico-25 cap] Number of nested segments
+### ![ico-25 cap] Number of nested segments⟪Number_of_nested_segments⟫
 
 There are several segments on the number axis:
 
@@ -1526,14 +1497,13 @@ intervals
   .map((segment, index, array) => array.filter(interval => segment.interior(interval)).length)
 ~~~
 
-◘◘**^^Result^^**◘◘
 ~~~console
 ► (9) [2, 6, 0, 5, 1, 0, 2, 0, 0]
 ~~~
 
 __________________________
 
-### ![ico-25 cap] Checking paired brackets
+### ![ico-25 cap] Checking paired brackets⟪Checking_paired_brackets⟫
 
 Task: Check the parity and correct placement of brackets.
 
@@ -1584,7 +1554,7 @@ String.prototype.testBrackets.toString().testBrackets()  // true
 {{{Array-iteration-methods-brackets.js}}}
 ___________________________________________________
 
-### ![ico-25 cap] location
+### ![ico-25 cap] location⟪location⟫
 
 ~~~js
 function getSearchObject () {
@@ -1609,7 +1579,7 @@ for (const rec in searchObject) {
 
 _____________________________________________
 
-### ![ico-25 cap] getComputedStyle
+### ![ico-25 cap] getComputedStyle⟪getComputedStyle⟫
 
 Navigate to [**_link_**](https://en.wikipedia.org/wiki/Idempotence) and execute the code in the page's console:
 

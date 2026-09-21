@@ -1,15 +1,15 @@
 [
-  "~GET~",
-  "~POST~",
-  "~PUT~",
-  "~PATCH~",
-  "~DELETE~",
-  "~endpoint~",
-  "~Hypermedia~",
-  "~гиперсвязей~",
-  "~endpoints~",
+  "GET",
+  "POST",
+  "PUT",
+  "PATCH",
+  "DELETE",
+  "endpoint",
+  "Hypermedia",
+  "гиперсвязей",
+  "endpoints",
   "https://weatherstack.com/",
-  "~id === begemot~",
-  "~_&#94;число&#94;_~",
-  "~200~"
+  "id === begemot",
+  "_&#94;число&#94;_",
+  "200"
 ]

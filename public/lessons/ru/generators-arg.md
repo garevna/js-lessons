@@ -1,10 +1,10 @@
-# ![ico-30 study] Генераторы и итераторы
+# ![ico-30 study] Генераторы и итераторы⟪heneratori_y_yteratori⟫
 
 **ES 2015**
 
 _______________________________________________________
 
-## ![ico-25 icon] Передача параметров
+## ![ico-25 icon] Передача параметров⟪peredacha_parametrov⟫
 
 У функции-генератора, как и у любой нормальной функции, могут быть формальные параметры и приватные переменные.
 
@@ -133,7 +133,7 @@ console.log('Result: ', total)
 
 _______________________________________________________
 
-## ![ico-25 icon] Аргументы метода next
+## ![ico-25 icon] Аргументы метода next⟪arhumenti_metoda_next⟫
 
 Вычисление факториала
 
@@ -193,22 +193,22 @@ iterator = (function* gen (arg) {
 ▼ {value: {…}, done: false}
     done: false
   ► value: {1572850855950[0]: "Hello"}
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 
 ▼ {value: {…}, done: false}
     done: false
   ► value: {1572850855951: "Welcome"}
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 
 ▼ {value: {…}, done: false}
     done: false
   ► value: {1572850855951[1]: "Who are you?"}
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 
 ▼ {value: {…}, done: false}
     done: false
   ► value: {1572850855951[2]: "Bye-bye..."}
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 {{{generators-26.js}}}

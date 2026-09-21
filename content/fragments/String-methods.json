@@ -1,12 +1,12 @@
 [
-  "~length~",
-  "~String~",
-  "~indexOf()~",
-  "~str.length~",
-  "~slice()~",
-  "~padStart()~",
-  "~padEnd()~",
-  "~padStart~",
-  "~padEnd~",
+  "length",
+  "String",
+  "indexOf()",
+  "str.length",
+  "slice()",
+  "padStart()",
+  "padEnd()",
+  "padStart",
+  "padEnd",
   "quiz/stringMethods"
 ]

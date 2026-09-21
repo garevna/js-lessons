@@ -1,12 +1,12 @@
 [
-  "~sample.values()~",
-  "~next()~",
-  "~sample~",
-  "~true~",
-  "~false~",
-  "~userSet~",
-  "~users~",
-  "~human~",
-  "~clients~",
-  "~testObject~"
+  "sample.values()",
+  "next()",
+  "sample",
+  "true",
+  "false",
+  "userSet",
+  "users",
+  "human",
+  "clients",
+  "testObject"
 ]

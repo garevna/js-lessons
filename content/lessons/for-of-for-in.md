@@ -439,7 +439,7 @@ console.log(cities)
     7: 'Лондон'
     whereYouLive: 'Париж'
     length: 8
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 {{p65}}

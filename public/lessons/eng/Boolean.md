@@ -1,8 +1,8 @@
-# ![ico-35 study] Logical language constructs
+# ![ico-35 study] Logical language constructs⟪Logical_language_constructs⟫
 
 In this section we will learn about logical values, logical variables, logical expressions and logical operators.
 
-## ![ico-30 icon] Variables of logical type (boolean)
+## ![ico-30 icon] Variables of logical type (boolean)⟪Variables_of_logical_type_(boolean)⟫
 
 When a person declares that his son is 18 years old, that statement will be true for one year, but before that year and after that year, that statement will be a lie. And that is on the condition that this person has a son.
 
@@ -27,7 +27,7 @@ So, our variable can take one of two possible logical values (**~true~** or **~f
 
 ______________________________________
 
-## ![ico-30 icon] Logical expressions
+## ![ico-30 icon] Logical expressions⟪Logical_expressions⟫
 
 The statement '_The apple is red and round_' can be decomposed into two parts: '_Apple is red_' + '_Apple is round_'.
 
@@ -65,7 +65,7 @@ Let's see how we can construct more complex logical expressions.
 
 _________________________________________________________________________
 
-### ![ico-25 icon] Comparison operators
+### ![ico-25 icon] Comparison operators⟪Comparison_operators⟫
 
 The simplest way to construct logical expressions is to use **comparison operators**.
 These are binary operators, meaning they have two operands.
@@ -91,7 +91,7 @@ Each character has a numeric code, and the character codes are compared.
 
 _________________________________________________________________________
 
-### ![ico-30 hw] Tests
+### ![ico-30 hw] Tests⟪Tests⟫
 
 ◘◘![ico-25 hw]** 1**◘◘
 
@@ -127,7 +127,7 @@ _________________________________________________________________________
 
 __________________________________________________________________________
 
-## ![ico-30 icon] Negation operator
+## ![ico-30 icon] Negation operator⟪Negation_operator⟫
 
 The statement ‘The apple is not red’ is the negation of the statement ‘The apple is red’.
 
@@ -149,7 +149,7 @@ JS uses the **~ !~** symbol (exclamation mark) for logical negation:
 
 _____________________________________________
 
-### ![ico-25 icon] Logical multiplication
+### ![ico-25 icon] Logical multiplication⟪Logical_multiplication⟫
 
 Syntax: ~operand1 **&&** operand2~
 Let's go back to example 1:
@@ -202,7 +202,7 @@ Note the fact that the use of the logical operator **~&&~** does not uniquely de
 
 ____________________________________________________________
 
-### ![ico-25 icon] Logical addition
+### ![ico-25 icon] Logical addition⟪Logical_addition⟫
 
 ◘◘![ico-25 coffee] **11**◘◘
 
@@ -289,7 +289,7 @@ true && true     // true
 
 _________________________________________________
 
-### ![ico-25 icon] Логическое сложение
+### ![ico-25 icon] Логическое сложение⟪lohycheskoe_slozhenye⟫
 
 Синтаксис: ~operand1 **||** operand2~
 
@@ -376,7 +376,7 @@ _________________________________________________________________________
 
 _________________________________________________________________________
 
-### ![ico-25 icon] Tests
+### ![ico-25 icon] Tests⟪Tests⟫
 
 ◘◘![ico-25 hw] ** 1**◘◘
 

@@ -15,7 +15,7 @@ formData instanceof FormData   // true
 
 ~~~~console
 ▼ FormData {}
-  ▼ __proto__: FormData
+  ▼ [[Prototype]]: FormData
       ► append: ƒ append()
       ► delete: ƒ delete()
       ► entries: ƒ entries()
@@ -29,7 +29,7 @@ formData instanceof FormData   // true
       ► constructor: ƒ FormData()
       ► Symbol(Symbol.iterator): ƒ entries()
         Symbol(Symbol.toStringTag): "FormData"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~~
 
 {{p3}}
@@ -461,7 +461,7 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/form-data/forms/all')
   ► garevna: {name: "Irina", age: "16", avatar: {…}}
   ► goblin: {name: "Grig", age: "21", avatar: {…}}
   ► safari: {name: "Grig", age: "25", avatar: {…}}
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ◘◘![ico-20 cap] 9◘◘
@@ -486,7 +486,7 @@ Frodo
     size: 15068
     type: "image/jpeg"
     webkitRelativePath: ""
-  ► __proto__: File
+  ► [[Prototype]]: File
 ~~~
 
 ◘◘![ico-20 cap] 10◘◘

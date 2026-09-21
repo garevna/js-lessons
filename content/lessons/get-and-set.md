@@ -83,7 +83,6 @@ console.log(commodity.priceUAH) // 560
 
 {{p18}}
 
-
 ~~~js
 commodity.priceUAH = 250
 
@@ -296,7 +295,7 @@ calculator.result = '5 - 8 '
     secondValue: 8
   ► get result: ƒ result()
   ► set result: ƒ result( newValue )
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 {{{get-and-set-calculator.js}}}
@@ -334,8 +333,6 @@ var human = {
 human.showState()
 ~~~
 
-**{{common.c4}}**
-
 ~~~console
 Current state: 0 (work)
 ~~~
@@ -346,14 +343,11 @@ Current state: 0 (work)
 
 {{p30}}
 
-
 ~~~js
 human.state = 'swim'
 
 human.showState()
 ~~~
-
-**{{common.c4}}**
 
 ~~~console
 Current state: 3 (swim)

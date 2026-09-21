@@ -10,9 +10,9 @@
     "ua": "Це більш компактна альтернатива формату **XML** (e<b>X</b>tensible ** M**arkup ** L**anguage)."
   },
   "p3": {
-    "ru": "**⟦f0⟧** - это встроенный нативный объект (![ico-20 warn] не конструктор)",
-    "eng": "**⟦f0⟧** - is a built-in native object (![ico-20 warn] not a constructor).",
-    "ua": "**⟦f0⟧** - є вбудованим нативним об'єктом (![ico-20 warn] не конструктор)."
+    "ru": "**~⟦f0⟧~** - это встроенный нативный объект (![ico-20 warn] не конструктор)",
+    "eng": "**~⟦f0⟧~** - is a built-in native object (![ico-20 warn] not a constructor).",
+    "ua": "**~⟦f0⟧~** - є вбудованим нативним об'єктом (![ico-20 warn] не конструктор)."
   },
   "p4": {
     "ru": "Имеет всего два метода:",
@@ -105,19 +105,19 @@
     "ua": "Відомо, що масиви та об'єкти передаються за посиланням."
   },
   "p22": {
-    "ru": "Если объект имеет плоскую структуру, то получить точную копию этого объекта можно с помощью метода **⟦f1⟧**",
-    "eng": "If an object has a flat structure, then you can get an exact copy of this object using the **⟦f1⟧** method.",
-    "ua": "Якщо об'єкт має плоску структуру, отримати точну копію цього об'єкта можна за допомогою методу **⟦f1⟧**."
+    "ru": "Если объект имеет плоскую структуру, то получить точную копию этого объекта можно с помощью метода **~⟦f1⟧~**",
+    "eng": "If an object has a flat structure, then you can get an exact copy of this object using the **~⟦f1⟧~** method.",
+    "ua": "Якщо об'єкт має плоску структуру, отримати точну копію цього об'єкта можна за допомогою методу **~⟦f1⟧~**."
   },
   "p23": {
-    "ru": "Однако если свойства объекта являются объектами или массивами, то **⟦f1⟧** скопирует ссылки на эти вложенные объекты",
-    "eng": "However, if the object's properties are objects or arrays, then **⟦f1⟧** will copy references to those nested objects.",
-    "ua": "Однак якщо властивості об'єкта є об'єктами або масивами, **⟦f1⟧** скопіює посилання на ці вкладені об'єкти."
+    "ru": "Однако если свойства объекта являются объектами или массивами, то **~⟦f1⟧~** скопирует ссылки на эти вложенные объекты",
+    "eng": "However, if the object's properties are objects or arrays, then **~⟦f1⟧~** will copy references to those nested objects.",
+    "ua": "Однак якщо властивості об'єкта є об'єктами або масивами, **~⟦f1⟧~** скопіює посилання на ці вкладені об'єкти."
   },
   "p24": {
-    "ru": "Если же выполнить сначала **⟦f2⟧**, а затем **⟦f3⟧**, то в результате мы получим точную копию объекта, а не ссылку",
-    "eng": "If we first execute **⟦f2⟧**, and then **⟦f3⟧**, the result will be the clone of the object, not a reference.",
-    "ua": "Якщо ж виконати спочатку **⟦f2⟧**, а потім **⟦f3⟧**, то в результаті ми отримаємо клони вкладених об'єктів і масивів, а не посилання на них."
+    "ru": "Если же выполнить сначала **~⟦f2⟧~**, а затем **~⟦f3⟧~**, то в результате мы получим точную копию объекта, а не ссылку",
+    "eng": "If we first execute **~⟦f2⟧~**, and then **~⟦f3⟧~**, the result will be the clone of the object, not a reference.",
+    "ua": "Якщо ж виконати спочатку **~⟦f2⟧~**, а потім **~⟦f3⟧~**, то в результаті ми отримаємо клони вкладених об'єктів і масивів, а не посилання на них."
   },
   "p25": {
     "ru": "В переменной **sample** теперь находится точная копия объекта **obj**, включая значения элементов массива **position**, а не ссылка на него",
@@ -125,14 +125,14 @@
     "ua": "У змінній **sample** тепер знаходиться точна копія об'єкта **obj**, включаючи значення елементів масиву **position**, а не посилання на нього."
   },
   "p26": {
-    "ru": "Сравним результаты  **⟦f1⟧** и  **⟦f2⟧** → **⟦f4⟧**",
-    "eng": "Let's compare the results of **⟦f1⟧** and **⟦f2⟧** → **⟦f4⟧**.",
-    "ua": "Порівняємо результати  **⟦f1⟧** та **⟦f2⟧** → **⟦f4⟧**"
+    "ru": "Сравним результаты  **~⟦f1⟧~** и  **~⟦f2⟧~** → **~⟦f4⟧~**",
+    "eng": "Let's compare the results of **~⟦f1⟧~** and **~⟦f2⟧~** → **~⟦f4⟧~**.",
+    "ua": "Порівняємо результати  **~⟦f1⟧~** та **~⟦f2⟧~** → **~⟦f4⟧~**"
   },
   "p27": {
-    "ru": "возвращает ⟦f5⟧, поскольку значение свойства  **test.position** является ссылкой на объект **obj.position**",
-    "eng": "returns ⟦f5⟧ because the value of the **test.position** property is a reference, and the value of the **obj.position** property is also a reference, and these references point to the same object.",
-    "ua": "повертає ⟦f5⟧, оскільки значення властивості  **test.position** є посиланням на об'єкт **obj.position**."
+    "ru": "возвращает ~⟦f5⟧~, поскольку значение свойства  **test.position** является ссылкой на объект **obj.position**",
+    "eng": "returns ~⟦f5⟧~ because the value of the **test.position** property is a reference, and the value of the **obj.position** property is also a reference, and these references point to the same object.",
+    "ua": "повертає ~⟦f5⟧~, оскільки значення властивості  **test.position** є посиланням на об'єкт **obj.position**."
   },
   "p28": {
     "ru": "А вот логическое выражение",
@@ -140,9 +140,9 @@
     "ua": "А ось логічний вираз:"
   },
   "p29": {
-    "ru": "вернет  ⟦f6⟧, потому что **sample.position** является другим объектом, ссылка на который не совпадает со ссылкой на объект **obj.position**",
-    "eng": "will return ⟦f6⟧ because **sample.position** is a different object whose reference is not the same as the **obj.position** object reference.",
-    "ua": "поверне ⟦f6⟧, тому що **sample.position** є іншим об'єктом, посилання на який не збігається з посиланням на об'єкт **obj.position**."
+    "ru": "вернет  ~⟦f6⟧~, потому что **sample.position** является другим объектом, ссылка на который не совпадает со ссылкой на объект **obj.position**",
+    "eng": "will return ~⟦f6⟧~ because **sample.position** is a different object whose reference is not the same as the **obj.position** object reference.",
+    "ua": "поверне ~⟦f6⟧~, тому що **sample.position** є іншим об'єктом, посилання на який не збігається з посиланням на об'єкт **obj.position**."
   },
   "p30": {
     "ru": "Лайфхак",
@@ -156,8 +156,8 @@
   },
   "p32": {
     "ru": "Для этого, прежде всего, добавим конструктору Function в prototype метод **toJSON**:",
-    "eng": "To do this, first of all, add the **⟦f7⟧** method to the prototype of constructor **Function**:",
-    "ua": "Для цього, перш за все, додамо конструктору **⟦f9⟧** у prototype метод **toJSON**:"
+    "eng": "To do this, first of all, add the **~⟦f7⟧~** method to the prototype of constructor **Function**:",
+    "ua": "Для цього, перш за все, додамо конструктору **~⟦f9⟧~** у prototype метод **toJSON**:"
   },
   "p33": {
     "ru": "Теперь сериализация объекта пройдет нормально, но метод будет включен в json-строку как текстовая строка:",
@@ -171,12 +171,12 @@
   },
   "p35": {
     "ru": "и добавим метод **parseFuncs** объекту **JSON**:",
-    "eng": "and add the method **⟦f8⟧** to the **JSON** object:",
-    "ua": "і додамо метод **⟦f8⟧** до об'єкту **JSON**:"
+    "eng": "and add the method **~⟦f8⟧~** to the **JSON** object:",
+    "ua": "і додамо метод **~⟦f8⟧~** до об'єкту **JSON**:"
   },
   "p36": {
     "ru": "Теперь мы можем смело сериализовать объект _user_ и затем парсить результат методом **parseFuncs**:",
-    "eng": "Now we can safely serialize the object **user** and then parse the result using the **⟦f8⟧** method:",
-    "ua": "Тепер ми можем з впевненістю серіалізувати об'єкт **user**, а потім розібрати результат за допомогою методу **⟦f8⟧**:"
+    "eng": "Now we can safely serialize the object **user** and then parse the result using the **~⟦f8⟧~** method:",
+    "ua": "Тепер ми можем з впевненістю серіалізувати об'єкт **user**, а потім розібрати результат за допомогою методу **~⟦f8⟧~**:"
   }
 }

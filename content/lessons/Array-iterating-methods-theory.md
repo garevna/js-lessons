@@ -40,7 +40,6 @@ _____________________________________________
 
 {{p20}}
 
-
 ◘◘![ico-20 cap] ** 1**◘◘
 
 ~~~js
@@ -89,8 +88,6 @@ Array.prototype.iterate = function (func) {
 ;[49, 4, 25].iterate(Math.sqrt)
 ~~~
 
-{{common.c4}}
-
 ~~~console
 ► (3) [7, 2, 5]
 ~~~
@@ -103,8 +100,6 @@ Array.prototype.iterate = function (func) {
 const squaring = num => Math.pow(num, 2)
 ;[7, 2, 5].iterate(squaring)
 ~~~
-
-{{common.c4}}
 
 ~~~console
 ► (3) [49, 4, 25]
@@ -130,8 +125,6 @@ const func = num => num < 10
 ;[108, 24, 5, 17, 1, 7].filtering(func)
 ~~~
 
-{{common.c4}}
-
 ~~~console
 ► (3) [5, 1, 7]
 ~~~
@@ -139,8 +132,6 @@ const func = num => num < 10
 ~~~js   
 [7, 4, 1, 20, 8].filtering(item => item > 5)
 ~~~
-
-{{common.c4}}
 
 ~~~console
 ► (3) [7, 20, 8]
@@ -185,8 +176,6 @@ const sample = numbers.iterate(function (item, index, arr) {
 console.log(sample)
 ~~~
 
-{{common.c4}}
-
 ~~~console
 ► (4) [15, 9, 9, 18]
 ~~~
@@ -209,8 +198,6 @@ const sample = numbers.iterate(function (item) {
 
 console.log(sample)
 ~~~
-
-{{common.c4}}
 
 ~~~console
 ► (4) [4, 5, 7, 7]
@@ -238,7 +225,6 @@ _____________________________________
 
 {{p57}}
 
-
 ◘◘![ico-20 cap] ** 6**◘◘
 
 ~~~js
@@ -257,8 +243,6 @@ const sample = numbers.iterate((item, index, arr) => item * index - arr[0])
 
 console.log(sample)
 ~~~
-
-{{common.c4}}
 
 ~~~console
 ► (4) [-8, -4, 10, 13]
@@ -283,7 +267,6 @@ ______________________
 {{p66}}
 
 {{p67}}
-
 
 ◘◘![ico-20 cap] ** 7**◘◘
 
@@ -350,8 +333,6 @@ browsers.iterate(storeItem, storeItem)
 console.dir(storeItem)
 ~~~
 
-{{common.c2}}
-
 ~~~console
 ▼ ƒ storeItem(item, index, arr)
   ▼ history: Array(5)
@@ -361,13 +342,13 @@ console.dir(storeItem)
       3: "Safari"
       4: "Edge"
       length: 5
-    ► __proto__: Array(0)
+    ► [[Prototype]]: Array(0)
     arguments: null
     caller: null
     length: 3
     name: "storeItem"
   ► prototype: {constructor: ƒ}
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 _____________________________________________
@@ -399,8 +380,6 @@ Array.prototype.idempotence = function (func) {
 numbers.idempotence(Math.sqrt)
 ~~~
 
-{{common.c4}}
-
 ~~~console
 ► (7) [5, 4, 3, 7, 9, 8, 2]
 ~~~
@@ -414,8 +393,6 @@ numbers[6] = 125
 
 numbers.idempotence(Math.sqrt)
 ~~~
-
-{{common.c4}}
 
 ~~~console
 ► (7) [5, 4, 3, 7, 9, 8, 2]
@@ -463,8 +440,6 @@ Array.prototype.idempotence = function (func) {
 numbers.idempotence(Math.sqrt)
 ~~~
 
-{{common.c4}}
-
 ~~~console
 '[5,4,3,7,9,8,2]'
 ~~~
@@ -472,8 +447,6 @@ numbers.idempotence(Math.sqrt)
 ~~~js
 numbers.idempotence(item => item + Math.floor(Math.random() * 100))
 ~~~
-
-{{common.c4}}
 
 ~~~console
 '[5,4,3,7,9,8,2]'
@@ -653,7 +626,6 @@ arr.iterate(test)
 ~~~
 __________________________________________
 
-
 {{p96}}
 
 ◘◘![ico-20 cap] **14**◘◘
@@ -676,19 +648,16 @@ companList.iterate(test, browsers)
 console.log(browsers)
 ~~~
 
-{{common.c2}}
-
 ~~~console
 ▼ (3) [{…}, {…}, {…}]
   ► 0: {Google: "Chrome"}
   ► 1: {Mozilla: "Firefox"}
   ► 2: {Microsoft: "Edge"}
     length: 3
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ________________________________________________________________
-
 
 {{p97}}
 

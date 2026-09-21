@@ -1,4 +1,4 @@
-# ![ico-30 study] Context
+# ![ico-30 study] Context⟪Context⟫
 
 Поговорим о контексте вызова обычной и стрелочной функции
 

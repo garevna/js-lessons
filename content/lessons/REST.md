@@ -159,7 +159,7 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')
   ► 451789: {name: "Feodor", age: 18, speciality: "hobbit"}
   ► 789451: {name: "Teodor", age: 25, hobby: "fly", speciality: "teacher"}
   ► begemot: {name: "Stephan", age: 36, speciality: "doctor"}
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 _______________________
@@ -181,7 +181,7 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/begemot')
     age: 36
     name: "Stephan"
     speciality: "doctor"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 _______________________________
@@ -204,7 +204,7 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/?name=Steph
 ▼ [{…}]
   ► 0: {name: "Stephan", age: 36, speciality: "doctor"}
     length: 1
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 {{p49}}
@@ -225,7 +225,7 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users?age=^18^')
 ▼ [{…}]
   ► 0: {name: "Feodor", age: 18, speciality: "hobbit"}
     length: 1
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ___________________________________

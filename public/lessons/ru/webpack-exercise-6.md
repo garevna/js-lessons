@@ -1,9 +1,9 @@
-# ![ico-70 webpack] Загрузчики файлов
+# ![ico-70 webpack] Загрузчики файлов⟪zahruzchyky_failov⟫
 
 ![ico-20 green-ok] file-loader
 ![ico-20 green-ok]  url-loader
 
-## ![ico-20 icon] url-loader
+## ![ico-20 icon] url-loader⟪url-loader⟫
 
 webpack резолвит любые выражения ~url()~, которые встретит в css-файлах, а также ссылки на изображения из скрипта
 
@@ -27,7 +27,7 @@ webpack может встраивать ресурсы с помощью заг�
 
 __________________________________________
 
-## ![ico-25 hw] Упражнение 6
+## ![ico-25 hw] Упражнение 6⟪Exercise_6⟫
 
 
 Создадим папку ![ico-20 folder] images в корневой папке нашего проекта и поместим туда несколько файлов изображений:
@@ -92,7 +92,7 @@ body {
 
 _________________________________
 
-### ![ico-20 npm] file-loader
+### ![ico-20 npm] file-loader⟪file-loader⟫
 
 Установим загрузчик **file-loader**
 

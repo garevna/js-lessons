@@ -1,4 +1,4 @@
-## ![ico-25 icon] BigInt
+## ![ico-25 icon] BigInt⟪BigInt⟫
 
 **ES10 (2019)**
 
@@ -10,7 +10,7 @@
 
 __________________________________________________________
 
-### ![ico-20 icon] Создание BigInt
+### ![ico-20 icon] Создание BigInt⟪sozdanye_BigInt⟫
 
 Для создания числа типа **~BigInt~** нужно просто добавить **~ n ~**:
 
@@ -33,11 +33,11 @@ typeof bigNumber // 'bigint'
 
 _____________________________________________________________
 
-### ![ico-20 icon] Приведение типов
+### ![ico-20 icon] Приведение типов⟪pryvedenye_typov⟫
 
 **~NaN~**, **~null~**, **~Infinity~** не могут быть конвертированы в **~bigint~**
 
-#### Infinity
+#### Infinity⟪Infinity⟫
 
 ~~~js
 BigInt(Infinity)
@@ -51,7 +51,7 @@ BigInt(Infinity)
     Uncaught RangeError: The number Infinity cannot be converted to a BigInt because it is not an integer
 ~~~
 
-#### NaN
+#### NaN⟪NaN⟫
 
 ~~~js
 BigInt(NaN)
@@ -65,7 +65,7 @@ BigInt(NaN)
     Uncaught RangeError: The number NaN cannot be converted to a BigInt because it is not an integer
 ~~~
 
-#### null
+#### null⟪null⟫
 
 ~~~js
 BigInt(null)
@@ -81,20 +81,20 @@ BigInt(null)
 
 _____________________________________________________
 
-#### Boolean → BigInt
+#### Boolean → BigInt⟪Boolean_→_BigInt⟫
 
 ~~~js
 BigInt(false)  // 0n
 BigInt(true)   // 1n
 ~~~
 
-#### [] → BigInt
+#### [] → BigInt⟪[]_→_BigInt⟫
 
 ~~~js
 BigInt([])   // 0n
 ~~~
 
-#### String → BigInt
+#### String → BigInt⟪String_→_BigInt⟫
 
 ~~~js
 BigInt('45')        // 45n
@@ -118,7 +118,7 @@ BigInt('45 + 8')
 
 _____________________________________________________________
 
-### ![ico-20 icon] Арифметические операции
+### ![ico-20 icon] Арифметические операции⟪aryfmetycheskye_operatsyy⟫
 
 ^^^[Арифметические операции]
 
@@ -185,7 +185,7 @@ bigArray[BigInt(1)]  // 9007199254740994n
 
 ____________________________________________________________
 
-### ![ico-20 icon] Битовые операции
+### ![ico-20 icon] Битовые операции⟪bytovie_operatsyy⟫
 
 Битовые операции работают с данными типа **~bigint~** и возвращают результат типа **~bigint~**:
 

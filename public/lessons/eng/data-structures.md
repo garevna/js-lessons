@@ -1,4 +1,4 @@
-# ![ico-35 study] Data Structures
+# ![ico-35 study] Data Structures⟪Data_Structures⟫
 
 Generally speaking, now we are going to study **reference data type**.
 Let's try to understand what it is.
@@ -39,7 +39,7 @@ In objects, there is no strict ordering, and instead of a sequence number, the e
 
 _________________________________________________
 
-## ![ico-30 icon] Arrays
+## ![ico-30 icon] Arrays⟪Arrays⟫
 
 **data type: ~object~**
 
@@ -125,7 +125,7 @@ array
 As you can see, the changes we made (by reference!) to the **~collection~** array are reflected in the **~array~** array.
 This is because both the **~collection~** variable and the **~array~** variable are **references to the same array**.
 
-### ![ico-25 icon] length
+### ![ico-25 icon] length⟪length⟫
 
 Arrays, like strings, have a property **~length~** (the length of the array, or the number of array elements).
 
@@ -141,7 +141,7 @@ collection.length
 
 _________________________________________
 
-### ![ico-25 hw] Tests
+### ![ico-25 hw] Tests⟪Tests⟫
 
 ◘◘![ico-20 hw] 1◘◘
 
@@ -200,7 +200,7 @@ var hello = 'Hi ' + students[1] + '!'
 
 _____________________________________________________________
 
-## ![ico-25 icon] Objects
+## ![ico-25 icon] Objects⟪Objects⟫
 
 **data type: ~object~**
 
@@ -294,7 +294,7 @@ This operator applies only to object properties, and returns the boolean value ~
 
 ________________________________________________________
 
-### ![ico-25 hw] Tests
+### ![ico-25 hw] Tests⟪Tests⟫
 
 ◘◘![ico-20 hw] 1◘◘
 

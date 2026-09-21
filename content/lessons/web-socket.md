@@ -56,7 +56,6 @@ _____________________________________________
 
 ## ![ico-25 hw] {{common.c3}} 1
 
-
 {{p11}}
 
 {{p12}}
@@ -71,9 +70,7 @@ const websocket = new WebSocket(`wss://demo.piesocket.com/v3/channel_1?api_key=$
 
 {{p14}}
 
-
 {{p15}}
-
 
 {{p16}}
 {{p17}}
@@ -111,8 +108,6 @@ websocket.onerror = function (event) {
   console.error(`ERROR: ${event.data}`)
 }
 ~~~
-
-◘◘{{common.c2}}◘◘
 
 ~~~console
 CONNECTED
@@ -283,7 +278,7 @@ received from a client:
 ▼ { name: "server", message: "I listen to you" }
     message: "I listen to you"
     name: "server"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 _____________________________________________
@@ -336,7 +331,6 @@ const fs = require('fs')
 ~~~
 
 ^^^
-
 
 ^^^[messages.json]
 
@@ -488,7 +482,6 @@ const randomValue = num => Math.round(Math.random() * num)
 __________________________________________________________________________
 
 ### ![ico-20 icon] {{p89}}
-
 
 ◘◘![ico-20 file] index.html◘◘
 

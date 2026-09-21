@@ -57,8 +57,8 @@ ____________________________________________________
       ► pipeTo: ƒ pipeTo()
       ► tee: ƒ tee()
       ► get locked: ƒ locked()
-      ► __proto__: Object
-  ► __proto__: ƒ ()
+      ► [[Prototype]]: Object
+  ► [[Prototype]]: ƒ ()
 ~~~~
 
 {{p11}}
@@ -92,14 +92,14 @@ const textStream = new ReadableStream({
 ~~~~ReadableStreamDefaultController
 ▼ ReadableStreamDefaultController
     desiredSize: (...)
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ► close: ƒ close()
       ► constructor: ƒ ReadableStreamDefaultController()
         desiredSize: (...)
       ► enqueue: ƒ enqueue()
       ► error: ƒ error()
       ► get desiredSize: ƒ desiredSize()
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~~
 
 {{p17}}
@@ -137,7 +137,7 @@ const textStream = new ReadableStream({
 ~~~~textStream
 ▼ ReadableStream {locked: false}
     locked: false
-  ▼ __proto__: ReadableStream
+  ▼ [[Prototype]]: ReadableStream
       ► cancel: ƒ cancel()
       ► constructor: ƒ ReadableStream()
       ► getReader: ƒ getReader()
@@ -147,7 +147,7 @@ const textStream = new ReadableStream({
       ► tee: ƒ tee()
         Symbol(Symbol.toStringTag): "ReadableStream"
       ► get locked: ƒ locked()
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~~
 
 {{p24}}
@@ -168,14 +168,14 @@ console.log(reader)
 ~~~~ReadableStreamDefaultReader
 ▼ ReadableStreamDefaultReader {}
     closed: (...)
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ► cancel: ƒ cancel()
         closed: (...)
       ► constructor: ƒ ReadableStreamDefaultReader()
       ► read: ƒ read()
       ► releaseLock: ƒ releaseLock()
       ► get closed: ƒ closed()
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~~
 
 {{p31}}
@@ -303,7 +303,7 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
 ~~~console
 ▼ ReadableStream {}
     locked: (...)
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ► cancel: ƒ cancel()
       ► constructor: ƒ ReadableStream()
       ► getReader: ƒ getReader()
@@ -312,7 +312,7 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
       ► pipeTo: ƒ pipeTo()
       ► tee: ƒ tee()
       ► get locked: ƒ locked()
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 ^^^
@@ -329,14 +329,14 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
 ~~~console
 ▼ ReadableStreamDefaultReader {}
     closed: (...)
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ► cancel: ƒ cancel()
         closed: (...)
       ► constructor: ƒ ReadableStreamDefaultReader()
       ► read: ƒ read()
       ► releaseLock: ƒ releaseLock()
       ► get closed: ƒ closed()
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 ^^^
@@ -355,7 +355,7 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
 ▼ {value: Uint8Array(1401), done: false}
     done: false
   ► value: Uint8Array(1401) [123, 34, 84, 105, 109, 101, 115, 116, 97, 109, 112, 34, 58, 34, 50, 48, 49, 56, 45, 49, 48, 45, 50, 52, 84, 48, 55, 58, 48, 52, 58, 49, 56, 46, 48, 57, 51, 49, 90, 34, 44, 34, 77, 101, 116, 104, 111, 100, 34, 58, 34, 80, 79, 83, 84, 34, 44, 34, 82, 101, 109, 111, 116, 101, 65, 100, 100, 114, 34, 58, 34, 49, 56, 53, 46, 51, 56, 46, 50, 49, 55, 46, 54, 57, 34, 44, 34, 73, 68, 34, 58, 57, 56, 48, 48, 48, 49, 44, 34, 72, …]
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ^^^
@@ -408,7 +408,7 @@ fetch('http://ptsv2.com/t/garevna/d/980001/json')
 ▼ Blob(1401) {size: 1401, type: ""}
     size: 1401
     type: ""
-    __proto__: Blob
+    [[Prototype]]: Blob
 ~~~
 
 ^^^

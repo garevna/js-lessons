@@ -1,8 +1,8 @@
 [
-  "~window.onbeforeunload~",
-  "~observedAttributes~",
-  "~attributeChangedCallback()~",
-  "~connectedCallback~",
-  "~attributeChangedCallback~",
+  "window.onbeforeunload",
+  "observedAttributes",
+  "attributeChangedCallback()",
+  "connectedCallback",
+  "attributeChangedCallback",
   "https://repl.it/@garevna/customElements-lifecycle-hooks"
 ]

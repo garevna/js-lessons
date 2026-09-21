@@ -1,11 +1,11 @@
 [
-  "~Object.assign~",
-  "~Object~",
-  "~user~",
-  "~read~",
-  "~write~",
-  "~User~",
-  "~updateMethods~",
-  "~&#95;&#95;proto__~",
-  "~RegisteredUser~"
+  "Object.assign",
+  "Object",
+  "user",
+  "read",
+  "write",
+  "User",
+  "updateMethods",
+  "&#95;&#95;proto__",
+  "RegisteredUser"
 ]

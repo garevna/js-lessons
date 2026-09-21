@@ -1,23 +1,20 @@
-# ![ico-30 study] Classes
+# ![ico-30 study] Classes⟪Classes⟫
 
 **ES6 (ECMAScript 2015)**
 
-^^Proxies for working with the prototype inheritance model^^
+••Proxies to simplify working with the prototype inheritance model••
 
 Since the prototype inheritance model is based on a function (constructor), the proxy object ~**class**~ is, in essence, a wrapper for this constructor function.
 
 This wrapper makes it considerably easier to construct rather complex inheritance chains, thanks to the simpler and more convenient interface of the proxy object.
 
-However, it should be borne in mind that this is merely a layer of cellophane in which the same old constructor has been wrapped.
+However, it should be borne in mind that this is merely a layer of 'cellophane' in which the same old constructor has been wrapped.
 
 ____________________________________________________________________
 
-## ![ico-25 icon] Syntax
+## ![ico-25 icon] Syntax⟪Syntax⟫
 
-![ico-20 warn] Code within the class body is always executed in **~strict mode~**
-^^even if you have not used the **_~use strict~_** directive^^
-
-![ico-20 memo] The ‘body’ of the class is always enclosed in curly brackets ~{ }~
+![ico-20 memo] The 'body' of the class is always enclosed in curly brackets ~{ }~
 
 ~~~js
 class User {
@@ -25,7 +22,7 @@ class User {
 }
 ~~~
 
-![ico-20 memo] The constructor (**~constructor~**) is declared within the curly brackets
+![ico-20 memo] The constructor (**~constructor~**) is usually declared within the curly brackets
 
 ~~~js
 class User {
@@ -49,14 +46,23 @@ class User {
 }
 ~~~
 
-![ico-20 memo] The **_constructor_** method creates and initialises an instance of the class
-![ico-20 memo] All instance properties must be declared in the constructor  **~constructor()~**
-![ico-20 memo] Properties and methods created in the class constructor can be **private** and **public**
-^^( just as in a normal constructor )^^
+••••
+![ico-20 warn] Code within the class body is always executed in **_strict mode_**
+^^even if you have not used the **_use strict_** directive^^
+••••
 
-In a normal constructor, the call context for private methods will be the global object ~window~
-![ico-20 warn] In a class constructor, the call context for private methods will be ~undefined~
+![ico-20 memo] The **~constructor~** method creates and initialises an instance of the class.
 
+•••• memo
+![ico-20 memo] All instance properties must be declared in the constructor **_constructor()_**.
+![ico-20 memo] Properties and methods created in the class constructor
+can be **private** and **public** ^^(just as in a normal constructor)^^
+••••
+
+•••• none
+![ico-20 memo]In a normal constructor, the call context for private methods will be the global object **_window_**
+![ico-20 warn] In a class constructor, the call context for private methods will be **_undefined_**
+••••
 ____________________________________
 
 ♦♦♦1♦♦♦
@@ -67,65 +73,77 @@ class User {
     const privateVar = prompt('Set privateVar value:')
 
     function showPrivate () {
-      console.log(`Ай-яй-яй, у меня контекст вызова ${this}`)
-      console.log(`Зато я вижу приватную переменную: ${privateVar}`)
+      console.log(`Oh dear, my call context is ${this}`)
+      console.log(`But I can see the private variable: ${privateVar}`)
     }
-    this.name = name || 'Бегемот'
+    this.name = name || 'Hippopotamus'
     this.show = function () {
       showPrivate ()
     }
   }
 }
 
-const user = new User('Крокодил')
+const user = new User('Crocodile')
 user.show()
 ~~~
 
-◘◘**Result**◘◘
+{{{Classes-1-class.js}}}
 
-~~~console
+Let’s print an instance of the **User** class to the console:
 
-Ай-яй-яй, у меня контекст вызова undefined
-Зато я вижу приватную переменную: 789
+~~~js
+console.log(user)
 ~~~
 
-To dispel any misconceptions about ‘classes’ in JS,
-let’s create a similar instance using a standard constructor
+~~~console
+▼ User {name: 'Crocodile', show: ƒ}
+    name: "Crocodile"
+  ► show: ƒ ()
+  ▼ [[Prototype]]: Object
+    ► constructor: class User
+    ► [[Prototype]]: Object
+~~~
+
+To dispel any misconceptions about "classes" in JS, let’s create a similar instance using a standard constructor:
 
 ~~~js
 
 function User (name) {
   const privateVar = prompt('Set privateVar value:')
   function showPrivate () {
-    console.log(`Ай-яй-яй, у меня контекст вызова ${this}`)
-    console.log(`Зато я вижу приватную переменную: ${privateVar}`)
+    console.log(`Oh dear, my call context is ${this}`)
+    console.log(`But I can see the private variable: ${privateVar}`)
   }
-  this.name = name || 'Бегемот'
+  this.name = name || 'Hippopotamus'
   this.show = function () {
     showPrivate ()
   }
 }
 
-const user = new User('Крокодил')
+const user = new User('Crocodile')
 user.show()
 ~~~
 
-◘◘**Result**◘◘
+{{{Classes-1-function.js}}}
 
-~~~console
+Let’s print an instance of **user**, created using the constructor, to the console and see how it differs from an instance of the class: ![ico-20 smile]
 
-Ай-яй-яй, у меня контекст вызова [object Window]
-Зато я вижу приватную переменную: 789
+~~~js
+console.log(user)
 ~~~
 
-Let’s print both versions of **user** to the console and spot the minor differences that should be there ![ico-20 smile]
-
-••constructor: class User    /    constructor: ƒ User(name)••
+~~~console
+▼ User {name: 'Crocodile', show: ƒ}
+    name: "Crocodile"
+  ► show: ƒ ()
+  ▼ [[Prototype]]: Object
+    ► constructor: ƒ User(name)
+    ► [[Prototype]]: Object
+~~~
 
 _______________________________________________
 
-## ![ico-25 icon] class declaration
-
+## ![ico-25 icon] class declaration⟪class_declaration⟫
 
 ![ico-20 error] **hoisting**
 
@@ -140,31 +158,42 @@ class Picture {
   constructor (url, width) {
     this.elem = document.createElement('img')
     this.elem.src = url
-    this.width = width
+    this.elem.width = width
   }
 }
 
-typeof Picture  // "function"
+const x = new Picture('images/hong-kong-1990268__340.jpg', 200)
+document.body.appendChild(x.elem)
 ~~~
 
-• ![ico-20 warn] ^^A declared class cannot be deleted dynamically without reloading the page^^
-• ^^In this example, the identifier **_~Picture~_** is already taken, and no magic spells will help to redefine its content^^
+{{{Classes-2.js}}}
 
-^^Whilst a standard JS constructor can be called both as a function and as a constructor (using the keyword **~new~**), ^^
-^^then a class constructor cannot be called without the keyword **~new~** – an exception **_~TypeError~_** will be thrown^^
+•••• none
+![ico-20 warn] A declared class cannot be deleted dynamically without reloading the page.
+![ico-20 warn] A class identifier cannot be overridden (i.e. you cannot declare a variable with the same name).
+![ico-20 warn] Whilst a standard JS constructor can be called both as a function and as a constructor (using the keyword **_new_**), then a class constructor cannot be called without the keyword **_new_** – an exception **_TypeError_** will be thrown
+
+••••
 
 ~~~js
-const x = new Picture('http://www.radioactiva.cl/wp-content/uploads/2018/05/pikachu.jpg', 200)
-document.body.appendChild(x.elem)
+const x = Picture('images/hong-kong-1990268__340.jpg', 200)
+~~~
+
+~~~console
+<p class="error-message">Uncaught TypeError&colon; Class constructor Picture cannot be invoked without 'new'</p>
+~~~
+
+~~~js
+typeof Picture  // "function"
 ~~~
 
 __________________________________________________
 
-## ![ico-25 icon] class expression
+## ![ico-25 icon] class expression⟪class_expression⟫
 
 **A class expression can be named or anonymous**
 
-### ![ico-20 icon] Examples of named classes
+### ![ico-20 icon] Examples of named classes⟪Examples_of_named_classes⟫
 
 ♦♦♦3♦♦♦
 
@@ -180,17 +209,14 @@ const Picture = class {
 console.dir(Picture)
 ~~~
 
-◘◘**Result in the console:**◘◘
-
 ~~~console
-
 ▼ class Picture
     arguments: (...)
     caller: (...)
     length: 0
     name: "Picture"
   ► prototype: {constructor: ƒ}
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 However, if we create an instance of this class and view it in the console, we will see that the class name is missing
@@ -201,15 +227,12 @@ let sample = new Picture
 console.log(sample)
 ~~~
 
-◘◘**Result in the console:**◘◘
-
 ~~~console
-
 ▼ Picture {elem: img}
     elem: img
-  ▼ __proto__:
-      ► constructor: class
-      ► __proto__: Object
+  ▼ [[Prototype]]:
+      ► constructor: class 
+      ► [[Prototype]]: Object
 ~~~
 
 _____________________________________________________________
@@ -228,17 +251,14 @@ const Picture = class Canvas {
 console.dir(Picture)
 ~~~
 
-◘◘**Result in the console:**◘◘
-
 ~~~console
-
 ▼ class Canvas
     arguments: (...)
     caller: (...)
     length: 0
     name: "Canvas"
   ► prototype: {constructor: ƒ}
-  ► __proto__: ƒ ()
+  ► [[Prototype]]: ƒ ()
 ~~~
 
 Now let’s create an instance of this class and print it to the console:
@@ -249,15 +269,12 @@ const sample = new Picture
 console.log(sample)
 ~~~
 
-◘◘**Result in the console:**◘◘
-
 ~~~console
-
 ▼ Canvas {elem: img}
     elem: img
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ► constructor: class Canvas
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 ~~~js
@@ -268,7 +285,9 @@ sample instanceof Picture   // true
 sample instanceof Canvas
 ~~~
 
-••![ico-20 error] Uncaught ReferenceError: Canvas is not defined••
+~~~console
+<p class="error-message">Uncaught ReferenceError&colon; Canvas is not defined</p>
+~~~
 
 So, when using a class expression, the class name becomes inaccessible from outside
 
@@ -289,6 +308,7 @@ const Sample = class Canvas {
       .appendChild(document.createElement('canvas'))
     this.resizeCanvas()
     this.canvas.style.border = '1px solid #000000'
+    this.canvas.style.background = '#ffffff'
     this.area = this.canvas.getContext('2d')
   }
 
@@ -311,6 +331,8 @@ pict.drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 pict.drawLine([{ x: 250, y: 250 }, { x: 100, y: 250 }])
 ~~~
 
+{{{Classes-5.js}}}
+
 ![ico-20 pin] To retrieve the class name, use its **name** property:
 
 ~~~js
@@ -319,8 +341,7 @@ console.log ( Sample.name ) // "Canvas"
 
 ________________________________________________________
 
-
-## ![ico-25 icon] get & set
+## ![ico-25 icon] get & set⟪get_&_set⟫
 
 ^^![ico-20 warn] Properties declared in the constructor will be instance properties^^
 
@@ -426,10 +447,7 @@ pict.history = [
 ]
 ~~~
 
-◘◘pict◘◘
-
 ~~~console
-
 ▼ Canvas {canvas: canvas, area: CanvasRenderingContext2D}
   ► area: CanvasRenderingContext2D {canvas: canvas, globalAlpha: 1, globalCompositeOperation: "source-over", filter: "none", imageSmoothingEnabled: true, …}
   ► canvas: canvas
@@ -437,8 +455,8 @@ pict.history = [
     ► 0: {path: Array(2), lineColor: "red"}
     ► 1: {path: Array(2), lineColor: "green"}
       length: 2
-    ► __proto__: Array(0)
-  ► __proto__: Object
+    ► [[Prototype]]: Array(0)
+  ► [[Prototype]]: Object
 ~~~
 
 ^^Only the first two elements made it into the array  **canvas._history_** ^^
@@ -453,7 +471,9 @@ pict.history = ['***']
 
 **Result – an exception:**
 
-••![ico-20 error] History must contain path array••
+~~~console
+<p class="error-message">History must contain path array</p>
+~~~
 
 ~~~js
 pict.history = true
@@ -461,14 +481,16 @@ pict.history = true
 
 **Result – an exception:**
 
-••![ico-20 error] History must be array••
+~~~console
+<p class="error-message">History must be array</p>
+~~~
 
 ^^![ico-20 speach] The value of the **_history_** property has not changed, ^^
 ^^and the corresponding error messages were displayed in the console^^
 
 ________________________________________________________
 
-## ![ico-25 icon] Loss of context
+## ![ico-25 icon] Loss of context⟪Loss_of_context⟫
 
 ![ico-20 pin] In strict mode, implicit call context passing does not occur
 
@@ -484,7 +506,9 @@ drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 
 An exception will be thrown:
 
-••![ico-20 error] Uncaught TypeError: Cannot read property 'area' of undefined••
+~~~console
+<p class="error-message">Uncaught TypeError&colon; Cannot read property 'area' of undefined</p>
+~~~
 
 The call context must be passed explicitly:
 
@@ -492,10 +516,12 @@ The call context must be passed explicitly:
 const drawLine = pict.drawLine.bind(pict)
 ~~~
 
-![ico-20 pin] ^^Context loss ( ~undefined~ ) occurs because all code within the class body is executed in  **_strict mode_**, even though there is no explicit  “use strict”  directive in the class code^^
-^^In the absence of an explicit reference to the object calling the method, ^^
-^^in strict mode, ~this~ will not be a reference to the global object ~window~^^
-^^In strict mode, ~this~ will be  ~undefined~
+![ico-20 pin] ^^Context loss (~undefined~) occurs because all code within the class body is executed in  **~strict mode~**, even though there is no explicit 'use strict'  directive in the class code.^^
+^^In the absence of an explicit reference to the object calling the method:^^
+•••• none
+in strict mode, _this_ will not be a reference to the global object _window_.
+In strict mode, _this_ will be _undefined_
+••••
 
 ______________________________________________________
 
@@ -521,9 +547,11 @@ class User {
 }
 ~~~
 
-^^In this example, the context is lost in the function **_getProp()_**,  declared within the method **_addSomeInfo_**^^
-^^(an inner function does not inherit the call context of its parent)^^
-^^Let’s create an instance **user** of the **User** class and call the method **_addSomeInfo_** within the context of the **user** object^^
+•••• none
+In this example, the context is lost in the function **_getProp()_**,  declared within the method **_addSomeInfo_**
+(an inner function does not inherit the call context of its parent)
+••••
+^^Let’s create an instance **user** of the **User** class and call the method **~addSomeInfo~** within the context of the **user** object^^
 
 ~~~js
 var user = new User('Grig')
@@ -533,13 +561,13 @@ user.addSomeInfo([
 ])
 ~~~
 
-**Result**
+~~~console
+<p class="error-message">Uncaught TypeError&colon; Cannot set property 'age' of undefined</p>
+~~~
 
-••![ico-20 error] Uncaught TypeError: Cannot set property 'age' of undefined••
+^^![ico-20 yes] Inside the **~getProp~** function, the call context (**~this~**) turned out to be ~undefined~^^
 
-^^![ico-20 yes] Inside the **_getProp_** function, the call context ( **~this~** ) turned out to be ~undefined~^^
-
-^^Now let’s use the arrow function **_getProp_**, which does not lose context ![ico-20 smile]^^
+^^Now let’s use the arrow function **~getProp~**, which does not lose context ![ico-20 smile]^^
 
 ~~~js
 class User {
@@ -555,7 +583,7 @@ class User {
 }
 ~~~
 
-^^Let’s create an instance of **user** and call the **_addSomeInfo_** method^^
+^^Let’s create an instance of **user** and call the **~addSomeInfo~** method^^
 
 ~~~js
 const user = new User('Grig')
@@ -570,25 +598,22 @@ user.addSomeInfo([
 console.log(user)
 ~~~
 
-◘◘**Result**◘◘
-
 ~~~console
-
 ▼ User {name: "Grig", age: 25, hobby: Array(2)}
     age: 25
   ► hobby: (2) ["football", "fishing"]
     name: "Grig"
-  ▼ __proto__:
+  ▼ [[Prototype]]:
       ► addSomeInfo: addSomeInfo ( props ) { if ( !Array.isArray ( props ) ) return var getProp = prop => {…}
       ► constructor: class User
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~
 
 ________________________________________________________
 
-## ![ico-25 icon] Inheritance
+## ![ico-25 icon] Inheritance⟪Inheritance⟫
 
-### ![ico-20 icon] extends
+### ![ico-20 icon] extends⟪extends⟫
 
 The keyword **~extends~** is used to create a subclass
 In fact, we are passing a reference to the prototype using **~extends~**
@@ -611,7 +636,7 @@ class Provider extends Array {
 }
 ~~~
 
-^^Note that in the class constructor, the first thing we do is call the parent class’s constructor using **super()**^^
+^^Note that in the class constructor, the first thing we do is call the parent class’s constructor using **~super()~**^^
 
 ^^Let’s create an instance of the **Provider** class^^
 
@@ -620,8 +645,6 @@ let provider = new Provider
 ~~~
 
 ^^Let’s look at the prototype chain ^^
-
-◘◘provider◘◘
 
 ~~~console
 
@@ -632,10 +655,10 @@ let provider = new Provider
     3: "Safari"
     4: "IE"
     length: 5
-  ▼ __proto__: Array
+  ▼ [[Prototype]]: Array
       ► constructor: class Provider
       ► valueOf: ƒ valueOf()
-      ► __proto__: Array(0)
+      ► [[Prototype]]: Array(0)
 ~~~
 
 ^^Now let’s test the instance:^^
@@ -682,14 +705,16 @@ newCanvas.drawCircle({ x: 100, y: 100 }, 100)
 newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }])
 ~~~
 
-^^![ico-20 speach] Note that the method **_~drawCircle()~_** is in the instance prototype^^
-^^(which makes sense, as it is an inherited method)^^,
-^^The method **_~drawLine()~_** of the parent class **Canvas** is located in the prototype’s prototype ^^
-^^(which corresponds to the prototype model of inheritance – we have obtained a chain of prototypes)^^
+••••
+Note that the method **_drawCircle()_** is in the instance prototype
+(which makes sense, as it is an inherited method)
+and method **_drawLine()_** of the parent class **Canvas** is located in the prototype’s prototype
+(which corresponds to the prototype model of inheritance – we have obtained a chain of prototypes)
+••••
 
 ________________________________________________________
 
-### ![ico-20 icon] super
+### ![ico-20 icon] super⟪super⟫
 
 Methods of the parent class are accessible in the child class via the keyword **~super~**
 
@@ -749,13 +774,13 @@ newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }], '#ffaa00', 10)
 
 ____________________________________________
 
-### ![ico-20 icon] super ()
+### ![ico-20 icon] super()⟪super⟫
 
 In the previous examples, we did not use the constructor of the derived class
 
 ![ico-20 warning] When you need to add your own properties to an instance of the derived class, this cannot be done without a constructor
 
-![ico-20 warning] The first thing you need to do in the constructor of the derived class is to call the **super()** method
+![ico-20 warning] The first thing you need to do in the constructor of the derived class is to call the **~super()~** method
 
 ♦♦♦12♦♦♦
 
@@ -784,20 +809,23 @@ class ExtendedCanvas extends Canvas {
 
 Otherwise, an exception will be thrown:
 
-••![ico-20 error] Uncaught ReferenceError: ••
-•• Must call super constructor in derived class before accessing 'this' or returning from derived constructor••
+~~~console
+<p class="error-message">Uncaught ReferenceError&colon; Must call super constructor in derived class before accessing 'this' or returning from derived constructor</p>
+~~~
 
 _________________________________________________________
 
-### ![ico-20 icon] `super` in object literals
+### ![ico-20 icon] super in object literals⟪super_in_object_literals⟫
 
 The keyword **~super~** can be used without declaring classes
 **~super~** is a reference to the object’s prototype
 Therefore, it can be used to access the properties and methods of the prototype object
 
-••![ico-30 speach] _In the examples that follow, we will use objects declared in literal form_••
+•••• none
+![ico-30 speach] _In the examples that follow, we will use objects declared in literal form_
+The **human** object will serve as the prototype for the **person** object
+••••
 
-^^The **human** object will serve as the prototype for the **person** object^^
 ^^We will assign the **human** object as the prototype of the **person** object using a method^^
 
 ~~~js
@@ -806,9 +834,12 @@ Object.setPrototypeOf(person, human)
 
 ^^Following this assignment, within the **person** object, the properties and methods of the **human** object will be accessible using the keyword **~super~**^^
 
-^^![ico-20 speach] In the following example, we will call the methods  **_~place()~_**  and  **_~say()~_** of the **human** prototype^^
-^^in the methods   **_~getPlace()~_**  and  **_~talk()~_** of the  **person** object ^^
-^^using the keyword **~super~** :^^
+••••
+![ico-20 speach] In the following example
+we will call the methods **_place()_** and **_say()_** of the **human** prototype
+in the methods **_getPlace()_**  and  **_talk()_** of the  **person** object
+using the keyword **super**
+••••
 
 ♦♦♦13♦♦♦
 
@@ -868,25 +899,31 @@ person.talk('привет!')
 setTimeout(() => person.talk('Hello, baby!'), 2000)
 ~~~
 
-![ico-20 speach] ^^In this example, the method  **~place()~**  of the prototype  (of the object  **human**) checks for the existence of an element with  ••id === ‘demo’••^^
-^^and if such an element is found, it returns a reference to it, ^^
-^^otherwise, it creates such an element and adds it to the page^^
+••••
+In this example
+the method **_place()_** of the prototype (of the object **human**) checks for the existence of an element with id === 'demo'
+and if such an element is found, it returns a reference to it
+otherwise, it creates such an element and adds it to the page
+••••
 
-![ico-20 speach] ^^The  person  object does not initially have the  **_place_** property,^^
-^^but has its own method  **~getPlace()~**, which creates such a property,  ^^
-^^by calling the method **~place()~** of the prototype (the  **human** object) using the keyword  **~super~**, ^^
-^^and assigning the value returned by this method to its own property  **~place~**^^
+••••
+The **person** object does not initially have the  **_place_** property
+but has its own method **_getPlace()_**, which creates such a property
+by calling the method **_place()_** of the prototype (the **human** object) using the keyword **super**
+and assigning the value returned by this method to its own property **_place_**
+••••
 
-![ico-20 speach] ^^The method  **~talk(_text_)~**  of the object  **person**^^
-^^calls the method  **~getPlace()~**^^
-^^before calling the method **~say()~**  ^^
-^^of the prototype  (of the object  **human**)^^
+••••
+The method **_talk(text)_** of the object **person** calls the method **_getPlace()_**
+before calling the method **_say()_** of the prototype (of the object **human**)
+••••
 
-![ico-20 speach] ^^Note that when declaring the method   **~place()~**  of the object  **human** ^^
-^^we used an arrow function, ^^
-^^whereas when declaring the method  **~say()~**  it cannot be used, ^^
-^^because within methods declared using arrow functions, ^^
-^^the call context will be the global object^^
+••••
+Note that when declaring the method **_place()_** of the object **human** we used an arrow function,
+whereas when declaring the method **_say()_** it cannot be used
+because within methods declared using arrow functions
+the call context will be the global object.
+••••
 
 ______________________________________________________
 
@@ -1019,7 +1056,7 @@ setTimeout(() => person.talk('Hello, baby!'), 2000)
 
 ________________________________________________________
 
-## ![ico-25 icon] static
+## ![ico-25 icon] static⟪static⟫
 
 Static methods of a class are declared using the **static** keyword
 
@@ -1098,7 +1135,6 @@ drawLine (points) {
 
 ^^so that the call context is an instance created by the constructor^^
 
-
 ________________________________________________________
 
 ♦♦♦18♦♦♦
@@ -1134,12 +1170,11 @@ to the global object  (~window~)
 
 ____________________________________________________________________
 
-
-## ![ico-25 cap] Example
+## ![ico-25 cap] Example⟪Example⟫
 
 In this example, we will be working with [svg](external/svg) graphics
 
-#### ![ico-20 icon] createElementNS()
+#### ![ico-20 icon] createElementNS()⟪createElementNS⟫
 
 ![ico-20 warn] To dynamically create SVG elements, you must use the **~createElementNS()~** method
 specifying a namespace reference ( **_NS_** )
@@ -1180,7 +1215,7 @@ console.log(picture.namespaceURI)  // "http://www.w3.org/2000/svg"
 
 _______________________________________
 
-#### ![ico-20 icon] Base class
+#### ![ico-20 icon] Base class⟪Base_class⟫
 
 Let’s create a class **DrawFigures**, which will create an SVG element
 with two methods: **_setSize()_** and **~drawFigure()~**
@@ -1258,7 +1293,7 @@ circle.setAttribute('stroke-width', 8)
 
 _____________________________________________________
 
-#### ![ico-20 icon] Subclass
+#### ![ico-20 icon] Subclass⟪Subclass⟫
 
 ![ico-20 speach] Now let’s create a subclass  **ColouredFigures**,
 which extends the functionality of the parent class  **DrawFigures**

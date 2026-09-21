@@ -1,4 +1,4 @@
-## ![ico-25 icon] Размеры и прокрутка элемента
+## ![ico-25 icon] Размеры и прокрутка элемента⟪razmeri_y_prokrutka_alementa⟫
 
 | **Свойство**       |          | Значение (**в пикселях**)                                   |
 | **~scrollHeight~** | readonly | полная высота элемента                                      |
@@ -10,39 +10,39 @@
 | **~scrollTop~**    | readonly | высота "прокрученной" части элемента (сверху)               |
 | **~scrollLeft~**   | readonly | ширина "прокрученной" части элемента (слева)                |
 
-### ![ico-20 icon] **scrollHeight**
+### ![ico-20 icon] **scrollHeight**⟪**scrollHeight**⟫
 
 полная высота элемента
 
-### ![ico-20 icon] **scrollWidth**
+### ![ico-20 icon] **scrollWidth**⟪**scrollWidth**⟫
 
 полная ширина элемента
 
-### ![ico-20 icon] **clientHeight**
+### ![ico-20 icon] **clientHeight**⟪**clientHeight**⟫
 
 высота видимой части элемента ( за вычетом полосы прокрутки )
 
-### ![ico-20 icon] **clientWidth**
+### ![ico-20 icon] **clientWidth**⟪**clientWidth**⟫
 
 ширина видимой части элемента ( за вычетом полосы прокрутки )
 
 
-### ![ico-20 icon] offsetHeight
+### ![ico-20 icon] offsetHeight⟪offsetHeight⟫
 
 {{{offset-height.js}}}
 
 
-### ![ico-20 icon] **offsetWidth**
+### ![ico-20 icon] **offsetWidth**⟪**offsetWidth**⟫
 
 ширина видимой части элемента (с учетом полосы прокрутки)
 
 {{{offset-left.js}}}
 
-### ![ico-20 icon] **scrollTop**
+### ![ico-20 icon] **scrollTop**⟪**scrollTop**⟫
 
 высота "прокрученной" части элемента ( сверху )
 
-### ![ico-20 icon] **scrollLeft**
+### ![ico-20 icon] **scrollLeft**⟪**scrollLeft**⟫
 
 ширина "прокрученной" части элемента ( слева )
 
@@ -52,7 +52,7 @@ _____________________________________
 
 _____________________________________
 
-### ![ico-30 hw] Упражнение
+### ![ico-30 hw] Упражнение⟪Exercise⟫
 
 Выполните код в консоли
 
@@ -148,7 +148,7 @@ section.onclick = movie
 
 __________________________________________________
 
-## ![ico-20 icon] getBoundingClientRect()
+## ![ico-20 icon] getBoundingClientRect()⟪getBoundingClientRect⟫
 
 Все элементы DOM наследуют от ~Element~
 
@@ -175,7 +175,7 @@ document.querySelector ( "p" )
     width: 520
     x: 166.5
     y: -2905
-  ► __proto__: DOMRect
+  ► [[Prototype]]: DOMRect
 ~~~
 
 [:::Пример 2:::](https://garevna.github.io/js-samples/chanks/getBoundingClientRect.html)

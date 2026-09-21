@@ -5,14 +5,14 @@
     "ua": "Класи"
   },
   "p2": {
-    "ru": "^^Прокси для работы с прототипной моделью наследования^^",
-    "eng": "^^Proxies for working with the prototype inheritance model^^",
-    "ua": "^^Проксі для роботи з прототипною моделлю успадкування^^"
+    "ru": "••Прокси для упрощения работы с прототипной моделью наследования••",
+    "eng": "••Proxies to simplify working with the prototype inheritance model••",
+    "ua": "••Проксі для спрощення роботи з прототипною моделлю успадкування••"
   },
   "p3": {
-    "ru": "Поскольку прототипная модель наследования базируется на функции (конструкторе), то прокси-объект ⟦f0⟧ является, по сути, оберткой для этой функции-конструктора.",
-    "eng": "Since the prototype inheritance model is based on a function (constructor), the proxy object ⟦f0⟧ is, in essence, a wrapper for this constructor function.",
-    "ua": "Оскільки прототипна модель успадкування базується на функції (конструкторі), то проксі-об’єкт ⟦f0⟧ є, по суті, обгорткою для цієї функції-конструктора."
+    "ru": "Поскольку прототипная модель наследования базируется на функции (конструкторе), то прокси-объект ~⟦f0⟧~ является, по сути, оберткой для этой функции-конструктора.",
+    "eng": "Since the prototype inheritance model is based on a function (constructor), the proxy object ~⟦f0⟧~ is, in essence, a wrapper for this constructor function.",
+    "ua": "Оскільки прототипна модель успадкування базується на функції (конструкторі), то проксі-об’єкт ~⟦f0⟧~ є, по суті, обгорткою для цієї функції-конструктора."
   },
   "p4": {
     "ru": "Эта обертка значительно облегчает построение довольно сложных цепочек наследования за счет более простого и удобного интерфейса прокси-объекта.",
@@ -20,9 +20,9 @@
     "ua": "Ця оболонка значно полегшує побудову досить складних ланцюжків успадкування завдяки простішому та зручнішому інтерфейсу проксі-об’єкта."
   },
   "p5": {
-    "ru": "Однако следует помнить, что это всего лишь целлофан, в который завернули все тот же конструктор.",
-    "eng": "However, it should be borne in mind that this is merely a layer of cellophane in which the same old constructor has been wrapped.",
-    "ua": "Однак слід пам’ятати, що це всього лише целофан, у який загорнули той самий конструктор."
+    "ru": "Однако следует помнить, что это всего лишь 'целлофан', в который завернули все тот же конструктор.",
+    "eng": "However, it should be borne in mind that this is merely a layer of 'cellophane' in which the same old constructor has been wrapped.",
+    "ua": "Однак слід пам’ятати, що це всього лише 'целофан', у який загорнули той самий конструктор."
   },
   "p6": {
     "ru": "Синтаксис",
@@ -30,9 +30,9 @@
     "ua": "Синтаксис"
   },
   "p7": {
-    "ru": "![ico-20 warn] Код внутри тела класса всегда выполняется в **⟦f1⟧**",
-    "eng": "![ico-20 warn] Code within the class body is always executed in **⟦f1⟧**",
-    "ua": "![ico-20 warn] Код усередині тіла класу завжди виконується в **⟦f1⟧**"
+    "ru": "![ico-20 warn] Код внутри тела класса всегда выполняется в **_⟦f1⟧_**",
+    "eng": "![ico-20 warn] Code within the class body is always executed in **_⟦f1⟧_**",
+    "ua": "![ico-20 warn] Код усередині тіла класу завжди виконується в **_⟦f1⟧_**"
   },
   "p8": {
     "ru": "^^даже если вы не использовали директиву **_⟦f2⟧_**^^",
@@ -40,14 +40,14 @@
     "ua": "^^навіть якщо ви не використовували директиву **_⟦f2⟧_**^^"
   },
   "p9": {
-    "ru": "![ico-20 memo] \"Тело\" класса всегда заключено в фигурные скобки ⟦f3⟧",
-    "eng": "![ico-20 memo] The ‘body’ of the class is always enclosed in curly brackets ⟦f3⟧",
-    "ua": "![ico-20 memo] «Тіло» класу завжди укладено в фігурні дужки ⟦f3⟧"
+    "ru": "![ico-20 memo] 'Тело' класса всегда заключено в фигурные скобки ~⟦f3⟧~",
+    "eng": "![ico-20 memo] The 'body' of the class is always enclosed in curly brackets ~⟦f3⟧~",
+    "ua": "![ico-20 memo] «Тіло» класу завжди укладено в фігурні дужки ~⟦f3⟧~"
   },
   "p10": {
-    "ru": "![ico-20 memo] Внутри фигурных скобок объявляется конструктор (**⟦f4⟧**)",
-    "eng": "![ico-20 memo] The constructor (**⟦f4⟧**) is declared within the curly brackets",
-    "ua": "![ico-20 memo] Усередині фігурних дужок оголошується конструктор (**⟦f4⟧**)"
+    "ru": "![ico-20 memo] Внутри фигурных скобок, как правило, объявляется конструктор (**~⟦f4⟧~**)",
+    "eng": "![ico-20 memo] The constructor (**~⟦f4⟧~**) is usually declared within the curly brackets",
+    "ua": "![ico-20 memo] У фігурних дужках, як правило, оголошується конструктор (**~⟦f4⟧~**)"
   },
   "p11": {
     "ru": "и методы класса:",
@@ -55,49 +55,49 @@
     "ua": "та методи класу:"
   },
   "p12": {
-    "ru": "![ico-20 memo] Метод **_constructor_** создает и инициализирует экземпляра класса",
-    "eng": "![ico-20 memo] The **_constructor_** method creates and initialises an instance of the class",
-    "ua": "![ico-20 memo] Метод **_constructor_** створює та ініціалізує екземпляр класу"
+    "ru": "![ico-20 memo] Метод **~constructor~** создает и инициализирует экземпляра класса.",
+    "eng": "![ico-20 memo] The **~constructor~** method creates and initialises an instance of the class.",
+    "ua": "![ico-20 memo] Метод **~onstructor~** створює та ініціалізує екземпляр класу."
   },
   "p13": {
-    "ru": "![ico-20 memo] Все собственные свойства экземпляра должны быть объявлены в конструкторе  **⟦f5⟧**",
-    "eng": "![ico-20 memo] All instance properties must be declared in the constructor  **⟦f5⟧**",
-    "ua": "![ico-20 memo] Усі власні властивості екземпляра мають бути оголошені в конструкторі  **⟦f5⟧**"
+    "ru": "![ico-20 memo] Все собственные свойства экземпляра должны быть объявлены в конструкторе **_⟦f5⟧_**.",
+    "eng": "![ico-20 memo] All instance properties must be declared in the constructor **_⟦f5⟧_**.",
+    "ua": "![ico-20 memo] Усі власні властивості екземпляра мають бути оголошені в конструкторі **_⟦f5⟧_**."
   },
   "p14": {
-    "ru": "![ico-20 memo] Создаваемые в конструкторе класса свойства и методы могут быть **приватными** и **публичными**",
-    "eng": "![ico-20 memo] Properties and methods created in the class constructor can be **private** and **public**",
-    "ua": "![ico-20 memo] Властивості та методи, що створюються в конструкторі класу, можуть бути **приватними** та **публічними**"
+    "ru": "![ico-20 memo] Создаваемые в конструкторе класса свойства и методы",
+    "eng": "![ico-20 memo] Properties and methods created in the class constructor",
+    "ua": "![ico-20 memo] Властивості та методи, що створюються в конструкторі класу,<br />"
   },
   "p15": {
-    "ru": "^^( как и в обычном конструкторе )^^",
-    "eng": "^^( just as in a normal constructor )^^",
-    "ua": "^^( як і в звичайному конструкторі )^^"
+    "ru": "могут быть **приватными** и **публичными** ^^(как и в обычном конструкторе)^^",
+    "eng": "can be **private** and **public** ^^(just as in a normal constructor)^^",
+    "ua": "можуть бути **приватними** та **публічними** ^^(як і в звичайному конструкторі)^^"
   },
   "p16": {
-    "ru": "В обычном конструкторе контекстом вызова приватных методов будет глобальный объект ⟦f6⟧",
-    "eng": "In a normal constructor, the call context for private methods will be the global object ⟦f6⟧",
-    "ua": "У звичайному конструкторі контекстом виклику приватних методів буде глобальний об’єкт ⟦f6⟧"
+    "ru": "![ico-20 memo]В обычном конструкторе контекстом вызова приватных методов будет глобальный объект **_⟦f6⟧_**",
+    "eng": "![ico-20 memo]In a normal constructor, the call context for private methods will be the global object **_⟦f6⟧_**",
+    "ua": "![ico-20 memo]У звичайному конструкторі контекстом виклику приватних методів буде глобальний об’єкт **_⟦f6⟧_**"
   },
   "p17": {
-    "ru": "![ico-20 warn] В конструкторе класса контекстом вызова приватных методов будет ⟦f7⟧",
-    "eng": "![ico-20 warn] In a class constructor, the call context for private methods will be ⟦f7⟧",
-    "ua": "![ico-20 warn] У конструкторі класу контекстом виклику приватних методів буде ⟦f7⟧"
+    "ru": "![ico-20 warn] В конструкторе класса контекстом вызова приватных методов будет **_⟦f7⟧_**",
+    "eng": "![ico-20 warn] In a class constructor, the call context for private methods will be **_⟦f7⟧_**",
+    "ua": "![ico-20 warn] У конструкторі класу контекстом виклику приватних методів буде **_⟦f7⟧_**"
   },
   "p18": {
-    "ru": "Для того, чтобы избавиться от иллюзий по поводу \"классов\" в JS,",
-    "eng": "To dispel any misconceptions about ‘classes’ in JS,",
-    "ua": "Щоб позбутися ілюзій щодо «класів» у JS,"
+    "ru": "Выведем в консоль экземпляр класса **User**:",
+    "eng": "Let’s print an instance of the **User** class to the console:",
+    "ua": "Виведемо в консоль екземпляр класу **User**:"
   },
   "p19": {
-    "ru": "создадим аналогичный экземпляр с помощью обычного конструктора",
-    "eng": "let’s create a similar instance using a standard constructor",
-    "ua": "створимо аналогічний екземпляр за допомогою звичайного конструктора"
+    "ru": "Для того, чтобы избавиться от иллюзий по поводу \"классов\" в JS, создадим аналогичный экземпляр с помощью обычного конструктора:",
+    "eng": "To dispel any misconceptions about \"classes\" in JS, let’s create a similar instance using a standard constructor:",
+    "ua": "Щоб позбутися ілюзій щодо «класів» у JS, створимо аналогічний екземпляр за допомогою звичайного конструктора:"
   },
   "p20": {
-    "ru": "Выведем в консоль оба варианта **user** и найдем те косметические отличия, которые там должны быть ![ico-20 smile]",
-    "eng": "Let’s print both versions of **user** to the console and spot the minor differences that should be there ![ico-20 smile]",
-    "ua": "Виведемо в консоль обидва варіанти **user** і знайдемо ті косметичні відмінності, які там мають бути ![ico-20 smile]"
+    "ru": "Выведем в консоль экземпляр **user**, созданный конструктором, и посмотрим на то, чем он отличается от экземляра класса: ![ico-20 smile]",
+    "eng": "Let’s print an instance of **user**, created using the constructor, to the console and see how it differs from an instance of the class: ![ico-20 smile]",
+    "ua": "Виведемо в консоль екземпляр **user**, створений конструктором, і подивимося, чим він відрізняється від екземпляра класу: ![ico-20 smile]"
   },
   "p21": {
     "ru": "^^объявление класса дожно быть раньше первого обращения к нему^^",
@@ -110,24 +110,24 @@
     "ua": "Класи — це спеціальні функції-«обгортки», в які «загортають» конструктор"
   },
   "p23": {
-    "ru": "• ![ico-20 warn] ^^объявленный класс невозможно удалить динамически, без перезагрузки страницы^^",
-    "eng": "• ![ico-20 warn] ^^A declared class cannot be deleted dynamically without reloading the page^^",
-    "ua": "• ![ico-20 warn] ^^оголошений клас неможливо видалити динамічно, без перезавантаження сторінки^^"
+    "ru": "![ico-20 warn] объявленный класс невозможно удалить динамически, без перезагрузки страницы.",
+    "eng": "![ico-20 warn] A declared class cannot be deleted dynamically without reloading the page.",
+    "ua": "![ico-20 warn] оголошений клас неможливо видалити динамічно, без перезавантаження сторінки."
   },
   "p24": {
-    "ru": "• ^^В этом примере идентификатор  **_⟦f8⟧_**  уже занят, и никакие магические заклинания не помогут переопределить его  содержание^^",
-    "eng": "• ^^In this example, the identifier **_⟦f8⟧_** is already taken, and no magic spells will help to redefine its content^^",
-    "ua": "• ^^У цьому прикладі ідентифікатор  **_⟦f8⟧_**  вже зайнятий, і жодні магічні заклинання не допоможуть перевизначити його  вміст^^"
+    "ru": "![ico-20 warn] Идентификатор класса невозможно переопределить (т.е. невозможно объявить переменную с таким же именем).",
+    "eng": "![ico-20 warn] A class identifier cannot be overridden (i.e. you cannot declare a variable with the same name).",
+    "ua": "![ico-20 warn] Ідентифікатор класу неможливо перевизначити (тобто неможливо оголосити змінну з таким самим іменем)."
   },
   "p25": {
-    "ru": "^^если обычный конструктор JS можно вызвать и как функцию, и как конструктор ( с ключевым словом **⟦f9⟧** ), ^^",
-    "eng": "^^Whilst a standard JS constructor can be called both as a function and as a constructor (using the keyword **⟦f9⟧**), ^^",
-    "ua": "^^якщо звичайний конструктор JS можна викликати і як функцію, і як конструктор (з ключовим словом **⟦f9⟧**), ^^"
+    "ru": "![ico-20 warn] Если обычный конструктор JS можно вызвать и как функцию, и как конструктор (с ключевым словом **_⟦f9⟧_**), то конструктор класса вызвать без ключевого слова **_⟦f9⟧_**  нельзя - будет сгенерировано исключение **_⟦f10⟧_**",
+    "eng": "![ico-20 warn] Whilst a standard JS constructor can be called both as a function and as a constructor (using the keyword **_⟦f9⟧_**), then a class constructor cannot be called without the keyword **_⟦f9⟧_** – an exception **_⟦f10⟧_** will be thrown",
+    "ua": "![ico-20 warn] Якщо звичайний конструктор JS можна викликати і як функцію, і як конструктор (з ключовим словом **_⟦f9⟧_**), то конструктор класу викликати без ключового слова **_⟦f9⟧_**  не можна — буде згенеровано виняток **_⟦f10⟧_**"
   },
   "p26": {
-    "ru": "^^то конструктор класса вызвать без ключевого слова **⟦f9⟧**  нельзя - будет сгенерировано исключение **_⟦f10⟧_**^^",
-    "eng": "^^then a class constructor cannot be called without the keyword **⟦f9⟧** – an exception **_⟦f10⟧_** will be thrown^^",
-    "ua": "^^то конструктор класу викликати без ключового слова **⟦f9⟧**  не можна — буде згенеровано виняток **_⟦f10⟧_**^^"
+    "ru": "",
+    "eng": "",
+    "ua": ""
   },
   "p27": {
     "ru": "**class expression может быть именованным или аниномным**",
@@ -175,9 +175,9 @@
     "ua": "Для створення обчислюваних властивостей потрібно використовувати геттери та сеттери"
   },
   "p36": {
-    "ru": "![ico-20 memo] С помощью ключевого слова  **⟦f11⟧**  можно объявить геттер, возвращающий значение вычисляемого свойства",
-    "eng": "![ico-20 memo] Using the keyword  **⟦f11⟧**, you can declare a getter that returns the value of a computed property",
-    "ua": "![ico-20 memo] За допомогою ключового слова  **⟦f11⟧**  можна оголосити геттер, який повертає значення обчислюваної властивості"
+    "ru": "![ico-20 memo] С помощью ключевого слова  **~⟦f11⟧~**  можно объявить геттер, возвращающий значение вычисляемого свойства",
+    "eng": "![ico-20 memo] Using the keyword  **~⟦f11⟧~**, you can declare a getter that returns the value of a computed property",
+    "ua": "![ico-20 memo] За допомогою ключового слова  **~⟦f11⟧~**  можна оголосити геттер, який повертає значення обчислюваної властивості"
   },
   "p37": {
     "ru": "^^Геттер будет вызываться каждый раз при обращении к свойству экземпляра^^",
@@ -185,9 +185,9 @@
     "ua": "^^Геттер викликатиметься щоразу при зверненні до властивості екземпляра^^"
   },
   "p38": {
-    "ru": "![ico-20 memo] С помощью ключевого слова  **⟦f12⟧**  можно объявить сеттер, изменяющий значение свойства",
-    "eng": "![ico-20 memo] Using the keyword **⟦f12⟧**, you can declare a setter that changes the value of a property",
-    "ua": "![ico-20 memo] За допомогою ключового слова  **⟦f12⟧**  можна оголосити сеттер, який змінює значення властивості"
+    "ru": "![ico-20 memo] С помощью ключевого слова  **~⟦f12⟧~**  можно объявить сеттер, изменяющий значение свойства",
+    "eng": "![ico-20 memo] Using the keyword **~⟦f12⟧~**, you can declare a setter that changes the value of a property",
+    "ua": "![ico-20 memo] За допомогою ключового слова  **~⟦f12⟧~**  можна оголосити сеттер, який змінює значення властивості"
   },
   "p39": {
     "ru": "^^Сеттер будет вызываться каждый раз, когда идентификатор вычисляемого свойства будет в левой части оператора присваивания^^",
@@ -200,9 +200,9 @@
     "ua": "Розглянемо спрощений приклад із canvas:"
   },
   "p41": {
-    "ru": "^^![ico-20 speach] Добавим сеттер свойства  **⟦f13⟧**^^",
-    "eng": "^^![ico-20 speach] Let’s add a setter for the property  **⟦f13⟧**^^",
-    "ua": "^^![ico-20 speach] Додамо сеттер властивості  **⟦f13⟧**^^"
+    "ru": "^^![ico-20 speach] Добавим сеттер свойства  **~⟦f13⟧~**^^",
+    "eng": "^^![ico-20 speach] Let’s add a setter for the property  **~⟦f13⟧~**^^",
+    "ua": "^^![ico-20 speach] Додамо сеттер властивості  **~⟦f13⟧~**^^"
   },
   "p42": {
     "ru": "^^Обратите внимание, что в конструкторе такого свойства нет (и не должно быть)^^",
@@ -220,9 +220,9 @@
     "ua": "^^або створює його в іншому випадку^^"
   },
   "p45": {
-    "ru": "^^![ico-20 speach] Теперь добавим геттер свойства  ⟦f13⟧:^^",
-    "eng": "^^![ico-20 speach] Now let’s add a getter for the property  ⟦f13⟧:^^",
-    "ua": "^^![ico-20 speach] Тепер додамо геттер властивості  ⟦f13⟧:^^"
+    "ru": "^^![ico-20 speach] Теперь добавим геттер свойства  ~⟦f13⟧~:^^",
+    "eng": "^^![ico-20 speach] Now let’s add a getter for the property  ~⟦f13⟧~:^^",
+    "ua": "^^![ico-20 speach] Тепер додамо геттер властивості  ~⟦f13⟧~:^^"
   },
   "p46": {
     "ru": "^^![ico-20 speach] Этот метод возвращает массив  **canvas._history_**^^",
@@ -300,54 +300,54 @@
     "ua": "Передачу контексту виклику потрібно зробити явно:"
   },
   "p61": {
-    "ru": "![ico-20 pin] ^^Потеря контекста ( ⟦f7⟧ ) происходит вследствие того, что весь код внутри тела класса выполняется в  **_strict mode_**, хотя явного указания  'use strict'  в коде класса нет^^",
-    "eng": "![ico-20 pin] ^^Context loss ( ⟦f7⟧ ) occurs because all code within the class body is executed in  **_strict mode_**, even though there is no explicit  “use strict”  directive in the class code^^",
-    "ua": "![ico-20 pin] ^^Втрата контексту ( ⟦f7⟧ ) відбувається внаслідок того, що весь код усередині тіла класу виконується в  **_strict mode_**, хоча явного вказівки  “use strict”  у коді класу немає^^"
+    "ru": "![ico-20 pin] ^^Потеря контекста (~⟦f7⟧~) происходит вследствие того, что весь код внутри тела класса выполняется в **~strict mode~**, хотя явного указания 'use strict'  в коде класса нет.^^",
+    "eng": "![ico-20 pin] ^^Context loss (~⟦f7⟧~) occurs because all code within the class body is executed in  **~strict mode~**, even though there is no explicit 'use strict'  directive in the class code.^^",
+    "ua": "![ico-20 pin] ^^Втрата контексту (~⟦f7⟧~) відбувається внаслідок того, що весь код усередині тіла класу виконується в  **~strict mode~**, хоча явного вказівки 'use strict'  у коді класу немає.^^"
   },
   "p62": {
-    "ru": "^^При отсутствии явного указания на объект, вызывающий метод, ^^",
-    "eng": "^^In the absence of an explicit reference to the object calling the method, ^^",
-    "ua": "^^За відсутності явного вказівника на об’єкт, що викликає метод, ^^"
+    "ru": "^^При отсутствии явного указания на объект, вызывающий метод:^^",
+    "eng": "^^In the absence of an explicit reference to the object calling the method:^^",
+    "ua": "^^За відсутності явного вказівника на об’єкт, що викликає метод:^^"
   },
-  "p63": {
-    "ru": "^^в строгом режиме ⟦f14⟧ не будет ссылкой на глобальный объект ⟦f6⟧^^",
-    "eng": "^^in strict mode, ⟦f14⟧ will not be a reference to the global object ⟦f6⟧^^",
-    "ua": "^^у строгому режимі ⟦f14⟧ не буде посиланням на глобальний об’єкт ⟦f6⟧^^"
+  "p232": {
+    "ru": "в строгом режиме _this_ не будет ссылкой на глобальный объект _window_.",
+    "eng": "in strict mode, _this_ will not be a reference to the global object _window_.",
+    "ua": "у строгому режимі _this_ не буде посиланням на глобальний об’єкт _window_."
   },
-  "p64": {
-    "ru": "^^В строгом режиме ⟦f14⟧ будет  ⟦f7⟧",
-    "eng": "^^In strict mode, ⟦f14⟧ will be  ⟦f7⟧",
-    "ua": "^^У строгому режимі ⟦f14⟧ буде  ⟦f7⟧"
+  "p233": {
+    "ru": "В строгом режиме _this_ будет _undefined_",
+    "eng": "In strict mode, _this_ will be _undefined_",
+    "ua": "У строгому режимі _this_ буде _undefined_"
   },
-  "p65": {
-    "ru": "^^В этом примере контекст теряется в функции **_getProp()_**,  объявленной внутри метода **_addSomeInfo_**^^",
-    "eng": "^^In this example, the context is lost in the function **_getProp()_**,  declared within the method **_addSomeInfo_**^^",
-    "ua": "^^У цьому прикладі контекст втрачається у функції **_getProp()_**,  оголошеній усередині методу **_addSomeInfo_**^^"
+  "p234": {
+    "ru": "В этом примере контекст теряется в функции **_getProp()_**, объявленной внутри метода **_addSomeInfo_**",
+    "eng": "In this example, the context is lost in the function **_getProp()_**,  declared within the method **_addSomeInfo_**",
+    "ua": "У цьому прикладі контекст втрачається у функції **_getProp()_**,  оголошеній усередині методу **_addSomeInfo_**"
   },
-  "p66": {
-    "ru": "^^(внутренняя функция не наследует контекст вызова родительской)^^",
-    "eng": "^^(an inner function does not inherit the call context of its parent)^^",
-    "ua": "^^(внутрішня функція не успадковує контекст виклику батьківської функції)^^"
+  "p235": {
+    "ru": "(внутренняя функция не наследует контекст вызова родительской)",
+    "eng": "(an inner function does not inherit the call context of its parent)",
+    "ua": "(внутрішня функція не успадковує контекст виклику батьківської функції)"
   },
   "p67": {
-    "ru": "^^Создадим экземпляр **user** класса **User** и вызовем метод **_addSomeInfo_** в контексте объекта **user**^^",
-    "eng": "^^Let’s create an instance **user** of the **User** class and call the method **_addSomeInfo_** within the context of the **user** object^^",
-    "ua": "^^Створимо екземпляр **user** класу **User** і викличемо метод **_addSomeInfo_** у контексті об’єкта **user**^^"
+    "ru": "^^Создадим экземпляр **user** класса **User** и вызовем метод **~addSomeInfo~** в контексте объекта **user**^^",
+    "eng": "^^Let’s create an instance **user** of the **User** class and call the method **~addSomeInfo~** within the context of the **user** object^^",
+    "ua": "^^Створимо екземпляр **user** класу **User** і викличемо метод **~addSomeInfo~** у контексті об’єкта **user**^^"
   },
   "p68": {
-    "ru": "^^![ico-20 yes] Внутри функции **_getProp_** контекст вызова ( **⟦f14⟧** ) оказался ⟦f7⟧^^",
-    "eng": "^^![ico-20 yes] Inside the **_getProp_** function, the call context ( **⟦f14⟧** ) turned out to be ⟦f7⟧^^",
-    "ua": "^^![ico-20 yes] Усередині функції **_getProp_** контекст виклику ( **⟦f14⟧** ) виявився ⟦f7⟧^^"
+    "ru": "^^![ico-20 yes] Внутри функции **~getProp~** контекст вызова (**~⟦f14⟧~**) оказался ~⟦f7⟧~^^",
+    "eng": "^^![ico-20 yes] Inside the **~getProp~** function, the call context (**~⟦f14⟧~**) turned out to be ~⟦f7⟧~^^",
+    "ua": "^^![ico-20 yes] Усередині функції **~getProp~** контекст виклику (**~⟦f14⟧~**) виявився ~⟦f7⟧~^^"
   },
   "p69": {
-    "ru": "^^Теперь используем стрелочную функцию **_getProp_**, которая не теряет контекст ![ico-20 smile]^^",
-    "eng": "^^Now let’s use the arrow function **_getProp_**, which does not lose context ![ico-20 smile]^^",
-    "ua": "^^Тепер використаємо стрілкову функцію **_getProp_**, яка не втрачає контекст ![ico-20 smile]^^"
+    "ru": "^^Теперь используем стрелочную функцию **~getProp~**, которая не теряет контекст ![ico-20 smile]^^",
+    "eng": "^^Now let’s use the arrow function **~getProp~**, which does not lose context ![ico-20 smile]^^",
+    "ua": "^^Тепер використаємо стрілкову функцію **~getProp~**, яка не втрачає контекст ![ico-20 smile]^^"
   },
   "p70": {
-    "ru": "^^Создадим экземпляр **user** и вызовем метод **_addSomeInfo_**^^",
-    "eng": "^^Let’s create an instance of **user** and call the **_addSomeInfo_** method^^",
-    "ua": "^^Створимо екземпляр **user** і викличемо метод **_addSomeInfo_**^^"
+    "ru": "^^Создадим экземпляр **user** и вызовем метод **~addSomeInfo~**^^",
+    "eng": "^^Let’s create an instance of **user** and call the **~addSomeInfo~** method^^",
+    "ua": "^^Створимо екземпляр **user** і викличемо метод **~addSomeInfo~**^^"
   },
   "p71": {
     "ru": "Наследование",
@@ -355,24 +355,39 @@
     "ua": "Спадкування"
   },
   "p72": {
-    "ru": "Ключевое слово **⟦f15⟧** используется для создания дочернего класса",
-    "eng": "The keyword **⟦f15⟧** is used to create a subclass",
-    "ua": "Ключове слово **⟦f15⟧** використовується для створення дочірнього класу"
+    "ru": "Ключевое слово **~⟦f15⟧~** используется для создания дочернего класса",
+    "eng": "The keyword **~⟦f15⟧~** is used to create a subclass",
+    "ua": "Ключове слово **~⟦f15⟧~** використовується для створення дочірнього класу"
   },
   "p73": {
-    "ru": "Фактически мы передаем с помощью **⟦f15⟧** ссылку на прототип",
-    "eng": "In fact, we are passing a reference to the prototype using **⟦f15⟧**",
-    "ua": "Фактично ми передаємо за допомогою **⟦f15⟧** посилання на прототип"
+    "ru": "Фактически мы передаем с помощью **~⟦f15⟧~** ссылку на прототип",
+    "eng": "In fact, we are passing a reference to the prototype using **~⟦f15⟧~**",
+    "ua": "Фактично ми передаємо за допомогою **~⟦f15⟧~** посилання на прототип"
   },
   "p74": {
     "ru": "^^Объявим класс **Provider**^^",
     "eng": "^^Let’s declare the **Provider** class^^",
     "ua": "^^Оголосимо клас **Provider**^^"
   },
+  "p80": {
+    "ru": "^^(что логично, поскольку это унаследованный метод)^^,",
+    "eng": "^^(which makes sense, as it is an inherited method)^^,",
+    "ua": "^^(що логічно, оскільки це успадкований метод)^^,"
+  },
+  "p81": {
+    "ru": "^^а метод **_~⟦f17⟧~_** родительского класса  **Canvas** находится в прототипе прототипа ^^",
+    "eng": "^^and method **_~⟦f17⟧~_** of the parent class **Canvas** is located in the prototype’s prototype ^^",
+    "ua": "^^а метод **_~⟦f17⟧~_** батьківського класу  **Canvas** знаходиться в прототипі прототипу ^^"
+  },
+  "p82": {
+    "ru": "^^(что соответствует прототипной модели наследования - мы получили цепочку прототипов)^^",
+    "eng": "^^(which corresponds to the prototype model of inheritance – we have obtained a chain of prototypes)^^",
+    "ua": "^^(що відповідає прототипній моделі успадкування — ми отримали ланцюжок прототипів)^^"
+  },
   "p75": {
-    "ru": "^^Обратите внимание, что в конструкторе класса первым делом с помощью **super()** мы вызываем конструктор родительского класса^^",
-    "eng": "^^Note that in the class constructor, the first thing we do is call the parent class’s constructor using **super()**^^",
-    "ua": "^^Зверніть увагу, що в конструкторі класу насамперед за допомогою **super()** ми викликаємо конструктор батьківського класу^^"
+    "ru": "^^Обратите внимание, что в конструкторе класса первым делом с помощью **~super()~** мы вызываем конструктор родительского класса^^",
+    "eng": "^^Note that in the class constructor, the first thing we do is call the parent class’s constructor using **~super()~**^^",
+    "ua": "^^Зверніть увагу, що в конструкторі класу насамперед за допомогою **~super()~** ми викликаємо конструктор батьківського класу^^"
   },
   "p76": {
     "ru": "^^Создадим экземпляр класса **Provider**^^",
@@ -389,45 +404,45 @@
     "eng": "^^Now let’s test the instance:^^",
     "ua": "^^Тепер протестуємо екземпляр:^^"
   },
-  "p79": {
-    "ru": "^^![ico-20 speach] Обратите внимание, что метод **_⟦f16⟧_** находится в прототипе экземпляра^^",
-    "eng": "^^![ico-20 speach] Note that the method **_⟦f16⟧_** is in the instance prototype^^",
-    "ua": "^^![ico-20 speach] Зверніть увагу, що метод **_⟦f16⟧_** знаходиться в прототипі екземпляра^^"
+  "p236": {
+    "ru": "Обратите внимание, что метод **_drawCircle()_** находится в прототипе экземпляра",
+    "eng": "Note that the method **_drawCircle()_** is in the instance prototype",
+    "ua": "Зверніть увагу, що метод **_drawCircle()_** знаходиться в прототипі екземпляра"
   },
-  "p80": {
-    "ru": "^^( что логично, поскольку это унаследованный метод )^^,",
-    "eng": "^^(which makes sense, as it is an inherited method)^^,",
-    "ua": "^^( що логічно, оскільки це успадкований метод )^^,"
+  "p237": {
+    "ru": "(что логично, поскольку это унаследованный метод)",
+    "eng": "(which makes sense, as it is an inherited method)",
+    "ua": "(що логічно, оскільки це успадкований метод)"
   },
-  "p81": {
-    "ru": "^^а метод **_⟦f17⟧_** родительского класса  **Canvas** находится в прототипе прототипа ^^",
-    "eng": "^^The method **_⟦f17⟧_** of the parent class **Canvas** is located in the prototype’s prototype ^^",
-    "ua": "^^а метод **_⟦f17⟧_** батьківського класу  **Canvas** знаходиться в прототипі прототипу ^^"
+  "p238": {
+    "ru": "а метод **_drawLine()_** родительского класса  **Canvas** находится в прототипе прототипа",
+    "eng": "and method **_drawLine()_** of the parent class **Canvas** is located in the prototype’s prototype",
+    "ua": "а метод **_drawLine()_** батьківського класу  **Canvas** знаходиться в прототипі прототипу"
   },
-  "p82": {
-    "ru": "^^( что соответствует прототипной модели наследования - мы получили цепочку прототипов )^^",
-    "eng": "^^(which corresponds to the prototype model of inheritance – we have obtained a chain of prototypes)^^",
-    "ua": "^^( що відповідає прототипній моделі успадкування — ми отримали ланцюжок прототипів )^^"
+  "p239": {
+    "ru": "(что соответствует прототипной модели наследования - мы получили цепочку прототипов)",
+    "eng": "(which corresponds to the prototype model of inheritance – we have obtained a chain of prototypes)",
+    "ua": "(що відповідає прототипній моделі успадкування — ми отримали ланцюжок прототипів)"
   },
   "p83": {
-    "ru": "Методы родительского класса доступны в дочернем классе посредством ключевого слова **⟦f18⟧**",
-    "eng": "Methods of the parent class are accessible in the child class via the keyword **⟦f18⟧**",
-    "ua": "Методи батьківського класу доступні в дочірньому класі за допомогою ключового слова **⟦f18⟧**"
+    "ru": "Методы родительского класса доступны в дочернем классе посредством ключевого слова **~⟦f18⟧~**",
+    "eng": "Methods of the parent class are accessible in the child class via the keyword **~⟦f18⟧~**",
+    "ua": "Методи батьківського класу доступні в дочірньому класі за допомогою ключового слова **~⟦f18⟧~**"
   },
   "p84": {
-    "ru": "^^![ico-20 speach] Расширим унаследованный метод **⟦f17⟧**  родительского класса, добавив аргумент **_⟦f19⟧_**  ( толщину линии )^^",
-    "eng": "^^![ico-20 speach] Let’s extend the inherited method **⟦f17⟧** of the parent class by adding an argument **_⟦f19⟧_** (line thickness)^^",
-    "ua": "^^![ico-20 speach] Розширимо успадкований метод **⟦f17⟧**  батьківського класу, додавши аргумент **_⟦f19⟧_**  (товщину лінії)^^"
+    "ru": "^^![ico-20 speach] Расширим унаследованный метод **~⟦f17⟧~**  родительского класса, добавив аргумент **_~⟦f19⟧~_** (толщину линии)^^",
+    "eng": "^^![ico-20 speach] Let’s extend the inherited method **~⟦f17⟧~** of the parent class by adding an argument **_~⟦f19⟧~_** (line thickness)^^",
+    "ua": "^^![ico-20 speach] Розширимо успадкований метод **~⟦f17⟧~**  батьківського класу, додавши аргумент **_~⟦f19⟧~_** (товщину лінії)^^"
   },
   "p85": {
-    "ru": "^^![ico-20 speach] Для этого определим \"расширенный\" метод  ⟦f17⟧ внутри дочернего класса,^^",
-    "eng": "^^![ico-20 speach] To do this, let’s define the ‘extended’ method  ⟦f17⟧ within the child class,^^",
-    "ua": "^^![ico-20 speach] Для цього визначимо «розширений» метод  ⟦f17⟧ усередині дочірнього класу,^^"
+    "ru": "^^![ico-20 speach] Для этого определим \"расширенный\" метод  ~⟦f17⟧~ внутри дочернего класса,^^",
+    "eng": "^^![ico-20 speach] To do this, let’s define the ‘extended’ method  ~⟦f17⟧~ within the child class,^^",
+    "ua": "^^![ico-20 speach] Для цього визначимо «розширений» метод  ~⟦f17⟧~ усередині дочірнього класу,^^"
   },
   "p86": {
-    "ru": "^^который будет вызывать  метод  ⟦f17⟧ родительского класса^^",
-    "eng": "^^which will call  the method  ⟦f17⟧ of the parent class^^",
-    "ua": "^^який викликатиме  метод  ⟦f17⟧ батьківського класу^^"
+    "ru": "^^который будет вызывать  метод  ~⟦f17⟧~ родительского класса^^",
+    "eng": "^^which will call  the method  ~⟦f17⟧~ of the parent class^^",
+    "ua": "^^який викликатиме  метод  ~⟦f17⟧~ батьківського класу^^"
   },
   "p87": {
     "ru": "^^с помощью ключевого слова **super**:^^",
@@ -445,14 +460,19 @@
     "ua": "^^![ico-20 speach] Створимо екземпляр дочірнього класу:^^"
   },
   "p90": {
-    "ru": "^^![ico-20 speach] и вызовем его метод  **⟦f17⟧**^^",
-    "eng": "^^![ico-20 speach] and call its method **⟦f17⟧**^^",
-    "ua": "^^![ico-20 speach] і викличемо його метод  **⟦f17⟧**^^"
+    "ru": "^^![ico-20 speach] и вызовем его метод  **~⟦f17⟧~**^^",
+    "eng": "^^![ico-20 speach] and call its method **~⟦f17⟧~**^^",
+    "ua": "^^![ico-20 speach] і викличемо його метод  **~⟦f17⟧~**^^"
   },
   "p91": {
     "ru": "^^![ico-20 speach] Теперь линия будет отрисовываться заданной толщины^^",
     "eng": "^^![ico-20 speach] Now the line will be drawn with the specified thickness^^",
     "ua": "^^![ico-20 speach] Тепер лінія буде відтворюватися із заданою товщиною^^"
+  },
+  "p101": {
+    "ru": "^^В качестве прототипа объекта  **person**  будет выступать объект  **human**^^",
+    "eng": "^^The **human** object will serve as the prototype for the **person** object^^",
+    "ua": "^^Прототипом об’єкта  **person**  виступатиме об’єкт  **human**^^"
   },
   "p92": {
     "ru": "В предыдущих примерах мы не использовали конструктор наследующего класса",
@@ -464,75 +484,15 @@
     "eng": "![ico-20 warning] When you need to add your own properties to an instance of the derived class, this cannot be done without a constructor",
     "ua": "![ico-20 warning] Коли потрібно додати власні властивості до екземпляра класу, що успадковує, без конструктора це зробити неможливо"
   },
-  "p94": {
-    "ru": "![ico-20 warning] Первое, что нужно выполнить в конструкторе наследующего класса - вызвать метод **super()**",
-    "eng": "![ico-20 warning] The first thing you need to do in the constructor of the derived class is to call the **super()** method",
-    "ua": "![ico-20 warning] Перше, що потрібно виконати у конструкторі класу, що успадковується, — викликати метод **super()**"
-  },
-  "p95": {
-    "ru": "В противном случае будет сгенерировано исключение:",
-    "eng": "Otherwise, an exception will be thrown:",
-    "ua": "В іншому разі буде згенеровано виняток:"
-  },
-  "p96": {
-    "ru": "super в литералах объектов",
-    "eng": "`super` in object literals",
-    "ua": "super у літералах об’єктів"
-  },
-  "p97": {
-    "ru": "Ключевое слово  **⟦f18⟧**  можно использовать без объявления классов",
-    "eng": "The keyword **⟦f18⟧** can be used without declaring classes",
-    "ua": "Ключове слово  **⟦f18⟧**  можна використовувати без оголошення класів"
-  },
-  "p98": {
-    "ru": "**⟦f18⟧** является ссылкой на прототип объекта",
-    "eng": "**⟦f18⟧** is a reference to the object’s prototype",
-    "ua": "**⟦f18⟧** є посиланням на прототип об’єкта"
-  },
-  "p99": {
-    "ru": "Поэтому можно использовать его для доступа к свойствам и методам объекта-прототипа",
-    "eng": "Therefore, it can be used to access the properties and methods of the prototype object",
-    "ua": "Тому його можна використовувати для доступу до властивостей та методів об’єкта-прототипу"
-  },
-  "p100": {
-    "ru": "••![ico-30 speach] _В примерах далее мы будем использовать объекты, объявленные в литеральной форме_••",
-    "eng": "••![ico-30 speach] _In the examples that follow, we will use objects declared in literal form_••",
-    "ua": "••![ico-30 speach] _У наведених нижче прикладах ми використовуватимемо об’єкти, оголошені у літеральній формі_••"
-  },
-  "p101": {
-    "ru": "^^В качестве прототипа объекта  **person**  будет выступать объект  **human**^^",
-    "eng": "^^The **human** object will serve as the prototype for the **person** object^^",
-    "ua": "^^Прототипом об’єкта  **person**  виступатиме об’єкт  **human**^^"
-  },
-  "p102": {
-    "ru": "^^Назначать объект  **human**  прототипом объекта  **person** мы будем с помощью метода^^",
-    "eng": "^^We will assign the **human** object as the prototype of the **person** object using a method^^",
-    "ua": "^^Призначати об’єкт  **human**  прототипом об’єкта  **person** ми будемо за допомогою методу^^"
-  },
-  "p103": {
-    "ru": "^^После такого назначения внутри объекта  **person** свойства и методы объекта  **human** будут доступны с помощью ключевого слова  **⟦f18⟧**^^",
-    "eng": "^^Following this assignment, within the **person** object, the properties and methods of the **human** object will be accessible using the keyword **⟦f18⟧**^^",
-    "ua": "^^Після такого призначення всередині об’єкта  **person** властивості та методи об’єкта  **human** будуть доступні за допомогою ключового слова  **⟦f18⟧**^^"
-  },
-  "p104": {
-    "ru": "^^![ico-20 speach] В следующем примере вызовем методы  **_⟦f20⟧_**  и  **_⟦f21⟧_** прототипа **human**^^",
-    "eng": "^^![ico-20 speach] In the following example, we will call the methods  **_⟦f20⟧_**  and  **_⟦f21⟧_** of the **human** prototype^^",
-    "ua": "^^![ico-20 speach] У наступному прикладі викличемо методи  **_⟦f20⟧_**  та  **_⟦f21⟧_** прототипу **human**^^"
-  },
   "p105": {
-    "ru": "^^в методах   **_⟦f22⟧_**  и  **_⟦f23⟧_** объекта  **person** ^^",
-    "eng": "^^in the methods   **_⟦f22⟧_**  and  **_⟦f23⟧_** of the  **person** object ^^",
-    "ua": "^^у методах   **_⟦f22⟧_**  та  **_⟦f23⟧_** об’єкта  **person** ^^"
+    "ru": "^^в методах **~⟦f22⟧~** и **~⟦f23⟧~** объекта  **person** ^^",
+    "eng": "^^in the methods **~⟦f22⟧~**  and  **~⟦f23⟧~** of the  **person** object ^^",
+    "ua": "^^у методах **~⟦f22⟧~** та **~⟦f23⟧~** об’єкта  **person** ^^"
   },
   "p106": {
-    "ru": "^^с помощью ключевого слова **⟦f18⟧** :^^",
-    "eng": "^^using the keyword **⟦f18⟧** :^^",
-    "ua": "^^за допомогою ключового слова **⟦f18⟧** :^^"
-  },
-  "p107": {
-    "ru": "![ico-20 speach] ^^В этом примере метод  **⟦f20⟧**  прототипа  (объекта  **human**) проверяет наличие элемента с  ••id === \"demo\"••^^",
-    "eng": "![ico-20 speach] ^^In this example, the method  **⟦f20⟧**  of the prototype  (of the object  **human**) checks for the existence of an element with  ••id === ‘demo’••^^",
-    "ua": "![ico-20 speach] ^^У цьому прикладі метод  **⟦f20⟧**  прототипу  (об’єкта  **human**) перевіряє наявність елемента з  ••id === «demo»••^^"
+    "ru": "^^с помощью ключевого слова **~⟦f18⟧~** :^^",
+    "eng": "^^using the keyword **~⟦f18⟧~** :^^",
+    "ua": "^^за допомогою ключового слова **~⟦f18⟧~** :^^"
   },
   "p108": {
     "ru": "^^и если такой элемент найден, возвращает ссылку на него, ^^",
@@ -544,50 +504,35 @@
     "eng": "^^otherwise, it creates such an element and adds it to the page^^",
     "ua": "^^в іншому випадку створює такий елемент, додає його на сторінку^^"
   },
-  "p110": {
-    "ru": "![ico-20 speach] ^^Объект  person  изначально не имеет свойства  **_place_**,^^",
-    "eng": "![ico-20 speach] ^^The  person  object does not initially have the  **_place_** property,^^",
-    "ua": "![ico-20 speach] ^^Об’єкт  person  спочатку не має властивості  **_place_**,^^"
-  },
   "p111": {
-    "ru": "^^но имеет собственный метод  **⟦f22⟧**, который создает такое свойство,  ^^",
-    "eng": "^^but has its own method  **⟦f22⟧**, which creates such a property,  ^^",
-    "ua": "^^але має власний метод  **⟦f22⟧**, який створює таку властивість,  ^^"
+    "ru": "^^но имеет собственный метод  **~⟦f22⟧~**, который создает такое свойство,  ^^",
+    "eng": "^^but has its own method  **~⟦f22⟧~**, which creates such a property,  ^^",
+    "ua": "^^але має власний метод  **~⟦f22⟧~**, який створює таку властивість,  ^^"
   },
   "p112": {
-    "ru": "^^вызывая с помощью ключевого слова  **⟦f18⟧** метод **⟦f20⟧**  прототипа  (объекта  **human**), ^^",
-    "eng": "^^by calling the method **⟦f20⟧** of the prototype (the  **human** object) using the keyword  **⟦f18⟧**, ^^",
-    "ua": "^^викликаючи за допомогою ключового слова  **⟦f18⟧** метод **⟦f20⟧**  прототипу  (об’єкта  **human**), ^^"
+    "ru": "^^вызывая с помощью ключевого слова  **~⟦f18⟧~** метод **~⟦f20⟧~**  прототипа  (объекта  **human**), ^^",
+    "eng": "^^by calling the method **~⟦f20⟧~** of the prototype (the  **human** object) using the keyword  **~⟦f18⟧~**, ^^",
+    "ua": "^^викликаючи за допомогою ключового слова  **~⟦f18⟧~** метод **~⟦f20⟧~**  прототипу  (об’єкта  **human**), ^^"
   },
   "p113": {
-    "ru": "^^и присваивая возвращенное этим методом значение собственному свойству  **⟦f24⟧**^^",
-    "eng": "^^and assigning the value returned by this method to its own property  **⟦f24⟧**^^",
-    "ua": "^^і присвоюючи значення, повернене цим методом, власній властивості  **⟦f24⟧**^^"
-  },
-  "p114": {
-    "ru": "![ico-20 speach] ^^Метод  **⟦f25⟧**  объекта  **person**^^",
-    "eng": "![ico-20 speach] ^^The method  **⟦f25⟧**  of the object  **person**^^",
-    "ua": "![ico-20 speach] ^^Метод  **⟦f25⟧**  об’єкта  **person**^^"
+    "ru": "^^и присваивая возвращенное этим методом значение собственному свойству  **~⟦f24⟧~**^^",
+    "eng": "^^and assigning the value returned by this method to its own property  **~⟦f24⟧~**^^",
+    "ua": "^^і присвоюючи значення, повернене цим методом, власній властивості  **~⟦f24⟧~**^^"
   },
   "p115": {
-    "ru": "^^вызывает метод  **⟦f22⟧**^^",
-    "eng": "^^calls the method  **⟦f22⟧**^^",
-    "ua": "^^викликає метод  **⟦f22⟧**^^"
+    "ru": "^^вызывает метод  **~⟦f22⟧~**^^",
+    "eng": "^^calls the method  **~⟦f22⟧~**^^",
+    "ua": "^^викликає метод  **~⟦f22⟧~**^^"
   },
   "p116": {
-    "ru": "^^до вызова метода **⟦f21⟧**  ^^",
-    "eng": "^^before calling the method **⟦f21⟧**  ^^",
-    "ua": "^^до виклику методу **⟦f21⟧**  ^^"
+    "ru": "^^до вызова метода **~⟦f21⟧~**  ^^",
+    "eng": "^^before calling the method **~⟦f21⟧~**  ^^",
+    "ua": "^^до виклику методу **~⟦f21⟧~**  ^^"
   },
   "p117": {
     "ru": "^^прототипа  (объекта  **human**)^^",
     "eng": "^^of the prototype  (of the object  **human**)^^",
     "ua": "^^прототипу  (об’єкта  **human**)^^"
-  },
-  "p118": {
-    "ru": "![ico-20 speach] ^^Обратите внимание, что при объявлении метода   **⟦f20⟧**  объекта  **human** ^^",
-    "eng": "![ico-20 speach] ^^Note that when declaring the method   **⟦f20⟧**  of the object  **human** ^^",
-    "ua": "![ico-20 speach] ^^Зверніть увагу, що при оголошенні методу   **⟦f20⟧**  об’єкта  **human** ^^"
   },
   "p119": {
     "ru": "^^мы использовали стрелочную функцию, ^^",
@@ -595,9 +540,9 @@
     "ua": "^^ми використовували стрілкову функцію, ^^"
   },
   "p120": {
-    "ru": "^^а при объявлении метода  **⟦f21⟧**  ее использовать нельзя, ^^",
-    "eng": "^^whereas when declaring the method  **⟦f21⟧**  it cannot be used, ^^",
-    "ua": "^^а при оголошенні методу  **⟦f21⟧**  її використовувати не можна, ^^"
+    "ru": "^^а при объявлении метода  **~⟦f21⟧~**  ее использовать нельзя, ^^",
+    "eng": "^^whereas when declaring the method  **~⟦f21⟧~**  it cannot be used, ^^",
+    "ua": "^^а при оголошенні методу  **~⟦f21⟧~**  її використовувати не можна, ^^"
   },
   "p121": {
     "ru": "^^поскольку внутри методов, объявленных с помощью стрелочных функций, ^^",
@@ -608,6 +553,146 @@
     "ru": "^^контектом вызова будет глобальный объект^^",
     "eng": "^^the call context will be the global object^^",
     "ua": "^^контекстом виклику буде глобальний об’єкт^^"
+  },
+  "p94": {
+    "ru": "![ico-20 warning] Первое, что нужно выполнить в конструкторе наследующего класса - вызвать метод **~super()~**",
+    "eng": "![ico-20 warning] The first thing you need to do in the constructor of the derived class is to call the **~super()~** method",
+    "ua": "![ico-20 warning] Перше, що потрібно виконати у конструкторі класу, що успадковується, — викликати метод **~super()~**"
+  },
+  "p95": {
+    "ru": "В противном случае будет сгенерировано исключение:",
+    "eng": "Otherwise, an exception will be thrown:",
+    "ua": "В іншому разі буде згенеровано виняток:"
+  },
+  "p96": {
+    "ru": "super в литералах объектов",
+    "eng": "super in object literals",
+    "ua": "super у літералах об’єктів"
+  },
+  "p97": {
+    "ru": "Ключевое слово  **~⟦f18⟧~**  можно использовать без объявления классов",
+    "eng": "The keyword **~⟦f18⟧~** can be used without declaring classes",
+    "ua": "Ключове слово  **~⟦f18⟧~**  можна використовувати без оголошення класів"
+  },
+  "p98": {
+    "ru": "**~⟦f18⟧~** является ссылкой на прототип объекта",
+    "eng": "**~⟦f18⟧~** is a reference to the object’s prototype",
+    "ua": "**~⟦f18⟧~** є посиланням на прототип об’єкта"
+  },
+  "p99": {
+    "ru": "Поэтому можно использовать его для доступа к свойствам и методам объекта-прототипа",
+    "eng": "Therefore, it can be used to access the properties and methods of the prototype object",
+    "ua": "Тому його можна використовувати для доступу до властивостей та методів об’єкта-прототипу"
+  },
+  "p240": {
+    "ru": "![ico-30 speach] _В примерах далее мы будем использовать объекты, объявленные в литеральной форме_",
+    "eng": "![ico-30 speach] _In the examples that follow, we will use objects declared in literal form_",
+    "ua": "![ico-30 speach] _У наведених нижче прикладах ми використовуватимемо об’єкти, оголошені у літеральній формі_"
+  },
+  "p241": {
+    "ru": "В качестве прототипа объекта  **person**  будет выступать объект  **human**",
+    "eng": "The **human** object will serve as the prototype for the **person** object",
+    "ua": "Прототипом об’єкта  **person**  виступатиме об’єкт  **human**"
+  },
+  "p102": {
+    "ru": "^^Назначать объект  **human**  прототипом объекта  **person** мы будем с помощью метода^^",
+    "eng": "^^We will assign the **human** object as the prototype of the **person** object using a method^^",
+    "ua": "^^Призначати об’єкт  **human**  прототипом об’єкта  **person** ми будемо за допомогою методу^^"
+  },
+  "p103": {
+    "ru": "^^После такого назначения внутри объекта  **person** свойства и методы объекта **human** будут доступны с помощью ключевого слова  **~⟦f18⟧~**^^",
+    "eng": "^^Following this assignment, within the **person** object, the properties and methods of the **human** object will be accessible using the keyword **~⟦f18⟧~**^^",
+    "ua": "^^Після такого призначення всередині об’єкта  **person** властивості та методи об’єкта  **human** будуть доступні за допомогою ключового слова  **~⟦f18⟧~**^^"
+  },
+  "p228": {
+    "ru": "![ico-20 speach] В следующем примере",
+    "eng": "![ico-20 speach] In the following example",
+    "ua": "![ico-20 speach] У наступному прикладі"
+  },
+  "p229": {
+    "ru": "вызовем методы **_place()_** и **_say()_** прототипа **human**",
+    "eng": "we will call the methods **_place()_** and **_say()_** of the **human** prototype",
+    "ua": "викличемо методи **_place()_** та **_say()_** прототипу **human**"
+  },
+  "p230": {
+    "ru": "в методах **_getPlace()_** и **_talk()_** объекта  **person**",
+    "eng": "in the methods **_getPlace()_**  and  **_talk()_** of the  **person** object",
+    "ua": "у методах **_getPlace()_** та **_talk()_** об’єкта  **person**"
+  },
+  "p231": {
+    "ru": "с помощью ключевого слова **super**",
+    "eng": "using the keyword **super**",
+    "ua": "за допомогою ключового слова **super**"
+  },
+  "p242": {
+    "ru": "В этом примере",
+    "eng": "In this example",
+    "ua": "У цьому прикладі"
+  },
+  "p243": {
+    "ru": "метод **_place()_** прототипа (объекта **human**) проверяет наличие элемента с id === 'demo'",
+    "eng": "the method **_place()_** of the prototype (of the object **human**) checks for the existence of an element with id === 'demo'",
+    "ua": "метод **_place()_** прототипу (об’єкта **human**) перевіряє наявність елемента з id === 'demo'"
+  },
+  "p244": {
+    "ru": "и если такой элемент найден, возвращает ссылку на него,",
+    "eng": "and if such an element is found, it returns a reference to it",
+    "ua": "і якщо такий елемент знайдено, повертає посилання на нього,"
+  },
+  "p245": {
+    "ru": "в противном случае создает такой элемент, добавляет его на страницу",
+    "eng": "otherwise, it creates such an element and adds it to the page",
+    "ua": "в іншому випадку створює такий елемент, додає його на сторінку"
+  },
+  "p246": {
+    "ru": "Объект **person** изначально не имеет свойства **_place_**",
+    "eng": "The **person** object does not initially have the  **_place_** property",
+    "ua": "Об’єкт **person** спочатку не має властивості **_place_**"
+  },
+  "p247": {
+    "ru": "но имеет собственный метод **_getPlace()_**, который создает такое свойство",
+    "eng": "but has its own method **_getPlace()_**, which creates such a property",
+    "ua": "але має власний метод **_getPlace()_**, який створює таку властивість"
+  },
+  "p248": {
+    "ru": "вызывая с помощью ключевого слова **super** метод **_place()_** прототипа (объекта **human**)",
+    "eng": "by calling the method **_place()_** of the prototype (the **human** object) using the keyword **super**",
+    "ua": "викликаючи за допомогою ключового слова **super** метод **_place()_** прототипу (об’єкта **human**)"
+  },
+  "p249": {
+    "ru": "и присваивая возвращенное этим методом значение собственному свойству **_place_**",
+    "eng": "and assigning the value returned by this method to its own property **_place_**",
+    "ua": "і присвоюючи значення, повернене цим методом, власній властивості **_place_**"
+  },
+  "p250": {
+    "ru": "Метод **_talk(text)_** объекта **person** вызывает метод **_getPlace()_**",
+    "eng": "The method **_talk(text)_** of the object **person** calls the method **_getPlace()_**",
+    "ua": "Метод **_talk(text)_** об’єкта  **person** викликає метод **_getPlace()_**"
+  },
+  "p251": {
+    "ru": "до вызова метода **_say()_** прототипа (объекта **human**)",
+    "eng": "before calling the method **_say()_** of the prototype (of the object **human**)",
+    "ua": "до виклику методу **_say()_** прототипу (об’єкта **human**)"
+  },
+  "p252": {
+    "ru": "Обратите внимание, что при объявлении метода **_place()_** объекта **human**",
+    "eng": "Note that when declaring the method **_place()_** of the object **human** we used an arrow function,",
+    "ua": "Зверніть увагу, що при оголошенні методу **_place()_** об’єкта **human**"
+  },
+  "p253": {
+    "ru": "мы использовали стрелочную функцию, а при объявлении метода **_say()_** ее использовать нельзя,",
+    "eng": "whereas when declaring the method **_say()_** it cannot be used",
+    "ua": "ми використовували стрілкову функцію, а при оголошенні методу **_say()_** її використовувати не можна,"
+  },
+  "p254": {
+    "ru": "поскольку внутри методов, объявленных с помощью стрелочных функций,",
+    "eng": "because within methods declared using arrow functions",
+    "ua": "оскільки всередині методів, оголошених за допомогою стрілкових функцій,"
+  },
+  "p255": {
+    "ru": "контектом вызова будет глобальный объект.",
+    "eng": "the call context will be the global object.",
+    "ua": "контекстом виклику буде глобальний об’єкт."
   },
   "p123": {
     "ru": "^^В этом примере свойство  **_place_**  прототипа (объекта  **human**) ^^",
@@ -630,9 +715,9 @@
     "ua": "^^буде встановлено під час ініціалізації об’єкта  **human**^^"
   },
   "p127": {
-    "ru": "^^В этом примере демонстрируется взаимозаменяемость ключевых слов  **⟦f18⟧**  и  **⟦f14⟧** ^^",
-    "eng": "^^This example demonstrates the interchangeability of the keywords **⟦f18⟧** and **⟦f14⟧** ^^",
-    "ua": "^^У цьому прикладі демонструється взаємозамінність ключових слів  **⟦f18⟧**  та  **⟦f14⟧** ^^"
+    "ru": "^^В этом примере демонстрируется взаимозаменяемость ключевых слов  **~⟦f18⟧~**  и  **~⟦f14⟧~** ^^",
+    "eng": "^^This example demonstrates the interchangeability of the keywords **~⟦f18⟧~** and **~⟦f14⟧~** ^^",
+    "ua": "^^У цьому прикладі демонструється взаємозамінність ключових слів  **~⟦f18⟧~**  та  **~⟦f14⟧~** ^^"
   },
   "p128": {
     "ru": "^^при  ссылках на свойства прототипа^^",
@@ -650,14 +735,14 @@
     "ua": "^^викликає  метод  **_say ()_**  прототипу^^"
   },
   "p131": {
-    "ru": "^^без ключевого слова  **⟦f18⟧**^^",
-    "eng": "^^without the keyword  **⟦f18⟧**^^",
-    "ua": "^^без ключового слова  **⟦f18⟧**^^"
+    "ru": "^^без ключевого слова  **~⟦f18⟧~**^^",
+    "eng": "^^without the keyword  **~⟦f18⟧~**^^",
+    "ua": "^^без ключового слова  **~⟦f18⟧~**^^"
   },
   "p132": {
-    "ru": "^^(с ключевым словом  **⟦f14⟧**)^^",
-    "eng": "^^(with the keyword  **⟦f14⟧**)^^",
-    "ua": "^^(з ключовим словом  **⟦f14⟧**)^^"
+    "ru": "^^(с ключевым словом  **~⟦f14⟧~**)^^",
+    "eng": "^^(with the keyword  **~⟦f14⟧~**)^^",
+    "ua": "^^(з ключовим словом  **~⟦f14⟧~**)^^"
   },
   "p133": {
     "ru": "![ico-20 speach] ^^Когда метод  **_say()_**  в объекте  **person**  не будет найден, ^^",
@@ -685,14 +770,14 @@
     "ua": "^^контекстом виклику буде об’єкт  **person**^^"
   },
   "p138": {
-    "ru": "^^(т.е.  **⟦f14⟧**  будет  указывать на объект  person)^^",
-    "eng": "^^(i.e.  **⟦f14⟧**  will  point to the  person object)^^",
-    "ua": "^^(тобто  **⟦f14⟧**  буде  вказувати на об’єкт  person)^^"
+    "ru": "^^(т.е.  **~⟦f14⟧~**  будет  указывать на объект  person)^^",
+    "eng": "^^(i.e.  **~⟦f14⟧~**  will  point to the  person object)^^",
+    "ua": "^^(тобто  **~⟦f14⟧~**  буде  вказувати на об’єкт  person)^^"
   },
   "p139": {
-    "ru": "^^но тем не менее ссылка   **⟦f26⟧**  ^^",
-    "eng": "^^nevertheless, the reference   **⟦f26⟧**  ^^",
-    "ua": "^^проте посилання   **⟦f26⟧**  ^^"
+    "ru": "^^но тем не менее ссылка   **~⟦f26⟧~**  ^^",
+    "eng": "^^nevertheless, the reference   **~⟦f26⟧~**  ^^",
+    "ua": "^^проте посилання   **~⟦f26⟧~**  ^^"
   },
   "p140": {
     "ru": "^^будет благополучно разрешена по цепочке прототипов^^",
@@ -715,9 +800,9 @@
     "ua": "^^а не власну властивість об’єкта, ^^"
   },
   "p144": {
-    "ru": "^^то для унаследованных свойств можно использовать  ⟦f27⟧^^",
-    "eng": "^^then for inherited properties you can use  ⟦f27⟧^^",
-    "ua": "^^то для успадкованих властивостей можна використовувати  ⟦f27⟧^^"
+    "ru": "^^то для унаследованных свойств можно использовать  ~⟦f27⟧~^^",
+    "eng": "^^then for inherited properties you can use  ~⟦f27⟧~^^",
+    "ua": "^^то для успадкованих властивостей можна використовувати  ~⟦f27⟧~^^"
   },
   "p145": {
     "ru": "![ico-20 speach] ^^Очевидно, в таком случае код:",
@@ -755,14 +840,14 @@
     "ua": "![ico-20 warn] Ці методи можуть бути викликані лише як методи класу"
   },
   "p152": {
-    "ru": "![ico-20 warn] Внутри статического метода ⟦f14⟧ указывает на конструктор класса, а не на экземпляр",
-    "eng": "![ico-20 warn] Within a static method, ⟦f14⟧ refers to the class constructor, not to an instance",
-    "ua": "![ico-20 warn] Усередині статичного методу ⟦f14⟧ вказує на конструктор класу, а не на екземпляр"
+    "ru": "![ico-20 warn] Внутри статического метода ~⟦f14⟧~ указывает на конструктор класса, а не на экземпляр",
+    "eng": "![ico-20 warn] Within a static method, ~⟦f14⟧~ refers to the class constructor, not to an instance",
+    "ua": "![ico-20 warn] Усередині статичного методу ~⟦f14⟧~ вказує на конструктор класу, а не на екземпляр"
   },
   "p153": {
-    "ru": "![ico-20 pin] Обратите внимание, что статические методы **_⟦f28⟧_** и **_⟦f29⟧_**",
-    "eng": "![ico-20 pin] Note that the static methods **_⟦f28⟧_** and **_⟦f29⟧_**",
-    "ua": "![ico-20 pin] Зверніть увагу, що статичні методи **_⟦f28⟧_** та **_⟦f29⟧_**"
+    "ru": "![ico-20 pin] Обратите внимание, что статические методы **_~⟦f28⟧~_** и **_~⟦f29⟧~_**",
+    "eng": "![ico-20 pin] Note that the static methods **_~⟦f28⟧~_** and **_~⟦f29⟧~_**",
+    "ua": "![ico-20 pin] Зверніть увагу, що статичні методи **_~⟦f28⟧~_** та **_~⟦f29⟧~_**"
   },
   "p154": {
     "ru": "вызываются как методы класса **Canvas**:",
@@ -770,14 +855,14 @@
     "ua": "викликаються як методи класу **Canvas**:"
   },
   "p155": {
-    "ru": "![ico-20 pin] Внутри конструктора  ⟦f14⟧  указывает  на экземпляр",
-    "eng": "![ico-20 pin] Inside the constructor,  ⟦f14⟧  refers to an instance",
-    "ua": "![ico-20 pin] Усередині конструктора  ⟦f14⟧  вказує  на екземпляр"
+    "ru": "![ico-20 pin] Внутри конструктора  ~⟦f14⟧~  указывает  на экземпляр",
+    "eng": "![ico-20 pin] Inside the constructor,  ~⟦f14⟧~  refers to an instance",
+    "ua": "![ico-20 pin] Усередині конструктора  ~⟦f14⟧~  вказує  на екземпляр"
   },
   "p156": {
-    "ru": "В этом примере для того, чтобы внутри метода ⟦f14⟧ указывал на объект **canvas** экземпляра,",
-    "eng": "In this example, in order for ⟦f14⟧ to refer to the **canvas** object of the instance within the method,",
-    "ua": "У цьому прикладі для того, щоб усередині методу ⟦f14⟧ вказував на об’єкт **canvas** екземпляра,"
+    "ru": "В этом примере для того, чтобы внутри метода ~⟦f14⟧~ указывал на объект **canvas** экземпляра,",
+    "eng": "In this example, in order for ~⟦f14⟧~ to refer to the **canvas** object of the instance within the method,",
+    "ua": "У цьому прикладі для того, щоб усередині методу ~⟦f14⟧~ вказував на об’єкт **canvas** екземпляра,"
   },
   "p157": {
     "ru": "вызов метода  **_resizeCanvas_** из конструктора происходит с передачей контекста:",
@@ -785,9 +870,9 @@
     "ua": "виклик методу  **_resizeCanvas_** з конструктора відбувається з передачею контексту:"
   },
   "p158": {
-    "ru": "и когда этот метод используется в качестве обработчика события **_⟦f30⟧_** объекта  **⟦f6⟧**,",
-    "eng": "and when this method is used as the event handler **_⟦f30⟧_** for the object **⟦f6⟧**,",
-    "ua": "і коли цей метод використовується як обробник події **_⟦f30⟧_** об’єкта  **⟦f6⟧**,"
+    "ru": "и когда этот метод используется в качестве обработчика события **_~⟦f30⟧~_** объекта  **~⟦f6⟧~**,",
+    "eng": "and when this method is used as the event handler **_~⟦f30⟧~_** for the object **~⟦f6⟧~**,",
+    "ua": "і коли цей метод використовується як обробник події **_~⟦f30⟧~_** об’єкта  **~⟦f6⟧~**,"
   },
   "p159": {
     "ru": "то выполняется явная привязка контекста:",
@@ -795,14 +880,14 @@
     "ua": "то виконується явна прив’язка контексту:"
   },
   "p160": {
-    "ru": "При вызове статического метода  **_⟦f29⟧_**  первым аргументом ему передается контекст вызова",
-    "eng": "When the static method **_⟦f29⟧_** is called, the call context is passed to it as the first argument",
-    "ua": "При виклику статичного методу **_⟦f29⟧_** першим аргументом йому передається контекст виклику"
+    "ru": "При вызове статического метода  **_~⟦f29⟧~_**  первым аргументом ему передается контекст вызова",
+    "eng": "When the static method **_~⟦f29⟧~_** is called, the call context is passed to it as the first argument",
+    "ua": "При виклику статичного методу **_~⟦f29⟧~_** першим аргументом йому передається контекст виклику"
   },
   "p161": {
-    "ru": "^^В данном случае объявление метода  **⟦f29⟧**  как статического^^",
-    "eng": "^^In this case, declaring the method  **⟦f29⟧**  as static^^",
-    "ua": "^^У цьому випадку оголошення методу  **⟦f29⟧**  як статичного^^"
+    "ru": "^^В данном случае объявление метода  **~⟦f29⟧~**  как статического^^",
+    "eng": "^^In this case, declaring the method  **~⟦f29⟧~**  as static^^",
+    "ua": "^^У цьому випадку оголошення методу  **~⟦f29⟧~**  як статичного^^"
   },
   "p162": {
     "ru": "^^создает ненужные сложности с передачей контекста, ^^",
@@ -820,9 +905,9 @@
     "ua": "^^щоб контекстом виклику був екземпляр, створений конструктором^^"
   },
   "p165": {
-    "ru": "Когда метод **_⟦f31⟧_** будет вызван из конструктора, он выведет в консоль:",
-    "eng": "When the method **_⟦f31⟧_** is called from the constructor, it will output the following to the console:",
-    "ua": "Коли метод **_⟦f31⟧_** буде викликано з конструктора, він виведе в консоль:"
+    "ru": "Когда метод **_~⟦f31⟧~_** будет вызван из конструктора, он выведет в консоль:",
+    "eng": "When the method **_~⟦f31⟧~_** is called from the constructor, it will output the following to the console:",
+    "ua": "Коли метод **_~⟦f31⟧~_** буде викликано з конструктора, він виведе в консоль:"
   },
   "p166": {
     "ru": "Измените размер окна браузера",
@@ -830,9 +915,9 @@
     "ua": "Змініть розмір вікна браузера"
   },
   "p167": {
-    "ru": "Теперь метод  **_⟦f31⟧_**  будет вызван в глобальной области видимости,",
-    "eng": "Now the method **_⟦f31⟧_** will be called in the global scope,",
-    "ua": "Тепер метод **_⟦f31⟧_** буде викликано в глобальній області видимості,"
+    "ru": "Теперь метод  **_~⟦f31⟧~_**  будет вызван в глобальной области видимости,",
+    "eng": "Now the method **_~⟦f31⟧~_** will be called in the global scope,",
+    "ua": "Тепер метод **_~⟦f31⟧~_** буде викликано в глобальній області видимості,"
   },
   "p168": {
     "ru": "и в консоль будет выведено:",
@@ -840,14 +925,14 @@
     "ua": "і в консоль буде виведено:"
   },
   "p169": {
-    "ru": "поскольку  ⟦f14⟧  внутри **_⟦f31⟧_** теперь указывает",
-    "eng": "because  ⟦f14⟧  inside **_⟦f31⟧_** now points",
-    "ua": "оскільки  ⟦f14⟧  всередині **_⟦f31⟧_** тепер вказує"
+    "ru": "поскольку  ~⟦f14⟧~  внутри **_~⟦f31⟧~_** теперь указывает",
+    "eng": "because  ~⟦f14⟧~  inside **_~⟦f31⟧~_** now points",
+    "ua": "оскільки  ~⟦f14⟧~  всередині **_~⟦f31⟧~_** тепер вказує"
   },
   "p170": {
-    "ru": "на глобальный объект  (⟦f6⟧)",
-    "eng": "to the global object  (⟦f6⟧)",
-    "ua": "на глобальний об’єкт  (⟦f6⟧)"
+    "ru": "на глобальный объект  (~⟦f6⟧~)",
+    "eng": "to the global object  (~⟦f6⟧~)",
+    "ua": "на глобальний об’єкт  (~⟦f6⟧~)"
   },
   "p171": {
     "ru": "В этом примере мы будем работать с графикой [svg](⟦f32⟧)",
@@ -855,9 +940,9 @@
     "ua": "У цьому прикладі ми будемо працювати з графікою [svg](⟦f32⟧)"
   },
   "p172": {
-    "ru": "![ico-20 warn] Для динамического создания элементов SVG нужно использовать метод **⟦f33⟧**",
-    "eng": "![ico-20 warn] To dynamically create SVG elements, you must use the **⟦f33⟧** method",
-    "ua": "![ico-20 warn] Для динамічного створення елементів SVG потрібно використовувати метод **⟦f33⟧**"
+    "ru": "![ico-20 warn] Для динамического создания элементов SVG нужно использовать метод **~⟦f33⟧~**",
+    "eng": "![ico-20 warn] To dynamically create SVG elements, you must use the **~⟦f33⟧~** method",
+    "ua": "![ico-20 warn] Для динамічного створення елементів SVG потрібно використовувати метод **~⟦f33⟧~**"
   },
   "p173": {
     "ru": "с указанием ссылки на пространство имен ( **_NS_** )",
@@ -875,9 +960,9 @@
     "ua": "SVG — це тип XML-розмітки, який має власний простір імен, що може бути вбудований у HTML5"
   },
   "p176": {
-    "ru": "![ico-20 green-ok] Первым аргументом метода  **⟦f33⟧** идет ссылка на пространство имен",
-    "eng": "![ico-20 green-ok] The first argument of the **⟦f33⟧** method is a reference to the namespace",
-    "ua": "![ico-20 green-ok] Першим аргументом методу  **⟦f33⟧** є посилання на простір імен"
+    "ru": "![ico-20 green-ok] Первым аргументом метода  **~⟦f33⟧~** идет ссылка на пространство имен",
+    "eng": "![ico-20 green-ok] The first argument of the **~⟦f33⟧~** method is a reference to the namespace",
+    "ua": "![ico-20 green-ok] Першим аргументом методу  **~⟦f33⟧~** є посилання на простір імен"
   },
   "p177": {
     "ru": "![ico-20 green-ok] Второй аргумент - имя тега элемента в этом пространстве имен",
@@ -885,9 +970,9 @@
     "ua": "![ico-20 green-ok] Другий аргумент — ім’я тегу елемента в цьому просторі імен"
   },
   "p178": {
-    "ru": "![ico-20 warn] Если использовать обычный метод  ⟦f34⟧, то браузер будет интерпретировать его в пространстве имен  HTML",
-    "eng": "![ico-20 warn] If you use the standard method  ⟦f34⟧, the browser will interpret it within the HTML namespace",
-    "ua": "![ico-20 warn] Якщо використовувати звичайний метод  ⟦f34⟧, то браузер інтерпретуватиме його в просторі імен  HTML"
+    "ru": "![ico-20 warn] Если использовать обычный метод  ~⟦f34⟧~, то браузер будет интерпретировать его в пространстве имен  HTML",
+    "eng": "![ico-20 warn] If you use the standard method  ~⟦f34⟧~, the browser will interpret it within the HTML namespace",
+    "ua": "![ico-20 warn] Якщо використовувати звичайний метод  ~⟦f34⟧~, то браузер інтерпретуватиме його в просторі імен  HTML"
   },
   "p179": {
     "ru": "( по умолчанию )",
@@ -920,19 +1005,19 @@
     "ua": "Створимо клас **DrawFigures**, який буде створювати елемент svg"
   },
   "p185": {
-    "ru": "с двумя методами:   **_setSize()_**  и  **⟦f35⟧**",
-    "eng": "with two methods: **_setSize()_** and **⟦f35⟧**",
-    "ua": "з двома методами: **_setSize()_** та **⟦f35⟧**"
+    "ru": "с двумя методами:   **_setSize()_**  и  **~⟦f35⟧~**",
+    "eng": "with two methods: **_setSize()_** and **~⟦f35⟧~**",
+    "ua": "з двома методами: **_setSize()_** та **~⟦f35⟧~**"
   },
   "p186": {
-    "ru": "![ico-20 speach] Метод **⟦f36⟧** будет изменять размеры элемента  svg",
-    "eng": "![ico-20 speach] The **⟦f36⟧** method will change the dimensions of the SVG element",
-    "ua": "![ico-20 speach] Метод **⟦f36⟧** змінюватиме розміри елемента  svg"
+    "ru": "![ico-20 speach] Метод **~⟦f36⟧~** будет изменять размеры элемента  svg",
+    "eng": "![ico-20 speach] The **~⟦f36⟧~** method will change the dimensions of the SVG element",
+    "ua": "![ico-20 speach] Метод **~⟦f36⟧~** змінюватиме розміри елемента  svg"
   },
   "p187": {
-    "ru": "![ico-20 speach] Метод **⟦f35⟧** будет добавлять элементы в контейнер  svg",
-    "eng": "![ico-20 speach] The **⟦f35⟧** method will add elements to the SVG container",
-    "ua": "![ico-20 speach] Метод **⟦f35⟧** додаватиме елементи до контейнера  svg"
+    "ru": "![ico-20 speach] Метод **~⟦f35⟧~** будет добавлять элементы в контейнер  svg",
+    "eng": "![ico-20 speach] The **~⟦f35⟧~** method will add elements to the SVG container",
+    "ua": "![ico-20 speach] Метод **~⟦f35⟧~** додаватиме елементи до контейнера  svg"
   },
   "p188": {
     "ru": "^^Имя элемента будет передано первым аргументом метода  (figure)^^",
@@ -950,14 +1035,14 @@
     "ua": "^^Параметри фігури будуть передані другим аргументом методу (params)^^"
   },
   "p191": {
-    "ru": "![ico-20 speach] Поскольку у каждого элемента  svg  свой набор атрибутов, создаем свойство  **⟦f37⟧** (объект), свойства которого будут именами svg-элементов, а значения - массивом атрибутов каждого svg-элемента",
-    "eng": "![ico-20 speach] As each  svg  element has its own set of attributes, we create a property  **⟦f37⟧** (an object), whose properties will be the names of the svg elements, and whose values will be an array of attributes for each svg element",
-    "ua": "![ico-20 speach] Оскільки кожен елемент  svg  має власний набір атрибутів, створюємо властивість  **⟦f37⟧** (об’єкт), властивості якої будуть іменами svg-елементів, а значення — масивом атрибутів кожного svg-елемента"
+    "ru": "![ico-20 speach] Поскольку у каждого элемента  svg  свой набор атрибутов, создаем свойство  **~⟦f37⟧~** (объект), свойства которого будут именами svg-элементов, а значения - массивом атрибутов каждого svg-элемента",
+    "eng": "![ico-20 speach] As each  svg  element has its own set of attributes, we create a property  **~⟦f37⟧~** (an object), whose properties will be the names of the svg elements, and whose values will be an array of attributes for each svg element",
+    "ua": "![ico-20 speach] Оскільки кожен елемент  svg  має власний набір атрибутів, створюємо властивість  **~⟦f37⟧~** (об’єкт), властивості якої будуть іменами svg-елементів, а значення — масивом атрибутів кожного svg-елемента"
   },
   "p192": {
-    "ru": "При создании svg-элемента его атрибуты будут установлены с помощью метода  **⟦f38⟧**",
-    "eng": "When creating an SVG element, its attributes will be set using the **⟦f38⟧** method",
-    "ua": "Під час створення svg-елемента його атрибути будуть встановлені за допомогою методу  **⟦f38⟧**"
+    "ru": "При создании svg-элемента его атрибуты будут установлены с помощью метода  **~⟦f38⟧~**",
+    "eng": "When creating an SVG element, its attributes will be set using the **~⟦f38⟧~** method",
+    "ua": "Під час створення svg-елемента його атрибути будуть встановлені за допомогою методу  **~⟦f38⟧~**"
   },
   "p193": {
     "ru": "Протестировать работу класса можно так:",
@@ -965,24 +1050,24 @@
     "ua": "Перевірити роботу класу можна так:"
   },
   "p194": {
-    "ru": "![ico-20 speach] Вызов метода   **⟦f35⟧** создаст элемент &lt;line> и вернет ссылку на него,",
-    "eng": "![ico-20 speach] Calling the method   **⟦f35⟧** will create a &lt;line&gt; element and return a reference to it,",
-    "ua": "![ico-20 speach] Виклик методу   **⟦f35⟧** створить елемент &lt;line> і поверне посилання на нього,"
+    "ru": "![ico-20 speach] Вызов метода   **~⟦f35⟧~** создаст элемент &lt;line> и вернет ссылку на него,",
+    "eng": "![ico-20 speach] Calling the method   **~⟦f35⟧~** will create a &lt;line&gt; element and return a reference to it,",
+    "ua": "![ico-20 speach] Виклик методу   **~⟦f35⟧~** створить елемент &lt;line> і поверне посилання на нього,"
   },
   "p195": {
-    "ru": "но этот элемент не отобразится на странице, поскольку в массиве  **⟦f39⟧**",
-    "eng": "but this element will not be displayed on the page, as the array  **⟦f39⟧**",
-    "ua": "але цей елемент не відобразиться на сторінці, оскільки в масиві  **⟦f39⟧**"
+    "ru": "но этот элемент не отобразится на странице, поскольку в массиве  **~⟦f39⟧~**",
+    "eng": "but this element will not be displayed on the page, as the array  **~⟦f39⟧~**",
+    "ua": "але цей елемент не відобразиться на сторінці, оскільки в масиві  **~⟦f39⟧~**"
   },
   "p196": {
-    "ru": "нет атрибута \"⟦f40⟧\", задающего цвет линии",
-    "eng": "lacks the “⟦f40⟧” attribute, which specifies the line colour",
-    "ua": "немає атрибута «⟦f40⟧», що задає колір лінії"
+    "ru": "нет атрибута \"~⟦f40⟧~\", задающего цвет линии",
+    "eng": "lacks the “~⟦f40⟧~” attribute, which specifies the line colour",
+    "ua": "немає атрибута «~⟦f40⟧~», що задає колір лінії"
   },
   "p197": {
-    "ru": "![ico-20 speach] Чтобы увидеть этот элемент на странице, нам приходится устанавливать значение атрибута ⟦f40⟧",
-    "eng": "![ico-20 speach] To see this element on the page, we need to set the value of the ⟦f40⟧ attribute",
-    "ua": "![ico-20 speach] Щоб побачити цей елемент на сторінці, нам доводиться встановлювати значення атрибута ⟦f40⟧"
+    "ru": "![ico-20 speach] Чтобы увидеть этот элемент на странице, нам приходится устанавливать значение атрибута ~⟦f40⟧~",
+    "eng": "![ico-20 speach] To see this element on the page, we need to set the value of the ~⟦f40⟧~ attribute",
+    "ua": "![ico-20 speach] Щоб побачити цей елемент на сторінці, нам доводиться встановлювати значення атрибута ~⟦f40⟧~"
   },
   "p198": {
     "ru": "после вызова метода **_drawFigure()_**:",
@@ -1025,9 +1110,9 @@
     "ua": "та методу видалення елемента  **_erase_**"
   },
   "p206": {
-    "ru": "![ico-20 speach] В конструкторе дочернего класса вызовем метод **⟦f42⟧**,",
-    "eng": "![ico-20 speach] In the constructor of the child class, we’ll call the method **⟦f42⟧**,",
-    "ua": "![ico-20 speach] У конструкторі дочірнього класу викличемо метод **⟦f42⟧**,"
+    "ru": "![ico-20 speach] В конструкторе дочернего класса вызовем метод **~⟦f42⟧~**,",
+    "eng": "![ico-20 speach] In the constructor of the child class, we’ll call the method **~⟦f42⟧~**,",
+    "ua": "![ico-20 speach] У конструкторі дочірнього класу викличемо метод **~⟦f42⟧~**,"
   },
   "p207": {
     "ru": "чтобы был создан контейнер &lt;svg> с нужными размерами,",
@@ -1035,14 +1120,14 @@
     "ua": "щоб було створено контейнер &lt;svg> з потрібними розмірами,"
   },
   "p208": {
-    "ru": "и объявим свойство экземпляра  **⟦f43⟧**",
-    "eng": "and declare the instance property  **⟦f43⟧**",
-    "ua": "і оголосимо властивість екземпляра  **⟦f43⟧**"
+    "ru": "и объявим свойство экземпляра  **~⟦f43⟧~**",
+    "eng": "and declare the instance property  **~⟦f43⟧~**",
+    "ua": "і оголосимо властивість екземпляра  **~⟦f43⟧~**"
   },
   "p209": {
-    "ru": "![ico-20 speach] Метод **⟦f42⟧** должен быть вызван первым в конструкторе,",
-    "eng": "![ico-20 speach] The method **⟦f42⟧** must be called first in the constructor,",
-    "ua": "![ico-20 speach] Метод **⟦f42⟧** має бути викликаний першим у конструкторі,"
+    "ru": "![ico-20 speach] Метод **~⟦f42⟧~** должен быть вызван первым в конструкторе,",
+    "eng": "![ico-20 speach] The method **~⟦f42⟧~** must be called first in the constructor,",
+    "ua": "![ico-20 speach] Метод **~⟦f42⟧~** має бути викликаний першим у конструкторі,"
   },
   "p210": {
     "ru": "поскольку до его вызова  значение  `this`  не будет определено",
@@ -1060,9 +1145,9 @@
     "ua": "![ico-20 speach] Крім того, розширимо функціонал базового класу  **DrawFigures**,"
   },
   "p213": {
-    "ru": "добавив атрибуты  \"⟦f40⟧\",  \"⟦f44⟧\"  и  \"⟦f45⟧\"",
-    "eng": "by adding the attributes “⟦f40⟧”, “⟦f44⟧” and “⟦f45⟧”",
-    "ua": "додавши атрибути  «⟦f40⟧»,  «⟦f44⟧»  та  «⟦f45⟧»"
+    "ru": "добавив атрибуты  \"~⟦f40⟧~\",  \"~⟦f44⟧~\"  и  \"~⟦f45⟧~\"",
+    "eng": "by adding the attributes “~⟦f40⟧~”, “~⟦f44⟧~” and “~⟦f45⟧~”",
+    "ua": "додавши атрибути  «~⟦f40⟧~»,  «~⟦f44⟧~»  та  «~⟦f45⟧~»"
   },
   "p214": {
     "ru": "это мы тоже сделаем в конструкторе класса  **ColoredFigures**",
@@ -1075,24 +1160,24 @@
     "ua": "![ico-20 speach] Перевіримо, як працює розширений клас  **ColoredFigures**"
   },
   "p216": {
-    "ru": "![ico-20 speach] Конечно, мы можем создавать элементы, обращаясь к методу базового класса  **⟦f35⟧**:",
-    "eng": "![ico-20 speach] Of course, we can create elements by calling the method of the base class  **⟦f35⟧**:",
-    "ua": "![ico-20 speach] Звісно, ми можемо створювати елементи, звертаючись до методу базового класу  **⟦f35⟧**:"
+    "ru": "![ico-20 speach] Конечно, мы можем создавать элементы, обращаясь к методу базового класса  **~⟦f35⟧~**:",
+    "eng": "![ico-20 speach] Of course, we can create elements by calling the method of the base class  **~⟦f35⟧~**:",
+    "ua": "![ico-20 speach] Звісно, ми можемо створювати елементи, звертаючись до методу базового класу  **~⟦f35⟧~**:"
   },
   "p217": {
-    "ru": "![ico-20 speach] но тогда созданные svg-элементы не попадут в массив  **⟦f43⟧**",
-    "eng": "![ico-20 speach] but then the SVG elements created will not be added to the array  **⟦f43⟧**",
-    "ua": "![ico-20 speach] але тоді створені SVG-елементи не потраплять до масиву  **⟦f43⟧**"
+    "ru": "![ico-20 speach] но тогда созданные svg-элементы не попадут в массив  **~⟦f43⟧~**",
+    "eng": "![ico-20 speach] but then the SVG elements created will not be added to the array  **~⟦f43⟧~**",
+    "ua": "![ico-20 speach] але тоді створені SVG-елементи не потраплять до масиву  **~⟦f43⟧~**"
   },
   "p218": {
-    "ru": "и их нельзя будет удалить с помощью метода  **⟦f46⟧**",
-    "eng": "and they cannot be removed using the method  **⟦f46⟧**",
-    "ua": "і їх не можна буде видалити за допомогою методу  **⟦f46⟧**"
+    "ru": "и их нельзя будет удалить с помощью метода  **~⟦f46⟧~**",
+    "eng": "and they cannot be removed using the method  **~⟦f46⟧~**",
+    "ua": "і їх не можна буде видалити за допомогою методу  **~⟦f46⟧~**"
   },
   "p219": {
-    "ru": "![ico-20 speach] Кроме того, вызов метода  **⟦f47⟧**  или  **⟦f48⟧**  лаконичнее",
-    "eng": "![ico-20 speach] Furthermore, calling the method  **⟦f47⟧**  or  **⟦f48⟧**  is more concise",
-    "ua": "![ico-20 speach] Крім того, виклик методу  **⟦f47⟧**  або  **⟦f48⟧**  є лаконічнішим"
+    "ru": "![ico-20 speach] Кроме того, вызов метода  **~⟦f47⟧~**  или  **~⟦f48⟧~**  лаконичнее",
+    "eng": "![ico-20 speach] Furthermore, calling the method  **~⟦f47⟧~**  or  **~⟦f48⟧~**  is more concise",
+    "ua": "![ico-20 speach] Крім того, виклик методу  **~⟦f47⟧~**  або  **~⟦f48⟧~**  є лаконічнішим"
   },
   "p220": {
     "ru": "![ico-25 speach] Обратите внимание, что у класса  **ColoredFigures** есть свойство  prototype, которого нет ( и не может быть ) у экземпляра",
@@ -1100,14 +1185,14 @@
     "ua": "![ico-25 speach] Зверніть увагу, що клас **ColoredFigures** має властивість prototype, якої немає (і не може бути) у екземпляра"
   },
   "p221": {
-    "ru": "В свойстве **⟦f49⟧** класса **ColoredFigures** находятся методы **⟦f48⟧**, **⟦f47⟧**, **⟦f50⟧** и **⟦f46⟧**",
-    "eng": "The **⟦f49⟧** property of the **ColoredFigures** class contains the methods **⟦f48⟧**, **⟦f47⟧**, **⟦f50⟧** and **⟦f46⟧**",
-    "ua": "У властивості **⟦f49⟧** класу **ColoredFigures** містяться методи **⟦f48⟧**, **⟦f47⟧**, **⟦f50⟧** та **⟦f46⟧**"
+    "ru": "В свойстве **~⟦f49⟧~** класса **ColoredFigures** находятся методы **~⟦f48⟧~**, **~⟦f47⟧~**, **~⟦f50⟧~** и **~⟦f46⟧~**",
+    "eng": "The **~⟦f49⟧~** property of the **ColoredFigures** class contains the methods **~⟦f48⟧~**, **~⟦f47⟧~**, **~⟦f50⟧~** and **~⟦f46⟧~**",
+    "ua": "У властивості **~⟦f49⟧~** класу **ColoredFigures** містяться методи **~⟦f48⟧~**, **~⟦f47⟧~**, **~⟦f50⟧~** та **~⟦f46⟧~**"
   },
   "p222": {
-    "ru": "![ico-25 speach] У класса ColoredFigures есть также свойство  **⟦f27⟧**",
-    "eng": "![ico-25 speach] The **ColoredFigures** class also has a property **⟦f27⟧**",
-    "ua": "![ico-25 speach] У класу ColoredFigures є також властивість **⟦f27⟧**"
+    "ru": "![ico-25 speach] У класса ColoredFigures есть также свойство  **~⟦f27⟧~**",
+    "eng": "![ico-25 speach] The **ColoredFigures** class also has a property **~⟦f27⟧~**",
+    "ua": "![ico-25 speach] У класу ColoredFigures є також властивість **~⟦f27⟧~**"
   },
   "p223": {
     "ru": "это ссылка на родительский класс **SVG**",
@@ -1115,19 +1200,19 @@
     "ua": "це посилання на батьківський клас **SVG**"
   },
   "p224": {
-    "ru": "![ico-25 speach] У родительского класса, как и следовало ожидать, тоже есть свойство **⟦f49⟧**,",
-    "eng": "![ico-25 speach] As you might expect, the parent class also has a property **⟦f49⟧**,",
-    "ua": "![ico-25 speach] У батьківського класу, як і слід було очікувати, теж є властивість **⟦f49⟧**,"
+    "ru": "![ico-25 speach] У родительского класса, как и следовало ожидать, тоже есть свойство **~⟦f49⟧~**,",
+    "eng": "![ico-25 speach] As you might expect, the parent class also has a property **~⟦f49⟧~**,",
+    "ua": "![ico-25 speach] У батьківського класу, як і слід було очікувати, теж є властивість **~⟦f49⟧~**,"
   },
   "p225": {
-    "ru": "и в этом свойстве находятся методы **⟦f35⟧** и **⟦f36⟧**",
-    "eng": "and this property contains the methods **⟦f35⟧** and **⟦f36⟧**",
-    "ua": "і в цій властивості містяться методи **⟦f35⟧** та **⟦f36⟧**"
+    "ru": "и в этом свойстве находятся методы **~⟦f35⟧~** и **~⟦f36⟧~**",
+    "eng": "and this property contains the methods **~⟦f35⟧~** and **~⟦f36⟧~**",
+    "ua": "і в цій властивості містяться методи **~⟦f35⟧~** та **~⟦f36⟧~**"
   },
   "p226": {
-    "ru": "![ico-25 speach] Ни у класса **ColoredFigures**, ни у класса **SVG** нет свойств **⟦f37⟧**, **⟦f51⟧** и **⟦f43⟧**",
-    "eng": "![ico-25 speach] Neither the **ColoredFigures** class nor the **SVG** class has the properties **⟦f37⟧**, **⟦f51⟧** and **⟦f43⟧**",
-    "ua": "![ico-25 speach] Ні у класу **ColoredFigures**, ні у класу **SVG** немає властивостей **⟦f37⟧**, **⟦f51⟧** та **⟦f43⟧**"
+    "ru": "![ico-25 speach] Ни у класса **ColoredFigures**, ни у класса **SVG** нет свойств **~⟦f37⟧~**, **~⟦f51⟧~** и **~⟦f43⟧~**",
+    "eng": "![ico-25 speach] Neither the **ColoredFigures** class nor the **SVG** class has the properties **~⟦f37⟧~**, **~⟦f51⟧~** and **~⟦f43⟧~**",
+    "ua": "![ico-25 speach] Ні у класу **ColoredFigures**, ні у класу **SVG** немає властивостей **~⟦f37⟧~**, **~⟦f51⟧~** та **~⟦f43⟧~**"
   },
   "p227": {
     "ru": "Они есть только у экземпляра этого класса",

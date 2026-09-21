@@ -1,4 +1,5 @@
 import { createTableForSpoiler } from './createTableForSpoiler'
+import { buildSnippet } from './createScriptSnippet'
 
 const { createElem } = require('../').default
 
@@ -29,9 +30,14 @@ export function createSpoiler (fragment) {
       if (line.indexOf('!!!') >= 0) {
         const snippet = this.fragments[line.slice(3, -3)]
         if (snippet.type === 'ScriptSnippet') {
-          const lang = snippet.content.slice(3, snippet.content.search(String.fromCharCode(10)))
-          const scriptSnippetContent = this.createCodeSnippet(snippet.content.slice(3 + lang.length, snippet.content.length - 3), lang)
-          spoiler.content.push(scriptSnippetContent)
+          // Every block was built as a code snippet here, whatever its
+          // language said, so console output inside a spoiler came out as
+          // highlighted source instead of a console — the same twenty-two
+          // blocks the rest of this change is about. It goes through the same
+          // builder as a block on the page now, heading and all.
+          for (const element of buildSnippet.call(this, snippet.content)) {
+            spoiler.content.push(element)
+          }
         } else {
           console.warn('?', snippet.type)
         }

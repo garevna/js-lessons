@@ -1,4 +1,4 @@
-# ![ico-30 study] valueOf
+# ![ico-30 study] valueOf⟪valueOf⟫
 
 Метод  **_~valueOf()~_**  наследуется всеми объектами от **~Object~**
 

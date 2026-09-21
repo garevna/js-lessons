@@ -17,12 +17,12 @@ console.dir(test)
     caller: (...)
     length: 0
     name: "test"
-  ▼ __proto__: AsyncFunction
+  ▼ [[Prototype]]: AsyncFunction
         arguments: (...)
         caller: (...)
       ► constructor: ƒ AsyncFunction()
         Symbol(Symbol.toStringTag): "AsyncFunction"
-      ▼ __proto__: ƒ ()
+      ▼ [[Prototype]]: ƒ ()
         ► apply: ƒ apply()
           arguments: (...)
         ► bind: ƒ bind()
@@ -37,7 +37,7 @@ console.dir(test)
         ► set arguments: ƒ ()
         ► get caller: ƒ ()
         ► set caller: ƒ ()
-        ► __proto__: Object
+        ► [[Prototype]]: Object
 ~~~~
 
 {{p4}}
@@ -73,8 +73,6 @@ const asyncFunc = new AsyncFunction
 
 console.log(asyncFunc)
 ~~~
-
-**Result**
 
 ~~~console
 async ƒ anonymous(

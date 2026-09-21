@@ -24,6 +24,7 @@ for (var key in window) {
 window.onmessage = function (event) {
   console.log(event)
 }
+window.postMessage('Hello!')
 ~~~
 
 {{p6}}
@@ -32,12 +33,13 @@ window.onmessage = function (event) {
 ~~~console
 
 ▼ MessageEvent {isTrusted: true, data: "Hello, I'm listening to you", origin: "null", lastEventId: "", source: Window, …}
+    isTrusted: true
     bubbles: false
     cancelBubble: false
     cancelable: false
     composed: false
-  ► currentTarget: Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
-    data: "Hello, I'm listening to you"
+  ► currentTarget: null
+    data: "Hello!"
     defaultPrevented: false
     eventPhase: 0
     isTrusted: true
@@ -52,7 +54,7 @@ window.onmessage = function (event) {
     timeStamp: 5.620000010821968
     type: "message"
     userActivation: null
-  ► __proto__: MessageEvent
+  ► [[Prototype]]: MessageEvent
 ~~~
 
 {{p8}}
@@ -127,7 +129,7 @@ let childWin = window.open('about:blank', 'childWin')
 
 childWin.onmessage = function (event) {
   event.target.document.write(`<h3>${this.name}</h3><p>I've received the message from ${event.source.name}</p><b><em>${event.data}</em></b>`)
-  event.source.postMessage('Wecome any time, my dear!'', '*')
+  event.source.postMessage('Wecome any time, my dear!', '*')
 }
 
 childWin.postMessage('Hello, I\'m listening to you', '*')

@@ -1,9 +1,9 @@
 [
-  "~fetch~",
-  "~Blob~",
-  "~testFile~",
-  "~readFile~",
+  "fetch",
+  "Blob",
+  "testFile",
+  "readFile",
   "https://www.webfx.com/tools/emoji-cheat-sheet/",
-  "~submit~",
-  "~FormData~"
+  "submit",
+  "FormData"
 ]

@@ -95,7 +95,7 @@ const request = new Request('https://api.github.com/users')
     referrerPolicy: ""
   ► signal: AbortSignal {aborted: false, onabort: null}
     url: "https://api.github.com/users"
-  ► __proto__: Request
+  ► [[Prototype]]: Request
 ~~~~
 
 {{p18}}
@@ -133,7 +133,7 @@ request.headers.get('Content-Type')
     referrerPolicy: ""
   ► signal: AbortSignal {aborted: false, onabort: null}
     url: "https://api.github.com/users"
-  ► __proto__: Request
+  ► [[Prototype]]: Request
 ~~~~
 
 {{p21}}
@@ -146,7 +146,7 @@ request.headers.get('Content-Type')
 
 ~~~~Headers
 ▼ Headers {}
-  ▼ __proto__: Headers
+  ▼ [[Prototype]]: Headers
       ► append: ƒ append()
       ► delete: ƒ delete()
       ► entries: ƒ entries()
@@ -159,7 +159,7 @@ request.headers.get('Content-Type')
       ► constructor: ƒ Headers()
       ► Symbol(Symbol.iterator): ƒ entries()
         Symbol(Symbol.toStringTag): "Headers"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~~
 
 {{p23}}
@@ -372,7 +372,7 @@ ____________________________________________________
 
 ~~~~Headers
 ▼ Headers
-  ▼ __proto__: Headers
+  ▼ [[Prototype]]: Headers
       ► append: ƒ append()
       ► delete: ƒ delete()
       ► entries: ƒ entries()
@@ -385,7 +385,7 @@ ____________________________________________________
       ► constructor: ƒ Headers()
       ► Symbol(Symbol.iterator): ƒ entries()
         Symbol(Symbol.toStringTag): "Headers"
-      ► __proto__: Object
+      ► [[Prototype]]: Object
 ~~~~
 
 {{p67}}
@@ -637,7 +637,7 @@ fetch('https://httpbin.org/get')
    Origin: "null"
    Save-Data: "on"
    User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
- ► __proto__: Object
+ ► [[Prototype]]: Object
 ~~~~
 
 _________________________________________________________
@@ -677,7 +677,7 @@ fetch(request)
     statusText: "OK"
     type: "cors"
     url: "https://httpbin.org/post"
-  ► __proto__: Response
+  ► [[Prototype]]: Response
 ~~~
 
 ^^^
@@ -694,7 +694,7 @@ fetch(request)
     json: null
     origin: "185.38.217.69"
     url: "https://httpbin.org/post"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ^^^

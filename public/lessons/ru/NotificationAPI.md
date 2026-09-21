@@ -1,4 +1,4 @@
-# ![ico-30 study] Notification API
+# ![ico-30 study] Notification API⟪Notification_API⟫
 
 API вывода уведомлений на рабочий стол юзера
 
@@ -18,12 +18,12 @@ API вывода уведомлений на рабочий стол юзера
   ► prototype: Notification {…}
   ► get maxActions: ƒ maxActions()
   ► get permission: ƒ permission()
-  ► __proto__: ƒ EventTarget()
+  ► [[Prototype]]: ƒ EventTarget()
 ~~~
 
 ___________________________________________
 
-## ![ico-25 icon] permission
+## ![ico-25 icon] permission⟪permission⟫
 
 Юзер может запретить отображение уведомлений на рабочем столе
 Прежде, чем пытаться вывести уведомление юзеру, стоит проверить, разрешает ли пользователь отображать уведомления
@@ -63,7 +63,7 @@ Notification.requestPermission()
 ^^^
 ____________________________
 
-## ![ico-25 icon] Экземпляр Notification
+## ![ico-25 icon] Экземпляр Notification⟪akzemplyar_Notification⟫
 
 С помошью конструктора **Notification** создаем новый экземпляр:
 
@@ -122,7 +122,7 @@ const notes = new Notification(title, options)
   ► get timestamp: ƒ timestamp()
   ► get title: ƒ title()
   ► get vibrate: ƒ vibrate()
-  ► __proto__: ƒ EventTarget()
+  ► [[Prototype]]: ƒ EventTarget()
 ~~~~
 
 Разберемся с этой кучей
@@ -177,7 +177,7 @@ function showNotification (data) {
 [:::Live Demo:::](https://garevna.github.io/js-samples/#45)
 ______________________________________________________________
 
-## ![ico-25 icon] Notification from Worker
+## ![ico-25 icon] Notification from Worker⟪Notification_from_Worker⟫
 
 ![ico-20 warn] в **worker**-е недоступен метод **requestPermission** конструктора **Notification**
 

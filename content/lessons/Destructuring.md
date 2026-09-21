@@ -316,7 +316,6 @@ console.log(motherLastHobby)  // walks
 
 ____________________________________________________________________
 
-
 ## ![ico-25 icon] {{p37}}
 
 {{p38}}
@@ -389,7 +388,7 @@ console.log (userWithoutPass)
     email: "piter@gmail.com"
     hobby: "football"
     name: "Piter"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 _______________________________________
@@ -542,8 +541,6 @@ const lettersCounter = str => Object.assign({}, ...str
 lettersCounter('htkolkhlfottko')
 ~~~
 
-{{p67}}
-
 ~~~console
 ▼ {h: 2, t: 3, k: 3, o: 3, l: 2, …}
     f: 1
@@ -552,7 +549,7 @@ lettersCounter('htkolkhlfottko')
     l: 2
     o: 3
     t: 3
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 ___________________________________________________________________
@@ -605,7 +602,6 @@ function func (a, b, c) {
 
 func(...'578')  // 20
 
-
 function test ({ a, b, c } = { a: 3, b: 4, c: 5 }) {
   console.log(a + b + c)
 }
@@ -634,7 +630,6 @@ second() || console.log(...[first(), second()])
 ~~~
 
 _______________________________________________________________________________
-
 
 [![ico-25 hw] Quiz](quiz/destructuring)
 

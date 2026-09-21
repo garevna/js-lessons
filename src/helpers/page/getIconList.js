@@ -1,3 +1,5 @@
+import { blackBlockIcon } from './createBlackBlock'
+
 export function getIconList (pageText) {
   const icons = pageText.match(/!\[ico-\d+[^\]]+\]/gm)
   const names = icons
@@ -7,6 +9,15 @@ export function getIconList (pageText) {
   // the style for it has to be asked for here or the heading renders blank.
   if (/^[ 	]*♦{3}/m.test(pageText)) names.push('cap')
   if (/^[ 	]*※{3}/m.test(pageText)) names.push('hw')
+  // Same for the heading a ~~~console block brings with it: the block is the
+  // marker, and without this the heading reserves 24px and shows nothing.
+  if (/^[ 	]*~~~console[ 	]*$/m.test(pageText)) names.push('mdi-console')
+  // And for the icon each •••• block opens with — the default, or whatever
+  // its own fence names.
+  for (const fence of pageText.match(/^[ \t]*•{4}[ \t]*[a-z_-]*[ \t]*$/gm) || []) {
+    const icon = blackBlockIcon(fence)
+    if (icon) names.push(icon)
+  }
 
   const links = pageText.match(/\[(.)+\]\(.+\)/gm)
 

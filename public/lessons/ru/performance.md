@@ -1,4 +1,4 @@
-# ![ico-30 study] Performance
+# ![ico-30 study] Performance⟪Performance⟫
 
 Для оценки производительности приложения можно использовать встроенный в браузеры интерфейс **performance**
 
@@ -19,7 +19,7 @@
         jsHeapSizeLimit: 2217857988
         totalJSHeapSize: 33243136
         usedJSHeapSize: 19358120
-      ► __proto__: MemoryInfo
+      ► [[Prototype]]: MemoryInfo
   ► navigation: PerformanceNavigation {type: 0, redirectCount: 0}
     onresourcetimingbufferfull: null
     timeOrigin: 1546006432906.767
@@ -45,8 +45,8 @@
         secureConnectionStart: 1546006433015
         unloadEventEnd: 0
         unloadEventStart: 0
-      ► __proto__: PerformanceTiming
-  ► __proto__: Performance
+      ► [[Prototype]]: PerformanceTiming
+  ► [[Prototype]]: Performance
 ~~~
 
 ^^^
@@ -59,7 +59,7 @@
 
 _____________________________________________
 
-## ![ico-25 icon] performance.timing
+## ![ico-25 icon] performance.timing⟪performance.timing⟫
 
 **^^Загрузка документа^^**
 
@@ -77,7 +77,7 @@ console.log(domInteractive - domLoading)
 
 _____________________________________________________
 
-## ![ico-25 icon] Унаследованные методы performance
+## ![ico-25 icon] Унаследованные методы performance⟪unasledovannie_metodi_performance⟫
 
 ^^^[Performance.prototype]
 
@@ -107,14 +107,14 @@ _____________________________________________________
   ► set onresourcetimingbufferfull: ƒ onresourcetimingbufferfull()
   ► get timeOrigin: ƒ timeOrigin()
   ► get timing: ƒ timing()
-  ► __proto__: EventTarget
+  ► [[Prototype]]: EventTarget
 ~~~
 
 ^^^
 
 _______________________________________________________________
 
-### ![ico-20 icon] now
+### ![ico-20 icon] now⟪now⟫
 
 Метод ~performance.now()~ позволяет получить текущее время высокой точности с момента начала отсчета
 
@@ -124,8 +124,6 @@ _______________________________________________________________
 console.log(`Старт: ${performance.now()}`)
 setTimeout(() => console.log(`Стоп: ${performance.now()}`), 2000)
 ~~~
-
-◘◘^^Результат^^◘◘
 
 ~~~console
 Старт: 207385.50000003306
@@ -140,7 +138,7 @@ setTimeout(() => console.log(`Стоп: ${performance.now()}`), 2000)
 
 _______________________________________________________________
 
-### ![ico-20 icon] mark
+### ![ico-20 icon] mark⟪mark⟫
 
 Установка временных меток
 
@@ -158,8 +156,6 @@ const items = window.performance.getEntriesByType('mark')
 console.log(items)
 ~~~
 
-◘◘^^Результат^^◘◘
-
 ~~~console
 ▼ (2) [PerformanceMark, PerformanceMark]
   ▼ 0: PerformanceMark
@@ -167,20 +163,20 @@ console.log(items)
         entryType: "mark"
         name: "start"
         startTime: 2677.5999999954365
-      ► __proto__: PerformanceMark
+      ► [[Prototype]]: PerformanceMark
   ▼ 1: PerformanceMark
         duration: 0
         entryType: "mark"
         name: "end"
         startTime: 2725.9000000049127
-      ► __proto__: PerformanceMark
+      ► [[Prototype]]: PerformanceMark
     length: 2
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 _______________________________________________________________
 
-### ![ico-20 icon] measure
+### ![ico-20 icon] measure⟪measure⟫
 
 Измерение производительности
 
@@ -218,8 +214,6 @@ performance.clearMarks()
 performance.clearMeasures()
 ~~~
 
-◘◘^^Результат^^◘◘
-
 ~~~console
 1: duration: 0.20000000949949026ms
 2: duration: 0.20000000949949026ms
@@ -232,7 +226,7 @@ performance.clearMeasures()
 
 _______________________________________________________________
 
-### ![ico-20 icon] Entries
+### ![ico-20 icon] Entries⟪Entries⟫
 
 • getEntries()
 • getEntriesByName()
@@ -253,7 +247,7 @@ _______________________________________________________________
 
 _______________________________________________________________
 
-#### ![ico-20 icon] getEntries
+#### ![ico-20 icon] getEntries⟪getEntries⟫
 
 Этот метод вернет все объекты
 
@@ -286,8 +280,6 @@ performance.mark('end')
 console.log(performance.getEntries())
 ~~~
 
-◘◘^^Результат^^◘◘
-
 ~~~console
 ▼ (2) [PerformanceMark, PerformanceMark]
   ▼ 0: PerformanceMark
@@ -295,17 +287,16 @@ console.log(performance.getEntries())
         entryType: "mark"
         name: "start"
         startTime: 3348.8999999826774
-      ► __proto__: PerformanceMark
+      ► [[Prototype]]: PerformanceMark
   ▼ 1: PerformanceMark
         duration: 0
         entryType: "mark"
         name: "end"
         startTime: 3349.099999992177
-      ► __proto__: PerformanceMark
+      ► [[Prototype]]: PerformanceMark
     length: 2
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
-
 
 ◘◘![ico-20 cap] ** 5**◘◘
 
@@ -329,13 +320,13 @@ fetch('https://httpbin.org')
         entryType: "mark"
         name: "start"
         startTime: 2684.400000027381
-      ► __proto__: PerformanceMark
+      ► [[Prototype]]: PerformanceMark
   ▼ 1: PerformanceMeasure
         duration: 453.5999999498017
         entryType: "measure"
         name: "fetchDuration"
         startTime: 2684.400000027381
-      ► __proto__: PerformanceMeasure
+      ► [[Prototype]]: PerformanceMeasure
   ▼ 2: PerformanceResourceTiming
         connectEnd: 0
         connectStart: 0
@@ -359,23 +350,22 @@ fetch('https://httpbin.org')
         startTime: 2684.5999999786727
         transferSize: 0
         workerStart: 0
-      ► __proto__: PerformanceResourceTiming
+      ► [[Prototype]]: PerformanceResourceTiming
   ▼ 3: PerformanceMark
         duration: 0
         entryType: "mark"
         name: "end"
         startTime: 3137.9999999771826
-      ► __proto__: PerformanceMark
+      ► [[Prototype]]: PerformanceMark
     length: 4
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ^^^
 
 _______________________________________________________________
 
-#### ![ico-20 icon] getEntriesByName
-
+#### ![ico-20 icon] getEntriesByName⟪getEntriesByName⟫
 
 ◘◘![ico-20 cap] ** 6**◘◘
 
@@ -417,9 +407,9 @@ fetch('https://httpbin.org')
         startTime: 6048.500000033528
         transferSize: 0
         workerStart: 0
-      ► __proto__: PerformanceMark
+      ► [[Prototype]]: PerformanceMark
     length: 1
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ^^^
@@ -450,8 +440,6 @@ pictures
 console.log(performance.getEntriesByName('start'))
 ~~~
 
-◘◘^^Результат^^◘◘
-
 ~~~console
 ▼ (4) [PerformanceMark, PerformanceMark, PerformanceMark, PerformanceMark]
   ► 0: PerformanceMark {name: "start", entryType: "mark", startTime: 2465.700000000652, duration: 0}
@@ -459,12 +447,12 @@ console.log(performance.getEntriesByName('start'))
   ► 2: PerformanceMark {name: "start", entryType: "mark", startTime: 2467.1000000089407, duration: 0}
   ► 3: PerformanceMark {name: "start", entryType: "mark", startTime: 2467.30000001844, duration: 0}
     length: 4
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 _______________________________________________________________
 
-#### ![ico-20 icon] getEntriesByType
+#### ![ico-20 icon] getEntriesByType⟪getEntriesByType⟫
 
 ◘◘![ico-20 cap] ** 8**◘◘
 
@@ -499,9 +487,9 @@ console.log(performance.getEntriesByType('resource'))
         startTime: 19113.49999997765
         transferSize: 0
         workerStart: 0
-      ► __proto__: PerformanceResourceTiming
+      ► [[Prototype]]: PerformanceResourceTiming
         length: 1
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ^^^
@@ -542,20 +530,20 @@ fetch('https://httpbin.org/')
         startTime: 24782.19999995781
         transferSize: 0
         workerStart: 0
-      ► __proto__: PerformanceResourceTiming
+      ► [[Prototype]]: PerformanceResourceTiming
         length: 1
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ^^^
 
 _______________________________________________________________
 
-### ![ico-20 icon] PerformanceResourceTiming
+### ![ico-20 icon] PerformanceResourceTiming⟪PerformanceResourceTiming⟫
 
 Для каждого процесса загрузки ресурсов приложения создается свой экземпляр **~PerformanceResourceTiming~**
 
-#### ![ico-20 icon] initiatorType
+#### ![ico-20 icon] initiatorType⟪initiatorType⟫
 
 Свойство **_~initiatorType~_** этого экземпляра идентифицирует источник запроса
 
@@ -565,7 +553,7 @@ _______________________________________________________________
 | **css**            | Запрос инициирован элементом &lt;style><br>( например, при загрузке шрифтов ) |
 | **xmlhttprequest** | Запрос инициирован объектом XMLHttpRequest |
 
-#### ![ico-20 icon] name
+#### ![ico-20 icon] name⟪name⟫
 
 Свойство **_~name~_** этого экземпляра идентифицирует **~url~** запрошенного ресурса
 
@@ -635,6 +623,6 @@ ________________________________
 
 _______________________________________________________________
 
-## ![ico-25 icon] Memory allocation
+## ![ico-25 icon] Memory allocation⟪Memory_allocation⟫
 
 [![ico-70 youtube]](https://www.youtube.com/watch?v=nDNEiu_xwf0&feature=youtu.be)

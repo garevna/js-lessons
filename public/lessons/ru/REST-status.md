@@ -1,4 +1,4 @@
-# ![ico-25 icon] Status
+# ![ico-25 icon] Status⟪Status⟫
 
 ![ico-20 green-ok] **200** (OK)
 

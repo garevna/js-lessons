@@ -1,4 +1,4 @@
-# ![ico-30 study] REST API
+# ![ico-30 study] REST API⟪REST_API⟫
 
 **Representational State Transfer**
 
@@ -16,7 +16,7 @@ __________________________________
 
 ________________________________________
 
-## ![ico-25 icon] Автор концепции
+## ![ico-25 icon] Автор концепции⟪avtor_kontseptsyy⟫
 
 @@@@
 
@@ -27,7 +27,7 @@ ________________________________________
 
 ______________________________
 
-## ![ico-25 icon] HATEOAS
+## ![ico-25 icon] HATEOAS⟪HATEOAS⟫
 
 **_Hypermedia As The Engine Of Application State_** (**HATEOAS**) — это базовая концепция REST
 ^^(коренное отличие архитектуры **REST** от других сетевых архитектур)^^
@@ -53,7 +53,7 @@ ___________________________________
 
 _____________________________________
 
-## ![ico-25 icon] Понятие endpoint
+## ![ico-25 icon] Понятие endpoint⟪ponyatye_endpoint⟫
 
 ^^^[endpoint]
 
@@ -138,9 +138,9 @@ http://api.weatherstack.com/current?access_key=xxxxxxxx&query=Kharkiv
 @@@@
 ___________________________________
 
-## ![ico-25 icon] endpoints для самостоятельной работы с REST API
+## ![ico-25 icon] endpoints для самостоятельной работы с REST API⟪endpoints_dlya_samostoyatelʹnoi_raboti_s_REST_API⟫
 
-### ![ico-20 icon] GET
+### ![ico-20 icon] GET⟪GET⟫
 
 Получить всех юзеров из базы данных **users**:
 
@@ -159,7 +159,7 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')
   ► 451789: {name: "Feodor", age: 18, speciality: "hobbit"}
   ► 789451: {name: "Teodor", age: 25, hobby: "fly", speciality: "teacher"}
   ► begemot: {name: "Stephan", age: 36, speciality: "doctor"}
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 _______________________
@@ -181,7 +181,7 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/begemot')
     age: 36
     name: "Stephan"
     speciality: "doctor"
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 _______________________________
@@ -204,7 +204,7 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/?name=Steph
 ▼ [{…}]
   ► 0: {name: "Stephan", age: 36, speciality: "doctor"}
     length: 1
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 если нужно получить из базы данных **users** всех юзеров в возрасте 18 лет:
@@ -225,12 +225,12 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users?age=^18^')
 ▼ [{…}]
   ► 0: {name: "Feodor", age: 18, speciality: "hobbit"}
     length: 1
-  ► __proto__: Array(0)
+  ► [[Prototype]]: Array(0)
 ~~~
 
 ___________________________________
 
-### ![ico-20 icon] POST | PUT | PATCH | DELETE
+### ![ico-20 icon] POST | PUT | PATCH | DELETE⟪POST___PUT___PATCH___DELETE⟫
 
 ••https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/_id_••
 

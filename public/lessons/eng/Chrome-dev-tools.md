@@ -1,9 +1,9 @@
-# ![ico-30 icon] Chrome DevTools
+# ![ico-30 icon] Chrome DevTools⟪Chrome_DevTools⟫
 
 [![ico-20 link] Chrome DevTools](external/dev-tools)
 _____________________________________________________________
 
-## ![ico-25 icon] Sources
+## ![ico-25 icon] Sources⟪Sources⟫
 
 Open the [**page**](samples/02).
 
@@ -26,7 +26,7 @@ You can work not only with the code of an open page in the debugger.
 
 You can create your own piece of code that you want to debug.
 
-### ![ico-20 icon] Snippet
+### ![ico-20 icon] Snippet⟪Snippet⟫
 
 Using the same **~>>~** button in the navigation panel, select **_Snippets_**.
 
@@ -43,7 +43,7 @@ Next, you can paste the snippet code in the center, save the changes (Ctrl+S) an
 
 ________________________________________________________________________
 
-## ![ico-25 icon] Debugger
+## ![ico-25 icon] Debugger⟪Debugger⟫
 
 The most important sections of the debugger that you will need to master first are:
 
@@ -68,26 +68,26 @@ You can also make changes to the code, save your changes (**~Ctrl + S~**) and re
 
 @@@@
 ![](icons/debugger-panel.png)
-After resuming, the new version of the code will work.
+To resume code execution, use the ![ico-40 debug-button] button.
 @@@@
 
-To resume the execution of the code, use the button ![ico-40 debug-button].
+![ico-25 warn] After installing ~breakpoints~, you need to refresh the page ![reload].
 
 ![](illustrations/lesson-01-debugger.gif)
 
 _______________________________________________________
 
-![ico-25 warn] After setting the ~breakpoints~, you need to reload the page ![reload].
 ![ico20] You can also track changes in variable values in the **~Scope~** section of the debugger:
 • Local - local variables of the function being executed.
-
 • Block - variables of the call context of the executable function.
+
+![ico-20 warn] Keep track of which function is currently being executed in the **~Call Stack~** section.
 
 _____________________________________________________________________________
 
-### ![ico-25 icon] Event Listener Breakpoints
+### ![ico-25 icon] Event Listener Breakpoints⟪Event_Listener_Breakpoints⟫
 
-В  **Chrome DevTools**  можно также приостанавливать выполнение кода, когда происходят события DOM
+In  **Chrome DevTools** , you can also pause code execution when DOM events occur
 
 ![](illustrations/Chrome-devtools-breakpoints.gif)
 

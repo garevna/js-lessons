@@ -193,22 +193,22 @@ iterator = (function* gen (arg) {
 ▼ {value: {…}, done: false}
     done: false
   ► value: {1572850855950[0]: "Hello"}
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 
 ▼ {value: {…}, done: false}
     done: false
   ► value: {1572850855951: "Welcome"}
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 
 ▼ {value: {…}, done: false}
     done: false
   ► value: {1572850855951[1]: "Who are you?"}
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 
 ▼ {value: {…}, done: false}
     done: false
   ► value: {1572850855951[2]: "Bye-bye..."}
-  ► __proto__: Object
+  ► [[Prototype]]: Object
 ~~~
 
 {{{generators-26.js}}}

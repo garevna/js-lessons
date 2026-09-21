@@ -7,6 +7,8 @@ export const icons = {
   negation: 'red_cross',
   icon: 'icon',
   cap: 'coffee',
+  console: 'mdi_console',
+  'mdi-console': 'mdi_console',
   cup: 'coffee',
   coffee: 'coffee',
   link: 'link',

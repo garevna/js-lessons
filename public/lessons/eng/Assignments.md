@@ -1,4 +1,4 @@
-# ![ico-35 study] Assignment operators
+# ![ico-35 study] Assignment operators⟪Assignment_operators⟫
 
 ^^![ico-20 warn] do not confuse the assignment operator with the comparison operator.^^
 
@@ -48,7 +48,7 @@ In addition to the usual assignment operator, we also have such forms that allow
 
 _________________________________________________________________
 
-## ![ico-30 icon] Abbreviated forms of assignment
+## ![ico-30 icon] Abbreviated forms of assignment⟪Abbreviated_forms_of_assignment⟫
 
 Let's say we have a variable **~number~**:
 
@@ -125,7 +125,7 @@ Would you agree that this is much more convenient?
 
 _________________________________________________________________
 
-## ![ico-30 hw] Tests
+## ![ico-30 hw] Tests⟪Tests⟫
 
 ~~~js
 var alpha = 11, betta = 7, sigma = 2, number = NaN

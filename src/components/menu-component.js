@@ -111,7 +111,11 @@ class MenuComponent extends HTMLElement {
         opacity: 0
       })
 
-      const href = `#${convertStringForAnchor(option.text)}`
+      // The id the heading actually carries. The build makes it from the
+      // English wording, so it is the same in all three languages and the
+      // address survives switching. A page without one — anything static —
+      // still falls back to transliterating what the heading says here.
+      const href = `#${option.id || convertStringForAnchor(option.text)}`
 
       const ref = Object.assign(createElem('a', li), {
         innerHTML: option.char + ' ' + option.text,

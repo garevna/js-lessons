@@ -1,9 +1,9 @@
-# ![ico-35 study] Таймеры
+# ![ico-35 study] Таймеры⟪taimeri⟫
 
 The first argument passed to the timer is always the callback function.
 Setting a timer returns a numeric timer ID.
 
-## ![ico-30 clock] setTimeout
+## ![ico-30 clock] setTimeout⟪setTimeout⟫
 
 The ~setTimeout~ method of the ~window~ object takes two arguments:
 
@@ -57,7 +57,7 @@ undefined // основной поток завершил работу, стек
 
 ____________________________
 
-## ![ico-25 clock] setInterval
+## ![ico-25 clock] setInterval⟪setInterval⟫
 
 I don't recommend you use this timer.
 Firstly, because the exact time interval cannot be maintained.
@@ -213,7 +213,7 @@ This **~requestAnimationFrame~** is a method of the **window** object.
 
 ____________________________________________
 
-## ![ico-25 icon] requestAnimationFrame
+## ![ico-25 icon] requestAnimationFrame⟪requestAnimationFrame⟫
 
 So, there are a few ‘shortcomings’ of timers that make it undesirable to use them for animation.
 The first is that you can never be sure that the time that passes until the timer's callback function enters the Call Stack will be the time you set when you set the timer.
@@ -392,7 +392,7 @@ messages
 {{{requestAnimationFrame-6.js}}}
 ___________________________________________________
 
-## ![ico-25 icon] Debounce
+## ![ico-25 icon] Debounce⟪Debounce⟫
 
 Debounce is an unpleasant phenomenon which means that some function is called too often.
 This happens most frequently with UI event handlers.
@@ -455,7 +455,7 @@ section.onclick = (function () {
 
 _________________________________________________________
 
-## ![ico-25 icon] Examples
+## ![ico-25 icon] Examples⟪Examples⟫
 
 ![ico-25 cap] **11**
 
