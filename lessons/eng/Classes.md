@@ -313,8 +313,8 @@ const Sample = class Canvas {
   }
 
   resizeCanvas (event) {
-    this.canvas.width = window.innerWidth - 30
-    this.canvas.height = window.innerHeight - 20
+    this.canvas.width = window.innerWidth - 64
+    this.canvas.height = window.innerHeight - 64
   }
 
   drawLine (points) {
@@ -343,17 +343,15 @@ ________________________________________________________
 
 ## ![ico-25 icon] get & set⟪get_&_set⟫
 
-^^![ico-20 warn] Properties declared in the constructor will be instance properties^^
-
 To create computed properties, you need to use getters and setters
-
 ![ico-20 memo] Using the keyword  **~get~**, you can declare a getter that returns the value of a computed property
-
-^^The getter will be called every time the instance’s property is accessed^^
-
 ![ico-20 memo] Using the keyword **~set~**, you can declare a setter that changes the value of a property
 
+•••• none
+^^![ico-20 warn] Properties declared in the constructor will be instance properties^^
+^^The getter will be called every time the instance’s property is accessed^^
 ^^The setter will be called whenever the identifier of the computed property appears on the left-hand side of an assignment statement^^
+••••
 
 Let’s look at a simplified example using canvas:
 
@@ -1217,19 +1215,21 @@ _______________________________________
 
 #### ![ico-20 icon] Base class⟪Base_class⟫
 
-Let’s create a class **DrawFigures**, which will create an SVG element
-with two methods: **_setSize()_** and **~drawFigure()~**
+Let’s create a class **~DrawFigures~**, which will create an SVG element
+with two methods: **~setSize()~** and **~drawFigure()~**
 
-![ico-20 speach] The **~setSize()~** method will change the dimensions of the SVG element
-![ico-20 speach] The **~drawFigure()~** method will add elements to the SVG container
-
+•••• none
+![ico-20 speach] The **_setSize()_** method will change the dimensions of the SVG element
+![ico-20 speach] The **_drawFigure()_** method will add elements to the SVG container
 ^^The element name will be passed as the first argument to the method (figure)^^
 ^^Possible values are “line”, “circle”, “path”, “rect”, etc.^^
 ^^The shape parameters will be passed as the second argument to the method (params)^^
+••••
 
-![ico-20 speach] As each  svg  element has its own set of attributes, we create a property  **~attrs~** (an object), whose properties will be the names of the svg elements, and whose values will be an array of attributes for each svg element
-
-When creating an SVG element, its attributes will be set using the **~setAttribute()~** method
+••••
+![ico-20 speach] As each  svg  element has its own set of attributes, we create a property  **_attrs_** (an object), whose properties will be the names of the svg elements, and whose values will be an array of attributes for each svg element
+When creating an SVG element, its attributes will be set using the **_setAttribute()_** method
+••••
 
 ~~~js
 const DrawFigures = class SVG {
@@ -1268,12 +1268,16 @@ sample
   .setAttribute ('stroke', 'red')
 ~~~
 
-![ico-20 speach] Calling the method   **~drawFigure()~** will create a &lt;line&gt; element and return a reference to it,
-but this element will not be displayed on the page, as the array  **~attrs.line~**
-lacks the “~stroke~” attribute, which specifies the line colour
+•••• none
+![ico-20 speach] Calling the method **_drawFigure()_** will create a &lt;line&gt; element and return a reference to it,
+but this element will not be displayed on the page, as the array **_attrs.line_** lacks the _stroke_ attribute, which specifies the line colour.
 
-![ico-20 speach] To see this element on the page, we need to set the value of the ~stroke~ attribute
-after calling the **_drawFigure()_** method:
+••••
+
+•••• none
+![ico-20 speach] To see this element on the page, we need to set the value of the _stroke_ attribute after calling the **_drawFigure()_** method:
+
+••••
 
 ~~~js
 setAttribute('stroke', 'red')
@@ -1295,18 +1299,21 @@ _____________________________________________________
 
 #### ![ico-20 icon] Subclass⟪Subclass⟫
 
-![ico-20 speach] Now let’s create a subclass  **ColouredFigures**,
-which extends the functionality of the parent class  **DrawFigures**
-by adding attributes for lines and fills
-("~stroke~", "~style~", "~fill~")
-and the method for deleting an element  **_erase_**
+![ico-20 speach] Now let’s create a subclass **~ColouredFigures~** which extends the functionality of the parent class **~DrawFigures~** by adding
+• attributes for lines and fills (~stroke~, ~style~, ~fill~)
+• the method for deleting an element **~erase~**
 
-![ico-20 speach] In the constructor of the child class, we’ll call the method **~super()~**,
-to create an &lt;svg&gt; container with the required dimensions,
-and declare the instance property  **~figures~**
 
-![ico-20 speach] The method **~super()~** must be called first in the constructor,
-as the value of `this` will not be defined
+
+![ico-20 speach] In the constructor of the child class, we’ll call the method **~super()~** to create an &lt;svg&gt; container with the required dimensions
+
+and declare the instance property  **~figures~**.
+
+••••
+![ico-20 speach] The method **_super()_** must be called first in the constructor, as the value of _this_ will not be defined.
+••••
+
+
 within the constructor until it is called
 
 ![ico-20 speach] Furthermore, we’ll extend the functionality of the base class **DrawFigures**,
