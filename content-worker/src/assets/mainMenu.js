@@ -132,6 +132,7 @@ export const mainMenu = [
       { ref: 'BOM', ua: 'Об\'єктна модель браузера', eng: 'Browser Object Model', ru: 'Объектная модель браузера' },
       { ref: 'DOM', ua: 'Об\'єктна модель документа', eng: 'Document Object Model', ru: 'Объектная модель документа' },
       { ref: 'DOM-elements', ua: 'Елементи DOM', eng: 'DOM elements', ru: 'Элементы DOM' },
+      { ref: 'scroll', ua: 'Розміри та прокручування елемента', eng: 'Element size and scrolling', ru: 'Размеры и прокрутка элемента' },
       { ref: 'hw-06', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
   },
