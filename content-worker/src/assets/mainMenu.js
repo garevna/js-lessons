@@ -153,13 +153,6 @@ export const mainMenu = [
     ]
   },
   {
-    ref: 'dom-events',
-    ua: 'Події об\'єктів DOM',
-    eng: 'DOM events',
-    ru: 'События объектов DOM',
-    items: []
-  },
-  {
     ref: 'closure-recursion-timers',
     ua: 'Контекст. Замикання. Throttling',
     eng: 'Context. Closure. Throttling',
