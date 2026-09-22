@@ -77,6 +77,21 @@ Everything is edited under `content/`:
 Then `npm run lessons`, or leave `npm run watch` running and it happens by
 itself.
 
+Four things a lesson needs are not under `content/`, and they are the ones
+people hunt for:
+
+| To change | Edit |
+|---|---|
+| a running demo — the `{{{name.js}}}` blocks | `public/lessons/js/<name>.js` |
+| what a lesson is found by | `content-worker/src/assets/keywords.js` |
+| the menu: sections, order, titles | `content-worker/src/assets/mainMenu.js` |
+| which areas a lesson belongs to | `content/areas.json` |
+
+The demos are the exception to "never edit under `public/`": they are source
+that happens to live in the output folder, and nothing generates them. The
+other three are read by the content worker, so a change there needs
+`npm run content-worker`, or `npm run full`.
+
 `npm run lessons:check` answers the question directly: it compares every built
 page with `content/` and names anything that disagrees. CI runs it too, so a
 page built from stale sources cannot reach the repository.
