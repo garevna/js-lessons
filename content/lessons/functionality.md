@@ -1,11 +1,17 @@
 # ![ico-30 study] {{p1}}
 
+## ![ico-25 icon] {{p8}}
+
+•••• none
 {{p2}}
 {{p3}}
 {{p4}}
 {{p5}}
+••••
 
 __________________________________________
+
+### ![ico-20 icon] {{p10}}
 
 {{p6}}
 
@@ -14,10 +20,9 @@ const func = (x, y, z) => x + y - z
 ~~~
 
 {{p7}}
-{{p8}}
 
 {{p9}}
-{{p10}}
+
 
 ~~~js
 const func = (x, y, z) => x + y - z * Math.random()
@@ -34,16 +39,19 @@ const makeCounter = () => {
 const counter = makeCounter()
 ~~~
 
+••••
 {{p12}}
-
 {{p13}}
-{{p14}}
+••••
 
 ___________________________________________________________
 
-{{p15}}
+### ![ico-20 icon] {{p14}}
 
+••••
+{{p15}}
 {{p16}}
+••••
 
 {{p17}}
 
@@ -98,83 +106,100 @@ summation()
 
 {{p23}}
 
-{{p24}}
-
 ◘◘![ico-25 cap] ** 1**◘◘
 
 ~~~js
 const numbers = [10, 5, 7]
 
-const show = (numbers, sum) => setTimeout(() => console.log(`[${numbers.toString()}] : ${sum}`), Math.random() * 2500)
-
 const summation = (sum = 0) => {
-  while (numbers.length > 0) {
+  for (const num of numbers) {
     sum += numbers.shift()
-    show(numbers, sum)
+    numbers.push(sum)
   }
-  return sum
+  console.log(`[${numbers.toString()}]:`, sum)
 }
-~~~
 
-{{p25}}
-
-~~~js
-numbers = [10, 5, 7]
-
+summation()
+summation()
 summation()
 ~~~
 
-{{{functionality.js}}}
+~~~console
+[10,15,22]: 22
+[10,25,47]: 47
+[10,35,82]: 82
+~~~
 
+________________________________________
+
+### ![ico-20 icon] {{p24}}
+
+•••• none
+{{p25}}
 {{p26}}
+••••
+
+~~~js
+function setAdmin (user) {
+  user.role = 'admin'
+  return user
+}
+~~~
+
 {{p27}}
 {{p28}}
 
 {{p29}}
 
+~~~js
+function five () {
+  console.log(5)
+  return 5
+}
+
+five(five(five(five())))
+~~~
+
+~~~console
+5
+5
+5
+5
+<• 5
+~~~
+
 {{p30}}
 
-{{p31}}
-
-◘◘![ico-25 cap] ** 2**◘◘
+◘◘![ico-25 cap] **2**◘◘
 
 ~~~js
-const numbers = [10, 5, 7]
-
-const randomNum = lim => Math.floor(Math.random() * lim)
-
-const summation = () => numbers[randomNum(numbers.length - 1)] = randomNum(20)
-
-const show = () => console.log(`[${numbers.toString()}]`)
-
-const callFunc = () => {
-  if (Math.random() > 0.5) {
-    summation()
-    show ()
-  } else {
-    show ()
-    summation()
+function initArray (array) {
+  if (!Array.isArray(array) {
+    return false
   }
+  array.length = 0
+  array.push(1, 2, 3, 4, 5)
+  return true
 }
 ~~~
 
-{{p32}}
-
-{{{functionality-1.js}}}
+{{p31}}
 
 _______________________________________________________
 
+## ![ico-25 icon] {{p32}}
+
 {{p33}}
 
+••••
 {{p34}}
-
 {{p35}}
 {{p36}}
 {{p37}}
-
 {{p38}}
+••••
 
-## ![ico-25 icon] {{p39}}
+### ![ico-20 icon] {{p39}}
 
 ◘◘![ico-25 cap] ** 3**◘◘
 
@@ -211,7 +236,9 @@ elefant
 
 {{p44}}
 
-![](https://lh3.googleusercontent.com/3GB6A4pHq6LgFdRGD31bjB5sEUMgWCTYJHf9JmNjOX-r-6PMN54s6-vRTL5d73Nw7lKkAntT_2d0Ea4kcEpenX-gTm8nuNXGXvgJ0DKxw82A36E8hZbr-Zmggh9N7ZJbK4G5TkfTDDY5DHw)
+~~~console
+<p class="error-message">Uncaught TypeError&colon; func is not a function</p>
+~~~
 
 {{p45}}
 
@@ -273,7 +300,7 @@ newFunc(elefant, 'sample')
 
 ________________________________
 
-## ![ico-25 icon] {{p54}}
+### ![ico-20 icon] {{p54}}
 
 {{p55}}
 
@@ -306,4 +333,112 @@ secondFunc()
 ~~~console
 function  First
 function  Second
+~~~
+
+________________________________________
+
+### ![ico-20 icon] {{p65}}
+
+{{p58}}
+
+◘◘![ico-25 cap] **5**◘◘
+
+~~~js
+function first (a, b, c) {
+  if (!a || typeof a !== 'number') {
+      return first
+  }
+  if (!b || typeof b !== 'number') {
+    return function second (b, c) {
+      if (!b || typeof b !== 'number') {
+        return second
+      }
+      if (!c || typeof c !== 'number') {
+        return function third (c) {
+          if (!c || typeof c !== 'number') {
+            return third
+          }
+          return a + b + c
+        }
+      } else {
+        return a + b + c
+      }
+    }
+  } else {
+    if (!c || typeof c !== 'number') {
+      return function third (c) {
+        if (!c) return third
+        return a + b + c
+      }
+    } else {
+      return a + b + c
+    }
+  }
+}
+
+console.log('first(5, 10, 20):', first(5, 10, 20))
+console.log('first(5)(10)(20):', first(5)(10)(20))
+~~~
+
+~~~console
+first(5, 10, 20): 35
+first(5)(10)(20): 35
+~~~
+
+{{p59}}
+{{p60}}
+{{p61}}
+{{p62}}
+{{p63}}
+{{p64}}
+
+~~~js
+const second = first(5)
+const third = second(10)
+console.log('third(20):', third(20))
+~~~
+
+~~~console
+third(20): 35
+~~~
+
+~~~js
+console.log('first("a", "b", "c")')
+console.dir(first('a', 'b', 'c'))
+~~~
+
+~~~console
+first("a", "b", "c")
+▼ ƒ first(a, b, c)
+    length: 3
+    name: "first"
+  ► prototype: {}
+    arguments: null
+    caller: null
+  ► [[Prototype]]: ƒ ()
+~~~
+
+~~~js
+console.log('first(5, 10, "*"):')
+console.dir(first(5, 10, '*'))
+~~~
+
+~~~console
+▼ ƒ third(c)
+    length: 1
+    name: "third"
+  ► prototype: {}
+    arguments: null
+    caller: null
+  ► [[Prototype]]: ƒ ()
+~~~
+
+{{p66}}
+
+~~~js
+first('*')(undefined)(5)(NaN)(7)(false)(null)(3)
+~~~
+
+~~~console
+15
 ~~~

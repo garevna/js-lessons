@@ -54,7 +54,7 @@ const BY_SECTION = {
   'BOM & DOM': [BROWSER],
   'Асинхронщина': [ASYNC, BROWSER],
   'События объектов DOM': [],
-  'Контекст. Замыкание': [BASICS, FUNCTIONAL],
+  'Контекст. Замыкание. Throttling': [BASICS, FUNCTIONAL],
   'Итерирование массивов. SHA': [FUNCTIONAL],
   'Статические методы конструктора Object': [PROTOTYPES],
   'AJAX. Promise': [ASYNC, BROWSER],
@@ -70,7 +70,7 @@ const BY_SECTION = {
   'Встроенные объекты': [BASICS, PROTOTYPES],
   'Design Patterns': [FUNCTIONAL, PROTOTYPES],
   'IndexedDB': [ASYNC, BROWSER],
-  'Дополнительный материал': [],
+  'Браузерные API': [BROWSER],
   'Справочный материал': [TOOLS],
   'ECMAScript': [BASICS]
 }

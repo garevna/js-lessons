@@ -17,10 +17,24 @@ const throttle = function (func, interval) {
 }
 
 function showPicture () {
-  const img = section.appendChild(new Image())
-  const num = Math.round(Math.random() * 900)
+  const img = new Image()
+  let num = Math.round(Math.random() * 900)
+
+  // На страницу картинка попадает загруженной. Раньше её добавляли сразу, и
+  // до ответа сервера на месте снимка висел битый квадрат.
+  img.onload = function () {
+    section.appendChild(img)
+    img.width = 100
+  }
+
+  // Не всякий id у picsum существует. Берём следующий, вместо того чтобы
+  // оставить дыру.
+  img.onerror = function () {
+    num++
+    img.src = `https://picsum.photos/id/${num}/400/300`
+  }
+
   img.src = `https://picsum.photos/id/${num}/400/300`
-  img.width = 100
 }
 
 const showPictureThrottle = throttle(showPicture, 1000)

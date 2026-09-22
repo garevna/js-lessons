@@ -161,12 +161,13 @@ export const mainMenu = [
   },
   {
     ref: 'closure-recursion-timers',
-    ua: 'Контекст. Замикання',
-    eng: 'Context. Closure',
-    ru: 'Контекст. Замыкание',
+    ua: 'Контекст. Замикання. Throttling',
+    eng: 'Context. Closure. Throttling',
+    ru: 'Контекст. Замыкание. Throttling',
     items: [
       { ref: 'Closure', ua: 'Замикання', eng: 'Closure', ru: 'Замыкание' },
-      { ref: 'Context', ua: 'Контекст виклику', eng: 'Call context', ru: 'Контекст вызова' }
+      { ref: 'Context', ua: 'Контекст виклику', eng: 'Call context', ru: 'Контекст вызова' },
+      { ref: 'throttling-and-debouncing', ua: 'Throttling and debouncing', eng: 'Throttling and debouncing', ru: 'Throttling and debouncing' }
     ]
   },
   {
@@ -177,7 +178,6 @@ export const mainMenu = [
     items: [
       { ref: 'Array-iterating-methods', ua: 'Ітеруючі методи масивів', eng: 'Array iterating methods', ru: 'Итерирующие методы массивов' },
       { ref: 'JS-heap-memory-allocation', ua: 'Тестування продуктивності', eng: 'Heap memory allocation', ru: 'Тестирование производительности' },
-      { ref: 'throttling-and-debouncing', ua: 'Throttling and debouncing', eng: 'Throttling and debouncing', ru: 'Throttling and debouncing' },
       { ref: 'SHA', ua: 'Secure Hash Algorithm', eng: 'Secure Hash Algorithm', ru: 'Secure Hash Algorithm' },
       { ref: 'hw-09', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
@@ -354,6 +354,7 @@ export const mainMenu = [
     eng: 'Design Patterns',
     ru: 'Design Patterns',
     items: [
+      { ref: 'SOLID', ua: 'Принципи SOLID', eng: 'SOLID principles', ru: 'Принципы SOLID' },
       { ref: 'patterns', ua: 'Design Patterns', eng: 'Design Patterns', ru: 'Design Patterns' },
       { ref: 'pattern-Observer', ua: 'Pattern Observer', eng: 'Pattern Observer', ru: 'Паттерн Observer' },
       { ref: 'pattern-Decorator', ua: 'Pattern Decorator', eng: 'Pattern Decorator', ru: 'Паттерн Decorator' },
@@ -375,12 +376,10 @@ export const mainMenu = [
   },
   {
     ref: 'additional-material',
-    ua: 'Додатковий матеріал',
-    eng: 'Additional material',
-    ru: 'Дополнительный материал',
+    ua: 'Браузерні API',
+    eng: 'Browser APIs',
+    ru: 'Браузерные API',
     items: [
-      { ref: 'throttling-and-debouncing', ua: 'Throttling and debouncing', eng: 'Throttling and debouncing', ru: 'Throttling and debouncing' },
-      { ref: 'SOLID', ua: 'Принципи SOLID', eng: 'SOLID principles', ru: 'Принципы SOLID' },
       { ref: 'web-workers', ua: 'Web-workers', eng: 'Web-workers', ru: 'Web-workers' },
       { ref: 'NotificationAPI', ua: 'Notification API', eng: 'Notification API', ru: 'Notification API' },
       { ref: 'performance', ua: 'Performance API', eng: 'Performance API', ru: 'Performance API' },

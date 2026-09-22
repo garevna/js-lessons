@@ -54,7 +54,7 @@ export const keywords = {
   forms: ['value', 'onchange', 'input', 'type', 'switches', 'radio', 'checked', 'checkbox', 'select', 'selectedindex', 'option', 'drop-down list', 'click', 'color'],
   'hw-07': ['click', 'mouseover', 'mouseout'],
   'arrow-function': ['es6', 'prototype', 'arguments', 'call context', 'function', 'this', 'arrow', 'arrow function', 'signature'],
-  functionality: ['higher-order function', 'function as argument', 'function as return value'],
+  functionality: ['higher-order function', 'function as argument', 'function as return value', 'функциональное программирование', 'functional programming', 'функціональне програмування', 'чистая функция', 'pure function', 'чиста функція', 'ссылочная прозрачность', 'referential transparency', 'посилальна прозорість', 'иммутабельность', 'immutability', 'immutable', 'імутабельність', 'идемпотентность', 'idempotence', 'idempotency', 'ідемпотентність', 'функция высшего порядка', 'функція вищого порядку', 'функция-аргумент', 'функція-аргумент', 'функция-возвращаемое значение', 'функція-значення, що повертається', 'цепочные вычисления', 'chaining', 'ланцюгові обчислення'],
   Closure: ['closure', 'lexical environment', 'iife', 'immediately invoked function expression', 'function expression', 'function', 'function as return value', 'var', 'arguments'],
   recursion: ['recursion', 'tail recursion', 'recursion termination condition', 'call stack', 'self-invocation', 'function', 'recursion depth'],
   'Event-Loop': ['loop', 'event', 'event-driven programming', 'thread', 'process', 'heap', 'call stack', 'asynchrony', 'task', 'queue', 'callback', 'function', 'microtask', 'promise', 'task queue', 'event queue', 'multithreading', 'single-threading', 'core', 'processor', 'engine', 'browser'],

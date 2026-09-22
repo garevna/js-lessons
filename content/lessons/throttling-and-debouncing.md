@@ -1,7 +1,9 @@
-# ![ico-30 icon] Throttling and Debouncing
+# ![ico-30 icon] {{p1}}
 
-{{p1}}
+••••
 {{p2}}
+••••
+
 {{p3}}
 {{p4}}
 
@@ -59,10 +61,18 @@ const throttle = function (func, interval) {
 
 ~~~js
 function showPicture () {
-  const img = document.body.appendChild(new Image())
-  const num = Math.round(Math.random() * 900)
+  const img = new Image()
+  let num = Math.round(Math.random() * 900)
+  img.onload = function () {
+    document.body.appendChild(img)
+    img.width = 100
+  }
+  img.onerror = function () {
+    num++
+    img.src = `https://picsum.photos/id/${num}/400/300`
+  }
+  
   img.src = `https://picsum.photos/id/${num}/400/300`
-  img.width = 100
 }
 ~~~
 
