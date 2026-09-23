@@ -1,9 +1,11 @@
 
-#![ico-70 warn] 404
+#![ico-70 sand-watch] Not translated yet
 
-<h1 style="text-align: center">File Not Found</h1>
-<h2>Unfortunately, the material you requested was not found or does not exist.</h2>
-<h5 style="text-align: center">You can view this topic in ^^russian^^, or wait until the translation will be completed.</h5>
+<h2 style="text-align: center">This lesson exists. It has not been translated into English yet.</h2>
 
-<p>Please contact the developer</p>
+<h5 style="text-align: center">You can read it in ^^russian^^ now, or come back when the translation is done.</h5>
+
+_______________________________________________
+
+<p>Looks like a mistake? Write to the author</p>
 <p>Telegram: @garevna</p>

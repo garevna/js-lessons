@@ -9,7 +9,7 @@ export const mainMenu = [
       { ref: 'Developer-tools', ua: 'Інструменти розробника', eng: 'Developer tools', ru: 'Инструменты разработчика' },
       { ref: 'Chrome-dev-tools', ua: 'Chrome DevTools', eng: 'Chrome DevTools', ru: 'Chrome DevTools' },
       { ref: 'global-object-and-memory', ua: 'Глобальний об\'єкт. Пам\'ять', eng: 'Global object. Memory', ru: 'Глобальный объект. Память' },
-      { ref: 'hw-flowchart', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-01', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
   },
   {
