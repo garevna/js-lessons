@@ -23,9 +23,11 @@ export const mainMenu = [
       { ref: 'typeof', ua: 'Оператор typeof', eng: 'Operator typeof', ru: 'Оператор typeof' },
       { ref: 'NaN-null-Infinity', ua: 'NaN / null / Infinity', eng: 'NaN / null / Infinity', ru: 'NaN / null / Infinity' },
       { ref: 'data-structures', ua: 'Структури даних', eng: 'Data structures', ru: 'Структуры данных' },
+      { ref: 'length', ua: 'Властивість length', eng: 'The length property', ru: 'Свойство length' },
       { ref: 'Boolean', ua: 'Логічні конструкції', eng: 'Logical constructs', ru: 'Логические конструкции' },
       { ref: 'function', ua: 'Функції', eng: 'Functions', ru: 'Функции' },
       { ref: 'Assignments', ua: 'Оператори присвоювання', eng: 'Assignment operators', ru: 'Операторы присваивания' },
+      { ref: 'hw-02', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
     ]
   },
   {
