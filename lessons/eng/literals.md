@@ -1,60 +1,124 @@
-# ![ico-30 study] Variables in literals⟪Variables_in_literals⟫
+# ![ico-30 study] Template literals⟪Template_literals⟫
 
-![ico-20 warn] A string literal is enclosed in backticks **~`...`~**
+••![ico-20 warn] A string literal is enclosed in backticks **_`...`_**.••
 
-A literal can contain multi-line text,
-i.e. a line feed character can be inserted into a literal
+Smart strings
+It could be said that these are _dynamic strings_, as in most cases their content is compiled whilst the code is being executed.
+
+## ![ico-25 icon] Multi-line text⟪Multi-line_text⟫
+
+If you try to write a normal text string across several lines, an exception will be thrown:
+
+~~~js
+var str = "
+  Welcome, ladies and gentlemen
+  we hope you enjoy learning JS!
+  Remember the golden rule:
+  not a day without writing a line of code!
+"
+~~~
+
+~~~console
+<p class="error-message">Uncaught SyntaxError&colon; Invalid or unexpected token</p>
+~~~
+
+You can insert a line break character (~\n~) into any line; however, this may result in the line becoming uncomfortably long and rather difficult to read.
+
+~~~js
+var str = "Welcome, ladies and gentlemen,\nwe hope you enjoy learning JS!\nRemember the golden rule:\nnot a day without writing a line of code!"
+
+console.log(str)
+~~~
+
+~~~console
+Welcome, ladies and gentlemen,
+we hope you enjoy learning JS!
+Remember the golden rule&colon;
+not a day without writing a line of code!
+~~~
+
+A literal allows you to write multi-line text in a more convenient format:
 
 ![ico-25 cap] **Example 1**
 
 ~~~js
-var str = "\nПривет,\nменя зовут Дима\n"
-
 var lit = `
-    Привет,
-    меня зовут Дима
-
+Welcome, ladies and gentlemen,
+we hope you enjoy learning JS!
+Remember the golden rule:
+not a day without writing a line of code!
 `
 
-console.log(str)
 console.log(lit)
-console.log(str.charCodeAt(0))
-console.log(lit.charCodeAt(0))
 ~~~
 
-^^Result in the console:^^
+~~~console
+    
+Welcome, ladies and gentlemen,
+we hope you enjoy learning JS!
+Remember the golden rule&colon;
+not a day without writing a line of code!
+~~~
 
-![](createPath("illustrations", "string-methods-01.png"))
+Let’s check which character appears at the very start of the literal **~lit~**:
 
-^^10 is the code for the line feed character^^
+~~~js
+lit[0]  // '\n'
+~~~
 
-Note that in a normal string (**str**) we had to insert a line break using ~\n~
+~~~js
+console.log(lit.charCodeAt(0)) // 10
+~~~
 
-In a literal (**lit**) we simply type multi-line text, which improves the readability of the code
+^^10 is the code for the line feed character.^^
 
-But these are not the only advantages of literals
+Note that in a normal string (**~str~**) we had to insert a line break using ~\n~.
+
+In a literal (**~lit~**) we simply type multi-line text, which improves the readability of the code.
+
+~~~js
+var style = `
+width: 100px;
+height: 100px;
+background: #dde;
+padding: 16px;
+`
+
+console.log(style)
+~~~
+
+~~~console
+width&colon; 100px;
+height&colon; 100px;
+background&colon; #dde;
+padding&colon; 16px;
+~~~
+
+But these are not the only advantages of literals.
 
 __________________________________________________________________
 
-The **~${ имя_переменной }~** construct allows you to insert variable values directly into a string literal
+## ![ico-25 icon] Variables in literals⟪Variables_in_literals⟫
+
+The **~${varName}~** construct allows you to insert variable values directly into a string literal.
+
+{{{template-literals.js}}}
 
 ![ico-25 cap] **Example 2**
 
 ~~~js
-var cities = ['Неаполь', 'Вашингтон', 'Женева']
+var cities = ['Naples', 'Washington', 'Geneva']
 
-for (var i = 0; i < cities.length; i++) {
-  console.log(`${ i + 1 }: ${ cities [ i ] }`)
-}
+console.log(`1: ${cities[0]}`)
+console.log(`2: ${cities[1]}`)
+console.log(`3: ${cities[2]}`)
 ~~~
 
-^^Result in the console:^^
-
-•••• none
-1: Naples
-2: Washington
-3: Geneva
-••••
+~~~console
+1&colon; Naples
+2&colon; Washington
+3&colon; Geneva
+~~~
 
 ____________________________________________________________________
 
@@ -63,26 +127,21 @@ You can use expressions whose values will be evaluated and inserted into the lit
 ![ico-25 cap] **Example 3**
 
 ~~~js
-var cities = [
-  'Киев',
-  'Львов',
-  'Харьков',
-  'Одесса',
-  'Днепропетровск'
-]
+var cities = ['Kyiv', 'Lviv', 'Kharkiv', 'Odesa', 'Dnipro']
 
-var str = ''
+var str = `Cities: ${cities.length}\n`
 
-for (var x = 0; x < cities.length; x++) {
-  str += `${cities[x].charCodeAt(0)}: ${cities[x]}\n`
-}
+str += `First: ${cities[0]} (${cities[0].length} letters)\n`
+str += `Last: ${cities[cities.length - 1]} (${cities[cities.length - 1].length} letters)`
 
 console.log(str)
 ~~~
 
-^^Result in the console:^^
-
-![](createPath("illustrations", "string-methods-02.png"))
+~~~console
+Cities&colon; 5
+First&colon; Kyiv (4 letters)
+Last&colon; Dnipro (6 letters)
+~~~
 
 ______________________________________________________________________
 
@@ -123,5 +182,7 @@ var blue = Math.round(Math.random() * 255)
 
 var color = `rgb(${red},${green},${blue})`
 ~~~
+
+{{{template-literals-color.js}}}
 
 The variable **~color~** will now contain a string representing a colour value in the **~rgb~** model, with decimal colour values for each channel
