@@ -2,29 +2,73 @@
 
 {{p2}}
 
+{{p25}}
+{{p26}}
+
+## ![ico-25 icon] {{p21}}
+
+{{p22}}
+
+~~~js
+var str = "
+  Welcome, ladies and gentlemen
+  we hope you enjoy learning JS!
+  Remember the golden rule:
+  not a day without writing a line of code!
+"
+~~~
+
+~~~console
+<p class="error-message">Uncaught SyntaxError&colon; Invalid or unexpected token</p>
+~~~
+
 {{p3}}
-{{p4}}
+
+~~~js
+var str = "Welcome, ladies and gentlemen,\nwe hope you enjoy learning JS!\nRemember the golden rule:\nnot a day without writing a line of code!"
+
+console.log(str)
+~~~
+
+~~~console
+Welcome, ladies and gentlemen,
+we hope you enjoy learning JS!
+Remember the golden rule&colon;
+not a day without writing a line of code!
+~~~
+
+{{p23}}
 
 ![ico-25 cap] **{{common.c0}} 1**
 
 ~~~js
-var str = "\nПривет,\nменя зовут Дима\n"
-
 var lit = `
-    Привет,
-    меня зовут Дима
-
+Welcome, ladies and gentlemen,
+we hope you enjoy learning JS!
+Remember the golden rule:
+not a day without writing a line of code!
 `
 
-console.log(str)
 console.log(lit)
-console.log(str.charCodeAt(0))
-console.log(lit.charCodeAt(0))
 ~~~
 
-^^{{common.c2}}^^
+~~~console
+    
+Welcome, ladies and gentlemen,
+we hope you enjoy learning JS!
+Remember the golden rule&colon;
+not a day without writing a line of code!
+~~~
 
-![](createPath("illustrations", "string-methods-01.png"))
+{{p4}}
+
+~~~js
+lit[0]  // '\n'
+~~~
+
+~~~js
+console.log(lit.charCodeAt(0)) // 10
+~~~
 
 {{p5}}
 
@@ -32,29 +76,49 @@ console.log(lit.charCodeAt(0))
 
 {{p7}}
 
+~~~js
+var style = `
+width: 100px;
+height: 100px;
+background: #dde;
+padding: 16px;
+`
+
+console.log(style)
+~~~
+
+~~~console
+width&colon; 100px;
+height&colon; 100px;
+background&colon; #dde;
+padding&colon; 16px;
+~~~
+
 {{p8}}
 
 __________________________________________________________________
 
+## ![ico-25 icon] {{p24}}
+
 {{p9}}
+
+{{{template-literals.js}}}
 
 ![ico-25 cap] **{{common.c0}} 2**
 
 ~~~js
-var cities = ['Неаполь', 'Вашингтон', 'Женева']
+var cities = ['Naples', 'Washington', 'Geneva']
 
-for (var i = 0; i < cities.length; i++) {
-  console.log(`${ i + 1 }: ${ cities [ i ] }`)
-}
+console.log(`1: ${cities[0]}`)
+console.log(`2: ${cities[1]}`)
+console.log(`3: ${cities[2]}`)
 ~~~
 
-^^{{common.c2}}^^
-
-•••• none
-{{p21}}
-{{p22}}
-{{p23}}
-••••
+~~~console
+1&colon; Naples
+2&colon; Washington
+3&colon; Geneva
+~~~
 
 ____________________________________________________________________
 
@@ -63,26 +127,21 @@ ____________________________________________________________________
 ![ico-25 cap] **{{common.c0}} 3**
 
 ~~~js
-var cities = [
-  'Киев',
-  'Львов',
-  'Харьков',
-  'Одесса',
-  'Днепропетровск'
-]
+var cities = ['Kyiv', 'Lviv', 'Kharkiv', 'Odesa', 'Dnipro']
 
-var str = ''
+var str = `Cities: ${cities.length}\n`
 
-for (var x = 0; x < cities.length; x++) {
-  str += `${cities[x].charCodeAt(0)}: ${cities[x]}\n`
-}
+str += `First: ${cities[0]} (${cities[0].length} letters)\n`
+str += `Last: ${cities[cities.length - 1]} (${cities[cities.length - 1].length} letters)`
 
 console.log(str)
 ~~~
 
-^^{{common.c2}}^^
-
-![](createPath("illustrations", "string-methods-02.png"))
+~~~console
+Cities&colon; 5
+First&colon; Kyiv (4 letters)
+Last&colon; Dnipro (6 letters)
+~~~
 
 ______________________________________________________________________
 
@@ -123,5 +182,7 @@ var blue = Math.round(Math.random() * 255)
 
 var color = `rgb(${red},${green},${blue})`
 ~~~
+
+{{{template-literals-color.js}}}
 
 {{p20}}

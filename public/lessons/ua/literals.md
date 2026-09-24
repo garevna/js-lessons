@@ -1,60 +1,124 @@
-# ![ico-30 study] Змінні в літералах⟪Variables_in_literals⟫
+# ![ico-30 study] Шаблонні літерали⟪Template_literals⟫
 
-![ico-20 warn] Літерал рядка обводиться символами зворотних лапок **~`...`~**
+••![ico-20 warn] Літерал рядка обводиться символами зворотних лапок **_`...`_**.••
 
-Літерал може містити багаторядковий текст,
-тобто в літерал можна вставляти символ перенесення рядка
+Смарт-рядки (розумні рядки)
+Можна сказати, що це _динамічні рядки_, оскільки в більшості випадків їхній вміст компілюється під час виконання коду.
+
+## ![ico-25 icon] Багаторядковий текст⟪Multi-line_text⟫
+
+Якщо спробувати записати звичайний текстовий рядок у декількох рядках, то буде згенеровано виняток:
+
+~~~js
+var str = "
+  Welcome, ladies and gentlemen
+  we hope you enjoy learning JS!
+  Remember the golden rule:
+  not a day without writing a line of code!
+"
+~~~
+
+~~~console
+<p class="error-message">Uncaught SyntaxError&colon; Invalid or unexpected token</p>
+~~~
+
+У будь-який рядок можна вставляти символ перенесення рядка (~\n~), однак у цьому випадку рядок може виявитися надто довгим і не дуже зручним для читання.
+
+~~~js
+var str = "Welcome, ladies and gentlemen,\nwe hope you enjoy learning JS!\nRemember the golden rule:\nnot a day without writing a line of code!"
+
+console.log(str)
+~~~
+
+~~~console
+Welcome, ladies and gentlemen,
+we hope you enjoy learning JS!
+Remember the golden rule&colon;
+not a day without writing a line of code!
+~~~
+
+Літерал дає змогу записувати багаторядковий текст у зручнішій формі:
 
 ![ico-25 cap] **Приклад 1**
 
 ~~~js
-var str = "\nПривет,\nменя зовут Дима\n"
-
 var lit = `
-    Привет,
-    меня зовут Дима
-
+Welcome, ladies and gentlemen,
+we hope you enjoy learning JS!
+Remember the golden rule:
+not a day without writing a line of code!
 `
 
-console.log(str)
 console.log(lit)
-console.log(str.charCodeAt(0))
-console.log(lit.charCodeAt(0))
 ~~~
 
-^^Результат у консолі:^^
+~~~console
+    
+Welcome, ladies and gentlemen,
+we hope you enjoy learning JS!
+Remember the golden rule&colon;
+not a day without writing a line of code!
+~~~
 
-![](createPath("illustrations", "string-methods-01.png"))
+Давайте перевіримо, який символ стоїть на самому початку літералу **~lit~**:
 
-^^10 — це код символу перенесення рядка^^
+~~~js
+lit[0]  // '\n'
+~~~
 
-Зверніть увагу, що у звичайному рядку (**str**) нам довелося вставляти символ перенесення рядка за допомогою ~\n~
+~~~js
+console.log(lit.charCodeAt(0)) // 10
+~~~
 
-У літералі (**lit**) ми просто вводимо багаторядковий текст, що покращує читабельність коду
+^^10 — це код символу перенесення рядка.^^
 
-Але це не всі переваги літералу
+Зверніть увагу, що у звичайному рядку (**~str~**) нам довелося вставляти символ перенесення рядка за допомогою ~\n~.
+
+У літералі (**~lit~**) ми просто вводимо багаторядковий текст, що покращує читабельність коду.
+
+~~~js
+var style = `
+width: 100px;
+height: 100px;
+background: #dde;
+padding: 16px;
+`
+
+console.log(style)
+~~~
+
+~~~console
+width&colon; 100px;
+height&colon; 100px;
+background&colon; #dde;
+padding&colon; 16px;
+~~~
+
+Але це не всі переваги літералу.
 
 __________________________________________________________________
 
-Конструкція **~${ имя_переменной }~** дозволяє вставляти значення змінних безпосередньо в літерал рядка
+## ![ico-25 icon] Змінні в літералах⟪Variables_in_literals⟫
+
+Конструкція **~${varName}~** дозволяє вставляти значення змінних безпосередньо в літерал рядка.
+
+{{{template-literals.js}}}
 
 ![ico-25 cap] **Приклад 2**
 
 ~~~js
-var cities = ['Неаполь', 'Вашингтон', 'Женева']
+var cities = ['Naples', 'Washington', 'Geneva']
 
-for (var i = 0; i < cities.length; i++) {
-  console.log(`${ i + 1 }: ${ cities [ i ] }`)
-}
+console.log(`1: ${cities[0]}`)
+console.log(`2: ${cities[1]}`)
+console.log(`3: ${cities[2]}`)
 ~~~
 
-^^Результат у консолі:^^
-
-•••• none
-1: Неаполь
-2: Вашингтон
-3: Женева
-••••
+~~~console
+1&colon; Naples
+2&colon; Washington
+3&colon; Geneva
+~~~
 
 ____________________________________________________________________
 
@@ -63,26 +127,21 @@ ____________________________________________________________________
 ![ico-25 cap] **Приклад 3**
 
 ~~~js
-var cities = [
-  'Киев',
-  'Львов',
-  'Харьков',
-  'Одесса',
-  'Днепропетровск'
-]
+var cities = ['Kyiv', 'Lviv', 'Kharkiv', 'Odesa', 'Dnipro']
 
-var str = ''
+var str = `Cities: ${cities.length}\n`
 
-for (var x = 0; x < cities.length; x++) {
-  str += `${cities[x].charCodeAt(0)}: ${cities[x]}\n`
-}
+str += `First: ${cities[0]} (${cities[0].length} letters)\n`
+str += `Last: ${cities[cities.length - 1]} (${cities[cities.length - 1].length} letters)`
 
 console.log(str)
 ~~~
 
-^^Результат у консолі:^^
-
-![](createPath("illustrations", "string-methods-02.png"))
+~~~console
+Cities&colon; 5
+First&colon; Kyiv (4 letters)
+Last&colon; Dnipro (6 letters)
+~~~
 
 ______________________________________________________________________
 
@@ -123,5 +182,7 @@ var blue = Math.round(Math.random() * 255)
 
 var color = `rgb(${red},${green},${blue})`
 ~~~
+
+{{{template-literals-color.js}}}
 
 Тепер у змінній **~color~** буде рядок, що містить значення кольору в моделі **~rgb~** з десятковими значеннями кольору в каналах

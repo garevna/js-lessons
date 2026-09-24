@@ -9,7 +9,7 @@ export const mainMenu = [
       { ref: 'Developer-tools', ua: 'Інструменти розробника', eng: 'Developer tools', ru: 'Инструменты разработчика' },
       { ref: 'Chrome-dev-tools', ua: 'Chrome DevTools', eng: 'Chrome DevTools', ru: 'Chrome DevTools' },
       { ref: 'global-object-and-memory', ua: 'Глобальний об\'єкт. Пам\'ять', eng: 'Global object. Memory', ru: 'Глобальный объект. Память' },
-      { ref: 'hw-01', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-01', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -27,7 +27,8 @@ export const mainMenu = [
       { ref: 'Boolean', ua: 'Логічні конструкції', eng: 'Logical constructs', ru: 'Логические конструкции' },
       { ref: 'function', ua: 'Функції', eng: 'Functions', ru: 'Функции' },
       { ref: 'Assignments', ua: 'Оператори присвоювання', eng: 'Assignment operators', ru: 'Операторы присваивания' },
-      { ref: 'hw-02', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'literals', ua: 'Шаблонні літерали', eng: 'Template literals', ru: 'Темплейтные литералы' },
+      { ref: 'hw-02', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -39,8 +40,7 @@ export const mainMenu = [
       { ref: 'Explicit-type-conversion', ua: 'Явне приведення типів', eng: 'Explicit type coercion', ru: 'Явное приведение типов' },
       { ref: 'Implicit-type-conversion', ua: 'Неявне приведення типів', eng: 'Implicit type coercion', ru: 'Неявное приведение типов' },
       { ref: 'BigInt', ua: 'BigInt (ES10)', eng: 'BigInt (ES10)', ru: 'BigInt (ES10)' },
-      { ref: 'literals', ua: 'Змінні в літералах', eng: 'Variables in literals', ru: 'Переменные в литералах' },
-      { ref: 'hw-type-coercion', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-type-coercion', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -55,7 +55,7 @@ export const mainMenu = [
       { ref: 'for', ua: 'Оператор for', eng: 'The \'for\' operator', ru: 'Оператор for' },
       { ref: 'while', ua: 'Цикли while | do ... while', eng: 'while | do ... while', ru: 'Циклы while | do ... while' },
       { ref: 'for-of-for-in', ua: 'Цикли for...of | for...in', eng: 'for...of | for...in', ru: 'Циклы for...of | for...in' },
-      { ref: 'hw-operators', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-operators', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
 
@@ -73,7 +73,7 @@ export const mainMenu = [
       { ref: 'Date-constructor', ua: 'Конструктор Date', eng: 'Constructor Date', ru: 'Конструктор Date' },
       { ref: 'self-work-02', ua: 'Самостійна робота', eng: 'Self-study', ru: 'Самостоятельная работа' },
       { ref: 'practice-with-XSS', ua: 'Практика (XSS)', eng: 'Practice (XSS)', ru: 'Практика (XSS)' },
-      { ref: 'hw-functions', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-functions', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -84,7 +84,7 @@ export const mainMenu = [
     items: [
       { ref: 'function-object', ua: 'Функція як об\'єкт', eng: 'Function as an object', ru: 'Функция как объект' },
       { ref: 'practice-03', ua: 'Практика', eng: 'Practice', ru: 'Практика' },
-      { ref: 'hw-03', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-03', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -98,7 +98,7 @@ export const mainMenu = [
       { ref: 'value-of', ua: 'Метод valueOf()', eng: 'The \'valueOf\' method', ru: 'Метод valueOf()' },
       { ref: 'in-operator', ua: 'Оператор in', eng: 'The \'in\' operator', ru: 'Оператор in' },
       { ref: 'Error', ua: 'Конструктор Error', eng: 'Constructor Error', ru: 'Конструктор Error' },
-      { ref: 'hw-04', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-04', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -109,7 +109,7 @@ export const mainMenu = [
     items: [
       { ref: 'get-and-set', ua: 'Обчислювані властивості', eng: 'Computed properties', ru: 'Вычисляемые свойства' },
       { ref: 'call-apply-bind', ua: 'Зміна контексту виклику', eng: 'Changing the call context', ru: 'Изменение контекста вызова' },
-      { ref: 'hw-05', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-05', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -123,7 +123,7 @@ export const mainMenu = [
       { ref: 'functionality', ua: 'Функціональщина', eng: 'Functional programming stuff', ru: 'Функциональщина' },
       { ref: 'recursion', ua: 'Рекурсія', eng: 'Recursion', ru: 'Рекурсия' },
       { ref: 'call-apply-bind-currying', ua: 'Каррування', eng: 'Currying', ru: 'Каррирование' },
-      { ref: 'hw-08', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-08', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -136,7 +136,7 @@ export const mainMenu = [
       { ref: 'DOM', ua: 'Об\'єктна модель документа', eng: 'Document Object Model', ru: 'Объектная модель документа' },
       { ref: 'DOM-elements', ua: 'Елементи DOM', eng: 'DOM elements', ru: 'Элементы DOM' },
       { ref: 'scroll', ua: 'Розміри та прокручування елемента', eng: 'Element size and scrolling', ru: 'Размеры и прокрутка элемента' },
-      { ref: 'hw-06', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-06', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -151,7 +151,7 @@ export const mainMenu = [
       { ref: 'DOM-events', ua: 'Події елементів DOM', eng: 'DOM events', ru: 'События элементов DOM' },
       { ref: 'DOM-MutationObserver', ua: 'MutationObserver', eng: 'MutationObserver', ru: 'MutationObserver' },
       { ref: 'forms', ua: 'Елементи форм', eng: 'Form elements', ru: 'Элементы форм' },
-      { ref: 'hw-07', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-07', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -174,7 +174,7 @@ export const mainMenu = [
       { ref: 'Array-iterating-methods', ua: 'Ітеруючі методи масивів', eng: 'Array iterating methods', ru: 'Итерирующие методы массивов' },
       { ref: 'JS-heap-memory-allocation', ua: 'Тестування продуктивності', eng: 'Heap memory allocation', ru: 'Тестирование производительности' },
       { ref: 'SHA', ua: 'Secure Hash Algorithm', eng: 'Secure Hash Algorithm', ru: 'Secure Hash Algorithm' },
-      { ref: 'hw-09', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-09', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -184,7 +184,7 @@ export const mainMenu = [
     ru: 'Статические методы конструктора Object',
     items: [
       { ref: 'Object-static-props', ua: 'Статичні методи конструктора Object', eng: 'Static methods of the Object constructor', ru: 'Статические методы конструктора Object' },
-      { ref: 'hw-10', ua: 'Homework', ru: 'Homework', eng: 'Homework' }
+      { ref: 'hw-10', ua: 'Homework', ru: 'Homework', eng: 'Homework', hidden: true }
     ]
   },
   {
@@ -199,7 +199,7 @@ export const mainMenu = [
       { ref: 'Content-Type', ua: 'Заголовок Content-Type', eng: 'Content-Type header', ru: 'Заголовок Content-Type' },
       { ref: 'promise', ua: 'Promise', eng: 'Promise', ru: 'Promise' },
       { ref: 'promise-constructor', ua: 'Конструктор Promise', eng: 'Promise constructor', ru: 'Конструктор Promise' },
-      { ref: 'hw-11', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-11', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -212,7 +212,7 @@ export const mainMenu = [
       { ref: 'CORS', ua: 'CORS', eng: 'CORS', ru: 'CORS' },
       { ref: 'cookie', ua: 'cookie', eng: 'cookie', ru: 'cookie' },
       { ref: 'localStorage', ua: 'localStorage', eng: 'localStorage', ru: 'localStorage' },
-      { ref: 'hw-12', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-12', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -227,7 +227,7 @@ export const mainMenu = [
       { ref: 'FileReader', ua: 'FileReader', eng: 'FileReader', ru: 'FileReader' },
       { ref: 'File-API', ua: 'File API', eng: 'File API', ru: 'File API' },
       { ref: 'FormData', ua: 'FormData', eng: 'FormData', ru: 'FormData' },
-      { ref: 'hw-13', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-13', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -240,7 +240,7 @@ export const mainMenu = [
       { ref: 'async-await', ua: 'async | await', eng: 'async | await', ru: 'async | await' },
       { ref: 'async-constructor', ua: 'Конструктор асинхронної функції', eng: 'Asynchronous function constructor', ru: 'Конструктор асинхронной функции' },
       { ref: 'async-vs-Promise-all', ua: 'async function vs Promise.all', eng: 'async function vs Promise.all', ru: 'async function vs Promise.all' },
-      { ref: 'hw-14', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-14', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -255,7 +255,7 @@ export const mainMenu = [
       { ref: 'JSON-placeholder', ua: 'JSON-placeholder', eng: 'JSON-placeholder', ru: 'JSON-placeholder' },
       { ref: 'json-server', ua: 'json-server', eng: 'json-server', ru: 'json-server' },
       { ref: 'fake-chat', ua: 'Fake chat', eng: 'Fake chat', ru: 'Fake chat' },
-      { ref: 'hw-15', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-15', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -269,7 +269,7 @@ export const mainMenu = [
       { ref: 'short-method-syntax', ua: 'Короткий синтаксис методів', eng: 'Short method syntax', ru: 'Краткий синтаксис методов' },
       { ref: 'shorthand-object-literal', ua: 'Коротка форма літерала об\'єкта', eng: 'Shorthand object literal', ru: 'Краткая форма литерала объекта' },
       { ref: 'Classes', ua: 'Класи', eng: 'Classes', ru: 'Классы' },
-      { ref: 'hw-16', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-16', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {
@@ -284,7 +284,7 @@ export const mainMenu = [
       { ref: 'generators-async', ua: 'Асинхронні генератори', eng: 'Asynchronous generators', ru: 'Асинхронные генераторы' },
       { ref: 'generators-yield', ua: 'Зміна протоколу ітерування (yield*)', eng: 'Switching the iteration protocol (yield*)', ru: 'Изменение протокола итерирования (yield*)' },
       { ref: 'generators-arg', ua: 'Передача параметрів генератору', eng: 'Passing parameters to a generator', ru: 'Передача параметров генератору' },
-      { ref: 'hw-17', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-17', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
       ]
   },
   {
@@ -301,7 +301,7 @@ export const mainMenu = [
       { ref: 'template', ua: '&lt;template&gt;', eng: '&lt;template&gt;', ru: '&lt;template&gt;' },
       { ref: 'slots', ua: 'Слоти', eng: 'Slots', ru: 'Слоты' },
       { ref: 'web-component-samples', ua: 'Приклади веб-компонентів', eng: 'Web-component examples', ru: 'Примеры веб-компонентов' },
-      { ref: 'hw-18', ua: 'Homework', eng: 'Homework', ru: 'Homework' }
+      { ref: 'hw-18', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },
   {

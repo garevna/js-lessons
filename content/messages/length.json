@@ -1,66 +1,66 @@
 {
   "p1": {
-    "ru": "Свойство length массивов и строк",
-    "eng": "",
-    "ua": ""
+    "ru": "Свойство length",
+    "eng": "The length property",
+    "ua": "Властивість length"
   },
   "p2": {
-    "ru": "Массивы и строки имеют длину",
-    "eng": "",
-    "ua": ""
+    "ru": "Массивы и строки имеют свойство **~length~**. Это свойство характеризует длину массива или строки, т.е. количество элементов в массиве или количество символов в строке.",
+    "eng": "Arrays and strings have a **~length~** property. This property indicates the length of an array or string, i.e. the number of elements in the array or the number of characters in the string.",
+    "ua": "Масиви та рядки мають властивість **~length~**. Ця властивість характеризує довжину масиву або рядка, тобто кількість елементів у масиві або кількість символів у рядку."
   },
   "p3": {
-    "ru": "Для массивов это число элементов массива",
-    "eng": "",
-    "ua": ""
+    "ru": "Это свойство играет ключевую роль в **итерировании** массивов и строк, с которым мы ближе познакомися при изучении **циклов**.",
+    "eng": "This property plays a key role in **iterating** over arrays and strings, which we will explore in more detail when we study **loops**.",
+    "ua": "Ця властивість відіграє ключову роль у **ітерації** масивів і рядків, з якою ми детальніше ознайомимося під час вивчення **циклів**."
   },
   "p4": {
-    "ru": "Для строк это число символов в строке",
-    "eng": "",
-    "ua": ""
+    "ru": "Массивы и строки являются простейшими случаями **~итерабельных объектов~**, т.е. структур данных, для которых существует **~протокол итерирования~**.",
+    "eng": "Arrays and strings are the simplest examples of **~iterable objects~**, i.e. data structures for which an iteration protocol exists.",
+    "ua": "Масиви та рядки є найпростішими випадками **~ітерабельних об’єктів~**, тобто структур даних, для яких існує **~протокол ітерації~** (правило перебору елементів)."
   },
   "p5": {
-    "ru": "Это свойство есть как у массивов, так и у строк",
-    "eng": "",
-    "ua": ""
+    "ru": "••Пример - ученики одного класса. В журнале учителя они записаны, как правило, по алфавиту. Когда учитель проводит перекличку, то фактически происходит **итерирование** массива учеников, и этот процесс происходит строго в порядке следования фамилий учеников в школьном журнале.••",
+    "eng": "••Take, for example, the pupils in a class. In the teacher’s register, they are usually listed in alphabetical order. When the teacher takes the register, they are effectively **iterating** through the array of pupils, and this process takes place strictly in the order in which the pupils’ surnames appear in the register.••",
+    "ua": "••Приклад — учні одного класу. У журналі вчителя вони записані, як правило, за алфавітом. Коли вчитель проводить перекличку, то фактично відбувається **ітерація** масиву учнів, і цей процес відбувається строго в порядку послідовності прізвищ учнів у шкільному журналі.••"
   },
   "p6": {
-    "ru": "Для массива значение этого свойства равно числу элементов массива",
-    "eng": "",
-    "ua": ""
+    "ru": "Для двух простейших итерабельных объектов (массивов и строк) протокол итерирования очень прост: перебор элементов массива происходит строго в соответствии с их индексами в порядке их возрастания. Символы в строке также строго упорядочены, и любой символ может быть получен из строки по его порядковому номеру, подобно элементу массива.",
+    "eng": "For the two simplest iterable objects (arrays and strings), the iteration protocol is very simple: the elements of an array are traversed strictly in accordance with their indices in ascending order. The characters in a string are also strictly ordered, and any character can be retrieved from the string by its index, just like an array element.",
+    "ua": "Для двох найпростіших ітерабельних об’єктів (масивів і рядків) протокол ітерації дуже простий: перебір елементів масиву відбувається суворо відповідно до їхніх індексів у порядку зростання. Символи в рядку також суворо впорядковані, і будь-який символ можна отримати з рядка за його порядковим номером, подібно до елемента масиву."
   },
   "p7": {
-    "ru": "Например, для массива",
-    "eng": "",
-    "ua": ""
+    "ru": "У вас может возникнуть вопрос: зачем нам это свойство, если мы и так видим, что число элементов в массиве 3?",
+    "eng": "You might well ask: why do we need this property if we can already see that the array contains 3 elements?",
+    "ua": "У вас може виникнути запитання: навіщо нам ця властивість, якщо ми й так бачимо, що кількість елементів у масиві дорівнює 3?"
   },
   "p8": {
-    "ru": "значение",
-    "eng": "",
-    "ua": ""
+    "ru": "Однако в процессе работы приложения массивы, во-первых, могут быть очень большими (иметь огромное число элементов), и **динамичными** (т.е. число элементов в массиве может изменяться с течением времени). В случае динамичных массиво значение свойства **~length~** будет автоматически обновляться, влияя на процесс итерирования.",
+    "eng": "However, whilst an application is running, arrays may, firstly, be very large (containing a huge number of elements), and **dynamic** (i.e. the number of elements in the array may change over time). In the case of dynamic arrays, the value of the **~length~** property will be automatically updated, affecting the iteration process.",
+    "ua": "Однак у процесі роботи програми масиви, по-перше, можуть бути дуже великими (мати величезну кількість елементів) і **динамічними** (тобто кількість елементів у масиві може змінюватися з плином часу). У разі динамічних масивів значення властивості **~length~** автоматично оновлюватиметься, впливаючи на процес перебирання."
   },
   "p9": {
-    "ru": "будет равно ** 3 **",
-    "eng": "",
-    "ua": ""
+    "ru": "••Вернемся к нашему примеру с классом. Предположим, школьников повели на экскурсию в музей. В музее на входе строгая теточка смотрит на длину списка учеников, которых нужно пропустить, и пересчитывает тех, кто фактически явился в музей. Если число явившихся больше, чем число в списке, то вряд ли билетерша пропустит тех, кого нет в списке.••",
+    "eng": "••Let’s return to our example with the class. Suppose a group of schoolchildren have been taken on a trip to a museum. At the museum entrance, a strict lady checks the length of the list of pupils who are to be admitted and counts those who have actually turned up at the museum. If the number of those present is greater than the number on the list, it is unlikely that the ticket inspector will let in those who are not on the list.••",
+    "ua": "••Повернемося до нашого прикладу з класом. Припустимо, школярів повели на екскурсію до музею. У музеї біля входу сувора тіточка перевіряє довжину списку учнів, яких потрібно пропустити, і перераховує тих, хто фактично з’явився в музеї. Якщо кількість тих, хто з’явився, більша, ніж кількість у списку, то навряд чи квиткова пропустить тих, кого немає у списку.••"
   },
   "p10": {
-    "ru": "Для строки это свойство содержит число символов в строке",
-    "eng": "",
-    "ua": ""
+    "ru": "Упражнения",
+    "eng": "Exercises",
+    "ua": "Вправи"
   },
   "p11": {
-    "ru": "Например, для строки",
+    "ru": "",
     "eng": "",
     "ua": ""
   },
   "p12": {
-    "ru": "значение свойства",
+    "ru": "",
     "eng": "",
     "ua": ""
   },
   "p13": {
-    "ru": "будет равно ** 6 **",
+    "ru": "",
     "eng": "",
     "ua": ""
   },

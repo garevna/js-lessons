@@ -2,50 +2,72 @@
 
 {{p2}}
 
+~~~js
+[5, 8, 7, 4, 1, 0].length  // 6
+'Hi, students!'.length  // 13
+~~~
+
+~~~js
+var names = ['John', 'Henry', 'Piter']
+names.length  // 3
+~~~
+
+~~~js
+var userName = 'Gregory'
+userName.length // 7
+~~~
+
 {{p3}}
 
 {{p4}}
-
-## ![ico-25 icon] length
 
 {{p5}}
 
 {{p6}}
 
-{{p7}}
+~~~js
+'Arrays'[5] // 's'
+~~~
 
 ~~~js
-var names = ['John', 'Henry', 'Piter']
+var userName = 'Gregory'
+userName[4] // 'o'
 ~~~
+
+{{p7}}
 
 {{p8}}
 
-~~~js
-names.length
-~~~
-
 {{p9}}
 
-{{p10}}
+____________________________
 
-{{p11}}
+![ico-30 hw] **{{p10}}**
 
-~~~js
-var hello = 'Привет'
-~~~
-
-{{p12}}
+◘◘**1**◘◘
 
 ~~~js
-hello.length
+var numbers = [5, 8, 11, 7]
 ~~~
 
-{{p13}}
+→→→ people.length | 3, 4, 5 | 4 →→→
 
-____________________________________
+◘◘**2**◘◘
 
-{{p14}}
+~~~js
+var items = [null, undifined, '*', false, true]
+~~~
 
-________________________________________________________
+→→→ people.length | 3, 4, 5 | 5 →→→
 
-[![ico-20 link] ^^w3school^^](https://www.w3schools.com/js/tryit.asp?filename=tryjs_string_length)
+◘◘**3**◘◘
+
+~~~js
+var userName = 'Robert'
+~~~
+
+→→→ userName[2] | 'R', 'o', 'b', 'e', 'r', 't' | b →→→
+
+◘◘**4**◘◘
+
+→→→ userName.length | 4, 5, 6, 7, 8 | 6 →→→
