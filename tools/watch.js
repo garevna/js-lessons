@@ -19,9 +19,10 @@
  * only writes when the output actually differs — so live-server reloads the
  * browser exactly when something changed and stays quiet otherwise.
  *
- * One thing it cannot do for you: the service worker caches lessons, on
- * localhost as much as anywhere. If a rebuilt page does not appear, that is
- * why — see the note this prints on startup.
+ * Lesson files are not part of any bundle: the workers fetch them, and fetch
+ * the two small JSON files that say which pages exist and what version each
+ * resource is at. So a content edit never runs webpack, and the whole round
+ * trip from save to reloaded tab is under a second.
  */
 
 const fs = require('fs')
@@ -29,6 +30,64 @@ const path = require('path')
 const { execFileSync } = require('child_process')
 
 const root = path.join(__dirname, '..')
+
+/**
+ * One watcher at a time.
+ *
+ * Closing a terminal on Windows kills the shell, not its grandchildren:
+ * `npm run watch` is npm, and npm is what receives the Ctrl+C, while the node
+ * process it started carries on watching. Nothing says so, and the machine had
+ * been up eight days — so five forgotten watchers were rebuilding the same
+ * pages at once, each one also tripping the others by writing the files they
+ * were watching. It looked like the build had become slow.
+ *
+ * The lock lives under node_modules, which is not in git, and a lock left by a
+ * process that is gone is ignored rather than honoured.
+ */
+const LOCK = path.join(root, 'node_modules/.cache/watch.pid')
+
+const alive = (pid) => {
+  try {
+    process.kill(pid, 0)
+    return true
+  } catch (error) {
+    // EPERM means it exists and belongs to someone else — still running.
+    return error.code === 'EPERM'
+  }
+}
+
+const claimLock = () => {
+  if (fs.existsSync(LOCK)) {
+    const owner = Number(fs.readFileSync(LOCK, 'utf8').trim())
+
+    if (owner && owner !== process.pid && alive(owner)) {
+      console.log(`
+  Вотчер уже работает — процесс ${owner}.
+
+  Если его терминал закрыт, процесс всё равно жив: на Windows закрытие
+  вкладки снимает оболочку, но не node внутри неё. Остановить:
+
+      taskkill /PID ${owner} /F
+
+  Два вотчера на одних файлах пересобирают всё по два раза и будят друг
+  друга — именно так сборка и становится медленной.
+`)
+      process.exit(1)
+    }
+  }
+
+  fs.mkdirSync(path.dirname(LOCK), { recursive: true })
+  fs.writeFileSync(LOCK, String(process.pid))
+
+  const release = () => { try { fs.unlinkSync(LOCK) } catch {} }
+
+  process.on('exit', release)
+  for (const signal of ['SIGINT', 'SIGTERM', 'SIGHUP']) {
+    process.on(signal, () => { release(); process.exit(0) })
+  }
+}
+
+claimLock()
 
 const WATCHED = [
   'content/lessons',
@@ -65,43 +124,34 @@ const build = (page) => {
 const stamp = () => new Date().toTimeString().slice(0, 8)
 
 /**
- * The set of built pages, so that a page appearing or disappearing can be
- * noticed.
+ * The two files that describe the content rather than being it: the registry
+ * of which pages exist in which language, and the map of content hashes the
+ * service worker checks pages against.
  *
- * A lesson only gets a file in a language once it has a translation, and the
- * worker learns which languages a page exists in from a registry built by
- * scanning those folders. Rebuild the page and not the registry, and the site
- * goes on believing the page is untranslated: Irina translated
- * async-constructor into both languages, watched it rebuild, and still got the
- * "not translated yet" notice on localhost.
+ * Neither is compiled into a bundle any more — both are written straight into
+ * public/ and fetched at runtime — so keeping them current costs a third of a
+ * second and no webpack at all. It used to mean rebuilding the content
+ * worker, which is why a newly translated page took five seconds to appear.
  */
-const builtPages = () => {
-  const found = []
-  for (const lang of ['ru', 'eng', 'ua']) {
-    const dir = path.join(root, 'public/lessons', lang)
-    if (!fs.existsSync(dir)) continue
-    for (const f of fs.readdirSync(dir)) if (f.endsWith('.md')) found.push(`${lang}/${f}`)
-  }
-  return found.sort().join('\n')
-}
-
-let known = builtPages()
-
-/** Regenerating the registry costs a few seconds, so it waits to be needed. */
 const refreshRegistry = () => {
-  const now = builtPages()
-  if (now === known) return false
-  known = now
-
   const started = Date.now()
-  try {
-    execFileSync('npm', ['run', 'content-worker'], { cwd: root, encoding: 'utf8', shell: true, stdio: 'pipe' })
-    console.log(`  ${stamp()}  набор страниц изменился — реестр пересобран (${Date.now() - started} мс)`)
-  } catch (error) {
-    console.log(`  ${stamp()}  реестр пересобрать не удалось:`)
-    console.log(String(error.stdout || error.message).split('\n').filter(Boolean).slice(-4).map((l) => `            ${l}`).join('\n'))
+  const said = []
+
+  const scripts = [
+    ['content-worker/build-content.js', []],
+    ['service-worker/config-service-worker.js', ['--versions']]
+  ]
+
+  for (const [script, args] of scripts) {
+    try {
+      const out = execFileSync(process.execPath, [path.join(root, script), ...args], { cwd: root, encoding: 'utf8' })
+      said.push(out.trim().split('\n').filter(Boolean).pop() || '')
+    } catch (error) {
+      said.push(String(error.stdout || error.message).split('\n').filter(Boolean).pop() || '')
+    }
   }
-  return true
+
+  console.log(`  ${stamp()}  ${said.join('  |  ')}  (${Date.now() - started} мс)`)
 }
 
 const run = () => {
@@ -227,14 +277,12 @@ const watchSource = () => {
 watchSource()
 
 console.log(`
-  Слежу за content/ — правь, страница пересоберётся сама.
-  И за src/ — стили и компоненты пересоберутся в бандлы (~2 с).
+  Слежу за content/ — правь, страница пересоберётся сама (~0,4 с).
+  И за src/ — стили и компоненты пересоберутся в бандлы (~1,5 с).
   Рядом, в другом терминале:  npm start   →  localhost:8181
 
-  ⚠  Service worker кэширует уроки и на локалхосте. Если пересобранная
-     страница не появляется, дело в нём: в DevTools → Application →
-     Service Workers включи "Bypass for network" — галочка держится,
-     пока открыт инспектор, и ничего не ломает.
+  Service worker на локалхосте выключен, так что кэш ничего не прячет.
+  Включить для проверки:  localStorage.setItem('service-worker', 'on')
 
   Ctrl+C чтобы остановить.
 `)

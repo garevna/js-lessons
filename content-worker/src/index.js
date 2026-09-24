@@ -22,10 +22,10 @@ self.controller = async function (request) {
 
       self.postMessage({ route, response: { lang: self.lang, page: self.currentLesson } })
 
-      self.postMessage({ route: 'main-menu', response: getMainMenu() })
+      self.postMessage({ route: 'main-menu', response: await getMainMenu() })
       await switchContent()
     case 'main-menu':
-      return self.postMessage({ route, response: getMainMenu() })
+      return self.postMessage({ route, response: await getMainMenu() })
     case 'keywords':
       return self.postMessage({ route, response: getKeywords() })
     case 'search':
@@ -33,7 +33,7 @@ self.controller = async function (request) {
     case 'lang':
       self.lang = ['eng', 'ua', 'ru'].includes(param) ? param : self.lang
       await switchContent()
-      self.postMessage({ route: 'main-menu', response: getMainMenu() })
+      self.postMessage({ route: 'main-menu', response: await getMainMenu() })
       return
     case 'lesson':
       self.currentLesson = param

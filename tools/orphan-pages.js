@@ -23,15 +23,28 @@ const menuSource = fs.readFileSync(MENU, 'utf8')
 
 // Sections and their items are the same shape; a section is the one that
 // carries an items list. Only items are pages — a section is a folder.
+//
+// An item can be marked `hidden`: it keeps its place in the file and its
+// order, but the worker leaves it out of the menu a reader sees. So a hidden
+// page is not lost — it is parked — and the two are worth telling apart.
 const sections = []
 for (const block of menuSource.split(/\n  \{/).slice(1)) {
   const ref = (block.match(/ref:\s*'([^']+)'/) || [])[1]
   const ru = (block.match(/ru:\s*'((?:[^'\\]|\\.)*)'/) || [])[1]
-  const items = [...block.matchAll(/\{\s*ref:\s*'([^']+)'/g)].map((m) => m[1])
+  const items = [...block.matchAll(/\{\s*ref:\s*'([^']+)'([^}]*)\}/g)]
+    .map((m) => ({ ref: m[1], hidden: /hidden:\s*true/.test(m[2]) }))
   sections.push({ ref, ru, items })
 }
 
-const inMenu = new Set(sections.flatMap((s) => s.items))
+const allItems = sections.flatMap((s) => s.items)
+
+/** Named in the menu file at all — parked counts, so nothing here is "lost". */
+const inMenu = new Set(allItems.map((i) => i.ref))
+
+/** Actually offered to a reader. */
+const visible = new Set(allItems.filter((i) => !i.hidden).map((i) => i.ref))
+
+const hidden = [...new Set(allItems.filter((i) => i.hidden).map((i) => i.ref))].sort()
 
 /* --------------------------------------------------------------- the pages */
 
@@ -103,25 +116,38 @@ const missing = [...inMenu]
   .filter((ref) => !pages.includes(ref))
   .sort()
 
-const empty = sections.filter((s) => s.items.length === 0)
+// A section every one of whose items is hidden shows a reader an empty folder,
+// which is the same problem as having no items at all.
+const empty = sections.filter((s) => !s.items.some((i) => !i.hidden))
 
 const twice = {}
-for (const s of sections) for (const item of s.items) (twice[item] = twice[item] || []).push(s.ru)
+for (const s of sections) for (const item of s.items) (twice[item.ref] = twice[item.ref] || []).push(s.ru)
 const duplicated = Object.entries(twice).filter(([, where]) => where.length > 1)
 
-console.log(`${pages.length} pages, ${inMenu.size} of them in the menu\n`)
+const whereIs = (ref) => sections.filter((s) => s.items.some((i) => i.ref === ref)).map((s) => s.ru)
+
+console.log(`${pages.length} pages, ${visible.size} of them offered in the menu\n`)
 
 console.log(`reached by nothing — no menu entry, no link from another page: ${orphans.length}`)
 for (const page of orphans) console.log(`  ${page}`)
 
-console.log(`\nmenu entries with no skeleton behind them: ${missing.length}`)
-for (const ref of missing) {
-  const where = sections.filter((s) => s.items.includes(ref)).map((s) => s.ru)
-  const note = built.has(ref) ? 'built page, no skeleton' : 'NOTHING — the entry leads to a 404'
-  console.log(`  ${ref.padEnd(20)} ${note.padEnd(34)} in "${where.join('", "')}"`)
+console.log(`\nhidden on purpose — in the menu file, not shown to a reader: ${hidden.length}`)
+for (const ref of hidden) {
+  const note = pages.includes(ref) ? 'page exists' : 'no page behind it'
+  console.log(`  ${ref.padEnd(20)} ${note.padEnd(20)} in "${whereIs(ref).join('", "')}"`)
 }
 
-console.log(`\nempty sections: ${empty.length}`)
+console.log(`\nmenu entries with no skeleton behind them: ${missing.length}`)
+for (const ref of missing) {
+  const note = built.has(ref)
+    ? 'built page, no skeleton'
+    : hidden.includes(ref)
+      ? 'nothing behind it, but hidden'
+      : 'NOTHING — the entry leads to a 404'
+  console.log(`  ${ref.padEnd(20)} ${note.padEnd(34)} in "${whereIs(ref).join('", "')}"`)
+}
+
+console.log(`\nsections with nothing visible in them: ${empty.length}`)
 for (const s of empty) console.log(`  ${(s.ref || '?').padEnd(24)} "${s.ru}"`)
 
 console.log(`\npages listed in the menu more than once: ${duplicated.length}`)

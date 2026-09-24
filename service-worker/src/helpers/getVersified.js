@@ -1,6 +1,9 @@
-const { versions, initialCachedFiles } = require('../configs').default
+import { versions } from './versions'
 
-export function getVersified (data) {
+export async function getVersified (data) {
+  const map = await versions()
+  if (!map) return null
+
   const url = typeof data === 'string' ? data : data.url
-  return Object.keys(versions).find(key => url.includes(key))
+  return Object.keys(map).find(key => url.includes(key))
 }

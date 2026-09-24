@@ -28,7 +28,7 @@ export async function searchInCache (event) {
   if (response) {
     if (isStable(request)) return response
 
-    const valid = validateVersion(request.url, response)
+    const valid = await validateVersion(request.url, response)
 
     if (valid) return response
 

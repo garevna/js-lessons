@@ -5,8 +5,14 @@
  *
  *   --identity  version + date, derived from git alone. The root bundle
  *               prints them in the footer, so this has to run before it.
+ *               Only written on the deploy — see below.
  *   --versions  the hash map, which reads the built bundles and therefore
- *               has to run after them.
+ *               has to run after them. It is written to public/versions.json
+ *               and fetched by the worker, not compiled into it: lesson files
+ *               are content, and a change to content must not change a
+ *               bundle. Before, editing one word of one lesson rewrote
+ *               service-worker.js, and a commit that fixed a typo carried a
+ *               rebuilt worker with it.
  *
  * With no argument it does both, which is what a local rebuild wants once
  * the bundles are already there.
@@ -22,7 +28,7 @@
  * invalidated only when its bytes actually change.
  */
 
-const fs = require('fs-extra')
+const fs = require('fs')
 const path = require('path')
 const crypto = require('crypto')
 const { execFileSync } = require('child_process')
@@ -87,18 +93,29 @@ if (doVersions) {
 
 // ------------------------------------------------------------ build identity
 
-// major.minor stay hand-managed in package.json; the patch is the commit
-// count, so the number moves forward on its own and no file is rewritten
-// during a build. Without git, fall back to the version already declared.
-const declared = fs.readJsonSync(path.join(__dirname, 'package.json')).version
-const [major, minor] = declared.split('.')
+/**
+ * Worked out only when it is going to be used.
+ *
+ * It used to be computed unconditionally — two git subprocesses and all — even
+ * for --versions, which does not want it. That was half the cost of a script
+ * the watcher runs after every save.
+ */
+const identity = () => {
+  // major.minor stay hand-managed in package.json; the patch is the commit
+  // count, so the number moves forward on its own and no file is rewritten
+  // during a build. Without git, fall back to the version already declared.
+  const declared = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), 'utf-8')).version
+  const [major, minor] = declared.split('.')
 
-const commits = git('rev-list', '--count', 'HEAD')
-const version = commits ? `${major}.${minor}.${commits}` : declared
+  const commits = git('rev-list', '--count', 'HEAD')
 
-// The date describes the content, not the moment of the build, so two builds
-// of the same commit agree.
-const date = git('log', '-1', '--format=%cs') || new Date().toISOString().slice(0, 10)
+  return {
+    version: commits ? `${major}.${minor}.${commits}` : declared,
+    // The date describes the content, not the moment of the build, so two
+    // builds of the same commit agree.
+    date: git('log', '-1', '--format=%cs') || new Date().toISOString().slice(0, 10)
+  }
+}
 
 // ------------------------------------------------------------------- write
 
@@ -106,12 +123,47 @@ const asModule = (name, value) =>
   `export const ${name} = ${JSON.stringify(value, null, '\t').replaceAll('"', '\'')}\n`
 
 if (doIdentity) {
-  fs.writeFileSync(path.join(root, 'src/configs/serviceWorkerVersion.js'), asModule('serviceWorkerVersion', version), 'utf-8')
-  fs.writeFileSync(path.join(root, 'src/configs/serviceWorkerDate.js'), asModule('serviceWorkerDate', date), 'utf-8')
-  console.log(`service worker ${version} | ${date}`)
+  const { version, date } = identity()
+
+  const files = [
+    [path.join(root, 'src/configs/serviceWorkerVersion.js'), asModule('serviceWorkerVersion', version)],
+    [path.join(root, 'src/configs/serviceWorkerDate.js'), asModule('serviceWorkerDate', date)]
+  ]
+
+  // Locally the version is left alone.
+  //
+  // It is the commit count, so the number itself only moves when something is
+  // committed — but the files were rewritten by every local build, and the
+  // root bundle prints the version, so rebuilding to preview one changed
+  // letter put two more files in the diff. What the site says is settled by
+  // the deploy, which builds from a clean checkout and publishes its own
+  // output; nothing about the number depends on the copy in the working tree.
+  //
+  // Written anyway when missing — the bundle imports them — and on demand with
+  // --force.
+  const missing = files.some(([file]) => !fs.existsSync(file))
+  const write = !!process.env.CI || args.includes('--force') || missing
+
+  if (write) {
+    for (const [file, text] of files) fs.writeFileSync(file, text, 'utf-8')
+    console.log(`service worker ${version} | ${date}`)
+  } else {
+    console.log(`service worker ${version} | ${date} — локально не переписываю (--force, если надо)`)
+  }
 }
 
 if (doVersions) {
-  fs.writeFileSync(path.join(__dirname, 'src/configs/versions.js'), asModule('versions', versions), 'utf-8')
-  console.log(`${Object.keys(versions).length} resources hashed`)
+  const target = path.join(root, 'public/versions.json')
+  const text = JSON.stringify(versions, null, '\t') + '\n'
+
+  // Only write when it differs, so a watcher does not reload the browser for
+  // a build that produced the same map.
+  const current = fs.existsSync(target) ? fs.readFileSync(target, 'utf-8') : null
+
+  if (current === text) {
+    console.log(`${Object.keys(versions).length} resources hashed — unchanged`)
+  } else {
+    fs.writeFileSync(target, text, 'utf-8')
+    console.log(`${Object.keys(versions).length} resources hashed`)
+  }
 }

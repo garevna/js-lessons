@@ -1,6 +1,6 @@
 {
   "name": "js-lessons",
-  "version": "8.0.0",
+  "version": "8.5.0",
   "license": "MIT",
   "description": "Web-development. Educational materials for the JS course.",
   "main": "./public",
@@ -11,6 +11,7 @@
     "full": "npm run sw-identity && npm run lessons && npm run icons-worker && npm run content-worker && npm run prod && npm run service-worker",
     "lessons": "node tools/i18n-build.js",
     "lessons:check": "node tools/i18n-build.js --check",
+    "content": "npm run lessons && node content-worker/build-content.js && node service-worker/config-service-worker.js --versions",
     "extract": "node tools/i18n-extract.js",
     "i18n": "node tools/i18n-status.js",
     "i18n:check": "node tools/i18n-check.js",

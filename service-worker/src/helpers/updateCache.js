@@ -12,7 +12,7 @@ export async function updateCache (response) {
 
   const headers = new Headers(clone.headers)
 
-  headers.append(verHeaderName, getValidVersion(response))
+  headers.append(verHeaderName, await getValidVersion(response))
 
   const blob = await clone.blob()
   const resp = new Response(blob, { status, statusText, headers })

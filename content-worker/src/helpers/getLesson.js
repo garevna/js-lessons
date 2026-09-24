@@ -1,7 +1,7 @@
-import data from '../configs'
+import { registry } from './registry'
 
 export async function getLesson () {
-  const [pages, list] = [data.pages, data[self.lang]]
+  const data = await registry()
 
   const pathname = location.pathname.replace('content.worker.js', '')
 
@@ -15,11 +15,16 @@ export async function getLesson () {
   // untranslated notice only needs English and Ukrainian: Russian is the
   // language the lessons are written in, so a page missing from it is a page
   // that does not exist.
-  const fileName = !pages.includes(self.currentLesson)
-    ? `${self.lang}/404`
-    : !list.includes(self.currentLesson)
-        ? `${self.lang}/not-translated`
-        : `${self.lang}/${self.currentLesson}`
+  //
+  // With no registry to consult, ask for the page itself: if it is there the
+  // reader gets it, and if it is not the fetch says so.
+  const fileName = !data
+    ? `${self.lang}/${self.currentLesson}`
+    : !data.pages.includes(self.currentLesson)
+        ? `${self.lang}/404`
+        : !(data[self.lang] || []).includes(self.currentLesson)
+            ? `${self.lang}/not-translated`
+            : `${self.lang}/${self.currentLesson}`
 
   const url = `${location.origin}${pathname}lessons/${fileName}.md`
 

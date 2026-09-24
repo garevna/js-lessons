@@ -70,16 +70,33 @@ jobs:
         # The order matters: the root bundle prints the service worker version
         # in the footer, and the version map hashes the bundles, so identity
         # comes first and the map comes last.
+        #
+        # This is also the only place the version is written. Locally
+        # config-service-worker.js leaves it alone, so that rebuilding to
+        # preview an edit does not put it in the diff; here CI is set, and the
+        # deploy stamps the real number onto what it publishes.
         run: npm run full
 
       - name: Check the build produced everything
         # A webpack error fails the step above, but a missing entry point can
         # slip through quietly. Better to find out here than on the live site.
+        #
+        # The two JSON files are checked for the same reason. They are not
+        # bundles — they are what the workers fetch instead of having the
+        # content compiled in — and without them the site still loads, which
+        # is exactly what makes their absence easy to miss.
         run: |
           for file in index.js donate.js main-menu.js content.worker.js icons.worker.js service-worker.js; do
             test -s "public/$file" || { echo "::error::public/$file is missing or empty"; exit 1; }
           done
           echo "all six bundles present"
+
+          for file in lessons/index.json versions.json; do
+            test -s "public/$file" || { echo "::error::public/$file is missing or empty"; exit 1; }
+            node -e "JSON.parse(require('fs').readFileSync('public/$file','utf8'))" \
+              || { echo "::error::public/$file is not valid JSON"; exit 1; }
+          done
+          echo "registry and version map present"
 
       - name: Publish public/ to gh-pages
         run: |

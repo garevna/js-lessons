@@ -1,9 +1,11 @@
+import { versions } from './versions'
 import { getVersified } from './getVersified'
 
-const { versions } = require('../configs').default
-
-export function getValidVersion (data) {
+export async function getValidVersion (data) {
   const url = typeof data === 'string' ? data : data.url
-  const key = getVersified(url)
-  return key ? versions[key] : new Date().toISOString()
+  const key = await getVersified(url)
+  if (!key) return new Date().toISOString()
+
+  const map = await versions()
+  return map ? map[key] : new Date().toISOString()
 }

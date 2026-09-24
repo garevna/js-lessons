@@ -8,6 +8,12 @@
 const path = require('path')
 
 module.exports = {
+  // Webpack keeps its work on disk between runs, so a rebuild only redoes the
+  // modules that actually changed. The bundle is byte-identical either way —
+  // this is the difference between waiting a few seconds after every edit and
+  // waiting a few hundred milliseconds. The cache lives in node_modules/.cache
+  // and invalidates itself when the config, a loader or a dependency changes.
+  cache: { type: 'filesystem' },
   entry: {
     index: './src/start.js',
     donate: './src/donate.js',
