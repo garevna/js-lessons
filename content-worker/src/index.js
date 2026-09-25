@@ -29,7 +29,7 @@ self.controller = async function (request) {
     case 'keywords':
       return self.postMessage({ route, response: getKeywords() })
     case 'search':
-      return search(param)
+      return await search(param)
     case 'lang':
       self.lang = ['eng', 'ua', 'ru'].includes(param) ? param : self.lang
       await switchContent()

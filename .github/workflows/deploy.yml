@@ -98,6 +98,14 @@ jobs:
           done
           echo "registry and version map present"
 
+      - name: Check the workers still answer
+        # Present and non-empty is not the same as working. When getMainMenu
+        # became asynchronous, search went on calling it synchronously and
+        # mapped over a promise: webpack was happy, every page opened, and the
+        # search box silently returned nothing. This runs the built bundles
+        # against public/ and asks them what the page asks.
+        run: npm run workers
+
       - name: Publish public/ to gh-pages
         run: |
           # The site is ~290 MB, nearly all of it images and audio that rarely

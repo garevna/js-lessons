@@ -83,7 +83,7 @@ people hunt for:
 | To change | Edit |
 |---|---|
 | a running demo — the `{{{name.js}}}` blocks | `public/lessons/js/<name>.js` |
-| what a lesson is found by | `content-worker/src/assets/keywords.js` |
+| **keywords** — what the search box matches a lesson by | `content-worker/src/assets/keywords.js` |
 | the menu: sections, order, titles | `content-worker/src/assets/mainMenu.js` |
 | which areas a lesson belongs to | `content/areas.json` |
 
@@ -776,8 +776,7 @@ above:
 ```
 1.  content/drafts/<name>.md             write it here
 2.  node tools/i18n-extract.js <name> --write
-3.  npm run content-worker
-4.  npm run lessons
+3.  npm run content
 ```
 
 Step 2 takes it apart into `content/lessons/<name>.md` and
@@ -787,14 +786,67 @@ caught before anything is saved. It also points any repeated phrase at the
 phrase book. The draft can be deleted afterwards; everything it held is in
 `content/` by then.
 
-Step 3 regenerates the page registry from the folders. Until it runs the site
-does not know the page exists and answers with the 404.
+Step 3 builds the page and regenerates `public/lessons/index.json`, the
+registry of which pages exist in which language. Until it runs the site does
+not know the page exists and answers with the 404. No webpack is involved:
+the registry is fetched, not compiled in.
 
-After that the page answers at `?<name>` and can be translated like any other.
-It will **not** be in the menu: `content-worker/src/assets/mainMenu.js` is
-hand-maintained, and a page reaches the menu only by being added there.
+After that the page answers at `?<name>`, and two things still have to be done
+by hand, because nothing can guess either of them:
 
-`npm run full` does steps 3 and 4 along with everything else.
+- **the menu** — `content-worker/src/assets/mainMenu.js`. A page reaches the
+  menu only by being named there.
+- **the keywords** — `content-worker/src/assets/keywords.js`. Without them the
+  page cannot be found by search at all.
+
+Both are compiled into the content worker, so after editing either run
+`npm run content-worker` (or `npm run full`).
+
+### Keywords: how a lesson is found
+
+The search box does not read the lessons. It matches what you type against
+`content-worker/src/assets/keywords.js` — one list of words per page:
+
+```js
+export const keywords = {
+  'Block-diagram': ['algorithm', 'sequence', 'branching', 'loop', 'flowchart'],
+  var: ['var', 'referenceerror', 'undefined', 'string', 'number', 'typing'],
+  …
+}
+```
+
+A page whose `ref` is missing from that object is invisible to search, however
+well it is written. That is the whole mechanism: a substring match against
+these lists, and the menu is then narrowed to the pages that matched.
+
+Two things follow from how the match is made.
+
+**Keywords must be lower case.** The search box lowercases what the reader
+types (`src/main-menu/search-component.js`) and then looks for it inside each
+keyword, unchanged. So a keyword written `parseInt` can never match anything:
+the query has already become `parseint`. There are 47 such keywords across 27
+lessons — `scroll` alone has eight, all of its `scrollHeight`/`clientWidth`
+family, and none of them can be found.
+
+**A word finds the page only if it is in the list.** The lists are almost
+entirely English, so `замыкание` finds `Closure` only if somebody wrote
+`замыкание` into it. Twelve lines in the whole file contain any Cyrillic.
+
+```
+npm run keywords              draft for every lesson that has none
+npm run keywords -- --all     draft for every lesson
+npm run keywords -- <page>    for one
+```
+
+It draws on two things the lesson already says: the identifiers it gives a
+heading to — those are its subject — and the code terms in its fragment table,
+which are what it handles. So it proposes `IIFE, Function, data, func` for
+`Closure` and stops there: the words a reader would actually type — "замыкание",
+"closure", "scope" — are not in the page as code, and a person still has to add
+them.
+
+It prints and never writes. The draft is a starting point to paste in and
+edit, not an answer.
 
 ### Why there are three copies of every page
 
@@ -821,7 +873,7 @@ Four independent npm projects share one repository:
 | Project | Builds | Does |
 |---|---|---|
 | root | `index.js`, `main-menu.js`, `donate.js` | the custom elements that render a page |
-| `content-worker/` | `content.worker.js` | fetches lessons, keeps the page registry |
+| `content-worker/` | `content.worker.js` | fetches lessons and the page registry, builds the menu, runs the search |
 | `icons-worker/` | `icons.worker.js` | serves inlined icons |
 | `service-worker/` | `service-worker.js` | caching and offline |
 
@@ -829,10 +881,40 @@ Four independent npm projects share one repository:
 alongside the bundles the build writes into it. The whole folder is what gets
 published.
 
-Two files are generated during the build and should not be edited by hand:
-the page registry in `content-worker/src/configs/`, built from the folders
-under `public/lessons/`, and the cache version map in
-`service-worker/src/configs/versions.js`.
+Two files are generated during the build and should not be edited by hand.
+Both sit in `public/` and are fetched at runtime rather than compiled into a
+bundle, so that a change to the content never changes a bundle:
+
+| File | Is | Written by |
+|---|---|---|
+| `public/lessons/index.json` | which pages exist, in which languages | `content-worker/build-content.js` |
+| `public/versions.json` | the content hash of every cached resource | `service-worker/config-service-worker.js --versions` |
+
+They used to be modules inside the workers, which meant translating a page
+rewrote `content.worker.js` and fixing one word in a lesson rewrote
+`service-worker.js`. Both are on the service worker's "never cached" list, so
+a new page is never hidden behind a stale copy of the registry.
+
+`npm run content` regenerates both, and rebuilds the lessons, in about a
+second and a half without running webpack at all.
+
+### Checking the workers
+
+```
+npm run workers
+```
+
+loads the built `content.worker.js` and `service-worker.js` into a sandbox,
+points them at a real server over `public/`, and asks them what the page asks:
+a lesson that exists, one that does not, one that is untranslated, the menu,
+the search box, and — for the service worker — caching, revalidation and
+offline.
+
+Webpack compiling a worker without an error says nothing about whether it
+still works. When `getMainMenu` became asynchronous, `search` went on calling
+it synchronously and mapped over a promise: the build was green, every page
+opened, and the search box silently returned nothing. CI runs this after the
+build for that reason.
 
 ### Caching
 
