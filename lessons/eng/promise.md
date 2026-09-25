@@ -23,7 +23,7 @@ The function-argument will be called when the **~Promise~** instance is created.
 const promise = new Promise ()
 ~~~
 
-![ico-20 err] будет сгенерировано исключение
+![ico-20 err] an exception will be thrown
 
 ~~~error
     Uncaught TypeError: Promise resolver undefined is not a function

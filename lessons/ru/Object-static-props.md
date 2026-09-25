@@ -287,7 +287,7 @@ function SubClass () {
 var sample = new SubClass()
 ~~~
 
-**Результат**
+**Результат:**
 
 ![](illustrations/Object-static-props-02.png)
 
@@ -900,7 +900,7 @@ Object.defineProperty(provider, 'service', {
 })
 ~~~
 
-Будет сгенерировано исключение:
+будет сгенерировано исключение
 
 ••![ico-20 error] Uncaught TypeError: Cannot redefine property: service••
 

@@ -23,7 +23,7 @@ const promise = new Promise(function (...) {
 const promise = new Promise ()
 ~~~
 
-![ico-20 err] будет сгенерировано исключение
+![ico-20 err] буде згенеровано виняток
 
 ~~~error
     Uncaught TypeError: Promise resolver undefined is not a function

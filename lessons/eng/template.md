@@ -78,7 +78,7 @@ const circle = document.querySelector('#svg')
 console.dir(circle.content)
 ~~~
 
-^^^[Result]
+^^^[Result:]
 
 ~~~console
 ▼ #document-fragment

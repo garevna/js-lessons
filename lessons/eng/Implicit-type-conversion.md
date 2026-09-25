@@ -1,21 +1,21 @@
 # ![ico-30 study] Приведение типов⟪pryvedenye_typov⟫
 
-Тут мы вступаем на минное поле, заложенное динамической типизацией. За исключением откровенных синтаксических ошибок, движок дает нам полную свободу в выражениях, которые мы предоставляем ему вычислять, даже если эти выражения выглядят абсолютным бредом.
-Главная "мина" в том, что движок разрешает использовать в выражениях данные различного типа, и не рассматривает это как ошибку, если вы пытаетесь сложить число со строкой или с булевым значением. Т.е. вы можете скрестить кактус с курицей, и движок не остановит вас. Однако вопрос: а что получится в результате? Кактус или курица?
-Это и есть главный вопрос, на который мы попробуем ответить.
+Here we enter a minefield created by dynamic typing. With the exception of obvious syntactic errors, the engine gives us complete freedom in the expressions we provide for it to evaluate, even if those expressions look like utter nonsense.
+The main ‘pitfall’ is that the engine allows data of different types to be used in expressions, and does not treat it as an error if you try to add a number to a string or a Boolean value. In other words, you can cross a cactus with a chicken, and the engine won’t stop you. However, the question is: what will the result be? A cactus or a chicken?
+This is the main question we’ll try to answer.
 ___________________________________
 
-## ![ico-25 icon] Неявное приведение типов⟪Implicit_type_coercion⟫
+## ![ico-25 icon] Implicit type coercion⟪Implicit_type_coercion⟫
 
-Неявное приведение типов происходит в процессе вычисления выражений.
+Implicit type coercion occurs during the evaluation of expressions.
 
 •••• none
-Главное, с чего следует начинать: как движок вычисляет наши выражения. А вычисляет он их последовательно, слева направо, за исключением следующих правил (приоритетов):
-![ico-20 warning] Если в выражении встречаются круглые скобки, то сначала будет вычислено выражение в круглых скобках, затем полученное значение будет подставлено вместо выражения в круглых скобках. Т.е. при вычислении выражения _2 * (8 + 2)_ движок сначала вычислит _8 + 2_, а затем - значение выражения **_2 * 10_**;
-![ico-20 warning] Операторы умножения и деления имеют более высокий приоритет, чем операторы сложения и вычитания. Это означает, что при вычислении выражения _5 + 8 * 2_ движок сначала вычислит _8 * 2_, а затем - значение выражения **_5 + 16_**.
+The first thing to start with is how the engine evaluates our expressions. It evaluates them sequentially, from left to right, subject to the following rules (operators’ precedence):
+![ico-20 warning] If an expression contains round brackets, the expression inside the round brackets will be evaluated first, and then the resulting value will be substituted for the expression inside the round brackets. In other words, when evaluating the expression _2 * (8 + 2)_, the engine will first evaluate _8 + 2_, and then the value of the expression **_2 * 10_**;
+![ico-20 warning] Multiplication and division operators have higher precedence than addition and subtraction operators. This means that when evaluating the expression _5 + 8 * 2_, the engine will first evaluate _8 * 2_, and then the value of the expression **_5 + 16_**.
 ••••
 
-![ico-25 hw] Тесты
+![ico-25 hw] Tests
 
 →→→ 40 / 2 * 5 | 100, 4 | 100 →→→
 →→→ 40 / (2 * 5) | 100, 4 | 4 →→→
@@ -23,11 +23,11 @@ ___________________________________
 →→→ (10 - 2) * 5 + 4 | 72, 44, 4 | 44 →→→
 →→→ (10 - 2) * (5 + 4) | 72, 44, 4 | 72 →→→
 
-^^Прежде, чем выполнить присваивание, движок должен вычислить значение выражения в правой части оператора присваивания. Полученное значение будет присвоено переменной, имя которой стоит в левой части оператора присваивания.^^
+^^Before performing an assignment, the engine must evaluate the expression on the right-hand side of the assignment statement. The resulting value is then assigned to the variable whose name appears on the left-hand side of the assignment statement.^^
 
-### ![ico-20 icon] Неявное приведение к типу string⟪Implicit_conversion_to_the_string_type⟫
+### ![ico-20 icon] Implicit conversion to the string type⟪Implicit_conversion_to_the_string_type⟫
 
-Строка доминирует в выражении в том смысле, что конечный результат вычисления выражения всегда будет строкой, если в выражении встречается хотя бы одна строка.
+A string dominates an expression in the sense that the final result of evaluating the expression will always be a string if the expression contains at least one string.
 
 ~~~js
 20 + '5'  // '205'
@@ -37,7 +37,7 @@ ___________________________________
 10 + '/' + 5  // '10/5'
 ~~~
 
-Однако есть исключения из этого правила. Например, если строка, входящая в выражение, участвует в качестве операнда в любой арифметической операции, кроме операции **+**. При вычислении значения арифметического выражения (~a - b~, ~a * b~, ~a / b~, ~a % b~) движок будет неявно приводить оба операнда к типу number.
+However, there are exceptions to this rule. For example, if a string within an expression acts as an operand in any arithmetic operation other than the **+** operation. When evaluating the value of an arithmetic expression (~a - b~, ~a * b~, ~a / b~, ~a % b~), the engine will implicitly cast both operands to the number type.
 
 ~~~js
 20 - '5'  // 15
@@ -46,7 +46,7 @@ ___________________________________
 '100' % '3'  // 1
 ~~~
 
-Движок вычисляет выражение последовательно, слева направо, т.е. если выражение начинается с арифметических операций с числами, а потом добавляется строка, то первыми будут выполнены арифметические операции, а затем к полученному числу будет добавлена строка, что превратит результат в строку.
+The engine evaluates the expression sequentially, from left to right; that is, if the expression begins with arithmetic operations on numbers and is then followed by a string, the arithmetic operations will be performed first, and then the string will be appended to the resulting number, which will convert the result into a string.
 
 ~~~js
 20 + 5 + '5'  // 255
@@ -68,7 +68,7 @@ illegal // 'height: 7240px'
 legal  // 'height: 112px'
 ~~~
 
-![ico-25 hw] Тесты
+![ico-25 hw] Tests
 
 →→→ 2 - '10' + '8' | '0', 0, '-88' | -88 →→→
 →→→ 2 + '10' - '200' | 2, 10, '210' | 10 →→→
