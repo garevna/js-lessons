@@ -83,7 +83,7 @@ lib.message('Вы еще не знакомы с Node.js ?')
 
 ••![ico-20 bash] node start.js••
 
-**{{common.c4}}**
+**{{common.c1}}**
 
 •••• none
 {{p73}}

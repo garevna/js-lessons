@@ -113,7 +113,7 @@ const user = new User('Иван')
 user.write('Hello!')
 ~~~
 
-{{topic.t9}}
+{{topic.t10}}
 
 ~~~console
 Иван: Hello!
@@ -135,7 +135,7 @@ User.updateMethods('voyage', function (city) {
 user.voyage('London')
 ~~~
 
-{{topic.t9}}
+{{topic.t10}}
 
 ~~~console
 Иван: I visit London

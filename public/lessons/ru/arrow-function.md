@@ -170,7 +170,7 @@ const arrowFunc = () => null
 const obj = new arrowFunc()
 ~~~
 
-будет сгенерировано исключение:
+будет сгенерировано исключение
 
 ~~~error
     TypeError: arrowFunc is not a constructor

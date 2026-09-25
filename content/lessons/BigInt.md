@@ -130,7 +130,7 @@ _____________________________________________________________
 bigNumber * 2
 ~~~
 
-{{topic.t8}}
+{{common.c5}}
 
 ![ico-20 err]
 
@@ -144,7 +144,7 @@ bigNumber * 2
 Math.sin(bigNumber)
 ~~~
 
-{{topic.t8}}
+{{common.c5}}
 
 ![ico-20 err]
 

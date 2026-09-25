@@ -131,7 +131,7 @@ button.onclick = function (event) {
 
 Вызов **~countInnerIntervals~** "заворачивается в ~console.time~/~console.timeEnd~, что позволит нам получить грубую оценку времени выполнения функции
 
-^^^[Результат в консоли]
+^^^[Результат в консоли:]
 
 ~~~console
 segments: 0.536865234375ms

@@ -78,7 +78,7 @@ function sum (x, y) {
 delete sum
 ~~~
 
-**будет сгенерировано исключение:**
+**будет сгенерировано исключение**
 
 ••![ico-20 error] Uncaught SyntaxError: Delete of an unqualified identifier in strict mode.••
 
@@ -100,7 +100,7 @@ var x = 010   // 8
 var x = 010
 ~~~
 
-**будет сгенерировано исключение:**
+**будет сгенерировано исключение**
 
 ••![ico-20 error] Uncaught SyntaxError: Octal literals are not allowed in strict mode.••
 
@@ -122,7 +122,7 @@ var x = '\010'   // ""
 var x = '\010'
 ~~~
 
-**будет сгенерировано исключение:**
+**будет сгенерировано исключение**
 
 ••![ico-20 error] Uncaught SyntaxError: Octal escape sequences are not allowed in strict mode.••
 
@@ -154,7 +154,7 @@ var sample = Object.defineProperty({}, 'x', {
 sample.x = 5
 ~~~
 
-**будет сгенерировано исключение:**
+**будет сгенерировано исключение**
 
 ••![ico-20 error] Uncaught TypeError: Cannot assign to read only property 'x' of object '#&lt;Object>'••
 
@@ -188,7 +188,7 @@ var obj = {
 obj.x = 5
 ~~~
 
-**будет сгенерировано исключение:**
+**будет сгенерировано исключение**
 
 ••![ico-20 error] Uncaught TypeError: Cannot set property x of #<Object> which has only a getter••
 
@@ -210,7 +210,7 @@ delete Object.prototype  // false
 delete Object.prototype
 ~~~
 
-**будет сгенерировано исключение:**
+**будет сгенерировано исключение**
 
 ••![ico-20 error] Uncaught TypeError: Cannot delete property 'prototype' of function Object() { [native code] }••
 
@@ -232,7 +232,7 @@ var eval = 7  // 7
 var eval = 7
 ~~~
 
-**будет сгенерировано исключение:**
+**будет сгенерировано исключение**
 
 ••![ico-20 error] Uncaught SyntaxError: Unexpected eval or arguments in strict mode••
 
@@ -254,7 +254,7 @@ var arguments = 7  // 7
 var arguments = 7
 ~~~
 
-**будет сгенерировано исключение:**
+**будет сгенерировано исключение**
 
 ••![ico-20 error] Uncaught SyntaxError: Unexpected eval or arguments in strict mode••
 
@@ -291,7 +291,7 @@ function test () {
 test ()
 ~~~
 
-**будет сгенерировано исключение:**
+**будет сгенерировано исключение**
 
 ![ico-20 error] ~~~console
   
@@ -338,7 +338,7 @@ function test () {
 test ()
 ~~~
 
-**будет сгенерировано исключение:**
+**будет сгенерировано исключение**
 
 ~~~console
   
@@ -388,7 +388,7 @@ with (Math) {
 console.log(y)
 ~~~
 
-**будет сгенерировано исключение:**
+**будет сгенерировано исключение**
 
 ••![ico-20 error] Uncaught SyntaxError: Strict mode code may not include a with statement••
 
@@ -414,7 +414,7 @@ eval('var gamma = 2')
 console.log(gamma)
 ~~~
 
-**будет сгенерировано исключение:**
+**будет сгенерировано исключение**
 
 ••![ico-20 error] Uncaught ReferenceError: gamma is not defined••
 
@@ -432,6 +432,6 @@ __________________________________________
 | ![ico-20 error] | static |
 | ![ico-20 error] | yield |
 
-**будет сгенерировано исключение:**
+**будет сгенерировано исключение**
 
 ••![ico-20 error] Uncaught SyntaxError: Unexpected strict mode reserved word••

@@ -23,7 +23,7 @@ const promise = new Promise(function (...) {
 const promise = new Promise ()
 ~~~
 
-![ico-20 err] {{topic.t8}}
+![ico-20 err] {{common.c5}}
 
 ~~~error
     Uncaught TypeError: Promise resolver undefined is not a function

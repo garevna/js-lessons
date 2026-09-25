@@ -502,7 +502,7 @@ const drawLine = pict.drawLine
 drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 ~~~
 
-будет сгенерировано исключение:
+будет сгенерировано исключение
 
 ~~~console
 <p class="error-message">Uncaught TypeError&colon; Cannot read property 'area' of undefined</p>

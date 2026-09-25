@@ -2,9 +2,9 @@
 
 ______________________________________
 
-## ![ico-25 icon] Явное приведение типов⟪Explicit_type_coercion⟫
+## ![ico-25 icon] Explicit type coercion⟪Explicit_type_coercion⟫
 
-Самый простой способ явного приведения данных произвольного типа к типу ~string~, ~number~ или ~boolean~ - использование встроенных одноименных функций **~String()~**, **~Number()~**, **~Boolean()~**.
+The simplest way to explicitly cast data of any type to the type ~string~, ~number~ or ~boolean~ is to use the built-in functions of the same name: **~String()~**, **~Number()~**,  **~Boolean()~**.
 
 ![ico-25 cap] ** 1**
 
@@ -13,7 +13,7 @@ var x = '10'
 Number(x)    // 10
 ~~~
 
-вернет число 10.
+returns the number 10.
 
 ![ico-25 cap] ** 2 **
 
@@ -21,7 +21,7 @@ Number(x)    // 10
 Number('туман')
 ~~~
 
-вернет специальное значение **~NaN~** (^^_Not  a  Number_^^), что означает, что строка "туман" не может быть преобразована к числу.
+returns the special value **~NaN~** (^^_Not  a  Number_^^), which means that the string 'fog' cannot be converted to a number.
 
 
 
@@ -31,7 +31,7 @@ Number('туман')
 String(50)   // "50"
 ~~~
 
-вернет строку "50".
+returns the string '50'.
 
 ![ico-25 cap] ** 4 **
 
@@ -39,13 +39,13 @@ String(50)   // "50"
 Boolean('50')  // true
 ~~~
 
-вернет логическое значение  ~true~.
+returns the boolean value  ~true~.
 
 ___________________________________________________________________
 
-### ![ico-20 icon] Явное приведение к ~number~⟪Explicit_coercion_to_~number~⟫
+### ![ico-20 icon] Explicit coercion to ~number~⟪Explicit_coercion_to_~number~⟫
 
-![ico-20 warn] Во всех нижеперечисленных случаях результат будет ** 0**:
+![ico-20 warn] In all the cases listed below, the result will be ** 0**:
 
 ~~~js
 Number(null)    // 0
@@ -57,7 +57,7 @@ Number('\n')    // 0
 Number('\t')    // 0
 ~~~
 
-^^"пробельные" символы ~""~, ~"   "~, ~"\n"~, ~"\t"~ всегда приводятся к 0.^^
+^^'space' characters ~""~, ~"   "~, ~"\n"~, ~"\t"~ are always converted to 0.^^
 
 ~~~js
 Number(String.fromCharCode(9))   // 0
@@ -67,11 +67,11 @@ Number(String.fromCharCode(12))  // 0
 Number(String.fromCharCode(13))  // 0
 ~~~
 
-^^~String.fromCharCode(cod)~ возвращает символ, код которого равен **cod**^^
+^^~String.fromCharCode(cod)~ returns the character whose code is **cod**.^^
 
-![ico-20 warn] ~Number(true)~  вернет 1.
+![ico-20 warn] ~Number(true)~  will return 1
 
-![ico-20 warn] В случаях, когда преобразовать выражение к числу невозможно, результат будет **~NaN~** (^^Not a Number^^):
+![ico-20 warn] In cases where it is impossible to convert an expression to a number, the result will be  **~NaN~** (^^Not a Number^^):
 
 ![ico-25 cap] ** 5 **
 
@@ -84,7 +84,7 @@ Number(NaN)         // NaN
 Number({})          // NaN
 ~~~
 
-![ico-20 warn]  Во всех остальных случаях результат будет  числом.
+![ico-20 warn]  In all other cases, the result will be  a number.
 
 ![ico-25 cap] ** 6 **
 
@@ -100,8 +100,8 @@ ______________________________
 
 #### ![ico-20 icon] parseInt & parseFloat⟪parseInt_&_parseFloat⟫
 
-Для приведения к целому числу или к числу с плавающей запятой (с десятичными знаками) можно использовать встроенные функции ~parseInt~ и ~parseFloat~.
-В отличие от конструктора **~Number~**, эти функции парсят строку, даже если в ней есть "левые" символы после числа - эти символы просто будут проигнорированы:
+To convert to an integer or a floating-point number (with decimal places), you can use the built-in functions ~parseInt~ and ~parseFloat~.
+Unlike the **~Number~** constructor, these functions parse the string even if it contains ‘leading’ characters after the number – these characters will simply be ignored:
 
 ~~~js
 Number('3.14abc')      // NaN
@@ -112,11 +112,11 @@ Number('3.14/5')        // NaN
 parseFloat('3.14/5')    // 3.14
 ~~~
 
-Однако если строка начинается с символов, которые не могут быть приведены к числу, эти функции вернут **~NaN~**.
+However, if the string begins with characters that cannot be converted to a number, these functions will return **~NaN~**.
 
 ____________________________________________________________________
 
-### ![ico-20 icon] Явное приведение к ~boolean~⟪Explicit_conversion_to_~boolean~⟫
+### ![ico-20 icon] Explicit conversion to ~boolean~⟪Explicit_conversion_to_~boolean~⟫
 
 ![ico-20 warn] Во всех нижеперечисленных случаях результат будет  ~false~:
 

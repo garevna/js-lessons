@@ -1,21 +1,71 @@
 {
+  "p44": {
+    "ru": "Тут мы вступаем на минное поле, заложенное динамической типизацией. За исключением откровенных синтаксических ошибок, движок дает нам полную свободу в выражениях, которые мы предоставляем ему вычислять, даже если эти выражения выглядят абсолютным бредом.",
+    "eng": "Here we enter a minefield created by dynamic typing. With the exception of obvious syntactic errors, the engine gives us complete freedom in the expressions we provide for it to evaluate, even if those expressions look like utter nonsense.",
+    "ua": "Тут ми потрапляємо на мінне поле, закладене динамічною типізацією. За винятком явних синтаксичних помилок, движок надає нам повну свободу у виразах, які ми доручаємо йому обчислювати, навіть якщо ці вирази виглядають як абсолютна нісенітниця."
+  },
+  "p45": {
+    "ru": "Главная \"мина\" в том, что движок разрешает использовать в выражениях данные различного типа, и не рассматривает это как ошибку, если вы пытаетесь сложить число со строкой или с булевым значением. Т.е. вы можете скрестить кактус с курицей, и движок не остановит вас. Однако вопрос: а что получится в результате? Кактус или курица?",
+    "eng": "The main ‘pitfall’ is that the engine allows data of different types to be used in expressions, and does not treat it as an error if you try to add a number to a string or a Boolean value. In other words, you can cross a cactus with a chicken, and the engine won’t stop you. However, the question is: what will the result be? A cactus or a chicken?",
+    "ua": "Головна «міна» полягає в тому, що движок дозволяє використовувати у виразах дані різних типів і не розглядає це як помилку, якщо ви намагаєтеся додати число до рядка або до булевого значення. Тобто ви можете схрестити кактус із куркою, і движок вас не зупинить. Однак питання: а що вийде в результаті? Кактус чи курка?"
+  },
+  "p46": {
+    "ru": "Это и есть главный вопрос, на который мы попробуем ответить.",
+    "eng": "This is the main question we’ll try to answer.",
+    "ua": "Це й є головне питання, на яке ми спробуємо відповісти."
+  },
   "p1": {
     "ru": "Неявное приведение типов",
-    "eng": "",
-    "ua": ""
+    "eng": "Implicit type coercion",
+    "ua": "Неявне приведення типів"
   },
   "p2": {
-    "ru": "Неявное приведение типов происходит в процессе вычисления выражений",
-    "eng": "",
-    "ua": ""
+    "ru": "Неявное приведение типов происходит в процессе вычисления выражений.",
+    "eng": "Implicit type coercion occurs during the evaluation of expressions.",
+    "ua": "Неявне приведення типів відбувається в процесі обчислення виразів."
+  },
+  "p47": {
+    "ru": "Главное, с чего следует начинать: как движок вычисляет наши выражения. А вычисляет он их последовательно, слева направо, за исключением следующих правил (приоритетов):",
+    "eng": "The first thing to start with is how the engine evaluates our expressions. It evaluates them sequentially, from left to right, subject to the following rules (operators’ precedence):",
+    "ua": "Головне, з чого слід починати: як движок обчислює наші вирази. А обчислює він їх послідовно, зліва направо, за винятком таких правил (пріоритетів):"
+  },
+  "p48": {
+    "ru": "![ico-20 warning] Если в выражении встречаются круглые скобки, то сначала будет вычислено выражение в круглых скобках, затем полученное значение будет подставлено вместо выражения в круглых скобках. Т.е. при вычислении выражения _2 * (8 + 2)_ движок сначала вычислит _8 + 2_, а затем - значение выражения **_2 * 10_**;",
+    "eng": "![ico-20 warning] If an expression contains round brackets, the expression inside the round brackets will be evaluated first, and then the resulting value will be substituted for the expression inside the round brackets. In other words, when evaluating the expression _2 * (8 + 2)_, the engine will first evaluate _8 + 2_, and then the value of the expression **_2 * 10_**;",
+    "ua": "![ico-20 warning] Якщо у виразі зустрічаються круглі дужки, то спочатку обчислюється вираз у круглих дужках, потім отримане значення підставляється замість виразу в круглих дужках. Тобто під час обчислення виразу _2 * (8 + 2)_ движок спочатку обчислить _8 + 2_, а потім — значення виразу **_2 * 10_**;"
+  },
+  "p49": {
+    "ru": "![ico-20 warning] Операторы умножения и деления имеют более высокий приоритет, чем операторы сложения и вычитания. Это означает, что при вычислении выражения _5 + 8 * 2_ движок сначала вычислит _8 * 2_, а затем - значение выражения **_5 + 16_**.",
+    "eng": "![ico-20 warning] Multiplication and division operators have higher precedence than addition and subtraction operators. This means that when evaluating the expression _5 + 8 * 2_, the engine will first evaluate _8 * 2_, and then the value of the expression **_5 + 16_**.",
+    "ua": "![ico-20 warning] Оператори множення та ділення мають вищий пріоритет, ніж оператори додавання та віднімання. Це означає, що під час обчислення виразу _5 + 8 * 2_ движок спочатку обчислить _8 * 2_, а потім — значення виразу **_5 + 16_**."
+  },
+  "p50": {
+    "ru": "^^Прежде, чем выполнить присваивание, движок должен вычислить значение выражения в правой части оператора присваивания. Полученное значение будет присвоено переменной, имя которой стоит в левой части оператора присваивания.^^",
+    "eng": "^^Before performing an assignment, the engine must evaluate the expression on the right-hand side of the assignment statement. The resulting value is then assigned to the variable whose name appears on the left-hand side of the assignment statement.^^",
+    "ua": "^^Перш ніж виконати присвоєння, движок повинен обчислити значення виразу в правій частині оператора присвоєння. Отримане значення буде присвоєно змінній, ім’я якої стоїть у лівій частині оператора присвоєння.^^"
   },
   "p3": {
-    "ru": "Неявное приведение к string",
-    "eng": "",
-    "ua": ""
+    "ru": "Неявное приведение к типу string",
+    "eng": "Implicit conversion to the string type",
+    "ua": "Неявне приведення до типу string"
+  },
+  "p51": {
+    "ru": "Строка доминирует в выражении в том смысле, что конечный результат вычисления выражения всегда будет строкой, если в выражении встречается хотя бы одна строка.",
+    "eng": "A string dominates an expression in the sense that the final result of evaluating the expression will always be a string if the expression contains at least one string.",
+    "ua": "Рядок домінує у виразі в тому сенсі, що кінцевий результат обчислення виразу завжди буде рядком, якщо у виразі зустрічається хоча б один рядок."
+  },
+  "p52": {
+    "ru": "Однако есть исключения из этого правила. Например, если строка, входящая в выражение, участвует в качестве операнда в любой арифметической операции, кроме операции **+**. При вычислении значения арифметического выражения (~a - b~, ~a * b~, ~a / b~, ~a % b~) движок будет неявно приводить оба операнда к типу number.",
+    "eng": "However, there are exceptions to this rule. For example, if a string within an expression acts as an operand in any arithmetic operation other than the **+** operation. When evaluating the value of an arithmetic expression (~a - b~, ~a * b~, ~a / b~, ~a % b~), the engine will implicitly cast both operands to the number type.",
+    "ua": "Однак є винятки з цього правила. Наприклад, якщо рядок, що входить до виразу, бере участь як операнд у будь-якій арифметичній операції, крім операції **+**. Під час обчислення значення арифметичного виразу (~a - b~, ~a * b~, ~a / b~, ~a % b~) движок неявно приводитиме обидва операнди до типу number."
   },
   "p4": {
-    "ru": "При сложении числа и строки JavaScript обрабатывает число как строку",
+    "ru": "Движок вычисляет выражение последовательно, слева направо, т.е. если выражение начинается с арифметических операций с числами, а потом добавляется строка, то первыми будут выполнены арифметические операции, а затем к полученному числу будет добавлена строка, что превратит результат в строку.",
+    "eng": "The engine evaluates the expression sequentially, from left to right; that is, if the expression begins with arithmetic operations on numbers and is then followed by a string, the arithmetic operations will be performed first, and then the string will be appended to the resulting number, which will convert the result into a string.",
+    "ua": "Движок обчислює вираз послідовно, зліва направо, тобто якщо вираз починається з арифметичних операцій з числами, а потім додається рядок, то спочатку будуть виконані арифметичні операції, а потім до отриманого числа буде додано рядок, що перетворить результат на рядок."
+  },
+  "p53": {
+    "ru": "",
     "eng": "",
     "ua": ""
   },

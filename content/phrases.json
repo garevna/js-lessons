@@ -6,9 +6,9 @@
       "ua": "Приклад"
     },
     "c1": {
-      "ru": "Результат",
-      "eng": "Result",
-      "ua": ""
+      "ru": "Результат:",
+      "eng": "Result:",
+      "ua": "Результат:"
     },
     "c2": {
       "ru": "Результат в консоли:",
@@ -20,15 +20,10 @@
       "eng": "Exercise",
       "ua": "Вправа"
     },
-    "c4": {
-      "ru": "Результат:",
-      "eng": "Result:",
-      "ua": "Результат"
-    },
     "c5": {
-      "ru": "будет сгенерировано исключение:",
-      "eng": "An exception will be thrown:",
-      "ua": "буде згенеровано виняток:"
+      "ru": "будет сгенерировано исключение",
+      "eng": "an exception will be thrown",
+      "ua": "буде згенеровано виняток"
     },
     "c6": {
       "ru": "или:",
@@ -59,11 +54,6 @@
       "ru": "Тесты",
       "eng": "Tests",
       "ua": "Тести"
-    },
-    "c14": {
-      "ru": "Результат в консоли",
-      "eng": "",
-      "ua": ""
     },
     "c13": {
       "ru": "Методы",
@@ -177,46 +167,16 @@
       "eng": "What happened?",
       "ua": "Що сталося?"
     },
-    "t7": {
-      "ru": "в консоли:",
-      "lessons": [
-        "for-of-for-in"
-      ],
-      "eng": "",
-      "ua": ""
-    },
-    "t6": {
-      "ru": "Будет сгенерировано исключение:",
-      "lessons": [
-        "Object-static-props",
-        "let-const"
-      ],
-      "eng": "An exception will be thrown:",
-      "ua": "Буде згенеровано виняток:"
-    },
     "t14": {
       "ru": "Генератор",
-      "lessons": [
-        "Array-iterating-methods",
-        "generators"
-      ],
+      "lessons": [],
       "eng": "Generator",
-      "ua": ""
-    },
-    "t8": {
-      "ru": "будет сгенерировано исключение",
-      "lessons": [
-        "BigInt",
-        "promise"
-      ],
-      "eng": "",
       "ua": ""
     },
     "t12": {
       "ru": "Цепочка областей видимости",
       "lessons": [
-        "function-object",
-        "function-object-eng"
+        "function-object"
       ],
       "eng": "Scope chain",
       "ua": "Ланцюжок областей видимості"
@@ -229,19 +189,13 @@
       "eng": "What's going to be in the console?",
       "ua": "Що буде в консолі?"
     },
-    "t9": {
-      "ru": "В консоли мы увидим",
-      "lessons": [
-        "IndexedDB-transaction",
-        "SOLID"
-      ],
-      "eng": "",
-      "ua": ""
-    },
     "t10": {
       "ru": "В консоли мы увидим:",
       "lessons": [
         "IndexedDB-transaction",
+        "SOLID",
+        "for-of-for-in",
+        "functionality",
         "typeof"
       ],
       "eng": "We'll see in the console:",

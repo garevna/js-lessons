@@ -76,7 +76,7 @@ names [ i ] ="Сергей",
 lastNames [ i ] = "Коломенцев"
 ~~~
 
-**{{common.c4}}**
+**{{common.c1}}**
 
 ~~~javascript
 newArray [ i ] = "Сергей Коломенцев"

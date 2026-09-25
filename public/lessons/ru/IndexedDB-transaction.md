@@ -309,7 +309,7 @@ indexedDB.open('users').onsuccess = event => {
 }
 ~~~
 
-В консоли мы увидим
+В консоли мы увидим:
 
 ~~~console
 ▼  (3) [{…}, {…}, {…}]

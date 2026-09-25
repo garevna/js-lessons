@@ -110,7 +110,7 @@ Therefore, as a result of executing the code:
 }
 ~~~
 
-An exception will be thrown:
+an exception will be thrown
 
 ••![ico-25 err] ReferenceError: Cannot access 'x' before initialization••
 
@@ -136,7 +136,7 @@ function sample () {
 sample ()
 ~~~
 
-An exception will be thrown:
+an exception will be thrown
 
 ![ico-20 err] ~Uncaught SyntaxError: Identifier 'figure' has already been declared~
 
@@ -179,7 +179,7 @@ const XXX = 11
 XXX = 55
 ~~~
 
-An exception will be thrown:
+an exception will be thrown
 
 ![ico-20 err] ~Uncaught TypeError: Assignment to constant variable.~
 
@@ -191,7 +191,7 @@ An exception will be thrown:
 const XXX
 ~~~
 
-An exception will be thrown:
+an exception will be thrown
 
 ••![ico-20 err] Uncaught SyntaxError: Missing initializer in const declaration••
 

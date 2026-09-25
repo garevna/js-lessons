@@ -900,7 +900,7 @@ Object.defineProperty(provider, 'service', {
 })
 ~~~
 
-{{topic.t6}}
+{{common.c5}}
 
 ••![ico-20 error] Uncaught TypeError: Cannot redefine property: service••
 

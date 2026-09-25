@@ -30,7 +30,7 @@ document
   .appendChild (section)
 ~~~
 
-◘◘Результат◘◘
+◘◘Результат:◘◘
 
 ~~~html
 &ltbody>
@@ -56,7 +56,7 @@ style
   .appendChild(document.createTextNode(`div { color: blue; }`))
 ~~~
 
-◘◘Результат◘◘
+◘◘Результат:◘◘
 
 ~~~html
 &lthead>
@@ -109,7 +109,7 @@ var figure = document.querySelector('.figure')
 figure.appendChild(removed)
 ~~~
 
-◘◘Результат◘◘
+◘◘Результат:◘◘
 
 ~~~html
 &ltbody>
@@ -140,7 +140,7 @@ var figure = addElement ('figure', main)
 main.insertBefore(document.createElement('p'), section)
 ~~~
 
-◘◘Результат◘◘
+◘◘Результат:◘◘
 
 ~~~html
 &ltbody>
@@ -179,7 +179,7 @@ section.insertAdjacentHTML('beforeEnd', '<p>beforeEnd</p>')
 section.insertAdjacentHTML('afterEnd', '<p>afterEnd</p>')
 ~~~
 
-◘◘Результат◘◘
+◘◘Результат:◘◘
 
 ~~~html
 &ltbody>
@@ -224,7 +224,7 @@ document.getElementsByTagName('figure')[0]
   .insertAdjacentElement('afterbegin', document.createElement('li'))
 ~~~
 
-◘◘Результат◘◘
+◘◘Результат:◘◘
 
 ~~~html
 &ltbody>

@@ -113,7 +113,7 @@ const user = new User('Иван')
 user.write('Hello!')
 ~~~
 
-В консоли мы увидим
+В консоли мы увидим:
 
 ~~~console
 Иван: Hello!
@@ -135,7 +135,7 @@ User.updateMethods('voyage', function (city) {
 user.voyage('London')
 ~~~
 
-В консоли мы увидим
+В консоли мы увидим:
 
 ~~~console
 Иван: I visit London

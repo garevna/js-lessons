@@ -75,7 +75,7 @@ document.body.ondomnodeinserted = function (event) {
 document.body.appendChild(document.createElement('div'))
 ~~~
 
-**{{common.c4}}**
+**{{common.c1}}**
 
 ~~~~console
 
