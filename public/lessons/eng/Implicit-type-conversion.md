@@ -31,9 +31,7 @@ A string dominates an expression in the sense that the final result of evaluatin
 
 ~~~js
 20 + '5'  // '205'
-
 '100' + 5  // '1005'
-
 10 + '/' + 5  // '10/5'
 ~~~
 
@@ -77,80 +75,81 @@ legal  // 'height: 112px'
 →→→ ('5' - '2') * '10' | 30, -15, 0 | 30 →→→
 →→→ '5' - '2' * '10' | 30, -15, 10 | -15 →→→
 
+### ![ico-20 icon] An array as an operand in an arithmetic expression⟪An_array_as_an_operand_in_an_arithmetic_expression⟫
 
-
-^^Например, после выполнения кода:^^
-
-^^значением переменной **res** будет строка _"205"_^^
-
-JavaScript вычисляет выражения слева направо
-
-^^В результате выполнения кода:^^
+The result of evaluating an expression can be cast to a string type not only by explicitly adding a string operand. For example, adding an empty array produces the same result. In other words, if an array acts as an operand in an expression, it is cast to a string.
 
 ~~~js
-var res = 20 + 10 + '5'
+20 + 5 + []      // '25'
+20 + 5 + [0]     // '250'
+20 + 5 + [0, 5]  // '250,5'
 ~~~
 
-^^в переменной ~res~ будет значение "305",^^
-
-^^а в результате выполнения кода:^^
+Therefore, if an array acts as an operand in an arithmetic operation (multiplication, division, subtraction or modulo), the situation is slightly different: if the array is empty, it is converted to an empty string, which, when used as an operand in an arithmetic operation, is converted to 0. If the array contains a single element, that element is converted to a string and then to a numeric type (a number or ~NaN~).
 
 ~~~js
-var res = '3' + 20 + 10
+20 + '5' - []     // 205
+20 + '5' - [3]    // 202
+20 + '5' - ['5']  // 250
+20 + '5' - [3, 0] // NaN
 ~~~
 
-^^в переменной ~res~ будет значение _"32010"_^^
+![ico-25 hw] Tests
 
-![ico-20 warn] При сложении массива и любого другого операнда результат будет строкового типа ( ~string~ )
+→→→ 5 + [8] | 13, '58' | 58 →→→
+→→→ 5 * [8] | 40, NaN, 0 | 40 →→→
+→→→ '5' % ['8'] | 0, NaN, 5 | 5 →→→
+→→→ 5 * [8, 0] | 40, NaN, 0 | NaN →→→
+→→→ ['8'] - '5' | 3, NaN, 0 | 3 →→→
+→→→ [] + false | 'false', NaN, 0 | false →→→
+→→→ [4] + NaN | '4NaN', NaN, 0 | 4NaN →→→
 
-![ico-25 cap] **1**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+However, if any arithmetic operator is placed before an array, the array is converted to a number (or ~NaN~):
+
+◘◘![ico-25 cap] **2**◘◘
 
 ~~~js
-[] + 5             //  "5"
-[] + false         //  "false"
-[4] + NaN          //  "4NaN"
-[4, 8] + null      //  "4,8null"
-null + [4, 8]      //  "null4,8"
-~~~
-
-Это происходит потому, что массив преобразуется в строку:
-
-~~~js
-String([4, 8])
-~~~
-
-и результат будет   ~4,8~
-
-![ico-20 warn] Однако, если в массиве не более одного элемента, и перед массивом стоит знак арифметической операции, он будет приведен к числу:
-
-![ico-25 cap] ** 2**
-
-~~~js
-null + +[4]       // 4
-+[5] + null         // 5
++['8'] + 5    // 13
+null + +[4]   // 4
++[5] + null   // 5
 ~~~
 
 _____________________________________________________________________
 
-### ![ico-20 icon] Неявное приведение к number⟪neyavnoe_pryvedenye_k_number⟫
+### ![ico-20 icon] Implicit coercion to the number type⟪Implicit_coercion_to_the_number_type⟫
 
-
-Неявное приведение к типу  ~number~ происходит в арифметических выражениях:
+Implicit coercion to the type ~number~ occurs in arithmetic expressions:
 
 ~~~js
 var  x = '8' / 2
 ~~~
 
-^^( значением переменной ~ x~ будет 4 )^^
+^^(the value of the variable ~ x~ will be 4)^^
 
-![ico-20 warn] При участии в арифметических операциях пустая строка ( ~""~ ) и пустой массив ( ~[]~ ) преобразуется в ** 0**:
+![ico-20 warn] When used in arithmetic operations, an empty string (~""~) and an empty array (~[]~) are converted to **0**:
 
 ~~~js
 var x = ''
 var y = x / 5
 ~~~
 
-^^( выражение  ~"" / 5~   будет приведено к   ~0 / 5~ )^^
+^^(the expression ~"" / 5~ will be reduced to ~0 / 5~)^^
 
 ~~~js
 console.log(+'')         // 0
@@ -158,14 +157,14 @@ console.log(+[])         // 0
 console.log(+[]+'')      // 0
 ~~~
 
-![ico-20 warn] Если в арифметическом выражении участвуют специальные значения ~undefined~ или ~null~, то они преобразуются к числу так:
+![ico-20 warn] If special values ~undefined~ or ~null~ appear in an arithmetic expression, they are converted to numbers as follows:
 
 ~~~js
 Number(undefined)   // NaN
 Number(null)        // 0
 ~~~
 
-![ico-20 warn] Если в арифметическом выражении участвуют логические значения ~true~ или ~false~, то они преобразуются к числу так:
+![ico-20 warn] If an arithmetic expression contains the logical values ~true~ or ~false~, they are converted to a number as follows:
 
 ~~~js
 var a = false
@@ -173,7 +172,7 @@ var b = true
 var z = a + b    //  0 + 1 --> 1
 ~~~
 
-![ico-20 warn] Кроме арифметических операций, преобразование к типу ~number~ происходит при участии переменной в операциях сравнения ( за исключением операций   ~===~  и  ~!==~,  когда сравниваются не только значения, но и типы данных )
+![ico-20 warn] In addition to arithmetic operations, coercion to the type ~number~ occurs when a variable is involved in comparison operations (with the exception of operations ~===~ and ~!==~, where not only values but also data types are compared)
 
 ____________________________________________________________
 
@@ -197,35 +196,35 @@ a == b      // 1 == null  --> false
 
 ______________________________________________________
 
-### ![ico-20 icon] Неявное приведение к boolean⟪neyavnoe_pryvedenye_k_boolean⟫
+### ![ico-20 icon] Implicit coercion to the boolean type⟪Implicit_coercion_to_the_boolean_type⟫
 
-Преобразование типов к логическому типу ( ~boolean~ ) происходит в условных операторах ( ~if~, тернарный оператор )
+Coerсion to the boolean type (~boolean~) occurs in conditional operators (~if~, the ternary operator)
 
-![ico-25 cap] ** 5**
+![ico-25 cap] **5**
 
 ~~~js
 if ('5') console.log('Yes')
 ~~~
 
-Будет вычисляться логическое значение выражения  в круглых скобках оператора ~if~, т.е. "под капотом" будет выполнена операция
+The logical value of the expression within the parentheses of the ~if~ operator will be evaluated, i.e. the operation will be performed ‘under the bonnet’
 
 ~~~js
 Boolean('5')
 ~~~
 
-![ico-20 warn] При выполнении логических операций  ~&#10072;&#10072;~  и  ~&&~ происходит неявное приведение типов операндов к логическому значению, но при этом результатом логической операции будет изначальное значение одного из операндов, даже если оно не являются булевым
+![ico-20 warn] When performing the logical operations ~&#10072;&#10072;~ and ~&&~, the operands are implicitly cast to a logical value; however, the result of the logical operation will be the original value of one of the operands, even if it is not a Boolean
 
 _______________________________________________
 
 #### ![ico-20 icon] &&⟪&&⟫
 
-^^^[Операция&nbsp;&&]
+^^^[The && operation]
 
-Операция ~&&~  перебирает операнды слева направо, приводя их к логическому значению, до тех пор, пока не встретится первый ~false~
+The ~&&~ operation iterates through the operands from left to right, converting them to a logical value, until the first ~false~ is encountered
 
-в этом случае возвращается исходное значение последнего операнда
+in which case the original value of the last operand is returned
 
-![ico-25 cap] ** 6**
+![ico-25 cap] **6**
 
 ~~~js
 true && false && null   //  false
@@ -233,74 +232,63 @@ true && '5' && null     //  null
 true && [] && null      //  null
 ~~~
 
-![ico-25 cap] ** 7**
+![ico-25 cap] **7**
 
 ~~~js
 true && ![] && null     //  false
 ~~~
 
-^^вычисляется значение второго операнда ~![]~, оно будет ~false~, операция останавливается и возвращается последний операнд, на котором остановились )^^
+^^the value of the second operand ~![]~ is calculated; it will be ~false~, the operation stops and the last operand at which it stopped is returned^^
 
 ~~~js
 true && true && true && true     //    true
 ~~~
 
-^^дошли до конца, но не встретили ~false~, возвращается последний операнд^^
+^^We have reached the end but have not encountered ~false~; the last operand is returned^^
 
 ^^^
 __________________________________________________________________
 
 #### ![ico-20 icon] ||⟪__⟫
 
-^^^[Операция ||]
+^^^[The || operation]
 
-Операция ~||~  перебирает операнды слева направо, приводя их к логическому значению, до тех пор, пока не встретится первый ~true~
+The ~||~ operation iterates through the operands from left to right, reducing them to a logical value, until the first ~true~ is encountered
 
-в этом случае возвращается исходное значение последнего операнда, на котором остановились
-
-![ico-25 cap] ** 8**
+in this case, the original value of the last operand at which the operation stopped is returned
 
 ~~~js
 null || false || 5 || ''          //   5
 null || '' || 0 || 4 || 10        //   4
-~~~
-
-![ico-25 cap] ** 9**
-
-~~~js
 null || false || undefined || ''  //  ""
 ~~~
 
-^^последовательно вычисляются логические значения^^
+^^the logical values are evaluated sequentially^^
 
-^^• первого операнда (~null~) - это ~false~,^^
-^^• второго операнда - ~false~,^^
-^^• третьего операнда (~undefined~) - это ~false~,^^
-^^• четвертого операнда (~""~) - это ~false~^^
+^^• the first operand (~null~) is ~false~,^^
+^^• the second operand is ~false~,^^
+^^• the third operand (~undefined~) is ~false~,^^
+^^• the fourth operand (~""~) is ~false~^^
 
-^^больше операндов нет, операция завершается и возвращает последний операнд, на котором остановилась ( ~""~ )^^
+^^there are no more operands; the operation terminates and returns the last operand it was on (~""~)^^
 
 ^^^
 
 #### ![ico-20 icon] !!⟪!!⟫
 
-^^^[Операция !!]
+^^^[Operation !!]
 
-можно привести переменную любого типа к ~boolean~ с помощью логической операции двойного отрицания:
+A variable of any type can be reduced to ~boolean~ using the double negation logical operation:
 
 ~~~js
 var x = null
 var y = !!x        // false
-~~~
 
-~~~js
 var x = undefined
 var y = !!x        // false
-~~~
 
-~~~js
-!![ ]      // вернет   true
-!!+[ ]     // вернет  false
+!![]              // true
+!!+[]             // false
 ~~~
 
 ^^^
