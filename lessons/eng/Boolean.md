@@ -4,26 +4,28 @@ In this section we will learn about logical values, logical variables, logical e
 
 ## ![ico-30 icon] Variables of logical type (boolean)⟪Variables_of_logical_type_(boolean)⟫
 
-When a person declares that his son is 18 years old, that statement will be true for one year, but before that year and after that year, that statement will be a lie. And that is on the condition that this person has a son.
+••When a person declares that his son is 18 years old, that statement will be true for one year, but before that year and after that year, that statement will be a lie. And that is on the condition that this person has a son.••
 
 ![](illustrations/logical-expressions.svg)
 
+•••• none
 Suppose a man wrote this statement on his social media page when he was 15 years old.
 He did not yet have a son, and the statement was false.
 Then he grew up, got married and had a son, but the statement remained false because his son was not yet 18.
 Finally, when his son turned 18, the statement became true.
 But it lasted for one year.
 Then his son turned 19, and this statement became false again.
-
 Thus, this statement is a **variable**. For its meaning can change.
-The values this variable can take are **~true~** or **~false~**
-.
+The values this variable can take are **_true_** or **_false_**.
+••••
 
-**~true~** and **~false~** are **logical values**.
-![ico-25 warn] **There are no other logical values.
+![ico-25 pin] **~true~** and **~false~** are **logical values**.
 
-^^We don't have such a sly value as ‘Not everything is so unambiguous’. Everything is unambiguous. It's either black or white. Our world is simple.^^
-So, our variable can take one of two possible logical values (**~true~** or **~false~**).
+![ico-25 warn] **There are no other logical values.**
+^^We don’t have a vague notion like ‘It’s not all that clear-cut’. Everything is clear-cut. It’s either black or white. Our world is simple.^^
+
+So, our variable can take on one of two possible logical values (**~true~** or **~false~**).
+This is a variable of **logical type** (**~boolean~**).
 
 ______________________________________
 
@@ -33,9 +35,10 @@ The statement '_The apple is red and round_' can be decomposed into two parts: '
 
 ![](illustrations/logical-expressions-1.svg)
 
-◘◘ ![ico-25 coffee] ** 1**◘◘
+In other words, we are effectively dealing with two logical variables, each of which takes on a logical value; that is, each is a variable of the logical type.
 
-◘◘ ![ico-25 coffee] ** 1**◘◘
+◘◘ ![ico-25 coffee] **1**◘◘
+
 ~~~js
 var apple = {
   color: 'yellow',
@@ -45,7 +48,7 @@ var apple = {
 
 Let the boolean variable **~appleIsRed~** take the value **~true~** when the property **~apple.colour~** has the value ‘red’ and the boolean variable **~appleIsRound~** take the value **~true~** when the property **~apple.shape~** has the value ‘round’.
 
-|   'green'   |   'square'  |   ~false~  | ~false~      |   ~false~          |
+The variable **~appleIsRedAndRound~** takes the value **~true~** when the property **~apple.color~** has the value “red” and the property **~apple.shape~** has the value “round”.
 
 | apple.color | apple.shape | appleIsRed | appleIsRound | appleIsRedAndRound |
 |   'red'     |   'round'   |   ~true~   | ~true~       |   ~true~           |
@@ -80,80 +83,99 @@ Comparison operators always return a **logical value**.
 | **~!==~** | strict inequality ^^(will return ~true~ if the data types or values are not equal)^^ |
 | **~ > ~** | greater than |
 | **~ < ~** | less than |
-| **~>=~**  | greater than or equal to |
-| **~<=~**  | less than or equal to |
+| **~>=~** | greater than or equal to |
+| **~<=~** | less than or equal to |
 
 String comparison is character-by-character.
 Each character has a numeric code, and the character codes are compared.
-◘◘![ico-25 hw]** 5**◘◘
+If the first characters of the operand strings are the same, the next characters are compared, and so on, until one of the characters is greater than or less than the other.
 
-§§§§ Demo | boolean_01_template §§§§
+~~~demo
+> var alpha = 1
+< undefined
+> alpha === '1'
+< false
+> alpha == '1'
+< true
+> alpha == true
+< true
+> alpha > false
+< true
+> alpha != '1'
+< false
+> alpha !== '1'
+< true
+> typeof alpha === 'string'
+< false
+> typeof alpha === 'number'
+< true
+~~~
 
 _________________________________________________________________________
 
 ### ![ico-30 hw] Tests⟪Tests⟫
 
-◘◘![ico-25 hw]** 1**◘◘
+◘◘![ico-25 hw] **1**◘◘
 
 →→→ 5 > '4' | true, false | true→→→
 
-◘◘![ico-25 hw]** 2**◘◘
+◘◘![ico-25 hw] **2**◘◘
 
 →→→ 5 !== '5' | true, false | true→→→
 
-◘◘![ico-25 hw]** 3**◘◘
+◘◘![ico-25 hw] **3**◘◘
 
 →→→ 10 != '10' | true, false | false→→→
 
-◘◘![ico-25 hw]** 4**◘◘
+◘◘![ico-25 hw] **4**◘◘
 
 →→→ true != 1 | true, false | false→→→
 
-◘◘![ico-25 hw]** 5**◘◘
+◘◘![ico-25 hw] **5**◘◘
 
-→→→ true !== '1' | true, false, 'Не все так однозначно' | true→→→
+→→→ true !== '1' | true, false, 'It’s not quite that straightforward' | true→→→
 
-◘◘![ico-25 hw]** 6**◘◘
+◘◘![ico-25 hw] **6**◘◘
 
 →→→ true <= 1 | true, false | true→→→
 
-◘◘![ico-25 hw]** 7**◘◘
+◘◘![ico-25 hw] **7**◘◘
 
 →→→ 'abc' < 'cde' | true, false | true→→→
 
-◘◘![ico-25 hw]** 8**◘◘
+◘◘![ico-25 hw] **8**◘◘
 
 →→→ 'Welcome!'.length < 'How are you?'.length | true, false | true→→→
 
 __________________________________________________________________________
 
-## ![ico-30 icon] Negation operator⟪Negation_operator⟫
+## ![ico-30 icon] Logical operators⟪Logical_operators⟫
 
-The statement ‘The apple is not red’ is the negation of the statement ‘The apple is red’.
+There are three logical operators in JavaScript: **logical multiplication**, **logical addition** and **logical negation**.
 
-That is, the apple can be any colour, just not red.
-If we go back to Example 1:
+The **logical negation** operator is a unary operator, i.e. it has only one operand.
+The logical operators ‘and’ and ‘or’ are binary operators; they have two operands.
 
-then a new variable of logical type **~appleIsNotRed~** can be calculated based on the value of the variable **~appleIsRed~** by negation.
-JS uses the **~ !~** symbol (exclamation mark) for logical negation:
+Logical negation always returns a logical value, even if the operand is not a logical expression (or a logical value).
+The **logical multiplication** and **logical addition** operators do not always return a logical value.
 
-![ico-25 warn] Logical negation always returns a **boolean value** regardless of the data type of the operand.
-Это называется [►►►**неявное приведение типов**►►►](page/Implicit-type-conversion).
+When performing logical operations, the engine internally converts the operands to the data type **~boolean~**.
+This is known as [►►►**implicit type coercion**►►►](page/Implicit-type-conversion).
 
-Поскольку приведение к типу **~boolean~** является достаточно простым, мы можем немного "забежать вперед":
+Since type coercion to **~boolean~** is fairly straightforward, we can ‘jump ahead’ a little:
 
-1. Пустая строка приводится к **~false~**. Если длина строки больше 0, то такая строка будет приведена к **~true~** независимо от того, какие символы есть в этой строке.
-2. Числа, отличные от 0 и **~NaN~**, приводятся к **~true~**, а 0 и **~NaN~** приводятся к **~false~**.
-3. **~null~** и **~undefib=ned~** приводятся к **~false~**.
-4. Любые структуры данных (массивы, объекты) всегда приводятся к **~true~**, независимо от содержимого этих структур данных или полного отсутствия содержимого.
+1. An empty string is coerced to **~false~**. If the length of a string is greater than 0, that string will be coerced to **~true~** regardless of the characters it contains.
+2. Numbers other than 0 and **~NaN~** are coerced to **~true~**, whilst 0 and **~NaN~** are coerced to **~false~**.
+3. **~null~** and **~undefib=ned~** are coerced to **~false~**.
+4. Any data structures (arrays, objects) are always coerced to **~true~**, regardless of the contents of these data structures or whether they are completely empty.
 
 _____________________________________________
 
-### ![ico-25 icon] Logical multiplication⟪Logical_multiplication⟫
+### ![ico-25 icon] Negation operator⟪Negation_operator⟫
 
-Syntax: ~operand1 **&&** operand2~
-Let's go back to example 1:
-In the following examples, we use the logical operator **~&&~** to operands that are **logical expressions**.
+The statement ‘The apple is not red’ is the negation of the statement ‘The apple is red’.
+In other words, an apple can be any colour except red.
+Returning to Example 1:
 
 ~~~js
 var apple = {
@@ -165,18 +187,18 @@ var appleIsRed = apple.color === 'red'
 var appleIsRound = apple.shape === 'round'
 ~~~
 
-◘◘![ico-25 coffee] ** 7**◘◘
+then the new variable of logical type **~appleIsNotRed~** can be computed on the basis of the value of the variable **~appleIsRed~** by negation.
 
-However, this is JS, and we can apply logical operators to data of any type.
+In JavaScript, the symbol **~ !~** (exclamation mark) is used for logical negation:
 
 ~~~js
 var appleIsNotRed = !appleIsRed
 ~~~
 
-For more complex expressions:
-Note the fact that the use of the logical operator **~&&~** does not uniquely determine the type of the result.
+![ico-25 warn] Logical negation always returns a **logical value**, regardless of the operand’s data type.
+In other words, whatever the data type of the operand, the operator **~ !~** will always return the logical value **~true~** or **~false~**.
 
-◘◘![ico-25 coffee] ** 2**◘◘
+◘◘![ico-25 coffee] **2**◘◘
 
 ~~~js
 !(5 > 8)    // true
@@ -187,7 +209,7 @@ Note the fact that the use of the logical operator **~&&~** does not uniquely de
 !false     // true
 ~~~
 
-◘◘![ico-25 coffee] ** 3**◘◘
+◘◘![ico-25 coffee] **3**◘◘
 
 ~~~js
 !(5 > 4)   // false
@@ -198,15 +220,34 @@ Note the fact that the use of the logical operator **~&&~** does not uniquely de
 !true      // false
 ~~~
 
-§§§§ Demo | boolean_02_template §§§§
+~~~demo
+> !true
+< false
+> !false
+< true
+> !''
+< true
+> !0
+< true
+> !' '
+< false
+> !!' '
+< true
+> !!0
+< false
+> !-1
+< false
+> !!-1
+< true
+~~~
 
 ____________________________________________________________
 
-### ![ico-25 icon] Logical addition⟪Logical_addition⟫
+### ![ico-25 icon] Logical multiplication⟪Logical_multiplication⟫
 
-◘◘![ico-25 coffee] **11**◘◘
+Syntax: ~operand1 **&&** operand2~
 
-◘◘![ico-25 coffee] **12**◘◘
+Let us return to Example 1:
 
 ~~~js
 var apple = {
@@ -218,16 +259,25 @@ var appleIsRed = apple.color === 'red'
 var appleIsRound = apple.shape === 'round'
 ~~~
 
-Если оба операнда являются логическими выражениями (или логическими переменными), то результат будет иметь тип данных ~boolean~.
+If both operands are logical expressions (or logical variables), the result will have the data type ~boolean~.
 
 ~~~js
 var appleIsRedAndRound = appleIsRed && appleIsRound
 ~~~
 
-§§§§ Demo | boolean_03_template §§§§
+~~~demo
+> true && true
+< true
+> false && true
+< false
+> true && false
+< false
+> false && false
+< false
+~~~
 
-В следующих примерах мы используем логический оператор **~&&~** к операндам, которые являются **логическими выражениями**.
-Логические выражения мы строим с помощью операторов сравнения.
+In the following examples, we apply the logical operator **~&&~** to operands that are **logical expressions**.
+We construct logical expressions using comparison operators.
 
 ◘◘![ico-25 coffee] ** 4**◘◘
 
@@ -273,27 +323,58 @@ z < y            // true,
 true && true     // true
 ~~~
 
-Однако это JS, и мы можем применять логические операторы к данным любого типа.
-В этом случае начинает работать [►►►**неявное приведение типов**►►►](page/Implicit-type-conversion), т.е. операнды приводятся к логическому типу, после чего вычисляется значение выражения следующим образом: если логическое значение первого операнда (после приведения его к логическому типу данных) ~false~, то возвращается значение первого операнда, в противном случае возвращается значение второго операнда.
+However, this is JavaScript, and we can apply logical operators to data of any type.
+In this case, [►►►**implicit type coercion**►►►](page/Implicit-type-conversion) comes into play, i.e. the operands are coerced to the boolean type, after which the expression is evaluated as follows: if the boolean value of the first operand (after being coerced to the logical data type) is ~false~, then the value of the first operand is returned; otherwise, the value of the second operand is returned.
 
-§§§§ Demo | boolean_04_template §§§§
+~~~demo
+> 1 && 0
+< 0
+> 5 && 8
+< 8
+> 'hi' && false
+< false
+> 'cat' && 'dog'
+< "dog"
+~~~
 
-Для более сложных выражений:
+For more complex expressions:
 
 ![](illustrations/logical-operators.svg)
 
-Обратите внимание на тот факт, что использование логического оператора **~&&~** не определяет однозначно тип результата.
-Тип данных значения, которое будет получено движком в результате вычисления выражения, зависит от типа данных операндов.
+Please note that the use of the logical operator **~&&~** does not unambiguously determine the type of the result.
+The data type of the value that the engine will obtain as a result of evaluating the expression depends on the data types of the operands.
 
-§§§§ Demo | boolean_05_template §§§§
+~~~demo
+> var alpha = '0'
+< undefined
+> var betta = 'false'
+< undefined
+> var sigma = 8
+< undefined
+> alpha && betta && sigma
+< 8
+> !!alpha
+< true
+> !!betta
+< true
+~~~
 
 _________________________________________________
 
-### ![ico-25 icon] Логическое сложение⟪lohycheskoe_slozhenye⟫
+### ![ico-25 icon] Logical addition⟪Logical_addition⟫
 
-Синтаксис: ~operand1 **||** operand2~
+Syntax: ~operand1 **||** operand2~
 
-§§§§ Demo | boolean_06_template §§§§
+~~~demo
+> true || true
+< true
+> false || true
+< true
+> true || false
+< true
+> false || false
+< false
+~~~
 
 ◘◘![ico-25 coffee] ** 8**◘◘
 
@@ -345,7 +426,7 @@ z > y            // false,
 false || false   // false
 ~~~
 
-Итак, логическое сложение работает по принципу: если после приведения к типу данных **~boolean~** **хотя бы одного из операндов** будет получено **~true~**, то все выражение будет иметь значение **~true~**. Поскольку значения остальных операндов уже не изменят результат, то движок останавливается на первом же операнде, который после приведения типов даст **~true~**. Однако оператор **~||~** возвращает не **~true~**, а исходное значение операнда.
+Thus, logical addition works on the principle that if, after type coercion, **~boolean~** **at least one of the operands** results in **~true~**, then the entire expression will have the value **~true~**. Since the values of the remaining operands will no longer affect the result, the engine stops at the very first operand which, after type coercion, yields **~true~**. However, the operator **~||~** returns not **~true~**, but the original value of the operand.
 
 ![](illustrations/logical-operators-1.svg)
 
@@ -366,7 +447,7 @@ true
 ~~~
 _________________________________________________________________________
 
-![ico-25 exclamation] Независимо от типа данных и значения переменной **~test~**:
+![ico-25 exclamation] Regardless of the data type and value of the variable **~test~**:
 
 ~~~js
 !test || !!test    // всегда  true

@@ -17,7 +17,20 @@ _______________________________________________________________
 
 In the console we see the prompt **~ > ~**, i.e. the console is waiting for you to enter any command, which will be executed as soon as you press **~Enter~**:
 
-§§§§ Demo | developer_tools_01_template §§§§
+~~~demo
+> 5 + 7
+< 12
+> 10 - '5'
+< 5
+> 4 * 4
+< 16
+> 'Welcome, ' + 'students!'
+< 'Welcome, students!'
+> 5 > 8
+< false
+> 8 < 10
+< true
+~~~
 
 Due to the fact that every browser has the JS engine (V8), we can execute any script directly in the console.
 
@@ -36,6 +49,18 @@ Exception means interrupting code execution on the line where there is an error.
 
 Moreover, we can access the console "by name" (**~console~**) and use its commands to output some messages to the console:
 
-§§§§ Demo | developer_tools_02_template §§§§
+~~~demo
+> console.log('Welcome to JS!')
+< Welcome to JS!
+> console.warn('Warning!')
+! Warning!
+> console.error('Error!')
+! Error!
+> console.time('start')
+>   console.log('process')
+>   console.timeEnd('start')
+< process
+<   start: 0.06201171875 ms
+~~~
 
 ![ico-25 smile] We will stop studying the Developer Toolbar for now, but we will use its other tabs later on, and I hope you will appreciate the possibilities this panel provides you with.

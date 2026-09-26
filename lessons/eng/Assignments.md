@@ -121,7 +121,22 @@ number %= 4
 
 Would you agree that this is much more convenient?
 
-§§§§ Demo | assignments_01_template §§§§
+~~~demo
+> var number = 10
+< undefined
+> var sigma = 3
+< undefined
+> number += sigma
+< 13
+> number -= sigma * 2
+< 7
+> number *= sigma
+< 21
+> number %= (sigma + 5)
+< 5
+> number /= (sigma + 2)
+< 1
+~~~
 
 _________________________________________________________________
 

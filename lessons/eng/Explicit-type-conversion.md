@@ -6,7 +6,7 @@ ______________________________________
 
 The simplest way to explicitly cast data of any type to the type ~string~, ~number~ or ~boolean~ is to use the built-in functions of the same name: **~String()~**, **~Number()~**,  **~Boolean()~**.
 
-![ico-25 cap] ** 1**
+◘◘![ico-25 cap] **1**◘◘
 
 ~~~js
 var x = '10'
@@ -15,17 +15,17 @@ Number(x)    // 10
 
 returns the number 10.
 
-![ico-25 cap] ** 2 **
+◘◘![ico-25 cap] **2**◘◘
 
 ~~~js
-Number('туман')
+Number('hero')
 ~~~
 
 returns the special value **~NaN~** (^^_Not  a  Number_^^), which means that the string 'fog' cannot be converted to a number.
 
 
 
-![ico-25 cap] ** 3**
+◘◘![ico-25 cap] **3**◘◘
 
 ~~~js
 String(50)   // "50"
@@ -33,13 +33,13 @@ String(50)   // "50"
 
 returns the string '50'.
 
-![ico-25 cap] ** 4 **
+◘◘![ico-25 cap] **4**◘◘
 
 ~~~js
 Boolean('50')  // true
 ~~~
 
-returns the boolean value  ~true~.
+returns the boolean value ~true~.
 
 ___________________________________________________________________
 
@@ -73,7 +73,7 @@ Number(String.fromCharCode(13))  // 0
 
 ![ico-20 warn] In cases where it is impossible to convert an expression to a number, the result will be  **~NaN~** (^^Not a Number^^):
 
-![ico-25 cap] ** 5 **
+◘◘![ico-25 cap] **5**◘◘
 
 ~~~js
 Number(undefined)   // NaN
@@ -86,7 +86,7 @@ Number({})          // NaN
 
 ![ico-20 warn]  In all other cases, the result will be  a number.
 
-![ico-25 cap] ** 6 **
+◘◘![ico-25 cap] **6**◘◘
 
 ~~~js
 Number(57)            // вернет 57
@@ -103,6 +103,8 @@ ______________________________
 To convert to an integer or a floating-point number (with decimal places), you can use the built-in functions ~parseInt~ and ~parseFloat~.
 Unlike the **~Number~** constructor, these functions parse the string even if it contains ‘leading’ characters after the number – these characters will simply be ignored:
 
+◘◘![ico-25 cap] **7**◘◘
+
 ~~~js
 Number('3.14abc')      // NaN
 parseFloat('3.14abc')  // 3.14
@@ -118,7 +120,7 @@ ____________________________________________________________________
 
 ### ![ico-20 icon] Explicit conversion to ~boolean~⟪Explicit_conversion_to_~boolean~⟫
 
-![ico-20 warn] Во всех нижеперечисленных случаях результат будет  ~false~:
+![ico-20 warn] In all the cases listed below, the result will be ~false~:
 
 ~~~js
 Boolean('')
@@ -130,16 +132,17 @@ Boolean(undefined)
 Boolean(false)
 ~~~
 
-![ico-20 warn] Во всех остальных случаях результат будет  ~true~
+![ico-20 warn] In all other cases, the result will be ~true~
 
-При приведении строки к булевому типу действует простое правило:
+When casting a string to a Boolean type, a simple rule applies:
 
-если длина строки равна 0, то возвращается ~false~, в противном случае - ~true~
+if the length of the string is 0, ~false~ is returned; otherwise, ~true~ is returned
 
 ____________________________________________________________________
 
-### ![ico-20 icon] Явное приведение к ~string~⟪yavnoe_pryvedenye_k_~string~⟫
+### ![ico-20 icon] Explicit coercion to ~string~⟪Explicit_coercion_to_~string~⟫
 
+◘◘![ico-25 cap] **8**◘◘
 
 ~~~js
 var str = String(5 + 8 + false)  //  "13"
@@ -151,9 +154,11 @@ var array = [5, true, 'hello', 11]
 String(array)  //  "5,true,hello,11"
 ~~~
 
-При приведении числа к типу ~string~ можно использовать метод **_~toString()~_**, который принимает один аргумент - десятичное число 2, 8 или 16 (система исчисления).
-^^Десятичная система исчисления подразумевается по умолчанию, поэтому аргумент при этом можно опустить.^^
-^^Для того, чтобы получить строчное значение числа в двоичной системе исчисления, нужно передать методу **_~toString()~_** аргумент 2, в восьмеричной - 8, в шестнадцатеричной - 16.^^
+When casting a number to the type ~string~, you can use the method **~toString()~**, which takes a single argument – the decimal number 2, 8 or 16 (base).
+^^The decimal number system is implied by default, so the argument can be omitted in this case.^^
+^^To obtain the string representation of a number in the binary number system, pass the argument 2 to the method **~toString()~**; for octal, pass 8; for hexadecimal, pass 16.^^
+
+◘◘![ico-25 cap] **9**◘◘
 
 ~~~js
 Number(2).toString(2)    // "10"
@@ -166,7 +171,7 @@ Number(58).toString(16)  // "3a"
 
 ____________________________________________________________________
 
-### ![ico20] Явное приведение к ~object~⟪yavnoe_pryvedenye_k_~object~⟫
+### ![ico20 icon] Explicit coercion to ~object~⟪Explicit_coercion_to_~object~⟫
 
 ~~~js
 Object(5 + 8 + false)
@@ -194,11 +199,43 @@ var array = [5, true, 'hello', 11]
 Object(array)
 ~~~
 
-Преобразования не будет, поскольку тип данных переменной ** y** уже ~object~
+No conversion will take place, as the data type of the variable **~y~** is already ~object~
 
 ____________________________________________________________________
 
-※※※exercises external/explicit-type-covertion※※※
+## ![ico-25 hw] Tests⟪Tests⟫
+
+→→→ var x = '10'; var y = x + 5; y = ? | 15, '105', NaN | 105 →→→
+→→→ var x = '10'; var y = x > 5; y = ? | 10, false, true | true →→→
+→→→ var x = null; var y = x < 1; y = ? | null, false, true | true →→→
+→→→ var x = '10'; var y = x - 5; y = ? | NaN, '10', false, 5 | 5 →→→
+→→→ var x = '$$'; var y = x * 5; y = ? | '$$5', NaN, 5, undefined | NaN →→→
+→→→ var x = '$$'; var y = x * false; y = ? | '$$false', NaN, '$$', false, undefined | NaN →→→
+→→→ var x = '$$'; var y = x ? 5 : 0; y = ? | 0, 5, NaN, undefined | 5 →→→
+→→→ var x = NaN; var y = x ? 5 : 0; y = ? | 0, 5, NaN, undefined | 0 →→→
+→→→ var x = undefined; var y = x ? 5 : 0; y = ? | 0, 5, NaN, undefined | 0 →→→
+→→→ var x = null; var y = x ? 5 : 0; y = ? | 0, 5, NaN, null, undefined | 0 →→→
+→→→ var x = ''; var y = x ? 5 : 0; y = ? | 0, 5, NaN, null, undefined | 0 →→→
+→→→ var x = {}; var y = x ? 5 : 0; y = ? | 0, 5, NaN, {}, undefined | 5 →→→
+→→→ var x = []; var y = x ? 5 : 0; y = ? | 0, 5, NaN, [], undefined | 5 →→→
+→→→ var x = []; var y = 5 + x; y = ? | 0, '5', NaN, [], undefined | 5 →→→
+→→→ var x = []; var y = 5 + (+x); y = ? | 0, 5, NaN, [], undefined | 5 →→→
+→→→ var x = 'hero'; var y = 5 && x; y = ? | 0, 5, NaN, 'hero' | hero →→→
+→→→ var x = 'hero'; var y = 5 || x; y = ? | 0, 5, NaN, 'hero' | 5 →→→
+→→→ +[] - 5 | 0, '5', -5, NaN | -5 →→→
+→→→ !![] - 5 | 0, '5', -5, -4, NaN | -4 →→→
+→→→ !!{} | null, undefined, false, true, NaN | true →→→
+→→→ +!!{} | null, 1, undefined, false, true, NaN | 1 →→→
+→→→ 1 + [] - true | 0, 1, false, true, NaN | 0 →→→
+→→→ '1' + [] - true | 0, 1, false, true, NaN | 1 →→→
+→→→ [] - false + null | 0, 1, false, true, null, NaN | 0 →→→
+→→→ [] - true + null | 0, 1, -1, true, null | -1 →→→
+→→→ [5] - true + null | 0, 5, 4, true, null | 4 →→→
+→→→ [3, 5] - true + null | 0, 3, 4, 5, true, null, NaN | NaN →→→
+→→→ 1 / null | 1, null, undefined, Infinity, NaN | Infinity →→→
+→→→ 1 / [] | 1, null, undefined, Infinity, NaN | Infinity →→→
+→→→ 1 / '' | 1, null, undefined, Infinity, NaN | Infinity →→→
+→→→ !!5 && !![] | 5, [], undefined, Infinity, false, true | true →→→
 
 ____________________________________________________________________
 

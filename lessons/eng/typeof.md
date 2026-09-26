@@ -97,7 +97,22 @@ The value **~null~** means that the variable has no value. This value is inconsi
 
 Another peculiarity of **~null~** value is that if you use strict equality, then **~null~** will be equal only to itself, while non-strictly it will be equal only to **~undefined~**. This is understandable: they have different data types. But the fact that the value of **~null~** and the value of **~undefined~** are considered equal (without regard to data type) tells us that both of these values have the same meaning: no value. Both of these values are primitives, and they have one more feature in common, which we will understand a bit later, when we start studying constructors.
 
-§§§§ Demo | var_null_template §§§§
+~~~demo
+> null === null
+< true
+< null === undefined
+< false
+< null == undefined
+< true
+< null == 0
+< false
+< null == false
+< false
+< !! null == false
+< true
+< typeof null
+< 'object'
+~~~
 
 __________________________________________________
 
