@@ -50,12 +50,27 @@ const generator = function * () {
   }
 }
 
-export const pageRegExpr = {
+const pageRegExpr = {
   CodeOutput: /\{{3}.[^}]*\}{3}/,
   ScriptSpoiler: /~~~~.[^~~~~]+~~~~/,
   ScriptSnippet: /~~~.[^~~~]+~~~/,
   Spoiler: /(\^{3})([\s\S]+?)\1/m,
-  Slider: /!!\[.[^\]]+\]/,
+  // !![illustrations/one.png, illustrations/two.png] — the picture slider.
+  //
+  // Kept to one line and forbidden a pipe, because the old pattern was
+  // /!!\[.[^\]]+\]/ and that is not a slider, it is any !![ followed by
+  // anything up to the next ] — anywhere on the page, across as many lines as
+  // it took to find one.
+  //
+  // A lesson about type coercion writes !![] and !!{} in its questions, so on
+  // Explicit-type-conversion it matched from the !![] on one line to the ]
+  // of a [] six lines later, replaced all of it with a fragment marker, and
+  // tore six test questions in half. One of the halves reached the test
+  // renderer with no answer list behind it: "Cannot read properties of
+  // undefined (reading 'split')", and the page stopped rendering there.
+  //
+  // There is exactly one slider in the course, and this still matches it.
+  Slider: /!!\[[^\]\n|]+\]/,
   // ••••  …  ••••  — several lines on the black ground.
   //
   // ••one line•• has always been inline, so a paragraph on black had to be
@@ -74,3 +89,8 @@ export const pageRegExpr = {
   Table: /\n\n\|(.+|\n[^\n\n])+/gm,
   [Symbol.iterator]: generator
 }
+
+// CommonJS on purpose. A tool has to be able to ask this table what it
+// swallows, and a tool is plain Node — see convertStringForAnchor.js, which is
+// shared the same way. Webpack reads it either way.
+module.exports = { pageRegExpr }

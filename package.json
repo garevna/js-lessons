@@ -13,6 +13,7 @@
     "lessons:check": "node tools/i18n-build.js --check",
     "content": "npm run lessons && node content-worker/build-content.js && node service-worker/config-service-worker.js --versions",
     "workers": "node tools/worker-check.js",
+    "blocks": "node tools/blocks-check.js",
     "extract": "node tools/i18n-extract.js",
     "i18n": "node tools/i18n-status.js",
     "i18n:check": "node tools/i18n-check.js",

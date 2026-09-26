@@ -65,6 +65,15 @@ jobs:
         # protects the repository, and with it anyone serving public/ locally.
         run: npm run lessons:check
 
+      - name: Check no block pattern eats what it should not
+        # Blocks are lifted out of a page before it is read line by line, so a
+        # pattern that matches too much silently removes text from the middle
+        # of the page and leaves what was around it cut in half. The slider
+        # pattern did that to six test questions on one lesson, and the page
+        # stopped rendering at the first half-question. Everything built, and
+        # this workflow was green.
+        run: npm run blocks
+
       - name: Build
         # sw-identity -> icons-worker -> content-worker -> root -> service-worker.
         # The order matters: the root bundle prints the service worker version
