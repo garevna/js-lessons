@@ -8,15 +8,17 @@
 
 ![](illustrations/logical-expressions.svg)
 
+•••• none
 {{p5}}
 {{p6}}
 {{p7}}
 {{p8}}
 {{p9}}
 {{p10}}
-
 {{p11}}
 {{p12}}
+••••
+
 {{p13}}
 
 {{p14}}
@@ -35,7 +37,8 @@ ______________________________________
 
 {{p20}}
 
-◘◘ ![ico-25 coffee] ** 1**◘◘
+◘◘ ![ico-25 coffee] **1**◘◘
+
 ~~~js
 var apple = {
   color: 'yellow',
@@ -87,41 +90,60 @@ _________________________________________________________________________
 {{p44}}
 {{p45}}
 
-§§§§ Demo | boolean_01_template §§§§
+~~~demo
+> var alpha = 1
+< undefined
+> alpha === '1'
+< false
+> alpha == '1'
+< true
+> alpha == true
+< true
+> alpha > false
+< true
+> alpha != '1'
+< false
+> alpha !== '1'
+< true
+> typeof alpha === 'string'
+< false
+> typeof alpha === 'number'
+< true
+~~~
 
 _________________________________________________________________________
 
 ### ![ico-30 hw] {{common.c11}}
 
-◘◘![ico-25 hw]** 1**◘◘
+◘◘![ico-25 hw] **1**◘◘
 
 →→→ 5 > '4' | true, false | true→→→
 
-◘◘![ico-25 hw]** 2**◘◘
+◘◘![ico-25 hw] **2**◘◘
 
 →→→ 5 !== '5' | true, false | true→→→
 
-◘◘![ico-25 hw]** 3**◘◘
+◘◘![ico-25 hw] **3**◘◘
 
 →→→ 10 != '10' | true, false | false→→→
 
-◘◘![ico-25 hw]** 4**◘◘
+◘◘![ico-25 hw] **4**◘◘
 
 →→→ true != 1 | true, false | false→→→
 
-◘◘![ico-25 hw]** 5**◘◘
+◘◘![ico-25 hw] **5**◘◘
 
 →→→ {{p46}} | {{p47}} | {{p48}}→→→
 
-◘◘![ico-25 hw]** 6**◘◘
+◘◘![ico-25 hw] **6**◘◘
 
 →→→ true <= 1 | true, false | true→→→
 
-◘◘![ico-25 hw]** 7**◘◘
+◘◘![ico-25 hw] **7**◘◘
 
 →→→ 'abc' < 'cde' | true, false | true→→→
 
-◘◘![ico-25 hw]** 8**◘◘
+◘◘![ico-25 hw] **8**◘◘
 
 →→→ 'Welcome!'.length < 'How are you?'.length | true, false | true→→→
 
@@ -176,7 +198,7 @@ var appleIsNotRed = !appleIsRed
 {{p68}}
 {{p69}}
 
-◘◘![ico-25 coffee] ** 2**◘◘
+◘◘![ico-25 coffee] **2**◘◘
 
 ~~~js
 !(5 > 8)    // true
@@ -187,7 +209,7 @@ var appleIsNotRed = !appleIsRed
 !false     // true
 ~~~
 
-◘◘![ico-25 coffee] ** 3**◘◘
+◘◘![ico-25 coffee] **3**◘◘
 
 ~~~js
 !(5 > 4)   // false
@@ -198,7 +220,26 @@ var appleIsNotRed = !appleIsRed
 !true      // false
 ~~~
 
-§§§§ Demo | boolean_02_template §§§§
+~~~demo
+> !true
+< false
+> !false
+< true
+> !''
+< true
+> !0
+< true
+> !' '
+< false
+> !!' '
+< true
+> !!0
+< false
+> !-1
+< false
+> !!-1
+< true
+~~~
 
 ____________________________________________________________
 
@@ -224,7 +265,16 @@ var appleIsRound = apple.shape === 'round'
 var appleIsRedAndRound = appleIsRed && appleIsRound
 ~~~
 
-§§§§ Demo | boolean_03_template §§§§
+~~~demo
+> true && true
+< true
+> false && true
+< false
+> true && false
+< false
+> false && false
+< false
+~~~
 
 {{p74}}
 {{p75}}
@@ -276,7 +326,16 @@ true && true     // true
 {{p76}}
 {{p77}}
 
-§§§§ Demo | boolean_04_template §§§§
+~~~demo
+> 1 && 0
+< 0
+> 5 && 8
+< 8
+> 'hi' && false
+< false
+> 'cat' && 'dog'
+< "dog"
+~~~
 
 {{p78}}
 
@@ -285,7 +344,20 @@ true && true     // true
 {{p79}}
 {{p80}}
 
-§§§§ Demo | boolean_05_template §§§§
+~~~demo
+> var alpha = '0'
+< undefined
+> var betta = 'false'
+< undefined
+> var sigma = 8
+< undefined
+> alpha && betta && sigma
+< 8
+> !!alpha
+< true
+> !!betta
+< true
+~~~
 
 _________________________________________________
 
@@ -293,7 +365,16 @@ _________________________________________________
 
 {{p82}}
 
-§§§§ Demo | boolean_06_template §§§§
+~~~demo
+> true || true
+< true
+> false || true
+< true
+> true || false
+< true
+> false || false
+< false
+~~~
 
 ◘◘![ico-25 coffee] ** 8**◘◘
 

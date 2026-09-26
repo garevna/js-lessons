@@ -20,6 +20,11 @@ export const pageLabels = {
     eng: 'Result in the console',
     ua: 'Результат у консолі'
   },
+  consoleDemo: {
+    ru: 'Демонстрация в консоли',
+    eng: 'Console demo',
+    ua: 'Демонстрація в консолі'
+  },
   tests: {
     ru: 'Тесты',
     eng: 'Tests',

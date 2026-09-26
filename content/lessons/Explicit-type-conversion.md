@@ -6,7 +6,7 @@ ______________________________________
 
 {{p2}}
 
-![ico-25 cap] ** 1**
+◘◘![ico-25 cap] **1**◘◘
 
 ~~~js
 var x = '10'
@@ -15,17 +15,17 @@ Number(x)    // 10
 
 {{p3}}
 
-![ico-25 cap] ** 2 **
+◘◘![ico-25 cap] **2**◘◘
 
 ~~~js
-Number('туман')
+Number('hero')
 ~~~
 
 {{p4}}
 
 {{p5}}
 
-![ico-25 cap] ** 3**
+◘◘![ico-25 cap] **3**◘◘
 
 ~~~js
 String(50)   // "50"
@@ -33,7 +33,7 @@ String(50)   // "50"
 
 {{p6}}
 
-![ico-25 cap] ** 4 **
+◘◘![ico-25 cap] **4**◘◘
 
 ~~~js
 Boolean('50')  // true
@@ -73,7 +73,7 @@ Number(String.fromCharCode(13))  // 0
 
 {{p13}}
 
-![ico-25 cap] ** 5 **
+◘◘![ico-25 cap] **5**◘◘
 
 ~~~js
 Number(undefined)   // NaN
@@ -86,7 +86,7 @@ Number({})          // NaN
 
 {{p14}}
 
-![ico-25 cap] ** 6 **
+◘◘![ico-25 cap] **6**◘◘
 
 ~~~js
 Number(57)            // вернет 57
@@ -102,6 +102,8 @@ ______________________________
 
 {{p15}}
 {{p16}}
+
+◘◘![ico-25 cap] **7**◘◘
 
 ~~~js
 Number('3.14abc')      // NaN
@@ -140,6 +142,7 @@ ____________________________________________________________________
 
 ### ![ico-20 icon] {{p23}}
 
+◘◘![ico-25 cap] **8**◘◘
 
 ~~~js
 var str = String(5 + 8 + false)  //  "13"
@@ -155,6 +158,8 @@ String(array)  //  "5,true,hello,11"
 {{p25}}
 {{p26}}
 
+◘◘![ico-25 cap] **9**◘◘
+
 ~~~js
 Number(2).toString(2)    // "10"
 Number(58).toString(2)   // "111010"
@@ -166,7 +171,7 @@ Number(58).toString(16)  // "3a"
 
 ____________________________________________________________________
 
-### ![ico20] {{p27}}
+### ![ico20 icon] {{p27}}
 
 ~~~js
 Object(5 + 8 + false)
@@ -198,7 +203,39 @@ Object(array)
 
 ____________________________________________________________________
 
-※※※exercises ⟦f20⟧※※※
+## ![ico-25 hw] {{common.c11}}
+
+→→→ var x = '10'; var y = x + 5; y = ? | 15, '105', NaN | 105 →→→
+→→→ var x = '10'; var y = x > 5; y = ? | 10, false, true | true →→→
+→→→ var x = null; var y = x < 1; y = ? | null, false, true | true →→→
+→→→ var x = '10'; var y = x - 5; y = ? | NaN, '10', false, 5 | 5 →→→
+→→→ var x = '$$'; var y = x * 5; y = ? | '$$5', NaN, 5, undefined | NaN →→→
+→→→ var x = '$$'; var y = x * false; y = ? | '$$false', NaN, '$$', false, undefined | NaN →→→
+→→→ var x = '$$'; var y = x ? 5 : 0; y = ? | 0, 5, NaN, undefined | 5 →→→
+→→→ var x = NaN; var y = x ? 5 : 0; y = ? | 0, 5, NaN, undefined | 0 →→→
+→→→ var x = undefined; var y = x ? 5 : 0; y = ? | 0, 5, NaN, undefined | 0 →→→
+→→→ var x = null; var y = x ? 5 : 0; y = ? | 0, 5, NaN, null, undefined | 0 →→→
+→→→ var x = ''; var y = x ? 5 : 0; y = ? | 0, 5, NaN, null, undefined | 0 →→→
+→→→ var x = {}; var y = x ? 5 : 0; y = ? | 0, 5, NaN, {}, undefined | 5 →→→
+→→→ var x = []; var y = x ? 5 : 0; y = ? | 0, 5, NaN, [], undefined | 5 →→→
+→→→ var x = []; var y = 5 + x; y = ? | 0, '5', NaN, [], undefined | 5 →→→
+→→→ var x = []; var y = 5 + (+x); y = ? | 0, 5, NaN, [], undefined | 5 →→→
+→→→ var x = 'hero'; var y = 5 && x; y = ? | 0, 5, NaN, 'hero' | hero →→→
+→→→ var x = 'hero'; var y = 5 || x; y = ? | 0, 5, NaN, 'hero' | 5 →→→
+→→→ +[] - 5 | 0, '5', -5, NaN | -5 →→→
+→→→ !![] - 5 | 0, '5', -5, -4, NaN | -4 →→→
+→→→ !!{} | null, undefined, false, true, NaN | true →→→
+→→→ +!!{} | null, 1, undefined, false, true, NaN | 1 →→→
+→→→ 1 + [] - true | 0, 1, false, true, NaN | 0 →→→
+→→→ '1' + [] - true | 0, 1, false, true, NaN | 1 →→→
+→→→ [] - false + null | 0, 1, false, true, null, NaN | 0 →→→
+→→→ [] - true + null | 0, 1, -1, true, null | -1 →→→
+→→→ [5] - true + null | 0, 5, 4, true, null | 4 →→→
+→→→ [3, 5] - true + null | 0, 3, 4, 5, true, null, NaN | NaN →→→
+→→→ 1 / null | 1, null, undefined, Infinity, NaN | Infinity →→→
+→→→ 1 / [] | 1, null, undefined, Infinity, NaN | Infinity →→→
+→→→ 1 / '' | 1, null, undefined, Infinity, NaN | Infinity →→→
+→→→ !!5 && !![] | 5, [], undefined, Infinity, false, true | true →→→
 
 ____________________________________________________________________
 

@@ -26,15 +26,47 @@
 {{p13}}
 {{p14}}
 
-§§§§ Demo | function_console_template §§§§
+~~~demo
+> console.log('Hello')
+< Hello
+< undefined
+> console.log(5.25)
+< 5.25
+< undefined
+> var alpha = 7
+< undefined
+> var betta = 9
+< undefined
+> console.log(alpha + betta)
+< 16
+< undefined
+~~~
 
 {{p15}}
 
-§§§§ Demo | function_console_01_template §§§§
+~~~demo
+> console.log(5 - 4) // Shift + Enter
+>   console.log('Welcome, students!') // Shift + Enter
+>   var number = 11 // Shift + Enter
+>   console.log('Number: ', number) // Enter
+< 1
+< Welcome, students!
+< Number:  11
+< undefined
+~~~
 
 {{p16}}
 
-§§§§ Demo | function_console_02_template §§§§
+~~~demo
+> var user = {
+>     name: 'Piter',
+>     age: 25
+>   }
+< undefined
+> console.log(user)
+< ► {name: 'Piter', age: 25 }
+< undefined
+~~~
 
 _________________________________________________
 
@@ -45,7 +77,20 @@ _________________________________________________
 {{p19}}
 {{p20}}
 
-§§§§ Demo | function_parseInt_template §§§§
+~~~demo
+> parseInt('36px')
+< 36
+< parseInt(5.75)
+< 5
+< parseInt(undefined)
+< NaN
+< parseInt(null)
+< NaN
+< parseInt('abc7')
+< NaN
+< parseInt(false)
+< NaN
+~~~
 
 {{p21}}
 
@@ -61,7 +106,22 @@ parseInt()
 {{p26}}
 {{p27}}
 
-§§§§ Demo | function_parseInt_01_template §§§§
+~~~demo
+> parseInt('10101010', 2)
+< 170
+< parseInt(10101010, 2)
+< 170
+< parseInt(587, 2)
+< NaN
+< parseInt(170, 8)
+< 120
+< parseInt(170, 16)
+< 368
+< parseInt('F', 16)
+< 15
+< parseInt('FF', 16)
+< 255
+~~~
 
 {{p28}}
 
@@ -137,7 +197,20 @@ round: ƒ round()
 
 {{p35}}
 
-§§§§ Demo | function_math_template §§§§
+~~~demo
+> Math.sin(Math.PI / 2)
+< 1
+> Math.sqrt(16)
+< 4
+> Math.pow(4, 2)
+< 16
+> var number = 9
+< undefined
+> Math.sqrt(number)
+< 3
+> Math.pow(number, 2)
+< 81
+~~~
 
 {{p36}}
 {{p37}}
@@ -161,7 +234,14 @@ var sin = Math.sin(Math.PI / 2)
 {{p43}}
 {{p44}}
 
-§§§§ Demo | function_math_01_template §§§§
+~~~demo
+> var argument = Math.PI / 2
+< undefined
+> argument
+< 1.5707963267948966
+> Math.sin(argument)
+< 1
+~~~
 
 {{p45}}
 
@@ -209,7 +289,14 @@ ______________________________________________
 
 {{p60}}
 
-§§§§ Demo | function_console_03_template §§§§
+~~~demo
+> typeof parseInt
+< 'function'
+> typeof console.log
+< 'function'
+< typeof Math.sqrt
+< 'function'
+~~~
 
 ______________________________________________
 
@@ -234,7 +321,23 @@ ______________________________________________
 {{p68}}
 {{p69}}
 
-§§§§ Demo | function_00_template §§§§
+~~~demo
+> var bool = 5 < 8
+> {
+>   var number = 5
+>   var name = 'Mozilla'
+> }
+> var test = typeof number < typeof name
+< undefined
+> bool
+< true
+> number
+< 5
+> name
+< "Mozilla"
+> test
+< true
+~~~
 
 {{p70}}
 {{p71}}
@@ -301,7 +404,24 @@ var func = function () {
 
 {{p91}}
 
-§§§§ Demo | function_01_template §§§§
+~~~demo
+> var number = 8, name = 'Google'
+< undefined
+> var func = function () {
+>   number = 5
+>   name = 'Mozilla'
+>   }
+< undefined
+> number
+< 8
+> name
+< "Google"
+> func
+< ƒ () {
+<     number = 5
+<     name = 'Mozilla'
+<   }
+~~~
 
 {{p92}}
 {{p93}}
@@ -313,7 +433,14 @@ var func = function () {
 func()
 ~~~
 
-§§§§ Demo | function_02_template §§§§
+~~~demo
+> func()
+< undefined
+> number
+< 5
+> name
+< "Mozilla"
+~~~
 
 {{p96}}
 
@@ -379,7 +506,21 @@ _________________________________________________
 {{p122}}
 {{p123}}
 
-§§§§ Demo | function_parameters_template §§§§
+~~~demo
+> function example (arg1, arg2) {
+>     console.log (arg1, arg2)
+>   }
+< undefined
+> example(5, 10)
+< 5 10
+> var summarize = function  (number1, number2) {
+>     console.log (number1 + number2)
+>   }
+< undefined
+> summarize(9, 8)
+< 17
+< undefined
+~~~
 
 {{p124}}
 {{p125}}
@@ -392,15 +533,50 @@ _________________________________________________
 {{p130}}
 {{p131}}
 
-§§§§ Demo | function_parameters_01_template §§§§
+~~~demo
+> function example (param1, param2, param3) {
+>     var min = Math.min(param1, param2, param3, 10)
+>     console.log(min * 100)
+>   }
+< undefined
+> example(false, null, '0')
+< 0
+> example()
+< NaN
+~~~
 
 {{p132}}
 
-§§§§ Demo | function_parameters_02_template §§§§
+~~~demo
+> function test (param1 = 1, param2 = 1, param3 = 1) {
+>     console.log(param1, param2, param3)
+>   }
+< undefined
+> test(false, undefined, 0)
+< false 1 0
+< undefined
+> test()
+< 1 1 1
+< undefined
+~~~
 
 {{p133}}
 
-§§§§ Demo | function_parameters_03_template §§§§
+~~~demo
+> function calcs (x = 1, y = x + 1, z = x + y) {
+>     console.log(x, y, z)
+>   }
+< undefined
+> calcs()
+< 1 2 3
+< undefined
+> calcs(8)
+< 8 9 17
+< undefined
+> calcs(undefined, undefined, 8)
+< 1 2 8
+< undefined
+~~~
 
 {{p134}}
 

@@ -17,7 +17,20 @@ _______________________________________________________________
 
 {{p7}}
 
-§§§§ Demo | developer_tools_01_template §§§§
+~~~demo
+> 5 + 7
+< 12
+> 10 - '5'
+< 5
+> 4 * 4
+< 16
+> 'Welcome, ' + 'students!'
+< 'Welcome, students!'
+> 5 > 8
+< false
+> 8 < 10
+< true
+~~~
 
 {{p8}}
 
@@ -36,6 +49,18 @@ _______________________________________________________________
 
 {{p14}}
 
-§§§§ Demo | developer_tools_02_template §§§§
+~~~demo
+> console.log('Welcome to JS!')
+< Welcome to JS!
+> console.warn('Warning!')
+! Warning!
+> console.error('Error!')
+! Error!
+> console.time('start')
+>   console.log('process')
+>   console.timeEnd('start')
+< process
+<   start: 0.06201171875 ms
+~~~
 
 {{p15}}

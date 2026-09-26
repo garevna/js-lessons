@@ -55,7 +55,20 @@ _____________________________________
 {{p13}}
 {{p71}}
 
-§§§§ Demo | var_string_length_template §§§§
+~~~demo
+> 'Welcome!'.length
+< 8
+> var message = 'Hi, students!'
+< undefined
+> message.length
+< 13
+> var string = 'Welcome!'
+< undefined
+> message + ' ' + string
+< 'Hi, students! Welcome!'
+> (message + ' ' + string).length
+< 22
+~~~
 
 {{p15}}
 
@@ -164,7 +177,26 @@ _____________________________________
 {{p91}}
 {{p92}}
 
-§§§§ Demo | var_NaN_template §§§§
+~~~demo
+> NaN === NaN
+< false
+< NaN == NaN
+< false
+< NaN == undefined
+< false
+< isNaN('5')
+< false
+< isNaN('abc')
+< true
+< Number.isNaN('abc')
+< false
+< Number.isNaN('abc' / 2)
+< true
+< Number.isNaN(undefined)
+< false
+< Number.isNaN(undefined - 0)
+< true
+~~~
 
 __________________________________________________
 
@@ -256,7 +288,26 @@ var bool = 5 > 8
 
 {{p97}}
 
-§§§§ Demo | var_boolean_template §§§§
+~~~demo
+> 5 < 7
+< true
+< 'n' > 'u'
+< false
+< 'ba' > bc
+< false
+< 'a' < 100
+< false
+< 'a' > 100
+< false
+< 'a' > false
+< false
+< 'a' < false
+< false
+< !!'a' > false
+< true
+< 5 > true
+< true
+~~~
 
 ______________________________________________________________
 
@@ -270,4 +321,13 @@ ______________________________________________________________
 
 {{p69}}
 
-§§§§ Demo | var_undefined_template §§§§
+~~~demo
+> var sigma
+< undefined
+< sigma
+< undefined
+< undefined === undefined
+< true
+< undefined == false
+< false
+~~~

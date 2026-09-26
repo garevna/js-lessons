@@ -26,15 +26,47 @@
 Например, мы пользуемся консолью браузера, и код, который мы набираем в консоли, автоматически исполняется после нажатия _Enter_.
 Но до сих пор мы не знали, что можем обратиться к консоли напрямую (**~console~**) и вызвать одну из ее функций:
 
-§§§§ Demo | function_console_template §§§§
+~~~demo
+> console.log('Hello')
+< Hello
+< undefined
+> console.log(5.25)
+< 5.25
+< undefined
+> var alpha = 7
+< undefined
+> var betta = 9
+< undefined
+> console.log(alpha + betta)
+< 16
+< undefined
+~~~
 
 ![ico-25 warn] Для того, чтобы набрать в консоли многострочный код, используйте сочетание клавиш ~_Shift_ + _Enter_~, поскольку _Enter_ сразу запускает набранную строчку кода на исполнение:
 
-§§§§ Demo | function_console_01_template §§§§
+~~~demo
+> console.log(5 - 4) // Shift + Enter
+>   console.log('Welcome, students!') // Shift + Enter
+>   var number = 11 // Shift + Enter
+>   console.log('Number: ', number) // Enter
+< 1
+< Welcome, students!
+< Number:  11
+< undefined
+~~~
 
 Теперь с помощью ~_Shift_ + _Enter_~ мы можем объявить объект:
 
-§§§§ Demo | function_console_02_template §§§§
+~~~demo
+> var user = {
+>     name: 'Piter',
+>     age: 25
+>   }
+< undefined
+> console.log(user)
+< ► {name: 'Piter', age: 25 }
+< undefined
+~~~
 
 _________________________________________________
 
@@ -45,7 +77,20 @@ _________________________________________________
 Если это число с плавающей точкой, то возвращается целая часть числа.
 Если это что-то, что не приводится к числу, то возвращается **~NaN~**:
 
-§§§§ Demo | function_parseInt_template §§§§
+~~~demo
+> parseInt('36px')
+< 36
+< parseInt(5.75)
+< 5
+< parseInt(undefined)
+< NaN
+< parseInt(null)
+< NaN
+< parseInt('abc7')
+< NaN
+< parseInt(false)
+< NaN
+~~~
 
 Как видите, эта функция ждет агумент при вызове, и если вы его не передадите, т.е. вызовете функцию с пустыми круглыми скобками:
 
@@ -61,7 +106,22 @@ parseInt()
 Если вторым аргументом вы передадите 8, то первый аргумент будет рассматриваться как число в **восьмеричной системе исчисления**.
 Если вторым аргументом вы передадите 16, то первый аргумент будет рассматриваться как число в **шестнадцатеричной системе исчисления**.
 
-§§§§ Demo | function_parseInt_01_template §§§§
+~~~demo
+> parseInt('10101010', 2)
+< 170
+< parseInt(10101010, 2)
+< 170
+< parseInt(587, 2)
+< NaN
+< parseInt(170, 8)
+< 120
+< parseInt(170, 16)
+< 368
+< parseInt('F', 16)
+< 15
+< parseInt('FF', 16)
+< 255
+~~~
 
 **Возвращаемое значение всегда будет десятичным числом**.
 
@@ -137,7 +197,20 @@ round: ƒ round()
 
 Попробуем вызвать некоторые функции библиотеки **Math**:
 
-§§§§ Demo | function_math_template §§§§
+~~~demo
+> Math.sin(Math.PI / 2)
+< 1
+> Math.sqrt(16)
+< 4
+> Math.pow(4, 2)
+< 16
+> var number = 9
+< undefined
+> Math.sqrt(number)
+< 3
+> Math.pow(number, 2)
+< 81
+~~~
 
 В круглых скобках мы передаем функциям при вызове **аргументы**.
 Например, мы передаем функции извлечения квадратного корня число 16 при вызове:
@@ -161,7 +234,14 @@ var sin = Math.sin(Math.PI / 2)
 Но в круглых скобках вызова функции опять стоит **выражение** ~Math.PI / 2~.
 Т.е. движок должен сначала вычислить выражение в круглых скобках, и затем полученное значение передать функции ~Math.sin~ при вызове.
 
-§§§§ Demo | function_math_01_template §§§§
+~~~demo
+> var argument = Math.PI / 2
+< undefined
+> argument
+< 1.5707963267948966
+> Math.sin(argument)
+< 1
+~~~
 
 Обратите внимание, что когда мы запускаем на исполнение в консоли код:
 
@@ -209,7 +289,14 @@ ______________________________________________
 
 Наконец, давайте посмотрим, что же вернет нам оператор **~typeof~**:
 
-§§§§ Demo | function_console_03_template §§§§
+~~~demo
+> typeof parseInt
+< 'function'
+> typeof console.log
+< 'function'
+< typeof Math.sqrt
+< 'function'
+~~~
 
 ______________________________________________
 
@@ -234,7 +321,23 @@ ______________________________________________
 Во-первых, у функции должно быть имя, чтобы мы могли ее вызвать.
 Во-вторых, мы видим блок кода в фигурных скобках, и если его так и поместить в наш код, то он будет просто выполнен, как и все строчки кода до него и после него.
 
-§§§§ Demo | function_00_template §§§§
+~~~demo
+> var bool = 5 < 8
+> {
+>   var number = 5
+>   var name = 'Mozilla'
+> }
+> var test = typeof number < typeof name
+< undefined
+> bool
+< true
+> number
+< 5
+> name
+< "Mozilla"
+> test
+< true
+~~~
 
 Нет, нам явно нужно нечто другое.
 Ну, например, чтобы код был сохранен под каким-то именем, но не был исполнен в том месте, где появился.
@@ -301,7 +404,24 @@ var func = function () {
 
 Обявим переменные **~number~** и **~name~** до объявления функции.
 
-§§§§ Demo | function_01_template §§§§
+~~~demo
+> var number = 8, name = 'Google'
+< undefined
+> var func = function () {
+>   number = 5
+>   name = 'Mozilla'
+>   }
+< undefined
+> number
+< 8
+> name
+< "Google"
+> func
+< ƒ () {
+<     number = 5
+<     name = 'Mozilla'
+<   }
+~~~
 
 Как видите, объявление функции никак не повлияло на значения переменных **~number~** и **~name~**.
 Т.е. код в теле функции не сработал.
@@ -313,7 +433,14 @@ var func = function () {
 func()
 ~~~
 
-§§§§ Demo | function_02_template §§§§
+~~~demo
+> func()
+< undefined
+> number
+< 5
+> name
+< "Mozilla"
+~~~
 
 Вот такое присваивание:
 
@@ -379,7 +506,21 @@ _________________________________________________
 Т.е. в кргулых скобках.
 Логично?
 
-§§§§ Demo | function_parameters_template §§§§
+~~~demo
+> function example (arg1, arg2) {
+>     console.log (arg1, arg2)
+>   }
+< undefined
+> example(5, 10)
+< 5 10
+> var summarize = function  (number1, number2) {
+>     console.log (number1 + number2)
+>   }
+< undefined
+> summarize(9, 8)
+< 17
+< undefined
+~~~
 
 Таким образом, при объявлении функции мы используем круглые скобки для того, чтобы перечислить там имена переменных, которые мы будем использовать для вычислений в теле функции.
 Эти переменные называются **формальные параметры** функции.
@@ -392,15 +533,50 @@ _________________________________________________
 Конечно, большую проблему составляли для нас ошибки, связанные с передачей некорректных значений аргументов.
 В арифметических операциях в случае ошибки мы будем получать коварное значение **~NaN~**, которое будет доставлять нам много неприятностей.
 
-§§§§ Demo | function_parameters_01_template §§§§
+~~~demo
+> function example (param1, param2, param3) {
+>     var min = Math.min(param1, param2, param3, 10)
+>     console.log(min * 100)
+>   }
+< undefined
+> example(false, null, '0')
+< 0
+> example()
+< NaN
+~~~
 
 Но в 2015 году вышла новая версия спецификации языка (ES6), в которой у нас появилась возможность задавать дефолтные значения параметров функции при ее объявлении, что позволяет избежать проблем с вызовом функции без параметров или когда эти параметры имеют значения **~undefined~**:
 
-§§§§ Demo | function_parameters_02_template §§§§
+~~~demo
+> function test (param1 = 1, param2 = 1, param3 = 1) {
+>     console.log(param1, param2, param3)
+>   }
+< undefined
+> test(false, undefined, 0)
+< false 1 0
+< undefined
+> test()
+< 1 1 1
+< undefined
+~~~
 
 Более того, можно сделать дефолтные значения параметров функции **вычисляемыми**:
 
-§§§§ Demo | function_parameters_03_template §§§§
+~~~demo
+> function calcs (x = 1, y = x + 1, z = x + y) {
+>     console.log(x, y, z)
+>   }
+< undefined
+> calcs()
+< 1 2 3
+< undefined
+> calcs(8)
+< 8 9 17
+< undefined
+> calcs(undefined, undefined, 8)
+< 1 2 8
+< undefined
+~~~
 
 ![ico-25 warn] Обратите внимание, что **значения параметров функции по умолчанию** используются только в том случае, если при вызове функции передано значение **~undefined~** (или вообще не передано никакого значения). Т.е. это не избавляет вас от необходимости проверять другие "нежелательные" значения аргументов, такие как **~null~**, **~NaN~** или когда аргумент должен быть числом, а передано не числовое значение.
 

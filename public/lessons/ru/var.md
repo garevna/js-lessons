@@ -55,7 +55,20 @@ _____________________________________
 Поскольку строки - это упорядоченный набор символов, то число символов в строке определяет ее длину, логично?
 Так что у строк есть свойство **~length~**, которое доступно нам следующим образом:
 
-§§§§ Demo | var_string_length_template §§§§
+~~~demo
+> 'Welcome!'.length
+< 8
+> var message = 'Hi, students!'
+< undefined
+> message.length
+< 13
+> var string = 'Welcome!'
+< undefined
+> message + ' ' + string
+< 'Hi, students! Welcome!'
+> (message + ' ' + string).length
+< 22
+~~~
 
 Кстати, обратите внимание на следующее выражение:
 
@@ -164,7 +177,26 @@ _____________________________________
 Если метод **~isNaN~** сначала вычисляет выражение в круглых скобках, пытаясь получить число, а потом возвращает **~false~** или **~true~** в зависимости от того, получилось или нет,
 то метод **~Number.isNaN~** не пытается вычислять выражение в круглых скобках, 
 
-§§§§ Demo | var_NaN_template §§§§
+~~~demo
+> NaN === NaN
+< false
+< NaN == NaN
+< false
+< NaN == undefined
+< false
+< isNaN('5')
+< false
+< isNaN('abc')
+< true
+< Number.isNaN('abc')
+< false
+< Number.isNaN('abc' / 2)
+< true
+< Number.isNaN(undefined)
+< false
+< Number.isNaN(undefined - 0)
+< true
+~~~
 
 __________________________________________________
 
@@ -256,7 +288,26 @@ var bool = 5 > 8
 
 Далее мы будем часто сталкиваться с данными типа **~boolean~**.
 
-§§§§ Demo | var_boolean_template §§§§
+~~~demo
+> 5 < 7
+< true
+< 'n' > 'u'
+< false
+< 'ba' > bc
+< false
+< 'a' < 100
+< false
+< 'a' > 100
+< false
+< 'a' > false
+< false
+< 'a' < false
+< false
+< !!'a' > false
+< true
+< 5 > true
+< true
+~~~
 
 ______________________________________________________________
 
@@ -270,4 +321,13 @@ ______________________________________________________________
 
 ^^(без кавычек, _'undefined'_ - это уже строка).^^
 
-§§§§ Demo | var_undefined_template §§§§
+~~~demo
+> var sigma
+< undefined
+< sigma
+< undefined
+< undefined === undefined
+< true
+< undefined == false
+< false
+~~~

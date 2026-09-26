@@ -97,7 +97,22 @@ typeof typeof boolean
 
 {{p26}}
 
-§§§§ Demo | var_null_template §§§§
+~~~demo
+> null === null
+< true
+< null === undefined
+< false
+< null == undefined
+< true
+< null == 0
+< false
+< null == false
+< false
+< !! null == false
+< true
+< typeof null
+< 'object'
+~~~
 
 __________________________________________________
 

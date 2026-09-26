@@ -26,15 +26,47 @@ There are functions that do not require passing arguments when called. In this c
 For example, we use the browser console, and the code we type in the console is automatically executed after pressing _Enter_.
 But until now, we didn't know that we could access the console directly (**~console~**) and call one of its functions:
 
-§§§§ Demo | function_console_template §§§§
+~~~demo
+> console.log('Hello')
+< Hello
+< undefined
+> console.log(5.25)
+< 5.25
+< undefined
+> var alpha = 7
+< undefined
+> var betta = 9
+< undefined
+> console.log(alpha + betta)
+< 16
+< undefined
+~~~
 
 ![ico-25 warn] In order to type multi-line code in the console, use the ~_Shift_ + _Enter_~ keyboard shortcut, since ~_Enter_~ immediately starts the typed line of code for execution:
 
-§§§§ Demo | function_console_01_template §§§§
+~~~demo
+> console.log(5 - 4) // Shift + Enter
+>   console.log('Welcome, students!') // Shift + Enter
+>   var number = 11 // Shift + Enter
+>   console.log('Number: ', number) // Enter
+< 1
+< Welcome, students!
+< Number:  11
+< undefined
+~~~
 
 Now, using ~_Shift_ + _Enter_~ we can declare the object:
 
-§§§§ Demo | function_console_02_template §§§§
+~~~demo
+> var user = {
+>     name: 'Piter',
+>     age: 25
+>   }
+< undefined
+> console.log(user)
+< ► {name: 'Piter', age: 25 }
+< undefined
+~~~
 
 _________________________________________________
 
@@ -45,7 +77,20 @@ If it is a string starting with digits, the rest of the string is discarded and 
 If it is a floating point number, the integer part of the number is returned.
 If it is something that is not cast to a number, then **~NaN~** is returned:
 
-§§§§ Demo | function_parseInt_template §§§§
+~~~demo
+> parseInt('36px')
+< 36
+< parseInt(5.75)
+< 5
+< parseInt(undefined)
+< NaN
+< parseInt(null)
+< NaN
+< parseInt('abc7')
+< NaN
+< parseInt(false)
+< NaN
+~~~
 
 As you can see, this function waits for the agument when you call it, and if you don't pass it, i.e. call the function with empty parentheses:
 
@@ -61,7 +106,22 @@ If you specify 2, the first argument will be treated as a number in **binary not
 If you pass 8 as the second argument, the first argument will be treated as a number in **eight digits**.
 If you pass 16 as the second argument, the first argument will be treated as a number in **hexadecimal notation**.
 
-§§§§ Demo | function_parseInt_01_template §§§§
+~~~demo
+> parseInt('10101010', 2)
+< 170
+< parseInt(10101010, 2)
+< 170
+< parseInt(587, 2)
+< NaN
+< parseInt(170, 8)
+< 120
+< parseInt(170, 16)
+< 368
+< parseInt('F', 16)
+< 15
+< parseInt('FF', 16)
+< 255
+~~~
 
 **The return value will always be a decimal number**.
 
@@ -137,7 +197,20 @@ round: ƒ round()
 
 Let's try to call some functions of the **Math** library:
 
-§§§§ Demo | function_math_template §§§§
+~~~demo
+> Math.sin(Math.PI / 2)
+< 1
+> Math.sqrt(16)
+< 4
+> Math.pow(4, 2)
+< 16
+> var number = 9
+< undefined
+> Math.sqrt(number)
+< 3
+> Math.pow(number, 2)
+< 81
+~~~
 
 In parentheses, we pass **arguments** to functions when calling them.
 For example, we pass the number 16 to the square root function when we call it:
@@ -161,7 +234,14 @@ In order to perform an assignment, the engine must calculate the **value** of th
 But the parentheses of the function call again contain the **expression** ~Math.PI / 2~.
 That is, the engine must first calculate the expression in the parentheses, and then pass the resulting value to the ~Math.sin~ function when calling it.
 
-§§§§ Demo | function_math_01_template §§§§
+~~~demo
+> var argument = Math.PI / 2
+< undefined
+> argument
+< 1.5707963267948966
+> Math.sin(argument)
+< 1
+~~~
 
 Note that when we run the code for execution in the console:
 
@@ -209,7 +289,14 @@ If we call the **~console.log~** function, it outputs the arguments passed to it
 
 Finally, let's see what the **~typeof~** operator returns:
 
-§§§§ Demo | function_console_03_template §§§§
+~~~demo
+> typeof parseInt
+< 'function'
+> typeof console.log
+< 'function'
+< typeof Math.sqrt
+< 'function'
+~~~
 
 ______________________________________________
 
@@ -234,7 +321,23 @@ There is obviously something missing here, isn't there?
 Of course, after all, the function must have a name so that we can call it.
 And more of that, we see a code block in curly braces, and if we put it into our code in this way, it will simply be executed, just like all the lines of code before and after it.
 
-§§§§ Demo | function_00_template §§§§
+~~~demo
+> var bool = 5 < 8
+> {
+>   var number = 5
+>   var name = 'Mozilla'
+> }
+> var test = typeof number < typeof name
+< undefined
+> bool
+< true
+> number
+< 5
+> name
+< "Mozilla"
+> test
+< true
+~~~
 
 No, we obviously need something else.
 For example, we need the code to be saved under some name, but not executed in the place where it appeared.
@@ -301,7 +404,24 @@ So, the code inside the function body has not been executed.
 
 Shall we check it?
 
-§§§§ Demo | function_01_template §§§§
+~~~demo
+> var number = 8, name = 'Google'
+< undefined
+> var func = function () {
+>   number = 5
+>   name = 'Mozilla'
+>   }
+< undefined
+> number
+< 8
+> name
+< "Google"
+> func
+< ƒ () {
+<     number = 5
+<     name = 'Mozilla'
+<   }
+~~~
 
 As you can see, the function declaration did not affect the values of the variables **~number~** and **~name~**.
 That is, the code in the function body did not work.
@@ -313,7 +433,14 @@ Such an assignment:
 func()
 ~~~
 
-§§§§ Demo | function_02_template §§§§
+~~~demo
+> func()
+< undefined
+> number
+< 5
+> name
+< "Mozilla"
+~~~
 
 is one of the ways to declare a function, which is called **function expression**.
 
@@ -379,7 +506,21 @@ And somehow it is self-evident that we should place the names of these variables
 That is, in parentheses.
 Do you see the sense?
 
-§§§§ Demo | function_parameters_template §§§§
+~~~demo
+> function example (arg1, arg2) {
+>     console.log (arg1, arg2)
+>   }
+< undefined
+> example(5, 10)
+< 5 10
+> var summarize = function  (number1, number2) {
+>     console.log (number1 + number2)
+>   }
+< undefined
+> summarize(9, 8)
+< 17
+< undefined
+~~~
 
 Thus, when declaring a function, we use parentheses to list there the names of variables that we will use for calculations in the body of the function.
 These variables have no values at the time the function is declared.
@@ -392,15 +533,50 @@ In other words, each time we call a function, we can pass it different arguments
 Obviously, the big problem for us was errors related to passing incorrect values of arguments.
 In arithmetic operations, in case of an error we will get the insidious value **~NaN~**, which will cause us a lot of trouble.
 
-§§§§ Demo | function_parameters_01_template §§§§
+~~~demo
+> function example (param1, param2, param3) {
+>     var min = Math.min(param1, param2, param3, 10)
+>     console.log(min * 100)
+>   }
+< undefined
+> example(false, null, '0')
+< 0
+> example()
+< NaN
+~~~
 
 But in 2015, a new version of the language specification (ES6) was released in which we now have the ability to set default values for function parameters when declaring a function, which avoids the problems of calling a function with no parameters or when those parameters have values **~undefined~**:
 
-§§§§ Demo | function_parameters_02_template §§§§
+~~~demo
+> function test (param1 = 1, param2 = 1, param3 = 1) {
+>     console.log(param1, param2, param3)
+>   }
+< undefined
+> test(false, undefined, 0)
+< false 1 0
+< undefined
+> test()
+< 1 1 1
+< undefined
+~~~
 
 Furthermore, you can make the default values of the function parameters **calculable**:
 
-§§§§ Demo | function_parameters_03_template §§§§
+~~~demo
+> function calcs (x = 1, y = x + 1, z = x + y) {
+>     console.log(x, y, z)
+>   }
+< undefined
+> calcs()
+< 1 2 3
+< undefined
+> calcs(8)
+< 8 9 17
+< undefined
+> calcs(undefined, undefined, 8)
+< 1 2 8
+< undefined
+~~~
 
 ![ico-25 warn] Note that **default function parameter values** are usefull when a **~undefined~** value (or no value at all) is passed as function arguments.
 

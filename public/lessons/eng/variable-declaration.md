@@ -28,7 +28,20 @@ When you declare a variable, you can immediately assign an initial value to it.
 
 For this purpose, the assignment operator (**~ =~** ) is used, which is the most common in any script.
 
-§§§§ Demo | var_01_template §§§§
+~~~demo
+> var alpha = 10
+< undefined
+> alpha
+< 10
+> var provider = 'Google'
+< undefined
+> provider
+< 'Google'
+> var test = false
+< undefined
+> test
+< false
+~~~
 
 The left side of the assignment operator should contain the variable name, the right side should contain some **expression**.
 The engine will compute the value of the expression on the right side of the assignment operator, and put the computed value into the variable named on the left side of the operator.
@@ -115,7 +128,18 @@ ______________________________________________________________
 
 ![ico-25 warn] Variable names can begin with a letter, the sybols **~ $~** and **~ _~**.
 
-§§§§ Demo | var_02_template §§§§
+~~~demo
+> var $$ = 15
+< undefined
+> $$
+< 15
+> var ___ = 20
+< undefined
+> ___
+< 20
+> $$ + ___
+< 35
+~~~
 
 It is recommended to give long and clear names of variables and functions composed of several words.
 It improves code readability:
@@ -126,7 +150,16 @@ var lastUserVisit = '2019-02-05'
 
 ![ico-25 warn] Variable names are case sensitive (~name~ and ~Name~ are different variables).
 
-§§§§ Demo | var_03_template §§§§
+~~~demo
+> var showMustGoOn = true
+< undefined
+< var showmustgoon = 'Win!'
+< undefined
+> showMustGoOn
+< true
+> showmustgoon
+< 'Win!'
+~~~
 
 @@@@
 ![](illustrations/camel-case.png)

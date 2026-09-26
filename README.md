@@ -110,6 +110,7 @@ Each of these is recognised before anything else and rendered as a unit.
 | Syntax | Renders as |
 |---|---|
 | <code>~~~js … ~~~</code> | a code sample (the language tag is optional) |
+| <code>~~~demo … ~~~</code> | a console session that types itself — see below |
 | <code>~~~~ … ~~~~</code> | a runnable script, collapsed |
 | `{{{ … }}}` | console output |
 | `^^^[Title]` … `^^^` | a spoiler; the title is shown, the body unfolds |
@@ -127,11 +128,99 @@ Each of these is recognised before anything else and rendered as a unit.
 | `※※※tests quiz/var※※※` | a link button — see Components |
 | `☼☼☼ text ☼☼☼` | a slogan |
 | `→→→ question \| variant, variant \| answer →→→` | a quiz |
-| `§§§§ header \| templateId §§§§` | a live console demo |
 
 The answer of a quiz has to match one of its variants exactly. A variant may be
 quoted — `'Google'` — and the quotes are consumed as attribute delimiters, so
 the answer is written without them.
+
+### A console session
+
+A `~~~demo` block is a console session, and it plays itself: the reader clicks
+the ► button, each command is typed in character by character, and the answer
+appears after it.
+
+```
+~~~demo
+> var alpha = 1
+< undefined
+> alpha === '1'
+< false
+> alpha == '1'
+< true
+> alpha.toUpperCase()
+! TypeError: alpha.toUpperCase is not a function
+~~~
+```
+
+Three marks, each a character and a space:
+
+| | |
+|---|---|
+| `>` | what was typed in |
+| `<` | what the console answered |
+| `!` | what it complained about — drawn on red, with the error icon |
+
+**Nothing is said about colour.** `var` is a keyword, `alpha` a name, `1` a
+number, `'1'` a string, `false` a value the console printed rather than one the
+reader typed — all of that is worked out from the text, and each gets the
+colour it has in DevTools. Values in an answer are coloured differently from
+the same values in a command, which is what the palette was always for.
+
+That is also why the quotes are worth writing as the console writes them:
+`provider` on its own answers `'Google'` and is coloured as a string, while
+`console.log(provider)` prints `Google` bare.
+
+**Several `>` lines in a row are one command**, entered over several lines the
+way Shift+Enter does it in a real console. The prompt is drawn once, the
+indentation is kept as written, and the whole command is typed before any
+answer appears:
+
+```
+~~~demo
+> function sigma () {
+>   return Math.random() * 1000
+> }
+< undefined
+~~~
+```
+
+Marking the answers is what makes that work: without a `<`, a line that is not
+a command could be either the next line of one or the answer to it, and no
+amount of guessing settles it.
+
+One limitation, shared with every `~~~` block: the content may not contain a
+tilde, because that is what closes the fence.
+
+It starts on the same ► button the `{{{…}}}` demos use, in #f50 rather than
+their blue so the two are told apart. Closed, the button and its caption are
+all there is — the console chrome opens together with the console under it.
+The caption says "Демонстрация в консоли" in the reader's language; to name it
+something else, write the name after the fence:
+
+```
+~~~demo Сравнение == и ===
+> 1 == '1'
+< true
+~~~
+```
+
+Before this, a demo was a template in `src/templates`: a paragraph per line, a
+span per token, `visibility: hidden` on every one of them and the colour class
+chosen by hand — a hundred and seventy lines of HTML for eight commands. Being
+in `src/`, it was compiled into the bundle, so a lesson could not carry its own
+demo and a new one meant a webpack build. All thirty-two were read back out
+into blocks and the templates deleted; a `~~~demo` block is content, and needs
+no build beyond `npm run lessons`.
+
+```
+npm run demos
+```
+
+runs every session in every lesson and compares each `<` with what the code
+actually does. A block copied from the one above it with a value left unchanged
+is a wrong promise on a page somebody is learning from, and nothing else in the
+build reads these blocks as code. A value the console draws open — a function,
+an object — is counted as unchecked rather than guessed at.
 
 ### Components
 
@@ -144,7 +233,7 @@ draws the whole thing. The lesson writes only what changes.
 | `※※※tests quiz/var※※※` | `createLinkButton` | a button to the tests or the exercises: briefcase icon, the word for the current language, the address you give it |
 | `☼☼☼ text ☼☼☼` | `funny-slogan` | a slogan |
 | `→→→ question \| variants \| answer →→→` | `test-component` | a quiz |
-| `§§§§ header \| templateId §§§§` | `live-demo-spoiler` | a live console demo |
+| a `~~~demo` block | `console-demo` | a console session written in the lesson |
 | a `~~~console` block | `createConsoleHeader` | the heading above console output: bordered panel, console icon, the words for the current language |
 | `••••` … `••••` | `createBlackBlock` | several lines on the black ground |
 

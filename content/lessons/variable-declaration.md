@@ -28,7 +28,20 @@ var number
 
 {{p14}}
 
-§§§§ Demo | var_01_template §§§§
+~~~demo
+> var alpha = 10
+< undefined
+> alpha
+< 10
+> var provider = 'Google'
+< undefined
+> provider
+< 'Google'
+> var test = false
+< undefined
+> test
+< false
+~~~
 
 {{p15}}
 {{p16}}
@@ -115,7 +128,18 @@ ______________________________________________________________
 
 {{p37}}
 
-§§§§ Demo | var_02_template §§§§
+~~~demo
+> var $$ = 15
+< undefined
+> $$
+< 15
+> var ___ = 20
+< undefined
+> ___
+< 20
+> $$ + ___
+< 35
+~~~
 
 {{p38}}
 {{p39}}
@@ -126,7 +150,16 @@ var lastUserVisit = '2019-02-05'
 
 {{p40}}
 
-§§§§ Demo | var_03_template §§§§
+~~~demo
+> var showMustGoOn = true
+< undefined
+< var showmustgoon = 'Win!'
+< undefined
+> showMustGoOn
+< true
+> showmustgoon
+< 'Win!'
+~~~
 
 @@@@
 ![](illustrations/camel-case.png)

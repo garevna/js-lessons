@@ -16,6 +16,11 @@ export function buildSnippet (fragment) {
     return [this.createConsoleHeader(), this.createConsoleOutput(fragment)]
   }
 
+  // A session that types itself, rather than output that is already there.
+  // The fence may carry a title after the word: ~~~demo Сравнение операторов
+  const [word, ...title] = lang.split(/\s+/)
+  if (word === 'demo') return [this.createConsoleDemo(fragment, title.join(' '))]
+
   if (lang === 'error') return [this.createErrorOutput(fragment)]
   if (lang === 'warn' || lang === 'warning') return [this.createWarningOutput(fragment)]
 
