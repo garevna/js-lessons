@@ -100,17 +100,17 @@ Another peculiarity of **~null~** value is that if you use strict equality, then
 ~~~demo
 > null === null
 < true
-< null === undefined
+> null === undefined
 < false
-< null == undefined
+> null == undefined
 < true
-< null == 0
+> null == 0
 < false
-< null == false
+> null == false
 < false
-< !! null == false
+> !! null == false
 < true
-< typeof null
+> typeof null
 < 'object'
 ~~~
 
