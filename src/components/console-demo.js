@@ -169,7 +169,6 @@ class ConsoleDemo extends HTMLElement {
   attributeChangedCallback (name) {
     if (name === 'session') {
       this.steps = ConsoleDemo.parse(this.getAttribute('session') || '')
-      if (this.section) this.height = this.measure()
       return
     }
 
@@ -270,9 +269,6 @@ class ConsoleDemo extends HTMLElement {
       className: 'live-demo-section console-demo'
     })
 
-    // Measured with everything shown, so the box has a height to open to
-    // before a character is typed — otherwise it grows under the reader.
-    this.height = this.measure()
     this.expanded = false
   }
 
@@ -280,21 +276,54 @@ class ConsoleDemo extends HTMLElement {
     this.stop()
   }
 
+  /**
+   * How tall the box has to be to hold the whole session.
+   *
+   * Measured when the demo is opened, not when it is connected. The palette
+   * arrives as a promise, and until it does the host has no `display: block`
+   * of its own — a custom element is inline by default, and an inline box does
+   * not report the height of what is inside it. A one-command session came out
+   * 89 pixels where it needed 121, and the answer and the rule under it were
+   * cut off; a longer one happened to measure right and looked fine.
+   *
+   * scrollHeight rather than the rectangle, because the box is `height: 0` and
+   * `overflow: hidden` until it opens: the rectangle is what the box is, and
+   * scrollHeight is what it would have to be.
+   */
   measure () {
     this.draw()
-    const { height } = this.body.getBoundingClientRect()
+    const height = this.body.scrollHeight
     this.section.innerHTML = ''
     return height
   }
 
-  /** The whole session, laid out. Used to measure, and step by step to play. */
+  /**
+   * The whole session, laid out. Used to measure, and step by step to play.
+   *
+   * A rule under the command as well as under the answer, because that is
+   * where a console draws one: pressing Enter rules off what was entered, and
+   * the answer is ruled off under itself. And an empty prompt at the end,
+   * which is what a console leaves you looking at.
+   */
   draw () {
     this.section.innerHTML = ''
+
     for (const step of this.steps) {
-      this.command(step.input)
+      if (step.input.length) {
+        this.command(step.input)
+        this.divider()
+      }
+
       for (const answer of step.answers) this.answer(answer)
       this.divider()
     }
+
+    this.waiting()
+  }
+
+  /** The prompt a console is left showing, with nothing typed at it yet. */
+  waiting () {
+    Object.assign(createElem('span', createElem('p', this.section)), { className: 'prompt-input' })
   }
 
   /** One command, however many lines it was entered over. */
@@ -336,7 +365,11 @@ class ConsoleDemo extends HTMLElement {
     this.button.innerText = '⛌'
     this.button.classList.add('opened')
     this.body.classList.add('opened')
-    this.body.style.height = this.height + 'px'
+
+    // Measured now: by the time a reader has clicked, the palette is in and
+    // the console picture has loaded, so the box is the size it needs to be.
+    this.body.style.height = this.measure() + 'px'
+
     this.play()
   }
 
@@ -374,13 +407,15 @@ class ConsoleDemo extends HTMLElement {
     for (const step of this.steps) {
       if (!running()) return
 
-      for (const body of this.command(step.input)) {
-        if (!running()) return
-        await this.type(body, running)
-      }
-
       if (step.input.length) {
+        for (const body of this.command(step.input)) {
+          if (!running()) return
+          await this.type(body, running)
+        }
+
+        // Enter: the console rules off what was entered, then thinks.
         if (!running()) return
+        this.divider()
         await this.later(BEFORE_ANSWER)
       }
 
@@ -393,6 +428,8 @@ class ConsoleDemo extends HTMLElement {
       this.divider()
       await this.later(AFTER_ANSWER)
     }
+
+    if (running()) this.waiting()
   }
 
   /**

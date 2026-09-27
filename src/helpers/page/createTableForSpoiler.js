@@ -1,11 +1,11 @@
 const { createElem } = require('../createElem')
+const { tableRows } = require('./tableRows')
 
 export function createTableForSpoiler (fragment) {
   const tableFragment = fragment.slice(fragment.match(/\n\n\|/).index + 2)
   const table = document.createElement('table')
 
-  tableFragment.match(/.[^\n]*/g)
-    .filter(string => string.trim().indexOf('|') === 0)
+  tableRows(tableFragment)
     .forEach(item => {
       const row = createElem('tr', table)
       item.split('|')

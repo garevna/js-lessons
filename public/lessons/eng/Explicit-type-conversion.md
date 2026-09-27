@@ -1,102 +1,173 @@
 # ![ico-30 study] Приведение типов⟪pryvedenye_typov⟫
 
+The fact that the engine allows us to use different data types in expressions leads to undesirable consequences: we can never be certain of the data type of the result. Such ambiguity leads to errors and application failures.
+One of the most troublesome consequences of such ambiguity is the appearance of the insidious value **~NaN~** (~Not a Number~) in our calculations.
+
+~~~demo
+> var x = 10, y = '***'
+< undefined
+> x * y
+< NaN
+~~~
+
+Given the specific behaviour of the logical operators **~&&~** and **~||~**, we can never be absolutely certain of the result of expressions constructed using them.
+Indeed, if the operands of an expression constructed using the logical operators **~&&~** and **~||~** have different data types, what data type will the result have?
+
+~~~demo
+> var x = 10, y = '***'
+< undefined
+> x && y
+< '***'
+> x || y
+< 10
+> typeof (x && y)
+< 'string'
+> typeof (x || y)
+< 'number'
+~~~
+
 ______________________________________
 
 ## ![ico-25 icon] Explicit type coercion⟪Explicit_type_coercion⟫
 
+••Explicit data type coercion allows us to avoid ambiguity in the results of expressions.••
+
 The simplest way to explicitly cast data of any type to the type ~string~, ~number~ or ~boolean~ is to use the built-in functions of the same name: **~String()~**, **~Number()~**,  **~Boolean()~**.
 
-◘◘![ico-25 cap] **1**◘◘
-
-~~~js
-var x = '10'
-Number(x)    // 10
+~~~demo
+> Number('10')
+< 10
+> Number('***')
+< NaN
+> Number(undefined)
+< NaN
+> String(50)
+< '50'
+> String(false)
+< 'false'
+> String(undefined)
+< 'undefined'
+> Boolean('50')
+< true
+> Boolean(50)
+< true
 ~~~
 
-returns the number 10.
-
-◘◘![ico-25 cap] **2**◘◘
-
-~~~js
-Number('hero')
-~~~
-
-returns the special value **~NaN~** (^^_Not  a  Number_^^), which means that the string 'fog' cannot be converted to a number.
-
-
-
-◘◘![ico-25 cap] **3**◘◘
-
-~~~js
-String(50)   // "50"
-~~~
-
-returns the string '50'.
-
-◘◘![ico-25 cap] **4**◘◘
-
-~~~js
-Boolean('50')  // true
-~~~
-
-returns the boolean value ~true~.
+The special value **~NaN~** (~Not a Number~) means that the result of the operation is not a number, but the result will still be of type **~number~**.
 
 ___________________________________________________________________
 
-### ![ico-20 icon] Explicit coercion to ~number~⟪Explicit_coercion_to_~number~⟫
+### ![ico-20 icon] Explicit type coercion to number⟪Explicit_type_coercion_to_number⟫
 
-![ico-20 warn] In all the cases listed below, the result will be ** 0**:
+Arithmetic operations such as subtraction, multiplication, division and modulo always return a result of type **~number~**, but it is not guaranteed that this result will be a number.
 
-~~~js
-Number(null)    // 0
-Number(false)   // 0
-Number('')      // 0
-Number(' ')     // 0
-Number([])      // 0
-Number('\n')    // 0
-Number('\t')    // 0
+Similarly, explicit coercion to the **~number~** type using the constructor function **~Number()~** will always return a result of type **~number~**, but this result is not necessarily a number.
+
+![ico-20 pin] Please note the cases in which explicit type coercion to **~number~** using the constructor function **~Number()~** will return **~0~**:
+
+~~~demo
+> Number(null)
+< 0
+> Number(false)
+< 0
+> Number('')
+< 0
+> Number(' ')
+< 0
+> Number([])
+< 0
+> Number([0])
+< 0
+> Number([''])
+< 0
+> Number([' '])
+< 0
+> Number('\n')
+< 0
+> Number('\t')
+< 0
+> Number('\r')
+< 0
+> Number('\v')
+< 0
+> Number('\f')
+< 0
 ~~~
 
-^^'space' characters ~""~, ~"   "~, ~"\n"~, ~"\t"~ are always converted to 0.^^
+••Coercion 'space' characters to the **_number_** type always returns 0.••
 
-~~~js
-Number(String.fromCharCode(9))   // 0
-Number(String.fromCharCode(10))  // 0
-Number(String.fromCharCode(11))  // 0
-Number(String.fromCharCode(12))  // 0
-Number(String.fromCharCode(13))  // 0
+^^^[Space characters]
+
+^^'Space' characters include special characters with the following codes:^^
+
+| Symbol    | Code | Description |
+| **~\t~**  |   9  | horizontal tab     |
+| **~\n~**  |  10  | line feed     |
+| **~\v~**  |  11  | vertical tab     |
+| **~\f~**  |  12  | form feed     |
+| **~\r~**  |  13  | carriage return     |
+
+^^Different OS use different combinations of the characters **~\r~** and **~\n~** to move text to a new line:^^
+^^• **Windows**: Uses the character pair **~\r~** + **~\n~**.^^
+^^• **Linux / macOS**: Uses only the character **~\n~**.^^
+
+^^^
+
+Let’s see in which cases an explicit coercion to the **~number~** type using the **~Number()~** constructor function will return **~NaN~**:
+
+~~~demo
+> Number(undefined)
+< NaN
+> Number({})
+< NaN
+> Number(NaN)
+< NaN
+> Number('5 + 3')
+< NaN
+> Number('40px')
+< NaN
+> Number([5, 7])
+< NaN
 ~~~
 
-^^~String.fromCharCode(cod)~ returns the character whose code is **cod**.^^
+The constructor function **~Number()~** converts only primitive values to the **~number~** type, i.e. strings, numbers, booleans, **~null~**, **~NaN~** and **~undefined~**.
+The engine evaluates the expression passed to the **~Number()~** constructor function within round brackets. If the result is a primitive value, that value is passed to the **~Number()~** constructor function.
+If, however, the result is an array or an object, the engine will use the **_built-in mechanism to evaluate the primitive value_** of that object.
+By default, to obtain the primitive value of an array or object, it is coerced to **~string~**, [►►► ^^but this behaviour can be changed^^ ►►►](page/value-of).
 
-![ico-20 warn] ~Number(true)~  will return 1
-
-![ico-20 warn] In cases where it is impossible to convert an expression to a number, the result will be  **~NaN~** (^^Not a Number^^):
-
-◘◘![ico-25 cap] **5**◘◘
-
-~~~js
-Number(undefined)   // NaN
-Number(' 12s ')     // NaN
-Number('4+8')       // NaN
-Number([5, 7, 4])   // NaN
-Number(NaN)         // NaN
-Number({})          // NaN
+~~~demo
+> String({})
+< '[object Object]'
+> Number('[object Object]')
+< NaN
+> String([5, 4, 8])
+< '5,4,8'
+> Number('5,4,8')
+< NaN
 ~~~
 
-![ico-20 warn]  In all other cases, the result will be  a number.
+So, the constructor function **~Number()~** accepts only primitive values; therefore, the engine first converts the expression within the parentheses of the constructor function **~Number()~** to a primitive data type, and only then does the coercion of this primitive type to the **~number~** type take place.
 
-◘◘![ico-25 cap] **6**◘◘
+| **~x~**     | **~Number(x)~**       |
+| ~number~    | **~x~**               |
+| ~string~    | If the string contains only digits and a digit separator, the result will be a number; otherwise, it will be **~NaN~**.               |
+| ~boolean~   | ~true~ → 1<br />~false~ → 0    |
+| ~array~     | An array is coerced to a string: ~[a, b, c]~ → ~'a,b,c'~. If the array is empty, the string will be empty. See above for converting a string to a numeric type.               |
+| ~object~    | An object is coerced to the string ~'[object Object]'~, so the result of the type conversion will be **~NaN~**.               |
 
-~~~js
-Number(57)            // вернет 57
-Number(4 * '8')       // вернет 32
-Number([5])           // вернет 5
-Number([5] + [8])     // вернет 58
-Number(null - true)   // вернет -1
-~~~
+![ico-25 hw] Tests
+
+→→→ Number(57) | NaN, 57, undefined | 57 →→→
+→→→ Number(4 * '8') | NaN, 32, 0 | 32 →→→
+→→→ Number([8]) | NaN, 8, 0 | 8 →→→
+→→→ Number([5] + [8]) | NaN, 13, 8, 5 | 13 →→→
+→→→ Number(null - true) | NaN, null, true, 1, -1, 0 | -1 →→→
 
 ______________________________
+
+As we have seen, the constructor function **~Number()~** does not offer sufficient flexibility for converting strings to the **~number~** type.
+
+Fortunately, there are more flexible alternatives.
 
 #### ![ico-20 icon] parseInt & parseFloat⟪parseInt_&_parseFloat⟫
 
@@ -112,6 +183,25 @@ parseInt('3.14abc')    // 3
 
 Number('3.14/5')        // NaN
 parseFloat('3.14/5')    // 3.14
+~~~
+
+~~~demo
+> var sample = '3.14abc'
+< undefined
+> Number(sample)
+< NaN
+> parseFloat(sample)
+< 3.14
+> parseInt(sample)
+< 3
+> Number('3.14 / 5')
+< NaN
+> parseFloat('3.14 / 5')
+< 3.14
+> Number('3.14 * 5')
+< NaN
+> parseFloat('3.14 * 5')
+< 3.14
 ~~~
 
 However, if the string begins with characters that cannot be converted to a number, these functions will return **~NaN~**.
@@ -132,6 +222,23 @@ Boolean(undefined)
 Boolean(false)
 ~~~
 
+~~~demo
+> Boolean('')
+< false
+> Boolean(0)
+< false
+> Boolean(-0)
+< false
+> Boolean(NaN)
+< false
+> Boolean(null)
+< false
+> Boolean(undefined)
+< false
+> Boolean(false)
+< false
+~~~
+
 ![ico-20 warn] In all other cases, the result will be ~true~
 
 When casting a string to a Boolean type, a simple rule applies:
@@ -142,31 +249,38 @@ ____________________________________________________________________
 
 ### ![ico-20 icon] Explicit coercion to ~string~⟪Explicit_coercion_to_~string~⟫
 
-◘◘![ico-25 cap] **8**◘◘
-
-~~~js
-var str = String(5 + 8 + false)  //  "13"
-
-var object = {}
-String(object)  //  "[object Object]"
-
-var array = [5, true, 'hello', 11]
-String(array)  //  "5,true,hello,11"
+~~~demo
+> var str = String(5 + 8 + false)
+< undefined
+> str
+< "13"
+> var object = {}
+< undefined
+> String(object)
+< "[object Object]"
+> var array = [5, true, 'hello', 11]
+< undefined
+> String(array)
+< "5,true,hello,11"
 ~~~
 
 When casting a number to the type ~string~, you can use the method **~toString()~**, which takes a single argument – the decimal number 2, 8 or 16 (base).
 ^^The decimal number system is implied by default, so the argument can be omitted in this case.^^
 ^^To obtain the string representation of a number in the binary number system, pass the argument 2 to the method **~toString()~**; for octal, pass 8; for hexadecimal, pass 16.^^
 
-◘◘![ico-25 cap] **9**◘◘
-
-~~~js
-Number(2).toString(2)    // "10"
-Number(58).toString(2)   // "111010"
-Number(8).toString(8)    // "10"
-Number(58).toString(8)   // "72"
-Number(16).toString(16)  // "10"
-Number(58).toString(16)  // "3a"
+~~~demo
+> Number(2).toString(2)
+< "10"
+> Number(58).toString(2)
+< "111010"
+> Number(8).toString(8)
+< "10"
+> Number(58).toString(8)
+< "72"
+> Number(16).toString(16)
+< "10"
+> Number(58).toString(16)
+< "3a"
 ~~~
 
 ____________________________________________________________________

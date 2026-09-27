@@ -1,102 +1,173 @@
 # ![ico-30 study] {{common.c22}}
 
+{{p29}}
+{{p30}}
+
+~~~demo
+> var x = 10, y = '***'
+< undefined
+> x * y
+< NaN
+~~~
+
+{{p31}}
+{{p32}}
+
+~~~demo
+> var x = 10, y = '***'
+< undefined
+> x && y
+< '***'
+> x || y
+< 10
+> typeof (x && y)
+< 'string'
+> typeof (x || y)
+< 'number'
+~~~
+
 ______________________________________
 
 ## ![ico-25 icon] {{p1}}
 
+{{p5}}
+
 {{p2}}
 
-◘◘![ico-25 cap] **1**◘◘
-
-~~~js
-var x = '10'
-Number(x)    // 10
+~~~demo
+> Number('10')
+< 10
+> Number('***')
+< NaN
+> Number(undefined)
+< NaN
+> String(50)
+< '50'
+> String(false)
+< 'false'
+> String(undefined)
+< 'undefined'
+> Boolean('50')
+< true
+> Boolean(50)
+< true
 ~~~
 
 {{p3}}
 
-◘◘![ico-25 cap] **2**◘◘
+___________________________________________________________________
 
-~~~js
-Number('hero')
-~~~
+### ![ico-20 icon] {{p7}}
 
 {{p4}}
 
-{{p5}}
-
-◘◘![ico-25 cap] **3**◘◘
-
-~~~js
-String(50)   // "50"
-~~~
-
 {{p6}}
 
-◘◘![ico-25 cap] **4**◘◘
+{{p8}}
 
-~~~js
-Boolean('50')  // true
+~~~demo
+> Number(null)
+< 0
+> Number(false)
+< 0
+> Number('')
+< 0
+> Number(' ')
+< 0
+> Number([])
+< 0
+> Number([0])
+< 0
+> Number([''])
+< 0
+> Number([' '])
+< 0
+> Number('\n')
+< 0
+> Number('\t')
+< 0
+> Number('\r')
+< 0
+> Number('\v')
+< 0
+> Number('\f')
+< 0
 ~~~
-
-{{p7}}
-
-___________________________________________________________________
-
-### ![ico-20 icon] {{p8}}
 
 {{p9}}
 
-~~~js
-Number(null)    // 0
-Number(false)   // 0
-Number('')      // 0
-Number(' ')     // 0
-Number([])      // 0
-Number('\n')    // 0
-Number('\t')    // 0
-~~~
+^^^[{{p49}}]
 
 {{p10}}
 
-~~~js
-Number(String.fromCharCode(9))   // 0
-Number(String.fromCharCode(10))  // 0
-Number(String.fromCharCode(11))  // 0
-Number(String.fromCharCode(12))  // 0
-Number(String.fromCharCode(13))  // 0
-~~~
+| Symbol    | Code | Description |
+| **~\t~**  |   9  | {{p37}}     |
+| **~\n~**  |  10  | {{p38}}     |
+| **~\v~**  |  11  | {{p39}}     |
+| **~\f~**  |  12  | {{p40}}     |
+| **~\r~**  |  13  | {{p41}}     |
+
+{{p34}}
+{{p35}}
+{{p36}}
+
+^^^
 
 {{p11}}
 
+~~~demo
+> Number(undefined)
+< NaN
+> Number({})
+< NaN
+> Number(NaN)
+< NaN
+> Number('5 + 3')
+< NaN
+> Number('40px')
+< NaN
+> Number([5, 7])
+< NaN
+~~~
+
 {{p12}}
+{{p42}}
+{{p43}}
+{{p44}}
+
+~~~demo
+> String({})
+< '[object Object]'
+> Number('[object Object]')
+< NaN
+> String([5, 4, 8])
+< '5,4,8'
+> Number('5,4,8')
+< NaN
+~~~
+
+{{p45}}
+
+| **~x~**     | **~Number(x)~**       |
+| ~number~    | **~x~**               |
+| ~string~    | {{p46}}               |
+| ~boolean~   | ~true~ → 1<br />~false~ → 0    |
+| ~array~     | {{p47}}               |
+| ~object~    | {{p48}}               |
+
+![ico-25 hw] {{common.c11}}
+
+→→→ Number(57) | NaN, 57, undefined | 57 →→→
+→→→ Number(4 * '8') | NaN, 32, 0 | 32 →→→
+→→→ Number([8]) | NaN, 8, 0 | 8 →→→
+→→→ Number([5] + [8]) | NaN, 13, 8, 5 | 13 →→→
+→→→ Number(null - true) | NaN, null, true, 1, -1, 0 | -1 →→→
+
+______________________________
 
 {{p13}}
 
-◘◘![ico-25 cap] **5**◘◘
-
-~~~js
-Number(undefined)   // NaN
-Number(' 12s ')     // NaN
-Number('4+8')       // NaN
-Number([5, 7, 4])   // NaN
-Number(NaN)         // NaN
-Number({})          // NaN
-~~~
-
 {{p14}}
-
-◘◘![ico-25 cap] **6**◘◘
-
-~~~js
-Number(57)            // вернет 57
-Number(4 * '8')       // вернет 32
-Number([5])           // вернет 5
-Number([5] + [8])     // вернет 58
-Number(null - true)   // вернет -1
-~~~
-
-______________________________
 
 #### ![ico-20 icon] parseInt & parseFloat
 
@@ -112,6 +183,25 @@ parseInt('3.14abc')    // 3
 
 Number('3.14/5')        // NaN
 parseFloat('3.14/5')    // 3.14
+~~~
+
+~~~demo
+> var sample = '3.14abc'
+< undefined
+> Number(sample)
+< NaN
+> parseFloat(sample)
+< 3.14
+> parseInt(sample)
+< 3
+> Number('3.14 / 5')
+< NaN
+> parseFloat('3.14 / 5')
+< 3.14
+> Number('3.14 * 5')
+< NaN
+> parseFloat('3.14 * 5')
+< 3.14
 ~~~
 
 {{p17}}
@@ -132,6 +222,23 @@ Boolean(undefined)
 Boolean(false)
 ~~~
 
+~~~demo
+> Boolean('')
+< false
+> Boolean(0)
+< false
+> Boolean(-0)
+< false
+> Boolean(NaN)
+< false
+> Boolean(null)
+< false
+> Boolean(undefined)
+< false
+> Boolean(false)
+< false
+~~~
+
 {{p20}}
 
 {{p21}}
@@ -142,31 +249,38 @@ ____________________________________________________________________
 
 ### ![ico-20 icon] {{p23}}
 
-◘◘![ico-25 cap] **8**◘◘
-
-~~~js
-var str = String(5 + 8 + false)  //  "13"
-
-var object = {}
-String(object)  //  "[object Object]"
-
-var array = [5, true, 'hello', 11]
-String(array)  //  "5,true,hello,11"
+~~~demo
+> var str = String(5 + 8 + false)
+< undefined
+> str
+< "13"
+> var object = {}
+< undefined
+> String(object)
+< "[object Object]"
+> var array = [5, true, 'hello', 11]
+< undefined
+> String(array)
+< "5,true,hello,11"
 ~~~
 
 {{p24}}
 {{p25}}
 {{p26}}
 
-◘◘![ico-25 cap] **9**◘◘
-
-~~~js
-Number(2).toString(2)    // "10"
-Number(58).toString(2)   // "111010"
-Number(8).toString(8)    // "10"
-Number(58).toString(8)   // "72"
-Number(16).toString(16)  // "10"
-Number(58).toString(16)  // "3a"
+~~~demo
+> Number(2).toString(2)
+< "10"
+> Number(58).toString(2)
+< "111010"
+> Number(8).toString(8)
+< "10"
+> Number(58).toString(8)
+< "72"
+> Number(16).toString(16)
+< "10"
+> Number(58).toString(16)
+< "3a"
 ~~~
 
 ____________________________________________________________________

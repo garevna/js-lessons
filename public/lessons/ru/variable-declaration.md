@@ -153,7 +153,7 @@ var lastUserVisit = '2019-02-05'
 ~~~demo
 > var showMustGoOn = true
 < undefined
-< var showmustgoon = 'Win!'
+> var showmustgoon = 'Win!'
 < undefined
 > showMustGoOn
 < true

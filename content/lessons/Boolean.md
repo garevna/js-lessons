@@ -113,7 +113,7 @@ _________________________________________________________________________
 
 _________________________________________________________________________
 
-### ![ico-30 hw] {{common.c11}}
+### ![ico-30 hw] {{common.c11}} 1
 
 ◘◘![ico-25 hw] **1**◘◘
 
@@ -279,7 +279,7 @@ var appleIsRedAndRound = appleIsRed && appleIsRound
 {{p74}}
 {{p75}}
 
-◘◘![ico-25 coffee] ** 4**◘◘
+◘◘![ico-25 coffee] **4**◘◘
 
 ~~~js
 5 > 8 && 4 < 5   // false  
@@ -289,7 +289,7 @@ var appleIsRedAndRound = appleIsRed && appleIsRound
 false && true    // false
 ~~~
 
-◘◘![ico-25 coffee] ** 5**◘◘
+◘◘![ico-25 coffee] **5**◘◘
 
 ~~~js
 8 < 5 && 4 < 5   // false
@@ -299,7 +299,7 @@ false && true    // false
 false && true    // false
 ~~~
 
-◘◘![ico-25 coffee] ** 6**◘◘
+◘◘![ico-25 coffee] **6**◘◘
 
 ~~~js
 var x = 4, y = 10, z = 8
@@ -311,7 +311,7 @@ z < y            // true,
 false && true    // false
 ~~~
 
-◘◘![ico-25 coffee] ** 7**◘◘
+◘◘![ico-25 coffee] **7**◘◘
 
 ~~~js
 var x = 4, y = 10, z = 8
@@ -376,7 +376,7 @@ _________________________________________________
 < false
 ~~~
 
-◘◘![ico-25 coffee] ** 8**◘◘
+◘◘![ico-25 coffee] **8**◘◘
 
 ~~~js
 5 > 8 || 4 < 5   // true
@@ -388,7 +388,7 @@ _________________________________________________
 false || true    // true
 ~~~
 
-◘◘![ico-25 coffee] ** 9**◘◘
+◘◘![ico-25 coffee] **9**◘◘
 
 ~~~js
 5 > 8 || 4 > 5   // false
@@ -440,6 +440,8 @@ var object = {
 }
 
 var test = object.color === 'red' || object.shape === 'circle' || object.size > 50
+
+test
 ~~~
 
 ~~~console
@@ -450,16 +452,16 @@ _________________________________________________________________________
 {{p84}}
 
 ~~~js
-!test || !!test    // всегда  true
+!test || !!test    // true
 
-!test && !!test    // всегда  false
+!test && !!test    // false
 ~~~
 
 _________________________________________________________________________
 
-### ![ico-25 icon] Tests
+### ![ico-30 hw] {{common.c11}} 2
 
-◘◘![ico-25 hw] ** 1**◘◘
+◘◘![ico-25 hw] **1**◘◘
 
 ~~~js
 var x = undefined

@@ -113,7 +113,7 @@ If the first characters of the operand strings are the same, the next characters
 
 _________________________________________________________________________
 
-### ![ico-30 hw] Tests⟪Tests⟫
+### ![ico-30 hw] Tests 1⟪Tests_1⟫
 
 ◘◘![ico-25 hw] **1**◘◘
 
@@ -279,7 +279,7 @@ var appleIsRedAndRound = appleIsRed && appleIsRound
 In the following examples, we apply the logical operator **~&&~** to operands that are **logical expressions**.
 We construct logical expressions using comparison operators.
 
-◘◘![ico-25 coffee] ** 4**◘◘
+◘◘![ico-25 coffee] **4**◘◘
 
 ~~~js
 5 > 8 && 4 < 5   // false  
@@ -289,7 +289,7 @@ We construct logical expressions using comparison operators.
 false && true    // false
 ~~~
 
-◘◘![ico-25 coffee] ** 5**◘◘
+◘◘![ico-25 coffee] **5**◘◘
 
 ~~~js
 8 < 5 && 4 < 5   // false
@@ -299,7 +299,7 @@ false && true    // false
 false && true    // false
 ~~~
 
-◘◘![ico-25 coffee] ** 6**◘◘
+◘◘![ico-25 coffee] **6**◘◘
 
 ~~~js
 var x = 4, y = 10, z = 8
@@ -311,7 +311,7 @@ z < y            // true,
 false && true    // false
 ~~~
 
-◘◘![ico-25 coffee] ** 7**◘◘
+◘◘![ico-25 coffee] **7**◘◘
 
 ~~~js
 var x = 4, y = 10, z = 8
@@ -376,7 +376,7 @@ Syntax: ~operand1 **||** operand2~
 < false
 ~~~
 
-◘◘![ico-25 coffee] ** 8**◘◘
+◘◘![ico-25 coffee] **8**◘◘
 
 ~~~js
 5 > 8 || 4 < 5   // true
@@ -388,7 +388,7 @@ Syntax: ~operand1 **||** operand2~
 false || true    // true
 ~~~
 
-◘◘![ico-25 coffee] ** 9**◘◘
+◘◘![ico-25 coffee] **9**◘◘
 
 ~~~js
 5 > 8 || 4 > 5   // false
@@ -440,6 +440,8 @@ var object = {
 }
 
 var test = object.color === 'red' || object.shape === 'circle' || object.size > 50
+
+test
 ~~~
 
 ~~~console
@@ -450,16 +452,16 @@ _________________________________________________________________________
 ![ico-25 exclamation] Regardless of the data type and value of the variable **~test~**:
 
 ~~~js
-!test || !!test    // всегда  true
+!test || !!test    // true
 
-!test && !!test    // всегда  false
+!test && !!test    // false
 ~~~
 
 _________________________________________________________________________
 
-### ![ico-25 icon] Tests⟪Tests⟫
+### ![ico-30 hw] Tests 2⟪Tests_2⟫
 
-◘◘![ico-25 hw] ** 1**◘◘
+◘◘![ico-25 hw] **1**◘◘
 
 ~~~js
 var x = undefined

@@ -1,13 +1,38 @@
 {
+  "p29": {
+    "ru": "Тот факт, что движок позволяет нам использовать данные различного типа в выражениях, приводит к неприятным последствиям: мы никогда не можем быть уверены в типе данных результата. Такая неоднозначность приводит к ошибкам, сбоям в работе приложения.",
+    "eng": "The fact that the engine allows us to use different data types in expressions leads to undesirable consequences: we can never be certain of the data type of the result. Such ambiguity leads to errors and application failures.",
+    "ua": "Той факт, що движок дозволяє нам використовувати дані різних типів у виразах, призводить до неприємних наслідків: ми ніколи не можемо бути впевнені в типі даних результату. Така неоднозначність призводить до помилок та збоїв у роботі додатка."
+  },
+  "p30": {
+    "ru": "Одним из наиболее неприятных результатов такой неоднозначности является появление коварного значениия **~NaN~** (~Not a Number~) в наших вычислениях.",
+    "eng": "One of the most troublesome consequences of such ambiguity is the appearance of the insidious value **~NaN~** (~Not a Number~) in our calculations.",
+    "ua": "Одним із найнеприємніших наслідків такої неоднозначності є поява підступного значення **~NaN~** (~Not a Number~) у наших обчисленнях."
+  },
+  "p31": {
+    "ru": "Учитывая специфическое поведение логических операторов **~&&~** и **~||~**, мы также никогда не можем быть абсолютно уверены в результате вычисления выражений, построенных с их помощью.",
+    "eng": "Given the specific behaviour of the logical operators **~&&~** and **~||~**, we can never be absolutely certain of the result of expressions constructed using them.",
+    "ua": "З огляду на специфічну поведінку логічних операторів **~&&~** та **~||~**, ми також ніколи не можемо бути абсолютно впевнені в результаті обчислення виразів, побудованих за їх допомогою."
+  },
+  "p32": {
+    "ru": "Действительно, если операнды выражения, построенного с помощью логических операторов **~&&~** и **~||~**, имеют различный тип данных, то какой тип данных будет у результата?",
+    "eng": "Indeed, if the operands of an expression constructed using the logical operators **~&&~** and **~||~** have different data types, what data type will the result have?",
+    "ua": "Дійсно, якщо операнди виразу, побудованого за допомогою логічних операторів **~&&~** та **~||~**, мають різний тип даних, то який тип даних матиме результат?"
+  },
+  "p33": {
+    "ru": "![ico-20 warn] Нужно всячески избегать непредсказуемости типа данных результата вычисления выражения.",
+    "eng": "![ico-20 warn] We must do everything possible to avoid unpredictability regarding the data type of an expression’s result.",
+    "ua": "![ico-20 warn] Потрібно всіляко уникати непередбачуваності типу даних результату обчислення виразу."
+  },
   "p1": {
     "ru": "Явное приведение типов",
     "eng": "Explicit type coercion",
     "ua": "Явне приведення типів"
   },
   "p5": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
+    "ru": "••Явное приведение типов данных позволяет нам избежать неоднозначности результата вычисления выражений.••",
+    "eng": "••Explicit data type coercion allows us to avoid ambiguity in the results of expressions.••",
+    "ua": "••Явне приведення типів даних дозволяє нам уникнути неоднозначності результату обчислення виразів.••"
   },
   "p2": {
     "ru": "Самый простой способ явного приведения данных произвольного типа к типу ~⟦f0⟧~, ~⟦f1⟧~ или ~⟦f2⟧~ - использование встроенных одноименных функций **~⟦f3⟧~**, **~⟦f4⟧~**, **~⟦f5⟧~**.",
@@ -15,59 +40,139 @@
     "ua": "Найпростіший спосіб явного приведення даних довільного типу до типу ~⟦f0⟧~, ~⟦f1⟧~ або ~⟦f2⟧~ — використання вбудованих однойменних функцій **~⟦f3⟧~**, **~⟦f4⟧~**, **~⟦f5⟧~**."
   },
   "p3": {
-    "ru": "вернет число 10.",
-    "eng": "returns the number 10.",
-    "ua": "поверне число 10."
-  },
-  "p4": {
-    "ru": "вернет специальное значение **~⟦f6⟧~** (^^_Not  a  Number_^^), что означает, что строка \"туман\" не может быть преобразована к числу.",
-    "eng": "returns the special value **~⟦f6⟧~** (^^_Not  a  Number_^^), which means that the string 'fog' cannot be converted to a number.",
-    "ua": "поверне спеціальне значення **~⟦f6⟧~** (^^_Not  a  Number_^^), що означає, що рядок «туман» не може бути перетворений на число."
-  },
-  "p6": {
-    "ru": "вернет строку \"50\".",
-    "eng": "returns the string '50'.",
-    "ua": "поверне рядок «50»."
+    "ru": "Специальное значение **~⟦f6⟧~** (~Not a Number~) означает, что результат операции не является числом, но при этом результат будет иметь тип **~number~**.",
+    "eng": "The special value **~⟦f6⟧~** (~Not a Number~) means that the result of the operation is not a number, but the result will still be of type **~number~**.",
+    "ua": "Спеціальне значення **~⟦f6⟧~** (~Not a Number~) означає, що результат операції не є числом, але при цьому результат матиме тип **~number~**."
   },
   "p7": {
-    "ru": "вернет логическое значение ~⟦f7⟧~.",
-    "eng": "returns the boolean value ~⟦f7⟧~.",
-    "ua": "поверне логічне значення ~⟦f7⟧~."
+    "ru": "Явное приведение к типу ⟦f1⟧",
+    "eng": "Explicit type coercion to ⟦f1⟧",
+    "ua": "Явне приведення до ⟦f1⟧"
+  },
+  "p4": {
+    "ru": "Арифметические операции вычитания, умножения, деления и взятия остатка от деления всегда возвращают результат типа **~number~**, но не факт, что этот результат будет числом.",
+    "eng": "Arithmetic operations such as subtraction, multiplication, division and modulo always return a result of type **~number~**, but it is not guaranteed that this result will be a number.",
+    "ua": "Арифметичні операції віднімання, множення, ділення та обчислення залишку від ділення завжди повертають результат типу **~number~**, але не факт, що цей результат буде числом."
+  },
+  "p6": {
+    "ru": "Аналогично, явное приведение к типу **~number~** с помощью функции-конструктора **~Number()~** всегда вернет результат типа **~number~**, но не факт, что этот результат будет числом.",
+    "eng": "Similarly, explicit coercion to the **~number~** type using the constructor function **~Number()~** will always return a result of type **~number~**, but this result is not necessarily a number.",
+    "ua": "Аналогічно, явне приведення до типу **~number~** за допомогою функції-конструктора **~Number()~** завжди поверне результат типу **~number~**, але не факт, що цей результат буде числом."
   },
   "p8": {
-    "ru": "Явное приведение к ~⟦f1⟧~",
-    "eng": "Explicit coercion to ~⟦f1⟧~",
-    "ua": "Явне приведення до ~⟦f1⟧~"
+    "ru": "![ico-20 pin] Обратите внимание, в каких случаях явное приведение к типу **~number~** с помощью функции-конструктора **~Number()~** будет возвращать **~0~**:",
+    "eng": "![ico-20 pin] Please note the cases in which explicit type coercion to **~number~** using the constructor function **~Number()~** will return **~0~**:",
+    "ua": "![ico-20 pin] Зверніть увагу, у яких випадках явне приведення до типу **~number~** за допомогою функції-конструктора **~Number()~** повертатиме **~0~**:"
   },
   "p9": {
-    "ru": "![ico-20 warn] Во всех нижеперечисленных случаях результат будет ** 0**:",
-    "eng": "![ico-20 warn] In all the cases listed below, the result will be ** 0**:",
-    "ua": "![ico-20 warn] У всіх наведених нижче випадках результат буде ** 0**:"
+    "ru": "••Приведение 'пробельных' символов к типу **_number_** всегда возвращает 0.••",
+    "eng": "••Coercion 'space' characters to the **_number_** type always returns 0.••",
+    "ua": "••Приведення «пробільних» символів до типу **_number_** завжди повертає 0.••"
+  },
+  "p49": {
+    "ru": "Пробельные символы",
+    "eng": "Space characters",
+    "ua": "Пробільні символи"
   },
   "p10": {
-    "ru": "^^\"пробельные\" символы ~⟦f8⟧~, ~⟦f9⟧~, ~⟦f10⟧~, ~⟦f11⟧~ всегда приводятся к 0.^^",
-    "eng": "^^'space' characters ~⟦f8⟧~, ~⟦f9⟧~, ~⟦f10⟧~, ~⟦f11⟧~ are always converted to 0.^^",
-    "ua": "^^«пробільні» символи ~⟦f8⟧~, ~⟦f9⟧~, ~⟦f10⟧~, ~⟦f11⟧~ завжди приводяться до 0.^^"
+    "ru": "^^К числу 'пробельных' символов относятся пустая строка (⟦f8⟧), символ пробела (⟦f9⟧), а так же спец.символы с кодами:^^",
+    "eng": "^^'Space' characters include special characters with the following codes:^^",
+    "ua": "^^До «пробільних» символів належать спеціальні символи з кодами:^^"
+  },
+  "p37": {
+    "ru":  "горизонтальная табуляция",
+    "eng": "horizontal tab",
+    "ua":  "горизонтальна табуляція"
+  },
+  "p38": {
+    "ru":  "перевод строки",
+    "eng": "line feed",
+    "ua":  "перехід на новий рядок"
+  },
+  "p39": {
+    "ru":  "вертикальная табуляция",
+    "eng": "vertical tab",
+    "ua":  "вертикальна табуляція"
+  },
+  "p40": {
+    "ru":  "перевод страницы",
+    "eng": "form feed",
+    "ua":  "перехід на нову сторінку"
+  },
+  "p41": {
+    "ru":  "возврат каретки",
+    "eng": "carriage return",
+    "ua":  "повернення каретки"
+  },
+  "p34": {
+    "ru": "^^В разных ОС для переноса текста на новую строку используются разные комбинации символов **~\\r~** и **~\\n~**:^^",
+    "eng": "^^Different OS use different combinations of the characters **~\\r~** and **~\\n~** to move text to a new line:^^",
+    "ua": "^^У різних операційних системах для перенесення тексту на новий рядок використовуються різні комбінації символів **~\\r~** і **~\\n~**:^^"
+  },
+  "p35": {
+    "ru": "^^• **Windows**: Использует пару символов **~\\r~** + **~\\n~**.^^",
+    "eng": "^^• **Windows**: Uses the character pair **~\\r~** + **~\\n~**.^^",
+    "ua": "^^• **Windows**: Використовує пару символів **~\\r~** + **~\\n~**.^^"
+  },
+  "p36": {
+    "ru": "^^• **Linux / macOS**: Использует только символ **~\\n~**.^^",
+    "eng": "^^• **Linux / macOS**: Uses only the character **~\\n~**.^^",
+    "ua": "^^• **Linux / macOS**: Використовує лише символ **~\\n~**.^^"
   },
   "p11": {
-    "ru": "^^~⟦f12⟧~ возвращает символ, код которого равен **cod**^^",
-    "eng": "^^~⟦f12⟧~ returns the character whose code is **cod**.^^",
-    "ua": "^^~⟦f12⟧~ повертає символ, код якого дорівнює **cod**.^^"
+    "ru": "Давайте посмотрим, в каких случаях явное приведение к типу **~number~** с помощью функции-конструктора **~Number()~** будет возвращать **~NaN~**:",
+    "eng": "Let’s see in which cases an explicit coercion to the **~number~** type using the **~Number()~** constructor function will return **~NaN~**:",
+    "ua": "Давайте розглянемо, у яких випадках явне приведення до типу **~number~** за допомогою функції-конструктора **~Number()~** повертатиме **~NaN~**:"
   },
   "p12": {
-    "ru": "![ico-20 warn] ~⟦f13⟧~  вернет 1.",
-    "eng": "![ico-20 warn] ~⟦f13⟧~  will return 1",
-    "ua": "![ico-20 warn] ~⟦f13⟧~  поверне 1."
+    "ru": "Функция-конструктор **~Number()~** приводит к типу **~number~** только примитивные значения, т.е. строки, числа, логические значения, **~null~**, **~NaN~**, **~undefined~**.",
+    "eng": "The constructor function **~Number()~** converts only primitive values to the **~number~** type, i.e. strings, numbers, booleans, **~null~**, **~NaN~** and **~undefined~**.",
+    "ua": "Функція-конструктор **~Number()~** приводить до типу **~number~** лише примітивні значення, тобто рядки, числа, логічні значення, **~null~**, **~NaN~**, **~undefined~**."
+  },
+  "p42": {
+    "ru": "Движок вычисляет значение выражения, передаваемого функции-конструктору **~Number()~** в круглых скобках. Если результат будет примитивным значением, то это значение будет передано функції-конструктору **~Number()~**.",
+    "eng": "The engine evaluates the expression passed to the **~Number()~** constructor function within round brackets. If the result is a primitive value, that value is passed to the **~Number()~** constructor function.",
+    "ua": "Движок обчислює значення виразу, що передається функції-конструктору **~Number()~** у круглих дужках. Якщо результат буде примітивним значенням, то це значення буде передано функції-конструктору **~Number()~**."
+  },
+  "p43": {
+    "ru": "Если же результат является массивом или объектом, то движок воспользуется **_встроенным механизмом вычисления примитивного значения_** этого объекта.",
+    "eng": "If, however, the result is an array or an object, the engine will use the **_built-in mechanism to evaluate the primitive value_** of that object.",
+    "ua": "Якщо ж результат є масивом або об’єктом, то движок скористається **_вбудованим механізмом обчислення примітивного значення_** цього об’єкта."
+  },
+  "p44": {
+    "ru": "По умолчанию для получения примитивного значения массива или объекта они приводятся к типу **~string~**, [►►► ^^но это поведение можно изменить^^ ►►►](page/value-of).",
+    "eng": "By default, to obtain the primitive value of an array or object, it is coerced to **~string~**, [►►► ^^but this behaviour can be changed^^ ►►►](page/value-of).",
+    "ua": "За замовчуванням для отримання примітивного значення масиву або об’єкта вони приводяться до типу **~string~**, [►►► ^^але цю поведінку можна змінити^^ ►►►](page/value-of)."
+  },
+  "p45": {
+    "ru": "Итак, функция-конструктор **~Number()~** принимает только примитивные значения, поэтому движок сначала преобразует выражение в круглых скобках функции-конструктора **~Number()~** к примитивному типу данных, а потом уже происходит преобразование этого примитивного типа в тип **~number~**.",
+    "eng": "So, the constructor function **~Number()~** accepts only primitive values; therefore, the engine first converts the expression within the parentheses of the constructor function **~Number()~** to a primitive data type, and only then does the coercion of this primitive type to the **~number~** type take place.",
+    "ua": "Отже, функція-конструктор **~Number()~** приймає лише примітивні значення, тому движок спочатку перетворює вираз у круглих дужках функції-конструктора **~Number()~** на примітивний тип даних, а вже потім відбувається перетворення цього примітивного типу на тип **~number~**."
+  },
+  "p46": {
+    "ru": "Если строка содержит только цифры и разделитель разрядов, то результатом будет число, в противном случае - **~NaN~**.",
+    "eng": "If the string contains only digits and a digit separator, the result will be a number; otherwise, it will be **~NaN~**.",
+    "ua": "Якщо рядок містить лише цифри та роздільник розрядів, то результатом буде число, в іншому випадку — **~NaN~**."
+  },
+  "p47": {
+    "ru": "Массив приводится к строке: ~[a, b, c]~ → ~'a,b,c'~. Если массив пустой, то строка будет пустой. Далее смотри выше приведение строки к числовому типу.",
+    "eng": "An array is coerced to a string: ~[a, b, c]~ → ~'a,b,c'~. If the array is empty, the string will be empty. See above for converting a string to a numeric type.",
+    "ua": "Масив приводиться до рядка: ~[a, b, c]~ → ~'a,b,c'~. Якщо масив порожній, то рядок буде порожнім. Далі див. вище приведення рядка до числового типу."
+  },
+  "p48": {
+    "ru": "Объект приводится к строке ~'[object Object]'~, поэтому результат приведения типов будет **~NaN~**.",
+    "eng": "An object is coerced to the string ~'[object Object]'~, so the result of the type conversion will be **~NaN~**.",
+    "ua": "Об’єкт приводиться до рядка ~'[object Object]'~, тому результатом приведення типів буде **~NaN~**."
   },
   "p13": {
-    "ru": "![ico-20 warn] В случаях, когда преобразовать выражение к числу невозможно, результат будет **~⟦f6⟧~** (^^Not a Number^^):",
-    "eng": "![ico-20 warn] In cases where it is impossible to convert an expression to a number, the result will be  **~⟦f6⟧~** (^^Not a Number^^):",
-    "ua": "![ico-20 warn] У випадках, коли перетворити вираз на число неможливо, результат буде **~⟦f6⟧~** (^^Not a Number^^):"
+    "ru": "Как мы убедились, функция-конструктор **~Number()~** не обладает достаточной гибкостью для приведения строк к типу **~number~**.",
+    "eng": "As we have seen, the constructor function **~Number()~** does not offer sufficient flexibility for converting strings to the **~number~** type.",
+    "ua": "Як ми переконалися, функція-конструктор **~Number()~** не є достатньо гнучкою для приведення рядків до типу **~number~**."
   },
   "p14": {
-    "ru": "![ico-20 warn]  Во всех остальных случаях результат будет  числом.",
-    "eng": "![ico-20 warn]  In all other cases, the result will be  a number.",
-    "ua": "![ico-20 warn]  У всіх інших випадках результат буде  числом."
+    "ru": "К счастью, у нас есть более гибкие альтернативы.",
+    "eng": "Fortunately, there are more flexible alternatives.",
+    "ua": "На щастя, у нас є більш гнучкі альтернативи."
   },
   "p15": {
     "ru": "Для приведения к целому числу или к числу с плавающей запятой (с десятичными знаками) можно использовать встроенные функции ~⟦f14⟧~ и ~⟦f15⟧~.",

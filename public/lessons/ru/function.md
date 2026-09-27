@@ -80,15 +80,15 @@ _________________________________________________
 ~~~demo
 > parseInt('36px')
 < 36
-< parseInt(5.75)
+> parseInt(5.75)
 < 5
-< parseInt(undefined)
+> parseInt(undefined)
 < NaN
-< parseInt(null)
+> parseInt(null)
 < NaN
-< parseInt('abc7')
+> parseInt('abc7')
 < NaN
-< parseInt(false)
+> parseInt(false)
 < NaN
 ~~~
 
@@ -109,17 +109,17 @@ parseInt()
 ~~~demo
 > parseInt('10101010', 2)
 < 170
-< parseInt(10101010, 2)
+> parseInt(10101010, 2)
 < 170
-< parseInt(587, 2)
+> parseInt(587, 2)
 < NaN
-< parseInt(170, 8)
+> parseInt(170, 8)
 < 120
-< parseInt(170, 16)
+> parseInt(170, 16)
 < 368
-< parseInt('F', 16)
+> parseInt('F', 16)
 < 15
-< parseInt('FF', 16)
+> parseInt('FF', 16)
 < 255
 ~~~
 
@@ -294,7 +294,7 @@ ______________________________________________
 < 'function'
 > typeof console.log
 < 'function'
-< typeof Math.sqrt
+> typeof Math.sqrt
 < 'function'
 ~~~
 

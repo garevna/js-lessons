@@ -180,21 +180,21 @@ _____________________________________
 ~~~demo
 > NaN === NaN
 < false
-< NaN == NaN
+> NaN == NaN
 < false
-< NaN == undefined
+> NaN == undefined
 < false
-< isNaN('5')
+> isNaN('5')
 < false
-< isNaN('abc')
+> isNaN('abc')
 < true
-< Number.isNaN('abc')
+> Number.isNaN('abc')
 < false
-< Number.isNaN('abc' / 2)
+> Number.isNaN('abc' / 2)
 < true
-< Number.isNaN(undefined)
+> Number.isNaN(undefined)
 < false
-< Number.isNaN(undefined - 0)
+> Number.isNaN(undefined - 0)
 < true
 ~~~
 
@@ -291,21 +291,21 @@ var bool = 5 > 8
 ~~~demo
 > 5 < 7
 < true
-< 'n' > 'u'
+> 'n' > 'u'
 < false
 < 'ba' > bc
 < false
-< 'a' < 100
+> 'a' < 100
 < false
-< 'a' > 100
+> 'a' > 100
 < false
-< 'a' > false
+> 'a' > false
 < false
-< 'a' < false
+> 'a' < false
 < false
-< !!'a' > false
+> !!'a' > false
 < true
-< 5 > true
+> 5 > true
 < true
 ~~~
 
@@ -324,10 +324,10 @@ ______________________________________________________________
 ~~~demo
 > var sigma
 < undefined
-< sigma
+> sigma
 < undefined
-< undefined === undefined
+> undefined === undefined
 < true
-< undefined == false
+> undefined == false
 < false
 ~~~
