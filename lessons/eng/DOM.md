@@ -859,7 +859,7 @@ parent.appendChild(elem)
 
 при этом в переменной **~figure~** у нас есть ссылка на элемент **~&lt;figure>~**, в переменной **~section~** - ссылка на элемент **~&lt;section>~**, а в переменной **~paragraph~** - ссылка на элемент **~&lt;p>~**.
 
-После выполнения кода:
+After running the code:
 
 ~~~js
 figure.appendChild(paragraph)
@@ -1106,7 +1106,7 @@ getMethods.call(Document.prototype, 'get')
 
 ![ico-25 coffee] ** 1**
 
-◘◘Разметка◘◘
+◘◘Markup◘◘
 
 ~~~html
 &lt;body>

@@ -1,4 +1,4 @@
-## ![ico-30 hw] Задание⟪zadanye⟫
+## ![ico-30 hw] Задание⟪Task⟫
 
 Перейдите по [![ico-20 link] **ссылке**](https://garevna.github.io/js-samples/#05)
 

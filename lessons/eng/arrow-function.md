@@ -228,7 +228,7 @@ As a result of the code running, the object ~arguments~ of the function **_testA
 
 ______________________________________________________
 
-### ![ico-20 icon] prototype⟪prototype⟫
+### ![ico-20 icon] Call context⟪Call_context⟫
 
 Arrow functions don't have a **~prototype~** object.<br><br>![ico-20 warn] Therefore, arrow functions cannot be constructors.
 
@@ -279,7 +279,7 @@ And here we can see how context passing works during the assignment process:
 Just for fun, I call this the ‘drill rule’ ![ico-25 smile]
 
 ----------------
-#### ![ico-20 icon] Call context⟪Call_context⟫
+#### ![ico-20 icon] Constructor⟪Constructor⟫
 
 Now let’s recap how the builder works.
 

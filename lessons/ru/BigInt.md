@@ -33,7 +33,7 @@ typeof bigNumber // 'bigint'
 
 _____________________________________________________________
 
-### ![ico-20 icon] Приведение типов⟪pryvedenye_typov⟫
+### ![ico-20 icon] Приведение типов⟪Type_coercion⟫
 
 **~NaN~**, **~null~**, **~Infinity~** не могут быть конвертированы в **~bigint~**
 

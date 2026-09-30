@@ -529,7 +529,7 @@ const randomize = item => item + Math.floor(item + Math.random() * 100)
 
 _____________________________________________
 
-## ![ico-25 icon] Ідемпотентність⟪Examples⟫
+## ![ico-25 icon] Приклади⟪Examples⟫
 
 Передача контексту виклику
 

@@ -250,7 +250,7 @@ What is inside the ![ico-20 ambulance] is the **execution context**.
 
 ^^^
 
-^^^[prototype]
+^^^[Call context]
 
 ![ico-30 ambulance]
 
@@ -259,7 +259,7 @@ What is inside the ![ico-20 ambulance] is the **execution context**.
 
 ^^^
 
-## ![ico-25 icon] prototype⟪prototype⟫
+## ![ico-25 icon] Call context⟪Call_context⟫
 
 The call context is an **object**.
 

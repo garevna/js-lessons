@@ -48,19 +48,19 @@ ________________________________________________________________________________
 
 Блок операций - прямоугольник - позволяет вам использовать различный уровень детализации. В один такой блок можно вписать сразу целую последовательность простых действий, а можно каждое такое простое действие поместить в отдельный блок.
 
-<div class="flowchart-endpoints">Begin<div>
+<div class="flowchart-endpoints">Begin</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Взять штаны<div>
+<div class="flowchart-process">Взять штаны</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Почистить штаны<div>
+<div class="flowchart-process">Почистить штаны</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Пришить пуговицу<div>
+<div class="flowchart-process">Пришить пуговицу</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Погладить штаны<div>
+<div class="flowchart-process">Погладить штаны</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Надеть штаны<div>
+<div class="flowchart-process">Надеть штаны</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-endpoints">End<div>
+<div class="flowchart-endpoints">End</div>
 
 _______________________________________________________
 

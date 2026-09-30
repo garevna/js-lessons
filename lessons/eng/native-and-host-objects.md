@@ -338,7 +338,7 @@ Print all native built-in objects to the console and trace the reference to **~O
 
 _________________________
 
-## ![ico-25 icon] Call context⟪Call_context⟫
+## ![ico-25 icon] Constructor⟪Constructor⟫
 
 It’s time to get to grips with what a constructor actually is
 
