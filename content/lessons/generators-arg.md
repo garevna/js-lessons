@@ -1,4 +1,4 @@
-# ![ico-30 study] {{common.c20}}
+# ![ico-30 study] {{common.generators_iterators}}
 
 **ES 2015**
 

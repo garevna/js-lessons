@@ -12,12 +12,11 @@
  * quietly removes text from the middle of the page, and whatever was around it
  * arrives at the renderer cut in half.
  *
- * That is what happened. The slider pattern was /!!\[.[^\]]+\]/, which is not
- * a slider but any !![ followed by anything up to the next ] — across as many
- * lines as it took to find one. On the lesson about explicit type coercion,
- * whose questions are written in JavaScript and say !![] and !!{}, it matched
- * from one line to a ] six lines down and took six test questions with it. One
- * half-question reached the test renderer with no answers behind it:
+ * That is what happened, twice. The slider pattern was any !![ followed by
+ * anything up to the next ], across as many lines as it took to find one. The
+ * lessons on type coercion write !![] and !![5] in their questions, and the
+ * pattern carried six of them off. One half-question reached the test renderer
+ * with no answers behind it:
  *
  *   Cannot read properties of undefined (reading 'split')
  *
@@ -25,7 +24,7 @@
  * pages built, the bundles built, CI was green.
  *
  * This asks the real table the real question, for every built page: after the
- * blocks are lifted out, is every line that carries a marker still whole?
+ * blocks are lifted out, is every line that carries markup still whole?
  */
 
 const fs = require('fs')
@@ -50,7 +49,62 @@ const LINES = [
   { name: 'кнопка', marker: '※※※', parts: 1 }
 ]
 
-/** What parsePageContent does to a page, without a DOM to render into. */
+/**
+ * A question read the way the renderer reads it, and what is wrong with it.
+ *
+ * From the right: the answer is last, the choices before it, and everything
+ * left over is the question. Splitting into three from the left loses any
+ * question with a pipe in it — and a lesson about coercion asks about
+ * `[!!{}] || true`, where the || was read as two empty separators. The choices
+ * came out empty and the question rendered with one blank button.
+ *
+ * Quotes around a choice are how a choice is written when it is a string; the
+ * renderer lets the HTML parser eat them as attribute delimiters, so they are
+ * taken off here too before the answer is looked for among them.
+ */
+// One layer only. The renderer writes the choice into value=… unquoted and
+// lets the HTML parser take the outer pair as delimiters, so exactly one
+// pair comes off — and a choice written '""' is the empty string, not
+// nothing at all.
+const unquote = (text) => {
+  const single = text.replace(/^'([^]*)'$/, '$1')
+  if (single !== text) return single
+  return text.replace(/^"([^]*)"$/, '$1')
+}
+
+const quizTrouble = (body) => {
+  const parts = body.split('|')
+
+  // The answer is written without quotes and set as an attribute as it is;
+  // only the choices go through the HTML parser, which eats their outer pair.
+  const answer = (parts.pop() || '').trim()
+  const choices = (parts.pop() || '').split(',').map((choice) => unquote(choice.trim()))
+  const question = parts.join('|').trim()
+
+  if (!question) return { what: 'вопрос пустой', detail: body.trim().slice(0, 74) }
+  if (choices.length < 2) return { what: `вариантов ${choices.length}`, detail: body.trim().slice(0, 74) }
+  if (!answer) return { what: 'ответ пустой', detail: body.trim().slice(0, 74) }
+
+  if (!choices.includes(answer)) {
+    return {
+      what: `ответа "${answer}" нет среди вариантов`,
+      detail: choices.join(' / ').slice(0, 74)
+    }
+  }
+
+  return null
+}
+
+const TESTS_FENCE = '~~~tests'
+
+/**
+ * What parsePageContent leaves to be read as lines, plus the inside of every
+ * ~~~tests block.
+ *
+ * A block of questions is lifted out like any other fenced block, and its
+ * questions would then never be looked at — which is the one kind of line this
+ * tool exists for. So the blocks are read back in.
+ */
 const textOf = (pageContent) => {
   const page = { fragments: {}, pageContent, regExprs: pageRegExpr }
 
@@ -72,10 +126,18 @@ const textOf = (pageContent) => {
 
   if (page.pageContent.length) texts.push(page.pageContent)
 
+  for (const key of Object.keys(page.fragments)) {
+    const content = page.fragments[key] && page.fragments[key].content
+    if (typeof content !== 'string') continue
+    if (content.slice(0, TESTS_FENCE.length) !== TESTS_FENCE) continue
+    texts.push(content)
+  }
+
   return texts
 }
 
 const pages = []
+
 for (const lang of fs.readdirSync(LESSONS)) {
   const dir = path.join(LESSONS, lang)
   if (!fs.statSync(dir).isDirectory()) continue
@@ -85,6 +147,7 @@ for (const lang of fs.readdirSync(LESSONS)) {
 }
 
 const broken = []
+let checked = 0
 
 for (const [name, file] of pages) {
   let texts
@@ -100,28 +163,38 @@ for (const [name, file] of pages) {
     for (const line of text.split('\n')) {
       if (!line.length) continue
 
-      for (const { name: kind, marker, parts } of LINES) {
-        if (!line.includes(marker)) continue
+      for (const kind of LINES) {
+        if (!line.includes(kind.marker)) continue
+
+        checked++
 
         // Two markers, one line: a line cut in half keeps only one.
-        const count = line.split(marker).length - 1
+        const count = line.split(kind.marker).length - 1
+
         if (count !== 2) {
-          broken.push({ name, what: `${kind}: маркеров ${count}, а не 2`, detail: line.trim().slice(0, 74) })
+          broken.push({ name, what: `${kind.name}: маркеров ${count}, а не 2`, detail: line.trim().slice(0, 74) })
           break
         }
 
-        const body = line.split(marker).find((piece) => piece.length)
+        const body = line.split(kind.marker).find((piece) => piece.length)
+
         if (body === undefined) {
-          broken.push({ name, what: `${kind}: пусто между маркерами`, detail: line.trim().slice(0, 74) })
+          broken.push({ name, what: `${kind.name}: пусто между маркерами`, detail: line.trim().slice(0, 74) })
           break
         }
 
-        if (parts > 1 && body.split('|').length < parts) {
+        if (kind.parts > 1 && body.split('|').length < kind.parts) {
           broken.push({
             name,
-            what: `${kind}: частей ${body.split('|').length}, нужно ${parts}`,
+            what: `${kind.name}: частей ${body.split('|').length}, нужно ${kind.parts}`,
             detail: body.trim().slice(0, 74)
           })
+          break
+        }
+
+        if (kind.marker === '→→→') {
+          const trouble = quizTrouble(body)
+          if (trouble) broken.push({ name, what: `тест: ${trouble.what}`, detail: trouble.detail })
         }
 
         break
@@ -130,7 +203,7 @@ for (const [name, file] of pages) {
   }
 }
 
-console.log(`\n${pages.length} built pages, ${LINES.length} kinds of line markup`)
+console.log(`\n${pages.length} built pages, ${checked} строк с разметкой проверено`)
 
 if (!broken.length) {
   console.log('\nничего не разорвано\n')
@@ -139,10 +212,10 @@ if (!broken.length) {
 
 console.log(`\nразорвано: ${broken.length}\n`)
 
-for (const { name, what, detail } of broken) {
-  console.log(`  ${name}`)
-  console.log(`    ${what}`)
-  console.log(`    ${detail}`)
+for (const item of broken) {
+  console.log(`  ${item.name}`)
+  console.log(`    ${item.what}`)
+  console.log(`    ${item.detail}`)
 }
 
 console.log('\nОдин из блочных шаблонов в src/configs/pageRegExpr.js захватил больше,')

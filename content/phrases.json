@@ -1,119 +1,134 @@
 {
   "common": {
-    "c0": {
+    "example": {
       "ru": "Пример",
       "eng": "Example",
       "ua": "Приклад"
     },
-    "c1": {
+    "result": {
       "ru": "Результат:",
       "eng": "Result:",
       "ua": "Результат:"
     },
-    "c2": {
+    "result_in_console": {
       "ru": "Результат в консоли:",
       "eng": "Result in the console:",
       "ua": "Результат у консолі:"
     },
-    "c3": {
+    "exercise": {
       "ru": "Упражнение",
       "eng": "Exercise",
       "ua": "Вправа"
     },
-    "c5": {
+    "exception": {
       "ru": "будет сгенерировано исключение",
       "eng": "an exception will be thrown",
       "ua": "буде згенеровано виняток"
     },
-    "c6": {
+    "or": {
       "ru": "или:",
       "eng": "or:",
       "ua": "або:"
     },
-    "c7": {
+    "_constructor": {
       "ru": "Конструктор",
-      "eng": "Call context",
-      "ua": "Контекст виклику"
+      "eng": "Constructor",
+      "ua": "Конструктор"
     },
-    "c8": {
+    "task": {
       "ru": "Задание",
-      "eng": "",
-      "ua": ""
+      "eng": "Task",
+      "ua": "Завдання"
     },
-    "c9": {
+    "or_this": {
       "ru": "или так:",
       "eng": "or like this:",
       "ua": "або так:"
     },
-    "c10": {
+    "examples": {
       "ru": "Примеры",
       "eng": "Examples",
-      "ua": "Ідемпотентність"
+      "ua": "Приклади"
     },
-    "c11": {
+    "tests": {
       "ru": "Тесты",
       "eng": "Tests",
       "ua": "Тести"
     },
-    "c13": {
+    "methods": {
       "ru": "Методы",
       "eng": "Methods",
       "ua": "Методи"
     },
-    "c12": {
+    "after": {
       "ru": "После выполнения кода:",
-      "eng": "",
-      "ua": ""
+      "eng": "After running the code:",
+      "ua": "Після виконання коду:"
     },
-    "c15": {
+    "after_example": {
       "ru": "Например, в результате выполнения следующего кода:",
       "eng": "For example, as a result of executing the following code:",
       "ua": "Наприклад, внаслідок виконання такого коду:"
     },
-    "c19": {
+    "call_context": {
       "ru": "Контекст вызова",
-      "eng": "prototype",
+      "eng": "Call context",
       "ua": "Контекст виклику"
     },
-    "c16": {
+    "note": {
       "ru": "Примечание:",
       "eng": "Note:",
       "ua": "Примітка:"
     },
-    "c18": {
+    "objects": {
       "ru": "Объекты",
       "eng": "Objects",
       "ua": "Об’єкти"
     },
-    "c17": {
+    "markup": {
       "ru": "Разметка",
-      "eng": "",
-      "ua": ""
+      "eng": "Markup",
+      "ua": "Верстання"
     },
-    "c20": {
+    "generators_iterators": {
       "ru": "Генераторы и итераторы",
-      "eng": "",
-      "ua": ""
+      "eng": "Generators and iterators",
+      "ua": "Генератори та ітератори"
     },
-    "c21": {
+    "build": {
       "ru": "Сборка",
-      "eng": "",
-      "ua": ""
+      "eng": "Build",
+      "ua": "Збірка"
     },
-    "c22": {
+    "type_coercion": {
       "ru": "Приведение типов",
-      "eng": "",
-      "ua": ""
+      "eng": "Type coercion",
+      "ua": "Приведення типів"
     },
-    "c23": {
+    "arrays": {
       "ru": "Массивы",
       "eng": "Arrays",
-      "ua": ""
+      "ua": "Масиви"
     },
-    "c24": {
+    "install": {
       "ru": "Установка",
       "eng": "Installation",
       "ua": "Встановлення"
+    },
+    "condition": {
+      "ru": "Условие",
+      "eng": "Condition",
+      "ua": "Умова"
+    },
+    "expression": {
+      "ru": "выражение",
+      "eng": "expression",
+      "ua": "вираз"
+    },
+    "syntax": {
+      "ru": "Синтаксис",
+      "eng": "Syntax",
+      "ua": "Синтаксис"
     }
   },
   "topic": {
@@ -156,11 +171,11 @@
       "lessons": [
         "Final-project"
       ],
-      "eng": "",
+      "eng": "Sprint",
       "ua": ""
     },
     "t5": {
-      "ru": "Что произошло ?",
+      "ru": "Что произошло?",
       "lessons": [
         "BOM"
       ],
@@ -171,7 +186,7 @@
       "ru": "Генератор",
       "lessons": [],
       "eng": "Generator",
-      "ua": ""
+      "ua": "Генератор"
     },
     "t12": {
       "ru": "Цепочка областей видимости",

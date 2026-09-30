@@ -193,7 +193,7 @@ _____________________
 
 {{p33}}
 
-### ![ico-25 cap] {{common.c0}}
+### ![ico-25 cap] {{common.example}}
 
 ~~~js
 var iteratedObject = {
@@ -247,7 +247,7 @@ _____________________________
 
 {{p41}}
 
-### ![ico-25 cap] {{common.c0}} 1
+### ![ico-25 cap] {{common.example}} 1
 
 ~~~js
 var iteratedArray = [7, 8, 9]
@@ -295,7 +295,7 @@ for (var index in iteratedString) {
 
 _____________________________________________
 
-### ![ico-25 cap] {{common.c0}} 2
+### ![ico-25 cap] {{common.example}} 2
 
 ~~~js
 var article = {
@@ -315,7 +315,7 @@ for (var prop in article) {
 
 _______________________________
 
-### ![ico-25 cap] {{common.c0}} 3
+### ![ico-25 cap] {{common.example}} 3
 
 ~~~js
 var obj = {

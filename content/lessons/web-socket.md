@@ -54,7 +54,7 @@ Upgrade: websocket
 
 _____________________________________________
 
-## ![ico-25 hw] {{common.c3}} 1
+## ![ico-25 hw] {{common.exercise}} 1
 
 {{p11}}
 
@@ -117,7 +117,7 @@ DISCONNECTED
 
 _____________________________________________
 
-## ![ico-25 hw] {{common.c3}} 2
+## ![ico-25 hw] {{common.exercise}} 2
 
 {{p24}}
 
@@ -127,7 +127,7 @@ _____________________________________________
 
 {{p27}}
 
-### ![ico-20 bash] {{common.c24}}
+### ![ico-20 bash] {{common.install}}
 
 ••$ npm install ws••
 
@@ -241,7 +241,7 @@ socket.addEventListener('message', event => {
 
 {{p50}}
 
-{{common.c12}}
+{{common.after}}
 
 ~~~js
 const socket = new WebSocket('ws://localhost:8080')
@@ -283,7 +283,7 @@ received from a client:
 
 _____________________________________________
 
-## ![ico-25 hw] {{common.c3}} 3
+## ![ico-25 hw] {{common.exercise}} 3
 
 {{p61}}
 

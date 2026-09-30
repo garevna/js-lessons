@@ -39,7 +39,7 @@ not a day without writing a line of code!
 
 {{p23}}
 
-![ico-25 cap] **{{common.c0}} 1**
+![ico-25 cap] **{{common.example}} 1**
 
 ~~~js
 var lit = `
@@ -104,7 +104,7 @@ __________________________________________________________________
 
 {{{template-literals.js}}}
 
-![ico-25 cap] **{{common.c0}} 2**
+![ico-25 cap] **{{common.example}} 2**
 
 ~~~js
 var cities = ['Naples', 'Washington', 'Geneva']
@@ -124,7 +124,7 @@ ____________________________________________________________________
 
 {{p11}}
 
-![ico-25 cap] **{{common.c0}} 3**
+![ico-25 cap] **{{common.example}} 3**
 
 ~~~js
 var cities = ['Kyiv', 'Lviv', 'Kharkiv', 'Odesa', 'Dnipro']
@@ -145,7 +145,7 @@ Last&colon; Dnipro (6 letters)
 
 ______________________________________________________________________
 
-![ico-25 cap] **{{common.c0}} 4**
+![ico-25 cap] **{{common.example}} 4**
 
 {{p12}}
 
@@ -171,7 +171,7 @@ var color = `#${red}${green}${blue}`
 
 ______________________________________________________________________________
 
-![ico-25 cap] **{{common.c0}} 5**
+![ico-25 cap] **{{common.example}} 5**
 
 {{p19}}
 

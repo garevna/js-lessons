@@ -1,4 +1,4 @@
-## ![ico-25 webpack] {{common.c3}} 4
+## ![ico-25 webpack] {{common.exercise}} 4
 
 ### ![ico-20 webpack] {{p1}}
 
@@ -34,7 +34,7 @@
 
 ______________________________________________________________________
 
-### ![ico-20 webpack] {{common.c21}}
+### ![ico-20 webpack] {{common.build}}
 
 {{p11}}
 

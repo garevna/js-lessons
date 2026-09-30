@@ -21,7 +21,7 @@ console.log(message[4])  // R
 
 {{p8}}
 
-^^{{common.c15}}^^
+^^{{common.after_example}}^^
 
 ~~~js
 var  message = 'Привет', user = 'студент'
@@ -51,7 +51,7 @@ console.log('My new book'.indexOf('new'))
 
 {{p16}}
 
-^^{{common.c12}}^^
+^^{{common.after}}^^
 
 ~~~js
 var mainString = 'Дела идут неплохо'
@@ -76,7 +76,7 @@ console.log(pos)
 
 ^^^[slice()]
 
-^^{{common.c15}}^^
+^^{{common.after_example}}^^
 
 ~~~js
 var name = 'Меня зовут Мария'.slice(11, 16)

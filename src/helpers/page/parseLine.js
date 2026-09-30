@@ -29,8 +29,15 @@ export function parseLine (line) {
 
   if (line.match(/[→→→]{3}/)) {
     const text = line.split('→→→').find(str => str.length).trim()
-    let [quiz, variants, right] = text.split('|').map(item => item.trim())
-    variants = variants.split(',').map(variant => variant.trim())
+    // Read from the right: the answer is last, the choices before it, and
+    // everything left over is the question. Splitting into three from the
+    // left loses any question with a pipe in it, and a lesson about coercion
+    // asks about `[!!{}] || true` — the || was read as two empty separators,
+    // so the choices came out empty and the test showed one blank button.
+    const parts = text.split('|')
+    const right = (parts.pop() || '').trim()
+    const variants = (parts.pop() || '').split(',').map(variant => variant.trim())
+    const quiz = parts.join('|').trim()
     const elem = document.createElement('test-component')
     elem.setAttribute('quiz-question', quiz)
     elem.setAttribute('choice-variants', JSON.stringify(variants))

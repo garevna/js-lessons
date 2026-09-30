@@ -529,7 +529,7 @@ const randomize = item => item + Math.floor(item + Math.random() * 100)
 
 _____________________________________________
 
-## ![ico-25 icon] {{common.c10}}
+## ![ico-25 icon] {{common.examples}}
 
 {{p94}}
 

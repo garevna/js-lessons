@@ -1,4 +1,4 @@
-# ![ico-30 study] {{common.c22}}
+# ![ico-30 study] {{common.type_coercion}}
 
 {{p29}}
 {{p30}}
@@ -155,13 +155,15 @@ ___________________________________________________________________
 | ~array~     | {{p47}}               |
 | ~object~    | {{p48}}               |
 
-![ico-25 hw] {{common.c11}}
+![ico-25 hw] {{common.tests}}
 
+~~~tests
 →→→ Number(57) | NaN, 57, undefined | 57 →→→
 →→→ Number(4 * '8') | NaN, 32, 0 | 32 →→→
 →→→ Number([8]) | NaN, 8, 0 | 8 →→→
 →→→ Number([5] + [8]) | NaN, 13, 8, 5 | 13 →→→
 →→→ Number(null - true) | NaN, null, true, 1, -1, 0 | -1 →→→
+~~~
 
 ______________________________
 
@@ -173,17 +175,6 @@ ______________________________
 
 {{p15}}
 {{p16}}
-
-◘◘![ico-25 cap] **7**◘◘
-
-~~~js
-Number('3.14abc')      // NaN
-parseFloat('3.14abc')  // 3.14
-parseInt('3.14abc')    // 3
-
-Number('3.14/5')        // NaN
-parseFloat('3.14/5')    // 3.14
-~~~
 
 ~~~demo
 > var sample = '3.14abc'
@@ -211,16 +202,6 @@ ____________________________________________________________________
 ### ![ico-20 icon] {{p18}}
 
 {{p19}}
-
-~~~js
-Boolean('')
-Boolean(0)     
-Boolean(-0)  
-Boolean(NaN)
-Boolean(null)
-Boolean(undefined)
-Boolean(false)
-~~~
 
 ~~~demo
 > Boolean('')
@@ -317,8 +298,9 @@ Object(array)
 
 ____________________________________________________________________
 
-## ![ico-25 hw] {{common.c11}}
+## ![ico-25 hw] {{common.tests}}
 
+~~~tests
 →→→ var x = '10'; var y = x + 5; y = ? | 15, '105', NaN | 105 →→→
 →→→ var x = '10'; var y = x > 5; y = ? | 10, false, true | true →→→
 →→→ var x = null; var y = x < 1; y = ? | null, false, true | true →→→
@@ -350,6 +332,7 @@ ____________________________________________________________________
 →→→ 1 / [] | 1, null, undefined, Infinity, NaN | Infinity →→→
 →→→ 1 / '' | 1, null, undefined, Infinity, NaN | Infinity →→→
 →→→ !!5 && !![] | 5, [], undefined, Infinity, false, true | true →→→
+~~~
 
 ____________________________________________________________________
 

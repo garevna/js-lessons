@@ -12,7 +12,7 @@
 
 ____________________________________________________________________
 
-## ![ico-25 icon] {{p6}}
+## ![ico-25 icon] {{common.syntax}}
 
 {{p9}}
 
@@ -502,7 +502,7 @@ const drawLine = pict.drawLine
 drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 ~~~
 
-{{common.c5}}
+{{common.exception}}
 
 ~~~console
 <p class="error-message">Uncaught TypeError&colon; Cannot read property 'area' of undefined</p>
@@ -1117,7 +1117,7 @@ window.onresize = Canvas.resizeCanvas.bind(pict.canvas)
 
 {{p160}}
 
-![ico-20 pin] {{common.c16}}
+![ico-20 pin] {{common.note}}
 
 {{p161}}
 {{p162}}
@@ -1168,7 +1168,7 @@ window.onresize = Canvas.resizeCanvas
 
 ____________________________________________________________________
 
-## ![ico-25 cap] {{common.c0}}
+## ![ico-25 cap] {{common.example}}
 
 {{p171}}
 

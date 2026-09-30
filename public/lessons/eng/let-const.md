@@ -1,6 +1,6 @@
 # ![ico-30 study] let | const⟪let___const⟫
 
-**ES6 ( 2015 )**
+**ES6 (2015)**
 
 ________________________
 
@@ -12,7 +12,7 @@ The scope of variables declared using the **_var_** directive can only be restri
 
 ![ico-25 pin] Block scope is the restriction of scope within curly brackets
 
-◘◘![ico-25 cap] ** 1**◘◘
+◘◘![ico-25 cap] **1**◘◘
 
 ~~~js
 var x = 5
@@ -29,7 +29,7 @@ As a result, the garbage collector frees up memory by removing unnecessary varia
 
 ![ico-25 pin] The consequence of block scope for variables declared using the **_let_** directive is that the value of the loop variable is reset on each iteration of the _for_ block:
 
-◘◘![ico-25 cap] ** 2**◘◘
+◘◘![ico-25 cap] **2**◘◘
 
 ~~~js
 for (let i of [1, 2, 3, 4, 5]) {
@@ -39,7 +39,7 @@ for (let i of [1, 2, 3, 4, 5]) {
 }
 ~~~
 
-__________________________________________________________
+___
 
 ![ico-20 warn] Note that the absence of explicit curly brackets does not alter the behaviour of variables declared using the **_let_** directive
 
@@ -86,7 +86,7 @@ sigma
 omega
 ~~~
 
-_______________________
+___
 
 ### ![ico-25 icon] Hoisting and the ‘temporary dead zone’⟪Hoisting_and_the_‘temporary_dead_zone’⟫
 
@@ -100,26 +100,27 @@ This is how a **_temporary dead zone_** arises
 
 Therefore, as a result of executing the code:
 
-◘◘![ico-25 cap] ** 3**◘◘
+◘◘![ico-25 cap] **3**◘◘
 
 ~~~js
 {
   console.log(x)
-  // [ временная мёртвая зона ]
+  // [temporary dead zone]
   let x = 10
 }
 ~~~
 
 an exception will be thrown
 
-••![ico-25 err] ReferenceError: Cannot access 'x' before initialization••
+~~~console
+<p class="error-message">ReferenceError&colon; Cannot access 'x' before initialization</p>
+~~~
 
-_________________________
-
+___
 
 ![ico-25 pin] It is not possible to re-declare a variable with the same identifier within the same scope:
 
-◘◘![ico-25 cap] ** 4**◘◘
+◘◘![ico-25 cap] **4**◘◘
 
 ~~~js
 function sample () {
@@ -138,7 +139,9 @@ sample ()
 
 an exception will be thrown
 
-![ico-20 err] ~Uncaught SyntaxError: Identifier 'figure' has already been declared~
+~~~console
+<p class="error-message">Uncaught SyntaxError&colon; Identifier 'figure' has already been declared.</p>
+~~~
 
 It will run in the loop because the block {...} is clearly present
 
@@ -154,7 +157,7 @@ for (const prop in sample) {
 
 ![ico-25 pin] ~let~ does not create properties in the global object
 
-◘◘![ico-25 cap] ** 5**◘◘
+◘◘![ico-25 cap] **5**◘◘
 
 ~~~js
 var x = 25
@@ -163,7 +166,7 @@ window.x    //  25
 window.z    //  undefined
 ~~~
 
-______________________
+___
 
 ## ![ico-25 icon] const⟪const⟫
 
@@ -172,7 +175,7 @@ ______________________
 ![ico-20 pin] Generally, everything is the same as with ~let~, except:
 ![ico-20 warn] The value cannot be changed
 
-◘◘![ico-25 cap] ** 6**◘◘
+◘◘![ico-25 cap] **6**◘◘
 
 ~~~js
 const XXX = 11
@@ -181,11 +184,13 @@ XXX = 55
 
 an exception will be thrown
 
-![ico-20 err] ~Uncaught TypeError: Assignment to constant variable.~
+~~~console
+<p class="error-message">Uncaught TypeError&colon; Assignment to constant variable.</p>
+~~~
 
 ![ico-20 warn] You must initialise the value when declaring it
 
-◘◘![ico-25 cap] ** 7**◘◘
+◘◘![ico-25 cap] **7**◘◘
 
 ~~~js
 const XXX
@@ -193,11 +198,13 @@ const XXX
 
 an exception will be thrown
 
-••![ico-20 err] Uncaught SyntaxError: Missing initializer in const declaration••
+~~~console
+<p class="error-message">Uncaught SyntaxError&colon; Missing initializer in const declaration.</p>
+~~~
 
 If a constant is an object, the values of its properties can be changed:
 
-◘◘![ico-25 cap] ** 8**◘◘
+◘◘![ico-25 cap] **8**◘◘
 
 ~~~js
 const user = {
@@ -214,7 +221,7 @@ user.rights = ['read']
 
 The same applies to arrays:
 
-◘◘![ico-25 cap] ** 9**◘◘
+◘◘![ico-25 cap] **9**◘◘
 
 ~~~js
 const rights = ['read', 'write', 'delete']
@@ -222,6 +229,123 @@ rights[1] = null
 rights[2] = null
 ~~~
 
-_______________________________
+___
 
-※※※exercises https://docs.google.com/forms/d/e/1FAIpQLScPBbEkpMk9CNH935pToTh_BmyE1vqk2rnzu3Mhw9F-D-7V_w/viewform※※※
+### ![ico-25 hw] Tests⟪Tests⟫
+
+~~~js
+let getPrivate, setPrivate
+{
+  let privateVar
+  setPrivate = function (newValue) {
+    privateVar = newValue
+  }
+  getPrivate = function () {
+    return privateVar
+  }
+}
+
+setPrivate('exist')
+~~~
+
+~~~tests
+→→→ getPrivate() | 'exist', ReferenceError, undefined | exist →→→
+→→→ console.log(privateVar)  | 'exist', ReferenceError, undefined | ReferenceError →→→
+~~~
+
+___
+
+~~~js
+let Sample
+
+{
+  let privateScope = {}
+  Sample = function () {
+    privateScope.name = ''Hidden properties''
+  }
+  Sample.prototype.addHiddenProperty = function (newPropName, newPropValue) {
+    privateScope[newPropName] = newPropValue
+  }
+  Sample.prototype.getHiddenProperties = function () {
+    return privateScope
+  }             
+  Sample.prototype.getHiddenProperty = function (prop) {
+    return privateScope[prop]
+  }
+}
+
+var sample = new Sample()
+~~~
+
+~~~tests
+→→→ sample.getHiddenProperties()     | Array, Object, String, 'Hidden properties', ReferenceError, undefined | Object →→→
+→→→ sample.getHiddenProperty()       | Array, Object, String, 'Hidden properties', ReferenceError, undefined | undefined →→→
+→→→ sample.getHiddenProperty('name') | Array, Object, String, "''Hidden properties''", ReferenceError, undefined | ''Hidden properties'' →→→
+~~~
+
+___
+
+~~~js
+switch (figure) {
+  case 'circle':
+    let elem = createElement('div')
+    break
+  case 'picture':
+    let elem = createElement('img')
+    break
+  default:
+    let elem = undefined
+    break
+}
+~~~
+
+→→→ What will happen when the code is executed? | The value of elem will be a reference to a DOM element, The value of elem will be undefined, ReferenceError, SyntaxError | SyntaxError →→→
+
+___
+
+~~~js
+function test (varName) {
+  {
+    var x = 55
+    let y = 17
+  }
+  if (varName === 'x') {
+    console.log(x)
+  } else if (varName === 'y') {
+    console.log(y)
+  } else {
+    console.error('Invalid variable name.')
+  }
+}
+~~~
+
+~~~tests
+→→→ test('x') | 55, 17, ReferenceError, SyntaxError, '"Invalid variable name."' | 55 →→→
+→→→ test('y') | 55, 17, ReferenceError, SyntaxError, '"Invalid variable name."' | ReferenceError →→→
+~~~
+
+___
+
+~~~js
+function test (varName) {
+  console.log(varName === 'x' ? x : varName === 'y' ? y : 'Invalid variable name.')
+  var x = 55
+  let y = 17
+}
+~~~
+
+~~~tests
+→→→ test('x') | 55, 17, ReferenceError, SyntaxError, undefined | undefined →→→
+→→→ test('y') | 55, 17, ReferenceError, SyntaxError, undefined | ReferenceError →→→
+~~~
+
+___
+
+~~~js
+let s = 0
+for (let x of [1, 2, 3]) {
+  s += x++
+}
+~~~
+
+→→→ console.log(x) | 3, 4, ReferenceError, SyntaxError, undefined | ReferenceError →→→

@@ -93,6 +93,14 @@ const AFTER_ANSWER = 700
 const EXTRA = `
   :host { display: block; }
 
+  /* The caption sat on the text baseline and the button on its own box, so
+     the words hung below the triangle. One row, both centred on it. */
+  .demo-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
   .demo-button {
     cursor: pointer;
     font-family: var(--main-font);
@@ -118,8 +126,6 @@ const EXTRA = `
     font-family: var(--main-font);
     font-size: .9rem;
     color: #f50;
-    margin-left: 12px;
-    vertical-align: middle;
   }
 
   .demo-body {
@@ -245,7 +251,7 @@ class ConsoleDemo extends HTMLElement {
   connectedCallback () {
     if (this.section) return
 
-    const bar = createElem('div', this.shadow)
+    const bar = Object.assign(createElem('div', this.shadow), { className: 'demo-bar' })
 
     this.button = Object.assign(createElem('button', bar), {
       className: 'demo-button',

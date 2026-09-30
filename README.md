@@ -111,6 +111,7 @@ Each of these is recognised before anything else and rendered as a unit.
 |---|---|
 | <code>~~~js … ~~~</code> | a code sample (the language tag is optional) |
 | <code>~~~demo … ~~~</code> | a console session that types itself — see below |
+| <code>~~~tests … ~~~</code> | a block of questions, shown one at a time — see below |
 | <code>~~~~ … ~~~~</code> | a runnable script, collapsed |
 | `{{{ … }}}` | console output |
 | `^^^[Title]` … `^^^` | a spoiler; the title is shown, the body unfolds |
@@ -132,6 +133,14 @@ Each of these is recognised before anything else and rendered as a unit.
 The answer of a quiz has to match one of its variants exactly. A variant may be
 quoted — `'Google'` — and the quotes are consumed as attribute delimiters, so
 the answer is written without them.
+
+The question is read as whatever is left when the answer and the variants have
+been taken off the end, so a question may contain a pipe of its own:
+`[!!{}] || true | [true], true, NaN | [true]` asks what it looks like it asks.
+The variants and the answer may not — a pipe there is still a separator.
+
+`npm run blocks` reads every question the way the renderer does and says so if
+one has lost its choices, or if its answer is not among them.
 
 ### A console session
 
@@ -221,6 +230,36 @@ actually does. A block copied from the one above it with a value left unchanged
 is a wrong promise on a page somebody is learning from, and nothing else in the
 build reads these blocks as code. A value the console draws open — a function,
 an object — is counted as unchecked rather than guessed at.
+
+### A block of questions
+
+A run of questions wrapped in `~~~tests` is shown one at a time, with a count
+and a score above it, instead of standing on the page as a wall.
+
+```
+~~~tests
+→→→ Number('5') | 5, '5', NaN | 5 →→→
+→→→ Number('') | 0, NaN, undefined | 0 →→→
+→→→ Number('5a') | 5, NaN, undefined | NaN →→→
+~~~
+```
+
+The header is the count on the left — `2 из 3` in the reader's language — and
+two scores on the right, right answers on green and wrong ones on red.
+Answering slides the card up and brings the next one in. After the last, a card
+lists the questions that were missed, with what was chosen and what was right,
+and offers to start again.
+
+**Only wrap what is meant to be a quiz.** A lesson writes questions two ways
+and means different things by them: Boolean has twenty-nine of them, each
+standing after the paragraph it checks, while Explicit-type-conversion ends
+with thirty-one in a row. The first is the lesson asking whether you followed
+and belongs where it is; the second was two thirds of the page — 9500 pixels,
+a dozen screens of scrolling — and is a quiz. Wrapping the first kind would
+make a more compact lesson and a worse one.
+
+A question outside a `~~~tests` block is rendered exactly as before, on its
+own. Nothing changes for it.
 
 ### Components
 
@@ -564,22 +603,38 @@ one.
 
 ### The phrase book
 
-A page that says `или:` twelve times used to hold twelve keys, each with the
-same two characters in it and each translated on its own. Now the skeleton
-points at the book:
+A page that says `или:` eight times used to hold eight keys, each with the
+same word in it and each translated on its own. Now the skeleton points at the
+book:
 
 ```
-◘◘{{common.c17}}◘◘
+◘◘{{common.or}}◘◘
 ```
 
-and `content/phrases.json` holds the phrase once. 397 keys across 95 pages
+and `content/phrases.json` holds the phrase once. 322 keys across 89 pages
 point at it.
 
 Two sections, because repeating often does not make a phrase the course's.
 
 **`common`** — stock wording turning up in lessons that have nothing to do with
-each other. `Результат в консоли:` is on twelve different pages and means the
-same thing on all of them. Written as `{{common.c3}}`.
+each other. `Пример` is on twenty-two different pages and means the same thing
+on all of them. Written as `{{common.example}}`.
+
+A key is named after its English reading, in lower case with underscores:
+`{{common.result_in_console}}`, not `{{common.c2}}`. The name is what you read
+when editing a lesson, so it has to say what will appear there. One name carries
+a leading underscore — `_constructor` — because a plain object already answers
+to `constructor`, `toString` and `valueOf` from its prototype; a key by one of
+those names would once have resolved to the inherited function instead of the
+phrase. The lookup now asks for an own property, so it would fail loudly rather
+than write `undefined` into a lesson, but the underscore keeps the question
+from arising.
+
+Punctuation belongs to the lesson rather than the entry: `{{common.syntax}}:`
+in the skeleton, so one entry serves a heading and a mid-sentence mention
+alike. Seven of the twenty-six entries still carry their own colon — `result`,
+`result_in_console`, `or`, `or_this`, `after`, `after_example`, `note` — from
+before the rule; they are moved as the lessons using them are next edited.
 
 **`topic`** — wording that repeats inside one lesson. `строгий режим:` appears
 twelve times, all of them on the page about strict mode. Worth writing once,

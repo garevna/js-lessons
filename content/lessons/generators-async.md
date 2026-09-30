@@ -1,4 +1,4 @@
-# ![ico-30 study] {{common.c20}}
+# ![ico-30 study] {{common.generators_iterators}}
 
 **ES 2015**
 
@@ -234,7 +234,7 @@ showMessage('Привет, студент!')
 
 {{{generators-12.js}}}
 
-{{common.c16}}
+{{common.note}}
 {{p35}}
 
 ◘◘![ico-25 cap] ** 5**◘◘

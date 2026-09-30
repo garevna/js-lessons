@@ -116,7 +116,7 @@ typeof typeof boolean
 
 __________________________________________________
 
-## ![ico-30 icon] {{common.c11}}
+## ![ico-30 icon] {{common.tests}}
 
 ◘◘** 1**◘◘
 

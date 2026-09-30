@@ -2,7 +2,7 @@
 
 ________________________________
 
-## ![ico-25 hw] {{common.c3}} 8
+## ![ico-25 hw] {{common.exercise}} 8
 
 ### ![ico-20 icon] Google Fonts
 

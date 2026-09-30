@@ -1,4 +1,4 @@
-# ![ico-30 study] Генераторы и итераторы⟪heneratori_y_yteratori⟫
+# ![ico-30 study] Генераторы и итераторы⟪Generators_and_iterators⟫
 
 **ES 2015**
 

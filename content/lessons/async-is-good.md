@@ -25,7 +25,7 @@ const promise = sayHello()
 ![](illustrations/queue-microtask.svg)
 @@@@
 
-{{common.c15}}
+{{common.after_example}}
 
 ◘◘![ico-25 cap] ** 1**◘◘
 

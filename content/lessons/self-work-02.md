@@ -1,4 +1,4 @@
-## ![ico-25 hw] {{common.c8}} 1
+## ![ico-25 hw] {{common.task}} 1
 
 {{p1}}
 
@@ -29,7 +29,7 @@ function getStudentsList ( arrayOfStudents ) {
 
 _________________________________________________
 
-## ![ico-25 hw] {{common.c8}} 2
+## ![ico-25 hw] {{common.task}} 2
 
 {{p6}}
 
@@ -47,7 +47,7 @@ function addNewStudent ( name, lastName, age, notebook ... ) {
 
 ________________________________________
 
-## ![ico-25 hw] {{common.c8}} 3
+## ![ico-25 hw] {{common.task}} 3
 
 {{p11}}
 {{p12}}
@@ -56,7 +56,7 @@ ________________________________________
 
 ________________________________________
 
-## ![ico-25 hw] {{common.c8}} 4
+## ![ico-25 hw] {{common.task}} 4
 
 {{p15}}
 
@@ -66,7 +66,7 @@ ________________________________________
 
 ________________________________________
 
-## ![ico-25 hw] {{common.c8}} 5
+## ![ico-25 hw] {{common.task}} 5
 
 {{p19}}
 {{p20}}
@@ -76,7 +76,7 @@ names [ i ] ="Сергей",
 lastNames [ i ] = "Коломенцев"
 ~~~
 
-**{{common.c1}}**
+**{{common.result}}**
 
 ~~~javascript
 newArray [ i ] = "Сергей Коломенцев"

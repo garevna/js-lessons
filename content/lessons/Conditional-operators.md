@@ -1,19 +1,22 @@
 # ![ico-30 icon] {{p1}}
 
 {{p2}}
+
+•••• none
 {{p3}}
 {{p4}}
 {{p5}}
 {{p6}}
+••••
 
 {{p7}}
 
 {{p8}}
 
 ~~~js
-var x = 5            // будет выполнена первой
-var y = 11           // будет выполнена второй
-var z = x * y + 5    // будет выполнена третьей
+var x = 5            // {{p12}}
+var y = 11           // {{p49}}
+var z = x * y + 5    // {{p50}}
 ~~~
 
 {{p9}}
@@ -23,45 +26,44 @@ _______________________________________________________________________________
 ## ![ico-25 icon] {{p10}}
 
 ~~~js
-Если (домашнее задание выполнено) {
-  идем в кино
-} в противном случае {
-  остаемся дома
+{{p40}} ({{p41}}) {
+  {{p42}}
+} {{p43}} {
+  {{p44}}
 }
 ~~~
 
 {{p11}}
-{{p12}}
 
 ~~~js
-Если (!!выражение) {
-  делаем так
-} в противном случае {
-  делаем что-то другое
+{{p40}} (!!{{common.expression}}) {
+  {{p46}}
+} {{p43}} {
+  {{p47}}
 }
 ~~~
 
 {{p13}}
 
-{{p14}}
+{{common.syntax}}:
 
 ~~~js
-if (!!выражение) {  
-  скрипт1
+if (!!{{common.expression}}) {  
+  {{p48}} 1
 } else {
-  скрипт 2
+  {{p48}} 2
 }
 ~~~
 
-{{p15}}
+{{p15}} <span class="first-expression">{{p48}} 1</span> <span class="second-expression">{{p48}} 2</span>
 
 {{p16}}
 
-{{p17}}
+| {{p51}}       | {{p17}}   |
+| **~true~**    | <span class="first-expression">{{p48}} 1</span> |
+| **~false~**   | <span class="second-expression">{{p48}} 2</span> |
 
-{{p18}}
-
-![ico-20 warn] {{common.c16}}
+^^^[{{common.note}}]
 
 {{p19}}
 
@@ -73,9 +75,11 @@ if (i % 2 !== 0) continue
 
 {{p20}}
 
+^^^
+
 _________________________________________________________________
 
-^^^[{{common.c0}} 1]
+◘◘![ico-25 cap] {{common.example}} 1◘◘
 
 ~~~js
 if (typeof x === 'number') {
@@ -94,13 +98,13 @@ else {
 
 {{p23}}
 
-^^^
-
 _________________________________________________________________
 
 ## ![ico-25 icon] {{p24}}
 
-{{p25}}
+{{common.syntax}}:
+
+<span class="condition-expression">{{common.condition}}</span><span class="ternary-sign">?</span><span class="first-expression">{{common.expression}} 1</span><span class="ternary-sign">:</span><span class="second-expression">{{common.expression}} 2</span>
 
 {{p26}}
 
@@ -110,16 +114,18 @@ _________________________________________________________________
 
 {{p29}}
 
-{{p30}}
+| <span class="condition-expression">{{common.condition}}</span> |  {{p30}}                                                       |
+| **~true~**                                                     | <span class="first-expression">{{common.expression}} 1</span>  |
+| **~false~**                                                    | <span class="second-expression">{{common.expression}} 2</span> |
 
 {{p31}}
 
 _____________________________________________________________
 
-#### ![ico-30 cap] Example 1
+◘◘![ico-25 cap] **1**◘◘
 
 ~~~js
-var meet = sourse === 'fruit' ? 'apple' : 'mashroom'
+var meet = source === 'fruit' ? 'apple' : 'mashroom'
 ~~~
 
 {{p32}}
@@ -128,51 +134,139 @@ var meet = sourse === 'fruit' ? 'apple' : 'mashroom'
 
 {{p34}}
 
-______________________________________________________________
-
-#### ![ico-30 cap] Example 2
-
-~~~js
-var result = expresion ? 'Все правильно' : 'Ошибка'
+~~~demo
+> var source = 'fruit'
+< undefined
+> var meet = source === 'fruit' ? 'apple' : 'mashroom'
+< undefined
+> meet
+< 'apple'
+> source = null
+< null
+> meet = source === 'fruit' ? 'apple' : 'mashroom'
+< 'mashroom'
 ~~~
 
-{{p35}}
+______________________________________________________________
 
-{{p36}}
+◘◘![ico-25 cap] **2**◘◘
 
-{{p37}}
+~~~js
+var result = expresion ? '{{p26}}' : '{{p27}}'
+~~~
+
+{{p35}} **~"{{p26}}"~**.
+
+{{p36}} **~"{{p27}}"~**.
+
+{{p37}} **~"{{p26}}"~**:
 
 ~~~js
 var expresion = 'Google'
-...
-var result = expresion ? 'Все правильно' : 'Ошибка'
+var result = expresion ? '{{p26}}' : '{{p27}}'
 ~~~
 
-{{p38}}
+{{p38}}  **~"{{p27}}"~**:
 
 ~~~js
 var expresion = null
-...
-var result = expresion ? 'Все правильно' : 'Ошибка'
+var result = expresion ? '{{p26}}' : '{{p27}}'
 ~~~
 
-_________________________________________________________
+~~~demo
+> var x = 8
+< undefined
+> var expresion = x > 5
+< undefined
+> var result = expresion ? '{{p26}}' : '{{p27}}'
+< undefined
+> meet
+< '{{p26}}'
+> expresion = x < 5
+< false
+> result = expresion ? '{{p26}}' : '{{p27}}'
+< '{{p27}}'
+~~~
 
-#### ![ico-30 cap] Example 3
+___
+
+◘◘![ico-25 cap] **3**◘◘
 
 ~~~js
-var sourse = 'picture'
+var angle = Math.PI / 2
 
-console.log(sourse === 'video' ? 'Видосик' : 'Картинка')
+console.log(angle < Math.PI ? Math.sin(angle) : Math.cos(angle))
 ~~~
 
 {{p39}}
 
-_____________________________________________________________
+___
 
 [![ico-20 link] MDN](external/mdn-expressions-operators)
 [![ico-20 link] w3schools](external/w3-if-else)
 
-_____________________________________________________________
+___
 
-※※※exercises ⟦f21⟧※※※
+## ![ico-25 hw] {{common.tests}}
+
+◘◘ ![ico-20 hw] **1** ◘◘
+
+~~~js
+if (a > b) {
+  console.log(a - b)
+}
+else {
+  console.log(a + b)
+}
+~~~
+
+{{p52}}
+
+~~~tests
+→→→ a = 5, b = 7 | 5, 7, -2, 12 | 12 →→→
+→→→ a = 5, b = -7 | 5, -7, -2, 12 | 12 →→→
+→→→ a = 4, b = null | 4, null, undefined, 0, NaN | 4 →→→
+→→→ a = null, b = -7 | null, undefined, -7, 7, NaN | 7 →→→
+→→→ a = 8, b = undefined | null, undefined, 8, NaN | NaN →→→
+→→→ a = true, b = false | true, false, 1, 0, NaN | 1 →→→
+→→→ a = false, b = true | true, false, 1, -1, NaN | 1 →→→
+→→→ a = null, b = false | true, false, 1, 0, NaN | 0 →→→
+→→→ a = 4, b = true | true, 4, 5, 3, NaN | 3 →→→
+~~~
+
+◘◘ ![ico-20 hw] **2** ◘◘
+
+~~~js
+if (userName) {
+  console.log('{{p53}}: ' + userName)
+} else {
+  console.log('{{p54}}')
+}
+~~~
+
+{{p52}}
+
+~~~tests
+→→→ userName === undefined | '{{p53}}: undefined', '{{p53}}:', '{{p54}}', undefined | {{p54}} →→→
+→→→ userName === null | '{{p53}}: null', '{{p53}}:', '{{p54}}', undefined | {{p54}} →→→
+→→→ username === 'Robert' | '{{p53}}: Robert', '{{p54}}', undefined | {{p53}}: Robert →→→
+~~~
+
+◘◘ ![ico-20 hw] **3** ◘◘
+
+~~~js
+var c = a > b ? a - b : a + b
+~~~
+
+{{p52}}
+
+~~~tests
+→→→ var a = false, b = true | NaN, true, false, 2, 1, -1, 0 | 1 →→→
+→→→ var a = true, b = false | NaN, true, false, 2, 1, -1, 0 | 1 →→→
+→→→ var a = true, b = true  | NaN, true, false, 2, 1, -1, 0 | 2 →→→
+→→→ var a = -true, b = null | NaN, true, false, 2, 1, -1, 0 | -1 →→→
+→→→ var a = Infinity, b = Infinity | NaN, 0, 1, -1, Infinity | Infinity →→→
+→→→ var a = '$', b = 5 | NaN, 0, 5, -5, '$5' | $5 →→→
+→→→ var a = 'welcome ', b = typeof a | NaN, 'welcome', 'welcome string' | NaN →→→
+→→→ var a = 'hello ', b = typeof a | NaN, 'hello', 'string', 'number', 'hello string' | hello string →→→
+~~~

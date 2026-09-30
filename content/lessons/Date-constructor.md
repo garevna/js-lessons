@@ -1,7 +1,7 @@
 # ![ico-30 study] Date()
 
 
-## ![ico-25 icon] {{common.c7}}
+## ![ico-25 icon] {{common._constructor}}
 
 {{p1}}
 
@@ -49,7 +49,7 @@ newData instanceof Date    // true
 
 {{p11}}
 
-## ![ico-25 icon] {{common.c13}}
+## ![ico-25 icon] {{common.methods}}
 
 {{p12}}
 

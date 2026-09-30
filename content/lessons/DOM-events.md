@@ -75,7 +75,7 @@ document.body.ondomnodeinserted = function (event) {
 document.body.appendChild(document.createElement('div'))
 ~~~
 
-**{{common.c1}}**
+**{{common.result}}**
 
 ~~~~console
 
@@ -617,7 +617,7 @@ _________________________
 
 ![ico-25 cap] ** 9**
 
-^^^[{{common.c17}}]
+^^^[{{common.markup}}]
 
 ~~~html
 <div id="main-frame" class="wrapper">

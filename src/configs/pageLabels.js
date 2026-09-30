@@ -21,9 +21,29 @@ export const pageLabels = {
     ua: 'Результат у консолі'
   },
   consoleDemo: {
-    ru: 'Демонстрация в консоли',
+    ru: 'Демо в консоли',
     eng: 'Console demo',
-    ua: 'Демонстрація в консолі'
+    ua: 'Демо в консолі'
+  },
+  outOf: {
+    ru: 'из',
+    eng: 'of',
+    ua: 'з'
+  },
+  mistakes: {
+    ru: 'Ошибок',
+    eng: 'Mistakes',
+    ua: 'Помилок'
+  },
+  allRight: {
+    ru: 'Все ответы верные',
+    eng: 'All answers correct',
+    ua: 'Усі відповіді правильні'
+  },
+  again: {
+    ru: 'Пройти заново',
+    eng: 'Start again',
+    ua: 'Пройти заново'
   },
   tests: {
     ru: 'Тесты',

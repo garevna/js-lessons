@@ -704,7 +704,7 @@ message => {
 
 _____________________________________________
 
-## ![ico-20 icon] {{common.c10}}
+## ![ico-20 icon] {{common.examples}}
 
 ### ![ico-25 cap] 7
 
@@ -1116,7 +1116,7 @@ fetch(`${origin}/users?name=Stephan&name=Andry`)
   .then(console.log)
 ~~~
 
-{{common.c9}}
+{{common.or_this}}
 
 ~~~js
 const origin = 'https://js-lessons-sandbox.garevna.workers.dev/json-server'

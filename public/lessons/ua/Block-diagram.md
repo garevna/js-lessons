@@ -48,19 +48,19 @@ ________________________________________________________________________________
 
 Блок операцій - прямокутник - дозволяє вам використовувати різний рівень деталізації. В один такий блок можна вписати одразу цілу послідовність простих дій, а можна кожну таку просту дію помістити в окремий блок.
 
-<div class="flowchart-endpoints">Begin<div>
+<div class="flowchart-endpoints">Begin</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Взяти штани<div>
+<div class="flowchart-process">Взяти штани</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Почистити штани<div>
+<div class="flowchart-process">Почистити штани</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Пришити ґудзик<div>
+<div class="flowchart-process">Пришити ґудзик</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Попрасувати штани<div>
+<div class="flowchart-process">Попрасувати штани</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Одягти штани<div>
+<div class="flowchart-process">Одягти штани</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-endpoints">End<div>
+<div class="flowchart-endpoints">End</div>
 
 _______________________________________________________
 

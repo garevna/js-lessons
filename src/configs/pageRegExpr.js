@@ -70,7 +70,12 @@ const pageRegExpr = {
   // undefined (reading 'split')", and the page stopped rendering there.
   //
   // There is exactly one slider in the course, and this still matches it.
-  Slider: /!!\[[^\]\n|]+\]/,
+  // A whole line, because that is what a slider is — it sits alone, and the
+  // one in the course is written that way. Without the anchor it was any
+  // !![…] anywhere on a line, and a lesson about coercion writes !![5] in
+  // the middle of a test question: the pattern lifted it out as a fragment
+  // and tore the question in half.
+  Slider: /^!!\[[^\]\n|]+\]$/m,
   // ••••  …  ••••  — several lines on the black ground.
   //
   // ••one line•• has always been inline, so a paragraph on black had to be

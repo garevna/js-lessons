@@ -62,25 +62,25 @@ var number = 10
 number = number + 8
 ~~~
 
-{{common.c6}}
+{{common.or}}
 
 ~~~js
 number = number * 4
 ~~~
 
-{{common.c6}}
+{{common.or}}
 
 ~~~js
 number = number / 2
 ~~~
 
-{{common.c6}}
+{{common.or}}
 
 ~~~js
 number = number - 5
 ~~~
 
-{{common.c6}}
+{{common.or}}
 
 ~~~js
 number = number % 4
@@ -95,25 +95,25 @@ number = number % 4
 number += 8
 ~~~
 
-{{common.c6}}
+{{common.or}}
 
 ~~~js
 number *= 4
 ~~~
 
-{{common.c6}}
+{{common.or}}
 
 ~~~js
 number /= 2
 ~~~
 
-{{common.c6}}
+{{common.or}}
 
 ~~~js
 number -= 5
 ~~~
 
-{{common.c6}}
+{{common.or}}
 
 ~~~js
 number %= 4

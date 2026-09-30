@@ -108,5 +108,50 @@
     "ru": "Аналогично с массивами:",
     "eng": "The same applies to arrays:",
     "ua": "Аналогічно з масивами:"
+  },
+  "p23": {
+    "ru": "временная мёртвая зона",
+    "eng": "temporary dead zone",
+    "ua": "тимчасова мертва зона"
+  },
+  "p24": {
+    "ru": "Что вернет",
+    "eng": "What does the function return?",
+    "ua": "Що поверне"
+  },
+  "p25": {
+    "ru": "Массив",
+    "eng": "Array",
+    "ua": "Масив"
+  },
+  "p26": {
+    "ru": "Объект",
+    "eng": "Object",
+    "ua": "Об’єкт"
+  },
+  "p27": {
+    "ru": "Строку",
+    "eng": "String",
+    "ua": "Рядок"
+  },
+  "p28": {
+    "ru": "'Скрытые свойства'",
+    "eng": "'Hidden properties'",
+    "ua": "Приховані властивості"
+  },
+  "p29": {
+    "ru": "Что произойдет в результате выполнения кода?",
+    "eng": "What will happen when the code is executed?",
+    "ua": "Що відбудеться в результаті виконання коду?"
+  },
+  "p30": {
+    "ru": "значение elem будет ссылкой на элемент DOM",
+    "eng": "The value of elem will be a reference to a DOM element",
+    "ua": "значення elem буде посиланням на елемент DOM"
+  },
+  "p31": {
+    "ru": "значение elem будет undefined",
+    "eng": "The value of elem will be undefined",
+    "ua": "значення elem буде undefined"
   }
 }

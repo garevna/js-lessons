@@ -1,6 +1,6 @@
 # ![ico-30 study] {{p1}}
 
-## ![ico-25 hw] {{common.c8}}
+## ![ico-25 hw] {{common.task}}
 
 ### ![ico-20 sand-watch] {{topic.t4}} 1
 

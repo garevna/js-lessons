@@ -53,7 +53,7 @@ ________________________________
 console.dir(Function)
 ~~~
 
-^^^[{{common.c2}}]
+^^^[{{common.result_in_console}}]
 
 ~~~console
 ▼ ƒ Function()
@@ -92,7 +92,7 @@ function func () {
 console.dir(func)
 ~~~
 
-^^^[{{common.c2}}]
+^^^[{{common.result_in_console}}]
 
 ~~~console
 ▼ ƒ func()
@@ -159,7 +159,7 @@ I'm figure
 
 ____________________________________
 
-## ![ico-25 icon] {{common.c19}}
+## ![ico-25 icon] {{common.call_context}}
 
 @@@@
 ![](slogans/funcs-call-girls.svg)

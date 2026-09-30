@@ -159,7 +159,7 @@ I'm figure
 
 ____________________________________
 
-## ![ico-25 icon] prototype⟪prototype⟫
+## ![ico-25 icon] Call context⟪Call_context⟫
 
 @@@@
 ![](slogans/funcs-call-girls.svg)

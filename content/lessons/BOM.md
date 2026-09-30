@@ -80,7 +80,7 @@ ________________________________________________
 {{p20}}
 {{p21}}
 
-^^^[{{common.c3}} 1]
+^^^[{{common.exercise}} 1]
 
 {{p22}}
 
@@ -200,7 +200,7 @@ _____________________________________
 
 ![](illustrations/console-methods.png)
 
-^^^[{{common.c3}} 2]
+^^^[{{common.exercise}} 2]
 
 ^^{{topic.t1}}^^
 ~~~js
@@ -247,7 +247,7 @@ ______________________________________
 
 ^^^
 
-^^^[{{common.c3}} 3]
+^^^[{{common.exercise}} 3]
 
 ^^{{topic.t1}}^^
 ~~~js
@@ -279,7 +279,7 @@ win.close()
 
 ^^^
 
-^^^[{{common.c3}} 4]
+^^^[{{common.exercise}} 4]
 
 ^^{{topic.t1}}^^
 ~~~js
@@ -345,7 +345,7 @@ ___________________________________________
 
 ### ![ico-20 icon] document
 
-^^^[{{common.c3}} 5]
+^^^[{{common.exercise}} 5]
 
 ^^{{topic.t1}}^^
 
@@ -360,7 +360,7 @@ console.log(newWin.document.body)
 
 ^^^
 
-^^^[{{common.c3}} 6]
+^^^[{{common.exercise}} 6]
 
 ^^{{topic.t1}}^^
 
@@ -376,7 +376,7 @@ newWin.close()
 
 ^^^
 
-^^^[{{common.c3}} 7]
+^^^[{{common.exercise}} 7]
 
 ^^{{topic.t1}}^^
 

@@ -27,7 +27,7 @@
 
 __________________________________________
 
-## ![ico-25 hw] {{common.c3}} 6
+## ![ico-25 hw] {{common.exercise}} 6
 
 
 {{p12}}
@@ -139,7 +139,7 @@ module.exports = {
 
 ___________________________________
 
-![ico-20 webpack] **{{common.c21}}**
+![ico-20 webpack] **{{common.build}}**
 
 {{p19}}
 {{p20}}

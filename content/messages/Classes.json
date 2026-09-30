@@ -24,11 +24,6 @@
     "eng": "However, it should be borne in mind that this is merely a layer of 'cellophane' in which the same old constructor has been wrapped.",
     "ua": "Однак слід пам’ятати, що це всього лише 'целофан', у який загорнули той самий конструктор."
   },
-  "p6": {
-    "ru": "Синтаксис",
-    "eng": "Syntax",
-    "ua": "Синтаксис"
-  },
   "p7": {
     "ru": "![ico-20 warn] Код внутри тела класса всегда выполняется в **_⟦f1⟧_**",
     "eng": "![ico-20 warn] Code within the class body is always executed in **_⟦f1⟧_**",

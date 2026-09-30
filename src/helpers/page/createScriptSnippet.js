@@ -21,6 +21,9 @@ export function buildSnippet (fragment) {
   const [word, ...title] = lang.split(/\s+/)
   if (word === 'demo') return [this.createConsoleDemo(fragment, title.join(' '))]
 
+  // A block of questions, shown one at a time rather than as a wall.
+  if (word === 'tests') return [this.createTestSeries(fragment, title.join(' '))]
+
   if (lang === 'error') return [this.createErrorOutput(fragment)]
   if (lang === 'warn' || lang === 'warning') return [this.createWarningOutput(fragment)]
 

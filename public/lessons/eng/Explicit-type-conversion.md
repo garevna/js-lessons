@@ -1,4 +1,4 @@
-# ![ico-30 study] Приведение типов⟪pryvedenye_typov⟫
+# ![ico-30 study] Type coercion⟪Type_coercion⟫
 
 The fact that the engine allows us to use different data types in expressions leads to undesirable consequences: we can never be certain of the data type of the result. Such ambiguity leads to errors and application failures.
 One of the most troublesome consequences of such ambiguity is the appearance of the insidious value **~NaN~** (~Not a Number~) in our calculations.
@@ -157,11 +157,13 @@ So, the constructor function **~Number()~** accepts only primitive values; there
 
 ![ico-25 hw] Tests
 
+~~~tests
 →→→ Number(57) | NaN, 57, undefined | 57 →→→
 →→→ Number(4 * '8') | NaN, 32, 0 | 32 →→→
 →→→ Number([8]) | NaN, 8, 0 | 8 →→→
 →→→ Number([5] + [8]) | NaN, 13, 8, 5 | 13 →→→
 →→→ Number(null - true) | NaN, null, true, 1, -1, 0 | -1 →→→
+~~~
 
 ______________________________
 
@@ -173,17 +175,6 @@ Fortunately, there are more flexible alternatives.
 
 To convert to an integer or a floating-point number (with decimal places), you can use the built-in functions ~parseInt~ and ~parseFloat~.
 Unlike the **~Number~** constructor, these functions parse the string even if it contains ‘leading’ characters after the number – these characters will simply be ignored:
-
-◘◘![ico-25 cap] **7**◘◘
-
-~~~js
-Number('3.14abc')      // NaN
-parseFloat('3.14abc')  // 3.14
-parseInt('3.14abc')    // 3
-
-Number('3.14/5')        // NaN
-parseFloat('3.14/5')    // 3.14
-~~~
 
 ~~~demo
 > var sample = '3.14abc'
@@ -211,16 +202,6 @@ ____________________________________________________________________
 ### ![ico-20 icon] Explicit conversion to ~boolean~⟪Explicit_conversion_to_~boolean~⟫
 
 ![ico-20 warn] In all the cases listed below, the result will be ~false~:
-
-~~~js
-Boolean('')
-Boolean(0)     
-Boolean(-0)  
-Boolean(NaN)
-Boolean(null)
-Boolean(undefined)
-Boolean(false)
-~~~
 
 ~~~demo
 > Boolean('')
@@ -319,6 +300,7 @@ ____________________________________________________________________
 
 ## ![ico-25 hw] Tests⟪Tests⟫
 
+~~~tests
 →→→ var x = '10'; var y = x + 5; y = ? | 15, '105', NaN | 105 →→→
 →→→ var x = '10'; var y = x > 5; y = ? | 10, false, true | true →→→
 →→→ var x = null; var y = x < 1; y = ? | null, false, true | true →→→
@@ -350,6 +332,7 @@ ____________________________________________________________________
 →→→ 1 / [] | 1, null, undefined, Infinity, NaN | Infinity →→→
 →→→ 1 / '' | 1, null, undefined, Infinity, NaN | Infinity →→→
 →→→ !!5 && !![] | 5, [], undefined, Infinity, false, true | true →→→
+~~~
 
 ____________________________________________________________________
 

@@ -56,7 +56,7 @@ function testArguments () {
 testArguments() // testArguments
 ~~~
 
-^^^[{{common.c0}} 2]
+^^^[{{common.example}} 2]
 
 {{p14}}
 
@@ -94,7 +94,7 @@ x('До свидания!')
 
 ^^^
 
-^^^[{{common.c0}} 3]
+^^^[{{common.example}} 3]
 
 ![ico-25 cap] ** 3 **
 
@@ -129,7 +129,7 @@ setProperty('method', function () {
 
 ^^^
 
-^^^[{{common.c0}} 4]
+^^^[{{common.example}} 4]
 
 ![ico-25 cap] ** 4 **
 
@@ -171,7 +171,7 @@ console.log(factorial.res)
 
 {{p35}}
 
-^^^[{{common.c0}} 5]
+^^^[{{common.example}} 5]
 
 ![ico-25 cap] ** 5 **
 
@@ -250,7 +250,7 @@ _______________________________________________
 
 ^^^
 
-^^^[{{common.c19}}]
+^^^[{{common.call_context}}]
 
 ![ico-30 ambulance]
 
@@ -259,7 +259,7 @@ _______________________________________________
 
 ^^^
 
-## ![ico-25 icon] {{common.c19}}
+## ![ico-25 icon] {{common.call_context}}
 
 {{p54}}
 
@@ -278,7 +278,7 @@ patient.emergency()
 
 _______________________________
 
-^^^[{{common.c0}} 6]
+^^^[{{common.example}} 6]
 
 ![ico-25 cap] ** 6 **
 
@@ -404,7 +404,7 @@ ______________________________________________
 {{p105}}
 {{p106}}
 
-^^^[{{common.c0}} 7]
+^^^[{{common.example}} 7]
 
 ![ico-25 cap] ** 7 **
 
@@ -465,7 +465,7 @@ x = 1, y = 1
 
 ^^^
 
-^^^[{{common.c0}} 8]
+^^^[{{common.example}} 8]
 
 ![ico-25 cap] ** 8**
 
@@ -545,7 +545,7 @@ ___________________________
 
 ^^^
 
-^^^[{{common.c0}} 9]
+^^^[{{common.example}} 9]
 
 ![ico-25 cap] ** 9**
 
@@ -581,7 +581,7 @@ sample = 10
 
 ^^^
 
-^^^[{{common.c0}} 10]
+^^^[{{common.example}} 10]
 
 ![ico-25 cap] **10**
 
@@ -622,7 +622,7 @@ Now sample === 1
 
 ^^^
 
-^^^[{{common.c0}} 11]
+^^^[{{common.example}} 11]
 
 ![ico-25 cap] **11**
 

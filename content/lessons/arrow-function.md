@@ -2,7 +2,7 @@
 
 **ES6**
 
-## ![ico-25 icon] {{p2}}
+## ![ico-25 icon] {{common.syntax}}
 
 ![ico-20 error] **_function_**
 
@@ -170,7 +170,7 @@ const arrowFunc = () => null
 const obj = new arrowFunc()
 ~~~
 
-{{common.c5}}
+{{common.exception}}
 
 ~~~error
     TypeError: arrowFunc is not a constructor
@@ -228,7 +228,7 @@ testArguments(5, false)
 
 ______________________________________________________
 
-### ![ico-20 icon] {{common.c19}}
+### ![ico-20 icon] {{common.call_context}}
 
 {{p28}}
 
@@ -279,7 +279,7 @@ human.showName = () => console.log(this.name)
 {{p42}}
 
 ----------------
-#### ![ico-20 icon] {{common.c7}}
+#### ![ico-20 icon] {{common._constructor}}
 
 {{p43}}
 
@@ -386,7 +386,7 @@ ____________________________________________________
 
 _____________________________________________________
 
-## ![ico-20 icon] {{common.c10}}
+## ![ico-20 icon] {{common.examples}}
 
 ◘◘![ico-25 cap] ** 1**◘◘
 ~~~js

@@ -16,7 +16,7 @@ __________________________
 
 ^^^
 
-### ![ico-25 cap] {{common.c0}} 1
+### ![ico-25 cap] {{common.example}} 1
 
 ~~~html
 <html>
@@ -59,7 +59,7 @@ document.all.namedItem('fonts')
 
 _________________________________________
 
-### ![ico-25 cap] {{common.c0}} 2
+### ![ico-25 cap] {{common.example}} 2
 
 {{p6}}
 
@@ -75,7 +75,7 @@ console.log(document.all.namedItem('div'))
 
 ________________________________________________
 
-### ![ico-25 cap] {{common.c0}} 3
+### ![ico-25 cap] {{common.example}} 3
 
 {{p8}}
 

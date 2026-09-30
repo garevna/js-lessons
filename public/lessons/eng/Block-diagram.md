@@ -48,19 +48,19 @@ Transition from one action to another is represented by arrows.
 
 The block of operations (a rectangle) allows you to use different level of detail. A whole sequence of simple actions can be written into one such block, or each such simple action can be placed in a separate block.
 
-<div class="flowchart-endpoints">Begin<div>
+<div class="flowchart-endpoints">Begin</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Get your trousers<div>
+<div class="flowchart-process">Get your trousers</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Clean your trousers<div>
+<div class="flowchart-process">Clean your trousers</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Sew on a button<div>
+<div class="flowchart-process">Sew on a button</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Iron the trousers<div>
+<div class="flowchart-process">Iron the trousers</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-process">Put the trousers on<div>
+<div class="flowchart-process">Put the trousers on</div>
 <div class="flowchart-arrow">↓</div>
-<div class="flowchart-endpoints">End<div>
+<div class="flowchart-endpoints">End</div>
 
 _______________________________________________________
 

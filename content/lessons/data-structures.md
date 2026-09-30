@@ -39,7 +39,7 @@ var students = group
 
 _________________________________________________
 
-## ![ico-30 icon] {{common.c23}}
+## ![ico-30 icon] {{common.arrays}}
 
 {{p22}}
 
@@ -200,7 +200,7 @@ var hello = 'Hi ' + students[1] + '!'
 
 _____________________________________________________________
 
-## ![ico-25 icon] {{common.c18}}
+## ![ico-25 icon] {{common.objects}}
 
 {{p51}}
 

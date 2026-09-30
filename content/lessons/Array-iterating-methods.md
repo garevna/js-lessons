@@ -346,7 +346,7 @@ _____________________
 
 ____________________
 
-![ico-25 memo] {{common.c3}}
+![ico-25 memo] {{common.exercise}}
 
 {{p68}}
 
@@ -1077,7 +1077,7 @@ Array.prototype.pow = function () {
 
 ______________________________________
 
-### ![ico-25 hw] {{common.c11}}
+### ![ico-25 hw] {{common.tests}}
 
 {{p163}}
 

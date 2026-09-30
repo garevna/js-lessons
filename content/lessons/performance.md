@@ -311,7 +311,7 @@ fetch('https://httpbin.org')
   })
 ~~~
 
-^^^[{{common.c1}}]
+^^^[{{common.result}}]
 
 ~~~console
 ▼ (4) [PerformanceMark, PerformanceMeasure, PerformanceResourceTiming, PerformanceMark]
@@ -380,7 +380,7 @@ fetch('https://httpbin.org')
   })
 ~~~
 
-^^^[{{common.c1}}]
+^^^[{{common.result}}]
 
 ~~~console
 ▼ [ PerformanceResourceTiming ]
@@ -460,7 +460,7 @@ _______________________________________________________________
 console.log(performance.getEntriesByType('resource'))
 ~~~
 
-^^^[{{common.c1}}]
+^^^[{{common.result}}]
 
 ~~~console
 ▼ [PerformanceResourceTiming]
@@ -503,7 +503,7 @@ fetch('https://httpbin.org/')
   .then(response => console.log(performance.getEntriesByType('resource')))
 ~~~
 
-^^^[{{common.c1}}]
+^^^[{{common.result}}]
 
 ~~~console
 ▼ [PerformanceResourceTiming]

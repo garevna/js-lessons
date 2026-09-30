@@ -12,7 +12,7 @@
 
 _________________________________________
 
-![ico-20 cap] **{{common.c0}} 1**
+![ico-20 cap] **{{common.example}} 1**
 
 ◘◘![ico-20 file] script.js◘◘
 
@@ -83,7 +83,7 @@ lib.message('Вы еще не знакомы с Node.js ?')
 
 ••![ico-20 bash] node start.js••
 
-**{{common.c1}}**
+**{{common.result}}**
 
 •••• none
 {{p73}}
@@ -137,7 +137,7 @@ path.resolve(__dirname, 'build')
 
 _______________________
 
-![ico-20 cap] **{{common.c0}} 1**
+![ico-20 cap] **{{common.example}} 1**
 
 
 ◘◘![ico-20 file] webpack.config.js◘◘
@@ -210,7 +210,7 @@ ____________________________________________________________________
 
 ________________________________________________________________
 
-## ![ico-25 webpack] {{common.c3}} 5
+## ![ico-25 webpack] {{common.exercise}} 5
 
 {{p55}}
 
@@ -241,7 +241,7 @@ import css from '../css/main.css'
 
 __________________________________________________
 
-**{{common.c21}}**
+**{{common.build}}**
 
 {{p58}}
 
@@ -303,7 +303,7 @@ module.exports = {
 _________________________________________________________________________
 
 
-### ![ico-20 webpack] {{common.c21}}
+### ![ico-20 webpack] {{common.build}}
 
 {{p67}}
 

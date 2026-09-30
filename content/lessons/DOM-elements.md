@@ -30,7 +30,7 @@ document
   .appendChild (section)
 ~~~
 
-◘◘{{common.c1}}◘◘
+◘◘{{common.result}}◘◘
 
 ~~~html
 &ltbody>
@@ -56,7 +56,7 @@ style
   .appendChild(document.createTextNode(`div { color: blue; }`))
 ~~~
 
-◘◘{{common.c1}}◘◘
+◘◘{{common.result}}◘◘
 
 ~~~html
 &lthead>
@@ -109,7 +109,7 @@ var figure = document.querySelector('.figure')
 figure.appendChild(removed)
 ~~~
 
-◘◘{{common.c1}}◘◘
+◘◘{{common.result}}◘◘
 
 ~~~html
 &ltbody>
@@ -140,7 +140,7 @@ var figure = addElement ('figure', main)
 main.insertBefore(document.createElement('p'), section)
 ~~~
 
-◘◘{{common.c1}}◘◘
+◘◘{{common.result}}◘◘
 
 ~~~html
 &ltbody>
@@ -179,7 +179,7 @@ section.insertAdjacentHTML('beforeEnd', '<p>beforeEnd</p>')
 section.insertAdjacentHTML('afterEnd', '<p>afterEnd</p>')
 ~~~
 
-◘◘{{common.c1}}◘◘
+◘◘{{common.result}}◘◘
 
 ~~~html
 &ltbody>
@@ -224,7 +224,7 @@ document.getElementsByTagName('figure')[0]
   .insertAdjacentElement('afterbegin', document.createElement('li'))
 ~~~
 
-◘◘{{common.c1}}◘◘
+◘◘{{common.result}}◘◘
 
 ~~~html
 &ltbody>

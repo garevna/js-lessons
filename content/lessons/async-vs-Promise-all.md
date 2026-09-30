@@ -2,7 +2,7 @@
 
 {{p1}}
 
-![ico-25 cap] **{{common.c0}} 1**
+![ico-25 cap] **{{common.example}} 1**
 
 {{p2}}
 
@@ -63,7 +63,7 @@ time: 1001.474365234375ms
 
 _________________________________
 
-![ico-25 cap] **{{common.c0}} 2**
+![ico-25 cap] **{{common.example}} 2**
 
 ~~~~js
 function getData (typ) {

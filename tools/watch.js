@@ -124,34 +124,27 @@ const build = (page) => {
 const stamp = () => new Date().toTimeString().slice(0, 8)
 
 /**
- * The two files that describe the content rather than being it: the registry
- * of which pages exist in which language, and the map of content hashes the
- * service worker checks pages against.
+ * The registry of which pages exist in which language. It is a file in
+ * public/, fetched at runtime rather than compiled in, so keeping it current
+ * after a save costs forty milliseconds and no webpack at all.
  *
- * Neither is compiled into a bundle any more — both are written straight into
- * public/ and fetched at runtime — so keeping them current costs a third of a
- * second and no webpack at all. It used to mean rebuilding the content
- * worker, which is why a newly translated page took five seconds to appear.
+ * The map of content hashes used to be rebuilt here too, and that was another
+ * hundred and thirty-five — a quarter of the wait between saving a lesson and
+ * seeing it — for something nothing on the page reads. live-server ignores the
+ * file, the service worker is switched off on localhost, and the deploy builds
+ * its own. It is rebuilt by npm run content, by npm run full, and by CI, which
+ * is early enough for everything that actually reads it.
  */
 const refreshRegistry = () => {
   const started = Date.now()
-  const said = []
 
-  const scripts = [
-    ['content-worker/build-content.js', []],
-    ['service-worker/config-service-worker.js', ['--versions']]
-  ]
-
-  for (const [script, args] of scripts) {
-    try {
-      const out = execFileSync(process.execPath, [path.join(root, script), ...args], { cwd: root, encoding: 'utf8' })
-      said.push(out.trim().split('\n').filter(Boolean).pop() || '')
-    } catch (error) {
-      said.push(String(error.stdout || error.message).split('\n').filter(Boolean).pop() || '')
-    }
+  try {
+    const out = execFileSync(process.execPath, [path.join(root, 'content-worker/build-content.js')], { cwd: root, encoding: 'utf8' })
+    console.log(`  ${stamp()}  ${out.trim().split('\n').filter(Boolean).pop() || ''}  (${Date.now() - started} мс)`)
+  } catch (error) {
+    console.log(`  ${stamp()}  реестр пересобрать не удалось:`)
+    console.log(String(error.stdout || error.message).split('\n').filter(Boolean).slice(-3).map((l) => `            ${l}`).join('\n'))
   }
-
-  console.log(`  ${stamp()}  ${said.join('  |  ')}  (${Date.now() - started} мс)`)
 }
 
 const run = () => {
@@ -277,7 +270,7 @@ const watchSource = () => {
 watchSource()
 
 console.log(`
-  Слежу за content/ — правь, страница пересоберётся сама (~0,4 с).
+  Слежу за content/ — правь, страница пересоберётся сама (~0,35 с).
   И за src/ — стили и компоненты пересоберутся в бандлы (~1,5 с).
   Рядом, в другом терминале:  npm start   →  localhost:8181
 

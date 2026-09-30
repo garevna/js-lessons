@@ -105,29 +105,29 @@
     "ua": "Блок операцій - прямокутник - дозволяє вам використовувати різний рівень деталізації. В один такий блок можна вписати одразу цілу послідовність простих дій, а можна кожну таку просту дію помістити в окремий блок."
   },
   "p22": {
-    "ru": "<div class=\"flowchart-process\">Взять штаны<div>",
-    "eng": "<div class=\"flowchart-process\">Get your trousers<div>",
-    "ua": "<div class=\"flowchart-process\">Взяти штани<div>"
+    "ru": "<div class=\"flowchart-process\">Взять штаны</div>",
+    "eng": "<div class=\"flowchart-process\">Get your trousers</div>",
+    "ua": "<div class=\"flowchart-process\">Взяти штани</div>"
   },
   "p23": {
-    "ru": "<div class=\"flowchart-process\">Почистить штаны<div>",
-    "eng": "<div class=\"flowchart-process\">Clean your trousers<div>",
-    "ua": "<div class=\"flowchart-process\">Почистити штани<div>"
+    "ru": "<div class=\"flowchart-process\">Почистить штаны</div>",
+    "eng": "<div class=\"flowchart-process\">Clean your trousers</div>",
+    "ua": "<div class=\"flowchart-process\">Почистити штани</div>"
   },
   "p24": {
-    "ru": "<div class=\"flowchart-process\">Пришить пуговицу<div>",
-    "eng": "<div class=\"flowchart-process\">Sew on a button<div>",
-    "ua": "<div class=\"flowchart-process\">Пришити ґудзик<div>"
+    "ru": "<div class=\"flowchart-process\">Пришить пуговицу</div>",
+    "eng": "<div class=\"flowchart-process\">Sew on a button</div>",
+    "ua": "<div class=\"flowchart-process\">Пришити ґудзик</div>"
   },
   "p25": {
-    "ru": "<div class=\"flowchart-process\">Погладить штаны<div>",
-    "eng": "<div class=\"flowchart-process\">Iron the trousers<div>",
-    "ua": "<div class=\"flowchart-process\">Попрасувати штани<div>"
+    "ru": "<div class=\"flowchart-process\">Погладить штаны</div>",
+    "eng": "<div class=\"flowchart-process\">Iron the trousers</div>",
+    "ua": "<div class=\"flowchart-process\">Попрасувати штани</div>"
   },
   "p26": {
-    "ru": "<div class=\"flowchart-process\">Надеть штаны<div>",
-    "eng": "<div class=\"flowchart-process\">Put the trousers on<div>",
-    "ua": "<div class=\"flowchart-process\">Одягти штани<div>"
+    "ru": "<div class=\"flowchart-process\">Надеть штаны</div>",
+    "eng": "<div class=\"flowchart-process\">Put the trousers on</div>",
+    "ua": "<div class=\"flowchart-process\">Одягти штани</div>"
   },
   "p27": {
     "ru": "Каждый из блоков \"Почистить штаны\" или \"Пришить пуговицу\" можно развернуть в отдельную последовательность действий.",

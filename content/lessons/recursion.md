@@ -78,7 +78,7 @@ function factor (num) {
 {{p14}}
 {{p15}}
 
-## ![ico-25 hw] {{common.c3}}
+## ![ico-25 hw] {{common.exercise}}
 
 {{p16}}
 

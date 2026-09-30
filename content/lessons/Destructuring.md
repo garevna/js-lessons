@@ -20,7 +20,7 @@
 
 _______________________________________________________________
 
-## ![ico-25 icon] {{common.c23}}
+## ![ico-25 icon] {{common.arrays}}
 
 {{p11}}
 
@@ -156,7 +156,7 @@ new Date(...new Date().toLocaleDateString().split('.').reverse())
 user.birthday = new Date(...).toLocaleDateString()
 ~~~
 
-{{common.c6}}
+{{common.or}}
 
 ~~~js
 user.birthday = '27.05.2001'
@@ -170,7 +170,7 @@ const userBirthday = new Date(...user.birthday.split('.').reverse())
 
 _____________________________________________________________
 
-## ![ico-25 icon] {{common.c18}}
+## ![ico-25 icon] {{common.objects}}
 
 {{p27}}
 
@@ -485,7 +485,7 @@ ____________________________________________________________________
 
 {{p62}}
 
-{{common.c17}}
+{{common.markup}}
 
 ◘◘![ico-20 cap] 15 (html)◘◘
 
@@ -613,7 +613,7 @@ test({ a: 5, b: 7, c: 8 })  // 20
 
 _________________________
 
-### ![ico-30 hw] {{common.c3}}
+### ![ico-30 hw] {{common.exercise}}
 
 {{p69}}
 

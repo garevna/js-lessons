@@ -130,11 +130,11 @@ for (const page of pages) {
   const skeleton = fs.readFileSync(path.join(CONTENT, 'lessons', `${page}.md`), 'utf8')
   const fragments = readJson(path.join(CONTENT, 'fragments', `${page}.json`)) || []
   // A page can legitimately have no message file: if every key in its skeleton
-  // points at the shared phrase book, there is nothing left to keep per page.
-  // async-is-good-eng is exactly that — one key, {{common.c0}} — and when the
-  // empty file was tidied away the build started refusing to run, which took
-  // the deploy with it. A page that really is missing its text still fails,
-  // one line per key, from the lookup below.
+  // points at the shared phrase book, or the page has no keys at all, there is
+  // nothing left to keep per page — XMLHttpRequest is the second kind. The
+  // build used to refuse to run when such a file was tidied away, and took the
+  // deploy with it. A page that really is missing its text still fails, one
+  // line per key, from the lookup below.
   const entries = readJson(path.join(CONTENT, 'messages', `${page}.json`)) || {}
 
   const render = (lang, report) => skeleton

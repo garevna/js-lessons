@@ -1,8 +1,6 @@
 const { createElem, createPath } = require('../helpers').default
 const { formatText } = require('../helpers/page').default
 
-const { getTestElement } = require('../templates').default
-
 const { testStyles } = require('../styles').default
 
 const getVariantTemplate = (choiceVariant, index) => `
@@ -63,6 +61,14 @@ class TestComponent extends HTMLElement {
         Object.assign(this.result, {
           className: right ? 'success-result' : 'failure-result'
         })
+
+        // A test on its own answers to nobody; one inside a series is counted
+        // and moved past, and the series has no other way to know.
+        this.dispatchEvent(new CustomEvent('answered', {
+          bubbles: true,
+          composed: true,
+          detail: { right, question: this.quizQuestion, chosen: event.target.value, answer: this.rightChoice }
+        }))
       }.bind(this)
     }
   }

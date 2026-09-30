@@ -54,7 +54,7 @@ test instanceof AsyncFunction
 const AsyncFunctionConstructor = test.__proto__.constructor
 ~~~
 
-^^{{common.c6}}^^
+^^{{common.or}}^^
 
 ~~~js
 const AsyncFunction = (async function () {}).__proto__.constructor
@@ -89,7 +89,7 @@ __________________________________
 
 {{p9}}
 
-◘◘![ico-20 cap] {{common.c0}} 1◘◘
+◘◘![ico-20 cap] {{common.example}} 1◘◘
 
 ~~~js
 (async function () {})
@@ -120,7 +120,7 @@ __________________________________
 {{p13}}
 {{p14}}
 
-◘◘![ico-20 cap] {{common.c0}} 2◘◘
+◘◘![ico-20 cap] {{common.example}} 2◘◘
 
 ~~~js
 const func = arg => console.log(arg)

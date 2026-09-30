@@ -859,7 +859,7 @@ parent.appendChild(elem)
 
 {{p101}}
 
-{{common.c12}}
+{{common.after}}
 
 ~~~js
 figure.appendChild(paragraph)
@@ -1106,7 +1106,7 @@ getMethods.call(Document.prototype, 'get')
 
 ![ico-25 coffee] ** 1**
 
-◘◘{{common.c17}}◘◘
+◘◘{{common.markup}}◘◘
 
 ~~~html
 &lt;body>
@@ -1233,7 +1233,7 @@ section.querySelectorAll('*')
 
 _________________________________________________
 
-## ![ico-30 hw] {{common.c11}}
+## ![ico-30 hw] {{common.tests}}
 
 ◘◘![ico-25 hw]** 1**◘◘
 ~~~js

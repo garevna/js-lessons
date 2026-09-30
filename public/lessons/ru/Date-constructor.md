@@ -1,7 +1,7 @@
 # ![ico-30 study] Date()⟪Date⟫
 
 
-## ![ico-25 icon] Конструктор⟪Call_context⟫
+## ![ico-25 icon] Конструктор⟪Constructor⟫
 
 Создать объект даты и времени можно с помощью конструктора **Date()**
 

@@ -1,6 +1,6 @@
 # ![ico-30 icon] FileReader
 
-**{{common.c7}}**
+**{{common._constructor}}**
 
 {{p1}}
 
@@ -11,7 +11,7 @@ var reader = new FileReader()
 {{p2}}
 
 
-^^^[{{common.c13}}]
+^^^[{{common.methods}}]
 • ~ ƒ~ **~readAsArrayBuffer()~**
 • ~ ƒ~ **~readAsBinaryString()~**
 • ~ ƒ~ **~readAsDataURL()~**

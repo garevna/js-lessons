@@ -2,7 +2,7 @@
 
 **ES6**
 
-**{{common.c7}}**
+**{{common._constructor}}**
 
 {{p1}}
 
@@ -102,7 +102,7 @@ console.log(sample)
 
 ______________________________________
 
-## ![ico-25 cap] {{common.c0}} 1
+## ![ico-25 cap] {{common.example}} 1
 
 {{p11}}
 
@@ -158,7 +158,7 @@ console.log(usersNewSet)
 
 _______________________________________________________
 
-## ![ico-25 icon] {{common.c0}} 2
+## ![ico-25 icon] {{common.example}} 2
 
 {{p16}}
 
@@ -200,7 +200,7 @@ console.log(humanSet)
 
 _____________________________________________________________
 
-## ![ico-25 cap] {{common.c0}} 3
+## ![ico-25 cap] {{common.example}} 3
 
 {{p17}}
 
@@ -268,7 +268,7 @@ ___________________________________________________
 
 {{p20}}
 
-## ![ico-25 cap] {{common.c0}} 4
+## ![ico-25 cap] {{common.example}} 4
 
 {{p21}}
 

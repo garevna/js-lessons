@@ -4,11 +4,6 @@
     "eng": "Arrow functions",
     "ua": "Стрілкові функції"
   },
-  "p2": {
-    "ru": "Синтаксис",
-    "eng": "Syntax",
-    "ua": "Синтаксис"
-  },
   "p3": {
     "ru": "В сигнатуре стрелочной функции нет слова **_function_**:",
     "eng": "In the signature of an arrow function, there's no word **_function_**:",

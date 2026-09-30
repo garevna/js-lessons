@@ -61,7 +61,7 @@ _________________________________________________________________________
 
 ![ico-25 cap] ** 1**
 
-^^{{common.c15}}^^
+^^{{common.after_example}}^^
 
 ~~~js
 var arrayOfThings = ['Nail', 'Bicycle', 'Processor', 'Disk', 'Program']

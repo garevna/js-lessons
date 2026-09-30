@@ -382,7 +382,7 @@ var obj = Object.create(null)
 
 {{p119}}
 
-{{common.c9}}
+{{common.or_this}}
 
 ~~~js
 var obj = {}
@@ -562,7 +562,7 @@ console.dir( Object.__proto__.constructor.name)
 
 _____________________________________________________
 
-## ![ico-25 cap] {{common.c0}}
+## ![ico-25 cap] {{common.example}}
 
 {{p143}}
 

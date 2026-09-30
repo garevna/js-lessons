@@ -218,7 +218,7 @@ for (var x = 0; x < 10000; x++) {}
 console.timeEnd('for')
 ~~~
 
-Что произошло ?
+Что произошло?
 
 ^^^
 
@@ -275,7 +275,7 @@ location.hash
 win.close()
 ~~~
 
-Что произошло ?
+Что произошло?
 
 ^^^
 
@@ -356,7 +356,7 @@ newWin.document.write('<script>document.write(\'<h3>Hello!</h3>\')</script>')
 console.log(newWin.document.body)
 ~~~
 
-Что произошло ?
+Что произошло?
 
 ^^^
 
@@ -372,7 +372,7 @@ console.log(newWin.document.body)
 newWin.close()
 ~~~
 
-Что произошло ?
+Что произошло?
 
 ^^^
 

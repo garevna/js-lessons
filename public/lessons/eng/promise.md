@@ -6,7 +6,7 @@ ________________________________________________________________________________
 
 __________________________________________________________________________________________
 
-## ![ico-30 icon] Call context⟪Call_context⟫
+## ![ico-30 icon] Constructor⟪Constructor⟫
 
 The function-argument of the **~Promise~** constructor is also a **higher-order function**, i.e. its formal parameters are **functions**.
 ^^Moreover, its formal parameters are callback functions.^^

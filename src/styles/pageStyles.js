@@ -204,6 +204,33 @@ menu-component {
   }
 }
 
+.condition-expression,
+.first-expression,
+.second-expression {
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.condition-expression {
+  background: #09b;
+}
+
+.first-expression {
+  background: #090;
+}
+
+.second-expression {
+  background: #770;
+}
+
+.ternary-sign {
+  margin-inline: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f50;
+}
+
 ::-webkit-scrollbar  {
   width: 4px;
   height: 4px;

@@ -33,7 +33,7 @@ typeof bigNumber // 'bigint'
 
 _____________________________________________________________
 
-### ![ico-20 icon] {{common.c22}}
+### ![ico-20 icon] {{common.type_coercion}}
 
 {{p8}}
 
@@ -130,7 +130,7 @@ _____________________________________________________________
 bigNumber * 2
 ~~~
 
-{{common.c5}}
+{{common.exception}}
 
 ![ico-20 err]
 
@@ -144,7 +144,7 @@ bigNumber * 2
 Math.sin(bigNumber)
 ~~~
 
-{{common.c5}}
+{{common.exception}}
 
 ![ico-20 err]
 

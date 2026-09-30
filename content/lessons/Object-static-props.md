@@ -110,7 +110,7 @@ ________________________
 {{p17}}
 {{p18}}
 
-^^^[{{common.c0}} 4]
+^^^[{{common.example}} 4]
 
 ~~~js
 function Figure (figType) {
@@ -287,7 +287,7 @@ function SubClass () {
 var sample = new SubClass()
 ~~~
 
-**{{common.c1}}**
+**{{common.result}}**
 
 ![](illustrations/Object-static-props-02.png)
 
@@ -784,7 +784,7 @@ ____________________________________________________
 
 ^^^[{{p61}}]
 
-![ico-25 cap] **{{common.c0}} 18**
+![ico-25 cap] **{{common.example}} 18**
 
 ~~~js
 var provider = { name: 'Google' }
@@ -802,7 +802,7 @@ console.log(provider) // { name: "Google" }
 
 ^^^[{{p62}}]
 
-![ico-25 cap] **{{common.c0}} 19**
+![ico-25 cap] **{{common.example}} 19**
 
 ~~~js
 var provider = { name: 'Google', service: 'API' }
@@ -818,7 +818,7 @@ console.log(provider) // { name: "Google", service: "API" }
 
 ^^^[{{p63}}]
 
-![ico-25 cap] **{{common.c0}} 20**
+![ico-25 cap] **{{common.example}} 20**
 
 ~~~js
 var provider = { name: "Google", service: "API" }
@@ -900,7 +900,7 @@ Object.defineProperty(provider, 'service', {
 })
 ~~~
 
-{{common.c5}}
+{{common.exception}}
 
 ••![ico-20 error] Uncaught TypeError: Cannot redefine property: service••
 

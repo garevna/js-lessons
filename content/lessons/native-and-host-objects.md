@@ -10,7 +10,7 @@ _____________________________________________
 
 ^^^[{{p5}}]
 
-**{{common.c18}}**
+**{{common.objects}}**
      ^^Math^^
      ^^JSON^^
 {{p6}}
@@ -45,7 +45,7 @@ var obj = {
 {{p9}}
 
 ^^^[{{p10}}]
-**{{common.c18}}**
+**{{common.objects}}**
      ^^window^^
      ^^document^^
      ^^history^^
@@ -95,7 +95,7 @@ console.log(figure.radius)
 console.log(figure.color)
 ~~~
 
-{{common.c9}}
+{{common.or_this}}
 
 ~~~js
 console.log(figure['type'])
@@ -332,13 +332,13 @@ console.dir(Array.__proto__.__proto__)  // Object
 
 ____________________________
 
-![ico-25 hw] **{{common.c3}}**
+![ico-25 hw] **{{common.exercise}}**
 
 {{p72}}
 
 _________________________
 
-## ![ico-25 icon] {{common.c7}}
+## ![ico-25 icon] {{common._constructor}}
 
 {{p73}}
 

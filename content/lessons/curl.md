@@ -4,7 +4,7 @@
 
 [![ico-50 curl]](https://curl.se/docs/tutorial.html)
 
-{{p2}}
+{{common.syntax}}:
 
 {{p3}}
 
