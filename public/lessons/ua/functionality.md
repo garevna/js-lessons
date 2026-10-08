@@ -237,7 +237,7 @@ elefant
 Однак якщо аргумент функції **~animal~** виявиться не функцією, то при спробі його виклику (у круглих дужках) буде згенеровано виняток (**~TypeError~**)
 
 ~~~console
-<p class="error-message">Uncaught TypeError&colon; func is not a function</p>
+! Uncaught TypeError: func is not a function
 ~~~
 
 Щоб уникнути цього, трохи змінимо код функції **~animal~**, додавши перевірку типу аргументу:

@@ -21,6 +21,11 @@ const { testSeriesStyles } = require('../styles').default
  * is where it belongs, and moving it into a series at the end of the lesson
  * would be a worse lesson, more compact.
  */
+// Long enough to be seen as a pause rather than a flicker. The old 900 was
+// chosen to show a colour, before anything was drawn to say why the card was
+// about to leave.
+const WAIT = 1600
+
 class TestSeries extends HTMLElement {
   constructor () {
     super()
@@ -33,6 +38,12 @@ class TestSeries extends HTMLElement {
     this.right = 0
     this.wrong = 0
     this.missed = []
+  }
+
+  /** The card an event actually came from, through the shadow boundary. */
+  sender (event) {
+    const path = typeof event.composedPath === 'function' ? event.composedPath() : []
+    return path.find((node) => this.tests.includes(node)) || null
   }
 
   word (name) {
@@ -51,16 +62,33 @@ class TestSeries extends HTMLElement {
     this.rightBox = Object.assign(createElem('span', score), { className: 'right', textContent: '0' })
     this.wrongBox = Object.assign(createElem('span', score), { className: 'wrong', textContent: '0' })
 
+    // Drains while the next card is on its way. Without it the card simply
+    // vanished: nothing on screen said that answering had started anything,
+    // so the page appeared to move on its own.
+    this.timer = Object.assign(createElem('div', this.shadow), { className: 'timer' })
+    this.bar = createElem('span', this.timer)
+
     this.stage = Object.assign(createElem('div', this.shadow), { className: 'stage' })
 
     for (const test of this.tests) {
       const slot = Object.assign(createElem('div', this.stage), { className: 'slot' })
+      // Told before it is answered, because what a card does on being
+      // answered depends on whether anything follows it.
+      test.inSeries = true
       slot.appendChild(test)
     }
 
     this.slots = [...this.stage.children]
 
-    this.addEventListener('answered', (event) => this.answered(event.detail))
+    // composedPath, not target. The cards sit inside this element's shadow
+    // tree and the listener is on the host, so an event crossing that
+    // boundary is retargeted: every card arrives as `event.target === this`,
+    // and the series could not tell which of them had been answered.
+    this.addEventListener('answered', (event) => this.answered(event.detail, this.sender(event)))
+
+    // A card that waits for the reader says so by sending this when they are
+    // ready, instead of being taken away on a timer.
+    this.addEventListener('next', () => this.advance())
 
     this.show()
   }
@@ -74,18 +102,62 @@ class TestSeries extends HTMLElement {
     })
   }
 
-  answered ({ right, question, chosen, answer }) {
+  answered ({ right, question, chosen, answer }, card) {
     right ? this.right++ : this.wrong++
     if (!right) this.missed.push({ question, chosen, answer })
 
     this.rightBox.textContent = String(this.right)
     this.wrongBox.textContent = String(this.wrong)
 
-    // Long enough to see the answer go green or red before the card leaves.
-    setTimeout(() => {
-      this.at++
-      this.at < this.tests.length ? this.show() : this.finish()
-    }, 900)
+    // Nine hundred milliseconds is long enough to watch an answer go green or
+    // red, and that is all there is to see when the answer is the word NaN.
+    //
+    // A card that answers with a sentence — why this option is wrong, which
+    // one was right — is being read, not glanced at, and a timer would carry
+    // it off mid-sentence. Those cards keep the reader in charge: they put up
+    // a button and send 'next' when it is pressed.
+    if (card && card.waitsForReader) return
+
+    this.countDown()
+  }
+
+  /**
+   * The wait before the next card, made visible.
+   *
+   * It was 900ms and silent. That is long enough to see an answer go green,
+   * which is what it was for, and far too short to be understood as a pause —
+   * the card was simply gone, and nothing had said it would be.
+   *
+   * Longer, with a bar draining across the width, and the two together say
+   * what one alone could not: something is about to happen, and this is how
+   * much of it is left.
+   */
+  countDown () {
+    this.timer.classList.add('running')
+
+    // From full to empty, started on the next frame so the browser has a
+    // width to animate away from rather than two styles set in one go.
+    this.bar.style.transition = 'none'
+    this.bar.style.width = '100%'
+
+    // Reading a layout property forces the full width to be committed before
+    // the next two lines change it. Without that the browser sees one style
+    // change, from empty to empty, and there is nothing to animate.
+    void this.bar.offsetWidth
+
+    this.bar.style.transition = `width ${WAIT}ms linear`
+    this.bar.style.width = '0%'
+
+    clearTimeout(this.waiting)
+    this.waiting = setTimeout(() => {
+      this.timer.classList.remove('running')
+      this.advance()
+    }, WAIT)
+  }
+
+  advance () {
+    this.at++
+    this.at < this.tests.length ? this.show() : this.finish()
   }
 
   /**
@@ -128,9 +200,17 @@ class TestSeries extends HTMLElement {
   }
 
   restart () {
+    clearTimeout(this.waiting)
+    this.timer.classList.remove('running')
     this.stage.querySelector('.summary').remove()
 
     for (const test of this.tests) {
+      // A card with more state than its radios — quiz-card hides an
+      // explanation under each option — clears itself.
+      if (typeof test.reset === 'function') {
+        test.reset()
+        continue
+      }
       for (const radio of test.shadowRoot.querySelectorAll('input')) {
         Object.assign(radio, { disabled: false, checked: false, style: '' })
       }

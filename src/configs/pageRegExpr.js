@@ -90,6 +90,23 @@ const pageRegExpr = {
   // Anchored to whole lines so it cannot be confused with the inline form,
   // and lazy so two blocks on a page stay two blocks.
   BlackBlock: /^[ \t]*•{4}[ \t]*[a-z_-]*[ \t]*$[\s\S]*?^[ \t]*•{4}[ \t]*$/m,
+  // ♣♣♣♣  …  ♣♣♣♣  — questions whose options are sentences, one per
+  // line: ? the question, + the right option, - a wrong one, = why.
+  //
+  // The short form of a question is a line (→→→) and the long form has to be
+  // a block, because its fields are sentences and one of them repeats
+  // another — see createQuiz.
+  //
+  // Anchored to whole lines and lazy, the same as BlackBlock: that is the
+  // shape of fence pattern that has never eaten more than it meant to.
+  Quiz: /^[ \t]*♣{4}[ \t]*$[\s\S]*?^[ \t]*♣{4}[ \t]*$/m,
+  // ♠♠♠♠  …  ♠♠♠♠  — code with something wrong in it, which the reader
+  // edits and the checks grade. The opening fence carries the task; ??? on a
+  // line of its own divides the code from the checks — see createCodeFix.
+  //
+  // Anchored and lazy, like BlackBlock and Quiz. The opening fence is allowed
+  // a tail because the task is written on it.
+  CodeFix: /^[ \t]*♠{4}[ \t]*.*$[\s\S]*?^[ \t]*♠{4}[ \t]*$/m,
   Grid: /\@\@\@\@\s+\S+[^\@\@\@\@]*]*\@\@\@\@/m,
   Table: /\n\n\|(.+|\n[^\n\n])+/gm,
   [Symbol.iterator]: generator

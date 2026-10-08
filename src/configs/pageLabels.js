@@ -25,6 +25,11 @@ export const pageLabels = {
     eng: 'Console demo',
     ua: 'Демо в консолі'
   },
+  terminalDemo: {
+    ru: 'Терминал',
+    eng: 'Terminal',
+    ua: 'Термінал'
+  },
   outOf: {
     ru: 'из',
     eng: 'of',
@@ -39,6 +44,21 @@ export const pageLabels = {
     ru: 'Все ответы верные',
     eng: 'All answers correct',
     ua: 'Усі відповіді правильні'
+  },
+  runChecks: {
+    ru: 'Проверить',
+    eng: 'Check',
+    ua: 'Перевірити'
+  },
+  restoreCode: {
+    ru: 'Вернуть исходный',
+    eng: 'Reset code',
+    ua: 'Повернути вихідний'
+  },
+  next: {
+    ru: 'Далее',
+    eng: 'Next',
+    ua: 'Далі'
   },
   again: {
     ru: 'Пройти заново',

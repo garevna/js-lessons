@@ -52,5 +52,19 @@ export const icons = {
   // 'active-main-menu-icon': 'folder',
   // 'active-expanded-main-menu-icon': 'folder_open_active',
   'menu-icon-image': 'table_of_contents',
-  'menu-symbol': 'table_of_contents_white'
+  'menu-symbol': 'table_of_contents_white',
+
+  // The same name spelled the other way. The lessons write these, the asset
+  // files are named the other way round, and a name the worker does not know
+  // draws an empty span rather than complaining.
+  'debug-button': 'debug_button',
+  sandwatch: 'sand_watch',
+  'green-ok': 'green_ok',
+  ok: 'green_ok',
+
+  // speach_balloon and speach-balloon above point at 'speech', and the file is
+  // speach.js — so both were empty too. Nothing in the course writes them, but
+  // they would have been empty the first time anyone did.
+  'speech': 'speach',
+  'arrow-right': 'arrow_right'
 }

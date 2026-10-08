@@ -1,4 +1,25 @@
 Rainbow.extend('javascript', [
+  /*
+   * A private name, and it has to come first.
+   *
+   * Rainbow's generic language reads # as the start of a line comment — it is
+   * one in Python, in Ruby, in a shell — so every #private was greyed out from
+   * the hash to the end of the line, taking the rest of the line with it.
+   * Eleven of them on the lesson about classes alone. ES2022 gave JavaScript
+   * the same character for the opposite meaning.
+   *
+   * A letter is required after the hash, so #000 inside 'solid #000' is left to
+   * the colour rule that already handles it.
+   *
+   * This pattern alone is not enough: where two patterns start at the same
+   * place Rainbow keeps the longer match, so the comment rule still won
+   * `this.#status = status`. The rule itself is edited by tools/rainbow-patch.js
+   * — npm run rainbow — and this gives the name its own class once it is free.
+   */
+  {
+    name: 'variable.private',
+    pattern: /#[A-Za-z_$][\w$]*/g
+  },
   {
     name: 'keyword',
     pattern: /var |let |const |class |function|function *|function*|return |continue|break/g

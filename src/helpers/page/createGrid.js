@@ -1,46 +1,23 @@
 const { createElem } = require('../').default
 
+/**
+ * The @@@@ block: pictures or short paragraphs side by side. The number after
+ * the fence is how many columns; @@@@ on its own is two.
+ *
+ * The layout is .grid-component in pageStyles.js. It used to be written here as
+ * inline styles, which beat the stylesheet, so the class could not be edited
+ * into having any effect.
+ */
 export function createGrid (fragment) {
   const columns = Number(fragment.slice(5, 6)) || 2
 
   const content = fragment.split('\n').filter(item => !!item).slice(1, -1)
 
-  const rows = Math.round(content.length / columns) + (content.length % columns > 0)
-
-  const templateColumns = (Math.round(100 / columns) + '% ').repeat(columns).trim()
-
   const grid = Object.assign(createElem('figure', this.main), {
-    className: 'grid-component',
-    templateColumns
+    className: 'grid-component'
   })
 
-  grid.onresize = function (event) {
-    if (window.innerWidth > 600) {
-      this.style = `
-        display: grid;
-        grid-template-columns: ${this.templateColumns};
-        grid-template-rows: auto;
-        justify-items: center;
-        align-items: stretch;
-      `
-    } else {
-      this.style = 'display: block;'
-    }
-  }.bind(grid)
+  grid.dataset.columns = columns
 
-  for (const line of content) {
-    grid.content = Object.assign(grid.appendChild(this.parseLine(line)), {
-      style: `
-        display: block;
-        width: max-content;
-        height: max-content;
-        padding: 0;
-        margin:0;
-        border: 0;
-        box-shadow: none;
-      `
-    })
-  }
-
-  grid.dispatchEvent(new Event('resize'))
+  for (const line of content) grid.appendChild(this.parseLine(line))
 }

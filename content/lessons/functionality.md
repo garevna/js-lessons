@@ -237,7 +237,7 @@ elefant
 {{p44}}
 
 ~~~console
-<p class="error-message">Uncaught TypeError&colon; func is not a function</p>
+! Uncaught TypeError: func is not a function
 ~~~
 
 {{p45}}

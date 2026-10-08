@@ -204,6 +204,53 @@ menu-component {
   }
 }
 
+.grid-component {
+  width: 100%;
+  display: grid;
+  grid-template-columns: calc(50% - 20px) calc(50% - 20px);
+  align-items: center;
+  margin-inline: 0;
+}
+
+/* @@@@ on its own is two columns; @@@@ 1, @@@@ 3 and @@@@ 4 are also in use. */
+.grid-component[data-columns="1"] {
+  grid-template-columns: 100%;
+}
+
+.grid-component[data-columns="3"] {
+  grid-template-columns: repeat(3, calc(33.333% - 20px));
+}
+
+.grid-component[data-columns="4"] {
+  grid-template-columns: repeat(4, calc(25% - 20px));
+}
+
+/* On a phone, one column whatever the block asked for. */
+@media (max-width: 600px) {
+  .grid-component,
+  .grid-component[data-columns] {
+    grid-template-columns: 100%;
+  }
+}
+
+.grid-component > * {
+  display: block;
+  width: max-content;
+  height: max-content;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+.grid-component > *:first-child {
+  justify-self: start;
+}
+
+.grid-component > *:last-child {
+  justify-self: end;
+}
+
 .condition-expression,
 .first-expression,
 .second-expression {
@@ -253,9 +300,17 @@ menu-component {
 ` + errorAndWarning + blackClass
 
 export const pageStyles = new Promise(resolve => {
-  worker.addEventListener('message', function (event) {
-    const { route, error, response } = event.data
+  worker.addEventListener('message', function listener (event) {
+    const { route, iconList, error, response } = event.data
     if (route !== 'page') return
+
+    // This asks for the route's own icons and sends no list, so the answer to
+    // it carries none either. Answers that do carry one belong to a page or a
+    // spoiler asking for the icons it found in its text, and taking one of
+    // those here would paint the page with somebody else's icon set.
+    if (iconList) return
+
+    worker.removeEventListener('message', listener)
 
     if (error || !response) {
       console.error(error || 'There is no response from icons worker!')

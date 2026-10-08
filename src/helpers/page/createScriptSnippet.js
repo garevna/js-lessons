@@ -21,6 +21,13 @@ export function buildSnippet (fragment) {
   const [word, ...title] = lang.split(/\s+/)
   if (word === 'demo') return [this.createConsoleDemo(fragment, title.join(' '))]
 
+  // The same session in a terminal. Worth a word of its own because a terminal
+  // is not a browser console: run node in it and a private field behaves as the
+  // language says, where a browser console reads one from outside its class and
+  // prints it. What else gets run there — webpack, git, npm — is the block's
+  // business, not this one's.
+  if (word === 'bash') return [this.createConsoleDemo(fragment, title.join(' '), 'bash')]
+
   // A block of questions, shown one at a time rather than as a wall.
   if (word === 'tests') return [this.createTestSeries(fragment, title.join(' '))]
 

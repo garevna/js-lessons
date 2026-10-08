@@ -19,6 +19,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const util = require('util')
 const vm = require('vm')
 
 const root = path.join(__dirname, '..')
@@ -28,19 +29,21 @@ const args = process.argv.slice(2)
 const only = args.find((a) => !a.startsWith('--'))
 
 /**
- * The session as written, read into the steps it plays — the same three marks
+ * The session as written, read into the steps it plays — the same four marks
  * the renderer reads.
  *
  *   > what was typed
  *   < what the console answered
  *   ! what it complained about
+ *   ? what it warned about
+ *   ... a continuation of the command above
  */
 const readSession = (text) => {
   const steps = []
   let open = null
 
-  const start = () => { open = { input: [], answers: [] }; steps.push(open); return open }
-  const answer = (line, error) => { if (!open) start(); open.answers.push({ text: line, error }) }
+  const start = (shell) => { open = { input: [], answers: [], shell: !!shell }; steps.push(open); return open }
+  const answer = (line, level) => { if (!open) start(); open.answers.push({ text: line, level }) }
 
   for (const raw of text.split('\n')) {
     const line = raw.replace(/\s+$/, '')
@@ -50,15 +53,33 @@ const readSession = (text) => {
 
     if (/^>(\s|$)/.test(trimmed)) {
       const command = trimmed.slice(1).replace(/^ /, '')
-      if (!open || open.answers.length) start()
+      if (!open || open.answers.length || open.shell) start()
       open.input.push(command)
       continue
     }
 
-    if (/^<(\s|$)/.test(trimmed)) { answer(trimmed.slice(1).replace(/^ /, ''), false); continue }
-    if (/^!(\s|$)/.test(trimmed)) { answer(trimmed.slice(1).trim(), true); continue }
+    // A continuation of the command above, written the way node prompts for
+    // one, so a session can be copied out of a terminal unchanged.
+    if (/^\.\.\.(\s|$)/.test(trimmed)) {
+      if (!open || open.answers.length) start()
+      open.input.push(trimmed.slice(3).replace(/^ /, ''))
+      continue
+    }
 
-    answer(trimmed, false)
+    // A line typed at the shell, not at the REPL. It is not JavaScript and
+    // there is nothing here that could run it.
+    if (/^\$(\s|$)/.test(trimmed)) {
+      if (!open || open.answers.length || open.input.length) start(true)
+      open.shell = true
+      open.input.push(trimmed.slice(1).replace(/^ /, ''))
+      continue
+    }
+
+    if (/^<(\s|$)/.test(trimmed)) { answer(trimmed.slice(1).replace(/^ /, ''), null); continue }
+    if (/^!(\s|$)/.test(trimmed)) { answer(trimmed.slice(1).trim(), 'error'); continue }
+    if (/^\?(\s|$)/.test(trimmed)) { answer(trimmed.slice(1).trim(), 'warning'); continue }
+
+    answer(trimmed, null)
   }
 
   return steps
@@ -86,13 +107,28 @@ const check = (context, step) => {
     return { skipped: true, why: error.message }
   }
 
-  if (!step.answers.length || step.answers.some((a) => a.error)) return { skipped: true }
+  // What the lesson shows as a complaint or a warning is not the value the
+  // expression returned, so there is nothing here to compare it against. Nor
+  // is a line typed at the shell something this could run.
+  if (step.shell) return { skipped: true }
+  if (!step.answers.length || step.answers.some((a) => a.level)) return { skipped: true }
 
   // A value the console draws open — ƒ with its source, ► with its properties
   // — has no single line to compare against.
   if (step.answers.some((a) => /^[ƒ►▼]/.test(a.text))) return { skipped: true }
 
-  const asValue = (v) => typeof v === 'string' ? [`'${v}'`, `"${v}"`, v] : [String(v)]
+  /*
+   * The forms a lesson may have written the value in.
+   *
+   * util.inspect first, because that is the one node prints: a ~~~bash session
+   * showing `User { name: 'Piter', getStatus: [Function (anonymous)] }` was
+   * reported as a mismatch against [object Object], which is what String gives
+   * for every object alike. The lesson was right and this was not reading it.
+   * String stays for the browser sessions, where it is what console.log shows.
+   */
+  const asValue = (v) => typeof v === 'string'
+    ? [`'${v}'`, `"${v}"`, v]
+    : [util.inspect(v), String(v)]
 
   const answers = step.answers.map((a) => a.text)
   const printed = context.__printed
@@ -125,7 +161,9 @@ for (const page of pages) {
   const file = path.join(LESSONS, `${page}.md`)
   const text = fs.readFileSync(file, 'utf8')
 
-  const found = [...text.matchAll(/~~~demo[^\n]*\n([\s\S]*?)\n~~~/g)]
+  // ~~~bash is the same session in a terminal, and this runs its commands in
+  // node already — so those are the ones it can speak for most exactly.
+  const found = [...text.matchAll(/~~~(?:demo|bash)[^\n]*\n([\s\S]*?)\n~~~/g)]
   if (!found.length) continue
 
   const said = []

@@ -92,6 +92,36 @@ const GRID_DELIMITER = /^@{4}\s*$/
 // fence names a column count, so the name is markup too.
 const BLACK_DELIMITER = /^\s*•{4}\s*[a-z_-]*\s*$/
 
+// A long-form question is fenced by ♣♣♣♣ on its own line
+// (pageRegExpr.Quiz), and like a grid or a black block only the fences are
+// markup. What sits between them is the whole of the question — the text, the
+// options, the explanations — and all of it is prose that has to be
+// translated, one key per line.
+const QUIZ_DELIMITER = /^[ \t]*♣{4}[ \t]*$/
+
+// ? question, + right option, - wrong one, = why. The mark says what the line
+// is and belongs to the skeleton; only the sentence after it is a message.
+//
+// This is the whole reason the long form is written as lines. The short form
+// puts question, options and answer on one line, and names its answer by
+// repeating one of the options verbatim — so the two copies have to survive
+// translation identical, which is what the quiz check in i18n-import exists to
+// catch. Here the answer is a + in the skeleton, which no translator can see
+// and none can break.
+const QUIZ_LINE = /^(\s*[?+=-]\s*)(.+?)(\s*)$/
+
+// A repair exercise is fenced by ♠♠♠♠ (pageRegExpr.CodeFix) and is mostly
+// code, which is not translated and must not be touched. Two things in it are
+// prose: the task, written on the opening fence, and the name of each check,
+// written after the points.
+//
+// Treating the whole block as code would have been less work, and is what
+// ~~~tests does — which is why the questions inside a ~~~tests block are not
+// translated on any page of the course.
+const CODEFIX_OPEN = /^([ \t]*♠{4}[ \t]*)(.*?)([ \t]*)$/
+const CODEFIX_CLOSE = /^[ \t]*♠{4}[ \t]*$/
+const CODEFIX_CHECK = /^([ \t]*\?[ \t]*\d*[ \t]*\|?[ \t]*)(.*?)([ \t]*)$/
+
 // A line that is nothing but an HTML tag — <img src="…" width="120"/>. The
 // letters live in the attribute names and the URL, so without a rule it reads
 // as prose.
@@ -115,6 +145,15 @@ function extract (source, sectionNames, refDecisions, sharedFragments) {
   // language decides; the others replay it.
   const decisions = []
   let contentIndex = -1
+
+  // Only inside a ♣ block does a leading - mean "a wrong option". Everywhere
+  // else on a page it is a dash at the start of a sentence, and reading it as a
+  // mark would cut the first word off the message.
+  let inQuiz = false
+
+  // Inside a ♠ block every line is code until proved otherwise, so the line
+  // rules below must not see it at all.
+  let inCodeFix = false
 
   const key = (kind) => {
     const bucket = `${section}.${kind}`
@@ -195,6 +234,33 @@ function extract (source, sectionNames, refDecisions, sharedFragments) {
     if (SPOILER_CLOSE.test(line)) return line
     if (GRID_DELIMITER.test(line)) return line
     if (BLACK_DELIMITER.test(line)) return line
+    if (QUIZ_DELIMITER.test(line)) {
+      inQuiz = !inQuiz
+      return line
+    }
+
+    if (inCodeFix) {
+      if (CODEFIX_CLOSE.test(line)) {
+        inCodeFix = false
+        return line
+      }
+      // Everything between the fences is code, except the line that names a
+      // check — and that line is prose only after the points and the pipe.
+      const check = line.match(CODEFIX_CHECK)
+      if (!check || !check[2].trim()) return line
+      return check[1] + put('codefixCheck', check[2]) + check[3]
+    }
+
+    {
+      const open = line.match(CODEFIX_OPEN)
+      if (open) {
+        inCodeFix = true
+        // A bare fence opens a block with no task written on it. The closing
+        // fence looks the same but never reaches here: it is consumed above,
+        // while inCodeFix is still set.
+        return open[2].trim() ? open[1] + put('codefix', open[2]) + open[3] : line
+      }
+    }
     if (HTML_ONLY.test(line.trim())) return line
 
     // Everything past this point is a content line: not a separator, not an
@@ -221,6 +287,10 @@ function extract (source, sectionNames, refDecisions, sharedFragments) {
     if (!translatable) return line
 
     let m
+
+    if (inQuiz && (m = line.match(QUIZ_LINE))) {
+      return m[1] + put('quiz', m[2]) + m[3]
+    }
 
     if ((m = line.match(SPOILER_OPEN))) {
       return m[2].trim() ? m[1] + put('spoiler', m[2]) + m[3] : line

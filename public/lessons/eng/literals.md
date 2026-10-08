@@ -19,7 +19,7 @@ var str = "
 ~~~
 
 ~~~console
-<p class="error-message">Uncaught SyntaxError&colon; Invalid or unexpected token</p>
+! Uncaught SyntaxError: Invalid or unexpected token
 ~~~
 
 You can insert a line break character (~\n~) into any line; however, this may result in the line becoming uncomfortably long and rather difficult to read.

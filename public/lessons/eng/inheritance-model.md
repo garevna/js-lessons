@@ -362,6 +362,11 @@ It means that when accessing any property (or method) of the instance **~obj~**,
 
 This means that if a property with that name exists at several levels, the value located higher up in the prototype chain will be used
 
+^^![ico-25 pin] Из метода объекта до его прототипа можно дотянуться и напрямую —
+ключевым словом **~super~**, без всяких классов:^^
+
+[%%%super в литералах объектов%%%](page/super-in-object-literals)
+
 ________________________________________________________
 
 ## ![ico-25 icon] The Object constructor⟪The_Object_constructor⟫

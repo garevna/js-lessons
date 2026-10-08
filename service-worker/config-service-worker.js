@@ -101,16 +101,17 @@ if (doVersions) {
  * the watcher runs after every save.
  */
 const identity = () => {
-  // major.minor stay hand-managed in package.json; the patch is the commit
-  // count, so the number moves forward on its own and no file is rewritten
-  // during a build. Without git, fall back to the version already declared.
+  // The whole version is declared in package.json and moves only when someone
+  // says so: npm run bump fix | translation | change | lesson | update.
+  //
+  // The patch used to be the commit count, which made it 2.0.114 and climbing
+  // — a number that grew with every commit whatever the commit did, and said
+  // nothing about what had changed. Nothing is derived now, so a day of local
+  // work leaves it alone on its own, with no rule needed to hold it still.
   const declared = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), 'utf-8')).version
-  const [major, minor] = declared.split('.')
-
-  const commits = git('rev-list', '--count', 'HEAD')
 
   return {
-    version: commits ? `${major}.${minor}.${commits}` : declared,
+    version: declared,
     // The date describes the content, not the moment of the build, so two
     // builds of the same commit agree.
     date: git('log', '-1', '--format=%cs') || new Date().toISOString().slice(0, 10)

@@ -19,7 +19,7 @@ var str = "
 ~~~
 
 ~~~console
-<p class="error-message">Uncaught SyntaxError&colon; Invalid or unexpected token</p>
+! Uncaught SyntaxError: Invalid or unexpected token
 ~~~
 
 {{p3}}

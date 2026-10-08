@@ -237,7 +237,7 @@ elefant
 However, if the argument passed to the **~animal~** function is not a function, then attempting to call it (using round brackets) will raise an exception (**~TypeError~**)
 
 ~~~console
-<p class="error-message">Uncaught TypeError&colon; func is not a function</p>
+! Uncaught TypeError: func is not a function
 ~~~
 
 To avoid this, let’s modify the code of the **~animal~** function slightly by adding a type check for the argument:

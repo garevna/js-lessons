@@ -8,6 +8,54 @@ browser by hand-written custom elements — no framework, no runtime dependency.
 Pages are fetched and cached by a web worker, so the course works offline once
 visited.
 
+<!-- оглавление: npm run toc -->
+
+- [Getting started](#getting-started)
+  - [The version in the footer](#the-version-in-the-footer)
+  - [The scripts](#the-scripts)
+- [Where to edit](#where-to-edit)
+- [Writing a lesson](#writing-a-lesson)
+  - [Blocks](#blocks)
+  - [Lines](#lines)
+  - [A question with long options](#a-question-with-long-options)
+  - [Code the reader repairs](#code-the-reader-repairs)
+    - [Where the code runs](#where-the-code-runs)
+    - [Why the code is not compared with a correct version](#why-the-code-is-not-compared-with-a-correct-version)
+  - [A console session](#a-console-session)
+    - [The same session in a terminal](#the-same-session-in-a-terminal)
+  - [A block of questions](#a-block-of-questions)
+  - [Components](#components)
+    - [Colour on the black ground](#colour-on-the-black-ground)
+  - [Inline](#inline)
+  - [Images](#images)
+  - [Icons](#icons)
+  - [Links](#links)
+  - [Checking the links](#checking-the-links)
+  - [Links in another language](#links-in-another-language)
+- [Translation](#translation)
+  - [How a page is stored](#how-a-page-is-stored)
+  - [Keys](#keys)
+  - [What to do next](#what-to-do-next)
+  - [The phrase book](#the-phrase-book)
+  - [Translating a page](#translating-a-page)
+  - [What the importer refuses](#what-the-importer-refuses)
+  - [After editing a message file](#after-editing-a-message-file)
+  - [Editing the Russian](#editing-the-russian)
+  - [Why there are three copies of every page](#why-there-are-three-copies-of-every-page)
+- [Working on the course](#working-on-the-course)
+  - [Working on the lessons locally](#working-on-the-lessons-locally)
+  - [Editing the styles](#editing-the-styles)
+    - [The highlighter and `#private`](#the-highlighter-and-private)
+  - [Editing a page's markup](#editing-a-pages-markup)
+  - [Adding a page](#adding-a-page)
+  - [Keywords: how a lesson is found](#keywords-how-a-lesson-is-found)
+- [How it is built](#how-it-is-built)
+  - [Checking the workers](#checking-the-workers)
+  - [Caching](#caching)
+- [Gotchas](#gotchas)
+
+<!-- /оглавление -->
+
 ## Getting started
 
 ```
@@ -19,7 +67,7 @@ yarn start            serve public/ locally
 `yarn full` runs the pieces in an order that matters:
 
 ```
-sw-identity     version and date for the footer, from git
+sw-identity     version and date for the footer
 lessons         public/lessons/ from content/, in all three languages
 icons-worker    icons.worker.js
 content-worker  the page registry, then content.worker.js
@@ -31,6 +79,30 @@ The version map hashes the built bundles, so it has to run last; the footer
 prints the version, so that has to be written first. `lessons` comes before
 `content-worker`, which builds the page registry by reading the folders the
 lessons were just written into.
+
+### The version in the footer
+
+It is declared in `service-worker/package.json` and moves only when one of
+these is said:
+
+```
+npm run bump              what each word would make it
+npm run bump fix          a bug fixed, styles touched
+npm run bump translation  a page translated
+npm run bump change       anything more serious
+npm run bump lesson       a lesson or a topic added
+npm run bump update       a large update
+```
+
+A bigger part moving sets the smaller ones back to nothing, and neither of the
+lower two numbers ever reaches ten: the tenth small fix is a step of its own and
+becomes `2.2.0`, the tenth of those becomes `3.0.0`. So both stay single digits.
+
+The patch used to be the commit count, which is how it read `2.0.114` — a
+number that grew with every commit whatever the commit did, and said nothing
+about what had changed. Nothing is derived now, so a day of local work leaves it
+alone by itself, and the date beside it still comes from the last commit, so two
+builds of the same commit agree.
 
 Deployment is automatic: a push to `master` builds the site in GitHub Actions
 and publishes `public/` to the `gh-pages` branch. `yarn deploy` still works for
@@ -116,6 +188,8 @@ Each of these is recognised before anything else and rendered as a unit.
 | `{{{ … }}}` | console output |
 | `^^^[Title]` … `^^^` | a spoiler; the title is shown, the body unfolds |
 | `@@@@` … `@@@@` | a grid — images and captions laid out in columns |
+| `♣♣♣♣` … `♣♣♣♣` | a question whose options are sentences — see below |
+| `♠♠♠♠` … `♠♠♠♠` | broken code the reader repairs, and the checks that grade it |
 | `!![a.svg, b.svg, c.svg]` | a slider |
 | `\| a \| b \|` on consecutive lines | a table |
 | `____________` | a horizontal rule |
@@ -142,6 +216,124 @@ The variants and the answer may not — a pipe there is still a separator.
 `npm run blocks` reads every question the way the renderer does and says so if
 one has lost its choices, or if its answer is not among them.
 
+### A question with long options
+
+The line above works because every field on it is a word long. A question whose
+options are whole statements, each with a reason it is right or wrong, does not
+fit on a line — that is nine fields and some nine hundred characters — so it is
+written as a block, one option to a line:
+
+```
+♣♣♣♣
+? Какое из утверждений верно для Class Expression?
++ Оно может быть именованным или безымянным и не подвергается хостингу.
+= Верно! Имя выражения класса доступно только внутри самого класса.
+- Оно обязательно должно иметь уникальное имя.
+= Неверно. Class Expression может быть анонимным: ~const C = class {}~
+♣♣♣♣
+```
+
+Four marks, each a character and a space:
+
+| | |
+|---|---|
+| `?` | the question. Repeat the mark to carry it over several lines. |
+| `+` | the right option. Exactly one to a question. |
+| `-` | a wrong one. |
+| `=` | why the option above it is right or wrong. Optional. |
+
+The answer is a mark, not a copy. `→→→` names its answer by writing one of the
+variants out a second time, and the two have to stay identical — a translator
+who rewrites `"0"` as `„0“` breaks the test silently, which is what the quiz
+check in `npm run import` exists to catch. Here there is nothing to match: the
+`+` lives in the skeleton, where no translation can reach it.
+
+Each line is ordinary prose and gets a key of its own, the same as a line of a
+black block. A `~~~tests` block, by contrast, is lifted out whole as code — the
+questions inside one are not translated at all.
+
+One `♣` block may hold several questions: a new `?` after the options starts the
+next. When it does they are shown a card at a time by `test-series`, with its
+counter and its score.
+
+A card that explains itself waits for the reader. The short form moves on by
+itself after a pause — there is nothing to read but a colour — and the pause is
+drawn as a bar draining under the counter, so that the card leaving is
+something the reader was told about rather than something that happened. A card
+with explanations puts up a **Далее** button instead and waits to be pressed. A
+single question has neither: nothing follows it.
+
+Inline code inside an option is drawn in colour without its pale box, which
+belongs on a light ground. That is in `src/styles/quizStyles.js`, with the rest
+of the card's styling.
+
+`npm run blocks` checks every `♣` block: that each question has at least two
+options and exactly one `+`, that no `=` stands before the option it explains,
+and that no line inside the block is missing its mark.
+
+### Code the reader repairs
+
+A `♠` block is an exercise: code with something wrong in it, an editor to fix
+it in, and checks that say how well it was fixed.
+
+```
+♠♠♠♠ Клик по кнопке должен менять надпись на ней самой. Почини обработчик.
+class CustomButton {
+  …
+}
+
+const btn = new CustomButton('Click me!')
+???
+? 2 | кнопка появилась на странице
+document.querySelector('button') !== null
+
+? 4 | клик увеличивает счётчик
+document.querySelector('button').click()
+btn.clicks === 1
+
+? 2 | контекст связан полем-стрелкой, а не bind
+/handleClick\s*=\s*[(\w$]/.test(SOURCE) && !/\.bind\s*\(/.test(SOURCE)
+♠♠♠♠
+```
+
+The opening fence carries the task. Then the code, exactly as the reader first
+sees it. Then `???` alone on a line, and after it the checks.
+
+A check is a `?` line — how many points, a pipe, and what the reader is told is
+being tested — followed by the JavaScript that decides it. The last line of
+that JavaScript is the verdict: true if the check passed. Any lines before it
+are there to make something happen first, like clicking the button.
+
+#### Where the code runs
+
+In an iframe of its own. `{{{…}}}` runs a demo with `eval` in the lesson's own
+window and rewrites `document.body` to mean a box below the button; that is
+fine for code the course wrote, and not fine for code the reader wrote, which
+would be editing the page around it. The frame gives it a document to append
+to and a window to throw in, and because it is same-origin the checks can look
+inside afterwards. A fresh frame is built for every run — a repair that works
+only because the previous attempt left something behind is not a repair.
+
+#### Why the code is not compared with a correct version
+
+Because there is rarely one. The exercise above has at least three correct
+repairs — a class field arrow, a bind in the constructor, a wrapping callback
+— and a text comparison rejects two of them.
+
+So the checks run the code and ask what it did. Every repair that works passes,
+which is the honest answer to *did I fix it*.
+
+That leaves what a text comparison was good for: telling an elegant repair from
+one that merely works. A bind is the ugly way to do this and should not score
+what a class field scores. So each check carries a number, and a check may read
+`SOURCE`, the text the reader wrote, instead of the behaviour. On the exercise
+above a class field scores 12 of 12 and a bind scores 10 — the code works, and
+it could have been written better, and the reader is told both.
+
+`npm run blocks` checks every `♠` block: that the code and the checks are
+divided by `???`, that the code is not empty, that there is at least one check,
+and that each check has points, a name, and a body.
+
 ### A console session
 
 A `~~~demo` block is a console session, and it plays itself: the reader clicks
@@ -161,13 +353,105 @@ appears after it.
 ~~~
 ```
 
-Three marks, each a character and a space:
+Four marks, each a character and a space:
 
 | | |
 |---|---|
 | `>` | what was typed in |
 | `<` | what the console answered |
 | `!` | what it complained about — drawn on red, with the error icon |
+| `?` | what it warned about — drawn on yellow, with the warning icon |
+
+#### The same session in a terminal
+
+`~~~bash` plays it in a terminal instead of the browser console, and adds two
+marks: `$` for a line typed at the shell, and `...` for a line that continues
+the command above — the prompt node shows while a statement is unfinished, so a
+session can be copied out of a terminal and pasted in unchanged. Several `>`
+lines in a row still mean the same thing, which is how the sessions written
+before this one read.
+
+A command of several lines is not typed out in a terminal — it appears at once,
+because that is what pasting a class definition into a REPL looks like. Nobody
+types one a character at a time, and watching it done took seventeen seconds
+where the session now plays in eight. A command on one line is still typed:
+that one is somebody typing.
+
+```
+~~~bash Приватные поля
+$ node
+> class User {
+>   #secret = 'pin'
+>   get secret () { return this.#secret }
+> }
+< undefined
+> const user = new User()
+< undefined
+> user
+< User {}
+> user.secret
+< 'pin'
+> user.#secret
+! SyntaxError: Private field '#secret' must be declared in an enclosing class
+~~~
+```
+
+Worth having because a browser console is not the language. It lists a private
+field in the object it prints and hands it over when asked for it from outside
+the class; node prints `User {}` and refuses, which is what the language says.
+A lesson about `#private` has to show a terminal to be telling the truth.
+
+The word is `bash` rather than `node` because the block is a terminal and node
+is only what was run in it — the same block shows a webpack build, a git
+command, an npm script.
+
+It is the same component and the same tokenizer, but a terminal is coloured far
+more sparingly than devtools: node leaves the code it echoes plain and paints
+only the value it prints back — green for a string, yellow for a number, grey
+for `undefined`. Text a program wrote rather than a value it returned — a
+`console.error`, the banner node opens with — stays plain, the way it is in a
+terminal, and so does a complaint: `!` and `?` draw the red and yellow panels
+in a browser demo, and in a terminal only say what the line is, for the author
+and for `npm run demos`, while it is printed white with everything else. What
+else differs is the prompts — `$` for the shell in green, `>` for the REPL, `...` for a statement it
+is still waiting to see the end of — and that an answer carries no mark at all,
+because a REPL prints the value on a line of its own.
+
+The prompt left at the end follows where the session got to. A block that typed
+`$ node` and went on from there ends on `>`, because that is what node leaves
+you looking at; one that only ever ran shell commands ends on `$`:
+
+```
+~~~bash Ветка и сборка
+$ git status
+< On branch master
+$ npm run lessons
+< 163 pages
+~~~
+```
+
+The bar above it carries the bash icon, and so does the button that opens it,
+on black in place of the orange ► a browser demo starts on. A block with no
+words after the fence is captioned "Терминал" rather than "Демо в консоли", in
+the language being read.
+
+`npm run demos` checks these too, and more exactly than the browser ones: it
+runs the commands in node already. A `$` line is not JavaScript, so the step it
+opens is skipped rather than run.
+
+The last two work in a `~~~console` block as well, which is where most of the
+course's errors are: a line beginning `!` or `?` becomes the red or the yellow
+paragraph and nothing else is done to it. They used to be written out by hand —
+
+```
+<p class="error-message">Uncaught TypeError&colon; func is not a function</p>
+```
+
+— which meant remembering the class name, and writing every colon in the text
+as `&colon;` so that the key-and-value colouring below would not cut the markup
+in half. It did cut it, wherever a real colon was left in. Twenty-five lines
+were written that way and are now written `! Uncaught TypeError: func is not a
+function`.
 
 **Nothing is said about colour.** `var` is a keyword, `alpha` a name, `1` a
 number, `'1'` a string, `false` a value the console printed rather than one the
@@ -271,8 +555,11 @@ draws the whole thing. The lesson writes only what changes.
 | `♦♦♦4♦♦♦` | `createExampleHeader` | the heading of an example block: bordered panel, coffee cup, the word for the current language, the number |
 | `※※※tests quiz/var※※※` | `createLinkButton` | a button to the tests or the exercises: briefcase icon, the word for the current language, the address you give it |
 | `☼☼☼ text ☼☼☼` | `funny-slogan` | a slogan |
-| `→→→ question \| variants \| answer →→→` | `test-component` | a quiz |
+| `→→→ question \| variants \| answer →→→` | `test-component` | a quiz, short answers |
+| `♣♣♣♣` … `♣♣♣♣` | `quiz-card` | a quiz whose options are sentences, each with its reason |
+| `♠♠♠♠` … `♠♠♠♠` | `code-fix` | an editor holding code with something wrong in it, and a score |
 | a `~~~demo` block | `console-demo` | a console session written in the lesson |
+| a `~~~bash` block | `console-demo` | the same session in a terminal |
 | a `~~~console` block | `createConsoleHeader` | the heading above console output: bordered panel, console icon, the words for the current language |
 | `••••` … `••••` | `createBlackBlock` | several lines on the black ground |
 
@@ -360,6 +647,25 @@ One thing to remember: icon styles are requested by scanning the page text for
 `![ico-NN name]` markers. A component that draws an icon without writing such a
 marker has to ask for it in `getIconList.js`, or it renders blank.
 
+#### Colour on the black ground
+
+Three accents, and a word takes one by being emphasised the usual way:
+
+| Written | Colour | Looks like |
+|---|---|---|
+| `_слово_` | `#fa0` amber | italic, normal weight — a term being named |
+| `**слово**` | `#f50` orange | bold, upright — a word being stressed |
+| `**_слово_**` | `#09b` blue | bold italic — the strongest of the three |
+
+Each is one class carrying the whole look — colour, weight and slant together —
+`accent-amber`, `accent-orange`, `accent-blue` in `blackClass.js`, writable by
+hand as well. Inside a black block the emphasis already in the text picks the
+class up on its own, which is why none of the seventy highlights in the course
+had to be edited to get its colour.
+
+Outside a black block the same markup stays plain bold and italic: these three
+are chosen to be legible on `#000` and would be shouting on the page.
+
 ### Inline
 
 | Syntax | Renders as |
@@ -422,10 +728,109 @@ Icons are inlined by the icon worker, so they cost no request:
 ![ico-30 octocat]
 ```
 
-Available keys:
+The number is the size in pixels, the name is one of the list below. A name the
+worker does not know draws an empty span of that size and says nothing, which is
+how 379 blank icons once accumulated across 53 pages without anyone noticing.
 
-['house', 'home', 'mag', 'search', 'err', 'error', 'warn', 'warning', 'close', 'negation', 'icon', 'cap', 'coffee', 'link', 'link-ico', 'dir', 'folder-open', 'opened', 'hw', 'mortar_board', 'study', 'pin', 'pushpin', 'exclamation', 'yes', 'question', 'open-in-new', 'page-next', 'page-previous', 'sand-watch', 'paper', 'file', 'smile', 'emotion', 'require', 'point_up', 'good', 'exelent', 'thumbsup', 'hourglass', 'wait', 'clock', 'white_check_mark',
-'mail', 'speach_balloon', 'speach-balloon', 'git-ver', 'google-maps', 'slider-button', 'draw-io', 'main-menu-icon', 'expanded-main-menu-icon', 'active-main-menu-icon', 'active-expanded-main-menu-icon', 'menu-icon-image', 'menu-symbol']
+Adding one:
+
+```
+npm run icon public/icons/toilet.svg
+npm run icon public/icons/mdn.svg mozilla    # when the written name differs
+npm run icons-worker
+```
+
+The file is encoded into a module under `icons-worker/src/assets/` — the worker
+hands back data URIs rather than fetching files, so the icons work offline — and
+a name that cannot be a JavaScript identifier, `arrow-right`, gets an alias in
+`configs/icons.js` written for it.
+
+| name | also written as |
+|---|---|
+| `ambulance` |  |
+| `arrow_right` | `arrow-right` |
+| `atom` |  |
+| `bad_hand` |  |
+| `bash` |  |
+| `book` |  |
+| `books` |  |
+| `hw` | `briefcase` |
+| `cap` | `cup`, `coffee` |
+| `curl` |  |
+| `db` |  |
+| `debug_button` | `debug-button` |
+| `debug_paused` |  |
+| `debugger_panel` |  |
+| `disabled` |  |
+| `draw_io` | `draw-io` |
+| `egg` |  |
+| `endpoint` |  |
+| `mail` | `envelope` |
+| `err` | `error` |
+| `yes` | `exclamation` |
+| `eyes` |  |
+| `firebase` |  |
+| `folder` |  |
+| `folder_open` | `folder-open` |
+| `folder_open_active` |  |
+| `folder_outline` |  |
+| `git` | `git-ver` |
+| `github` |  |
+| `exelent` | `thumbsup`, `good_hand` |
+| `google` |  |
+| `google_maps` | `google-maps` |
+| `ok` | `green_ok`, `green-ok` |
+| `home` | `house` |
+| `icon` |  |
+| `json_placeholder_logo` |  |
+| `link` | `link-ico` |
+| `link_dark` |  |
+| `link_grey` |  |
+| `link_transparent` |  |
+| `console` | `mdi_console`, `mdi-console` |
+| `file` | `memo` |
+| `mozilla` |  |
+| `no_entry` |  |
+| `node` |  |
+| `npm` |  |
+| `octocat` |  |
+| `good` | `ok_hand`, `white_check_mark` |
+| `dir` | `opened`, `open_file_folder` |
+| `open_folder` |  |
+| `open_in_new` | `open-in-new` |
+| `paper` | `page_facing_up` |
+| `page_next` | `page-next` |
+| `page_previous` | `page-previous` |
+| `paperclip` |  |
+| `pen` |  |
+| `pencil` |  |
+| `plunker` |  |
+| `require` | `point_up` |
+| `postman` |  |
+| `pin` | `pushpin` |
+| `question` |  |
+| `close` | `negation`, `red_cross` |
+| `reload` |  |
+| `replit` |  |
+| `wait` | `clock`, `hourglass`, `sandwatch`, `sand_watch`, `sand-watch` |
+| `sass` |  |
+| `mag` | `search` |
+| `self` |  |
+| `slider_1` | `slider-button` |
+| `slider_2` |  |
+| `speach` | `speech` |
+| `study` | `mortar_board` |
+| `sublime` |  |
+| `swagger` |  |
+| `menu-icon-image` | `table_of_contents` |
+| `menu-symbol` | `table_of_contents_white` |
+| `toilet` |  |
+| `trophy` |  |
+| `warn` | `warning` |
+| `webpack` |  |
+| `wink` | `smile`, `emotion` |
+| `wrench` |  |
+| `youtube` |  |
 
 ### Links
 
@@ -823,6 +1228,32 @@ The extractor splits a page and then rebuilds it, comparing the result with the
 original byte for byte. A page that fails that check is not written.
 
 
+### Why there are three copies of every page
+
+`public/lessons/{ru,eng,ua}/` holds a built file per language, and they are
+generated — never edited. The translation lives in one place:
+
+```
+content/messages/<page>.json     one file, all three languages
+        ↓  npm run lessons
+public/lessons/ru/<page>.md      three files, which is what the browser asks for
+public/lessons/eng/<page>.md
+public/lessons/ua/<page>.md
+```
+
+Three copies exist because a lesson is fetched as a plain `.md` by the content
+worker, at `lessons/<lang>/<page>.md`. There is no server to assemble one on
+request — the site is a folder of files on GitHub Pages, so the assembling
+happens at build time and the result is committed.
+
+## Working on the course
+
+Changing a lesson rather than writing or translating one — the loop to keep
+running while you edit, where the styles actually live, what a change to a
+page's structure costs, how a page is added, and how the search finds it.
+
+These five used to sit under Translation, where nobody would look for them.
+
 ### Working on the lessons locally
 
 Two terminals:
@@ -881,6 +1312,35 @@ npm run prod
 Two things that look like styles and are not. `public/for-rainbow.css` is a
 stray copy that nothing loads — the file that counts is `src/css/`. And
 `public/index.js` is build output: editing it works until the next build.
+
+#### The highlighter and `#private`
+
+Code blocks are coloured by Rainbow, vendored as `public/rainbow.js`, with the
+course's own patterns added in `src/configs/rainbowExtends.js`.
+
+Rainbow's generic language — the one every language falls back on — reads `#`
+as the start of a line comment. It is one in Python, in Ruby, in a shell;
+ES2022 gave JavaScript the same character for the opposite meaning. Every
+`#private` was greyed out from the hash to the end of the line, taking the rest
+of the line with it — eleven of them on the lesson about classes alone.
+
+Two things fix it, and both are needed:
+
+```
+src/configs/rainbowExtends.js   a pattern that names #field, so it has a class
+npm run rainbow                 takes the # branch out of the comment rule
+```
+
+The pattern alone is not enough: where two patterns start at the same place
+Rainbow keeps the longer match, so `#status` on its own went to the new rule
+while `this.#status = status` was still won by the comment. `extend()` only
+adds patterns — there is no way to replace one — so the rule itself is edited,
+by a script rather than by hand so that it is described and repeatable.
+`npm run rainbow -- --check` says whether it is still patched, which is worth
+running if the library is ever updated.
+
+A private name is drawn like any other property, which is what DevTools does.
+`#000` inside a string is left alone: the pattern wants a letter after the hash.
 
 > Do not leave `npm run dev` behind. It watches `src/` too, but writes a
 > development bundle — the same code 170 KB larger — and `public/index.js` is
@@ -991,24 +1451,6 @@ them.
 
 It prints and never writes. The draft is a starting point to paste in and
 edit, not an answer.
-
-### Why there are three copies of every page
-
-`public/lessons/{ru,eng,ua}/` holds a built file per language, and they are
-generated — never edited. The translation lives in one place:
-
-```
-content/messages/<page>.json     one file, all three languages
-        ↓  npm run lessons
-public/lessons/ru/<page>.md      three files, which is what the browser asks for
-public/lessons/eng/<page>.md
-public/lessons/ua/<page>.md
-```
-
-Three copies exist because a lesson is fetched as a plain `.md` by the content
-worker, at `lessons/<lang>/<page>.md`. There is no server to assemble one on
-request — the site is a folder of files on GitHub Pages, so the assembling
-happens at build time and the result is committed.
 
 ## How it is built
 

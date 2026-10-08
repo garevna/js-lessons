@@ -20,9 +20,32 @@
  * repaired here.
  */
 const fs = require('fs')
+const net = require('net')
 const path = require('path')
 
+// PORT=8182 npm start runs a second copy without disturbing the first.
+const PORT = Number(process.env.PORT) || 8181
+
 const INJECTED = path.join(__dirname, 'node_modules/live-server/injected.html')
+
+/**
+ * Refuse to start quietly on a port nobody asked for.
+ *
+ * live-server does not stop when 8181 is taken — it picks a free port at
+ * random and says so in a line that scrolls away. A second server then runs
+ * on, say, 61050, watching the same public/ as the first, while the browser
+ * at localhost:8181 is being served by whichever one got there first. Two
+ * servers, two file watchers, and edits arriving from the wrong one.
+ *
+ * It is the same fault the watcher's lock was written for, and the same cure:
+ * say who is already there and stop.
+ */
+const portIsFree = (port, host) => new Promise((resolve, reject) => {
+  const probe = net.createServer()
+  probe.once('error', (error) => error.code === 'EADDRINUSE' ? resolve(false) : reject(error))
+  probe.once('listening', () => probe.close(() => resolve(true)))
+  probe.listen(port, host)
+})
 
 /** The stock client, plus onclose, plus a reload once the socket comes back. */
 const CLIENT = String.raw`<!-- Code injected by live-server -->
@@ -88,11 +111,35 @@ try {
 
 var liveServer = require('live-server')
 
+/**
+ * Does the tab reload itself when a lesson is rebuilt?
+ *
+ * false — the page stays where it is until you refresh it. The watcher still
+ * rebuilds on every save, so the next refresh shows the current lesson; what
+ * stops is the page being taken away from under you while you read it.
+ *
+ * It was true, and with the editor saving on a timer that meant the tab was
+ * restarted about once a second for as long as a paragraph was being typed. The
+ * editor is on Ctrl+S now, which fixes that; this is the other half — a save is
+ * for the file, a refresh is for the page, and the two are no longer the same
+ * gesture.
+ *
+ * Set it back to true for auto-reload: watch, wait and ignore below are all it
+ * needs, and the injected client is already listening.
+ */
+const RELOAD_ON_CHANGE = false
+
 var params = {
-	port: 8181,
+	port: PORT,
 	host: '0.0.0.0',
 	root: 'public',
 	open: false,
+
+	// Nothing watched means nothing to reload for: live-server only ever sends
+	// the tab a reload from a file event, so with no paths the page is left
+	// alone. An empty array is a list of paths, not an absent option, so the
+	// root is not filled in behind it.
+	watch: RELOAD_ON_CHANGE ? ['public'] : [],
 
 	// How long to keep collecting changes before reloading the tab.
 	//
@@ -119,4 +166,33 @@ var params = {
 	middleware: [function(req, res, next) { next() }]
 }
 
-liveServer.start(params)
+portIsFree(PORT, params.host).then((free) => {
+	if (free) {
+		liveServer.start(params)
+
+		console.log(RELOAD_ON_CHANGE
+			? '  вкладка перезагружается сама при каждой пересборке'
+			: '  вкладка сама не перезагружается — обнови её, когда захочешь увидеть правку\n' +
+			  '  (вернуть авто-перезагрузку: RELOAD_ON_CHANGE = true в live-server.js)')
+
+		return
+	}
+
+	console.log(`
+  Порт ${PORT} уже занят — сервер не запускаю.
+
+  live-server на моём месте взял бы случайный свободный порт и работал бы
+  вторым: два сервера следят за одним public/, а вкладка на localhost:${PORT}
+  обслуживается тем, кто встал первым.
+
+  Кто держит порт:
+
+      netstat -ano | findstr :${PORT}
+
+  и дальше по номеру процесса из последней колонки:
+
+      taskkill /PID <номер> /F
+`)
+
+	process.exit(1)
+})

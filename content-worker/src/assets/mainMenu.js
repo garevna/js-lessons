@@ -269,6 +269,7 @@ export const mainMenu = [
       { ref: 'short-method-syntax', ua: 'Короткий синтаксис методів', eng: 'Short method syntax', ru: 'Краткий синтаксис методов' },
       { ref: 'shorthand-object-literal', ua: 'Коротка форма літерала об\'єкта', eng: 'Shorthand object literal', ru: 'Краткая форма литерала объекта' },
       { ref: 'Classes', ua: 'Класи', eng: 'Classes', ru: 'Классы' },
+      { ref: 'super-in-object-literals', ua: 'super у літералах об\'єктів', eng: 'super in object literals', ru: 'super в литералах объектов' },
       { ref: 'hw-16', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
   },

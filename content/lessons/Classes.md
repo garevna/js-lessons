@@ -10,11 +10,11 @@
 
 {{p5}}
 
-____________________________________________________________________
+___________________________________________________
 
 ## ![ico-25 icon] {{common.syntax}}
 
-{{p9}}
+{{p6}}
 
 ~~~js
 class User {
@@ -22,7 +22,9 @@ class User {
 }
 ~~~
 
-{{p10}}
+{{p7}}
+
+{{p8}}
 
 ~~~js
 class User {
@@ -32,289 +34,644 @@ class User {
 }
 ~~~
 
-{{p11}}
+•••• pin
+{{p9}}
+{{p10}}
+••••
 
 ~~~js
 class User {
   constructor (name) {
     this.name = name
   }
-
-  getUserInfo () {
-    console.log(this.name)
-  }
+  age = 35
 }
 ~~~
 
-••••
-{{p7}}
-{{p8}}
-••••
+~~~demo
+> const user = new User('Piter')
+< undefined
+> user
+< ► User {age: 35, name: 'Piter'}
+~~~
 
-{{p12}}
+___________________________________________________
 
-•••• memo
-{{p13}}
-{{p14}}
-{{p15}}
-••••
+### ![ico-20 icon] {{common.private}}
 
-•••• none
-{{p16}}
-{{p17}}
-••••
-____________________________________
+{{p11}}
 
 ♦♦♦1♦♦♦
 
 ~~~js
 class User {
-  constructor (name) {
-    const privateVar = prompt('Set privateVar value:')
-
-    function showPrivate () {
-      console.log(`Oh dear, my call context is ${this}`)
-      console.log(`But I can see the private variable: ${privateVar}`)
-    }
-    this.name = name || 'Hippopotamus'
-    this.show = function () {
-      showPrivate ()
-    }
+  #status
+  constructor (name = 'Unknown', status) {
+    this.name = name
+    this.#status = status
+    this.getStatus = () => console.log(this.#status)
   }
 }
-
-const user = new User('Crocodile')
-user.show()
 ~~~
 
-{{{Classes-1-class.js}}}
+{{p12}}
 
+~~~bash
+$ node
+Welcome to Node.js v22.11.0.
+Type '.help' for more information.
+> class User {
+...   #status
+...   constructor (name = 'Unknown', status) {
+...     this.name = name
+...     this.#status = status
+...     this.getStatus = () => console.log(this.#status)
+...   }
+... }
+< undefined
+> const user = new User('Piter', 'registered')
+< undefined
+> user
+< User { name: 'Piter', getStatus: [Function (anonymous)] }
+> user.getStatus()
+registered
+undefined
+> user.#status = 'test'
+< user.#status = 'test'
+<     ^
+<
+< Uncaught SyntaxError: Private field '#status' must be declared in an enclosing class
+~~~
+
+^^{{p13}}^^
+
+___________________________________________________
+
+### ![ico-25 icon] {{common.classFields}}
+
+{{p14}}
+
+•••• none
+{{p15}}
+{{p16}}
+{{p17}}
 {{p18}}
-
-~~~js
-console.log(user)
-~~~
-
-~~~console
-▼ User {name: 'Crocodile', show: ƒ}
-    name: "Crocodile"
-  ► show: ƒ ()
-  ▼ [[Prototype]]: Object
-    ► constructor: class User
-    ► [[Prototype]]: Object
-~~~
-
-{{p19}}
-
-~~~js
-
-function User (name) {
-  const privateVar = prompt('Set privateVar value:')
-  function showPrivate () {
-    console.log(`Oh dear, my call context is ${this}`)
-    console.log(`But I can see the private variable: ${privateVar}`)
-  }
-  this.name = name || 'Hippopotamus'
-  this.show = function () {
-    showPrivate ()
-  }
-}
-
-const user = new User('Crocodile')
-user.show()
-~~~
-
-{{{Classes-1-function.js}}}
-
-{{p20}}
-
-~~~js
-console.log(user)
-~~~
-
-~~~console
-▼ User {name: 'Crocodile', show: ƒ}
-    name: "Crocodile"
-  ► show: ƒ ()
-  ▼ [[Prototype]]: Object
-    ► constructor: ƒ User(name)
-    ► [[Prototype]]: Object
-~~~
-
-_______________________________________________
-
-## ![ico-25 icon] class declaration
-
-![ico-20 error] **hoisting**
-
-{{p21}}
-
-{{p22}}
+••••
 
 ♦♦♦2♦♦♦
 
 ~~~js
-class Picture {
-  constructor (url, width) {
-    this.elem = document.createElement('img')
-    this.elem.src = url
-    this.elem.width = width
+class User {
+  #status
+
+  constructor (name, status) {
+    this.name = name
+    this.#status = status
+  }
+
+  getStatus () {
+    return this.#status
+  }
+
+  get status () {
+    return this.#status
+  }
+
+  set status (newStatus) {
+    const allowedStatuses = ['registered', 'admin', 'customer'];
+    if (allowedStatuses.includes(newStatus)) {
+      this.#status = newStatus
+    } else {
+      console.error(`Invalid status '${newStatus}'.`)
+    }
   }
 }
-
-const x = new Picture('images/hong-kong-1990268__340.jpg', 200)
-document.body.appendChild(x.elem)
 ~~~
 
-{{{Classes-2.js}}}
-
-•••• none
-{{p23}}
-{{p24}}
-{{p25}}
-{{p26}}
-••••
-
-~~~js
-const x = Picture('images/hong-kong-1990268__340.jpg', 200)
+~~~bash
+$ node
+Welcome to Node.js v22.11.0.
+Type '.help' for more information.
+> class User {
+...   #status
+...
+...   constructor (name, status) {
+...     this.name = name
+...     this.#status = status
+...   }
+...
+...   getStatus () {
+...     return this.#status
+...   }
+...
+...   get status () {
+...     return this.#status
+...   }
+...
+...   set status (newStatus) {
+...     const allowedStatuses = ['registered', 'admin', 'customer'];
+...     if (allowedStatuses.includes(newStatus)) {
+...       this.#status = newStatus
+...     } else {
+...       console.error(`Invalid status '${newStatus}'.`)
+...     }
+...   }
+... }
+< undefined
+> const user = new User('Piter', 'registered')
+< undefined
+> user.getStatus()
+< 'registered'
+> user.status
+< 'registered'
+> user.status = 'figma'
+! Invalid status 'figma'.
+> user.status = 'hacker'
+! Invalid status 'hacker'.
 ~~~
 
-~~~console
-<p class="error-message">Uncaught TypeError&colon; Class constructor Picture cannot be invoked without 'new'</p>
-~~~
-
-~~~js
-typeof Picture  // "function"
-~~~
-
-__________________________________________________
-
-## ![ico-25 icon] class expression
-
-{{p27}}
-
-### ![ico-20 icon] {{p28}}
+___________________________________________________
 
 ♦♦♦3♦♦♦
 
 ~~~js
-const Picture = class {
-  constructor (url = 'https://cdn.pastemagazine.com/www/articles/GrinchPOster_header.jpg') {
-    this.elem = document.body
-      .appendChild(document.createElement('img'))
-    this.elem.src = url
+class Demo {
+  publicField = '{{publicField}}'
+
+  #privateField = '{{privateField}}'
+
+  static staticField = '{{staticField}}'
+
+  constructor (name) {
+    this.name = name
+  }
+
+  publicMethod () {
+    return `{{access}}: ${this.#privateField}`
+  }
+
+  static staticMethod () {
+    return '{{call}} Demo.staticMethod()'
   }
 }
-
-console.dir(Picture)
 ~~~
 
-~~~console
-▼ class Picture
-    arguments: (...)
-    caller: (...)
-    length: 0
-    name: "Picture"
-  ► prototype: {constructor: ƒ}
-  ► [[Prototype]]: ƒ ()
+~~~bash
+$ node
+Welcome to Node.js v22.11.0.
+Type '.help' for more information.
+> class Demo {
+...   publicField = '{{publicField}}'
+...
+...   #privateField = '{{privateField}}'
+...
+...   static staticField = '{{staticField}}'
+...
+...   constructor(name) {
+...     this.name = name
+...   }
+...
+...   publicMethod () {
+...     return `{{access}}: ${this.#privateField}`
+...   }
+...
+...   static staticMethod () {
+...     return '{{call}} Demo.staticMethod()'
+...   }
+... }
+< undefined
+> const instance = new Demo('Test')
+< undefined
+> instance
+< Demo { publicField: '{{publicField}}', name: 'Test' }
+> instance.publicMethod()
+< '{{access}}: {{privateField}}'
+> Demo.staticMethod()
+< '{{call}} Demo.staticMethod()'
+> Demo.staticField
+< '{{staticField}}'
 ~~~
 
-{{p29}}
+___________________________________________________
 
-~~~js
-let sample = new Picture
+## ![ico-25 icon] {{p26}}
 
-console.log(sample)
-~~~
+{{p19}}
+{{p20}}
 
-~~~console
-▼ Picture {elem: img}
-    elem: img
-  ▼ [[Prototype]]:
-      ► constructor: class 
-      ► [[Prototype]]: Object
-~~~
+{{initialisation}}
 
-_____________________________________________________________
+•••• none
+
+1. {{p21}}
+2. {{p22}} '**{{publicField}}**'
+
+••••
+
+{{p23}}
+{{p24}}
+
+•••• none
+3. {{p25}}
+••••
+
+{{prove}}
 
 ♦♦♦4♦♦♦
 
 ~~~js
-const Picture = class Canvas {
-  constructor (url = 'https://cdn.pastemagazine.com/www/articles/GrinchPOster_header.jpg') {
-    this.elem = document.body
-      .appendChild(document.createElement('img'))
-    this.elem.src = url
-  }
+function getValue (stepName) {
+  console.log(`-> {{running}}: ${stepName}`)
+  return '{{value}}'
 }
-
-console.dir(Picture)
 ~~~
-
-~~~console
-▼ class Canvas
-    arguments: (...)
-    caller: (...)
-    length: 0
-    name: "Canvas"
-  ► prototype: {constructor: ƒ}
-  ► [[Prototype]]: ƒ ()
-~~~
-
-{{p30}}
-
-~~~js
-const sample = new Picture
-
-console.log(sample)
-~~~
-
-~~~console
-▼ Canvas {elem: img}
-    elem: img
-  ▼ [[Prototype]]:
-      ► constructor: class Canvas
-      ► [[Prototype]]: Object
-~~~
-
-~~~js
-sample instanceof Picture   // true
-~~~
-
-~~~js
-sample instanceof Canvas
-~~~
-
-~~~console
-<p class="error-message">Uncaught ReferenceError&colon; Canvas is not defined</p>
-~~~
-
-{{p31}}
-
-{{p32}}
-
-~~~js
-sample.constructor.name
-~~~
-
-________________________________________________________________
 
 ♦♦♦5♦♦♦
 
 ~~~js
-const Sample = class Canvas {
+class TestOrder {
+  firstField = getValue('{{field}} (firstField)')
+
+  constructor () {
+    getValue('{{code}}')
+    this.secondField = '{{created}}'
+  }
+
+  thirdField = getValue('{{field}} (thirdField)')
+}
+
+const instance = new TestOrder()
+~~~
+
+{{order}}
+
+~~~bash
+$ node
+Welcome to Node.js v22.11.0.
+Type '.help' for more information.
+> function getValue(stepName) {
+...   console.log(`-> {{running}}: ${stepName}`)
+...   return '{{value}}'
+... }
+< undefined
+> class TestOrder {
+...   firstField = getValue('{{field}} (firstField)')
+...
+...   constructor() {
+...     getValue('{{code}}')
+...     this.secondField = '{{created}}'
+...   }
+...
+...   thirdField = getValue('{{field}} (thirdField)')
+... }
+< undefined
+> const instance = new TestOrder()
+< -> {{running}}: {{field}} (firstField)
+< -> {{running}}: {{field}} (thirdField)
+< -> {{running}}: {{code}}
+< undefined
+~~~
+
+{{resume}}
+
+___________________________________________________
+
+## ![ico-25 icon] Class expression
+
+{{p27}}
+{{p28}}
+
+### ![ico-20 icon] {{p29}}
+
+♦♦♦6♦♦♦
+
+~~~js
+const User = class {
+  #name
+  constructor (name = 'Unknown') {
+    this.#name = name
+  } 
+  setName = name => {
+    if (!!name) {
+      this.#name = name
+    } else {
+      console.error('Invalid name: ', name)
+    }
+  }
+  getName = () => this.#name
+}
+~~~
+
+{{p30}}
+{{p31}}
+
+~~~bash
+$ node
+Welcome to Node.js v22.11.0.
+Type ".help" for more information.
+> const User = class {
+...   #name
+...   constructor (name = 'Unknown') {
+...     this.#name = name
+...   }
+...   setName = name => {
+...     if (!!name) {
+...       this.#name = name
+...     } else {
+...       console.error('Invalid name: ', name)
+...     }
+...   }
+...   getName = () => this.#name
+... }
+< undefined
+> User.name
+< 'User'
+> const user = new User
+< undefined
+> user
+< User { setName: [Function: setName], getName: [Function: getName] }
+> user.getName()
+< 'Unknown'
+> user.setName('Piter')
+< undefined
+> user.getName()
+< 'Piter'
+~~~
+
+___________________________________________________
+
+### ![ico-20 icon] {{p32}}
+
+♦♦♦7♦♦♦
+
+~~~js
+const User = class Human {
+  #name
+  constructor (name = 'Unknown') {
+    this.#name = name
+  } 
+  setName = name => {
+    if (!!name) {
+      this.#name = name
+    } else {
+      console.error('Invalid name: ', name)
+    }
+  }
+  getName = () => this.#name
+}
+~~~
+
+{{p33}}
+{{p34}}
+
+~~~bash
+$ node
+Welcome to Node.js v22.11.0.
+Type ".help" for more information.
+> const User = class Human {
+...   #name
+...   constructor (name = 'Unknown') {
+...     this.#name = name
+...   }
+...   setName = name => {
+...     if (!!name) {
+...       this.#name = name
+...     } else {
+...       console.error('Invalid name: ', name)
+...     }
+...   }
+...   getName = () => this.#name
+... }
+< undefined
+> User.name
+< 'Human'
+~~~
+
+___________________________________________________
+
+{{whatFor}}
+
+^^^[{{whatFor10}}]
+^^{{whatFor11}}^^
+![ico-20 paperclip] ^^{{whatFor111}}^^
+![ico-20 paperclip] ^^{{whatFor112}}^^
+
+~~~js
+let User = class {
+  static createDefault() { return new User }
+}
+~~~
+
+~~~demo
+> const Student = User
+< undefined
+> User = null
+< null
+> Student.createDefault()
+! Uncaught TypeError: User is not a constructor
+~~~
+
+^^^
+
+^^^[{{whatFor20}}]
+^^{{whatFor21}}^^
+^^^
+
+___________________________________________________
+
+♦♦♦8♦♦♦
+
+~~~js
+const Picture = class Canvas {
   constructor () {
     this.canvas = document.body
       .appendChild(document.createElement('canvas'))
-    this.resizeCanvas()
-    this.canvas.style.border = '1px solid #000000'
-    this.canvas.style.background = '#ffffff'
+    Object.assign(this.canvas, {
+      width: 320,
+      height: 320,
+      style: 'border: 1px solid #000; background: #FFF'
+    })
+
     this.area = this.canvas.getContext('2d')
   }
 
-  resizeCanvas (event) {
-    this.canvas.width = window.innerWidth - 64
-    this.canvas.height = window.innerHeight - 64
+  drawLine (points) {
+    this.area.moveTo(points[0].x, points[0].y)
+    this.area.lineTo(points[1].x, points[1].y)
+    this.area.stroke()
+  }
+}
+~~~
+
+~~~demo
+> console.log(Picture.name)
+< Canvas
+~~~
+
+~~~js
+const picture = new Picture()
+
+picture.drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
+picture.drawLine([{ x: 250, y: 250 }, { x: 100, y: 250 }])
+~~~
+
+~~~demo
+> picture instanceof Picture
+< true
+> picture instanceof Canvas
+! Uncaught ReferenceError: Canvas is not defined
+~~~
+
+{{{Classes-5.js}}}
+
+___________________________________________________
+
+## ![ico-25 icon] get & set
+
+{{p35}}
+{{p36}}
+{{p38}}
+
+•••• none
+{{p37}}
+{{p39}}
+••••
+
+{{p40}}
+
+♦♦♦9♦♦♦
+
+~~~js
+const Canvas = class {
+  constructor () {
+    this.canvas = document.body
+      .appendChild(document.createElement('canvas'))
+    this.area = this.canvas.getContext('2d')
+
+    let history = []
+
+    Object.defineProperty(this, 'history', {
+      get: () => Object.freeze(history),
+
+      set: newHistory => {
+        if (!Array.isArray(newHistory)) {
+          console.error('{{p49}}')
+          return
+        }
+
+        const tmp = newHistory
+          .filter(item => item.path && Array.isArray(item.path))
+
+        if (!tmp.length) {
+          console.error('{{p48}}')
+          return
+        }
+
+        history = tmp
+      },
+
+      enumerable: true,
+      configurable: true
+    })
+  }
+}
+~~~
+
+{{p41}}
+
+~~~js
+const canvas = new Canvas
+console.log(canvas)
+~~~
+
+~~~console
+▼ Canvas {canvas: canvas, area: CanvasRenderingContext2D}
+  ► area: CanvasRenderingContext2D {canvas: canvas, lang: 'inherit', font: '10px sans-serif', textAlign: 'start', textBaseline: 'alphabetic', …}
+  ► canvas: canvas
+    history: (...)
+  ► get history: () => history
+  ► set history: newHistory => {…}
+  ▼ [[Prototype]]: Object
+      ► constructor: class Canvas
+      ► [[Prototype]]: Object
+~~~
+
+{{p42}}
+{{p43}}
+
+~~~js
+canvas.history = [
+  { path: [{ x: 150, y: 250 }, { x: 350, y: 50 }], lineColor: 'red' },
+  { path: [{ x: 350, y: 50 }, { x: 100, y: 250 }], lineColor: 'green' },
+  '***',
+  { val: '***' }
+]
+~~~
+
+{{p44}}
+
+~~~js
+console.log(canvas.history)
+~~~
+
+~~~console
+▼ (2) [{…}, {…}]
+  ► 0: {path: Array(2), lineColor: 'red'}
+  ► 1: {path: Array(2), lineColor: 'green'}
+    length: 2
+  ► [[Prototype]]: Array(0)
+~~~
+
+{{p45}}
+
+{{p46}}
+
+~~~demo
+> canvas.history = 'History'
+! {{p49}}
+> canvas.history = ['***']
+! {{p48}}
+~~~
+
+{{p47}}
+
+{{p50}}
+
+~~~demo
+> canvas.history.push({ x: 10, y: 20 })
+! Uncaught TypeError: Cannot add property 2, object is not extensible
+> canvas.history.pop()
+! Uncaught TypeError: Cannot delete property '1' of [object Array]
+~~~
+
+___________________________________________________
+
+## ![ico-25 icon] {{p51}}
+
+{{p52}}
+
+{{p59}}
+
+•••• none
+{{p60}}
+{{p61}}
+{{p62}}
+••••
+
+{{p53}}
+
+~~~~js
+const Picture = class Canvas {
+  constructor () {
+    this.canvas = document.body
+      .appendChild(document.createElement('canvas'))
+    Object.assign(this.canvas, {
+      width: 320,
+      height: 320,
+      style: 'border: 1px solid #000; background: #FFF'
+    })
+
+    this.area = this.canvas.getContext('2d')
   }
 
   drawLine (points) {
@@ -324,206 +681,61 @@ const Sample = class Canvas {
   }
 }
 
-const pict = new Sample ()
-window.onresize = pict.resizeCanvas.bind(pict)
-
-pict.drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
-pict.drawLine([{ x: 250, y: 250 }, { x: 100, y: 250 }])
-~~~
-
-{{{Classes-5.js}}}
-
-{{p33}}
-
-~~~js
-console.log ( Sample.name ) // "Canvas"
-~~~
-
-________________________________________________________
-
-## ![ico-25 icon] get & set
-
-{{p35}}
-{{p36}}
-{{p38}}
-
-•••• none
-{{p34}}
-{{p37}}
-{{p39}}
-••••
-
-{{p40}}
-
-♦♦♦6♦♦♦
-
-~~~js
-const Canvas = class {
-  constructor () {
-    this.canvas = document.body.appendChild(document.createElement('canvas'))
-    this.area = this.canvas.getContext('2d')
-  }
-}
-~~~
-
-{{p41}}
-
-{{p42}}
-
-~~~js
-set history (newHistory) {
-  if (!this.canvas.history) this.canvas.history = []
-  if (!Array.isArray(newHistory)) {
-    console.error('History must be array')
-    return
-  }
-  const __history = newHistory
-    .filter(x => x.points && Array.isArray(x.points))
-    if (!__history.length) {
-      console.error('History must contain points array')
-      return
-    }
-
-    this.canvas.history = __history
-}
-~~~
-
-{{p43}}
-{{p44}}
-
-{{p45}}
-
-~~~js
-get history () {
-  return this.canvas.history
-}
-~~~
-
-{{p46}}
-
-{{p47}}
-
-~~~~js
-const Canvas = class {
-  constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    this.area = this.canvas.getContext('2d')
-  }
-
-  get history () {
-    return this.canvas.history
-  }
-
-  set history (newHistory) {
-    if (!this.canvas.history) this.canvas.history = []
-    if (!Array.isArray(newHistory)) {
-      console.error('History must be array')
-      return
-    }
-    const __history = newHistory
-      .filter(x => x.path && Array.isArray(x.path))
-    if (!__history.length) {
-      console.error('History must contain path array')
-      return
-    }
-    this.canvas.history = __history
-  }
-}
-
-let pict = new Canvas()
+const picture = new Picture
 ~~~~
-
-{{p48}}
-
-~~~js
-pict.history = [
-  { path: [{ x: 150, y: 250 }, { x: 350, y: 50 }], lineColor: 'red' },
-  { path: [{ x: 350, y: 50 }, { x: 100, y: 250 }], lineColor: 'green' },
-  "***",
-  { val: "***" }
-]
-~~~
-
-~~~console
-▼ Canvas {canvas: canvas, area: CanvasRenderingContext2D}
-  ► area: CanvasRenderingContext2D {canvas: canvas, globalAlpha: 1, globalCompositeOperation: "source-over", filter: "none", imageSmoothingEnabled: true, …}
-  ► canvas: canvas
-  ▼ history: Array(2)
-    ► 0: {path: Array(2), lineColor: "red"}
-    ► 1: {path: Array(2), lineColor: "green"}
-      length: 2
-    ► [[Prototype]]: Array(0)
-  ► [[Prototype]]: Object
-~~~
-
-{{p49}}
-{{p50}}
-{{p51}}
-
-{{p52}}
-
-~~~js
-pict.history = ['***']
-~~~
-
-{{p53}}
-
-~~~console
-<p class="error-message">History must contain path array</p>
-~~~
-
-~~~js
-pict.history = true
-~~~
 
 {{p54}}
 
-~~~console
-<p class="error-message">History must be array</p>
+~~~demo
+> const drawLine = picture.drawLine
+< undefined
+> drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
+! Uncaught TypeError: Cannot read property 'area' of undefined
 ~~~
 
 {{p55}}
+
+♦♦♦10♦♦♦
+
+~~~js
+const Picture = class Canvas {
+  constructor () {
+    this.canvas = document.body
+      .appendChild(document.createElement('canvas'))
+    Object.assign(this.canvas, {
+      width: 320,
+      height: 320,
+      style: 'border: 1px solid #000; background: #FFF'
+    })
+
+    this.area = this.canvas.getContext('2d')
+  }
+
+  drawLine = (points) => {
+    this.area.moveTo(points[0].x, points[0].y)
+    this.area.lineTo(points[1].x, points[1].y)
+    this.area.stroke()
+  }
+}
+~~~
+
 {{p56}}
-
-________________________________________________________
-
-## ![ico-25 icon] {{p57}}
+{{p57}}
 
 {{p58}}
 
-{{p59}}
-
-♦♦♦7♦♦♦
-
-~~~js
-const drawLine = pict.drawLine
-
-drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
+~~~demo
+> const picture = new Picture()
+< undefined
+> const test = picture.drawLine
+< undefined
+> test([{ x: 50, y: 50 }, { x: 250, y: 250 }])
+< undefined
 ~~~
 
-{{common.exception}}
+___________________________________________________
 
-~~~console
-<p class="error-message">Uncaught TypeError&colon; Cannot read property 'area' of undefined</p>
-~~~
-
-{{p60}}
-
-~~~js
-const drawLine = pict.drawLine.bind(pict)
-~~~
-
-{{p61}}
-{{p62}}
-•••• none
-{{p232}}
-{{p233}}
-••••
-
-______________________________________________________
-
-♦♦♦8♦♦♦
+♦♦♦11♦♦♦
 
 ~~~js
 class User {
@@ -531,41 +743,40 @@ class User {
     this.name = name || 'unknown'
   }
 
-  addSomeInfo (props) {
-    if (!Array.isArray(props)) return
+  addProperties (props) {
+    if (!Array.isArray(props)) {
+      console.error('The argument must be an array.')
+      return
+    }
 
-    function getProp (prop) {
-      this[prop.name] = prop.value
+    function setProp (prop) {
+      try {
+        this[prop.name] = prop.value
+      } catch (err) {
+        console.error(err.message)
+      }
     }
 
     for (const prop of props) {
-      getProp(prop)
+      setProp(prop)
     }
   }
 }
+~~~
+
+~~~demo
+> const user = new User('Piter')
+< undefined
+> user.addProperties([{ name: 'country', value: 'UA' }])
+! Cannot set properties of undefined (setting 'country')
 ~~~
 
 •••• none
 {{p234}}
 {{p235}}
 ••••
+
 {{p67}}
-
-~~~js
-var user = new User('Grig')
-user.addSomeInfo([
-  { name: 'age', value: 25 },
-  { name: 'hobby', value: ['football', 'fishing'] }
-])
-~~~
-
-~~~console
-<p class="error-message">Uncaught TypeError&colon; Cannot set property 'age' of undefined</p>
-~~~
-
-{{p68}}
-
-{{p69}}
 
 ~~~js
 class User {
@@ -573,52 +784,58 @@ class User {
     this.name = name || 'unknown'
   }
 
-  addSomeInfo (props) {
-    if (!Array.isArray(props)) return
+  addProperties (props) {
+    if (!Array.isArray(props)) {
+      console.error('The argument must be an array.')
+      return
+    }
 
-    props.forEach(prop => prop && prop.name && Object.assign(this, { [prop.name]: prop.value }))
+    const setProp = (prop) => {
+      try {
+        this[prop.name] = prop.value
+      } catch (err) {
+        console.error(err.message)
+      }
+    }
+
+    for (const prop of props) {
+      setProp(prop)
+    }
   }
 }
 ~~~
 
-{{p70}}
+{{p68}}
 
-~~~js
-const user = new User('Grig')
-
-user.addSomeInfo([
-  { name: 'age', value: 25 },
-  { name: hobby, value: ['football', 'fishing'] },
-  {},
-  54,
-  null
-])
-console.log(user)
+~~~demo
+> const user = new User('Piter')
+< undefined
+> user.addProperties([{ name: 'country', value: 'UA' }])
+< undefined
+> user
+< ► User {name: 'Piter', country: 'UA'}
 ~~~
 
-~~~console
-▼ User {name: "Grig", age: 25, hobby: Array(2)}
-    age: 25
-  ► hobby: (2) ["football", "fishing"]
-    name: "Grig"
-  ▼ [[Prototype]]:
-      ► addSomeInfo: addSomeInfo ( props ) { if ( !Array.isArray ( props ) ) return var getProp = prop => {…}
-      ► constructor: class User
-      ► [[Prototype]]: Object
-~~~
+___________________________________________________
 
-________________________________________________________
-
-## ![ico-25 icon] {{p71}}
+## ![ico-25 icon] {{p70}}
 
 ### ![ico-20 icon] extends
 
+{{p71}}
+
+•••• none
 {{p72}}
 {{p73}}
+••••
 
-{{p74}}
+^^^[]
+{{p232}}
+{{p233}}
+{{p251}}
+^^^
 
-♦♦♦9♦♦♦
+♦♦♦12♦♦♦
 
 ~~~js
 class Provider extends Array {
@@ -646,12 +863,12 @@ let provider = new Provider
 
 ~~~console
 
-▼ Provider(5) ["Google", "Mozilla", "Opera", "Safari", "IE"]
-    0: "Google"
-    1: "Mozilla"
-    2: "Opera"
-    3: "Safari"
-    4: "IE"
+▼ Provider(5) ['Google', 'Mozilla', 'Opera', 'Safari', 'IE']
+    0: 'Google'
+    1: 'Mozilla'
+    2: 'Opera'
+    3: 'Safari'
+    4: 'IE'
     length: 5
   ▼ [[Prototype]]: Array
       ► constructor: class Provider
@@ -661,17 +878,21 @@ let provider = new Provider
 
 {{p78}}
 
-~~~js
-provider instanceof Provider  // true
-provider instanceof Array     // true
+~~~demo
+> provider instanceof Provider
+< true
+> provider instanceof Array
+< true
 
-provider + 5   // 10
-provider * 3   // 15
+> provider + 5
+< 10
+> provider * 3
+< 15
 ~~~
 
-______________________________
+___________________________________________________
 
-♦♦♦10♦♦♦
+♦♦♦13♦♦♦
 
 ~~~js
 const Canvas = class {
@@ -698,19 +919,34 @@ class ExtendedCanvas extends Canvas {
   }
 }
 
-let newCanvas = new ExtendedCanvas()
+const newCanvas = new ExtendedCanvas()
 newCanvas.drawCircle({ x: 100, y: 100 }, 100)
 newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }])
+
+console.log(newCanvas)
+~~~
+
+~~~console
+▼ ExtendedCanvas {canvas: canvas, area: CanvasRenderingContext2D}
+  ► area: CanvasRenderingContext2D {canvas: canvas, lang: 'inherit', font: '10px sans-serif', textAlign: 'start', textBaseline: 'alphabetic', …}
+  ► canvas: canvas
+  ▼ [[Prototype]]: Canvas
+    ► constructor: class ExtendedCanvas
+    ► drawCircle: ƒ drawCircle(center, radius)
+    ▼ [[Prototype]]: Object
+      ► constructor: class
+      ► drawLine: ƒ drawLine(points)
+      ► [[Prototype]]: Object
 ~~~
 
 ••••
-{{p236}}
-{{p237}}
-{{p238}}
-{{p239}}
+{{p79}}
+{{p80}}
+{{p81}}
+{{p82}}
 ••••
 
-________________________________________________________
+___________________________________________________
 
 ### ![ico-20 icon] super
 
@@ -723,12 +959,12 @@ ________________________________________________________
 {{p87}}
 
 ~~~js
-super.drawLine(points, lineColor)
+super.drawLine(points)
 ~~~
 
 {{p88}}
 
-♦♦♦11♦♦♦
+♦♦♦14♦♦♦
 
 ~~~js
 const Canvas = class {
@@ -770,7 +1006,7 @@ newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }], '#ffaa00', 10)
 
 {{p91}}
 
-____________________________________________
+___________________________________________________
 
 ### ![ico-20 icon] super()
 
@@ -780,7 +1016,7 @@ ____________________________________________
 
 {{p94}}
 
-♦♦♦12♦♦♦
+♦♦♦15♦♦♦
 
 ~~~js
 const Canvas = class {
@@ -808,332 +1044,201 @@ class ExtendedCanvas extends Canvas {
 {{p95}}
 
 ~~~console
-<p class="error-message">Uncaught ReferenceError&colon; Must call super constructor in derived class before accessing 'this' or returning from derived constructor</p>
+! Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
 ~~~
 
-_________________________________________________________
+___________________________________________________
 
-### ![ico-20 icon] {{p96}}
 
-{{p97}}
-{{p98}}
-{{p99}}
+^^![ico-25 pin] Ключевое слово **~super~** работает и без классов — в обычных
+объектах, через их прототип. Это отдельная тема, и она вынесена на свою
+страницу:^^
 
-•••• none
-{{p240}}
-{{p241}}
-••••
-
-{{p102}}
-
-~~~js
-Object.setPrototypeOf(person, human)
-~~~
-
-{{p103}}
-
-••••
-{{p228}}
-{{p229}}
-{{p230}}
-{{p231}}
-••••
-
-♦♦♦13♦♦♦
-
-~~~js
-const human = {
-  place () {
-    return Object.assign(document.body.appendChild(document.createElement('p')), {
-      id: 'demo'
-    })
-  },
-  say (text) {
-    this.place.innerHTML = text
-  }
-}
-
-const person = {
-  getPlace () { this.place = super.place () },
-  talk (text) {
-    super.say(text)
-  }
-}
-
-Object.setPrototypeOf(person, human)
-person.getPlace()
-person.talk('привет!')
-~~~
-
-__________________________________________________
-
-♦♦♦14♦♦♦
-
-~~~js
-const human = {
-  place: () =>
-    document.getElementById('demo')
-      ? document.getElementById('demo')
-      : document.body.appendChild(document.createElement('p')).id = 'demo',
-
-    say (text) {
-      this.place.innerHTML = text
-    }
-}
-
-let person = {
-  getPlace () {
-    this.place = super.place()
-  },
-  talk (text) {
-    this.getPlace()
-    super.say(text)
-  }
-}
-
-Object.setPrototypeOf(person, human)
-
-person.talk('привет!')
-setTimeout(() => person.talk('Hello, baby!'), 2000)
-~~~
-
-••••
-{{p242}}
-{{p243}}
-{{p244}}
-{{p245}}
-••••
-
-••••
-{{p246}}
-{{p247}}
-{{p248}}
-{{p249}}
-••••
-
-••••
-{{p250}}
-{{p251}}
-••••
-
-••••
-{{p252}}
-{{p253}}
-{{p254}}
-{{p255}}
-••••
-
-______________________________________________________
-
-♦♦♦15♦♦♦
-
-~~~js
-const human = {
-  place: (() => {
-    const elem = document.getElementById('demo')
-    return elem || Object.assign(document.body.appendChild(document.createElement('p')), {
-      id: 'demo'
-    })
-  })(),
-
-  say (text) {
-    this.place.innerHTML = text
-  }
-}
-
-let person = {
-  talk ( text ) {
-    this.say(text)
-  }
-}
-
-Object.setPrototypeOf(person, human)
-person.talk('привет!')
-setTimeout(() => person.talk('Hello, baby!'), 2000)
-~~~
-
-{{p123}}
-{{p124}}
-{{p125}}
-{{p126}}
-
-{{p127}}
-{{p128}}
-
-{{p129}}
-{{p130}}
-{{p131}}
-{{p132}}
-
-{{p133}}
-{{p134}}
-{{p135}}
-
-{{p136}}
-{{p137}}
-{{p138}}
-{{p139}}
-{{p140}}
-
-{{p141}}
-{{p142}}
-{{p143}}
-{{p144}}
-
-~~~js
-const person = {
-  say (text) {
-    console.log(text)
-  },
-  talk (text) {
-    this.__proto__.say(text)
-  }
-}
-~~~
-
-{{p145}}
-
-~~~js
-super.say(text)
-~~~
-
-{{p146}}
-
-~~~js
-this.__proto__.say(text)
-~~~
-
-{{p147}}
-
-______________________________________________________________
-
-♦♦♦16♦♦♦
-
-~~~~js
-const human = {
-  id: '',
-  get place () {
-    if (this.id) return document.getElementById(this.id)
-  },
-  set place (newId) {
-    this.id = newId
-    document.getElementById(this.id) ||
-      Object.assign(document.body.appendChild(document.createElement('p')), {
-        id: this.id
-      })
-    },
-    get message () {
-      return this.place.innerText
-    },
-    set message (val) {
-      this.place.innerText = val
-    }
-}
-
-const person = {
-  talk (text) {
-    super.message = text
-  },
-  get place () {
-    return super.place
-  },
-  set place (newId) {
-    super.place = newId
-  }
-}
-
-Object.setPrototypeOf(person, human)
-person.place = 'demo-1'
-person.talk('привет!')
-person.place = 'demo-2'
-setTimeout(() => person.talk('Hello, baby!'), 2000)
-~~~~
-
-{{p148}}
-{{p149}}
-
-________________________________________________________
+[%%%super в литералах объектов%%%](page/super-in-object-literals)
 
 ## ![ico-25 icon] static
 
 {{p150}}
 
+•••• warn
 {{p151}}
-
 {{p152}}
+••••
 
-♦♦♦17♦♦♦
+♦♦♦16♦♦♦
 
 ~~~js
 class Canvas {
   constructor () {
-    this.canvas = document.body.appendChild(document.createElement('canvas'))
-    Canvas.resizeCanvas.call(this.canvas)
-    this.canvas.style.border = "1px solid #000000"
-    this.area = this.canvas.getContext ( "2d" )
+    this.canvas = Canvas.createCanvas()
+    this.area = this.canvas.getContext('2d')
   }
 
-  static resizeCanvas (event) {
-    this.width = window.innerWidth - 30
-    this.height = window.innerHeight - 20
-  }
-
-  static drawLine (context, points) {
-    context.area.moveTo(points[0].x, points[0].y)
-    context.area.lineTo(points[1].x, points[1].y)
-    context.area.stroke()
+  static createCanvas () {
+    const elem = document.body
+      .appendChild(document.createElement('canvas'))
+    Object.assign(elem, {
+      width: window.innerWidth - 64,
+      height: 400,
+      style: 'background: #ddd; margin-inline: 32px'
+    })
+    elem.addEventListener('resize', function () {
+      this.width = window.innerWidth - 64
+    })
+    return elem
   }
 }
-
-let pict = new Canvas()
-window.onresize = Canvas.resizeCanvas.bind(pict.canvas)
-Canvas.drawLine(pict, [{ x: 50, y: 50 }, { x: 250, y: 250 }])
-Canvas.drawLine(pict, [{ x: 250, y: 250 }, { x: 100, y: 250 }])
 ~~~
 
 {{p153}}
 {{p154}}
 
 ~~~js
-Canvas.resizeCanvas
-Canvas.drawLine
-~~~
-
-{{p155}}
-
-{{p156}}
-{{p157}}
-
-~~~js
-Canvas.resizeCanvas.call(this.canvas)
-~~~
-
-{{p158}}
-{{p159}}
-
-~~~js
-window.onresize = Canvas.resizeCanvas.bind(pict.canvas)
-~~~
-
-{{p160}}
-
-![ico-20 pin] {{common.note}}
-
-{{p161}}
-{{p162}}
-{{p163}}
-
-~~~js
-drawLine (points) {
-  this.area.moveTo(points[0].x, points[0].y)
-  this.area.lineTo(points[1].x, points[1].y)
-  this.area.stroke()
+const picture = new Canvas()
+window.onresize = function () {
+  picture.canvas.dispatchEvent(new Event('resize'))
 }
 ~~~
 
-{{p164}}
+{{p155}}
+{{p156}}
 
-________________________________________________________
+♦♦♦17♦♦♦
+
+~~~js
+class Canvas {
+  constructor () {
+    this.constructor.instances.add(this)
+    this.canvas = this.constructor.createCanvas()
+    this.area = this.canvas.getContext('2d')
+  }
+
+  static instances = new Set()
+  static listener = false
+
+  static setListener () {
+    if (this.listener) {
+      console.log('The listener is already enabled.')
+      return
+    }
+    window.onresize = function () {
+      const event = new Event('resize')
+      Canvas.instances
+        .forEach(instance => instance.canvas.dispatchEvent(event))
+    }
+    this.listener = true
+  }
+
+  static createCanvas () {
+    const elem = document.body
+      .appendChild(document.createElement('canvas'))
+    Object.assign(elem, {
+      width: window.innerWidth - 64,
+      height: 400,
+      style: `
+        background: #ddd;
+        margin: 32px;
+        border: solid 1px #777;
+      `
+    })
+    elem.addEventListener('resize', function () {
+      this.width = window.innerWidth - 64
+    })
+    return elem
+  }
+}
+~~~
+
+{{p157}}
+{{p158}}
+![ico-25 warn] {{p160}}
+
+^^^[{{p161}}]
+
+{{p162}}
+{{p163}}
+
+
+| [![ico-20 link] **~FinalizationRegistry~**⯈](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/FinalizationRegistry) | [![ico-20 link] **~WeakRef~**⯈](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef) |
+
+~~~js
+class Canvas {
+  constructor () {
+    const ref = new WeakRef(this)
+    Canvas.#registry.add(ref)
+    Canvas.#cleaner.register(this, ref)
+    this.canvas = this.constructor.createCanvas()
+    this.area = this.canvas.getContext('2d')
+    
+    Canvas.setListener()
+  }
+
+  static #registry = new Set()
+  static #listener = false
+
+  static #cleaner = new FinalizationRegistry((ref) => {
+    Canvas.#registry.delete(ref)
+    console.log('{{p159}}')
+  })
+
+  static setListener () {
+    if (this.#listener) return // Если слушатель уже есть, ничего не делаем
+    
+    window.onresize = function () {
+      const event = new Event('resize')
+      Canvas.#registry.forEach(ref => {
+        const instance = ref.deref()
+        if (instance && instance.canvas) {
+          instance.canvas.dispatchEvent(event)
+        }
+      })
+    }
+    this.#listener = true
+  }
+
+  static getAliveInstances() {
+    const alive = []
+    for (const ref of this.#registry) {
+      const obj = ref.deref()
+      if (obj) alive.push(obj)
+    }
+    return alive
+  }
+
+  static createCanvas () {
+    const elem = document.body
+      .appendChild(document.createElement('canvas'))
+    Object.assign(elem, {
+      width: window.innerWidth - 64,
+      height: 400,
+      style: `
+        background: #ddd;
+        margin: 32px;
+        border: solid 1px #777;
+      `
+    })
+    elem.addEventListener('resize', function () {
+      this.width = window.innerWidth - 64
+    })
+    return elem
+  }
+
+  destroy () {
+    if (this.canvas && this.canvas.parentNode) {
+      this.canvas.parentNode.removeChild(this.canvas)
+    }
+    this.canvas = null
+    this.area = null
+  }
+}
+
+const first = new Canvas()
+const second = new Canvas()
+~~~
+
+^^^
+
+___________________________________________________
 
 ♦♦♦18♦♦♦
 
@@ -1155,18 +1260,18 @@ window.onresize = Canvas.resizeCanvas
 
 {{p165}}
 
-••name: "Canvas"••
+••name: 'Canvas'••
 
 {{p166}}
 {{p167}}
 {{p168}}
 
-••name: ""••
+••name: ''••
 
 {{p169}}
 {{p170}}
 
-____________________________________________________________________
+___________________________________________________
 
 ## ![ico-25 cap] {{common.example}}
 
@@ -1200,10 +1305,10 @@ document.createElementNS('http://www.w3.org/2000/svg', 'svg')
 
 ~~~js
 const svg = document.createElement('svg')
-console.log(svg.namespaceURI)  // "http://www.w3.org/1999/xhtml"
+console.log(svg.namespaceURI)  // 'http://www.w3.org/1999/xhtml'
 
 const picture = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-console.log(picture.namespaceURI)  // "http://www.w3.org/2000/svg"
+console.log(picture.namespaceURI)  // 'http://www.w3.org/2000/svg'
 ~~~
 
 **Valid Namespace URIs:**
@@ -1211,7 +1316,7 @@ console.log(picture.namespaceURI)  // "http://www.w3.org/2000/svg"
 ![ico-20 green-ok] **HTML** - http://www.w3.org/1999/xhtml
 ![ico-20 green-ok] **SVG** - http://www.w3.org/2000/svg
 
-_______________________________________
+___________________________________________________
 
 #### ![ico-20 icon] {{p183}}
 
@@ -1295,7 +1400,7 @@ circle.setAttribute('stroke-width', 8)
 
 {{p200}}
 
-_____________________________________________________
+___________________________________________________
 
 #### ![ico-20 icon] {{p201}}
 
@@ -1409,6 +1514,120 @@ canvas.drawFigure('line', {
 {{p226}}
 {{p227}}
 
-________________________________________________________________
+___________________________________________________
+
+## ![ico-25 hw] {{common.tests}}
+
+♣♣♣♣
+? {{test01Question}}
+
++ {{test01Variant1}}
+= {{test01Variant1Answer}}
+
+- {{test01Variant2}}
+= {{test01Variant2Answer}}
+
+- {{test01Variant3}}
+= {{test01Variant3Answer}}
+
+- {{test01Variant4}}
+= {{test01Variant4Answer}}
+
+? {{test02Question}}
+
+- {{test02Variant1}}
+= {{test02Variant1Answer}}
+
+- {{test02Variant2}}
+= {{test02Variant2Answer}}
+
++ {{test02Variant3}}
+= {{test02Variant3Answer}}
+
+- {{test02Variant4}}
+= {{test02Variant4Answer}}
+
+? {{test03Question}}
+
+- {{test03Variant1}}
+= {{test03Variant1Answer}}
+
++ {{test03Variant2}}
+= {{test03Variant2Answer}}
+
+- {{test03Variant3}}
+= {{test03Variant3Answer}}
+
+- {{test03Variant4}}
+= {{test03Variant4Answer}}
+
+? {{test04Question}}
+
+- {{test04Variant1}}
+= {{test04Variant1Answer}}
+
+- {{test04Variant2}}
+= {{test04Variant2Answer}}
+
+- {{test04Variant3}}
+= {{test04Variant3Answer}}
+
++ {{test04Variant4}}
+= {{test04Variant4Answer}}
+
+? {{test05Question}}
+
++ {{test05Variant1}}
+= {{test05Variant1Answer}}
+
+- {{test05Variant2}}
+= {{test05Variant2Answer}}
+
+- {{test05Variant3}}
+= {{test05Variant3Answer}}
+
+- {{test05Variant4}}
+= {{test05Variant4Answer}}
+
+♣♣♣♣
+
+## ![ico-25 hw] {{common.quest}}
+
+♠♠♠♠ {{quest01Task}}
+class CustomButton {
+  constructor (label) {
+    this.label = label
+    this.clicks = 0
+    
+    this.elem = document.createElement('button')
+    this.elem.textContent = this.label
+    
+    this.elem.addEventListener('click', this.handleClick)
+    document.body.appendChild(this.elem)
+  }
+
+  handleClick () {
+    this.clicks++
+    this.textContent = `Clicked: ${this.clicks}`
+  }
+}
+
+const btn = new CustomButton('Click me!')
+???
+? 2 | {{quest01Check1}}
+document.querySelector('button') !== null
+
+? 4 | {{quest01Check2}}
+document.querySelector('button').click()
+btn.clicks === 1
+
+? 4 | {{quest01Check3}}
+document.querySelector('button').textContent === 'Clicked: 1'
+
+? 2 | {{quest01Check4}}
+/handleClick\s*=\s*[(\w$]/.test(SOURCE) && !/\.bind\s*\(/.test(SOURCE)
+♠♠♠♠
+
+___________________________________________________
 
 [![ico-30 hw] Quiz](quiz/classes)

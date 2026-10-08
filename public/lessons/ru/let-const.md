@@ -113,7 +113,7 @@ ___
 будет сгенерировано исключение
 
 ~~~console
-<p class="error-message">ReferenceError&colon; Cannot access 'x' before initialization</p>
+! ReferenceError: Cannot access 'x' before initialization
 ~~~
 
 ___
@@ -140,7 +140,7 @@ sample ()
 будет сгенерировано исключение
 
 ~~~console
-<p class="error-message">Uncaught SyntaxError&colon; Identifier 'figure' has already been declared.</p>
+! Uncaught SyntaxError: Identifier 'figure' has already been declared.
 ~~~
 
 в цикле сработает, потому что явно присутствует блок {...}
@@ -185,7 +185,7 @@ XXX = 55
 будет сгенерировано исключение
 
 ~~~console
-<p class="error-message">Uncaught TypeError&colon; Assignment to constant variable.</p>
+! Uncaught TypeError: Assignment to constant variable.
 ~~~
 
 ![ico-20 warn] Обязательно при объявлении инициализировать значение
@@ -199,7 +199,7 @@ const XXX
 будет сгенерировано исключение
 
 ~~~console
-<p class="error-message">Uncaught SyntaxError&colon; Missing initializer in const declaration.</p>
+! Uncaught SyntaxError: Missing initializer in const declaration.
 ~~~
 
 Если константа является объектом, то значения ее свойств могут быть изменены:

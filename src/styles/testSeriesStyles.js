@@ -44,6 +44,27 @@ header {
 .right { background: #090; }
 .wrong { background: #c00; }
 
+/* Takes its height whether or not it is running, so nothing on the page
+   moves when a card is answered. */
+.timer {
+  height: 3px;
+  margin: 0 4px 8px;
+  border-radius: 2px;
+  background: #0000;
+  overflow: hidden;
+  transition: background .2s linear;
+}
+
+.timer.running { background: #00000030; }
+
+.timer span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: 2px;
+  background: #079;
+}
+
 .stage {
   position: relative;
   overflow: hidden;

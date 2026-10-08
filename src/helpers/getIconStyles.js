@@ -7,11 +7,28 @@ import { getIconsWorker } from './getIconsWorker'
 
 const worker = getIconsWorker()
 
+/**
+ * The icons a page or a spoiler asks for, as a stylesheet.
+ *
+ * The worker echoes the list it was given back with its answer, and the answer
+ * is only taken when that echo is the list this call sent. Every caller used to
+ * resolve on the first message with a matching route, so two asking at once —
+ * the page and a spoiler, or two spoilers — each took whichever answer arrived
+ * first, and one of them got the other's icons. The listener is removed once it
+ * has its answer; they used to stay on the worker for the life of the page, one
+ * more on every call.
+ */
 export const getIconStyles = (source, iconList) => new Promise(resolve => {
-  worker.addEventListener('message', function (event) {
+  const asked = JSON.stringify(iconList)
+
+  worker.addEventListener('message', function listener (event) {
     const { route, iconList, response, error } = event.data
 
     if (route !== source || !iconList) return
+    if (JSON.stringify(iconList) !== asked) return
+
+    worker.removeEventListener('message', listener)
+
     if (error) console.error(error)
     if (!response) console.error('There is no response from icons worker!')
 

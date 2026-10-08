@@ -105,6 +105,7 @@ export const keywords = {
   'short-method-syntax': ['es6', 'property', 'name', 'method', 'syntax', 'short', 'short form'],
   'shorthand-object-literal': ['es6', 'literal', 'object', 'declaration', 'short', 'short form', 'syntax'],
   Classes: ['es6', 'strict', 'strict mode', 'constructor', 'class', 'declaration', 'expression', 'instanceof', 'get', 'set', 'context', 'inheritance', 'extends', 'super', 'static', 'createElementNS', 'svg', 'setAttribute', 'getAttribute', 'constructor', 'property', 'private', 'public', 'inherited', 'own', 'private property', 'public property', 'inherited property', 'own property'],
+  'super-in-object-literals': ['super', 'object literal', 'prototype', '__proto__', 'home object', 'setPrototypeOf', 'Object.create', 'method', 'shorthand', 'get', 'set'],
   'hw-16': ['class', 'inherited property', 'json-server'],
   fabric: ['polymorphism', 'factory', 'factory method', 'pattern', 'module', 'closure', 'iife', 'interface', 'class', 'constructor', 'instance', 'non-enumerable', 'method', 'enumerable', 'inherited'],
   Destructuring: ['structure', 'destructuring', 'assignment', 'destructuring assignment', 'array', 'object', 'data', 'spread', '...', 'rest', 'operator', 'collection', 'iterable'],

@@ -96,6 +96,157 @@ const quizTrouble = (body) => {
 }
 
 const TESTS_FENCE = '~~~tests'
+const QUIZ_FENCE = '♣♣♣♣'
+const FIX_FENCE = '♠♠♠♠'
+
+/**
+ * What can go wrong inside a ♠ block.
+ *
+ * All of it is about the halves. The block is code above ??? and checks
+ * below it, and every way of getting that wrong renders as something that
+ * looks deliberate: a block with no ??? is all code and cannot be graded, a
+ * check with no body always passes, and a check worth no points is scored
+ * out of a total it does not add to.
+ */
+const fixBlockTrouble = (content) => {
+  const lines = content.split('\n')
+  const body = lines.slice(1, -1)
+  const trouble = []
+
+  const at = body.findIndex((line) => /^[ \t]*\?{3}[ \t]*$/.test(line))
+
+  if (at === -1) {
+    return [{ what: 'нет ??? — код не отделён от проверок', detail: lines[0].trim().slice(0, 74) }]
+  }
+
+  if (!body.slice(0, at).join('').trim()) {
+    trouble.push({ what: 'код пустой', detail: lines[0].trim().slice(0, 74) })
+  }
+
+  let check = null
+  let count = 0
+
+  const close = () => {
+    if (check && !check.body) {
+      trouble.push({ what: 'проверка без кода — нечему сработать', detail: check.title })
+    }
+    check = null
+  }
+
+  for (const raw of body.slice(at + 1)) {
+    const line = raw.trim()
+    if (!line) continue
+
+    const head = line.match(/^\?[ \t]*(\d+)?[ \t]*\|?[ \t]*(.*)$/)
+
+    if (head) {
+      close()
+      count++
+      check = { title: (head[2] || '').trim().slice(0, 74), body: false }
+      if (!head[1]) {
+        trouble.push({ what: 'у проверки не указаны баллы', detail: check.title })
+      }
+      if (!check.title) {
+        trouble.push({ what: 'у проверки нет названия', detail: line.slice(0, 74) })
+      }
+      continue
+    }
+
+    if (!check) {
+      trouble.push({ what: 'строка после ??? до первой проверки', detail: line.slice(0, 74) })
+      continue
+    }
+
+    check.body = true
+  }
+
+  close()
+
+  if (!count) trouble.push({ what: 'ни одной проверки', detail: lines[0].trim().slice(0, 74) })
+
+  return trouble
+}
+
+/**
+ * What can go wrong inside a ♣ block.
+ *
+ * The short form is one line and its failure is a torn line, which is what
+ * every other check here looks for. The long form cannot be torn — its fences
+ * are whole lines — so the things worth checking are different, and all of
+ * them are about the marks:
+ *
+ *   a question with one option is not a question
+ *   a question with no + has no right answer, and nothing can be picked
+ *   a question with two + has two, and the second is never credited
+ *   an = before any option explains nothing
+ *   a line with no mark at all is a line the renderer silently drops
+ */
+const quizBlockTrouble = (content) => {
+  const lines = content.split('\n').slice(1, -1)
+  const trouble = []
+
+  let question = null
+  let seen = false
+
+  const close = () => {
+    if (!question) return
+    if (question.options < 2) {
+      trouble.push({ what: `вариантов ${question.options}, нужно хотя бы 2`, detail: question.text })
+    } else if (question.right !== 1) {
+      trouble.push({ what: `пометок + у вопроса: ${question.right}, нужна ровно 1`, detail: question.text })
+    }
+    question = null
+  }
+
+  for (const raw of lines) {
+    const line = raw.trim()
+    if (!line) continue
+
+    const mark = line[0]
+    const text = line.slice(1).trim()
+
+    if ('?+-='.indexOf(mark) === -1) {
+      trouble.push({ what: 'строка без пометки ? + - =', detail: line.slice(0, 74) })
+      continue
+    }
+
+    if (mark === '?') {
+      if (!question || question.options) {
+        close()
+        question = { text: text.slice(0, 74), options: 0, right: 0 }
+        seen = true
+      }
+      if (!text) trouble.push({ what: 'вопрос пустой', detail: line.slice(0, 74) })
+      continue
+    }
+
+    if (!question) {
+      trouble.push({ what: `пометка ${mark} до вопроса`, detail: line.slice(0, 74) })
+      continue
+    }
+
+    if (mark === '+' || mark === '-') {
+      if (!text) {
+        trouble.push({ what: `вариант ${mark} пустой`, detail: question.text })
+        continue
+      }
+      question.options++
+      if (mark === '+') question.right++
+      continue
+    }
+
+    // '='
+    if (!question.options) {
+      trouble.push({ what: 'пояснение = до первого варианта', detail: line.slice(0, 74) })
+    }
+  }
+
+  close()
+
+  if (!seen) trouble.push({ what: 'блок без вопросов', detail: content.trim().slice(0, 74) })
+
+  return trouble
+}
 
 /**
  * What parsePageContent leaves to be read as lines, plus the inside of every
@@ -114,6 +265,9 @@ const textOf = (pageContent) => {
   delete page.fragments.pageContent
 
   const texts = []
+  const quizzes = []
+  const fixes = []
+  const nested = []
   const markers = page.pageContent.match(/!!!\d+!!!/g)
 
   if (markers) {
@@ -129,11 +283,21 @@ const textOf = (pageContent) => {
   for (const key of Object.keys(page.fragments)) {
     const content = page.fragments[key] && page.fragments[key].content
     if (typeof content !== 'string') continue
-    if (content.slice(0, TESTS_FENCE.length) !== TESTS_FENCE) continue
-    texts.push(content)
+    if (content.slice(0, TESTS_FENCE.length) === TESTS_FENCE) {
+      texts.push(content)
+      // A ♣ block inside a ~~~tests fence renders as nothing at all: the
+      // fence is lifted out first and createTestSeries reads only →→→ lines,
+      // so the questions are silently dropped. The wrapper is not needed —
+      // one ♣ block holds as many questions as you give it — but the way the
+      // mistake fails gives no hint of that, so it is named here.
+      if (content.includes(QUIZ_FENCE)) nested.push(content)
+      continue
+    }
+    if (content.slice(0, QUIZ_FENCE.length) === QUIZ_FENCE) quizzes.push(content)
+    if (content.slice(0, FIX_FENCE.length) === FIX_FENCE) fixes.push(content)
   }
 
-  return texts
+  return { texts, quizzes, fixes, nested }
 }
 
 const pages = []
@@ -150,13 +314,36 @@ const broken = []
 let checked = 0
 
 for (const [name, file] of pages) {
-  let texts
+  let texts, quizzes, fixes, nested
 
   try {
-    texts = textOf(fs.readFileSync(file, 'utf8'))
+    ({ texts, quizzes, fixes, nested } = textOf(fs.readFileSync(file, 'utf8')))
   } catch (error) {
     broken.push({ name, what: 'разбор упал', detail: error.message })
     continue
+  }
+
+  for (const block of nested) {
+    const first = block.split('\n').find((line) => line.trim().startsWith('?')) || ''
+    broken.push({
+      name,
+      what: 'тест ♣: блок внутри ~~~tests — не отрисуется, фенс лишний',
+      detail: first.trim().slice(0, 74)
+    })
+  }
+
+  for (const fix of fixes) {
+    checked++
+    for (const trouble of fixBlockTrouble(fix)) {
+      broken.push({ name, what: `задание ♠: ${trouble.what}`, detail: trouble.detail })
+    }
+  }
+
+  for (const quiz of quizzes) {
+    checked++
+    for (const trouble of quizBlockTrouble(quiz)) {
+      broken.push({ name, what: `тест ♣: ${trouble.what}`, detail: trouble.detail })
+    }
   }
 
   for (const text of texts) {
@@ -218,7 +405,16 @@ for (const item of broken) {
   console.log(`    ${item.detail}`)
 }
 
-console.log('\nОдин из блочных шаблонов в src/configs/pageRegExpr.js захватил больше,')
-console.log('чем должен, и вырезал часть строки вместе со своим блоком.\n')
+// Only true of a torn line. A ♣ block cannot be torn — its fences are whole
+// lines — so what is wrong with one is written in the block itself, and
+// pointing at pageRegExpr would send the reader to the wrong file.
+const ownFault = (item) => item.what.slice(0, 6) !== 'тест ♣' && item.what.slice(0, 9) !== 'задание ♠'
+
+if (broken.some(ownFault)) {
+  console.log('\nОдин из блочных шаблонов в src/configs/pageRegExpr.js захватил больше,')
+  console.log('чем должен, и вырезал часть строки вместе со своим блоком.\n')
+} else {
+  console.log('')
+}
 
 process.exit(1)

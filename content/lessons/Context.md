@@ -2,12 +2,16 @@
 
 {{p1}}
 
+@@@@
+
+![](slogans/funcs-call-girls.svg)
 {{p2}}
+@@@@
 
 {{p3}}
 {{p4}}
 
-**{{common.example}} 1**
+♦♦♦1♦♦♦
 
 ~~~js
 user.showContext = function () {
@@ -17,17 +21,24 @@ user.showContext = function () {
 
 {{p5}}
 
+@@@@
 {{p6}}
+![](slogans/arrow-funcs-neutered-kitties.svg)
 
-**{{common.example}} 2**
+@@@@
+
+♦♦♦2♦♦♦
+
 ~~~js
 user.sayHello = () => console.log(this)
 ~~~
+
 {{p7}}
 
--------------------
+_______________________________________
 
 {{p8}}
+
 ~~~js
 const boy = {
   name: 'Robert',
@@ -40,19 +51,21 @@ const boy = {
 {{p10}}
 
 {{p11}}
+
 ~~~js
 const boy = {
   name: 'Robert',
   showContext: () => console.log(this)
 }
 ~~~
+
 {{p12}}
 
--------------------
+_______________________________________
 
 {{p13}}
 
-**sample 1**
+♦♦♦3♦♦♦
 
 {{p14}}
 {{p15}}
@@ -74,11 +87,14 @@ const user = {
 user.create().showContext()  // { name: 'Henry', create: ƒ }
 ~~~
 
-**sample 2**
+_______________________________________
+
+♦♦♦4♦♦♦
 
 {{p19}}
 {{p20}}
 {{p21}}
+
 ~~~js
 const user = {
   name: 'Henry',
@@ -94,6 +110,7 @@ user.create().showContext()  // { name: 'Jeck', showContext: ƒ }
 ~~~
 
 {{p22}}
+
 ~~~js
 const user = {
   name: 'Henry',
@@ -105,7 +122,9 @@ const user = {
   }
 }
 ~~~
+
 {{p23}}
+
 ~~~js
 const user = {
   name: 'Henry',

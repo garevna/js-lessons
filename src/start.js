@@ -17,6 +17,8 @@ import './components/spoiler-component'
 import './components/script-spoiler'
 import './components/codeOutputComponent'
 import './components/test-component'
+import './components/quiz-card'
+import './components/code-fix'
 
 import './components/page-component'
 
@@ -41,7 +43,7 @@ window.onscroll = window.onwheel = function (event) {
   welcome && welcome.remove()
 }
 
-window.addEventListener('resize', (event) => {
-  const grids = document.getElementsByClassName('grid-component')
-  Array.from(grids).forEach(elem => elem.dispatchEvent(new Event('resize')))
-})
+// A resize listener used to be here, forwarding the event to every @@@@ grid
+// so each could rewrite its own inline style. The grids are laid out by
+// .grid-component in pageStyles.js now, and a media query narrows them to one
+// column on a phone, so there is nothing to forward.

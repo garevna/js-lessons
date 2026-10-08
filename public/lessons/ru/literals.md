@@ -19,7 +19,7 @@ var str = "
 ~~~
 
 ~~~console
-<p class="error-message">Uncaught SyntaxError&colon; Invalid or unexpected token</p>
+! Uncaught SyntaxError: Invalid or unexpected token
 ~~~
 
 В любую строку можно вставлять символ перевода строки (~\n~), однако в этом случае строка может оказаться неприятно длинной и не очень читабельной.

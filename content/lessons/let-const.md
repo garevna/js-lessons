@@ -113,7 +113,7 @@ ___
 {{common.exception}}
 
 ~~~console
-<p class="error-message">ReferenceError&colon; Cannot access 'x' before initialization</p>
+! ReferenceError: Cannot access 'x' before initialization
 ~~~
 
 ___
@@ -140,7 +140,7 @@ sample ()
 {{common.exception}}
 
 ~~~console
-<p class="error-message">Uncaught SyntaxError&colon; Identifier 'figure' has already been declared.</p>
+! Uncaught SyntaxError: Identifier 'figure' has already been declared.
 ~~~
 
 {{p14}}
@@ -185,7 +185,7 @@ XXX = 55
 {{common.exception}}
 
 ~~~console
-<p class="error-message">Uncaught TypeError&colon; Assignment to constant variable.</p>
+! Uncaught TypeError: Assignment to constant variable.
 ~~~
 
 {{p20}}
@@ -199,7 +199,7 @@ const XXX
 {{common.exception}}
 
 ~~~console
-<p class="error-message">Uncaught SyntaxError&colon; Missing initializer in const declaration.</p>
+! Uncaught SyntaxError: Missing initializer in const declaration.
 ~~~
 
 {{p21}}

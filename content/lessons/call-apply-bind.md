@@ -342,10 +342,10 @@ objects.forEach(obj => func.apply(obj, args))
 
 ~~~console
 
-<p class="warning-message">Who was called before figure (0):</p>
-<p class="warning-message">Who was called before sample (1):</p>
+? Who was called before figure (0):
+? Who was called before sample (1):
 figure
-<p class="warning-message">Who was called before google (2):</p>
+? Who was called before google (2):
 figure
 sample
 
@@ -438,9 +438,9 @@ funcs[2]()
 ~~~
 
 ~~~console
-<p class="warning-message">The function func is called 1 times within the context of the object figure</p>
-<p class="warning-message">The function func is called 2 times within the context of the object sample</p>
-<p class="warning-message">The function func is called 3 times within the context of the object google</p>
+? The function func is called 1 times within the context of the object figure
+? The function func is called 2 times within the context of the object sample
+? The function func is called 3 times within the context of the object google
 ~~~
 
 _____________________________
@@ -466,9 +466,9 @@ bloom.google()
 ~~~
 
 ~~~console
-<p class="warning-message">The function func is called 4 times within the context of the object figure</p>
-<p class="warning-message">The function func is called 5 times within the context of the object sample</p>
-<p class="warning-message">The function func is called 6 times within the context of the object google</p>
+? The function func is called 4 times within the context of the object figure
+? The function func is called 5 times within the context of the object sample
+? The function func is called 6 times within the context of the object google
 ~~~
 
 _______________________________

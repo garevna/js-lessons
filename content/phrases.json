@@ -35,6 +35,16 @@
       "eng": "Constructor",
       "ua": "Конструктор"
     },
+    "private": {
+      "ru": "Приватные свойства",
+      "eng": "Private class fields",
+      "ua": "Приватні властивості"
+    },
+    "classFields": {
+      "ru": "Свойства и методы класса",
+      "eng": "Class properties and methods",
+      "ua": "Властивості та методи класу"
+    },
     "task": {
       "ru": "Задание",
       "eng": "Task",
@@ -54,6 +64,11 @@
       "ru": "Тесты",
       "eng": "Tests",
       "ua": "Тести"
+    },
+    "quest": {
+      "ru": "Квест",
+      "eng": "Quest",
+      "ua": "Квест"
     },
     "methods": {
       "ru": "Методы",
