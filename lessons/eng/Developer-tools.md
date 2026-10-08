@@ -53,7 +53,7 @@ Moreover, we can access the console "by name" (**~console~**) and use its comman
 > console.log('Welcome to JS!')
 < Welcome to JS!
 > console.warn('Warning!')
-! Warning!
+? Warning!
 > console.error('Error!')
 ! Error!
 > console.time('start')

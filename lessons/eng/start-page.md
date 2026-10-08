@@ -16,6 +16,7 @@ It's mind-boggling!
 Implicit type coercion puzzles many because they do not know the engine allows you to control this process.
 
 So goodbye, class inheritance model! and long live the
+
 ☼☼☼ functional freedom of JS! ☼☼☼
 
 ### ![ico-20 icon] Func-style⟪Func-style⟫
