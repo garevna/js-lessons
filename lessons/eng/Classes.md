@@ -1593,15 +1593,13 @@ ___________________________________________________
 
 ## ![ico-25 hw] Quest⟪Quest⟫
 
-♠♠♠♠ Клик по кнопке должен менять надпись на ней самой, но обработчик теряет контекст. Почини его.
+♠♠♠♠ Clicking the button should change the text on it to show the number of clicks. However, the code isn’t working. Please fix it.
 class CustomButton {
   constructor (label) {
     this.label = label
     this.clicks = 0
-    
     this.elem = document.createElement('button')
     this.elem.textContent = this.label
-    
     this.elem.addEventListener('click', this.handleClick)
     document.body.appendChild(this.elem)
   }
@@ -1614,18 +1612,67 @@ class CustomButton {
 
 const btn = new CustomButton('Click me!')
 ???
-? 2 | кнопка появилась на странице
+? 2 | The button has appeared on the page
 document.querySelector('button') !== null
 
-? 4 | клик увеличивает счётчик
+? 2 | Clicking it increments the counter
 document.querySelector('button').click()
 btn.clicks === 1
 
-? 4 | надпись меняется на самой кнопке
+? 2 | The text on the button changes when clicked and shows the number of clicks
 document.querySelector('button').textContent === 'Clicked: 1'
 
-? 2 | контекст связан полем-стрелкой, а не bind
+? 3 | The task has been solved without using `bind`
 /handleClick\s*=\s*[(\w$]/.test(SOURCE) && !/\.bind\s*\(/.test(SOURCE)
+♠♠♠♠
+
+♠♠♠♠ Вызов UserTracker.logAction('login') падает с TypeError, хотя статический метод increment() наследуется нормально. Разберись почему и почини — счётчик должен остаться приватным и быть одним на всех наследников.
+const Tracker = class {
+  static #count = 0
+
+  static increment () {
+    this.#count++
+    console.log(`Total events tracked: ${this.#count}`)
+  }
+}
+
+class UserTracker extends Tracker {
+  static logAction (action) {
+    console.log(`Action: ${action}`)
+    this.increment()
+  }
+}
+
+UserTracker.logAction('login')
+???
+? 2 | действие попадает в консоль, без исключения
+const seen = []
+const real = console.log
+console.log = (...a) => seen.push(String(a[0]))
+try { UserTracker.logAction('login') } finally { console.log = real }
+seen.some((line) => line.includes('login'))
+
+? 4 | счётчик действительно растёт на каждом вызове
+const seen = []
+const real = console.log
+console.log = (...a) => seen.push(String(a[0]))
+try { UserTracker.logAction('a'); UserTracker.logAction('b') } finally { console.log = real }
+const n = (seen.join(' ').match(/\d+/g) || []).map(Number)
+n.length >= 2 && n[n.length - 1] === n[n.length - 2] + 1
+
+? 4 | счётчик один на всех: любой наследник, а не только UserTracker, продолжает общий счёт, а не начинает свой
+class SecondTracker extends Tracker {
+  static logAction (action) { this.increment() }
+}
+const seen = []
+const real = console.log
+console.log = (...a) => seen.push(String(a[0]))
+try { UserTracker.logAction('a'); SecondTracker.logAction('b') } finally { console.log = real }
+const n = (seen.join(' ').match(/\d+/g) || []).map(Number)
+n.length >= 2 && n[n.length - 1] === n[n.length - 2] + 1
+
+? 2 | счётчик остался приватным (static #count)
+/static\s+#count/.test(SOURCE)
 ♠♠♠♠
 
 ___________________________________________________
