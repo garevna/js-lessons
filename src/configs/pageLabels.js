@@ -51,9 +51,9 @@ export const pageLabels = {
     ua: 'Перевірити'
   },
   restoreCode: {
-    ru: 'Вернуть исходный',
+    ru: 'Исходный код',
     eng: 'Reset code',
-    ua: 'Повернути вихідний'
+    ua: 'Початковий код'
   },
   next: {
     ru: 'Далее',

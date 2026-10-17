@@ -1598,10 +1598,8 @@ class CustomButton {
   constructor (label) {
     this.label = label
     this.clicks = 0
-    
     this.elem = document.createElement('button')
     this.elem.textContent = this.label
-    
     this.elem.addEventListener('click', this.handleClick)
     document.body.appendChild(this.elem)
   }
@@ -1617,15 +1615,64 @@ const btn = new CustomButton('Click me!')
 ? 2 | {{quest01Check1}}
 document.querySelector('button') !== null
 
-? 4 | {{quest01Check2}}
+? 2 | {{quest01Check2}}
 document.querySelector('button').click()
 btn.clicks === 1
 
-? 4 | {{quest01Check3}}
+? 2 | {{quest01Check3}}
 document.querySelector('button').textContent === 'Clicked: 1'
 
-? 2 | {{quest01Check4}}
+? 3 | {{quest01Check4}}
 /handleClick\s*=\s*[(\w$]/.test(SOURCE) && !/\.bind\s*\(/.test(SOURCE)
+♠♠♠♠
+
+♠♠♠♠ {{quest02Task}}
+const Tracker = class {
+  static #count = 0
+
+  static increment () {
+    this.#count++
+    console.log(`Total events tracked: ${this.#count}`)
+  }
+}
+
+class UserTracker extends Tracker {
+  static logAction (action) {
+    console.log(`Action: ${action}`)
+    this.increment()
+  }
+}
+
+UserTracker.logAction('login')
+???
+? 2 | {{quest02Check1}}
+const seen = []
+const real = console.log
+console.log = (...a) => seen.push(String(a[0]))
+try { UserTracker.logAction('login') } finally { console.log = real }
+seen.some((line) => line.includes('login'))
+
+? 4 | {{quest02Check2}}
+const seen = []
+const real = console.log
+console.log = (...a) => seen.push(String(a[0]))
+try { UserTracker.logAction('a'); UserTracker.logAction('b') } finally { console.log = real }
+const n = (seen.join(' ').match(/\d+/g) || []).map(Number)
+n.length >= 2 && n[n.length - 1] === n[n.length - 2] + 1
+
+? 4 | {{quest02Check3}}
+class SecondTracker extends Tracker {
+  static logAction (action) { this.increment() }
+}
+const seen = []
+const real = console.log
+console.log = (...a) => seen.push(String(a[0]))
+try { UserTracker.logAction('a'); SecondTracker.logAction('b') } finally { console.log = real }
+const n = (seen.join(' ').match(/\d+/g) || []).map(Number)
+n.length >= 2 && n[n.length - 1] === n[n.length - 2] + 1
+
+? 2 | {{quest02Check4}}
+/static\s+#count/.test(SOURCE)
 ♠♠♠♠
 
 ___________________________________________________
