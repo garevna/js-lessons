@@ -895,51 +895,86 @@ ___________________________________________________
 ♦♦♦13♦♦♦
 
 ~~~js
-const Canvas = class {
-  constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    this.canvas.height = '400'
-    this.area = this.canvas.getContext('2d')
+const BaseClass = class Canvas {
+  constructor (w = 300, h = 300) {
+    Canvas.create(w, h)
   }
 
-  drawLine (points) {
-    this.area.beginPath()
-    this.area.moveTo(points[0].x, points[0].y)
-    this.area.lineTo(points[1].x, points[1].y)
-    this.area.stroke()
+  static #context = null
+
+  static getContext = () => this.#context
+
+  static create (width, height) {
+    if (this.#context) return
+    const canvas = document.body
+      .appendChild(document.createElement('canvas'))
+    Object.assign(canvas, { width, height })
+    this.#context = canvas.getContext('2d')
+  }
+
+  setLineWidth (width = 2) {
+    const context = Canvas.getContext()
+    context.lineWidth = width 
+  }
+  setLineColor (color = '#09b') {
+    const context = Canvas.getContext()
+    context.strokeStyle = color
+  }
+  setFillColor (color = '#ff0') {
+    const context = Canvas.getContext()
+    context.fillStyle = color 
+  }
+
+  drawLine (points, lineWidth, lineColor) {
+    const context = Canvas.getContext()
+    context.beginPath()
+    this.setLineWidth(lineWidth)
+    this.setLineColor(lineColor)
+    context.moveTo(points[0].x, points[0].y)
+    context.lineTo(points[1].x, points[1].y)
+    context.stroke()
   }
 }
+~~~
 
-class ExtendedCanvas extends Canvas {
-  drawCircle (center, radius) {
-    this.area.beginPath()
-    this.area.arc(center.x, center.y, radius, 0, 2 * Math.PI)
-    this.area.stroke()
+♦♦♦extends♦♦♦
+
+~~~js
+class ExtendedCanvas extends BaseClass {
+  drawCircle (center, radius, lineWidth, lineColor, fill) {
+    const context = BaseClass.getContext()
+    context.beginPath()
+    this.setLineWidth(lineWidth)
+    this.setLineColor(lineColor)
+    this.setFillColor(fill)
+    context.arc(center.x, center.y, radius, 0, 2 * Math.PI)
+    context.stroke()
+    context.fill()
   }
 }
 
 const newCanvas = new ExtendedCanvas()
 newCanvas.drawCircle({ x: 100, y: 100 }, 100)
-newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }])
-
-console.log(newCanvas)
+newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }], 5, '#f0f')
 ~~~
 
+{{{Classes-extends-1.js}}}
+
 ~~~console
-▼ ExtendedCanvas {canvas: canvas, area: CanvasRenderingContext2D}
-  ► area: CanvasRenderingContext2D {canvas: canvas, lang: 'inherit', font: '10px sans-serif', textAlign: 'start', textBaseline: 'alphabetic', …}
-  ► canvas: canvas
+▼ ExtendedCanvas {}
   ▼ [[Prototype]]: Canvas
     ► constructor: class ExtendedCanvas
-    ► drawCircle: ƒ drawCircle(center, radius)
+    ► drawCircle: ƒ drawCircle(center, radius, lineWidth, lineColor, fill)
     ▼ [[Prototype]]: Object
-      ► constructor: class
-      ► drawLine: ƒ drawLine(points)
+      ► constructor: class Canvas
+      ► drawLine: ƒ drawLine(points, lineWidth, lineColor)
+      ► setFillColor: ƒ setFillColor(color = '#ff0')
+      ► setLineColor: ƒ setLineColor(color = '#09b')
+      ► setLineWidth: ƒ setLineWidth(width = 2)
       ► [[Prototype]]: Object
 ~~~
 
-••••
+••••none
 {{p79}}
 {{p80}}
 {{p81}}
@@ -958,36 +993,66 @@ ___________________________________________________
 {{p86}}
 {{p87}}
 
-~~~js
-super.drawLine(points)
-~~~
-
 {{p88}}
 
 ♦♦♦14♦♦♦
 
 ~~~js
-const Canvas = class {
-  constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    this.canvas.style.border = '1px solid #ddd'
-    this.area = this.canvas.getContext('2d')
+const BaseClass = class Canvas {
+  constructor (w = 300, h = 300) {
+    Canvas.create(w, h)
   }
 
-  drawLine (points) {
-    this.area.beginPath()
-    this.area.moveTo(points[0].x, points[0].y)
-    this.area.lineTo(points[1].x, points[1].y)
-    this.area.stroke()
+  static #context = null
+
+  static getContext = () => this.#context
+
+  static create (width, height) {
+    if (this.getContext()) return
+    const canvas = document.body
+      .appendChild(document.createElement('canvas'))
+    Object.assign(canvas, { width, height })
+    this.#context = canvas.getContext('2d')
+  }
+
+  static setLineWidth (width = 2) {
+    this.getContext().lineWidth = width 
+  }
+  static setLineColor (color = '#09b') {
+    this.getContext().strokeStyle = color
+  }
+  static setFillColor (color = '#ff0') {
+    this.getContext().fillStyle = color
   }
 }
+~~~
 
-class ExtendedCanvas extends Canvas {
-  drawLine (points, lineColor, lineWidth) {
-    this.area.lineWidth = lineWidth || 3
-    this.area.strokeStyle = lineColor
-    super.drawLine(points)
+◘◘ ![ico-25 cap] **extends** ◘◘
+
+~~~js
+class ExtendedCanvas extends BaseClass {
+  constructor (w, h) {
+    super(w, h)
+  }
+  static config (lineWidth, lineColor, fill) {
+    super.create(360, 280)
+    super.setLineWidth(lineWidth)
+    super.setLineColor(lineColor)
+    super.setFillColor(fill)
+  }
+  static drawLine (points, lineWidth, lineColor) {
+    const context = super.getContext()
+    this.config(lineWidth, lineColor)
+    context.moveTo(points[0].x, points[0].y)
+    context.lineTo(points[1].x, points[1].y)
+    context.stroke()
+  }
+  static drawCircle (center, radius, lineWidth, lineColor, fill) {
+    const context = super.getContext()
+    this.config(lineWidth, lineColor, fill)
+    context.arc(center.x, center.y, radius, 0, 2 * Math.PI)
+    context.stroke()
+    context.fill()
   }
 }
 ~~~
@@ -995,14 +1060,12 @@ class ExtendedCanvas extends Canvas {
 {{p89}}
 
 ~~~js
-let newCanvas = new ExtendedCanvas()
+BaseClass.create(400, 400)
+ExtendedCanvas.drawCircle({ x: 110, y: 110 }, 100, 8, '#f50', '#ff7')
+ExtendedCanvas.drawLine([{ x: 20, y: 20 }, { x: 220, y: 220 }], 5, '#f0f')
 ~~~
 
 {{p90}}
-
-~~~js
-newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }], '#ffaa00', 10)
-~~~
 
 {{p91}}
 
@@ -1264,255 +1327,187 @@ window.onresize = Canvas.resizeCanvas
 
 {{p166}}
 {{p167}}
-{{p168}}
 
 ••name: ''••
 
-{{p169}}
-{{p170}}
+{{p168}}
 
 ___________________________________________________
 
-## ![ico-25 cap] {{common.example}}
+## ![ico-25 cap] {{common.example}} SVG
 
-{{p171}}
+{{p169}}
+^^{{p170}}^^
+^^{{p171}}^^
 
-#### ![ico-20 icon] createElementNS()
+^^^[createElementNS()]
 
-{{p172}}
-{{p173}}
+^^{{p172}}^^
 
-{{p174}}
+^^{{p173}}^^
 
-{{p175}}
+| {{p174}} | {{p175}} |
+| {{p176}} | {{p177}} |
 
-{{p176}}
-( ~http://www.w3.org/2000/svg~ )
-{{p177}}
-
-{{p178}}
-{{p179}}
-
-{{p180}}
-
-{{p181}}
+^^{{p179}}^^
 
 ~~~js
 document.createElementNS('http://www.w3.org/2000/svg', 'svg')
 ~~~
 
-{{p182}}
+^^{{p178}}^^
 
-~~~js
-const svg = document.createElement('svg')
-console.log(svg.namespaceURI)  // 'http://www.w3.org/1999/xhtml'
+**^^Valid Namespace URIs:^^**
 
-const picture = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-console.log(picture.namespaceURI)  // 'http://www.w3.org/2000/svg'
+| **^^HTML^^** | ^^http://www.w3.org/1999/xhtml^^ |
+| **^^SVG^^**  | ^^http://www.w3.org/2000/svg^^   |
+
+^^^
+
+~~~demo
+> const svg = document.createElement('svg')
+< undefined
+> svg.namespaceURI
+< 'http://www.w3.org/1999/xhtml'
+> const picture = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+< undefined
+> picture.namespaceURI
+< 'http://www.w3.org/2000/svg'
 ~~~
-
-**Valid Namespace URIs:**
-
-![ico-20 green-ok] **HTML** - http://www.w3.org/1999/xhtml
-![ico-20 green-ok] **SVG** - http://www.w3.org/2000/svg
 
 ___________________________________________________
 
-#### ![ico-20 icon] {{p183}}
+#### ![ico-20 icon] {{p180}}
 
-{{p184}}
-{{p185}}
-
-•••• none
-{{p186}}
-{{p187}}
-{{p188}}
-{{p189}}
-{{p190}}
-••••
-
-••••
-{{p191}}
-{{p192}}
-••••
+{{p181}}
 
 ~~~js
-const DrawFigures = class SVG {
+class SVG {
   constructor (w, h) {
-    this.canvas = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-    document.body.appendChild(this.canvas)
-    this.setSize(w, h)
-    this.attrs = {
-      line: ['x1', 'y1', 'x2', 'y2'],
-      circle: ['cx', 'cy', 'r']
-    }
+    SVG.createCanvas()
+    SVG.setSize(w, h)
+  }
+  static #canvas = null
+  static #attrs = {
+    line: ['x1', 'y1', 'x2', 'y2', 'stroke', 'stroke-width'],
+    circle: ['cx', 'cy', 'r', 'stroke', 'stroke-width', 'fill']
   }
 
-  setSize (w, h) {
-    this.canvas.setAttribute ('width', w)
-    this.canvas.setAttribute ('height', h)
+  static createCanvas () {
+    if (this.#canvas) return
+    this.#canvas = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+    document.body.appendChild(SVG.#canvas)
+  }
+
+  static getCanvas () {
+    return this.#canvas
+  }
+
+  static getAttrs (figure) {
+    return this.#attrs[figure]
+  }
+
+  static setSize (w, h) {
+    this.#canvas.setAttribute('width', w)
+    this.#canvas.setAttribute('height', h)
   }
 
   drawFigure (figure, params) {
+    if (!SVG.getAttrs(figure)) {
+      console.error('Invalid figure:', figure)
+    }
     const elem = document.createElementNS('http://www.w3.org/2000/svg', figure)
-    this.canvas.appendChild(elem)
-    for (const attr of this.attrs[figure]) {
-      elem.setAttribute(attr, params[attr])
+    SVG.getCanvas().appendChild(elem)
+    for (const attr of SVG.getAttrs(figure)) {
+      if (params[attr]) {
+        elem.setAttribute(attr, params[attr])
+      }
     }
     return elem
   }
 }
 ~~~
 
-{{p193}}
-
-~~~js
-const sample = new DrawFigures(300, 300)
-sample
-  .drawFigure('line', { x1: 10, y1: 20, x2: 250, y2: 250 })
-  .setAttribute ('stroke', 'red')
-~~~
-
-•••• none
-{{p194}}
-{{p195}}
-{{p196}}
+••••none
+{{p182}}
+{{p183}}
+{{p184}}
 ••••
 
-•••• none
-{{p197}}
-{{p198}}
-••••
+{{p185}}
 
 ~~~js
-setAttribute('stroke', 'red')
+const picture = new SVG(360, 360)
+picture.drawFigure('circle', {
+  cx: 100,
+  cy: 150,
+  r: 80,
+  stroke: '#090',
+  'stroke-width': 5,
+  fill: '#ff0d'
+})
+const image = new SVG(300, 300)
+image.drawFigure('line', {
+  x1: 20,
+  y1: 30,
+  x2: 180,
+  y2: 270,
+  stroke: '#f50',
+  'stroke-width': 4
+})
 ~~~
 
-{{p199}}
-
-~~~js
-const circle = sample.drawFigure('circle', { cx: 180, cy: 180, r: 150 })
-circle.setAttribute('stroke', 'blue')
-circle.setAttribute('fill', 'transparent')
-sample.setSize(400, 400)
-circle.setAttribute('stroke-width', 8)
-~~~
-
-{{p200}}
+{{{Classes-3.js}}}
 
 ___________________________________________________
 
-#### ![ico-20 icon] {{p201}}
+#### ![ico-20 icon] {{p186}}
 
-{{p202}}
-{{p203}}
-{{p204}}
-
-{{p205}}
-
-{{p206}}
-{{p207}}
-{{p208}}
-
-••••
-{{p209}}
-••••
-
-{{p210}}
-{{p211}}
-
-{{p212}}
-{{p213}}
-{{p214}}
+{{p187}}
 
 ~~~js
-class ColoredFigures extends DrawFigures {
+class ExtendedSVG extends SVG {
   constructor () {
-    super(window.innerWidth - 20, window.innerHeight - 20)
-    this.figures = []
-    for (const attr in this.attrs) {
-      this.attrs[attr].push('stroke', 'style', 'fill')
-    }
+    super(420, 420)
   }
 
-  line (params, line) {
-    this.draw('line', params)
+  line (x1, y1, x2, y2, stroke = '#777', strokeWidth = 2) {
+    super.drawFigure('line', {
+      x1,
+      y1,
+      x2,
+      y2,
+      stroke,
+      'stroke-width': strokeWidth
+    })
   }
-
-  circle (params, line, fill) {
-    this.draw('circle', params)
-  }
-
-  draw (figure, params) {
-    if (params.strokeWidth) {
-      Object.assign(params, {
-        style: `stroke-width: ${ params.strokeWidth }`
-      })
-      delete params.strokeWidth
-    }
-    this.figures.push(this.drawFigure(figure, params))
-  }
-
-  erase (figureIndex) {
-    if (figureIndex > this.figures.length - 1 || figureIndex < 0) return
-    this.figures[figureIndex].remove()
-    this.figures.splice(figureIndex, 1)
+  circle (cx, cy, r, stroke = '#777', strokeWidth = 2, fill = '#fff5') {
+    super.drawFigure('circle', {
+      cx,
+      cy,
+      r,
+      stroke,
+      'stroke-width': strokeWidth,
+      fill
+    })
   }
 }
 ~~~
 
-{{p215}}
+{{p188}}
+••{{p189}}••
+
+{{p190}}
 
 ~~~js
-const canvas = new ColoredFigures(400, 500)
+const canvas = new ExtendedSVG
+const picture = new ExtendedSVG
 
-canvas.line({
-  x1: 10,
-  y1: 250,
-  x2: 250,
-  y2: 50,
-  stroke: 'green',
-  strokeWidth: 5
-})
-canvas.circle({
-  cx: 150,
-  cy: 150,
-  r: 100,
-  fill: '#ff00ff90',
-  stroke: '#909',
-  strokeWidth: 10
-})
+canvas.circle(150, 150, 100, '#090', 5, '#ff0d')
+picture.line(20, 30, 180, 270, '#f50', 4)
 ~~~
 
-{{p216}}
-
-~~~js
-canvas.drawFigure('line', {
-  x1: 200,
-  y1: 150,
-  x2: 50,
-  y2: 100,
-  stroke: 'blue',
-  style: 'stroke-width: 10'
-})
-~~~
-
-{{p217}}
-{{p218}}
-
-{{p219}}
-
-{{p220}}
-{{p221}}
-
-{{p222}}
-{{p223}}
-
-{{p224}}
-{{p225}}
-
-{{p226}}
-{{p227}}
+{{{Classes-4.js}}}
 
 ___________________________________________________
 
@@ -1675,6 +1670,30 @@ n.length >= 2 && n[n.length - 1] === n[n.length - 2] + 1
 /static\s+#count/.test(SOURCE)
 ♠♠♠♠
 
+___
+
+◘◘**![ico-20 hw] {{common.quest}} 3**◘◘
+
+~~~js
+function createModelFactory (prefix) {
+  return class DBModel {
+    constructor (id) {
+      this.dbId = `${prefix}_${id}`
+    }
+    
+    static getModelName() {
+      return DBModel.name
+    }
+  }
+}
+
+const OrderModel = createModelFactory('ORD')
+const userOrder = new OrderModel('1024')
+
+console.log(OrderModel.getModelName())
+~~~
+
+→→→ {{quest03Question}} | 'OrderModel', 'DBModel', TypeError, 'ORD_1024', undefined | DBModel →→→
 ___________________________________________________
 
 [![ico-30 hw] Quiz](quiz/classes)

@@ -895,51 +895,86 @@ ___________________________________________________
 ♦♦♦13♦♦♦
 
 ~~~js
-const Canvas = class {
-  constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    this.canvas.height = '400'
-    this.area = this.canvas.getContext('2d')
+const BaseClass = class Canvas {
+  constructor (w = 300, h = 300) {
+    Canvas.create(w, h)
   }
 
-  drawLine (points) {
-    this.area.beginPath()
-    this.area.moveTo(points[0].x, points[0].y)
-    this.area.lineTo(points[1].x, points[1].y)
-    this.area.stroke()
+  static #context = null
+
+  static getContext = () => this.#context
+
+  static create (width, height) {
+    if (this.#context) return
+    const canvas = document.body
+      .appendChild(document.createElement('canvas'))
+    Object.assign(canvas, { width, height })
+    this.#context = canvas.getContext('2d')
+  }
+
+  setLineWidth (width = 2) {
+    const context = Canvas.getContext()
+    context.lineWidth = width 
+  }
+  setLineColor (color = '#09b') {
+    const context = Canvas.getContext()
+    context.strokeStyle = color
+  }
+  setFillColor (color = '#ff0') {
+    const context = Canvas.getContext()
+    context.fillStyle = color 
+  }
+
+  drawLine (points, lineWidth, lineColor) {
+    const context = Canvas.getContext()
+    context.beginPath()
+    this.setLineWidth(lineWidth)
+    this.setLineColor(lineColor)
+    context.moveTo(points[0].x, points[0].y)
+    context.lineTo(points[1].x, points[1].y)
+    context.stroke()
   }
 }
+~~~
 
-class ExtendedCanvas extends Canvas {
-  drawCircle (center, radius) {
-    this.area.beginPath()
-    this.area.arc(center.x, center.y, radius, 0, 2 * Math.PI)
-    this.area.stroke()
+♦♦♦extends♦♦♦
+
+~~~js
+class ExtendedCanvas extends BaseClass {
+  drawCircle (center, radius, lineWidth, lineColor, fill) {
+    const context = BaseClass.getContext()
+    context.beginPath()
+    this.setLineWidth(lineWidth)
+    this.setLineColor(lineColor)
+    this.setFillColor(fill)
+    context.arc(center.x, center.y, radius, 0, 2 * Math.PI)
+    context.stroke()
+    context.fill()
   }
 }
 
 const newCanvas = new ExtendedCanvas()
 newCanvas.drawCircle({ x: 100, y: 100 }, 100)
-newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }])
-
-console.log(newCanvas)
+newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }], 5, '#f0f')
 ~~~
 
+{{{Classes-extends-1.js}}}
+
 ~~~console
-▼ ExtendedCanvas {canvas: canvas, area: CanvasRenderingContext2D}
-  ► area: CanvasRenderingContext2D {canvas: canvas, lang: 'inherit', font: '10px sans-serif', textAlign: 'start', textBaseline: 'alphabetic', …}
-  ► canvas: canvas
+▼ ExtendedCanvas {}
   ▼ [[Prototype]]: Canvas
     ► constructor: class ExtendedCanvas
-    ► drawCircle: ƒ drawCircle(center, radius)
+    ► drawCircle: ƒ drawCircle(center, radius, lineWidth, lineColor, fill)
     ▼ [[Prototype]]: Object
-      ► constructor: class
-      ► drawLine: ƒ drawLine(points)
+      ► constructor: class Canvas
+      ► drawLine: ƒ drawLine(points, lineWidth, lineColor)
+      ► setFillColor: ƒ setFillColor(color = '#ff0')
+      ► setLineColor: ƒ setLineColor(color = '#09b')
+      ► setLineWidth: ƒ setLineWidth(width = 2)
       ► [[Prototype]]: Object
 ~~~
 
-••••
+••••none
 Обратите внимание, что метод **_drawCircle()_** находится в прототипе экземпляра
 (что логично, поскольку это собственный метод дочернего класса)
 а унаследованный метод **_drawLine()_** родительского класса **Canvas** находится в прототипе прототипа
@@ -952,42 +987,72 @@ ___________________________________________________
 
 Методы родительского класса доступны в дочернем классе посредством ключевого слова **~super~**.
 
-^^![ico-20 speach] Расширим унаследованный метод **~drawLine()~**  родительского класса, добавив аргумент **_~lineWidth~_** (толщину линии)^^
+Обычные (не статические) методы родителя наследуются и доступны дочернему объекту через **~this~**. Ключевое слово **~super~** для них нужно только тогда, когда метод с таким же именем есть у экземпляра (или в дочернем классе), и есть необходимость вызвать родительскую версию.
 
-^^![ico-20 speach] Для этого определим "расширенный" метод ~drawLine()~ внутри дочернего класса, который будет вызывать метод ~drawLine()~ родительского класса с помощью ключевого слова **~super~**:^^
+Со статическими методами (**static**) дело обстоит иначе. У нас есть два варианта вызова статического метода родительского класса: через ключевое слово **~super~** или через имя родительского класса.
+![ico-25 warn] В статических методах **~this~** ссылается на класс, в котором вызывается метод. Если статический метод родителя вызывается через ключевое слово **~super~**, то **~this~** будет ссылкой на дочерний класс.
+Таким образом, статические методы наследуются, но контекст вызова в них будет ссылкой на класс, в котором вызывается метод.
 
-
-
-~~~js
-super.drawLine(points)
-~~~
-
-^^Теперь код будет таким:^^
+![ico-25 warn] Важно помнить, что вызывать статические методы родительского класса через ключевое слово **~super~** можно только внутри статических методов дочернего класса.
 
 ♦♦♦14♦♦♦
 
 ~~~js
-const Canvas = class {
-  constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    this.canvas.style.border = '1px solid #ddd'
-    this.area = this.canvas.getContext('2d')
+const BaseClass = class Canvas {
+  constructor (w = 300, h = 300) {
+    Canvas.create(w, h)
   }
 
-  drawLine (points) {
-    this.area.beginPath()
-    this.area.moveTo(points[0].x, points[0].y)
-    this.area.lineTo(points[1].x, points[1].y)
-    this.area.stroke()
+  static #context = null
+
+  static getContext = () => this.#context
+
+  static create (width, height) {
+    if (this.getContext()) return
+    const canvas = document.body
+      .appendChild(document.createElement('canvas'))
+    Object.assign(canvas, { width, height })
+    this.#context = canvas.getContext('2d')
+  }
+
+  static setLineWidth (width = 2) {
+    this.getContext().lineWidth = width 
+  }
+  static setLineColor (color = '#09b') {
+    this.getContext().strokeStyle = color
+  }
+  static setFillColor (color = '#ff0') {
+    this.getContext().fillStyle = color
   }
 }
+~~~
 
-class ExtendedCanvas extends Canvas {
-  drawLine (points, lineColor, lineWidth) {
-    this.area.lineWidth = lineWidth || 3
-    this.area.strokeStyle = lineColor
-    super.drawLine(points)
+◘◘ ![ico-25 cap] **extends** ◘◘
+
+~~~js
+class ExtendedCanvas extends BaseClass {
+  constructor (w, h) {
+    super(w, h)
+  }
+  static config (lineWidth, lineColor, fill) {
+    super.create(360, 280)
+    super.setLineWidth(lineWidth)
+    super.setLineColor(lineColor)
+    super.setFillColor(fill)
+  }
+  static drawLine (points, lineWidth, lineColor) {
+    const context = super.getContext()
+    this.config(lineWidth, lineColor)
+    context.moveTo(points[0].x, points[0].y)
+    context.lineTo(points[1].x, points[1].y)
+    context.stroke()
+  }
+  static drawCircle (center, radius, lineWidth, lineColor, fill) {
+    const context = super.getContext()
+    this.config(lineWidth, lineColor, fill)
+    context.arc(center.x, center.y, radius, 0, 2 * Math.PI)
+    context.stroke()
+    context.fill()
   }
 }
 ~~~
@@ -995,14 +1060,12 @@ class ExtendedCanvas extends Canvas {
 ^^![ico-20 speach] Создадим экземпляр дочернего класса:^^
 
 ~~~js
-let newCanvas = new ExtendedCanvas()
+BaseClass.create(400, 400)
+ExtendedCanvas.drawCircle({ x: 110, y: 110 }, 100, 8, '#f50', '#ff7')
+ExtendedCanvas.drawLine([{ x: 20, y: 20 }, { x: 220, y: 220 }], 5, '#f0f')
 ~~~
 
 ^^![ico-20 speach] и вызовем его метод  **~drawLine()~**^^
-
-~~~js
-newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }], '#ffaa00', 10)
-~~~
 
 ^^![ico-20 speach] Теперь линия будет отрисовываться заданной толщины.^^
 
@@ -1263,256 +1326,188 @@ window.onresize = Canvas.resizeCanvas
 ••name: 'Canvas'••
 
 Измените размер окна браузера
-Теперь метод  **_~resizeCanvas()~_**  будет вызван в глобальной области видимости,
-и в консоль будет выведено:
+Теперь метод  **_~resizeCanvas()~_**  будет вызван в глобальной области видимости, и в консоль будет выведено:
 
 ••name: ''••
 
-поскольку  ~this~  внутри **_~resizeCanvas()~_** теперь указывает
-на глобальный объект  (~window~)
+поскольку ~this~ внутри **_~resizeCanvas()~_** теперь указывает на глобальный объект (~window~).
 
 ___________________________________________________
 
-## ![ico-25 cap] Пример⟪Example⟫
+## ![ico-25 cap] Пример SVG⟪Example_SVG⟫
 
-В этом примере мы будем работать с графикой [svg](external/svg)
+В этом примере мы будем работать с графикой [svg](external/svg).
+^^**SVG** - это тип _XML_-разметки, который имеет собственное пространство имен, которое может быть встроено в HTML5.^^
+^^![ico-20 warn] Для корректной работы svg-элементов нужно, чтобы браузер интерпретировал их в пространстве имен **SVG**.^^
 
-#### ![ico-20 icon] createElementNS()⟪createElementNS⟫
+^^^[createElementNS()]
 
-![ico-20 warn] Для динамического создания элементов SVG нужно использовать метод **~createElementNS()~**
-с указанием ссылки на пространство имен ( **_NS_** )
+^^![ico-20 warn] Для динамического создания элементов SVG нужно использовать метод **~createElementNS()~** с указанием ссылки на пространство имен (**~NS~** - namespace)^^
 
-Это необходимо для того, чтобы браузер правильно понимал и отображал _svg_-элементы
+^^Это необходимо для того, чтобы браузер правильно понимал и отображал ~svg~-элементы.^^
 
-SVG - это тип XML-разметки, который имеет собственное пространство имен, которое может быть встроено в HTML5
+| Первый аргумент | ссылка на пространство имен (~http://www.w3.org/2000/svg~) |
+| Второй аргумент | имя тега элемента в этом пространстве имен |
 
-![ico-20 green-ok] Первым аргументом метода  **~createElementNS()~** идет ссылка на пространство имен
-( ~http://www.w3.org/2000/svg~ )
-![ico-20 green-ok] Второй аргумент - имя тега элемента в этом пространстве имен
-
-![ico-20 warn] Если использовать обычный метод  ~createElement()~, то браузер будет интерпретировать его в пространстве имен  HTML
-( по умолчанию )
-
-![ico-20 warn] Для корректной работы svg-элементов нужно, чтобы браузер интерпретировал их в пространстве имен SVG
-
-^^Например, чтобы корректно создать контейнер для  svg-графики:^^
+^^Например, чтобы корректно создать контейнер для svg-графики:^^
 
 ~~~js
 document.createElementNS('http://www.w3.org/2000/svg', 'svg')
 ~~~
 
-**Проверим в консоли:**
+^^![ico-20 warn] Если использовать обычный метод ~createElement()~, то браузер по умолчанию будет интерпретировать его в пространстве имен HTML.^^
 
-~~~js
-const svg = document.createElement('svg')
-console.log(svg.namespaceURI)  // 'http://www.w3.org/1999/xhtml'
+**^^Valid Namespace URIs:^^**
 
-const picture = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-console.log(picture.namespaceURI)  // 'http://www.w3.org/2000/svg'
+| **^^HTML^^** | ^^http://www.w3.org/1999/xhtml^^ |
+| **^^SVG^^**  | ^^http://www.w3.org/2000/svg^^   |
+
+^^^
+
+~~~demo
+> const svg = document.createElement('svg')
+< undefined
+> svg.namespaceURI
+< 'http://www.w3.org/1999/xhtml'
+> const picture = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+< undefined
+> picture.namespaceURI
+< 'http://www.w3.org/2000/svg'
 ~~~
-
-**Valid Namespace URIs:**
-
-![ico-20 green-ok] **HTML** - http://www.w3.org/1999/xhtml
-![ico-20 green-ok] **SVG** - http://www.w3.org/2000/svg
 
 ___________________________________________________
 
 #### ![ico-20 icon] Базовый класс⟪Base_class⟫
 
-Создадим класс **~DrawFigures~**, который будет создавать  элемент **svg**
-с двумя методами:   **~setSize()~**  и  **~drawFigure()~**
-
-•••• none
-![ico-20 speach] Метод **_setSize()_** будет изменять размеры элемента  svg
-![ico-20 speach] Метод **_drawFigure()_** будет добавлять элементы в контейнер  svg
-^^Имя элемента будет передано первым аргументом метода  (figure)^^
-^^возможные значения  "line", "circle", "path", "rect" и т.д.^^
-^^Параметры фигуры будут переданы вторым аргументом метода (params)^^
-••••
-
-••••
-![ico-20 speach] Поскольку у каждого элемента  svg  свой набор атрибутов, создаем свойство  **_attrs_** (объект), свойства которого будут именами svg-элементов, а значения - массивом атрибутов каждого svg-элемента
-При создании svg-элемента его атрибуты будут установлены с помощью метода  **_setAttribute()_**
-••••
+Создадим класс **~SVG~**, который будет создавать элемент ~svg~:
 
 ~~~js
-const DrawFigures = class SVG {
+class SVG {
   constructor (w, h) {
-    this.canvas = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-    document.body.appendChild(this.canvas)
-    this.setSize(w, h)
-    this.attrs = {
-      line: ['x1', 'y1', 'x2', 'y2'],
-      circle: ['cx', 'cy', 'r']
-    }
+    SVG.createCanvas()
+    SVG.setSize(w, h)
+  }
+  static #canvas = null
+  static #attrs = {
+    line: ['x1', 'y1', 'x2', 'y2', 'stroke', 'stroke-width'],
+    circle: ['cx', 'cy', 'r', 'stroke', 'stroke-width', 'fill']
   }
 
-  setSize (w, h) {
-    this.canvas.setAttribute ('width', w)
-    this.canvas.setAttribute ('height', h)
+  static createCanvas () {
+    if (this.#canvas) return
+    this.#canvas = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+    document.body.appendChild(SVG.#canvas)
+  }
+
+  static getCanvas () {
+    return this.#canvas
+  }
+
+  static getAttrs (figure) {
+    return this.#attrs[figure]
+  }
+
+  static setSize (w, h) {
+    this.#canvas.setAttribute('width', w)
+    this.#canvas.setAttribute('height', h)
   }
 
   drawFigure (figure, params) {
+    if (!SVG.getAttrs(figure)) {
+      console.error('Invalid figure:', figure)
+    }
     const elem = document.createElementNS('http://www.w3.org/2000/svg', figure)
-    this.canvas.appendChild(elem)
-    for (const attr of this.attrs[figure]) {
-      elem.setAttribute(attr, params[attr])
+    SVG.getCanvas().appendChild(elem)
+    for (const attr of SVG.getAttrs(figure)) {
+      if (params[attr]) {
+        elem.setAttribute(attr, params[attr])
+      }
     }
     return elem
   }
 }
 ~~~
 
+••••none
+Обратите внимание, что контейнер _svg_ является статическим приватным свойством (**_#canvas_**) класса **SVG** и создается помощью статического метода **_createCanvas_**. Он создается только один раз.
+Класс **SVG** имеет также статическое приватное свойство **_#attrs_**, описывающее допустимые атрибуты для каждого типа фигуры.
+Поскольку доступ к приватным статическим свойствам класса возможен только внутри этого класса, мы создаем статические методы **_getCanvas_** и **_getAttrs_** для доступа к этим свойствам.
+••••
+
 Протестировать работу класса можно так:
 
 ~~~js
-const sample = new DrawFigures(300, 300)
-sample
-  .drawFigure('line', { x1: 10, y1: 20, x2: 250, y2: 250 })
-  .setAttribute ('stroke', 'red')
+const picture = new SVG(360, 360)
+picture.drawFigure('circle', {
+  cx: 100,
+  cy: 150,
+  r: 80,
+  stroke: '#090',
+  'stroke-width': 5,
+  fill: '#ff0d'
+})
+const image = new SVG(300, 300)
+image.drawFigure('line', {
+  x1: 20,
+  y1: 30,
+  x2: 180,
+  y2: 270,
+  stroke: '#f50',
+  'stroke-width': 4
+})
 ~~~
 
-•••• none
-![ico-20 speach] Вызов метода **_drawFigure()_** создаст элемент &lt;line> и вернет ссылку на него,
-но этот элемент не отобразится на странице, поскольку в массиве **_attrs.line_** нет атрибута _stroke_, задающего цвет линии.
-
-••••
-
-•••• none
-![ico-20 speach] Чтобы увидеть этот элемент на странице, нам приходится устанавливать значение атрибута _stroke_ после вызова метода **_drawFigure()_**:
-
-••••
-
-~~~js
-setAttribute('stroke', 'red')
-~~~
-
-![ico-20 speach] Теперь можно рисовать и другие фигуры, и настраивать их атрибуты:
-
-~~~js
-const circle = sample.drawFigure('circle', { cx: 180, cy: 180, r: 150 })
-circle.setAttribute('stroke', 'blue')
-circle.setAttribute('fill', 'transparent')
-sample.setSize(400, 400)
-circle.setAttribute('stroke-width', 8)
-~~~
-
-[![ico-25 cap] Пример](samples/18)
+{{{Classes-3.js}}}
 
 ___________________________________________________
 
 #### ![ico-20 icon] Дочерний класс⟪Subclass⟫
 
-![ico-20 speach] Теперь создадим дочерний класс **~ColoredFigures~**, расширяющий функционал родительского класса **~DrawFigures~** путем добавления 
-• атрибутов линий и заливки фигур (~stroke~, ~style~, ~fill~)
-• метода удаления элемента **~erase~**
-
-
-
-![ico-20 speach] В конструкторе дочернего класса вызовем метод **~super()~**, чтобы был создан контейнер &lt;svg> с нужными размерами,
-
-и объявим свойство экземпляра  **~figures~**.
-
-••••
-![ico-20 speach] Метод **_super()_** должен быть вызван первым в конструкторе, поскольку до его вызова  значение _this_  не будет определено.
-••••
-
-
-внутри конструктора
-
-![ico-20 speach] Кроме того, расширим функционал базового класса  **DrawFigures**,
-добавив атрибуты  "~stroke~",  "~style~"  и  "~fill~"
-это мы тоже сделаем в конструкторе класса  **ColoredFigures**
+Теперь создадим дочерний класс **~ExtendedSVG~**, наследующий от родительского класса **~SVG~**:
 
 ~~~js
-class ColoredFigures extends DrawFigures {
+class ExtendedSVG extends SVG {
   constructor () {
-    super(window.innerWidth - 20, window.innerHeight - 20)
-    this.figures = []
-    for (const attr in this.attrs) {
-      this.attrs[attr].push('stroke', 'style', 'fill')
-    }
+    super(420, 420)
   }
 
-  line (params, line) {
-    this.draw('line', params)
+  line (x1, y1, x2, y2, stroke = '#777', strokeWidth = 2) {
+    super.drawFigure('line', {
+      x1,
+      y1,
+      x2,
+      y2,
+      stroke,
+      'stroke-width': strokeWidth
+    })
   }
-
-  circle (params, line, fill) {
-    this.draw('circle', params)
-  }
-
-  draw (figure, params) {
-    if (params.strokeWidth) {
-      Object.assign(params, {
-        style: `stroke-width: ${ params.strokeWidth }`
-      })
-      delete params.strokeWidth
-    }
-    this.figures.push(this.drawFigure(figure, params))
-  }
-
-  erase (figureIndex) {
-    if (figureIndex > this.figures.length - 1 || figureIndex < 0) return
-    this.figures[figureIndex].remove()
-    this.figures.splice(figureIndex, 1)
+  circle (cx, cy, r, stroke = '#777', strokeWidth = 2, fill = '#fff5') {
+    super.drawFigure('circle', {
+      cx,
+      cy,
+      r,
+      stroke,
+      'stroke-width': strokeWidth,
+      fill
+    })
   }
 }
 ~~~
 
-![ico-20 speach] Проверим, как работает расширенный класс  **ColoredFigures**
+В конструкторе дочернего класса вызовем метод **~super()~**, чтобы был создан контейнер **&lt;svg>** с нужными размерами.
+••![ico-25 speach] Метод **_super()_** должен быть вызван первым в конструкторе, поскольку до его вызова  значение _this_  не будет определено.••
+
+![ico-20 speach] Проверим, как работает расширенный класс **~ExtendedSVG~**:
 
 ~~~js
-const canvas = new ColoredFigures(400, 500)
+const canvas = new ExtendedSVG
+const picture = new ExtendedSVG
 
-canvas.line({
-  x1: 10,
-  y1: 250,
-  x2: 250,
-  y2: 50,
-  stroke: 'green',
-  strokeWidth: 5
-})
-canvas.circle({
-  cx: 150,
-  cy: 150,
-  r: 100,
-  fill: '#ff00ff90',
-  stroke: '#909',
-  strokeWidth: 10
-})
+canvas.circle(150, 150, 100, '#090', 5, '#ff0d')
+picture.line(20, 30, 180, 270, '#f50', 4)
 ~~~
 
-![ico-20 speach] Конечно, мы можем создавать элементы, обращаясь к методу базового класса  **~drawFigure()~**:
-
-~~~js
-canvas.drawFigure('line', {
-  x1: 200,
-  y1: 150,
-  x2: 50,
-  y2: 100,
-  stroke: 'blue',
-  style: 'stroke-width: 10'
-})
-~~~
-
-![ico-20 speach] но тогда созданные svg-элементы не попадут в массив  **~figures~**
-и их нельзя будет удалить с помощью метода  **~erase()~**
-
-![ico-20 speach] Кроме того, вызов метода  **~line()~**  или  **~circle()~**  лаконичнее
-
-![ico-25 speach] Обратите внимание, что у класса  **ColoredFigures** есть свойство  prototype, которого нет ( и не может быть ) у экземпляра
-В свойстве **~prototype~** класса **ColoredFigures** находятся методы **~circle()~**, **~line()~**, **~draw()~** и **~erase()~**
-
-![ico-25 speach] У класса ColoredFigures есть также свойство  **~__proto__~**
-это ссылка на родительский класс **SVG**
-
-![ico-25 speach] У родительского класса, как и следовало ожидать, тоже есть свойство **~prototype~**,
-и в этом свойстве находятся методы **~drawFigure()~** и **~setSize()~**
-
-![ico-25 speach] Ни у класса **ColoredFigures**, ни у класса **SVG** нет свойств **~attrs~**, **~canvas~** и **~figures~**
-Они есть только у экземпляра этого класса
+{{{Classes-4.js}}}
 
 ___________________________________________________
 
@@ -1675,6 +1670,30 @@ n.length >= 2 && n[n.length - 1] === n[n.length - 2] + 1
 /static\s+#count/.test(SOURCE)
 ♠♠♠♠
 
+___
+
+◘◘**![ico-20 hw] Квест 3**◘◘
+
+~~~js
+function createModelFactory (prefix) {
+  return class DBModel {
+    constructor (id) {
+      this.dbId = `${prefix}_${id}`
+    }
+    
+    static getModelName() {
+      return DBModel.name
+    }
+  }
+}
+
+const OrderModel = createModelFactory('ORD')
+const userOrder = new OrderModel('1024')
+
+console.log(OrderModel.getModelName())
+~~~
+
+→→→ Что вернет OrderModel.getModelName()? | 'OrderModel', 'DBModel', TypeError, 'ORD_1024', undefined | DBModel →→→
 ___________________________________________________
 
 [![ico-30 hw] Quiz](quiz/classes)

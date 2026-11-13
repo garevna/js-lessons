@@ -520,34 +520,34 @@
     "ua": "(що відповідає прототипній моделі успадкування — ми отримали ланцюжок прототипів)."
   },
   "p83": {
-    "ru": "Методы родительского класса доступны в дочернем классе посредством ключевого слова **~⟦f18⟧~**.",
-    "eng": "Methods of the parent class are accessible in the child class via the keyword **~⟦f18⟧~**.",
-    "ua": "Методи батьківського класу доступні в дочірньому класі за допомогою ключового слова **~⟦f18⟧~**."
+    "ru": "Методы родительского класса доступны в дочернем классе посредством ключевого слова **~super~**.",
+    "eng": "Methods of the parent class are accessible in the child class via the keyword **~super~**.",
+    "ua": "Методи батьківського класу доступні в дочірньому класі за допомогою ключового слова **~super~**."
   },
   "p84": {
-    "ru": "^^![ico-20 speach] Расширим унаследованный метод **~⟦f17⟧~**  родительского класса, добавив аргумент **_~⟦f19⟧~_** (толщину линии)^^",
-    "eng": "^^![ico-20 speach] Let’s extend the inherited method **~⟦f17⟧~** of the parent class by adding an argument **_~⟦f19⟧~_** (line thickness)^^",
-    "ua": "^^![ico-20 speach] Розширимо успадкований метод **~⟦f17⟧~**  батьківського класу, додавши аргумент **_~⟦f19⟧~_** (товщину лінії)^^"
+    "ru": "Обычные (не статические) методы родителя наследуются и доступны дочернему объекту через **~this~**. Ключевое слово **~super~** для них нужно только тогда, когда метод с таким же именем есть у экземпляра (или в дочернем классе), и есть необходимость вызвать родительскую версию.",
+    "eng": "The usual (non-static) methods of the parent class are inherited and accessible to the child object via **~this~**. The **~super~** keyword is only required for these methods when a method with the same name exists on the instance (or in the child class) and it is necessary to call the parent version.",
+    "ua": "Звичайні (не статичні) методи батьківського об’єкта успадковуються і доступні дочірньому об’єкту через **~this~**. Ключове слово **~super~** для них потрібне лише тоді, коли метод із таким самим іменем є в екземплярі (або в дочірньому класі) і необхідно викликати батьківську версію."
   },
   "p85": {
-    "ru": "^^![ico-20 speach] Для этого определим \"расширенный\" метод ~⟦f17⟧~ внутри дочернего класса, который будет вызывать метод ~⟦f17⟧~ родительского класса с помощью ключевого слова **~super~**:^^",
-    "eng": "^^![ico-20 speach] To do this, let’s define the ‘extended’ method ~⟦f17⟧~ within the child class which will call the method ~⟦f17⟧~ of the parent class using the keyword **~super~**:^^",
-    "ua": "^^![ico-20 speach] Для цього визначимо «розширений» метод ~⟦f17⟧~ усередині дочірнього класу, який викликатиме метод ~⟦f17⟧~ батьківського класу за допомогою ключового слова **~super~**:^^"
+    "ru": "Со статическими методами (**static**) дело обстоит иначе. У нас есть два варианта вызова статического метода родительского класса: через ключевое слово **~super~** или через имя родительского класса.",
+    "eng": "The situation is different with static methods (**static**). There are two ways to call a static method of the parent class: using the keyword **~super~** or by specifying the parent class’s name.",
+    "ua": "Зі статичними методами (**static**) ситуація інша. У нас є два варіанти виклику статичного методу батьківського класу: через ключове слово **~super~** або через ім’я батьківського класу."
   },
   "p86": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
+    "ru": "![ico-25 warn] В статических методах **~this~** ссылается на класс, в котором вызывается метод. Если статический метод родителя вызывается через ключевое слово **~super~**, то **~this~** будет ссылкой на дочерний класс.",
+    "eng": "![ico-25 warn] In static methods, **~this~** refers to the class in which the method is called. If a static method of the parent class is called using the keyword **~super~**, then **~this~** will refer to the child class.",
+    "ua": "![ico-25 warn] У статичних методах **~this~** посилається на клас, у якому викликається метод. Якщо статичний метод батьківського класу викликається через ключове слово **~super~**, то **~this~** буде посиланням на дочірній клас."
   },
   "p87": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
+    "ru": "Таким образом, статические методы наследуются, но контекст вызова в них будет ссылкой на класс, в котором вызывается метод.",
+    "eng": "Thus, static methods are inherited, but the context of the call in them will be a reference to the class in which the method is called.",
+    "ua": "Таким чином, статичні методи успадковуються, але контекст виклику в них буде посиланням на клас, у якому викликається метод."
   },
   "p88": {
-    "ru": "^^Теперь код будет таким:^^",
-    "eng": "^^Now the code will look like this:^^",
-    "ua": "^^Тепер код буде таким:^^"
+    "ru": "![ico-25 warn] Важно помнить, что вызывать статические методы родительского класса через ключевое слово **~super~** можно только внутри статических методов дочернего класса.",
+    "eng": "![ico-25 warn] It is important to remember that you can only call static methods of the parent class using the **~super~** keyword from within static methods of the child class.",
+    "ua": "![ico-25 warn] Важливо пам’ятати, що викликати статичні методи батьківського класу за допомогою ключового слова **~super~** можна лише всередині статичних методів дочірнього класу."
   },
   "p89": {
     "ru": "^^![ico-20 speach] Создадим экземпляр дочернего класса:^^",
@@ -770,309 +770,129 @@
     "ua": "Змініть розмір вікна браузера"
   },
   "p167": {
-    "ru": "Теперь метод  **_~⟦f31⟧~_**  будет вызван в глобальной области видимости,",
-    "eng": "Now the method **_~⟦f31⟧~_** will be called in the global scope,",
-    "ua": "Тепер метод **_~⟦f31⟧~_** буде викликано в глобальній області видимості,"
+    "ru": "Теперь метод  **_~⟦f31⟧~_**  будет вызван в глобальной области видимости, и в консоль будет выведено:",
+    "eng": "Now the method **_~⟦f31⟧~_** will be called in the global scope and the following will be printed to the console:",
+    "ua": "Тепер метод **_~⟦f31⟧~_** буде викликано в глобальній області видимості, і в консоль буде виведено:"
   },
   "p168": {
-    "ru": "и в консоль будет выведено:",
-    "eng": "and the following will be printed to the console:",
-    "ua": "і в консоль буде виведено:"
+    "ru": "поскольку ~⟦f14⟧~ внутри **_~⟦f31⟧~_** теперь указывает на глобальный объект (~⟦f6⟧~).",
+    "eng": "because ~⟦f14⟧~ inside **_~⟦f31⟧~_** now points to the global object (~⟦f6⟧~).",
+    "ua": "оскільки ~⟦f14⟧~ всередині **_~⟦f31⟧~_** тепер вказує на глобальний об’єкт (~⟦f6⟧~)."
   },
   "p169": {
-    "ru": "поскольку  ~⟦f14⟧~  внутри **_~⟦f31⟧~_** теперь указывает",
-    "eng": "because  ~⟦f14⟧~  inside **_~⟦f31⟧~_** now points",
-    "ua": "оскільки  ~⟦f14⟧~  всередині **_~⟦f31⟧~_** тепер вказує"
+    "ru": "В этом примере мы будем работать с графикой [svg](⟦f32⟧).",
+    "eng": "In this example, we will be working with [svg](⟦f32⟧) graphics.",
+    "ua": "У цьому прикладі ми будемо працювати з графікою [svg](⟦f32⟧)."
   },
   "p170": {
-    "ru": "на глобальный объект  (~⟦f6⟧~)",
-    "eng": "to the global object  (~⟦f6⟧~)",
-    "ua": "на глобальний об’єкт  (~⟦f6⟧~)"
+    "ru": "**SVG** - это тип _XML_-разметки, который имеет собственное пространство имен, которое может быть встроено в HTML5.",
+    "eng": "**SVG** is a type of _XML_ markup that has its own namespace, which can be embedded within HTML5.",
+    "ua": "**SVG** — це тип _XML_-розмітки, який має власний простір імен, що може бути вбудований у HTML5."
   },
   "p171": {
-    "ru": "В этом примере мы будем работать с графикой [svg](⟦f32⟧)",
-    "eng": "In this example, we will be working with [svg](⟦f32⟧) graphics",
-    "ua": "У цьому прикладі ми будемо працювати з графікою [svg](⟦f32⟧)"
+    "ru": "![ico-20 warn] Для корректной работы svg-элементов нужно, чтобы браузер интерпретировал их в пространстве имен **SVG**.",
+    "eng": "![ico-20 warn] For SVG elements to work correctly, the browser must interpret them within the **SVG** namespace.",
+    "ua": "![ico-20 warn] Для коректної роботи svg-елементів потрібно, щоб браузер інтерпретував їх у просторі імен **SVG**."
   },
   "p172": {
-    "ru": "![ico-20 warn] Для динамического создания элементов SVG нужно использовать метод **~⟦f33⟧~**",
-    "eng": "![ico-20 warn] To dynamically create SVG elements, you must use the **~⟦f33⟧~** method",
-    "ua": "![ico-20 warn] Для динамічного створення елементів SVG потрібно використовувати метод **~⟦f33⟧~**"
+    "ru": "![ico-20 warn] Для динамического создания элементов SVG нужно использовать метод **~⟦f33⟧~** с указанием ссылки на пространство имен (**~NS~** - namespace)",
+    "eng": "![ico-20 warn] To dynamically create SVG elements, you must use the **~⟦f33⟧~** method specifying a namespace reference (**~NS~** - namespace)",
+    "ua": "![ico-20 warn] Для динамічного створення елементів SVG потрібно використовувати метод **~⟦f33⟧~** із зазначенням посилання на простір імен (**_NS_** - namespace)"
   },
   "p173": {
-    "ru": "с указанием ссылки на пространство имен ( **_NS_** )",
-    "eng": "specifying a namespace reference ( **_NS_** )",
-    "ua": "із зазначенням посилання на простір імен ( **_NS_** )"
+    "ru": "Это необходимо для того, чтобы браузер правильно понимал и отображал ~svg~-элементы.",
+    "eng": "This is necessary for the browser to correctly interpret and display ~svg~ elements.",
+    "ua": "Це необхідно для того, щоб браузер правильно розпізнавав і відображав ~svg~-елементи."
   },
   "p174": {
-    "ru": "Это необходимо для того, чтобы браузер правильно понимал и отображал _svg_-элементы",
-    "eng": "This is necessary for the browser to correctly interpret and display _svg_ elements",
-    "ua": "Це необхідно для того, щоб браузер правильно розпізнавав і відображав _svg_-елементи"
+    "ru": "Первый аргумент",
+    "eng": "The first argument",
+    "ua": "Перший аргумент"
   },
   "p175": {
-    "ru": "SVG - это тип XML-разметки, который имеет собственное пространство имен, которое может быть встроено в HTML5",
-    "eng": "SVG is a type of XML markup that has its own namespace, which can be embedded within HTML5",
-    "ua": "SVG — це тип XML-розмітки, який має власний простір імен, що може бути вбудований у HTML5"
+    "ru": "ссылка на пространство имен (~http://www.w3.org/2000/svg~)",
+    "eng": "a reference to the namespace (~http://www.w3.org/2000/svg~)",
+    "ua": "посилання на простір імен (~http://www.w3.org/2000/svg~)"
   },
   "p176": {
-    "ru": "![ico-20 green-ok] Первым аргументом метода  **~⟦f33⟧~** идет ссылка на пространство имен",
-    "eng": "![ico-20 green-ok] The first argument of the **~⟦f33⟧~** method is a reference to the namespace",
-    "ua": "![ico-20 green-ok] Першим аргументом методу  **~⟦f33⟧~** є посилання на простір імен"
+    "ru": "Второй аргумент",
+    "eng": "The second argument",
+    "ua": "Другий аргумент"
   },
   "p177": {
-    "ru": "![ico-20 green-ok] Второй аргумент - имя тега элемента в этом пространстве имен",
-    "eng": "![ico-20 green-ok] The second argument is the name of the element’s tag within that namespace",
-    "ua": "![ico-20 green-ok] Другий аргумент — ім’я тегу елемента в цьому просторі імен"
+    "ru": "имя тега элемента в этом пространстве имен",
+    "eng": "the name of the element’s tag within that namespace",
+    "ua": "ім’я тегу елемента в цьому просторі імен"
   },
   "p178": {
-    "ru": "![ico-20 warn] Если использовать обычный метод  ~⟦f34⟧~, то браузер будет интерпретировать его в пространстве имен  HTML",
-    "eng": "![ico-20 warn] If you use the standard method  ~⟦f34⟧~, the browser will interpret it within the HTML namespace",
-    "ua": "![ico-20 warn] Якщо використовувати звичайний метод  ~⟦f34⟧~, то браузер інтерпретуватиме його в просторі імен  HTML"
+    "ru": "![ico-20 warn] Если использовать обычный метод ~⟦f34⟧~, то браузер по умолчанию будет интерпретировать его в пространстве имен HTML.",
+    "eng": "![ico-20 warn] If you use the standard method ~⟦f34⟧~, the browser will interpret it within the HTML namespace by default.",
+    "ua": "![ico-20 warn] Якщо використовувати звичайний метод ~⟦f34⟧~, то браузер за замовчуванням інтерпретуватиме його в просторі імен HTML."
   },
   "p179": {
-    "ru": "( по умолчанию )",
-    "eng": "(by default)",
-    "ua": "(за замовчуванням)"
+    "ru": "Например, чтобы корректно создать контейнер для svg-графики:",
+    "eng": "For example, to correctly create a container for an SVG graphic:",
+    "ua": "Наприклад, щоб коректно створити контейнер для svg-графіки:"
   },
   "p180": {
-    "ru": "![ico-20 warn] Для корректной работы svg-элементов нужно, чтобы браузер интерпретировал их в пространстве имен SVG",
-    "eng": "![ico-20 warn] For SVG elements to work correctly, the browser must interpret them within the SVG namespace",
-    "ua": "![ico-20 warn] Для коректної роботи svg-елементів потрібно, щоб браузер інтерпретував їх у просторі імен SVG"
-  },
-  "p181": {
-    "ru": "^^Например, чтобы корректно создать контейнер для  svg-графики:^^",
-    "eng": "^^For example, to correctly create a container for an SVG graphic:^^",
-    "ua": "^^Наприклад, щоб коректно створити контейнер для  svg-графіки:^^"
-  },
-  "p182": {
-    "ru": "**Проверим в консоли:**",
-    "eng": "**Let’s check in the console:**",
-    "ua": "**Перевіримо в консолі:**"
-  },
-  "p183": {
     "ru": "Базовый класс",
     "eng": "Base class",
     "ua": "Базовий клас"
   },
+  "p181": {
+    "ru": "Создадим класс **~SVG~**, который будет создавать элемент ~svg~:",
+    "eng": "Let’s create a class **~SVG~** which will create an SVG element:",
+    "ua": "Створимо клас **~SVG~**, який буде створювати елемент ~svg~:"
+  },
+  "p182": {
+    "ru": "Обратите внимание, что контейнер _svg_ является статическим приватным свойством (**_#canvas_**) класса **SVG** и создается помощью статического метода **_createCanvas_**. Он создается только один раз.",
+    "eng": "Please note that the _svg_ container is a static private property (**_#canvas_**) of the **SVG** class and is created using the static method **_createCanvas_**. It is created only once.",
+    "ua": "Зверніть увагу, що контейнер _svg_ є статичною приватною властивістю (**_#canvas_**) класу **SVG** і створюється за допомогою статичного методу **_createCanvas_**. Він створюється лише один раз."
+  },
+  "p183": {
+    "ru": "Класс **SVG** имеет также статическое приватное свойство **_#attrs_**, описывающее допустимые атрибуты для каждого типа фигуры.",
+    "eng": "The **SVG** class also has a static private property **_#attrs_** that describes the valid attributes for each type of figure.",
+    "ua": "Клас **SVG** має також статичну приватну властивість **_#attrs_**, яка описує допустимі атрибути для кожного типу фігури."
+  },
   "p184": {
-    "ru": "Создадим класс **~DrawFigures~**, который будет создавать  элемент **svg**",
-    "eng": "Let’s create a class **~DrawFigures~**, which will create an SVG element",
-    "ua": "Створимо клас **~DrawFigures~**, який буде створювати елемент **svg**"
+    "ru": "Поскольку доступ к приватным статическим свойствам класса возможен только внутри этого класса, мы создаем статические методы **_getCanvas_** и **_getAttrs_** для доступа к этим свойствам.",
+    "eng": "Since access to private static properties of a class is only possible within the static methods of that class, we create static methods **_getCanvas_** and **_getAttrs_** to access these properties.",
+    "ua": "Оскільки доступ до приватних статичних властивостей класу можливий лише всередині статичних методів цього класу, ми створюємо статичні методи **_getCanvas_** і **_getAttrs_** для доступу до цих властивостей."
   },
   "p185": {
-    "ru": "с двумя методами:   **~setSize()~**  и  **~⟦f35⟧~**",
-    "eng": "with two methods: **~setSize()~** and **~⟦f35⟧~**",
-    "ua": "з двома методами: **~setSize()~** та **~⟦f35⟧~**"
-  },
-  "p186": {
-    "ru": "![ico-20 speach] Метод **_⟦f36⟧_** будет изменять размеры элемента  svg",
-    "eng": "![ico-20 speach] The **_⟦f36⟧_** method will change the dimensions of the SVG element",
-    "ua": "![ico-20 speach] Метод **_⟦f36⟧_** змінюватиме розміри елемента  svg"
-  },
-  "p187": {
-    "ru": "![ico-20 speach] Метод **_⟦f35⟧_** будет добавлять элементы в контейнер  svg",
-    "eng": "![ico-20 speach] The **_⟦f35⟧_** method will add elements to the SVG container",
-    "ua": "![ico-20 speach] Метод **_⟦f35⟧_** додаватиме елементи до контейнера  svg"
-  },
-  "p188": {
-    "ru": "^^Имя элемента будет передано первым аргументом метода  (figure)^^",
-    "eng": "^^The element name will be passed as the first argument to the method (figure)^^",
-    "ua": "^^Ім'я елемента буде передано першим аргументом методу  (figure)^^"
-  },
-  "p189": {
-    "ru": "^^возможные значения  \"line\", \"circle\", \"path\", \"rect\" и т.д.^^",
-    "eng": "^^Possible values are “line”, “circle”, “path”, “rect”, etc.^^",
-    "ua": "^^можливі значення  «line», «circle», “path”, «rect» тощо^^"
-  },
-  "p190": {
-    "ru": "^^Параметры фигуры будут переданы вторым аргументом метода (params)^^",
-    "eng": "^^The shape parameters will be passed as the second argument to the method (params)^^",
-    "ua": "^^Параметри фігури будуть передані другим аргументом методу (params)^^"
-  },
-  "p191": {
-    "ru": "![ico-20 speach] Поскольку у каждого элемента  svg  свой набор атрибутов, создаем свойство  **_⟦f37⟧_** (объект), свойства которого будут именами svg-элементов, а значения - массивом атрибутов каждого svg-элемента",
-    "eng": "![ico-20 speach] As each  svg  element has its own set of attributes, we create a property  **_⟦f37⟧_** (an object), whose properties will be the names of the svg elements, and whose values will be an array of attributes for each svg element",
-    "ua": "![ico-20 speach] Оскільки кожен елемент  svg  має власний набір атрибутів, створюємо властивість  **_⟦f37⟧_** (об’єкт), властивості якої будуть іменами svg-елементів, а значення — масивом атрибутів кожного svg-елемента"
-  },
-  "p192": {
-    "ru": "При создании svg-элемента его атрибуты будут установлены с помощью метода  **_⟦f38⟧_**",
-    "eng": "When creating an SVG element, its attributes will be set using the **_⟦f38⟧_** method",
-    "ua": "Під час створення svg-елемента його атрибути будуть встановлені за допомогою методу **_⟦f38⟧_**"
-  },
-  "p193": {
     "ru": "Протестировать работу класса можно так:",
     "eng": "You can test the class as follows:",
     "ua": "Перевірити роботу класу можна так:"
   },
-  "p194": {
-    "ru": "![ico-20 speach] Вызов метода **_⟦f35⟧_** создаст элемент &lt;line> и вернет ссылку на него,",
-    "eng": "![ico-20 speach] Calling the method **_⟦f35⟧_** will create a &lt;line&gt; element and return a reference to it,",
-    "ua": "![ico-20 speach] Виклик методу **_⟦f35⟧_** створить елемент &lt;line> і поверне посилання на нього,"
-  },
-  "p195": {
-    "ru": "но этот элемент не отобразится на странице, поскольку в массиве **_⟦f39⟧_** нет атрибута _⟦f40⟧_, задающего цвет линии.",
-    "eng": "but this element will not be displayed on the page, as the array **_⟦f39⟧_** lacks the _⟦f40⟧_ attribute, which specifies the line colour.",
-    "ua": "але цей елемент не відобразиться на сторінці, оскільки в масиві  **_⟦f39⟧_** немає атрибута _⟦f40⟧_, що задає колір лінії."
-  },
-  "p196": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
-  },
-  "p197": {
-    "ru": "![ico-20 speach] Чтобы увидеть этот элемент на странице, нам приходится устанавливать значение атрибута _⟦f40⟧_ после вызова метода **_drawFigure()_**:",
-    "eng": "![ico-20 speach] To see this element on the page, we need to set the value of the _⟦f40⟧_ attribute after calling the **_drawFigure()_** method:",
-    "ua": "![ico-20 speach] Щоб побачити цей елемент на сторінці, нам доводиться встановлювати значення атрибута _⟦f40⟧_ після виклику методу **_drawFigure()_**:"
-  },
-  "p198": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
-  },
-  "p199": {
-    "ru": "![ico-20 speach] Теперь можно рисовать и другие фигуры, и настраивать их атрибуты:",
-    "eng": "![ico-20 speach] Now we can draw other shapes and customise their attributes:",
-    "ua": "![ico-20 speach] Тепер можна малювати й інші фігури та налаштовувати їхні атрибути:"
-  },
-  "p200": {
-    "ru": "[![ico-25 cap] Пример](⟦f41⟧)",
-    "eng": "[![ico-25 cap] Example](⟦f41⟧)",
-    "ua": "[![ico-25 cap] Приклад](⟦f41⟧)"
-  },
-  "p201": {
+  "p186": {
     "ru": "Дочерний класс",
     "eng": "Subclass",
     "ua": "Дочірній клас"
   },
-  "p202": {
-    "ru": "![ico-20 speach] Теперь создадим дочерний класс **~ColoredFigures~**, расширяющий функционал родительского класса **~DrawFigures~** путем добавления ",
-    "eng": "![ico-20 speach] Now let’s create a subclass **~ColouredFigures~** which extends the functionality of the parent class **~DrawFigures~** by adding",
-    "ua": "![ico-20 speach] Тепер створимо дочірній клас **~ColoredFigures~**, який розширює функціонал батьківського класу **~DrawFigures~** шляхом додавання"
+  "p187": {
+    "ru": "Теперь создадим дочерний класс **~ExtendedSVG~**, наследующий от родительского класса **~SVG~**:",
+    "eng": "Now let’s create a subclass **~ExtendedSVG~** that inherits from a parent class **~SVG~**:",
+    "ua": "Тепер створимо дочірній клас **~ExtendedSVG~**, який успадковує від батьківського класу **~SVG~**:"
   },
-  "p203": {
-    "ru": "• атрибутов линий и заливки фигур (~stroke~, ~style~, ~fill~)",
-    "eng": "• attributes for lines and fills (~stroke~, ~style~, ~fill~)",
-    "ua": "• атрибутів ліній і заливки фігур (~stroke~, ~style~, ~fill~)"
+  "p188": {
+    "ru": "В конструкторе дочернего класса вызовем метод **~⟦f42⟧~**, чтобы был создан контейнер **&lt;svg>** с нужными размерами.",
+    "eng": "In the constructor of the child class, we’ll call the method **~⟦f42⟧~** to create an **&lt;svg&gt;** container with the required dimensions.",
+    "ua": "У конструкторі дочірнього класу викличемо метод **~⟦f42⟧~**, щоб було створено контейнер **&lt;svg>** з потрібними розмірами."
   },
-  "p204": {
-    "ru": "• метода удаления элемента **~erase~**",
-    "eng": "• the method for deleting an element **~erase~**",
-    "ua": "• методу видалення елемента  **~erase~**"
+  "p189": {
+    "ru": "![ico-25 speach] Метод **_⟦f42⟧_** должен быть вызван первым в конструкторе, поскольку до его вызова  значение _this_  не будет определено.",
+    "eng": "![ico-25 speach] The method **_⟦f42⟧_** must be called first in the constructor, as the value of _this_ will not be defined.",
+    "ua": "![ico-25 speach] Метод **_⟦f42⟧_** має бути викликаний першим у конструкторі, оскільки до його виклику значення _this_ не буде визначено."
   },
-  "p205": {
+  "p190": {
+    "ru": "![ico-20 speach] Проверим, как работает расширенный класс **~ExtendedSVG~**:",
+    "eng": "![ico-20 speach] Let’s check how the extended class **~ExtendedSVG~** works:",
+    "ua": "![ico-20 speach] Перевіримо, як працює розширений клас **~ExtendedSVG~**:"
+  },
+  "p191": {
     "ru": "",
     "eng": "",
     "ua": ""
-  },
-  "p206": {
-    "ru": "![ico-20 speach] В конструкторе дочернего класса вызовем метод **~⟦f42⟧~**, чтобы был создан контейнер &lt;svg> с нужными размерами,",
-    "eng": "![ico-20 speach] In the constructor of the child class, we’ll call the method **~⟦f42⟧~** to create an &lt;svg&gt; container with the required dimensions",
-    "ua": "![ico-20 speach] У конструкторі дочірнього класу викличемо метод **~⟦f42⟧~**, щоб було створено контейнер &lt;svg> з потрібними розмірами,"
-  },
-  "p207": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
-  },
-  "p208": {
-    "ru": "и объявим свойство экземпляра  **~⟦f43⟧~**.",
-    "eng": "and declare the instance property  **~⟦f43⟧~**.",
-    "ua": "і оголосимо властивість екземпляра  **~⟦f43⟧~**."
-  },
-  "p209": {
-    "ru": "![ico-20 speach] Метод **_⟦f42⟧_** должен быть вызван первым в конструкторе, поскольку до его вызова  значение _this_  не будет определено.",
-    "eng": "![ico-20 speach] The method **_⟦f42⟧_** must be called first in the constructor, as the value of _this_ will not be defined.",
-    "ua": "![ico-20 speach] Метод **_⟦f42⟧_** має бути викликаний першим у конструкторі, оскільки до його виклику значення _this_ не буде визначено."
-  },
-  "p210": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
-  },
-  "p211": {
-    "ru": "внутри конструктора",
-    "eng": "within the constructor until it is called",
-    "ua": "усередині конструктора"
-  },
-  "p212": {
-    "ru": "![ico-20 speach] Кроме того, расширим функционал базового класса  **DrawFigures**,",
-    "eng": "![ico-20 speach] Furthermore, we’ll extend the functionality of the base class **DrawFigures**,",
-    "ua": "![ico-20 speach] Крім того, розширимо функціонал базового класу  **DrawFigures**,"
-  },
-  "p213": {
-    "ru": "добавив атрибуты  \"~⟦f40⟧~\",  \"~⟦f44⟧~\"  и  \"~⟦f45⟧~\"",
-    "eng": "by adding the attributes “~⟦f40⟧~”, “~⟦f44⟧~” and “~⟦f45⟧~”",
-    "ua": "додавши атрибути  «~⟦f40⟧~»,  «~⟦f44⟧~»  та  «~⟦f45⟧~»"
-  },
-  "p214": {
-    "ru": "это мы тоже сделаем в конструкторе класса  **ColoredFigures**",
-    "eng": "We’ll do this in the constructor of the  **ColoredFigures** class as well",
-    "ua": "це ми теж зробимо у конструкторі класу  **ColoredFigures**"
-  },
-  "p215": {
-    "ru": "![ico-20 speach] Проверим, как работает расширенный класс  **ColoredFigures**",
-    "eng": "![ico-20 speach] Let’s check how the extended class  **ColoredFigures** works",
-    "ua": "![ico-20 speach] Перевіримо, як працює розширений клас  **ColoredFigures**"
-  },
-  "p216": {
-    "ru": "![ico-20 speach] Конечно, мы можем создавать элементы, обращаясь к методу базового класса  **~⟦f35⟧~**:",
-    "eng": "![ico-20 speach] Of course, we can create elements by calling the method of the base class  **~⟦f35⟧~**:",
-    "ua": "![ico-20 speach] Звісно, ми можемо створювати елементи, звертаючись до методу базового класу  **~⟦f35⟧~**:"
-  },
-  "p217": {
-    "ru": "![ico-20 speach] но тогда созданные svg-элементы не попадут в массив  **~⟦f43⟧~**",
-    "eng": "![ico-20 speach] but then the SVG elements created will not be added to the array  **~⟦f43⟧~**",
-    "ua": "![ico-20 speach] але тоді створені SVG-елементи не потраплять до масиву  **~⟦f43⟧~**"
-  },
-  "p218": {
-    "ru": "и их нельзя будет удалить с помощью метода  **~⟦f46⟧~**",
-    "eng": "and they cannot be removed using the method  **~⟦f46⟧~**",
-    "ua": "і їх не можна буде видалити за допомогою методу  **~⟦f46⟧~**"
-  },
-  "p219": {
-    "ru": "![ico-20 speach] Кроме того, вызов метода  **~⟦f47⟧~**  или  **~⟦f48⟧~**  лаконичнее",
-    "eng": "![ico-20 speach] Furthermore, calling the method  **~⟦f47⟧~**  or  **~⟦f48⟧~**  is more concise",
-    "ua": "![ico-20 speach] Крім того, виклик методу  **~⟦f47⟧~**  або  **~⟦f48⟧~**  є лаконічнішим"
-  },
-  "p220": {
-    "ru": "![ico-25 speach] Обратите внимание, что у класса  **ColoredFigures** есть свойство  prototype, которого нет ( и не может быть ) у экземпляра",
-    "eng": "![ico-25 speach] Please note that the **ColoredFigures** class has a **prototype** property, which an instance does not have (and cannot have)",
-    "ua": "![ico-25 speach] Зверніть увагу, що клас **ColoredFigures** має властивість prototype, якої немає (і не може бути) у екземпляра"
-  },
-  "p221": {
-    "ru": "В свойстве **~⟦f49⟧~** класса **ColoredFigures** находятся методы **~⟦f48⟧~**, **~⟦f47⟧~**, **~⟦f50⟧~** и **~⟦f46⟧~**",
-    "eng": "The **~⟦f49⟧~** property of the **ColoredFigures** class contains the methods **~⟦f48⟧~**, **~⟦f47⟧~**, **~⟦f50⟧~** and **~⟦f46⟧~**",
-    "ua": "У властивості **~⟦f49⟧~** класу **ColoredFigures** містяться методи **~⟦f48⟧~**, **~⟦f47⟧~**, **~⟦f50⟧~** та **~⟦f46⟧~**"
-  },
-  "p222": {
-    "ru": "![ico-25 speach] У класса ColoredFigures есть также свойство  **~⟦f27⟧~**",
-    "eng": "![ico-25 speach] The **ColoredFigures** class also has a property **~⟦f27⟧~**",
-    "ua": "![ico-25 speach] У класу ColoredFigures є також властивість **~⟦f27⟧~**"
-  },
-  "p223": {
-    "ru": "это ссылка на родительский класс **SVG**",
-    "eng": "This is a reference to the parent class **SVG**",
-    "ua": "це посилання на батьківський клас **SVG**"
-  },
-  "p224": {
-    "ru": "![ico-25 speach] У родительского класса, как и следовало ожидать, тоже есть свойство **~⟦f49⟧~**,",
-    "eng": "![ico-25 speach] As you might expect, the parent class also has a property **~⟦f49⟧~**,",
-    "ua": "![ico-25 speach] У батьківського класу, як і слід було очікувати, теж є властивість **~⟦f49⟧~**,"
-  },
-  "p225": {
-    "ru": "и в этом свойстве находятся методы **~⟦f35⟧~** и **~⟦f36⟧~**",
-    "eng": "and this property contains the methods **~⟦f35⟧~** and **~⟦f36⟧~**",
-    "ua": "і в цій властивості містяться методи **~⟦f35⟧~** та **~⟦f36⟧~**"
-  },
-  "p226": {
-    "ru": "![ico-25 speach] Ни у класса **ColoredFigures**, ни у класса **SVG** нет свойств **~⟦f37⟧~**, **~⟦f51⟧~** и **~⟦f43⟧~**",
-    "eng": "![ico-25 speach] Neither the **ColoredFigures** class nor the **SVG** class has the properties **~⟦f37⟧~**, **~⟦f51⟧~** and **~⟦f43⟧~**",
-    "ua": "![ico-25 speach] Ні у класу **ColoredFigures**, ні у класу **SVG** немає властивостей **~⟦f37⟧~**, **~⟦f51⟧~** та **~⟦f43⟧~**"
-  },
-  "p227": {
-    "ru": "Они есть только у экземпляра этого класса",
-    "eng": "These are only present in an instance of this class",
-    "ua": "Вони є лише в екземплярі цього класу"
   },
   "test01Question": {
     "ru": "Какое из следующих утверждений верно для Class Expression?",
@@ -1348,5 +1168,10 @@
     "ru": "счётчик остался приватным (static #count)",
     "eng": "",
     "ua": ""
+  },
+  "quest03Question": {
+    "ru": "Что вернет OrderModel.getModelName()?",
+    "eng": "What will `OrderModel.getModelName()` return?",
+    "ua": "Що поверне OrderModel.getModelName()?"
   }
 }
