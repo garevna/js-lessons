@@ -22,6 +22,9 @@ const API = 'https://api.telegram.org/bot'
 export const WAITING = '⚠️'
 export const ANSWERED = '✅'
 
+/** Drawn between a question and the answers to it. */
+export const RULE = '──────────'
+
 /** Telegram's HTML mode is strict about these three and forgiving about the rest. */
 export const escape = (text) => String(text)
   .replace(/&/g, '&amp;')
@@ -106,7 +109,11 @@ export async function post (env, chat, text, markup) {
  */
 export async function markAnswered (env, chat, { postId, postText, answer, name, markup }) {
   const time = new Date().toLocaleTimeString('uk-UA', { timeZone: 'Europe/Kyiv', hour: '2-digit', minute: '2-digit' })
-  const head = postText.startsWith(WAITING) ? ANSWERED + postText.slice(WAITING.length) : postText
+  const marked = postText.startsWith(WAITING) ? ANSWERED + postText.slice(WAITING.length) : postText
+  // A rule between the question and the answers to it, drawn once: without
+  // it the first answer reads as a continuation of the question. Further
+  // answers line up under the same rule.
+  const head = marked.includes(RULE) ? marked : `${marked}\n\n${RULE}`
   const text = `${head}\n\n🤝 ${time} · ${escape(answer)}`
 
   if (text.length <= 4096) {

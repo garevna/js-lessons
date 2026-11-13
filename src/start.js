@@ -23,6 +23,7 @@ import './components/code-fix'
 import './components/page-component'
 
 import './components/welcome-win'
+import './components/feedback-widget'
 import './components/funny-slogan'
 
 const { createPath, createElem } = require('./helpers').default
