@@ -1081,23 +1081,23 @@ ______________________________________
 
 Что вернут следующие выражения:
 
-◘◘** 1**◘◘
+◘◘**1**◘◘
 
 →→→ [].reduce(Math.pow) | TypeError, null, NaN, 0 | TypeError →→→
 
-◘◘** 2**◘◘
+◘◘**2**◘◘
 
 →→→ [].reduce(Math.sqrt, 'Google') | TypeError, null, NaN, 0, 'Google' | Google →→→
 
-◘◘** 3**◘◘
+◘◘**3**◘◘
 
 →→→ [1].reduce(Math.sqrt, 'Google') | TypeError, null, NaN, 0, 'Google' | NaN →→→
 
-◘◘** 4**◘◘
+◘◘**4**◘◘
 
 →→→ [-10, -20, 5].reduce(Math.abs) | null, NaN, 0, 10, 20, 5 | 10 →→→
 
-◘◘** 5**◘◘
+◘◘**5**◘◘
 
 →→→ [.5].reduce(Math.pow, 49) | null, NaN, 0, 7, 49, 5 | 7 →→→
 

@@ -12,7 +12,7 @@ In other words, all arguments passed to the parent function upon invocation, as 
 
 So, the closure effect only occurs if a function returns a function.
 
-◘◘![ico-25 cap] ** 1**◘◘
+◘◘![ico-25 cap] **1**◘◘
 
 ~~~js
 function parent (arg) {
@@ -31,7 +31,7 @@ Let’s call the child function:
 child()  // Hello!  I'm frog
 ~~~
 
-◘◘![ico-25 cap] ** 2**◘◘
+◘◘![ico-25 cap] **2**◘◘
 
 ~~~js
 var parent = message => () => console.log(message)
@@ -45,7 +45,7 @@ welcome()  // Welcome!
 
 An alternative to closure is another mechanism – currying:
 
-◘◘![ico-25 cap] ** 3**◘◘
+◘◘![ico-25 cap] **3**◘◘
 
 ~~~js
 var parent = message => console.log(message)
@@ -57,7 +57,7 @@ hello()    // Hello!
 welcome()  // Welcome!
 ~~~
 
-◘◘![ico-25 cap] ** 4**◘◘
+◘◘![ico-25 cap] **4**◘◘
 
 ~~~js
 function parent (omega) {
@@ -79,7 +79,7 @@ child() // 18
 ...
 ~~~
 
-◘◘![ico-25 cap] ** 5**◘◘
+◘◘![ico-25 cap] **5**◘◘
 
 ~~~js
 function first (firstArg) {
@@ -107,7 +107,7 @@ A functional expression [**IIFE**](external/mdn-iife), i.e. an ‘in-place’ ca
 
 In this example, the anonymous function is ‘enclosed’ in round brackets:
 
-◘◘![ico-25 cap] ** 6**◘◘
+◘◘![ico-25 cap] **6**◘◘
 
 ~~~js
 (function (userName) {
@@ -205,7 +205,7 @@ within the context of which the variable **_message_** will be ‘bound’.
 
 Now, the reference to the variable **_message_** exists only within the context of the returned function.
 
-◘◘![ico-25 cap] ** 7**◘◘
+◘◘![ico-25 cap] **7**◘◘
 
 ~~~js
 var sayHello = (function (message) {
@@ -238,7 +238,7 @@ _____________________________
 
 ![ico-20 err] Functions created using the **Function** constructor do not create closures
 
-◘◘![ico-25 cap] ** 8**◘◘
+◘◘![ico-25 cap] **8**◘◘
 
 ~~~js
 var __var__ = 'Global Scope'
@@ -267,7 +267,7 @@ _____________________________
 
 The following code will cause the application to crash due to a memory overflow:
 
-◘◘![ico-25 cap] ** 9**◘◘
+◘◘![ico-25 cap] **9**◘◘
 
 ~~~js
 var globalFunc
