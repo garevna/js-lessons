@@ -14,13 +14,28 @@ const shortId = () => crypto.randomUUID().replace(/-/g, '').slice(0, 8)
 /** Long enough that guessing is not a strategy: 32 hex characters. */
 const secret = () => crypto.randomUUID().replace(/-/g, '') + crypto.randomUUID().replace(/-/g, '').slice(0, 16)
 
-export async function createThread (db, { name, page, lang }) {
-  const thread = { id: shortId(), token: secret(), name: name || null, page: page || null, lang: lang || null }
+export async function createThread (db, { name, telegram, page, lang }) {
+  const thread = {
+    id: shortId(),
+    token: secret(),
+    name: name || null,
+    telegram: telegram || null,
+    page: page || null,
+    lang: lang || null
+  }
   const time = now()
   await db.prepare(
-    'INSERT INTO threads (id, token, name, page, lang, created, updated) VALUES (?, ?, ?, ?, ?, ?, ?)'
-  ).bind(thread.id, thread.token, thread.name, thread.page, thread.lang, time, time).run()
+    'INSERT INTO threads (id, token, name, telegram, page, lang, created, updated) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
+  ).bind(thread.id, thread.token, thread.name, thread.telegram, thread.page, thread.lang, time, time).run()
   return thread
+}
+
+/**
+ * A handle given later - on the second message, say - belongs to the thread
+ * as much as one given at the start, and a corrected one replaces the old.
+ */
+export async function rememberHandle (db, thread, telegram) {
+  await db.prepare('UPDATE threads SET telegram = ? WHERE id = ?').bind(telegram, thread).run()
 }
 
 /**

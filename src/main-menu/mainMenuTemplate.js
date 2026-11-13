@@ -18,4 +18,5 @@ export const mainMenuTemplate = `
 </aside>
 
 <donate-component size="48" id="top-donate" />
+<feedback-widget id="top-message"></feedback-widget>
 `

@@ -21,7 +21,7 @@
  *   GET  /health            is it alive and configured
  */
 
-import { createThread, openThread, addMessage, attachTelegramMessage, conversation, keepPostText, lastQuestion, messageById, messageByTelegramId, recentCount, remember, threadName } from './store.js'
+import { createThread, openThread, addMessage, attachTelegramMessage, conversation, keepPostText, lastQuestion, messageById, messageByTelegramId, recentCount, remember, rememberHandle, threadName } from './store.js'
 import { answerButton, call, escape, inbox, isAdmin, markAnswered, post, questionText, readUpdate } from './telegram.js'
 
 // The site is served from garevna.github.io and from js-lessons.pp.ua, and in
@@ -90,6 +90,12 @@ async function ask (request, env) {
 
   const page = trim(body.page, 120)
   const lang = ['ua', 'ru', 'eng'].includes(body.lang) ? body.lang : null
+  // A Telegram handle as Telegram itself defines one: letters, digits and
+  // underscores, five to thirty-two of them. Anything else is not a handle,
+  // and a link built from it would be a link to nowhere - or to somebody
+  // else's account.
+  const raw = trim(body.telegram, 40).replace(/^@+/, '').replace(/^https?:\/\/t\.me\//i, '')
+  const handle = /^[A-Za-z\d_]{5,32}$/.test(raw) ? raw : ''
 
   // An existing thread is continued only by whoever holds its token; anything
   // else starts a new one rather than failing, so a reader whose storage was
@@ -97,7 +103,11 @@ async function ask (request, env) {
   let thread = await openThread(env.DB, body.thread, body.token)
   const first = !thread
   if (!thread) {
-    thread = await createThread(env.DB, { name: trim(body.name, MAX_NAME), page, lang })
+    thread = await createThread(env.DB, { name: trim(body.name, MAX_NAME), telegram: handle, page, lang })
+  } else if (handle && handle !== thread.telegram) {
+    // Given later, or corrected: it belongs to the thread either way.
+    await rememberHandle(env.DB, thread.id, handle)
+    thread.telegram = handle
   }
 
   if (await recentCount(env.DB, thread.id) >= MAX_PER_HOUR) {
@@ -113,6 +123,7 @@ async function ask (request, env) {
     const postText = questionText({
       thread: thread.id,
       name: thread.name,
+      telegram: thread.telegram,
       page,
       lang: lang || thread.lang,
       text,

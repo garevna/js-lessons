@@ -1,88 +1,85 @@
 /**
- * The "ask about this lesson" widget: where it sends, and what it says.
+ * The message widget: where it sends, and what it says.
+ *
+ * A message to the author, not a question about a lesson - the same standing
+ * as the donate button next to it in the top bar, and deliberately not a
+ * free help desk. The lesson a reader happened to be on travels with the
+ * message, because it is useful to the person answering, but it is never
+ * named in the interface and nothing is promised about it.
  *
  * The address is the feedback Worker (feedback-api/ in this repository). It
  * answers the three origins the course is served from - garevna.github.io,
  * js-lessons.pp.ua and a live-server on localhost - and nothing else.
  *
- * There is no account behind it and no sign-in. The first question gets a
- * thread id and a token; the browser keeps them under the key below, and
- * they are how the reader's own answers are found later. Clearing site data
- * ends that thread, which is the price of asking nothing of the reader.
+ * There is no account and no sign-in. The first message gets a thread id and
+ * a token; the browser keeps them under the key below, and they are how a
+ * reader's own answers are found later. Clearing site data ends that thread,
+ * which is the price of asking nothing of the reader.
  */
 export const feedbackConfig = {
   endpoint: 'https://js-lessons-feedback.garevna.workers.dev',
 
-  // Where the thread lives in this browser. One thread per reader, not per
-  // lesson: the questions carry the lesson's name, and a reader who asks on
-  // three pages should see all three answers in one place.
+  // Where the thread lives in this browser.
   storageKey: 'feedback-thread',
 
-  // How long the widget waits before asking the server whether an answer has
-  // arrived. Only while the panel is open, and only for a thread that has an
-  // unanswered question in it.
+  // How long the widget waits before asking whether an answer has arrived.
+  // Only while the panel is open.
   pollMs: 20000,
 
   labels: {
     ua: {
-      open: 'Запитати',
-      title: 'Запитання до уроку',
-      intro: 'Напишіть, що незрозуміло — відповім, і відповідь з’явиться тут же, коли ви наступного разу відкриєте сайт.',
-      name: 'Як до вас звертатися',
+      open: 'Написати авторці',
+      title: 'Повідомлення',
+      name: 'Як вас звати',
       namePlaceholder: 'необов’язково',
-      text: 'Запитання',
-      textPlaceholder: 'Про що саме?',
+      telegram: 'Нік у Telegram',
+      telegramPlaceholder: 'щоб відповісти вам особисто',
+      text: 'Що ви хочете сказати',
+      textPlaceholder: '',
       send: 'Надіслати',
       sending: 'Надсилаю…',
-      sent: 'Надіслано. Відповідь з’явиться тут.',
-      failed: 'Не вийшло надіслати. Спробуйте ще раз трохи згодом.',
-      tooMany: 'Забагато запитань поспіль — зачекайте годину.',
-      empty: 'Спершу напишіть запитання.',
-      answers: 'Відповіді',
-      waiting: 'Чекає на відповідь',
-      yours: 'Ваше запитання',
-      close: 'Закрити',
-      badge: 'є відповідь'
+      sent: 'Надіслано.',
+      failed: 'Не вийшло надіслати. Спробуйте трохи згодом.',
+      tooMany: 'Забагато повідомлень поспіль — зачекайте годину.',
+      empty: 'Спершу напишіть повідомлення.',
+      waiting: 'без відповіді',
+      close: 'Закрити'
     },
     ru: {
-      open: 'Спросить',
-      title: 'Вопрос по уроку',
-      intro: 'Напишите, что непонятно — отвечу, и ответ появится здесь же, когда вы в следующий раз откроете сайт.',
-      name: 'Как к вам обращаться',
+      open: 'Написать автору',
+      title: 'Сообщение',
+      name: 'Как вас зовут',
       namePlaceholder: 'необязательно',
-      text: 'Вопрос',
-      textPlaceholder: 'О чём именно?',
+      telegram: 'Ник в Telegram',
+      telegramPlaceholder: 'чтобы ответить вам лично',
+      text: 'Что вы хотите сказать',
+      textPlaceholder: '',
       send: 'Отправить',
       sending: 'Отправляю…',
-      sent: 'Отправлено. Ответ появится здесь.',
+      sent: 'Отправлено.',
       failed: 'Не получилось отправить. Попробуйте чуть позже.',
-      tooMany: 'Слишком много вопросов подряд — подождите час.',
-      empty: 'Сначала напишите вопрос.',
-      answers: 'Ответы',
-      waiting: 'Ждёт ответа',
-      yours: 'Ваш вопрос',
-      close: 'Закрыть',
-      badge: 'есть ответ'
+      tooMany: 'Слишком много сообщений подряд — подождите час.',
+      empty: 'Сначала напишите сообщение.',
+      waiting: 'без ответа',
+      close: 'Закрыть'
     },
     eng: {
-      open: 'Ask',
-      title: 'A question about this lesson',
-      intro: 'Write what is unclear — I answer, and the answer appears right here next time you open the site.',
-      name: 'What to call you',
+      open: 'Message the author',
+      title: 'Message',
+      name: 'Your name',
       namePlaceholder: 'optional',
-      text: 'Question',
-      textPlaceholder: 'What exactly?',
+      telegram: 'Telegram handle',
+      telegramPlaceholder: 'so the answer can reach you there',
+      text: 'What you want to say',
+      textPlaceholder: '',
       send: 'Send',
       sending: 'Sending…',
-      sent: 'Sent. The answer will appear here.',
+      sent: 'Sent.',
       failed: 'It did not go through. Try again in a moment.',
-      tooMany: 'Too many questions in a row — give it an hour.',
-      empty: 'Write the question first.',
-      answers: 'Answers',
-      waiting: 'Waiting for an answer',
-      yours: 'Your question',
-      close: 'Close',
-      badge: 'answered'
+      tooMany: 'Too many messages in a row — give it an hour.',
+      empty: 'Write the message first.',
+      waiting: 'no answer yet',
+      close: 'Close'
     }
   }
 }

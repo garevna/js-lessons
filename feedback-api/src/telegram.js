@@ -67,11 +67,14 @@ export async function call (env, method, payload) {
  * which language, from which thread. The thread id is printed because a post
  * can be forwarded or quoted - the id in the text is the copy that survives.
  */
-export function questionText ({ status = WAITING, thread, name, page, lang, text, first }) {
+export function questionText ({ status = WAITING, thread, name, telegram, page, lang, text, first }) {
   const who = name ? escape(name) : 'без имени'
+  // A handle becomes a link, so answering in private is one tap rather than
+  // a copy, a search, and a hope that it is the same person.
+  const handle = telegram ? ` · <a href="https://t.me/${escape(telegram)}">@${escape(telegram)}</a>` : ''
   return [
     `${status} <b>${escape(page || 'сайт')}</b> · ${escape(lang || '?')}`,
-    `${who} · тред <code>${escape(thread)}</code>${first ? ' · новый' : ''}`,
+    `${who}${handle} · тред <code>${escape(thread)}</code>${first ? ' · новый' : ''}`,
     '',
     escape(text)
   ].join('\n')

@@ -64,6 +64,23 @@ let rawSource = `
   transition: all .5s;
 }
 
+/* Left of the donate widget, in the panel that is there anyway. The page
+   footer is what a floating button in the corner covers on a phone after a
+   scroll, and the title in this bar disappears below 480px - which is
+   exactly where the room for this comes from. */
+#top-message {
+  position: absolute;
+  top: 14px;
+  right: 170px;
+  cursor: pointer;
+  z-index: 504;
+  transition: all .5s;
+}
+
+@media screen and (max-width: 480px), screen and (max-height: 480px) {
+  #top-message { top: 12px; right: 164px; }
+}
+
 .go-to-home {
   position:absolute;
   top: 24px;

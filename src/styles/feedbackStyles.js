@@ -10,115 +10,125 @@ const rawSource = `
     --feedback-ink: #203040;
     --feedback-soft: #6a7a88;
     --feedback-line: #dce4ea;
-    --feedback-accent: #0a7b8c;
-    --feedback-answer: #f2fbf6;
-    font-family: var(--main-font, system-ui, sans-serif);
+    --feedback-accent: #09b;
+    --feedback-answer: #f1f9fc;
+    font-family: var(--font-family, system-ui, sans-serif);
   }
 
-  /* The button sits out of the way of the lesson and of the menu: bottom
-     right, above the fold, and it never covers the code examples. */
+  /* An icon, no caption: this sits in the top bar beside the donate widget,
+     where there is room for a mark and none for a sentence. The tooltip
+     carries the words. */
   .open {
-    position: fixed;
-    right: 24px;
-    bottom: 24px;
-    z-index: 40;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 18px;
+    display: block;
+    padding: 0;
     border: none;
-    border-radius: 24px;
-    background: var(--feedback-accent);
-    color: #fff;
-    font: inherit;
-    font-size: 15px;
+    background: none;
+    color: #fa0;
+    line-height: 0;
     cursor: pointer;
-    box-shadow: 0 6px 18px rgba(20, 40, 60, .25);
-    transition: transform .15s, box-shadow .15s;
+    position: relative;
+    transition: color .2s, transform .15s;
   }
 
-  .open:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(20, 40, 60, .3); }
+  .open:hover { color: #fc6; transform: scale(1.08); }
 
   /* An answer arrived while the reader was away. */
   .open .badge {
     display: none;
-    min-width: 20px;
-    height: 20px;
-    padding: 0 6px;
-    border-radius: 10px;
-    background: #ffd23f;
-    color: #203040;
-    font-size: 13px;
-    line-height: 20px;
+    position: absolute;
+    top: -4px;
+    right: -6px;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    border-radius: 9px;
+    background: #f50;
+    color: #fff;
+    font-family: var(--font-family, system-ui, sans-serif);
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 17px;
     text-align: center;
   }
 
-  .open.has-answers .badge { display: inline-block; }
+  .open.has-answers .badge { display: block; }
 
   .panel {
     position: fixed;
+    top: 76px;
     right: 24px;
-    bottom: 24px;
-    z-index: 41;
+    z-index: 600;
     display: none;
     flex-direction: column;
-    width: min(420px, calc(100vw - 32px));
-    max-height: min(640px, calc(100vh - 48px));
-    border-radius: 14px;
+    width: min(400px, calc(100vw - 24px));
+    max-height: min(620px, calc(100vh - 100px));
+    padding: 14px 16px 16px;
+    border-radius: 12px;
     background: #fff;
     color: var(--feedback-ink);
-    box-shadow: 0 18px 48px rgba(20, 40, 60, .28);
+    box-shadow: 0 18px 48px rgba(10, 20, 30, .35);
     overflow: hidden;
   }
 
   .panel.open { display: flex; }
 
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 16px;
-    border-bottom: 1px solid var(--feedback-line);
-  }
-
-  header h3 { margin: 0; font-size: 16px; font-weight: 600; }
-
+  /* The corner, not beside the heading. */
   .close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
     border: none;
+    border-radius: 14px;
     background: none;
     color: var(--feedback-soft);
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1;
     cursor: pointer;
   }
 
-  .body { overflow-y: auto; padding: 14px 16px; }
+  .close:hover { background: #f2f5f7; color: var(--feedback-ink); }
 
-  .intro { margin: 0 0 14px; color: var(--feedback-soft); font-size: 14px; line-height: 1.45; }
-
-  /* A question with its answers under it - the shape the server returns and
-     the shape this has to read as: a thicket of alternating messages is
-     exactly what nesting them avoids. */
-  .question {
-    margin-bottom: 14px;
-    padding: 10px 12px;
-    border: 1px solid var(--feedback-line);
-    border-radius: 10px;
+  h3 {
+    margin: 0 0 12px;
+    padding-right: 32px;
+    font-size: 17px;
+    font-weight: 600;
   }
 
-  .question > .meta {
+  .body { overflow-y: auto; overflow-x: hidden; }
+
+  /* Previous messages live under the form; a rule keeps them from reading as
+     part of it. */
+  .thread:not(:empty) {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--feedback-line);
+  }
+
+  /* A message with its answers under it - the shape the server returns, and
+     the shape this has to read as. */
+  .message {
+    margin-bottom: 12px;
+    padding: 9px 11px;
+    border: 1px solid var(--feedback-line);
+    border-radius: 9px;
+  }
+
+  .message > .meta {
     display: flex;
-    gap: 8px;
-    margin-bottom: 6px;
+    gap: 6px;
+    margin-bottom: 5px;
     color: var(--feedback-soft);
     font-size: 12px;
   }
 
-  .question > p { margin: 0; font-size: 14px; line-height: 1.5; white-space: pre-wrap; }
+  .message > p { margin: 0; font-size: 14px; line-height: 1.5; white-space: pre-wrap; }
 
   .reply {
-    margin-top: 10px;
-    padding: 10px 12px;
+    margin-top: 9px;
+    padding: 9px 11px;
     border-left: 3px solid var(--feedback-accent);
     border-radius: 0 8px 8px 0;
     background: var(--feedback-answer);
@@ -127,16 +137,21 @@ const rawSource = `
     white-space: pre-wrap;
   }
 
-  .reply .meta { margin-bottom: 4px; color: var(--feedback-soft); font-size: 12px; }
+  .reply .meta { margin-bottom: 3px; color: var(--feedback-soft); font-size: 12px; }
 
-  label { display: block; margin-bottom: 4px; color: var(--feedback-soft); font-size: 13px; }
+  label {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--feedback-soft);
+    font-size: 13px;
+  }
 
   input, textarea {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 9px 11px;
+    margin-bottom: 9px;
+    padding: 8px 10px;
     border: 1px solid var(--feedback-line);
-    border-radius: 8px;
+    border-radius: 7px;
     color: inherit;
     font: inherit;
     font-size: 14px;
@@ -145,13 +160,13 @@ const rawSource = `
 
   input:focus, textarea:focus { outline: 2px solid var(--feedback-accent); outline-offset: -1px; }
 
-  textarea { min-height: 96px; }
+  textarea { min-height: 88px; }
 
   .send {
     width: 100%;
-    padding: 11px;
+    padding: 10px;
     border: none;
-    border-radius: 8px;
+    border-radius: 7px;
     background: var(--feedback-accent);
     color: #fff;
     font: inherit;
@@ -159,15 +174,15 @@ const rawSource = `
     cursor: pointer;
   }
 
+  .send:hover { background: #0ac; }
   .send[disabled] { opacity: .6; cursor: default; }
 
-  .status { margin: 10px 0 0; font-size: 13px; line-height: 1.4; }
+  .status { margin: 9px 0 0; font-size: 13px; line-height: 1.4; }
   .status.bad { color: #b3261e; }
   .status.good { color: #1b7a43; }
 
-  @media (max-width: 520px) {
-    .open { right: 12px; bottom: 12px; }
-    .panel { right: 8px; left: 8px; bottom: 8px; width: auto; }
+  @media screen and (max-width: 520px) {
+    .panel { right: 8px; left: 8px; top: 64px; width: auto; max-height: calc(100vh - 88px); }
   }
 `
 
