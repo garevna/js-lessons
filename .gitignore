@@ -39,3 +39,9 @@ pnpm-debug.log*
 # worker secrets for local runs: wrangler dev and set-webhook.js read this
 .dev.vars
 */.dev.vars
+
+# real secret values: an inventory lives in secrets.example.json, the
+# values live in a password manager and are uploaded with `wrangler secret bulk`
+secrets.json
+*/secrets.json
+**/secrets.json
