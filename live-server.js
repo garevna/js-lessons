@@ -175,6 +175,13 @@ portIsFree(PORT, params.host).then((free) => {
 			: '  вкладка сама не перезагружается — обнови её, когда захочешь увидеть правку\n' +
 			  '  (вернуть авто-перезагрузку: RELOAD_ON_CHANGE = true в live-server.js)')
 
+		// This serves public/ and nothing else: it does not build. An edit in
+		// src/ or content/ changes nothing on screen until the watcher runs,
+		// and the usual way to lose half an hour here is to have only this
+		// half of the pair running.
+		console.log('  рядом, в другом терминале:  npm run watch   →  пересборка при правках')
+		console.log('  что ещё умеет проект:       npm run help')
+
 		return
 	}
 

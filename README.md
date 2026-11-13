@@ -61,8 +61,22 @@ visited.
 ```
 yarn install:all      the root project and the three workers
 yarn full             build everything
-yarn start            serve public/ locally
 ```
+
+Day to day it is two commands, in two terminals:
+
+```
+npm run watch         rebuild a page, and the bundles, on every save
+npm start             serve public/ on localhost:8181
+```
+
+`npm run watch` is the half that builds. `npm start` only serves what is in
+`public/`, so an edit in `src/` or `content/` shows up on screen exactly when
+the watcher has run - having only the server running is the usual way to lose
+half an hour wondering why nothing changes.
+
+`npm run help` prints what every other script is for, grouped. `npm run check`
+runs the checks CI runs, before a push rather than after it.
 
 `yarn full` runs the pieces in an order that matters:
 
@@ -1342,10 +1356,11 @@ running if the library is ever updated.
 A private name is drawn like any other property, which is what DevTools does.
 `#000` inside a string is left alone: the pattern wants a letter after the hash.
 
-> Do not leave `npm run dev` behind. It watches `src/` too, but writes a
-> development bundle — the same code 170 KB larger — and `public/index.js` is
-> committed, so that bundle would go to the live site. `npm run watch` builds
-> in production mode for exactly this reason.
+> There used to be an `npm run dev` here — webpack in watch mode. It is gone:
+> it wrote a development bundle, the same code 170 KB larger, and
+> `public/index.js` is committed, so that bundle would have gone to the live
+> site. `npm run watch` watches `src/` as well and builds in production mode,
+> which is why it replaced it.
 
 ### Editing a page's markup
 
