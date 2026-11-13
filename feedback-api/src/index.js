@@ -21,8 +21,8 @@
  *   GET  /health            is it alive and configured
  */
 
-import { createThread, openThread, addMessage, attachTelegramMessage, conversation, keepPostText, messageById, messageByTelegramId, recentCount, threadName } from './store.js'
-import { answerButton, call, escape, isAdmin, markAnswered, post, questionText, readUpdate } from './telegram.js'
+import { createThread, openThread, addMessage, attachTelegramMessage, conversation, keepPostText, lastQuestion, messageById, messageByTelegramId, recentCount, remember, threadName } from './store.js'
+import { answerButton, call, escape, inbox, isAdmin, markAnswered, post, questionText, readUpdate } from './telegram.js'
 
 // The site is served from garevna.github.io and from js-lessons.pp.ua, and in
 // development from a live-server on localhost. Listing them is not security -
@@ -120,7 +120,7 @@ async function ask (request, env) {
     })
     // The button carries this message's row id, so an answer is tied to the
     // question it answers and not to whatever was replied to.
-    const messageId = await post(env, postText, answerButton(stored.id))
+    const messageId = await post(env, await inbox(env, env.DB), postText, answerButton(stored.id))
     await attachTelegramMessage(env.DB, stored.id, messageId)
     await keepPostText(env.DB, stored.id, postText)
   } catch (error) {
@@ -185,7 +185,7 @@ async function deliver (env, message, text) {
   await addMessage(env.DB, { thread: message.thread_id, side: 'author', text, parent: message.id })
 
   if (message.tg_message_id && message.tg_text) {
-    const updated = await markAnswered(env, {
+    const updated = await markAnswered(env, await inbox(env, env.DB), {
       postId: message.tg_message_id,
       postText: message.tg_text,
       answer: text,
@@ -202,13 +202,27 @@ async function onAnswerButton (env, callback) {
   const id = Number(String(callback.data || '').slice(2))
   const message = id ? await messageById(env.DB, id) : null
 
-  if (!message || !(await isAdmin(env, callback.from.id))) {
+  if (!message || !(await isAdmin(env, await inbox(env, env.DB), callback.from.id))) {
     await call(env, 'answerCallbackQuery', {
       callback_query_id: callback.id,
       text: 'Отвечать могут только администраторы канала.',
       show_alert: true
     })
     return 'button refused'
+  }
+
+  // In a group the reply field is right there, in every Telegram client, so
+  // the answer is written under the post and nobody switches chats. Only a
+  // channel has no reply field - that, and nothing else, is why the bot
+  // takes the conversation into a private chat.
+  const where = callback.message && callback.message.chat && callback.message.chat.type
+  if (where === 'group' || where === 'supergroup') {
+    await call(env, 'answerCallbackQuery', {
+      callback_query_id: callback.id,
+      text: 'Ответьте реплаем на это сообщение — ответ уйдёт читателю.',
+      show_alert: true
+    })
+    return `told the admin to reply in place (message ${message.id})`
   }
 
   const quoted = String(message.text || '').slice(0, 600)
@@ -239,7 +253,7 @@ async function onAnswerButton (env, callback) {
 async function onPrivateAnswer (env, update, text) {
   const ids = PROMPT_IDS.exec(update.replyTo.text || '')
   if (!ids) return 'private message that answers no prompt'
-  if (!(await isAdmin(env, update.post.from.id))) return 'not an admin'
+  if (!(await isAdmin(env, await inbox(env, env.DB), update.post.from.id))) return 'not an admin'
 
   const message = await messageById(env.DB, ids[1])
   if (!message) return `prompt points at message ${ids[1]}, which is gone`
@@ -249,14 +263,64 @@ async function onPrivateAnswer (env, update, text) {
   return `answer stored in thread ${thread}`
 }
 
-/** 3. A plain reply to the post in the channel. */
-async function onChannelReply (env, update, text) {
-  if (update.post.from && !(await isAdmin(env, update.post.from.id))) return 'not an admin'
+/**
+ * 3. An answer written in the channel itself.
+ *
+ * Two shapes, because Telegram gives channels no reliable reply: a real
+ * reply to the post, and - when the client sends a quote instead, which is
+ * what actually happens - a post that begins with the thread id. The id is
+ * printed in every question as code, so one tap copies it.
+ */
+const THREAD_IN_TEXT = /^\s*(?:тред\s*)?([0-9a-f]{8})[\s:,.—-]*/i
 
-  const message = await messageByTelegramId(env.DB, update.replyTo.message_id)
-  if (!message) return `reply to post ${update.replyTo.message_id}, which belongs to no question`
+async function onChannelAnswer (env, update, text) {
+  if (update.post.from && !(await isAdmin(env, await inbox(env, env.DB), update.post.from.id))) return 'not an admin'
 
-  return `answer stored in thread ${await deliver(env, message, text)}`
+  if (update.replyTo) {
+    const message = await messageByTelegramId(env.DB, update.replyTo.message_id)
+    if (message) return `answer stored in thread ${await deliver(env, message, text)}`
+    return `reply to post ${update.replyTo.message_id}, which belongs to no question`
+  }
+
+  const found = THREAD_IN_TEXT.exec(text)
+  if (!found) return 'a post in the channel that answers nothing (no reply, no thread id)'
+
+  const message = await lastQuestion(env.DB, found[1].toLowerCase())
+  if (!message) return `thread ${found[1]} has no question to answer`
+
+  const answer = text.slice(found[0].length).trim()
+  if (!answer) return `thread ${found[1]} named, but the post says nothing else`
+
+  return `answer stored in thread ${await deliver(env, message, answer)}`
+}
+
+/**
+ * "/here" - move the inbox to this chat.
+ *
+ * Who may: an administrator of the chat the questions go to now. That is the
+ * whole guard, and it is enough - anyone can add a bot to their own group,
+ * and without this they could point somebody else's questions at it.
+ */
+async function onHere (env, update) {
+  const chat = update.post.chat
+  const user = update.post.from && update.post.from.id
+  if (!user) {
+    await call(env, 'sendMessage', { chat_id: chat.id, text: 'Эту команду нужно написать в группе — в канале у сообщений нет автора, и я не могу проверить, кто это.' })
+    return 'here: no author (channel post)'
+  }
+
+  const current = await inbox(env, env.DB)
+  if (current && String(current) !== String(chat.id) && !(await isAdmin(env, current, user))) {
+    await call(env, 'sendMessage', { chat_id: chat.id, text: 'Перенести ящик может только администратор того чата, куда вопросы приходят сейчас.' })
+    return `here: ${user} is not an admin of ${current}`
+  }
+
+  await remember(env.DB, 'inbox_chat', chat.id)
+  await call(env, 'sendMessage', {
+    chat_id: chat.id,
+    text: '📬 Готово: вопросы с сайта теперь приходят сюда. Отвечайте реплаем на сообщение — ответ уйдёт читателю, а ⚠️ сменится на ✅.'
+  })
+  return `inbox moved to ${chat.id}`
 }
 
 /**
@@ -298,6 +362,11 @@ async function webhook (request, env) {
       return new Response('ok')
     }
 
+    if (/^\/here(@\w+)?\s*$/.test(seen.text.trim())) {
+      await note(env, 1, kind, await onHere(env, seen))
+      return new Response('ok')
+    }
+
     if (seen.private) {
       await note(env, 1, kind, seen.replyTo
         ? await onPrivateAnswer(env, seen, seen.text)
@@ -305,9 +374,7 @@ async function webhook (request, env) {
       return new Response('ok')
     }
 
-    await note(env, 1, kind, seen.replyTo
-      ? await onChannelReply(env, seen, seen.text)
-      : 'a post in the channel that replies to nothing')
+    await note(env, 1, kind, await onChannelAnswer(env, seen, seen.text))
   } catch (error) {
     console.error('[feedback] webhook:', error.message)
     await note(env, 1, kind, `failed: ${error.message}`)

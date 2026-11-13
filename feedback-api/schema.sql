@@ -53,3 +53,11 @@ CREATE TABLE IF NOT EXISTS hook_events (
   detail  TEXT                -- what happened to it
 );
 CREATE INDEX IF NOT EXISTS messages_by_parent ON messages (parent_id);
+
+-- Settings that outlive a deployment. Today there is one, inbox_chat: the
+-- group or channel the questions are posted to, set by writing /here in it.
+CREATE TABLE IF NOT EXISTS settings (
+  key     TEXT PRIMARY KEY,
+  value   TEXT NOT NULL,
+  updated INTEGER NOT NULL
+);

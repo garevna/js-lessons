@@ -14,6 +14,8 @@
  * repository.
  */
 
+import { setting } from './store.js'
+
 const API = 'https://api.telegram.org/bot'
 
 /** Unanswered, and answered. The variation selector is part of the emoji. */
@@ -26,8 +28,16 @@ export const escape = (text) => String(text)
   .replace(/</g, '&lt;')
   .replace(/>/g, '&gt;')
 
-/** Pasted into a dashboard, a secret easily picks up a space at an end. */
-export const channel = (env) => String(env.TELEGRAM_CHAT_ID || '').trim()
+/**
+ * Where the questions go.
+ *
+ * wrangler.toml holds the first one; after that it is whatever chat was last
+ * told "/here", kept in the settings table. Moving the inbox should be a
+ * message in Telegram, not an edit and a deploy.
+ */
+export async function inbox (env, db) {
+  return String(await setting(db, 'inbox_chat', env.TELEGRAM_CHAT_ID || '')).trim()
+}
 
 /**
  * One call to the bot API. Returns Telegram's own answer, parsed; nothing is
@@ -74,9 +84,9 @@ export const answerButton = (id) => ({
  * Telegram's own reason - "chat not found" when the bot is not an
  * administrator of the channel, "Unauthorized" when the token is wrong.
  */
-export async function post (env, text, markup) {
+export async function post (env, chat, text, markup) {
   const answer = await call(env, 'sendMessage', {
-    chat_id: channel(env),
+    chat_id: chat,
     text,
     parse_mode: 'HTML',
     link_preview_options: { is_disabled: true },
@@ -94,14 +104,14 @@ export async function post (env, text, markup) {
  * Telegram caps a message at 4096 characters. Past that the answer goes under
  * the post as its own message instead, and the post is still marked answered.
  */
-export async function markAnswered (env, { postId, postText, answer, name, markup }) {
+export async function markAnswered (env, chat, { postId, postText, answer, name, markup }) {
   const time = new Date().toLocaleTimeString('uk-UA', { timeZone: 'Europe/Kyiv', hour: '2-digit', minute: '2-digit' })
   const head = postText.startsWith(WAITING) ? ANSWERED + postText.slice(WAITING.length) : postText
   const text = `${head}\n\n🤝 ${time} · ${escape(answer)}`
 
   if (text.length <= 4096) {
     const edited = await call(env, 'editMessageText', {
-      chat_id: channel(env),
+      chat_id: chat,
       message_id: postId,
       text,
       parse_mode: 'HTML',
@@ -114,7 +124,7 @@ export async function markAnswered (env, { postId, postText, answer, name, marku
   // Too long, or the edit was refused: the mark still has to go on, and the
   // answer still has to be visible in the channel.
   await call(env, 'editMessageText', {
-    chat_id: channel(env),
+    chat_id: chat,
     message_id: postId,
     text: head,
     parse_mode: 'HTML',
@@ -122,7 +132,7 @@ export async function markAnswered (env, { postId, postText, answer, name, marku
     ...(markup ? { reply_markup: markup } : {})
   })
   await call(env, 'sendMessage', {
-    chat_id: channel(env),
+    chat_id: chat,
     reply_parameters: { message_id: postId, allow_sending_without_reply: true },
     text: `🤝 Ответ${name ? ` для ${escape(name)}` : ''}\n\n${escape(answer)}`,
     parse_mode: 'HTML'
@@ -131,8 +141,8 @@ export async function markAnswered (env, { postId, postText, answer, name, marku
 }
 
 /** Only an administrator of the channel may answer in Irina's name. */
-export async function isAdmin (env, userId) {
-  const answer = await call(env, 'getChatMember', { chat_id: channel(env), user_id: userId })
+export async function isAdmin (env, chat, userId) {
+  const answer = await call(env, 'getChatMember', { chat_id: chat, user_id: userId })
   return ['creator', 'administrator'].includes(answer?.result?.status)
 }
 

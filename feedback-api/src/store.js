@@ -132,3 +132,31 @@ export async function recentCount (db, thread) {
   ).bind(thread, now() - 3600_000).first()
   return row ? row.n : 0
 }
+
+/**
+ * The newest question in a thread - what an answer that names only the
+ * thread is answering.
+ */
+export async function lastQuestion (db, thread) {
+  return db.prepare(
+    "SELECT * FROM messages WHERE thread_id = ? AND side = 'reader' ORDER BY id DESC LIMIT 1"
+  ).bind(thread).first()
+}
+
+/**
+ * Settings that outlive a deployment - at the moment one: which chat the
+ * questions go to.
+ *
+ * In wrangler.toml it would be a redeploy every time the inbox moves, and
+ * moving it is exactly the kind of thing that happens on a Tuesday evening.
+ */
+export async function setting (db, key, fallback = null) {
+  const row = await db.prepare('SELECT value FROM settings WHERE key = ?').bind(key).first()
+  return row ? row.value : fallback
+}
+
+export async function remember (db, key, value) {
+  await db.prepare(
+    'INSERT INTO settings (key, value, updated) VALUES (?, ?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated = excluded.updated'
+  ).bind(key, String(value), now()).run()
+}

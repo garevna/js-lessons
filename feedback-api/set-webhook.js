@@ -76,9 +76,11 @@ if (!secret) {
 const result = await api('setWebhook', {
   url: `${argument.replace(/\/+$/, '')}/telegram`,
   secret_token: secret,
-  // Everything else Telegram sends is noise here: this bot exists to carry
-  // answers out of one channel, not to talk to anybody.
-  allowed_updates: ['channel_post', 'edited_channel_post', 'message'],
+  // callback_query is in the list because the "✍️ Ответить" button under
+  // every question is one, and a type left out of this list is not delayed
+  // or logged - Telegram drops it and says nothing. The button did nothing
+  // at all for exactly that reason.
+  allowed_updates: ['message', 'edited_message', 'channel_post', 'edited_channel_post', 'callback_query'],
   drop_pending_updates: true
 })
 
