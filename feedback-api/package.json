@@ -1,0 +1,16 @@
+{
+  "name": "js-lessons-feedback",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Questions from the lessons, answered from a private Telegram channel",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "hook": "node set-webhook.js",
+    "schema": "wrangler d1 execute js-lessons-feedback --remote --file=./schema.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^4.132.0"
+  }
+}

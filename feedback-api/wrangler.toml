@@ -1,0 +1,32 @@
+name = "js-lessons-feedback"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# What is NOT here, deliberately: the bot token and the webhook secret. Those
+# are Worker secrets —
+#
+#   npx wrangler secret put TELEGRAM_BOT_TOKEN
+#   npx wrangler secret put TELEGRAM_WEBHOOK_SECRET
+#
+# — which go straight to Cloudflare and cannot be read back, by anyone, from
+# anywhere. A token in a file is a token in the repository the moment someone
+# runs `git add .`.
+
+[vars]
+# The private channel the questions land in: a negative number like -1001234567890.
+# Not a secret - it is useless without the token - so it lives here where it
+# can be seen and changed. Get it by forwarding any post from the channel to
+# @getidsbot, or from getUpdates after the bot posts once.
+TELEGRAM_CHAT_ID = ""
+
+# Threads and messages. Same reasoning as the sandbox: a reader sends a
+# question and the page shows it on the next line, which KV cannot promise.
+#
+# Creating it:
+#
+#   npx wrangler d1 create js-lessons-feedback      # prints the id below
+#   npm run schema                                  # creates the two tables
+[[d1_databases]]
+binding = "DB"
+database_name = "js-lessons-feedback"
+database_id = ""
