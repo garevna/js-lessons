@@ -9,6 +9,10 @@ CREATE TABLE IF NOT EXISTS threads (
   id       TEXT PRIMARY KEY,          -- short, public: shown in Telegram
   token    TEXT NOT NULL,             -- long, secret: kept in the reader's browser
   name     TEXT,                      -- what they asked to be called, if anything
+  -- A Telegram handle, if they left one: the post in the group turns it into
+  -- a link, so an answer can go to them directly instead of waiting for them
+  -- to come back to the site.
+  telegram TEXT,
   page     TEXT,                      -- the lesson the first question came from
   lang     TEXT,                      -- ua | ru | eng
   created  INTEGER NOT NULL,
