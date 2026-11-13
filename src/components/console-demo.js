@@ -114,13 +114,13 @@ const EXTRA = `
     font-family: var(--main-font);
     font-size: 1.2rem;
     border: 0;
-    background: #f50;
+    background: #000;
     padding: 4px 8px;
     border-radius: 4px;
-    color: white;
+    color: #09b;
     box-shadow: -1px -1px 2px #00000070;
   }
-  .demo-button:hover { background: #f83; }
+  .demo-button:hover { background: #fa0; }
 
   .demo-button.opened {
     background: transparent;
@@ -133,7 +133,7 @@ const EXTRA = `
   .demo-title {
     font-family: var(--main-font);
     font-size: .9rem;
-    color: #f50;
+    color: #09b;
   }
 
   .demo-body {

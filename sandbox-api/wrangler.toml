@@ -15,4 +15,4 @@ compatibility_date = "2026-09-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "js-lessons-sandbox"
-database_id = "2d4fd83d-7148-4410-86ce-7bdbf6aa33d2"
+database_id = "db14a19c-c70f-4440-8854-874ae7becdad"

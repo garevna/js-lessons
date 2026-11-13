@@ -144,10 +144,10 @@ ___________________________________
 
 {{p44}}
 
-••https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all••
+••https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/users/all••
 
 ~~~js
-fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')
+fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/users/all')
   .then(response => response.json())
   .then(response => console.log(response))
 ~~~
@@ -166,10 +166,10 @@ _______________________
 
 {{p45}}
 
-••https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/begemot••
+••https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/user/begemot••
 
 ~~~js
-fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/begemot')
+fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/user/begemot')
   .then(response => response.json())
   .then(response => console.log(response))
 ~~~
@@ -190,10 +190,10 @@ _______________________________
 
 {{p47}}
 
-••https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/?name=Stephan••
+••https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/users/?name=Stephan••
 
 ~~~js
-fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/?name=Stephan')
+fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/users/?name=Stephan')
   .then(response => response.json())
   .then(response => console.log(response))
 ~~~
@@ -209,12 +209,12 @@ fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/?name=Steph
 
 {{p49}}
 
-••https://js-lessons-sandbox.garevna.workers.dev/rest-api/users?age=&#94;18&#94;••
+••https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/users?age=&#94;18&#94;••
 
 {{p50}}
 
 ~~~js
-fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users?age=^18^')
+fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/users?age=^18^')
   .then(response => response.json())
   .then(response => console.log(response))
 ~~~
@@ -232,12 +232,12 @@ ___________________________________
 
 ### ![ico-20 icon] POST | PUT | PATCH | DELETE
 
-••https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/_id_••
+••https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/user/_id_••
 
 ◘◘**POST**◘◘
 
 ~~~js
-fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/987145', {
+fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/user/987145', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
@@ -269,7 +269,7 @@ ___________________________________
 ◘◘**PUT**◘◘
 
 ~~~js
-fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/987145', {
+fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/user/987145', {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json'
@@ -295,7 +295,7 @@ ___________________________________
 ◘◘**PATCH**◘◘
 
 ~~~js
-fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/987145', {
+fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/user/987145', {
   method: 'PATCH',
   headers: {
     'Content-Type': 'application/json'
@@ -319,7 +319,7 @@ ___________________________________
 ◘◘**DELETE**◘◘
 
 ~~~js
-fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/user/garevna', {
+fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/user/garevna', {
   method: 'DELETE',
   headers: {
     'Content-Type': 'application/json'

@@ -1084,7 +1084,7 @@ Let’s consider a purely theoretical variant
 ◘◘![ico-25 cap] **17**◘◘
 
 ~~~js
-const origin = 'https://js-lessons-sandbox.garevna.workers.dev/json-server'
+const origin = 'https://js-lessons-sandbox.garevna-dev.workers.dev/json-server'
 
 const users = ['Stephan', 'Andry']
   .reduce(async (result, item) => {
@@ -1119,7 +1119,7 @@ fetch(`${origin}/users?name=Stephan&name=Andry`)
 or like this:
 
 ~~~js
-const origin = 'https://js-lessons-sandbox.garevna.workers.dev/json-server'
+const origin = 'https://js-lessons-sandbox.garevna-dev.workers.dev/json-server'
 
 const getEndpoint = userList => userList
   .reduce((result, item, index) => result += `${index > 0 ? '&' : ''}name=${item}`, '')

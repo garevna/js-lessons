@@ -17,7 +17,7 @@
  * which is the price of asking nothing of the reader.
  */
 export const feedbackConfig = {
-  endpoint: 'https://js-lessons-feedback.garevna.workers.dev',
+  endpoint: 'https://js-lessons-feedback.garevna-dev.workers.dev',
 
   // Where the thread lives in this browser.
   storageKey: 'feedback-thread',

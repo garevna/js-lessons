@@ -132,7 +132,7 @@ function inputHandler (event) {
     event.target.label.innerText = '...'
     return
   }
-  fetch(`https://js-lessons-sandbox.garevna.workers.dev/json-server/usernames/${event.target.value}`)
+  fetch(`https://js-lessons-sandbox.garevna-dev.workers.dev/json-server/usernames/${event.target.value}`)
     .then(response => response.json())
     .then(response => {
       if (response && response.name) {

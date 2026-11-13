@@ -220,7 +220,7 @@ __________________________________
 
 ~~~js
 async function getLogin (resolve, reject) {
-  const users = await (await fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')).json()
+  const users = await (await fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/users/all')).json()
 
   const logins = Object.keys(users)
 
@@ -252,7 +252,7 @@ getLogin(res => console.log(res), err => console.error(err))
 {{p48}}
 
 ~~~js
-fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')
+fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/users/all')
   .then(response => response.json())
   .then(console.log)
 ~~~
@@ -302,7 +302,7 @@ function getInput (users) {
 
 ~~~js
 async function getLogin () {
-  const users = await (await fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')).json()
+  const users = await (await fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/users/all')).json()
 
   return await getInput(users)
 }
@@ -346,7 +346,7 @@ function getInput ( users ) {
 }
 
 async function getLogin () {
-  const users = await (await fetch('https://js-lessons-sandbox.garevna.workers.dev/rest-api/users/all')).json()
+  const users = await (await fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/rest-api/users/all')).json()
 
   return await getInput(users)
 }

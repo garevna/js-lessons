@@ -138,7 +138,7 @@ const createUsersDB = users => new Promise((resolve, reject) => {
 })
 
 async function callUsers () {
-  const users = await (await fetch('https://js-lessons-sandbox.garevna.workers.dev/json-server/users')).json()
+  const users = await (await fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/json-server/users')).json()
   return await createUsersDB(users).catch(error => console.warn(error))
 }
 
@@ -224,7 +224,7 @@ ___________________________________________________________
 {{p66}}
 
 ~~~js
-fetch('https://js-lessons-sandbox.garevna.workers.dev/json-server/lessons')
+fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/json-server/lessons')
   .then(response => response.json())
   .then(response => console.log(response))
 ~~~
@@ -277,7 +277,7 @@ function pushTopic (lessonIndex, topic) {
 
 
 async function createLessonsDB () {
-  data = await (await fetch('https://js-lessons-sandbox.garevna.workers.dev/json-server/lessons')).json()
+  data = await (await fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/json-server/lessons')).json()
   openDB('lessonsDB').then(openDBCallback)
 }
 
@@ -409,7 +409,7 @@ function pushTopic (lessonIndex, topic) {
 
 ~~~js
 async function createLessonsDB () {
-  const data = await (await fetch('https://js-lessons-sandbox.garevna.workers.dev/json-server/lessons')).json()
+  const data = await (await fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/json-server/lessons')).json()
   openDB('lessonsDB').then(openDBCallback)
   data.forEach(lesson => pushLesson(lesson))
 }
