@@ -21,8 +21,8 @@
  *   GET  /health            is it alive and configured
  */
 
-import { createThread, openThread, addMessage, attachTelegramMessage, messages, recentCount, threadByTelegramMessage } from './store.js'
-import { post, questionText, readUpdate } from './telegram.js'
+import { createThread, openThread, addMessage, attachTelegramMessage, conversation, keepPostText, messageById, messageByTelegramId, recentCount, threadName } from './store.js'
+import { answerButton, call, escape, isAdmin, markAnswered, post, questionText, readUpdate } from './telegram.js'
 
 // The site is served from garevna.github.io and from js-lessons.pp.ua, and in
 // development from a live-server on localhost. Listing them is not security -
@@ -59,6 +59,22 @@ const json = (request, body, status = 200) => new Response(JSON.stringify(body),
 
 const trim = (value, max) => typeof value === 'string' ? value.trim().slice(0, max) : ''
 
+/**
+ * A line in the webhook's diary (see hook_events in schema.sql).
+ *
+ * Never throws and never changes the answer: a diagnostic that can break the
+ * thing it watches is worse than no diagnostic.
+ */
+async function note (env, ok, kind, detail) {
+  try {
+    await env.DB.prepare('INSERT INTO hook_events (created, ok, kind, detail) VALUES (?, ?, ?, ?)')
+      .bind(Date.now(), ok, kind, detail).run()
+    await env.DB.prepare('DELETE FROM hook_events WHERE id <= (SELECT MAX(id) - 10 FROM hook_events)').run()
+  } catch (error) {
+    console.error('[feedback] note:', error.message)
+  }
+}
+
 /* ------------------------------------------------------------- the reader */
 
 async function ask (request, env) {
@@ -94,15 +110,19 @@ async function ask (request, env) {
   const stored = await addMessage(env.DB, { thread: thread.id, side: 'reader', text, page })
 
   try {
-    const messageId = await post(env, questionText({
+    const postText = questionText({
       thread: thread.id,
       name: thread.name,
       page,
       lang: lang || thread.lang,
       text,
       first
-    }))
+    })
+    // The button carries this message's row id, so an answer is tied to the
+    // question it answers and not to whatever was replied to.
+    const messageId = await post(env, postText, answerButton(stored.id))
     await attachTelegramMessage(env.DB, stored.id, messageId)
+    await keepPostText(env.DB, stored.id, postText)
   } catch (error) {
     console.error('[feedback] telegram:', error.message)
     return json(request, {
@@ -126,14 +146,118 @@ async function read (request, env, url) {
   const thread = await openThread(env.DB, url.searchParams.get('thread'), url.searchParams.get('token'))
   if (!thread) return json(request, { error: 'no-thread' }, 404)
 
+  const questions = await conversation(env.DB, thread.id)
   return json(request, {
     thread: thread.id,
     name: thread.name,
-    messages: await messages(env.DB, thread.id, url.searchParams.get('since'))
+    // Each question carries its own answers. `answers` is what the page puts
+    // a badge on: how many of them the reader has not seen yet is its own
+    // business, kept in the browser beside the thread id.
+    questions,
+    answers: questions.reduce((total, question) => total + question.replies.length, 0)
   })
 }
 
 /* ------------------------------------------------------------- the author */
+
+/**
+ * The three ways an answer can arrive, and the one way it is saved.
+ *
+ * 1. "✍️ Ответить" under a post in the channel. A channel has no reply field
+ *    in most Telegram clients, so the bot writes to the admin privately and
+ *    asks for the answer there.
+ * 2. The admin's reply to that private request.
+ * 3. A plain reply to the post, for whoever has a client that offers one.
+ *
+ * All three end in deliver(), which stores the answer for the reader and -
+ * the point of the whole arrangement - edits the post in the channel so its
+ * ⚠️ becomes ✅. With fifty questions in a channel, that mark is the only
+ * thing that says which of them are still waiting.
+ */
+
+/** The prompt carries both ids, so no state has to be kept between taps. */
+const PROMPT_IDS = /🆔\s*(\d+)\s*·\s*#(\d+)/
+
+async function deliver (env, message, text) {
+  // parent: the answer belongs to the question it answers, so the page can
+  // show it under that question and not at the end of a flat log. A question
+  // may collect several.
+  await addMessage(env.DB, { thread: message.thread_id, side: 'author', text, parent: message.id })
+
+  if (message.tg_message_id && message.tg_text) {
+    const updated = await markAnswered(env, {
+      postId: message.tg_message_id,
+      postText: message.tg_text,
+      answer: text,
+      name: await threadName(env.DB, message.thread_id),
+      markup: answerButton(message.id)
+    })
+    await keepPostText(env.DB, message.id, updated)
+  }
+  return message.thread_id
+}
+
+/** 1. The button. */
+async function onAnswerButton (env, callback) {
+  const id = Number(String(callback.data || '').slice(2))
+  const message = id ? await messageById(env.DB, id) : null
+
+  if (!message || !(await isAdmin(env, callback.from.id))) {
+    await call(env, 'answerCallbackQuery', {
+      callback_query_id: callback.id,
+      text: 'Отвечать могут только администраторы канала.',
+      show_alert: true
+    })
+    return 'button refused'
+  }
+
+  const quoted = String(message.text || '').slice(0, 600)
+  const asked = await call(env, 'sendMessage', {
+    chat_id: callback.from.id,
+    text: `✍️ Ответ на вопрос из урока <b>${escape(message.page || 'сайт')}</b>:
+
+`
+      + `<blockquote>${escape(quoted)}</blockquote>
+`
+      + `🆔 ${message.id} · #${message.tg_message_id}
+
+`
+      + 'Напишите ответ ответом на это сообщение.',
+    parse_mode: 'HTML',
+    reply_markup: { force_reply: true, input_field_placeholder: 'Ваш ответ…' }
+  })
+
+  await call(env, 'answerCallbackQuery', asked.ok
+    ? { callback_query_id: callback.id, text: 'Напишите ответ в чате с ботом.' }
+    // A bot may write first only to someone who has started it.
+    : { callback_query_id: callback.id, text: 'Сначала откройте чат с ботом и нажмите «Start», потом попробуйте снова.', show_alert: true })
+
+  return asked.ok ? `asked for an answer to message ${message.id}` : 'bot cannot write to this admin yet'
+}
+
+/** 2. The admin's reply in the private chat. */
+async function onPrivateAnswer (env, update, text) {
+  const ids = PROMPT_IDS.exec(update.replyTo.text || '')
+  if (!ids) return 'private message that answers no prompt'
+  if (!(await isAdmin(env, update.post.from.id))) return 'not an admin'
+
+  const message = await messageById(env.DB, ids[1])
+  if (!message) return `prompt points at message ${ids[1]}, which is gone`
+
+  const thread = await deliver(env, message, text)
+  await call(env, 'sendMessage', { chat_id: update.post.chat.id, text: '✅ Отправлено — читатель увидит ответ на странице урока.' })
+  return `answer stored in thread ${thread}`
+}
+
+/** 3. A plain reply to the post in the channel. */
+async function onChannelReply (env, update, text) {
+  if (update.post.from && !(await isAdmin(env, update.post.from.id))) return 'not an admin'
+
+  const message = await messageByTelegramId(env.DB, update.replyTo.message_id)
+  if (!message) return `reply to post ${update.replyTo.message_id}, which belongs to no question`
+
+  return `answer stored in thread ${await deliver(env, message, text)}`
+}
 
 /**
  * Telegram calls this. Nobody else should be able to.
@@ -141,9 +265,14 @@ async function read (request, env, url) {
  * setWebhook was given a secret_token, which Telegram returns in a header on
  * every call; without that check the address alone would be the only thing
  * standing between a stranger and the ability to answer in Irina's name.
+ *
+ * The answer is always 200, whatever happens inside: anything else makes
+ * Telegram retry the same update for a day. What became of it is written to
+ * hook_events instead.
  */
 async function webhook (request, env) {
-  if (request.headers.get('X-Telegram-Bot-Api-Secret-Token') !== env.TELEGRAM_WEBHOOK_SECRET) {
+  if (request.headers.get('X-Telegram-Bot-Api-Secret-Token') !== String(env.TELEGRAM_WEBHOOK_SECRET || '').trim()) {
+    await note(env, 0, 'rejected', 'secret header did not match')
     return new Response('no', { status: 401 })
   }
 
@@ -151,23 +280,38 @@ async function webhook (request, env) {
   try {
     update = await request.json()
   } catch {
+    await note(env, 1, 'unparsed', 'body was not JSON')
     return new Response('ok')
   }
 
-  const reply = readUpdate(update)
-  // Always 200: an update Telegram cannot deliver is retried, and a post in
-  // the channel that answers nothing is not an error, it is a note to self.
-  if (!reply) return new Response('ok')
+  const kind = Object.keys(update).filter((key) => key !== 'update_id').join(',') || 'empty'
 
-  const thread = await threadByTelegramMessage(env.DB, reply.replyTo)
-  if (!thread) return new Response('ok')
+  try {
+    if (update.callback_query) {
+      await note(env, 1, 'callback_query', await onAnswerButton(env, update.callback_query))
+      return new Response('ok')
+    }
 
-  await addMessage(env.DB, {
-    thread,
-    side: 'author',
-    text: reply.text,
-    telegramMessageId: reply.messageId
-  })
+    const seen = readUpdate(update)
+    if (!seen || !seen.text) {
+      await note(env, 1, kind, 'nothing to read in it')
+      return new Response('ok')
+    }
+
+    if (seen.private) {
+      await note(env, 1, kind, seen.replyTo
+        ? await onPrivateAnswer(env, seen, seen.text)
+        : 'private message out of the blue')
+      return new Response('ok')
+    }
+
+    await note(env, 1, kind, seen.replyTo
+      ? await onChannelReply(env, seen, seen.text)
+      : 'a post in the channel that replies to nothing')
+  } catch (error) {
+    console.error('[feedback] webhook:', error.message)
+    await note(env, 1, kind, `failed: ${error.message}`)
+  }
 
   return new Response('ok')
 }

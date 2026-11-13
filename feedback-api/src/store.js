@@ -36,18 +36,39 @@ export async function openThread (db, id, token) {
   return row
 }
 
-export async function threadByTelegramMessage (db, messageId) {
-  const row = await db.prepare(
-    'SELECT thread_id FROM messages WHERE tg_message_id = ? ORDER BY id DESC LIMIT 1'
-  ).bind(messageId).first()
-  return row ? row.thread_id : null
+/** The question a post in the channel belongs to, with the post's text. */
+export async function messageByTelegramId (db, telegramMessageId) {
+  return db.prepare(
+    'SELECT * FROM messages WHERE tg_message_id = ? ORDER BY id DESC LIMIT 1'
+  ).bind(telegramMessageId).first()
 }
 
-export async function addMessage (db, { thread, side, text, page, telegramMessageId = null }) {
+export async function messageById (db, id) {
+  return db.prepare('SELECT * FROM messages WHERE id = ?').bind(Number(id) || 0).first()
+}
+
+/**
+ * The post's text as it now stands in Telegram.
+ *
+ * Kept because editing a message means sending the whole of it again: to add
+ * "🤝 answer" to a post you have to know what is already in it, and Telegram
+ * will not tell you.
+ */
+export async function keepPostText (db, id, text) {
+  await db.prepare('UPDATE messages SET tg_text = ? WHERE id = ?').bind(text, id).run()
+}
+
+/** The name the thread's reader gave, for the answer's header. */
+export async function threadName (db, thread) {
+  const row = await db.prepare('SELECT name FROM threads WHERE id = ?').bind(thread).first()
+  return row ? row.name : null
+}
+
+export async function addMessage (db, { thread, side, text, page, parent = null, telegramMessageId = null }) {
   const time = now()
   const result = await db.prepare(
-    'INSERT INTO messages (thread_id, side, text, page, created, tg_message_id) VALUES (?, ?, ?, ?, ?, ?)'
-  ).bind(thread, side, text, page || null, time, telegramMessageId).run()
+    'INSERT INTO messages (thread_id, parent_id, side, text, page, created, tg_message_id) VALUES (?, ?, ?, ?, ?, ?, ?)'
+  ).bind(thread, parent, side, text, page || null, time, telegramMessageId).run()
 
   await db.prepare('UPDATE threads SET updated = ? WHERE id = ?').bind(time, thread).run()
   return { id: result.meta.last_row_id, created: time }
@@ -59,14 +80,43 @@ export async function attachTelegramMessage (db, id, telegramMessageId) {
 }
 
 /**
- * The conversation, oldest first. `since` is the id of the last message the
- * page already shows, so polling asks for what it has not seen.
+ * The conversation: questions oldest first, each with the answers attached
+ * to it.
+ *
+ * Nested rather than flat, because that is how it is read. A flat log of
+ * twenty messages is a thicket - you cannot see what answers what - while a
+ * question with its answers under it stays legible however many there are.
+ * The whole thread comes back on every call: a reader's thread is a handful
+ * of rows, and paging it would cost more than it saves.
  */
-export async function messages (db, thread, since = 0) {
+export async function conversation (db, thread) {
   const { results } = await db.prepare(
-    'SELECT id, side, text, page, created FROM messages WHERE thread_id = ? AND id > ? ORDER BY id'
-  ).bind(thread, Number(since) || 0).all()
-  return results || []
+    'SELECT id, parent_id, side, text, page, created FROM messages WHERE thread_id = ? ORDER BY id'
+  ).bind(thread).all()
+
+  const rows = results || []
+  const questions = []
+  const byId = new Map()
+
+  for (const row of rows) {
+    if (row.side === 'reader') {
+      const question = { id: row.id, text: row.text, page: row.page, created: row.created, replies: [] }
+      byId.set(row.id, question)
+      questions.push(question)
+    }
+  }
+
+  for (const row of rows) {
+    if (row.side !== 'author') continue
+    const reply = { id: row.id, text: row.text, created: row.created }
+    // An answer with no parent is one from before answers had parents, or a
+    // reply to a question that has since gone: it belongs to the last
+    // question rather than nowhere.
+    const question = byId.get(row.parent_id) || questions[questions.length - 1]
+    if (question) question.replies.push(reply)
+  }
+
+  return questions
 }
 
 /**

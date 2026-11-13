@@ -1,13 +1,24 @@
 /**
- * The Telegram side: posting a question into the private channel, and reading
- * what comes back.
+ * The Telegram side: posting a question into the private channel, asking for
+ * an answer, and marking the post once it has one.
  *
- * The bot token never appears here. It is a Worker secret (wrangler secret put
- * TELEGRAM_BOT_TOKEN), so it exists in Cloudflare and nowhere in this
- * repository - not in wrangler.toml, not in .dev.vars, which git ignores.
+ * The scheme is the one the Pagewright relay uses, because it is the one that
+ * survived contact with a real inbox: every question is posted with a ⚠️ and
+ * a button under it, and when it is answered the same post is edited - ⚠️
+ * becomes ✅ and the answer is written into it. With fifty questions in the
+ * channel you see at a glance which ones are still waiting, which is what a
+ * plain reply can never show.
+ *
+ * The bot token never appears here. It is a Worker secret (wrangler secret
+ * put TELEGRAM_BOT_TOKEN), so it exists in Cloudflare and nowhere in this
+ * repository.
  */
 
 const API = 'https://api.telegram.org/bot'
+
+/** Unanswered, and answered. The variation selector is part of the emoji. */
+export const WAITING = '⚠️'
+export const ANSWERED = '✅'
 
 /** Telegram's HTML mode is strict about these three and forgiving about the rest. */
 export const escape = (text) => String(text)
@@ -15,66 +26,132 @@ export const escape = (text) => String(text)
   .replace(/</g, '&lt;')
   .replace(/>/g, '&gt;')
 
+/** Pasted into a dashboard, a secret easily picks up a space at an end. */
+export const channel = (env) => String(env.TELEGRAM_CHAT_ID || '').trim()
+
+/**
+ * One call to the bot API. Returns Telegram's own answer, parsed; nothing is
+ * thrown, because every caller here has something better to do with a refusal
+ * than crash - usually showing it to whoever caused it.
+ */
+export async function call (env, method, payload) {
+  try {
+    const response = await fetch(`${API}${env.TELEGRAM_BOT_TOKEN}/${method}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    return await response.json()
+  } catch (error) {
+    return { ok: false, description: error.message }
+  }
+}
+
 /**
  * One question, as it appears in the channel.
  *
  * The header is what makes answering possible months later: which lesson, in
- * which language, from which thread. The thread id is printed because a reply
- * is tied to a post, and a post can be forwarded, quoted or lost - the id in
- * the text is the copy that survives.
+ * which language, from which thread. The thread id is printed because a post
+ * can be forwarded or quoted - the id in the text is the copy that survives.
  */
-export function questionText ({ thread, name, page, lang, text, first }) {
+export function questionText ({ status = WAITING, thread, name, page, lang, text, first }) {
   const who = name ? escape(name) : 'без имени'
-  const head = [
-    `<b>${escape(page || 'сайт')}</b> · ${escape(lang || '?')}`,
-    `${who} · тред <code>${escape(thread)}</code>${first ? ' · новый' : ''}`
+  return [
+    `${status} <b>${escape(page || 'сайт')}</b> · ${escape(lang || '?')}`,
+    `${who} · тред <code>${escape(thread)}</code>${first ? ' · новый' : ''}`,
+    '',
+    escape(text)
   ].join('\n')
-  return `${head}\n\n${escape(text)}`
+}
+
+/** The button under a question. `id` is the message's row id in D1. */
+export const answerButton = (id) => ({
+  inline_keyboard: [[{ text: '✍️ Ответить', callback_data: `r|${id}` }]]
+})
+
+/**
+ * Posts a question and returns the id Telegram gave it, or throws with
+ * Telegram's own reason - "chat not found" when the bot is not an
+ * administrator of the channel, "Unauthorized" when the token is wrong.
+ */
+export async function post (env, text, markup) {
+  const answer = await call(env, 'sendMessage', {
+    chat_id: channel(env),
+    text,
+    parse_mode: 'HTML',
+    link_preview_options: { is_disabled: true },
+    ...(markup ? { reply_markup: markup } : {})
+  })
+  if (!answer.ok) throw new Error(`telegram sendMessage: ${answer.description || 'unknown'}`)
+  return answer.result.message_id
 }
 
 /**
- * Posts to the channel and returns the message id Telegram assigned.
+ * The post, rewritten with the answer in it: ⚠️ becomes ✅ and the answer is
+ * added as a paragraph. The button is kept, so a second answer is one tap
+ * away.
  *
- * That id is the hinge of the whole thing: an answer is a reply to this
- * message, and the reply carries the id it answers.
+ * Telegram caps a message at 4096 characters. Past that the answer goes under
+ * the post as its own message instead, and the post is still marked answered.
  */
-export async function post (env, text) {
-  const response = await fetch(`${API}${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      chat_id: env.TELEGRAM_CHAT_ID,
+export async function markAnswered (env, { postId, postText, answer, name, markup }) {
+  const time = new Date().toLocaleTimeString('uk-UA', { timeZone: 'Europe/Kyiv', hour: '2-digit', minute: '2-digit' })
+  const head = postText.startsWith(WAITING) ? ANSWERED + postText.slice(WAITING.length) : postText
+  const text = `${head}\n\n🤝 ${time} · ${escape(answer)}`
+
+  if (text.length <= 4096) {
+    const edited = await call(env, 'editMessageText', {
+      chat_id: channel(env),
+      message_id: postId,
       text,
       parse_mode: 'HTML',
-      // A channel of questions does not need a preview of every link in them.
-      link_preview_options: { is_disabled: true }
+      link_preview_options: { is_disabled: true },
+      ...(markup ? { reply_markup: markup } : {})
     })
-  })
-
-  const body = await response.json()
-  if (!body.ok) {
-    // Thrown rather than swallowed: a question that did not reach the channel
-    // is a question nobody will ever answer, and the reader should be told.
-    throw new Error(`telegram sendMessage: ${body.description || response.status}`)
+    if (edited.ok) return text
   }
-  return body.result.message_id
+
+  // Too long, or the edit was refused: the mark still has to go on, and the
+  // answer still has to be visible in the channel.
+  await call(env, 'editMessageText', {
+    chat_id: channel(env),
+    message_id: postId,
+    text: head,
+    parse_mode: 'HTML',
+    link_preview_options: { is_disabled: true },
+    ...(markup ? { reply_markup: markup } : {})
+  })
+  await call(env, 'sendMessage', {
+    chat_id: channel(env),
+    reply_parameters: { message_id: postId, allow_sending_without_reply: true },
+    text: `🤝 Ответ${name ? ` для ${escape(name)}` : ''}\n\n${escape(answer)}`,
+    parse_mode: 'HTML'
+  })
+  return head
+}
+
+/** Only an administrator of the channel may answer in Irina's name. */
+export async function isAdmin (env, userId) {
+  const answer = await call(env, 'getChatMember', { chat_id: channel(env), user_id: userId })
+  return ['creator', 'administrator'].includes(answer?.result?.status)
 }
 
 /**
- * An update as it arrives on the webhook, reduced to what matters: which post
- * is being answered, and with what.
+ * An update as it arrives on the webhook, reduced to what matters.
  *
  * A channel admin writing in the channel produces channel_post; the same bot
- * in a group produces message. Both are accepted, because a private channel
- * can be turned into a group later and nothing here should care.
+ * in a group or a private chat produces message. Both are accepted, because a
+ * private channel can be turned into a group later and nothing here should
+ * care.
  */
 export function readUpdate (update) {
   const post = update.channel_post || update.message || update.edited_channel_post || update.edited_message
   if (!post) return null
 
-  const replyTo = post.reply_to_message && post.reply_to_message.message_id
-  const text = post.text || post.caption
-  if (!replyTo || !text) return null
-
-  return { replyTo, text, messageId: post.message_id }
+  return {
+    post,
+    text: post.text || post.caption || '',
+    replyTo: post.reply_to_message || null,
+    private: post.chat && post.chat.type === 'private'
+  }
 }
