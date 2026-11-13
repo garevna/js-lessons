@@ -441,14 +441,14 @@ ______________________________________________________________________________
 
 ## ![ico-25 icon] Endpoints для самостоятельной работы⟪Endpoints_dlya_samostoyatelʹnoi_raboti⟫
 
-••https://js-lessons-sandbox.garevna.workers.dev/form-data/forms/&lt;id>••
+••https://js-lessons-sandbox.garevna-dev.workers.dev/form-data/forms/&lt;id>••
 
 ### ![ico-20 icon] GET⟪GET⟫
 
 ◘◘![ico-20 cap] 8◘◘
 
 ~~~js
-fetch('https://js-lessons-sandbox.garevna.workers.dev/form-data/forms/all')
+fetch('https://js-lessons-sandbox.garevna-dev.workers.dev/form-data/forms/all')
   .then(response => response.json())
   .then(response => console.log(response))
 ~~~
@@ -473,7 +473,7 @@ function getFormData (url) {
     .then(formData => formData.forEach(prop => console.log(prop)))
 }
 
-getFormData('https://js-lessons-sandbox.garevna.workers.dev/form-data/forms/frodo')
+getFormData('https://js-lessons-sandbox.garevna-dev.workers.dev/form-data/forms/frodo')
 ~~~
 
 ~~~console
@@ -492,7 +492,7 @@ Frodo
 ◘◘![ico-20 cap] 10◘◘
 
 ~~~js
-const api = 'https://js-lessons-sandbox.garevna.workers.dev/form-data/forms'
+const api = 'https://js-lessons-sandbox.garevna-dev.workers.dev/form-data/forms'
 
 const addElem = (tagName, container = document.body) => {
   return container.appendChild(document.createElement(tagName))
@@ -545,7 +545,7 @@ ________________________________________________________
 
 ### ![ico-20 icon] POST | PUT | PATCH⟪POST___PUT___PATCH⟫
 
-••https://js-lessons-sandbox.garevna.workers.dev/form-data/form/&lt;id>••
+••https://js-lessons-sandbox.garevna-dev.workers.dev/form-data/form/&lt;id>••
 
 ~~~html
 <form id="form">
@@ -580,7 +580,7 @@ const login = 'bandit'
 
 const formData = new FormData(document.getElementById('form'))
 
-fetch(`https://js-lessons-sandbox.garevna.workers.dev/form-data/form/${login}`, {
+fetch(`https://js-lessons-sandbox.garevna-dev.workers.dev/form-data/form/${login}`, {
   method: 'POST',
   body: formData
 }).then(response => console.log(response.status))
@@ -592,5 +592,5 @@ fetch(`https://js-lessons-sandbox.garevna.workers.dev/form-data/form/${login}`, 
 
 ________________________________________________________
 
-[:::Live Demo:::](https://js-lessons-sandbox.garevna.workers.dev/form-data/)  
+[:::Live Demo:::](https://js-lessons-sandbox.garevna-dev.workers.dev/form-data/)  
 [![ico-50 git] Live Demo](https://garevna.github.io/js-samples/#47)
