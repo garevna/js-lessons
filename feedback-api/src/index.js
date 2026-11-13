@@ -109,7 +109,13 @@ async function ask (request, env) {
       thread: thread.id,
       token: thread.token,
       id: stored.id,
-      delivered: false
+      delivered: false,
+      // What Telegram said, passed through: "chat not found" when the bot is
+      // not an administrator of the channel, "unauthorized" when the token is
+      // wrong. None of it reveals anything - the token is never in the
+      // message - and without it the only way to see why nothing arrives is
+      // to sit on `wrangler tail` and hope the stream flushes.
+      reason: error.message
     }, 202)
   }
 

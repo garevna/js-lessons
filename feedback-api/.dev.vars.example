@@ -1,0 +1,12 @@
+# Copy this file to .dev.vars and fill in the two values.
+#
+# .dev.vars is what `wrangler dev` and set-webhook.js read, and it is the one
+# place on disk where the bot token is allowed to live. git ignores it. This
+# example is committed so that the next person — or the next machine — knows
+# what belongs there without having to read the code.
+#
+# The deployed Worker does not use this file at all: in production both values
+# are Worker secrets, set with `npx wrangler secret put <NAME>`.
+
+TELEGRAM_BOT_TOKEN=1234567890:AAEexampleexampleexampleexampleexample
+TELEGRAM_WEBHOOK_SECRET=a-long-random-string-you-invent

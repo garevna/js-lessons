@@ -17,7 +17,7 @@ compatibility_date = "2026-09-01"
 # Not a secret - it is useless without the token - so it lives here where it
 # can be seen and changed. Get it by forwarding any post from the channel to
 # @getidsbot, or from getUpdates after the bot posts once.
-TELEGRAM_CHAT_ID = ""
+TELEGRAM_CHAT_ID = "-1004381061210"
 
 # Threads and messages. Same reasoning as the sandbox: a reader sends a
 # question and the page shows it on the next line, which KV cannot promise.
@@ -29,4 +29,4 @@ TELEGRAM_CHAT_ID = ""
 [[d1_databases]]
 binding = "DB"
 database_name = "js-lessons-feedback"
-database_id = ""
+database_id = "4a1401ef-831a-4c73-8087-8f47f4e6052a"
