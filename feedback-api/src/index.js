@@ -184,6 +184,7 @@ async function deliver (env, message, text) {
   // may collect several.
   await addMessage(env.DB, { thread: message.thread_id, side: 'author', text, parent: message.id })
 
+  let marked = false
   if (message.tg_message_id && message.tg_text) {
     const updated = await markAnswered(env, await inbox(env, env.DB), {
       postId: message.tg_message_id,
@@ -193,8 +194,32 @@ async function deliver (env, message, text) {
       markup: answerButton(message.id)
     })
     await keepPostText(env.DB, message.id, updated)
+    marked = true
   }
-  return message.thread_id
+  return { thread: message.thread_id, marked }
+}
+
+/**
+ * The answer as written is now inside the question's own post, so the typed
+ * message is a duplicate - and a chat of duplicates is the thing this whole
+ * arrangement exists to avoid. It goes.
+ *
+ * Only when the post really was updated: if the mark did not go on, the
+ * typed message is the only copy of the answer and deleting it would throw
+ * the answer away. And only when the bot is allowed to - deleting someone
+ * else's message needs the right, so a refusal falls back to a 👍, which at
+ * least says the answer went through.
+ */
+async function tidyAway (env, post, marked) {
+  if (!marked) return
+  const removed = await call(env, 'deleteMessage', { chat_id: post.chat.id, message_id: post.message_id })
+  if (!removed.ok) {
+    await call(env, 'setMessageReaction', {
+      chat_id: post.chat.id,
+      message_id: post.message_id,
+      reaction: [{ type: 'emoji', emoji: '👍' }]
+    })
+  }
 }
 
 /** 1. The button. */
@@ -217,12 +242,24 @@ async function onAnswerButton (env, callback) {
   // takes the conversation into a private chat.
   const where = callback.message && callback.message.chat && callback.message.chat.type
   if (where === 'group' || where === 'supergroup') {
+    // force_reply opens the reply field in the admin's client by itself,
+    // already tied to this prompt - so answering is: tap the button, type,
+    // send. No reply gesture, no switching chats. The prompt carries both
+    // ids, so nothing has to be remembered between the tap and the answer,
+    // and it is deleted as soon as the answer arrives.
+    const asked = await call(env, 'sendMessage', {
+      chat_id: callback.message.chat.id,
+      reply_parameters: { message_id: callback.message.message_id, allow_sending_without_reply: true },
+      text: `✍️ Ответ${message.page ? ` · ${escape(message.page)}` : ''}
+🆔 ${message.id} · #${message.tg_message_id}`,
+      parse_mode: 'HTML',
+      reply_markup: { force_reply: true, input_field_placeholder: 'Ваш ответ…' }
+    })
     await call(env, 'answerCallbackQuery', {
       callback_query_id: callback.id,
-      text: 'Ответьте реплаем на это сообщение — ответ уйдёт читателю.',
-      show_alert: true
+      text: asked.ok ? 'Пишите ответ — поле уже открыто.' : 'Не вышло открыть поле ответа.'
     })
-    return `told the admin to reply in place (message ${message.id})`
+    return asked.ok ? `prompt opened in the group for message ${message.id}` : 'could not open the prompt'
   }
 
   const quoted = String(message.text || '').slice(0, 600)
@@ -258,7 +295,7 @@ async function onPrivateAnswer (env, update, text) {
   const message = await messageById(env.DB, ids[1])
   if (!message) return `prompt points at message ${ids[1]}, which is gone`
 
-  const thread = await deliver(env, message, text)
+  const { thread } = await deliver(env, message, text)
   await call(env, 'sendMessage', { chat_id: update.post.chat.id, text: '✅ Отправлено — читатель увидит ответ на странице урока.' })
   return `answer stored in thread ${thread}`
 }
@@ -277,9 +314,23 @@ async function onChannelAnswer (env, update, text) {
   if (update.post.from && !(await isAdmin(env, await inbox(env, env.DB), update.post.from.id))) return 'not an admin'
 
   if (update.replyTo) {
-    const message = await messageByTelegramId(env.DB, update.replyTo.message_id)
-    if (message) return `answer stored in thread ${await deliver(env, message, text)}`
-    return `reply to post ${update.replyTo.message_id}, which belongs to no question`
+    // Two things can be replied to: the bot's "✍️ Ответ 🆔 … · #…" prompt,
+    // which the button opens, or the question itself.
+    const prompted = PROMPT_IDS.exec(update.replyTo.text || '')
+    const message = prompted
+      ? await messageById(env.DB, prompted[1])
+      : await messageByTelegramId(env.DB, update.replyTo.message_id)
+
+    if (!message) return `reply to message ${update.replyTo.message_id}, which belongs to no question`
+
+    const { thread, marked } = await deliver(env, message, text)
+    if (prompted) {
+      // The prompt has done its work; leaving it would litter the group with
+      // one of these under every answered question.
+      await call(env, 'deleteMessage', { chat_id: update.post.chat.id, message_id: update.replyTo.message_id })
+    }
+    await tidyAway(env, update.post, marked)
+    return `answer stored in thread ${thread}`
   }
 
   const found = THREAD_IN_TEXT.exec(text)
@@ -291,7 +342,9 @@ async function onChannelAnswer (env, update, text) {
   const answer = text.slice(found[0].length).trim()
   if (!answer) return `thread ${found[1]} named, but the post says nothing else`
 
-  return `answer stored in thread ${await deliver(env, message, answer)}`
+  const { thread, marked } = await deliver(env, message, answer)
+  await tidyAway(env, update.post, marked)
+  return `answer stored in thread ${thread}`
 }
 
 /**
