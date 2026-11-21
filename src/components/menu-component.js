@@ -127,6 +127,17 @@ class MenuComponent extends HTMLElement {
     const first = createElem('li', this.menuContent)
     first.className = 'lesson-map'
 
+    // Only where there is a map. It is written by hand, one file per lesson,
+    // and most lessons do not have one yet; a line that opens an apology is
+    // worse than no line. Put in first and taken out if the file is not
+    // there, because the contents are built before anything can be fetched
+    // and this panel is shut at the time anyway.
+    const owner = document.querySelector('page-element')
+    const map = owner && owner.map
+    map && map.exists
+      ? map.exists().then(yes => { if (!yes) first.remove() })
+      : first.remove()
+
     // No href: this goes nowhere, it opens something. A "#" would put a
     // stray hash in the address bar and a javascript: URL is the kind of
     // thing a content policy refuses.

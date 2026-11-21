@@ -1,55 +1,45 @@
 /**
- * The lesson seen whole.
+ * The lesson's subject, laid out as a picture.
  *
- * Some lessons are long enough that a reader scrolling through them never
- * holds the shape of the thing: Classes has twenty sections across four
- * levels, and the parts depend on one another in ways the order of the page
- * cannot show. super() has to run before `this` exists, which is a fact
- * about the initialisation order three sections earlier; losing the context
- * of a method is the same subject as get & set. A page is a line. This is
- * the picture.
+ * Not the table of contents in another shape. The contents say in what order
+ * the lesson is written; this says what the subject is made of, and those are
+ * different questions with different answers. Tests and the quest belong to
+ * the first and have no place here; "Class Declaration" and "Class
+ * Expression" are one group here and are pages apart in the lesson.
  *
- * Nothing here is written per lesson. The tree is the lesson's own headings:
- * the page keeps them in pageContentList as it parses, each with the anchor
- * the build stamped on it - the same anchor in all three languages, so a
- * node knows where to jump and the labels are already translated. Add a
- * heading to a lesson and the map grows a node; nothing to keep in step.
+ * So the map is written, not derived: public/maps/<page>.json, three levels
+ * deep and the same three everywhere - branch, group, item. An item carries
+ * a sentence about itself and a few lines of code, which a click brings up,
+ * and the anchor of the section where the lesson explains it, which turns
+ * into a way in. A lesson with no such file has no map and does not offer
+ * one; 404 is the normal answer for most of them.
  *
- * What the headings cannot say is which section leans on which. That is the
- * one thing written by hand, per lesson, in public/maps/<page>.json:
+ * What the structure cannot say is which item leans on which. Those are the
+ * dashed arrows: a pair of ids and a note, drawn round the outside and
+ * numbered, with the words in the legend below - a note written along a
+ * curve stands on end where the curve runs vertical.
  *
- *   { "links": [ { "from": "super", "to": "Initialisation_process",
- *                  "note": "до super() нет this" } ] }
- *
- * No file, no cross-links, and the map is still a map. 404 is the normal
- * answer for most lessons and is not an error.
+ * Folded to the branches to begin with. Two dozen boxes at once have to be
+ * scaled down until nothing can be read, which is the opposite of the point.
  */
 const { createElem } = require('../helpers').default
 const { lang } = require('../configs').default
 
-/**
- * A note on a dependency arrow is the only text here that the lesson does
- * not already carry, so it is the only text that has to be translated by
- * hand. Either a string, used as it stands, or the three languages:
- *
- *   "note": { "ru": "…", "ua": "…", "eng": "…" }
- */
-const speak = note => {
-  if (!note) return ''
-  if (typeof note === 'string') return note
-  return note[lang()] || note.eng || ''
+/** A field is either one string for everyone, or the three languages. */
+const speak = value => {
+  if (!value) return ''
+  if (typeof value === 'string') return value
+  return value[lang()] || value.eng || ''
 }
 
-/** Eight hues for eight branches, then round again. Each is dark enough for
- *  white text on it at 14px, and they stay apart from one another for the
- *  most common sorts of colour blindness. */
-const HUES = ['#09b', '#c35', '#2a7', '#85b', '#d72', '#357', '#a84', '#777']
-
-const GAP_X = 48          // between one level and the next
-const GAP_Y = 12          // between siblings
+const GAP_X = 44          // between one ring and the next
 const PAD_X = 14          // inside a node
-const LINE = 20           // a line of label
-const MAX_WIDTH = 220     // before a label wraps
+const LINE = 19           // a line of label
+const MAX_WIDTH = 200     // before a label wraps
+
+const INK = '#1E293B'
+const MUTED = '#64748B'
+const LINE_COLOUR = '#CBD5E1'
 
 const styles = `
   *, *::before, *::after { box-sizing: border-box; }
@@ -61,7 +51,7 @@ const styles = `
     position: fixed;
     inset: 0;
     z-index: 700;
-    background: rgba(10, 20, 30, .55);
+    background: rgba(15, 23, 42, .55);
   }
 
   .sheet.shown { display: block; }
@@ -72,8 +62,8 @@ const styles = `
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 16px 48px rgba(10, 20, 30, .4);
+    background: #F1F5F9;
+    box-shadow: 0 16px 48px rgba(15, 23, 42, .4);
     overflow: hidden;
   }
 
@@ -82,37 +72,35 @@ const styles = `
     gap: 12px;
     align-items: center;
     padding: 12px 16px;
-    border-bottom: 1px solid #dce4ea;
+    border-bottom: 1px solid #E2E8F0;
+    background: #fff;
   }
 
-  h3 { flex: 1; margin: 0; color: #203040; font-size: 16px; font-weight: 600; }
+  h3 { flex: 1; margin: 0; color: ${INK}; font-size: 16px; font-weight: 700; }
 
   .tool {
     width: 32px;
     height: 32px;
     padding: 0;
-    border: 1px solid #dce4ea;
+    border: 1px solid #CBD5E1;
     border-radius: 8px;
-    background: #fff;
-    color: #6a7a88;
+    background: #F8FAFC;
+    color: #334155;
     font-size: 16px;
     line-height: 1;
     cursor: pointer;
   }
 
-  .tool:hover { background: #f2f5f7; color: #203040; }
+  .tool:hover { background: #E2E8F0; color: ${INK}; }
   .tool.close { font-size: 20px; }
 
-  /* The canvas. Dragging it pans, the wheel zooms, and a touch screen does
-     both with the usual two gestures - so the browser must be told not to
-     take the gestures for itself first. */
+  /* Dragging pans, the wheel zooms; a touch screen does both with the usual
+     gestures, so the browser has to be told not to take them first. */
   .board {
     flex: 1;
     overflow: hidden;
     touch-action: none;
     cursor: grab;
-    background:
-      radial-gradient(circle at 1px 1px, #e4ebf0 1px, transparent 0) 0 0 / 24px 24px;
   }
 
   .board.dragging { cursor: grabbing; }
@@ -121,41 +109,37 @@ const styles = `
 
   .node { cursor: pointer; }
   .node rect { transition: filter .15s; }
-  .node:hover rect { filter: brightness(1.12); }
-  .node text { fill: #fff; font-size: 14px; dominant-baseline: middle; }
-  .node.root rect { fill: #203040; }
+  .node:hover rect { filter: brightness(.97); }
+  .node text { font-size: 13px; dominant-baseline: middle; }
 
-  .edge { fill: none; stroke: #c4ced6; stroke-width: 2; }
+  .node.root rect { fill: ${INK}; }
+  .node.root text { fill: #fff; font-size: 15px; font-weight: 700; }
+  .node.branch text { fill: #fff; font-weight: 700; font-size: 14px; }
+  .node.group text { fill: ${INK}; font-weight: 600; }
+  .node.item text { fill: #334155; }
 
-  /* The dependencies, which are the reason for the whole thing: dashed, so
-     they are plainly not the tree, and curved away from it so they can be
-     followed across the picture. */
-  .cross { fill: none; stroke: #f50; stroke-width: 2; stroke-dasharray: 6 5; }
+  .edge { fill: none; stroke-linecap: round; }
 
   /* The fold handle: small, quiet, and clearly not part of the box. */
   .handle { cursor: pointer; }
-  .handle circle { fill: #fff; stroke: #94a3b8; stroke-width: 1.5; }
+  .handle circle { fill: #fff; stroke: #94A3B8; stroke-width: 1.5; }
   .handle text { fill: #475569; font-size: 13px; font-weight: bold; dominant-baseline: central; }
-  .handle:hover circle { stroke: #203040; }
-  .handle:hover text { fill: #203040; }
+  .handle:hover circle { stroke: ${INK}; }
 
-  /* A folded branch has more behind it, and says so without a word. */
-  .node.folded rect { stroke: #fff; stroke-width: 2; stroke-dasharray: 4 3; }
-
-  /* The number on a curve, and the same number in the legend below. */
-  .mark circle { fill: #f50; }
+  /* The dependencies, which are the reason for the whole thing. */
+  .cross { fill: none; stroke: #F97316; stroke-width: 2; stroke-dasharray: 6 5; }
+  .mark circle { fill: #F97316; }
   .mark text { fill: #fff; font-size: 11px; font-weight: bold; dominant-baseline: central; }
 
-  /* The dependencies in words, numbered to match the marks on their curves.
-     Empty for a lesson with no links file, and then it takes no room. */
   footer:not(:empty) {
     display: flex;
     flex-wrap: wrap;
     gap: 4px 16px;
     max-height: 76px;
     padding: 8px 16px;
-    border-top: 1px solid #dce4ea;
-    color: #6a7a88;
+    border-top: 1px solid #E2E8F0;
+    background: #fff;
+    color: ${MUTED};
     font-size: 12px;
     overflow-y: auto;
   }
@@ -167,7 +151,7 @@ const styles = `
     min-width: 16px;
     height: 16px;
     border-radius: 8px;
-    background: #f50;
+    background: #F97316;
     color: #fff;
     font-size: 10px;
     font-weight: bold;
@@ -175,32 +159,111 @@ const styles = `
     text-align: center;
   }
 
+  /* What a click on an item brings up: the sentence and the few lines of
+     code, where the eye already is rather than at the other end of a scroll. */
+  .card {
+    display: none;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 20;
+    width: 380px;
+    max-width: calc(100% - 40px);
+    padding: 16px;
+    border-radius: 12px;
+    background: ${INK};
+    color: #F8FAFC;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, .35);
+  }
+
+  .card.shown { display: block; }
+  .card h4 { margin: 0 8px 8px 0; padding-right: 24px; color: #38BDF8; font-size: 15px; }
+  .card p { margin: 0 0 12px; color: #CBD5E1; font-size: 13px; line-height: 1.45; }
+
+  .card pre {
+    margin: 0;
+    padding: 12px;
+    border-radius: 8px;
+    background: #0F172A;
+    color: #A7F3D0;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.45;
+    overflow-x: auto;
+  }
+
+  .card .go {
+    display: inline-block;
+    margin-top: 12px;
+    color: #38BDF8;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .card .go:hover { color: #7DD3FC; }
+
+  .card .shut {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background: none;
+    color: #94A3B8;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .card .shut:hover { color: #fff; }
+
   @media screen and (max-width: 520px) {
     .frame { inset: 8px; }
     header { padding: 8px 12px; }
     h3 { font-size: 14px; }
+    .card { right: 8px; left: 8px; bottom: 8px; width: auto; }
   }
 `
 
-/** A label is a heading, and headings are sentences. Two lines, then cut. */
+/** A label is a phrase, not a word. Two lines, then cut. */
 function wrap (text, measure) {
   if (measure(text) <= MAX_WIDTH) return [text]
 
-  const words = text.split(/\s+/)
+  const words = String(text).split(/\s+/)
   const lines = ['']
   for (const word of words) {
-    const candidate = lines[lines.length - 1] ? lines[lines.length - 1] + ' ' + word : word
+    const candidate = lines[lines.length - 1] ? `${lines[lines.length - 1]} ${word}` : word
     if (measure(candidate) <= MAX_WIDTH || !lines[lines.length - 1]) {
       lines[lines.length - 1] = candidate
     } else if (lines.length < 2) {
       lines.push(word)
     } else {
-      lines[1] = lines[1] + '…'
+      lines[1] += '…'
       break
     }
   }
   return lines
 }
+
+/** Where a line from the middle of a box towards a point leaves the box. */
+function edgeOf (node, towards) {
+  const dx = towards.x - node.cx
+  const dy = towards.y - node.cy
+  if (!dx && !dy) return { x: node.cx, y: node.cy }
+
+  const scale = Math.min(
+    Math.abs(dx) > 0.001 ? (node.w / 2) / Math.abs(dx) : Infinity,
+    Math.abs(dy) > 0.001 ? (node.h / 2) / Math.abs(dy) : Infinity
+  )
+  return { x: node.cx + dx * scale, y: node.cy + dy * scale }
+}
+
+const escapeText = text => String(text)
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
 
 class MindMap extends HTMLElement {
   constructor () {
@@ -220,7 +283,17 @@ class MindMap extends HTMLElement {
             <button class="tool fit" type="button" title="⤢" aria-label="⤢">⤢</button>
             <button class="tool close" type="button" title="×" aria-label="×">×</button>
           </header>
+
           <div class="board"></div>
+
+          <div class="card">
+            <button class="shut" type="button" aria-label="×">×</button>
+            <h4></h4>
+            <p></p>
+            <pre></pre>
+            <span class="go"></span>
+          </div>
+
           <footer></footer>
         </div>
       </div>
@@ -232,41 +305,29 @@ class MindMap extends HTMLElement {
       heading: find('h3'),
       board: find('.board'),
       note: find('footer'),
-      view: { x: 0, y: 0, scale: 1 }
+      card: find('.card'),
+      cardTitle: find('.card h4'),
+      cardDesc: find('.card p'),
+      cardCode: find('.card pre'),
+      cardGo: find('.card .go'),
+      view: { x: 0, y: 0, scale: 1 },
+      closed: new Set()
     })
 
-    // Measuring text without drawing it. The font has to be the one the
-    // nodes will actually be set in, and it cannot be read in the
-    // constructor: the element is not in the document yet, so the computed
-    // family is whatever the browser defaults to. Measured against that, the
-    // long labels came out narrower than they render and ran off their boxes.
-    // Asked on open instead, when there is something to ask.
+    // Measuring text without drawing it. The font cannot be read in the
+    // constructor - the element is not in the document yet - so it is asked
+    // for on open, when there is something to ask.
     this.ruler = document.createElement('canvas').getContext('2d')
-    this.measure = text => this.ruler.measureText(text).width
+    this.measure = text => this.ruler.measureText(String(text)).width
   }
 
   connectedCallback () {
     this.shadow.querySelector('.close').onclick = () => this.close()
+    this.shadow.querySelector('.shut').onclick = () => this.card.classList.remove('shown')
     this.shadow.querySelector('.in').onclick = () => this.zoom(1.25)
     this.shadow.querySelector('.out').onclick = () => this.zoom(0.8)
     this.shadow.querySelector('.fit').onclick = () => this.fit()
-
-    // Everything at once, and back again. Folded is the useful default, but
-    // "show me all of it" is a fair thing to want, and finding every handle
-    // by hand to get there is not.
-    this.shadow.querySelector('.all').onclick = () => {
-      if (this.closed.size) {
-        this.closed.clear()
-      } else {
-        const fold = (node, depth) => {
-          if (depth >= 1 && node.children.length) this.closed.add(node.id)
-          node.children.forEach(child => fold(child, depth + 1))
-        }
-        fold(this.tree(this.headings), 0)
-      }
-      this.draw()
-      this.fit()
-    }
+    this.shadow.querySelector('.all').onclick = () => this.foldAll()
     this.sheet.onclick = event => { if (event.target === this.sheet) this.close() }
 
     this.escape = event => { if (event.key === 'Escape') this.close() }
@@ -281,42 +342,135 @@ class MindMap extends HTMLElement {
     document.removeEventListener('keydown', this.escape)
   }
 
+  /** The page this map is for. */
+  static page () {
+    return location.search.slice(1) || 'start-page'
+  }
+
+  /**
+   * The map file, fetched once per lesson and kept.
+   *
+   * Also the answer to whether this lesson has a map at all: the contents
+   * panel asks before offering the way in, because a line that opens an
+   * apology is worse than no line.
+   */
+  async data () {
+    const page = MindMap.page()
+    if (this.loaded === page) return this.map
+    this.loaded = page
+
+    try {
+      const response = await fetch(`maps/${page}.json`, { headers: { Accept: 'application/json' } })
+      this.map = response.ok ? await response.json() : null
+    } catch {
+      this.map = null
+    }
+    return this.map
+  }
+
+  async exists () {
+    return !!(await this.data())
+  }
+
+  /**
+   * The file's three levels turned into nodes.
+   *
+   * An id is what an arrow points at: the one written down if there is one,
+   * otherwise the anchor. Several items can share an anchor - three rules
+   * all explained in one section - so an arrow that has to reach one of them
+   * in particular asks for an id of its own.
+   */
+  tree (map) {
+    const node = (source, kind, colour) => ({
+      kind,
+      colour,
+      id: source.id || source.anchor || '',
+      title: speak(source.title),
+      anchor: source.anchor || '',
+      desc: speak(source.desc),
+      code: source.code || '',
+      children: []
+    })
+
+    const root = {
+      kind: 'root',
+      colour: INK,
+      id: '',
+      title: speak(map.center) || '',
+      anchor: '',
+      desc: '',
+      code: '',
+      children: []
+    }
+
+    for (const branch of map.branches || []) {
+      const one = node(branch, 'branch', branch.colour || '#0284C7')
+      root.children.push(one)
+
+      for (const group of branch.groups || []) {
+        const two = node(group, 'group', one.colour)
+        one.children.push(two)
+
+        for (const item of group.items || []) {
+          two.children.push(node(item, 'item', one.colour))
+        }
+      }
+    }
+
+    return root
+  }
+
   async open () {
     this.sheet.classList.add('shown')
+    this.card.classList.remove('shown')
     document.addEventListener('keydown', this.escape)
 
-    this.ruler.font = `14px ${getComputedStyle(this.board).fontFamily || 'system-ui, sans-serif'}`
+    this.ruler.font = `13px ${getComputedStyle(this.board).fontFamily || 'system-ui, sans-serif'}`
 
-    const page = document.querySelector('page-element')
-    this.headings = (page && page.pageContentList) || []
-    this.links = await this.crossLinks()
-    this.heading.textContent = this.headings.length ? this.headings[0].text : ''
-
-    /*
-     * Folded to the branches, not opened flat.
-     *
-     * Twenty-five sections drawn at once make a picture that has to be
-     * scaled down until the labels cannot be read, which is the opposite of
-     * the point: the map is for taking the lesson in, and nobody takes in
-     * twenty-five unreadable boxes. Folded, it opens on the handful of
-     * things the lesson is about, and a branch unfolds when it is wanted.
-     *
-     * Worked out afresh on every open, so a map always opens the same way
-     * however it was left.
-     */
-    this.closed = new Set()
-    const fold = (node, depth) => {
-      if (depth >= 1 && node.children.length) this.closed.add(node.id)
-      node.children.forEach(child => fold(child, depth + 1))
+    const map = await this.data()
+    if (!map) {
+      this.heading.textContent = ''
+      this.board.innerHTML = ''
+      this.note.textContent = ''
+      return
     }
-    fold(this.tree(this.headings), 0)
+
+    this.root = this.tree(map)
+    this.links = map.links || []
+    this.heading.textContent = this.root.title
+
+    // Folded to the branches, worked out afresh every time, so the map always
+    // opens the same way however it was left.
+    this.closed = new Set()
+    this.fold(this.root, 0)
 
     this.draw()
     this.fit()
   }
 
-  /** The same picture, redrawn after a branch opened or closed, without
-   *  moving the view out from under the reader. */
+  fold (node, depth) {
+    if (depth >= 1 && node.children.length) this.closed.add(node.id || node.title)
+    node.children.forEach(child => this.fold(child, depth + 1))
+  }
+
+  foldAll () {
+    if (this.closed.size) {
+      this.closed.clear()
+    } else {
+      this.closed = new Set()
+      this.fold(this.root, 0)
+    }
+    this.draw()
+    this.fit()
+  }
+
+  close () {
+    this.sheet.classList.remove('shown')
+    this.card.classList.remove('shown')
+    document.removeEventListener('keydown', this.escape)
+  }
+
+  /** Redrawn after a branch opened, without moving the view. */
   redraw () {
     const view = { ...this.view }
     this.draw()
@@ -324,91 +478,40 @@ class MindMap extends HTMLElement {
     this.apply()
   }
 
-  close () {
-    this.sheet.classList.remove('shown')
-    document.removeEventListener('keydown', this.escape)
-  }
-
-  /** The hand-written half, if this lesson has one. */
-  async crossLinks () {
-    const page = location.search.slice(1) || 'start-page'
-    if (this.loaded === page) return this.links || []
-    this.loaded = page
-
-    try {
-      const response = await fetch(`maps/${page}.json`, { headers: { Accept: 'application/json' } })
-      this.links = response.ok ? (await response.json()).links || [] : []
-    } catch {
-      this.links = []
-    }
-    return this.links
-  }
-
-  /** Headings are a flat list with a level each; this is the tree they mean. */
-  tree (headings) {
-    const root = { id: null, text: '', level: 0, children: [] }
-    const path = [root]
-
-    for (const heading of headings) {
-      const node = { ...heading, children: [] }
-      while (path.length > 1 && path[path.length - 1].level >= node.level) path.pop()
-      path[path.length - 1].children.push(node)
-      path.push(node)
-    }
-
-    // A lesson whose first heading is its title: that title is the root, and
-    // everything else hangs off it. Anything else gets the invisible root.
-    return root.children.length === 1 ? root.children[0] : root
-  }
-
   draw () {
+    const root = this.root
     const links = this.links || []
-    const root = this.tree(this.headings)
     const places = new Map()
+    const key = node => node.id || node.title
 
     // A folded branch keeps its children - they are what unfolds - but
     // nothing below it is measured, placed or drawn.
     const prune = node => {
-      node.folded = this.closed.has(node.id) && node.children.length > 0
+      node.folded = this.closed.has(key(node)) && node.children.length > 0
       node.shown = node.folded ? [] : node.children
       node.shown.forEach(prune)
     }
     prune(root)
 
-    // Width by level, so the columns line up and the edges stay short.
     const widths = []
     const walk = (node, depth) => {
       node.depth = depth
-      node.lines = wrap(node.text || '…', this.measure)
+      node.lines = wrap(node.title || '…', this.measure)
       node.w = Math.min(MAX_WIDTH, Math.max(...node.lines.map(this.measure))) + PAD_X * 2
-      node.h = node.lines.length * LINE + 16
+      node.h = node.lines.length * LINE + 18
       widths[depth] = Math.max(widths[depth] || 0, node.w)
       node.shown.forEach(child => walk(child, depth + 1))
     }
     walk(root, 0)
 
     /*
-     * Radial, not a tree lying on its side.
+     * Radial: the subject in the middle, what it is made of going outwards.
      *
-     * The subject in the middle and the branches going out from it is the
-     * shape this is supposed to show: everything at the same distance from
-     * the centre is the same kind of thing, and the eye takes the whole in
-     * at once instead of reading it left to right like the page it is
-     * supposed to replace.
-     *
-     * Angles first. Every leaf is given a share of the circle in proportion
-     * to how WIDE its box is - what a box takes up along a ring is its
-     * width, not its height, which is the thing a tree laid on its side
-     * gets the other way round. Weighed by height, nine branches of one
-     * word each were given nine equal slivers and their labels sat on top of
-     * one another. A branch takes the sum of its leaves and sits in the
-     * middle of its own span.
-     *
-     * Then the rings. Each is far enough out to clear the widest box of the
-     * ring before it - and then every ring is checked for whether the boxes
-     * standing on it actually fit round it. If any does not, all the radii
-     * grow together until it does, which keeps the picture round instead of
-     * letting one crowded ring bulge.
+     * Every leaf gets a share of the circle in proportion to how WIDE its
+     * box is, because width is what a box takes up along a ring; weighed by
+     * height, branches of one word each were given equal slivers and sat on
+     * top of one another. A branch takes the sum of its leaves and sits in
+     * the middle of its own span.
      */
     const weigh = node => {
       node.weight = node.shown.length
@@ -424,15 +527,9 @@ class MindMap extends HTMLElement {
       rings[depth] = rings[depth - 1] + widths[depth - 1] / 2 + w / 2 + GAP_X
     })
 
-    // Does each box fit the slice of the circle it was given?
-    //
-    // Its slice is a share of the whole turn, and how much room that is
-    // depends on how far out it sits: the same angle is a hand's width near
-    // the middle and an arm's length at the rim. So ask it of every node -
-    // the slice it has, times the radius of its ring, against its own width
-    // - and stretch every radius by the worst answer. Checking the rings
-    // instead, as a total, let a wide box with few children be squeezed
-    // between two narrow ones on a ring that was roomy on average.
+    // Does every box fit the slice it was given? The same angle is a hand's
+    // width near the middle and an arm's length at the rim, so it is asked of
+    // each node and every radius grows by the worst answer.
     const everyone = []
     const gather = node => { everyone.push(node); node.shown.forEach(gather) }
     gather(root)
@@ -445,8 +542,6 @@ class MindMap extends HTMLElement {
     }
     if (stretch > 1) for (let depth = 1; depth < rings.length; depth++) rings[depth] *= stretch
 
-    // Starting at the top and going clockwise, because that is how a clock
-    // goes and nobody has to be told.
     const spread = (node, depth, from) => {
       const span = (node.weight / root.weight) * Math.PI * 2
       node.angle = from + span / 2
@@ -457,14 +552,11 @@ class MindMap extends HTMLElement {
         spread(child, depth + 1, cursor)
         cursor += (child.weight / root.weight) * Math.PI * 2
       }
-      if (node.id) places.set(node.id, node)
+      if (key(node)) places.set(key(node), node)
     }
     spread(root, 0, -Math.PI / 2)
 
-    const all = []
-    const collect = node => { all.push(node); node.shown.forEach(collect) }
-    collect(root)
-
+    const all = everyone
     for (const node of all) {
       node.cx = Math.cos(node.angle) * node.radius
       node.cy = Math.sin(node.angle) * node.radius
@@ -472,10 +564,8 @@ class MindMap extends HTMLElement {
       node.y = node.cy - node.h / 2
     }
 
-    // Everything so far is measured from the centre, so half of it is in
-    // negative space. Shift it all into the picture.
-    const left = Math.min(...all.map(n => n.x)) - 48
-    const top = Math.min(...all.map(n => n.y)) - 48
+    const left = Math.min(...all.map(n => n.x)) - 56
+    const top = Math.min(...all.map(n => n.y)) - 56
     for (const node of all) {
       node.x -= left
       node.y -= top
@@ -484,53 +574,25 @@ class MindMap extends HTMLElement {
     }
     const middle = { x: -left, y: -top }
 
-    const width = Math.max(...all.map(n => n.x + n.w)) + 48
-    const height = Math.max(...all.map(n => n.y + n.h)) + 48
+    const width = Math.max(...all.map(n => n.x + n.w)) + 56
+    const height = Math.max(...all.map(n => n.y + n.h)) + 56
 
-    const colour = node => {
-      let walker = node
-      while (walker.parent && walker.parent.parent) walker = walker.parent
-      return HUES[(walker.index || 0) % HUES.length]
-    }
-    root.shown.forEach((child, index) => {
-      child.index = index
-      const mark = (node, top) => { node.parent = top; node.shown.forEach(c => { c.index = index; mark(c, top) }) }
-      mark(child, root)
-    })
-
-    // A branch leaves its parent and curves round to the child, bending with
-    // the ring it crosses rather than cutting straight across it.
     const edges = all.filter(n => n.shown.length).map(node => node.shown.map(child => {
       const r = (node.radius + child.radius) / 2
       const a = (node.angle + child.angle) / 2
-      const bend = {
-        x: middle.x + Math.cos(a) * r,
-        y: middle.y + Math.sin(a) * r
-      }
-      return `<path class="edge" d="M${node.cx} ${node.cy} Q${bend.x} ${bend.y} ${child.cx} ${child.cy}"/>`
+      const bend = { x: middle.x + Math.cos(a) * r, y: middle.y + Math.sin(a) * r }
+      const thick = child.kind === 'branch' ? 3 : child.kind === 'group' ? 2 : 1.5
+      return `<path class="edge" stroke="${child.kind === 'item' ? LINE_COLOUR : child.colour}"
+                    stroke-width="${thick}"
+                    d="M${node.cx} ${node.cy} Q${bend.x} ${bend.y} ${child.cx} ${child.cy}"/>`
     }).join('')).join('')
 
-    // A dependency leaves the top or the bottom of its box, bows out to the
-    // right of everything, and comes back.
-    //
-    // The note is not written along it. It was, and it was unreadable: these
-    // curves run nearly vertical where the middle of the text would sit, so
-    // the words stood on end and half of them upside down. Before that they
-    // were parked at a computed point, and three notes converging on one
-    // section landed in the same patch of white and read as one sentence of
-    // nonsense. So the curve carries a number and the words go underneath,
-    // where there is room for them and they are the right way up.
     const legend = []
     const crosses = links.map((link, index) => {
       const from = places.get(link.from)
       const to = places.get(link.to)
       if (!from || !to) return ''
 
-      // Outward, away from the centre. A chord drawn straight across the
-      // circle would run over the middle of the map, which is the one part
-      // that has to stay legible; bowed outwards it keeps to the margin and
-      // its number lands in clear air. Each bows a little wider than the
-      // last so the marks keep out of each other's way.
       const mid = { x: (from.cx + to.cx) / 2, y: (from.cy + to.cy) / 2 }
       const away = { x: mid.x - middle.x, y: mid.y - middle.y }
       const reach = Math.hypot(away.x, away.y) || 1
@@ -540,25 +602,18 @@ class MindMap extends HTMLElement {
         y: mid.y + (away.y / reach) * bow
       }
 
-      // Not from the middle of a box to the middle of a box: the arrowhead
-      // would be buried under the one it points at. Both ends step out to
-      // the edge of their box, along the line towards the handle.
       const start = edgeOf(from, control)
       const end = edgeOf(to, control)
-      const x1 = start.x
-      const y1 = start.y
-      const x2 = end.x
-      const y2 = end.y
-
-      // The far point of a quadratic is its middle: a quarter of each end
-      // plus half the handle.
-      const apex = { x: (x1 + x2) / 4 + control.x / 2, y: (y1 + y2) / 4 + control.y / 2 }
+      const apex = {
+        x: (start.x + end.x) / 4 + control.x / 2,
+        y: (start.y + end.y) / 4 + control.y / 2
+      }
       const number = index + 1
-
-      legend.push({ number, text: speak(link.note), from, to })
+      legend.push({ number, text: speak(link.note) || `${from.title} → ${to.title}` })
 
       return `
-        <path class="cross" d="M${x1} ${y1} Q${control.x} ${control.y} ${x2} ${y2}" marker-end="url(#arrow)"/>
+        <path class="cross" d="M${start.x} ${start.y} Q${control.x} ${control.y} ${end.x} ${end.y}"
+              marker-end="url(#arrow)"/>
         <g class="mark">
           <circle cx="${apex.x}" cy="${apex.y}" r="10"/>
           <text x="${apex.x}" y="${apex.y}" text-anchor="middle">${number}</text>
@@ -566,27 +621,30 @@ class MindMap extends HTMLElement {
       `
     }).join('')
 
-    // The handle that folds a branch, on the far side of the box from the
-    // centre - the side the branch would grow into. Its own little target,
-    // because the box itself is a link to the section and a reader should
-    // not have to choose between opening a branch and going to read it.
     const handle = node => {
       if (!node.children.length || node === root) return ''
-      const out = { x: Math.cos(node.angle), y: Math.sin(node.angle) }
-      const hx = node.cx + out.x * (node.w / 2 + 11)
-      const hy = node.cy + out.y * (node.h / 2 + 11)
+      const hx = node.cx + Math.cos(node.angle) * (node.w / 2 + 11)
+      const hy = node.cy + Math.sin(node.angle) * (node.h / 2 + 11)
       return `
-        <g class="handle" data-fold="${node.id || ''}">
+        <g class="handle" data-fold="${escapeText(key(node))}">
           <circle cx="${hx}" cy="${hy}" r="9"/>
           <text x="${hx}" y="${hy}" text-anchor="middle">${node.folded ? '+' : '−'}</text>
         </g>
       `
     }
 
-    const nodes = all.filter(node => node.text).map(node => `
-      <g class="node ${node === root ? 'root' : ''} ${node.folded ? 'folded' : ''}" data-id="${node.id || ''}">
-        <rect x="${node.x}" y="${node.y}" width="${node.w}" height="${node.h}" rx="8"
-              fill="${node === root ? '#203040' : colour(node)}"/>
+    // Filled for a branch, tinted for a group, white for an item: three
+    // levels you can tell apart without reading them.
+    const paint = node => {
+      if (node.kind === 'root') return 'fill="' + INK + '"'
+      if (node.kind === 'branch') return `fill="${node.colour}"`
+      if (node.kind === 'group') return `fill="${node.colour}" fill-opacity="0.12" stroke="${node.colour}" stroke-width="2"`
+      return `fill="#fff" stroke="${node.colour}" stroke-opacity="0.5" stroke-width="1.5"`
+    }
+
+    const nodes = all.map(node => `
+      <g class="node ${node.kind} ${node.folded ? 'folded' : ''}" data-key="${escapeText(key(node))}">
+        <rect x="${node.x}" y="${node.y}" width="${node.w}" height="${node.h}" rx="${node.h / 2}" ${paint(node)}/>
         ${node.lines.map((line, index) => `
           <text x="${node.cx}" y="${node.cy + (index - (node.lines.length - 1) / 2) * LINE}" text-anchor="middle">${escapeText(line)}</text>
         `).join('')}
@@ -598,7 +656,7 @@ class MindMap extends HTMLElement {
       <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
         <defs>
           <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="#f50"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#F97316"/>
           </marker>
         </defs>
         ${edges}${crosses}${nodes}
@@ -607,8 +665,11 @@ class MindMap extends HTMLElement {
 
     this.svg = this.board.querySelector('svg')
     this.size = { width, height }
+    this.places = places
 
     this.svg.onclick = event => {
+      if (this.dragged) return
+
       const fold = event.target.closest('.handle')
       if (fold) {
         const id = fold.dataset.fold
@@ -618,21 +679,47 @@ class MindMap extends HTMLElement {
       }
 
       const group = event.target.closest('.node')
-      if (!group || !group.dataset.id) return
-      this.close()
-      const target = document.getElementById(group.dataset.id)
-      if (!target) return
-      history.replaceState(null, '', `${location.pathname}${location.search}#${group.dataset.id}`)
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      if (!group) return
+      const node = places.get(group.dataset.key)
+      if (node) this.tell(node)
     }
 
     this.note.innerHTML = legend.length
-      ? legend.map(item => `
-          <span class="legend">
-            <b>${item.number}</b>${escapeText(item.text || `${item.from.text} → ${item.to.text}`)}
-          </span>
-        `).join('')
+      ? legend.map(item => `<span class="legend"><b>${item.number}</b>${escapeText(item.text)}</span>`).join('')
       : ''
+  }
+
+  /**
+   * What a click on a node says.
+   *
+   * An item has a sentence and a few lines of code; a branch or a group
+   * usually has neither, and for them the click is only a way into the
+   * lesson. Nothing at all to say and no section to go to - the card would
+   * be an empty box, so it does not open.
+   */
+  tell (node) {
+    if (!node.desc && !node.code && !node.anchor) return
+
+    this.cardTitle.textContent = node.title
+    this.cardDesc.textContent = node.desc
+    this.cardDesc.style.display = node.desc ? 'block' : 'none'
+    this.cardCode.textContent = node.code
+    this.cardCode.style.display = node.code ? 'block' : 'none'
+
+    const words = { ru: 'Читать в уроке →', ua: 'Читати в уроці →', eng: 'Read it in the lesson →' }
+    this.cardGo.textContent = node.anchor ? (words[lang()] || words.eng) : ''
+    this.cardGo.style.display = node.anchor ? 'inline-block' : 'none'
+    this.cardGo.onclick = node.anchor ? () => this.goTo(node.anchor) : null
+
+    this.card.classList.add('shown')
+  }
+
+  goTo (anchor) {
+    this.close()
+    const target = document.getElementById(anchor)
+    if (!target) return
+    history.replaceState(null, '', `${location.pathname}${location.search}#${anchor}`)
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   apply () {
@@ -642,15 +729,23 @@ class MindMap extends HTMLElement {
   }
 
   zoom (by) {
+    if (!this.svg) return
     this.view.scale = Math.min(2.5, Math.max(0.2, this.view.scale * by))
     this.apply()
   }
 
-  /** The whole picture in the window, centred, never magnified past life size. */
+  /**
+   * The whole picture in the window, centred.
+   *
+   * Allowed to grow, not only to shrink: folded, the map is four branches
+   * round a middle, and held to life size it sat in the corner of a wide
+   * window like a postage stamp. Half again is as far as it goes - beyond
+   * that the boxes look like buttons.
+   */
   fit () {
     if (!this.svg) return
     const box = this.board.getBoundingClientRect()
-    const scale = Math.min(1, (box.width - 32) / this.size.width, (box.height - 32) / this.size.height)
+    const scale = Math.min(1.5, (box.width - 64) / this.size.width, (box.height - 64) / this.size.height)
     this.view = {
       scale,
       x: (box.width - this.size.width * scale) / 2,
@@ -659,21 +754,44 @@ class MindMap extends HTMLElement {
     this.apply()
   }
 
+  /**
+   * Dragging the picture about - and letting a press that is not a drag
+   * reach the node under it.
+   *
+   * The capture is taken only once the pointer has actually moved. Taken on
+   * the press, as it was, it makes the board the target of everything that
+   * follows: the click then arrives at the board instead of the box that was
+   * pressed, and nothing on the map answered a click at all. The buttons in
+   * the header went on working, which is what made it look like the map was
+   * fine and the nodes were not.
+   */
   grab (event) {
+    if (!this.svg) return
+
     const start = { x: event.clientX, y: event.clientY, vx: this.view.x, vy: this.view.y }
-    this.board.classList.add('dragging')
-    this.board.setPointerCapture(event.pointerId)
+    let dragging = false
 
     const move = moved => {
+      if (!dragging) {
+        if (Math.abs(moved.clientX - start.x) + Math.abs(moved.clientY - start.y) < 4) return
+        dragging = true
+        this.dragged = true
+        this.board.classList.add('dragging')
+        this.board.setPointerCapture(event.pointerId)
+      }
       this.view.x = start.vx + (moved.clientX - start.x)
       this.view.y = start.vy + (moved.clientY - start.y)
       this.apply()
     }
+
     const drop = () => {
       this.board.classList.remove('dragging')
       this.board.removeEventListener('pointermove', move)
       this.board.removeEventListener('pointerup', drop)
       this.board.removeEventListener('pointercancel', drop)
+      // The click comes after the release; a drag that ended on a node
+      // should not also open it.
+      setTimeout(() => { this.dragged = false })
     }
 
     this.board.addEventListener('pointermove', move)
@@ -681,31 +799,6 @@ class MindMap extends HTMLElement {
     this.board.addEventListener('pointercancel', drop)
   }
 }
-
-/**
- * Where a line from the middle of a box towards some point leaves the box.
- *
- * The arrowhead has to land on the edge of the node it points at, not under
- * it. Which side it leaves by is whichever the line reaches first, and that
- * is the smaller of the two ratios - half the width over the horizontal
- * distance, half the height over the vertical.
- */
-function edgeOf (node, towards) {
-  const dx = towards.x - node.cx
-  const dy = towards.y - node.cy
-  if (!dx && !dy) return { x: node.cx, y: node.cy }
-
-  const scale = Math.min(
-    Math.abs(dx) > 0.001 ? (node.w / 2) / Math.abs(dx) : Infinity,
-    Math.abs(dy) > 0.001 ? (node.h / 2) / Math.abs(dy) : Infinity
-  )
-  return { x: node.cx + dx * scale, y: node.cy + dy * scale }
-}
-
-const escapeText = text => String(text)
-  .replace(/&/g, '&amp;')
-  .replace(/</g, '&lt;')
-  .replace(/>/g, '&gt;')
 
 customElements.define('mind-map', MindMap)
 
