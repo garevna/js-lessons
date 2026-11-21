@@ -321,11 +321,18 @@ class FeedbackWidget extends HTMLElement {
 
   /**
    * What the outside is told: how many answers are unread, and whether
-   * there is a conversation at all.
+   * there is a conversation to open at all.
    *
-   * The second one decides whether the conversation is offered in the menu.
-   * A reader who has never written has nothing to read, and an item that
-   * opens an explanation of its own emptiness is worse than no item.
+   * The badge, because headless the one inside this element is hidden along
+   * with the icon it sits on, and an answer would arrive with nothing on the
+   * page to show it. The flag, because the menu item that opens the
+   * conversation is there either way and greys itself out when there is
+   * nothing behind it.
+   *
+   * A thread is the signal rather than a count of messages: a thread cannot
+   * exist without the message that created it, and it is known before any
+   * request is made - so the item is right from the first paint instead of
+   * flickering when the server answers.
    */
   announce () {
     this.dispatchEvent(new CustomEvent('answers', {
@@ -358,8 +365,9 @@ class FeedbackWidget extends HTMLElement {
   }
 
   drawThread () {
+    // The button stays even with nothing above it: in an empty conversation
+    // it is the only useful thing on the screen.
     this.nothing.style.display = this.messages.length ? 'none' : 'block'
-    this.againButton.style.display = this.messages.length ? 'block' : 'none'
 
     this.list.innerHTML = this.messages.map(message => `
       <article class="message">

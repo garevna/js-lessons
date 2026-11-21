@@ -131,6 +131,18 @@ const styles = `
   .item svg { flex: none; }
   .item.message svg { fill: #09b; }
   .item.donate svg { fill: #fa0; }
+  .item.history svg { fill: #09b; }
+
+  /* Nothing written yet. Left in place rather than taken away, so the menu
+     is the same three lines every time; the colour says it is not for
+     pressing, and the tooltip says why. */
+  .item[disabled] {
+    color: var(--author-soft);
+    cursor: default;
+  }
+
+  .item[disabled] svg { fill: #c4ced6; }
+  .item[disabled]:hover { background: none; }
 
   /* On a phone the bar has room for the button and nothing else; the menu is
      given the width it needs and kept off the right edge. */
@@ -149,6 +161,9 @@ class AuthorWidget extends HTMLElement {
     this.words = {
       message: said.open,
       history: said.history,
+      // Why the conversation is not clickable yet; the same sentence the
+      // empty conversation would have shown.
+      empty: said.historyEmpty,
       donate: SUPPORT[lang()] || SUPPORT.eng,
       title: TITLE[lang()] || TITLE.eng
     }
@@ -171,10 +186,12 @@ class AuthorWidget extends HTMLElement {
         <span class="badge">0</span>
       </button>
 
-      <!-- The conversation comes last and is hidden until there is one: a
-           reader who has never written has nothing to read there, and an
-           item that opens an explanation of its own emptiness is worse than
-           no item at all. -->
+      <!-- Three items, always the same three. The conversation was hidden
+           until there was one to read - it seemed tidier - but a menu whose
+           items come and go is harder to learn, and the first person to go
+           looking for the missing one was the person who asked for it. With
+           nothing to show it stays in place and greys out, and says why
+           when the pointer rests on it. -->
       <div class="menu" role="menu">
         ${item('message', this.words.message)}
         ${item('donate', this.words.donate)}
@@ -212,8 +229,6 @@ class AuthorWidget extends HTMLElement {
       event.stopPropagation()
       this.show(!this.open)
     }
-
-    this.historyItem.style.display = 'none'
 
     this.menu.onclick = event => {
       const button = event.target.closest('.item')
@@ -257,14 +272,18 @@ class AuthorWidget extends HTMLElement {
     })
     this.addEventListener('main-menu-close', () => { this.style.display = 'block' })
 
-    // The unread count and whether a conversation exists at all both live in
-    // the message widget; it says so, and this is what listens. Sending the
-    // first message is what makes the third item appear, without a reload.
+    // Nothing written yet, so nothing to read: the item stays where it is
+    // and stops answering. Sending the first message turns it on, without a
+    // reload - the widget says so the moment it has a thread.
+    this.historyItem.disabled = true
+    this.historyItem.title = this.words.empty
+
     this.feedback.addEventListener('answers', event => {
       const { count, thread } = event.detail
       this.badge.textContent = String(count)
       this.badge.classList.toggle('on', count > 0)
-      this.historyItem.style.display = thread ? 'flex' : 'none'
+      this.historyItem.disabled = !thread
+      this.historyItem.title = thread ? '' : this.words.empty
     })
   }
 
