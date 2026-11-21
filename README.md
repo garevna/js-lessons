@@ -67,13 +67,17 @@ Day to day it is two commands, in two terminals:
 
 ```
 npm run watch         rebuild a page, and the bundles, on every save
-npm start             serve public/ on localhost:8181
+npm start             serve public/ on localhost:8181, reload the tab
 ```
 
 `npm run watch` is the half that builds. `npm start` only serves what is in
 `public/`, so an edit in `src/` or `content/` shows up on screen exactly when
 the watcher has run - having only the server running is the usual way to lose
 half an hour wondering why nothing changes.
+
+Together they need nothing from you but a save: the watcher rebuilds, the
+server notices the write and the tab takes itself fresh. `RELOAD=off npm start`
+leaves the tab alone, for reading a long page while it is being edited.
 
 `npm run help` prints what every other script is for, grouped. `npm run check`
 runs the checks CI runs, before a push rather than after it.
@@ -129,9 +133,9 @@ a manual push from a workstation.
 npm run help
 ```
 
-prints what every script is for, grouped, with the argument form. `npm run`
-alone lists the names; `help` says what they do, which is the part that is hard
-to remember three weeks later.
+prints the same list this section holds, in the terminal, where it is needed.
+`npm run` alone lists the names; `help` says what they do, which is the part
+that is hard to remember three weeks later.
 
 One thing worth knowing before it bites: arguments go after `--`.
 
@@ -139,6 +143,93 @@ One thing worth knowing before it bites: arguments go after `--`.
 npm run export -- var eng          right
 npm run export var eng             npm keeps them, the script gets nothing
 ```
+
+Every script, in the order they stand in `package.json` — which is the order
+they are reached for, not the alphabet.
+
+**Local — the pair, in two terminals.** Nothing else is needed to work on the
+course.
+
+| | |
+|---|---|
+| `watch` | rebuilds the page, and the bundles, the moment `content/` or `src/` changes |
+| `start` | serves `public/` on localhost:8181 and reloads the tab after every rebuild |
+| `help` | this list, in the terminal |
+
+**Checks.** `check` is the one CI runs; the others answer a single question
+each, when that question comes up.
+
+| | |
+|---|---|
+| `check` | all three at once: `lessons:check`, `blocks`, `workers` |
+| `lessons:check` | is everything in `public/lessons/` what `content/` would build? Writes nothing |
+| `blocks` | does the block template swallow anything inside a line |
+| `workers` | run the built workers: menu, lesson, search, cache |
+| `demos` | do the answers in `~~~demo` blocks match what the code actually prints |
+| `links` | every link in every lesson (`-- --net` also asks the addresses whether they answer) |
+| `orphans` | pages nothing links to, and menu items leading nowhere |
+| `order` | links to lessons that come later in the course than the page linking to them |
+
+**Building.** Day to day `watch` runs these; by hand they are for a deploy from
+a workstation, or after a change the watcher does not see.
+
+| | |
+|---|---|
+| `lessons` | `public/lessons/` from `content/`, all three languages (`-- <page>` for one) |
+| `content` | `lessons`, then the page registry and the version map — no webpack |
+| `prod` | webpack: `index.js`, `main-menu.js`, `donate.js` |
+| `full` | everything, in the one order that works (see above) |
+| `sw-identity` | writes the version and date the footer prints |
+| `icons-worker` | builds `icons.worker.js` |
+| `content-worker` | the page registry, then `content.worker.js` — needed after editing the menu or the keywords |
+| `service-worker` | the cache version map, then `service-worker.js`; it hashes the bundles, so it runs last |
+
+**Translation.** The long way round is in [Translation](#translation); these
+are the commands it uses.
+
+| | |
+|---|---|
+| `i18n` | what is translated and what is not (`-- --next`, `--todo`, `--done`) |
+| `i18n:check` | translations that no longer match the Russian they were made from |
+| `export` | `-- <page> <lang>` — the untranslated parts, in a form DeepL accepts (`--all`, `--phrases`) |
+| `import` | `-- <page> <lang>` — the translation back in, with the checks that refuse a broken one |
+| `phrases` | rebuild the phrase book of repeated lines |
+| `dedupe` | move repeats out of the pages into the phrase book (`--write`) |
+| `repair` | translations filed under the wrong key (`--write`) |
+| `links:translated` | find the translated version of an external page (`--write`) |
+
+**Markup and content tools.** Each one reports what it would do and changes
+nothing until `--write`.
+
+| | |
+|---|---|
+| `extract` | `-- <page> --write` — split a draft into a skeleton and a message file |
+| `console-headers` | captions above `~~~console` blocks: which of them are redundant (`--write`) |
+| `black-blocks` | multi-line `••…<br />…••` into a proper `••••` block (`--write`) |
+| `black-fragments` | put the `⟦fN⟧` keys back into black blocks (`--write`) |
+| `bare-fragments` | take the formatting out of the fragment table (`--write`) |
+| `sort-messages` | put the keys of a message file back into page order (`--write`) |
+| `rainbow` | the rainbow patch for a lesson's headings (`--write`) |
+| `icon` | add an icon to the icon worker |
+| `areas` | a draft of which areas of the course a lesson belongs to (`--write`) |
+| `keywords` | a draft of a lesson's search keywords (`--all`, `-- <page>`) |
+| `toc` | rebuild the table of contents of this README |
+| `api-host` | `-- <url>` — point the lessons at another sandbox (`--write`) |
+
+**Releasing.**
+
+| | |
+|---|---|
+| `bump` | move the version in the footer — see [The version in the footer](#the-version-in-the-footer) |
+| `deploy` | push `public/` to `gh-pages` by hand; normally CI does it on a push to `master` |
+| `staging` | the same, to the staging repository |
+
+**Rarely.**
+
+| | |
+|---|---|
+| `install:all` | install the root project and the three workers from the lockfiles |
+| `clean` | delete the built bundles and the content cache, to build them again from nothing |
 
 ## Where to edit
 
@@ -1284,6 +1375,17 @@ reloads the tab. Nothing to run by hand.
 The watcher writes only when the output actually differs, so a save that
 changes nothing leaves the browser alone.
 
+A reload is still a reload: whatever the page was holding - a scroll position,
+an open block of questions, something typed into a demo - starts over. When
+that is in the way:
+
+```
+RELOAD=off npm start
+```
+
+The watcher still rebuilds on every save; what stops is the tab being taken
+away while you read it. Refresh it when you want to see the change.
+
 **The service worker stays out of the way on localhost.** It caches lessons,
 which is the point in production and a trap while writing one: a rebuilt page
 would keep coming back from the cache. On localhost it is not registered, and
@@ -1326,6 +1428,30 @@ npm run prod
 Two things that look like styles and are not. `public/for-rainbow.css` is a
 stray copy that nothing loads — the file that counts is `src/css/`. And
 `public/index.js` is build output: editing it works until the next build.
+
+**`prod` alone leaves the cache map behind.** What the service worker
+refetches is decided by `public/versions.json`, and that file is written by
+`npm run service-worker`, not by `npm run prod`. Build the bundles on their
+own and the map still carries the previous hashes: a worker that has them
+concludes nothing changed and serves what it cached, reload after reload,
+with nothing to say so.
+
+On localhost this is usually invisible — `registerServiceWorker.js` keeps the
+worker out of the way there and unregisters any that was left behind. It
+bites where the worker is in charge: after
+`localStorage.setItem('service-worker', 'on')`, and anywhere the site is
+served from that is not localhost. CI always runs `npm run full`, which ends
+with `service-worker`, so what is published is consistent; a hand-made build
+is not.
+
+So either finish with
+
+```
+npm run service-worker
+```
+
+or use `npm run full`. And when a change still refuses to show: DevTools →
+Application → Service Workers → Unregister, then Clear site data.
 
 #### The highlighter and `#private`
 
@@ -1526,6 +1652,68 @@ copy of an image survives until the site data is cleared.
 
 If a page looks wrong after a deploy and a normal reload does not fix it:
 DevTools → Application → Service Workers → Unregister, then Clear site data.
+
+## Where it is published
+
+Every push to `master` publishes the site twice, independently, from the same
+build:
+
+| Address | Where | How |
+|---|---|---|
+| [garevna.github.io/js-lessons](https://garevna.github.io/js-lessons/) | GitHub Pages, the `gh-pages` branch | `git subtree` push from the workflow |
+| [js-lessons.pp.ua](https://js-lessons.pp.ua/) | Cloudflare Pages, project `js-lessons-course` | `wrangler pages deploy public` |
+| [js-lessons-course.pages.dev](https://js-lessons-course.pages.dev/) | the same Cloudflare project | — |
+
+The project is not called `js-lessons`. A `pages.dev` name is global rather
+than per account, that one answers for somebody else's site, and a project
+cannot be renamed — only deleted and remade. Nobody is sent to this address
+anyway; readers arrive at the domain.
+
+Two sites, not one with a redirect. A custom domain on GitHub Pages would
+send `garevna.github.io/js-lessons` to the domain and leave the course with a
+single address to lose; this way, if the domain lapses or Cloudflare has a bad
+day, github.io goes on serving.
+
+One build serves both. Everything `public/index.html` references is
+referenced relatively, so the same folder works under `/js-lessons/` and at
+the root of a domain — there is no base path to rewrite and nothing to build
+twice.
+
+### Setting the domain up
+
+Needed once; until the token is set the Cloudflare step prints a notice and
+skips, and github.io is unaffected.
+
+1. **The domain in Cloudflare.** cloudflare.com → Add a domain →
+   `js-lessons.pp.ua`, Free plan. Cloudflare answers with two nameservers.
+   They are issued per account, so the pair is the same one
+   `kcc-bible.pp.ua` and `pagewright.pp.ua` already use — but read it off the
+   dashboard rather than trusting that.
+
+2. **The nameservers at the registrar.** nic.ua → this domain → DNS servers:
+   replace `parked1.uadns.com` / `parked2.uadns.com` with the two Cloudflare
+   gave. Delegation takes anywhere from minutes to a few hours.
+
+3. **The custom domain on the project.** Cloudflare → Workers & Pages →
+   `js-lessons` → Custom domains → add `js-lessons.pp.ua`. The DNS record is
+   made for you; the certificate follows within minutes.
+
+4. **The API token.** Cloudflare → My Profile → API Tokens → Create Token →
+   Custom: Account · Cloudflare Pages · Edit. It goes into the repository as
+   the secret `CLOUDFLARE_API_TOKEN` (GitHub → Settings → Secrets and
+   variables → Actions), and the account id as the variable
+   `CLOUDFLARE_ACCOUNT_ID`.
+
+The feedback Worker already answers `https://js-lessons.pp.ua` — see
+`ALLOWED` in `feedback-api/src/index.js`. Anything else that keeps a list of
+origins has to learn the domain too, or the page will load and the request
+will not.
+
+**Still pointing at github.io:** a handful of images in the lessons
+(`content/lessons/hw-16.md`, `promise.md`, the donate button's background)
+are written as `https://garevna.github.io/js-lessons/…`. They load on the
+domain, from github.io. Nothing breaks, but the two sites are not independent
+until those are relative.
 
 ## Gotchas
 

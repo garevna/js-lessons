@@ -160,3 +160,53 @@ jobs:
           git push -q origin gh-pages
 
           echo "published $(git ls-files | wc -l) files"
+
+      # Wrangler 4 wants a newer Node than the build does. This is the last
+      # step, so raising the version here disturbs nothing above it.
+      - name: Node for wrangler
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Publish the same public/ to js-lessons.pp.ua
+        # The second address, and a separate site: Cloudflare Pages, not a
+        # redirect. If the domain lapses or Cloudflare has a bad day,
+        # garevna.github.io/js-lessons goes on serving - which is the whole
+        # reason for publishing twice rather than pointing one at the other.
+        #
+        # No second build. Everything in public/index.html is referenced
+        # relatively, so the one build works at /js-lessons/ on github.io and
+        # at / on the domain. (This is what the BASE_PATH dance in the bible
+        # repository is for; here there is nothing to rewrite.)
+        #
+        # Only changed files go up: wrangler asks Cloudflare which hashes it
+        # already has. The first deploy carries ~290 MB, later ones a few.
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::notice::CLOUDFLARE_API_TOKEN is not set — the domain is not deployed (see README)"
+            exit 0
+          fi
+
+          # "js-lessons" is taken: a pages.dev subdomain is global, not per
+          # account, and someone else's project answers at that name. This one
+          # is only ever seen here and in the dashboard — readers arrive at
+          # js-lessons.pp.ua — and it cannot be renamed later without deleting
+          # the project, so it is spelled out rather than derived.
+          PROJECT=js-lessons-course
+
+          # The first run has no project to deploy into, and the docs do not
+          # promise that deploy makes one. Create it when it is missing, and
+          # say which branch is production, or every deploy lands as a preview
+          # and the domain keeps serving the first upload.
+          if ! npx --yes wrangler@4.132.0 pages project list | grep -q "$PROJECT"; then
+            echo "creating the Pages project $PROJECT"
+            npx --yes wrangler@4.132.0 pages project create "$PROJECT" --production-branch master
+          fi
+
+          npx --yes wrangler@4.132.0 pages deploy public \
+            --project-name "$PROJECT" \
+            --branch "$GITHUB_REF_NAME" \
+            --commit-dirty=true

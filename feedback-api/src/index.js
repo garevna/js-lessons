@@ -32,9 +32,22 @@ import { answerButton, call, escape, inbox, isAdmin, markAnswered, post, questio
 const ALLOWED = [
   'https://garevna.github.io',
   'https://js-lessons.pp.ua',
-  'http://localhost:8080',
-  'http://127.0.0.1:8080'
+  // Every Cloudflare Pages deploy is reachable at the project address as
+  // well, and that is where the domain is checked from before the DNS has
+  // caught up. The project is "js-lessons-course" because a pages.dev name
+  // is global and "js-lessons" belongs to someone else.
+  'https://js-lessons-course.pages.dev'
 ]
+
+// The dev server has no one port. It is 8181 by default, another when that
+// one is taken (PORT=8182 npm start), and "localhost" and "127.0.0.1" are two
+// different origins as far as a browser is concerned. A list naming one port
+// means the widget stops sending the day the port changes, and says only
+// "try again later" while it does - which is exactly what happened: the list
+// said 8080 and the server had long since moved to 8181.
+const LOCAL = /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/
+
+const permitted = origin => ALLOWED.includes(origin) || LOCAL.test(origin)
 
 const MAX_TEXT = 4000      // a question, not an essay; Telegram caps a message at 4096
 const MAX_NAME = 60
@@ -42,7 +55,7 @@ const MAX_PER_HOUR = 20
 
 function cors (request) {
   const origin = request.headers.get('Origin') || ''
-  const allowed = ALLOWED.includes(origin) ? origin : ALLOWED[0]
+  const allowed = permitted(origin) ? origin : ALLOWED[0]
   return {
     'Access-Control-Allow-Origin': allowed,
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',

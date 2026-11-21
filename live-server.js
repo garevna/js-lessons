@@ -112,22 +112,24 @@ try {
 var liveServer = require('live-server')
 
 /**
- * Does the tab reload itself when a lesson is rebuilt?
+ * Does the tab reload itself when the watcher has rebuilt something?
  *
- * false — the page stays where it is until you refresh it. The watcher still
- * rebuilds on every save, so the next refresh shows the current lesson; what
- * stops is the page being taken away from under you while you read it.
+ * Yes, by default: the pair is meant to be left alone — save in the editor,
+ * look at the browser. The watcher writes into public/, live-server sees the
+ * write and the tab takes itself fresh; nothing has to be refreshed by hand.
  *
- * It was true, and with the editor saving on a timer that meant the tab was
- * restarted about once a second for as long as a paragraph was being typed. The
- * editor is on Ctrl+S now, which fixes that; this is the other half — a save is
- * for the file, a refresh is for the page, and the two are no longer the same
- * gesture.
+ * It was off for a while. With an editor that saved on a timer it meant the tab
+ * was restarted about once a second for as long as a paragraph was being typed,
+ * which is unusable. That editor is on Ctrl+S now, so a save is a deliberate
+ * gesture and reloading on it is the right answer again.
  *
- * Set it back to true for auto-reload: watch, wait and ignore below are all it
- * needs, and the injected client is already listening.
+ *   RELOAD=off npm start
+ *
+ * turns it back off for the cases where it is still wrong — reading a long
+ * lesson while someone else edits it, or debugging something that only exists
+ * after a few clicks and would be lost on a reload.
  */
-const RELOAD_ON_CHANGE = false
+const RELOAD_ON_CHANGE = process.env.RELOAD !== 'off'
 
 var params = {
 	port: PORT,
@@ -160,7 +162,7 @@ var params = {
 	// one edit into a second needless reload.
 	//
 	// Regexes rather than names: chokidar matches against the full path.
-	ignore: [/versions\.json$/, /lessons[\/]index\.json$/],
+	ignore: [/versions\.json$/, /lessons[\/]index\.json$/, /[\\/]\.cache[\\/]/],
 
 	logLevel: 2,
 	middleware: [function(req, res, next) { next() }]
@@ -171,9 +173,10 @@ portIsFree(PORT, params.host).then((free) => {
 		liveServer.start(params)
 
 		console.log(RELOAD_ON_CHANGE
-			? '  вкладка перезагружается сама при каждой пересборке'
+			? '  вкладка перезагружается сама, как только вотчер что-то пересобрал\n' +
+			  '  (не надо — запусти так:  RELOAD=off npm start)'
 			: '  вкладка сама не перезагружается — обнови её, когда захочешь увидеть правку\n' +
-			  '  (вернуть авто-перезагрузку: RELOAD_ON_CHANGE = true в live-server.js)')
+			  '  (вернуть авто-перезагрузку: npm start без RELOAD=off)')
 
 		// This serves public/ and nothing else: it does not build. An edit in
 		// src/ or content/ changes nothing on screen until the watcher runs,
