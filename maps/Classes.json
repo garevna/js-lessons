@@ -1,90 +1,371 @@
 {
   "_": [
-    "Связи между разделами урока - то единственное, чего нет в его оглавлении.",
-    "Дерево карта строит сама из заголовков; здесь только стрелки «это опирается",
-    "на то» и короткая подпись, зачем они связаны.",
+    "Карта урока «Классы».",
     "",
-    "from и to - якоря заголовков, те самые ⟪…⟫ из content/lessons/Classes.md.",
-    "Они одинаковы во всех трёх языках, поэтому файл один на все языки, а",
-    "подпись к стрелке переводится здесь же.",
+    "Это НЕ оглавление. Оглавление показывает, в каком порядке урок написан;",
+    "карта показывает, из чего предмет состоит. Поэтому здесь нет ни тестов,",
+    "ни квеста, ни разбора примера - им место в оглавлении, а не в схеме.",
     "",
-    "Это черновик: связи расставлены по смыслу предмета, а не по тому, как ты",
-    "его рассказываешь. Правь свободно - сломать ничего нельзя, неизвестный",
-    "якорь просто не нарисуется."
+    "Три уровня, одинаковые для всех ветвей: ветвь - группа - пункт.",
+    "У пункта есть краткое описание и пример кода: они всплывают по клику.",
+    "",
+    "anchor - якорь заголовка в уроке (то, что в ⟪…⟫ в content/lessons).",
+    "Если он есть, в карточке появляется ссылка «читать в уроке». Якоря",
+    "одинаковы во всех трёх языках. Неизвестный якорь просто не даст ссылку.",
+    "",
+    "links - зависимости между пунктами: пара якорей и подпись к стрелке."
+  ],
+
+  "center": { "ru": "Классы в JS", "ua": "Класи в JS", "eng": "Classes in JS" },
+
+  "branches": [
+    {
+      "title": { "ru": "Создание", "ua": "Створення", "eng": "Creating" },
+      "colour": "#EA580C",
+      "groups": [
+        {
+          "title": { "ru": "Формы записи", "ua": "Форми запису", "eng": "Ways to write it" },
+          "items": [
+            {
+              "title": "Class Declaration",
+              "anchor": "Syntax",
+              "desc": {
+                "ru": "Обычное объявление класса. Имя становится самостоятельным именем в области видимости.",
+                "ua": "Звичайне оголошення класу. Ім'я стає самостійним іменем в області видимості.",
+                "eng": "An ordinary class declaration. The name becomes a name of its own in the scope."
+              },
+              "code": "class User {\n  constructor (name) {\n    this.name = name\n  }\n}"
+            },
+            {
+              "title": "Class Expression",
+              "anchor": "Class_expression",
+              "desc": {
+                "ru": "Класс как часть выражения: его можно присвоить, передать аргументом, вернуть из функции.",
+                "ua": "Клас як частина виразу: його можна присвоїти, передати аргументом, повернути з функції.",
+                "eng": "A class as part of an expression: it can be assigned, passed as an argument, returned from a function."
+              },
+              "code": "const User = class {\n  sayHi () { return 'Hi' }\n}"
+            },
+            {
+              "title": { "ru": "Анонимное", "ua": "Анонімне", "eng": "Anonymous" },
+              "anchor": "Anonymous_class_expression",
+              "desc": {
+                "ru": "Без собственного имени. Имя переменной становится именем класса — но только для отладчика.",
+                "ua": "Без власного імені. Ім'я змінної стає іменем класу — але лише для зневаджувача.",
+                "eng": "With no name of its own. The variable's name becomes the class name - but only for the debugger."
+              },
+              "code": "const User = class {}\nUser.name   // 'User'"
+            },
+            {
+              "title": { "ru": "Именованное", "ua": "Іменоване", "eng": "Named" },
+              "anchor": "Named_class_expression",
+              "desc": {
+                "ru": "Своё имя видно только внутри тела класса. Снаружи его нет — там работает только имя переменной.",
+                "ua": "Власне ім'я видно лише всередині тіла класу. Ззовні його немає — там працює лише ім'я змінної.",
+                "eng": "Its own name is visible only inside the class body. Outside it does not exist - only the variable's name works there."
+              },
+              "code": "const User = class Human {\n  who () { return Human.name }\n}\nnew Human()   // ReferenceError"
+            }
+          ]
+        },
+        {
+          "title": { "ru": "Правила", "ua": "Правила", "eng": "The rules" },
+          "items": [
+            {
+              "title": { "ru": "Не всплывает", "ua": "Не спливає", "eng": "Does not hoist" },
+              "anchor": "The_rules",
+              "desc": {
+                "ru": "До своей строки класс в мёртвой зоне: обращение оттуда — ReferenceError. Функция так не умеет.",
+                "ua": "До свого рядка клас у мертвій зоні: звернення звідти — ReferenceError. Функція так не вміє.",
+                "eng": "Before its own line the class is in the dead zone: reaching for it there is a ReferenceError. A function is not like that."
+              },
+              "code": "new User()   // ReferenceError\nclass User {}"
+            },
+            {
+              "title": { "ru": "Только через new", "ua": "Лише через new", "eng": "Only with new" },
+              "anchor": "The_rules",
+              "desc": {
+                "ru": "Класс — функция, но позвать её как обычную нельзя: будет TypeError.",
+                "ua": "Клас — функція, але покликати її як звичайну не можна: буде TypeError.",
+                "eng": "A class is a function, but calling it like an ordinary one is a TypeError."
+              },
+              "code": "class User {}\nUser()   // TypeError: Class constructor\n         // User cannot be invoked without 'new'"
+            },
+            {
+              "id": "always_strict",
+              "title": { "ru": "Всегда strict", "ua": "Завжди strict", "eng": "Always strict" },
+              "anchor": "The_rules",
+              "desc": {
+                "ru": "Тело класса выполняется в строгом режиме само, без директивы. Отсюда и undefined вместо window при потере контекста.",
+                "ua": "Тіло класу виконується в суворому режимі саме, без директиви. Звідси й undefined замість window при втраті контексту.",
+                "eng": "A class body runs in strict mode by itself, with no directive. Hence undefined rather than window on a lost context."
+              },
+              "code": "class Test {\n  fn () { x = 10 }   // ReferenceError\n}"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "title": { "ru": "Структура", "ua": "Структура", "eng": "Structure" },
+      "colour": "#0D9488",
+      "groups": [
+        {
+          "title": { "ru": "Данные", "ua": "Дані", "eng": "Data" },
+          "items": [
+            {
+              "title": "constructor()",
+              "anchor": "Class_properties_and_methods",
+              "desc": {
+                "ru": "Метод, который движок вызывает сам при new. Всё, что присвоено здесь через this, попадает в экземпляр.",
+                "ua": "Метод, який рушій викликає сам при new. Усе, що присвоєно тут через this, потрапляє в екземпляр.",
+                "eng": "The method the engine calls itself on new. Whatever is assigned through this here lands in the instance."
+              },
+              "code": "class User {\n  constructor (name) {\n    this.name = name\n  }\n}"
+            },
+            {
+              "title": { "ru": "Поля экземпляра", "ua": "Поля екземпляра", "eng": "Instance fields" },
+              "anchor": "Class_properties_and_methods",
+              "desc": {
+                "ru": "Объявленные прямо в теле класса, они создаются в каждом объекте, а не в прототипе.",
+                "ua": "Оголошені прямо в тілі класу, вони створюються в кожному об'єкті, а не в прототипі.",
+                "eng": "Declared in the class body, they are made in every object rather than on the prototype."
+              },
+              "code": "class User {\n  role = 'guest'\n}\nObject.keys(new User())   // ['role']"
+            },
+            {
+              "title": "#private",
+              "anchor": "Private_class_fields",
+              "desc": {
+                "ru": "Настоящая закрытость на уровне движка: снаружи такого свойства просто нет, а не «не принято трогать».",
+                "ua": "Справжня закритість на рівні рушія: ззовні такої властивості просто немає, а не «не заведено чіпати».",
+                "eng": "Real privacy at the engine level: from outside the property does not exist, rather than merely being impolite to touch."
+              },
+              "code": "class Wallet {\n  #balance = 0\n  get () { return this.#balance }\n}"
+            }
+          ]
+        },
+        {
+          "title": { "ru": "Поведение", "ua": "Поведінка", "eng": "Behaviour" },
+          "items": [
+            {
+              "id": "proto_methods",
+              "title": { "ru": "Методы прототипа", "ua": "Методи прототипу", "eng": "Prototype methods" },
+              "anchor": "Class_properties_and_methods",
+              "desc": {
+                "ru": "Лежат в User.prototype и общие для всех экземпляров: один метод на тысячу объектов.",
+                "ua": "Лежать у User.prototype і спільні для всіх екземплярів: один метод на тисячу об'єктів.",
+                "eng": "They live on User.prototype and are shared by every instance: one method for a thousand objects."
+              },
+              "code": "class User {\n  login () { console.log('in') }\n}\nUser.prototype.login   // ƒ login ()"
+            },
+            {
+              "id": "accessors",
+              "title": "get / set",
+              "anchor": "get_&_set",
+              "desc": {
+                "ru": "Свойство снаружи, функция внутри: вычисляемое значение или проверка при записи.",
+                "ua": "Властивість ззовні, функція всередині: обчислюване значення або перевірка при записі.",
+                "eng": "A property from outside, a function inside: a computed value, or a check when something is written."
+              },
+              "code": "class Box {\n  get size () { return this._s }\n  set size (v) { if (v > 0) this._s = v }\n}"
+            },
+            {
+              "id": "statics",
+              "title": "static",
+              "anchor": "static",
+              "desc": {
+                "ru": "Принадлежит самому классу, а не экземплярам. У объекта такого метода нет.",
+                "ua": "Належить самому класу, а не екземплярам. В об'єкта такого методу немає.",
+                "eng": "Belongs to the class itself, not to the instances. An object does not have it."
+              },
+              "code": "class Math2 {\n  static sum (a, b) { return a + b }\n}\nMath2.sum(2, 3)   // 5"
+            }
+          ]
+        },
+        {
+          "title": { "ru": "Порядок инициализации", "ua": "Порядок ініціалізації", "eng": "Initialisation order" },
+          "items": [
+            {
+              "id": "init_fields",
+              "title": { "ru": "Поля до конструктора", "ua": "Поля до конструктора", "eng": "Fields before the constructor" },
+              "anchor": "Initialisation_process",
+              "desc": {
+                "ru": "Поля, объявленные в теле, выполняются раньше тела конструктора — в том порядке, в каком написаны.",
+                "ua": "Поля, оголошені в тілі, виконуються раніше за тіло конструктора — у тому порядку, у якому написані.",
+                "eng": "Fields declared in the body run before the constructor body - in the order they are written."
+              },
+              "code": "class A {\n  first = log(1)\n  constructor () { log(2) }\n  third = log(3)\n}\n// 1, 3, 2"
+            },
+            {
+              "title": { "ru": "В наследнике — после super()", "ua": "У нащадка — після super()", "eng": "In an heir, after super()" },
+              "anchor": "Initialisation_process",
+              "desc": {
+                "ru": "У дочернего класса поля создаются только после super(): до него this ещё не существует.",
+                "ua": "У дочірнього класу поля створюються лише після super(): до нього this ще не існує.",
+                "eng": "In a subclass the fields are made only after super(): before it, this does not exist yet."
+              },
+              "code": "class Dog extends Animal {\n  kind = 'dog'      // после super()\n  constructor (n) {\n    super(n)\n  }\n}"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "title": { "ru": "Наследование", "ua": "Успадкування", "eng": "Inheritance" },
+      "colour": "#7C3AED",
+      "groups": [
+        {
+          "title": { "ru": "Связь", "ua": "Зв'язок", "eng": "The link" },
+          "items": [
+            {
+              "title": "extends",
+              "anchor": "extends",
+              "desc": {
+                "ru": "Связывает сразу две цепочки: прототипы экземпляров и сами классы — последнее и даёт наследование статики.",
+                "ua": "Пов'язує одразу два ланцюжки: прототипи екземплярів і самі класи — останнє й дає успадкування статики.",
+                "eng": "Ties two chains at once: the instances' prototypes and the classes themselves - the latter is what inherits the statics."
+              },
+              "code": "class Animal {}\nclass Dog extends Animal {}"
+            },
+            {
+              "title": "instanceof",
+              "anchor": "instanceof",
+              "desc": {
+                "ru": "Идёт по цепочке прототипов до конца, поэтому отвечает true и для предка. Смотрит на цепочку, а не на того, кто вызвал new.",
+                "ua": "Іде ланцюжком прототипів до кінця, тому відповідає true і для предка. Дивиться на ланцюжок, а не на того, хто викликав new.",
+                "eng": "Walks the prototype chain to the end, so it says true for an ancestor too. It looks at the chain, not at whoever called new."
+              },
+              "code": "const dog = new Dog()\ndog instanceof Dog      // true\ndog instanceof Animal   // true"
+            }
+          ]
+        },
+        {
+          "title": "super",
+          "items": [
+            {
+              "id": "super_call",
+              "title": { "ru": "super() до this", "ua": "super() до this", "eng": "super() before this" },
+              "anchor": "super_2",
+              "desc": {
+                "ru": "В конструкторе наследника super() обязан быть вызван раньше любого обращения к this — его до этого просто нет.",
+                "ua": "У конструкторі нащадка super() має бути викликаний раніше за будь-яке звернення до this — його до цього просто немає.",
+                "eng": "In a subclass constructor, super() must be called before any use of this - until then there is no this."
+              },
+              "code": "constructor (name, breed) {\n  super(name)\n  this.breed = breed\n}"
+            },
+            {
+              "title": "super.method()",
+              "anchor": "super",
+              "desc": {
+                "ru": "Вызвать переопределённый метод родителя, не теряя собственный.",
+                "ua": "Викликати перевизначений метод батька, не втрачаючи власний.",
+                "eng": "Call the parent's overridden method without losing your own."
+              },
+              "code": "speak () {\n  super.speak()\n  console.log('Woof!')\n}"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "title": { "ru": "Под капотом", "ua": "Під капотом", "eng": "Under the bonnet" },
+      "colour": "#0284C7",
+      "groups": [
+        {
+          "title": { "ru": "Природа", "ua": "Природа", "eng": "What it is" },
+          "items": [
+            {
+              "title": "typeof === 'function'",
+              "anchor": "A_class_is_a_function",
+              "desc": {
+                "ru": "Класс — это функция-конструктор. Синтаксис классов записывает короче то, что раньше писали руками.",
+                "ua": "Клас — це функція-конструктор. Синтаксис класів записує коротше те, що раніше писали руками.",
+                "eng": "A class is a constructor function. Class syntax writes in fewer words what used to be written by hand."
+              },
+              "code": "class User {}\ntypeof User   // 'function'"
+            },
+            {
+              "title": { "ru": "Методы неперечислимы", "ua": "Методи неперелічувані", "eng": "Methods are not enumerable" },
+              "anchor": "Methods_are_not_enumerable",
+              "desc": {
+                "ru": "enumerable: false, поэтому for..in их не видит, а Object.keys() не показывает. Данные перебираются, поведение — нет.",
+                "ua": "enumerable: false, тому for..in їх не бачить, а Object.keys() не показує. Дані перебираються, поведінка — ні.",
+                "eng": "enumerable: false, so for..in does not see them and Object.keys() does not list them. Data is iterated, behaviour is not."
+              },
+              "code": "Object.keys(User.prototype)   // []"
+            }
+          ]
+        },
+        {
+          "title": { "ru": "Прототипы", "ua": "Прототипи", "eng": "Prototypes" },
+          "items": [
+            {
+              "title": { "ru": "Цепочка экземпляров", "ua": "Ланцюжок екземплярів", "eng": "The instance chain" },
+              "anchor": "A_class_is_a_function",
+              "desc": {
+                "ru": "Прототип объекта — это Class.prototype. По этой цепочке ищутся методы.",
+                "ua": "Прототип об'єкта — це Class.prototype. Цим ланцюжком шукаються методи.",
+                "eng": "An object's prototype is Class.prototype. Methods are looked up along this chain."
+              },
+              "code": "const u = new User()\nObject.getPrototypeOf(u) === User.prototype   // true"
+            },
+            {
+              "id": "class_chain",
+              "title": { "ru": "Цепочка классов", "ua": "Ланцюжок класів", "eng": "The class chain" },
+              "anchor": "Statics_inherit_by_a_chain_of_their_own",
+              "desc": {
+                "ru": "Сами классы тоже выстроены в цепочку — через неё наследник получает статические методы.",
+                "ua": "Самі класи теж вишикувані в ланцюжок — через нього нащадок отримує статичні методи.",
+                "eng": "The classes themselves form a chain too - that is how an heir gets the static methods."
+              },
+              "code": "Object.getPrototypeOf(Dog) === Animal   // true\nDog.kind()   // метод Animal"
+            }
+          ]
+        },
+        {
+          "title": { "ru": "Контекст", "ua": "Контекст", "eng": "Context" },
+          "items": [
+            {
+              "id": "lost_context",
+              "title": { "ru": "Потеря контекста", "ua": "Втрата контексту", "eng": "A lost context" },
+              "anchor": "Loss_of_context",
+              "desc": {
+                "ru": "Метод, оторванный от объекта, теряет this — и в строгом режиме это undefined, а не window.",
+                "ua": "Метод, відірваний від об'єкта, втрачає this — і в суворому режимі це undefined, а не window.",
+                "eng": "A method taken away from its object loses this - and in strict mode that is undefined, not window."
+              },
+              "code": "const { login } = user\nlogin()   // TypeError: Cannot read\n          // properties of undefined"
+            }
+          ]
+        }
+      ]
+    }
   ],
 
   "links": [
     {
-      "from": "super",
-      "to": "Initialisation_process",
-      "note": {
-        "ru": "до super() нет this",
-        "ua": "до super() немає this",
-        "eng": "no this before super()"
-      }
+      "from": "super_call",
+      "to": "init_fields",
+      "note": { "ru": "до super() нет this", "ua": "до super() немає this", "eng": "no this before super()" }
     },
     {
-      "from": "extends",
-      "to": "Initialisation_process",
-      "note": {
-        "ru": "базовый класс первым",
-        "ua": "базовий клас першим",
-        "eng": "the base class first"
-      }
+      "from": "always_strict",
+      "to": "lost_context",
+      "note": { "ru": "строгий режим даёт undefined", "ua": "суворий режим дає undefined", "eng": "strict mode gives undefined" }
     },
     {
-      "from": "Private_class_fields",
-      "to": "Initialisation_process",
-      "note": {
-        "ru": "поля до тела конструктора",
-        "ua": "поля до тіла конструктора",
-        "eng": "fields before the constructor body"
-      }
+      "from": "statics",
+      "to": "class_chain",
+      "note": { "ru": "наследуется цепочкой классов", "ua": "успадковується ланцюжком класів", "eng": "inherited by the class chain" }
     },
     {
-      "from": "Loss_of_context",
-      "to": "Class_properties_and_methods",
-      "note": {
-        "ru": "метод без объекта теряет this",
-        "ua": "метод без об'єкта втрачає this",
-        "eng": "a method apart from its object loses this"
-      }
-    },
-    {
-      "from": "get_&_set",
-      "to": "Class_properties_and_methods",
-      "note": {
-        "ru": "аксессоры - те же методы",
-        "ua": "аксесори - ті самі методи",
-        "eng": "accessors are methods too"
-      }
-    },
-    {
-      "from": "static",
-      "to": "Inheritance",
-      "note": {
-        "ru": "статика тоже наследуется",
-        "ua": "статика теж успадковується",
-        "eng": "statics are inherited as well"
-      }
-    },
-    {
-      "from": "Named_class_expression",
-      "to": "Loss_of_context",
-      "note": {
-        "ru": "имя видно только внутри",
-        "ua": "ім'я видно лише всередині",
-        "eng": "the name is visible only inside"
-      }
-    },
-    {
-      "from": "Example_SVG",
-      "to": "Inheritance",
-      "note": {
-        "ru": "всё вместе на одном примере",
-        "ua": "все разом на одному прикладі",
-        "eng": "all of it on one example"
-      }
+      "from": "accessors",
+      "to": "proto_methods",
+      "note": { "ru": "аксессоры — те же методы", "ua": "аксесори — ті самі методи", "eng": "accessors are methods too" }
     }
   ]
 }
