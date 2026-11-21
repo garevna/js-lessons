@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Интерактивная Mind Map: Классы в JS (v2)</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #F1F5F9;
+      color: #0F172A;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #FFFFFF;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    header h1 { font-size: 16px; font-weight: 700; color: #1E293B; }
+    .controls { display: flex; gap: 8px; }
+    button {
+      background: #F8FAFC;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    button:hover { background: #E2E8F0; color: #0F172A; }
+    #canvas-container {
+      flex: 1;
+      position: relative;
+      cursor: grab;
+      user-select: none;
+    }
+    #canvas-container:active { cursor: grabbing; }
+    svg { width: 100%; height: 100%; display: block; }
+    .node-group { cursor: pointer; transition: opacity 0.2s; }
+    .node-group:hover rect { filter: brightness(0.96); }
+    .branch-line { fill: none; stroke-linecap: round; transition: opacity 0.25s; }
+    
+    #code-card {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 400px;
+      background: #1E293B;
+      color: #F8FAFC;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+      z-index: 20;
+      display: none;
+    }
+    #code-card h3 { font-size: 15px; color: #38BDF8; margin-bottom: 6px; padding-right: 24px; }
+    #code-card p { font-size: 13px; color: #CBD5E1; margin-bottom: 10px; line-height: 1.45; }
+    #code-card pre {
+      background: #0F172A;
+      padding: 12px;
+      border-radius: 8px;
+      font-family: "Fira Code", Consolas, monospace;
+      font-size: 12.5px;
+      color: #A7F3D0;
+      overflow-x: auto;
+      line-height: 1.45;
+    }
+    #close-card {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: transparent;
+      border: none;
+      color: #94A3B8;
+      font-size: 16px;
+      padding: 2px 6px;
+    }
+    #close-card:hover { color: #FFF; background: transparent; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Mind Map: Классы в JavaScript (кликните по узлу, чтобы свернуть или открыть пример кода)</h1>
+  <div class="controls">
+    <button onclick="expandAll()">Развернуть всё</button>
+    <button onclick="collapseToL1()">Свернуть до Уровня 1</button>
+    <button onclick="resetView()">Центрировать</button>
+  </div>
+</header>
+
+<div id="canvas-container">
+  <svg id="mindmap" viewBox="0 0 1600 1060">
+    <defs>
+      <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+        <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.1"/>
+      </filter>
+    </defs>
+    <g id="viewport"></g>
+  </svg>
+</div>
+
+<div id="code-card">
+  <button id="close-card" onclick="closeCard()">✕</button>
+  <h3 id="card-title">Заголовок</h3>
+  <p id="card-desc">Описание</p>
+  <pre id="card-code"></pre>
+</div>
+
+<script>
+const data = {
+  center: { x: 800, y: 530, title: "Классы в JS" },
+  branches: [
+    {
+      id: "b1", title: "1. Создание", x: 560, y: 290, w: 160,
+      color: "#EA580C", bgL2: "#FFF7ED", strokeL3: "#FDBA74",
+      path: "M 730 465 C 680 370, 640 290, 560 290",
+      children: [
+        {
+          id: "b1-1", title: "Формы записи", x: 375, y: 170, w: 140,
+          path: "M 480 290 C 450 290, 465 170, 445 170",
+          items: [
+            {
+              title: "Class Declaration", x: 185, y: 100, w: 185,
+              path: "M 305 170 C 285 170, 290 100, 278 100",
+              desc: "Классическое объявление класса через ключевое слово class.",
+              code: "class User {\n  constructor(name) {\n    this.name = name;\n  }\n}"
+            },
+            {
+              title: "Class Expression", x: 185, y: 190, w: 185,
+              path: "M 305 170 C 285 170, 290 190, 278 190",
+              desc: "Класс как часть выражения: можно присвоить переменной или передать в функцию.",
+              code: "function makeClass(phrase) {\n  return class {\n    sayHi() { alert(phrase); }\n  };\n}",
+              subItems: [
+                {
+                  title: "Анонимное", x: 20, y: 162, w: 115,
+                  path: "M 92 190 C 85 190, 85 162, 78 162",
+                  desc: "Анонимное Class Expression — имя класса после слова class не указывается.",
+                  code: "const User = class {\n  sayHi() { return 'Hi'; }\n};\nconsole.log(User.name); // 'User'"
+                },
+                {
+                  title: "Именованное", x: 20, y: 218, w: 115,
+                  path: "M 92 190 C 85 190, 85 218, 78 218",
+                  desc: "Именованное Class Expression (NCE) — внутреннее имя видно только внутри самого класса.",
+                  code: "const Picture = class Canvas {\n  getName() { return Canvas.name; }\n};\n// Canvas снаружи не доступен"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: "b1-2", title: "Правила", x: 395, y: 365, w: 115,
+          path: "M 480 290 C 460 290, 470 365, 452 365",
+          items: [
+            {
+              title: "Нет всплытия (TDZ)", x: 185, y: 310, w: 185,
+              path: "M 338 365 C 310 365, 310 310, 278 310",
+              desc: "Классы не всплывают (hoisting). Обращение до объявления вызывает ReferenceError.",
+              code: "new User(); // ReferenceError!\nclass User {}"
+            },
+            {
+              title: "Всегда 'use strict'", x: 185, y: 365, w: 185,
+              path: "M 338 365 L 278 365",
+              desc: "Весь код внутри тела класса автоматически выполняется в строгом режиме.",
+              code: "class Test {\n  fn() { x = 10; } // ReferenceError\n}"
+            },
+            {
+              title: "Только через new", x: 185, y: 420, w: 185,
+              path: "M 338 365 C 310 365, 310 420, 278 420",
+              desc: "Вызов класса без оператора new выбросит ошибку TypeError.",
+              code: "class User {}\nUser(); // TypeError: Class constructor..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "b2", title: "2. Структура", x: 1040, y: 290, w: 160,
+      color: "#0D9488", bgL2: "#F0FDFA", strokeL3: "#5EEAD4",
+      path: "M 870 465 C 920 370, 960 290, 1040 290",
+      children: [
+        {
+          id: "b2-1", title: "Данные", x: 1215, y: 105, w: 115,
+          path: "M 1120 290 C 1140 290, 1130 105, 1158 105",
+          items: [
+            {
+              title: "constructor()", x: 1445, y: 78, w: 195,
+              path: "M 1272 105 C 1300 105, 1300 78, 1348 78",
+              desc: "Специальный метод, автоматически вызываемый при создании объекта через new.",
+              code: "class User {\n  constructor(name) {\n    this.name = name;\n  }\n}"
+            },
+            {
+              title: "Поля экземпляра", x: 1445, y: 132, w: 195,
+              path: "M 1272 105 C 1300 105, 1300 132, 1348 132",
+              desc: "Записываются напрямую в каждый созданный объект, а не в прототип.",
+              code: "class User {\n  role = 'guest'; // в экземпляре\n}"
+            }
+          ]
+        },
+        {
+          id: "b2-2", title: "Поведение", x: 1220, y: 225, w: 125,
+          path: "M 1120 290 C 1140 290, 1135 225, 1158 225",
+          items: [
+            {
+              title: "Методы прототипа", x: 1445, y: 198, w: 195,
+              path: "M 1282 225 C 1305 225, 1305 198, 1348 198",
+              desc: "Сохраняются в User.prototype и разделяются между всеми экземплярами.",
+              code: "class User {\n  login() { console.log('In'); }\n}"
+            },
+            {
+              title: "get / set", x: 1445, y: 252, w: 195,
+              path: "M 1282 225 C 1305 225, 1305 252, 1348 252",
+              desc: "Геттеры и сеттеры для вычисляемых свойств или валидации при записи.",
+              code: "class Box {\n  get size() { return this._s; }\n  set size(v) { if (v > 0) this._s = v; }\n}"
+            }
+          ]
+        },
+        {
+          id: "b2-3", title: "Модификаторы", x: 1228, y: 345, w: 140,
+          path: "M 1120 290 C 1140 290, 1135 345, 1158 345",
+          items: [
+            {
+              title: "static", x: 1445, y: 318, w: 195,
+              path: "M 1298 345 C 1320 345, 1320 318, 1348 318",
+              desc: "Свойства и методы самого класса, недоступные у экземпляров.",
+              code: "class MathHelper {\n  static sum(a, b) { return a + b; }\n}\nMathHelper.sum(2, 3); // 5"
+            },
+            {
+              title: "#private", x: 1445, y: 372, w: 195,
+              path: "M 1298 345 C 1320 345, 1320 372, 1348 372",
+              desc: "Настоящая инкапсуляция на уровне движка JS: доступ только внутри класса.",
+              code: "class Wallet {\n  #balance = 0;\n  getBalance() { return this.#balance; }\n}"
+            }
+          ]
+        },
+        {
+          id: "b2-4", title: "Порядок инициализации", x: 1255, y: 465, w: 195,
+          path: "M 1120 290 C 1140 290, 1130 465, 1158 465",
+          items: [
+            {
+              title: "Поля до конструктора", x: 1475, y: 438, w: 210,
+              path: "M 1352 465 C 1362 465, 1362 438, 1370 438",
+              desc: "В базовом классе поля экземпляра инициализируются строго до выполнения тела constructor().",
+              code: "class User {\n  role = 'user'; // 1-й шаг\n  constructor() {\n    console.log(this.role); // 'user' (2-й шаг)\n  }\n}"
+            },
+            {
+              title: "После super() в наследнике", x: 1475, y: 492, w: 210,
+              path: "M 1352 465 C 1362 465, 1362 492, 1370 492",
+              desc: "В дочернем классе собственные поля создаются сразу после завершения super(), но до оставшегося кода constructor().",
+              code: "class Admin extends User {\n  level = 1; // 2-й шаг (после super)\n  constructor() {\n    super(); // 1-й шаг\n    console.log(this.level); // 1 (3-й шаг)\n  }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "b3", title: "3. Наследование", x: 1040, y: 740, w: 180,
+      color: "#7C3AED", bgL2: "#F5F3FF", strokeL3: "#C4B5FD",
+      path: "M 870 595 C 920 680, 960 740, 1040 740",
+      children: [
+        {
+          id: "b3-1", title: "Связь", x: 1215, y: 665, w: 105,
+          path: "M 1130 740 C 1150 740, 1145 665, 1162 665",
+          items: [
+            {
+              title: "extends", x: 1425, y: 638, w: 180,
+              path: "M 1268 665 C 1295 665, 1295 638, 1335 638",
+              desc: "Устанавливает цепочку прототипов от дочернего класса к родительскому.",
+              code: "class Animal {}\nclass Dog extends Animal {}"
+            },
+            {
+              title: "instanceof", x: 1425, y: 692, w: 180,
+              path: "M 1268 665 C 1295 665, 1295 692, 1335 692",
+              desc: "Проверяет, принадлежит ли объект классу или любому его родителю.",
+              code: "const d = new Dog();\nd instanceof Animal; // true"
+            }
+          ]
+        },
+        {
+          id: "b3-2", title: "Контекст super", x: 1235, y: 815, w: 150,
+          path: "M 1130 740 C 1150 740, 1145 815, 1160 815",
+          items: [
+            {
+              title: "super() до this", x: 1425, y: 788, w: 180,
+              path: "M 1310 815 C 1322 815, 1322 788, 1335 788",
+              desc: "В конструкторе наследника super() обязан вызываться раньше обращения к this.",
+              code: "constructor(name, breed) {\n  super(name);\n  this.breed = breed;\n}"
+            },
+            {
+              title: "super.method()", x: 1425, y: 842, w: 180,
+              path: "M 1310 815 C 1322 815, 1322 842, 1335 842",
+              desc: "Позволяет вызвать метод родителя при его переопределении.",
+              code: "speak() {\n  super.speak();\n  console.log('Woof!');\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "b4", title: "4. Под капотом", x: 560, y: 740, w: 170,
+      color: "#0284C7", bgL2: "#F0F9FF", strokeL3: "#7DD3FC",
+      path: "M 730 595 C 680 680, 640 740, 560 740",
+      children: [
+        {
+          id: "b4-1", title: "Природа", x: 385, y: 615, w: 115,
+          path: "M 475 740 C 455 740, 460 615, 442 615",
+          items: [
+            {
+              title: "typeof === 'function'", x: 185, y: 588, w: 195,
+              path: "M 328 615 C 305 615, 305 588, 282 588",
+              desc: "С технической точки зрения класс — это функция-конструктор.",
+              code: "class User {}\ntypeof User; // 'function'"
+            },
+            {
+              title: "Неперечислимые методы", x: 185, y: 642, w: 195,
+              path: "M 328 615 C 305 615, 305 642, 282 642",
+              desc: "Методы класса имеют флаг enumerable: false и не попадают в цикл for..in.",
+              code: "Object.keys(User.prototype); // []"
+            }
+          ]
+        },
+        {
+          id: "b4-2", title: "Прототипы", x: 380, y: 755, w: 125,
+          path: "M 475 740 C 455 740, 460 755, 442 755",
+          items: [
+            {
+              title: "Экземпляров (prototype)", x: 185, y: 728, w: 195,
+              path: "M 318 755 C 300 755, 300 728, 282 728",
+              desc: "Свойство [[Prototype]] экземпляра ссылается на Class.prototype.",
+              code: "const u = new User();\nu.__proto__ === User.prototype; // true"
+            },
+            {
+              title: "Статики (__proto__)", x: 185, y: 782, w: 195,
+              path: "M 318 755 C 300 755, 300 782, 282 782",
+              desc: "Наследование статических методов работает через прототип самой функции-класса.",
+              code: "Dog.__proto__ === Animal; // true"
+            }
+          ]
+        },
+        {
+          id: "b4-3", title: "Контекст", x: 385, y: 880, w: 115,
+          path: "M 475 740 C 455 740, 460 880, 442 880",
+          items: [
+            {
+              title: "Потеря контекста", x: 185, y: 880, w: 195,
+              path: "M 328 880 L 282 880",
+              desc: "При передаче метода отдельно (например, в коллбэк) this становится undefined из-за строгого режима. Решается через bind() или поля-стрелки.",
+              code: "class Btn {\n  val = 'OK';\n  click() { console.log(this.val); }\n  arrowClick = () => console.log(this.val);\n}\nconst b = new Btn();\nsetTimeout(b.click, 100);      // TypeError (this === undefined)\nsetTimeout(b.arrowClick, 100); // 'OK'"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+const state = {};
+const svgNS = "http://www.w3.org/2000/svg";
+const viewport = document.getElementById("viewport");
+
+function createEl(tag, attrs = {}) {
+  const el = document.createElementNS(svgNS, tag);
+  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+  return el;
+}
+
+function render() {
+  viewport.innerHTML = "";
+
+  data.branches.forEach(b => {
+    const bCollapsed = !!state[b.id];
+    const bGroup = createEl("g");
+
+    bGroup.appendChild(createEl("path", { d: b.path, stroke: b.color, "stroke-width": 4, class: "branch-line" }));
+
+    if (!bCollapsed) {
+      b.children.forEach(c => {
+        const cCollapsed = !!state[c.id];
+        bGroup.appendChild(createEl("path", { d: c.path, stroke: b.color, "stroke-width": 2.5, class: "branch-line" }));
+
+        if (!cCollapsed) {
+          c.items.forEach(item => {
+            bGroup.appendChild(createEl("path", { d: item.path, stroke: b.strokeL3, "stroke-width": 1.8, class: "branch-line" }));
+
+            // Подуровень (Уровень 4 — для Анонимного и Именованного Class Expression)
+            if (item.subItems) {
+              item.subItems.forEach(sub => {
+                bGroup.appendChild(createEl("path", { d: sub.path, stroke: b.strokeL3, "stroke-width": 1.5, "stroke-dasharray": "4,2", class: "branch-line" }));
+
+                const g4 = createEl("g", { class: "node-group" });
+                g4.appendChild(createEl("rect", {
+                  x: sub.x - sub.w / 2, y: sub.y - 13, width: sub.w, height: 26, rx: 13,
+                  fill: b.bgL2, stroke: b.strokeL3, "stroke-width": 1.5
+                }));
+                const t4 = createEl("text", {
+                  x: sub.x, y: sub.y, fill: "#1E293B", "font-size": 12, "font-weight": 500,
+                  "text-anchor": "middle", "dominant-baseline": "central"
+                });
+                t4.textContent = sub.title;
+                g4.appendChild(t4);
+                g4.onclick = (e) => { e.stopPropagation(); showCard(sub); };
+                bGroup.appendChild(g4);
+              });
+            }
+
+            const g3 = createEl("g", { class: "node-group" });
+            g3.appendChild(createEl("rect", {
+              x: item.x - item.w / 2, y: item.y - 15, width: item.w, height: 30, rx: 15,
+              fill: "#FFFFFF", stroke: b.strokeL3, "stroke-width": 1.5
+            }));
+            const t3 = createEl("text", {
+              x: item.x, y: item.y, fill: "#334155", "font-size": 13, "font-weight": 500,
+              "text-anchor": "middle", "dominant-baseline": "central"
+            });
+            t3.textContent = item.title;
+            g3.appendChild(t3);
+            g3.onclick = (e) => { e.stopPropagation(); showCard(item); };
+            bGroup.appendChild(g3);
+          });
+        }
+
+        const g2 = createEl("g", { class: "node-group" });
+        g2.appendChild(createEl("rect", {
+          x: c.x - c.w / 2, y: c.y - 17, width: c.w, height: 34, rx: 17,
+          fill: b.bgL2, stroke: b.color, "stroke-width": 2
+        }));
+        const t2 = createEl("text", {
+          x: c.x, y: c.y, fill: "#1E293B", "font-size": 13.5, "font-weight": 600,
+          "text-anchor": "middle", "dominant-baseline": "central"
+        });
+        t2.textContent = `${c.title} ${cCollapsed ? "+" : "−"}`;
+        g2.appendChild(t2);
+        g2.onclick = (e) => { e.stopPropagation(); state[c.id] = !state[c.id]; render(); };
+        bGroup.appendChild(g2);
+      });
+    }
+
+    const g1 = createEl("g", { class: "node-group" });
+    g1.appendChild(createEl("rect", {
+      x: b.x - b.w / 2, y: b.y - 20, width: b.w, height: 40, rx: 20,
+      fill: b.color, filter: "url(#shadow)"
+    }));
+    const t1 = createEl("text", {
+      x: b.x, y: b.y, fill: "#FFFFFF", "font-size": 15, "font-weight": 700,
+      "text-anchor": "middle", "dominant-baseline": "central"
+    });
+    t1.textContent = `${b.title} ${bCollapsed ? "+" : "−"}`;
+    g1.appendChild(t1);
+    g1.onclick = (e) => { e.stopPropagation(); state[b.id] = !state[b.id]; render(); };
+    bGroup.appendChild(g1);
+
+    viewport.appendChild(bGroup);
+  });
+
+  const centerG = createEl("g");
+  centerG.appendChild(createEl("circle", { cx: 800, cy: 530, r: 82, fill: "#FFFFFF", stroke: "#0F172A", "stroke-width": 3, filter: "url(#shadow)" }));
+  centerG.appendChild(createEl("circle", { cx: 800, cy: 530, r: 72, fill: "#1E293B" }));
+  
+  const icon = createEl("text", { x: 800, y: 513, fill: "#93C5FD", "font-family": "monospace", "font-size": 24, "font-weight": 700, "text-anchor": "middle" });
+  icon.textContent = "</>";
+  centerG.appendChild(icon);
+
+  const title = createEl("text", { x: 800, y: 550, fill: "#FFFFFF", "font-size": 19, "font-weight": 700, "text-anchor": "middle" });
+  title.textContent = "Классы в JS";
+  centerG.appendChild(title);
+
+  viewport.appendChild(centerG);
+}
+
+function showCard(item) {
+  document.getElementById("card-title").textContent = item.title;
+  document.getElementById("card-desc").textContent = item.desc;
+  document.getElementById("card-code").textContent = item.code;
+  document.getElementById("code-card").style.display = "block";
+}
+function closeCard() { document.getElementById("code-card").style.display = "none"; }
+
+function expandAll() { Object.keys(state).forEach(k => delete state[k]); render(); }
+function collapseToL1() { data.branches.forEach(b => state[b.id] = true); render(); }
+
+let scale = 1, panX = 0, panY = 0, isDragging = false, startX, startY;
+const container = document.getElementById("canvas-container");
+
+function updateTransform() {
+  viewport.setAttribute("transform", `translate(${panX}, ${panY}) scale(${scale})`);
+}
+function resetView() { scale = 1; panX = 0; panY = 0; updateTransform(); }
+
+container.addEventListener("mousedown", e => { isDragging = true; startX = e.clientX - panX; startY = e.clientY - panY; });
+window.addEventListener("mousemove", e => {
+  if (!isDragging) return;
+  panX = e.clientX - startX;
+  panY = e.clientY - startY;
+  updateTransform();
+});
+window.addEventListener("mouseup", () => isDragging = false);
+container.addEventListener("wheel", e => {
+  e.preventDefault();
+  const delta = e.deltaY < 0 ? 1.1 : 0.9;
+  scale = Math.min(Math.max(0.5, scale * delta), 2.5);
+  updateTransform();
+}, { passive: false });
+
+render();
+</script>
+</body>
+</html>

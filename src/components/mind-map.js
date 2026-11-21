@@ -1,26 +1,26 @@
 /**
- * The lesson's subject, laid out as a picture.
+ * The lesson's subject as a drawing.
  *
- * Not the table of contents in another shape. The contents say in what order
- * the lesson is written; this says what the subject is made of, and those are
- * different questions with different answers. Tests and the quest belong to
- * the first and have no place here; "Class Declaration" and "Class
- * Expression" are one group here and are pages apart in the lesson.
+ * Not the table of contents in another shape: the contents say in what order
+ * the lesson is written, this says what the subject is made of. Tests and the
+ * quest belong to the first and have no place here; "Class Declaration" and
+ * "Class Expression" are one group here and pages apart in the lesson.
  *
- * So the map is written, not derived: public/maps/<page>.json, three levels
- * deep and the same three everywhere - branch, group, item. An item carries
- * a sentence about itself and a few lines of code, which a click brings up,
- * and the anchor of the section where the lesson explains it, which turns
- * into a way in. A lesson with no such file has no map and does not offer
- * one; 404 is the normal answer for most of them.
+ * And not a computed layout either, which is what this was. A generic radial
+ * algorithm optimises for boxes that do not collide, and that is not the same
+ * thing as a picture a person can read: branches came out at odd angles, and
+ * three lines leaving one point curved three different ways. A map like this
+ * is a designed object. So the geometry - every x, every y, every curve - is
+ * taken from the drawing in content/js-classes-mindmap-v2.html and kept in
+ * public/maps/<page>.json; moving a box means changing a number there, and
+ * nothing here second-guesses it.
  *
- * What the structure cannot say is which item leans on which. Those are the
- * dashed arrows: a pair of ids and a note, drawn round the outside and
- * numbered, with the words in the legend below - a note written along a
- * curve stands on end where the curve runs vertical.
+ * What is computed is everything the drawing cannot carry: the labels in
+ * whichever of the three languages is being read, the card that opens on a
+ * click with a sentence and a few lines of code, the way into the section of
+ * the lesson that explains the thing, and folding a branch away.
  *
- * Folded to the branches to begin with. Two dozen boxes at once have to be
- * scaled down until nothing can be read, which is the opposite of the point.
+ * A lesson with no such file has no map and is not offered one.
  */
 const { createElem } = require('../helpers').default
 const { lang } = require('../configs').default
@@ -29,17 +29,10 @@ const { lang } = require('../configs').default
 const speak = value => {
   if (!value) return ''
   if (typeof value === 'string') return value
-  return value[lang()] || value.eng || ''
+  return value[lang()] || value.ru || value.eng || ''
 }
 
-const GAP_X = 44          // between one ring and the next
-const PAD_X = 14          // inside a node
-const LINE = 19           // a line of label
-const MAX_WIDTH = 200     // before a label wraps
-
 const INK = '#1E293B'
-const MUTED = '#64748B'
-const LINE_COLOUR = '#CBD5E1'
 
 const styles = `
   *, *::before, *::after { box-sizing: border-box; }
@@ -94,8 +87,6 @@ const styles = `
   .tool:hover { background: #E2E8F0; color: ${INK}; }
   .tool.close { font-size: 20px; }
 
-  /* Dragging pans, the wheel zooms; a touch screen does both with the usual
-     gestures, so the browser has to be told not to take them first. */
   .board {
     flex: 1;
     overflow: hidden;
@@ -109,64 +100,9 @@ const styles = `
 
   .node { cursor: pointer; }
   .node rect { transition: filter .15s; }
-  .node:hover rect { filter: brightness(.97); }
-  .node text { font-size: 13px; dominant-baseline: middle; }
+  .node:hover rect { filter: brightness(.96); }
+  .branch-line { fill: none; stroke-linecap: round; }
 
-  /* The rings the levels stand on. Faint: they order the picture, they are
-     not part of it. */
-  .ring { fill: none; stroke: #DBE3EC; stroke-width: 1; }
-
-  .node.root { cursor: default; }
-  .node.root .halo { fill: #fff; stroke: ${INK}; stroke-width: 3; }
-  .node.root .core { fill: ${INK}; }
-  .node.root text { fill: #fff; font-size: 15px; font-weight: 700; }
-  .node.branch text { fill: #fff; font-weight: 700; font-size: 14px; }
-  .node.group text { fill: ${INK}; font-weight: 600; }
-  .node.item text { fill: #334155; }
-
-  .edge { fill: none; stroke-linecap: round; }
-
-  /* The fold handle: small, quiet, and clearly not part of the box. */
-  .handle { cursor: pointer; }
-  .handle circle { fill: #fff; stroke: #94A3B8; stroke-width: 1.5; }
-  .handle text { fill: #475569; font-size: 13px; font-weight: bold; dominant-baseline: central; }
-  .handle:hover circle { stroke: ${INK}; }
-
-  /* The dependencies, which are the reason for the whole thing. */
-  .cross { fill: none; stroke: #F97316; stroke-width: 2; stroke-dasharray: 6 5; }
-  .mark circle { fill: #F97316; }
-  .mark text { fill: #fff; font-size: 11px; font-weight: bold; dominant-baseline: central; }
-
-  footer:not(:empty) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 16px;
-    max-height: 76px;
-    padding: 8px 16px;
-    border-top: 1px solid #E2E8F0;
-    background: #fff;
-    color: ${MUTED};
-    font-size: 12px;
-    overflow-y: auto;
-  }
-
-  .legend { display: flex; gap: 6px; align-items: baseline; }
-
-  .legend b {
-    display: inline-block;
-    min-width: 16px;
-    height: 16px;
-    border-radius: 8px;
-    background: #F97316;
-    color: #fff;
-    font-size: 10px;
-    font-weight: bold;
-    line-height: 16px;
-    text-align: center;
-  }
-
-  /* What a click on an item brings up: the sentence and the few lines of
-     code, where the eye already is rather than at the other end of a scroll. */
   .card {
     display: none;
     position: absolute;
@@ -233,43 +169,47 @@ const styles = `
   }
 `
 
-/** A label is a phrase, not a word. Two lines, then cut. */
-function wrap (text, measure) {
-  if (measure(text) <= MAX_WIDTH) return [text]
-
-  const words = String(text).split(/\s+/)
-  const lines = ['']
-  for (const word of words) {
-    const candidate = lines[lines.length - 1] ? `${lines[lines.length - 1]} ${word}` : word
-    if (measure(candidate) <= MAX_WIDTH || !lines[lines.length - 1]) {
-      lines[lines.length - 1] = candidate
-    } else if (lines.length < 2) {
-      lines.push(word)
-    } else {
-      lines[1] += '…'
-      break
-    }
-  }
-  return lines
-}
-
-/** Where a line from the middle of a box towards a point leaves the box. */
-function edgeOf (node, towards) {
-  const dx = towards.x - node.cx
-  const dy = towards.y - node.cy
-  if (!dx && !dy) return { x: node.cx, y: node.cy }
-
-  const scale = Math.min(
-    Math.abs(dx) > 0.001 ? (node.w / 2) / Math.abs(dx) : Infinity,
-    Math.abs(dy) > 0.001 ? (node.h / 2) / Math.abs(dy) : Infinity
-  )
-  return { x: node.cx + dx * scale, y: node.cy + dy * scale }
-}
-
 const escapeText = text => String(text)
   .replace(/&/g, '&amp;')
   .replace(/</g, '&lt;')
   .replace(/>/g, '&gt;')
+
+/**
+ * Measuring a label without drawing it.
+ *
+ * The boxes are a fixed width, because the drawing is: moving one to fit a
+ * word would pull the balance out of the picture, which is the whole reason
+ * for drawing it by hand. But a label is three labels - the same box holds
+ * "Поля экземпляра", "Поля екземпляра" and "Instance fields" - and they are
+ * not the same length. Whichever of them does not fit is cut and given an
+ * ellipsis, and the whole of it goes into the tooltip, so nothing is lost,
+ * only folded away.
+ */
+const ruler = document.createElement('canvas').getContext('2d')
+
+const shorten = (text, room, size, weight) => {
+  ruler.font = `${weight} ${size}px system-ui, sans-serif`
+  if (ruler.measureText(text).width <= room) return { label: text, cut: false }
+
+  let cut = text
+  while (cut.length > 1 && ruler.measureText(`${cut}…`).width > room) cut = cut.slice(0, -1)
+  return { label: `${cut.trimEnd()}…`, cut: true }
+}
+
+/** One box: the drawing says where and how wide, the level says how tall. */
+const box = (node, shape, text) => {
+  // 11px of air each side, the same as the drawing leaves.
+  const { label, cut } = shorten(text, node.w - 22, shape.size, shape.weight)
+  return `
+    <g class="node" data-key="${escapeText(node.key)}">
+      <rect x="${node.x - node.w / 2}" y="${node.y - shape.h / 2}" width="${node.w}" height="${shape.h}"
+            rx="${shape.h / 2}" ${shape.paint}/>
+      <text x="${node.x}" y="${node.y}" fill="${shape.ink}" font-size="${shape.size}"
+            font-weight="${shape.weight}" text-anchor="middle" dominant-baseline="central">${escapeText(label)}</text>
+      ${cut ? `<title>${escapeText(text)}</title>` : ''}
+    </g>
+  `
+}
 
 class MindMap extends HTMLElement {
   constructor () {
@@ -283,7 +223,6 @@ class MindMap extends HTMLElement {
         <div class="frame">
           <header>
             <h3></h3>
-            <button class="tool all" type="button" title="+/−" aria-label="+/−">⊞</button>
             <button class="tool out" type="button" title="−" aria-label="−">−</button>
             <button class="tool in" type="button" title="+" aria-label="+">+</button>
             <button class="tool fit" type="button" title="⤢" aria-label="⤢">⤢</button>
@@ -299,8 +238,6 @@ class MindMap extends HTMLElement {
             <pre></pre>
             <span class="go"></span>
           </div>
-
-          <footer></footer>
         </div>
       </div>
     `
@@ -310,21 +247,15 @@ class MindMap extends HTMLElement {
       sheet: find('.sheet'),
       heading: find('h3'),
       board: find('.board'),
-      note: find('footer'),
       card: find('.card'),
       cardTitle: find('.card h4'),
       cardDesc: find('.card p'),
       cardCode: find('.card pre'),
       cardGo: find('.card .go'),
       view: { x: 0, y: 0, scale: 1 },
-      closed: new Set()
+      closed: new Set(),
+      cards: new Map()
     })
-
-    // Measuring text without drawing it. The font cannot be read in the
-    // constructor - the element is not in the document yet - so it is asked
-    // for on open, when there is something to ask.
-    this.ruler = document.createElement('canvas').getContext('2d')
-    this.measure = text => this.ruler.measureText(String(text)).width
   }
 
   connectedCallback () {
@@ -333,7 +264,6 @@ class MindMap extends HTMLElement {
     this.shadow.querySelector('.in').onclick = () => this.zoom(1.25)
     this.shadow.querySelector('.out').onclick = () => this.zoom(0.8)
     this.shadow.querySelector('.fit').onclick = () => this.fit()
-    this.shadow.querySelector('.all').onclick = () => this.foldAll()
     this.sheet.onclick = event => { if (event.target === this.sheet) this.close() }
 
     this.escape = event => { if (event.key === 'Escape') this.close() }
@@ -348,17 +278,15 @@ class MindMap extends HTMLElement {
     document.removeEventListener('keydown', this.escape)
   }
 
-  /** The page this map is for. */
   static page () {
     return location.search.slice(1) || 'start-page'
   }
 
   /**
-   * The map file, fetched once per lesson and kept.
-   *
-   * Also the answer to whether this lesson has a map at all: the contents
-   * panel asks before offering the way in, because a line that opens an
-   * apology is worse than no line.
+   * The map file, fetched once per lesson and kept. Also the answer to
+   * whether this lesson has a map at all: the contents panel asks before
+   * offering the way in, because a line that opens an apology is worse than
+   * no line.
    */
   async data () {
     const page = MindMap.page()
@@ -378,94 +306,20 @@ class MindMap extends HTMLElement {
     return !!(await this.data())
   }
 
-  /**
-   * The file's three levels turned into nodes.
-   *
-   * An id is what an arrow points at: the one written down if there is one,
-   * otherwise the anchor. Several items can share an anchor - three rules
-   * all explained in one section - so an arrow that has to reach one of them
-   * in particular asks for an id of its own.
-   */
-  tree (map) {
-    const node = (source, kind, colour) => ({
-      kind,
-      colour,
-      id: source.id || source.anchor || '',
-      title: speak(source.title),
-      anchor: source.anchor || '',
-      desc: speak(source.desc),
-      code: source.code || '',
-      children: []
-    })
-
-    const root = {
-      kind: 'root',
-      colour: INK,
-      id: '',
-      title: speak(map.center) || '',
-      anchor: '',
-      desc: '',
-      code: '',
-      children: []
-    }
-
-    for (const branch of map.branches || []) {
-      const one = node(branch, 'branch', branch.colour || '#0284C7')
-      root.children.push(one)
-
-      for (const group of branch.groups || []) {
-        const two = node(group, 'group', one.colour)
-        one.children.push(two)
-
-        for (const item of group.items || []) {
-          two.children.push(node(item, 'item', one.colour))
-        }
-      }
-    }
-
-    return root
-  }
-
   async open () {
     this.sheet.classList.add('shown')
     this.card.classList.remove('shown')
     document.addEventListener('keydown', this.escape)
 
-    this.ruler.font = `13px ${getComputedStyle(this.board).fontFamily || 'system-ui, sans-serif'}`
-
     const map = await this.data()
     if (!map) {
       this.heading.textContent = ''
       this.board.innerHTML = ''
-      this.note.textContent = ''
       return
     }
 
-    this.root = this.tree(map)
-    this.links = map.links || []
-    this.heading.textContent = this.root.title
-
-    // Folded to the branches, worked out afresh every time, so the map always
-    // opens the same way however it was left.
+    this.heading.textContent = speak(map.center && map.center.title)
     this.closed = new Set()
-    this.fold(this.root, 0)
-
-    this.draw()
-    this.fit()
-  }
-
-  fold (node, depth) {
-    if (depth >= 1 && node.children.length) this.closed.add(node.id || node.title)
-    node.children.forEach(child => this.fold(child, depth + 1))
-  }
-
-  foldAll () {
-    if (this.closed.size) {
-      this.closed.clear()
-    } else {
-      this.closed = new Set()
-      this.fold(this.root, 0)
-    }
     this.draw()
     this.fit()
   }
@@ -476,7 +330,177 @@ class MindMap extends HTMLElement {
     document.removeEventListener('keydown', this.escape)
   }
 
-  /** Redrawn after a branch opened, without moving the view. */
+  /**
+   * The drawing, as drawn.
+   *
+   * Four levels, each with its own height, colours and line, exactly as in
+   * the file this was taken from: a branch is filled with its colour, a
+   * group is the same colour in a wash with a solid outline, an item is
+   * white, and a sub-item is a wash again and hangs off a dashed line.
+   */
+  draw () {
+    const map = this.map
+    const parts = []
+    this.cards = new Map()
+
+    const remember = node => {
+      this.cards.set(node.key, node)
+      return node
+    }
+
+    for (const branch of map.branches || []) {
+      const shut = this.closed.has(branch.id)
+
+      parts.push(`<path class="branch-line" d="${branch.path}" stroke="${branch.colour}" stroke-width="4"/>`)
+
+      if (!shut) {
+        for (const group of branch.groups || []) {
+          const folded = this.closed.has(group.id)
+          parts.push(`<path class="branch-line" d="${group.path}" stroke="${branch.colour}" stroke-width="2.5"/>`)
+
+          if (!folded) {
+            for (const item of group.items || []) {
+              parts.push(`<path class="branch-line" d="${item.path}" stroke="${branch.line}" stroke-width="1.8"/>`)
+
+              for (const sub of item.subItems || []) {
+                parts.push(`
+                  <path class="branch-line" d="${sub.path}" stroke="${branch.line}"
+                        stroke-width="1.5" stroke-dasharray="4,2"/>
+                `)
+                sub.key = `${group.id}:${speak(sub.title)}`
+                parts.push(box(remember(sub), {
+                  h: 26,
+                  size: 12,
+                  weight: 500,
+                  ink: INK,
+                  paint: `fill="${branch.tint}" stroke="${branch.line}" stroke-width="1.5"`
+                }, speak(sub.title)))
+              }
+
+              item.key = `${group.id}:${speak(item.title)}`
+              parts.push(box(remember(item), {
+                h: 30,
+                size: 13,
+                weight: 500,
+                ink: '#334155',
+                paint: `fill="#FFFFFF" stroke="${branch.line}" stroke-width="1.5"`
+              }, speak(item.title)))
+            }
+          }
+
+          group.key = `fold:${group.id}`
+          parts.push(box(remember({ ...group, key: group.key }), {
+            h: 34,
+            size: 13.5,
+            weight: 600,
+            ink: INK,
+            paint: `fill="${branch.tint}" stroke="${branch.colour}" stroke-width="2"`
+          }, `${speak(group.title)} ${folded ? '+' : '−'}`))
+        }
+      }
+
+      branch.key = `fold:${branch.id}`
+      parts.push(box(remember({ ...branch, key: branch.key }), {
+        h: 40,
+        size: 15,
+        weight: 700,
+        ink: '#FFFFFF',
+        paint: `fill="${branch.colour}" filter="url(#shadow)"`
+      }, `${speak(branch.title)} ${shut ? '+' : '−'}`))
+    }
+
+    const centre = map.center
+    parts.push(`
+      <g>
+        <circle cx="${centre.x}" cy="${centre.y}" r="82" fill="#FFFFFF" stroke="#0F172A" stroke-width="3" filter="url(#shadow)"/>
+        <circle cx="${centre.x}" cy="${centre.y}" r="72" fill="${INK}"/>
+        <text x="${centre.x}" y="${centre.y - 17}" fill="#93C5FD" font-family="monospace"
+              font-size="24" font-weight="700" text-anchor="middle">&lt;/&gt;</text>
+        <text x="${centre.x}" y="${centre.y + 20}" fill="#FFFFFF" font-size="19"
+              font-weight="700" text-anchor="middle">${escapeText(speak(centre.title))}</text>
+      </g>
+    `)
+
+    const frame = this.extent(map)
+    this.size = { width: frame.width, height: frame.height }
+
+    this.board.innerHTML = `
+      <svg width="${frame.width}" height="${frame.height}" viewBox="${frame.box}">
+        <defs>
+          <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.1"/>
+          </filter>
+        </defs>
+        ${parts.join('')}
+      </svg>
+    `
+
+    this.svg = this.board.querySelector('svg')
+    this.svg.onclick = event => {
+      if (this.dragged) return
+      const group = event.target.closest('.node')
+      if (!group) return
+
+      const key = group.dataset.key
+      if (key.startsWith('fold:')) {
+        const id = key.slice(5)
+        this.closed.has(id) ? this.closed.delete(id) : this.closed.add(id)
+        this.redraw()
+        return
+      }
+
+      const node = this.cards.get(key)
+      if (node) this.tell(node)
+    }
+  }
+
+  /**
+   * How much room the drawing actually needs.
+   *
+   * Not the viewBox it was drawn with: in the drawing this came from, the
+   * two sub-items of Class Expression sit at x = 20 with a width of 115, so
+   * half of each hangs off the left edge of a box that starts at zero. What
+   * falls outside a viewBox is not clipped by the window - it is not drawn
+   * at all, and no amount of dragging brings it back.
+   *
+   * So the boxes are measured and the frame is drawn round them, with the
+   * declared viewBox taken as a floor rather than a promise.
+   */
+  extent (map) {
+    const edges = { left: 0, top: 0, right: 0, bottom: 0 }
+    const [floorX, floorY, floorW, floorH] = (map.viewBox || '0 0 1600 1060').split(/\s+/).map(Number)
+    Object.assign(edges, { left: floorX, top: floorY, right: floorX + floorW, bottom: floorY + floorH })
+
+    const stretch = (node, h) => {
+      if (!node || node.x === undefined) return
+      edges.left = Math.min(edges.left, node.x - node.w / 2)
+      edges.right = Math.max(edges.right, node.x + node.w / 2)
+      edges.top = Math.min(edges.top, node.y - h / 2)
+      edges.bottom = Math.max(edges.bottom, node.y + h / 2)
+    }
+
+    for (const branch of map.branches || []) {
+      stretch(branch, 40)
+      for (const group of branch.groups || []) {
+        stretch(group, 34)
+        for (const item of group.items || []) {
+          stretch(item, 30)
+          for (const sub of item.subItems || []) stretch(sub, 26)
+        }
+      }
+    }
+
+    const pad = 24
+    const box = [
+      edges.left - pad,
+      edges.top - pad,
+      edges.right - edges.left + pad * 2,
+      edges.bottom - edges.top + pad * 2
+    ]
+    return { box: box.join(' '), width: box[2], height: box[3] }
+  }
+
+  /** Redrawn after a branch folded, without moving the view. */
   redraw () {
     const view = { ...this.view }
     this.draw()
@@ -484,297 +508,15 @@ class MindMap extends HTMLElement {
     this.apply()
   }
 
-  draw () {
-    const root = this.root
-    const links = this.links || []
-    const places = new Map()
-    const key = node => node.id || node.title
-
-    // A folded branch keeps its children - they are what unfolds - but
-    // nothing below it is measured, placed or drawn.
-    const prune = node => {
-      node.folded = this.closed.has(key(node)) && node.children.length > 0
-      node.shown = node.folded ? [] : node.children
-      node.shown.forEach(prune)
-    }
-    prune(root)
-
-    const widths = []
-    const walk = (node, depth) => {
-      node.depth = depth
-      node.lines = wrap(node.title || '…', this.measure)
-      node.w = Math.min(MAX_WIDTH, Math.max(...node.lines.map(this.measure))) + PAD_X * 2
-      node.h = node.lines.length * LINE + 18
-      widths[depth] = Math.max(widths[depth] || 0, node.w)
-      node.shown.forEach(child => walk(child, depth + 1))
-    }
-    walk(root, 0)
-
-    // The middle is drawn as a circle, so it takes a circle's room: a square
-    // the size of its diameter, worked out before anything is spaced against
-    // it. Left as the width of its own text, the first ring cut through it.
-    root.w = root.h = (Math.max(root.w, root.h) / 2 + 25) * 2
-    widths[0] = root.w
-
-    /*
-     * Radial: the subject in the middle, what it is made of going outwards.
-     *
-     * Every leaf gets a share of the circle in proportion to how WIDE its
-     * box is, because width is what a box takes up along a ring; weighed by
-     * height, branches of one word each were given equal slivers and sat on
-     * top of one another. A branch takes the sum of its leaves and sits in
-     * the middle of its own span.
-     */
-    const weigh = node => {
-      node.weight = node.shown.length
-        ? node.shown.reduce((total, child) => total + weigh(child), 0)
-        : node.w + GAP_X
-      return node.weight
-    }
-    weigh(root)
-
-    const rings = [0]
-    widths.forEach((w, depth) => {
-      if (!depth) return
-      rings[depth] = rings[depth - 1] + widths[depth - 1] / 2 + w / 2 + GAP_X
-    })
-
-    // Does every box fit the slice it was given? The same angle is a hand's
-    // width near the middle and an arm's length at the rim, so it is asked of
-    // each node and every radius grows by the worst answer.
-    const everyone = []
-    const gather = node => { everyone.push(node); node.shown.forEach(gather) }
-    gather(root)
-
-    let stretch = 1
-    for (const node of everyone) {
-      if (!node.depth || !rings[node.depth]) continue
-      const slice = (node.weight / root.weight) * 2 * Math.PI
-      stretch = Math.max(stretch, ((node.w + GAP_X / 2) / slice) / rings[node.depth])
-    }
-    if (stretch > 1) for (let depth = 1; depth < rings.length; depth++) rings[depth] *= stretch
-
-    /*
-     * Where each box sits on its ring.
-     *
-     * The branches get equal shares of the turn, not shares in proportion to
-     * what hangs off them. Proportional is the honest division and it is the
-     * ugly one: four branches of unequal size come out at odd angles and the
-     * picture looks like it fell over. Equal shares put them at the quarters
-     * and the thing is symmetrical, which is most of what makes a drawing
-     * like this readable. Inside a branch the division is proportional
-     * again, because there the crowding is real.
-     *
-     * The first share is turned back by half of itself, so with four
-     * branches they stand on the diagonals rather than straight up and
-     * sideways - more room for the words, and the shape the eye expects
-     * from a map like this.
-     */
-    const spread = (node, depth, from, span) => {
-      node.angle = from + span / 2
-      node.radius = rings[depth]
-
-      const equally = depth === 0
-      let cursor = from
-      for (const child of node.shown) {
-        const share = equally
-          ? span / node.shown.length
-          : span * (child.weight / node.weight)
-        spread(child, depth + 1, cursor, share)
-        cursor += share
-      }
-      if (key(node)) places.set(key(node), node)
-    }
-
-    const half = root.shown.length ? Math.PI / root.shown.length : 0
-    spread(root, 0, -Math.PI / 2 - half, Math.PI * 2)
-
-    const all = everyone
-    for (const node of all) {
-      node.cx = Math.cos(node.angle) * node.radius
-      node.cy = Math.sin(node.angle) * node.radius
-      node.x = node.cx - node.w / 2
-      node.y = node.cy - node.h / 2
-    }
-
-    const left = Math.min(...all.map(n => n.x)) - 56
-    const top = Math.min(...all.map(n => n.y)) - 56
-    for (const node of all) {
-      node.x -= left
-      node.y -= top
-      node.cx -= left
-      node.cy -= top
-    }
-    const middle = { x: -left, y: -top }
-
-    const width = Math.max(...all.map(n => n.x + n.w)) + 56
-    const height = Math.max(...all.map(n => n.y + n.h)) + 56
-
-    /*
-     * A branch leaves its parent heading outwards and arrives at its child
-     * heading outwards too - a cubic with both handles laid along the radius
-     * of the ring each end sits on.
-     *
-     * A single bend through the midpoint, which is what this was, gives a
-     * line that leaves sideways and arrives sideways: it reads as a wire
-     * strung between two pins. Tangents along the radius give the curve that
-     * grows out of the middle, which is the shape the drawing is copying.
-     */
-    const edges = all.filter(n => n.shown.length).map(node => node.shown.map(child => {
-      const reach = (child.radius - node.radius) * 0.55
-      const out = {
-        x: node.cx + Math.cos(node.angle) * reach,
-        y: node.cy + Math.sin(node.angle) * reach
-      }
-      const into = {
-        x: child.cx - Math.cos(child.angle) * reach,
-        y: child.cy - Math.sin(child.angle) * reach
-      }
-      const thick = child.kind === 'branch' ? 3 : child.kind === 'group' ? 2 : 1.5
-      return `<path class="edge" stroke="${child.kind === 'item' ? LINE_COLOUR : child.colour}"
-                    stroke-width="${thick}"
-                    d="M${node.cx} ${node.cy} C${out.x} ${out.y} ${into.x} ${into.y} ${child.cx} ${child.cy}"/>`
-    }).join('')).join('')
-
-    const legend = []
-    const crosses = links.map((link, index) => {
-      const from = places.get(link.from)
-      const to = places.get(link.to)
-      if (!from || !to) return ''
-
-      const mid = { x: (from.cx + to.cx) / 2, y: (from.cy + to.cy) / 2 }
-      const away = { x: mid.x - middle.x, y: mid.y - middle.y }
-      const reach = Math.hypot(away.x, away.y) || 1
-      const bow = 80 + index * 18
-      const control = {
-        x: mid.x + (away.x / reach) * bow,
-        y: mid.y + (away.y / reach) * bow
-      }
-
-      const start = edgeOf(from, control)
-      const end = edgeOf(to, control)
-      const apex = {
-        x: (start.x + end.x) / 4 + control.x / 2,
-        y: (start.y + end.y) / 4 + control.y / 2
-      }
-      const number = index + 1
-      legend.push({ number, text: speak(link.note) || `${from.title} → ${to.title}` })
-
-      return `
-        <path class="cross" d="M${start.x} ${start.y} Q${control.x} ${control.y} ${end.x} ${end.y}"
-              marker-end="url(#arrow)"/>
-        <g class="mark">
-          <circle cx="${apex.x}" cy="${apex.y}" r="10"/>
-          <text x="${apex.x}" y="${apex.y}" text-anchor="middle">${number}</text>
-        </g>
-      `
-    }).join('')
-
-    const handle = node => {
-      if (!node.children.length || node === root) return ''
-      const hx = node.cx + Math.cos(node.angle) * (node.w / 2 + 11)
-      const hy = node.cy + Math.sin(node.angle) * (node.h / 2 + 11)
-      return `
-        <g class="handle" data-fold="${escapeText(key(node))}">
-          <circle cx="${hx}" cy="${hy}" r="9"/>
-          <text x="${hx}" y="${hy}" text-anchor="middle">${node.folded ? '+' : '−'}</text>
-        </g>
-      `
-    }
-
-    // Filled for a branch, tinted for a group, white for an item: three
-    // levels you can tell apart without reading them.
-    const paint = node => {
-      if (node.kind === 'root') return 'fill="' + INK + '"'
-      if (node.kind === 'branch') return `fill="${node.colour}"`
-      if (node.kind === 'group') return `fill="${node.colour}" fill-opacity="0.12" stroke="${node.colour}" stroke-width="2"`
-      return `fill="#fff" stroke="${node.colour}" stroke-opacity="0.5" stroke-width="1.5"`
-    }
-
-    // The rings themselves, drawn faintly. The levels are the point of a
-    // map like this - everything the same distance out is the same kind of
-    // thing - and until they were drawn the reader had to work that out
-    // from the boxes.
-    const circles = rings.slice(1).map(r => `
-      <circle class="ring" cx="${middle.x}" cy="${middle.y}" r="${r}"/>
-    `).join('')
-
-    // The middle is a circle, not a box with its corners rounded off: it is
-    // the one thing on the page that is not a label, and it should not look
-    // like one.
-    const heart = root.w / 2 - 9
-    const centre = `
-      <g class="node root" data-key="${escapeText(key(root))}">
-        <circle class="halo" cx="${root.cx}" cy="${root.cy}" r="${heart + 9}"/>
-        <circle class="core" cx="${root.cx}" cy="${root.cy}" r="${heart}"/>
-        ${root.lines.map((line, index) => `
-          <text x="${root.cx}" y="${root.cy + (index - (root.lines.length - 1) / 2) * LINE}" text-anchor="middle">${escapeText(line)}</text>
-        `).join('')}
-      </g>
-    `
-
-    const nodes = all.filter(node => node !== root).map(node => `
-      <g class="node ${node.kind} ${node.folded ? 'folded' : ''}" data-key="${escapeText(key(node))}">
-        <rect x="${node.x}" y="${node.y}" width="${node.w}" height="${node.h}" rx="${node.h / 2}" ${paint(node)}/>
-        ${node.lines.map((line, index) => `
-          <text x="${node.cx}" y="${node.cy + (index - (node.lines.length - 1) / 2) * LINE}" text-anchor="middle">${escapeText(line)}</text>
-        `).join('')}
-      </g>
-      ${handle(node)}
-    `).join('')
-
-    this.board.innerHTML = `
-      <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
-        <defs>
-          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="#F97316"/>
-          </marker>
-        </defs>
-        ${circles}${edges}${crosses}${nodes}${centre}
-      </svg>
-    `
-
-    this.svg = this.board.querySelector('svg')
-    this.size = { width, height }
-    this.places = places
-
-    this.svg.onclick = event => {
-      if (this.dragged) return
-
-      const fold = event.target.closest('.handle')
-      if (fold) {
-        const id = fold.dataset.fold
-        this.closed.has(id) ? this.closed.delete(id) : this.closed.add(id)
-        this.redraw()
-        return
-      }
-
-      const group = event.target.closest('.node')
-      if (!group) return
-      const node = places.get(group.dataset.key)
-      if (node) this.tell(node)
-    }
-
-    this.note.innerHTML = legend.length
-      ? legend.map(item => `<span class="legend"><b>${item.number}</b>${escapeText(item.text)}</span>`).join('')
-      : ''
-  }
-
-  /**
-   * What a click on a node says.
-   *
-   * An item has a sentence and a few lines of code; a branch or a group
-   * usually has neither, and for them the click is only a way into the
-   * lesson. Nothing at all to say and no section to go to - the card would
-   * be an empty box, so it does not open.
-   */
+  /** What a click on an item says: the sentence, the code, and the way in. */
   tell (node) {
-    if (!node.desc && !node.code && !node.anchor) return
+    const desc = speak(node.desc)
+    if (!desc && !node.code && !node.anchor) return
 
-    this.cardTitle.textContent = node.title
-    this.cardDesc.textContent = node.desc
-    this.cardDesc.style.display = node.desc ? 'block' : 'none'
-    this.cardCode.textContent = node.code
+    this.cardTitle.textContent = speak(node.title)
+    this.cardDesc.textContent = desc
+    this.cardDesc.style.display = desc ? 'block' : 'none'
+    this.cardCode.textContent = node.code || ''
     this.cardCode.style.display = node.code ? 'block' : 'none'
 
     const words = { ru: 'Читать в уроке →', ua: 'Читати в уроці →', eng: 'Read it in the lesson →' }
@@ -805,36 +547,24 @@ class MindMap extends HTMLElement {
     this.apply()
   }
 
-  /**
-   * The whole picture in the window, centred.
-   *
-   * Allowed to grow, not only to shrink: folded, the map is four branches
-   * round a middle, and held to life size it sat in the corner of a wide
-   * window like a postage stamp. Half again is as far as it goes - beyond
-   * that the boxes look like buttons.
-   */
+  /** The whole drawing in the window, centred. */
   fit () {
     if (!this.svg) return
-    const box = this.board.getBoundingClientRect()
-    const scale = Math.min(1.5, (box.width - 64) / this.size.width, (box.height - 64) / this.size.height)
+    const place = this.board.getBoundingClientRect()
+    const scale = Math.min(1.4, (place.width - 32) / this.size.width, (place.height - 32) / this.size.height)
     this.view = {
       scale,
-      x: (box.width - this.size.width * scale) / 2,
-      y: (box.height - this.size.height * scale) / 2
+      x: (place.width - this.size.width * scale) / 2,
+      y: (place.height - this.size.height * scale) / 2
     }
     this.apply()
   }
 
   /**
    * Dragging the picture about - and letting a press that is not a drag
-   * reach the node under it.
-   *
-   * The capture is taken only once the pointer has actually moved. Taken on
-   * the press, as it was, it makes the board the target of everything that
-   * follows: the click then arrives at the board instead of the box that was
-   * pressed, and nothing on the map answered a click at all. The buttons in
-   * the header went on working, which is what made it look like the map was
-   * fine and the nodes were not.
+   * reach the box under it. The capture is taken on the first movement, not
+   * on the press: taken on the press it makes the board the target of
+   * everything that follows, and nothing on the map answers a click at all.
    */
   grab (event) {
     if (!this.svg) return
@@ -860,8 +590,6 @@ class MindMap extends HTMLElement {
       this.board.removeEventListener('pointermove', move)
       this.board.removeEventListener('pointerup', drop)
       this.board.removeEventListener('pointercancel', drop)
-      // The click comes after the release; a drag that ended on a node
-      // should not also open it.
       setTimeout(() => { this.dragged = false })
     }
 
