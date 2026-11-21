@@ -1,6 +1,7 @@
 # JS lessons
 
-[**Open the course**](https://garevna.github.io/js-lessons)
+[**Open the course**](https://js-lessons.pp.ua) · the same course on
+[garevna.github.io](https://garevna.github.io/js-lessons)
 
 A JavaScript course of 167 lessons in Russian, English and Ukrainian. The
 lessons are written in a small markup language of its own and rendered in the
