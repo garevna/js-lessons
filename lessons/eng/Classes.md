@@ -57,6 +57,42 @@ class User {
 
 ___________________________________________________
 
+### ![ico-20 icon] The rules⟪The_rules⟫
+
+A class is not declared the way a function is, and three of the differences are worth learning at once - they are what trips people up.
+
+![ico-20 pin] **A class does not hoist.** Before the line that declares it the class already exists, but it sits in the **_temporal dead zone_**, and reaching for it there is a **_^^ReferenceError^^_**.
+
+A function is different: one declared with ~function~ can be called above its own declaration, and it works. A class cannot.
+
+~~~js
+sayHi()             // works: the function hoists
+new User('Piter')   // ReferenceError: Cannot access 'User' before initialization
+
+function sayHi () {
+  console.log('Hi')
+}
+
+class User {
+  constructor (name) {
+    this.name = name
+  }
+}
+~~~
+
+![ico-20 pin] **A class is called only with _new_.** It is a function - but not one that can simply be called: without **_new_** you get a **_^^TypeError^^_**.
+
+~~~demo
+> class User {}
+< undefined
+> User('Piter')
+! Uncaught TypeError: Class constructor User cannot be invoked without 'new'
+~~~
+
+![ico-20 pin] **The body of a class always runs in strict mode** - the _'use strict'_ directive is not needed, it applies by itself. That is where the behaviour of **_this_** on a lost context comes from, which we will come back to.
+
+___________________________________________________
+
 ### ![ico-20 icon] Private class fields⟪Private_class_fields⟫
 
 ••The **_#_** symbol before a property or method name declares it as private (_Private class fields_). This is standard **ES2022** syntax.••
@@ -275,14 +311,14 @@ Only once all the fields from the class body have been successfully instantiated
 3. The line _this.name = name_ is executed, adding another instance property to the instance.
 ••••
 
-To prove this, let’s do the following: instead of simply assigning string values to properties, we’ll call the ~getValue()~ function, which will print the name of the variable being initialised to the console.
+To prove this, let’s do the following: instead of simply assigning string values to properties, we’ll call the ~output()~ function, which will print the name of the variable being initialised to the console.
 
 ♦♦♦4♦♦♦
 
 ~~~js
-function getValue (stepName) {
+function output (stepName, value) {
   console.log(`-> In progress: ${stepName}`)
-  return 'value'
+  return value
 }
 ~~~
 
@@ -290,14 +326,13 @@ function getValue (stepName) {
 
 ~~~js
 class TestOrder {
-  firstField = getValue('Class field (firstField)')
+  firstField = output('Class field (firstField)', 1)
 
   constructor () {
-    getValue('Code within the constructor')
-    this.secondField = 'created in the constructor'
+    this.secondField = output('Code within the constructor', 2)
   }
 
-  thirdField = getValue('Class field (thirdField)')
+  thirdField = output('Class field (thirdField)', 3)
 }
 
 const instance = new TestOrder()
@@ -309,20 +344,19 @@ This will allow us to track the order in which the variables are initialised.
 $ node
 Welcome to Node.js v22.11.0.
 Type '.help' for more information.
-> function getValue(stepName) {
+> function output (stepName, value) {
 ...   console.log(`-> In progress: ${stepName}`)
-...   return 'value'
+...   return value
 ... }
 < undefined
 > class TestOrder {
-...   firstField = getValue('Class field (firstField)')
+...   firstField = output('Class field (firstField)', 1)
 ...
 ...   constructor() {
-...     getValue('Code within the constructor')
-...     this.secondField = 'created in the constructor'
+...     this.secondField = output('Code within the constructor', 2)
 ...   }
 ...
-...   thirdField = getValue('Class field (thirdField)')
+...   thirdField = output('Class field (thirdField)', 3)
 ... }
 < undefined
 > const instance = new TestOrder()
@@ -983,6 +1017,31 @@ newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }], 5, '#f0f')
 
 ___________________________________________________
 
+### ![ico-20 icon] instanceof⟪instanceof⟫
+
+The **_instanceof_** operator answers whether an object was made by this class - or by any of its ancestors. It walks the prototype chain; it does not compare names.
+
+~~~demo
+> class Animal {}
+< undefined
+> class Dog extends Animal {}
+< undefined
+> const dog = new Dog()
+< undefined
+> dog instanceof Dog
+< true
+> dog instanceof Animal
+< true
+> dog instanceof Array
+< false
+~~~
+
+That is why **_dog instanceof Animal_** is _true_ as well: **_Animal_** stands in the same chain, and the check climbs it all the way up.
+
+![ico-20 warn] The check looks at the chain, not at whoever called **_new_**. Replace an object's prototype after it was made and the answer changes. **_instanceof_** says what is in the chain now, not who made it.
+
+___________________________________________________
+
 ### ![ico-20 icon] super⟪super⟫
 
 Methods of the parent class are accessible in the child class via the keyword **~super~**.
@@ -1331,6 +1390,72 @@ Now the method **_~resizeCanvas()~_** will be called in the global scope and the
 ••name: ''••
 
 because ~this~ inside **_~resizeCanvas()~_** now points to the global object (~window~).
+
+___________________________________________________
+
+## ![ico-25 icon] Under the bonnet⟪Under_the_bonnet⟫
+
+Everything above is how a class is used. What follows is three facts about what it actually is - without them it is hard to see why it behaves the way it does.
+
+### ![ico-20 icon] A class is a function⟪A_class_is_a_function⟫
+
+Not ‘almost a function’, not ‘a wrapper around one’. **_typeof_** answers literally:
+
+~~~demo
+> class User {}
+< undefined
+> typeof User
+< 'function'
+~~~
+
+Class syntax is a convenient way of writing what used to be written by hand: a constructor function with its methods on its **_prototype_**. The engine does the same thing, only more strictly and in fewer words.
+
+___________________________________________________
+
+### ![ico-20 icon] Methods are not enumerable⟪Methods_are_not_enumerable⟫
+
+Methods put on the **_prototype_** are given **_enumerable: false_**. A **_for..in_** loop therefore does not see them and **_Object.keys()_** does not list them - unlike the instance fields.
+
+~~~demo
+> class User {
+...   name = 'Piter'
+...   login () { console.log('in') }
+... }
+< undefined
+> const user = new User()
+< undefined
+> Object.keys(user)
+< ► ['name']
+> Object.keys(User.prototype)
+< ► []
+> User.prototype.login
+< ƒ login () { console.log('in') }
+~~~
+
+![ico-20 pin] This is deliberate: going over an object, one almost always wants its data and not its behaviour. The method has not gone anywhere - it is there and it is callable, it simply does not turn up in the loop.
+
+___________________________________________________
+
+### ![ico-20 icon] Statics inherit by a chain of their own⟪Statics_inherit_by_a_chain_of_their_own⟫
+
+Static methods reach the heir as well - the same prototype machinery, but between the classes themselves rather than between their instances.
+
+~~~demo
+> class Animal {
+...   static kind () { return 'animal' }
+... }
+< undefined
+> class Dog extends Animal {}
+< undefined
+> Dog.kind()
+< 'animal'
+> Object.getPrototypeOf(Dog) === Animal
+< true
+> Object.getPrototypeOf(Dog.prototype) === Animal.prototype
+< true
+~~~
+
+![ico-20 pin] **_extends_** ties two chains at once: **_Dog.prototype_** inherits from **_Animal.prototype_**, which is about the instances, and **_Dog_** itself inherits from **_Animal_**, which is about the statics. Two inheritances in one word.
 
 ___________________________________________________
 

@@ -57,6 +57,42 @@ class User {
 
 ___________________________________________________
 
+### ![ico-20 icon] Правила оголошення⟪The_rules⟫
+
+Клас оголошується не так, як функція, і три відмінності варто запам'ятати одразу: саме на них спотикаються найчастіше.
+
+![ico-20 pin] **Клас не спливає.** До рядка оголошення він уже існує, але перебуває в «мертвій зоні» (**_temporal dead zone_**), і будь-яке звернення до нього звідти — **_^^ReferenceError^^_**.
+
+З функцією так не вийде: оголошену через ~function~ можна викликати вище за її оголошення, і це працює. З класом — ні.
+
+~~~js
+sayHi()             // працює: функція спливає
+new User('Piter')   // ReferenceError: Cannot access 'User' before initialization
+
+function sayHi () {
+  console.log('Hi')
+}
+
+class User {
+  constructor (name) {
+    this.name = name
+  }
+}
+~~~
+
+![ico-20 pin] **Клас викликається лише через _new_.** Це функція — але не та, яку можна просто покликати: без **_new_** буде **_^^TypeError^^_**.
+
+~~~demo
+> class User {}
+< undefined
+> User('Piter')
+! Uncaught TypeError: Class constructor User cannot be invoked without 'new'
+~~~
+
+![ico-20 pin] **Тіло класу завжди виконується в суворому режимі** — директиву _'use strict'_ писати не треба, вона діє сама. Звідси й поведінка **_this_** при втраті контексту, до якої ми ще повернемося.
+
+___________________________________________________
+
 ### ![ico-20 icon] Приватні властивості⟪Private_class_fields⟫
 
 ••Символ **_#_** перед іменем властивості або методу оголошує його приватним (_Private class fields_). Це стандартний синтаксис **ES2022**.••
@@ -275,14 +311,14 @@ ___________________________________________________
 3. Виконується рядок _this.name = name_, додаючи екземпляру ще одну власну властивість.
 ••••
 
-Щоб це довести, зробимо так: замість того, щоб просто присвоювати властивостям рядкові значення, будемо викликати функцію ~getValue()~, яка виводитиме в консоль ім’я змінної, що ініціалізується.
+Щоб це довести, зробимо так: замість того, щоб просто присвоювати властивостям рядкові значення, будемо викликати функцію ~output()~, яка виводитиме в консоль ім’я змінної, що ініціалізується.
 
 ♦♦♦4♦♦♦
 
 ~~~js
-function getValue (stepName) {
+function output (stepName, value) {
   console.log(`-> Виконується: ${stepName}`)
-  return 'значення'
+  return value
 }
 ~~~
 
@@ -290,14 +326,13 @@ function getValue (stepName) {
 
 ~~~js
 class TestOrder {
-  firstField = getValue('Поле класу (firstField)')
+  firstField = output('Поле класу (firstField)', 1)
 
   constructor () {
-    getValue('Код у конструкторі')
-    this.secondField = 'створено в конструкторі'
+    this.secondField = output('Код у конструкторі', 2)
   }
 
-  thirdField = getValue('Поле класу (thirdField)')
+  thirdField = output('Поле класу (thirdField)', 3)
 }
 
 const instance = new TestOrder()
@@ -309,20 +344,19 @@ const instance = new TestOrder()
 $ node
 Welcome to Node.js v22.11.0.
 Type '.help' for more information.
-> function getValue(stepName) {
+> function output (stepName, value) {
 ...   console.log(`-> Виконується: ${stepName}`)
-...   return 'значення'
+...   return value
 ... }
 < undefined
 > class TestOrder {
-...   firstField = getValue('Поле класу (firstField)')
+...   firstField = output('Поле класу (firstField)', 1)
 ...
 ...   constructor() {
-...     getValue('Код у конструкторі')
-...     this.secondField = 'створено в конструкторі'
+...     this.secondField = output('Код у конструкторі', 2)
 ...   }
 ...
-...   thirdField = getValue('Поле класу (thirdField)')
+...   thirdField = output('Поле класу (thirdField)', 3)
 ... }
 < undefined
 > const instance = new TestOrder()
@@ -983,6 +1017,31 @@ newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }], 5, '#f0f')
 
 ___________________________________________________
 
+### ![ico-20 icon] instanceof⟪instanceof⟫
+
+Оператор **_instanceof_** відповідає на питання, чи створено об'єкт цим класом — або будь-яким його предком. Він іде ланцюжком прототипів, а не порівнює імена.
+
+~~~demo
+> class Animal {}
+< undefined
+> class Dog extends Animal {}
+< undefined
+> const dog = new Dog()
+< undefined
+> dog instanceof Dog
+< true
+> dog instanceof Animal
+< true
+> dog instanceof Array
+< false
+~~~
+
+Тому **_dog instanceof Animal_** — теж _true_: **_Animal_** стоїть у тому самому ланцюжку, яким перевірка піднімається до самого кінця.
+
+![ico-20 warn] Перевірка дивиться на ланцюжок, а не на того, хто викликав **_new_**. Підмініть об'єкту прототип після створення — і відповідь зміниться. **_instanceof_** каже, що в об'єкта в ланцюжку зараз, а не хто його зробив.
+
+___________________________________________________
+
 ### ![ico-20 icon] super⟪super⟫
 
 Методи батьківського класу доступні в дочірньому класі за допомогою ключового слова **~super~**.
@@ -1331,6 +1390,72 @@ window.onresize = Canvas.resizeCanvas
 ••name: ''••
 
 оскільки ~this~ всередині **_~resizeCanvas()~_** тепер вказує на глобальний об’єкт (~window~).
+
+___________________________________________________
+
+## ![ico-25 icon] Під капотом⟪Under_the_bonnet⟫
+
+Усе, що було вище, — це те, як класом користуються. Далі — три факти про те, чим він є насправді. Без них важко зрозуміти, чому він поводиться саме так.
+
+### ![ico-20 icon] Клас — це функція⟪A_class_is_a_function⟫
+
+Не «майже функція» і не «обгортка над функцією». **_typeof_** відповідає буквально:
+
+~~~demo
+> class User {}
+< undefined
+> typeof User
+< 'function'
+~~~
+
+Синтаксис класів — зручний запис того, що раніше писали руками: функція-конструктор і методи в її **_prototype_**. Движок робить те саме, тільки суворіше й коротше.
+
+___________________________________________________
+
+### ![ico-20 icon] Методи не перелічуються⟪Methods_are_not_enumerable⟫
+
+Методи, записані в **_prototype_**, отримують прапорець **_enumerable: false_**. Тому цикл **_for..in_** їх не бачить і **_Object.keys()_** не показує — на відміну від полів екземпляра.
+
+~~~demo
+> class User {
+...   name = 'Piter'
+...   login () { console.log('in') }
+... }
+< undefined
+> const user = new User()
+< undefined
+> Object.keys(user)
+< ► ['name']
+> Object.keys(User.prototype)
+< ► []
+> User.prototype.login
+< ƒ login () { console.log('in') }
+~~~
+
+![ico-20 pin] Так і задумано: перебираючи об'єкт, майже завжди хочуть його дані, а не його поведінку. Метод нікуди не зник — він на місці й викликається, просто не потрапляє в перебір.
+
+___________________________________________________
+
+### ![ico-20 icon] Статика успадковується своїм ланцюжком⟪Statics_inherit_by_a_chain_of_their_own⟫
+
+Статичні методи теж дістаються нащадку — і це та сама механіка прототипів, тільки не в екземплярів, а в самих класів.
+
+~~~demo
+> class Animal {
+...   static kind () { return 'animal' }
+... }
+< undefined
+> class Dog extends Animal {}
+< undefined
+> Dog.kind()
+< 'animal'
+> Object.getPrototypeOf(Dog) === Animal
+< true
+> Object.getPrototypeOf(Dog.prototype) === Animal.prototype
+< true
+~~~
+
+![ico-20 pin] **_extends_** пов'язує одразу два ланцюжки: **_Dog.prototype_** успадковує від **_Animal.prototype_** — це про екземпляри, і сам **_Dog_** успадковує від **_Animal_** — це про статику. Два різні успадкування одним словом.
 
 ___________________________________________________
 
