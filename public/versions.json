@@ -449,10 +449,10 @@
 	"ua/web-workers.md": "a64505e30fb3",
 	"ua/webpack.md": "2fbe94dcf8a7",
 	"ua/while.md": "a01e5531d883",
-	"index.js": "cbcc9f314ada",
+	"index.js": "37305d28338d",
 	"content.worker.js": "39a4e66ff7dc",
 	"icons.worker.js": "d4a4f4dfd9fa",
-	"main-menu.js": "e734b94597d3",
-	"donate.js": "cb69848582a2",
+	"main-menu.js": "84bd248d5421",
+	"donate.js": "66ce787810e8",
 	"registerServiceWorker.js": "ed71cdcea03a"
 }

@@ -17,6 +17,7 @@ export const mainMenuTemplate = `
   </div>
 </aside>
 
-<donate-component size="48" id="top-donate" />
-<feedback-widget id="top-message"></feedback-widget>
+<!-- One button where the donate button and the message button used to stand
+     side by side: it opens a choice between them. See author-widget.js. -->
+<author-widget size="48" id="top-author"></author-widget>
 `

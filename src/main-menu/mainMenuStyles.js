@@ -55,30 +55,18 @@ let rawSource = `
   letter-spacing: 2;
 }
 
-#top-donate {
+/* One widget stands here now: the starry button, which opens a choice
+   between writing to the author and supporting the course. Until it there
+   were two - #top-donate and #top-message - side by side in a bar that also
+   carries the hamburger and the title, and below 480px there was no room
+   left for the title at all. */
+#top-author {
   position: absolute;
   top: 0;
   right: 108px;
   cursor: pointer;
   z-index: 504;
   transition: all .5s;
-}
-
-/* Left of the donate widget, in the panel that is there anyway. The page
-   footer is what a floating button in the corner covers on a phone after a
-   scroll, and the title in this bar disappears below 480px - which is
-   exactly where the room for this comes from. */
-#top-message {
-  position: absolute;
-  top: 14px;
-  right: 170px;
-  cursor: pointer;
-  z-index: 504;
-  transition: all .5s;
-}
-
-@media screen and (max-width: 480px), screen and (max-height: 480px) {
-  #top-message { top: 12px; right: 164px; }
 }
 
 .go-to-home {

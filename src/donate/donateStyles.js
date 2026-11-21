@@ -23,7 +23,11 @@ const rawSource = `
     background: #fbfbfb;
     border: solid 1px #999;
     padding: 40px 24px 24px 24px;
-    border-radius: 4px;
+
+    /* 8px, the same as the message panel and every button in both. Two
+       popups that open from one widget should not round their corners
+       differently. */
+    border-radius: 8px;
     box-shadow: 8px 8px 12px #0007;
     transition: all .5s;
     z-index: 505;
@@ -53,14 +57,14 @@ const rawSource = `
   .pay-button {
     display: block;
     margin: 16px 16px 4px 0;
-    padding: 10px;
+    padding: 12px;
     background: #09b;
     color: #fff;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     text-align: center;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 8px;
     transition: background .2s;
   }
 
@@ -82,7 +86,7 @@ const rawSource = `
     background: #333;
     color: #fff;
     font-size: 12px;
-    border-radius: 3px;
+    border-radius: 4px;
     pointer-events: none;
     opacity: 0;
     transition: opacity .3s;

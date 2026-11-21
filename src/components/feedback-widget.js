@@ -124,6 +124,15 @@ class FeedbackWidget extends HTMLElement {
   }
 
   connectedCallback () {
+    // "headless": somebody else provides the button.
+    //
+    // In the top bar this widget sits inside <author-widget>, which offers
+    // one starry button for both writing to the author and supporting the
+    // course, and opens this panel through open() below. Its own icon would
+    // be a second button for the same thing, which is the crowding the
+    // arrangement was made to undo.
+    if (this.hasAttribute('headless')) this.button.style.display = 'none'
+
     this.button.onclick = () => this.toggle(true)
     this.shadow.querySelector('.close').onclick = () => this.toggle(false)
     this.sendButton.onclick = () => this.send()
@@ -172,6 +181,12 @@ class FeedbackWidget extends HTMLElement {
 
     view[on ? 'addEventListener' : 'removeEventListener']('resize', this.onKeyboard)
     if (!on) this.panel.style.maxHeight = ''
+  }
+
+  /** The only way in from outside: the shadow root is closed, so a host that
+   *  draws its own button has no panel to reach for - only this. */
+  open () {
+    this.toggle(true)
   }
 
   toggle (open) {
@@ -248,6 +263,13 @@ class FeedbackWidget extends HTMLElement {
       this.badge.textContent = '0'
       this.button.classList.remove('has-answers')
     }
+
+    // Said out loud for whoever draws the button. Headless, the badge above
+    // is hidden along with the icon it sits on, and an answer would arrive
+    // with nothing on the page to show it.
+    this.dispatchEvent(new CustomEvent('answers', {
+      detail: { count: Number(this.badge.textContent) || 0 }
+    }))
 
     this.list.innerHTML = this.messages.map(message => `
       <article class="message">

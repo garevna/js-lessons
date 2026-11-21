@@ -1,5 +1,6 @@
 import './main-menu-item'
 import './search-component'
+import './author-widget'
 import { createPath } from './createPath'
 import { createElem } from './createElem'
 import { getContentWorker } from './getContentWorker'
@@ -86,10 +87,10 @@ class MainMenuComponent extends HTMLElement {
   connectedCallback () {
     this.shadow.innerHTML += mainMenuTemplate
 
-    const [svg, backShadow, donate, checkbox, menu, searchInput, homeButton] = [
+    const [svg, backShadow, author, checkbox, menu, searchInput, homeButton] = [
       'svg-nav-panel',
       '#main-menu-shadow',
-      '#top-donate',
+      '#top-author',
       '#menuToggle > input[type="checkbox"]',
       '#menu',
       '#search-input',
@@ -99,7 +100,7 @@ class MainMenuComponent extends HTMLElement {
     Object.assign(this, {
       svg,
       backShadow,
-      donate,
+      author,
       checkbox,
       menu,
       searchInput,
@@ -108,7 +109,6 @@ class MainMenuComponent extends HTMLElement {
     })
 
     this.worker.addEventListener('message', this.workerMessageHandler.bind(this))
-    this.addEventListener('scroll', this.scrollHandler.bind(this))
     this.checkbox.onclick = this.checkboxClickHandler.bind(this)
     this.homeButton.onclick = this.homeButtonClickHandler.bind(this)
 
@@ -143,7 +143,7 @@ class MainMenuComponent extends HTMLElement {
       .then(function () {
         this.menu.style.opacity = '0'
         this.svg.dispatchEvent(new Event('close'))
-        this.donate.style.right = '108px'
+        this.author.style.right = '108px'
       }.bind(this))
   }
 
@@ -151,7 +151,7 @@ class MainMenuComponent extends HTMLElement {
     this.state = 'expand'
     this.backShadow.style.display = 'block'
     this.svg.dispatchEvent(new Event('expand'))
-    this.donate.style.right = '387px'
+    this.author.style.right = '388px'
     this.menu.style['transition-delay'] = '1s'
     this.menuOptions
       .forEach((elem, index) => setTimeout(function () { this.menu.appendChild(elem) }.bind(this), index * 20))
@@ -163,12 +163,15 @@ class MainMenuComponent extends HTMLElement {
     }
   }
 
-  scrollHandler (event) {
-    Object.assign(this.donate.style, { display: event.offset <= 200 ? 'none' : 'block' })
-  }
+  // There was a scrollHandler here that hid the donate button until the page
+  // had been scrolled 200px. Sensible for asking money: let them read first.
+  // The button is not only about money now - it is also the way to write to
+  // the author - and a reader who has a question about the first screen
+  // should not have to scroll to find out that asking is possible. So it
+  // stays visible, and the handler is gone with the hiding it did.
 
   checkboxClickHandler (event) {
-    ;[this.pageMenu, this.donate]
+    ;[this.pageMenu, this.author]
       .forEach(elem => elem.dispatchEvent(new Event('main-menu-' + this.state)))
 
     this.state === 'close' ? this.show() : this.hide()

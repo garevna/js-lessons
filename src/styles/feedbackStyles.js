@@ -69,24 +69,24 @@ const rawSource = `
      is no room to make it bigger. The area it answers to can grow without
      it: a transparent pad, laid over nothing, taking the taps that land
      just beside the mark. */
-  .open::after { content: ''; position: absolute; inset: -9px; }
+  .open::after { content: ''; position: absolute; inset: -8px; }
 
   /* An answer arrived while the reader was away. */
   .open .badge {
     display: none;
     position: absolute;
     top: -4px;
-    right: -6px;
-    min-width: 17px;
-    height: 17px;
+    right: -8px;
+    min-width: 20px;
+    height: 20px;
     padding: 0 4px;
-    border-radius: 9px;
+    border-radius: 10px;
     background: #f50;
     color: #fff;
     font-family: var(--font-family, system-ui, sans-serif);
     font-size: 11px;
     font-weight: bold;
-    line-height: 17px;
+    line-height: 20px;
     text-align: center;
   }
 
@@ -113,8 +113,12 @@ const rawSource = `
        Safari. dvh is the height actually on screen. Said second: a browser
        that does not know the unit keeps the line above. */
     max-height: min(620px, calc(100dvh - 100px));
-    padding: 16px 18px 18px;
-    border-radius: 12px;
+    padding: 16px 20px 20px;
+
+    /* 8px here, 8px on the donate popup, 8px on every button and field in
+       both: one widget opens them, and corners that disagree read as two
+       different programs. */
+    border-radius: 8px;
     background: #fff;
     color: var(--feedback-ink);
 
@@ -122,7 +126,7 @@ const rawSource = `
        sheet of text and a form, and it should not depend on the leading of
        the bar it happens to hang from. */
     line-height: 1.5;
-    box-shadow: 0 18px 48px rgba(10, 20, 30, .35);
+    box-shadow: 0 16px 48px rgba(10, 20, 30, .35);
     overflow: hidden;
   }
 
@@ -132,7 +136,7 @@ const rawSource = `
   .close {
     position: absolute;
     top: 8px;
-    right: 10px;
+    right: 8px;
 
     /* A fingertip is about nine millimetres; 28px is under that, and the
        × sits in the corner, where a miss closes nothing and scrolls the
@@ -140,7 +144,7 @@ const rawSource = `
     width: 36px;
     height: 36px;
     border: none;
-    border-radius: 18px;
+    border-radius: 8px;
     background: none;
     color: var(--feedback-soft);
     font-size: 28px;
@@ -175,7 +179,7 @@ const rawSource = `
      part of it. */
   .thread:not(:empty) {
     margin-top: 16px;
-    padding-top: 14px;
+    padding-top: 16px;
     border-top: 1px solid var(--feedback-line);
   }
 
@@ -199,9 +203,9 @@ const rawSource = `
   .message > p { margin: 0; font-size: 14px; line-height: 1.5; white-space: pre-wrap; }
 
   .reply {
-    margin-top: 9px;
-    padding: 9px 11px;
-    border-left: 3px solid var(--feedback-accent);
+    margin-top: 8px;
+    padding: 8px 12px;
+    border-left: 4px solid var(--feedback-accent);
     border-radius: 0 8px 8px 0;
     background: var(--feedback-answer);
     font-size: 14px;
@@ -209,7 +213,7 @@ const rawSource = `
     white-space: pre-wrap;
   }
 
-  .reply .meta { margin-bottom: 3px; color: var(--feedback-soft); font-size: 12px; }
+  .reply .meta { margin-bottom: 4px; color: var(--feedback-soft); font-size: 12px; }
 
   /* Three fields one under another: the gap between a label and its own
      field has to be visibly smaller than the gap to the next label, or the
@@ -296,7 +300,7 @@ const rawSource = `
   .send:hover { background: #0ac; }
   .send[disabled] { opacity: .6; cursor: default; }
 
-  .status { margin: 9px 0 0; font-size: 13px; line-height: 1.4; }
+  .status { margin: 8px 0 0; font-size: 13px; line-height: 1.4; }
   .status.bad { color: #b3261e; }
   .status.good { color: #1b7a43; }
 
@@ -315,7 +319,7 @@ const rawSource = `
      landscape. The air above is what has to go first; the air between the
      fields is what made the form readable in the first place. */
   @media screen and (max-height: 640px) {
-    .panel { top: 58px; max-height: calc(100vh - 72px); max-height: calc(100dvh - 72px); }
+    .panel { top: 56px; max-height: calc(100vh - 72px); max-height: calc(100dvh - 72px); }
     textarea { min-height: 64px; }
   }
 `

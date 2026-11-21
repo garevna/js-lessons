@@ -1,6 +1,13 @@
 // import { stars_for_donates } from './stars_for_donates'
 
-const stars_for_fonates = `${location.origin}${location.pathname}images/stars-for-donates.gif`
+/**
+ * The night sky behind the hearts, taken from whichever site is being served
+ * rather than from github.io by name. The course answers at two addresses
+ * now, and a hard-coded host means the one that is not github.io borrows its
+ * pictures from the one that is. location.pathname is "/" on the domain and
+ * "/js-lessons/" on github.io - which is the whole of the difference.
+ */
+const starsBackground = `${location.origin}${location.pathname}images/stars-for-donates.gif`
 
 class DonateButton extends HTMLElement {
   constructor () {
@@ -10,7 +17,7 @@ class DonateButton extends HTMLElement {
     this.shadow.innerHTML = `
       <style>
         svg {
-          background-image: url(https://garevna.github.io/js-lessons/images/stars-for-donates.gif);
+          background-image: url(${starsBackground});
           padding: 12px;
           border-radius: 4px;
         }
@@ -26,13 +33,30 @@ class DonateButton extends HTMLElement {
       </svg>
     `
     this.svg = this.shadow.querySelector('svg')
+    this.caption = this.shadow.querySelector('.donate-text')
   }
 
+  /**
+   * The word is an attribute because the same button stands in two places
+   * with two meanings: in the top bar it opens a choice - write to the author
+   * or support the course - and says AUTHOR, while in the footer it is only
+   * about money and goes on saying DONATE.
+   *
+   * Six letters either way, so nothing about the drawing changes. A longer
+   * word would run past the edge of the viewBox; if one is ever wanted, the
+   * cure is textLength with lengthAdjust="spacingAndGlyphs" on this text,
+   * which squeezes any word into the same width.
+   */
   static get observedAttributes () {
-    return ['size']
+    return ['size', 'caption']
   }
 
   attributeChangedCallback (attrName, oldVal, newVal) {
+    if (attrName === 'caption') {
+      this.caption.textContent = newVal || 'DONATE'
+      return
+    }
+
     this.svg.setAttribute('width', newVal)
     this.svg.setAttribute('height', newVal)
   }
@@ -41,6 +65,7 @@ class DonateButton extends HTMLElement {
     const size = this.getAttribute('size') || 80
     this.svg.setAttribute('width', size)
     this.svg.setAttribute('height', size)
+    this.caption.textContent = this.getAttribute('caption') || 'DONATE'
   }
 }
 
