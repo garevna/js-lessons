@@ -49,6 +49,111 @@
     "eng": "![ico-20 memo] With the introduction of the **Class Fields** specification, the rules were expanded. Now, any variable (property) declared directly within the class body without the _static_ keyword automatically becomes a private property of every instance created. Under the bonnet, the engine itself ‘moves’ these declarations into the constructor and executes them when _new_ is called, before your code runs.",
     "ua": "![ico-20 memo] З появою специфікації **Class Fields** правила розширилися. Тепер будь-яка змінна (властивість), оголошена безпосередньо в тілі класу без ключового слова _static_, автоматично стає власною властивістю кожного створюваного екземпляра. «Під капотом» движок сам «переносить» ці оголошення в конструктор і виконує їх у момент виклику _new_ перед вашим кодом."
   },
+  "rules": {
+    "ru": "Правила объявления",
+    "eng": "The rules",
+    "ua": "Правила оголошення"
+  },
+  "rules_intro": {
+    "ru": "Класс объявляется не так, как функция, и три отличия стоит запомнить сразу: именно на них спотыкаются чаще всего.",
+    "eng": "A class is not declared the way a function is, and three of the differences are worth learning at once - they are what trips people up.",
+    "ua": "Клас оголошується не так, як функція, і три відмінності варто запам'ятати одразу: саме на них спотикаються найчастіше."
+  },
+  "rule_tdz": {
+    "ru": "![ico-20 pin] **Класс не всплывает.** До строки объявления он уже существует, но находится в «мёртвой зоне» (**_temporal dead zone_**), и любое обращение к нему оттуда — **_^^ReferenceError^^_**.",
+    "eng": "![ico-20 pin] **A class does not hoist.** Before the line that declares it the class already exists, but it sits in the **_temporal dead zone_**, and reaching for it there is a **_^^ReferenceError^^_**.",
+    "ua": "![ico-20 pin] **Клас не спливає.** До рядка оголошення він уже існує, але перебуває в «мертвій зоні» (**_temporal dead zone_**), і будь-яке звернення до нього звідти — **_^^ReferenceError^^_**."
+  },
+  "rule_tdz_contrast": {
+    "ru": "С функцией так не выйдет: объявленную через ~function~ можно вызвать выше её объявления, и это работает. С классом — нет.",
+    "eng": "A function is different: one declared with ~function~ can be called above its own declaration, and it works. A class cannot.",
+    "ua": "З функцією так не вийде: оголошену через ~function~ можна викликати вище за її оголошення, і це працює. З класом — ні."
+  },
+  "rules_works": {
+    "ru": "работает: функция всплывает",
+    "eng": "works: the function hoists",
+    "ua": "працює: функція спливає"
+  },
+  "rule_new": {
+    "ru": "![ico-20 pin] **Класс вызывается только через _new_.** Это функция — но не та, которую можно просто позвать: без **_new_** будет **_^^TypeError^^_**.",
+    "eng": "![ico-20 pin] **A class is called only with _new_.** It is a function - but not one that can simply be called: without **_new_** you get a **_^^TypeError^^_**.",
+    "ua": "![ico-20 pin] **Клас викликається лише через _new_.** Це функція — але не та, яку можна просто покликати: без **_new_** буде **_^^TypeError^^_**."
+  },
+  "rule_strict": {
+    "ru": "![ico-20 pin] **Тело класса всегда выполняется в строгом режиме** — директиву _'use strict'_ писать не нужно, она действует сама. Отсюда и поведение **_this_** при потере контекста, к которому мы ещё вернёмся.",
+    "eng": "![ico-20 pin] **The body of a class always runs in strict mode** - the _'use strict'_ directive is not needed, it applies by itself. That is where the behaviour of **_this_** on a lost context comes from, which we will come back to.",
+    "ua": "![ico-20 pin] **Тіло класу завжди виконується в суворому режимі** — директиву _'use strict'_ писати не треба, вона діє сама. Звідси й поведінка **_this_** при втраті контексту, до якої ми ще повернемося."
+  },
+  "instanceof_intro": {
+    "ru": "Оператор **_instanceof_** отвечает на вопрос, создан ли объект этим классом — или любым его предком. Он идёт по цепочке прототипов, а не сравнивает имена.",
+    "eng": "The **_instanceof_** operator answers whether an object was made by this class - or by any of its ancestors. It walks the prototype chain; it does not compare names.",
+    "ua": "Оператор **_instanceof_** відповідає на питання, чи створено об'єкт цим класом — або будь-яким його предком. Він іде ланцюжком прототипів, а не порівнює імена."
+  },
+  "instanceof_chain": {
+    "ru": "Поэтому **_dog instanceof Animal_** — тоже _true_: **_Animal_** стоит в той же цепочке, по которой проверка поднимается до самого конца.",
+    "eng": "That is why **_dog instanceof Animal_** is _true_ as well: **_Animal_** stands in the same chain, and the check climbs it all the way up.",
+    "ua": "Тому **_dog instanceof Animal_** — теж _true_: **_Animal_** стоїть у тому самому ланцюжку, яким перевірка піднімається до самого кінця."
+  },
+  "instanceof_warn": {
+    "ru": "![ico-20 warn] Проверка смотрит на цепочку, а не на того, кто вызвал **_new_**. Подмените объекту прототип после создания — и ответ изменится. **_instanceof_** говорит, что у объекта в цепочке сейчас, а не кто его сделал.",
+    "eng": "![ico-20 warn] The check looks at the chain, not at whoever called **_new_**. Replace an object's prototype after it was made and the answer changes. **_instanceof_** says what is in the chain now, not who made it.",
+    "ua": "![ico-20 warn] Перевірка дивиться на ланцюжок, а не на того, хто викликав **_new_**. Підмініть об'єкту прототип після створення — і відповідь зміниться. **_instanceof_** каже, що в об'єкта в ланцюжку зараз, а не хто його зробив."
+  },
+  "under_hood": {
+    "ru": "Под капотом",
+    "eng": "Under the bonnet",
+    "ua": "Під капотом"
+  },
+  "hood_intro": {
+    "ru": "Всё, что было выше, — это то, как классом пользуются. Дальше — три факта о том, чем он является на самом деле. Без них трудно понять, почему он ведёт себя именно так.",
+    "eng": "Everything above is how a class is used. What follows is three facts about what it actually is - without them it is hard to see why it behaves the way it does.",
+    "ua": "Усе, що було вище, — це те, як класом користуються. Далі — три факти про те, чим він є насправді. Без них важко зрозуміти, чому він поводиться саме так."
+  },
+  "hood_typeof_title": {
+    "ru": "Класс — это функция",
+    "eng": "A class is a function",
+    "ua": "Клас — це функція"
+  },
+  "hood_typeof": {
+    "ru": "Не «почти функция» и не «обёртка над функцией». **_typeof_** отвечает буквально:",
+    "eng": "Not ‘almost a function’, not ‘a wrapper around one’. **_typeof_** answers literally:",
+    "ua": "Не «майже функція» і не «обгортка над функцією». **_typeof_** відповідає буквально:"
+  },
+  "hood_typeof_note": {
+    "ru": "Синтаксис классов — удобная запись того, что раньше писали руками: функция-конструктор и методы в её **_prototype_**. Движок делает то же самое, только строже и короче.",
+    "eng": "Class syntax is a convenient way of writing what used to be written by hand: a constructor function with its methods on its **_prototype_**. The engine does the same thing, only more strictly and in fewer words.",
+    "ua": "Синтаксис класів — зручний запис того, що раніше писали руками: функція-конструктор і методи в її **_prototype_**. Движок робить те саме, тільки суворіше й коротше."
+  },
+  "hood_enumerable_title": {
+    "ru": "Методы не перечисляются",
+    "eng": "Methods are not enumerable",
+    "ua": "Методи не перелічуються"
+  },
+  "hood_enumerable": {
+    "ru": "Методы, записанные в **_prototype_**, получают флаг **_enumerable: false_**. Поэтому цикл **_for..in_** их не видит и **_Object.keys()_** не показывает — в отличие от полей экземпляра.",
+    "eng": "Methods put on the **_prototype_** are given **_enumerable: false_**. A **_for..in_** loop therefore does not see them and **_Object.keys()_** does not list them - unlike the instance fields.",
+    "ua": "Методи, записані в **_prototype_**, отримують прапорець **_enumerable: false_**. Тому цикл **_for..in_** їх не бачить і **_Object.keys()_** не показує — на відміну від полів екземпляра."
+  },
+  "hood_enumerable_why": {
+    "ru": "![ico-20 pin] Так и задумано: перебирая объект, почти всегда хотят его данные, а не его поведение. Метод никуда не делся — он на месте и вызывается, просто не попадает в перебор.",
+    "eng": "![ico-20 pin] This is deliberate: going over an object, one almost always wants its data and not its behaviour. The method has not gone anywhere - it is there and it is callable, it simply does not turn up in the loop.",
+    "ua": "![ico-20 pin] Так і задумано: перебираючи об'єкт, майже завжди хочуть його дані, а не його поведінку. Метод нікуди не зник — він на місці й викликається, просто не потрапляє в перебір."
+  },
+  "hood_static_title": {
+    "ru": "Статика наследуется своей цепочкой",
+    "eng": "Statics inherit by a chain of their own",
+    "ua": "Статика успадковується своїм ланцюжком"
+  },
+  "hood_static": {
+    "ru": "Статические методы тоже достаются наследнику — и это та же механика прототипов, только не у экземпляров, а у самих классов.",
+    "eng": "Static methods reach the heir as well - the same prototype machinery, but between the classes themselves rather than between their instances.",
+    "ua": "Статичні методи теж дістаються нащадку — і це та сама механіка прототипів, тільки не в екземплярів, а в самих класів."
+  },
+  "hood_static_note": {
+    "ru": "![ico-20 pin] **_extends_** связывает сразу две цепочки: **_Dog.prototype_** наследует от **_Animal.prototype_** — это про экземпляры, и сам **_Dog_** наследует от **_Animal_** — это про статику. Два разных наследования одним словом.",
+    "eng": "![ico-20 pin] **_extends_** ties two chains at once: **_Dog.prototype_** inherits from **_Animal.prototype_**, which is about the instances, and **_Dog_** itself inherits from **_Animal_**, which is about the statics. Two inheritances in one word.",
+    "ua": "![ico-20 pin] **_extends_** пов'язує одразу два ланцюжки: **_Dog.prototype_** успадковує від **_Animal.prototype_** — це про екземпляри, і сам **_Dog_** успадковує від **_Animal_** — це про статику. Два різні успадкування одним словом."
+  },
   "p11": {
     "ru": "••Символ **_#_** перед именем свойства или метода объявляет его приватным (_Private class fields_). Это стандартный синтаксис **ES2022**.••",
     "eng": "••The **_#_** symbol before a property or method name declares it as private (_Private class fields_). This is standard **ES2022** syntax.••",
@@ -160,9 +265,9 @@
     "ua": "Розглянемо порядок ініціалізації полів класу на попередньому прикладі 3."
   },
   "prove": {
-    "ru": "Чтобы доказать это, сделаем так: вместо того, чтобы просто присваивать свойствам строковые значения, будем вызывать функцию ~getValue()~, которая будет выводить в консоль имя инициализируемой переменной.",
-    "eng": "To prove this, let’s do the following: instead of simply assigning string values to properties, we’ll call the ~getValue()~ function, which will print the name of the variable being initialised to the console.",
-    "ua": "Щоб це довести, зробимо так: замість того, щоб просто присвоювати властивостям рядкові значення, будемо викликати функцію ~getValue()~, яка виводитиме в консоль ім’я змінної, що ініціалізується."
+    "ru": "Чтобы доказать это, сделаем так: вместо того, чтобы просто присваивать свойствам строковые значения, будем вызывать функцию ~output()~, которая будет выводить в консоль имя инициализируемой переменной.",
+    "eng": "To prove this, let’s do the following: instead of simply assigning string values to properties, we’ll call the ~output()~ function, which will print the name of the variable being initialised to the console.",
+    "ua": "Щоб це довести, зробимо так: замість того, щоб просто присвоювати властивостям рядкові значення, будемо викликати функцію ~output()~, яка виводитиме в консоль ім’я змінної, що ініціалізується."
   },
   "order": {
     "ru": "Это позволит отследить порядок инициализации переменных.",
@@ -199,42 +304,47 @@
     "eng": "created in the constructor",
     "ua": "створено в конструкторі"
   },
-  "p27": {
+  "class_expression": {
+    "ru": "Class expression",
+    "eng": "Class expression",
+    "ua": "Class expression"
+  },
+  "class_expression_description": {
     "ru": "Объявление классов через _Class Expression_ работает аналогично _Function Expression_. Этот синтаксис делает классы «первоклассными гражданами» (**First-Class Citizens**) в JS — их можно динамически передавать в функции, возвращать из них или присваивать переменным.",
     "eng": "Declaring classes using a _Class Expression_ works in the same way as a _Function Expression_. This syntax makes classes ‘first-class citizens’ (**First-Class Citizens**) in JavaScript — they can be dynamically passed to functions, returned from them, or assigned to variables.",
     "ua": "Оголошення класів за допомогою _Class Expression_ працює аналогічно до _Function Expression_. Цей синтаксис робить класи «першокласними громадянами» (**First-Class Citizens**) у JS — їх можна динамічно передавати у функції, повертати з них або присвоювати змінним."
   },
-  "p28": {
+  "class_expression_diff": {
     "ru": "Главное отличие заключается в области видимости имени класса и удобстве отладки.",
     "eng": "The main difference lies in the scope of the class name and the ease of debugging.",
     "ua": "Головна відмінність полягає в області видимості імені класу та зручності налагодження."
   },
-  "p29": {
+  "class_expression_anonymous": {
     "ru": "Анонимное классовое выражение",
     "eng": "Anonymous class expression",
     "ua": "Анонімний класовий вираз"
   },
-  "p30": {
+  "class_expression_anonymous_name": {
     "ru": "**Имя класса**: У этого класса нет собственного внутреннего имени. Однако современные JS-движки достаточно умны: они автоматически берут имя из переменной, в которую записан класс (~User.name === 'User'~).",
     "eng": "**Class name**: This class does not have its own internal name. However, modern JavaScript engines are clever enough to automatically take the name from the variable in which the class is stored (~User.name === 'User'~).",
     "ua": "**Ім'я класу**: Цей клас не має власного внутрішнього імені. Однак сучасні JS-двигуни досить розумні: вони автоматично беруть ім'я зі змінної, в якій записано клас (~User.name === “User”~)."
   },
-  "p31": {
+  "class_expression_accessibility": {
     "ru": "**Где доступно**: Только через переменную ~User~.",
     "eng": "**Where it is accessible**: Only via the ~User~ variable.",
     "ua": "**Де доступно**: Лише через змінну ~User~."
   },
-  "p32": {
+  "class_expression_named": {
     "ru": "Именованное классовое выражение",
     "eng": "Named class expression",
     "ua": "Іменований класовий вираз"
   },
-  "p33": {
+  "class_expression_name": {
     "ru": "**Имя класса**: Свойство **~name~** теперь жестко привязано к внутреннему имени: ~User.name === 'Human'~.",
     "eng": "**Class name**: The **~name~** property is now strictly bound to the internal name: ~User.name === 'Human'~.",
     "ua": "**Ім’я класу**: Властивість **~name~** тепер жорстко прив’язана до внутрішнього імені: ~User.name === “Human”~."
   },
-  "p34": {
+  "class_expression_scope": {
     "ru": "**Область видимости имени**: Имя **~Human~** доступно только внутри самого тела класса (в конструкторе или методах). Снаружи вызвать ~new Human()~ нельзя — вы получите **_^^ReferenceError^^_**. Снаружи этот класс доступен исключительно по имени **~User~**.",
     "eng": "**Name scope**: The name **~Human~** is only accessible within the body of the class itself (in the constructor or methods). You cannot call ~new Human()~ from outside — you will get a **_^^ReferenceError^^_**. From outside, this class is accessible exclusively via the name **~User~**.",
     "ua": "**Область видимості імені**: Ім’я **~Human~** доступне лише всередині самого тіла класу (у конструкторі або методах). Ззовні викликати ~new Human()~ не можна — ви отримаєте **_^^ReferenceError^^_**. Ззовні цей клас доступний виключно за іменем **~User~**."

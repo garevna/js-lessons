@@ -57,6 +57,42 @@ class User {
 
 ___________________________________________________
 
+### ![ico-20 icon] {{rules}}
+
+{{rules_intro}}
+
+{{rule_tdz}}
+
+{{rule_tdz_contrast}}
+
+~~~js
+sayHi()             // {{rules_works}}
+new User('Piter')   // ReferenceError: Cannot access 'User' before initialization
+
+function sayHi () {
+  console.log('Hi')
+}
+
+class User {
+  constructor (name) {
+    this.name = name
+  }
+}
+~~~
+
+{{rule_new}}
+
+~~~demo
+> class User {}
+< undefined
+> User('Piter')
+! Uncaught TypeError: Class constructor User cannot be invoked without 'new'
+~~~
+
+{{rule_strict}}
+
+___________________________________________________
+
 ### ![ico-20 icon] {{common.private}}
 
 {{p11}}
@@ -280,9 +316,9 @@ ___________________________________________________
 ♦♦♦4♦♦♦
 
 ~~~js
-function getValue (stepName) {
+function output (stepName, value) {
   console.log(`-> {{running}}: ${stepName}`)
-  return '{{value}}'
+  return value
 }
 ~~~
 
@@ -290,14 +326,13 @@ function getValue (stepName) {
 
 ~~~js
 class TestOrder {
-  firstField = getValue('{{field}} (firstField)')
+  firstField = output('{{field}} (firstField)', 1)
 
   constructor () {
-    getValue('{{code}}')
-    this.secondField = '{{created}}'
+    this.secondField = output('{{code}}', 2)
   }
 
-  thirdField = getValue('{{field}} (thirdField)')
+  thirdField = output('{{field}} (thirdField)', 3)
 }
 
 const instance = new TestOrder()
@@ -309,20 +344,19 @@ const instance = new TestOrder()
 $ node
 Welcome to Node.js v22.11.0.
 Type '.help' for more information.
-> function getValue(stepName) {
+> function output (stepName, value) {
 ...   console.log(`-> {{running}}: ${stepName}`)
-...   return '{{value}}'
+...   return value
 ... }
 < undefined
 > class TestOrder {
-...   firstField = getValue('{{field}} (firstField)')
+...   firstField = output('{{field}} (firstField)', 1)
 ...
 ...   constructor() {
-...     getValue('{{code}}')
-...     this.secondField = '{{created}}'
+...     this.secondField = output('{{code}}', 2)
 ...   }
 ...
-...   thirdField = getValue('{{field}} (thirdField)')
+...   thirdField = output('{{field}} (thirdField)', 3)
 ... }
 < undefined
 > const instance = new TestOrder()
@@ -336,12 +370,12 @@ Type '.help' for more information.
 
 ___________________________________________________
 
-## ![ico-25 icon] Class expression
+## ![ico-25 icon] {{class_expression}}
 
-{{p27}}
-{{p28}}
+{{class_expression_description}}
+{{class_expression_diff}}
 
-### ![ico-20 icon] {{p29}}
+### ![ico-20 icon] {{class_expression_anonymous}}
 
 ♦♦♦6♦♦♦
 
@@ -362,8 +396,8 @@ const User = class {
 }
 ~~~
 
-{{p30}}
-{{p31}}
+{{class_expression_anonymous_name}}
+{{class_expression_accessibility}}
 
 ~~~bash
 $ node
@@ -400,7 +434,7 @@ Type ".help" for more information.
 
 ___________________________________________________
 
-### ![ico-20 icon] {{p32}}
+### ![ico-20 icon] {{class_expression_named}}
 
 ♦♦♦7♦♦♦
 
@@ -421,8 +455,8 @@ const User = class Human {
 }
 ~~~
 
-{{p33}}
-{{p34}}
+{{class_expression_name}}
+{{class_expression_scope}}
 
 ~~~bash
 $ node
@@ -983,6 +1017,31 @@ newCanvas.drawLine([{ x: 20, y: 20 }, { x: 300, y: 400 }], 5, '#f0f')
 
 ___________________________________________________
 
+### ![ico-20 icon] instanceof
+
+{{instanceof_intro}}
+
+~~~demo
+> class Animal {}
+< undefined
+> class Dog extends Animal {}
+< undefined
+> const dog = new Dog()
+< undefined
+> dog instanceof Dog
+< true
+> dog instanceof Animal
+< true
+> dog instanceof Array
+< false
+~~~
+
+{{instanceof_chain}}
+
+{{instanceof_warn}}
+
+___________________________________________________
+
 ### ![ico-20 icon] super
 
 {{p83}}
@@ -1331,6 +1390,72 @@ window.onresize = Canvas.resizeCanvas
 ••name: ''••
 
 {{p168}}
+
+___________________________________________________
+
+## ![ico-25 icon] {{under_hood}}
+
+{{hood_intro}}
+
+### ![ico-20 icon] {{hood_typeof_title}}
+
+{{hood_typeof}}
+
+~~~demo
+> class User {}
+< undefined
+> typeof User
+< 'function'
+~~~
+
+{{hood_typeof_note}}
+
+___________________________________________________
+
+### ![ico-20 icon] {{hood_enumerable_title}}
+
+{{hood_enumerable}}
+
+~~~demo
+> class User {
+...   name = 'Piter'
+...   login () { console.log('in') }
+... }
+< undefined
+> const user = new User()
+< undefined
+> Object.keys(user)
+< ► ['name']
+> Object.keys(User.prototype)
+< ► []
+> User.prototype.login
+< ƒ login () { console.log('in') }
+~~~
+
+{{hood_enumerable_why}}
+
+___________________________________________________
+
+### ![ico-20 icon] {{hood_static_title}}
+
+{{hood_static}}
+
+~~~demo
+> class Animal {
+...   static kind () { return 'animal' }
+... }
+< undefined
+> class Dog extends Animal {}
+< undefined
+> Dog.kind()
+< 'animal'
+> Object.getPrototypeOf(Dog) === Animal
+< true
+> Object.getPrototypeOf(Dog.prototype) === Animal.prototype
+< true
+~~~
+
+{{hood_static_note}}
 
 ___________________________________________________
 
