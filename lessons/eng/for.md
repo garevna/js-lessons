@@ -63,7 +63,7 @@ All that remains is to fill the loop body with code.
 
 _____________________________________________________________________
 
-## ![ico-30 icon] Syntax⟪Syntax⟫
+## ![ico-30 icon] Syntax⟪Syntax_2⟫
 
 The **~for~** loop statement requires a counter variable (loop variable) that must:
 

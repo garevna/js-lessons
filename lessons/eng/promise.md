@@ -225,7 +225,7 @@ This makes sense, as the purpose of the method is to pass a callback to the **Ev
 
 In other words, once you have created an instance of **~Promise~**, you will no longer be able to ‘break out’ of this ‘vicious circle’; that is, whatever you do, the result will always be a new instance of **~Promise~**.
 
-#### ![ico-20 icon] catch⟪catch⟫
+#### ![ico-20 icon] catch⟪catch_2⟫
 
 The function we pass to the **~catch~** method will catch an error message if the request is rejected, and the state of our ‘box’ will become **~rejected~**.
 
@@ -290,7 +290,7 @@ Finally
 ~~~
 ______________________________________________
 
-## ![ico-30 icon] then⟪then⟫
+## ![ico-30 icon] then⟪then_2⟫
 
 So, using the **~Promise~** constructor, you can create a magic box with two holes.
 As we’ve already seen, it’s simply impossible to look inside this box ‘here and now’.
@@ -425,7 +425,7 @@ first.then(() => second.then(console.log).then(third))
 
 __________________________________________________________________________________________
 
-## ![ico-25 icon] finally⟪finally⟫
+## ![ico-25 icon] finally⟪finally_2⟫
 
 As we continue to explore the static methods of the **~Promise~** constructor, we discover that, in addition to **~Promise.resolve~** and **~Promise.reject~**, there are a number of other useful methods with which we can handle entire collections of promises at once.
 The main thing is that these collections are **iterable**.

@@ -294,7 +294,7 @@ This operator applies only to object properties, and returns the boolean value ~
 
 ________________________________________________________
 
-### ![ico-25 hw] Tests⟪Tests⟫
+### ![ico-25 hw] Tests⟪Tests_2⟫
 
 ◘◘![ico-20 hw] 1◘◘
 
