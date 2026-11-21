@@ -16,12 +16,14 @@
  *
  * Routes:
  *   POST /feedback          a question; creates the thread if there is none
- *   GET  /feedback?…        the conversation so far
+ *   POST /conversation      the conversation so far; token in the body
+ *   GET  /feedback?…        the same, token in the query - the old way, kept
+ *                           only until the cached bundles that use it expire
  *   POST /telegram          the webhook; a reply in the channel becomes an answer
  *   GET  /health            is it alive and configured
  */
 
-import { createThread, openThread, addMessage, attachTelegramMessage, conversation, keepPostText, lastQuestion, messageById, messageByTelegramId, recentCount, remember, rememberHandle, threadName } from './store.js'
+import { createThread, openThread, addMessage, attachTelegramMessage, conversation, forgetOldThreads, keepPostText, lastQuestion, messageById, messageByTelegramId, recentCount, remember, rememberHandle, threadName } from './store.js'
 import { answerButton, call, escape, inbox, isAdmin, markAnswered, post, questionText, readUpdate } from './telegram.js'
 
 // The site is served from garevna.github.io and from js-lessons.pp.ua, and in
@@ -52,6 +54,20 @@ const permitted = origin => ALLOWED.includes(origin) || LOCAL.test(origin)
 const MAX_TEXT = 4000      // a question, not an essay; Telegram caps a message at 4096
 const MAX_NAME = 60
 const MAX_PER_HOUR = 20
+
+/**
+ * How long a conversation is kept, counted from the last thing said in it.
+ *
+ * Fourteen rather than seven: a question asked on a Friday and answered on
+ * the Monday is read by someone who comes back the following weekend, which
+ * is the ninth day. A week would delete the answer before it was read, and
+ * there is no account here to recover it from.
+ *
+ * Changing the number is changing this line; the sweep below and the small
+ * print in the form both take it from here. The form says 14 in words, so
+ * feedbackConfig.labels in the site needs the same number if this moves.
+ */
+const KEEP_DAYS = 14
 
 function cors (request) {
   const origin = request.headers.get('Origin') || ''
@@ -166,8 +182,25 @@ async function ask (request, env) {
   return json(request, { thread: thread.id, token: thread.token, id: stored.id, delivered: true })
 }
 
+/**
+ * The conversation, read with the token in the body rather than in the URL.
+ *
+ * A query string is the one part of a request that gets written down
+ * everywhere: proxy logs, analytics, the browser's own history, a Referer
+ * header on the way out. The token is the whole of the reader's identity
+ * here - there is no password to fall back on - so it travels in a POST body,
+ * which is logged by nobody by default.
+ *
+ * The GET below it is the old way, kept alive only until the bundles that
+ * use it have aged out of the caches of people who are not visiting often.
+ * It can go after that, and nothing else will need changing.
+ */
 async function read (request, env, url) {
-  const thread = await openThread(env.DB, url.searchParams.get('thread'), url.searchParams.get('token'))
+  const asked = request.method === 'POST'
+    ? await request.json().catch(() => ({}))
+    : { thread: url.searchParams.get('thread'), token: url.searchParams.get('token') }
+
+  const thread = await openThread(env.DB, asked.thread, asked.token)
   if (!thread) return json(request, { error: 'no-thread' }, 404)
 
   const questions = await conversation(env.DB, thread.id)
@@ -470,6 +503,13 @@ export default {
     if (path === '/telegram' && request.method === 'POST') return webhook(request, env)
 
     if (path === '/feedback' && request.method === 'POST') return ask(request, env)
+
+    // Reading the conversation: the token in the body.
+    if (path === '/conversation' && request.method === 'POST') return read(request, env, url)
+
+    // The same thing with the token in the query string - the old way, and
+    // the reason /conversation exists. Serves whoever still has the previous
+    // bundle in their cache; delete it once they cannot.
     if (path === '/feedback' && request.method === 'GET') return read(request, env, url)
 
     if (path === '/health') {
@@ -486,5 +526,24 @@ export default {
     }
 
     return json(request, { error: 'not-found' }, 404)
+  },
+
+  /**
+   * Once a day, throw away the conversations nobody is coming back for.
+   *
+   * A cron trigger rather than a sweep on every request: deleting is not the
+   * reader's business and should not be in the way of their question, and
+   * once a day is often enough for something measured in weeks. The schedule
+   * is in wrangler.toml.
+   *
+   * A reader whose thread was swept still has its two strings in their
+   * browser. Nothing special happens: the next read answers 404, and the
+   * widget drops its copy and shows an empty form, which is the same thing
+   * that happens to anyone who clears their site data.
+   */
+  async scheduled (event, env, ctx) {
+    const before = Date.now() - KEEP_DAYS * 24 * 60 * 60 * 1000
+    const gone = await forgetOldThreads(env.DB, before)
+    console.log(`swept ${gone.threads} threads and ${gone.messages} messages older than ${KEEP_DAYS} days`)
   }
 }

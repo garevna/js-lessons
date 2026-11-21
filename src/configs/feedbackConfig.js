@@ -43,7 +43,17 @@ export const feedbackConfig = {
       tooMany: 'Забагато повідомлень поспіль — зачекайте годину.',
       empty: 'Спершу напишіть повідомлення.',
       waiting: 'без відповіді',
-      close: 'Закрити'
+      close: 'Закрити',
+
+      // The conversation, which is a window of its own: the form is for
+      // writing, this is for reading what was written and what came back.
+      history: 'Листування',
+      historyEmpty: 'Тут з’являться ваші повідомлення і відповіді авторки.',
+      writeMore: 'Написати ще',
+
+      // The number here and KEEP_DAYS in feedback-api/src/index.js are the
+      // same fortnight said twice. Moving one means moving the other.
+      kept: 'Листування зберігається 14 днів після останнього повідомлення, потім видаляється.'
     },
     ru: {
       open: 'Написать автору',
@@ -61,7 +71,12 @@ export const feedbackConfig = {
       tooMany: 'Слишком много сообщений подряд — подождите час.',
       empty: 'Сначала напишите сообщение.',
       waiting: 'без ответа',
-      close: 'Закрыть'
+      close: 'Закрыть',
+
+      history: 'Переписка',
+      historyEmpty: 'Здесь появятся ваши сообщения и ответы автора.',
+      writeMore: 'Написать ещё',
+      kept: 'Переписка хранится 14 дней после последнего сообщения, потом удаляется.'
     },
     eng: {
       open: 'Message the author',
@@ -79,7 +94,12 @@ export const feedbackConfig = {
       tooMany: 'Too many messages in a row — give it an hour.',
       empty: 'Write the message first.',
       waiting: 'no answer yet',
-      close: 'Close'
+      close: 'Close',
+
+      history: 'The conversation',
+      historyEmpty: 'Your messages and the answers to them will appear here.',
+      writeMore: 'Write again',
+      kept: 'A conversation is kept for 14 days after the last message, then deleted.'
     }
   }
 }

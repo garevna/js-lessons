@@ -39,12 +39,13 @@ const TITLE = {
   eng: 'The author'
 }
 
-/** mdi-message-arrow-right, and mdi-heart. Drawn here for the same reason the
- *  send mark in the message panel is: these belong to the interface, not to a
- *  lesson, and the icon worker serves lessons. */
+/** mdi-message-arrow-right, mdi-heart, mdi-forum. Drawn here for the same
+ *  reason the send mark in the message panel is: these belong to the
+ *  interface, not to a lesson, and the icon worker serves lessons. */
 const ICONS = {
   message: 'M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M12 14L10.8 12.8L12.6 11H8V9H12.5L10.7 7.2L12 6L16 10L12 14Z',
-  heart: 'M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z'
+  donate: 'M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z',
+  history: 'M17,12V3A1,1 0 0,0 16,2H3A1,1 0 0,0 2,3V17L6,13H16A1,1 0 0,0 17,12M21,6H19V15H6V17A1,1 0 0,0 7,18H18L22,22V7A1,1 0 0,0 21,6Z'
 }
 
 const styles = `
@@ -143,9 +144,12 @@ class AuthorWidget extends HTMLElement {
     super()
 
     this.shadow = this.attachShadow({ mode: 'closed' })
+
+    const said = feedbackConfig.labels[lang()] || feedbackConfig.labels.eng
     this.words = {
-      message: (feedbackConfig.labels[lang()] || feedbackConfig.labels.eng).open,
-      support: SUPPORT[lang()] || SUPPORT.eng,
+      message: said.open,
+      history: said.history,
+      donate: SUPPORT[lang()] || SUPPORT.eng,
       title: TITLE[lang()] || TITLE.eng
     }
 
@@ -154,7 +158,7 @@ class AuthorWidget extends HTMLElement {
     const item = (kind, label) => `
       <button class="item ${kind}" type="button" role="menuitem" data-do="${kind}">
         <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-          <path d="${ICONS[kind === 'message' ? 'message' : 'heart']}"/>
+          <path d="${ICONS[kind]}"/>
         </svg>
         <span>${label}</span>
       </button>
@@ -167,9 +171,14 @@ class AuthorWidget extends HTMLElement {
         <span class="badge">0</span>
       </button>
 
+      <!-- The conversation comes last and is hidden until there is one: a
+           reader who has never written has nothing to read there, and an
+           item that opens an explanation of its own emptiness is worse than
+           no item at all. -->
       <div class="menu" role="menu">
         ${item('message', this.words.message)}
-        ${item('donate', this.words.support)}
+        ${item('donate', this.words.donate)}
+        ${item('history', this.words.history)}
       </div>
 
       <feedback-widget headless></feedback-widget>
@@ -181,6 +190,7 @@ class AuthorWidget extends HTMLElement {
       trigger: find('.trigger'),
       badge: find('.badge'),
       menu: find('.menu'),
+      historyItem: find('.item.history'),
       mark: find('donate-button'),
       feedback: find('feedback-widget'),
       popup: find('donate-popup')
@@ -203,11 +213,16 @@ class AuthorWidget extends HTMLElement {
       this.show(!this.open)
     }
 
+    this.historyItem.style.display = 'none'
+
     this.menu.onclick = event => {
       const button = event.target.closest('.item')
       if (!button) return
       this.show(false)
-      button.dataset.do === 'message' ? this.write() : this.donate()
+
+      const what = button.dataset.do
+      if (what === 'donate') return this.donate()
+      this.write(what === 'history' ? 'history' : 'write')
     }
 
     // A menu that cannot be dismissed by looking away is a trap, so a press
@@ -242,12 +257,14 @@ class AuthorWidget extends HTMLElement {
     })
     this.addEventListener('main-menu-close', () => { this.style.display = 'block' })
 
-    // The unread count lives in the message widget; it says so, and this
-    // shows it.
+    // The unread count and whether a conversation exists at all both live in
+    // the message widget; it says so, and this is what listens. Sending the
+    // first message is what makes the third item appear, without a reload.
     this.feedback.addEventListener('answers', event => {
-      const count = event.detail.count
+      const { count, thread } = event.detail
       this.badge.textContent = String(count)
       this.badge.classList.toggle('on', count > 0)
+      this.historyItem.style.display = thread ? 'flex' : 'none'
     })
   }
 
@@ -265,10 +282,11 @@ class AuthorWidget extends HTMLElement {
     document[method]('keydown', this.escape)
   }
 
-  /** The message panel, opened from the outside: its shadow is closed, so
-   *  there is no reaching the panel except through a method it offers. */
-  write () {
-    customElements.whenDefined('feedback-widget').then(() => this.feedback.open())
+  /** The message panel, opened from the outside on one of its two windows:
+   *  its shadow is closed, so there is no reaching in except through the
+   *  method it offers. */
+  write (which = 'write') {
+    customElements.whenDefined('feedback-widget').then(() => this.feedback.open(which))
   }
 
   /** What donate-component does when its own button is pressed. */

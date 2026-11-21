@@ -77,33 +77,52 @@ class FeedbackWidget extends HTMLElement {
         ${SEND_ICON}<span class="badge">0</span>
       </button>
 
+      <!--
+        Two windows, not one with the past pinned under the form.
+
+        They were one: the form, and everything written before it underneath.
+        That makes writing a short errand read as a long one - a reader who
+        only wants to ask something scrolls past their own history to find
+        the button - and it makes reading an answer a matter of scrolling
+        past an empty form. So: a form that is only a form, and a
+        conversation that is only the conversation. Sending moves from the
+        first to the second, which is where the answer will appear.
+      -->
       <section class="panel" role="dialog" aria-label="${this.words.title}">
         <button class="close" type="button" title="${this.words.close}" aria-label="${this.words.close}">×</button>
-        <h3>${this.words.title}</h3>
+        <h3></h3>
 
         <div class="body">
-          <label for="who">${this.words.name}</label>
-          <input id="who" type="text" maxlength="60" placeholder="${this.words.namePlaceholder}">
+          <div class="view write">
+            <label for="who">${this.words.name}</label>
+            <input id="who" type="text" maxlength="60" placeholder="${this.words.namePlaceholder}">
 
-          <!-- A handle is not a word. The keyboard on a phone capitalises the
-               first letter of a field and corrects what it does not know, so
-               "garevna" is offered back as "Garevna" or as something else
-               entirely - and the answer then goes to a nick that does not
-               exist. All three have to be refused by name. -->
-          <label for="tg">${this.words.telegram}</label>
-          <input id="tg" type="text" maxlength="40" placeholder="${this.words.telegramPlaceholder}"
-                 autocapitalize="none" autocorrect="off" autocomplete="off" spellcheck="false">
+            <!-- A handle is not a word. The keyboard on a phone capitalises
+                 the first letter of a field and corrects what it does not
+                 know, so "garevna" is offered back as "Garevna" or as
+                 something else entirely - and the answer then goes to a nick
+                 that does not exist. All three have to be refused by name. -->
+            <label for="tg">${this.words.telegram}</label>
+            <input id="tg" type="text" maxlength="40" placeholder="${this.words.telegramPlaceholder}"
+                   autocapitalize="none" autocorrect="off" autocomplete="off" spellcheck="false">
 
-          <label for="ask">${this.words.text}</label>
-          <textarea id="ask" maxlength="4000" placeholder="${this.words.textPlaceholder}"></textarea>
+            <label for="ask">${this.words.text}</label>
+            <textarea id="ask" maxlength="4000" placeholder="${this.words.textPlaceholder}"></textarea>
 
-          <button class="send" type="button">${this.words.send}</button>
-          <p class="status"></p>
+            <button class="send" type="button">${this.words.send}</button>
+            <p class="status"></p>
 
-          <!-- Everything written before, with the answers under it. Below the
-               form, not above: writing is why the panel was opened, and a
-               reader with a long history should not have to scroll to it. -->
-          <div class="thread"></div>
+            <!-- Said before writing rather than after: a reader who comes
+                 back on the twentieth day to an empty form deserves to have
+                 been told, and there is no account here to recover it from. -->
+            <p class="kept">${this.words.kept}</p>
+          </div>
+
+          <div class="view history">
+            <div class="thread"></div>
+            <p class="nothing">${this.words.historyEmpty}</p>
+            <button class="again" type="button">${this.words.writeMore}</button>
+          </div>
         </div>
       </section>
     `
@@ -113,14 +132,21 @@ class FeedbackWidget extends HTMLElement {
       button: find('.open'),
       badge: find('.badge'),
       panel: find('.panel'),
+      heading: find('h3'),
       scroller: find('.body'),
+      writeView: find('.view.write'),
+      historyView: find('.view.history'),
       list: find('.thread'),
+      nothing: find('.nothing'),
+      againButton: find('.again'),
       who: find('#who'),
       tg: find('#tg'),
       ask: find('#ask'),
       sendButton: find('.send'),
       status: find('.status')
     })
+
+    this.view = 'write'
   }
 
   connectedCallback () {
@@ -136,15 +162,22 @@ class FeedbackWidget extends HTMLElement {
     this.button.onclick = () => this.toggle(true)
     this.shadow.querySelector('.close').onclick = () => this.toggle(false)
     this.sendButton.onclick = () => this.send()
+    this.againButton.onclick = () => this.show('write')
 
     // Ctrl/Cmd+Enter sends, which is what anyone writing in a textarea tries.
     this.ask.onkeydown = event => {
       if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) this.send()
     }
 
+    this.show('write')
+
     // The badge is why the thread is read on load rather than on open: a
     // reader who was answered while away should see that from the page.
-    if (this.thread) this.load()
+    //
+    // And whoever draws the button has to be told either way - with a thread
+    // or without one - because the conversation is only offered to a reader
+    // who has one.
+    this.thread ? this.load() : this.announce()
   }
 
   disconnectedCallback () {
@@ -183,10 +216,42 @@ class FeedbackWidget extends HTMLElement {
     if (!on) this.panel.style.maxHeight = ''
   }
 
-  /** The only way in from outside: the shadow root is closed, so a host that
-   *  draws its own button has no panel to reach for - only this. */
-  open () {
+  /**
+   * The only way in from outside: the shadow root is closed, so a host that
+   * draws its own buttons has no panel to reach for - only this. The
+   * argument says which of the two windows is wanted, "write" or "history".
+   */
+  open (which = 'write') {
+    this.show(which)
     this.toggle(true)
+  }
+
+  /** Which of the two is on show. The panel, its heading and the polling all
+   *  follow from it. */
+  show (which) {
+    this.view = which === 'history' ? 'history' : 'write'
+
+    const history = this.view === 'history'
+    this.writeView.style.display = history ? 'none' : 'block'
+    this.historyView.style.display = history ? 'block' : 'none'
+    this.heading.textContent = history ? this.words.history : this.words.title
+    this.panel.setAttribute('aria-label', this.heading.textContent)
+
+    if (history) this.drawThread()
+    if (this.panel.classList.contains('shown')) this.watchThread()
+    this.scroller.scrollTop = 0
+  }
+
+  /**
+   * Asking the server every twenty seconds is worth it only where an answer
+   * would be seen arriving - the conversation, open, in front of the reader.
+   * Not behind the form, and not on a page nobody has opened the panel on.
+   */
+  watchThread () {
+    clearInterval(this.timer)
+    if (this.view !== 'history' || !this.thread) return
+    this.load()
+    this.timer = setInterval(() => this.load(), pollMs)
   }
 
   toggle (open) {
@@ -198,12 +263,7 @@ class FeedbackWidget extends HTMLElement {
     this.watchKeyboard(open)
     if (!open) return
 
-    if (this.thread) {
-      this.load()
-      // Only while the panel is open: nobody needs a background request every
-      // twenty seconds on a page they are reading.
-      this.timer = setInterval(() => this.load(), pollMs)
-    }
+    this.watchThread()
 
     // preventScroll, and the panel back to the top.
     //
@@ -216,7 +276,9 @@ class FeedbackWidget extends HTMLElement {
     // Not on a touch screen. There, focusing throws up the keyboard over half
     // the panel before the reader has decided to write anything - and on iOS
     // it also drags the page about. A finger can choose its own field.
-    if (!matchMedia('(pointer: coarse)').matches) this.ask.focus({ preventScroll: true })
+    if (this.view === 'write' && !matchMedia('(pointer: coarse)').matches) {
+      this.ask.focus({ preventScroll: true })
+    }
   }
 
   /** Travels with the message, never shown: useful to whoever answers. */
@@ -228,8 +290,16 @@ class FeedbackWidget extends HTMLElement {
     if (!this.thread) return
 
     try {
-      const url = `${endpoint}/feedback?thread=${encodeURIComponent(this.thread.id)}&token=${encodeURIComponent(this.thread.token)}`
-      const response = await fetch(url, { headers: { Accept: 'application/json' } })
+      // POST, and the token in the body. It used to be a query string, and a
+      // query string is the one part of a request that gets written down
+      // everywhere - proxy logs, the browser's own history, a Referer header
+      // on the way out. This token is the whole of the reader's identity:
+      // there is no password behind it and no way to issue a new one.
+      const response = await fetch(`${endpoint}/conversation`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+        body: JSON.stringify({ thread: this.thread.id, token: this.thread.token })
+      })
 
       if (response.status === 404) {
         // The thread is gone from the server; this browser's copy means
@@ -249,6 +319,23 @@ class FeedbackWidget extends HTMLElement {
     }
   }
 
+  /**
+   * What the outside is told: how many answers are unread, and whether
+   * there is a conversation at all.
+   *
+   * The second one decides whether the conversation is offered in the menu.
+   * A reader who has never written has nothing to read, and an item that
+   * opens an explanation of its own emptiness is worse than no item.
+   */
+  announce () {
+    this.dispatchEvent(new CustomEvent('answers', {
+      detail: {
+        count: Number(this.badge.textContent) || 0,
+        thread: !!this.thread
+      }
+    }))
+  }
+
   draw () {
     const answers = this.messages.reduce((total, message) => total + message.replies.length, 0)
     const seen = (this.thread && this.thread.seen) || 0
@@ -256,20 +343,23 @@ class FeedbackWidget extends HTMLElement {
     this.badge.textContent = String(Math.max(answers - seen, 0))
     this.button.classList.toggle('has-answers', answers > seen)
 
-    // Opened and read: the badge should not keep shouting about it.
-    if (this.panel.classList.contains('shown') && this.thread) {
+    // Read where it can be read: the conversation, open. Marking answers as
+    // seen because the form happened to be on screen would silence the badge
+    // for a reader who never looked at them.
+    if (this.panel.classList.contains('shown') && this.view === 'history' && this.thread) {
       this.thread = { ...this.thread, seen: answers }
       stored.write(this.thread)
       this.badge.textContent = '0'
       this.button.classList.remove('has-answers')
     }
 
-    // Said out loud for whoever draws the button. Headless, the badge above
-    // is hidden along with the icon it sits on, and an answer would arrive
-    // with nothing on the page to show it.
-    this.dispatchEvent(new CustomEvent('answers', {
-      detail: { count: Number(this.badge.textContent) || 0 }
-    }))
+    this.announce()
+    this.drawThread()
+  }
+
+  drawThread () {
+    this.nothing.style.display = this.messages.length ? 'none' : 'block'
+    this.againButton.style.display = this.messages.length ? 'block' : 'none'
 
     this.list.innerHTML = this.messages.map(message => `
       <article class="message">
@@ -335,7 +425,16 @@ class FeedbackWidget extends HTMLElement {
 
       this.ask.value = ''
       this.say(this.words.sent, 'good')
+
+      // Straight to the conversation. The message has left, and the place
+      // where its answer will appear is the only thing left to show; a form
+      // that has just been emptied says nothing about what happened to what
+      // was in it. The status line goes with the form, so it is cleared on
+      // the way out rather than left behind for the next visit.
       await this.load()
+      this.say('')
+      this.show('history')
+      this.watchThread()
     } catch {
       this.say(this.words.failed, 'bad')
     } finally {

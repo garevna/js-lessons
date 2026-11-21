@@ -175,3 +175,37 @@ export async function remember (db, key, value) {
     'INSERT INTO settings (key, value, updated) VALUES (?, ?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated = excluded.updated'
   ).bind(key, String(value), now()).run()
 }
+
+/**
+ * Throwing away what nobody is coming back for.
+ *
+ * A conversation is kept for a while after the last thing said in it - by
+ * either side, which is what `threads.updated` records - and then it goes.
+ * Not from when it started: an exchange still going on at a fortnight old
+ * would otherwise be cut off mid-sentence.
+ *
+ * The author loses nothing by this. Every question was posted to the Telegram
+ * group when it arrived and every answer was written there; this clears only
+ * the copy the reader's browser reads back.
+ *
+ * Messages first, then the threads. There is no foreign key between the two
+ * tables, so deleting the threads first would leave the messages behind with
+ * nothing to point at and no way left to find them.
+ */
+export async function forgetOldThreads (db, before) {
+  const dead = await db.prepare('SELECT id FROM threads WHERE updated < ?').bind(before).all()
+  const ids = (dead.results || []).map(row => row.id)
+  if (!ids.length) return { threads: 0, messages: 0 }
+
+  // One statement per thread rather than an IN list built by hand: a
+  // thread id is generated here, not typed by anyone, but a query assembled
+  // out of values is a habit worth not having.
+  let messages = 0
+  for (const id of ids) {
+    const gone = await db.prepare('DELETE FROM messages WHERE thread_id = ?').bind(id).run()
+    messages += (gone.meta && gone.meta.changes) || 0
+    await db.prepare('DELETE FROM threads WHERE id = ?').bind(id).run()
+  }
+
+  return { threads: ids.length, messages }
+}

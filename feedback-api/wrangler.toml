@@ -12,6 +12,13 @@ compatibility_date = "2026-09-01"
 # anywhere. A token in a file is a token in the repository the moment someone
 # runs `git add .`.
 
+# Once a day at 03:00 UTC the Worker is woken with no request to serve, and
+# deletes the conversations whose last message is older than KEEP_DAYS in
+# src/index.js. Nothing of the author's goes with them: every question and
+# every answer is also a post in the Telegram group.
+[triggers]
+crons = ["0 3 * * *"]
+
 [vars]
 # The private channel the questions land in: a negative number like -1001234567890.
 # Not a secret - it is useless without the token - so it lives here where it

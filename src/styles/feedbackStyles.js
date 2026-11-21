@@ -175,13 +175,37 @@ const rawSource = `
     overscroll-behavior: contain;
   }
 
-  /* Previous messages live under the form; a rule keeps them from reading as
-     part of it. */
-  .thread:not(:empty) {
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid var(--feedback-line);
+  /* The conversation is a window of its own now, so the rule that used to
+     separate it from the form above has nothing left to separate. */
+
+  /* Before the first message - and for the little while after sending when
+     the server has not answered the reload yet. */
+  .nothing {
+    margin: 0;
+    padding: 24px 0;
+    color: var(--feedback-soft);
+    font-size: 14px;
+    text-align: center;
   }
+
+  /* Back to the form, from the conversation. Quiet: the reader came here to
+     read, and writing again is the second thing they might want, not the
+     first. */
+  .again {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 0;
+    border: 1px solid var(--feedback-line);
+    border-radius: 8px;
+    background: none;
+    color: var(--feedback-accent);
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .again:hover { background: #f2f5f7; }
 
   /* A message with its answers under it - the shape the server returns, and
      the shape this has to read as. */
@@ -301,6 +325,15 @@ const rawSource = `
   .send[disabled] { opacity: .6; cursor: default; }
 
   .status { margin: 8px 0 0; font-size: 13px; line-height: 1.4; }
+
+  /* The small print, and small on purpose: it is a fact about the form, not
+     a warning about it. */
+  .kept {
+    margin: 12px 0 0;
+    color: var(--feedback-soft);
+    font-size: 11px;
+    line-height: 1.4;
+  }
   .status.bad { color: #b3261e; }
   .status.good { color: #1b7a43; }
 
