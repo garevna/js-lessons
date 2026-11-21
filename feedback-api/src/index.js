@@ -34,9 +34,9 @@ const ALLOWED = [
   'https://js-lessons.pp.ua',
   // Every Cloudflare Pages deploy is reachable at the project address as
   // well, and that is where the domain is checked from before the DNS has
-  // caught up. The project is "js-lessons-course" because a pages.dev name
+  // caught up. The project is "garevna-js-lessons" because a pages.dev name
   // is global and "js-lessons" belongs to someone else.
-  'https://js-lessons-course.pages.dev'
+  'https://garevna-js-lessons.pages.dev'
 ]
 
 // The dev server has no one port. It is 8181 by default, another when that

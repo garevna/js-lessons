@@ -195,7 +195,7 @@ jobs:
           # is only ever seen here and in the dashboard — readers arrive at
           # js-lessons.pp.ua — and it cannot be renamed later without deleting
           # the project, so it is spelled out rather than derived.
-          PROJECT=js-lessons-course
+          PROJECT=garevna-js-lessons
 
           # The first run has no project to deploy into, and the docs do not
           # promise that deploy makes one. Create it when it is missing, and

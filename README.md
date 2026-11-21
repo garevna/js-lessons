@@ -1661,8 +1661,8 @@ build:
 | Address | Where | How |
 |---|---|---|
 | [garevna.github.io/js-lessons](https://garevna.github.io/js-lessons/) | GitHub Pages, the `gh-pages` branch | `git subtree` push from the workflow |
-| [js-lessons.pp.ua](https://js-lessons.pp.ua/) | Cloudflare Pages, project `js-lessons-course` | `wrangler pages deploy public` |
-| [js-lessons-course.pages.dev](https://js-lessons-course.pages.dev/) | the same Cloudflare project | — |
+| [js-lessons.pp.ua](https://js-lessons.pp.ua/) | Cloudflare Pages, project `garevna-js-lessons` | `wrangler pages deploy public` |
+| [garevna-js-lessons.pages.dev](https://garevna-js-lessons.pages.dev/) | the same Cloudflare project | — |
 
 The project is not called `js-lessons`. A `pages.dev` name is global rather
 than per account, that one answers for somebody else's site, and a project
