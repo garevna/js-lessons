@@ -217,7 +217,7 @@ getName.getName()
 ~~~
 _____________________________________________
 
-## ![ico-25 icon] Changing the context⟪Changing_the_context⟫
+## ![ico-25 icon] Changing the context⟪Changing_the_context_2⟫
 
 By looking at the **_~prototype~_** property of the **Function** constructor or the **_~&#95;&#95;proto&#95;&#95;~_** property of a function instance
 you will find three methods that all functions inherit from their creator:

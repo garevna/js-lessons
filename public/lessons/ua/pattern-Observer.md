@@ -252,7 +252,7 @@ const observed = ['topic', 'message', 'author']
 
 Функцію **~createSubscriber~** можна запозичити з попереднього прикладу, а ось клас **~Observer~** дещо зміниться.
 
-### ![ico-25 cap] Class Observer⟪Class_Observer⟫
+### ![ico-25 cap] Class Observer⟪Class_Observer_2⟫
 
 ~~~js
 class Observer {

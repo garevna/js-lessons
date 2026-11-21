@@ -163,10 +163,34 @@ for (const page of pages) {
 
   // Worked out once from the English page and then written into all three, so
   // the three files agree on where a section lives.
+  //
+  // Two headings can come out with the same anchor and do: "super" and
+  // "super()" differ by the brackets, and the brackets are the first thing
+  // dropped. One id then belongs to two places - the address #super reaches
+  // only the first, a link to the second cannot be written at all, and the
+  // page carries two elements with one id, which is not valid HTML either.
+  //
+  // The first keeps the plain anchor, so no address that worked yesterday
+  // stops working; every repeat takes the next free number. It also means a
+  // run of sections can simply be called "Тест" without anyone numbering
+  // them by hand to keep their anchors apart.
+  const taken = new Set()
   const anchors = render('eng', false)
     .split(/\r?\n/)
     .filter((line) => HEADING.test(line))
-    .map((line) => convertStringForAnchor(headingText(line)))
+    .map((line) => {
+      const plain = convertStringForAnchor(headingText(line))
+      if (!taken.has(plain)) {
+        taken.add(plain)
+        return plain
+      }
+      // Keep counting until something is free: the suffix can collide too,
+      // if a heading of its own spells out the number.
+      let n = 2
+      while (taken.has(`${plain}_${n}`)) n += 1
+      taken.add(`${plain}_${n}`)
+      return `${plain}_${n}`
+    })
 
   const stamp = (text) => {
     const eol = text.includes('\r\n') ? '\r\n' : '\n'

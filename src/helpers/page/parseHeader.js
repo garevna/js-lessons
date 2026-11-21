@@ -37,7 +37,21 @@ export function parseHeader (line) {
     text = content.split(']').slice(-1)[0].trim()
   })
 
-  const id = stamped ? stamped[1] : convertStringForAnchor(text)
+  // A stamped anchor is taken as it stands: the build has already made it
+  // unique across the page. Only a page with no markers - anything static,
+  // or built before the markers existed - works its id out here, and then
+  // two headings that read the same would get one id between them. Same
+  // rule as the build's: the first keeps the plain one, the rest count up.
+  let id = stamped ? stamped[1] : convertStringForAnchor(text)
+
+  if (!stamped) {
+    const used = new Set(this.pageContentList.map(item => item.id))
+    if (used.has(id)) {
+      let n = 2
+      while (used.has(`${id}_${n}`)) n += 1
+      id = `${id}_${n}`
+    }
+  }
 
   Object.assign(createElem('a', this.main), { name: id, id })
 

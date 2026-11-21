@@ -300,7 +300,7 @@ workWithData (
 )
 ~~~
 
-##### ![ico-25 cap] POST⟪POST⟫
+##### ![ico-25 cap] POST⟪POST_2⟫
 
 ~~~js
 workWithData (
@@ -314,7 +314,7 @@ workWithData (
 )
 ~~~
 
-##### ![ico-25 cap] DELETE⟪DELETE⟫
+##### ![ico-25 cap] DELETE⟪DELETE_2⟫
 
 ~~~js
 workWithData (
@@ -323,7 +323,7 @@ workWithData (
 )
 ~~~
 
-##### ![ico-25 cap] PUT⟪PUT⟫
+##### ![ico-25 cap] PUT⟪PUT_2⟫
 
 ~~~js
 workWithData (

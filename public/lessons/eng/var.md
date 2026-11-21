@@ -200,7 +200,7 @@ _____________________________________
 
 __________________________________________________
 
-### ![ico-25 icon] Infinity⟪Infinity⟫
+### ![ico-25 icon] Infinity⟪Infinity_2⟫
 
 ![ico-20 warn] The value **~Infinity~** can occur when dividing by zero:
 
@@ -210,7 +210,7 @@ Generally speaking, **~Infinity~** is a constant that has a specific value, whic
 
 _____________________________________
 
-### ![ico-25 icon] NaN⟪NaN⟫
+### ![ico-25 icon] NaN⟪NaN_2⟫
 
 ◘◘** 1**◘◘
 
