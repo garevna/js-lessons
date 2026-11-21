@@ -112,7 +112,13 @@ const styles = `
   .node:hover rect { filter: brightness(.97); }
   .node text { font-size: 13px; dominant-baseline: middle; }
 
-  .node.root rect { fill: ${INK}; }
+  /* The rings the levels stand on. Faint: they order the picture, they are
+     not part of it. */
+  .ring { fill: none; stroke: #DBE3EC; stroke-width: 1; }
+
+  .node.root { cursor: default; }
+  .node.root .halo { fill: #fff; stroke: ${INK}; stroke-width: 3; }
+  .node.root .core { fill: ${INK}; }
   .node.root text { fill: #fff; font-size: 15px; font-weight: 700; }
   .node.branch text { fill: #fff; font-weight: 700; font-size: 14px; }
   .node.group text { fill: ${INK}; font-weight: 600; }
@@ -504,6 +510,12 @@ class MindMap extends HTMLElement {
     }
     walk(root, 0)
 
+    // The middle is drawn as a circle, so it takes a circle's room: a square
+    // the size of its diameter, worked out before anything is spaced against
+    // it. Left as the width of its own text, the first ring cut through it.
+    root.w = root.h = (Math.max(root.w, root.h) / 2 + 25) * 2
+    widths[0] = root.w
+
     /*
      * Radial: the subject in the middle, what it is made of going outwards.
      *
@@ -542,19 +554,40 @@ class MindMap extends HTMLElement {
     }
     if (stretch > 1) for (let depth = 1; depth < rings.length; depth++) rings[depth] *= stretch
 
-    const spread = (node, depth, from) => {
-      const span = (node.weight / root.weight) * Math.PI * 2
+    /*
+     * Where each box sits on its ring.
+     *
+     * The branches get equal shares of the turn, not shares in proportion to
+     * what hangs off them. Proportional is the honest division and it is the
+     * ugly one: four branches of unequal size come out at odd angles and the
+     * picture looks like it fell over. Equal shares put them at the quarters
+     * and the thing is symmetrical, which is most of what makes a drawing
+     * like this readable. Inside a branch the division is proportional
+     * again, because there the crowding is real.
+     *
+     * The first share is turned back by half of itself, so with four
+     * branches they stand on the diagonals rather than straight up and
+     * sideways - more room for the words, and the shape the eye expects
+     * from a map like this.
+     */
+    const spread = (node, depth, from, span) => {
       node.angle = from + span / 2
       node.radius = rings[depth]
 
+      const equally = depth === 0
       let cursor = from
       for (const child of node.shown) {
-        spread(child, depth + 1, cursor)
-        cursor += (child.weight / root.weight) * Math.PI * 2
+        const share = equally
+          ? span / node.shown.length
+          : span * (child.weight / node.weight)
+        spread(child, depth + 1, cursor, share)
+        cursor += share
       }
       if (key(node)) places.set(key(node), node)
     }
-    spread(root, 0, -Math.PI / 2)
+
+    const half = root.shown.length ? Math.PI / root.shown.length : 0
+    spread(root, 0, -Math.PI / 2 - half, Math.PI * 2)
 
     const all = everyone
     for (const node of all) {
@@ -577,14 +610,30 @@ class MindMap extends HTMLElement {
     const width = Math.max(...all.map(n => n.x + n.w)) + 56
     const height = Math.max(...all.map(n => n.y + n.h)) + 56
 
+    /*
+     * A branch leaves its parent heading outwards and arrives at its child
+     * heading outwards too - a cubic with both handles laid along the radius
+     * of the ring each end sits on.
+     *
+     * A single bend through the midpoint, which is what this was, gives a
+     * line that leaves sideways and arrives sideways: it reads as a wire
+     * strung between two pins. Tangents along the radius give the curve that
+     * grows out of the middle, which is the shape the drawing is copying.
+     */
     const edges = all.filter(n => n.shown.length).map(node => node.shown.map(child => {
-      const r = (node.radius + child.radius) / 2
-      const a = (node.angle + child.angle) / 2
-      const bend = { x: middle.x + Math.cos(a) * r, y: middle.y + Math.sin(a) * r }
+      const reach = (child.radius - node.radius) * 0.55
+      const out = {
+        x: node.cx + Math.cos(node.angle) * reach,
+        y: node.cy + Math.sin(node.angle) * reach
+      }
+      const into = {
+        x: child.cx - Math.cos(child.angle) * reach,
+        y: child.cy - Math.sin(child.angle) * reach
+      }
       const thick = child.kind === 'branch' ? 3 : child.kind === 'group' ? 2 : 1.5
       return `<path class="edge" stroke="${child.kind === 'item' ? LINE_COLOUR : child.colour}"
                     stroke-width="${thick}"
-                    d="M${node.cx} ${node.cy} Q${bend.x} ${bend.y} ${child.cx} ${child.cy}"/>`
+                    d="M${node.cx} ${node.cy} C${out.x} ${out.y} ${into.x} ${into.y} ${child.cx} ${child.cy}"/>`
     }).join('')).join('')
 
     const legend = []
@@ -642,7 +691,29 @@ class MindMap extends HTMLElement {
       return `fill="#fff" stroke="${node.colour}" stroke-opacity="0.5" stroke-width="1.5"`
     }
 
-    const nodes = all.map(node => `
+    // The rings themselves, drawn faintly. The levels are the point of a
+    // map like this - everything the same distance out is the same kind of
+    // thing - and until they were drawn the reader had to work that out
+    // from the boxes.
+    const circles = rings.slice(1).map(r => `
+      <circle class="ring" cx="${middle.x}" cy="${middle.y}" r="${r}"/>
+    `).join('')
+
+    // The middle is a circle, not a box with its corners rounded off: it is
+    // the one thing on the page that is not a label, and it should not look
+    // like one.
+    const heart = root.w / 2 - 9
+    const centre = `
+      <g class="node root" data-key="${escapeText(key(root))}">
+        <circle class="halo" cx="${root.cx}" cy="${root.cy}" r="${heart + 9}"/>
+        <circle class="core" cx="${root.cx}" cy="${root.cy}" r="${heart}"/>
+        ${root.lines.map((line, index) => `
+          <text x="${root.cx}" y="${root.cy + (index - (root.lines.length - 1) / 2) * LINE}" text-anchor="middle">${escapeText(line)}</text>
+        `).join('')}
+      </g>
+    `
+
+    const nodes = all.filter(node => node !== root).map(node => `
       <g class="node ${node.kind} ${node.folded ? 'folded' : ''}" data-key="${escapeText(key(node))}">
         <rect x="${node.x}" y="${node.y}" width="${node.w}" height="${node.h}" rx="${node.h / 2}" ${paint(node)}/>
         ${node.lines.map((line, index) => `
@@ -659,7 +730,7 @@ class MindMap extends HTMLElement {
             <path d="M0 0 L10 5 L0 10 z" fill="#F97316"/>
           </marker>
         </defs>
-        ${edges}${crosses}${nodes}
+        ${circles}${edges}${crosses}${nodes}${centre}
       </svg>
     `
 
