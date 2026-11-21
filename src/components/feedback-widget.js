@@ -85,8 +85,14 @@ class FeedbackWidget extends HTMLElement {
           <label for="who">${this.words.name}</label>
           <input id="who" type="text" maxlength="60" placeholder="${this.words.namePlaceholder}">
 
+          <!-- A handle is not a word. The keyboard on a phone capitalises the
+               first letter of a field and corrects what it does not know, so
+               "garevna" is offered back as "Garevna" or as something else
+               entirely - and the answer then goes to a nick that does not
+               exist. All three have to be refused by name. -->
           <label for="tg">${this.words.telegram}</label>
-          <input id="tg" type="text" maxlength="40" placeholder="${this.words.telegramPlaceholder}">
+          <input id="tg" type="text" maxlength="40" placeholder="${this.words.telegramPlaceholder}"
+                 autocapitalize="none" autocorrect="off" autocomplete="off" spellcheck="false">
 
           <label for="ask">${this.words.text}</label>
           <textarea id="ask" maxlength="4000" placeholder="${this.words.textPlaceholder}"></textarea>
@@ -107,6 +113,7 @@ class FeedbackWidget extends HTMLElement {
       button: find('.open'),
       badge: find('.badge'),
       panel: find('.panel'),
+      scroller: find('.body'),
       list: find('.thread'),
       who: find('#who'),
       tg: find('#tg'),
@@ -133,12 +140,47 @@ class FeedbackWidget extends HTMLElement {
 
   disconnectedCallback () {
     clearInterval(this.timer)
+    this.watchKeyboard(false)
+  }
+
+  /**
+   * The panel is fixed, and an on-screen keyboard is not.
+   *
+   * A phone does not make the page shorter when the keyboard comes up - the
+   * window stays the size it was and the keyboard is laid over the bottom
+   * half of it. A panel sized by the window therefore ends up with its Send
+   * button under the keys, and nothing about the panel says so.
+   *
+   * visualViewport is the part still in sight. While the panel is open the
+   * cap is taken from that instead, and the inline value is removed the
+   * moment the keyboard goes away, so the stylesheet is back in charge on a
+   * desktop and after every rotation.
+   */
+  watchKeyboard (on) {
+    const view = window.visualViewport
+    if (!view) return
+
+    if (!this.onKeyboard) this.onKeyboard = () => {
+      const hidden = window.innerHeight - view.height
+      if (hidden < 120) {
+        this.panel.style.maxHeight = ''
+        return
+      }
+      const top = this.panel.getBoundingClientRect().top
+      this.panel.style.maxHeight = `${Math.max(view.height - top - 12, 200)}px`
+    }
+
+    view[on ? 'addEventListener' : 'removeEventListener']('resize', this.onKeyboard)
+    if (!on) this.panel.style.maxHeight = ''
   }
 
   toggle (open) {
-    this.panel.classList.toggle('open', open)
+    // "shown", not "open": the icon button is .open, and a shared class name
+    // means the button's rules land on the panel as well - see the stylesheet.
+    this.panel.classList.toggle('shown', open)
 
     clearInterval(this.timer)
+    this.watchKeyboard(open)
     if (!open) return
 
     if (this.thread) {
@@ -147,7 +189,19 @@ class FeedbackWidget extends HTMLElement {
       // twenty seconds on a page they are reading.
       this.timer = setInterval(() => this.load(), pollMs)
     }
-    this.ask.focus()
+
+    // preventScroll, and the panel back to the top.
+    //
+    // Plain focus() scrolls the field into view, and the field is inside a
+    // scrolling box: on a short window the panel therefore opened already
+    // scrolled, with the first label sliced in half under the heading. It
+    // read as a broken layout and was only the browser being helpful.
+    this.scroller.scrollTop = 0
+
+    // Not on a touch screen. There, focusing throws up the keyboard over half
+    // the panel before the reader has decided to write anything - and on iOS
+    // it also drags the page about. A finger can choose its own field.
+    if (!matchMedia('(pointer: coarse)').matches) this.ask.focus({ preventScroll: true })
   }
 
   /** Travels with the message, never shown: useful to whoever answers. */
@@ -188,7 +242,7 @@ class FeedbackWidget extends HTMLElement {
     this.button.classList.toggle('has-answers', answers > seen)
 
     // Opened and read: the badge should not keep shouting about it.
-    if (this.panel.classList.contains('open') && this.thread) {
+    if (this.panel.classList.contains('shown') && this.thread) {
       this.thread = { ...this.thread, seen: answers }
       stored.write(this.thread)
       this.badge.textContent = '0'
