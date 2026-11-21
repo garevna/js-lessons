@@ -1,0 +1,90 @@
+{
+  "_": [
+    "Связи между разделами урока - то единственное, чего нет в его оглавлении.",
+    "Дерево карта строит сама из заголовков; здесь только стрелки «это опирается",
+    "на то» и короткая подпись, зачем они связаны.",
+    "",
+    "from и to - якоря заголовков, те самые ⟪…⟫ из content/lessons/Classes.md.",
+    "Они одинаковы во всех трёх языках, поэтому файл один на все языки, а",
+    "подпись к стрелке переводится здесь же.",
+    "",
+    "Это черновик: связи расставлены по смыслу предмета, а не по тому, как ты",
+    "его рассказываешь. Правь свободно - сломать ничего нельзя, неизвестный",
+    "якорь просто не нарисуется."
+  ],
+
+  "links": [
+    {
+      "from": "super",
+      "to": "Initialisation_process",
+      "note": {
+        "ru": "до super() нет this",
+        "ua": "до super() немає this",
+        "eng": "no this before super()"
+      }
+    },
+    {
+      "from": "extends",
+      "to": "Initialisation_process",
+      "note": {
+        "ru": "базовый класс первым",
+        "ua": "базовий клас першим",
+        "eng": "the base class first"
+      }
+    },
+    {
+      "from": "Private_class_fields",
+      "to": "Initialisation_process",
+      "note": {
+        "ru": "поля до тела конструктора",
+        "ua": "поля до тіла конструктора",
+        "eng": "fields before the constructor body"
+      }
+    },
+    {
+      "from": "Loss_of_context",
+      "to": "Class_properties_and_methods",
+      "note": {
+        "ru": "метод без объекта теряет this",
+        "ua": "метод без об'єкта втрачає this",
+        "eng": "a method apart from its object loses this"
+      }
+    },
+    {
+      "from": "get_&_set",
+      "to": "Class_properties_and_methods",
+      "note": {
+        "ru": "аксессоры - те же методы",
+        "ua": "аксесори - ті самі методи",
+        "eng": "accessors are methods too"
+      }
+    },
+    {
+      "from": "static",
+      "to": "Inheritance",
+      "note": {
+        "ru": "статика тоже наследуется",
+        "ua": "статика теж успадковується",
+        "eng": "statics are inherited as well"
+      }
+    },
+    {
+      "from": "Named_class_expression",
+      "to": "Loss_of_context",
+      "note": {
+        "ru": "имя видно только внутри",
+        "ua": "ім'я видно лише всередині",
+        "eng": "the name is visible only inside"
+      }
+    },
+    {
+      "from": "Example_SVG",
+      "to": "Inheritance",
+      "note": {
+        "ru": "всё вместе на одном примере",
+        "ua": "все разом на одному прикладі",
+        "eng": "all of it on one example"
+      }
+    }
+  ]
+}

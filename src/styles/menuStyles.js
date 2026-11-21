@@ -75,6 +75,43 @@ let rawSource = `
   color: #fa0;
 }
 
+/* The way into the lesson map, at the head of the contents.
+   ----------------------------------------------------------------------
+   The same errand as the list beneath it - finding your way around a
+   lesson - so it opens from the same place instead of putting a second
+   navigation button somewhere else on the screen. The rule under it says
+   it is not one of the headings. */
+#page-navigation-menu-container > li.lesson-map {
+  border-bottom: 1px solid #333;
+}
+
+#page-navigation-menu-container > li.lesson-map > a {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 12px 24px 12px 12px;
+  color: #fa0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* The heading rows set their own small blue text on the span; this row's
+   label is the row. */
+#page-navigation-menu-container > li.lesson-map > a > span {
+  margin: 0;
+  color: inherit;
+  font-size: 0.8rem;
+}
+
+#page-navigation-menu-container > li.lesson-map:hover > a {
+  color: #fc6;
+}
+
+#page-navigation-menu-container > li.lesson-map svg {
+  flex: none;
+  fill: currentColor;
+}
+
 @media screen and (max-width: 480px), screen and (max-height: 480px) {
   #page-navigation-menu  {
     background-size: 32px;

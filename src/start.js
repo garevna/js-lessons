@@ -20,6 +20,7 @@ import './components/test-component'
 import './components/quiz-card'
 import './components/code-fix'
 
+import './components/mind-map'
 import './components/page-component'
 
 import './components/welcome-win'

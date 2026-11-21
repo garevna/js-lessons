@@ -1,6 +1,19 @@
 const { menuStyles } = require('../styles').default
 const { createElem, createPath, getContentWorker } = require('../helpers').default
-const { convertStringForAnchor } = require('../configs').default
+const { convertStringForAnchor, lang } = require('../configs').default
+
+/** mdi-sitemap-outline, the same mark the map window wears. */
+const MAP_ICON = 'M9 2V8H7V10H11V8H9V4H15V8H13V10H17V8H15V2H9M2 14V20H8V14H6V12H4V14H2M4 16H6V18H4V16M9 14V20H15V14H13V12H11V14H9M11 16H13V18H11V16M16 14V20H22V14H20V12H18V14H16M18 16H20V18H18V16Z'
+
+/**
+ * "Карта", not "ментальная схема": the word is a metaphor the reader
+ * already owns, and the panel is narrow.
+ */
+const MAP_LABEL = {
+  ru: 'Карта урока',
+  ua: 'Карта уроку',
+  eng: 'Lesson map'
+}
 
 class MenuComponent extends HTMLElement {
   constructor () {
@@ -103,6 +116,29 @@ class MenuComponent extends HTMLElement {
     const notFound = !!this.options.find(option => option.text.indexOf('404') !== -1)
     const visible = !!location.search && !notFound
     this.style.visibility = visible ? 'visible' : 'hidden'
+
+    // The map, at the head of the contents.
+    //
+    // A reader finding their way around a lesson has two ways to do it: the
+    // list below, which is the order the lesson is written in, and the
+    // picture, which is the shape it has. They are the same errand, so they
+    // open from the same place; a second navigation button in another
+    // corner of the screen would only split the question in two.
+    const first = createElem('li', this.menuContent)
+    first.className = 'lesson-map'
+
+    // No href: this goes nowhere, it opens something. A "#" would put a
+    // stray hash in the address bar and a javascript: URL is the kind of
+    // thing a content policy refuses.
+    Object.assign(createElem('a', first), {
+      innerHTML: `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="${MAP_ICON}"/></svg><span>${MAP_LABEL[lang()] || MAP_LABEL.eng}</span>`,
+      onclick: event => {
+        event.preventDefault()
+        this.hide()
+        const page = document.querySelector('page-element')
+        page && page.map && page.map.open()
+      }
+    })
 
     this.options.forEach((option, index) => {
       const li = createElem('li', this.menuContent)

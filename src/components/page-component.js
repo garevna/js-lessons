@@ -13,6 +13,10 @@ class PageComponent extends HTMLElement {
       parsePageContent,
       worker: getContentWorker(),
       main: createElem('main', this),
+      // The lesson seen whole, in a window of its own. It draws itself from
+      // the headings this page parses, so it is given nothing and only has
+      // to be here.
+      map: createElem('mind-map', this),
       menu: document.getElementsByTagName('menu-component')[0]
     })
 
