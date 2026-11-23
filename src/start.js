@@ -21,6 +21,7 @@ import './components/quiz-card'
 import './components/code-fix'
 
 import './components/mind-map'
+import './components/course-map'
 import './components/page-component'
 
 import './components/welcome-win'
@@ -34,6 +35,11 @@ const favicon = Object.assign(createElem('link', document.head), {
   type: 'image/x-icon',
   href: createPath('icons','personage-icon.ico')
 })
+
+// The course map lives on the body, not on a lesson: it is wanted on the
+// start page as well, where there is no <page-element> to hang it on. The
+// frame inside it stays empty until the map is first asked for.
+document.body.appendChild(document.createElement('course-map'))
 
 window.onscroll = window.onwheel = function (event) {
   const { scrollTop, scrollHeight } = document.documentElement

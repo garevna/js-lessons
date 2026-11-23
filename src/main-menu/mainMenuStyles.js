@@ -90,6 +90,28 @@ let rawSource = `
   color: #fa0;
 }
 
+/* The way into the course map, beside the way home.
+   ----------------------------------------------------------------------
+   Both are about the course rather than about a lesson, and this menu is
+   where a reader goes to find their way about; the home link sits in the
+   corner, so this one sits under it. Its mark is drawn inline rather than
+   kept in icons/ because it is one path, and a data URL of an SVG file is
+   a lot of base64 for one path. */
+.course-map {
+  position: absolute;
+  top: 64px;
+  left: 20px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #09b;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.course-map:hover { color: #fa0; }
+.course-map svg { flex: none; fill: currentColor; }
+
 hr {
   margin: 16px 0;
   height: 2px;

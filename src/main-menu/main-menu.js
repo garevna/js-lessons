@@ -1,6 +1,11 @@
 import './main-menu-item'
 import './search-component'
 import './author-widget'
+
+const { lang } = require('../configs').default
+
+/** mdi-sitemap-outline, the same mark the lesson map wears. */
+const MAP_ICON = 'M9 2V8H7V10H11V8H9V4H15V8H13V10H17V8H15V2H9M2 14V20H8V14H6V12H4V14H2M4 16H6V18H4V16M9 14V20H15V14H13V12H11V14H9M11 16H13V18H11V16M16 14V20H22V14H20V12H18V14H16M18 16H20V18H18V16Z'
 import { createPath } from './createPath'
 import { createElem } from './createElem'
 import { getContentWorker } from './getContentWorker'
@@ -107,6 +112,25 @@ class MainMenuComponent extends HTMLElement {
       homeButton,
       pageMenu: document.getElementsByTagName('menu-component')[0]
     })
+
+    // The course map, from the menu. The element itself hangs off the body
+    // (start.js), because the map is wanted on the start page too, where
+    // there is no lesson to hang it on.
+    const mapLink = this.shadow.querySelector('#course-map-link')
+    if (mapLink) {
+      const words = { ru: 'Карта курса', ua: 'Карта курсу', eng: 'The course map' }
+      mapLink.innerHTML = `
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="${MAP_ICON}"/>
+        </svg>
+        <span>${words[lang()] || words.eng}</span>
+      `
+      mapLink.onclick = () => {
+        this.checkbox.checked && this.checkbox.dispatchEvent(new Event('click'))
+        const map = document.querySelector('course-map')
+        map && map.open()
+      }
+    }
 
     this.worker.addEventListener('message', this.workerMessageHandler.bind(this))
     this.checkbox.onclick = this.checkboxClickHandler.bind(this)

@@ -61,7 +61,7 @@ ___________________________________________________
 
 A class is not declared the way a function is, and three of the differences are worth learning at once - they are what trips people up.
 
-![ico-20 pin] **A class does not hoist.** Before the line that declares it the class already exists, but it sits in the **_temporal dead zone_**, and reaching for it there is a **_^^ReferenceError^^_**.
+![ico-20 pin] **A class does not hoist.** Before the line that declares it the class already exists, but it sits in the **_^^temporal dead zone^^_**, and reaching for it there is a **_^^ReferenceError^^_**.
 
 A function is different: one declared with ~function~ can be called above its own declaration, and it works. A class cannot.
 
@@ -80,7 +80,7 @@ class User {
 }
 ~~~
 
-![ico-20 pin] **A class is called only with _new_.** It is a function - but not one that can simply be called: without **_new_** you get a **_^^TypeError^^_**.
+![ico-20 pin] **A class is called only with ~new~.** It is a function - but not one that can simply be called: without **_~new~_** you get a **_^^TypeError^^_**.
 
 ~~~demo
 > class User {}
@@ -89,13 +89,13 @@ class User {
 ! Uncaught TypeError: Class constructor User cannot be invoked without 'new'
 ~~~
 
-![ico-20 pin] **The body of a class always runs in strict mode** - the _'use strict'_ directive is not needed, it applies by itself. That is where the behaviour of **_this_** on a lost context comes from, which we will come back to.
+![ico-20 pin] **The body of a class always runs in strict mode** - the ~'use strict'~ directive is not needed, it applies by itself. That is where the behaviour of **_~this~_** on a lost context comes from, which we will come back to.
 
 ___________________________________________________
 
 ### ![ico-20 icon] Private class fields⟪Private_class_fields⟫
 
-••The **_#_** symbol before a property or method name declares it as private (_Private class fields_). This is standard **ES2022** syntax.••
+••The **_#_** symbol before a property or method name declares it as private (_^^Private class fields^^_). This is standard **ES2022** syntax.••
 
 ♦♦♦1♦♦♦
 
@@ -372,7 +372,7 @@ ___________________________________________________
 
 ## ![ico-25 icon] Class expression⟪Class_expression⟫
 
-Declaring classes using a _Class Expression_ works in the same way as a _Function Expression_. This syntax makes classes ‘first-class citizens’ (**First-Class Citizens**) in JavaScript — they can be dynamically passed to functions, returned from them, or assigned to variables.
+Declaring classes using a **_^^Class Expression^^_** works in the same way as a **_^^Function Expression^^_**. This syntax makes classes **^^First-Class Citizens^^** in JavaScript — they can be dynamically passed to functions, returned from them, or assigned to variables.
 The main difference lies in the scope of the class name and the ease of debugging.
 
 ### ![ico-20 icon] Anonymous class expression⟪Anonymous_class_expression⟫
@@ -532,7 +532,7 @@ const Picture = class Sketch {
 }
 ~~~
 
-The inner name **_Sketch_** is not decoration here: the static **_of()_** makes an instance by that very name. From outside the class is **_Picture_**; inside it is **_Sketch_**.
+The inner name **~Sketch~** is not decoration here: the static **~of()~** makes an instance by that very name. From outside the class is **_Picture_**; inside it is ~Sketch~.
 
 ~~~demo
 > Picture.name
@@ -546,7 +546,7 @@ The inner name **_Sketch_** is not decoration here: the static **_of()_** makes 
 < 2
 ~~~
 
-![ico-20 pin] Here is the protection from renaming promised above, at work. **_of()_** can be taken off the class and called on its own: inside it says **_Sketch_**, not **_Picture_**, so it depends neither on the outer name nor on what anyone later does with it.
+![ico-20 pin] Here is the protection from renaming promised above, at work. **~of()~** can be taken off the class and called on its own: inside it says ~Sketch~, not ~Picture~, so it depends neither on the outer name nor on what anyone later does with it.
 
 ~~~demo
 > const makeSketch = Picture.of
@@ -1008,7 +1008,7 @@ ___________________________________________________
 
 ### ![ico-20 icon] instanceof⟪instanceof⟫
 
-The **_instanceof_** operator answers whether an object was made by this class - or by any of its ancestors. It walks the prototype chain; it does not compare names.
+The **_~instanceof~_** operator answers whether an object was made by this class - or by any of its ancestors. It walks the prototype chain; it does not compare names.
 
 ~~~demo
 > class Animal {}
@@ -1025,9 +1025,9 @@ The **_instanceof_** operator answers whether an object was made by this class -
 < false
 ~~~
 
-That is why **_dog instanceof Animal_** is _true_ as well: **_Animal_** stands in the same chain, and the check climbs it all the way up.
+That is why **~dog instanceof Animal~** is ~true~ as well: **~Animal~** stands in the same chain, and the check climbs it all the way up.
 
-![ico-20 warn] The check looks at the chain, not at whoever called **_new_**. Replace an object's prototype after it was made and the answer changes. **_instanceof_** says what is in the chain now, not who made it.
+![ico-20 warn] The check looks at the chain, not at whoever called **_~new~_**. Replace an object's prototype after it was made and the answer changes. **_~instanceof~_** says what is in the chain now, not who made it.
 
 ___________________________________________________
 
@@ -1416,7 +1416,7 @@ Everything above is how a class is used. What follows is three facts about what 
 
 ### ![ico-20 icon] A class is a function⟪A_class_is_a_function⟫
 
-Not ‘almost a function’, not ‘a wrapper around one’. **_typeof_** answers literally:
+Not ‘almost a function’, not ‘a wrapper around one’. **_~typeof~_** answers literally:
 
 ~~~demo
 > class User {}
@@ -1425,13 +1425,13 @@ Not ‘almost a function’, not ‘a wrapper around one’. **_typeof_** answer
 < 'function'
 ~~~
 
-Class syntax is a convenient way of writing what used to be written by hand: a constructor function with its methods on its **_prototype_**. The engine does the same thing, only more strictly and in fewer words.
+Class syntax is a convenient way of writing what used to be written by hand: a constructor function with its methods on its **_~prototype~_**. The engine does the same thing, only more strictly and in fewer words.
 
 ___________________________________________________
 
 ### ![ico-20 icon] Methods are not enumerable⟪Methods_are_not_enumerable⟫
 
-Methods put on the **_prototype_** are given **_enumerable: false_**. A **_for..in_** loop therefore does not see them and **_Object.keys()_** does not list them - unlike the instance fields.
+Methods put on the **_~prototype~_** are given **~enumerable: false~**. A **~for..in~** loop therefore does not see them and **~Object.keys()~** does not list them - unlike the instance fields.
 
 ~~~demo
 > class User {
@@ -1472,7 +1472,7 @@ Static methods reach the heir as well - the same prototype machinery, but betwee
 < true
 ~~~
 
-![ico-20 pin] **_extends_** ties two chains at once: **_Dog.prototype_** inherits from **_Animal.prototype_**, which is about the instances, and **_Dog_** itself inherits from **_Animal_**, which is about the statics. Two inheritances in one word.
+![ico-20 pin] **_~extends~_** ties two chains at once: ~Dog.prototype~ inherits from ~Animal.prototype~, which is about the instances, and ~Dog~ itself inherits from ~Animal~, which is about the statics. Two inheritances in one word.
 
 ___________________________________________________
 

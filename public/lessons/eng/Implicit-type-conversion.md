@@ -71,7 +71,16 @@ The same applies to comparison operations. The engine cannot compare an object w
 < true
 ~~~
 
-The engine has a certain ‘protocol’ for handling strings as operands in expressions. For example, if a string within an expression acts as an operand in any arithmetic operation other than the **+** operation. When evaluating the value of an arithmetic expression (~a - b~, ~a * b~, ~a / b~, ~a % b~), the engine will implicitly cast both operands to the number type.
+The engine has a certain protocol for handling strings as operands in expressions. For example, if a string within an expression acts as an operand in any arithmetic operation (other than the **+** operation). When evaluating the value of an arithmetic expression:
+
+~~~js
+a - b
+a * b
+a / b
+a % b
+~~~
+
+the engine will implicitly cast both operands to the number type.
 
 ~~~demo
 > 20 - '5'
@@ -126,85 +135,6 @@ ___
 
 ___
 
-### ![ico-20 icon] An array as an operand in an arithmetic expression⟪An_array_as_an_operand_in_an_arithmetic_expression⟫
-
-The result of evaluating an expression can be cast to a string type not only by explicitly adding a string operand. For example, adding an empty array produces the same result. In other words, if an array acts as an operand in an expression, it is cast to a string.
-
-~~~demo
-> 20 + 5 + []
-< '25'
-> 20 + 5 + [0]
-< '250'
-> 20 + 5 + [0, 5]
-< '250,5'
-> 20 + 5 + [0, 5, 4]
-< '250,5,4'
-~~~
-
-Therefore, if an array acts as an operand in an arithmetic operation (multiplication, division, subtraction or modulo), the situation is slightly different: if the array is empty, it is converted to an empty string, which, when used as an operand in an arithmetic operation, is converted to 0. If the array contains a single element, that element is converted to a string and then to a numeric type (a number or ~NaN~).
-
-~~~demo
-> 20 + '5' - []
-< 205
-> 20 + '5' - [3]
-< 202
-> 20 + '5' - ['5']
-< 200
-> 20 + '5' - [3, 0]
-< NaN
-~~~
-
-___
-
-### ![ico-25 hw] Tests 3⟪Tests_3⟫
-
-~~~tests
-→→→ 5 + [8] | 13, '58' | 58 →→→
-→→→ 5 * [8] | 40, NaN, 0 | 40 →→→
-→→→ '5' % ['8'] | 0, NaN, 5 | 5 →→→
-→→→ 5 * [8, 0] | 40, NaN, 0 | NaN →→→
-→→→ ['8'] - '5' | 3, NaN, 0 | 3 →→→
-→→→ [] + false | 'false', NaN, 0 | false →→→
-→→→ [4] + NaN | '4NaN', NaN, 0 | 4NaN →→→
-→→→ ({} + []) | '', '[object Object]', NaN, 0 | [object Object] →→→
-→→→ [1] + [2] + [3] | 6, '123', NaN, 0 | 123 →→→
-→→→ [5] - [4] / [2] | 5, 3, '542', NaN, Infinity | 3 →→→
-→→→ [5] * [4] / [2] | 5, 10, '542', NaN, undefined | 10 →→→
-→→→ ([5] - [4]) / [2] | 5, 0.5, NaN, Infinity | 0.5 →→→
-→→→ ([5] + [0] - [10]) / [2] | 5, 50, 20, NaN, 0 | 20 →→→
-~~~
-
-___
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-However, if any arithmetic operator is placed before an array, the array is converted to a number (or ~NaN~):
-
-~~~demo
-> +['8'] + 5
-< 13
-> null + +[4]
-< 4
-> +[5] + null
-< 5
-~~~
-
-___
-
 ### ![ico-20 icon] Implicit coercion to the number type⟪Implicit_coercion_to_the_number_type⟫
 
 Implicit coercion to the type ~number~ occurs in arithmetic expressions:
@@ -221,8 +151,6 @@ Implicit coercion to the type ~number~ occurs in arithmetic expressions:
 > +'5' + +'3'
 < 8
 ~~~
-
-
 
 ![ico-20 warn] When used in arithmetic operations, an empty string (~""~) and an empty array (~[]~) are converted to **0**:
 
@@ -301,11 +229,72 @@ Implicit coercion to the type ~number~ occurs in arithmetic expressions:
 
 ___
 
+### ![ico-20 icon] An array as an operand in an arithmetic expression⟪An_array_as_an_operand_in_an_arithmetic_expression⟫
+
+The result of evaluating an expression can be cast to a string type not only by explicitly adding a string operand. For example, adding an empty array produces the same result. In other words, if an array acts as an operand in an expression, it is cast to a string.
+
+~~~demo
+> 20 + 5 + []
+< '25'
+> 20 + 5 + [0]
+< '250'
+> 20 + 5 + [0, 5]
+< '250,5'
+> 20 + 5 + [0, 5, 4]
+< '250,5,4'
+~~~
+
+Therefore, if an array acts as an operand in an arithmetic operation (multiplication, division, subtraction or modulo), the situation is slightly different: if the array is empty, it is converted to an empty string, which, when used as an operand in an arithmetic operation, is converted to 0. If the array contains a single element, that element is converted to a string and then to a numeric type (a number or ~NaN~).
+
+~~~demo
+> 20 + '5' - []
+< 205
+> 20 + '5' - [3]
+< 202
+> 20 + '5' - ['5']
+< 200
+> 20 + '5' - [3, 0]
+< NaN
+~~~
+
+___
+
+### ![ico-25 hw] Tests 3⟪Tests_3⟫
+
+~~~tests
+→→→ 5 + [8] | 13, '58' | 58 →→→
+→→→ 5 * [8] | 40, NaN, 0 | 40 →→→
+→→→ '5' % ['8'] | 0, NaN, 5 | 5 →→→
+→→→ 5 * [8, 0] | 40, NaN, 0 | NaN →→→
+→→→ ['8'] - '5' | 3, NaN, 0 | 3 →→→
+→→→ [] + false | 'false', NaN, 0 | false →→→
+→→→ [4] + NaN | '4NaN', NaN, 0 | 4NaN →→→
+→→→ ({} + []) | '', '[object Object]', NaN, 0 | [object Object] →→→
+→→→ [1] + [2] + [3] | 6, '123', NaN, 0 | 123 →→→
+→→→ [5] - [4] / [2] | 5, 3, '542', NaN, Infinity | 3 →→→
+→→→ [5] * [4] / [2] | 5, 10, '542', NaN, undefined | 10 →→→
+→→→ ([5] - [4]) / [2] | 5, 0.5, NaN, Infinity | 0.5 →→→
+→→→ ([5] + [0] - [10]) / [2] | 5, 50, 20, NaN, 0 | 20 →→→
+~~~
+
+___
+
+However, if any arithmetic operator is placed before an array, the array is converted to a number (or ~NaN~):
+
+~~~demo
+> +['8'] + 5
+< 13
+> null + +[4]
+< 4
+> +[5] + null
+< 5
+~~~
+
+___
+
 ### ![ico-20 icon] Implicit coercion to the boolean type⟪Implicit_coercion_to_the_boolean_type⟫
 
 Implicit coercion to the boolean type (~boolean~) occurs in [►►►conditional operators►►►](page/Conditional-operators), which we shall look at later, as well as when evaluating expressions constructed using the logical operators **~&&~** and **~||~**.
-
-
 
 ![ico-20 warn] When performing the logical operations ~&#10072;&#10072;~ and ~&&~, the operands are implicitly cast to a logical value; however, the result of the logical operation will be the original value of one of the operands, even if it is not a Boolean
 

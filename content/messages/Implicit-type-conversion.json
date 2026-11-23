@@ -1,271 +1,225 @@
 {
-  "p44": {
+  "intro_1": {
     "ru": "Тут мы вступаем на минное поле, заложенное динамической типизацией. За исключением откровенных синтаксических ошибок, движок дает нам полную свободу в выражениях, которые мы предоставляем ему вычислять, даже если эти выражения выглядят абсолютным бредом.",
     "eng": "Here we enter a minefield created by dynamic typing. With the exception of obvious syntactic errors, the engine gives us complete freedom in the expressions we provide for it to evaluate, even if those expressions look like utter nonsense.",
     "ua": "Тут ми потрапляємо на мінне поле, закладене динамічною типізацією. За винятком явних синтаксичних помилок, движок надає нам повну свободу у виразах, які ми доручаємо йому обчислювати, навіть якщо ці вирази виглядають як абсолютна нісенітниця."
   },
-  "p45": {
+  "intro_2": {
     "ru": "Главная \"мина\" в том, что движок разрешает использовать в выражениях данные различного типа, и не рассматривает это как ошибку, если вы пытаетесь сложить число со строкой или с булевым значением. Т.е. вы можете скрестить кактус с курицей, и движок не остановит вас. Однако вопрос: а что получится в результате? Кактус или курица?",
     "eng": "The main ‘pitfall’ is that the engine allows data of different types to be used in expressions, and does not treat it as an error if you try to add a number to a string or a Boolean value. In other words, you can cross a cactus with a chicken, and the engine won’t stop you. However, the question is: what will the result be? A cactus or a chicken?",
     "ua": "Головна «міна» полягає в тому, що движок дозволяє використовувати у виразах дані різних типів і не розглядає це як помилку, якщо ви намагаєтеся додати число до рядка або до булевого значення. Тобто ви можете схрестити кактус із куркою, і движок вас не зупинить. Однак питання: а що вийде в результаті? Кактус чи курка?"
   },
-  "p46": {
+  "intro_3": {
     "ru": "Это и есть главный вопрос, на который мы попробуем ответить.",
     "eng": "This is the main question we’ll try to answer.",
     "ua": "Це й є головне питання, на яке ми спробуємо відповісти."
   },
-  "p1": {
+  "implicit_type_coercion": {
     "ru": "Неявное приведение типов",
     "eng": "Implicit type coercion",
     "ua": "Неявне приведення типів"
   },
-  "p2": {
+  "expression_1": {
     "ru": "Неявное приведение типов происходит в процессе вычисления выражений.",
     "eng": "Implicit type coercion occurs during the evaluation of expressions.",
     "ua": "Неявне приведення типів відбувається в процесі обчислення виразів."
   },
-  "p47": {
+  "expression_2": {
     "ru": "Главное, с чего следует начинать: как движок вычисляет наши выражения. А вычисляет он их последовательно, слева направо, за исключением следующих правил (приоритетов):",
     "eng": "The first thing to start with is how the engine evaluates our expressions. It evaluates them sequentially, from left to right, subject to the following rules (operators’ precedence):",
     "ua": "Головне, з чого слід починати: як движок обчислює наші вирази. А обчислює він їх послідовно, зліва направо, за винятком таких правил (пріоритетів):"
   },
-  "p48": {
+  "expression_3": {
     "ru": "![ico-20 warning] Если в выражении встречаются круглые скобки, то сначала будет вычислено выражение в круглых скобках, затем полученное значение будет подставлено вместо выражения в круглых скобках. Т.е. при вычислении выражения _2 * (8 + 2)_ движок сначала вычислит _8 + 2_, а затем - значение выражения **_2 * 10_**;",
     "eng": "![ico-20 warning] If an expression contains round brackets, the expression inside the round brackets will be evaluated first, and then the resulting value will be substituted for the expression inside the round brackets. In other words, when evaluating the expression _2 * (8 + 2)_, the engine will first evaluate _8 + 2_, and then the value of the expression **_2 * 10_**;",
     "ua": "![ico-20 warning] Якщо у виразі зустрічаються круглі дужки, то спочатку обчислюється вираз у круглих дужках, потім отримане значення підставляється замість виразу в круглих дужках. Тобто під час обчислення виразу _2 * (8 + 2)_ движок спочатку обчислить _8 + 2_, а потім — значення виразу **_2 * 10_**;"
   },
-  "p49": {
+  "expression_4": {
     "ru": "![ico-20 warning] Операторы умножения и деления имеют более высокий приоритет, чем операторы сложения и вычитания. Это означает, что при вычислении выражения _5 + 8 * 2_ движок сначала вычислит _8 * 2_, а затем - значение выражения **_5 + 16_**.",
     "eng": "![ico-20 warning] Multiplication and division operators have higher precedence than addition and subtraction operators. This means that when evaluating the expression _5 + 8 * 2_, the engine will first evaluate _8 * 2_, and then the value of the expression **_5 + 16_**.",
     "ua": "![ico-20 warning] Оператори множення та ділення мають вищий пріоритет, ніж оператори додавання та віднімання. Це означає, що під час обчислення виразу _5 + 8 * 2_ движок спочатку обчислить _8 * 2_, а потім — значення виразу **_5 + 16_**."
   },
-  "p50": {
+  "expression_5": {
     "ru": "^^Прежде, чем выполнить присваивание, движок должен вычислить значение выражения в правой части оператора присваивания. Полученное значение будет присвоено переменной, имя которой стоит в левой части оператора присваивания.^^",
     "eng": "^^Before performing an assignment, the engine must evaluate the expression on the right-hand side of the assignment statement. The resulting value is then assigned to the variable whose name appears on the left-hand side of the assignment statement.^^",
     "ua": "^^Перш ніж виконати присвоєння, движок повинен обчислити значення виразу в правій частині оператора присвоєння. Отримане значення буде присвоєно змінній, ім’я якої стоїть у лівій частині оператора присвоєння.^^"
   },
-  "p3": {
+  "to_string": {
     "ru": "Неявное приведение к типу string",
     "eng": "Implicit conversion to the string type",
     "ua": "Неявне приведення до типу string"
   },
-  "p51": {
+  "to_string_1": {
     "ru": "Начнем с того, что приведение к типу string является дефолтным поведением движка в ситуациях, когда он 'не знает, что делать'. Точнее, когда операнд арифметической операции не является примитивным значением (строкой, числом, логическим значением, или ~null~ | ~NaN~ | ~undefined~).",
     "eng": "Let’s start by noting that coercion to a string type is the engine’s default behaviour in situations where it ‘doesn’t know what to do’. More precisely, this occurs when the operand of an arithmetic operation is not a primitive value (a string, a number, a boolean value, or ~null~ | ~NaN~ | ~undefined~).",
     "ua": "Почнемо з того, що приведення до типу string є стандартною поведінкою движка в ситуаціях, коли він «не знає, що робити». Точніше, коли операнд арифметичної операції не є примітивним значенням (рядком, числом, логічним значенням або ~null~ | ~NaN~ | ~undefined~)."
   },
-  "p54": {
+  "to_string_2": {
     "ru": "Аналогичная история происходит в операциях сравнения. Движок не может сравнить объект с каким-либо примитивным значением, пока не получит тем или иным способом примитивное значение этого объекта. И по дефолту он будет приводить этот объект к примитивному значению типа ~string~.",
     "eng": "The same applies to comparison operations. The engine cannot compare an object with a primitive value until it has, in one way or another, obtained a primitive value for that object. By default, it will coerce the object to a primitive value of type ~string~.",
     "ua": "Аналогічна ситуація спостерігається в операціях порівняння. Движок не може порівняти об’єкт із будь-яким примітивним значенням, доки не отримає тим чи іншим способом примітивне значення цього об’єкта. І за замовчуванням він приводитиме цей об’єкт до примітивного значення типу ~string~."
   },
-  "p52": {
-    "ru": "У движка есть некоторый 'протокол' работы со строками как операндами выражений. Например, если строка, входящая в выражение, участвует в качестве операнда в любой арифметической операции, кроме операции **+**. При вычислении значения арифметического выражения (~a - b~, ~a * b~, ~a / b~, ~a % b~) движок будет неявно приводить оба операнда к типу number.",
-    "eng": "The engine has a certain ‘protocol’ for handling strings as operands in expressions. For example, if a string within an expression acts as an operand in any arithmetic operation other than the **+** operation. When evaluating the value of an arithmetic expression (~a - b~, ~a * b~, ~a / b~, ~a % b~), the engine will implicitly cast both operands to the number type.",
-    "ua": "У движка є певний «протокол» роботи з рядками як операндами виразів. Наприклад, якщо рядок, що входить до виразу, бере участь як операнд у будь-якій арифметичній операції, крім операції **+**. Під час обчислення значення арифметичного виразу (~a - b~, ~a * b~, ~a / b~, ~a % b~) движок неявно приводитиме обидва операнди до типу number."
+  "to_string_3": {
+    "ru": "У движка есть некоторый протокол работы со строками как операндами выражений. Например, если строка, входящая в выражение, участвует в качестве операнда в любой арифметической операции (кроме операции **+**). При вычислении значения арифметического выражения:",
+    "eng": "The engine has a certain protocol for handling strings as operands in expressions. For example, if a string within an expression acts as an operand in any arithmetic operation (other than the **+** operation). When evaluating the value of an arithmetic expression:",
+    "ua": "У движка є певний протокол роботи з рядками як операндами виразів. Наприклад, якщо рядок, що входить до виразу, бере участь як операнд у будь-якій арифметичній операції (крім операції **+**). Під час обчислення значення арифметичного виразу:"
   },
-  "p4": {
+  "to_string_4": {
+    "ru": "движок будет неявно приводить оба операнда к типу number.",
+    "eng": "the engine will implicitly cast both operands to the number type.",
+    "ua": "движок неявно приводитиме обидва операнди до типу number."
+  },
+  "to_string_5": {
     "ru": "Движок вычисляет выражение последовательно, слева направо, т.е. если выражение начинается с арифметических операций с числами, а потом добавляется строка, то первыми будут выполнены арифметические операции, а затем к полученному числу будет добавлена строка, что превратит результат в строку.",
     "eng": "The engine evaluates the expression sequentially, from left to right; that is, if the expression begins with arithmetic operations on numbers and is then followed by a string, the arithmetic operations will be performed first, and then the string will be appended to the resulting number, which will convert the result into a string.",
     "ua": "Движок обчислює вираз послідовно, зліва направо, тобто якщо вираз починається з арифметичних операцій з числами, а потім додається рядок, то спочатку будуть виконані арифметичні операції, а потім до отриманого числа буде додано рядок, що перетворить результат на рядок."
   },
-  "p6": {
+  "array_as_operand": {
     "ru": "Массив как операнд арифметического выражения",
     "eng": "An array as an operand in an arithmetic expression",
     "ua": "Масив як операнд арифметичного виразу"
   },
-  "p53": {
+  "array_as_operand_1": {
     "ru": "Привести результат вычисления выражения к строчному типу можно не только явным добавлением операнда типа string. Например, добавление пустого массива приводит к такому же результату. Т.е. если массив выступает в качестве операнда в выражении, то он приводится к строке.",
     "eng": "The result of evaluating an expression can be cast to a string type not only by explicitly adding a string operand. For example, adding an empty array produces the same result. In other words, if an array acts as an operand in an expression, it is cast to a string.",
     "ua": "Перетворити результат обчислення виразу на рядок можна не лише шляхом явного додавання операнда типу string. Наприклад, додавання порожнього масиву дає той самий результат. Тобто якщо масив виступає операндом у виразі, то він перетворюється на рядок."
   },
-  "p5": {
+  "array_as_operand_2": {
     "ru": "Поэтому если массив выступает в качестве операнда арифметической операции (умножения, деления, вычитания, взятия остатка от деления), то ситуация несколько иная: если массив пустой, то приводится к пустой строке, которая, будучи операндом арифметической операции, приводится к 0. Если массив содержит один элемент, то этот элемент приводится к строке, а далее - к числовому типу (число или ~NaN~).",
     "eng": "Therefore, if an array acts as an operand in an arithmetic operation (multiplication, division, subtraction or modulo), the situation is slightly different: if the array is empty, it is converted to an empty string, which, when used as an operand in an arithmetic operation, is converted to 0. If the array contains a single element, that element is converted to a string and then to a numeric type (a number or ~NaN~).",
     "ua": "Тому, якщо масив виступає операндом арифметичної операції (множення, ділення, віднімання, обчислення залишку від ділення), ситуація дещо інша: якщо масив порожній, його приводять до порожнього рядка, який, будучи операндом арифметичної операції, приводять до 0. Якщо масив містить один елемент, то цей елемент зводиться до рядка, а далі — до числового типу (число або ~NaN~)."
   },
-  
-  "p7": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
-  },
-  "p8": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
-  },
-  "p9": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
-  },
-  "p10": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
-  },
-  "p11": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
-  },
-  "p12": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
-  },
-  "p13": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
-  },
-  "p14": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
-  },
-  "p15": {
+  "array_as_operand_3": {
     "ru": "Однако если перед массивом использовать любой знак арифметической операции, то массив приводится к числу (или ~NaN~):",
     "eng": "However, if any arithmetic operator is placed before an array, the array is converted to a number (or ~NaN~):",
     "ua": "Однак якщо перед масивом використати будь-який знак арифметичної операції, то масив перетворюється на число (або ~NaN~):"
   },
-  "p16": {
+  "to_number": {
     "ru": "Неявное приведение к типу number",
     "eng": "Implicit coercion to the number type",
     "ua": "Неявне приведення до типу number"
   },
-  "p17": {
+  "to_number_1": {
     "ru": "Неявное приведение к типу ~⟦f3⟧~ происходит в арифметических выражениях:",
     "eng": "Implicit coercion to the type ~⟦f3⟧~ occurs in arithmetic expressions:",
     "ua": "Неявне приведення до типу ~⟦f3⟧~ відбувається в арифметичних виразах:"
   },
-  "p18": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
-  },
-  "p19": {
+  "to_number_2": {
     "ru": "![ico-20 warn] При участии в арифметических операциях пустая строка (~⟦f5⟧~) и пустой массив (~⟦f6⟧~) преобразуется в **0**:",
     "eng": "![ico-20 warn] When used in arithmetic operations, an empty string (~⟦f5⟧~) and an empty array (~⟦f6⟧~) are converted to **0**:",
     "ua": "![ico-20 warn] При участі в арифметичних операціях порожній рядок (~⟦f5⟧~) і порожній масив (~⟦f6⟧~) перетворюються на **0**:"
   },
-  "p20": {
+  "to_number_3": {
     "ru": "^^(выражение ~⟦f7⟧~ будет приведено к ~⟦f8⟧~).^^",
     "eng": "^^(the expression ~⟦f7⟧~ will be reduced to ~⟦f8⟧~)^^",
     "ua": "^^(вираз ~⟦f7⟧~ буде приведено до ~⟦f8⟧~).^^"
   },
-  "p21": {
+  "to_number_4": {
     "ru": "![ico-20 warn] Если в арифметическом выражении участвуют специальные значения ~⟦f9⟧~ или ~⟦f10⟧~, то они преобразуются к числу так:",
     "eng": "![ico-20 warn] If special values ~⟦f9⟧~ or ~⟦f10⟧~ appear in an arithmetic expression, they are converted to numbers as follows:",
     "ua": "![ico-20 warn] Якщо в арифметичному виразі беруть участь спеціальні значення ~⟦f9⟧~ або ~⟦f10⟧~, то вони перетворюються на число таким чином:"
   },
-  "p22": {
+  "to_number_5": {
     "ru": "![ico-20 warn] Если в арифметическом выражении участвуют логические значения ~⟦f11⟧~ или ~⟦f12⟧~, то они преобразуются к числу так:",
     "eng": "![ico-20 warn] If an arithmetic expression contains the logical values ~⟦f11⟧~ or ~⟦f12⟧~, they are converted to a number as follows:",
     "ua": "![ico-20 warn] Якщо в арифметичному виразі беруть участь логічні значення ~⟦f11⟧~ або ~⟦f12⟧~, то вони перетворюються на число так:"
   },
-  "p23": {
+  "to_number_6": {
     "ru": "![ico-20 warn] Кроме арифметических операций, преобразование к типу ~⟦f3⟧~ происходит при участии переменной в операциях сравнения (за исключением операций ~⟦f13⟧~ и ~⟦f14⟧~, когда сравниваются не только значения, но и типы данных)",
     "eng": "![ico-20 warn] In addition to arithmetic operations, coercion to the type ~⟦f3⟧~ occurs when a variable is involved in comparison operations (with the exception of operations ~⟦f13⟧~ and ~⟦f14⟧~, where not only values but also data types are compared)",
     "ua": "![ico-20 warn] Окрім арифметичних операцій, перетворення до типу ~⟦f3⟧~ відбувається за участю змінної в операціях порівняння (за винятком операцій ~⟦f13⟧~ та ~⟦f14⟧~, коли порівнюються не лише значення, а й типи даних)"
   },
-  "p24": {
+  "to_boolean": {
     "ru": "Неявное приведение к типу boolean",
     "eng": "Implicit coercion to the boolean type",
     "ua": "Неявне приведення до типу boolean"
   },
-  "p25": {
+  "to_boolean_1": {
     "ru": "Неявное приведение к логическому типу (~⟦f15⟧~) происходит в [►►►условных операторах►►►](page/Conditional-operators), с которыми мы познакомимся далее, а так же при вычислении выражений, построенных с участием логических операторов **~&&~** и **~||~**.",
     "eng": "Implicit coercion to the boolean type (~⟦f15⟧~) occurs in [►►►conditional operators►►►](page/Conditional-operators), which we shall look at later, as well as when evaluating expressions constructed using the logical operators **~&&~** and **~||~**.",
     "ua": "Неявне приведення до логічного типу (~⟦f15⟧~) відбувається в [►►►умовних операторах►►►](page/Conditional-operators), з якими ми ознайомимося далі, а також під час обчислення виразів, побудованих із використанням логічних операторів **~&&~** та **~||~**."
   },
-  "p26": {
-    "ru": "",
-    "eng": "",
-    "ua": ""
-  },
-  "p27": {
+  "to_boolean_2": {
     "ru": "![ico-20 warn] При выполнении логических операций ~⟦f17⟧~ и ~⟦f18⟧~ происходит неявное приведение типов операндов к логическому значению, но при этом результатом логической операции будет изначальное значение одного из операндов, даже если оно не являются булевым",
     "eng": "![ico-20 warn] When performing the logical operations ~⟦f17⟧~ and ~⟦f18⟧~, the operands are implicitly cast to a logical value; however, the result of the logical operation will be the original value of one of the operands, even if it is not a Boolean",
     "ua": "![ico-20 warn] Під час виконання логічних операцій ~⟦f17⟧~ та ~⟦f18⟧~ відбувається неявне приведення типів операндів до логічного значення, але при цьому результатом логічної операції буде початкове значення одного з операндів, навіть якщо воно не є булевим"
   },
-  "p28": {
+  "to_boolean_3": {
     "ru": "Операция&nbsp;&&",
     "eng": "The && operation",
     "ua": "Операція&nbsp;&&"
   },
-  "p29": {
+  "to_boolean_4": {
     "ru": "Операция ~⟦f18⟧~ перебирает операнды слева направо, приводя их к логическому значению, до тех пор, пока не встретится первый ~⟦f12⟧~",
     "eng": "The ~⟦f18⟧~ operation iterates through the operands from left to right, converting them to a logical value, until the first ~⟦f12⟧~ is encountered",
     "ua": "Операція ~⟦f18⟧~ перебирає операнди зліва направо, приводячи їх до логічного значення, доки не зустрінеться перший ~⟦f12⟧~"
   },
-  "p30": {
+  "to_boolean_5": {
     "ru": "в этом случае возвращается исходное значение последнего операнда",
     "eng": "in which case the original value of the last operand is returned",
     "ua": "у цьому випадку повертається початкове значення останнього операнда"
   },
-  "p31": {
+  "to_boolean_6": {
     "ru": "^^вычисляется значение второго операнда ~⟦f19⟧~, оно будет ~⟦f12⟧~, операция останавливается и возвращается последний операнд, на котором остановились^^",
     "eng": "^^the value of the second operand ~⟦f19⟧~ is calculated; it will be ~⟦f12⟧~, the operation stops and the last operand at which it stopped is returned^^",
     "ua": "^^обчислюється значення другого операнда ~⟦f19⟧~, воно дорівнюватиме ~⟦f12⟧~, операція зупиняється і повертається останній операнд, на якому зупинилися^^"
   },
-  "p32": {
+  "to_boolean_7": {
     "ru": "^^дошли до конца, но не встретили ~⟦f12⟧~, возвращается последний операнд^^",
     "eng": "^^We have reached the end but have not encountered ~⟦f12⟧~; the last operand is returned^^",
     "ua": "^^дійшли до кінця, але не зустріли ~⟦f12⟧~, повертається останній операнд^^"
   },
-  "p33": {
+  "to_boolean_8": {
     "ru": "Операция ||",
     "eng": "The || operation",
     "ua": "Операція ||"
   },
-  "p34": {
+  "to_boolean_9": {
     "ru": "Операция ~⟦f20⟧~  перебирает операнды слева направо, приводя их к логическому значению, до тех пор, пока не встретится первый ~⟦f11⟧~",
     "eng": "The ~⟦f20⟧~ operation iterates through the operands from left to right, reducing them to a logical value, until the first ~⟦f11⟧~ is encountered",
     "ua": "Операція ~⟦f20⟧~  перебирає операнди зліва направо, приводячи їх до логічного значення, доти, доки не зустрінеться перший ~⟦f11⟧~"
   },
-  "p35": {
+  "to_boolean_10": {
     "ru": "в этом случае возвращается исходное значение последнего операнда, на котором остановились",
     "eng": "in this case, the original value of the last operand at which the operation stopped is returned",
     "ua": "у цьому випадку повертається початкове значення останнього операнда, на якому зупинилися"
   },
-  "p36": {
+  "to_boolean_11": {
     "ru": "^^последовательно вычисляются логические значения^^",
     "eng": "^^the logical values are evaluated sequentially^^",
     "ua": "^^послідовно обчислюються логічні значення^^"
   },
-  "p37": {
+  "to_boolean_12": {
     "ru": "^^• первого операнда (~⟦f10⟧~) - это ~⟦f12⟧~,^^",
     "eng": "^^• the first operand (~⟦f10⟧~) is ~⟦f12⟧~,^^",
     "ua": "^^• першого операнда (~⟦f10⟧~) — це ~⟦f12⟧~,^^"
   },
-  "p38": {
+  "to_boolean_13": {
     "ru": "^^• второго операнда - ~⟦f12⟧~,^^",
     "eng": "^^• the second operand is ~⟦f12⟧~,^^",
     "ua": "^^• другого операнда — ~⟦f12⟧~,^^"
   },
-  "p39": {
+  "to_boolean_14": {
     "ru": "^^• третьего операнда (~⟦f9⟧~) - это ~⟦f12⟧~,^^",
     "eng": "^^• the third operand (~⟦f9⟧~) is ~⟦f12⟧~,^^",
     "ua": "^^• третього операнда (~⟦f9⟧~) — це ~⟦f12⟧~,^^"
   },
-  "p40": {
+  "to_boolean_15": {
     "ru": "^^• четвертого операнда (~⟦f5⟧~) - это ~⟦f12⟧~^^",
     "eng": "^^• the fourth operand (~⟦f5⟧~) is ~⟦f12⟧~^^",
     "ua": "^^• четвертого операнда (~⟦f5⟧~) — це ~⟦f12⟧~^^"
   },
-  "p41": {
+  "to_boolean_16": {
     "ru": "^^больше операндов нет, операция завершается и возвращает последний операнд, на котором остановилась (~⟦f5⟧~)^^",
     "eng": "^^there are no more operands; the operation terminates and returns the last operand it was on (~⟦f5⟧~)^^",
     "ua": "^^більше операндів немає, операція завершується і повертає останній операнд, на якому зупинилася (~⟦f5⟧~)^^"
   },
-  "p42": {
+  "to_boolean_17": {
     "ru": "Операция !!",
     "eng": "Operation !!",
     "ua": "Операція !!"
   },
-  "p43": {
+  "to_boolean_18": {
     "ru": "можно привести переменную любого типа к ~⟦f15⟧~ с помощью логической операции двойного отрицания:",
     "eng": "A variable of any type can be reduced to ~⟦f15⟧~ using the double negation logical operation:",
     "ua": "можна звести змінну будь-якого типу до ~⟦f15⟧~ за допомогою логічної операції подвійного заперечення:"

@@ -1,18 +1,18 @@
 # ![ico-30 study] {{common.type_coercion}}
 
-{{p44}}
-{{p45}}
-{{p46}}
+{{intro_1}}
+{{intro_2}}
+{{intro_3}}
 ___
 
-## ![ico-25 icon] {{p1}}
+## ![ico-25 icon] {{implicit_type_coercion}}
 
-{{p2}}
+{{expression_1}}
 
 •••• none
-{{p47}}
-{{p48}}
-{{p49}}
+{{expression_2}}
+{{expression_3}}
+{{expression_4}}
 ••••
 
 ### ![ico-25 hw] {{common.tests}} 1
@@ -25,11 +25,11 @@ ___
 →→→ (10 - 2) * (5 + 4) | 72, 44, 4 | 72 →→→
 ~~~
 
-{{p50}}
+{{expression_5}}
 
-### ![ico-20 icon] {{p3}}
+### ![ico-20 icon] {{to_string}}
 
-{{p51}}
+{{to_string_1}}
 
 ~~~demo
 > var user = { name: 'Piter', age: 25 }
@@ -42,7 +42,7 @@ ___
 < '1,2,3,4,5'
 ~~~
 
-{{p54}}
+{{to_string_2}}
 
 ~~~demo
 > var user = { name: 'Piter', age: 25 }
@@ -71,7 +71,16 @@ ___
 < true
 ~~~
 
-{{p52}}
+{{to_string_3}}
+
+~~~js
+a - b
+a * b
+a / b
+a % b
+~~~
+
+{{to_string_4}}
 
 ~~~demo
 > 20 - '5'
@@ -84,7 +93,7 @@ ___
 < 1
 ~~~
 
-{{p4}}
+{{to_string_5}}
 
 ~~~demo
 > 20 + 5 + '5'
@@ -126,9 +135,103 @@ ___
 
 ___
 
-### ![ico-20 icon] {{p6}}
+### ![ico-20 icon] {{to_number}}
 
-{{p53}}
+{{to_number_1}}
+
+~~~demo
+> '8' / 2
+< 4
+> '5' * '2'
+< 10
+> '5' - '3'
+< 2
+> '5' % '3'
+< 2
+> +'5' + +'3'
+< 8
+~~~
+
+{{to_number_2}}
+
+~~~demo
+> var x = '', y = x / 5
+< undefined
+> x == 0
+< true
+> y
+< 0
+> var x = [], y = x / 5
+< undefined
+> x == 0
+< true
+> y
+< 0
+~~~
+
+{{to_number_3}}
+
+~~~demo
+> +''
+< 0
+> +[]
+< 0
+> +[] + ''
+< '0'
+~~~
+
+{{to_number_4}}
+
+~~~demo
+> 0 - undefined
+< NaN
+> 0 + null
+< 0
+> undefined == null
+< true
+> 1 == (undefined == null)
+< true
+~~~
+
+{{to_number_5}}
+
+~~~demo
+> var a = false, b = true
+< undefined
+> a == 0
+< true
+> b == 1
+< true
+> a + b
+< 1
+~~~
+
+{{to_number_6}}
+
+~~~demo
+> a = false, b = undefined
+< undefined
+> a > b
+< false
+> a < b
+< false
+> a == b
+< false
+> a = true, b = null
+< null
+> a > b
+< true
+> a < b
+< false
+> a == b
+< false
+~~~
+
+___
+
+### ![ico-20 icon] {{array_as_operand}}
+
+{{array_as_operand_1}}
 
 ~~~demo
 > 20 + 5 + []
@@ -141,7 +244,7 @@ ___
 < '250,5,4'
 ~~~
 
-{{p5}}
+{{array_as_operand_2}}
 
 ~~~demo
 > 20 + '5' - []
@@ -176,23 +279,7 @@ ___
 
 ___
 
-{{p7}}
-
-{{p8}}
-
-{{p9}}
-
-{{p10}}
-
-{{p11}}
-
-{{p12}}
-
-{{p13}}
-
-{{p14}}
-
-{{p15}}
+{{array_as_operand_3}}
 
 ~~~demo
 > +['8'] + 5
@@ -205,113 +292,15 @@ ___
 
 ___
 
-### ![ico-20 icon] {{p16}}
+### ![ico-20 icon] {{to_boolean}}
 
-{{p17}}
+{{to_boolean_1}}
 
-~~~demo
-> '8' / 2
-< 4
-> '5' * '2'
-< 10
-> '5' - '3'
-< 2
-> '5' % '3'
-< 2
-> +'5' + +'3'
-< 8
-~~~
+{{to_boolean_2}}
 
-{{p18}}
+^^^[{{to_boolean_3}}]
 
-{{p19}}
-
-~~~demo
-> var x = '', y = x / 5
-< undefined
-> x == 0
-< true
-> y
-< 0
-> var x = [], y = x / 5
-< undefined
-> x == 0
-< true
-> y
-< 0
-~~~
-
-{{p20}}
-
-~~~demo
-> +''
-< 0
-> +[]
-< 0
-> +[] + ''
-< '0'
-~~~
-
-{{p21}}
-
-~~~demo
-> 0 - undefined
-< NaN
-> 0 + null
-< 0
-> undefined == null
-< true
-> 1 == (undefined == null)
-< true
-~~~
-
-{{p22}}
-
-~~~demo
-> var a = false, b = true
-< undefined
-> a == 0
-< true
-> b == 1
-< true
-> a + b
-< 1
-~~~
-
-{{p23}}
-
-~~~demo
-> a = false, b = undefined
-< undefined
-> a > b
-< false
-> a < b
-< false
-> a == b
-< false
-> a = true, b = null
-< null
-> a > b
-< true
-> a < b
-< false
-> a == b
-< false
-~~~
-
-___
-
-### ![ico-20 icon] {{p24}}
-
-{{p25}}
-
-{{p26}}
-
-{{p27}}
-
-^^^[{{p28}}]
-
-{{p29}}
+{{to_boolean_4}}
 
 ~~~demo
 > true && false && null
@@ -322,29 +311,29 @@ ___
 < null
 ~~~
 
-^^{{p30}}^^
+^^{{to_boolean_5}}^^
 
 ~~~demo
 > true && ![] && null
 < false
 ~~~
 
-{{p31}}
+{{to_boolean_6}}
 
 ~~~demo
 > true && true && true && true
 < true
 ~~~
 
-{{p32}}
+{{to_boolean_7}}
 
 ^^^
 
-^^^[{{p33}}]
+^^^[{{to_boolean_8}}]
 
-{{p34}}
+{{to_boolean_9}}
 
-{{p35}}
+{{to_boolean_10}}
 
 ~~~demo
 > null || false || 5 || ''
@@ -355,20 +344,20 @@ ___
 < ''
 ~~~
 
-{{p36}}
+{{to_boolean_11}}
 
-{{p37}}
-{{p38}}
-{{p39}}
-{{p40}}
+{{to_boolean_12}}
+{{to_boolean_13}}
+{{to_boolean_14}}
+{{to_boolean_15}}
 
-{{p41}}
+{{to_boolean_16}}
 
 ^^^
 
-^^^[{{p42}}]
+^^^[{{to_boolean_17}}]
 
-{{p43}}
+{{to_boolean_18}}
 
 ~~~js
 var x = null
