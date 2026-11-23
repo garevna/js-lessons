@@ -51,8 +51,8 @@
     }
     #canvas-container:active { cursor: grabbing; }
     svg { width: 100%; height: 100%; display: block; }
-    .node-group, .ring-header, .junction-badge { cursor: pointer; }
-    .node-group:hover rect, .ring-header:hover rect, .junction-badge:hover rect { filter: brightness(1.12); }
+    .node-group, .ring-header { cursor: pointer; }
+    .node-group:hover rect, .ring-header:hover rect { filter: brightness(1.12); }
 
     #info-panel {
       position: fixed;
@@ -145,7 +145,6 @@
   <div class="controls">
     <button onclick="expandAll()">Развернуть всё</button>
     <button onclick="collapseAllRings()">Свернуть все уровни</button>
-    <button id="btn-junctions" class="active" onclick="toggleJunctions()">Темы на стыках (⚡): ВКЛ</button>
     <button id="btn-satellites" class="active-sat" onclick="toggleSatellites()">Внешний контур: ВКЛ</button>
     <button onclick="resetView()">Центрировать</button>
   </div>
@@ -169,7 +168,6 @@
   <div class="legend-item"><span class="dot" style="background:#8B5CF6"></span> Кольцо 3: Функциональщина</div>
   <div class="legend-item"><span class="dot" style="background:#0284C7"></span> Кольцо 4: Асинхронщина</div>
   <div class="legend-item"><span class="dot" style="background:#F59E0B"></span> Орбита 5: Инженерия, Web APIs и Паттерны</div>
-  <div class="legend-item"><span class="dot" style="background:#38BDF8"></span> ⚡ Узлы на границах колец (стыки тем)</div>
 </div>
 
 <div id="info-panel">
@@ -186,7 +184,6 @@ const viewport = document.getElementById("viewport");
 
 const CX = 1220, CY = 1100;
 const state = {}; // Состояние свёрнутости колец и веток
-let showJunctions = true;
 let showSatellites = true;
 
 // Вспомогательная функция: координаты по углу (в градусах, 0 = верх, по часовой) и радиусу
@@ -417,7 +414,7 @@ const rings = [
     headerAngle: 7,
     color: "#0D9488",
     fill: "rgba(13, 148, 136, 0.06)",
-    desc: "Второй слой матрёшки: модель наследования, контекст исполнения (и всё, что из него следует), классы, нативные объекты и объекты среды.",
+    desc: "Второй слой матрёшки: модель наследования, контекст исполнения (и всё, что из него следует), классы, встроенные объекты и объекты среды.",
     refs: [
       "prototypal-inheritance",
       "function-object",
@@ -962,50 +959,6 @@ const rings = [
     ]
   }
 ];
-// УЗЛЫ НА СТЫКАХ КОЛЕЦ ("МАТРЁШКИ") — прямо на границах окружностей!
-const junctions = [
-  {
-    angle: -148, r: 340, // Граница Кольца 1 (235) и Кольца 2 (445)
-    label: "⚡ Приведение типов ↔ valueOf()",
-    color: "#14B8A6",
-    tag: "Стык Колец 1 и 2: Основы ↔ Нативные объекты",
-    desc: "На границе Основ и Прототипного наследования: неявное приведение типов из Кольца 1 получает программное управление через метод valueOf() нативных объектов в Кольце 2.",
-    refs: ["Implicit-type-conversion", "value-of"]
-  },
-  {
-    angle: 148, r: 340, // Граница Кольца 1 (235) и Кольца 2 (445)
-    label: "⚡ try/catch ↔ Конструктор Error",
-    color: "#F97316",
-    tag: "Стык Колец 1 и 2: Основы ↔ Нативные объекты",
-    desc: "Синтаксис обработки исключений из Основ стыкуется с иерархией встроенного конструктора Error в Нативных объектах.",
-    refs: ["Error"]
-  },
-  {
-    angle: -82, r: 550, // Граница Кольца 2 (445) и Кольца 3 (655)
-    label: "⚡ Функция как объект ↔ IIFE и Модуль",
-    color: "#A855F7",
-    tag: "Стык Колец 2 и 3: Нативные объекты ↔ Функциональщина",
-    desc: "Идеальный переход между слоями: в Кольце 2 функция изучается как объект (Function.prototype), а в Кольце 3 замыкания и IIFE превращают её в паттерн «Модуль».",
-    refs: ["function-object", "Closure", "functionality"]
-  },
-  {
-    angle: 82, r: 655, // Стык Кольца 2 (Хост-объекты) и Кольца 4 (События DOM)
-    label: "⚡ Хост-объекты DOM/BOM ↔ События DOM",
-    color: "#0EA5E9",
-    tag: "Стык: Хост-объекты (Кольцо 2) ↔ Асинхронщина (Кольцо 4)",
-    desc: "Элементы DOM и окно BOM определяются как хост-объекты в Кольце 2, а подписка на их события (DOM-events, window.onresize) работает через Event Loop в Кольце 4.",
-    refs: ["DOM-elements", "DOM-events", "Event-Loop"]
-  },
-  {
-    angle: 158, r: 760, // Граница Кольца 3 (655) и Кольца 4 (865)
-    label: "⚡ Протокол итерирования (HOF → Деструктуризация → Генераторы)",
-    color: "#38BDF8",
-    tag: "Сквозной стык: Кольцо 1 ↔ Кольцо 3 ↔ Кольцо 4",
-    desc: "Понятие протокола итерирования вводится в «Итерирующих методах массивов» (Кольцо 3), связывает «Деструктуризацию» (Кольцо 1) и раскрывается в «Генераторах» (Кольцо 4).",
-    refs: ["Array-iterating-methods", "Destructuring", "generators"]
-  }
-];
-
 // ВНЕШНЯЯ ОРБИТА 5 (Спутники: Инженерия, Web APIs, Паттерны)
 const outerOrbit = {
   r: 1030,
@@ -1019,7 +972,7 @@ const outerOrbit = {
     },
     {
       id: "sat-webapi", title: "🛰️ Браузерные Web APIs", angle: 45, w: 220, color: "#D97706",
-      desc: "Дополнительные браузерные API на стыке Хост-объектов (Кольцо 2) и Асинхронщины (Кольцо 4).",
+      desc: "Дополнительные браузерные API рядом с объектами среды (Кольцо 2) и асинхронщиной (Кольцо 4).",
       items: [
         { title: "Web Workers, WebSockets, IndexedDB, Performance", angle: 45, rOffset: 44, w: 325, desc: "Многопоточные Web Workers, WebSockets, клиентская БД IndexedDB, Notification API и Performance API.", refs: ["web-workers", "web-socket", "indexed-db", "NotificationAPI", "performance"] }
       ]
@@ -1209,32 +1162,6 @@ function render() {
     viewport.appendChild(layer);
   });
 
-  // 4. Узлы на стыках колец (границы матрёшки)
-  if (showJunctions) {
-    const jLayer = createEl("g");
-    junctions.forEach(j => {
-      const pos = polar(j.angle, j.r);
-      const w = j.label.length * 6.8 + 26;
-      const jg = createEl("g", { class: "junction-badge" });
-      jg.appendChild(createEl("rect", {
-        x: pos.x - w / 2, y: pos.y - 13, width: w, height: 26, rx: 13,
-        fill: "#0F172A", stroke: j.color, "stroke-width": 1.8, filter: "url(#glow)"
-      }));
-      const txt = createEl("text", {
-        x: pos.x, y: pos.y, fill: "#F8FAFC", "font-size": 11.5, "font-weight": 600,
-        "text-anchor": "middle", "dominant-baseline": "central"
-      });
-      txt.textContent = j.label;
-      jg.appendChild(txt);
-      jg.onclick = (e) => {
-        e.stopPropagation();
-        showPanel(j.tag, j.label, j.desc, j.color, j.refs);
-      };
-      jLayer.appendChild(jg);
-    });
-    viewport.appendChild(jLayer);
-  }
-
   // 5. Центральное ядро
   const centerG = createEl("g");
   centerG.appendChild(createEl("circle", { cx: CX, cy: CY, r: 86, fill: "#0F172A", stroke: "#38BDF8", "stroke-width": 3, filter: "url(#glow)" }));
@@ -1287,14 +1214,6 @@ function expandAll() {
 function collapseAllRings() {
   rings.forEach(r => state[r.id] = true);
   outerOrbit.satellites.forEach(s => state[s.id] = true);
-  render();
-}
-
-function toggleJunctions() {
-  showJunctions = !showJunctions;
-  const btn = document.getElementById("btn-junctions");
-  btn.textContent = showJunctions ? "Темы на стыках (⚡): ВКЛ" : "Темы на стыках (⚡): ВЫКЛ";
-  btn.classList.toggle("active", showJunctions);
   render();
 }
 
