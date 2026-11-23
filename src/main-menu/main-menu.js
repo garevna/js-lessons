@@ -119,11 +119,15 @@ class MainMenuComponent extends HTMLElement {
     const mapLink = this.shadow.querySelector('#course-map-link')
     if (mapLink) {
       const words = { ru: 'Карта курса', ua: 'Карта курсу', eng: 'The course map' }
+      // The caption is a bare text node on purpose. A <span> here would be
+      // caught by `#menuToggle span`, the rule that draws the three bars of
+      // the hamburger: it would turn the words into a 16x16 blue square with
+      // the text spilling out beside it.
       mapLink.innerHTML = `
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
           <path d="${MAP_ICON}"/>
         </svg>
-        <span>${words[lang()] || words.eng}</span>
+        ${words[lang()] || words.eng}
       `
       mapLink.onclick = () => {
         this.checkbox.checked && this.checkbox.dispatchEvent(new Event('click'))

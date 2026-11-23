@@ -94,16 +94,18 @@ let rawSource = `
    ----------------------------------------------------------------------
    Both are about the course rather than about a lesson, and this menu is
    where a reader goes to find their way about; the home link sits in the
-   corner, so this one sits under it. Its mark is drawn inline rather than
-   kept in icons/ because it is one path, and a data URL of an SVG file is
-   a lot of base64 for one path. */
+   corner, so this one takes the row under the search. It was placed by
+   absolute coordinates at first, which put it straight through the search
+   box: the home link can be placed that way because it is an icon in the
+   margin the flow leaves empty, but a row with a word in it needs a line
+   of its own, and only the flow knows where that line begins. Its mark is
+   drawn inline rather than kept in icons/ because it is one path, and a
+   data URL of an SVG file is a lot of base64 for one path. */
 .course-map {
-  position: absolute;
-  top: 64px;
-  left: 20px;
   display: flex;
   gap: 12px;
   align-items: center;
+  margin: 16px 0 0 28px;
   color: #09b;
   font-size: 0.9rem;
   cursor: pointer;
