@@ -45,3 +45,11 @@ pnpm-debug.log*
 secrets.json
 */secrets.json
 **/secrets.json
+
+# the lesson map as it was drawn: a working file, not a source the site reads
+#
+# The picture that matters is public/maps/<page>.json - coordinates, curves
+# and all - and the site reads only that. The HTML it was drawn in is where
+# the next version gets drawn; keeping both in the repository means two
+# places to change and one of them silently wrong.
+content/js-classes-mindmap*.html

@@ -516,44 +516,52 @@ ___________________________________________________
 ♦♦♦8♦♦♦
 
 ~~~js
-const Picture = class Canvas {
+const Picture = class Sketch {
   constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    Object.assign(this.canvas, {
-      width: 320,
-      height: 320,
-      style: 'border: 1px solid #000; background: #FFF'
-    })
-
-    this.area = this.canvas.getContext('2d')
+    this.lines = []
   }
 
-  drawLine (points) {
-    this.area.moveTo(points[0].x, points[0].y)
-    this.area.lineTo(points[1].x, points[1].y)
-    this.area.stroke()
+  addLine (from, to) {
+    this.lines.push({ from, to })
+    return this
+  }
+
+  static of (...lines) {
+    return lines.reduce((sketch, line) => sketch.addLine(...line), new Sketch())
   }
 }
 ~~~
 
+{{named_inner}}
+
 ~~~demo
-> console.log(Picture.name)
-< Canvas
+> Picture.name
+< 'Sketch'
+> const picture = Picture.of(
+...   [{ x: 50, y: 50 }, { x: 250, y: 250 }],
+...   [{ x: 250, y: 250 }, { x: 100, y: 250 }]
+... )
+< undefined
+> picture.lines.length
+< 2
 ~~~
 
-~~~js
-const picture = new Picture()
+{{named_why}}
 
-picture.drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
-picture.drawLine([{ x: 250, y: 250 }, { x: 100, y: 250 }])
+~~~demo
+> const makeSketch = Picture.of
+< undefined
+> makeSketch([{ x: 0, y: 0 }, { x: 10, y: 10 }]).lines.length
+< 1
 ~~~
+
+{{named_outside}}
 
 ~~~demo
 > picture instanceof Picture
 < true
-> picture instanceof Canvas
-! Uncaught ReferenceError: Canvas is not defined
+> picture instanceof Sketch
+! Uncaught ReferenceError: Sketch is not defined
 ~~~
 
 {{{Classes-5.js}}}

@@ -154,6 +154,21 @@
     "eng": "![ico-20 pin] **_extends_** ties two chains at once: **_Dog.prototype_** inherits from **_Animal.prototype_**, which is about the instances, and **_Dog_** itself inherits from **_Animal_**, which is about the statics. Two inheritances in one word.",
     "ua": "![ico-20 pin] **_extends_** пов'язує одразу два ланцюжки: **_Dog.prototype_** успадковує від **_Animal.prototype_** — це про екземпляри, і сам **_Dog_** успадковує від **_Animal_** — це про статику. Два різні успадкування одним словом."
   },
+  "named_inner": {
+    "ru": "Внутреннее имя **_Sketch_** здесь не украшение: статический метод **_of()_** создаёт экземпляр именно по нему. Снаружи класс известен как **_Picture_**, внутри — как **_Sketch_**.",
+    "eng": "The inner name **_Sketch_** is not decoration here: the static **_of()_** makes an instance by that very name. From outside the class is **_Picture_**; inside it is **_Sketch_**.",
+    "ua": "Внутрішнє ім'я **_Sketch_** тут не прикраса: статичний метод **_of()_** створює екземпляр саме за ним. Ззовні клас відомий як **_Picture_**, усередині — як **_Sketch_**."
+  },
+  "named_why": {
+    "ru": "![ico-20 pin] Вот та самая защита от переименования, обещанная выше, в действии. Метод **_of()_** можно оторвать от класса и вызвать отдельно: внутри он говорит **_Sketch_**, а не **_Picture_**, и потому не зависит ни от внешнего имени, ни от того, что с этим именем потом сделают.",
+    "eng": "![ico-20 pin] Here is the protection from renaming promised above, at work. **_of()_** can be taken off the class and called on its own: inside it says **_Sketch_**, not **_Picture_**, so it depends neither on the outer name nor on what anyone later does with it.",
+    "ua": "![ico-20 pin] Ось той самий захист від перейменування, обіцяний вище, у дії. Метод **_of()_** можна відірвати від класу й викликати окремо: усередині він каже **_Sketch_**, а не **_Picture_**, і тому не залежить ні від зовнішнього імені, ні від того, що з цим іменем потім зроблять."
+  },
+  "named_outside": {
+    "ru": "А снаружи внутреннего имени просто нет — ни как класса, ни как переменной:",
+    "eng": "And outside, the inner name simply does not exist - neither as a class nor as a variable:",
+    "ua": "А ззовні внутрішнього імені просто немає — ні як класу, ні як змінної:"
+  },
   "p11": {
     "ru": "••Символ **_#_** перед именем свойства или метода объявляет его приватным (_Private class fields_). Это стандартный синтаксис **ES2022**.••",
     "eng": "••The **_#_** symbol before a property or method name declares it as private (_Private class fields_). This is standard **ES2022** syntax.••",
