@@ -579,17 +579,13 @@ To create computed properties, you need to use getters and setters.
 ^^The setter will be called whenever the identifier of the computed property appears on the left-hand side of an assignment statement.^^
 ••••
 
-Let’s look at an example of the **~Canvas~** class with a computed property called **~history~**:
+Let’s look at an example of the **~Sketch~** class with a computed property called **~history~**:
 
 ♦♦♦9♦♦♦
 
 ~~~js
-const Canvas = class {
+const Sketch = class {
   constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    this.area = this.canvas.getContext('2d')
-
     let history = []
 
     Object.defineProperty(this, 'history', {
@@ -605,7 +601,7 @@ const Canvas = class {
           .filter(item => item.path && Array.isArray(item.path))
 
         if (!tmp.length) {
-          console.error('canvas.history is an array of objects with a required `path` property.')
+          console.error('sketch.history is an array of objects with a required `path` property.')
           return
         }
 
@@ -622,19 +618,17 @@ const Canvas = class {
 Let’s create an instance of this class and print it to the console:
 
 ~~~js
-const canvas = new Canvas
-console.log(canvas)
+const sketch = new Sketch
+console.log(sketch)
 ~~~
 
 ~~~console
-▼ Canvas {canvas: canvas, area: CanvasRenderingContext2D}
-  ► area: CanvasRenderingContext2D {canvas: canvas, lang: 'inherit', font: '10px sans-serif', textAlign: 'start', textBaseline: 'alphabetic', …}
-  ► canvas: canvas
+▼ Sketch {}
     history: (...)
   ► get history: () => history
   ► set history: newHistory => {…}
   ▼ [[Prototype]]: Object
-      ► constructor: class Canvas
+      ► constructor: class Sketch
       ► [[Prototype]]: Object
 ~~~
 
@@ -642,7 +636,7 @@ The instance now has its own computable property **~history~**.
 Let’s check how the setter for this property works by assigning a value to the computed property:
 
 ~~~js
-canvas.history = [
+sketch.history = [
   { path: [{ x: 150, y: 250 }, { x: 350, y: 50 }], lineColor: 'red' },
   { path: [{ x: 350, y: 50 }, { x: 100, y: 250 }], lineColor: 'green' },
   '***',
@@ -653,7 +647,7 @@ canvas.history = [
 We are deliberately passing incorrect data to the setter, which does not match the data schema of the **~history~** object. Now let’s check what the value of this property will be; in other words, let’s use the getter:
 
 ~~~js
-console.log(canvas.history)
+console.log(sketch.history)
 ~~~
 
 ~~~console
@@ -669,10 +663,10 @@ Great, our setter has filtered the received values, preventing rubbish from gett
 Let’s try to perform the assignment by passing incorrect values:
 
 ~~~demo
-> canvas.history = 'History'
+> sketch.history = 'History'
 ! Invalid value.
-> canvas.history = ['***']
-! canvas.history is an array of objects with a required `path` property.
+> sketch.history = ['***']
+! sketch.history is an array of objects with a required `path` property.
 ~~~
 
 The setter for the computed property prevented us from corrupting the data, and we will see an exception in the console:
@@ -680,9 +674,9 @@ The setter for the computed property prevented us from corrupting the data, and 
 Since **~history~** is a **reference data type**, and a reference is like a master key, let’s check that once we’ve retrieved a reference to **~history~** using a getter, we won’t be able to corrupt it:
 
 ~~~demo
-> canvas.history.push({ x: 10, y: 20 })
+> sketch.history.push({ x: 10, y: 20 })
 ! Uncaught TypeError: Cannot add property 2, object is not extensible
-> canvas.history.pop()
+> sketch.history.pop()
 ! Uncaught TypeError: Cannot delete property '1' of [object Array]
 ~~~
 
@@ -703,23 +697,13 @@ In strict mode, **_this_** will be **_undefined_**.
 Let’s go back to Example 5:
 
 ~~~~js
-const Picture = class Canvas {
+const Picture = class Sketch {
   constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    Object.assign(this.canvas, {
-      width: 320,
-      height: 320,
-      style: 'border: 1px solid #000; background: #FFF'
-    })
-
-    this.area = this.canvas.getContext('2d')
+    this.lines = []
   }
 
-  drawLine (points) {
-    this.area.moveTo(points[0].x, points[0].y)
-    this.area.lineTo(points[1].x, points[1].y)
-    this.area.stroke()
+  addLine (points) {
+    this.lines.push(points)
   }
 }
 
@@ -729,10 +713,10 @@ const picture = new Picture
 ![ico-20 warn] Context loss always occurs if a reference to a method is assigned to a new variable:
 
 ~~~demo
-> const drawLine = picture.drawLine
+> const addLine = picture.addLine
 < undefined
-> drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
-! Uncaught TypeError: Cannot read property 'area' of undefined
+> addLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
+! Uncaught TypeError: Cannot read properties of undefined (reading 'lines')
 ~~~
 
 Let’s declare the method **~drawLine~** using an arrow function:
@@ -740,23 +724,13 @@ Let’s declare the method **~drawLine~** using an arrow function:
 ♦♦♦10♦♦♦
 
 ~~~js
-const Picture = class Canvas {
+const Picture = class Sketch {
   constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    Object.assign(this.canvas, {
-      width: 320,
-      height: 320,
-      style: 'border: 1px solid #000; background: #FFF'
-    })
-
-    this.area = this.canvas.getContext('2d')
+    this.lines = []
   }
 
-  drawLine = (points) => {
-    this.area.moveTo(points[0].x, points[0].y)
-    this.area.lineTo(points[1].x, points[1].y)
-    this.area.stroke()
+  addLine = (points) => {
+    this.lines.push(points)
   }
 }
 ~~~
@@ -769,7 +743,7 @@ Once the **~test~** function has been called, a line will be drawn on the canvas
 ~~~demo
 > const picture = new Picture()
 < undefined
-> const test = picture.drawLine
+> const test = picture.addLine
 < undefined
 > test([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 < undefined
@@ -948,10 +922,17 @@ const BaseClass = class Canvas {
 
   static create (width, height) {
     if (this.#context) return
-    const canvas = document.body
-      .appendChild(document.createElement('canvas'))
+
+    // Одна канва на страницу, а не по канве на каждый запуск примера:
+    // найдём свою по id, и только если её нет - создадим.
+    const canvas = document.querySelector('#demo-canvas') || Object.assign(
+      document.body.appendChild(document.createElement('canvas')),
+      { id: 'demo-canvas' }
+    )
+
     Object.assign(canvas, { width, height })
     this.#context = canvas.getContext('2d')
+    this.#context.clearRect(0, 0, width, height)
   }
 
   setLineWidth (width = 2) {
@@ -1076,10 +1057,16 @@ const BaseClass = class Canvas {
 
   static create (width, height) {
     if (this.getContext()) return
-    const canvas = document.body
-      .appendChild(document.createElement('canvas'))
+
+    // Одна канва на страницу, а не по канве на каждый запуск примера.
+    const canvas = document.querySelector('#demo-canvas') || Object.assign(
+      document.body.appendChild(document.createElement('canvas')),
+      { id: 'demo-canvas' }
+    )
+
     Object.assign(canvas, { width, height })
     this.#context = canvas.getContext('2d')
+    this.#context.clearRect(0, 0, width, height)
   }
 
   static setLineWidth (width = 2) {
@@ -1149,21 +1136,17 @@ In the previous examples, we did not use the constructor of the derived class
 ♦♦♦15♦♦♦
 
 ~~~js
-const Canvas = class {
+const Sketch = class {
   constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    this.area = this.canvas.getContext('2d')
+    this.lines = []
   }
-  drawLine (points) {
-    this.area.beginPath()
-    this.area.moveTo(points[0].x, points[0].y)
-    this.area.lineTo(points[1].x, points[1].y)
-    this.area.stroke()
+
+  addLine (from, to) {
+    this.lines.push({ from, to })
   }
 }
 
-class ExtendedCanvas extends Canvas {
+class Shaded extends Sketch {
   constructor () {
     super ()
     this.history = []
@@ -1281,6 +1264,32 @@ class Canvas {
 
 Please note that the ~resize~ event listener for the global ~window~ object, which is set using the **~setListener~** class’s static method, creates and dispatches the ~resize~ event for all registered instances of the **~Canvas~** class.
 In the instance constructor, we register the instance in the class’s static property **~instances~**, and call the class’s static method **~createCanvas~**, which creates a ~canvas~ and adds a ~resize~ event listener to it.
+
+___________________________________________________
+
+### ![ico-20 icon] Where the leak is⟪Where_the_leak_is⟫
+
+The **~instances~** registry holds its instances by an **ordinary, strong reference**. The class lives as long as the page does - so not one registered instance will ever be collected. Not one, not ever.
+
+![ico-20 pin] And there are two such references. **~Canvas.instances~** holds the object itself, and the handler in **~window.onresize~** is a closure with **~Canvas~** inside it. Both outlive any instance.
+
+~~~demo
+> const first = new Canvas()
+< undefined
+> const second = new Canvas()
+< undefined
+> Canvas.instances.size
+< 2
+> first.canvas.remove()
+< undefined
+> Canvas.instances.size
+< 2
+~~~
+
+Taking the canvas out of the document is not enough: the instance is still in the registry, and in it **~this.area~**, the drawing context. The canvas bitmap stays in memory with it - megabytes for every thousand by thousand pixels.
+
+There are two cures. One is to deregister by hand: a method that takes the canvas out of the document and strikes the instance off the registry. It is simple, and it has to be remembered. The other is to keep weak references in the registry, and that is below.
+
 ![ico-25 warn] In the example above, there is a serious risk of memory leaks.
 
 ^^^[Memory leaks]

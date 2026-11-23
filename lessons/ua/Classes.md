@@ -579,17 +579,13 @@ ___________________________________________________
 ^^Сеттер викликатиметься щоразу, коли ідентифікатор обчислюваної властивості буде в лівій частині оператора присвоєння.^^
 ••••
 
-Розглянемо приклад класу **~Canvas~** із обчислюваною властивістю **~history~**:
+Розглянемо приклад класу **~Sketch~** із обчислюваною властивістю **~history~**:
 
 ♦♦♦9♦♦♦
 
 ~~~js
-const Canvas = class {
+const Sketch = class {
   constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    this.area = this.canvas.getContext('2d')
-
     let history = []
 
     Object.defineProperty(this, 'history', {
@@ -605,7 +601,7 @@ const Canvas = class {
           .filter(item => item.path && Array.isArray(item.path))
 
         if (!tmp.length) {
-          console.error('canvas.history — це масив об’єктів з обов’язковою властивістю `path`.')
+          console.error('sketch.history — це масив об’єктів з обов’язковою властивістю `path`.')
           return
         }
 
@@ -622,19 +618,17 @@ const Canvas = class {
 Створимо екземпляр цього класу та виведемо його в консоль:
 
 ~~~js
-const canvas = new Canvas
-console.log(canvas)
+const sketch = new Sketch
+console.log(sketch)
 ~~~
 
 ~~~console
-▼ Canvas {canvas: canvas, area: CanvasRenderingContext2D}
-  ► area: CanvasRenderingContext2D {canvas: canvas, lang: 'inherit', font: '10px sans-serif', textAlign: 'start', textBaseline: 'alphabetic', …}
-  ► canvas: canvas
+▼ Sketch {}
     history: (...)
   ► get history: () => history
   ► set history: newHistory => {…}
   ▼ [[Prototype]]: Object
-      ► constructor: class Canvas
+      ► constructor: class Sketch
       ► [[Prototype]]: Object
 ~~~
 
@@ -642,7 +636,7 @@ console.log(canvas)
 Перевіримо роботу сеттера цієї властивості, присвоївши значення обчислювальній властивості:
 
 ~~~js
-canvas.history = [
+sketch.history = [
   { path: [{ x: 150, y: 250 }, { x: 350, y: 50 }], lineColor: 'red' },
   { path: [{ x: 350, y: 50 }, { x: 100, y: 250 }], lineColor: 'green' },
   '***',
@@ -653,7 +647,7 @@ canvas.history = [
 Ми навмисно передаємо сеттеру некоректні дані, що не відповідають схемі даних об’єкта **~history~**. Тепер перевіримо, яке значення матиме ця властивість, тобто скористаємося геттером:
 
 ~~~js
-console.log(canvas.history)
+console.log(sketch.history)
 ~~~
 
 ~~~console
@@ -669,10 +663,10 @@ console.log(canvas.history)
 Спробуємо виконати присвоєння, передаючи некоректні значення:
 
 ~~~demo
-> canvas.history = 'History'
+> sketch.history = 'History'
 ! Неприпустиме значення.
-> canvas.history = ['***']
-! canvas.history — це масив об’єктів з обов’язковою властивістю `path`.
+> sketch.history = ['***']
+! sketch.history — це масив об’єктів з обов’язковою властивістю `path`.
 ~~~
 
 Сеттер обчислюваної властивості не дозволив нам зіпсувати дані, і в консолі ми побачимо виняток:
@@ -680,9 +674,9 @@ console.log(canvas.history)
 Оскільки **~history~** — це посилальний тип даних, а посилання — це відмичка, перевіримо, що після отримання геттером посилання на **~history~** ми не зможемо його пошкодити:
 
 ~~~demo
-> canvas.history.push({ x: 10, y: 20 })
+> sketch.history.push({ x: 10, y: 20 })
 ! Uncaught TypeError: Cannot add property 2, object is not extensible
-> canvas.history.pop()
+> sketch.history.pop()
 ! Uncaught TypeError: Cannot delete property '1' of [object Array]
 ~~~
 
@@ -703,23 +697,13 @@ ___________________________________________________
 Повернемося до прикладу 8:
 
 ~~~~js
-const Picture = class Canvas {
+const Picture = class Sketch {
   constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    Object.assign(this.canvas, {
-      width: 320,
-      height: 320,
-      style: 'border: 1px solid #000; background: #FFF'
-    })
-
-    this.area = this.canvas.getContext('2d')
+    this.lines = []
   }
 
-  drawLine (points) {
-    this.area.moveTo(points[0].x, points[0].y)
-    this.area.lineTo(points[1].x, points[1].y)
-    this.area.stroke()
+  addLine (points) {
+    this.lines.push(points)
   }
 }
 
@@ -729,10 +713,10 @@ const picture = new Picture
 ![ico-20 warn] Втрата контексту відбувається завжди, якщо посилання на метод передається в нову змінну:
 
 ~~~demo
-> const drawLine = picture.drawLine
+> const addLine = picture.addLine
 < undefined
-> drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
-! Uncaught TypeError: Cannot read property 'area' of undefined
+> addLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
+! Uncaught TypeError: Cannot read properties of undefined (reading 'lines')
 ~~~
 
 Оголосимо метод **~drawLine~** за допомогою стрілкової функції:
@@ -740,23 +724,13 @@ const picture = new Picture
 ♦♦♦10♦♦♦
 
 ~~~js
-const Picture = class Canvas {
+const Picture = class Sketch {
   constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    Object.assign(this.canvas, {
-      width: 320,
-      height: 320,
-      style: 'border: 1px solid #000; background: #FFF'
-    })
-
-    this.area = this.canvas.getContext('2d')
+    this.lines = []
   }
 
-  drawLine = (points) => {
-    this.area.moveTo(points[0].x, points[0].y)
-    this.area.lineTo(points[1].x, points[1].y)
-    this.area.stroke()
+  addLine = (points) => {
+    this.lines.push(points)
   }
 }
 ~~~
@@ -769,7 +743,7 @@ const Picture = class Canvas {
 ~~~demo
 > const picture = new Picture()
 < undefined
-> const test = picture.drawLine
+> const test = picture.addLine
 < undefined
 > test([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 < undefined
@@ -948,10 +922,17 @@ const BaseClass = class Canvas {
 
   static create (width, height) {
     if (this.#context) return
-    const canvas = document.body
-      .appendChild(document.createElement('canvas'))
+
+    // Одна канва на страницу, а не по канве на каждый запуск примера:
+    // найдём свою по id, и только если её нет - создадим.
+    const canvas = document.querySelector('#demo-canvas') || Object.assign(
+      document.body.appendChild(document.createElement('canvas')),
+      { id: 'demo-canvas' }
+    )
+
     Object.assign(canvas, { width, height })
     this.#context = canvas.getContext('2d')
+    this.#context.clearRect(0, 0, width, height)
   }
 
   setLineWidth (width = 2) {
@@ -1076,10 +1057,16 @@ const BaseClass = class Canvas {
 
   static create (width, height) {
     if (this.getContext()) return
-    const canvas = document.body
-      .appendChild(document.createElement('canvas'))
+
+    // Одна канва на страницу, а не по канве на каждый запуск примера.
+    const canvas = document.querySelector('#demo-canvas') || Object.assign(
+      document.body.appendChild(document.createElement('canvas')),
+      { id: 'demo-canvas' }
+    )
+
     Object.assign(canvas, { width, height })
     this.#context = canvas.getContext('2d')
+    this.#context.clearRect(0, 0, width, height)
   }
 
   static setLineWidth (width = 2) {
@@ -1149,21 +1136,17 @@ ___________________________________________________
 ♦♦♦15♦♦♦
 
 ~~~js
-const Canvas = class {
+const Sketch = class {
   constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    this.area = this.canvas.getContext('2d')
+    this.lines = []
   }
-  drawLine (points) {
-    this.area.beginPath()
-    this.area.moveTo(points[0].x, points[0].y)
-    this.area.lineTo(points[1].x, points[1].y)
-    this.area.stroke()
+
+  addLine (from, to) {
+    this.lines.push({ from, to })
   }
 }
 
-class ExtendedCanvas extends Canvas {
+class Shaded extends Sketch {
   constructor () {
     super ()
     this.history = []
@@ -1281,6 +1264,32 @@ class Canvas {
 
 Зверніть увагу, що слухач події ~resize~ глобального об’єкта ~window~, який встановлюється за допомогою статичного методу класу **~setListener~**, створює та розповсюджує подію ~resize~ для всіх зареєстрованих екземплярів класу **~Canvas~**.
 У конструкторі екземпляра ми реєструємо його у статичній властивості класу **~instances~** і викликаємо статичний метод класу **~createCanvas~**, який створює полотно ~canvas~ та додає до нього слухач події ~resize~.
+
+___________________________________________________
+
+### ![ico-20 icon] Де тут витік⟪Where_the_leak_is⟫
+
+Реєстр **~instances~** тримає екземпляри **звичайним, сильним посиланням**. Клас живе стільки ж, скільки сторінка, — отже жоден зареєстрований екземпляр не буде зібраний складальником сміття. Ніколи.
+
+![ico-20 pin] І посилань таких два. **~Canvas.instances~** тримає сам об'єкт, а обробник у **~window.onresize~** — замикання, у якому лежить **~Canvas~**. Обидва переживають будь-який екземпляр.
+
+~~~demo
+> const first = new Canvas()
+< undefined
+> const second = new Canvas()
+< undefined
+> Canvas.instances.size
+< 2
+> first.canvas.remove()
+< undefined
+> Canvas.instances.size
+< 2
+~~~
+
+Прибрати полотно з документа недостатньо: у реєстрі лишився сам екземпляр, а в ньому — **~this.area~**, контекст малювання. Разом із ним у пам'яті лишається й бітова карта полотна, а це мегабайти на кожну тисячу на тисячу пікселів.
+
+Лікується це двома способами. Перший — знімати з обліку руками: метод, який прибирає полотно з документа й викреслює екземпляр із реєстру. Він простий, але його треба не забути викликати. Другий — тримати в реєстрі слабкі посилання, і про нього нижче.
+
 ![ico-25 warn] У наведеному вище прикладі існує серйозна небезпека витоків пам’яті.
 
 ^^^[Витоки пам'яті]
