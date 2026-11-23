@@ -13,8 +13,18 @@ class SVG {
 
   static createCanvas () {
     if (this.#canvas) return
-    this.#canvas = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-    document.body.appendChild(this.#canvas)
+
+    // Одна область рисования на страницу: демо запускают кнопкой, и без
+    // этого сколько раз нажали - столько <svg> осталось бы в документе.
+    this.#canvas = document.querySelector('#demo-svg')
+
+    if (!this.#canvas) {
+      this.#canvas = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+      this.#canvas.id = 'demo-svg'
+      document.body.appendChild(this.#canvas)
+    }
+
+    this.#canvas.replaceChildren()
   }
 
   static setSize (w, h) {

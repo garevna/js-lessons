@@ -9,10 +9,18 @@ const BaseClass = class Canvas {
 
   static create (width, height) {
     if (this.#context) return
-    const canvas = document.body
-      .appendChild(document.createElement('canvas'))
+
+    // Одна канва на страницу, а не по канве на каждый запуск примера:
+    // демо запускают кнопкой, и сколько раз нажали - столько элементов
+    // осталось бы в документе. Своя находится по id.
+    const canvas = document.querySelector('#demo-canvas') || Object.assign(
+      document.body.appendChild(document.createElement('canvas')),
+      { id: 'demo-canvas' }
+    )
+
     Object.assign(canvas, { width, height })
     this.#context = canvas.getContext('2d')
+    this.#context.clearRect(0, 0, width, height)
   }
 
   setLineWidth (width = 2) {

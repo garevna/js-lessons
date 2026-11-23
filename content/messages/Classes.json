@@ -425,9 +425,9 @@
     "ua": "^^Сеттер викликатиметься щоразу, коли ідентифікатор обчислюваної властивості буде в лівій частині оператора присвоєння.^^"
   },
   "p40": {
-    "ru": "Рассмотрим пример класса **~Canvas~** с вычисляемым свойством **~history~**:",
-    "eng": "Let’s look at an example of the **~Canvas~** class with a computed property called **~history~**:",
-    "ua": "Розглянемо приклад класу **~Canvas~** із обчислюваною властивістю **~history~**:"
+    "ru": "Рассмотрим пример класса **~Sketch~** с вычисляемым свойством **~history~**:",
+    "eng": "Let’s look at an example of the **~Sketch~** class with a computed property called **~history~**:",
+    "ua": "Розглянемо приклад класу **~Sketch~** із обчислюваною властивістю **~history~**:"
   },
   "p41": {
     "ru": "Создадим экземпляр этого класса и выведем его в консоль:",
@@ -465,9 +465,9 @@
     "ua": "Сеттер обчислюваної властивості не дозволив нам зіпсувати дані, і в консолі ми побачимо виняток:"
   },
   "p48": {
-    "ru": "canvas.history - это массив объектов с обязательным свойством `path`.",
-    "eng": "canvas.history is an array of objects with a required `path` property.",
-    "ua": "canvas.history — це масив об’єктів з обов’язковою властивістю `path`."
+    "ru": "sketch.history - это массив объектов с обязательным свойством `path`.",
+    "eng": "sketch.history is an array of objects with a required `path` property.",
+    "ua": "sketch.history — це масив об’єктів з обов’язковою властивістю `path`."
   },
   "p49": {
     "ru": "Недопустимое значение.",
@@ -1298,5 +1298,30 @@
     "ru": "Что вернет OrderModel.getModelName()?",
     "eng": "What will `OrderModel.getModelName()` return?",
     "ua": "Що поверне OrderModel.getModelName()?"
+  },
+  "leak_title": {
+    "ru": "Где здесь утечка",
+    "eng": "Where the leak is",
+    "ua": "Де тут витік"
+  },
+  "leak_holds": {
+    "ru": "Реестр **~instances~** держит экземпляры **обычной, сильной ссылкой**. Класс живёт столько же, сколько страница, — значит ни один зарегистрированный экземпляр не будет собран сборщиком мусора. Никогда.",
+    "eng": "The **~instances~** registry holds its instances by an **ordinary, strong reference**. The class lives as long as the page does - so not one registered instance will ever be collected. Not one, not ever.",
+    "ua": "Реєстр **~instances~** тримає екземпляри **звичайним, сильним посиланням**. Клас живе стільки ж, скільки сторінка, — отже жоден зареєстрований екземпляр не буде зібраний складальником сміття. Ніколи."
+  },
+  "leak_two": {
+    "ru": "![ico-20 pin] И ссылок таких две. **~Canvas.instances~** держит сам объект, а обработчик в **~window.onresize~** — замыкание, в котором лежит **~Canvas~**. Обе переживают любой экземпляр.",
+    "eng": "![ico-20 pin] And there are two such references. **~Canvas.instances~** holds the object itself, and the handler in **~window.onresize~** is a closure with **~Canvas~** inside it. Both outlive any instance.",
+    "ua": "![ico-20 pin] І посилань таких два. **~Canvas.instances~** тримає сам об'єкт, а обробник у **~window.onresize~** — замикання, у якому лежить **~Canvas~**. Обидва переживають будь-який екземпляр."
+  },
+  "leak_dom": {
+    "ru": "Убрать холст из документа недостаточно: в реестре остался сам экземпляр, а в нём — **~this.area~**, контекст рисования. Вместе с ним в памяти остаётся и битовая карта холста, а это мегабайты на каждую тысячу на тысячу пикселей.",
+    "eng": "Taking the canvas out of the document is not enough: the instance is still in the registry, and in it **~this.area~**, the drawing context. The canvas bitmap stays in memory with it - megabytes for every thousand by thousand pixels.",
+    "ua": "Прибрати полотно з документа недостатньо: у реєстрі лишився сам екземпляр, а в ньому — **~this.area~**, контекст малювання. Разом із ним у пам'яті лишається й бітова карта полотна, а це мегабайти на кожну тисячу на тисячу пікселів."
+  },
+  "leak_cure": {
+    "ru": "Лечится это двумя способами. Первый — снимать с учёта руками: метод, который убирает холст из документа и вычёркивает экземпляр из реестра. Он прост, но его надо не забыть вызвать. Второй — держать в реестре слабые ссылки, и о нём ниже.",
+    "eng": "There are two cures. One is to deregister by hand: a method that takes the canvas out of the document and strikes the instance off the registry. It is simple, and it has to be remembered. The other is to keep weak references in the registry, and that is below.",
+    "ua": "Лікується це двома способами. Перший — знімати з обліку руками: метод, який прибирає полотно з документа й викреслює екземпляр із реєстру. Він простий, але його треба не забути викликати. Другий — тримати в реєстрі слабкі посилання, і про нього нижче."
   }
 }

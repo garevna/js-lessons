@@ -584,12 +584,8 @@ ___________________________________________________
 ♦♦♦9♦♦♦
 
 ~~~js
-const Canvas = class {
+const Sketch = class {
   constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    this.area = this.canvas.getContext('2d')
-
     let history = []
 
     Object.defineProperty(this, 'history', {
@@ -622,19 +618,17 @@ const Canvas = class {
 {{p41}}
 
 ~~~js
-const canvas = new Canvas
-console.log(canvas)
+const sketch = new Sketch
+console.log(sketch)
 ~~~
 
 ~~~console
-▼ Canvas {canvas: canvas, area: CanvasRenderingContext2D}
-  ► area: CanvasRenderingContext2D {canvas: canvas, lang: 'inherit', font: '10px sans-serif', textAlign: 'start', textBaseline: 'alphabetic', …}
-  ► canvas: canvas
+▼ Sketch {}
     history: (...)
   ► get history: () => history
   ► set history: newHistory => {…}
   ▼ [[Prototype]]: Object
-      ► constructor: class Canvas
+      ► constructor: class Sketch
       ► [[Prototype]]: Object
 ~~~
 
@@ -642,7 +636,7 @@ console.log(canvas)
 {{p43}}
 
 ~~~js
-canvas.history = [
+sketch.history = [
   { path: [{ x: 150, y: 250 }, { x: 350, y: 50 }], lineColor: 'red' },
   { path: [{ x: 350, y: 50 }, { x: 100, y: 250 }], lineColor: 'green' },
   '***',
@@ -653,7 +647,7 @@ canvas.history = [
 {{p44}}
 
 ~~~js
-console.log(canvas.history)
+console.log(sketch.history)
 ~~~
 
 ~~~console
@@ -669,9 +663,9 @@ console.log(canvas.history)
 {{p46}}
 
 ~~~demo
-> canvas.history = 'History'
+> sketch.history = 'History'
 ! {{p49}}
-> canvas.history = ['***']
+> sketch.history = ['***']
 ! {{p48}}
 ~~~
 
@@ -680,9 +674,9 @@ console.log(canvas.history)
 {{p50}}
 
 ~~~demo
-> canvas.history.push({ x: 10, y: 20 })
+> sketch.history.push({ x: 10, y: 20 })
 ! Uncaught TypeError: Cannot add property 2, object is not extensible
-> canvas.history.pop()
+> sketch.history.pop()
 ! Uncaught TypeError: Cannot delete property '1' of [object Array]
 ~~~
 
@@ -703,23 +697,13 @@ ___________________________________________________
 {{p53}}
 
 ~~~~js
-const Picture = class Canvas {
+const Picture = class Sketch {
   constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    Object.assign(this.canvas, {
-      width: 320,
-      height: 320,
-      style: 'border: 1px solid #000; background: #FFF'
-    })
-
-    this.area = this.canvas.getContext('2d')
+    this.lines = []
   }
 
-  drawLine (points) {
-    this.area.moveTo(points[0].x, points[0].y)
-    this.area.lineTo(points[1].x, points[1].y)
-    this.area.stroke()
+  addLine (points) {
+    this.lines.push(points)
   }
 }
 
@@ -729,10 +713,10 @@ const picture = new Picture
 {{p54}}
 
 ~~~demo
-> const drawLine = picture.drawLine
+> const addLine = picture.addLine
 < undefined
-> drawLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
-! Uncaught TypeError: Cannot read property 'area' of undefined
+> addLine([{ x: 50, y: 50 }, { x: 250, y: 250 }])
+! Uncaught TypeError: Cannot read properties of undefined (reading 'lines')
 ~~~
 
 {{p55}}
@@ -740,23 +724,13 @@ const picture = new Picture
 ♦♦♦10♦♦♦
 
 ~~~js
-const Picture = class Canvas {
+const Picture = class Sketch {
   constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    Object.assign(this.canvas, {
-      width: 320,
-      height: 320,
-      style: 'border: 1px solid #000; background: #FFF'
-    })
-
-    this.area = this.canvas.getContext('2d')
+    this.lines = []
   }
 
-  drawLine = (points) => {
-    this.area.moveTo(points[0].x, points[0].y)
-    this.area.lineTo(points[1].x, points[1].y)
-    this.area.stroke()
+  addLine = (points) => {
+    this.lines.push(points)
   }
 }
 ~~~
@@ -769,7 +743,7 @@ const Picture = class Canvas {
 ~~~demo
 > const picture = new Picture()
 < undefined
-> const test = picture.drawLine
+> const test = picture.addLine
 < undefined
 > test([{ x: 50, y: 50 }, { x: 250, y: 250 }])
 < undefined
@@ -948,10 +922,17 @@ const BaseClass = class Canvas {
 
   static create (width, height) {
     if (this.#context) return
-    const canvas = document.body
-      .appendChild(document.createElement('canvas'))
+
+    // Одна канва на страницу, а не по канве на каждый запуск примера:
+    // найдём свою по id, и только если её нет - создадим.
+    const canvas = document.querySelector('#demo-canvas') || Object.assign(
+      document.body.appendChild(document.createElement('canvas')),
+      { id: 'demo-canvas' }
+    )
+
     Object.assign(canvas, { width, height })
     this.#context = canvas.getContext('2d')
+    this.#context.clearRect(0, 0, width, height)
   }
 
   setLineWidth (width = 2) {
@@ -1076,10 +1057,16 @@ const BaseClass = class Canvas {
 
   static create (width, height) {
     if (this.getContext()) return
-    const canvas = document.body
-      .appendChild(document.createElement('canvas'))
+
+    // Одна канва на страницу, а не по канве на каждый запуск примера.
+    const canvas = document.querySelector('#demo-canvas') || Object.assign(
+      document.body.appendChild(document.createElement('canvas')),
+      { id: 'demo-canvas' }
+    )
+
     Object.assign(canvas, { width, height })
     this.#context = canvas.getContext('2d')
+    this.#context.clearRect(0, 0, width, height)
   }
 
   static setLineWidth (width = 2) {
@@ -1149,21 +1136,17 @@ ___________________________________________________
 ♦♦♦15♦♦♦
 
 ~~~js
-const Canvas = class {
+const Sketch = class {
   constructor () {
-    this.canvas = document.body
-      .appendChild(document.createElement('canvas'))
-    this.area = this.canvas.getContext('2d')
+    this.lines = []
   }
-  drawLine (points) {
-    this.area.beginPath()
-    this.area.moveTo(points[0].x, points[0].y)
-    this.area.lineTo(points[1].x, points[1].y)
-    this.area.stroke()
+
+  addLine (from, to) {
+    this.lines.push({ from, to })
   }
 }
 
-class ExtendedCanvas extends Canvas {
+class Shaded extends Sketch {
   constructor () {
     super ()
     this.history = []
@@ -1281,6 +1264,32 @@ class Canvas {
 
 {{p157}}
 {{p158}}
+
+___________________________________________________
+
+### ![ico-20 icon] {{leak_title}}
+
+{{leak_holds}}
+
+{{leak_two}}
+
+~~~demo
+> const first = new Canvas()
+< undefined
+> const second = new Canvas()
+< undefined
+> Canvas.instances.size
+< 2
+> first.canvas.remove()
+< undefined
+> Canvas.instances.size
+< 2
+~~~
+
+{{leak_dom}}
+
+{{leak_cure}}
+
 ![ico-25 warn] {{p160}}
 
 ^^^[{{p161}}]
