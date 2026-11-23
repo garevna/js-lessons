@@ -95,9 +95,9 @@
     "ua": "використовувати **_eval_** як ім’я змінної"
   },
   "p20": {
-    "ru": "использовать **_arguments_** как имя переменной",
-    "eng": "Use **_arguments_** as a variable name",
-    "ua": "використовувати **_arguments_** як ім’я змінної"
+    "ru": "использовать **_~arguments~_** как имя переменной",
+    "eng": "Use **_~arguments~_** as a variable name",
+    "ua": "використовувати **_~arguments~_** як ім’я змінної"
   },
   "p21": {
     "ru": "использовать **_arguments.callee_**",

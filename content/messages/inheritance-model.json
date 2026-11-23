@@ -256,7 +256,7 @@
   },
   "p52": {
     "ru": "Теперь вопрос: а что сделало его **_конструктором_** ?",
-    "eng": "Now the question is: what made him a **_constructor_**?",
+    "eng": "Now the question is: what made him a **_~constructor~_**?",
     "ua": "Тепер питання: а що зробило його **_конструктором_**?"
   },
   "p53": {
@@ -611,7 +611,7 @@
   },
   "p123": {
     "ru": "Поскольку они не передаются экземплярам, их называют **_статическими_**",
-    "eng": "As they are not passed to instances, they are referred to as **_static_**",
+    "eng": "As they are not passed to instances, they are referred to as **_~static~_**",
     "ua": "Оскільки вони не передаються екземплярам, їх називають **_статичними_**"
   },
   "p124": {

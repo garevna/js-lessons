@@ -1120,9 +1120,9 @@
     "ua": "Статичні методи автоматично копіюються в кожен новий створений екземпляр класу."
   },
   "test03Variant2": {
-    "ru": "Статические методы вызываются на самом классе, а не в его экземплярах, и **_this_** внутри них ссылается на конструктор класса.",
-    "eng": "Static methods are called on the class itself, not on its instances, and **_this_** within them refers to the class constructor.",
-    "ua": "Статичні методи викликаються безпосередньо в класі, а не в його екземплярах, і **_this_** всередині них посилається на конструктор класу."
+    "ru": "Статические методы вызываются на самом классе, а не в его экземплярах, и **_~this~_** внутри них ссылается на конструктор класса.",
+    "eng": "Static methods are called on the class itself, not on its instances, and **_~this~_** within them refers to the class constructor.",
+    "ua": "Статичні методи викликаються безпосередньо в класі, а не в його екземплярах, і **_~this~_** всередині них посилається на конструктор класу."
   },
   "test03Variant3": {
     "ru": "Статические методы невозможно вызывать, если в коде не создан хотя бы один экземпляр класса.",
@@ -1140,9 +1140,9 @@
     "ua": "Неправильно. Статичні методи належать самому класу-конструктору, а не його окремим екземплярам."
   },
   "test03Variant2Answer": {
-    "ru": "Верно! Вы вызываете их через имя класса (_Class.method()_), а ключевое слово **_this_** внутри статического метода указывает на сам класс.",
-    "eng": "Correct! You call them via the class name (_Class.method()_), and the keyword **_this_** within a static method refers to the class itself.",
-    "ua": "Правильно! Ви викликаєте їх через ім’я класу (_Class.method()_), а ключове слово **_this_** всередині статичного методу вказує на сам клас."
+    "ru": "Верно! Вы вызываете их через имя класса (_Class.method()_), а ключевое слово **_~this~_** внутри статического метода указывает на сам класс.",
+    "eng": "Correct! You call them via the class name (_Class.method()_), and the keyword **_~this~_** within a static method refers to the class itself.",
+    "ua": "Правильно! Ви викликаєте їх через ім’я класу (_Class.method()_), а ключове слово **_~this~_** всередині статичного методу вказує на сам клас."
   },
   "test03Variant3Answer": {
     "ru": "Неверно. Напротив, статические методы существуют независимо от создания каких-либо экземпляров.",
@@ -1160,9 +1160,9 @@
     "ua": "Що станеться, якщо відокремити метод звичайного класу від екземпляра та викликати його як звичайну функцію (наприклад, _const fn = instance.method; fn()_)?"
   },
   "test04Variant1": {
-    "ru": "**_this_** внутри метода автоматически останется привязанным к экземпляру класса.",
-    "eng": "**_this_** within the method will automatically remain bound to the class instance.",
-    "ua": "**_this_** усередині методу автоматично залишиться прив’язаним до екземпляра класу."
+    "ru": "**_~this~_** внутри метода автоматически останется привязанным к экземпляру класса.",
+    "eng": "**_~this~_** within the method will automatically remain bound to the class instance.",
+    "ua": "**_~this~_** усередині методу автоматично залишиться прив’язаним до екземпляра класу."
   },
   "test04Variant2": {
     "ru": "Возникнет ошибка синтаксиса ещё на этапе компиляции скрипта.",
@@ -1170,14 +1170,14 @@
     "ua": "Виникне синтаксична помилка ще на етапі компіляції скрипта."
   },
   "test04Variant3": {
-    "ru": "**_this_** внутри метода всегда будет указывать на глобальный объект **window** во всех режимах выполнения.",
-    "eng": "**_this_** inside a method will always point to the global **window** object in all execution modes.",
-    "ua": "**_this_** усередині методу завжди вказуватиме на глобальний об’єкт **window** у всіх режимах виконання."
+    "ru": "**_~this~_** внутри метода всегда будет указывать на глобальный объект **window** во всех режимах выполнения.",
+    "eng": "**_~this~_** inside a method will always point to the global **window** object in all execution modes.",
+    "ua": "**_~this~_** усередині методу завжди вказуватиме на глобальний об’єкт **window** у всіх режимах виконання."
   },
   "test04Variant4": {
-    "ru": "**_this_** внутри метода потеряет контекст и в строгом режиме станет равным **_undefined_**.",
-    "eng": "**_this_** inside a method will lose its context and, in strict mode, will become **_undefined_**.",
-    "ua": "**_this_** всередині методу втратить контекст і в строгому режимі стане рівним **_undefined_**."
+    "ru": "**_~this~_** внутри метода потеряет контекст и в строгом режиме станет равным **_~undefined~_**.",
+    "eng": "**_~this~_** inside a method will lose its context and, in strict mode, will become **_~undefined~_**.",
+    "ua": "**_~this~_** всередині методу втратить контекст і в строгому режимі стане рівним **_~undefined~_**."
   },
   "test04Variant1Answer": {
     "ru": "Неверно. При отделении метода от объекта метод теряет ссылку на свой исходный объект («потеря контекста»).",
@@ -1190,14 +1190,14 @@
     "ua": "Неправильно. Синтаксично передача методу як функції є цілком коректною, проблема проявиться лише під час виконання."
   },
   "test04Variant3Answer": {
-    "ru": "Неверно. Тела классов в JS всегда выполняются в строгом режиме (_strict mode_), поэтому при потере контекста **_this_** не становится ссылкой на глобальный объект.",
-    "eng": "Incorrect. Class bodies in JS always execute in strict mode, so when context is lost, **_this_** does not become a reference to the global object.",
-    "ua": "Неправильно. Тіла класів у JS завжди виконуються у строгому режимі (_strict mode_), тому при втраті контексту **_this_** не стає посиланням на глобальний об’єкт."
+    "ru": "Неверно. Тела классов в JS всегда выполняются в строгом режиме (_strict mode_), поэтому при потере контекста **_~this~_** не становится ссылкой на глобальный объект.",
+    "eng": "Incorrect. Class bodies in JS always execute in strict mode, so when context is lost, **_~this~_** does not become a reference to the global object.",
+    "ua": "Неправильно. Тіла класів у JS завжди виконуються у строгому режимі (_strict mode_), тому при втраті контексту **_~this~_** не стає посиланням на глобальний об’єкт."
   },
   "test04Variant4Answer": {
-    "ru": "Верно! Поскольку классы работают в _strict mode_, при вызове метода как обычной функции значение **_this_** теряется и становится **_undefined_**, что приведет к исключению при попытке обратиться к свойствам через **_this_**.",
-    "eng": "Correct! As classes operate in _strict mode_, when a method is called as a regular function, the value of **_this_** is lost and becomes **_undefined_**, which will result in an exception when attempting to access properties via **_this_**.",
-    "ua": "Правильно! Оскільки класи працюють у _strict mode_, під час виклику методу як звичайної функції значення **_this_** втрачається і стає **_undefined_**, що призведе до винятку при спробі звернутися до властивостей через **_this_**."
+    "ru": "Верно! Поскольку классы работают в _strict mode_, при вызове метода как обычной функции значение **_~this~_** теряется и становится **_~undefined~_**, что приведет к исключению при попытке обратиться к свойствам через **_~this~_**.",
+    "eng": "Correct! As classes operate in _strict mode_, when a method is called as a regular function, the value of **_~this~_** is lost and becomes **_~undefined~_**, which will result in an exception when attempting to access properties via **_~this~_**.",
+    "ua": "Правильно! Оскільки класи працюють у _strict mode_, під час виклику методу як звичайної функції значення **_~this~_** втрачається і стає **_~undefined~_**, що призведе до винятку при спробі звернутися до властивостей через **_~this~_**."
   },
   "test05Question": {
     "ru": "Где в современном синтаксисе JS разрешено объявлять публичные поля экземпляра класса?",
@@ -1210,9 +1210,9 @@
     "ua": "Безпосередньо в тілі класу (поза методами та конструктором)."
   },
   "test05Variant2": {
-    "ru": "Только внутри метода _constructor_ с обязательным указанием ключевого слова **_this_**.",
-    "eng": "Only within the _constructor_ method, with the **_this_** keyword required.",
-    "ua": "Тільки всередині методу _constructor_ з обов’язковим зазначенням ключового слова **_this_**."
+    "ru": "Только внутри метода _constructor_ с обязательным указанием ключевого слова **_~this~_**.",
+    "eng": "Only within the _constructor_ method, with the **_~this~_** keyword required.",
+    "ua": "Тільки всередині методу _constructor_ з обов’язковим зазначенням ключового слова **_~this~_**."
   },
   "test05Variant3": {
     "ru": "Исключительно в прототипе класса после его полного объявления через точку.",
@@ -1220,9 +1220,9 @@
     "ua": "Виключно у прототипі класу після його повного оголошення через крапку."
   },
   "test05Variant4": {
-    "ru": "Только внутри специального статического блока **_static_** {}.",
-    "eng": "Only within the special static block **_static_** {}.",
-    "ua": "Тільки всередині спеціального статичного блоку **_static_** {}."
+    "ru": "Только внутри специального статического блока **_~static~_** {}.",
+    "eng": "Only within the special static block **_~static~_** {}.",
+    "ua": "Тільки всередині спеціального статичного блоку **_~static~_** {}."
   },
   "test05Variant1Answer": {
     "ru": "Верно! Стандарт **Class Fields** позволяет объявлять публичные свойства прямо в теле класса без использования this и конструктора.",

@@ -5,8 +5,8 @@
     "ua": "Стрілкові функції"
   },
   "p3": {
-    "ru": "В сигнатуре стрелочной функции нет слова **_function_**:",
-    "eng": "In the signature of an arrow function, there's no word **_function_**:",
+    "ru": "В сигнатуре стрелочной функции нет слова **_~function~_**:",
+    "eng": "In the signature of an arrow function, there's no word **_~function~_**:",
     "ua": "У сигнатурі стрілкової функції немає слова **~⟦f22⟧~**"
   },
   "p4": {

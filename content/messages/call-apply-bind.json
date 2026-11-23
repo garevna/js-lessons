@@ -55,14 +55,14 @@
     "ua": "![ico-20 pin] будь-яка функція є об’єктом"
   },
   "p12": {
-    "ru": "![ico-20 pin] все функции наследуют свойства и методы объекта **_prototype_** конструктора **Function**",
-    "eng": "![ico-20 pin] all functions inherit properties and methods from the **_prototype_** object of the **Function** constructor",
-    "ua": "![ico-20 pin] усі функції успадковують властивості та методи об’єкта **_prototype_** конструктора **Function**"
+    "ru": "![ico-20 pin] все функции наследуют свойства и методы объекта **_~prototype~_** конструктора **Function**",
+    "eng": "![ico-20 pin] all functions inherit properties and methods from the **_~prototype~_** object of the **Function** constructor",
+    "ua": "![ico-20 pin] усі функції успадковують властивості та методи об’єкта **_~prototype~_** конструктора **Function**"
   },
   "p13": {
-    "ru": "![ico-20 warn] Свойство **~⟦f4⟧~** любой функции является ссылкой на свойство **_prototype_** конструктора **Function**",
-    "eng": "![ico-20 warn] The **~⟦f4⟧~** property of any function is a reference to the **_prototype_** property of the **Function** constructor",
-    "ua": "![ico-20 warn] Властивість **~⟦f4⟧~** будь-якої функції є посиланням на властивість **_prototype_** конструктора **Function**"
+    "ru": "![ico-20 warn] Свойство **~⟦f4⟧~** любой функции является ссылкой на свойство **_~prototype~_** конструктора **Function**",
+    "eng": "![ico-20 warn] The **~⟦f4⟧~** property of any function is a reference to the **_~prototype~_** property of the **Function** constructor",
+    "ua": "![ico-20 warn] Властивість **~⟦f4⟧~** будь-якої функції є посиланням на властивість **_~prototype~_** конструктора **Function**"
   },
   "p14": {
     "ru": "![ico-20 pin] Поскольку конструктор **Function** также является функцией, его свойство **~⟦f5⟧~** тоже является ссылкой на собственное свойство **~⟦f6⟧~**",

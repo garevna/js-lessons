@@ -41,6 +41,7 @@
     "black-blocks": "node tools/black-blocks.js",
     "black-fragments": "node tools/black-fragments.js",
     "bare-fragments": "node tools/bare-fragments.js",
+    "keyword-markup": "node tools/keyword-markup.js",
     "sort-messages": "node tools/sort-messages.js",
     "rainbow": "node tools/rainbow-patch.js",
     "icon": "node tools/icon-add.js",

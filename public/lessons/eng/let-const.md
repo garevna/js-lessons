@@ -8,7 +8,7 @@ ________________________
 
 ### ![ico-25 icon] Functional and block scope⟪Functional_and_block_scope⟫
 
-The scope of variables declared using the **_var_** directive can only be restricted by ‘wrapping’ them within a function
+The scope of variables declared using the **_~var~_** directive can only be restricted by ‘wrapping’ them within a function
 
 ![ico-25 pin] Block scope is the restriction of scope within curly brackets
 
@@ -27,7 +27,7 @@ console.log(x)  // 5
 
 As a result, the garbage collector frees up memory by removing unnecessary variables upon exiting the block scope
 
-![ico-25 pin] The consequence of block scope for variables declared using the **_let_** directive is that the value of the loop variable is reset on each iteration of the _for_ block:
+![ico-25 pin] The consequence of block scope for variables declared using the **_~let~_** directive is that the value of the loop variable is reset on each iteration of the _for_ block:
 
 ◘◘![ico-25 cap] **2**◘◘
 
@@ -41,7 +41,7 @@ for (let i of [1, 2, 3, 4, 5]) {
 
 ___
 
-![ico-20 warn] Note that the absence of explicit curly brackets does not alter the behaviour of variables declared using the **_let_** directive
+![ico-20 warn] Note that the absence of explicit curly brackets does not alter the behaviour of variables declared using the **_~let~_** directive
 
 ◘◘![ico-25 cap] **var**◘◘
 
@@ -92,9 +92,9 @@ ___
 
 **Hoisting** means that variables are ‘hoisted’ from their point of declaration in the code to the top of their scope
 
-**Hoisting** applies equally to variables declared using the **_let_** directive as it does to those declared using **_var_**
+**Hoisting** applies equally to variables declared using the **_~let~_** directive as it does to those declared using **_~var~_**
 
-![ico-20 warn] However, variables declared using **_let_** will remain inaccessible until execution reaches the point where the variable is actually declared
+![ico-20 warn] However, variables declared using **_~let~_** will remain inaccessible until execution reaches the point where the variable is actually declared
 
 This is how a **_temporary dead zone_** arises
 

@@ -4,7 +4,7 @@
 
 ## ![ico-25 icon] {{common.syntax}}
 
-![ico-20 error] **_function_**
+![ico-20 error] **_~function~_**
 
 {{p3}}
 

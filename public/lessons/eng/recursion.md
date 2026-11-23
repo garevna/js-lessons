@@ -7,7 +7,7 @@ In functional programming, a recursive function is a ‘purer’ alternative to 
 ![ico-20 warn] Every recursive function must have a condition to terminate the recursion
 Otherwise, calling the function will result in an infinite loop
 
-**Tail recursion** is when the last statement executed by a recursive function is the **_return_** statement, which calls the function itself
+**Tail recursion** is when the last statement executed by a recursive function is the **_~return~_** statement, which calls the function itself
 
 The simplest (classic) example of recursion is calculating a factorial
 

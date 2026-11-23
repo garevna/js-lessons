@@ -5,9 +5,9 @@
     "ua": "Функціональна та блокова області видимості"
   },
   "p2": {
-    "ru": "Ограничить область видимости переменных, объявленных с помощью директивы **_var_**, можно только \"заворачиванием\" их в функцию",
-    "eng": "The scope of variables declared using the **_var_** directive can only be restricted by ‘wrapping’ them within a function",
-    "ua": "Обмежити область видимості змінних, оголошених за допомогою директиви **_var_**, можна лише «загортанням» їх у функцію"
+    "ru": "Ограничить область видимости переменных, объявленных с помощью директивы **_~var~_**, можно только \"заворачиванием\" их в функцию",
+    "eng": "The scope of variables declared using the **_~var~_** directive can only be restricted by ‘wrapping’ them within a function",
+    "ua": "Обмежити область видимості змінних, оголошених за допомогою директиви **_~var~_**, можна лише «загортанням» їх у функцію"
   },
   "p3": {
     "ru": "![ico-25 pin] Блочная область видимости - это ограничение области видимости в пределах фигурных скобок",
@@ -20,14 +20,14 @@
     "ua": "Завдяки цьому збирач сміття звільняє пам’ять від непотрібних змінних при виході з блокової області видимості"
   },
   "p5": {
-    "ru": "![ico-25 pin] Следствием блочной области видимости переменных, объявленных с помощью директивы **_let_**, является замыкание значения переменной цикла на каждой итерации блока _for_:",
-    "eng": "![ico-25 pin] The consequence of block scope for variables declared using the **_let_** directive is that the value of the loop variable is reset on each iteration of the _for_ block:",
-    "ua": "![ico-25 pin] Наслідком блокової області видимості змінних, оголошених за допомогою директиви **_let_**, є фіксація значення змінної циклу на кожній ітерації блоку _for_:"
+    "ru": "![ico-25 pin] Следствием блочной области видимости переменных, объявленных с помощью директивы **_~let~_**, является замыкание значения переменной цикла на каждой итерации блока _for_:",
+    "eng": "![ico-25 pin] The consequence of block scope for variables declared using the **_~let~_** directive is that the value of the loop variable is reset on each iteration of the _for_ block:",
+    "ua": "![ico-25 pin] Наслідком блокової області видимості змінних, оголошених за допомогою директиви **_~let~_**, є фіксація значення змінної циклу на кожній ітерації блоку _for_:"
   },
   "p6": {
-    "ru": "![ico-20 warn] Обратите внимание, что отсутствие явных фигурных скобок не меняет принцип поведения переменных, объявленных с помощью директивы **_let_**",
-    "eng": "![ico-20 warn] Note that the absence of explicit curly brackets does not alter the behaviour of variables declared using the **_let_** directive",
-    "ua": "![ico-20 warn] Зверніть увагу, що відсутність явних фігурних дужок не змінює принцип поведінки змінних, оголошених за допомогою директиви **_let_**"
+    "ru": "![ico-20 warn] Обратите внимание, что отсутствие явных фигурных скобок не меняет принцип поведения переменных, объявленных с помощью директивы **_~let~_**",
+    "eng": "![ico-20 warn] Note that the absence of explicit curly brackets does not alter the behaviour of variables declared using the **_~let~_** directive",
+    "ua": "![ico-20 warn] Зверніть увагу, що відсутність явних фігурних дужок не змінює принцип поведінки змінних, оголошених за допомогою директиви **_~let~_**"
   },
   "p7": {
     "ru": "Hoisting и \"временная мёртвая зона\"",
@@ -40,14 +40,14 @@
     "ua": "**Hoisting** полягає в тому, що змінні «піднімаються» від місця їх оголошення в коді до початку їхньої області видимості"
   },
   "p9": {
-    "ru": "**Hoisting** имеет такое же отношение к переменным, объявленным с помощью директивы **_let_**, как и к объявленным с помощью **_var_**",
-    "eng": "**Hoisting** applies equally to variables declared using the **_let_** directive as it does to those declared using **_var_**",
-    "ua": "**Hoisting** має таке саме значення для змінних, оголошених за допомогою директиви **_let_**, як і для оголошених за допомогою **_var_**"
+    "ru": "**Hoisting** имеет такое же отношение к переменным, объявленным с помощью директивы **_~let~_**, как и к объявленным с помощью **_~var~_**",
+    "eng": "**Hoisting** applies equally to variables declared using the **_~let~_** directive as it does to those declared using **_~var~_**",
+    "ua": "**Hoisting** має таке саме значення для змінних, оголошених за допомогою директиви **_~let~_**, як і для оголошених за допомогою **_~var~_**"
   },
   "p10": {
-    "ru": "![ico-20 warn] Однако переменные, объявленные с помощью **_let_**, будут недоступны до тех пор, пока выполнение кода не дойдёт до места фактического объявления переменной",
-    "eng": "![ico-20 warn] However, variables declared using **_let_** will remain inaccessible until execution reaches the point where the variable is actually declared",
-    "ua": "![ico-20 warn] Однак змінні, оголошені за допомогою **_let_**, будуть недоступні доти, доки виконання коду не дійде до місця фактичного оголошення змінної"
+    "ru": "![ico-20 warn] Однако переменные, объявленные с помощью **_~let~_**, будут недоступны до тех пор, пока выполнение кода не дойдёт до места фактического объявления переменной",
+    "eng": "![ico-20 warn] However, variables declared using **_~let~_** will remain inaccessible until execution reaches the point where the variable is actually declared",
+    "ua": "![ico-20 warn] Однак змінні, оголошені за допомогою **_~let~_**, будуть недоступні доти, доки виконання коду не дійде до місця фактичного оголошення змінної"
   },
   "p11": {
     "ru": "Так появляется **_временная мёртвая зона_**",
