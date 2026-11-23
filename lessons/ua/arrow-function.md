@@ -4,7 +4,7 @@
 
 ## ![ico-25 icon] Синтаксис⟪Syntax⟫
 
-![ico-20 error] **_function_**
+![ico-20 error] **_~function~_**
 
 У сигнатурі стрілкової функції немає слова **~function~**
 

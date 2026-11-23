@@ -175,7 +175,7 @@ Furthermore, the ‘grandfather’ is a **function**
 
 And ‘grandad’ has a very specific role – he is **~constructor~**
 
-Now the question is: what made him a **_constructor_**?
+Now the question is: what made him a **_~constructor~_**?
 
 ___________________________________________________________________
 
@@ -434,7 +434,7 @@ Properties and methods of the **Object** object that are not contained within th
   ► [[Prototype]]: ƒ ()
 ~~~~
 
-As they are not passed to instances, they are referred to as **_static_**
+As they are not passed to instances, they are referred to as **_~static~_**
 
 ____________________________________
 

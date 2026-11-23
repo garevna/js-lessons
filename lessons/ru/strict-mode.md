@@ -238,7 +238,7 @@ var eval = 7
 
 _______________________________________
 
-### ![ico-20 warn] использовать **_arguments_** как имя переменной⟪Use_**_arguments_**_as_a_variable_name⟫
+### ![ico-20 warn] использовать **_~arguments~_** как имя переменной⟪Use_**_~arguments~_**_as_a_variable_name⟫
 
 **обычный режим:**
 

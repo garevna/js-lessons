@@ -4,9 +4,9 @@
 
 ## ![ico-25 icon] Syntax⟪Syntax⟫
 
-![ico-20 error] **_function_**
+![ico-20 error] **_~function~_**
 
-In the signature of an arrow function, there's no word **_function_**:
+In the signature of an arrow function, there's no word **_~function~_**:
 
 ~~~js
 (параметры) => { тело функции }

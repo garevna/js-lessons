@@ -15,7 +15,7 @@ In short, the magic continues... Promises were only the beginning.
 
 ## ![ico-25 icon] async function⟪async_function⟫
 
-To declare an asynchronous function, use **~async~** keyword before the **_function_** keyword:
+To declare an asynchronous function, use **~async~** keyword before the **_~function~_** keyword:
 
 ~~~js
 async function sigma () {

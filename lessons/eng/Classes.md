@@ -1689,8 +1689,8 @@ ___________________________________________________
 - Static methods are automatically copied to every new instance of the class that is created.
 = Incorrect. Static methods belong to the class itself (the constructor), not to its individual instances.
 
-+ Static methods are called on the class itself, not on its instances, and **_this_** within them refers to the class constructor.
-= Correct! You call them via the class name (_Class.method()_), and the keyword **_this_** within a static method refers to the class itself.
++ Static methods are called on the class itself, not on its instances, and **_~this~_** within them refers to the class constructor.
+= Correct! You call them via the class name (_Class.method()_), and the keyword **_~this~_** within a static method refers to the class itself.
 
 - Static methods cannot be called unless at least one instance of the class has been created in the code.
 = Incorrect. On the contrary, static methods exist independently of whether any instances have been created.
@@ -1700,30 +1700,30 @@ ___________________________________________________
 
 ? What happens if you detach a method of a normal class from its instance and call it as a normal function (for example, `_const fn = instance.method; fn()_`)?
 
-- **_this_** within the method will automatically remain bound to the class instance.
+- **_~this~_** within the method will automatically remain bound to the class instance.
 = Incorrect. When a method is separated from its object, it loses its reference to its original object (‘context loss’).
 
 - A syntax error will occur as early as the script compilation stage.
 = Incorrect. Syntactically, passing a method as a function is perfectly valid; the problem will only become apparent at runtime.
 
-- **_this_** inside a method will always point to the global **window** object in all execution modes.
-= Incorrect. Class bodies in JS always execute in strict mode, so when context is lost, **_this_** does not become a reference to the global object.
+- **_~this~_** inside a method will always point to the global **window** object in all execution modes.
+= Incorrect. Class bodies in JS always execute in strict mode, so when context is lost, **_~this~_** does not become a reference to the global object.
 
-+ **_this_** inside a method will lose its context and, in strict mode, will become **_undefined_**.
-= Correct! As classes operate in _strict mode_, when a method is called as a regular function, the value of **_this_** is lost and becomes **_undefined_**, which will result in an exception when attempting to access properties via **_this_**.
++ **_~this~_** inside a method will lose its context and, in strict mode, will become **_~undefined~_**.
+= Correct! As classes operate in _strict mode_, when a method is called as a regular function, the value of **_~this~_** is lost and becomes **_~undefined~_**, which will result in an exception when attempting to access properties via **_~this~_**.
 
 ? Where in modern JS syntax is it permitted to declare public class instance fields?
 
 + Directly within the class body (outside methods and the constructor).
 = Correct! The **Class Fields** standard allows public properties to be declared directly within the class body without using `this` or the constructor.
 
-- Only within the _constructor_ method, with the **_this_** keyword required.
+- Only within the _constructor_ method, with the **_~this~_** keyword required.
 = Incorrect. Although historically this was done in this way, modern syntax allows the initialisation of fields to be moved outside the constructor.
 
 - Exclusively in the class prototype after it has been fully declared using a dot.
 = That is incorrect. A property on the _prototype_ is a single value shared by all instances, rather than a property of a specific instance, and has nothing to do with the syntax of class properties.
 
-- Only within the special static block **_static_** {}.
+- Only within the special static block **_~static~_** {}.
 = Incorrect. The static block is intended for initialising static class variables, not public instance fields.
 
 ♣♣♣♣

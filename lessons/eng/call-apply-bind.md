@@ -47,7 +47,7 @@ So, every function in JS is an _instance_ of the **Function** class
 
 It follows that:
 ![ico-20 pin] every function is an object
-![ico-20 pin] all functions inherit properties and methods from the **_prototype_** object of the **Function** constructor
+![ico-20 pin] all functions inherit properties and methods from the **_~prototype~_** object of the **Function** constructor
 
 ~~~js
 console.dir(Function)
@@ -82,7 +82,7 @@ console.dir(Function)
 
 ^^^
 
-![ico-20 warn] The **~&#95;&#95;proto&#95;&#95;~** property of any function is a reference to the **_prototype_** property of the **Function** constructor
+![ico-20 warn] The **~&#95;&#95;proto&#95;&#95;~** property of any function is a reference to the **_~prototype~_** property of the **Function** constructor
 
 ~~~js
 function func () {
