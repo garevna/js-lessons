@@ -25,10 +25,6 @@
       "fill": "rgba(234, 88, 12, 0.08)",
       "desc": "Первый внутренний слой матрёшки: среда и память, типы данных, операторы, приведение типов и структуры данных.",
       "refs": [
-        "introduction-basics",
-        "data-types",
-        "type-coercion",
-        "operators",
         "function"
       ],
       "branches": [
@@ -234,12 +230,8 @@
       "fill": "rgba(13, 148, 136, 0.06)",
       "desc": "Второй слой матрёшки: модель наследования, контекст исполнения (и всё, что из него следует), классы, встроенные объекты и объекты среды.",
       "refs": [
-        "prototypal-inheritance",
         "function-object",
-        "Change-call-context",
-        "classes",
-        "browser-object-model",
-        "web-components"
+        "Classes"
       ],
       "branches": [
         {
@@ -447,7 +439,6 @@
               "w": 100,
               "desc": "Свои элементы, теневое дерево, хуки жизненного цикла, template и слоты.",
               "refs": [
-                "web-components",
                 "Shadow-DOM",
                 "custom-elements",
                 "life-cycle-hooks",
@@ -468,8 +459,7 @@
       "fill": "rgba(139, 92, 246, 0.05)",
       "desc": "Третий слой матрёшки: функция как значение. Чистота, неизменяемость, функции высшего порядка, каррирование и рекурсия. Замыкание сюда не входит — оно следствие устройства контекста исполнения и живёт в Кольце 2.",
       "refs": [
-        "functional-programming-stuff",
-        "array-iterating-methods"
+        "Array-iterating-methods"
       ],
       "branches": [
         {
@@ -553,29 +543,22 @@
           "title": "Стрелочные функции",
           "angle": 291,
           "w": 171,
-          "items": [
-            {
-              "title": "Лексический this",
-              "angle": 273,
-              "rOffset": 150,
-              "w": 140,
-              "desc": "У стрелки нет своего this: она берёт его там, где написана.",
-              "refs": [
-                "arrow-function",
-                "let-const"
-              ]
-            },
-            {
-              "title": "Рекурсия",
-              "angle": 309,
-              "rOffset": 150,
-              "w": 100,
-              "desc": "Функция, вызывающая себя: база, шаг и глубина стека.",
-              "refs": [
-                "recursion"
-              ]
-            }
+          "items": [],
+          "desc": "У стрелки нет своего this: она берёт его там, где написана.",
+          "refs": [
+            "arrow-function"
           ]
+        },
+        {
+          "id": "r3-recursion",
+          "title": "Рекурсия",
+          "angle": 30,
+          "w": 100,
+          "desc": "Функция, вызывающая себя: база, шаг и глубина стека.",
+          "refs": [
+            "recursion"
+          ],
+          "items": []
         }
       ]
     },
@@ -588,32 +571,16 @@
       "color": "#0284C7",
       "fill": "rgba(2, 132, 199, 0.05)",
       "desc": "Четвёртый слой матрёшки: всё, что происходит не сейчас. Цикл событий и его очереди, таймеры, события, наблюдатели, промисы, сеть и генераторы.",
-      "refs": [
-        "async-staff",
-        "ajax-promise",
-        "fetch-cors",
-        "file-api-and-formdata",
-        "asynchronous-function",
-        "rest-api",
-        "generators-and-iterators"
-      ],
       "branches": [
         {
           "id": "r4-loop",
           "title": "Event Loop",
           "angle": 35,
           "w": 110,
-          "items": [
-            {
-              "title": "Микро- и макротаски",
-              "angle": 35,
-              "rOffset": 110,
-              "w": 161,
-              "desc": "Одна очередь на кадр и одна на микрозадачи: в каком порядке движок берёт работу.",
-              "refs": [
-                "Event-Loop"
-              ]
-            }
+          "items": [],
+          "desc": "Одна очередь на кадр и одна на микрозадачи: в каком порядке движок берёт работу.",
+          "refs": [
+            "Event-Loop"
           ]
         },
         {
@@ -621,17 +588,10 @@
           "title": "Таймеры",
           "angle": 74,
           "w": 110,
-          "items": [
-            {
-              "title": "setTimeout, setInterval",
-              "angle": 74,
-              "rOffset": 110,
-              "w": 189,
-              "desc": "Отложенный вызов, его точность и почему ноль миллисекунд — не сразу.",
-              "refs": [
-                "Timers"
-              ]
-            }
+          "items": [],
+          "desc": "Отложенный вызов, его точность и почему ноль миллисекунд — не сразу.",
+          "refs": [
+            "Timers"
           ]
         },
         {
@@ -639,17 +599,10 @@
           "title": "События DOM",
           "angle": 114,
           "w": 118,
-          "items": [
-            {
-              "title": "Всплытие, делегирование",
-              "angle": 114,
-              "rOffset": 110,
-              "w": 189,
-              "desc": "Фазы погружения и всплытия, один обработчик на список вместо сотни.",
-              "refs": [
-                "DOM-events"
-              ]
-            }
+          "items": [],
+          "desc": "Фазы погружения и всплытия, один обработчик на список вместо сотни.",
+          "refs": [
+            "DOM-events"
           ]
         },
         {
@@ -657,17 +610,10 @@
           "title": "MutationObserver",
           "angle": 155,
           "w": 156,
-          "items": [
-            {
-              "title": "Наблюдение за деревом",
-              "angle": 155,
-              "rOffset": 110,
-              "w": 175,
-              "desc": "Узнать об изменении DOM, которое сделал не ты.",
-              "refs": [
-                "DOM-MutationObserver"
-              ]
-            }
+          "items": [],
+          "desc": "Узнать об изменении DOM, которое сделал не ты.",
+          "refs": [
+            "DOM-MutationObserver"
           ]
         },
         {
@@ -675,17 +621,10 @@
           "title": "postMessage",
           "angle": 197,
           "w": 118,
-          "items": [
-            {
-              "title": "Обмен между окнами",
-              "angle": 197,
-              "rOffset": 110,
-              "w": 154,
-              "desc": "Сообщения между окнами, вкладками и воркерами.",
-              "refs": [
-                "BOM-postMessage"
-              ]
-            }
+          "items": [],
+          "desc": "Сообщения между окнами, вкладками и воркерами.",
+          "refs": [
+            "BOM-postMessage"
           ]
         },
         {
@@ -693,17 +632,10 @@
           "title": "Throttling, Debouncing",
           "angle": 239,
           "w": 201,
-          "items": [
-            {
-              "title": "Прореживание вызовов",
-              "angle": 239,
-              "rOffset": 110,
-              "w": 168,
-              "desc": "Что делать, когда событий больше, чем работы: реже и позже.",
-              "refs": [
-                "throttling-and-debouncing"
-              ]
-            }
+          "items": [],
+          "desc": "Что делать, когда событий больше, чем работы: реже и позже.",
+          "refs": [
+            "throttling-and-debouncing"
           ]
         },
         {
@@ -735,7 +667,7 @@
                 "XMLHttpRequest",
                 "fetch-API",
                 "CORS",
-                "REST-api",
+                "REST",
                 "File-API",
                 "FormData",
                 "readableStream"
@@ -782,27 +714,55 @@
     "satellites": [
       {
         "id": "sat-patterns",
-        "title": "🛰️ Паттерны проектирования и SOLID",
+        "title": "🛰️ Паттерны проектирования",
         "angle": -45,
-        "w": 265,
+        "w": 215,
         "color": "#D97706",
-        "desc": "Архитектурный слой на стыке Кольца 2 (классы, полиморфизм) и Кольца 3 (декораторы, замыкания).",
+        "desc": "Архитектурный слой на стыке классов (Кольцо 2) и замыканий (Кольцо 3).",
         "items": [
           {
-            "title": "SOLID, Фабрики, Observer, Decorator, Strategy",
-            "angle": -45,
-            "rOffset": 44,
-            "w": 310,
-            "desc": "Принципы SOLID, фабричные методы, Наблюдатель (связь с событиями), Декоратор и Стратегия.",
+            "title": "Фабрика",
+            "angle": -58.5,
+            "rOffset": 62,
+            "w": 89,
+            "desc": "Создание объекта отделено от того, кто его просит.",
             "refs": [
-              "SOLID",
-              "patterns",
-              "fabric",
-              "pattern-Observer",
-              "pattern-Decorator",
+              "fabric"
+            ]
+          },
+          {
+            "title": "Observer",
+            "angle": -49.5,
+            "rOffset": 130,
+            "w": 86,
+            "desc": "Подписка и уведомление: то же, что события DOM, но своими руками.",
+            "refs": [
+              "pattern-Observer"
+            ]
+          },
+          {
+            "title": "Decorator",
+            "angle": -40.5,
+            "rOffset": 62,
+            "w": 93,
+            "desc": "Обёртка, добавляющая поведение, не трогая обёрнутое.",
+            "refs": [
+              "pattern-Decorator"
+            ]
+          },
+          {
+            "title": "Strategy",
+            "angle": -31.5,
+            "rOffset": 130,
+            "w": 86,
+            "desc": "Алгоритм как сменная деталь, выбираемая во время работы.",
+            "refs": [
               "pattern-Strategy"
             ]
           }
+        ],
+        "refs": [
+          "patterns"
         ]
       },
       {
@@ -814,16 +774,52 @@
         "desc": "Дополнительные браузерные API рядом с объектами среды (Кольцо 2) и асинхронщиной (Кольцо 4).",
         "items": [
           {
-            "title": "Web Workers, WebSockets, IndexedDB, Performance",
-            "angle": 45,
-            "rOffset": 44,
-            "w": 325,
-            "desc": "Многопоточные Web Workers, WebSockets, клиентская БД IndexedDB, Notification API и Performance API.",
+            "title": "Web Workers",
+            "angle": 27,
+            "rOffset": 62,
+            "w": 107,
+            "desc": "Счёт в отдельном потоке, не задерживая отрисовку.",
             "refs": [
-              "web-workers",
-              "web-socket",
-              "indexed-db",
-              "NotificationAPI",
+              "web-workers"
+            ]
+          },
+          {
+            "title": "WebSockets",
+            "angle": 36,
+            "rOffset": 130,
+            "w": 100,
+            "desc": "Постоянное соединение: сервер говорит первым.",
+            "refs": [
+              "web-socket"
+            ]
+          },
+          {
+            "title": "IndexedDB",
+            "angle": 45,
+            "rOffset": 62,
+            "w": 93,
+            "desc": "База данных в браузере, больше и структурнее localStorage.",
+            "refs": [
+              "IndexedDB"
+            ]
+          },
+          {
+            "title": "Notification API",
+            "angle": 54,
+            "rOffset": 130,
+            "w": 142,
+            "desc": "Уведомление системы, когда вкладка не на виду.",
+            "refs": [
+              "NotificationAPI"
+            ]
+          },
+          {
+            "title": "Performance",
+            "angle": 63,
+            "rOffset": 62,
+            "w": 107,
+            "desc": "Измерить, а не догадываться: тайминги загрузки и работы.",
+            "refs": [
               "performance"
             ]
           }
@@ -838,21 +834,69 @@
         "desc": "Практический инженерный финал курса: от паттерна «Модуль» (IIFE) к ES Modules, сборке Webpack, npm и Git.",
         "items": [
           {
-            "title": "ES Modules, Webpack, npm, Git и Final Project",
-            "angle": 180,
-            "rOffset": 70,
-            "w": 315,
-            "desc": "ES Modules (import/export, dynamic import), сборка в Webpack, пакетный менеджер npm, Git, TCP/IP и финальный проект.",
+            "title": "ES Modules",
+            "angle": 162,
+            "rOffset": 62,
+            "w": 100,
+            "desc": "import и export, и загрузка модуля по требованию.",
             "refs": [
               "webpack-es-modules",
-              "dynamic-import",
-              "webpack",
-              "npm",
-              "git",
-              "final-project"
+              "dynamic-import"
+            ]
+          },
+          {
+            "title": "Webpack",
+            "angle": 171,
+            "rOffset": 130,
+            "w": 79,
+            "desc": "Сборка: из множества файлов — то, что уедет на сервер.",
+            "refs": [
+              "webpack"
+            ]
+          },
+          {
+            "title": "npm",
+            "angle": 180,
+            "rOffset": 62,
+            "w": 51,
+            "desc": "Пакеты, версии и скрипты проекта.",
+            "refs": [
+              "npm"
+            ]
+          },
+          {
+            "title": "Git",
+            "angle": 189,
+            "rOffset": 130,
+            "w": 51,
+            "desc": "История изменений и ветки.",
+            "refs": [
+              "git"
+            ]
+          },
+          {
+            "title": "Финальный проект",
+            "angle": 198,
+            "rOffset": 62,
+            "w": 163,
+            "desc": "Всё вместе, на одном приложении.",
+            "refs": [
+              "Final-project"
             ]
           }
         ]
+      },
+      {
+        "id": "sat-solid",
+        "title": "🛰️ SOLID",
+        "angle": 270,
+        "w": 120,
+        "color": "#D97706",
+        "desc": "Пять принципов, по которым класс остаётся пригодным к изменению: единственная ответственность, открытость к расширению, подстановка Лисков, разделение интерфейсов, инверсия зависимостей.",
+        "refs": [
+          "SOLID"
+        ],
+        "items": []
       }
     ]
   }
