@@ -227,10 +227,20 @@ function render() {
           x: bPos.x, y: bPos.y, fill: "#FFFFFF", "font-size": 12.5, "font-weight": 600,
           "text-anchor": "middle", "dominant-baseline": "central"
         });
-        t2.textContent = leaf ? br.title : `${br.title} ${bCollapsed ? "+" : "−"}`;
+        t2.textContent = leaf
+          ? (br.map ? `${br.title} ⌁` : br.title)
+          : `${br.title} ${bCollapsed ? "+" : "−"}`;
         g2.appendChild(t2);
         g2.onclick = (e) => {
           e.stopPropagation();
+          // У темы бывает своя подробная схема урока. Рисует её приложение,
+          // в котором эта карта открыта во фрейме, — ему и сообщаем. Если
+          // фрейма нет (карту открыли отдельной страницей), открывать нечем,
+          // и остаётся карточка со ссылками.
+          if (leaf && br.map && window.parent !== window) {
+            window.parent.postMessage({ courseMap: "lesson-map", page: br.map }, "*");
+            return;
+          }
           if (leaf) {
             showPanel(ring.title, br.title, br.desc, ring.color, br.refs);
             return;
@@ -238,10 +248,10 @@ function render() {
           state[br.id] = !state[br.id];
           render();
         };
-        // У ветки с потомками клик занят сворачиванием, и до её собственного
-        // урока иначе не добраться — правой кнопкой, как у подписи кольца.
+        // Где клик занят — сворачиванием или схемой урока — до списка уроков
+        // ведёт правая кнопка, как у подписи кольца.
         g2.oncontextmenu = (e) => {
-          if (leaf || !br.refs) return;
+          if (!br.refs || (leaf && !br.map)) return;
           e.preventDefault();
           showPanel(ring.title, br.title, br.desc, ring.color, br.refs);
         };
@@ -311,9 +321,13 @@ function showPanel(tag, title, desc, color, refs = []) {
       // Урок открывается по ?имя, а не по #имя: #-адрес приводил на
       // стартовую страницу. И адрес относительный — карта живёт и на
       // garevna.github.io/js-lessons/, и на js-lessons.pp.ua.
+      //
+      // Ссылка бывает и на раздел урока: page#Anchor. До якоря приложение
+      // доезжает само, когда страница отрисована (page-component).
       a.href = `../?${r}`;
       a.target = "_blank";
-      a.textContent = r;
+      const [page, anchor] = r.split("#");
+      a.textContent = anchor ? `${page} → ${anchor.replace(/_/g, " ")}` : page;
       refsBox.appendChild(a);
     });
     refsBox.style.display = "flex";

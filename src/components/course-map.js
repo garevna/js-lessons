@@ -118,10 +118,28 @@ class CourseMap extends HTMLElement {
     this.shadow.querySelector('.close').onclick = () => this.close()
     this.sheet.onclick = event => { if (event.target === this.sheet) this.close() }
     this.escape = event => { if (event.key === 'Escape') this.close() }
+
+    // A topic on the course map can have a map of its own — Classes does.
+    // The drawing inside the frame cannot open it: the lesson map is a
+    // component of this page, not of that document. So the frame asks, and
+    // this is where the asking arrives.
+    this.listen = event => {
+      if (event.source !== this.frame.contentWindow) return
+      const { courseMap, page } = event.data || {}
+      if (courseMap !== 'lesson-map' || !page) return
+
+      const map = document.querySelector('mind-map')
+      if (!map) return
+
+      this.close()
+      map.open(page)
+    }
+    window.addEventListener('message', this.listen)
   }
 
   disconnectedCallback () {
     document.removeEventListener('keydown', this.escape)
+    window.removeEventListener('message', this.listen)
   }
 
   open () {

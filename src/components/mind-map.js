@@ -288,8 +288,11 @@ class MindMap extends HTMLElement {
    * offering the way in, because a line that opens an apology is worse than
    * no line.
    */
-  async data () {
-    const page = MindMap.page()
+  async data (which) {
+    // Usually the lesson on screen; but the course map can ask for another
+    // lesson's map by name, and then this is opened over a page it does not
+    // belong to.
+    const page = which || MindMap.page()
     if (this.loaded === page) return this.map
     this.loaded = page
 
@@ -306,12 +309,12 @@ class MindMap extends HTMLElement {
     return !!(await this.data())
   }
 
-  async open () {
+  async open (which) {
     this.sheet.classList.add('shown')
     this.card.classList.remove('shown')
     document.addEventListener('keydown', this.escape)
 
-    const map = await this.data()
+    const map = await this.data(which)
     if (!map) {
       this.heading.textContent = ''
       this.board.innerHTML = ''
@@ -529,6 +532,15 @@ class MindMap extends HTMLElement {
 
   goTo (anchor) {
     this.close()
+
+    // The map may belong to another lesson — it is opened that way from the
+    // course map. Then the section is not on this page to scroll to, and
+    // "read it in the lesson" means going to that lesson.
+    if (this.loaded && this.loaded !== MindMap.page()) {
+      location.href = `${location.pathname}?${this.loaded}#${anchor}`
+      return
+    }
+
     const target = document.getElementById(anchor)
     if (!target) return
     history.replaceState(null, '', `${location.pathname}${location.search}#${anchor}`)
