@@ -41,9 +41,9 @@
   said.style.cssText = "margin-left:12px;font-size:13px;color:#94A3B8;align-self:center";
   controls.appendChild(said);
 
-  const say = (text, warm) => {
+  const say = (text, how) => {
     said.textContent = text || "";
-    said.style.color = warm ? "#F59E0B" : "#94A3B8";
+    said.style.color = how === "плохо" ? "#F87171" : how === "важно" ? "#F59E0B" : "#94A3B8";
   };
 
   const undoButton = button("Отменить (Ctrl+Z)", () => undo());
@@ -57,14 +57,46 @@
     undoButton.disabled = !history.length;
   };
 
-  const toggle = () => {
-    editing = !editing;
-    editButton.textContent = editing ? "Закончить правку" : "Редактировать";
-    editButton.classList.toggle("active", editing);
-    saveButton.style.display = undoButton.style.display = editing ? "" : "none";
-    container.style.cursor = editing ? "crosshair" : "";
-    say(editing ? "тяни блок мышью · Shift — по окружности" : "");
+  const enter = () => {
+    editing = true;
+    editButton.textContent = "Закончить правку";
+    editButton.classList.add("active");
+    saveButton.style.display = undoButton.style.display = "";
+    container.style.cursor = "crosshair";
+    say("тяни блок мышью · Shift — по окружности");
     refresh();
+  };
+
+  const leave = () => {
+    editing = false;
+    editButton.textContent = "Редактировать";
+    editButton.classList.remove("active");
+    saveButton.style.display = undoButton.style.display = "none";
+    container.style.cursor = "";
+    say("");
+    refresh();
+  };
+
+  /**
+   * Прежде чем дать двигать блоки — убедиться, что их есть куда записать.
+   *
+   * Проверка — запись того, что уже лежит: байт в байт то же самое, файл
+   * не меняется, а ответ говорит всё. Без неё сервер, не умеющий писать
+   * (npm start, запущенный до того, как обработчик появился), выясняется
+   * только после того, как блоки расставлены, — и расставлены зря.
+   */
+  const toggle = () => {
+    if (editing) {
+      if (dirty && !confirm("Правка не сохранена. Выйти и потерять её?")) return;
+      if (dirty) undoAll();
+      leave();
+      return;
+    }
+
+    say("проверяю, можно ли сохранять…");
+    write()
+      .then(() => { enter(); })
+      .catch(error => say("правка не включена — сохранять некуда: " + error.message, "плохо"));
   };
 
   // --------------------------------------------------------------- данные
@@ -85,16 +117,29 @@
 
   const snapshot = () => JSON.stringify({ rings: map.rings, outerOrbit: map.outerOrbit });
 
-  const undo = () => {
-    if (!history.length) return;
-    const was = JSON.parse(history.pop());
-    // Содержимое, а не сами массивы: наружу отдан геттер.
+  /** Содержимое, а не сами массивы: наружу отдан геттер. */
+  const restore = (text) => {
+    const was = JSON.parse(text);
     map.rings.forEach((ring, i) => Object.assign(ring, was.rings[i]));
     map.outerOrbit.satellites.forEach((sat, i) => Object.assign(sat, was.outerOrbit.satellites[i]));
     map.render();
-    dirty = true;
+  };
+
+  const undo = () => {
+    if (!history.length) return;
+    restore(history.pop());
+    dirty = history.length > 0;
     refresh();
-    say(history.length ? "шаг назад" : "вернулись к началу", true);
+    say(history.length ? "шаг назад" : "вернулись к тому, что было", "важно");
+  };
+
+  /** Выйти, потеряв несохранённое, — значит вернуть то, что на диске. */
+  const undoAll = () => {
+    if (!history.length) return;
+    restore(history[0]);
+    history.length = 0;
+    dirty = false;
+    refresh();
   };
 
   // ------------------------------------------------------------ мышь
@@ -150,14 +195,14 @@
     dirty = true;
     refresh();
     say(`${node.title} — угол ${node[angleField]}°` +
-      (node[offsetField] ? `, смещение ${node[offsetField]}` : ", на окружности"), true);
+      (node[offsetField] ? `, смещение ${node[offsetField]}` : ", на окружности"), "важно");
     map.render();
   }, true);
 
   const release = () => {
     if (!dragging) return;
     dragging = null;
-    say("не сохранено", true);
+    say("не сохранено — Ctrl+S", "важно");
   };
   document.addEventListener("pointerup", release, true);
   document.addEventListener("pointercancel", release, true);
@@ -190,12 +235,10 @@
     return text || ("ответ " + status);
   };
 
-  const store = () => {
-    if (!dirty) return;
-    say("сохраняю…");
-
+  /** Записать карту как есть. Всё, что знает о сервере, — здесь. */
+  const write = () => {
     const whole = map.data || {};
-    fetch("course.json", {
+    return fetch("course.json", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -213,14 +256,21 @@
           // содержимым карты — и правка будет считаться сохранённой, не
           // будучи сохранённой. Записавший отвечает "ok" и ничем иным.
           if (text.trim() !== "ok") throw new Error("сервер ответил, но не записал");
-        }))
+        }));
+  };
+
+  const store = () => {
+    if (!dirty) return;
+    say("сохраняю…");
+
+    write()
       .then(() => {
         dirty = false;
         history.length = 0;
         refresh();
         say("сохранено в course.json");
       })
-      .catch(error => say("не сохранилось: " + error.message, true));
+      .catch(error => say("НЕ СОХРАНИЛОСЬ: " + error.message, "плохо"));
   };
 
   document.addEventListener("keydown", (event) => {
