@@ -9,6 +9,12 @@ browser by hand-written custom elements — no framework, no runtime dependency.
 Pages are fetched and cached by a web worker, so the course works offline once
 visited.
 
+**Авторские права.** Курс и код — произведение автора, © 2018–2026 Irina H.
+Fylyppova (garevna), все права защищены. Читать, учиться и запускать у себя
+можно свободно; публиковать, переводить, переделывать, преподавать за деньги
+и скармливать моделям машинного обучения — только с письменного разрешения
+автора. Условия целиком: [LICENSE](LICENSE).
+
 <!-- оглавление: npm run toc -->
 
 - [Getting started](#getting-started)

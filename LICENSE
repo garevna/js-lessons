@@ -1,21 +1,122 @@
-MIT License
+Copyright © 2018–2026 Irina H. Fylyppova (garevna). All rights reserved.
+Все права защищены.
 
-Copyright (c) 2018 Irina Fylyppova (garevna)
+This repository holds a course: its lessons, texts, illustrations, drawings,
+mind maps, code examples, tests and quests, together with the software that
+publishes them — the site, its components and its build tools.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this materials and associated files (the "Courseware"), to deal
-in the Courseware without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Courseware, and to permit persons to whom the Courseware is
-furnished to do so, subject to the following conditions:
+The course is the author's work. Both the content and the code are covered
+by this notice. Nothing here is placed in the public domain, and no licence
+to reuse is granted beyond what is written below.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Courseware.
+---------------------------------------------------------------------------
+ 1. What you may do without asking
+---------------------------------------------------------------------------
 
-THE COURSEWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE COURSEWARE OR THE USE OR OTHER DEALINGS IN THE
-COURSEWARE.
+  * Read, study and use the course for learning — at js-lessons.pp.ua, at
+    garevna.github.io/js-lessons, or from a copy of this repository.
+  * Run it locally, and change your own copy while you study it.
+  * Quote a short fragment — a paragraph, an example — in a review, a
+    lesson of your own, a post or a discussion, naming the author and
+    linking to the source.
+  * Link to any page of the course.
+
+---------------------------------------------------------------------------
+ 2. What needs the author's written permission
+---------------------------------------------------------------------------
+
+  * Publishing the course, a lesson, or a substantial part of either —
+    anywhere, in any form, including a mirror, a repository of your own, a
+    file archive, a video or a printed copy.
+  * Translating it into another language and publishing the translation.
+  * Making a derivative course, or any other derivative work.
+  * Teaching from it for payment, or using it in a paid course, a training
+    programme or any commercial offering.
+  * Selling it, or including it in anything sold.
+  * Using the content to train or fine-tune a machine learning model, or
+    including it in a dataset built for that purpose.
+  * Removing or altering the copyright notices, in the files or on the page.
+
+Permission is given by the author in writing, and only by the author.
+Ask: https://js-lessons.pp.ua (the AUTHOR button), or Telegram @garevna.
+
+---------------------------------------------------------------------------
+ 3. The code
+---------------------------------------------------------------------------
+
+The software that publishes the course — src/, tools/, content-worker/,
+service-worker/, icons-worker/, feedback-api/ and the build configuration —
+is covered by the same terms. It may be read and studied; it may be run to
+read the course; it may not be republished, redistributed or built into
+another product without written permission.
+
+A note on the earlier licence: until November 2026 this file granted the MIT
+licence over the whole repository. That grant cannot be withdrawn from
+copies already made under it, and this notice does not attempt to withdraw
+it. It governs the repository from this point onwards.
+
+---------------------------------------------------------------------------
+ 4. No warranty
+---------------------------------------------------------------------------
+
+The course and the software are provided "as is", without warranty of any
+kind. The author is not liable for any claim, damage or other liability
+arising from their use.
+
+===========================================================================
+ По-русски
+===========================================================================
+
+В этом репозитории лежит курс: уроки, тексты, иллюстрации, рисунки,
+ментальные карты, примеры кода, тесты и квесты — и программа, которая всё
+это публикует: сайт, его компоненты и сборка.
+
+Курс — произведение автора. И содержание, и код защищены этим уведомлением.
+Ничто здесь не передано в общественное достояние, и никаких прав на
+повторное использование, кроме перечисленных ниже, не предоставляется.
+
+1. Что можно без спроса
+
+  * Читать, изучать и использовать курс для обучения — на js-lessons.pp.ua,
+    на garevna.github.io/js-lessons или из копии этого репозитория.
+  * Запускать у себя и менять свою копию, пока учишься по ней.
+  * Цитировать небольшой фрагмент — абзац, пример — в обзоре, в своём
+    уроке, в посте или обсуждении, с именем автора и ссылкой на источник.
+  * Ссылаться на любую страницу курса.
+
+2. Что требует письменного разрешения автора
+
+  * Публиковать курс, урок или существенную их часть где бы то ни было и в
+    каком бы то ни было виде: зеркало, свой репозиторий, файловый архив,
+    видео, печатная копия.
+  * Переводить на другой язык и публиковать перевод.
+  * Делать на его основе производный курс или иное производное произведение.
+  * Преподавать по нему за деньги, использовать в платном курсе, в учебной
+    программе или в любом коммерческом предложении.
+  * Продавать его или включать в то, что продаётся.
+  * Использовать содержание для обучения и дообучения моделей машинного
+    обучения, а также включать его в наборы данных для этого.
+  * Убирать или изменять уведомления об авторских правах — в файлах и на
+    странице.
+
+Разрешение даёт автор, письменно, и только автор.
+Спросить: https://js-lessons.pp.ua (кнопка AUTHOR) или Telegram @garevna.
+
+3. Код
+
+Программа, которая публикует курс — src/, tools/, content-worker/,
+service-worker/, icons-worker/, feedback-api/ и конфигурация сборки, —
+подчиняется тем же условиям. Её можно читать и изучать, можно запускать,
+чтобы читать курс; нельзя переопубликовывать, распространять и встраивать
+в другой продукт без письменного разрешения.
+
+О прежней лицензии: до ноября 2026 этот файл давал на весь репозиторий
+лицензию MIT. То разрешение нельзя отозвать у копий, сделанных по нему, и
+это уведомление его не отзывает. Оно действует для репозитория с этого
+момента.
+
+4. Без гарантий
+
+Курс и программа предоставляются «как есть», без каких-либо гарантий. Автор
+не несёт ответственности за претензии, убытки и иные последствия их
+использования.

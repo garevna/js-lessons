@@ -1,7 +1,7 @@
 {
   "name": "js-lessons",
   "version": "8.5.0",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "description": "Web-development. Educational materials for the JS course.",
   "main": "./public",
   "scripts": {
