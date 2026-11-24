@@ -114,10 +114,12 @@ function render() {
     }));
 
     outerOrbit.satellites.forEach((sat, si) => {
-      const sCollapsed = !!state[sat.id];
+      // Спутник без тем — сама тема: открывает урок, а не сворачивается.
+      const leaf = !sat.items || !sat.items.length;
+      const sCollapsed = !leaf && !!state[sat.id];
       const pos = polar(sat.angle, outerOrbit.r + (sat.rOffset || 0));
 
-      if (!sCollapsed) {
+      if (!sCollapsed && !leaf) {
         sat.items.forEach((it, ii) => {
           const ipos = polar(it.angle, outerOrbit.r + it.rOffset);
           satLayer.appendChild(createEl("line", {
@@ -153,12 +155,21 @@ function render() {
         x: pos.x, y: pos.y, fill: "#FEF3C7", "font-size": 13, "font-weight": 700,
         "text-anchor": "middle", "dominant-baseline": "central"
       });
-      stxt.textContent = `${sat.title} ${sCollapsed ? "+" : "−"}`;
+      stxt.textContent = leaf ? sat.title : `${sat.title} ${sCollapsed ? "+" : "−"}`;
       sg.appendChild(stxt);
       sg.onclick = (e) => {
         e.stopPropagation();
+        if (leaf) {
+          showPanel("Внешний контур", sat.title, sat.desc, sat.color, sat.refs);
+          return;
+        }
         state[sat.id] = !state[sat.id];
         render();
+      };
+      sg.oncontextmenu = (e) => {
+        if (leaf || !sat.refs) return;
+        e.preventDefault();
+        showPanel("Внешний контур", sat.title, sat.desc, sat.color, sat.refs);
       };
       satLayer.appendChild(sg);
     });
@@ -173,10 +184,13 @@ function render() {
 
     if (!rCollapsed) {
       ring.branches.forEach((br, bi) => {
-        const bCollapsed = !!state[br.id];
+        // Ветка без потомков — сама тема, а не папка: она открывает урок.
+        // Знак +/− на ней не нужен, потому что сворачивать нечего.
+        const leaf = !br.items || !br.items.length;
+        const bCollapsed = !leaf && !!state[br.id];
         const bPos = polar(br.angle, ring.r + (br.rOffset || 0));
 
-        if (!bCollapsed) {
+        if (!bCollapsed && !leaf) {
           br.items.forEach((item, ii) => {
             const iPos = polar(item.angle, ring.r + item.rOffset);
             layer.appendChild(createEl("line", {
@@ -213,12 +227,23 @@ function render() {
           x: bPos.x, y: bPos.y, fill: "#FFFFFF", "font-size": 12.5, "font-weight": 600,
           "text-anchor": "middle", "dominant-baseline": "central"
         });
-        t2.textContent = `${br.title} ${bCollapsed ? "+" : "−"}`;
+        t2.textContent = leaf ? br.title : `${br.title} ${bCollapsed ? "+" : "−"}`;
         g2.appendChild(t2);
         g2.onclick = (e) => {
           e.stopPropagation();
+          if (leaf) {
+            showPanel(ring.title, br.title, br.desc, ring.color, br.refs);
+            return;
+          }
           state[br.id] = !state[br.id];
           render();
+        };
+        // У ветки с потомками клик занят сворачиванием, и до её собственного
+        // урока иначе не добраться — правой кнопкой, как у подписи кольца.
+        g2.oncontextmenu = (e) => {
+          if (leaf || !br.refs) return;
+          e.preventDefault();
+          showPanel(ring.title, br.title, br.desc, ring.color, br.refs);
         };
         layer.appendChild(g2);
       });
@@ -283,9 +308,12 @@ function showPanel(tag, title, desc, color, refs = []) {
     refs.forEach(r => {
       const a = document.createElement("a");
       a.className = "ref-link";
-      a.href = `https://js-lessons.pp.ua/#${r}`;
+      // Урок открывается по ?имя, а не по #имя: #-адрес приводил на
+      // стартовую страницу. И адрес относительный — карта живёт и на
+      // garevna.github.io/js-lessons/, и на js-lessons.pp.ua.
+      a.href = `../?${r}`;
       a.target = "_blank";
-      a.textContent = `ref: ${r}`;
+      a.textContent = r;
       refsBox.appendChild(a);
     });
     refsBox.style.display = "flex";
@@ -339,25 +367,31 @@ container.addEventListener("wheel", e => {
 }, { passive: false });
 
 /**
- * Ручка для редактора (npm run map-edit).
+ * Ручка для редактора (npm run map-edit) — и только на своей машине.
  *
- * Он открывает эту же страницу во фрейме и двигает блоки прямо в её
- * данных — другого рисунка у него нет и быть не должно, иначе редактор
- * показывал бы не то, что показывает карта. Всё остальное здесь объявлено
- * через const и let, а они живут в области видимости скрипта и снаружи не
- * видны, так что то немногое, что нужно редактору, названо явно.
+ * Редактор открывает эту же страницу во фрейме и двигает блоки прямо в её
+ * данных: другого рисунка у него нет и быть не должно, иначе он показывал
+ * бы не то, что показывает карта. Всё остальное здесь объявлено через const
+ * и let, они живут в области видимости скрипта и снаружи не видны, так что
+ * нужное редактору названо явно.
+ *
+ * На сайте этой ручки нет вовсе. Сохранять правку всё равно некуда — пишет
+ * её локальный сервер из tools/, которого там нет, — но и предлагать
+ * читателю потрогать внутренности карты незачем.
  *
  * Геттеры, а не ссылки: rings и outerOrbit заменяются целиком, когда
  * приходит course.json.
  */
-window.courseMap = {
-  CX,
-  CY,
-  polar,
-  render,
-  get rings () { return rings; },
-  get outerOrbit () { return outerOrbit; }
-};
+if (["127.0.0.1", "localhost", "::1"].includes(location.hostname)) {
+  window.courseMap = {
+    CX,
+    CY,
+    polar,
+    render,
+    get rings () { return rings; },
+    get outerOrbit () { return outerOrbit; }
+  };
+}
 
 updateTransform();
 
