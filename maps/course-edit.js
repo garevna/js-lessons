@@ -173,6 +173,23 @@
   }, true);
 
   // ------------------------------------------------------------ запись
+  /**
+   * Почему не записалось — словами, а не кодом ответа.
+   *
+   * 405 значит, что сервер отдал страницу, но про запись не знает. Чаще
+   * всего это npm start, запущенный до того, как обработчик появился:
+   * процесс держит в памяти прежний live-server.js и ничего не знает о
+   * новом. Сказать «405» в такой ситуации — всё равно что промолчать.
+   */
+  const why = (status, text) => {
+    if (status === 405 || status === 501) {
+      return "сервер не умеет сохранять. Если это npm start — перезапусти его: " +
+        "обработчик записи появляется только при старте";
+    }
+    if (status === 404) return "адрес не найден: карта открыта не с локального сервера";
+    return text || ("ответ " + status);
+  };
+
   const store = () => {
     if (!dirty) return;
     say("сохраняю…");
@@ -188,9 +205,15 @@
         outerOrbit: map.outerOrbit
       }, null, 2)
     })
-      .then(response => response.ok
-        ? response.text()
-        : response.text().then(text => Promise.reject(new Error(text || response.status))))
+      .then(response => response.text()
+        .catch(() => "")
+        .then(text => {
+          if (!response.ok) throw new Error(why(response.status, text));
+          // Сервер, который на PUT просто отдаёт тот же файл, ответит 200 и
+          // содержимым карты — и правка будет считаться сохранённой, не
+          // будучи сохранённой. Записавший отвечает "ok" и ничем иным.
+          if (text.trim() !== "ok") throw new Error("сервер ответил, но не записал");
+        }))
       .then(() => {
         dirty = false;
         history.length = 0;
