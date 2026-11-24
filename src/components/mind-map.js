@@ -412,7 +412,7 @@ class MindMap extends HTMLElement {
     const centre = map.center
     parts.push(`
       <g>
-        <circle cx="${centre.x}" cy="${centre.y}" r="82" fill="#FFFFFF" stroke="#0F172A" stroke-width="3" filter="url(#shadow)"/>
+        <circle cx="${centre.x}" cy="${centre.y}" r="82" fill="#FFFFFF" stroke="#0F172A" stroke-width="5" filter="url(#shadow)"/>
         <circle cx="${centre.x}" cy="${centre.y}" r="72" fill="${INK}"/>
         <text x="${centre.x}" y="${centre.y - 17}" fill="#93C5FD" font-family="monospace"
               font-size="24" font-weight="700" text-anchor="middle">&lt;/&gt;</text>
