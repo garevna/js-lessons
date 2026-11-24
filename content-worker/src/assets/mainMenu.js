@@ -323,15 +323,9 @@ export const mainMenu = [
       { ref: 'webpack-exercise-8', ua: 'Впровадження шрифтів', eng: 'Embedding fonts', ru: 'Подключение шрифтов' }
     ]
   },
-  {
-    ref: 'final-project',
-    ua: 'Final project',
-    eng: 'Final project',
-    ru: 'Final project',
-    items: [
-      { ref: 'Final-project', ua: 'Завдання на проектування', eng: 'Design task', ru: 'Задание на проектирование' }
-    ]
-  },
+  // Раздел «Final project» снят с меню по просьбе автора: задание есть
+  // (content/lessons/Final-project.md, три спринта), но показывать его
+  // пока не нужно. Сам урок на месте и вернётся сюда, когда понадобится.
   {
     ref: 'other-important',
     ua: 'Вбудовані об\'єкти',

@@ -1,21 +1,22 @@
 #!/usr/bin/env node
 /**
- * Редактор ментальной карты: перетащить блок и сохранить координаты.
+ * Карта курса с правкой — без всего остального приложения.
  *
- *   npm run map-edit        открыть редактор (http://127.0.0.1:8187/edit)
+ *   npm run map-edit           открыть карту (http://127.0.0.1:8187/maps/course.html)
  *   npm run map-edit -- 9000   на другом порту
  *
- * Карта рисуется из public/maps/course.json, и редактор правит именно этот
- * файл — не копию и не промежуточный формат. Поэтому он не рисует ничего
- * сам: он открывает во фрейме ту же страницу, что видит читатель, и двигает
- * блоки в её данных. Что видно в редакторе, то и будет на сайте.
+ * Правит карту сама страница: на 127.0.0.1 у неё есть кнопка «Редактировать»
+ * (public/maps/course-edit.js), блок тянется мышью, Ctrl+S шлёт PUT на
+ * course.json. Здесь — только отдать файлы и принять этот PUT.
  *
- * Отсюда и весь сервер: страницу со фреймом нельзя открыть файлом с диска
- * (fetch по file:// запрещён), а записать файл из браузера нечем. Два
- * десятка строк http и один PUT.
+ * То же самое умеет npm start: если приложение уже запущено, отдельный
+ * сервер не нужен, карта правится прямо в нём. Этот — для случая, когда
+ * хочется только карту и ничего больше: он ничего не следит, не
+ * перезагружает вкладку и не собирает.
  *
- * Ничего из этого не попадает на сайт: редактор лежит в tools/, сервер
- * слушает только 127.0.0.1 и живёт, пока открыто окно терминала.
+ * Ничего из этого не попадает на сайт: сервер слушает только 127.0.0.1,
+ * живёт, пока открыт терминал, а course-edit.js подключается лишь на
+ * локальном адресе.
  */
 
 const http = require('http')
@@ -25,7 +26,6 @@ const { execFile } = require('child_process')
 
 const root = path.join(__dirname, '..')
 const PUBLIC = path.join(root, 'public')
-const EDITOR = path.join(__dirname, 'map-editor.html')
 const DATA = path.join(PUBLIC, 'maps/course.json')
 
 const port = Number(process.argv[2]) || 8187
@@ -58,13 +58,13 @@ const save = (body, response) => {
   }
 
   fs.writeFileSync(DATA, JSON.stringify(data, null, 2) + '\n', 'utf8')
-  const blocks = data.rings.reduce((n, ring) => n + ring.branches.length, 0)
-  console.log(`сохранено: ${data.rings.length} колец, ${blocks} веток, ${new Date().toLocaleTimeString()}`)
+  const branches = data.rings.reduce((n, ring) => n + ring.branches.length, 0)
+  console.log(`сохранено: ${data.rings.length} колец, ${branches} веток, ${new Date().toLocaleTimeString()}`)
   response.writeHead(200).end('ok')
 }
 
 const server = http.createServer((request, response) => {
-  if (request.method === 'PUT' && request.url === '/maps/course.json') {
+  if (request.method === 'PUT' && request.url.split('?')[0] === '/maps/course.json') {
     let body = ''
     request.on('data', chunk => { body += chunk })
     request.on('end', () => save(body, response))
@@ -72,16 +72,11 @@ const server = http.createServer((request, response) => {
   }
 
   const url = decodeURIComponent(new URL(request.url, 'http://x').pathname)
-
-  if (url === '/' || url === '/edit') {
-    response.writeHead(200, { 'Content-Type': types['.html'] })
-    response.end(fs.readFileSync(EDITOR))
-    return
-  }
+  const asked = url === '/' ? '/maps/course.html' : url
 
   // Ничего выше public/ отдавать не нужно, и кэшировать тоже: правка должна
   // быть видна по F5, а не через четыре часа.
-  const file = path.join(PUBLIC, path.normalize(url).replace(/^(\.\.[/\\])+/, ''))
+  const file = path.join(PUBLIC, path.normalize(asked).replace(/^(\.\.[/\\])+/, ''))
   if (!file.startsWith(PUBLIC)) {
     response.writeHead(403).end('нет')
     return
@@ -99,8 +94,9 @@ const server = http.createServer((request, response) => {
 })
 
 server.listen(port, '127.0.0.1', () => {
-  const address = `http://127.0.0.1:${port}/edit`
-  console.log(`редактор карты: ${address}`)
+  const address = `http://127.0.0.1:${port}/maps/course.html`
+  console.log(`карта курса: ${address}`)
+  console.log('кнопка «Редактировать» — в правом верхнем углу')
   console.log(`пишет в: ${path.relative(root, DATA).replace(/\\/g, '/')}`)
   console.log('Ctrl+C — закончить\n')
 

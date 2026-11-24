@@ -75,6 +75,8 @@ function polar(angleDeg, radius) {
  */
 let rings = [];
 let outerOrbit = { r: 1030, satellites: [] };
+let titles = {};
+let mapData = null;   // всё прочитанное целиком — его же записывает правка
 // ВНЕШНЯЯ ОРБИТА 5 (Спутники: Инженерия, Web APIs, Паттерны)
 
 function createEl(tag, attrs = {}) {
@@ -301,6 +303,8 @@ function render() {
   centerG.appendChild(title);
 
   viewport.appendChild(centerG);
+
+  syncToggleAll();
 }
 
 function showPanel(tag, title, desc, color, refs = []) {
@@ -325,9 +329,16 @@ function showPanel(tag, title, desc, color, refs = []) {
       // Ссылка бывает и на раздел урока: page#Anchor. До якоря приложение
       // доезжает само, когда страница отрисована (page-component).
       a.href = `../?${r}`;
-      a.target = "_blank";
-      const [page, anchor] = r.split("#");
-      a.textContent = anchor ? `${page} → ${anchor.replace(/_/g, " ")}` : page;
+
+      // _top, а не _blank: карта открыта во фрейме внутри приложения и
+      // служит для навигации по нему. Новая вкладка на каждый переход —
+      // это не навигация, это коллекция вкладок. Когда карту открыли
+      // отдельной страницей, _top — она сама.
+      a.target = "_top";
+
+      // Имя файла урока студенту ни о чём не говорит: подписи берутся из
+      // меню курса и лежат в course.json. Чего там нет — то имя файла.
+      a.textContent = titles[r] || r.split("#")[0];
       refsBox.appendChild(a);
     });
     refsBox.style.display = "flex";
@@ -339,14 +350,27 @@ function showPanel(tag, title, desc, color, refs = []) {
 }
 function closePanel() { document.getElementById("info-panel").style.display = "none"; }
 
-function expandAll() {
-  Object.keys(state).forEach(k => delete state[k]);
+/**
+ * Одна кнопка вместо двух: что она сделает, видно по надписи.
+ *
+ * Их было две — «Развернуть всё» и «Свернуть все уровни», — и одна из них
+ * всегда была бесполезной: когда всё развёрнуто, разворачивать нечего.
+ */
+const anythingCollapsed = () => Object.keys(state).some(key => state[key]);
+
+function toggleAll() {
+  if (anythingCollapsed()) Object.keys(state).forEach(key => delete state[key]);
+  else {
+    rings.forEach(ring => { state[ring.id] = true; });
+    outerOrbit.satellites.forEach(sat => { state[sat.id] = true; });
+  }
   render();
 }
-function collapseAllRings() {
-  rings.forEach(r => state[r.id] = true);
-  outerOrbit.satellites.forEach(s => state[s.id] = true);
-  render();
+
+/** Надпись на ней — после каждой отрисовки: сворачивают и поодиночке. */
+function syncToggleAll() {
+  const button = document.getElementById("btn-all");
+  if (button) button.textContent = anythingCollapsed() ? "Развернуть всё" : "Свернуть всё";
 }
 
 function toggleSatellites() {
@@ -381,41 +405,49 @@ container.addEventListener("wheel", e => {
 }, { passive: false });
 
 /**
- * Ручка для редактора (npm run map-edit) — и только на своей машине.
+ * Правка карты — только на своей машине, и только там она вообще есть.
  *
- * Редактор открывает эту же страницу во фрейме и двигает блоки прямо в её
- * данных: другого рисунка у него нет и быть не должно, иначе он показывал
- * бы не то, что показывает карта. Всё остальное здесь объявлено через const
- * и let, они живут в области видимости скрипта и снаружи не видны, так что
- * нужное редактору названо явно.
+ * Двигать блоки имеет смысл там, где есть куда записать результат: сервер
+ * из этого репозитория (npm start или npm run map-edit) принимает PUT на
+ * course.json, а сайт, разумеется, нет. Поэтому и кнопка «Редактировать»,
+ * и весь код правки живут в отдельном файле, который подключается только
+ * здесь: читателю он не отдаётся вовсе, а не прячется от него.
  *
- * На сайте этой ручки нет вовсе. Сохранять правку всё равно некуда — пишет
- * её локальный сервер из tools/, которого там нет, — но и предлагать
- * читателю потрогать внутренности карты незачем.
- *
- * Геттеры, а не ссылки: rings и outerOrbit заменяются целиком, когда
- * приходит course.json.
+ * Всё остальное в этом файле объявлено через const и let — они живут в
+ * области видимости скрипта и снаружи не видны, так что нужное правке
+ * названо явно. Геттеры, а не ссылки: rings и outerOrbit заменяются
+ * целиком, когда приходит course.json.
  */
-if (["127.0.0.1", "localhost", "::1"].includes(location.hostname)) {
+const local = ["127.0.0.1", "localhost", "::1"].includes(location.hostname);
+
+if (local) {
   window.courseMap = {
     CX,
     CY,
     polar,
     render,
     get rings () { return rings; },
-    get outerOrbit () { return outerOrbit; }
+    get outerOrbit () { return outerOrbit; },
+    get data () { return mapData; }
   };
+
+  const editor = document.createElement("script");
+  editor.src = "course-edit.js";
+  document.body.appendChild(editor);
 }
 
 updateTransform();
 
-// Данные приходят из course.json, а не живут в коде: их пишет редактор
-// (npm run map-edit), и рисунок получает их тем же путём, что и редактор.
+// Данные приходят из course.json, а не живут в коде: их пишет правка
+// (кнопка «Редактировать» локально), и рисунок читает тот же файл.
 fetch("course.json")
   .then(response => response.json())
   .then(data => {
+    mapData = data;
     rings = data.rings;
     outerOrbit = data.outerOrbit;
+    titles = data.titles || {};
     render();
+    window.dispatchEvent(new Event("course-map-ready"));
   })
   .catch(error => console.error("course.json не прочитан:", error));

@@ -131,6 +131,37 @@ var liveServer = require('live-server')
  */
 const RELOAD_ON_CHANGE = process.env.RELOAD !== 'off'
 
+/**
+ * Карта курса правится в браузере и сохраняется сюда.
+ *
+ * На 127.0.0.1 на карте появляется кнопка «Редактировать» (maps/course-edit.js);
+ * сохранение — это PUT на тот же адрес, с которого карта прочитана. Писать
+ * его некому, кроме того, кто страницу отдал, — то есть этого сервера.
+ *
+ * Пишется только карта и только если присланное разбирается как карта: это
+ * localhost, но открытая наружу дырка в файловую систему никому не нужна.
+ */
+const COURSE_MAP = path.join(__dirname, 'public/maps/course.json')
+
+function saveTheMap (request, response, next) {
+	if (request.method !== 'PUT' || request.url.split('?')[0] !== '/maps/course.json') return next()
+
+	let body = ''
+	request.on('data', chunk => { body += chunk })
+	request.on('end', () => {
+		try {
+			const data = JSON.parse(body)
+			if (!Array.isArray(data.rings) || !data.outerOrbit) throw new Error('это не карта')
+
+			fs.writeFileSync(COURSE_MAP, JSON.stringify(data, null, 2) + '\n', 'utf8')
+			console.log(`  карта курса сохранена, ${new Date().toLocaleTimeString()}`)
+			response.writeHead(200).end('ok')
+		} catch (error) {
+			response.writeHead(400).end(error.message)
+		}
+	})
+}
+
 var params = {
 	port: PORT,
 	host: '0.0.0.0',
@@ -162,10 +193,14 @@ var params = {
 	// one edit into a second needless reload.
 	//
 	// Regexes rather than names: chokidar matches against the full path.
-	ignore: [/versions\.json$/, /lessons[\/]index\.json$/, /[\\/]\.cache[\\/]/],
+	//
+	// course.json — по той же причине, но с другой стороны: его пишет сама
+	// открытая страница, и перезагрузка в ответ на собственное сохранение
+	// стирала бы правку, которая ещё в работе.
+	ignore: [/versions\.json$/, /lessons[\/]index\.json$/, /[\\/]\.cache[\\/]/, /maps[\\/]course\.json$/],
 
 	logLevel: 2,
-	middleware: [function(req, res, next) { next() }]
+	middleware: [saveTheMap]
 }
 
 portIsFree(PORT, params.host).then((free) => {
