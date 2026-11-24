@@ -118,7 +118,7 @@ class MainMenuComponent extends HTMLElement {
     // there is no lesson to hang it on.
     const mapLink = this.shadow.querySelector('#course-map-link')
     if (mapLink) {
-      const words = { ru: 'Карта курса', ua: 'Карта курсу', eng: 'The course map' }
+      const words = { ru: 'Ментальная карта', ua: 'Ментальна карта', eng: 'Mind map' }
       // The caption is a bare text node on purpose. A <span> here would be
       // caught by `#menuToggle span`, the rule that draws the three bars of
       // the hamburger: it would turn the words into a 16x16 blue square with

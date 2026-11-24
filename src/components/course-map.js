@@ -23,9 +23,9 @@ const { createElem } = require('../helpers').default
 const { lang } = require('../configs').default
 
 const WORDS = {
-  ru: { title: 'Карта курса', close: 'Закрыть' },
-  ua: { title: 'Карта курсу', close: 'Закрити' },
-  eng: { title: 'The course map', close: 'Close' }
+  ru: { title: 'Ментальная карта', close: 'Закрыть' },
+  ua: { title: 'Ментальна карта', close: 'Закрити' },
+  eng: { title: 'Mind map', close: 'Close' }
 }
 
 const styles = `
