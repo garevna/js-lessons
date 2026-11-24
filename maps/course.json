@@ -42,7 +42,8 @@
               "desc": "Chrome DevTools и блок-схемы алгоритмов: чем и как смотреть на то, что делает код.",
               "refs": [
                 "Block-diagram",
-                "Chrome-dev-tools"
+                "Chrome-dev-tools",
+                "Developer-tools"
               ]
             },
             {
@@ -56,6 +57,11 @@
                 "JS-heap-memory-allocation"
               ]
             }
+          ],
+          "refs": [
+            "ECMA",
+            "tcp-ip",
+            "localhost"
           ]
         },
         {
@@ -66,8 +72,8 @@
           "items": [
             {
               "title": "Примитивы",
-              "angle": 92,
-              "rOffset": 150,
+              "angle": 85.5,
+              "rOffset": 95,
               "w": 100,
               "desc": "var / let / const, примитивные типы, typeof, NaN, null и Infinity.",
               "refs": [
@@ -79,7 +85,7 @@
             },
             {
               "title": "Symbol, BigInt",
-              "angle": 106,
+              "angle": 96.5,
               "rOffset": 150,
               "w": 127,
               "desc": "Два типа, добавленных позже остальных, и зачем каждый из них нужен.",
@@ -90,22 +96,45 @@
             },
             {
               "title": "Строки",
-              "angle": 128,
-              "rOffset": 150,
+              "angle": 107.5,
+              "rOffset": 95,
               "w": 100,
               "desc": "Методы строк, UTF-8 и шаблонные литералы.",
               "refs": [
-                "String-methods"
+                "String-methods",
+                "String-fromCharCode",
+                "UTF-8"
               ]
             },
             {
               "title": "Массивы",
-              "angle": 133,
+              "angle": 118.5,
               "rOffset": 150,
               "w": 100,
               "desc": "Массив как объект, базовые методы, обход.",
               "refs": [
-                "Array-methods"
+                "Array-methods",
+                "length"
+              ]
+            },
+            {
+              "title": "Ссылочный тип данных",
+              "angle": 129.5,
+              "rOffset": 95,
+              "w": 199,
+              "desc": "Почему объект, массив и функция передаются ссылкой, а не копией.",
+              "refs": [
+                "data-structures"
+              ]
+            },
+            {
+              "title": "Шаблонные литералы",
+              "angle": 140.5,
+              "rOffset": 150,
+              "w": 184,
+              "desc": "Строка со вставками и переносами, и тег-функция перед ней.",
+              "refs": [
+                "literals"
               ]
             }
           ]
@@ -118,8 +147,8 @@
           "items": [
             {
               "title": "Условные",
-              "angle": 160,
-              "rOffset": 150,
+              "angle": 160.5,
+              "rOffset": 95,
               "w": 100,
               "desc": "if / else, тернарный оператор и switch.",
               "refs": [
@@ -129,7 +158,7 @@
             },
             {
               "title": "Циклы",
-              "angle": 175,
+              "angle": 171.5,
               "rOffset": 150,
               "w": 100,
               "desc": "for, while, do..while, for...of и for...in.",
@@ -141,12 +170,23 @@
             },
             {
               "title": "try / catch",
-              "angle": 191,
-              "rOffset": 150,
+              "angle": -177.5,
+              "rOffset": 95,
               "w": 106,
               "desc": "Перехват исключений; на стыке с Кольцом 2 встречается с конструктором Error.",
               "refs": [
                 "Error"
+              ]
+            },
+            {
+              "title": "Присваивание, инкремент",
+              "angle": -166.5,
+              "rOffset": 150,
+              "w": 224,
+              "desc": "Операторы присваивания и инкремент — префиксный и постфиксный.",
+              "refs": [
+                "Assignments",
+                "Increment"
               ]
             }
           ]
@@ -197,23 +237,24 @@
           "w": 156,
           "items": [
             {
-              "title": "Объекты и массивы",
-              "angle": 299,
-              "rOffset": 150,
-              "w": 147,
-              "desc": "Как из примитивов складываются структуры и чем они отличаются по поведению.",
-              "refs": [
-                "data-structures"
-              ]
-            },
-            {
               "title": "Деструктуризация",
-              "angle": 331,
-              "rOffset": 150,
+              "angle": -57.5,
+              "rOffset": 95,
               "w": 140,
               "desc": "Разбор структуры на части: массивы, объекты, значения по умолчанию, остаток.",
               "refs": [
                 "Destructuring"
+              ]
+            },
+            {
+              "title": "Протокол итерирования",
+              "angle": -42.5,
+              "rOffset": 150,
+              "w": 209,
+              "desc": "Что делает структуру итерабельной: Symbol.iterator, for...of и то, чем for...in от него отличается.",
+              "refs": [
+                "for-of-for-in",
+                "generators"
               ]
             }
           ]
@@ -318,37 +359,17 @@
           "title": "Классы",
           "angle": 182,
           "w": 110,
-          "items": [
-            {
-              "title": "Синтаксис",
-              "angle": 167,
-              "rOffset": 150,
-              "w": 100,
-              "desc": "class, конструктор, поля и методы, #private, static, порядок инициализации.",
-              "refs": [
-                "Classes"
-              ]
-            },
-            {
-              "title": "get / set",
-              "angle": 182,
-              "rOffset": 150,
-              "w": 100,
-              "desc": "Вычисляемые свойства: снаружи свойство, внутри функция.",
-              "refs": [
-                "get-and-set"
-              ]
-            },
-            {
-              "title": "super",
-              "angle": 197,
-              "rOffset": 150,
-              "w": 100,
-              "desc": "Обращение к родителю — в классах и в литералах объектов.",
-              "refs": [
-                "super-in-object-literals"
-              ]
-            }
+          "items": [],
+          "map": "Classes",
+          "desc": "Синтаксис класса, поля и методы, статические элементы, наследование. Подробная схема урока открывается по клику.",
+          "refs": [
+            "Classes",
+            "get-and-set",
+            "super-in-object-literals",
+            "strict-mode",
+            "computed-prop-names",
+            "short-method-syntax",
+            "shorthand-object-literal"
           ]
         },
         {
@@ -442,7 +463,11 @@
                 "Shadow-DOM",
                 "custom-elements",
                 "life-cycle-hooks",
-                "slots"
+                "slots",
+                "template",
+                "when-defined",
+                "not-defined",
+                "web-component-samples"
               ]
             }
           ]
@@ -465,37 +490,41 @@
         {
           "id": "r3-pure",
           "title": "Чистые функции",
-          "angle": 71,
-          "w": 140,
+          "angle": 15,
+          "w": 150,
+          "desc": "Функция без побочных эффектов: тот же вход — тот же выход, и ничего вокруг не изменилось.",
+          "refs": [
+            "functionality#pure_function"
+          ],
           "items": [
             {
               "title": "Иммутабельность",
-              "angle": 43,
-              "rOffset": 78,
-              "w": 134,
-              "desc": "Не менять то, что получил: новое значение вместо правки старого.",
+              "angle": 0,
+              "rOffset": 95,
+              "w": 160,
+              "desc": "Значение не меняют, а делают новое: исходное остаётся тем, чем было.",
               "refs": [
-                "functionality"
+                "functionality#Immutability"
               ]
             },
             {
               "title": "Идемпотентность",
-              "angle": 70,
+              "angle": 15,
               "rOffset": 150,
-              "w": 134,
-              "desc": "Тот же вход — тот же выход, сколько ни повторяй.",
+              "w": 160,
+              "desc": "Повторный вызов с тем же аргументом ничего не добавляет к результату.",
               "refs": [
-                "functionality"
+                "functionality#Idempotence"
               ]
             },
             {
-              "title": "Побочные эффекты",
-              "angle": 98,
-              "rOffset": 114,
-              "w": 140,
-              "desc": "Всё, что функция делает помимо возврата значения, и почему это считают.",
+              "title": "Ссылочная прозрачность",
+              "angle": 30,
+              "rOffset": 95,
+              "w": 217,
+              "desc": "Вызов можно заменить его результатом, и программа не заметит разницы.",
               "refs": [
-                "functionality"
+                "functionality#referential_transparency"
               ]
             }
           ]
@@ -503,60 +532,99 @@
         {
           "id": "r3-hof",
           "title": "Функции высшего порядка",
-          "angle": 182,
-          "w": 209,
+          "angle": 67.7,
+          "w": 224,
+          "desc": "Функция как значение: её передают аргументом и возвращают из другой функции.",
+          "refs": [
+            "functionality#Higher-order_function"
+          ],
           "items": [
             {
-              "title": "map, filter, reduce",
-              "angle": 154,
-              "rOffset": 78,
-              "w": 161,
-              "desc": "Итерирующие методы массивов и понятие протокола итерирования.",
+              "title": "Функция-аргумент",
+              "angle": 52.7,
+              "rOffset": 95,
+              "w": 167,
+              "desc": "Функция, переданная внутрь другой: колбэк и то, что с ним делают.",
               "refs": [
-                "Array-iterating-methods"
+                "functionality#Function_as_an_argument"
               ]
             },
             {
-              "title": "Каррирование",
-              "angle": 182,
+              "title": "Функция как результат",
+              "angle": 67.7,
               "rOffset": 150,
-              "w": 113,
-              "desc": "Приём ФП: функция, возвращающая функцию; через bind и вручную.",
+              "w": 208,
+              "desc": "Функция, возвращённая из функции, — и замыкание, которое она уносит с собой.",
               "refs": [
-                "call-apply-bind-currying"
+                "functionality#A_function_as_a_return_value"
               ]
             },
             {
-              "title": "Функция как значение",
-              "angle": 210,
-              "rOffset": 114,
-              "w": 168,
-              "desc": "Передать, вернуть, положить в массив — функция наравне с числом.",
+              "title": "Цепочные вычисления",
+              "angle": 82.7,
+              "rOffset": 95,
+              "w": 192,
+              "desc": "Результат одной функции — вход следующей; цепочка вместо промежуточных переменных.",
               "refs": [
-                "functionality"
+                "functionality#Chain_computations"
               ]
             }
           ]
         },
         {
+          "id": "r3-iter",
+          "title": "Итерирующие методы массивов",
+          "angle": 120.3,
+          "w": 258,
+          "desc": "Весь набор: forEach, map, filter, reduce, some, every, find, flat и прочие — и чем они отличаются от цикла.",
+          "refs": [
+            "Array-iterating-methods",
+            "Array-iterating-methods-theory",
+            "SHA"
+          ],
+          "items": []
+        },
+        {
+          "id": "r3-currying",
+          "title": "Каррирование",
+          "angle": 173,
+          "w": 135,
+          "desc": "Функция, которая берёт аргументы по одному и возвращает функцию, пока их не хватит.",
+          "refs": [
+            "call-apply-bind-currying"
+          ],
+          "items": []
+        },
+        {
           "id": "r3-arrow",
           "title": "Стрелочные функции",
-          "angle": 291,
-          "w": 171,
-          "items": [],
+          "angle": -134.3,
+          "w": 184,
           "desc": "У стрелки нет своего this: она берёт его там, где написана.",
           "refs": [
             "arrow-function"
-          ]
+          ],
+          "items": []
         },
         {
           "id": "r3-recursion",
           "title": "Рекурсия",
-          "angle": 30,
-          "w": 100,
+          "angle": -81.7,
+          "w": 101,
           "desc": "Функция, вызывающая себя: база, шаг и глубина стека.",
           "refs": [
             "recursion"
+          ],
+          "items": []
+        },
+        {
+          "id": "r3-let-const",
+          "title": "let | const",
+          "angle": -29,
+          "w": 111,
+          "desc": "Блочная область видимости и чем она отличается от функциональной у var.",
+          "refs": [
+            "let-const"
           ],
           "items": []
         }
@@ -575,7 +643,7 @@
         {
           "id": "r4-loop",
           "title": "Event Loop",
-          "angle": 35,
+          "angle": 22,
           "w": 110,
           "items": [],
           "desc": "Одна очередь на кадр и одна на микрозадачи: в каком порядке движок берёт работу.",
@@ -586,7 +654,7 @@
         {
           "id": "r4-timers",
           "title": "Таймеры",
-          "angle": 74,
+          "angle": 48.3,
           "w": 110,
           "items": [],
           "desc": "Отложенный вызов, его точность и почему ноль миллисекунд — не сразу.",
@@ -595,9 +663,20 @@
           ]
         },
         {
+          "id": "r4-throttle",
+          "title": "Throttling, Debouncing",
+          "angle": 74.7,
+          "w": 201,
+          "items": [],
+          "desc": "Что делать, когда событий больше, чем работы: реже и позже.",
+          "refs": [
+            "throttling-and-debouncing"
+          ]
+        },
+        {
           "id": "r4-events",
           "title": "События DOM",
-          "angle": 114,
+          "angle": 101,
           "w": 118,
           "items": [],
           "desc": "Фазы погружения и всплытия, один обработчик на список вместо сотни.",
@@ -608,7 +687,7 @@
         {
           "id": "r4-observer",
           "title": "MutationObserver",
-          "angle": 155,
+          "angle": 127.3,
           "w": 156,
           "items": [],
           "desc": "Узнать об изменении DOM, которое сделал не ты.",
@@ -619,7 +698,7 @@
         {
           "id": "r4-postmessage",
           "title": "postMessage",
-          "angle": 197,
+          "angle": 153.7,
           "w": 118,
           "items": [],
           "desc": "Сообщения между окнами, вкладками и воркерами.",
@@ -628,63 +707,101 @@
           ]
         },
         {
-          "id": "r4-throttle",
-          "title": "Throttling, Debouncing",
-          "angle": 239,
-          "w": 201,
-          "items": [],
-          "desc": "Что делать, когда событий больше, чем работы: реже и позже.",
+          "id": "r4-ajax",
+          "title": "AJAX",
+          "angle": 180,
+          "w": 62,
+          "desc": "Запрос из кода, без перезагрузки страницы: XMLHttpRequest, JSON и заголовок Content-Type.",
           "refs": [
-            "throttling-and-debouncing"
-          ]
+            "XMLHttpRequest",
+            "JSON",
+            "Content-Type",
+            "curl"
+          ],
+          "items": []
+        },
+        {
+          "id": "r4-fetch",
+          "title": "Fetch API, CORS",
+          "angle": -153.7,
+          "w": 139,
+          "desc": "fetch вместо XMLHttpRequest, и почему чужой домен отвечает отказом.",
+          "refs": [
+            "fetch-API",
+            "CORS",
+            "cookie",
+            "localStorage"
+          ],
+          "items": []
+        },
+        {
+          "id": "r4-rest",
+          "title": "REST API",
+          "angle": -127.3,
+          "w": 90,
+          "desc": "Ресурсы, методы и коды ответа; учебный сервер, на котором это можно потрогать.",
+          "refs": [
+            "REST",
+            "API",
+            "REST-status",
+            "JSON-placeholder",
+            "json-server",
+            "fake-chat"
+          ],
+          "items": []
+        },
+        {
+          "id": "r4-files",
+          "title": "File API, FormData",
+          "angle": -101,
+          "w": 160,
+          "desc": "Файл, выбранный пользователем: прочитать, отправить, принять потоком.",
+          "refs": [
+            "File-API",
+            "FormData",
+            "FileReader",
+            "arrayBuffer",
+            "readableStream",
+            "named-item"
+          ],
+          "items": []
         },
         {
           "id": "r4-promise",
           "title": "Promises",
-          "angle": 282,
-          "w": 110,
-          "items": [
-            {
-              "title": "Promise, async / await",
-              "angle": 275,
-              "rOffset": 110,
-              "w": 182,
-              "desc": "Конструктор, цепочки, обработка ошибок, async/await и Promise.all.",
-              "refs": [
-                "promise",
-                "promise-constructor",
-                "async-await",
-                "async-vs-Promise-all"
-              ]
-            },
-            {
-              "title": "AJAX, Fetch, CORS",
-              "angle": 289,
-              "rOffset": 110,
-              "w": 147,
-              "desc": "XMLHttpRequest, Fetch API, CORS, REST, Streams, FileReader и FormData.",
-              "refs": [
-                "XMLHttpRequest",
-                "fetch-API",
-                "CORS",
-                "REST",
-                "File-API",
-                "FormData",
-                "readableStream"
-              ]
-            }
-          ]
+          "angle": -74.7,
+          "w": 90,
+          "desc": "Обещание результата: три состояния, then и catch, и почему это лучше обратного вызова.",
+          "refs": [
+            "promise",
+            "promise-constructor",
+            "async-is-good"
+          ],
+          "items": []
+        },
+        {
+          "id": "r4-async",
+          "title": "Асинхронные функции",
+          "angle": -48.3,
+          "w": 192,
+          "desc": "async и await: обещания, записанные как обычный последовательный код.",
+          "refs": [
+            "async-await",
+            "async-constructor",
+            "async-vs-Promise-all"
+          ],
+          "items": []
         },
         {
           "id": "r4-gen",
           "title": "Генераторы",
-          "angle": 324,
+          "angle": -22,
           "w": 110,
           "items": [
             {
               "title": "yield и yield*",
-              "angle": 324,
-              "rOffset": 110,
+              "angle": -29.5,
+              "rOffset": 95,
               "w": 127,
               "desc": "Приостановка и возобновление исполнения, делегирование протокола итерирования.",
               "refs": [
@@ -694,8 +811,8 @@
             },
             {
               "title": "Асинхронные генераторы",
-              "angle": 331,
-              "rOffset": 110,
+              "angle": -14.5,
+              "rOffset": 150,
               "w": 182,
               "desc": "Сравнение с async-функциями, двусторонний обмен, фабричные методы.",
               "refs": [
@@ -800,7 +917,11 @@
             "w": 93,
             "desc": "База данных в браузере, больше и структурнее localStorage.",
             "refs": [
-              "IndexedDB"
+              "IndexedDB",
+              "IndexedDB-store",
+              "IndexedDB-index",
+              "IndexedDB-transaction",
+              "NoSQL"
             ]
           },
           {
@@ -851,7 +972,13 @@
             "w": 79,
             "desc": "Сборка: из множества файлов — то, что уедет на сервер.",
             "refs": [
-              "webpack"
+              "webpack",
+              "webpack-mode",
+              "webpack-package-json",
+              "webpack-css-loaders",
+              "webpack-exercise-6",
+              "webpack-exercise-7",
+              "webpack-exercise-8"
             ]
           },
           {
@@ -871,7 +998,8 @@
             "w": 51,
             "desc": "История изменений и ветки.",
             "refs": [
-              "git"
+              "git",
+              "git-bash"
             ]
           },
           {
