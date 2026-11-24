@@ -6,13 +6,16 @@ const { convertStringForAnchor, lang } = require('../configs').default
 const MAP_ICON = 'M9 2V8H7V10H11V8H9V4H15V8H13V10H17V8H15V2H9M2 14V20H8V14H6V12H4V14H2M4 16H6V18H4V16M9 14V20H15V14H13V12H11V14H9M11 16H13V18H11V16M16 14V20H22V14H20V12H18V14H16M18 16H20V18H18V16Z'
 
 /**
- * "Карта", not "ментальная схема": the word is a metaphor the reader
- * already owns, and the panel is narrow.
+ * The same words as in the main menu, on purpose. Which map is meant is
+ * said by where the item stands: in the main menu, which is about the
+ * course, it is the course; in the contents of a lesson it is the lesson.
+ * Spelling that out in the label would only repeat what the place already
+ * says, in a panel that is narrow.
  */
 const MAP_LABEL = {
-  ru: 'Карта урока',
-  ua: 'Карта уроку',
-  eng: 'Lesson map'
+  ru: 'Ментальная карта',
+  ua: 'Ментальна карта',
+  eng: 'Mind map'
 }
 
 class MenuComponent extends HTMLElement {
