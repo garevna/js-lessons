@@ -14,8 +14,36 @@ const enableNavigationPreload = async () => self.registration.navigationPreload 
  * claim is what hands it the pages, and from that moment every lesson fetched
  * is measured against the new map.
  */
+/**
+ * Drop the cached code, and keep the cached course.
+ *
+ * A new worker exists because the code changed, so the code in the cache is
+ * the one thing certain to be out of date on arrival. Worse, it may be out of
+ * date and say otherwise: until the fetch here began passing no-store, the
+ * browser's own cache could answer with a previous build and this worker would
+ * file those bytes under the version the map calls current. Such an entry is
+ * wrong and stamped correct — the version check will never catch it, and no
+ * later deploy will either unless that bundle's hash happens to change.
+ *
+ * So each new worker begins by forgetting every .js, .json, .css and .html it
+ * inherits. They are a few hundred kilobytes and come back on demand. The
+ * lessons — the megabytes, and the reason there is a cache at all — are left
+ * where they are: they are checked file by file against the map, and that
+ * check was never the thing that was broken.
+ */
+const forgetCode = async () => {
+  const cache = await caches.open(getCacheName())
+  const code = /\.(js|json|css|html)$/
+
+  const stale = (await cache.keys())
+    .filter(request => code.test(new URL(request.url).pathname))
+
+  await Promise.all(stale.map(request => cache.delete(request)))
+}
+
 const takeOver = async () => {
   await enableNavigationPreload()
+  await forgetCode()
   await self.clients.claim()
 }
 
