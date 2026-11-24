@@ -1,6 +1,7 @@
 import { validateVersion } from './validateVersion'
 import { getFromRemote } from './getFromRemote'
 import { updateCache } from './updateCache'
+import { unredirected } from './unredirected'
 import { isStable } from './isStable'
 import { isCached } from './isCached'
 import { getCacheName } from './getCacheName'
@@ -20,7 +21,7 @@ const orNetwork = async (request, response) =>
 export async function searchInCache (event) {
   const { request } = event
 
-  if (!isCached(request)) return orNetwork(request, await getFromRemote(request.url))
+  if (!isCached(request)) return orNetwork(request, await unredirected(await getFromRemote(request.url)))
 
   const cache = await caches.open(getCacheName())
   const response = await cache.match(request, { ignoreSearch: true })
@@ -36,8 +37,8 @@ export async function searchInCache (event) {
 
     if (fetchResponse && fetchResponse.ok) {
       await cache.delete(request.url)
-      await updateCache(fetchResponse)
-      return fetchResponse
+      await updateCache(fetchResponse, request.url)
+      return await unredirected(fetchResponse)
     } else {
       console.warn(`Old cache will be used for ${request.url}.`)
       return response
@@ -45,8 +46,8 @@ export async function searchInCache (event) {
   } else {
     if (navigator.onLine) {
       const fetchResponse = await getFromRemote(request.url)
-      fetchResponse && await updateCache(fetchResponse)
-      return orNetwork(request, fetchResponse)
+      fetchResponse && await updateCache(fetchResponse, request.url)
+      return orNetwork(request, await unredirected(fetchResponse))
     } else {
       console.warn('OFFLINE MODE: ', request.url)
       const offline = await cache.match('lessons/offline.md', { ignoreSearch: true })
