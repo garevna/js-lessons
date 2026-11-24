@@ -46,22 +46,26 @@
     said.style.color = how === "плохо" ? "#F87171" : how === "важно" ? "#F59E0B" : "#94A3B8";
   };
 
+  const publishButton = button("Выложить", () => publish());
   const undoButton = button("Отменить (Ctrl+Z)", () => undo());
   const saveButton = button("Сохранить (Ctrl+S)", () => store());
   const editButton = button("Редактировать", () => toggle());
 
-  saveButton.style.display = undoButton.style.display = "none";
+  const hidden = [saveButton, undoButton, publishButton];
+  hidden.forEach(element => { element.style.display = "none"; });
 
   const refresh = () => {
     saveButton.disabled = !dirty;
     undoButton.disabled = !history.length;
+    publishButton.disabled = dirty;
+    publishButton.title = dirty ? "Сначала сохрани" : "Закоммитить карту и запушить — дальше деплой сам";
   };
 
   const enter = () => {
     editing = true;
     editButton.textContent = "Закончить правку";
     editButton.classList.add("active");
-    saveButton.style.display = undoButton.style.display = "";
+    hidden.forEach(element => { element.style.display = ""; });
     container.style.cursor = "crosshair";
     say("тяни блок мышью · Shift — по окружности");
     refresh();
@@ -71,7 +75,7 @@
     editing = false;
     editButton.textContent = "Редактировать";
     editButton.classList.remove("active");
-    saveButton.style.display = undoButton.style.display = "none";
+    hidden.forEach(element => { element.style.display = "none"; });
     container.style.cursor = "";
     say("");
     refresh();
@@ -271,6 +275,40 @@
         say("сохранено в course.json");
       })
       .catch(error => say("НЕ СОХРАНИЛОСЬ: " + error.message, "плохо"));
+  };
+
+  /**
+   * Выложить: коммит одного файла и пуш, дальше деплой сам.
+   *
+   * Карта лежит в репозитории, а не на сервере, — у неё есть история, и
+   * «вернуть как было во вторник» это git. Но набирать ради этого три
+   * команды незачем: кнопка делает ровно то же, и только с картой.
+   *
+   * На сайте правка появляется не сразу: сборка и выкладывание — минута-две.
+   */
+  const publish = () => {
+    if (dirty) { say("сначала сохрани", "важно"); return; }
+
+    say("выкладываю…");
+    publishButton.disabled = true;
+
+    fetch("publish", { method: "POST" })
+      .then(response => response.text()
+        .catch(() => "")
+        .then(text => {
+          if (!response.ok) throw new Error(text || ("ответ " + response.status));
+          return text;
+        }))
+      .then(text => {
+        refresh();
+        say(text.startsWith("ok")
+          ? `выложено (${text.slice(3)}) — на сайте через минуту-две`
+          : text);
+      })
+      .catch(error => {
+        refresh();
+        say("не выложилось: " + error.message, "плохо");
+      });
   };
 
   document.addEventListener("keydown", (event) => {

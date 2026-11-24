@@ -23,10 +23,10 @@ const http = require('http')
 const fs = require('fs')
 const path = require('path')
 const { execFile } = require('child_process')
+const { mapServer, FILE: DATA } = require('./map-server')
 
 const root = path.join(__dirname, '..')
 const PUBLIC = path.join(root, 'public')
-const DATA = path.join(PUBLIC, 'maps/course.json')
 
 const port = Number(process.argv[2]) || 8187
 
@@ -42,32 +42,10 @@ const types = {
   '.woff2': 'font/woff2'
 }
 
-/** Записывается только карта, и только если это разбирается как карта. */
-const save = (body, response) => {
-  let data
-  try {
-    data = JSON.parse(body)
-  } catch (error) {
-    response.writeHead(400).end('не JSON: ' + error.message)
-    return
-  }
-
-  if (!Array.isArray(data.rings) || !data.outerOrbit) {
-    response.writeHead(400).end('это не карта: нет rings или outerOrbit')
-    return
-  }
-
-  fs.writeFileSync(DATA, JSON.stringify(data, null, 2) + '\n', 'utf8')
-  const branches = data.rings.reduce((n, ring) => n + ring.branches.length, 0)
-  console.log(`сохранено: ${data.rings.length} колец, ${branches} веток, ${new Date().toLocaleTimeString()}`)
-  response.writeHead(200).end('ok')
-}
-
 const server = http.createServer((request, response) => {
-  if (request.method === 'PUT' && request.url.split('?')[0] === '/maps/course.json') {
-    let body = ''
-    request.on('data', chunk => { body += chunk })
-    request.on('end', () => save(body, response))
+  // Запись и выкладывание — те же, что у npm start: tools/map-server.js.
+  if (request.method !== 'GET' && request.method !== 'HEAD') {
+    mapServer(request, response)
     return
   }
 
@@ -82,15 +60,23 @@ const server = http.createServer((request, response) => {
     return
   }
 
+  // Сначала прочитать, потом отвечать. Наоборот — заголовки уже отправлены,
+  // и на отсутствующий файл (favicon, например) ответ 404 не влезает:
+  // ERR_HTTP_HEADERS_SENT роняет весь сервер, а выглядит это как «не
+  // запускается», потому что падает он в первую же секунду.
+  let body
   try {
-    response.writeHead(200, {
-      'Content-Type': types[path.extname(file)] || 'application/octet-stream',
-      'Cache-Control': 'no-store'
-    })
-    response.end(fs.readFileSync(file))
+    body = fs.readFileSync(file)
   } catch {
-    response.writeHead(404).end('нет такого файла')
+    response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' }).end('нет такого файла')
+    return
   }
+
+  response.writeHead(200, {
+    'Content-Type': types[path.extname(file)] || 'application/octet-stream',
+    'Cache-Control': 'no-store'
+  })
+  response.end(body)
 })
 
 server.listen(port, '127.0.0.1', () => {

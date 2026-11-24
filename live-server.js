@@ -132,35 +132,15 @@ var liveServer = require('live-server')
 const RELOAD_ON_CHANGE = process.env.RELOAD !== 'off'
 
 /**
- * Карта курса правится в браузере и сохраняется сюда.
+ * Карта курса правится в браузере — здесь она сохраняется и выкладывается.
  *
- * На 127.0.0.1 на карте появляется кнопка «Редактировать» (maps/course-edit.js);
- * сохранение — это PUT на тот же адрес, с которого карта прочитана. Писать
- * его некому, кроме того, кто страницу отдал, — то есть этого сервера.
- *
- * Пишется только карта и только если присланное разбирается как карта: это
- * localhost, но открытая наружу дырка в файловую систему никому не нужна.
+ * На 127.0.0.1 на карте появляются кнопки «Редактировать» и «Выложить»
+ * (maps/course-edit.js); сохранение и выкладывание — запросы на тот же
+ * адрес, с которого карта прочитана. Отвечать на них некому, кроме того,
+ * кто страницу отдал, — то есть этого сервера. Что именно он делает, в
+ * tools/map-server.js, вместе с npm run map-edit.
  */
-const COURSE_MAP = path.join(__dirname, 'public/maps/course.json')
-
-function saveTheMap (request, response, next) {
-	if (request.method !== 'PUT' || request.url.split('?')[0] !== '/maps/course.json') return next()
-
-	let body = ''
-	request.on('data', chunk => { body += chunk })
-	request.on('end', () => {
-		try {
-			const data = JSON.parse(body)
-			if (!Array.isArray(data.rings) || !data.outerOrbit) throw new Error('это не карта')
-
-			fs.writeFileSync(COURSE_MAP, JSON.stringify(data, null, 2) + '\n', 'utf8')
-			console.log(`  карта курса сохранена, ${new Date().toLocaleTimeString()}`)
-			response.writeHead(200).end('ok')
-		} catch (error) {
-			response.writeHead(400).end(error.message)
-		}
-	})
-}
+const { mapServer } = require('./tools/map-server')
 
 var params = {
 	port: PORT,
@@ -200,7 +180,7 @@ var params = {
 	ignore: [/versions\.json$/, /lessons[\/]index\.json$/, /[\\/]\.cache[\\/]/, /maps[\\/]course\.json$/],
 
 	logLevel: 2,
-	middleware: [saveTheMap]
+	middleware: [mapServer]
 }
 
 portIsFree(PORT, params.host).then((free) => {
