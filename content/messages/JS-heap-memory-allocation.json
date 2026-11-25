@@ -1,287 +1,287 @@
 {
   "p1": {
     "ru": "Тестирование производительности",
-    "eng": "",
-    "ua": ""
+    "eng": "Performance testing",
+    "ua": "Тестування продуктивності"
   },
   "p2": {
     "ru": "Сколько приложение \"кушает\" памяти на клиенте ?",
-    "eng": "",
-    "ua": ""
+    "eng": "How much memory does the application use on the client side?",
+    "ua": "Скільки пам’яті «споживає» додаток на клієнті?"
   },
   "p3": {
-    "ru": "![ico-20 warn] Если объем используемой памяти растет пропорционально времени работы приложения, то имеют место утечки памяти",
-    "eng": "",
-    "ua": ""
+    "ru": "![ico-20 warn] Если объем используемой памяти растет пропорционально времени работы приложения, то имеют место утечки памяти.",
+    "eng": "![ico-20 warn] If the amount of memory in use increases in proportion to the application’s runtime, there are memory leaks.",
+    "ua": "![ico-20 warn] Якщо обсяг використовуваної пам’яті зростає пропорційно до часу роботи додатка, це свідчить про витоки пам’яті."
   },
   "p4": {
-    "ru": "![ico-20 warn] Если приложение часто \"подвисает\" на секунду-две, то, скорее всего, слишком часто запускается сборщик мусора, чтобы очистить память от ненужных преременных",
-    "eng": "",
-    "ua": ""
+    "ru": "![ico-20 warn] Если приложение часто \"подвисает\" на секунду-две, то, скорее всего, слишком часто запускается сборщик мусора, чтобы очистить память от ненужных преременных.",
+    "eng": "![ico-20 warn] If the application frequently ‘freezes’ for a second or two, the garbage collector is most likely running too often to clear the memory of unnecessary temporary data.",
+    "ua": "![ico-20 warn] Якщо додаток часто «зависає» на секунду-дві, то, найімовірніше, занадто часто запускається збирач сміття, щоб очистити пам’ять від непотрібних тимчасових даних."
   },
   "p5": {
-    "ru": "**RAIL** - это модель производительности,  ориентированная на пользователя",
-    "eng": "",
-    "ua": ""
+    "ru": "**RAIL** - это модель производительности,  ориентированная на пользователя.",
+    "eng": "**RAIL** is a user-centred performance model.",
+    "ua": "**RAIL** — це модель продуктивності, орієнтована на користувача."
   },
   "p6": {
     "ru": "Она разбивает взаимодействие пользователя на ключевые действия:",
-    "eng": "",
-    "ua": ""
+    "eng": "It breaks down user interaction into key actions:",
+    "ua": "Вона розбиває взаємодію користувача на ключові дії:"
   },
   "p7": {
     "ru": "Основные характеристики производительности с точки зрения пользователя:",
-    "eng": "",
-    "ua": ""
+    "eng": "Key performance characteristics from the user’s perspective:",
+    "ua": "Основні характеристики продуктивності з точки зору користувача:"
   },
   "p8": {
     "ru": "![ico-20 green-ok] Скорость загрузки страницы",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-20 green-ok] Page load speed",
+    "ua": "![ico-20 green-ok] Швидкість завантаження сторінки"
   },
   "p9": {
-    "ru": "• время отрисовки ( визуализации ) контента",
-    "eng": "",
-    "ua": ""
+    "ru": "• время отрисовки (визуализации) контента",
+    "eng": "• Content rendering (visualisation) time",
+    "ua": "• час відтворення (візуалізації) контенту"
   },
   "p10": {
     "ru": "• время до того, как страница станет интерактивной, т.е. начнет регировать на действия пользователя",
-    "eng": "",
-    "ua": ""
+    "eng": "• the time it takes for the page to become interactive, i.e. to start responding to user actions",
+    "ua": "• час до того, як сторінка стане інтерактивною, тобто почне реагувати на дії користувача"
   },
   "p11": {
-    "ru": "![ico-20 green-ok] плавность анимации ( желательно 60fps )",
-    "eng": "",
-    "ua": ""
+    "ru": "![ico-20 green-ok] плавность анимации (желательно 60fps)",
+    "eng": "![ico-20 green-ok] Smoothness of animation (preferably 60fps)",
+    "ua": "![ico-20 green-ok] плавність анімації (бажано 60 кадрів на секунду)"
   },
   "p12": {
     "ru": "![ico-20 green-ok] интерактивность страницы",
-    "eng": "",
-    "ua": ""
+    "eng": "![ico-20 green-ok] Page interactivity",
+    "ua": "![ico-20 green-ok] інтерактивність сторінки"
   },
   "p13": {
     "ru": "время от момента, когда пользователь выполнил какое-то действие на странице, до момента, когда приложение отреагирует на это действие, должно быть в пределах 100ms",
-    "eng": "",
-    "ua": ""
+    "eng": "The time from when the user performs an action on the page to when the application responds to that action should be within 100 ms",
+    "ua": "час від моменту, коли користувач виконав якусь дію на сторінці, до моменту, коли додаток відреагує на цю дію, має бути в межах 100 мс"
   },
   "p14": {
     "ru": "более длительная задержка будет раздражать",
-    "eng": "",
-    "ua": ""
+    "eng": "Any longer delay will be frustrating",
+    "ua": "більш тривала затримка буде дратувати"
   },
   "p15": {
     "ru": "**Chrome DevTools** предоставляет подробный анализ всего, что происходит во время загрузки и запуска приложения",
-    "eng": "",
-    "ua": ""
+    "eng": "**Chrome DevTools** provides a detailed analysis of everything that happens whilst the application is loading and launching",
+    "ua": "**Chrome DevTools** надає детальний аналіз усього, що відбувається під час завантаження та запуску додатка"
   },
   "p16": {
     "ru": "В новой вкладке браузера запустите приложение, которое вы хотите проверить",
-    "eng": "",
-    "ua": ""
+    "eng": "In a new browser tab, launch the application you wish to test",
+    "ua": "У новій вкладці браузера запустіть додаток, який ви хочете перевірити"
   },
   "p17": {
-    "ru": "Откройте вкладку **JavaScript Profiler** в Chrome DevTools",
-    "eng": "",
-    "ua": ""
+    "ru": "Откройте вкладку **^^JavaScript Profiler^^** в Chrome DevTools",
+    "eng": "Open the **^^JavaScript Profiler^^** tab in Chrome DevTools",
+    "ua": "Відкрийте вкладку **^^JavaScript Profiler^^** у Chrome DevTools"
   },
   "p18": {
-    "ru": "Начните запись профиля ( нажмите кнопку Start )",
-    "eng": "",
-    "ua": ""
+    "ru": "Начните запись профиля (нажмите кнопку **^^Start^^**)",
+    "eng": "Start recording the profile (click the **^^Start^^** button)",
+    "ua": "Почніть запис профілю (натисніть кнопку **^^Start^^**)"
   },
   "p19": {
     "ru": "Выполните несколько действий на странице приложения",
-    "eng": "",
-    "ua": ""
+    "eng": "Perform a few actions on the application page",
+    "ua": "Виконайте кілька дій на сторінці додатка"
   },
   "p20": {
-    "ru": "Остановите запись  ( нажмите кнопку Stop )",
-    "eng": "",
-    "ua": ""
+    "ru": "Остановите запись (нажмите кнопку **^^Stop^^**)",
+    "eng": "Stop recording (press the **^^Stop^^** button)",
+    "ua": "Зупиніть запис (натисніть кнопку **^^Stop^^**)"
   },
   "p21": {
-    "ru": "Теперь можно посмотреть записанный профиль, оценить производительность различных модулей ( функций ) приложения и определить проблемные фрагменты кода",
-    "eng": "",
-    "ua": ""
+    "ru": "Теперь можно посмотреть записанный профиль, оценить производительность различных модулей (функций) приложения и определить проблемные фрагменты кода",
+    "eng": "You can now view the recorded profile, assess the performance of the application’s various modules (functions) and identify problematic sections of code",
+    "ua": "Тепер можна переглянути записаний профіль, оцінити продуктивність різних модулів (функцій) програми та визначити проблемні фрагменти коду"
   },
   "p22": {
     "ru": "Перейдите по URL приложения, которое вы хотите проверить",
-    "eng": "",
-    "ua": ""
+    "eng": "Go to the URL of the application you wish to test",
+    "ua": "Перейдіть за URL-адресою додатка, який ви хочете перевірити"
   },
   "p23": {
-    "ru": "Откройте вкладку **Audits** в Chrome DevTools",
-    "eng": "",
-    "ua": ""
+    "ru": "Откройте вкладку **^^Audits^^** в Chrome DevTools",
+    "eng": "Open the **^^Audits^^** tab in Chrome DevTools",
+    "ua": "Відкрийте вкладку **^^Audits^^** у Chrome DevTools"
   },
   "p24": {
     "ru": "DevTools показывает список видов аудита",
-    "eng": "",
-    "ua": ""
+    "eng": "DevTools displays a list of audit types",
+    "ua": "DevTools показує список видів аудиту"
   },
   "p25": {
     "ru": "Оставьте все виды аудита выбранными",
-    "eng": "",
-    "ua": ""
+    "eng": "Leave all audit types selected",
+    "ua": "Залиште всі види аудиту вибраними"
   },
   "p26": {
-    "ru": "Нажмите кнопку Run audits",
-    "eng": "",
-    "ua": ""
+    "ru": "Нажмите кнопку **^^Run audits^^**",
+    "eng": "Click the **^^Run audits^^** button",
+    "ua": "Натисніть кнопку **^^Run audits^^**"
   },
   "p27": {
-    "ru": "**First Contentful Paint** - время до того момента, когда первый текст или изображение покажется на странице",
-    "eng": "",
-    "ua": ""
+    "ru": "**^^First Contentful Paint^^** - время до того момента, когда первый текст или изображение покажется на странице",
+    "eng": "**^^First Contentful Paint^^** – the time taken until the first text or image appears on the page",
+    "ua": "**^^First Contentful Paint^^** — час до того моменту, коли перший текст або зображення з’явиться на сторінці"
   },
   "p28": {
-    "ru": "**First Meaningful Paint** - время, необходимое для отображения основного содержимого страницы пользователю",
-    "eng": "",
-    "ua": ""
+    "ru": "**^^First Meaningful Paint^^** - время, необходимое для отображения основного содержимого страницы пользователю",
+    "eng": "**^^First Meaningful Paint^^** – the time taken to display the main content of the page to the user",
+    "ua": "**^^First Meaningful Paint^^** — час, необхідний для відображення основного вмісту сторінки користувачеві"
   },
   "p29": {
-    "ru": "**Speed Index** - индекс скорости загрузки страницы ( насколько быстро отображается содержимое страницы ): чем меньше значение, тем лучше",
-    "eng": "",
-    "ua": ""
+    "ru": "**^^Speed Index^^** - индекс скорости загрузки страницы (насколько быстро отображается содержимое страницы): чем меньше значение, тем лучше",
+    "eng": "**^^Speed Index^^** – a measure of page loading speed (how quickly the page’s content is displayed): the lower the value, the better",
+    "ua": "**^^Speed Index^^** — індекс швидкості завантаження сторінки (наскільки швидко відображається вміст сторінки): чим менше значення, тим краще"
   },
   "p30": {
-    "ru": "**First CPU Idle** ( First Interactive ) - время первого простоя ЦП",
-    "eng": "",
-    "ua": ""
+    "ru": "**^^First CPU Idle^^** (**^^First Interactive^^**) - время первого простоя ЦП",
+    "eng": "**^^First CPU Idle^^** (**^^First Interactive^^**) – the time of the first CPU idle period",
+    "ua": "**^^First CPU Idle^^** (**^^First Interactive^^**) — час першого простою процесора"
   },
   "p31": {
     "ru": "минимальная интерактивность страницы, ",
-    "eng": "",
-    "ua": ""
+    "eng": "minimum page interactivity ",
+    "ua": "мінімальна інтерактивність сторінки,"
   },
   "p32": {
     "ru": "т.е. когда большая часть, но, возможно, еще не все элементы UI интерактивны, ",
-    "eng": "",
-    "ua": ""
+    "eng": "i.e. when most, but perhaps not yet all, UI elements are interactive ",
+    "ua": "тобто коли більша частина, але, можливо, ще не всі елементи інтерфейсу є інтерактивними, "
   },
   "p33": {
     "ru": "страница реагирует в среднем на большую часть пользовательского ввода в разумные сроки",
-    "eng": "",
-    "ua": ""
+    "eng": "the page responds, on average, to most user input within a reasonable timeframe",
+    "ua": "сторінка реагує в середньому на більшу частину користувацьких дій у розумні терміни"
   },
   "p34": {
-    "ru": "**Time to Interactive** - время до интерактивности ( сколько времени требуется странице, чтобы стать интерактивной )",
-    "eng": "",
-    "ua": ""
+    "ru": "**^^Time to Interactive^^** - время до интерактивности (сколько времени требуется странице, чтобы стать интерактивной)",
+    "eng": "**^^Time to Interactive^^** – time to interactivity (how long it takes for the page to become interactive)",
+    "ua": "**^^Time to Interactive^^** — час до досягнення інтерактивності (скільки часу потрібно сторінці, щоб стати інтерактивною)"
   },
   "p35": {
     "ru": "Это означает, что:",
-    "eng": "",
-    "ua": ""
+    "eng": "This means that:",
+    "ua": "Це означає, що:"
   },
   "p36": {
-    "ru": "• на странице отображен полезный контент ( First Contentful Paint );",
-    "eng": "",
-    "ua": ""
+    "ru": "• на странице отображен полезный контент (First Contentful Paint);",
+    "eng": "• useful content is displayed on the page (First Contentful Paint);",
+    "ua": "• на сторінці відображено корисний контент (First Contentful Paint);"
   },
   "p37": {
     "ru": "• для наиболее заметных элементов UI обработчики событий зарегистрированы;",
-    "eng": "",
-    "ua": ""
+    "eng": "• event handlers have been registered for the most prominent UI elements;",
+    "ua": "• для найбільш помітних елементів інтерфейсу зареєстровано обробники подій;"
   },
   "p38": {
     "ru": "• страница реагирует на действие пользователя в течение 50 миллисекунд",
-    "eng": "",
-    "ua": ""
+    "eng": "• the page responds to user input within 50 milliseconds",
+    "ua": "• сторінка реагує на дії користувача протягом 50 мілісекунд"
   },
   "p39": {
-    "ru": "**Max Potential First Input Delay** ( первая задержка ввода ) - время с момента, когда пользователь впервые взаимодействует со страницей",
-    "eng": "",
-    "ua": ""
+    "ru": "**^^Max Potential First Input Delay^^** (первая задержка ввода) - время с момента, когда пользователь впервые взаимодействует со страницей",
+    "eng": "**^^Max Potential First Input Delay^^** (first input delay) – the time from when the user first interacts with the page",
+    "ua": "**^^Max Potential First Input Delay^^** (перша затримка вводу) — час від моменту, коли користувач вперше взаємодіє з сторінкою"
   },
   "p40": {
     "ru": "(т.е. кликает ссылку, кнопку и т.п.), до момента, когда браузер сможет ответить на это действие",
-    "eng": "",
-    "ua": ""
+    "eng": "(i.e. clicks a link, button, etc.) until the browser is able to respond to that action",
+    "ua": "(тобто клікає на посилання, кнопку тощо), до моменту, коли браузер зможе відповісти на цю дію"
   },
   "p41": {
     "ru": "^^причиной задержки является то, что основной поток браузера может быть занят другой задачей^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^the delay is caused by the browser’s main thread potentially being occupied by another task^^",
+    "ua": "^^причиною затримки є те, що головний потік браузера може бути зайнятий іншою задачею^^"
   },
   "p42": {
-    "ru": "Вкладка **Performance** отображает временную шкалу записанного фрагмента работы приложения",
-    "eng": "",
-    "ua": ""
+    "ru": "Вкладка **^^Performance^^** отображает временную шкалу записанного фрагмента работы приложения",
+    "eng": "The **^^Performance^^** tab displays a timeline of the recorded application session",
+    "ua": "Вкладка **^^Performance^^** відображає часову шкалу записаного фрагмента роботи додатку"
   },
   "p43": {
     "ru": "Рассмотрим пример кода, производительность которого мы хотим протестировать:",
-    "eng": "",
-    "ua": ""
+    "eng": "Let’s look at an example of code whose performance we wish to test:",
+    "ua": "Розглянемо приклад коду, продуктивність якого ми хочемо протестувати:"
   },
   "p44": {
     "ru": "Нас интересует не только время выполнения функции **~⟦f0⟧~**, но и расход памяти",
-    "eng": "",
-    "ua": ""
+    "eng": "We are interested not only in the execution time of the function **~⟦f0⟧~**, but also in its memory usage",
+    "ua": "Нас цікавить не лише час виконання функції **~⟦f0⟧~**, а й витрати пам’яті"
   },
   "p45": {
     "ru": "Для этого добавим кнопку на страницу:",
-    "eng": "",
-    "ua": ""
+    "eng": "To do this, let’s add a button to the page:",
+    "ua": "Для цього додамо кнопку на сторінку:"
   },
   "p46": {
     "ru": "При клике на кнопке вызывается функция **~⟦f0⟧~**",
-    "eng": "",
-    "ua": ""
+    "eng": "Clicking the button calls the function **~⟦f0⟧~**",
+    "ua": "При натисканні на кнопку викликається функція **~⟦f0⟧~**"
   },
   "p47": {
-    "ru": "Вызов **~⟦f0⟧~** \"заворачивается в ~⟦f1⟧~/~⟦f2⟧~, что позволит нам получить грубую оценку времени выполнения функции",
-    "eng": "",
-    "ua": ""
+    "ru": "Вызов **~⟦f0⟧~** заворачивается в ~⟦f1⟧~/~⟦f2⟧~, что позволит нам получить грубую оценку времени выполнения функции",
+    "eng": "The call to **~⟦f0⟧~** is wrapped in ~⟦f1⟧~/~⟦f2⟧~, which will allow us to obtain a rough estimate of the function’s execution time",
+    "ua": "Виклик **~⟦f0⟧~** обгортається в ~⟦f1⟧~/~⟦f2⟧~, що дозволить нам отримати приблизну оцінку часу виконання функції"
   },
   "p48": {
     "ru": "Итак, производительность кода колеблется около пол-милисекунды",
-    "eng": "",
-    "ua": ""
+    "eng": "So, the code’s performance hovers around half a millisecond",
+    "ua": "Тож, продуктивність коду коливається навколо половини мілісекунди"
   },
   "p49": {
     "ru": "Воспользуемся дебаггером для оценки выделяемых ресурсов памяти",
-    "eng": "",
-    "ua": ""
+    "eng": "Let’s use the debugger to assess the memory resources allocated",
+    "ua": "Скористаємося дебаггером для оцінки виділених ресурсів пам’яті"
   },
   "p50": {
     "ru": "• Интерпретатор JavaScript динамически выделяет необходимую память при объявлении переменных",
-    "eng": "",
-    "ua": ""
+    "eng": "• The JavaScript interpreter dynamically allocates the necessary memory when variables are declared",
+    "ua": "• Інтерпретатор JavaScript динамічно виділяє необхідну пам’ять під час оголошення змінних"
   },
   "p51": {
     "ru": "• Вызовы некоторых функций также ведут к выделению памяти",
-    "eng": "",
-    "ua": ""
+    "eng": "• Calls to certain functions also result in memory allocation",
+    "ua": "• Виклики деяких функцій також призводять до виділення пам’яті"
   },
   "p52": {
     "ru": "• Некоторые методы выделяют память для новых значений или объектов",
-    "eng": "",
-    "ua": ""
+    "eng": "• Some methods allocate memory for new values or objects",
+    "ua": "• Деякі методи виділяють пам’ять для нових значень або об’єктів"
   },
   "p53": {
     "ru": "Благодаря дебаггеру мы можем убедиться, что у нашего кода расход памяти весьма незначительный:",
-    "eng": "",
-    "ua": ""
+    "eng": "Thanks to the debugger, we can see that our code’s memory usage is very negligible:",
+    "ua": "Завдяки дебаггеру ми можемо переконатися, що у нашого коду споживання пам’яті є досить незначним:"
   },
   "p54": {
-    "ru": "• код:                    127 килобайт",
-    "eng": "",
-    "ua": ""
+    "ru":  "• код:                    127 килобайт",
+    "eng": "• code:                   127 kilobytes",
+    "ua":  "• код:                    127 кілобайт"
   },
   "p55": {
-    "ru": "• строки:                 100 килобайт",
-    "eng": "",
-    "ua": ""
+    "ru":  "• строки:                 100 килобайт",
+    "eng": "• strings:                100 kilobytes",
+    "ua":  "• рядки:                  100 кілобайт"
   },
   "p56": {
-    "ru": "• массивы:                  2 килобайта",
-    "eng": "",
-    "ua": ""
+    "ru":  "• массивы:                  2 килобайта",
+    "eng": "• arrays:                   2 kilobytes",
+    "ua":  "• масиви:                   2 кілобайти"
   },
   "p57": {
-    "ru": "• типизированные массивы:   1 килобайт",
-    "eng": "",
-    "ua": ""
+    "ru":  "• типизированные массивы:   1 килобайт",
+    "eng": "• typed arrays:             1 kilobyte",
+    "ua":  "• типізовані масиви:        1 кілобайт"
   }
 }
