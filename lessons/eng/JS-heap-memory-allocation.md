@@ -39,6 +39,8 @@ Perform a few actions on the application page
 Stop recording (press the **^^Stop^^** button)
 You can now view the recorded profile, assess the performance of the application’s various modules (functions) and identify problematic sections of code
 
+![](illustrations/performance-main.png)
+
 The table with the **^^Self Time^^** and **^^Total Time^^** columns is at the bottom, on the **^^Bottom-Up^^** ( every function in a list, the most expensive first ) and **^^Call Tree^^** ( the same thing as a tree of calls ) tabs:
 
 ~~~console
