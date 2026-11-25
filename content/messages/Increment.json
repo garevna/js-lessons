@@ -1,82 +1,352 @@
 {
-  "p1": {
+  "increment": {
     "ru": "Инкремент",
-    "eng": "",
-    "ua": ""
+    "eng": "Increment",
+    "ua": "Інкремент"
   },
   "p2": {
-    "ru": "Инкремент - это увеличение значения числовой переменной на единицу",
-    "eng": "",
-    "ua": ""
+    "ru": "Инкремент - это увеличение значения числовой переменной на единицу.",
+    "eng": "An increment is an increase in the value of a numeric variable by one.",
+    "ua": "Інкремент — це збільшення значення числової змінної на одиницю."
   },
   "p3": {
-    "ru": "Пост-префиксная форма:   **~⟦f0⟧~**",
-    "eng": "",
-    "ua": ""
+    "ru": "Постфиксная форма: **~⟦f0⟧~**",
+    "eng": "Postfix form: **~⟦f0⟧~**",
+    "ua": "Постфіксна форма: **~⟦f0⟧~**"
   },
   "p4": {
-    "ru": "Префиксная форма:        **~⟦f1⟧~**",
-    "eng": "",
-    "ua": ""
+    "ru": "Префиксная форма: **~⟦f1⟧~**",
+    "eng": "Prefix form: **~⟦f1⟧~**",
+    "ua": "Префіксна форма: **~⟦f1⟧~**"
   },
   "p5": {
-    "ru": "Пост-префиксная форма означает, что переменная будет увеличена после операции, в которой она принимает участие",
-    "eng": "",
-    "ua": ""
+    "ru": "Постфиксная форма означает, что переменная будет увеличена после операции, в которой она принимает участие",
+    "eng": "The postfix form means that the variable will be incremented after the operation in which it is involved.",
+    "ua": "Постфіксна форма означає, що змінна буде збільшена після операції, в якій вона бере участь."
   },
   "p6": {
     "ru": "^^После операции:^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^After the operation:^^",
+    "ua": "^^Після операції:^^"
   },
   "p7": {
-    "ru": "^^значение переменной ** z** будет ~⟦f2⟧~,^^",
-    "eng": "",
-    "ua": ""
+    "ru": "^^значение переменной **z** будет ~⟦f2⟧~^^,",
+    "eng": "^^the value of the variable **z** will be ~⟦f2⟧~^^",
+    "ua": "^^значення змінної **z** буде ~⟦f2⟧~^^,"
   },
   "p8": {
-    "ru": "^^а значение переменной ** x** станет равным ~⟦f3⟧~^^",
-    "eng": "",
-    "ua": ""
+    "ru": "^^а значение переменной **x** станет равным ~⟦f3⟧~^^.",
+    "eng": "^^and the value of the variable **x** will be ~⟦f3⟧~^^.",
+    "ua": "^^а значення змінної **x** стане рівним ~⟦f3⟧~^^."
   },
   "p9": {
     "ru": "^^А вот после такой операции:^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^But after an operation like this:^^",
+    "ua": "^^А ось після такої операції:^^"
   },
   "p10": {
-    "ru": "^^сначала значение переменной ** x** станет ~⟦f4⟧~,^^",
-    "eng": "",
-    "ua": ""
+    "ru": "^^сначала значение переменной **x** станет ~⟦f4⟧~,^^",
+    "eng": "^^first, the value of the variable **x** will become ~⟦f4⟧~^^",
+    "ua": "^^спочатку значення змінної **x** стане ~⟦f4⟧~,^^"
   },
   "p11": {
-    "ru": "^^а затем будет вычислено значение переменной ** z**:  ~⟦f5⟧~^^",
-    "eng": "",
-    "ua": ""
+    "ru": "^^а затем будет вычислено значение переменной **z**: ~⟦f5⟧~^^.",
+    "eng": "^^and then the value of the variable **z** will be calculated: ~⟦f5⟧~^^.",
+    "ua": "^^а потім буде обчислено значення змінної **z**: ~⟦f5⟧~^^."
   },
   "p12": {
     "ru": "Декремент",
-    "eng": "",
-    "ua": ""
+    "eng": "Decrement",
+    "ua": "Декремент"
   },
   "p13": {
     "ru": "Все то же самое, только значение не увеличивается на 1, а уменьшается ![ico-25 smile]",
-    "eng": "",
-    "ua": ""
+    "eng": "It’s exactly the same, except that the value isn’t increased by 1, but decreased! [ico-25 smile]",
+    "ua": "Все те саме, тільки значення не збільшується на 1, а зменшується ![ico-25 smile]"
   },
   "p14": {
-    "ru": "^^сначала значение переменной ** y** станет ~⟦f6⟧~,^^",
-    "eng": "",
-    "ua": ""
+    "ru": "^^сначала значение переменной **y** станет ~⟦f6⟧~,^^",
+    "eng": "^^First, the value of the variable **y** will become ~⟦f6⟧~^^",
+    "ua": "^^спочатку значення змінної **y** стане ~⟦f6⟧~,^^"
   },
   "p15": {
-    "ru": "^^значение переменной ** x** станет ~⟦f4⟧~,^^",
-    "eng": "",
-    "ua": ""
+    "ru": "^^значение переменной **x** станет ~⟦f4⟧~^^,",
+    "eng": "^^the value of the variable **x** will become ~⟦f4⟧~^^",
+    "ua": "^^значення змінної **x** стане ~⟦f4⟧~^^,"
   },
   "p16": {
-    "ru": "^^а затем будет вычислено значение переменной ** z**:  ~⟦f7⟧~^^",
-    "eng": "",
-    "ua": ""
+    "ru": "^^а затем будет вычислено значение переменной **z**: ~⟦f7⟧~^^.",
+    "eng": "^^and then the value of the variable **z** will be calculated: ~⟦f7⟧~^^.",
+    "ua": "^^а потім буде обчислено значення змінної **z**: ~⟦f7⟧~^^."
+  },
+  "test01Question": {
+    "ru": "Чему будут равны **z** и **x** после **var x = 0, y = 2; var z = y + x++**?",
+    "eng": "What will **z** and **x** be after **var x = 0, y = 2; var z = y + x++**?",
+    "ua": "Чому дорівнюватимуть **z** і **x** після **var x = 0, y = 2; var z = y + x++**?"
+  },
+  "test01Variant1": {
+    "ru": "**z = 2**, **x = 1**",
+    "eng": "**z = 2**, **x = 1**",
+    "ua": "**z = 2**, **x = 1**"
+  },
+  "test01Variant1Answer": {
+    "ru": "Верно! В выражение **x** вошёл прежним значением — нулём, поэтому **z** равно двум. Увеличение произошло, но после: **x** стал единицей.",
+    "eng": "That’s right! **x** entered the expression with its old value, zero, so **z** is two. The increase did happen, but afterwards: **x** became one.",
+    "ua": "Правильно! У вираз **x** увійшов попереднім значенням — нулем, тому **z** дорівнює двом. Збільшення відбулося, але після: **x** став одиницею."
+  },
+  "test01Variant2": {
+    "ru": "**z = 3**, **x = 1**",
+    "eng": "**z = 3**, **x = 1**",
+    "ua": "**z = 3**, **x = 1**"
+  },
+  "test01Variant2Answer": {
+    "ru": "Неверно. Тройка получилась бы у префиксной формы — **y + ++x**: там **x** увеличивается до того, как войдёт в выражение.",
+    "eng": "Incorrect. Three is what the prefix form gives — **y + ++x**: there **x** is increased before it enters the expression.",
+    "ua": "Неправильно. Трійка вийшла б у префіксної форми — **y + ++x**: там **x** збільшується до того, як увійде у вираз."
+  },
+  "test01Variant3": {
+    "ru": "**z = 2**, **x = 0**",
+    "eng": "**z = 2**, **x = 0**",
+    "ua": "**z = 2**, **x = 0**"
+  },
+  "test01Variant3Answer": {
+    "ru": "Неверно. **z** посчитано правильно, но про **x** забыли: постфиксная форма тоже увеличивает переменную, просто позже.",
+    "eng": "Incorrect. **z** is right, but **x** has been forgotten: the postfix form increases the variable too, only later.",
+    "ua": "Неправильно. **z** пораховано правильно, але про **x** забули: постфіксна форма теж збільшує змінну, просто пізніше."
+  },
+  "test01Variant4": {
+    "ru": "**z = 3**, **x = 0**",
+    "eng": "**z = 3**, **x = 0**",
+    "ua": "**z = 3**, **x = 0**"
+  },
+  "test01Variant4Answer": {
+    "ru": "Неверно. Это обе ошибки сразу: значение в выражение вошло бы новым, а переменная осталась бы старой — так не бывает ни при одной из форм.",
+    "eng": "Incorrect. That is both mistakes at once: the new value in the expression and the old one in the variable — neither form does that.",
+    "ua": "Неправильно. Це обидві помилки одразу: значення у вираз увійшло б новим, а змінна лишилася б старою — так не буває за жодної з форм."
+  },
+  "test02Question": {
+    "ru": "Чем отличаются постфиксная **x++** и префиксная **++x** формы как выражения?",
+    "eng": "How do the postfix **x++** and the prefix **++x** differ as expressions?",
+    "ua": "Чим відрізняються постфіксна **x++** і префіксна **++x** форми як вирази?"
+  },
+  "test02Variant1": {
+    "ru": "Ничем: обе увеличивают **x** на единицу.",
+    "eng": "In no way: both increase **x** by one.",
+    "ua": "Нічим: обидві збільшують **x** на одиницю."
+  },
+  "test02Variant1Answer": {
+    "ru": "Неверно. Переменную они и правда увеличивают одинаково, но значение самого выражения у них разное — именно поэтому форма и имеет значение.",
+    "eng": "Incorrect. They do increase the variable in the same way, but the value of the expression itself differs — which is exactly why the form matters.",
+    "ua": "Неправильно. Змінну вони й справді збільшують однаково, але значення самого виразу в них різне — саме тому форма й має значення."
+  },
+  "test02Variant2": {
+    "ru": "**x++** возвращает прежнее значение, **++x** — уже увеличенное.",
+    "eng": "**x++** returns the old value, **++x** the increased one.",
+    "ua": "**x++** повертає попереднє значення, **++x** — уже збільшене."
+  },
+  "test02Variant2Answer": {
+    "ru": "Верно! Переменная в обоих случаях станет на единицу больше, а в выражение войдёт разное: прежнее значение у постфиксной формы и новое у префиксной. Там, где результат никуда не идёт — **for (let i = 0; i < 10; i++)** — разницы нет. То же и у декремента.",
+    "eng": "That’s right! The variable ends up one larger either way, but what goes into the expression differs: the old value with the postfix form, the new one with the prefix. Where the result goes nowhere — **for (let i = 0; i < 10; i++)** — there is no difference. Decrement works the same way.",
+    "ua": "Правильно! Змінна в обох випадках стане на одиницю більшою, а у вираз увійде різне: попереднє значення в постфіксної форми і нове в префіксної. Там, де результат нікуди не йде — **for (let i = 0; i < 10; i++)** — різниці немає. Те саме й у декремента."
+  },
+  "test02Variant3": {
+    "ru": "**++x** работает только с числами, **x++** — с любыми значениями.",
+    "eng": "**++x** works only with numbers, **x++** with any value.",
+    "ua": "**++x** працює лише з числами, **x++** — з будь-якими значеннями."
+  },
+  "test02Variant3Answer": {
+    "ru": "Неверно. Обе формы приводят операнд к числу одинаково: из строки **'5'** выйдет **6**, а из строки **'пять'** — **NaN**.",
+    "eng": "Incorrect. Both forms convert the operand to a number in the same way: the string **'5'** gives **6**, and the string **'five'** gives **NaN**.",
+    "ua": "Неправильно. Обидві форми приводять операнд до числа однаково: з рядка **'5'** вийде **6**, а з рядка **'п’ять'** — **NaN**."
+  },
+  "test02Variant4": {
+    "ru": "**x++** увеличивает на единицу, **++x** — на две.",
+    "eng": "**x++** adds one, **++x** adds two.",
+    "ua": "**x++** збільшує на одиницю, **++x** — на дві."
+  },
+  "test02Variant4Answer": {
+    "ru": "Неверно. Два плюса — это знак операции, а не её величина: обе формы прибавляют единицу.",
+    "eng": "Incorrect. The two plus signs are the name of the operation, not its size: both forms add one.",
+    "ua": "Неправильно. Два плюси — це знак операції, а не її величина: обидві форми додають одиницю."
+  },
+  "test03Question": {
+    "ru": "Чему будет равно **x** после **var x = 5; x = x++**?",
+    "eng": "What will **x** be after **var x = 5; x = x++**?",
+    "ua": "Чому дорівнюватиме **x** після **var x = 5; x = x++**?"
+  },
+  "test03Variant1": {
+    "ru": "**6**",
+    "eng": "**6**",
+    "ua": "**6**"
+  },
+  "test03Variant1Answer": {
+    "ru": "Неверно — и это самая частая ошибка с инкрементом. Увеличение происходит, но его результат тут же затирается присваиванием.",
+    "eng": "Incorrect — and this is the commonest mistake with increment. The increase does happen, but its result is overwritten by the assignment right away.",
+    "ua": "Неправильно — і це найчастіша помилка з інкрементом. Збільшення відбувається, але його результат одразу ж затирається присвоєнням."
+  },
+  "test03Variant2": {
+    "ru": "**5**",
+    "eng": "**5**",
+    "ua": "**5**"
+  },
+  "test03Variant2Answer": {
+    "ru": "Верно! Справа стоит постфиксная форма, её значение — прежняя пятёрка. **x** успевает стать шестёркой, но тут же получает обратно пятёрку из присваивания. Чтобы увеличить, достаточно написать **x++** без присваивания.",
+    "eng": "That’s right! On the right is the postfix form, whose value is the old five. **x** does become six, and is immediately given five back by the assignment. To increase it, **x++** on its own is enough.",
+    "ua": "Правильно! Праворуч стоїть постфіксна форма, її значення — попередня п’ятірка. **x** встигає стати шісткою, але одразу ж отримує назад п’ятірку з присвоєння. Щоб збільшити, достатньо написати **x++** без присвоєння."
+  },
+  "test03Variant3": {
+    "ru": "**NaN**",
+    "eng": "**NaN**",
+    "ua": "**NaN**"
+  },
+  "test03Variant3Answer": {
+    "ru": "Неверно. **NaN** появился бы, если бы в **x** лежало что-то, не приводимое к числу; здесь это число.",
+    "eng": "Incorrect. **NaN** would appear if **x** held something that cannot be converted to a number; here it is a number.",
+    "ua": "Неправильно. **NaN** з’явився б, якби в **x** лежало щось, що не приводиться до числа; тут це число."
+  },
+  "test03Variant4": {
+    "ru": "Синтаксическая ошибка",
+    "eng": "A syntax error",
+    "ua": "Синтаксична помилка"
+  },
+  "test03Variant4Answer": {
+    "ru": "Неверно. Запись совершенно законная — тем она и опасна: ошибка не в синтаксисе, а в том, что результат пропадает молча.",
+    "eng": "Incorrect. The line is perfectly legal — which is what makes it dangerous: the mistake is not in the syntax but in the result quietly disappearing.",
+    "ua": "Неправильно. Запис цілком законний — тим він і небезпечний: помилка не в синтаксисі, а в тому, що результат зникає мовчки."
+  },
+  "test04Question": {
+    "ru": "Чему будут равны **z**, **y** и **x** после **var x = 0, y = 2; var z = --y + ++x**?",
+    "eng": "What will **z**, **y** and **x** be after **var x = 0, y = 2; var z = --y + ++x**?",
+    "ua": "Чому дорівнюватимуть **z**, **y** і **x** після **var x = 0, y = 2; var z = --y + ++x**?"
+  },
+  "test04Variant1": {
+    "ru": "**z = 2**, **y = 1**, **x = 1**",
+    "eng": "**z = 2**, **y = 1**, **x = 1**",
+    "ua": "**z = 2**, **y = 1**, **x = 1**"
+  },
+  "test04Variant1Answer": {
+    "ru": "Верно! Обе формы префиксные, поэтому обе переменные меняются до сложения: **y** становится единицей, **x** тоже, и в сумме выходит два.",
+    "eng": "That’s right! Both forms are prefix, so both variables change before the addition: **y** becomes one, **x** becomes one, and the sum is two.",
+    "ua": "Правильно! Обидві форми префіксні, тому обидві змінні змінюються до додавання: **y** стає одиницею, **x** теж, і в сумі виходить два."
+  },
+  "test04Variant2": {
+    "ru": "**z = 3**, **y = 1**, **x = 1**",
+    "eng": "**z = 3**, **y = 1**, **x = 1**",
+    "ua": "**z = 3**, **y = 1**, **x = 1**"
+  },
+  "test04Variant2Answer": {
+    "ru": "Неверно. Тройка вышла бы, если бы **y** вошёл в сумму прежней двойкой, то есть у постфиксной формы **y--**. Здесь форма префиксная.",
+    "eng": "Incorrect. Three would come out if **y** entered the sum as the old two — that is, with the postfix **y--**. Here the form is prefix.",
+    "ua": "Неправильно. Трійка вийшла б, якби **y** увійшов у суму попередньою двійкою, тобто в постфіксної форми **y--**. Тут форма префіксна."
+  },
+  "test04Variant3": {
+    "ru": "**z = 2**, **y = 2**, **x = 1**",
+    "eng": "**z = 2**, **y = 2**, **x = 1**",
+    "ua": "**z = 2**, **y = 2**, **x = 1**"
+  },
+  "test04Variant3Answer": {
+    "ru": "Неверно. Сумма посчитана правильно, но **y** не остался двойкой: декремент его уменьшил — иначе и слагаемого «один» бы не было.",
+    "eng": "Incorrect. The sum is right, but **y** did not stay two: the decrement reduced it — otherwise there would be no \"one\" to add.",
+    "ua": "Неправильно. Сума порахована правильно, але **y** не лишився двійкою: декремент його зменшив — інакше й доданка «один» не було б."
+  },
+  "test04Variant4": {
+    "ru": "**z = 1**, **y = 1**, **x = 0**",
+    "eng": "**z = 1**, **y = 1**, **x = 0**",
+    "ua": "**z = 1**, **y = 1**, **x = 0**"
+  },
+  "test04Variant4Answer": {
+    "ru": "Неверно. **x** увеличивается тоже — и до сложения: **++x** делает его единицей, и она идёт в сумму.",
+    "eng": "Incorrect. **x** is increased as well, and before the addition: **++x** makes it one, and that one goes into the sum.",
+    "ua": "Неправильно. **x** збільшується теж — і до додавання: **++x** робить його одиницею, і вона йде в суму."
+  },
+  "test05Question": {
+    "ru": "Чему будут равны **m** и **n** после **var n = 3; var m = n-- - --n**?",
+    "eng": "What will **m** and **n** be after **var n = 3; var m = n-- - --n**?",
+    "ua": "Чому дорівнюватимуть **m** і **n** після **var n = 3; var m = n-- - --n**?"
+  },
+  "test05Variant1": {
+    "ru": "**m = 2**, **n = 1**",
+    "eng": "**m = 2**, **n = 1**",
+    "ua": "**m = 2**, **n = 1**"
+  },
+  "test05Variant1Answer": {
+    "ru": "Верно! Слева направо: **n--** отдаёт в выражение тройку и делает **n** двойкой; затем **--n** делает **n** единицей и отдаёт единицу. Три минус один — два, а **n** остаётся единицей.",
+    "eng": "That’s right! Left to right: **n--** gives three to the expression and makes **n** two; then **--n** makes **n** one and gives one. Three minus one is two, and **n** stays one.",
+    "ua": "Правильно! Зліва направо: **n--** віддає у вираз трійку й робить **n** двійкою; потім **--n** робить **n** одиницею і віддає одиницю. Три мінус один — два, а **n** лишається одиницею."
+  },
+  "test05Variant2": {
+    "ru": "**m = 0**, **n = 1**",
+    "eng": "**m = 0**, **n = 1**",
+    "ua": "**m = 0**, **n = 1**"
+  },
+  "test05Variant2Answer": {
+    "ru": "Неверно. Ноль вышел бы, если бы оба слагаемых взяли одно и то же значение **n**. Но **n** меняется прямо посреди выражения: уменьшаемое — тройка, вычитаемое — единица.",
+    "eng": "Incorrect. Zero would come out if both terms took the same value of **n**. But **n** changes in the middle of the expression: three is reduced by one.",
+    "ua": "Неправильно. Нуль вийшов би, якби обидва доданки взяли одне й те саме значення **n**. Але **n** змінюється просто посеред виразу: зменшуване — трійка, від’ємник — одиниця."
+  },
+  "test05Variant3": {
+    "ru": "**m = 1**, **n = 1**",
+    "eng": "**m = 1**, **n = 1**",
+    "ua": "**m = 1**, **n = 1**"
+  },
+  "test05Variant3Answer": {
+    "ru": "Неверно. Единица вышла бы из **2 - 1** — то есть если бы **n--** отдал в выражение уже уменьшенное значение. Постфиксная форма отдаёт прежнее, тройку.",
+    "eng": "Incorrect. One would come from **2 - 1** — that is, if **n--** gave the already reduced value. The postfix form gives the old one, three.",
+    "ua": "Неправильно. Одиниця вийшла б із **2 - 1** — тобто якби **n--** віддав у вираз уже зменшене значення. Постфіксна форма віддає попереднє, трійку."
+  },
+  "test05Variant4": {
+    "ru": "**m = 2**, **n = 2**",
+    "eng": "**m = 2**, **n = 2**",
+    "ua": "**m = 2**, **n = 2**"
+  },
+  "test05Variant4Answer": {
+    "ru": "Неверно. Разность посчитана правильно, но **n** уменьшался дважды, а не один раз: с тройки до единицы.",
+    "eng": "Incorrect. The difference is right, but **n** was reduced twice, not once: from three to one.",
+    "ua": "Неправильно. Різниця порахована правильно, але **n** зменшувався двічі, а не один раз: із трійки до одиниці."
+  },
+  "test06Question": {
+    "ru": "Что окажется в **s** и какого типа после **var s = '5'; s++**?",
+    "eng": "What ends up in **s**, and of what type, after **var s = '5'; s++**?",
+    "ua": "Що опиниться в **s** і якого типу після **var s = '5'; s++**?"
+  },
+  "test06Variant1": {
+    "ru": "Строка **'6'**",
+    "eng": "The string **'6'**",
+    "ua": "Рядок **'6'**"
+  },
+  "test06Variant1Answer": {
+    "ru": "Неверно. Тип не сохраняется: инкремент — арифметическая операция, её результат всегда число.",
+    "eng": "Incorrect. The type is not kept: increment is arithmetic, and its result is always a number.",
+    "ua": "Неправильно. Тип не зберігається: інкремент — арифметична операція, її результат завжди число."
+  },
+  "test06Variant2": {
+    "ru": "Строка **'51'**",
+    "eng": "The string **'51'**",
+    "ua": "Рядок **'51'**"
+  },
+  "test06Variant2Answer": {
+    "ru": "Неверно. Склеивание даёт плюс между двумя значениями — **'5' + 1**. Инкремент к строке не приклеивает ничего, он приводит её к числу.",
+    "eng": "Incorrect. Concatenation is what a plus between two values does — **'5' + 1**. Increment glues nothing to a string; it converts it to a number.",
+    "ua": "Неправильно. Склеювання дає плюс між двома значеннями — **'5' + 1**. Інкремент до рядка не приклеює нічого, він приводить її до числа."
+  },
+  "test06Variant3": {
+    "ru": "Число **6**",
+    "eng": "The number **6**",
+    "ua": "Число **6**"
+  },
+  "test06Variant3Answer": {
+    "ru": "Верно! Инкремент сначала приводит операнд к числу, и **typeof s** после этого — **'number'**. Если привести не выйдет — **var s = 'пять'; s++** — получится **NaN**, тоже число. Декремент ведёт себя так же.",
+    "eng": "That’s right! Increment first converts the operand to a number, and **typeof s** afterwards is **'number'**. If the conversion fails — **var s = 'five'; s++** — the result is **NaN**, which is a number too. Decrement behaves the same way.",
+    "ua": "Правильно! Інкремент спершу приводить операнд до числа, і **typeof s** після цього — **'number'**. Якщо привести не вийде — **var s = 'п’ять'; s++** — вийде **NaN**, теж число. Декремент поводиться так само."
+  },
+  "test06Variant4": {
+    "ru": "**NaN**",
+    "eng": "**NaN**",
+    "ua": "**NaN**"
+  },
+  "test06Variant4Answer": {
+    "ru": "Неверно. **NaN** получился бы из строки, которую нельзя прочитать как число. Строка **'5'** читается прекрасно.",
+    "eng": "Incorrect. **NaN** would come from a string that cannot be read as a number. The string **'5'** reads perfectly well.",
+    "ua": "Неправильно. **NaN** вийшов би з рядка, який не можна прочитати як число. Рядок **'5'** читається чудово."
   }
 }
