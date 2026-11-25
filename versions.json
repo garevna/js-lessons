@@ -451,10 +451,10 @@
 	"ua/web-workers.md": "a64505e30fb3",
 	"ua/webpack.md": "2fbe94dcf8a7",
 	"ua/while.md": "a01e5531d883",
-	"index.js": "9aab0a41569a",
+	"index.js": "9dca766a2b7d",
 	"content.worker.js": "ae068b70e07e",
 	"icons.worker.js": "d4a4f4dfd9fa",
-	"main-menu.js": "46cd0128e0d5",
+	"main-menu.js": "78b674434528",
 	"donate.js": "66ce787810e8",
 	"registerServiceWorker.js": "ed71cdcea03a"
 }
