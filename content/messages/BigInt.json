@@ -59,52 +59,47 @@
     "eng": "whereas this type coercion:",
     "ua": "а ось таке приведення:"
   },
-  "p13": {
+  "arithmetic_operations": {
     "ru": "Арифметические операции",
     "eng": "Arithmetic operations",
     "ua": "Арифметичні операції"
   },
-  "p14": {
-    "ru": "Арифметические операции",
-    "eng": "",
-    "ua": ""
-  },
-  "p15": {
+  "arithmetic_operations_description_1": {
     "ru": "Арифметические операции с участием данных типа **~⟦f8⟧~** возможны только при условии, что оба операнда имеют тип данных **~⟦f8⟧~**",
     "eng": "Arithmetic operations involving data of type **~⟦f8⟧~** are only possible provided that both operands are of type **~⟦f8⟧~**",
     "ua": "Арифметичні операції з даними типу **~⟦f8⟧~** можливі лише за умови, що обидва операнди мають тип даних **~⟦f8⟧~**"
   },
-  "p16": {
-    "ru": "При попытке выполнить арифметическую операцию с операндами различного типа",
-    "eng": "When attempting to perform an arithmetic operation with operands of different types",
-    "ua": "При спробі виконати арифметичну операцію з операндами різного типу"
+  "arithmetic_operations_description_2": {
+    "ru": "При попытке выполнить арифметическую операцию с операндами различного типа будет сгенерировано исключение **^^TypeError^^**",
+    "eng": "When attempting to perform an arithmetic operation with operands of different types a **^^TypeError^^** will be raised",
+    "ua": "При спробі виконати арифметичну операцію з операндами різного типу буде згенеровано виняток **^^TypeError^^**"
   },
-  "p17": {
-    "ru": "При попытке применить функции библиотеки Math к данным типа **~⟦f8⟧~**",
-    "eng": "When attempting to apply functions from the Math library to data of type **~⟦f8⟧~**",
-    "ua": "При спробі застосувати функції бібліотеки Math до даних типу **~⟦f8⟧~**"
+  "math_1": {
+    "ru": "При попытке применить функции библиотеки Math к данным типа **~⟦f8⟧~** будет сгенерировано исключение **^^TypeError^^**.",
+    "eng": "When attempting to apply functions from the Math library to data of type **~⟦f8⟧~** a **^^TypeError^^** will be raised.",
+    "ua": "При спробі застосувати функції бібліотеки Math до даних типу **~⟦f8⟧~** буде згенеровано виняток **^^TypeError^^**."
   },
-  "p18": {
-    "ru": "Однако можно привести данное типа **~⟦f8⟧~** к обычному типу **~⟦f9⟧~**",
-    "eng": "However, it is possible to cast data of type **~⟦f8⟧~** to the standard type **~⟦f9⟧~**",
-    "ua": "Однак можна привести дані типу **~⟦f8⟧~** до звичайного типу **~⟦f9⟧~**"
+  "math_2": {
+    "ru": "Однако можно привести данное типа **~⟦f8⟧~** к обычному типу **~⟦f9⟧~**.",
+    "eng": "However, it is possible to cast data of type **~⟦f8⟧~** to the standard type **~⟦f9⟧~**.",
+    "ua": "Однак можна привести дані типу **~⟦f8⟧~** до звичайного типу **~⟦f9⟧~**."
   },
-  "p19": {
+  "to_string": {
     "ru": "При приведении к строке оба типа (**~⟦f8⟧~** и **~⟦f9⟧~**) будут возвращать одинаковый результат:",
     "eng": "When cast to a string, both types (**~⟦f8⟧~** and **~⟦f9⟧~**) will return the same result:",
     "ua": "При приведенні до рядка обидва типи (**~⟦f8⟧~** і **~⟦f9⟧~**) повертатимуть однаковий результат:"
   },
-  "p20": {
+  "array_indices": {
     "ru": "Данные типа **~⟦f8⟧~** можно использовать в качестве индексов элементов массива:",
     "eng": "Data of type **~⟦f8⟧~** can be used as indices for array elements:",
     "ua": "Дані типу **~⟦f8⟧~** можна використовувати як індекси елементів масиву:"
   },
-  "p21": {
+  "bitwize_1": {
     "ru": "Битовые операции",
     "eng": "Bitwise operations",
     "ua": "Бітові операції"
   },
-  "p22": {
+  "bitwize_2": {
     "ru": "Битовые операции работают с данными типа **~⟦f8⟧~** и возвращают результат типа **~⟦f8⟧~**:",
     "eng": "Bitwise operations operate on data of type **~⟦f8⟧~** and return a result of type **~⟦f8⟧~**:",
     "ua": "Бітові операції працюють з даними типу **~⟦f8⟧~** і повертають результат типу **~⟦f8⟧~**:"

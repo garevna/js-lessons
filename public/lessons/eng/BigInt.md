@@ -57,6 +57,10 @@ whereas this type coercion:
 < 1n
 > BigInt([])
 < 0n
+> BigInt([5])
+< 5n
+> BigInt([5, 8])
+! Uncaught SyntaxError: Cannot convert 5,8 to a BigInt
 > BigInt('45')
 < 45n
 > BigInt('45' + 11)
@@ -75,61 +79,62 @@ ___
 
 Arithmetic operations involving data of type **~bigint~** are only possible provided that both operands are of type **~bigint~**
 
-When attempting to perform an arithmetic operation with operands of different types
+When attempting to perform an arithmetic operation with operands of different types a **^^TypeError^^** will be raised
 
-~~~js
-bigNumber * 2
+~~~demo
+> bigNumber = 9007199254745994n
+< 9007199254745994n
+> bigNumber * 2
+! Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
 ~~~
 
-an exception will be thrown
+When attempting to apply functions from the Math library to data of type **~bigint~** a **^^TypeError^^** will be raised.
+However, it is possible to cast data of type **~bigint~** to the standard type **~number~**.
 
-![ico-20 err]
-
-~~~error
-    Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
-~~~
-
-When attempting to apply functions from the Math library to data of type **~bigint~**
-
-~~~js
-Math.sin(bigNumber)
-~~~
-
-an exception will be thrown
-
-![ico-20 err]
-
-~~~error
-    Uncaught TypeError: Cannot convert a BigInt value to a number
-~~~
-
-However, it is possible to cast data of type **~bigint~** to the standard type **~number~**
-
-~~~js
-Number(bigNumber) // 9007199254745994
+~~~demo
+> bigNumber = 9007199254745994n
+< 9007199254745994n
+> Math.sin(bigNumber)
+! Uncaught TypeError: Cannot convert a BigInt value to a number
+> Math.sin(Number(bigNumber))
+< -0.9996177925388726
 ~~~
 
 When cast to a string, both types (**~bigint~** and **~number~**) will return the same result:
 
-~~~js
-bigNumber = bigNumber * bigNumber // 81129638414696789717133459048036n
-bigNumber.toString() // "81129638414696789717133459048036"
-
-Number(bigNumber) // 8.112963841469679e+31
-bigNumber.toString() // "81129638414696789717133459048036"
+~~~demo
+> bigNumber = bigNumber * bigNumber
+< 81129638414696789717133459048036n
+> bigNumber.toString()
+< "81129638414696789717133459048036"
+> Number(bigNumber)
+< 8.112963841469679e+31
+> bigNumber.toString()
+< "81129638414696789717133459048036"
 ~~~
 
 Data of type **~bigint~** can be used as indices for array elements:
 
 ~~~js
-let bigArray = [
-  BigInt(Number.MAX_SAFE_INTEGER + 2),
-  BigInt(Number.MAX_SAFE_INTEGER + 3),
-  BigInt(Number.MAX_SAFE_INTEGER + 4),
-  BigInt(Number.MAX_SAFE_INTEGER + 5)
+var bigArray = [
+  BigInt(10),
+  15n,
+  BigInt(10) + 10n,
+  BigInt(Number.MAX_SAFE_INTEGER)
 ]
+~~~
 
-bigArray[BigInt(1)]  // 9007199254740994n
+~~~demo
+> var bigIndex = 1n
+< undefined
+> bigArray[bigIndex - 1n]
+< 10n
+> bigArray[bigIndex]
+< 15n
+> bigArray[bigIndex + 1n]
+< 20n
+> bigArray[bigIndex + 2n]
+< 9007199254740991n
 ~~~
 
 ___
@@ -138,9 +143,9 @@ ___
 
 Bitwise operations operate on data of type **~bigint~** and return a result of type **~bigint~**:
 
-~~~js
-bigArray[0] ^ bigArray[1]  // 2n
-
-bigArray[0] | bigArray[1]  // 9007199254740994n
-
+~~~demo
+> bigArray[0]^bigArray[1]
+< 2n
+> bigArray[0]|bigArray[1]
+< 9007199254740994n
 ~~~

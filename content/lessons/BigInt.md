@@ -57,6 +57,10 @@ ___
 < 1n
 > BigInt([])
 < 0n
+> BigInt([5])
+< 5n
+> BigInt([5, 8])
+! Uncaught SyntaxError: Cannot convert 5,8 to a BigInt
 > BigInt('45')
 < 45n
 > BigInt('45' + 11)
@@ -71,76 +75,77 @@ ___
 
 ___
 
-### ![ico-20 icon] {{p13}}
+### ![ico-20 icon] {{arithmetic_operations}}
 
-{{p15}}
+{{arithmetic_operations_description_1}}
 
-{{p16}}
+{{arithmetic_operations_description_2}}
+
+~~~demo
+> bigNumber = 9007199254745994n
+< 9007199254745994n
+> bigNumber * 2
+! Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
+~~~
+
+{{math_1}}
+{{math_2}}
+
+~~~demo
+> bigNumber = 9007199254745994n
+< 9007199254745994n
+> Math.sin(bigNumber)
+! Uncaught TypeError: Cannot convert a BigInt value to a number
+> Math.sin(Number(bigNumber))
+< -0.9996177925388726
+~~~
+
+{{to_string}}
+
+~~~demo
+> bigNumber = bigNumber * bigNumber
+< 81129638414696789717133459048036n
+> bigNumber.toString()
+< "81129638414696789717133459048036"
+> Number(bigNumber)
+< 8.112963841469679e+31
+> bigNumber.toString()
+< "81129638414696789717133459048036"
+~~~
+
+{{array_indices}}
 
 ~~~js
-bigNumber * 2
-~~~
-
-{{common.exception}}
-
-![ico-20 err]
-
-~~~error
-    Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
-~~~
-
-{{p17}}
-
-~~~js
-Math.sin(bigNumber)
-~~~
-
-{{common.exception}}
-
-![ico-20 err]
-
-~~~error
-    Uncaught TypeError: Cannot convert a BigInt value to a number
-~~~
-
-{{p18}}
-
-~~~js
-Number(bigNumber) // 9007199254745994
-~~~
-
-{{p19}}
-
-~~~js
-bigNumber = bigNumber * bigNumber // 81129638414696789717133459048036n
-bigNumber.toString() // "81129638414696789717133459048036"
-
-Number(bigNumber) // 8.112963841469679e+31
-bigNumber.toString() // "81129638414696789717133459048036"
-~~~
-
-{{p20}}
-
-~~~js
-let bigArray = [
-  BigInt(Number.MAX_SAFE_INTEGER + 2),
-  BigInt(Number.MAX_SAFE_INTEGER + 3),
-  BigInt(Number.MAX_SAFE_INTEGER + 4),
-  BigInt(Number.MAX_SAFE_INTEGER + 5)
+var bigArray = [
+  BigInt(10),
+  15n,
+  BigInt(10) + 10n,
+  BigInt(Number.MAX_SAFE_INTEGER)
 ]
+~~~
 
-bigArray[BigInt(1)]  // 9007199254740994n
+~~~demo
+> var bigIndex = 1n
+< undefined
+> bigArray[bigIndex - 1n]
+< 10n
+> bigArray[bigIndex]
+< 15n
+> bigArray[bigIndex + 1n]
+< 20n
+> bigArray[bigIndex + 2n]
+< 9007199254740991n
 ~~~
 
 ___
 
-### ![ico-20 icon] {{p21}}
+### ![ico-20 icon] {{bitwize_1}}
 
-{{p22}}
+{{bitwize_2}}
 
-~~~js
-bigArray[0] ^ bigArray[1]  // 2n
-
-bigArray[0] | bigArray[1]  // 9007199254740994n
-
+~~~demo
+> bigArray[0]^bigArray[1]
+< 2n
+> bigArray[0]|bigArray[1]
+< 9007199254740994n
 ~~~
