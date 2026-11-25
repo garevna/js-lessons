@@ -96,14 +96,14 @@ DevTools показує список категорій перевірки
 
 ![](illustrations/performance.png)
 
-[%%%Accessibility%%%](https://developers.google.com/web/fundamentals/accessibility/?utm_source=lighthouse&utm_medium=devtools)
+[%%%Accessibility%%%](https://web.dev/accessibility)
 
 _____________________________________________________________
 
 ## ![ico-25 icon] Memory⟪Memory⟫
 
-[%%%How to Record Heap Snapshots%%%](https://developers.google.com/web/tools/chrome-devtools/memory-problems/heap-snapshots)
-[%%%Fix Memory Problems%%%](https://developers.google.com/web/tools/chrome-devtools/memory-problems/)
+[%%%Record heap snapshots%%%](https://developer.chrome.com/docs/devtools/memory-problems/heap-snapshots)
+[%%%Fix memory problems%%%](https://developer.chrome.com/docs/devtools/memory-problems/)
 
 Розглянемо приклад коду, продуктивність якого ми хочемо протестувати:
 
