@@ -103,5 +103,230 @@
     "ru": "Битовые операции работают с данными типа **~⟦f8⟧~** и возвращают результат типа **~⟦f8⟧~**:",
     "eng": "Bitwise operations operate on data of type **~⟦f8⟧~** and return a result of type **~⟦f8⟧~**:",
     "ua": "Бітові операції працюють з даними типу **~⟦f8⟧~** і повертають результат типу **~⟦f8⟧~**:"
+  },
+  "test01Question": {
+    "ru": "Что вернёт **typeof 10n**?",
+    "eng": "What does **typeof 10n** return?",
+    "ua": "Що поверне **typeof 10n**?"
+  },
+  "test01Variant1": {
+    "ru": "**'number'**",
+    "eng": "**'number'**",
+    "ua": "**'number'**"
+  },
+  "test01Variant1Answer": {
+    "ru": "Неверно. **BigInt** — это отдельный примитивный тип, а не разновидность **number**. Именно поэтому их и нельзя смешивать в одном выражении.",
+    "eng": "Incorrect. **BigInt** is a primitive type of its own, not a kind of **number**. That is exactly why the two cannot be mixed in one expression.",
+    "ua": "Неправильно. **BigInt** — це окремий примітивний тип, а не різновид **number**. Саме тому їх і не можна змішувати в одному виразі."
+  },
+  "test01Variant2": {
+    "ru": "**'bigint'**",
+    "eng": "**'bigint'**",
+    "ua": "**'bigint'**"
+  },
+  "test01Variant2Answer": {
+    "ru": "Верно! С маленькой буквы, как и у остальных примитивов: **typeof** возвращает **'bigint'**. Суффикс **n** в конце литерала — это и есть объявление значения этого типа.",
+    "eng": "That’s right! In lower case, like the other primitives: **typeof** returns **'bigint'**. The **n** suffix at the end of the literal is what declares a value of this type.",
+    "ua": "Правильно! З маленької літери, як і в інших примітивів: **typeof** повертає **'bigint'**. Суфікс **n** наприкінці літерала — це і є оголошення значення цього типу."
+  },
+  "test01Variant3": {
+    "ru": "**'object'**",
+    "eng": "**'object'**",
+    "ua": "**'object'**"
+  },
+  "test01Variant3Answer": {
+    "ru": "Неверно. **BigInt** — примитив, а не объект. Объектом он становится только на время вызова метода, как строка или число.",
+    "eng": "Incorrect. **BigInt** is a primitive, not an object. It is wrapped in an object only for the duration of a method call, as a string or a number is.",
+    "ua": "Неправильно. **BigInt** — примітив, а не об’єкт. Об’єктом він стає лише на час виклику методу, як рядок чи число."
+  },
+  "test01Variant4": {
+    "ru": "**'BigInt'**",
+    "eng": "**'BigInt'**",
+    "ua": "**'BigInt'**"
+  },
+  "test01Variant4Answer": {
+    "ru": "Неверно. **typeof** всегда отвечает строкой в нижнем регистре: **'bigint'**. С большой буквы пишется конструктор **BigInt()**.",
+    "eng": "Incorrect. **typeof** always answers with a lower-case string: **'bigint'**. The capital letter belongs to the **BigInt()** constructor.",
+    "ua": "Неправильно. **typeof** завжди відповідає рядком у нижньому регістрі: **'bigint'**. З великої літери пишеться конструктор **BigInt()**."
+  },
+  "test02Question": {
+    "ru": "Чем закончится **10n + 5**?",
+    "eng": "What happens with **10n + 5**?",
+    "ua": "Чим закінчиться **10n + 5**?"
+  },
+  "test02Variant1": {
+    "ru": "**15n**",
+    "eng": "**15n**",
+    "ua": "**15n**"
+  },
+  "test02Variant1Answer": {
+    "ru": "Неверно. Движок не приводит **number** к **BigInt** сам: за него это должны сделать вы — **10n + BigInt(5)**.",
+    "eng": "Incorrect. The engine does not convert **number** to **BigInt** by itself: you have to do it — **10n + BigInt(5)**.",
+    "ua": "Неправильно. Рушій не приводить **number** до **BigInt** сам: за нього це маєте зробити ви — **10n + BigInt(5)**."
+  },
+  "test02Variant2": {
+    "ru": "**15**",
+    "eng": "**15**",
+    "ua": "**15**"
+  },
+  "test02Variant2Answer": {
+    "ru": "Неверно. Приведения к **number** тоже не произойдёт — и к лучшему: именно ради точности, которой у **number** нет, **BigInt** и существует.",
+    "eng": "Incorrect. There is no conversion to **number** either — and just as well: **BigInt** exists for the precision that **number** does not have.",
+    "ua": "Неправильно. Приведення до **number** теж не станеться — і на краще: саме заради точності, якої в **number** немає, **BigInt** й існує."
+  },
+  "test02Variant3": {
+    "ru": "Ошибка **TypeError**",
+    "eng": "A **TypeError**",
+    "ua": "Помилка **TypeError**"
+  },
+  "test02Variant3Answer": {
+    "ru": "Верно! **Cannot mix BigInt and other types, use explicit conversions.** Смешивать типы в арифметике запрещено, и преобразование нужно написать явно.",
+    "eng": "That’s right! **Cannot mix BigInt and other types, use explicit conversions.** Mixing the types in arithmetic is forbidden, and the conversion has to be written out.",
+    "ua": "Правильно! **Cannot mix BigInt and other types, use explicit conversions.** Змішувати типи в арифметиці заборонено, і перетворення треба написати явно."
+  },
+  "test02Variant4": {
+    "ru": "Строка **'105'**",
+    "eng": "The string **'105'**",
+    "ua": "Рядок **'105'**"
+  },
+  "test02Variant4Answer": {
+    "ru": "Неверно. Склеивание получилось бы со строкой — **10n + '5'** даёт **'105'**. С числом не выйдет ни сложения, ни склеивания.",
+    "eng": "Incorrect. Concatenation happens with a string — **10n + '5'** gives **'105'**. With a number there is neither addition nor concatenation.",
+    "ua": "Неправильно. Склеювання вийшло б із рядком — **10n + '5'** дає **'105'**. З числом не буде ні додавання, ні склеювання."
+  },
+  "test03Question": {
+    "ru": "Что вернут **10n == 10** и **10n === 10**?",
+    "eng": "What do **10n == 10** and **10n === 10** return?",
+    "ua": "Що повернуть **10n == 10** і **10n === 10**?"
+  },
+  "test03Variant1": {
+    "ru": "Оба **true**",
+    "eng": "Both **true**",
+    "ua": "Обидва **true**"
+  },
+  "test03Variant1Answer": {
+    "ru": "Неверно. Строгое сравнение сначала смотрит на тип, а типы здесь разные — **bigint** и **number**.",
+    "eng": "Incorrect. Strict comparison looks at the type first, and the types differ here — **bigint** and **number**.",
+    "ua": "Неправильно. Строге порівняння спершу дивиться на тип, а типи тут різні — **bigint** і **number**."
+  },
+  "test03Variant2": {
+    "ru": "**true** и **false**",
+    "eng": "**true** and **false**",
+    "ua": "**true** і **false**"
+  },
+  "test03Variant2Answer": {
+    "ru": "Верно! Нестрогое сравнение сравнивает математические значения и говорит **true**, строгое смотрит ещё и на тип — и говорит **false**. Арифметику смешивать нельзя, а сравнивать можно.",
+    "eng": "That’s right! Loose comparison compares the mathematical values and says **true**; strict comparison also looks at the type and says **false**. Arithmetic may not be mixed, but comparison may.",
+    "ua": "Правильно! Нестроге порівняння порівнює математичні значення і каже **true**, строге дивиться ще й на тип — і каже **false**. Арифметику змішувати не можна, а порівнювати можна."
+  },
+  "test03Variant3": {
+    "ru": "Оба **false**",
+    "eng": "Both **false**",
+    "ua": "Обидва **false**"
+  },
+  "test03Variant3Answer": {
+    "ru": "Неверно. Нестрогое сравнение как раз для того и существует, чтобы сравнить значения разных типов: **10n == 10** даёт **true**.",
+    "eng": "Incorrect. Loose comparison exists precisely to compare values of different types: **10n == 10** gives **true**.",
+    "ua": "Неправильно. Нестроге порівняння саме для того й існує, щоб порівняти значення різних типів: **10n == 10** дає **true**."
+  },
+  "test03Variant4": {
+    "ru": "Ошибка **TypeError**",
+    "eng": "A **TypeError**",
+    "ua": "Помилка **TypeError**"
+  },
+  "test03Variant4Answer": {
+    "ru": "Неверно. **TypeError** бросает арифметика со смешанными типами, а сравнение работает спокойно.",
+    "eng": "Incorrect. The **TypeError** comes from arithmetic on mixed types; comparison works quite happily.",
+    "ua": "Неправильно. **TypeError** кидає арифметика зі змішаними типами, а порівняння працює спокійно."
+  },
+  "test04Question": {
+    "ru": "Что будет при вызове **BigInt(2.5)**?",
+    "eng": "What happens when **BigInt(2.5)** is called?",
+    "ua": "Що буде під час виклику **BigInt(2.5)**?"
+  },
+  "test04Variant1": {
+    "ru": "**2n** — дробная часть отбрасывается",
+    "eng": "**2n** — the fractional part is dropped",
+    "ua": "**2n** — дробова частина відкидається"
+  },
+  "test04Variant1Answer": {
+    "ru": "Неверно. Молча округлять конструктор не станет: число, которое не является целым, он отказывается преобразовывать вовсе.",
+    "eng": "Incorrect. The constructor will not round silently: a number that is not an integer it refuses to convert at all.",
+    "ua": "Неправильно. Мовчки округлювати конструктор не стане: число, яке не є цілим, він відмовляється перетворювати взагалі."
+  },
+  "test04Variant2": {
+    "ru": "**3n** — по правилам округления",
+    "eng": "**3n** — rounded as usual",
+    "ua": "**3n** — за правилами округлення"
+  },
+  "test04Variant2Answer": {
+    "ru": "Неверно. Никакого округления не происходит — будет ошибка.",
+    "eng": "Incorrect. No rounding takes place — there will be an error.",
+    "ua": "Неправильно. Жодного округлення не відбувається — буде помилка."
+  },
+  "test04Variant3": {
+    "ru": "Ошибка **RangeError**",
+    "eng": "A **RangeError**",
+    "ua": "Помилка **RangeError**"
+  },
+  "test04Variant3Answer": {
+    "ru": "Верно! **The number 2.5 cannot be converted to a BigInt because it is not an integer.** Так же конструктор отвечает на **Infinity** и **NaN**. Если дробную часть нужно отбросить, это делают до вызова: **BigInt(Math.trunc(2.5))**.",
+    "eng": "That’s right! **The number 2.5 cannot be converted to a BigInt because it is not an integer.** The constructor answers **Infinity** and **NaN** the same way. If the fractional part is to go, it goes before the call: **BigInt(Math.trunc(2.5))**.",
+    "ua": "Правильно! **The number 2.5 cannot be converted to a BigInt because it is not an integer.** Так само конструктор відповідає на **Infinity** і **NaN**. Якщо дробову частину треба відкинути, це роблять до виклику: **BigInt(Math.trunc(2.5))**."
+  },
+  "test04Variant4": {
+    "ru": "Ошибка **SyntaxError**",
+    "eng": "A **SyntaxError**",
+    "ua": "Помилка **SyntaxError**"
+  },
+  "test04Variant4Answer": {
+    "ru": "Неверно. **SyntaxError** конструктор бросает на строку, которую не может прочитать как число — **BigInt('45 + 8')**. Здесь число читается, но оно не целое, и это **RangeError**.",
+    "eng": "Incorrect. The constructor throws a **SyntaxError** at a string it cannot read as a number — **BigInt('45 + 8')**. Here the number reads fine but is not an integer, and that is a **RangeError**.",
+    "ua": "Неправильно. **SyntaxError** конструктор кидає на рядок, який не може прочитати як число — **BigInt('45 + 8')**. Тут число читається, але воно не ціле, і це **RangeError**."
+  },
+  "test05Question": {
+    "ru": "Чему равно **7n / 2n**?",
+    "eng": "What is **7n / 2n**?",
+    "ua": "Чому дорівнює **7n / 2n**?"
+  },
+  "test05Variant1": {
+    "ru": "**3.5**",
+    "eng": "**3.5**",
+    "ua": "**3.5**"
+  },
+  "test05Variant1Answer": {
+    "ru": "Неверно. Результат деления двух **BigInt** — тоже **BigInt**, а дробных значений этот тип не хранит вовсе.",
+    "eng": "Incorrect. Dividing two **BigInt** values gives a **BigInt**, and this type holds no fractions at all.",
+    "ua": "Неправильно. Результат ділення двох **BigInt** — теж **BigInt**, а дробових значень цей тип не зберігає взагалі."
+  },
+  "test05Variant2": {
+    "ru": "**3.5n**",
+    "eng": "**3.5n**",
+    "ua": "**3.5n**"
+  },
+  "test05Variant2Answer": {
+    "ru": "Неверно. Такого значения не существует: **BigInt** — это целые числа, и литерал **3.5n** не читается даже синтаксически.",
+    "eng": "Incorrect. There is no such value: **BigInt** is whole numbers, and the literal **3.5n** does not even parse.",
+    "ua": "Неправильно. Такого значення не існує: **BigInt** — це цілі числа, і літерал **3.5n** не читається навіть синтаксично."
+  },
+  "test05Variant3": {
+    "ru": "**3n**",
+    "eng": "**3n**",
+    "ua": "**3n**"
+  },
+  "test05Variant3Answer": {
+    "ru": "Верно! Деление целочисленное: остаток отбрасывается, а не округляется, — **7n / 2n** даёт **3n**, и **-7n / 2n** даёт **-3n**. Остаток, если он нужен, берут отдельно: **7n % 2n** — это **1n**.",
+    "eng": "That’s right! The division is integer division: the remainder is dropped, not rounded — **7n / 2n** gives **3n**, and **-7n / 2n** gives **-3n**. The remainder, if wanted, is taken separately: **7n % 2n** is **1n**.",
+    "ua": "Правильно! Ділення цілочислове: залишок відкидається, а не округлюється, — **7n / 2n** дає **3n**, і **-7n / 2n** дає **-3n**. Залишок, якщо він потрібен, беруть окремо: **7n % 2n** — це **1n**."
+  },
+  "test05Variant4": {
+    "ru": "**4n**",
+    "eng": "**4n**",
+    "ua": "**4n**"
+  },
+  "test05Variant4Answer": {
+    "ru": "Неверно. Округления вверх не происходит: дробная часть просто отбрасывается, и получается **3n**.",
+    "eng": "Incorrect. There is no rounding up: the fractional part is simply dropped, which gives **3n**.",
+    "ua": "Неправильно. Округлення вгору не відбувається: дробова частина просто відкидається, і виходить **3n**."
   }
 }
