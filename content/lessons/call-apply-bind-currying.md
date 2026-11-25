@@ -1,14 +1,14 @@
-# ![ico-30 study] {{p1}}
+# ![ico-30 study] {{carrying}}
 
-☼☼☼ {{p2}} ☼☼☼
+☼☼☼ {{fp}} ☼☼☼
 
-____________________________________________
+___
 
 ## ![ico-25 icon] Currying
 
-{{p3}}
+••{{description_1}}••
 
-![ico-25 cap] ** 1**
+◘◘![ico-25 cap] **1**◘◘
 
 ~~~js
 function reminder (arg) {
@@ -17,9 +17,10 @@ function reminder (arg) {
     : Array.from(arguments)
 }
 ~~~
-{{p4}}
-{{p5}}
-{{p6}}
+
+{{description_2}}
+{{description_3}}
+{{description_4}}
 
 ~~~js
 function sample () {
@@ -39,45 +40,45 @@ alpha,betta
 alpha,betta,delta
 ~~~
 
-{{p7}}
-{{p8}}
+{{example_1_1}}
+{{example_1_2}}
 
-{{p9}}
-{{p10}}
+{{example_1_3}}
+{{example_1_4}}
 
-{{p11}}
+{{example_1_5}}
 
 ~~~js
 alpha('sigma', 'omega')
 ~~~
 
-{{p12}}
+{{example_1_6}}
 
 ~~~console
 alpha,sigma,omega
 ~~~
 
-{{p13}}
-{{p14}}
-{{p15}}
+{{example_1_7}}
+{{example_1_8}}
+{{example_1_9}}
 
 ~~~js
 betta('figure', 'smile')
 ~~~
 
-{{p16}}
+{{example_1_10}}
 
 ~~~console
 alpha,betta,figure,smile
 ~~~
 
-{{p17}}
+{{example_1_11}}
 
-{{p18}}
+{{example_1_12}}
 
-_______________________________________________________
+___
 
-◘◘![ico-25 cap] **11**◘◘
+◘◘![ico-25 cap] **2**◘◘
 
 ~~~js
 function currying (first, second) {
@@ -97,9 +98,9 @@ var curried = currying('Google')
 console.log(curried)
 ~~~
 
-{{p19}}
-{{p20}}
-{{p21}}
+{{example_2_1}}
+{{example_2_2}}
+{{example_2_3}}
 
 ~~~console
 ƒ ( second ) {
@@ -108,23 +109,23 @@ console.log(curried)
 }
 ~~~
 
-{{p22}}
+{{example_2_4}}
 
 ~~~js
 curried()  // null
 ~~~
 
-{{p23}}
+{{example_2_5}}
 
 ~~~js
 curried('Mozilla')   // ► (2) ["Google", "Mozilla"]
 ~~~
 
-____________________
+___
 
-{{p24}}
+{{example_3_1}}
 
-◘◘![ico-25 cap] **12**◘◘
+◘◘![ico-25 cap] **3**◘◘
 
 ~~~js
 var test = function (args) {
@@ -132,7 +133,7 @@ var test = function (args) {
 }
 
 function func () {
-  console.log (`Функция func вызвана в контексте объекта ${this.name} c аргументами ${this.test( arguments )}`)
+  console.log (`{{example_3_console}} ${this.name} {{example_3_arguments}} ${this.test( arguments )}`)
 }
 
 var figure = { name: 'figure', test: test }
@@ -140,24 +141,20 @@ var figure = { name: 'figure', test: test }
 var circleFunc = func.bind(figure, 'circle')
 var rectFunc = func.bind(figure, 'rect')
 var lineFunc = func.bind(figure, 'line')
-
-circleFunc(100, 120, 80)
-rectFunc(50, 50, 150, 150)
-lineFunc(20, 30, 200, 200)
 ~~~
 
-~~~console
-Функция func вызвана в контексте объекта figure
-     c аргументами circle,100,120,80
-Функция func вызвана в контексте объекта figure
-     c аргументами rect,50,50,150,150
-Функция func вызвана в контексте объекта figure
-     c аргументами line,20,30,200,200
+~~~demo
+> circleFunc(100, 120, 80)
+< {{example_3_console}} figure {{example_3_arguments}} circle,100,120,80
+> rectFunc(50, 50, 150, 150)
+< {{example_3_console}} figure {{example_3_arguments}} rect,50,50,150,150
+> lineFunc(20, 30, 200, 200)
+< {{example_3_console}} figure {{example_3_arguments}} line,20,30,200,200
 ~~~
 
-_____________________________
+___
 
-◘◘![ico-25 cap] **13**◘◘
+◘◘![ico-25 cap] **4**◘◘
 
 ~~~js
 function sample (first, second, third) {
@@ -172,21 +169,20 @@ function sample (first, second, third) {
 }
 
 var test = sample('Google', 'Mozilla', 'Safari')
-
-console.log(test[0]('IE'))
-console.log(test[1]('IE'))
-console.log(test[2]('IE'))
 ~~~
 
-~~~console
-► (2) ["Google", "IE"]
-► (3) ["Google", "Mozilla", "IE"]
-► (4) ["Google", "Mozilla", "Safari", "IE"]
+~~~demo
+> test[0]('IE')
+< ► (2) ["Google", "IE"]
+> test[1]('IE')
+< ► (3) ["Google", "Mozilla", "IE"]
+> test[2]('IE')
+< ► (4) ["Google", "Mozilla", "Safari", "IE"]
 ~~~
 
-_____________________________________
+___
 
-◘◘![ico-25 cap] **14**◘◘
+◘◘![ico-25 cap] **5**◘◘
 
 ~~~js
 function sample (first, second, third) {
@@ -210,9 +206,9 @@ for (var num of [0, 1, 2]) console.log(test[num]('IE'))
 ► (4) ["Google", "Mozilla", "Safari", "IE"]
 ~~~
 
-_____________________________________
+___
 
-◘◘![ico-25 cap] **15**◘◘
+◘◘![ico-25 cap] **6**◘◘
 
 ~~~js
 function func () {
@@ -238,9 +234,9 @@ function func () {
 512
 ~~~
 
-_____________________________________
+___
 
-◘◘![ico-25 cap] **16**◘◘
+◘◘![ico-25 cap] **7**◘◘
 
 ~~~js
 function func () {
@@ -252,26 +248,25 @@ function func () {
   this.log.push(arguments[0])
   return this.bind(this, arguments[0] * 2)
 }
-
-func()()()()()()()()()()()
 ~~~
 
-~~~console
-► []
-► [1]
-► (2) [1, 2]
-► (3) [1, 2, 4]
-► (4) [1, 2, 4, 8]
-► (5) [1, 2, 4, 8, 16]
-► (6) [1, 2, 4, 8, 16, 32]
-► (7) [1, 2, 4, 8, 16, 32, 64]
-► (8) [1, 2, 4, 8, 16, 32, 64, 128]
-► (9) [1, 2, 4, 8, 16, 32, 64, 128, 256]
+~~~demo
+> func()()()()()()()()()()()
+< ► []
+< ► [1]
+< ► (2) [1, 2]
+< ► (3) [1, 2, 4]
+< ► (4) [1, 2, 4, 8]
+< ► (5) [1, 2, 4, 8, 16]
+< ► (6) [1, 2, 4, 8, 16, 32]
+< ► (7) [1, 2, 4, 8, 16, 32, 64]
+< ► (8) [1, 2, 4, 8, 16, 32, 64, 128]
+< ► (9) [1, 2, 4, 8, 16, 32, 64, 128, 256]
 ~~~
 
-_____________________________________
+___
 
-◘◘![ico-25 cap] **17**◘◘
+◘◘![ico-25 cap] **8**◘◘
 
 ~~~js
 function test () {
@@ -284,11 +279,12 @@ test = test.bind(test, 1)
 
 console.log(test ()()()()()().result)  // 64
 ~~~
-_________________________________________
 
-## ![ico-25 smile] {{p25}}
+___
 
-{{p26}}
+## ![ico-25 smile] {{test}}
+
+{{question}}
 
 ~~~js
 var sample = function () {
@@ -302,6 +298,6 @@ sample = sample.getSelf
 sample()
 ~~~
 
-_________________________
+____
 
 ※※※tests ⟦f1⟧※※※

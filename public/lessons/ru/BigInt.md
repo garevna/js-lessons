@@ -2,15 +2,15 @@
 
 **ES10 (2019)**
 
-**~BigInt~** - новый тип данных (числа произвольной точности)
+**~BigInt~** - новый тип данных (числа произвольной точности).
 
-Ранее максимально возможным числом было **~Number.MAX_SAFE_INTEGER~** (2**53, или ~9007199254740992~)
+Ранее максимально возможным числом было **~Number.MAX_SAFE_INTEGER~** (~2**53~, или ~9007199254740992~).
 
-Теперь это ограничение снято
+Теперь это ограничение снято.
 
-__________________________________________________________
+___
 
-### ![ico-20 icon] Создание BigInt⟪sozdanye_BigInt⟫
+### ![ico-20 icon] Создание BigInt⟪Creating_a_BigInt⟫
 
 Для создания числа типа **~BigInt~** нужно просто добавить **~ n ~**:
 
@@ -20,107 +20,58 @@ var bigNumber = 78n
 
 или использовать конструктор нового типа данных:
 
-~~~js
-var bigNumber = Number.MAX_SAFE_INTEGER + 5003  // 9007199254745994
-bigNumber = BigInt(bigNumber) // 9007199254745994n
+~~~demo
+> var bigNumber=Number.MAX_SAFE_INTEGER+5003
+< undefined
+> bigNumber
+< 9007199254745994
+> bigNumber=BigInt(bigNumber)
+< 9007199254745994n
+> typeof bigNumber
+< 'bigint'
 ~~~
 
-Теперь оператор **~typeof~** будет возвращать новый тип данных:
-
-~~~js
-typeof bigNumber // 'bigint'
-~~~
-
-_____________________________________________________________
+___
 
 ### ![ico-20 icon] Приведение типов⟪Type_coercion⟫
 
 **~NaN~**, **~null~**, **~Infinity~** не могут быть конвертированы в **~bigint~**
 
-#### Infinity⟪Infinity⟫
-
-~~~js
-BigInt(Infinity)
+~~~demo
+> BigInt(Infinity)
+! Uncaught RangeError: The number Infinity cannot be converted to a BigInt because it is not an integer
+> BigInt(NaN)
+! Uncaught RangeError: The number NaN cannot be converted to a BigInt because it is not an integer
+> BigInt(null)
+! Uncaught TypeError: Cannot convert null to a BigInt
 ~~~
 
-будет сгенерировано исключение **RangeError**
-
-![ico-20 err]
-
-~~~error
-    Uncaught RangeError: The number Infinity cannot be converted to a BigInt because it is not an integer
-~~~
-
-#### NaN⟪NaN⟫
-
-~~~js
-BigInt(NaN)
-~~~
-
-будет сгенерировано исключение **RangeError**
-
-![ico-20 err]
-
-~~~error
-    Uncaught RangeError: The number NaN cannot be converted to a BigInt because it is not an integer
-~~~
-
-#### null⟪null⟫
-
-~~~js
-BigInt(null)
-~~~
-
-будет сгенерировано исключение **TypeError**
-
-![ico-20 err]
-
-~~~error
-    Uncaught TypeError: Cannot convert null to a BigInt
-~~~
-
-_____________________________________________________
-
-#### Boolean → BigInt⟪Boolean_→_BigInt⟫
-
-~~~js
-BigInt(false)  // 0n
-BigInt(true)   // 1n
-~~~
-
-#### [] → BigInt⟪[]_→_BigInt⟫
-
-~~~js
-BigInt([])   // 0n
-~~~
-
-#### String → BigInt⟪String_→_BigInt⟫
-
-~~~js
-BigInt('45')        // 45n
-BigInt('45' + 11)   // 4511n
-BigInt('45' - 11)   // 34n
-
-BigInt('45' - true) // 44n
-~~~
+___
 
 а вот такое приведение:
 
-~~~js
-BigInt('45 + 8')
+~~~demo
+> BigInt(false)
+< 0n
+> BigInt(true)
+< 1n
+> BigInt([])
+< 0n
+> BigInt('45')
+< 45n
+> BigInt('45' + 11)
+< 4511n
+> BigInt('45' - 11)
+< 34n
+> BigInt('45' - true)
+< 44n
+> BigInt('45 + 8')
+! Uncaught SyntaxError: Cannot convert 45 + 8 to a BigInt
 ~~~
 
-![ico-20 err]
+___
 
-~~~error
-    Uncaught SyntaxError: Cannot convert 45 + 8 to a BigInt
-~~~
-
-_____________________________________________________________
-
-### ![ico-20 icon] Арифметические операции⟪aryfmetycheskye_operatsyy⟫
-
-^^^[Арифметические операции]
+### ![ico-20 icon] Арифметические операции⟪Arithmetic_operations⟫
 
 Арифметические операции с участием данных типа **~bigint~** возможны только при условии, что оба операнда имеют тип данных **~bigint~**
 
@@ -181,11 +132,9 @@ let bigArray = [
 bigArray[BigInt(1)]  // 9007199254740994n
 ~~~
 
-^^^
+___
 
-____________________________________________________________
-
-### ![ico-20 icon] Битовые операции⟪bytovie_operatsyy⟫
+### ![ico-20 icon] Битовые операции⟪Bitwise_operations⟫
 
 Битовые операции работают с данными типа **~bigint~** и возвращают результат типа **~bigint~**:
 
