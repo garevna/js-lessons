@@ -39,6 +39,8 @@ _____________________________________________________________
 {{p20}}
 {{p21}}
 
+![](illustrations/performance-main.png)
+
 {{whereSelfTime}}
 
 ~~~console
