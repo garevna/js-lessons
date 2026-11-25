@@ -349,3 +349,92 @@ for (let x of [1, 2, 3]) {
 ~~~
 
 →→→ console.log(x) | 3, 4, ReferenceError, SyntaxError, undefined | ReferenceError →→→
+
+___
+
+♣♣♣♣
+? A loop over three strings pushes three functions into an array, each printing **item**. With **var** all three print **omega**; with **let** they print **alpha**, **sigma**, **omega**. Why?
+
+- **let** copies the value into each function, while **var** passes it by reference.
+= Incorrect. Neither keyword copies anything into the function: a function remembers the variable, not the value. The difference is in how many variables there are.
+
++ With **let** each iteration gets a variable of its own; with **var** there is one for the whole loop.
+= That’s right! This follows from block scope: the loop body is a fresh scope on every pass, and each function closes over its own variable. With **var** there is a single variable, all three functions close over it, and by the time they are called it holds the last value.
+
+- **setTimeout** and **push** treat **var** and **let** differently.
+= Incorrect. Neither **push** nor **setTimeout** knows anything about declaration keywords — the difference arises earlier, when the variable is created.
+
+- With **var** the functions are called before the loop ends, with **let** afterwards.
+= Incorrect. They are called the same way in both cases — after the loop. What differs is which variable each of them remembers.
+
+? Which of these is allowed with **const user = { login: 'admin' }**?
+
+- Everything is allowed: **const** is only a hint to whoever reads the code.
+= Incorrect. It is not a hint but a prohibition: assigning to a constant throws a **TypeError**, in ordinary code and in strict mode alike.
+
+- Nothing: an object declared with **const** cannot be changed at all.
+= Incorrect. **const** forbids changing the variable, not the object it points to. Freezing the object itself is **Object.freeze()**, a different job.
+
++ **user.login = 'student'** is allowed, **user = {}** is not.
+= That’s right! A constant is a reference that cannot be reassigned. What lies behind that reference changes freely: an object’s properties, an array’s elements. Assigning to the constant itself gives **TypeError: Assignment to constant variable**.
+
+- **user = {}** is allowed, **user.login = 'student'** is not.
+= Incorrect, it is the other way round: assigning to the constant is what is forbidden, while the properties change freely.
+
+? How does **let** differ from **var** when it comes to hoisting?
+
+- There is no difference: both are **undefined** before the declaration.
+= Incorrect. **undefined** before the declaration is what **var** does. Touching a **let** before its line is an exception, not a value.
+
+- **let** is hoisted inside functions only, not inside blocks.
+= Incorrect. It is hoisted to the top of its own scope, and for **let** that scope is precisely the block.
+
+- Variables declared with **let** are not hoisted at all, so before the declaration they do not exist.
+= Incorrect — and the difference is subtle but visible. If the variable did not exist, touching it would give **ReferenceError: x is not defined**. It gives **Cannot access 'x' before initialization** instead, so the engine does know about it.
+
++ Both are hoisted, but a **let** variable is unavailable until its declaration line — the temporal dead zone.
+= That’s right! The variable is hoisted but not initialised, and until its own line it may not be touched: **ReferenceError: Cannot access 'x' before initialization**. A **var** in the same place would be **undefined** — quietly, and therefore more dangerously.
+
+? At the top level of a script: **var x = 25; let z = 15**. What are **window.x** and **window.z**?
+
++ **25** and **undefined**
+= That’s right! At the top level **var** puts the variable on the global object; **let** does not: it lives in the script’s own scope, not in **window**. **z** itself is perfectly reachable by name all the same.
+
+- **undefined** and **15**
+= Incorrect, the other way round: it is **var** that lands on the global object.
+
+- Both **undefined**
+= Incorrect. **var** does create the property — which is exactly what it is blamed for: that is how everything ends up on the global object.
+
+- **25** and **15**
+= Incorrect. Only **var** creates a property on the global object; **let** does not.
+
+? What happens with **const XXX** and no value assigned?
+
+- Nothing: a declaration without a value is fine.
+= Incorrect. That is fine for **var** and **let** — they can be assigned later. A constant cannot, so declaring one without a value is pointless.
+
+- The constant will hold **undefined**.
+= Incorrect. **undefined** would be a value — and a constant cannot be assigned to afterwards, so such a constant would be of no use at all. The language does not allow it to be declared.
+
++ A **SyntaxError**
+= That’s right! **Missing initializer in const declaration** — and it is a parse error, so the whole script fails to run, not just this line.
+
+- A **TypeError** on first use
+= Incorrect. A **TypeError** comes from assigning to a constant already declared. Here execution never starts at all.
+
+? Why does **for (const item of ['alpha', 'sigma', 'omega'])** work, when **item** is different on every pass?
+
+- **for...of** does not assign, it passes the value into the block.
+= Incorrect. There is an assignment, or **item** would hold nothing. What matters is that each one goes to a new variable — its first and only.
+
+- The array of strings is immutable, so **const** is not broken.
+= Incorrect. **const** is not about what is in the variable at all, but about whether another value may be assigned to it. The array has nothing to do with it.
+
+- In a loop **const** behaves like **let** — an exception to the rule.
+= Incorrect. There is no exception: the rule holds in full — each constant simply lives for one pass.
+
++ Each iteration creates a new constant, and none of them is ever reassigned.
+= That’s right! It is the same block scope as **let** has: the loop body is its own scope on every pass, and **item** is declared anew in it. But **for (const i = 0; i < 3; i++)** will not work: there the variable is one and it is being increased.
+
+♣♣♣♣

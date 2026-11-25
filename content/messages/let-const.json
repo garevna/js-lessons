@@ -153,5 +153,275 @@
     "ru": "значение elem будет undefined",
     "eng": "The value of elem will be undefined",
     "ua": "значення elem буде undefined"
+  },
+  "test01Variant1": {
+    "ru": "**let** копирует значение в каждую функцию, а **var** передаёт его по ссылке.",
+    "eng": "**let** copies the value into each function, while **var** passes it by reference.",
+    "ua": "**let** копіює значення в кожну функцію, а **var** передає його за посиланням."
+  },
+  "test01Variant1Answer": {
+    "ru": "Неверно. Ни та, ни другая директива ничего не копирует в функцию: функция запоминает не значение, а переменную. Дело в том, сколько этих переменных.",
+    "eng": "Incorrect. Neither keyword copies anything into the function: a function remembers the variable, not the value. The difference is in how many variables there are.",
+    "ua": "Неправильно. Ні та, ні інша директива нічого не копіює у функцію: функція запам’ятовує не значення, а змінну. Річ у тім, скільки цих змінних."
+  },
+  "test01Variant2": {
+    "ru": "С **let** на каждой итерации создаётся своя переменная, а с **var** она одна на весь цикл.",
+    "eng": "With **let** each iteration gets a variable of its own; with **var** there is one for the whole loop.",
+    "ua": "З **let** на кожній ітерації створюється власна змінна, а з **var** вона одна на весь цикл."
+  },
+  "test01Variant2Answer": {
+    "ru": "Верно! Это и есть следствие блочной области видимости: блок цикла — своя область на каждом проходе, и каждая функция замыкает свою переменную. С **var** переменная одна, все три функции замкнули её, а к моменту вызова в ней лежит последнее значение.",
+    "eng": "That’s right! This follows from block scope: the loop body is a fresh scope on every pass, and each function closes over its own variable. With **var** there is a single variable, all three functions close over it, and by the time they are called it holds the last value.",
+    "ua": "Правильно! Це і є наслідок блокової області видимості: блок циклу — власна область на кожному проході, і кожна функція замикає свою змінну. З **var** змінна одна, усі три функції замкнули її, а на момент виклику в ній лежить останнє значення."
+  },
+  "test01Variant3": {
+    "ru": "**setTimeout** и **push** по-разному работают с **var** и **let**.",
+    "eng": "**setTimeout** and **push** treat **var** and **let** differently.",
+    "ua": "**setTimeout** і **push** по-різному працюють із **var** і **let**."
+  },
+  "test01Variant3Answer": {
+    "ru": "Неверно. Ни **push**, ни **setTimeout** о директивах объявления ничего не знают — разница возникает раньше, при создании переменной.",
+    "eng": "Incorrect. Neither **push** nor **setTimeout** knows anything about declaration keywords — the difference arises earlier, when the variable is created.",
+    "ua": "Неправильно. Ні **push**, ні **setTimeout** про директиви оголошення нічого не знають — різниця виникає раніше, під час створення змінної."
+  },
+  "test01Variant4": {
+    "ru": "С **var** функции вызываются до окончания цикла, а с **let** — после.",
+    "eng": "With **var** the functions are called before the loop ends, with **let** afterwards.",
+    "ua": "З **var** функції викликаються до завершення циклу, а з **let** — після."
+  },
+  "test01Variant4Answer": {
+    "ru": "Неверно. Вызываются они в обоих случаях одинаково — после цикла. Отличается то, какую переменную каждая из них помнит.",
+    "eng": "Incorrect. They are called the same way in both cases — after the loop. What differs is which variable each of them remembers.",
+    "ua": "Неправильно. Викликаються вони в обох випадках однаково — після циклу. Відрізняється те, яку змінну кожна з них пам’ятає."
+  },
+  "test01Question": {
+    "ru": "Цикл по трём строкам складывает в массив три функции, каждая печатает **item**. С **var** все три печатают **omega**, с **let** — **alpha**, **sigma**, **omega**. Почему?",
+    "eng": "A loop over three strings pushes three functions into an array, each printing **item**. With **var** all three print **omega**; with **let** they print **alpha**, **sigma**, **omega**. Why?",
+    "ua": "Цикл по трьох рядках складає в масив три функції, кожна друкує **item**. З **var** усі три друкують **omega**, з **let** — **alpha**, **sigma**, **omega**. Чому?"
+  },
+  "test02Variant2": {
+    "ru": "Ничего: объект, объявленный через **const**, неизменяем целиком.",
+    "eng": "Nothing: an object declared with **const** cannot be changed at all.",
+    "ua": "Нічого: об’єкт, оголошений через **const**, незмінний цілком."
+  },
+  "test02Variant2Answer": {
+    "ru": "Неверно. **const** запрещает менять переменную, а не объект, на который она указывает. Заморозить сам объект — это **Object.freeze()**, другая работа.",
+    "eng": "Incorrect. **const** forbids changing the variable, not the object it points to. Freezing the object itself is **Object.freeze()**, a different job.",
+    "ua": "Неправильно. **const** забороняє змінювати змінну, а не об’єкт, на який вона вказує. Заморозити сам об’єкт — це **Object.freeze()**, інша робота."
+  },
+  "test02Variant3": {
+    "ru": "**user.login = 'student'** — можно, **user = {}** — нельзя.",
+    "eng": "**user.login = 'student'** is allowed, **user = {}** is not.",
+    "ua": "**user.login = 'student'** — можна, **user = {}** — ні."
+  },
+  "test02Variant3Answer": {
+    "ru": "Верно! Константа — это ссылка, которую нельзя переназначить. Что лежит по этой ссылке, меняется свободно: свойства объекта, элементы массива. Попытка присвоить новое значение самой константе даёт **TypeError: Assignment to constant variable**.",
+    "eng": "That’s right! A constant is a reference that cannot be reassigned. What lies behind that reference changes freely: an object’s properties, an array’s elements. Assigning to the constant itself gives **TypeError: Assignment to constant variable**.",
+    "ua": "Правильно! Константа — це посилання, яке не можна перепризначити. Те, що лежить за цим посиланням, змінюється вільно: властивості об’єкта, елементи масиву. Спроба присвоїти нове значення самій константі дає **TypeError: Assignment to constant variable**."
+  },
+  "test02Variant4": {
+    "ru": "**user = {}** — можно, **user.login = 'student'** — нельзя.",
+    "eng": "**user = {}** is allowed, **user.login = 'student'** is not.",
+    "ua": "**user = {}** — можна, **user.login = 'student'** — ні."
+  },
+  "test02Variant4Answer": {
+    "ru": "Неверно, всё наоборот: запрещено именно присваивание самой константе, а свойства меняются свободно.",
+    "eng": "Incorrect, it is the other way round: assigning to the constant is what is forbidden, while the properties change freely.",
+    "ua": "Неправильно, усе навпаки: заборонене саме присвоєння самій константі, а властивості змінюються вільно."
+  },
+  "test02Variant1": {
+    "ru": "Разрешено всё: **const** — это только подсказка читателю кода.",
+    "eng": "Everything is allowed: **const** is only a hint to whoever reads the code.",
+    "ua": "Дозволено все: **const** — це лише підказка читачеві коду."
+  },
+  "test02Variant1Answer": {
+    "ru": "Неверно. Это не подсказка, а запрет: присваивание константе бросает **TypeError** и в обычном коде, и в строгом режиме.",
+    "eng": "Incorrect. It is not a hint but a prohibition: assigning to a constant throws a **TypeError**, in ordinary code and in strict mode alike.",
+    "ua": "Неправильно. Це не підказка, а заборона: присвоєння константі кидає **TypeError** і у звичайному коді, і в строгому режимі."
+  },
+  "test02Question": {
+    "ru": "Что из этого разрешено с **const user = { login: 'admin' }**?",
+    "eng": "Which of these is allowed with **const user = { login: 'admin' }**?",
+    "ua": "Що з цього дозволено з **const user = { login: 'admin' }**?"
+  },
+  "test03Variant3": {
+    "ru": "Переменные **let** не поднимаются вовсе, поэтому до объявления их не существует.",
+    "eng": "Variables declared with **let** are not hoisted at all, so before the declaration they do not exist.",
+    "ua": "Змінні **let** не піднімаються взагалі, тому до оголошення їх не існує."
+  },
+  "test03Variant3Answer": {
+    "ru": "Неверно — и разница тонкая, но видная. Если бы переменной не существовало, обращение к ней дало бы **ReferenceError: x is not defined**. А оно даёт **Cannot access 'x' before initialization** — значит, движок про переменную знает.",
+    "eng": "Incorrect — and the difference is subtle but visible. If the variable did not exist, touching it would give **ReferenceError: x is not defined**. It gives **Cannot access 'x' before initialization** instead, so the engine does know about it.",
+    "ua": "Неправильно — і різниця тонка, але помітна. Якби змінної не існувало, звернення до неї дало б **ReferenceError: x is not defined**. А воно дає **Cannot access 'x' before initialization** — отже, рушій про змінну знає."
+  },
+  "test03Variant4": {
+    "ru": "Поднимаются обе, но **let** недоступна до строки объявления — это временная мёртвая зона.",
+    "eng": "Both are hoisted, but a **let** variable is unavailable until its declaration line — the temporal dead zone.",
+    "ua": "Піднімаються обидві, але **let** недоступна до рядка оголошення — це тимчасова мертва зона."
+  },
+  "test03Variant4Answer": {
+    "ru": "Верно! Переменная поднята, но не инициализирована, и до своей строки трогать её нельзя: **ReferenceError: Cannot access 'x' before initialization**. У **var** на том же месте было бы **undefined** — тихо и потому опаснее.",
+    "eng": "That’s right! The variable is hoisted but not initialised, and until its own line it may not be touched: **ReferenceError: Cannot access 'x' before initialization**. A **var** in the same place would be **undefined** — quietly, and therefore more dangerously.",
+    "ua": "Правильно! Змінна піднята, але не ініціалізована, і до свого рядка чіпати її не можна: **ReferenceError: Cannot access 'x' before initialization**. У **var** на тому ж місці було б **undefined** — тихо і тому небезпечніше."
+  },
+  "test03Variant1": {
+    "ru": "Разницы нет: обе до объявления равны **undefined**.",
+    "eng": "There is no difference: both are **undefined** before the declaration.",
+    "ua": "Різниці немає: обидві до оголошення дорівнюють **undefined**."
+  },
+  "test03Variant1Answer": {
+    "ru": "Неверно. **undefined** до объявления — это поведение **var**. Обращение к **let** до её строки — исключение, а не значение.",
+    "eng": "Incorrect. **undefined** before the declaration is what **var** does. Touching a **let** before its line is an exception, not a value.",
+    "ua": "Неправильно. **undefined** до оголошення — це поведінка **var**. Звернення до **let** до її рядка — виняток, а не значення."
+  },
+  "test03Variant2": {
+    "ru": "**let** поднимается только внутри функций, а в блоках — нет.",
+    "eng": "**let** is hoisted inside functions only, not inside blocks.",
+    "ua": "**let** піднімається лише всередині функцій, а в блоках — ні."
+  },
+  "test03Variant2Answer": {
+    "ru": "Неверно. Поднимается она до верха своей области видимости, а для **let** область — это именно блок.",
+    "eng": "Incorrect. It is hoisted to the top of its own scope, and for **let** that scope is precisely the block.",
+    "ua": "Неправильно. Піднімається вона до верху своєї області видимості, а для **let** область — це саме блок."
+  },
+  "test03Question": {
+    "ru": "Чем **let** отличается от **var** при hoisting?",
+    "eng": "How does **let** differ from **var** when it comes to hoisting?",
+    "ua": "Чим **let** відрізняється від **var** під час hoisting?"
+  },
+  "test04Variant4": {
+    "ru": "**25** и **15**",
+    "eng": "**25** and **15**",
+    "ua": "**25** і **15**"
+  },
+  "test04Variant4Answer": {
+    "ru": "Неверно. Свойство глобального объекта создаёт только **var**; **let** этого не делает.",
+    "eng": "Incorrect. Only **var** creates a property on the global object; **let** does not.",
+    "ua": "Неправильно. Властивість глобального об’єкта створює лише **var**; **let** цього не робить."
+  },
+  "test04Variant1": {
+    "ru": "**25** и **undefined**",
+    "eng": "**25** and **undefined**",
+    "ua": "**25** і **undefined**"
+  },
+  "test04Variant1Answer": {
+    "ru": "Верно! **var** на верхнем уровне кладёт переменную в глобальный объект, **let** — нет: она живёт в области видимости скрипта, а не в **window**. Сама **z** при этом прекрасно доступна по имени.",
+    "eng": "That’s right! At the top level **var** puts the variable on the global object; **let** does not: it lives in the script’s own scope, not in **window**. **z** itself is perfectly reachable by name all the same.",
+    "ua": "Правильно! **var** на верхньому рівні кладе змінну в глобальний об’єкт, **let** — ні: вона живе в області видимості скрипта, а не у **window**. Сама **z** при цьому чудово доступна за іменем."
+  },
+  "test04Variant2": {
+    "ru": "**undefined** и **15**",
+    "eng": "**undefined** and **15**",
+    "ua": "**undefined** і **15**"
+  },
+  "test04Variant2Answer": {
+    "ru": "Неверно, наоборот: в глобальный объект попадает именно **var**.",
+    "eng": "Incorrect, the other way round: it is **var** that lands on the global object.",
+    "ua": "Неправильно, навпаки: до глобального об’єкта потрапляє саме **var**."
+  },
+  "test04Variant3": {
+    "ru": "Оба **undefined**",
+    "eng": "Both **undefined**",
+    "ua": "Обидва **undefined**"
+  },
+  "test04Variant3Answer": {
+    "ru": "Неверно. **var** свойство создаёт — именно поэтому его и ругают: так в глобальный объект попадает всё подряд.",
+    "eng": "Incorrect. **var** does create the property — which is exactly what it is blamed for: that is how everything ends up on the global object.",
+    "ua": "Неправильно. **var** властивість створює — саме за це його й лають: так до глобального об’єкта потрапляє все підряд."
+  },
+  "test04Question": {
+    "ru": "На верхнем уровне скрипта: **var x = 25; let z = 15**. Чему равны **window.x** и **window.z**?",
+    "eng": "At the top level of a script: **var x = 25; let z = 15**. What are **window.x** and **window.z**?",
+    "ua": "На верхньому рівні скрипта: **var x = 25; let z = 15**. Чому дорівнюють **window.x** і **window.z**?"
+  },
+  "test05Variant2": {
+    "ru": "Константа получит **undefined**.",
+    "eng": "The constant will hold **undefined**.",
+    "ua": "Константа отримає **undefined**."
+  },
+  "test05Variant2Answer": {
+    "ru": "Неверно. **undefined** было бы значением — а константе значение потом не присвоить, так что от такой константы не было бы никакого толку. Язык и не даёт её объявить.",
+    "eng": "Incorrect. **undefined** would be a value — and a constant cannot be assigned to afterwards, so such a constant would be of no use at all. The language does not allow it to be declared.",
+    "ua": "Неправильно. **undefined** було б значенням — а константі значення потім не присвоїти, тож із такої константи не було б жодного пуття. Мова й не дає її оголосити."
+  },
+  "test05Variant3": {
+    "ru": "**SyntaxError**",
+    "eng": "A **SyntaxError**",
+    "ua": "**SyntaxError**"
+  },
+  "test05Variant3Answer": {
+    "ru": "Верно! **Missing initializer in const declaration** — и это ошибка разбора, то есть не выполнится весь скрипт целиком, а не только эта строка.",
+    "eng": "That’s right! **Missing initializer in const declaration** — and it is a parse error, so the whole script fails to run, not just this line.",
+    "ua": "Правильно! **Missing initializer in const declaration** — і це помилка розбору, тобто не виконається весь скрипт, а не лише цей рядок."
+  },
+  "test05Variant4": {
+    "ru": "**TypeError** при первом обращении",
+    "eng": "A **TypeError** on first use",
+    "ua": "**TypeError** під час першого звернення"
+  },
+  "test05Variant4Answer": {
+    "ru": "Неверно. **TypeError** бросает присваивание уже объявленной константе. Здесь до выполнения дело не доходит вовсе.",
+    "eng": "Incorrect. A **TypeError** comes from assigning to a constant already declared. Here execution never starts at all.",
+    "ua": "Неправильно. **TypeError** кидає присвоєння вже оголошеній константі. Тут до виконання справа не доходить узагалі."
+  },
+  "test05Variant1": {
+    "ru": "Ничего: объявление без значения допустимо.",
+    "eng": "Nothing: a declaration without a value is fine.",
+    "ua": "Нічого: оголошення без значення припустиме."
+  },
+  "test05Variant1Answer": {
+    "ru": "Неверно. Допустимо оно у **var** и **let** — им значение можно присвоить позже. Константе нельзя, поэтому и объявлять её без значения бессмысленно.",
+    "eng": "Incorrect. That is fine for **var** and **let** — they can be assigned later. A constant cannot, so declaring one without a value is pointless.",
+    "ua": "Неправильно. Припустиме воно у **var** і **let** — їм значення можна присвоїти пізніше. Константі не можна, тому й оголошувати її без значення безглуздо."
+  },
+  "test05Question": {
+    "ru": "Что будет с **const XXX** без присваивания значения?",
+    "eng": "What happens with **const XXX** and no value assigned?",
+    "ua": "Що буде з **const XXX** без присвоєння значення?"
+  },
+  "test06Variant3": {
+    "ru": "В цикле **const** ведёт себя как **let** — это исключение из правила.",
+    "eng": "In a loop **const** behaves like **let** — an exception to the rule.",
+    "ua": "У циклі **const** поводиться як **let** — це виняток із правила."
+  },
+  "test06Variant3Answer": {
+    "ru": "Неверно. Никакого исключения нет: правило соблюдается полностью — просто каждая константа живёт один проход.",
+    "eng": "Incorrect. There is no exception: the rule holds in full — each constant simply lives for one pass.",
+    "ua": "Неправильно. Жодного винятку немає: правило дотримано повністю — просто кожна константа живе один прохід."
+  },
+  "test06Variant4": {
+    "ru": "На каждой итерации создаётся новая константа, и ни одна не переприсваивается.",
+    "eng": "Each iteration creates a new constant, and none of them is ever reassigned.",
+    "ua": "На кожній ітерації створюється нова константа, і жодна не перепризначається."
+  },
+  "test06Variant4Answer": {
+    "ru": "Верно! Это та же блочная область видимости, что и у **let**: тело цикла — своя область на каждом проходе, и **item** в ней объявляется заново. А вот **for (const i = 0; i < 3; i++)** не заработает: там переменная одна и её увеличивают.",
+    "eng": "That’s right! It is the same block scope as **let** has: the loop body is its own scope on every pass, and **item** is declared anew in it. But **for (const i = 0; i < 3; i++)** will not work: there the variable is one and it is being increased.",
+    "ua": "Правильно! Це та сама блокова область видимості, що й у **let**: тіло циклу — власна область на кожному проході, і **item** у ній оголошується наново. А от **for (const i = 0; i < 3; i++)** не запрацює: там змінна одна і її збільшують."
+  },
+  "test06Variant1": {
+    "ru": "**for...of** не присваивает, а передаёт значение в блок.",
+    "eng": "**for...of** does not assign, it passes the value into the block.",
+    "ua": "**for...of** не присвоює, а передає значення в блок."
+  },
+  "test06Variant1Answer": {
+    "ru": "Неверно. Присваивание есть, иначе в **item** ничего бы не оказалось. Важно, что оно каждый раз достаётся новой переменной — первое и единственное для неё.",
+    "eng": "Incorrect. There is an assignment, or **item** would hold nothing. What matters is that each one goes to a new variable — its first and only.",
+    "ua": "Неправильно. Присвоєння є, інакше в **item** нічого б не опинилося. Важливо, що воно щоразу дістається новій змінній — перше і єдине для неї."
+  },
+  "test06Variant2": {
+    "ru": "Массив строк неизменяем, поэтому **const** не нарушается.",
+    "eng": "The array of strings is immutable, so **const** is not broken.",
+    "ua": "Масив рядків незмінний, тому **const** не порушується."
+  },
+  "test06Variant2Answer": {
+    "ru": "Неверно. **const** вообще не про то, что лежит в переменной, а про то, можно ли присвоить ей другое значение. Массив здесь ни при чём.",
+    "eng": "Incorrect. **const** is not about what is in the variable at all, but about whether another value may be assigned to it. The array has nothing to do with it.",
+    "ua": "Неправильно. **const** узагалі не про те, що лежить у змінній, а про те, чи можна присвоїти їй інше значення. Масив тут ні до чого."
+  },
+  "test06Question": {
+    "ru": "Почему **for (const item of ['alpha', 'sigma', 'omega'])** работает, хотя **item** на каждом проходе другой?",
+    "eng": "Why does **for (const item of ['alpha', 'sigma', 'omega'])** work, when **item** is different on every pass?",
+    "ua": "Чому **for (const item of ['alpha', 'sigma', 'omega'])** працює, хоча **item** на кожному проході інший?"
   }
 }
