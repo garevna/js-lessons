@@ -32,7 +32,7 @@ Open the **^^Performance^^** tab in Chrome DevTools
 
 ![ico-20 warn] There used to be a separate **^^JavaScript Profiler^^** tab for this. It was taken out of DevTools in Chrome 124 and cannot be brought back — a CPU profile is now recorded on the **^^Performance^^** tab. The old name still turns up in articles and videos.
 
-![](illustrations/js-profiler.png)
+![](illustrations/performance-panel.png)
 
 Start recording (the **^^Record^^** button, the circle at the top left)
 Perform a few actions on the application page
