@@ -162,15 +162,13 @@ segments: 0.459228515625ms
 
 So, the code’s performance hovers around half a millisecond
 
-Let’s use the debugger to assess the memory resources allocated
-
-[![ico-70 youtube]](https://youtu.be/nDNEiu_xwf0)
+Now let us see how much memory this takes. In the **^^Performance^^** panel tick **^^Memory^^** and record the profile again: the tracks are joined by the **^^JS heap^^**, **^^Documents^^**, **^^Nodes^^**, **^^Listeners^^** and **^^GPU memory^^** graphs.
 
 • The JavaScript interpreter dynamically allocates the necessary memory when variables are declared
 • Calls to certain functions also result in memory allocation
 • Some methods allocate memory for new values or objects
 
-Thanks to the debugger, we can see that our code’s memory usage is very negligible:
+The graphs show that our code’s memory usage is very small indeed:
 
 • code:                   127 kilobytes
 • strings:                100 kilobytes

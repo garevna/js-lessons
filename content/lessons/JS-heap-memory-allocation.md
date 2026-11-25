@@ -164,8 +164,6 @@ segments: 0.459228515625ms
 
 {{p49}}
 
-[![ico-70 youtube]](https://youtu.be/nDNEiu_xwf0)
-
 {{p50}}
 {{p51}}
 {{p52}}
