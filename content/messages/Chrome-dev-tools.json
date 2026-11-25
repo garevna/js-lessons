@@ -128,5 +128,185 @@
     "ru": "В  **Chrome DevTools**  можно также приостанавливать выполнение кода, когда происходят события DOM",
     "eng": "In  **Chrome DevTools** , you can also pause code execution when DOM events occur",
     "ua": "У  **Chrome DevTools**  можна також призупиняти виконання коду, коли відбуваються події DOM"
+  },
+  "test01Variant1": {
+    "ru": "Остановится **перед** выполнением строки 42.",
+    "eng": "It will stop **before** executing line 42.",
+    "ua": "Зупиниться **перед** виконанням рядка 42."
+  },
+  "test01Variant1Answer": {
+    "ru": "Верно! Строка ещё не выполнена — её результата в переменных пока нет. Именно поэтому в этот момент видно состояние **до** шага: чтобы посмотреть, что получилось, нужно сделать шаг дальше.",
+    "eng": "That’s right! The line has not run yet — its result is not in the variables. That is exactly why what you see at this moment is the state **before** the step: to see the outcome, take one step further.",
+    "ua": "Правильно! Рядок ще не виконано — його результату у змінних поки немає. Саме тому в цей момент видно стан **до** кроку: щоб подивитися, що вийшло, треба зробити крок далі."
+  },
+  "test01Variant2": {
+    "ru": "Выполнит строку 42 и остановится после неё.",
+    "eng": "It will execute line 42 and stop after it.",
+    "ua": "Виконає рядок 42 і зупиниться після нього."
+  },
+  "test01Variant2Answer": {
+    "ru": "Неверно — и путаница эта стоит дорого: глядя на значения, легко решить, что строка уже отработала. Она ещё не выполнена. Состояние после неё покажет шаг вперёд.",
+    "eng": "Incorrect — and the confusion is expensive: looking at the values, it is easy to decide the line has already run. It has not. The state after it is one step away.",
+    "ua": "Неправильно — і плутанина ця коштує дорого: дивлячись на значення, легко вирішити, що рядок уже відпрацював. Його ще не виконано. Стан після нього покаже крок уперед."
+  },
+  "test01Variant3": {
+    "ru": "Пропустит строку 42 и продолжит со следующей.",
+    "eng": "It will skip line 42 and carry on with the next one.",
+    "ua": "Пропустить рядок 42 і продовжить із наступного."
+  },
+  "test01Variant3Answer": {
+    "ru": "Неверно. Точка останова ничего не пропускает — она только приостанавливает. Код выполнится весь, как только вы возобновите выполнение.",
+    "eng": "Incorrect. A breakpoint skips nothing — it only pauses. All the code runs as soon as you resume.",
+    "ua": "Неправильно. Точка зупинки нічого не пропускає — вона лише призупиняє. Код виконається весь, щойно ви відновите виконання."
+  },
+  "test01Variant4": {
+    "ru": "Выведет значение строки 42 в консоль и продолжит.",
+    "eng": "It will print the value of line 42 to the console and carry on.",
+    "ua": "Виведе значення рядка 42 в консоль і продовжить."
+  },
+  "test01Variant4Answer": {
+    "ru": "Неверно. Это описание **~console.log~**, а не точки останова. Разница в том, что останов даёт посмотреть всё разом — переменные, стек вызовов, область видимости, — а не то, что вы догадались напечатать заранее.",
+    "eng": "Incorrect. That describes **~console.log~**, not a breakpoint. The difference is that a pause lets you look at everything at once — the variables, the call stack, the scope — rather than whatever you thought to print in advance.",
+    "ua": "Неправильно. Це опис **~console.log~**, а не точки зупинки. Різниця в тому, що зупинка дає подивитися все одразу — змінні, стек викликів, область видимості, — а не те, що ви здогадалися надрукувати заздалегідь."
+  },
+  "test01Question": {
+    "ru": "Вы поставили точку останова на строке **42**. Что сделает движок, дойдя до неё?",
+    "eng": "You have set a breakpoint on line **42**. What will the engine do when it gets there?",
+    "ua": "Ви поставили точку зупинки на рядку **42**. Що зробить рушій, дійшовши до неї?"
+  },
+  "test02Variant3": {
+    "ru": "Точки останова не работают в коде, который выполняется при загрузке.",
+    "eng": "Breakpoints do not work in code that runs during page load.",
+    "ua": "Точки зупинки не працюють у коді, який виконується під час завантаження."
+  },
+  "test02Variant3Answer": {
+    "ru": "Неверно. Работают, и отлаживать загрузку — обычное дело. Нужно только, чтобы загрузка случилась **после** того, как точка поставлена.",
+    "eng": "Incorrect. They do work, and debugging page load is routine. The loading simply has to happen **after** the breakpoint is set.",
+    "ua": "Неправильно. Працюють, і налагоджувати завантаження — звичайна справа. Потрібно лише, щоб завантаження сталося **після** того, як точку поставлено."
+  },
+  "test02Variant4": {
+    "ru": "Этот код уже выполнился — до того, как точка была поставлена. Нужно перезагрузить страницу.",
+    "eng": "That code has already run — before the breakpoint was set. The page needs reloading.",
+    "ua": "Цей код уже виконався — до того, як точку було поставлено. Потрібно перезавантажити сторінку."
+  },
+  "test02Variant4Answer": {
+    "ru": "Верно! Точка останова ждёт, когда движок дойдёт до этой строки, а он дошёл до неё ещё до того, как вы открыли дебаггер. Перезагрузка — и всё сработает. Это самая частая причина «я поставил, а оно не останавливается».",
+    "eng": "That’s right! A breakpoint waits for the engine to reach that line, and the engine reached it before you opened the debugger. Reload, and it will work. This is the commonest reason for \"I set it and it does not stop\".",
+    "ua": "Правильно! Точка зупинки чекає, коли рушій дійде до цього рядка, а він дійшов до нього ще до того, як ви відкрили налагоджувач. Перезавантаження — і все спрацює. Це найчастіша причина «я поставив, а воно не зупиняється»."
+  },
+  "test02Variant1": {
+    "ru": "Точка поставлена не в том файле — нужен файл из вкладки **Snippets**.",
+    "eng": "The breakpoint is in the wrong file — it has to be a file from the **Snippets** tab.",
+    "ua": "Точку поставлено не в тому файлі — потрібен файл із вкладки **Snippets**."
+  },
+  "test02Variant1Answer": {
+    "ru": "Неверно. Точки останова ставятся в любом файле страницы, не только в сниппетах. Сниппет — это удобство для своего кода, а не условие работы дебаггера.",
+    "eng": "Incorrect. Breakpoints can be set in any file of the page, not only in snippets. A snippet is a convenience for your own code, not a condition for the debugger to work.",
+    "ua": "Неправильно. Точки зупинки ставляться в будь-якому файлі сторінки, не лише у сніпетах. Сніпет — це зручність для власного коду, а не умова роботи налагоджувача."
+  },
+  "test02Variant2": {
+    "ru": "Нужно было сохранить изменения — **~Ctrl + S~**.",
+    "eng": "The changes needed saving — **~Ctrl + S~**.",
+    "ua": "Потрібно було зберегти зміни — **~Ctrl + S~**."
+  },
+  "test02Variant2Answer": {
+    "ru": "Неверно. **~Ctrl + S~** сохраняет правку кода, а точка останова ставится кликом по номеру строки и сохранения не требует.",
+    "eng": "Incorrect. **~Ctrl + S~** saves an edit to the code; a breakpoint is set by clicking the line number and needs no saving.",
+    "ua": "Неправильно. **~Ctrl + S~** зберігає правку коду, а точка зупинки ставиться кліком по номеру рядка і збереження не потребує."
+  },
+  "test02Question": {
+    "ru": "Вы поставили точку останова в коде, который выполняется при загрузке страницы, — и ничего не произошло. Почему?",
+    "eng": "You set a breakpoint in code that runs as the page loads — and nothing happened. Why?",
+    "ua": "Ви поставили точку зупинки в коді, який виконується під час завантаження сторінки, — і нічого не сталося. Чому?"
+  },
+  "test03Variant4": {
+    "ru": "Ничем: обе показывают значения переменных.",
+    "eng": "In no way: both show the values of variables.",
+    "ua": "Нічим: обидві показують значення змінних."
+  },
+  "test03Variant4Answer": {
+    "ru": "Неверно. Значения показывают обе, но отвечают на разные вопросы: «что здесь видно» и «что я просил показать».",
+    "eng": "Incorrect. Both show values, but they answer different questions: \"what is visible here\" and \"what did I ask to be shown\".",
+    "ua": "Неправильно. Значення показують обидві, але відповідають на різні питання: «що тут видно» і «що я просив показати»."
+  },
+  "test03Variant1": {
+    "ru": "**Scope** сам показывает всё, что видно в точке останова; **Watch** — только то, за чем вы попросили следить.",
+    "eng": "**Scope** shows by itself everything visible at the breakpoint; **Watch** shows only what you asked to keep an eye on.",
+    "ua": "**Scope** сам показує все, що видно в точці зупинки; **Watch** — лише те, за чим ви попросили стежити."
+  },
+  "test03Variant1Answer": {
+    "ru": "Верно! **Scope** — это срез области видимости: Local, Block, Closure, Global, и список меняется сам, когда движок переходит из функции в функцию. **Watch** — ваш список выражений, он остаётся тем же везде; там, где выражение не имеет смысла, вместо значения будет сообщение о недоступности.",
+    "eng": "That’s right! **Scope** is a slice of the scope chain — Local, Block, Closure, Global — and the list changes by itself as the engine moves from function to function. **Watch** is your own list of expressions; it stays the same everywhere, and where an expression makes no sense you get a message instead of a value.",
+    "ua": "Правильно! **Scope** — це зріз області видимості: Local, Block, Closure, Global, і список змінюється сам, коли рушій переходить із функції у функцію. **Watch** — ваш список виразів, він лишається тим самим усюди; там, де вираз не має сенсу, замість значення буде повідомлення про недоступність."
+  },
+  "test03Variant2": {
+    "ru": "**Watch** показывает значения до выполнения строки, **Scope** — после.",
+    "eng": "**Watch** shows values before the line runs, **Scope** after.",
+    "ua": "**Watch** показує значення до виконання рядка, **Scope** — після."
+  },
+  "test03Variant2Answer": {
+    "ru": "Неверно. Обе секции показывают одно и то же состояние — то, в котором движок стоит сейчас. Во времени они не расходятся.",
+    "eng": "Incorrect. Both sections show the same state — the one the engine is standing in now. They do not differ in time.",
+    "ua": "Неправильно. Обидві секції показують той самий стан — той, у якому рушій стоїть зараз. У часі вони не розходяться."
+  },
+  "test03Variant3": {
+    "ru": "В **Scope** попадают только глобальные переменные.",
+    "eng": "Only global variables appear in **Scope**.",
+    "ua": "У **Scope** потрапляють лише глобальні змінні."
+  },
+  "test03Variant3Answer": {
+    "ru": "Неверно. Глобальные там тоже есть, но интереснее остальное: **Local** — переменные выполняемой функции, **Block** — переменные блока, **Closure** — то, что функция унесла с собой из места, где была создана.",
+    "eng": "Incorrect. The globals are there too, but the rest is more interesting: **Local** is the running function’s variables, **Block** the block’s, **Closure** what the function carried away from where it was created.",
+    "ua": "Неправильно. Глобальні там теж є, але цікавіше решта: **Local** — змінні виконуваної функції, **Block** — змінні блоку, **Closure** — те, що функція забрала із собою з місця, де була створена."
+  },
+  "test03Question": {
+    "ru": "Чем секция **Scope** отличается от секции **Watch**?",
+    "eng": "How does the **Scope** section differ from the **Watch** section?",
+    "ua": "Чим секція **Scope** відрізняється від секції **Watch**?"
+  },
+  "test04Variant2": {
+    "ru": "Он на месте и его можно запустить здесь же.",
+    "eng": "It is there, and it can be run right here.",
+    "ua": "Він на місці, і його можна запустити тут же."
+  },
+  "test04Variant2Answer": {
+    "ru": "Верно! Сниппет хранит браузер, а не страница: он переживает и перезагрузку, и переход на другой сайт, и закрытие браузера. В этом и смысл — свой код, который можно запустить на любой странице, в её окружении.",
+    "eng": "That’s right! The browser keeps the snippet, not the page: it survives a reload, a move to another site and the browser being closed. That is the point of it — your own code, runnable on any page, in that page’s surroundings.",
+    "ua": "Правильно! Сніпет зберігає браузер, а не сторінка: він переживає і перезавантаження, і перехід на інший сайт, і закриття браузера. У цьому й сенс — власний код, який можна запустити на будь-якій сторінці, в її оточенні."
+  },
+  "test04Variant3": {
+    "ru": "Он пропал: сниппеты живут, пока открыта страница, на которой их создали.",
+    "eng": "It is gone: snippets live only while the page they were made on is open.",
+    "ua": "Він зник: сніпети живуть, доки відкрита сторінка, на якій їх створили."
+  },
+  "test04Variant3Answer": {
+    "ru": "Неверно. Так ведёт себя код, набранный в консоли, — он исчезает с перезагрузкой. Сниппет для того и придуман, чтобы сохраняться.",
+    "eng": "Incorrect. That is how code typed into the console behaves — it vanishes on reload. A snippet exists precisely in order to stay.",
+    "ua": "Неправильно. Так поводиться код, набраний у консолі, — він зникає з перезавантаженням. Сніпет для того й вигаданий, щоб зберігатися."
+  },
+  "test04Variant4": {
+    "ru": "Он остался, но запускается только на том сайте, где был создан.",
+    "eng": "It is still there, but runs only on the site where it was created.",
+    "ua": "Він лишився, але запускається лише на тому сайті, де його створили."
+  },
+  "test04Variant4Answer": {
+    "ru": "Неверно. Сниппет не привязан к сайту: он выполняется в контексте той страницы, которая открыта сейчас, — и это делает его удобным инструментом для чужих страниц тоже.",
+    "eng": "Incorrect. A snippet is not tied to a site: it runs in the context of whatever page is open now — which is what makes it a handy tool on other people’s pages as well.",
+    "ua": "Неправильно. Сніпет не прив’язаний до сайту: він виконується в контексті тієї сторінки, яка відкрита зараз, — і це робить його зручним інструментом і для чужих сторінок."
+  },
+  "test04Variant1": {
+    "ru": "Он сохранился в файле проекта, открытого во вкладке **Sources**.",
+    "eng": "It has been saved into a file of the project open on the **Sources** tab.",
+    "ua": "Він зберігся у файлі проєкту, відкритого у вкладці **Sources**."
+  },
+  "test04Variant1Answer": {
+    "ru": "Неверно. В файлы страницы сниппет не попадает — ни в проект, ни на сервер. Он лежит в хранилище самого браузера, рядом с настройками DevTools.",
+    "eng": "Incorrect. A snippet does not land in the page’s files — not in the project, not on the server. It lives in the browser’s own storage, beside the DevTools settings.",
+    "ua": "Неправильно. У файли сторінки сніпет не потрапляє — ні до проєкту, ні на сервер. Він лежить у сховищі самого браузера, поруч із налаштуваннями DevTools."
+  },
+  "test04Question": {
+    "ru": "Вы написали сниппет, перешли на другой сайт и открыли DevTools там. Что со сниппетом?",
+    "eng": "You wrote a snippet, went to another site and opened DevTools there. What has become of the snippet?",
+    "ua": "Ви написали сніпет, перейшли на інший сайт і відкрили DevTools там. Що зі сніпетом?"
   }
 }
