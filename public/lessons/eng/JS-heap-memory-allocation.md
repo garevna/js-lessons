@@ -4,7 +4,7 @@
 
 How much memory does the application use on the client side?
 ![ico-20 warn] If the amount of memory in use increases in proportion to the application’s runtime, there are memory leaks.
-![ico-20 warn] If the application frequently ‘freezes’ for a second or two, the garbage collector is most likely running too often to clear the memory of unnecessary temporary data.
+![ico-20 warn] If the application frequently ‘freezes’ for a second or two, the garbage collector is most likely running too often to clear unused variables out of memory.
 
 **RAIL** is a user-centred performance model.
 It breaks down user interaction into key actions:
@@ -25,22 +25,26 @@ Any longer delay will be frustrating
 
 _____________________________________________________________
 
-## ![ico-25 icon] JavaScript Profiler⟪JavaScript_Profiler⟫
+## ![ico-25 icon] Профиль CPU⟪profylʹ_CPU⟫
 
 In a new browser tab, launch the application you wish to test
-Open the **^^JavaScript Profiler^^** tab in Chrome DevTools
+Open the **^^Performance^^** tab in Chrome DevTools
+
+![ico-20 warn] There used to be a separate **^^JavaScript Profiler^^** tab for this. It was taken out of DevTools in Chrome 124 and cannot be brought back — a CPU profile is now recorded on the **^^Performance^^** tab. The old name still turns up in articles and videos.
 
 ![](createPath('images', 'js-profiler.png'))
 
-Start recording the profile (click the **^^Start^^** button)
+Start recording (the **^^Record^^** button, the circle at the top left)
 Perform a few actions on the application page
 Stop recording (press the **^^Stop^^** button)
 You can now view the recorded profile, assess the performance of the application’s various modules (functions) and identify problematic sections of code
 
+The table with the **^^Self Time^^** and **^^Total Time^^** columns is at the bottom, on the **^^Bottom-Up^^** ( every function in a list, the most expensive first ) and **^^Call Tree^^** ( the same thing as a tree of calls ) tabs:
+
 ~~~console
     Self Time                  Total Time                Function
 _______________________________________________________________________
-8092.0 ms                  8092.0 ms                     (iddle)
+8092.0 ms                  8092.0 ms                     (idle)
 1722.9 ms   93.74%         1722.9 ms      93.74%         (program)
    9.5 ms    0.52%            9.5 ms       0.52%         (garbage collector)
   10.6 ms    0.58%           10.6 ms       0.58%         fetch
@@ -53,16 +57,16 @@ _______________________________________________________________________
 
 _____________________________________________________________
 
-## ![ico-25 icon] Audits⟪Audits⟫
+## ![ico-25 icon] Lighthouse⟪Lighthouse⟫
 
 Go to the URL of the application you wish to test
-Open the **^^Audits^^** tab in Chrome DevTools
+Open the **^^Lighthouse^^** tab in Chrome DevTools ^^( before Chrome 89 it was called **Audits** )^^
 
 ![](createPath('images', 'audits.png'))
 
-DevTools displays a list of audit types
-Leave all audit types selected
-Click the **^^Run audits^^** button
+DevTools shows the list of categories to check
+Leave every category selected
+Click the **^^Analyze page load^^** button
 
 ### ![ico-20 icon] Performance⟪Performance⟫
 
@@ -81,6 +85,8 @@ This means that:
 **^^Max Potential First Input Delay^^** (first input delay) – the time from when the user first interacts with the page
 (i.e. clicks a link, button, etc.) until the browser is able to respond to that action
 ^^the delay is caused by the browser’s main thread potentially being occupied by another task^^
+
+![ico-20 warn] **^^First Meaningful Paint^^**, **^^First CPU Idle^^** and **^^Max Potential First Input Delay^^** are no longer measured by Lighthouse: they were dropped from the report as unreliable. Today’s report has **^^Largest Contentful Paint^^** ( when the largest element on the screen is painted ), **^^Total Blocking Time^^** ( how long in total the page did not answer input ) and **^^Cumulative Layout Shift^^** ( how much the content jumped about while loading ) instead. The old names remain in articles and in older reports, so they are worth knowing.
 
 The **^^Performance^^** tab displays a timeline of the recorded application session
 

@@ -5,7 +5,7 @@
     "ua": "Тестування продуктивності"
   },
   "p2": {
-    "ru": "Сколько приложение \"кушает\" памяти на клиенте ?",
+    "ru": "Сколько приложение \"кушает\" памяти на клиенте?",
     "eng": "How much memory does the application use on the client side?",
     "ua": "Скільки пам’яті «споживає» додаток на клієнті?"
   },
@@ -15,9 +15,9 @@
     "ua": "![ico-20 warn] Якщо обсяг використовуваної пам’яті зростає пропорційно до часу роботи додатка, це свідчить про витоки пам’яті."
   },
   "p4": {
-    "ru": "![ico-20 warn] Если приложение часто \"подвисает\" на секунду-две, то, скорее всего, слишком часто запускается сборщик мусора, чтобы очистить память от ненужных преременных.",
-    "eng": "![ico-20 warn] If the application frequently ‘freezes’ for a second or two, the garbage collector is most likely running too often to clear the memory of unnecessary temporary data.",
-    "ua": "![ico-20 warn] Якщо додаток часто «зависає» на секунду-дві, то, найімовірніше, занадто часто запускається збирач сміття, щоб очистити пам’ять від непотрібних тимчасових даних."
+    "ru": "![ico-20 warn] Если приложение часто \"подвисает\" на секунду-две, то, скорее всего, слишком часто запускается сборщик мусора, чтобы очистить память от ненужных переменных.",
+    "eng": "![ico-20 warn] If the application frequently ‘freezes’ for a second or two, the garbage collector is most likely running too often to clear unused variables out of memory.",
+    "ua": "![ico-20 warn] Якщо додаток часто «зависає» на секунду-дві, то, найімовірніше, занадто часто запускається збирач сміття, щоб очистити пам’ять від непотрібних змінних."
   },
   "p5": {
     "ru": "**RAIL** - это модель производительности,  ориентированная на пользователя.",
@@ -45,7 +45,7 @@
     "ua": "• час відтворення (візуалізації) контенту"
   },
   "p10": {
-    "ru": "• время до того, как страница станет интерактивной, т.е. начнет регировать на действия пользователя",
+    "ru": "• время до того, как страница станет интерактивной, т.е. начнёт реагировать на действия пользователя",
     "eng": "• the time it takes for the page to become interactive, i.e. to start responding to user actions",
     "ua": "• час до того, як сторінка стане інтерактивною, тобто почне реагувати на дії користувача"
   },
@@ -80,14 +80,14 @@
     "ua": "У новій вкладці браузера запустіть додаток, який ви хочете перевірити"
   },
   "p17": {
-    "ru": "Откройте вкладку **^^JavaScript Profiler^^** в Chrome DevTools",
-    "eng": "Open the **^^JavaScript Profiler^^** tab in Chrome DevTools",
-    "ua": "Відкрийте вкладку **^^JavaScript Profiler^^** у Chrome DevTools"
+    "ru": "Откройте вкладку **^^Performance^^** в Chrome DevTools",
+    "eng": "Open the **^^Performance^^** tab in Chrome DevTools",
+    "ua": "Відкрийте вкладку **^^Performance^^** у Chrome DevTools"
   },
   "p18": {
-    "ru": "Начните запись профиля (нажмите кнопку **^^Start^^**)",
-    "eng": "Start recording the profile (click the **^^Start^^** button)",
-    "ua": "Почніть запис профілю (натисніть кнопку **^^Start^^**)"
+    "ru": "Начните запись (кнопка **^^Record^^**, круглая слева вверху)",
+    "eng": "Start recording (the **^^Record^^** button, the circle at the top left)",
+    "ua": "Почніть запис (кнопка **^^Record^^**, кругла ліворуч угорі)"
   },
   "p19": {
     "ru": "Выполните несколько действий на странице приложения",
@@ -110,24 +110,24 @@
     "ua": "Перейдіть за URL-адресою додатка, який ви хочете перевірити"
   },
   "p23": {
-    "ru": "Откройте вкладку **^^Audits^^** в Chrome DevTools",
-    "eng": "Open the **^^Audits^^** tab in Chrome DevTools",
-    "ua": "Відкрийте вкладку **^^Audits^^** у Chrome DevTools"
+    "ru": "Откройте вкладку **^^Lighthouse^^** в Chrome DevTools ^^( в версиях до Chrome 89 она называлась **Audits** )^^",
+    "eng": "Open the **^^Lighthouse^^** tab in Chrome DevTools ^^( before Chrome 89 it was called **Audits** )^^",
+    "ua": "Відкрийте вкладку **^^Lighthouse^^** у Chrome DevTools ^^( у версіях до Chrome 89 вона називалася **Audits** )^^"
   },
   "p24": {
-    "ru": "DevTools показывает список видов аудита",
-    "eng": "DevTools displays a list of audit types",
-    "ua": "DevTools показує список видів аудиту"
+    "ru": "DevTools показывает список категорий проверки",
+    "eng": "DevTools shows the list of categories to check",
+    "ua": "DevTools показує список категорій перевірки"
   },
   "p25": {
-    "ru": "Оставьте все виды аудита выбранными",
-    "eng": "Leave all audit types selected",
-    "ua": "Залиште всі види аудиту вибраними"
+    "ru": "Оставьте все категории выбранными",
+    "eng": "Leave every category selected",
+    "ua": "Залиште всі категорії вибраними"
   },
   "p26": {
-    "ru": "Нажмите кнопку **^^Run audits^^**",
-    "eng": "Click the **^^Run audits^^** button",
-    "ua": "Натисніть кнопку **^^Run audits^^**"
+    "ru": "Нажмите кнопку **^^Analyze page load^^**",
+    "eng": "Click the **^^Analyze page load^^** button",
+    "ua": "Натисніть кнопку **^^Analyze page load^^**"
   },
   "p27": {
     "ru": "**^^First Contentful Paint^^** - время до того момента, когда первый текст или изображение покажется на странице",
@@ -235,7 +235,7 @@
     "ua": "Виклик **~⟦f0⟧~** обгортається в ~⟦f1⟧~/~⟦f2⟧~, що дозволить нам отримати приблизну оцінку часу виконання функції"
   },
   "p48": {
-    "ru": "Итак, производительность кода колеблется около пол-милисекунды",
+    "ru": "Итак, производительность кода колеблется около полумиллисекунды",
     "eng": "So, the code’s performance hovers around half a millisecond",
     "ua": "Тож, продуктивність коду коливається навколо половини мілісекунди"
   },
@@ -265,23 +265,38 @@
     "ua": "Завдяки дебаггеру ми можемо переконатися, що у нашого коду споживання пам’яті є досить незначним:"
   },
   "p54": {
-    "ru":  "• код:                    127 килобайт",
+    "ru": "• код:                    127 килобайт",
     "eng": "• code:                   127 kilobytes",
-    "ua":  "• код:                    127 кілобайт"
+    "ua": "• код:                    127 кілобайт"
   },
   "p55": {
-    "ru":  "• строки:                 100 килобайт",
+    "ru": "• строки:                 100 килобайт",
     "eng": "• strings:                100 kilobytes",
-    "ua":  "• рядки:                  100 кілобайт"
+    "ua": "• рядки:                  100 кілобайт"
   },
   "p56": {
-    "ru":  "• массивы:                  2 килобайта",
+    "ru": "• массивы:                  2 килобайта",
     "eng": "• arrays:                   2 kilobytes",
-    "ua":  "• масиви:                   2 кілобайти"
+    "ua": "• масиви:                   2 кілобайти"
   },
   "p57": {
-    "ru":  "• типизированные массивы:   1 килобайт",
+    "ru": "• типизированные массивы:   1 килобайт",
     "eng": "• typed arrays:             1 kilobyte",
-    "ua":  "• типізовані масиви:        1 кілобайт"
+    "ua": "• типізовані масиви:        1 кілобайт"
+  },
+  "outdatedMetrics": {
+    "ru": "![ico-20 warn] **^^First Meaningful Paint^^**, **^^First CPU Idle^^** и **^^Max Potential First Input Delay^^** Lighthouse больше не считает: их убрали из отчёта как ненадёжные. В сегодняшнем отчёте вместо них — **^^Largest Contentful Paint^^** ( когда отрисован самый большой элемент экрана ), **^^Total Blocking Time^^** ( сколько всего страница не отвечала на ввод ) и **^^Cumulative Layout Shift^^** ( насколько содержимое прыгало при загрузке ). Старые названия остались в статьях и в отчётах прежних лет, поэтому знать их стоит.",
+    "eng": "![ico-20 warn] **^^First Meaningful Paint^^**, **^^First CPU Idle^^** and **^^Max Potential First Input Delay^^** are no longer measured by Lighthouse: they were dropped from the report as unreliable. Today’s report has **^^Largest Contentful Paint^^** ( when the largest element on the screen is painted ), **^^Total Blocking Time^^** ( how long in total the page did not answer input ) and **^^Cumulative Layout Shift^^** ( how much the content jumped about while loading ) instead. The old names remain in articles and in older reports, so they are worth knowing.",
+    "ua": "![ico-20 warn] **^^First Meaningful Paint^^**, **^^First CPU Idle^^** та **^^Max Potential First Input Delay^^** Lighthouse більше не рахує: їх прибрали зі звіту як ненадійні. У сьогоднішньому звіті замість них — **^^Largest Contentful Paint^^** ( коли відмальовано найбільший елемент екрана ), **^^Total Blocking Time^^** ( скільки загалом сторінка не відповідала на ввід ) і **^^Cumulative Layout Shift^^** ( наскільки вміст стрибав під час завантаження ). Старі назви лишилися у статтях і у звітах попередніх років, тому знати їх варто."
+  },
+  "profilerGone": {
+    "ru": "![ico-20 warn] Раньше для этого была отдельная вкладка **^^JavaScript Profiler^^**. Её убрали из DevTools в Chrome 124 и включить обратно нельзя — профиль CPU снимают на вкладке **^^Performance^^**. Старое название ещё встречается в статьях и видео.",
+    "eng": "![ico-20 warn] There used to be a separate **^^JavaScript Profiler^^** tab for this. It was taken out of DevTools in Chrome 124 and cannot be brought back — a CPU profile is now recorded on the **^^Performance^^** tab. The old name still turns up in articles and videos.",
+    "ua": "![ico-20 warn] Раніше для цього була окрема вкладка **^^JavaScript Profiler^^**. Її прибрали з DevTools у Chrome 124, і повернути не можна — профіль CPU знімають на вкладці **^^Performance^^**. Стара назва ще трапляється у статтях і відео."
+  },
+  "whereSelfTime": {
+    "ru": "Таблицу со столбцами **^^Self Time^^** и **^^Total Time^^** ищите внизу, на вкладках **^^Bottom-Up^^** ( все функции списком, самые дорогие сверху ) и **^^Call Tree^^** ( то же самое деревом вызовов ):",
+    "eng": "The table with the **^^Self Time^^** and **^^Total Time^^** columns is at the bottom, on the **^^Bottom-Up^^** ( every function in a list, the most expensive first ) and **^^Call Tree^^** ( the same thing as a tree of calls ) tabs:",
+    "ua": "Таблицю зі стовпцями **^^Self Time^^** і **^^Total Time^^** шукайте внизу, на вкладках **^^Bottom-Up^^** ( усі функції списком, найдорожчі згори ) і **^^Call Tree^^** ( те саме деревом викликів ):"
   }
 }

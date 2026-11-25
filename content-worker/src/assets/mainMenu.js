@@ -172,7 +172,6 @@ export const mainMenu = [
     ru: 'Итерирование массивов. SHA',
     items: [
       { ref: 'Array-iterating-methods', ua: 'Ітеруючі методи масивів', eng: 'Array iterating methods', ru: 'Итерирующие методы массивов' },
-      { ref: 'JS-heap-memory-allocation', ua: 'Тестування продуктивності', eng: 'Heap memory allocation', ru: 'Тестирование производительности' },
       { ref: 'SHA', ua: 'Secure Hash Algorithm', eng: 'Secure Hash Algorithm', ru: 'Secure Hash Algorithm' },
       { ref: 'hw-09', ua: 'Homework', eng: 'Homework', ru: 'Homework', hidden: true }
     ]
@@ -373,6 +372,12 @@ export const mainMenu = [
       { ref: 'web-workers', ua: 'Web-workers', eng: 'Web-workers', ru: 'Web-workers' },
       { ref: 'NotificationAPI', ua: 'Notification API', eng: 'Notification API', ru: 'Notification API' },
       { ref: 'performance', ua: 'Performance API', eng: 'Performance API', ru: 'Performance API' },
+      // Страница называется «Тестирование производительности», а файл —
+      // JS-heap-memory-allocation: имя файла старше текста. Лежала она в
+      // разделе «Итерирование массивов. SHA», куда попала когда-то за
+      // компанию; её место здесь, рядом с Performance API, которым то же
+      // самое измеряют из кода.
+      { ref: 'JS-heap-memory-allocation', ua: 'Тестування продуктивності', eng: 'Performance testing', ru: 'Тестирование производительности' },
       { ref: 'web-socket', ua: 'Web-socket', eng: 'Web-socket', ru: 'Web-socket' }
     ]
   },
