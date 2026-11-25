@@ -32,7 +32,7 @@ _____________________________________________________________
 
 {{profilerGone}}
 
-![](illustrations/js-profiler.png)
+![](illustrations/performance-panel.png)
 
 {{p18}}
 {{p19}}
