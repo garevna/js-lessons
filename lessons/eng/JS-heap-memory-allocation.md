@@ -64,11 +64,13 @@ _____________________________________________________________
 Go to the URL of the application you wish to test
 Open the **^^Lighthouse^^** tab in Chrome DevTools ^^( before Chrome 89 it was called **Audits** )^^
 
-![](illustrations/audits.png)
-
 DevTools shows the list of categories to check
 Leave every category selected
 Click the **^^Analyze page load^^** button
+
+![](illustrations/lighthouse.png)
+
+![ico-20 warn] If the browser has extensions installed, Lighthouse says so: they run on the same page and spoil the measurement. An honest result is taken in an incognito window, or in a Chrome profile with no extensions.
 
 ### ![ico-20 icon] Performance⟪Performance⟫
 
