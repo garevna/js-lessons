@@ -164,6 +164,8 @@ segments: 0.459228515625ms
 
 {{p49}}
 
+![](illustrations/performance-memory.png)
+
 {{p50}}
 {{p51}}
 {{p52}}

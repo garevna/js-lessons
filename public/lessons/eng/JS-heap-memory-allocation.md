@@ -164,6 +164,8 @@ So, the code’s performance hovers around half a millisecond
 
 Now let us see how much memory this takes. In the **^^Performance^^** panel tick **^^Memory^^** and record the profile again: the tracks are joined by the **^^JS heap^^**, **^^Documents^^**, **^^Nodes^^**, **^^Listeners^^** and **^^GPU memory^^** graphs.
 
+![](illustrations/performance-memory.png)
+
 • The JavaScript interpreter dynamically allocates the necessary memory when variables are declared
 • Calls to certain functions also result in memory allocation
 • Some methods allocate memory for new values or objects
