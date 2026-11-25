@@ -77,6 +77,90 @@ let rings = [];
 let outerOrbit = { r: 1030, satellites: [] };
 let titles = {};
 let mapData = null;   // всё прочитанное целиком — его же записывает правка
+
+/**
+ * Язык читателя — тот же, на котором он читает курс.
+ *
+ * Карта открыта во фрейме внутри приложения, с того же адреса, так что
+ * localStorage у них общий, и спрашивать у приложения нечего: ответ лежит
+ * там, куда его кладёт переключатель языка. Карту, открытую отдельной
+ * страницей, это тоже касается — в том же браузере ответ тот же.
+ */
+const LANGS = ["ru", "ua", "eng"];
+
+const speaking = (() => {
+  try {
+    const kept = localStorage.getItem("lang");
+    return LANGS.includes(kept) ? kept : "ru";
+  } catch {
+    // Страница, открытая файлом с диска, или браузер с запретом на хранение.
+    return "ru";
+  }
+})();
+
+/** Поле — это либо одна строка для всех, либо три языка. */
+const speak = (value) => {
+  if (!value) return "";
+  if (typeof value === "string") return value;
+  return value[speaking] || value.ru || value.eng || "";
+};
+
+/** Слова самой страницы: заголовок, кнопки, легенда. */
+const WORDS = {
+  ru: {
+    title: "Ментальная карта курса JavaScript",
+    collapse: "Свернуть всё",
+    expand: "Развернуть всё",
+    orbitOn: "Внешний контур: ВКЛ",
+    orbitOff: "Внешний контур: ВЫКЛ",
+    centre: "Центрировать",
+    core: "Курс JavaScript",
+    orbit: "Внешний контур",
+    legend: [
+      "Кольцо 1 (Ядро): Основы",
+      "Кольцо 2: Прототипное наследование",
+      "Кольцо 3: Функциональщина",
+      "Кольцо 4: Асинхронщина",
+      "Орбита 5: Инженерия, Web APIs и Паттерны"
+    ]
+  },
+  ua: {
+    title: "Ментальна карта курсу JavaScript",
+    collapse: "Згорнути все",
+    expand: "Розгорнути все",
+    orbitOn: "Зовнішній контур: УВІМК",
+    orbitOff: "Зовнішній контур: ВИМК",
+    centre: "Центрувати",
+    core: "Курс JavaScript",
+    orbit: "Зовнішній контур",
+    legend: [
+      "Кільце 1 (Ядро): Основи",
+      "Кільце 2: Прототипне успадкування",
+      "Кільце 3: Функціональщина",
+      "Кільце 4: Асинхронщина",
+      "Орбіта 5: Інженерія, Web APIs і Патерни"
+    ]
+  },
+  eng: {
+    title: "The JavaScript course as a mind map",
+    collapse: "Collapse all",
+    expand: "Expand all",
+    orbitOn: "Outer ring: ON",
+    orbitOff: "Outer ring: OFF",
+    centre: "Centre it",
+    core: "JavaScript course",
+    orbit: "Outer ring",
+    legend: [
+      "Ring 1 (the core): the basics",
+      "Ring 2: prototypal inheritance",
+      "Ring 3: functional stuff",
+      "Ring 4: asynchronous stuff",
+      "Orbit 5: engineering, Web APIs and patterns"
+    ]
+  }
+};
+
+const words = WORDS[speaking] || WORDS.ru;
 // ВНЕШНЯЯ ОРБИТА 5 (Спутники: Инженерия, Web APIs, Паттерны)
 
 function createEl(tag, attrs = {}) {
@@ -138,11 +222,11 @@ function render() {
             x: ipos.x, y: ipos.y, fill: "#FDE68A", "font-size": 11.5, "font-weight": 500,
             "text-anchor": "middle", "dominant-baseline": "central"
           });
-          itxt.textContent = it.title;
+          itxt.textContent = speak(it.title);
           ig.appendChild(itxt);
           ig.onclick = (e) => {
             e.stopPropagation();
-            showPanel(sat.title, it.title, it.desc, sat.color, it.refs);
+            showPanel(speak(sat.title), speak(it.title), speak(it.desc), sat.color, it.refs);
           };
           satLayer.appendChild(ig);
         });
@@ -157,12 +241,12 @@ function render() {
         x: pos.x, y: pos.y, fill: "#FEF3C7", "font-size": 13, "font-weight": 700,
         "text-anchor": "middle", "dominant-baseline": "central"
       });
-      stxt.textContent = leaf ? sat.title : `${sat.title} ${sCollapsed ? "+" : "−"}`;
+      stxt.textContent = leaf ? speak(sat.title) : `${speak(sat.title)} ${sCollapsed ? "+" : "−"}`;
       sg.appendChild(stxt);
       sg.onclick = (e) => {
         e.stopPropagation();
         if (leaf) {
-          showPanel("Внешний контур", sat.title, sat.desc, sat.color, sat.refs);
+          showPanel(words.orbit, speak(sat.title), speak(sat.desc), sat.color, sat.refs);
           return;
         }
         state[sat.id] = !state[sat.id];
@@ -171,7 +255,7 @@ function render() {
       sg.oncontextmenu = (e) => {
         if (leaf || !sat.refs) return;
         e.preventDefault();
-        showPanel("Внешний контур", sat.title, sat.desc, sat.color, sat.refs);
+        showPanel(words.orbit, speak(sat.title), speak(sat.desc), sat.color, sat.refs);
       };
       satLayer.appendChild(sg);
     });
@@ -209,11 +293,11 @@ function render() {
               x: iPos.x, y: iPos.y, fill: "#E2E8F0", "font-size": 11.5, "font-weight": 500,
               "text-anchor": "middle", "dominant-baseline": "central"
             });
-            t3.textContent = item.title;
+            t3.textContent = speak(item.title);
             g3.appendChild(t3);
             g3.onclick = (e) => {
               e.stopPropagation();
-              showPanel(`${ring.title} → ${br.title}`, item.title, item.desc, ring.color, item.refs);
+              showPanel(`${speak(ring.title)} → ${speak(br.title)}`, speak(item.title), speak(item.desc), ring.color, item.refs);
             };
             layer.appendChild(g3);
           });
@@ -230,8 +314,8 @@ function render() {
           "text-anchor": "middle", "dominant-baseline": "central"
         });
         t2.textContent = leaf
-          ? (br.map ? `${br.title} ⌁` : br.title)
-          : `${br.title} ${bCollapsed ? "+" : "−"}`;
+          ? (br.map ? `${speak(br.title)} ⌁` : speak(br.title))
+          : `${speak(br.title)} ${bCollapsed ? "+" : "−"}`;
         g2.appendChild(t2);
         g2.onclick = (e) => {
           e.stopPropagation();
@@ -244,7 +328,7 @@ function render() {
             return;
           }
           if (leaf) {
-            showPanel(ring.title, br.title, br.desc, ring.color, br.refs);
+            showPanel(speak(ring.title), speak(br.title), speak(br.desc), ring.color, br.refs);
             return;
           }
           state[br.id] = !state[br.id];
@@ -255,7 +339,7 @@ function render() {
         g2.oncontextmenu = (e) => {
           if (!br.refs || (leaf && !br.map)) return;
           e.preventDefault();
-          showPanel(ring.title, br.title, br.desc, ring.color, br.refs);
+          showPanel(speak(ring.title), speak(br.title), speak(br.desc), ring.color, br.refs);
         };
         layer.appendChild(g2);
       });
@@ -263,7 +347,7 @@ function render() {
 
     // Заголовок самого кольца (сверху на окружности)
     const hPos = polar(ring.headerAngle, ring.r + (ring.headerOffset || 0));
-    const hw = ring.title.length * 8.2 + 44;
+    const hw = speak(ring.title).length * 8.2 + 44;
     const gHeader = createEl("g", { class: "ring-header", "data-at": `ring:${ri}` });
     gHeader.appendChild(createEl("rect", {
       x: hPos.x - hw / 2, y: hPos.y - 19, width: hw, height: 38, rx: 19,
@@ -273,7 +357,7 @@ function render() {
       x: hPos.x, y: hPos.y, fill: "#FFFFFF", "font-size": 14, "font-weight": 700,
       "text-anchor": "middle", "dominant-baseline": "central"
     });
-    tHeader.textContent = `${ring.title} ${rCollapsed ? "+" : "−"}`;
+    tHeader.textContent = `${speak(ring.title)} ${rCollapsed ? "+" : "−"}`;
     gHeader.appendChild(tHeader);
     gHeader.onclick = (e) => {
       e.stopPropagation();
@@ -282,7 +366,7 @@ function render() {
     };
     gHeader.oncontextmenu = (e) => {
       e.preventDefault();
-      showPanel(ring.level, ring.title, ring.desc, ring.color, ring.refs);
+      showPanel(speak(ring.level), speak(ring.title), speak(ring.desc), ring.color, ring.refs);
     };
     layer.appendChild(gHeader);
 
@@ -299,12 +383,43 @@ function render() {
   centerG.appendChild(icon);
 
   const title = createEl("text", { x: CX, y: CY + 16, fill: "#FFFFFF", "font-size": 16, "font-weight": 700, "text-anchor": "middle" });
-  title.textContent = "Курс JavaScript";
+  title.textContent = words.core;
   centerG.appendChild(title);
 
   viewport.appendChild(centerG);
 
+  fitBoxes();
   syncToggleAll();
+}
+
+/**
+ * Расширить блок, если подпись в него не влезла.
+ *
+ * Ширины в course.json подобраны руками под русский текст. «Память и
+ * среда» — четырнадцать букв, Memory and environment — двадцать две, и в
+ * ту же рамку они не помещаются: подпись вылезает за края с обеих сторон.
+ *
+ * Поэтому рамка здесь не меняется, пока текст в неё влезает, — расставленное
+ * руками остаётся как расставлено, — и растёт ровно настолько, насколько
+ * нужно, когда язык оказался длиннее. Делается это после отрисовки, потому
+ * что длину текста знает только сам браузер, и только когда текст уже на
+ * странице.
+ */
+function fitBoxes() {
+  const padding = 26;
+
+  for (const group of viewport.querySelectorAll("[data-at], .ring-header")) {
+    const rect = group.querySelector("rect");
+    const text = group.querySelector("text");
+    if (!rect || !text) continue;
+
+    const needed = Math.ceil(text.getComputedTextLength() + padding);
+    const width = Number(rect.getAttribute("width"));
+    if (!(needed > width)) continue;
+
+    rect.setAttribute("x", Number(text.getAttribute("x")) - needed / 2);
+    rect.setAttribute("width", needed);
+  }
 }
 
 function showPanel(tag, title, desc, color, refs = []) {
@@ -338,7 +453,7 @@ function showPanel(tag, title, desc, color, refs = []) {
 
       // Имя файла урока студенту ни о чём не говорит: подписи берутся из
       // меню курса и лежат в course.json. Чего там нет — то имя файла.
-      a.textContent = titles[r] || r.split("#")[0];
+      a.textContent = speak(titles[r]) || r.split("#")[0];
       refsBox.appendChild(a);
     });
     refsBox.style.display = "flex";
@@ -370,13 +485,13 @@ function toggleAll() {
 /** Надпись на ней — после каждой отрисовки: сворачивают и поодиночке. */
 function syncToggleAll() {
   const button = document.getElementById("btn-all");
-  if (button) button.textContent = anythingCollapsed() ? "Развернуть всё" : "Свернуть всё";
+  if (button) button.textContent = anythingCollapsed() ? words.expand : words.collapse;
 }
 
 function toggleSatellites() {
   showSatellites = !showSatellites;
   const btn = document.getElementById("btn-satellites");
-  btn.textContent = showSatellites ? "Внешний контур: ВКЛ" : "Внешний контур: ВЫКЛ";
+  btn.textContent = showSatellites ? words.orbitOn : words.orbitOff;
   btn.classList.toggle("active-sat", showSatellites);
   render();
 }
@@ -436,6 +551,20 @@ if (local) {
   document.body.appendChild(editor);
 }
 
+/** Подписи самой страницы — на языке читателя, до первой отрисовки. */
+function dress() {
+  document.title = words.title;
+  document.getElementById("map-title").textContent = words.title;
+  document.getElementById("btn-centre").textContent = words.centre;
+  document.getElementById("btn-satellites").textContent = showSatellites ? words.orbitOn : words.orbitOff;
+
+  const legend = document.querySelectorAll("#legend .legend-item span:last-child");
+  words.legend.forEach((line, i) => { if (legend[i]) legend[i].textContent = line; });
+
+  document.documentElement.lang = speaking === "eng" ? "en" : speaking === "ua" ? "uk" : "ru";
+}
+
+dress();
 updateTransform();
 
 // Данные приходят из course.json, а не живут в коде: их пишет правка

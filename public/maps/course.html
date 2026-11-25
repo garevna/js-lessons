@@ -138,14 +138,17 @@
 </head>
 <body>
 
+<!-- Подписи здесь пустые: их ставит course.js на языке, который читатель
+     выбрал в приложении. Написанные в разметке, они на мгновение
+     показались бы по-русски украинцу и англичанину. -->
 <header>
   <div>
-    <h1>Ментальная карта курса JavaScript</h1>
+    <h1 id="map-title"></h1>
   </div>
   <div class="controls">
-    <button id="btn-all" onclick="toggleAll()">Свернуть всё</button>
-    <button id="btn-satellites" class="active-sat" onclick="toggleSatellites()">Внешний контур: ВКЛ</button>
-    <button onclick="resetView()">Центрировать</button>
+    <button id="btn-all" onclick="toggleAll()"></button>
+    <button id="btn-satellites" class="active-sat" onclick="toggleSatellites()"></button>
+    <button id="btn-centre" onclick="resetView()"></button>
   </div>
 </header>
 
@@ -161,19 +164,19 @@
   </svg>
 </div>
 
-<div class="legend">
-  <div class="legend-item"><span class="dot" style="background:#EA580C"></span> Кольцо 1 (Ядро): Основы</div>
-  <div class="legend-item"><span class="dot" style="background:#0D9488"></span> Кольцо 2: Прототипное наследование</div>
-  <div class="legend-item"><span class="dot" style="background:#8B5CF6"></span> Кольцо 3: Функциональщина</div>
-  <div class="legend-item"><span class="dot" style="background:#0284C7"></span> Кольцо 4: Асинхронщина</div>
-  <div class="legend-item"><span class="dot" style="background:#F59E0B"></span> Орбита 5: Инженерия, Web APIs и Паттерны</div>
+<div class="legend" id="legend">
+  <div class="legend-item"><span class="dot" style="background:#EA580C"></span> <span></span></div>
+  <div class="legend-item"><span class="dot" style="background:#0D9488"></span> <span></span></div>
+  <div class="legend-item"><span class="dot" style="background:#8B5CF6"></span> <span></span></div>
+  <div class="legend-item"><span class="dot" style="background:#0284C7"></span> <span></span></div>
+  <div class="legend-item"><span class="dot" style="background:#F59E0B"></span> <span></span></div>
 </div>
 
 <div id="info-panel">
   <button id="close-panel" onclick="closePanel()">✕</button>
-  <div id="panel-tag" class="tag">Уровень</div>
-  <h3 id="panel-title">Заголовок</h3>
-  <p id="panel-desc">Описание</p>
+  <div id="panel-tag" class="tag"></div>
+  <h3 id="panel-title"></h3>
+  <p id="panel-desc"></p>
   <div id="panel-refs" class="refs-box"></div>
 </div>
 
