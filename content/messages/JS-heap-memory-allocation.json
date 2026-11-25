@@ -298,5 +298,10 @@
     "ru": "Таблицу со столбцами **^^Self Time^^** и **^^Total Time^^** ищите внизу, на вкладках **^^Bottom-Up^^** ( все функции списком, самые дорогие сверху ) и **^^Call Tree^^** ( то же самое деревом вызовов ):",
     "eng": "The table with the **^^Self Time^^** and **^^Total Time^^** columns is at the bottom, on the **^^Bottom-Up^^** ( every function in a list, the most expensive first ) and **^^Call Tree^^** ( the same thing as a tree of calls ) tabs:",
     "ua": "Таблицю зі стовпцями **^^Self Time^^** і **^^Total Time^^** шукайте внизу, на вкладках **^^Bottom-Up^^** ( усі функції списком, найдорожчі згори ) і **^^Call Tree^^** ( те саме деревом викликів ):"
+  },
+  "incognito": {
+    "ru": "![ico-20 warn] Если в браузере стоят расширения, Lighthouse об этом предупредит: они выполняются на той же странице и портят замер. Честный результат снимают в окне инкогнито или в профиле Chrome без расширений.",
+    "eng": "![ico-20 warn] If the browser has extensions installed, Lighthouse says so: they run on the same page and spoil the measurement. An honest result is taken in an incognito window, or in a Chrome profile with no extensions.",
+    "ua": "![ico-20 warn] Якщо у браузері встановлено розширення, Lighthouse про це попередить: вони виконуються на тій самій сторінці й псують замір. Чесний результат знімають у вікні інкогніто або у профілі Chrome без розширень."
   }
 }

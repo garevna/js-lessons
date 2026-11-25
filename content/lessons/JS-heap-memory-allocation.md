@@ -64,11 +64,13 @@ _____________________________________________________________
 {{p22}}
 {{p23}}
 
-![](illustrations/audits.png)
-
 {{p24}}
 {{p25}}
 {{p26}}
+
+![](illustrations/lighthouse.png)
+
+{{incognito}}
 
 ### ![ico-20 icon] Performance
 
