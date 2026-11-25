@@ -96,14 +96,14 @@ DevTools показує список категорій перевірки
 
 ![](illustrations/performance.png)
 
-[%%%Accessibility%%%](https://developers.google.com/web/fundamentals/accessibility/?utm_source=lighthouse&utm_medium=devtools)
+[%%%Accessibility%%%](https://web.dev/accessibility)
 
 _____________________________________________________________
 
 ## ![ico-25 icon] Memory⟪Memory⟫
 
-[%%%How to Record Heap Snapshots%%%](https://developers.google.com/web/tools/chrome-devtools/memory-problems/heap-snapshots)
-[%%%Fix Memory Problems%%%](https://developers.google.com/web/tools/chrome-devtools/memory-problems/)
+[%%%Record heap snapshots%%%](https://developer.chrome.com/docs/devtools/memory-problems/heap-snapshots)
+[%%%Fix memory problems%%%](https://developer.chrome.com/docs/devtools/memory-problems/)
 
 Розглянемо приклад коду, продуктивність якого ми хочемо протестувати:
 
@@ -162,15 +162,15 @@ segments: 0.459228515625ms
 
 Тож, продуктивність коду коливається навколо половини мілісекунди
 
-Скористаємося дебаггером для оцінки виділених ресурсів пам’яті
+Тепер подивимося, скільки пам’яті на це витрачається. У панелі **^^Performance^^** поставте галочку **^^Memory^^** і запишіть профіль заново: до доріжок додадуться графіки **^^JS heap^^**, **^^Documents^^**, **^^Nodes^^**, **^^Listeners^^** і **^^GPU memory^^**.
 
-[![ico-70 youtube]](https://youtu.be/nDNEiu_xwf0)
+![](illustrations/performance-memory.png)
 
 • Інтерпретатор JavaScript динамічно виділяє необхідну пам’ять під час оголошення змінних
 • Виклики деяких функцій також призводять до виділення пам’яті
 • Деякі методи виділяють пам’ять для нових значень або об’єктів
 
-Завдяки дебаггеру ми можемо переконатися, що у нашого коду споживання пам’яті є досить незначним:
+З графіків видно, що у нашого коду споживання пам’яті вельми незначне:
 
 • код:                    127 кілобайт
 • рядки:                  100 кілобайт

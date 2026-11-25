@@ -96,14 +96,14 @@ The **^^Performance^^** tab displays a timeline of the recorded application sess
 
 ![](illustrations/performance.png)
 
-[%%%Accessibility%%%](https://developers.google.com/web/fundamentals/accessibility/?utm_source=lighthouse&utm_medium=devtools)
+[%%%Accessibility%%%](https://web.dev/accessibility)
 
 _____________________________________________________________
 
 ## ![ico-25 icon] Memory⟪Memory⟫
 
-[%%%How to Record Heap Snapshots%%%](https://developers.google.com/web/tools/chrome-devtools/memory-problems/heap-snapshots)
-[%%%Fix Memory Problems%%%](https://developers.google.com/web/tools/chrome-devtools/memory-problems/)
+[%%%Record heap snapshots%%%](https://developer.chrome.com/docs/devtools/memory-problems/heap-snapshots)
+[%%%Fix memory problems%%%](https://developer.chrome.com/docs/devtools/memory-problems/)
 
 Let’s look at an example of code whose performance we wish to test:
 
@@ -162,15 +162,15 @@ segments: 0.459228515625ms
 
 So, the code’s performance hovers around half a millisecond
 
-Let’s use the debugger to assess the memory resources allocated
+Now let us see how much memory this takes. In the **^^Performance^^** panel tick **^^Memory^^** and record the profile again: the tracks are joined by the **^^JS heap^^**, **^^Documents^^**, **^^Nodes^^**, **^^Listeners^^** and **^^GPU memory^^** graphs.
 
-[![ico-70 youtube]](https://youtu.be/nDNEiu_xwf0)
+![](illustrations/performance-memory.png)
 
 • The JavaScript interpreter dynamically allocates the necessary memory when variables are declared
 • Calls to certain functions also result in memory allocation
 • Some methods allocate memory for new values or objects
 
-Thanks to the debugger, we can see that our code’s memory usage is very negligible:
+The graphs show that our code’s memory usage is very small indeed:
 
 • code:                   127 kilobytes
 • strings:                100 kilobytes
