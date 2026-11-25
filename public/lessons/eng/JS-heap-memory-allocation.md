@@ -32,7 +32,7 @@ Open the **^^Performance^^** tab in Chrome DevTools
 
 ![ico-20 warn] There used to be a separate **^^JavaScript Profiler^^** tab for this. It was taken out of DevTools in Chrome 124 and cannot be brought back — a CPU profile is now recorded on the **^^Performance^^** tab. The old name still turns up in articles and videos.
 
-![](createPath('images', 'js-profiler.png'))
+![](illustrations/js-profiler.png)
 
 Start recording (the **^^Record^^** button, the circle at the top left)
 Perform a few actions on the application page
@@ -62,7 +62,7 @@ _____________________________________________________________
 Go to the URL of the application you wish to test
 Open the **^^Lighthouse^^** tab in Chrome DevTools ^^( before Chrome 89 it was called **Audits** )^^
 
-![](createPath('images', 'audits.png'))
+![](illustrations/audits.png)
 
 DevTools shows the list of categories to check
 Leave every category selected
@@ -90,7 +90,7 @@ This means that:
 
 The **^^Performance^^** tab displays a timeline of the recorded application session
 
-![](createPath('images', 'performance.png'))
+![](illustrations/performance.png)
 
 [%%%Accessibility%%%](https://developers.google.com/web/fundamentals/accessibility/?utm_source=lighthouse&utm_medium=devtools)
 

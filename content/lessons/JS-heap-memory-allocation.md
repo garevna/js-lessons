@@ -32,7 +32,7 @@ _____________________________________________________________
 
 {{profilerGone}}
 
-![](createPath('images', 'js-profiler.png'))
+![](illustrations/js-profiler.png)
 
 {{p18}}
 {{p19}}
@@ -62,7 +62,7 @@ _____________________________________________________________
 {{p22}}
 {{p23}}
 
-![](createPath('images', 'audits.png'))
+![](illustrations/audits.png)
 
 {{p24}}
 {{p25}}
@@ -90,7 +90,7 @@ _____________________________________________________________
 
 {{p42}}
 
-![](createPath('images', 'performance.png'))
+![](illustrations/performance.png)
 
 [%%%Accessibility%%%](https://developers.google.com/web/fundamentals/accessibility/?utm_source=lighthouse&utm_medium=devtools)
 

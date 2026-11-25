@@ -32,7 +32,7 @@ _____________________________________________________________
 
 ![ico-20 warn] Раніше для цього була окрема вкладка **^^JavaScript Profiler^^**. Її прибрали з DevTools у Chrome 124, і повернути не можна — профіль CPU знімають на вкладці **^^Performance^^**. Стара назва ще трапляється у статтях і відео.
 
-![](createPath('images', 'js-profiler.png'))
+![](illustrations/js-profiler.png)
 
 Почніть запис (кнопка **^^Record^^**, кругла ліворуч угорі)
 Виконайте кілька дій на сторінці додатка
@@ -62,7 +62,7 @@ _____________________________________________________________
 Перейдіть за URL-адресою додатка, який ви хочете перевірити
 Відкрийте вкладку **^^Lighthouse^^** у Chrome DevTools ^^( у версіях до Chrome 89 вона називалася **Audits** )^^
 
-![](createPath('images', 'audits.png'))
+![](illustrations/audits.png)
 
 DevTools показує список категорій перевірки
 Залиште всі категорії вибраними
@@ -90,7 +90,7 @@ DevTools показує список категорій перевірки
 
 Вкладка **^^Performance^^** відображає часову шкалу записаного фрагмента роботи додатку
 
-![](createPath('images', 'performance.png'))
+![](illustrations/performance.png)
 
 [%%%Accessibility%%%](https://developers.google.com/web/fundamentals/accessibility/?utm_source=lighthouse&utm_medium=devtools)
 
