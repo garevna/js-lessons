@@ -625,4 +625,4 @@ _______________________________________________________________
 
 ## ![ico-25 icon] Memory allocation⟪Memory_allocation⟫
 
-[![ico-70 youtube]](https://www.youtube.com/watch?v=nDNEiu_xwf0&feature=youtu.be)
+[![ico-20 link] Тестирование производительности: профиль CPU и расход памяти](page/JS-heap-memory-allocation)

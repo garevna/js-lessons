@@ -91,6 +91,3 @@ In  **Chrome DevTools** , you can also pause code execution when DOM events occu
 
 ![](illustrations/Chrome-devtools-breakpoints.gif)
 
-_______________________________________________________
-
-[![ico-70 youtube]](https://youtu.be/PQYG2aJf6uI/)
