@@ -45,6 +45,33 @@ class MainMenuComponent extends HTMLElement {
     Object.assign(this, { keywords })
   }
 
+  /**
+   * The caption on the way into the course map, in the reader's language.
+   *
+   * Said again whenever the menu is rebuilt, which is what a change of
+   * language does: the switcher writes the choice and tells the worker, and
+   * the worker sends the menu back in the new language. The page is never
+   * reloaded, so anything that named itself once keeps the language it was
+   * born in — this line used to.
+   *
+   * The caption is a bare text node on purpose. A <span> here would be
+   * caught by `#menuToggle span`, the rule that draws the three bars of the
+   * hamburger: it would turn the words into a 16x16 blue square with the
+   * text spilling out beside it.
+   */
+  nameTheMap () {
+    if (!this.mapLink) return
+
+    const words = { ru: 'Ментальная карта', ua: 'Ментальна карта', eng: 'Mind map' }
+
+    this.mapLink.innerHTML = `
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="${MAP_ICON}"/>
+      </svg>
+      ${words[lang()] || words.eng}
+    `
+  }
+
   getRefs (data) {
     this.refs = data
       .flatMap(lesson => lesson.items.map(item => ({ [item.ref]: lesson.ref })))
@@ -56,6 +83,7 @@ class MainMenuComponent extends HTMLElement {
     this.menuOptions = []
     this.activeRef = localStorage.getItem('active-ref') || ''
     this.getRefs(data)
+    this.nameTheMap()
 
     const activeSubItemRef = location.search.slice(1) || ''
     const activeItemRef = activeSubItemRef ? this.refs[activeSubItemRef] : ''
@@ -118,17 +146,8 @@ class MainMenuComponent extends HTMLElement {
     // there is no lesson to hang it on.
     const mapLink = this.shadow.querySelector('#course-map-link')
     if (mapLink) {
-      const words = { ru: 'Ментальная карта', ua: 'Ментальна карта', eng: 'Mind map' }
-      // The caption is a bare text node on purpose. A <span> here would be
-      // caught by `#menuToggle span`, the rule that draws the three bars of
-      // the hamburger: it would turn the words into a 16x16 blue square with
-      // the text spilling out beside it.
-      mapLink.innerHTML = `
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-          <path d="${MAP_ICON}"/>
-        </svg>
-        ${words[lang()] || words.eng}
-      `
+      this.mapLink = mapLink
+      this.nameTheMap()
       mapLink.onclick = () => {
         this.checkbox.checked && this.checkbox.dispatchEvent(new Event('click'))
         const map = document.querySelector('course-map')

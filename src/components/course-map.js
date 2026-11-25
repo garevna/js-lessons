@@ -96,22 +96,25 @@ class CourseMap extends HTMLElement {
     this.shadow = this.attachShadow({ mode: 'closed' })
     createElem('style', this.shadow).textContent = styles
 
-    const words = WORDS[lang()] || WORDS.eng
-
+    // Без подписей: их ставит open(), на языке, который выбран к тому
+    // моменту. Написанные здесь, они остались бы языком, который был при
+    // загрузке страницы, — а переключатель языка страницу не
+    // перезагружает, он сообщает о смене воркеру.
     this.shadow.innerHTML += `
       <div class="sheet">
         <div class="frame">
           <header>
-            <h3>${words.title}</h3>
-            <button class="close" type="button" title="${words.close}" aria-label="${words.close}">×</button>
+            <h3></h3>
+            <button class="close" type="button">×</button>
           </header>
-          <iframe title="${words.title}" loading="lazy"></iframe>
+          <iframe loading="lazy"></iframe>
         </div>
       </div>
     `
 
     this.sheet = this.shadow.querySelector('.sheet')
     this.frame = this.shadow.querySelector('iframe')
+    this.heading = this.shadow.querySelector('h3')
   }
 
   connectedCallback () {
@@ -143,9 +146,28 @@ class CourseMap extends HTMLElement {
   }
 
   open () {
-    // Given its address once, on the first open, and kept afterwards: the
-    // reader who comes back to the map finds it where they left it.
-    if (!this.frame.getAttribute('src')) this.frame.setAttribute('src', 'maps/course.html')
+    // Подписи и язык — каждый раз заново.
+    //
+    // Переключатель языка не перезагружает страницу: он пишет выбор в
+    // localStorage и сообщает воркеру, а всё, что успело назвать себя
+    // раньше, остаётся на прежнем языке. Шапка этого окна так и
+    // оставалась русской над английской картой.
+    //
+    // Карта внутри читает тот же localStorage, но читает его при
+    // загрузке фрейма, поэтому язык стоит и в адресе: сменился — адрес
+    // другой, и фрейм перечитывается. Не сменился — фрейм остаётся как
+    // был, и читатель находит карту там, где её оставил.
+    const words = WORDS[lang()] || WORDS.eng
+
+    this.heading.textContent = words.title
+    this.frame.setAttribute('title', words.title)
+
+    const close = this.shadow.querySelector('.close')
+    close.setAttribute('title', words.close)
+    close.setAttribute('aria-label', words.close)
+
+    const address = `maps/course.html?${lang()}`
+    if (this.frame.getAttribute('src') !== address) this.frame.setAttribute('src', address)
 
     this.sheet.classList.add('shown')
     document.addEventListener('keydown', this.escape)
