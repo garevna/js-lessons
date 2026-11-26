@@ -90,9 +90,9 @@
     "ua": "^^Змінні, що знаходяться в стеку, завжди є локальними (**приватними**).^^"
   },
   "p19": {
-    "ru": "**Heap** (\"куча\") — это оперативная память, где хранятся глобальные переменные.",
-    "eng": "**Heap** is RAM where **global variables** are stored.",
-    "ua": "**Heap** (\"купа\") — це оперативна пам'ять, в якій зберігаються глобальні змінні."
+    "ru": "**Heap** (\"куча\") — это оперативная память, в которой движок размещает объекты: всё, что должно пережить вызов, в котором создано.",
+    "eng": "**Heap** is the memory where the engine puts objects: everything that has to outlive the call it was created in.",
+    "ua": "**Heap** (\"купа\") — це оперативна пам'ять, у якій рушій розміщує об'єкти: усе, що має пережити виклик, у якому створене."
   },
   "p20": {
     "ru": "^^\"Куча\" допускает динамическое выделение памяти.^^",
@@ -140,7 +140,7 @@
     "ua": "Те, що неможливо передбачити, неможливо синхронізувати."
   },
   "p29": {
-    "ru": "Мы не знаем заранее, когда пользователь кликнет на кнопке, и клинет ли вообще.",
+    "ru": "Мы не знаем заранее, когда пользователь кликнет на кнопке, и кликнет ли вообще.",
     "eng": "We don't know in advance when the user will click on the button, or if he or she will click at all.",
     "ua": "Ми не знаємо заздалегідь, коли користувач клацне на кнопці, і чи клацне взагалі."
   },
@@ -155,7 +155,7 @@
     "ua": "Друга властивість більшості подій - результат події недетермінований."
   },
   "p32": {
-    "ru": "Мы не можем с уверенностью предсказать, будет ли статус ответа сервера успешым, или же сервер вернет нам код http-ошибки.",
+    "ru": "Мы не можем с уверенностью предсказать, будет ли статус ответа сервера успешным, или же сервер вернет нам код http-ошибки.",
     "eng": "We can't predict with certainty whether the server's response status will be successful, or if the server will return an http error code to us.",
     "ua": "Ми не можемо з упевненістю передбачити, чи буде статус відповіді сервера успішним, чи сервер поверне нам код http-помилки."
   },
@@ -170,7 +170,7 @@
     "ua": "Асинхронне програмування полягає у прив'язці функцій до конкретних подій."
   },
   "p35": {
-    "ru": "Это так называемое событийно-ориентированное прораммирование (**Event-Driven Programming**).",
+    "ru": "Это так называемое событийно-ориентированное программирование (**Event-Driven Programming**).",
     "eng": "This is the so-called **event-driven programming**.",
     "ua": "Це так зване подієво-орієнтоване прораммування (**Event-Driven Programming**)."
   },
@@ -180,9 +180,9 @@
     "ua": "Зрозуміло, в середовищі (платформі), де буде запускатися ваш додаток, повинен бути механізм, що забезпечує реакцію на події."
   },
   "p37": {
-    "ru": "Т.е такой механизм должен предоставить вашему приложению некий **Event API** (<b>A</b>pplication <b>P</b>rogramme <b>I</b>nterface), сервисы которого позволят привязать ваши функции к определенным событиям.",
-    "eng": "That is, such a mechanism should provide your application with some kind of **Event API** (<b>A</b>pplication <b>P</b>rogramme <b>I</b>nterface), the services of which will allow you to bind your functions to certain events.",
-    "ua": "Тобто такий механізм повинен забезпечити ваш додаток певним **Event API** (<b>A</b>pplication <b>P</b>rogramme <b>I</b>nterface), сервіси якого дозволять прив'язати ваші функції до певних подій."
+    "ru": "Т.е. такой механизм должен предоставить вашему приложению некий **Event API** (<b>A</b>pplication <b>P</b>rogramming <b>I</b>nterface), сервисы которого позволят привязать ваши функции к определенным событиям.",
+    "eng": "That is, such a mechanism should provide your application with some kind of **Event API** (<b>A</b>pplication <b>P</b>rogramming <b>I</b>nterface), the services of which will allow you to bind your functions to certain events.",
+    "ua": "Тобто такий механізм повинен забезпечити ваш додаток певним **Event API** (<b>A</b>pplication <b>P</b>rogramming <b>I</b>nterface), сервіси якого дозволять прив'язати ваші функції до певних подій."
   },
   "p38": {
     "ru": "Этот же механизм должен обеспечить запуск на исполнение ваших функций при наступлении соответствующего события.",
@@ -275,7 +275,7 @@
     "ua": "^^Тепер **~⟦f2⟧~** із стека викликів може здійснювати прямий виклик інших функцій.^^"
   },
   "p56": {
-    "ru": "^^Функция **parent** была вызвана из скрипта **anonimous**. Это **прямой вызов**.^^",
+    "ru": "^^Функция **parent** была вызвана из скрипта **anonymous**. Это **прямой вызов**.^^",
     "eng": "^^The **~⟦f16⟧~** function was called from the **~⟦f17⟧~** script. This is a **direct call**.^^",
     "ua": "^^Функція **~⟦f16⟧~** була викликана зі скрипту **~⟦f2⟧~**. Це **прямий виклик**.^^"
   },
@@ -295,7 +295,7 @@
     "ua": "^^Зверху завжди знаходиться функція, яка виконується зараз.^^"
   },
   "p60": {
-    "ru": "^^Функция **parent** и функция **demo** попали в стек вызовов по непосредственному \"приглашению\" от скрипта **anonimous**.^^",
+    "ru": "^^Функция **parent** и функция **demo** попали в стек вызовов по непосредственному \"приглашению\" от скрипта **anonymous**.^^",
     "eng": "^^The **~⟦f16⟧~** function and the **~⟦f18⟧~** function hit the call stack by direct \"invitation\".^^",
     "ua": "^^Функція **~⟦f16⟧~** та функція **~⟦f18⟧~** потрапили у стік викликів на безпосереднє \"запрошення\".^^"
   },
@@ -330,9 +330,9 @@
     "ua": "Якщо ця подія відбудеться, то **~⟦f19⟧~** отримає шанс потрапити до стеку викликів."
   },
   "p67": {
-    "ru": "Однако тут придётся постоять в очереди, потому что событий много, и коллбеки, связанные с ними, образуют очередь задач (**task queue**).",
+    "ru": "Однако тут придётся постоять в очереди, потому что событий много, и колбеки, связанные с ними, образуют очередь задач (**task queue**).",
     "eng": "However, it will have to queue up, because there may be many events, and the callbacks associated with them form a **task queue**.",
-    "ua": "Однак тут доведеться постояти в черзі, тому що подій багато, і коллбеки, пов'язані з ними, утворюють чергу завдань (**task queue**)."
+    "ua": "Однак тут доведеться постояти в черзі, тому що подій багато, і колбеки, пов'язані з ними, утворюють чергу завдань (**task queue**)."
   },
   "p68": {
     "ru": "Итак, мы видим, что первым в **Call Stack** всегда попадает колбек.",
@@ -345,7 +345,7 @@
     "ua": "І, перебуваючи в стеку викликів, він може викликати інші функції."
   },
   "p70": {
-    "ru": "И каждая вызванная им функция будет одновременно с ним стеке вызовов.",
+    "ru": "И каждая вызванная им функция будет одновременно с ним в стеке вызовов.",
     "eng": "And each function being started by **dicrect call** will be in the **Call Stack** at the same time with script that called it.",
     "ua": "І кожна функція, що викликана ним, буде одночасно з ним стеку викликів."
   },
@@ -450,7 +450,7 @@
     "ua": "Найпростіший приклад браузерного API – метод глобального об'єкта **~⟦f5⟧~**."
   },
   "p91": {
-    "ru": "С его помощью мы передаем браузеру коллбек и указываем, через сколько миллисекунд этот коллбек должен попасть в очередь задач.",
+    "ru": "С его помощью мы передаем браузеру колбек и указываем, через сколько миллисекунд этот колбек должен попасть в очередь задач.",
     "eng": "With its help, we pass a callback to the browser and indicate how many milliseconds later this callback should get into the **task queue**.",
     "ua": "З його допомогою ми передаємо браузеру callback і вказуємо, через скільки мілісекунд цей callback повинен потрапити в чергу завдань."
   },
@@ -460,7 +460,7 @@
     "ua": "Далі двигун \"умиває руки\", тому що події відстежує браузер. Таймер встановлений, і браузер вчасно повідомить движку про те, що час минув."
   },
   "p93": {
-    "ru": "По истечении времени коллбек таймера будет помещён в очередь задач.",
+    "ru": "По истечении времени колбек таймера будет помещён в очередь задач.",
     "eng": "When the timer expires, the timer callback will be placed to the end of the **task queue**.",
     "ua": "Після закінчення часу callback таймера буде поміщений у чергу завдань."
   },
@@ -475,17 +475,17 @@
     "ua": "У черзі завдань може бути багато колбеків, і колбеку таймера доведеться чекати на свою чергу."
   },
   "p96": {
-    "ru": "Из очереди задач движок вытянет этот коллбек, когда наступит его очередь и стек вызовов будет свободен.",
+    "ru": "Из очереди задач движок вытянет этот колбек, когда наступит его очередь и стек вызовов будет свободен.",
     "eng": "The engine will pull this callback from the **task queue** when it is its turn and the **Call Stack** is free.",
     "ua": "З черги завдань двигун витягне цей колббек, коли настане його черга і стек викликів буде вільний."
   },
   "p97": {
-    "ru": "Обратите внимание, что все таймеры были установлены на 500 милисекунд.",
+    "ru": "Обратите внимание, что все таймеры были установлены на 500 миллисекунд.",
     "eng": "Note that all timers were set to 500 milliseconds.",
     "ua": "Зауважте, що всі таймери були встановлені на 500 мілісекунд."
   },
   "p98": {
-    "ru": "Однако большое число колбеков таймеров в очереди задач привело к тому, что задежка запуска очередного колбека возростала по мере продвижения очереди задач, и в конечном итоге последний колбек вошел в стек вызовов не через 500 милисекунд, а значительно позже.",
+    "ru": "Однако большое число колбеков таймеров в очереди задач привело к тому, что задержка запуска очередного колбека возрастала по мере продвижения очереди задач, и в конечном итоге последний колбек вошел в стек вызовов не через 500 миллисекунд, а значительно позже.",
     "eng": "However, the large number of timer callbacks in the task queue led to the fact that the delay in next callback execution increased as the task queue progressed, and ultimately the last callback entered the call stack not after 500 milliseconds, but much later.",
     "ua": "Однак велика кількість колбеків таймерів у черзі завдань призвела до того, що зачіпка запуску чергового колбека зростала в міру просування черги завдань, і зрештою останній колбек увійшов у стек викликів не через 500 мілісекунд, а значно пізніше."
   },
@@ -525,7 +525,7 @@
     "ua": "Пишіть код так, щоб стек викликів не був зайнятий надовго."
   },
   "p106": {
-    "ru": "Иначе ваша страница перестанет реагировать на события, потому что коллбеки не смогут попасть в стек вызовов.",
+    "ru": "Иначе ваша страница перестанет реагировать на события, потому что колбеки не смогут попасть в стек вызовов.",
     "eng": "Otherwise, your page will stop responding to events because the callbacks won't be able to get into the call stack.",
     "ua": "Інакше ваша сторінка перестане реагувати на події, тому що колбеки не зможуть потрапити у стек викликів."
   },
@@ -555,9 +555,9 @@
     "ua": "Таск, запущений таймером, займає стек викликів і блокує навіть перемальовування сторінки та виведення повідомлень у консоль."
   },
   "p112": {
-    "ru": "Сделайте вывод из этого примера, и тогда вы поймете, почему мы не можем создавать модальные окна.",
-    "eng": "Take a lesson from this example and then you will understand why we cannot create modal windows.",
-    "ua": "Зробіть висновок із цього прикладу, і тоді ви зрозумієте, чому ми не можемо створювати модальні вікна."
+    "ru": "Сделайте вывод из этого примера, и тогда вы поймете, почему мы не можем написать своё окно, которое остановит код до ответа пользователя.",
+    "eng": "Take a lesson from this example, and you will see why we cannot write a window of our own that stops the code until the user answers.",
+    "ua": "Зробіть висновок із цього прикладу, і тоді ви зрозумієте, чому ми не можемо написати своє вікно, яке зупинить код до відповіді користувача."
   },
   "p113": {
     "ru": "Браузер работает в многопоточном режиме, и каждый поток имеет свой стек вызовов, поэтому для него модальные окна не проблема.",
@@ -580,9 +580,9 @@
     "ua": "Як бачите, цикл працює начебто \"у фоновому режимі\", не блокуючи перемальовку екрана та інші операції."
   },
   "p117": {
-    "ru": "Однако \"фоновый режим\" у нас невозможен, поскольку JS - однопоточный, с одним стеком вызовов.",
-    "eng": "However, “background mode” is not possible for us, since JS is single-threaded, with one call stack.",
-    "ua": "Однак \"фоновий режим\" у нас неможливий, оскільки JS – однопотоковий, з одним стеком викликів."
+    "ru": "Однако настоящего \"фонового режима\" здесь нет: код страницы по-прежнему выполняется в одном потоке, с одним стеком вызовов.",
+    "eng": "There is no real “background mode” here, though: the page's code still runs in one thread, with one call stack.",
+    "ua": "Однак справжнього \"фонового режиму\" тут немає: код сторінки, як і раніше, виконується в одному потоці, з одним стеком викликів."
   },
   "p118": {
     "ru": "Поэтому мы имитируем \"многопоточность\" с помощью **Event Loop**.",
@@ -595,9 +595,9 @@
     "ua": "Пізніше ми познайомимося з асинхронними генераторами, які роблять щось подібне."
   },
   "p120": {
-    "ru": "Мікротаски - це нахабні хлопці, які лізуть позачергово",
+    "ru": "Микротаски — это нахальные ребята, которые лезут без очереди",
     "eng": "Microtasks are cheeky guys ignoring queue",
-    "ua": "Мікротаски - це нахабні хлопці, які лізуть позачергово"
+    "ua": "Мікротаски — це нахабні хлопці, які лізуть позачергово"
   },
   "p121": {
     "ru": "Колбеки таймеров и обработчики событий UI - это таски (tasks).",
@@ -611,7 +611,7 @@
   },
   "p123": {
     "ru": "Метод **~⟦f8⟧~** промиса тоже принимает колбек.",
-    "eng": "The method **~⟦f8⟧~** of the **promise** is a higher-order function that takes two callbacks as the arguments.",
+    "eng": "The **~⟦f8⟧~** method of a promise takes a callback too.",
     "ua": "Метод **~⟦f8⟧~** промісу теж приймає колбек."
   },
   "p124": {
@@ -620,9 +620,9 @@
     "ua": "І тут у циклі подій відбуваються такі дива:"
   },
   "p125": {
-    "ru": "Колбеки таймеров попадают в очередь задач раноше, чем колбеки промисов (у таймеров не установлено время, т.е. по умочанию это 0).",
+    "ru": "Колбеки таймеров попадают в очередь задач раньше, чем колбеки промисов (у таймеров не установлено время, т.е. по умолчанию это 0).",
     "eng": "Timer callbacks get into the **task queue** earlier than promise callbacks (timers do not have a time set, i.e., by default it is 0).",
-    "ua": "Колбеки таймерів потрапляють у **чергу завдань** раніше, ніж колбеки промісів (у таймерів не встановлений час, тобто за умоченням це 0)."
+    "ua": "Колбеки таймерів потрапляють у **чергу завдань** раніше, ніж колбеки промісів (у таймерів не встановлений час, тобто за умовчанням це 0)."
   },
   "p126": {
     "ru": "Так почему колбеки промисов попадают в стек вызовов раньше?",
@@ -650,14 +650,14 @@
     "ua": "Тільки тоді движок перейде до черги тасків."
   },
   "p131": {
-    "ru": "Пока таски сидят в и ожидают своей очереди, чтобы попасть в Call Stack, шустрые микротаски проскакивают туда у них под носом ![ico-25 smile]",
+    "ru": "Пока таски сидят в очереди и ожидают своей очереди, чтобы попасть в Call Stack, шустрые микротаски проскакивают туда у них под носом ![ico-25 smile]",
     "eng": "While the tasks are sitting in the task queue and waiting for their turn to get into the Call Stack, nimble micro-tasks slip there under their noses. ![ico-25 smile]",
     "ua": "Поки таски сидять і чекають своєї черги, щоб потрапити в Call Stack, спритні мікротаски проскакують туди у них під носом. ![ico-25 smile]"
   },
   "p132": {
     "ru": "Микротаски - это нахальные ребята, которые лезут в Call Stack без очереди",
     "eng": "Microtasks are cheeky little guys who jump into the Call Stack without waiting in line",
-    "ua": ""
+    "ua": "Мікротаски — це нахабні хлопці, які лізуть у Call Stack без черги"
   },
   "p133": {
     "ru": "Как только мы запускаем скрипт на исполнение, мы стартуем таск.",
@@ -665,9 +665,9 @@
     "ua": "Щойно ми запускаємо скрипт на виконання, ми стартуємо таск."
   },
   "p134": {
-    "ru": "В следующем примере это вызов функции **message**, установка таймеров и обработчика события ~⟦f3⟧~ на _document.body_.",
-    "eng": "The following example starts a task that declares the **message** function, sets timers and a ~⟦f3⟧~ event handler on the _document.body_ element.",
-    "ua": "У наступному прикладі це виклик функції **~⟦f7⟧~**, встановлення таймерів та обробника події ~⟦f3⟧~ на _document.body_."
+    "ru": "В следующем примере этот таск объявляет функцию **~⟦f7⟧~**, выводит первое сообщение и заводит четыре таймера.",
+    "eng": "In the next example that task declares the **~⟦f7⟧~** function, prints the first message and sets four timers.",
+    "ua": "У наступному прикладі цей таск оголошує функцію **~⟦f7⟧~**, виводить перше повідомлення і заводить чотири таймери."
   },
   "p135": {
     "ru": "Кроме того, мы запускаем три асинхронных операции, используя **Fetch API** браузера.",
@@ -680,48 +680,333 @@
     "ua": "Ми знаємо, що метод **~⟦f9⟧~** повертає проміс."
   },
   "p137": {
-    "ru": "Колбэк, передаваемый методу **~⟦f10⟧~** промиса, является **микро-таском**.",
+    "ru": "Колбек, передаваемый методу **~⟦f10⟧~** промиса, является **микро-таском**.",
     "eng": "The callback passed to the method  **~⟦f10⟧~** of promise is a **micro-task**.",
     "ua": "Колбек, який передається методу **~⟦f10⟧~** промісу, є **мікро-таском**."
   },
   "p138": {
     "ru": "А у микро-тасков своя очередь, которая имеет более высокий приоритет и обслуживается раньше, чем очередь тасков.",
     "eng": "And **micro-tasks** have their own queue, which has a higher priority and is serviced earlier than the **task queue**.",
-    "ua": "Таким чином, як тільки стек викликів звільниться, по черзі будуть виконані всі колбеки, які вже потрапили до черги мікротасків до цього моменту."
+    "ua": "А у мікротасків своя черга, яка має вищий пріоритет і обслуговується раніше, ніж черга тасків."
   },
   "p139": {
     "ru": "Таким образом, как только стек вызовов освободится, поочередно будут выполнены все колбеки, которые уже попали в очередь микротасков к этому моменту.",
     "eng": "Thus, as soon as the Call Stack is free, all the callbacks that are already in the **microtask queue** at that moment will be executed in turn.",
-    "ua": "І лише потім виконуватимуться колбеки із **task queue**."
+    "ua": "Таким чином, щойно стек викликів звільниться, по черзі будуть виконані всі колбеки, які вже потрапили до черги мікротасків на цей момент."
   },
   "p140": {
     "ru": "И только потом будут выполняться колбеки из очереди тасков.",
     "eng": "And only then the callbacks from the **task queue** will be executed.",
-    "ua": "◘◘![ico-20 cap] ** 6**◘◘"
+    "ua": "І лише потім виконуватимуться колбеки з черги тасків."
   },
   "p141": {
     "ru": "В этом примере, посылая **~⟦f9⟧~**-запрос на сервер, мы получаем промис, и передаем методу **~⟦f10⟧~** этого промиса микротаск, который получает экземпляр конструктора **Response**, который нужно распарсить методом **~⟦f11⟧~**, чтобы получить содержимое ~⟦f12⟧~.",
-    "eng": "In this example, by sending a **~⟦f9⟧~** request to the server, we receive a **promise** and pass the callback to the **~⟦f10⟧~** method of this promise.",
+    "eng": "In this example, by sending a **~⟦f9⟧~** request to the server we get a promise, and to its **~⟦f10⟧~** method we pass a microtask, which receives an instance of the **Response** constructor — and that has to be parsed with the **~⟦f11⟧~** method to get at the contents of ~⟦f12⟧~.",
     "ua": "У цьому прикладі, посилаючи **~⟦f9⟧~**-запит на сервер, ми отримуємо проміс, і передаємо методу **~⟦f10⟧~** цього промісу мікротаск, який отримує екземпляр конструктора **Response**, який потрібно розпарсити методом **~⟦f11⟧~**, щоб отримати вміст ~⟦f12⟧~."
   },
   "p142": {
     "ru": "Метод **~⟦f11⟧~** опять возвращает промис, методу **~⟦f10⟧~** которого мы передаем второй микротаск, который уже получит содержимое ответа сервера.",
-    "eng": "This callback receives an instance of the **Response** constructor, which needs to be parsed using the **~⟦f11⟧~** method to get the contents of body.",
-    "ua": "Таким чином, спочатку до черги мікротасків потрапить перший колбек, і тільки після того, як він «відпрацює», до черги мікротасків буде відправлено другий колбек."
+    "eng": "The **~⟦f11⟧~** method returns a promise again, and to its **~⟦f10⟧~** method we pass a second microtask, the one that will finally receive the contents of the server's answer.",
+    "ua": "Метод **~⟦f11⟧~** знову повертає проміс, методу **~⟦f10⟧~** якого ми передаємо другий мікротаск, який уже отримає вміст відповіді сервера."
   },
   "p143": {
     "ru": "Таким образом, сначала в очередь микротасков попадет первый колбек, и только после того, как он \"отработает\", в очередь микротасков будет отправлен второй колбек.",
-    "eng": "The **~⟦f11⟧~** method again returns a **promise**, and we pass the second callback to it's **~⟦f10⟧~** method.",
-    "ua": "Якби ми відправили методом **~⟦f13⟧~** тільки один колбек у чергу тасків, то всі колбеки таймерів потрапили б до стека викликів раніше, ніж останній мікротаск потрапив би до черги мікротасків."
+    "eng": "So the first callback goes into the microtask queue, and only once it has done its work is the second one sent there.",
+    "ua": "Таким чином, спочатку до черги мікротасків потрапить перший колбек, і тільки після того, як він \"відпрацює\", до черги мікротасків буде відправлено другий колбек."
   },
   "p144": {
     "ru": "Если бы мы отправили методом **~⟦f13⟧~** только один колбек в очередь тасков, то все колбеки таймеров попали бы в стек вызовов раньше, чем последний микротаск попал бы в очередь микротасков.",
-    "eng": "Last callback will already receive the contents of the server response.",
-    "ua": "Щоб «зрівняти шанси», колбек таймера знову встановлює таймер. Тоді в черзі тасків ситуація буде схожа з чергою мікротасків."
+    "eng": "Had we sent a single callback to the task queue with **~⟦f13⟧~**, every timer callback would have reached the call stack before the last microtask even joined the microtask queue.",
+    "ua": "Якби ми відправили методом **~⟦f13⟧~** тільки один колбек у чергу тасків, то всі колбеки таймерів потрапили б до стека викликів раніше, ніж останній мікротаск потрапив би до черги мікротасків."
   },
   "p145": {
     "ru": "Чтобы \"уравнять шансы\" тасков и микротасков, колбек таймера опять устанавливает таймер. Тогда в очереди тасков ситуация будет схожая с очередью микротасков.",
-    "eng": "Thus, the first callback will be sent to the **microtask queue** first, and only after it ‘works out’ will the second callback be sent to the **microtask queue**.",
-    "ua": ""
+    "eng": "To even the odds between tasks and microtasks, the timer's callback sets a timer of its own. The task queue then finds itself in much the same position as the microtask queue.",
+    "ua": "Щоб \"зрівняти шанси\" тасків і мікротасків, колбек таймера знову встановлює таймер. Тоді в черзі тасків ситуація буде схожа з чергою мікротасків."
+  },
+  "dialogNote": {
+    "ru": "![ico-20 pin] Модальное окно как таковое сделать можно — для этого есть элемент ~dialog~ и его метод ~showModal()~: страница за окном гаснет и не принимает ни клики, ни фокус. Но код после вызова не останавливается: ответ пользователя придёт событием ~close~, а не возвращаемым значением. Останавливают выполнение только ~alert~, ~confirm~ и ~prompt~ — и останавливает их сам браузер, а не наш код.",
+    "eng": "![ico-20 pin] A modal window as such can be made — that is what the ~dialog~ element and its ~showModal()~ method are for: the page behind it goes dim and takes neither clicks nor focus. But the code does not stop at the call: the user's answer arrives as a ~close~ event, not as a returned value. Only ~alert~, ~confirm~ and ~prompt~ stop execution — and it is the browser that stops it, not our code.",
+    "ua": "![ico-20 pin] Модальне вікно як таке зробити можна — для цього є елемент ~dialog~ і його метод ~showModal()~: сторінка за вікном гасне і не приймає ні кліків, ні фокуса. Але код після виклику не зупиняється: відповідь користувача прийде подією ~close~, а не поверненим значенням. Зупиняють виконання лише ~alert~, ~confirm~ і ~prompt~ — і зупиняє їх сам браузер, а не наш код."
+  },
+  "workers": {
+    "ru": "![ico-20 pin] Второй поток у браузера всё же попросить можно — это **Web Worker**: у него свой стек вызовов, своя очередь задач и свой цикл событий, и работает он действительно параллельно. Платой за это идёт отсутствие доступа к DOM: воркер и страница общаются сообщениями. Этот курс так и устроен — содержимое уроков, иконки и кэш обслуживают отдельные воркеры.",
+    "eng": "![ico-20 pin] A second thread can still be asked of the browser — a **Web Worker**: it has its own call stack, its own task queue and its own event loop, and it does run in parallel. The price is no access to the DOM: the worker and the page talk in messages. This course is built that way — separate workers serve the lesson content, the icons and the cache.",
+    "ua": "![ico-20 pin] Другий потік у браузера все ж можна попросити — це **Web Worker**: у нього свій стек викликів, своя черга завдань і свій цикл подій, і працює він справді паралельно. Платою за це є відсутність доступу до DOM: воркер і сторінка спілкуються повідомленнями. Цей курс так і влаштований — вміст уроків, іконки та кеш обслуговують окремі воркери."
+  },
+  "clampNote": {
+    "ru": "![ico-20 warn] Ноль здесь означает \"как можно скорее\", а не \"немедленно\": колбек всё равно встаёт в очередь задач и ждёт, пока освободится стек вызовов. А если таймер заводят из колбека таймера, то больше пяти таких вложений подряд — и браузер перестаёт давать меньше четырёх миллисекунд.",
+    "eng": "![ico-20 warn] Zero here means “as soon as possible”, not “now”: the callback still joins the task queue and waits for the call stack to clear. And when a timer is set from a timer's callback, more than five such nestings in a row and the browser stops allowing less than four milliseconds.",
+    "ua": "![ico-20 warn] Нуль тут означає \"якнайшвидше\", а не \"негайно\": колбек однаково стає в чергу завдань і чекає, поки звільниться стек викликів. А якщо таймер заводять із колбека таймера, то більш ніж п'ять таких вкладень поспіль — і браузер перестає давати менше за чотири мілісекунди."
+  },
+  "test01Question": {
+    "ru": "Что выведет консоль? **console.log(1); setTimeout(() => console.log(2)); Promise.resolve().then(() => console.log(3)); console.log(4)**",
+    "eng": "What will the console print? **console.log(1); setTimeout(() => console.log(2)); Promise.resolve().then(() => console.log(3)); console.log(4)**",
+    "ua": "Що виведе консоль? **console.log(1); setTimeout(() => console.log(2)); Promise.resolve().then(() => console.log(3)); console.log(4)**"
+  },
+  "test01Variant1": {
+    "ru": "**1, 2, 3, 4**",
+    "eng": "**1, 2, 3, 4**",
+    "ua": "**1, 2, 3, 4**"
+  },
+  "test01Variant1Answer": {
+    "ru": "Так было бы, если бы ~setTimeout~ вызывал колбек сразу. Но колбек таймера — это таск: он только встаёт в очередь, а выполнится, когда освободится стек вызовов.",
+    "eng": "That would be so if ~setTimeout~ called the callback at once. But a timer callback is a task: it only joins the queue, and runs when the call stack is free.",
+    "ua": "Так було б, якби ~setTimeout~ викликав колбек одразу. Але колбек таймера — це таск: він лише стає в чергу, а виконається, коли звільниться стек викликів."
+  },
+  "test01Variant2": {
+    "ru": "**1, 4, 3, 2**",
+    "eng": "**1, 4, 3, 2**",
+    "ua": "**1, 4, 3, 2**"
+  },
+  "test01Variant2Answer": {
+    "ru": "Сначала до конца отрабатывает текущий скрипт — это 1 и 4. Потом движок опустошает очередь микротасков — это 3. И только потом берёт первую задачу из очереди задач — это 2.",
+    "eng": "First the current script runs to its end — that is 1 and 4. Then the engine empties the microtask queue — that is 3. Only then does it take the first task from the task queue — that is 2.",
+    "ua": "Спочатку до кінця відпрацьовує поточний скрипт — це 1 і 4. Потім рушій спорожнює чергу мікротасків — це 3. І лише потім бере перше завдання з черги завдань — це 2."
+  },
+  "test01Variant3": {
+    "ru": "**1, 4, 2, 3**",
+    "eng": "**1, 4, 2, 3**",
+    "ua": "**1, 4, 2, 3**"
+  },
+  "test01Variant3Answer": {
+    "ru": "Так было бы, если бы колбек промиса стоял в той же очереди, что и колбек таймера. Но у микротасков своя очередь, и движок разбирает её раньше.",
+    "eng": "That would be so if the promise callback stood in the same queue as the timer callback. But microtasks have a queue of their own, and the engine goes through it first.",
+    "ua": "Так було б, якби колбек промісу стояв у тій самій черзі, що й колбек таймера. Але у мікротасків своя черга, і рушій розбирає її раніше."
+  },
+  "test01Variant4": {
+    "ru": "Порядок непредсказуем",
+    "eng": "The order is unpredictable",
+    "ua": "Порядок непередбачуваний"
+  },
+  "test01Variant4Answer": {
+    "ru": "Он как раз предсказуем до мелочей: текущий скрипт, затем вся очередь микротасков, затем одна задача. Непредсказуемо время наступления событий — но не порядок этих четырёх строк.",
+    "eng": "It is predictable down to the last detail: the current script, then the whole microtask queue, then one task. What is unpredictable is when events happen — not the order of these four lines.",
+    "ua": "Він якраз передбачуваний до дрібниць: поточний скрипт, потім уся черга мікротасків, потім одне завдання. Непередбачуваний час настання подій — але не порядок цих чотирьох рядків."
+  },
+  "test02Question": {
+    "ru": "Что означает ноль в **setTimeout(fn, 0)**?",
+    "eng": "What does the zero in **setTimeout(fn, 0)** mean?",
+    "ua": "Що означає нуль у **setTimeout(fn, 0)**?"
+  },
+  "test02Variant1": {
+    "ru": "Колбек выполнится немедленно, до следующей строки скрипта",
+    "eng": "The callback runs immediately, before the next line of the script",
+    "ua": "Колбек виконається негайно, до наступного рядка скрипта"
+  },
+  "test02Variant1Answer": {
+    "ru": "Ни один колбек не может попасть в стек вызовов, пока тот занят. Следующая строка скрипта выполнится в любом случае раньше.",
+    "eng": "No callback can enter the call stack while it is busy. The next line of the script runs first, whatever the delay.",
+    "ua": "Жоден колбек не може потрапити до стека викликів, поки той зайнятий. Наступний рядок скрипта виконається у будь-якому разі раніше."
+  },
+  "test02Variant2": {
+    "ru": "Ноль отменяет таймер: колбек не выполнится вовсе",
+    "eng": "Zero cancels the timer: the callback never runs",
+    "ua": "Нуль скасовує таймер: колбек не виконається зовсім"
+  },
+  "test02Variant2Answer": {
+    "ru": "Ноль — это задержка, а не отмена. Отменяет таймер ~clearTimeout~, и для этого ему нужен идентификатор, который вернул ~setTimeout~.",
+    "eng": "Zero is a delay, not a cancellation. A timer is cancelled by ~clearTimeout~, which needs the id that ~setTimeout~ returned.",
+    "ua": "Нуль — це затримка, а не скасування. Скасовує таймер ~clearTimeout~, і для цього йому потрібен ідентифікатор, який повернув ~setTimeout~."
+  },
+  "test02Variant3": {
+    "ru": "Колбек выполнится раньше колбеков промисов, ведь у него нулевая задержка",
+    "eng": "The callback runs before promise callbacks, since its delay is zero",
+    "ua": "Колбек виконається раніше за колбеки промісів, адже у нього нульова затримка"
+  },
+  "test02Variant3Answer": {
+    "ru": "Задержка здесь ни при чём: колбек промиса — микротаск, а очередь микротасков разбирается раньше очереди задач, как бы мало ни было поставлено таймеру.",
+    "eng": "The delay has nothing to do with it: a promise callback is a microtask, and the microtask queue is taken first however small the timer's delay.",
+    "ua": "Затримка тут ні до чого: колбек промісу — мікротаск, а черга мікротасків розбирається раніше за чергу завдань, хоч би яку малу затримку поставили таймеру."
+  },
+  "test02Variant4": {
+    "ru": "Колбек встанет в очередь задач и дождётся, пока освободится стек вызовов",
+    "eng": "The callback joins the task queue and waits until the call stack is free",
+    "ua": "Колбек стане в чергу завдань і дочекається, поки звільниться стек викликів"
+  },
+  "test02Variant4Answer": {
+    "ru": "Ноль значит \"как можно скорее\", а не \"немедленно\". А если таймер заводят из колбека таймера, то после пяти таких вложений браузер перестаёт давать меньше четырёх миллисекунд.",
+    "eng": "Zero means “as soon as possible”, not “now”. And when a timer is set from a timer's callback, after five such nestings the browser stops allowing less than four milliseconds.",
+    "ua": "Нуль означає \"якнайшвидше\", а не \"негайно\". А якщо таймер заводять із колбека таймера, то після п'яти таких вкладень браузер перестає давати менше за чотири мілісекунди."
+  },
+  "test03Question": {
+    "ru": "В колбеке таймера крутится цикл на десять секунд. Что в это время происходит со страницей?",
+    "eng": "A timer's callback is running a ten-second loop. What happens to the page meanwhile?",
+    "ua": "У колбеку таймера крутиться цикл на десять секунд. Що в цей час відбувається зі сторінкою?"
+  },
+  "test03Variant1": {
+    "ru": "Страница замирает — ни перерисовки, ни реакции на клики; но сами клики не пропадают, их колбеки ждут в очереди и отработают, когда цикл закончится",
+    "eng": "The page freezes — no repainting, no reaction to clicks; but the clicks are not lost, their callbacks wait in the queue and run once the loop ends",
+    "ua": "Сторінка завмирає — ні перемальовування, ні реакції на кліки; але самі кліки не зникають, їхні колбеки чекають у черзі й відпрацюють, коли цикл скінчиться"
+  },
+  "test03Variant1Answer": {
+    "ru": "Стек вызовов один на всё. Пока в нём сидит цикл, туда не попадёт ни колбек, ни кадр отрисовки — а очередь задач тем временем растёт.",
+    "eng": "There is one call stack for everything. While the loop sits in it, neither a callback nor a frame can get in — and the task queue grows meanwhile.",
+    "ua": "Стек викликів один на все. Поки в ньому сидить цикл, туди не потрапить ані колбек, ані кадр малювання — а черга завдань тим часом зростає."
+  },
+  "test03Variant2": {
+    "ru": "Браузер прервёт слишком долгий колбек и вернёт страницу к жизни",
+    "eng": "The browser interrupts a callback that takes too long and brings the page back to life",
+    "ua": "Браузер перерве занадто довгий колбек і поверне сторінку до життя"
+  },
+  "test03Variant2Answer": {
+    "ru": "Браузер не прерывает ваш код. Он может предложить закрыть вкладку, но сам цикл будет считаться до конца.",
+    "eng": "The browser does not interrupt your code. It may offer to close the tab, but the loop itself will count to the end.",
+    "ua": "Браузер не перериває ваш код. Він може запропонувати закрити вкладку, але сам цикл рахуватиметься до кінця."
+  },
+  "test03Variant3": {
+    "ru": "Страница перерисовывается как обычно: отрисовкой занят другой поток",
+    "eng": "The page keeps repainting as usual: another thread does the drawing",
+    "ua": "Сторінка перемальовується як завжди: малюванням зайнятий інший потік"
+  },
+  "test03Variant3Answer": {
+    "ru": "Рисует действительно браузер, но кадр он может показать только между задачами. Пока задача не кончилась, нового кадра не будет.",
+    "eng": "The drawing is indeed the browser's work, but a frame can only be shown between tasks. Until the task ends there is no new frame.",
+    "ua": "Малює справді браузер, але кадр він може показати лише між завданнями. Поки завдання не скінчилося, нового кадру не буде."
+  },
+  "test03Variant4": {
+    "ru": "Клики, сделанные во время цикла, пропадают — обрабатывать их некому",
+    "eng": "Clicks made during the loop are lost — there is no one to handle them",
+    "ua": "Кліки, зроблені під час циклу, зникають — обробляти їх нікому"
+  },
+  "test03Variant4Answer": {
+    "ru": "События отслеживает браузер, а он занят своим делом. Каждый клик положит колбек в очередь задач, и после цикла они отработают один за другим — иногда все разом, к удивлению пользователя.",
+    "eng": "Events are watched by the browser, and it is busy with its own work. Every click puts a callback into the task queue, and after the loop they run one after another — sometimes all at once, to the user's surprise.",
+    "ua": "Події відстежує браузер, а він зайнятий своєю справою. Кожен клік покладе колбек у чергу завдань, і після циклу вони відпрацюють один за одним — іноді всі разом, на подив користувача."
+  },
+  "test04Question": {
+    "ru": "Микротаск в конце работы ставит ещё один микротаск, и так без конца. Что будет со страницей?",
+    "eng": "A microtask ends by scheduling another microtask, and so on without end. What becomes of the page?",
+    "ua": "Мікротаск наприкінці роботи ставить ще один мікротаск, і так без кінця. Що буде зі сторінкою?"
+  },
+  "test04Variant1": {
+    "ru": "Ничего страшного: микротаски короткие, и браузер успеет нарисовать кадр между ними",
+    "eng": "No harm done: microtasks are short, and the browser will manage a frame between them",
+    "ua": "Нічого страшного: мікротаски короткі, і браузер встигне намалювати кадр між ними"
+  },
+  "test04Variant1Answer": {
+    "ru": "Между микротасками браузер не рисует. Кадр возможен только тогда, когда очередь микротасков опустела и движок вернулся к задачам.",
+    "eng": "The browser does not paint between microtasks. A frame is only possible once the microtask queue is empty and the engine is back to tasks.",
+    "ua": "Між мікротасками браузер не малює. Кадр можливий лише тоді, коли черга мікротасків спорожніла і рушій повернувся до завдань."
+  },
+  "test04Variant2": {
+    "ru": "Движок начнёт чередовать: микротаск, задача, микротаск, задача",
+    "eng": "The engine starts alternating: a microtask, a task, a microtask, a task",
+    "ua": "Рушій почне чергувати: мікротаск, завдання, мікротаск, завдання"
+  },
+  "test04Variant2Answer": {
+    "ru": "Чередования не предусмотрено. Очередь микротасков разбирается целиком — и только потом движок берёт одну задачу.",
+    "eng": "No alternating is provided for. The microtask queue is gone through in full — and only then does the engine take a single task.",
+    "ua": "Чергування не передбачено. Черга мікротасків розбирається цілком — і лише потім рушій бере одне завдання."
+  },
+  "test04Variant3": {
+    "ru": "Страница зависнет: движок будет опустошать очередь микротасков и не дойдёт ни до задач, ни до перерисовки",
+    "eng": "The page hangs: the engine keeps emptying the microtask queue and never gets to the tasks or to repainting",
+    "ua": "Сторінка зависне: рушій спорожнюватиме чергу мікротасків і не дійде ні до завдань, ні до перемальовування"
+  },
+  "test04Variant3Answer": {
+    "ru": "Это обратная сторона приоритета микротасков: их очередь обслуживается целиком, до опустошения. Бесконечная цепочка ~then~ вешает вкладку так же надёжно, как бесконечный цикл.",
+    "eng": "That is the other side of the microtasks' priority: their queue is served in full, until it is empty. An endless chain of ~then~ hangs a tab as surely as an endless loop.",
+    "ua": "Це зворотний бік пріоритету мікротасків: їхня черга обслуговується цілком, до спорожнення. Нескінченний ланцюжок ~then~ вішає вкладку так само надійно, як нескінченний цикл."
+  },
+  "test04Variant4": {
+    "ru": "Сработает защита: после сотни микротасков движок перейдёт к очереди задач",
+    "eng": "A safeguard kicks in: after a hundred microtasks the engine moves to the task queue",
+    "ua": "Спрацює захист: після сотні мікротасків рушій перейде до черги завдань"
+  },
+  "test04Variant4Answer": {
+    "ru": "Такого предела нет. Ограничение есть у стека вызовов — его переполнение даёт ошибку, — а очередь микротасков может расти сколько угодно.",
+    "eng": "There is no such limit. The call stack has one — overflowing it raises an error — but the microtask queue may grow as long as it likes.",
+    "ua": "Такої межі немає. Обмеження є у стека викликів — його переповнення дає помилку, — а черга мікротасків може зростати скільки завгодно."
+  },
+  "test05Question": {
+    "ru": "Что даёт **Web Worker**?",
+    "eng": "What does a **Web Worker** give you?",
+    "ua": "Що дає **Web Worker**?"
+  },
+  "test05Variant1": {
+    "ru": "Ничего нового: воркер выполняется в том же потоке, просто позже",
+    "eng": "Nothing new: a worker runs in the same thread, only later",
+    "ua": "Нічого нового: воркер виконується в тому самому потоці, просто пізніше"
+  },
+  "test05Variant1Answer": {
+    "ru": "Воркер — это именно второй поток. Его код выполняется одновременно с кодом страницы, а не после него.",
+    "eng": "A worker is exactly a second thread. Its code runs at the same time as the page's code, not after it.",
+    "ua": "Воркер — це саме другий потік. Його код виконується одночасно з кодом сторінки, а не після нього."
+  },
+  "test05Variant2": {
+    "ru": "Настоящий второй поток: свой стек вызовов, своя очередь задач и свой цикл событий — но без доступа к DOM",
+    "eng": "A real second thread: its own call stack, its own task queue and its own event loop — but with no access to the DOM",
+    "ua": "Справжній другий потік: свій стек викликів, своя черга завдань і свій цикл подій — але без доступу до DOM"
+  },
+  "test05Variant2Answer": {
+    "ru": "Поэтому тяжёлый счёт выносят в воркер: основной поток остаётся свободным, и страница продолжает отвечать. Общаются они сообщениями.",
+    "eng": "That is why heavy computation is moved into a worker: the main thread stays free and the page keeps answering. They talk in messages.",
+    "ua": "Тому важкі обчислення виносять у воркер: основний потік лишається вільним, і сторінка продовжує відповідати. Спілкуються вони повідомленнями."
+  },
+  "test05Variant3": {
+    "ru": "Второй поток, из которого можно напрямую менять DOM",
+    "eng": "A second thread from which the DOM can be changed directly",
+    "ua": "Другий потік, з якого можна безпосередньо змінювати DOM"
+  },
+  "test05Variant3Answer": {
+    "ru": "DOM принадлежит окну, и воркер его не видит. Он может посчитать и прислать результат сообщением, а менять страницу будет основной поток.",
+    "eng": "The DOM belongs to the window, and the worker cannot see it. It can compute and send the result in a message; changing the page is the main thread's job.",
+    "ua": "DOM належить вікну, і воркер його не бачить. Він може порахувати і надіслати результат повідомленням, а змінювати сторінку буде основний потік."
+  },
+  "test05Variant4": {
+    "ru": "Второй поток, которому доступны переменные страницы",
+    "eng": "A second thread that has access to the page's variables",
+    "ua": "Другий потік, якому доступні змінні сторінки"
+  },
+  "test05Variant4Answer": {
+    "ru": "Общих переменных нет: всё, что уходит между страницей и воркером, копируется. Именно поэтому там нечего ломать гонками за общие данные.",
+    "eng": "There are no shared variables: everything passed between page and worker is copied. That is precisely why there are no races over shared data to worry about.",
+    "ua": "Спільних змінних немає: усе, що йде між сторінкою і воркером, копіюється. Саме тому там нема чого ламати гонками за спільні дані."
+  },
+  "test06Question": {
+    "ru": "Чем прямой вызов функции отличается от обратного (колбека)?",
+    "eng": "How does calling a function directly differ from a callback?",
+    "ua": "Чим прямий виклик функції відрізняється від зворотного (колбека)?"
+  },
+  "test06Variant1": {
+    "ru": "Ничем: и то и другое — просто вызов функции",
+    "eng": "In no way: both are simply calling a function",
+    "ua": "Нічим: і те й інше — просто виклик функції"
+  },
+  "test06Variant1Answer": {
+    "ru": "Разница в том, кто вызывает и когда. Прямой вызов делает выполняющийся код, колбек запускает механизм Event Loop — и только когда стек свободен.",
+    "eng": "The difference is who calls, and when. A direct call is made by the running code; a callback is started by the Event Loop — and only when the stack is free.",
+    "ua": "Різниця в тому, хто викликає і коли. Прямий виклик робить код, що виконується, колбек запускає механізм Event Loop — і лише коли стек вільний."
+  },
+  "test06Variant2": {
+    "ru": "Колбек выполняется быстрее, потому что у него свой стек вызовов",
+    "eng": "A callback runs faster, because it has a call stack of its own",
+    "ua": "Колбек виконується швидше, бо в нього свій стек викликів"
+  },
+  "test06Variant2Answer": {
+    "ru": "Стек вызовов в потоке один на всех. Колбек не быстрее — он позже: сначала очередь, потом свободный стек.",
+    "eng": "There is one call stack per thread, shared by all. A callback is not faster — it is later: first the queue, then a free stack.",
+    "ua": "Стек викликів у потоці один на всіх. Колбек не швидший — він пізніше: спочатку черга, потім вільний стек."
+  },
+  "test06Variant3": {
+    "ru": "Прямой вызов возможен только для именованных функций, колбек — только для анонимных",
+    "eng": "A direct call only works for named functions, a callback only for anonymous ones",
+    "ua": "Прямий виклик можливий лише для іменованих функцій, колбек — лише для анонімних"
+  },
+  "test06Variant3Answer": {
+    "ru": "Имя тут ни при чём. Колбеком можно передать именованную функцию, а анонимную — вызвать сразу, как это делают с выражением функции в скобках.",
+    "eng": "The name has nothing to do with it. A named function can be passed as a callback, and an anonymous one can be called straight away, as is done with a function expression in brackets.",
+    "ua": "Ім'я тут ні до чого. Колбеком можна передати іменовану функцію, а анонімну — викликати одразу, як це роблять із виразом функції в дужках."
+  },
+  "test06Variant4": {
+    "ru": "Прямой вызов кладёт контекст в стек немедленно, поверх вызвавшего; колбек ждёт в очереди и попадёт в стек, когда тот освободится",
+    "eng": "A direct call puts the context on the stack at once, on top of the caller; a callback waits in the queue and enters the stack once it is free",
+    "ua": "Прямий виклик кладе контекст у стек негайно, поверх того, хто викликав; колбек чекає в черзі й потрапить у стек, коли той звільниться"
+  },
+  "test06Variant4Answer": {
+    "ru": "Поэтому вызванная напрямую функция возвращает значение туда, откуда её позвали, а колбеку возвращать некуда: того, кто его \"заказал\", в стеке давно нет.",
+    "eng": "That is why a function called directly returns its value to where it was called from, while a callback has nowhere to return it: whoever ordered it left the stack long ago.",
+    "ua": "Тому викликана напряму функція повертає значення туди, звідки її покликали, а колбеку повертати нікуди: того, хто його \"замовив\", у стеку давно немає."
   }
 }
