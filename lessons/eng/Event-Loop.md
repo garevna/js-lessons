@@ -32,7 +32,7 @@ A **stack** is a "fast" chunk of RAM.
 ^^Variables in the stack are always local (**private**).^^
 ^^^
 
-**Heap** is RAM where **global variables** are stored.
+**Heap** is the memory where the engine puts objects: everything that has to outlive the call it was created in.
 
 ^^^[Heap]
 ^^The **heap** allows dynamic memory allocation.^^
@@ -74,7 +74,7 @@ Asynchronous programming is all about binding functions to specific events.
 This is the so-called **event-driven programming**.
 
 Clearly, the environment (platform) where your application will run must have a mechanism that provides event reactivity.
-That is, such a mechanism should provide your application with some kind of **Event API** (<b>A</b>pplication <b>P</b>rogramme <b>I</b>nterface), the services of which will allow you to bind your functions to certain events.
+That is, such a mechanism should provide your application with some kind of **Event API** (<b>A</b>pplication <b>P</b>rogramming <b>I</b>nterface), the services of which will allow you to bind your functions to certain events.
 The same mechanism should ensure that your functions are launched for execution when the corresponding event occurs.
 
 The browser has such a mechanism, and it is called **Event Loop**.
@@ -112,10 +112,10 @@ But how did it get into **Call Stack**?
 ![](illustrations/event-loop-script.png)
 @@@@
 
-^^Here the snippet script was “wrapped” in a certain function **~anonimous~**, tied to the “run script ~anonimous~” event, after which this event was fired.^^
-^^As a result, the script **~anonimous~** “occupied” the Call Stack and began to be executed.^^
-^^The **~anonimous~** function became a callback and went through the **Event Loop**.^^
-^^Now **~anonimous~** from the call stack can make **direct calls** to other functions.^^
+^^Here the snippet script was “wrapped” in a certain function **~anonymous~**, tied to the “run script ~anonymous~” event, after which this event was fired.^^
+^^As a result, the script **~anonymous~** “occupied” the Call Stack and began to be executed.^^
+^^The **~anonymous~** function became a callback and went through the **Event Loop**.^^
+^^Now **~anonymous~** from the call stack can make **direct calls** to other functions.^^
 ----------------------------
 @@@@ 1
 ![](illustrations/event-loop-02.png)
@@ -259,6 +259,9 @@ message('Loop \'for\' finished')
 ~~~
 
 In this example, the timer was set to a delay of 0 seconds.
+
+![ico-20 warn] Zero here means “as soon as possible”, not “now”: the callback still joins the task queue and waits for the call stack to clear. And when a timer is set from a timer's callback, more than five such nestings in a row and the browser stops allowing less than four milliseconds.
+
 Look what happened
 
 {{{Event-Loop-1.js}}}
@@ -269,6 +272,8 @@ Let's declare the auxiliary functions **~createFigure~** and **~message~**:
 
 ◘◘![ico-20 cap] **createFigure**◘◘
 ~~~js
+const section = document.body
+
 function createFigure () {
   const figure = section
     .appendChild(document.createElement('div'))
@@ -326,9 +331,11 @@ setTimeout(function () {
 
 A task launched by a timer occupies the call stack for a long and blocks page redrawing and message output to the console.
 
-Take a lesson from this example and then you will understand why we cannot create modal windows.
+Take a lesson from this example, and you will see why we cannot write a window of our own that stops the code until the user answers.
 The browser is multi-threaded and each thread has its own call stack, so modal windows are not a problem for it.
 But we only have one call stack.
+
+![ico-20 pin] A modal window as such can be made — that is what the ~dialog~ element and its ~showModal()~ method are for: the page behind it goes dim and takes neither clicks nor focus. But the code does not stop at the call: the user's answer arrives as a ~close~ event, not as a returned value. Only ~alert~, ~confirm~ and ~prompt~ stop execution — and it is the browser that stops it, not our code.
 
 ____________________________________
 
@@ -336,8 +343,6 @@ Let's fix the problem:
 
 ◘◘![ico-20 cap] ** 4**◘◘
 ~~~js
-const section = document.body
-
 const start = Date.now()
 
 const figure = createFigure()
@@ -358,8 +363,10 @@ recurse()
 {{{Event-Loop-4.js}}}
 
 As you can see, the loop works as if “in the background”, without blocking screen redraw and other operations.
-However, “background mode” is not possible for us, since JS is single-threaded, with one call stack.
+There is no real “background mode” here, though: the page's code still runs in one thread, with one call stack.
 Therefore, we simulate "multithreading" using **Event Loop**.
+
+![ico-20 pin] A second thread can still be asked of the browser — a **Web Worker**: it has its own call stack, its own task queue and its own event loop, and it does run in parallel. The price is no access to the DOM: the worker and the page talk in messages. This course is built that way — separate workers serve the lesson content, the icons and the cache.
 
 Later we'll look at asynchronous generators, which do something similar.
 ______________________________
@@ -371,7 +378,7 @@ ______________________________
 Timer callbacks and UI event handlers are **tasks**.
 
 But we also have “magic boxes with two holes” - **promises**!
-The method **~then~** of the **promise** is a higher-order function that takes two callbacks as the arguments.
+The **~then~** method of a promise takes a callback too.
 And here in the Event Loop the following miracles happen:
 
 ◘◘![ico-20 cap] ** 5**◘◘
@@ -416,7 +423,7 @@ ________________________________________
 
 As soon as we run a script for execution, we start a task.
 
-The following example starts a task that declares the **message** function, sets timers and a ~click~ event handler on the _document.body_ element.
+In the next example that task declares the **~message~** function, prints the first message and sets four timers.
 
 In addition, this task runs three asynchronous operations using the browser's **Fetch API**.
 
@@ -441,7 +448,7 @@ const timer = ms => setTimeout(() => setTimeout(message.bind(null, `timeout ${ms
 
 function getUser () {
   const since = Math.round(Math.random() * 20000)
-  const index = Math.round(Math.random() * 30)
+  const index = Math.round(Math.random() * 25)
   return fetch(`https://api.github.com/users?since=${since}`)
     .then(response => response.json())
     .then(users => message(`github user ${since + index}: ${users[index].login}`))
@@ -461,12 +468,99 @@ getUser()
 
 {{{Event-Loop-6.js}}}
 
-In this example, by sending a **~fetch()~** request to the server, we receive a **promise** and pass the callback to the **~then()~** method of this promise.
-This callback receives an instance of the **Response** constructor, which needs to be parsed using the **~json()~** method to get the contents of body.
-The **~json()~** method again returns a **promise**, and we pass the second callback to it's **~then()~** method.
+In this example, by sending a **~fetch()~** request to the server we get a promise, and to its **~then()~** method we pass a microtask, which receives an instance of the **Response** constructor — and that has to be parsed with the **~json()~** method to get at the contents of ~body~.
+The **~json()~** method returns a promise again, and to its **~then()~** method we pass a second microtask, the one that will finally receive the contents of the server's answer.
+So the first callback goes into the microtask queue, and only once it has done its work is the second one sent there.
 
-Last callback will already receive the contents of the server response.
+Had we sent a single callback to the task queue with **~setTimeout()~**, every timer callback would have reached the call stack before the last microtask even joined the microtask queue.
 
-Thus, the first callback will be sent to the **microtask queue** first, and only after it ‘works out’ will the second callback be sent to the **microtask queue**.
+To even the odds between tasks and microtasks, the timer's callback sets a timer of its own. The task queue then finds itself in much the same position as the microtask queue.
 
 ________________________________________________
+
+♣♣♣♣
+? What will the console print? **console.log(1); setTimeout(() => console.log(2)); Promise.resolve().then(() => console.log(3)); console.log(4)**
+
+- **1, 2, 3, 4**
+= That would be so if ~setTimeout~ called the callback at once. But a timer callback is a task: it only joins the queue, and runs when the call stack is free.
+
++ **1, 4, 3, 2**
+= First the current script runs to its end — that is 1 and 4. Then the engine empties the microtask queue — that is 3. Only then does it take the first task from the task queue — that is 2.
+
+- **1, 4, 2, 3**
+= That would be so if the promise callback stood in the same queue as the timer callback. But microtasks have a queue of their own, and the engine goes through it first.
+
+- The order is unpredictable
+= It is predictable down to the last detail: the current script, then the whole microtask queue, then one task. What is unpredictable is when events happen — not the order of these four lines.
+
+? What does the zero in **setTimeout(fn, 0)** mean?
+
+- The callback runs immediately, before the next line of the script
+= No callback can enter the call stack while it is busy. The next line of the script runs first, whatever the delay.
+
+- Zero cancels the timer: the callback never runs
+= Zero is a delay, not a cancellation. A timer is cancelled by ~clearTimeout~, which needs the id that ~setTimeout~ returned.
+
+- The callback runs before promise callbacks, since its delay is zero
+= The delay has nothing to do with it: a promise callback is a microtask, and the microtask queue is taken first however small the timer's delay.
+
++ The callback joins the task queue and waits until the call stack is free
+= Zero means “as soon as possible”, not “now”. And when a timer is set from a timer's callback, after five such nestings the browser stops allowing less than four milliseconds.
+
+? A timer's callback is running a ten-second loop. What happens to the page meanwhile?
+
++ The page freezes — no repainting, no reaction to clicks; but the clicks are not lost, their callbacks wait in the queue and run once the loop ends
+= There is one call stack for everything. While the loop sits in it, neither a callback nor a frame can get in — and the task queue grows meanwhile.
+
+- The browser interrupts a callback that takes too long and brings the page back to life
+= The browser does not interrupt your code. It may offer to close the tab, but the loop itself will count to the end.
+
+- The page keeps repainting as usual: another thread does the drawing
+= The drawing is indeed the browser's work, but a frame can only be shown between tasks. Until the task ends there is no new frame.
+
+- Clicks made during the loop are lost — there is no one to handle them
+= Events are watched by the browser, and it is busy with its own work. Every click puts a callback into the task queue, and after the loop they run one after another — sometimes all at once, to the user's surprise.
+
+? A microtask ends by scheduling another microtask, and so on without end. What becomes of the page?
+
+- No harm done: microtasks are short, and the browser will manage a frame between them
+= The browser does not paint between microtasks. A frame is only possible once the microtask queue is empty and the engine is back to tasks.
+
+- The engine starts alternating: a microtask, a task, a microtask, a task
+= No alternating is provided for. The microtask queue is gone through in full — and only then does the engine take a single task.
+
++ The page hangs: the engine keeps emptying the microtask queue and never gets to the tasks or to repainting
+= That is the other side of the microtasks' priority: their queue is served in full, until it is empty. An endless chain of ~then~ hangs a tab as surely as an endless loop.
+
+- A safeguard kicks in: after a hundred microtasks the engine moves to the task queue
+= There is no such limit. The call stack has one — overflowing it raises an error — but the microtask queue may grow as long as it likes.
+
+? What does a **Web Worker** give you?
+
+- Nothing new: a worker runs in the same thread, only later
+= A worker is exactly a second thread. Its code runs at the same time as the page's code, not after it.
+
++ A real second thread: its own call stack, its own task queue and its own event loop — but with no access to the DOM
+= That is why heavy computation is moved into a worker: the main thread stays free and the page keeps answering. They talk in messages.
+
+- A second thread from which the DOM can be changed directly
+= The DOM belongs to the window, and the worker cannot see it. It can compute and send the result in a message; changing the page is the main thread's job.
+
+- A second thread that has access to the page's variables
+= There are no shared variables: everything passed between page and worker is copied. That is precisely why there are no races over shared data to worry about.
+
+? How does calling a function directly differ from a callback?
+
+- In no way: both are simply calling a function
+= The difference is who calls, and when. A direct call is made by the running code; a callback is started by the Event Loop — and only when the stack is free.
+
+- A callback runs faster, because it has a call stack of its own
+= There is one call stack per thread, shared by all. A callback is not faster — it is later: first the queue, then a free stack.
+
+- A direct call only works for named functions, a callback only for anonymous ones
+= The name has nothing to do with it. A named function can be passed as a callback, and an anonymous one can be called straight away, as is done with a function expression in brackets.
+
++ A direct call puts the context on the stack at once, on top of the caller; a callback waits in the queue and enters the stack once it is free
+= That is why a function called directly returns its value to where it was called from, while a callback has nowhere to return it: whoever ordered it left the stack long ago.
+
+♣♣♣♣
