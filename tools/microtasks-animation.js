@@ -23,23 +23,34 @@
 const fs = require('fs')
 const path = require('path')
 
-const CYCLE = 12 // секунд на полный круг
+const CYCLE = 13 // секунд на полный круг
 
-// Кто когда уезжает в стек. at — момент выезда, work — сколько работает
-// в стеке. Порядок важен: в очереди стоят в том же порядке, что и здесь.
+/**
+ * Расписание держит правило цикла событий, а не удобство картинки:
+ *
+ * движок берёт ОДНУ задачу, доводит её до конца, а потом опустошает
+ * очередь микротасков ЦЕЛИКОМ — и только после этого берёт следующую
+ * задачу. Поэтому микротаски здесь уезжают подряд, без таска посередине,
+ * и к приезду следующего таска их очередь пуста.
+ *
+ * И берутся они не из воздуха: микротаск появляется, когда кто-то
+ * выполняется — промис разрешился, then поставил колбек. Поэтому у
+ * микротаска есть born: он рождается, пока таск работает в стеке, и ждёт
+ * своей очереди ровно до того мига, когда стек освободится.
+ */
 const tasks = [
   { at: 0.2, work: 1.6 },
-  { at: 5.2, work: 1.6 },
-  { at: 9.4, work: 1.3 }
+  { at: 5.1, work: 1.6 },
+  { at: 10.2, work: 1.2 }
 ]
 
 const micros = [
-  { at: 2.9, work: 0.25 },
-  { at: 3.7, work: 0.25 },
-  { at: 4.5, work: 0.25 },
-  { at: 8.1, work: 0.25 },
-  { at: 8.6, work: 0.25 },
-  { at: 9.1, work: 0.25 }
+  { born: 0.9, at: 2.8, work: 0.25 },
+  { born: 1.3, at: 3.5, work: 0.25 },
+  { born: 1.7, at: 4.2, work: 0.25 },
+  { born: 6.0, at: 7.9, work: 0.25 },
+  { born: 6.4, at: 8.6, work: 0.25 },
+  { born: 6.8, at: 9.3, work: 0.25 }
 ]
 
 // travel — сколько едет до стека, leave — сколько уходит из него,
@@ -60,28 +71,43 @@ const pct = time => `${((time / CYCLE) * 100).toFixed(3)}%`
  * вверх и невидимым возвращается на своё место к началу круга.
  */
 function keyframes (name, index, all, look, inStackY) {
-  const steps = []
   const slotX = place => look.first + place * look.slot
   const at = time => Math.max(0, Math.min(CYCLE, time))
+  const me = all[index]
+  const born = me.born || 0
 
+  // Сначала — места в очереди: где участник стоит и когда сдвигается
+  // вперёд вслед за уехавшим. Учитываются только те, кто уехал раньше
+  // него: микротаск, рождённый позже, встаёт сразу на освободившееся.
+  const places = [[0, index]]
   let place = index
-  steps.push([0, `translate(${slotX(place)}px, ${look.lane}px)`, 1])
-
   for (let ahead = 0; ahead < index; ahead++) {
     const when = all[ahead].at
-    steps.push([at(when), `translate(${slotX(place)}px, ${look.lane}px)`, 1])
+    if (when >= me.at) break
+    places.push([when, place])
     place--
-    steps.push([at(when + 0.3), `translate(${slotX(place)}px, ${look.lane}px)`, 1])
+    places.push([when + 0.3, place])
   }
 
-  const me = all[index]
+  // До рождения участника на холсте нет: он не ждёт за кадром, его ещё
+  // никто не создал.
+  const visible = time => (time >= born ? 1 : 0)
+  const steps = places.map(([time, where]) =>
+    [at(time), `translate(${slotX(where)}px, ${look.lane}px)`, visible(time)])
+
+  if (born) {
+    const spot = places.filter(([time]) => time <= born).pop()[1]
+    steps.push([at(born - 0.02), `translate(${slotX(spot)}px, ${look.lane}px)`, 0])
+    steps.push([at(born), `translate(${slotX(spot)}px, ${look.lane}px)`, 1])
+  }
+
   steps.push([at(me.at), `translate(${slotX(0)}px, ${look.lane}px)`, 1])
   steps.push([at(me.at + look.travel), `translate(${STACK.x}px, ${inStackY}px)`, 1])
   steps.push([at(me.at + look.travel + me.work), `translate(${STACK.x}px, ${inStackY}px)`, 1])
   steps.push([at(me.at + look.travel + me.work + look.leave), `translate(${STACK.x}px, ${inStackY - 120}px)`, 0])
   steps.push([at(me.at + look.travel + me.work + look.leave + 0.01), `translate(${slotX(index)}px, ${look.lane}px)`, 0])
   steps.push([CYCLE - 0.01, `translate(${slotX(index)}px, ${look.lane}px)`, 0])
-  steps.push([CYCLE, `translate(${slotX(index)}px, ${look.lane}px)`, 1])
+  steps.push([CYCLE, `translate(${slotX(index)}px, ${look.lane}px)`, born ? 0 : 1])
 
   const body = steps
     .map(([time, transform, opacity]) => `  ${pct(time)} { transform: ${transform}; opacity: ${opacity} }`)
