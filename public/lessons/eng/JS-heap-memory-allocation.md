@@ -109,6 +109,31 @@ _____________________________________________________________
 [%%%Record heap snapshots%%%](https://developer.chrome.com/docs/devtools/memory-problems/heap-snapshots)
 [%%%Fix memory problems%%%](https://developer.chrome.com/docs/devtools/memory-problems/)
 
+Memory usage is shown by the same **^^Performance^^** panel — tick **^^Memory^^** above the tracks and record the profile again. Five lines join the recording: **^^JS heap^^** — everything JavaScript holds: objects, strings, functions; **^^Documents^^** — documents and frames; **^^Nodes^^** — DOM nodes; **^^Listeners^^** — event handlers; **^^GPU memory^^** — what the graphics card has drawn. Beside each name is the range it travelled while the recording lasted.
+
+These lines are read by their shape, not by their height. A step up means memory was taken: objects created, nodes inserted, handlers attached. A sawtooth means the garbage collector comes by and takes back whatever nothing refers to any more — that is how it should be. What deserves a second look is a line that climbs and never comes down while the page does the same thing over and over. Something still refers to what was allocated — a node taken off the page but held in a handler’s closure, say — and every repetition adds more.
+
+Measure on the deployed site rather than on your own machine. The development server, the live rebuild and the browser extensions live in the same tab and spend memory that has nothing to do with the application: on localhost so much of it goes elsewhere that your own code is lost behind it. It is the same reason Lighthouse asks for an incognito window.
+
+![](illustrations/performance-memory.png)
+
+The picture shows one page of the course loading, 6.75 seconds of it. **^^JS heap^^** grew from 827 kilobytes to 76.9 megabytes, the documents went from three to 21, the DOM nodes from twelve to 3,104, the handlers from ten to 2,074. This is the price of the page itself rather than of any computation: the markup, the highlighted code, the illustrations and every subscription to an event. The lines climb in steps, and each step is one more piece of the page built and shown.
+
+• The JavaScript interpreter dynamically allocates the necessary memory when variables are declared
+• Calls to certain functions also result in memory allocation
+• Some methods allocate memory for new values or objects
+
+How much memory is taken at this moment, and by what, is shown by a heap snapshot: the **^^Memory^^** tab, **^^Heap snapshot^^**, the **^^Take snapshot^^** button. The snapshot sorts what is taken by kind — code, strings, arrays, typed arrays, system objects:
+
+• code:                   127 kilobytes
+• strings:                100 kilobytes
+• arrays:                   2 kilobytes
+• typed arrays:             1 kilobyte
+
+_____________________________________________________________
+
+## ![ico-25 icon] Timing a piece of code⟪Timing_a_piece_of_code⟫
+
 Let’s look at an example of code whose performance we wish to test:
 
 ~~~~js
@@ -123,7 +148,7 @@ function countInnerIntervals (intervals) {
 }
 ~~~~
 
-We are interested not only in the execution time of the function **~countInnerIntervals~**, but also in its memory usage
+What interests us is how long the **~countInnerIntervals~** function takes, and whether that changes from one run to the next
 
 To do this, let’s add a button to the page:
 
@@ -166,17 +191,41 @@ segments: 0.459228515625ms
 
 So, the code’s performance hovers around half a millisecond
 
-Now let us see how much memory this takes. In the **^^Performance^^** panel tick **^^Memory^^** and record the profile again: the tracks are joined by the **^^JS heap^^**, **^^Documents^^**, **^^Nodes^^**, **^^Listeners^^** and **^^GPU memory^^** graphs.
+Half a millisecond on nine intervals says next to nothing: the interesting question is what happens when there are many of them. Let us build an array of four hundred and press the same button — the DevTools console lets a ~const~ be declared again under the same name:
 
-![](illustrations/performance-memory.png)
+~~~~js
+const segments = Array.from({ length: 400 }, (_, index) => [index, 400 + index * 7 % 400])
+~~~~
 
-• The JavaScript interpreter dynamically allocates the necessary memory when variables are declared
-• Calls to certain functions also result in memory allocation
-• Some methods allocate memory for new values or objects
+^^^[Result in the console:]
 
-The graphs show that our code’s memory usage is very small indeed:
+~~~console
+segments: 233.31689453125 ms
+segments: 159.1640625 ms
+segments: 177.68994140625 ms
+segments: 155.601806640625 ms
+~~~
 
-• code:                   127 kilobytes
-• strings:                100 kilobytes
-• arrays:                   2 kilobytes
-• typed arrays:             1 kilobyte
+^^^
+
+A hundred and fifty milliseconds is already noticeable: for that long the page answers neither a click nor a scroll. Before blaming the browser, read the function again. The ~reduce~ uses neither its accumulator ~childs~ nor the current element ~section~: the callback computes one and the same ~filter~ every time and returns its length. And it is called nearly as many times as there are elements in the array, walking the whole array on each call. The same work is repeated four hundred times where it is needed once.
+
+Take the ~reduce~ away, and what is left is exactly what was being computed:
+
+~~~~js
+const countInnerIntervals = intervals => intervals
+  .map(segment => intervals.filter(item => item[0] > segment[0] && item[1] < segment[1]).length)
+~~~~
+
+^^^[Result in the console:]
+
+~~~console
+segments: 1.683837890625 ms
+segments: 1.385986328125 ms
+segments: 1.35986328125 ms
+segments: 1.39990234375 ms
+~~~
+
+^^^
+
+The answer is the same — ~[5, 0, 1, 0, 4, 2, 0, 1, 1]~ on nine intervals — and it now takes a millisecond and a half instead of a hundred and fifty-five. The numbers on your own machine will differ; the ratio is what matters. This is what measuring is for: a pointless ~reduce~ is invisible to the eye, since the program does answer correctly, and only the stopwatch shows that nearly all of its work was wasted.

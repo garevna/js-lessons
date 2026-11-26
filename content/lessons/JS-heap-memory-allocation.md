@@ -109,6 +109,31 @@ _____________________________________________________________
 [%%%Record heap snapshots%%%](https://developer.chrome.com/docs/devtools/memory-problems/heap-snapshots)
 [%%%Fix memory problems%%%](https://developer.chrome.com/docs/devtools/memory-problems/)
 
+{{memoryWhat}}
+
+{{memoryRead}}
+
+{{memoryWhere}}
+
+![](illustrations/performance-memory.png)
+
+{{readGraph}}
+
+{{p50}}
+{{p51}}
+{{p52}}
+
+{{p53}}
+
+{{p54}}
+{{p55}}
+{{p56}}
+{{p57}}
+
+_____________________________________________________________
+
+## ![ico-25 icon] {{exampleHead}}
+
 {{p43}}
 
 ~~~~js
@@ -166,17 +191,41 @@ segments: 0.459228515625ms
 
 {{p48}}
 
-{{p49}}
+{{scaleUp}}
 
-![](illustrations/performance-memory.png)
+~~~~js
+const segments = Array.from({ length: 400 }, (_, index) => [index, 400 + index * 7 % 400])
+~~~~
 
-{{p50}}
-{{p51}}
-{{p52}}
+^^^[{{common.result_in_console}}]
 
-{{p53}}
+~~~console
+segments: 233.31689453125 ms
+segments: 159.1640625 ms
+segments: 177.68994140625 ms
+segments: 155.601806640625 ms
+~~~
 
-{{p54}}
-{{p55}}
-{{p56}}
-{{p57}}
+^^^
+
+{{lookCloser}}
+
+{{rewriteIt}}
+
+~~~~js
+const countInnerIntervals = intervals => intervals
+  .map(segment => intervals.filter(item => item[0] > segment[0] && item[1] < segment[1]).length)
+~~~~
+
+^^^[{{common.result_in_console}}]
+
+~~~console
+segments: 1.683837890625 ms
+segments: 1.385986328125 ms
+segments: 1.35986328125 ms
+segments: 1.39990234375 ms
+~~~
+
+^^^
+
+{{afterRewrite}}

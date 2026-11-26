@@ -215,9 +215,9 @@
     "ua": "Розглянемо приклад коду, продуктивність якого ми хочемо протестувати:"
   },
   "p44": {
-    "ru": "Нас интересует не только время выполнения функции **~⟦f0⟧~**, но и расход памяти",
-    "eng": "We are interested not only in the execution time of the function **~⟦f0⟧~**, but also in its memory usage",
-    "ua": "Нас цікавить не лише час виконання функції **~⟦f0⟧~**, а й витрати пам’яті"
+    "ru": "Нас интересует время выполнения функции **~⟦f0⟧~**: сколько его уходит и меняется ли оно от запуска к запуску",
+    "eng": "What interests us is how long the **~⟦f0⟧~** function takes, and whether that changes from one run to the next",
+    "ua": "Нас цікавить час виконання функції **~⟦f0⟧~**: скільки його йде і чи змінюється він від запуску до запуску"
   },
   "p45": {
     "ru": "Для этого добавим кнопку на страницу:",
@@ -239,11 +239,6 @@
     "eng": "So, the code’s performance hovers around half a millisecond",
     "ua": "Тож, продуктивність коду коливається навколо половини мілісекунди"
   },
-  "p49": {
-    "ru": "Теперь посмотрим, сколько памяти при этом расходуется. В панели **^^Performance^^** поставьте галочку **^^Memory^^** и запишите профиль заново: к дорожкам добавятся графики **^^JS heap^^**, **^^Documents^^**, **^^Nodes^^**, **^^Listeners^^** и **^^GPU memory^^**.",
-    "eng": "Now let us see how much memory this takes. In the **^^Performance^^** panel tick **^^Memory^^** and record the profile again: the tracks are joined by the **^^JS heap^^**, **^^Documents^^**, **^^Nodes^^**, **^^Listeners^^** and **^^GPU memory^^** graphs.",
-    "ua": "Тепер подивимося, скільки пам’яті на це витрачається. У панелі **^^Performance^^** поставте галочку **^^Memory^^** і запишіть профіль заново: до доріжок додадуться графіки **^^JS heap^^**, **^^Documents^^**, **^^Nodes^^**, **^^Listeners^^** і **^^GPU memory^^**."
-  },
   "p50": {
     "ru": "• Интерпретатор JavaScript динамически выделяет необходимую память при объявлении переменных",
     "eng": "• The JavaScript interpreter dynamically allocates the necessary memory when variables are declared",
@@ -260,9 +255,9 @@
     "ua": "• Деякі методи виділяють пам’ять для нових значень або об’єктів"
   },
   "p53": {
-    "ru": "По графикам видно, что у нашего кода расход памяти весьма незначительный:",
-    "eng": "The graphs show that our code’s memory usage is very small indeed:",
-    "ua": "З графіків видно, що у нашого коду споживання пам’яті вельми незначне:"
+    "ru": "Сколько памяти занято в данный момент и чем именно — показывает снимок кучи: вкладка **^^Memory^^**, **^^Heap snapshot^^**, кнопка **^^Take snapshot^^**. Снимок раскладывает занятое по видам — код, строки, массивы, типизированные массивы, системные объекты:",
+    "eng": "How much memory is taken at this moment, and by what, is shown by a heap snapshot: the **^^Memory^^** tab, **^^Heap snapshot^^**, the **^^Take snapshot^^** button. The snapshot sorts what is taken by kind — code, strings, arrays, typed arrays, system objects:",
+    "ua": "Скільки пам’яті зайнято цієї миті і чим саме — показує знімок купи: вкладка **^^Memory^^**, **^^Heap snapshot^^**, кнопка **^^Take snapshot^^**. Знімок розкладає зайняте за видами — код, рядки, масиви, типізовані масиви, системні об’єкти:"
   },
   "p54": {
     "ru": "• код:                    127 килобайт",
@@ -308,5 +303,50 @@
     "ru": "Вот весь отчёт целиком — прокрутите его в окне ниже: оценки, метрики, **^^Insights^^** и **^^Diagnostics^^**, а за ними **^^Accessibility^^**, **^^Best Practices^^** и **^^SEO^^**. Снято с этой самой страницы курса; уголок внизу справа тянется мышью, если окно хочется сделать выше.",
     "eng": "Here is the whole report — scroll it in the window below: the scores, the metrics, **^^Insights^^** and **^^Diagnostics^^**, and after them **^^Accessibility^^**, **^^Best Practices^^** and **^^SEO^^**. It was taken on this very page of the course; the grip in the bottom right corner drags, if the window wants to be taller.",
     "ua": "Ось увесь звіт повністю — прогортайте його у вікні нижче: оцінки, метрики, **^^Insights^^** і **^^Diagnostics^^**, а за ними **^^Accessibility^^**, **^^Best Practices^^** та **^^SEO^^**. Знято з цієї самої сторінки курсу; ріжок унизу праворуч тягнеться мишею, якщо вікно хочеться зробити вищим."
+  },
+  "memoryWhat": {
+    "ru": "Расход памяти та же панель **^^Performance^^** показывает отдельно — нужно только включить галочку **^^Memory^^** над дорожками и записать профиль заново. К записи добавятся пять линий: **^^JS heap^^** — всё, что держит JavaScript: объекты, строки, функции; **^^Documents^^** — документы и фреймы; **^^Nodes^^** — узлы DOM; **^^Listeners^^** — обработчики событий; **^^GPU memory^^** — то, что отрисовано видеокартой. Рядом с названием каждой — от скольких до скольких она дошла за время записи.",
+    "eng": "Memory usage is shown by the same **^^Performance^^** panel — tick **^^Memory^^** above the tracks and record the profile again. Five lines join the recording: **^^JS heap^^** — everything JavaScript holds: objects, strings, functions; **^^Documents^^** — documents and frames; **^^Nodes^^** — DOM nodes; **^^Listeners^^** — event handlers; **^^GPU memory^^** — what the graphics card has drawn. Beside each name is the range it travelled while the recording lasted.",
+    "ua": "Витрати пам’яті та сама панель **^^Performance^^** показує окремо — досить поставити галочку **^^Memory^^** над доріжками і записати профіль заново. До запису додадуться п’ять ліній: **^^JS heap^^** — усе, що тримає JavaScript: об’єкти, рядки, функції; **^^Documents^^** — документи і фрейми; **^^Nodes^^** — вузли DOM; **^^Listeners^^** — обробники подій; **^^GPU memory^^** — те, що відмалювала відеокарта. Поряд із назвою кожної — від скількох до скількох вона дійшла за час запису."
+  },
+  "memoryRead": {
+    "ru": "Читают эти линии не по высоте, а по форме. Ступенька вверх — выделили память: создали объекты, вставили узлы, повесили обработчики. Зубцы — сборщик мусора приходит и забирает то, на что больше никто не ссылается; так и должно быть. Настораживает другое: линия поднимается и не опускается, хотя страница делает одно и то же по кругу. Значит, ссылка на выделенное где-то осталась — например, узел убрали со страницы, а обработчик держит его в замыкании, — и каждый повтор добавляет ещё.",
+    "eng": "These lines are read by their shape, not by their height. A step up means memory was taken: objects created, nodes inserted, handlers attached. A sawtooth means the garbage collector comes by and takes back whatever nothing refers to any more — that is how it should be. What deserves a second look is a line that climbs and never comes down while the page does the same thing over and over. Something still refers to what was allocated — a node taken off the page but held in a handler’s closure, say — and every repetition adds more.",
+    "ua": "Читають ці лінії не за висотою, а за формою. Сходинка вгору — виділили пам’ять: створили об’єкти, вставили вузли, повісили обробники. Зубці — збирач сміття приходить і забирає те, на що більше ніхто не посилається; так і має бути. Насторожує інше: лінія піднімається і не опускається, хоча сторінка робить те саме по колу. Отже, посилання на виділене десь лишилося — наприклад, вузол прибрали зі сторінки, а обробник тримає його у замиканні, — і кожен повтор додає ще."
+  },
+  "memoryWhere": {
+    "ru": "Мерить стоит на выложенном сайте, а не на локальной машине. Сервер разработки, пересборка на лету и расширения браузера живут в той же вкладке и тратят память, к приложению отношения не имеющую: на локальном хосте её уходит «налево» столько, что своего кода за этим не видно. Та же причина, по которой Lighthouse просит окно инкогнито.",
+    "eng": "Measure on the deployed site rather than on your own machine. The development server, the live rebuild and the browser extensions live in the same tab and spend memory that has nothing to do with the application: on localhost so much of it goes elsewhere that your own code is lost behind it. It is the same reason Lighthouse asks for an incognito window.",
+    "ua": "Міряти варто на викладеному сайті, а не на локальній машині. Сервер розробки, перезбирання на льоту і розширення браузера живуть у тій самій вкладці і витрачають пам’ять, яка до застосунку не має стосунку: на локальному хості її йде «наліво» стільки, що свого коду за цим не видно. Та сама причина, через яку Lighthouse просить вікно інкогніто."
+  },
+  "readGraph": {
+    "ru": "На снимке — загрузка одной страницы курса, 6,75 секунды. **^^JS heap^^** вырос с 827 килобайт до 76,9 мегабайта, документов стало 21 вместо трёх, узлов DOM — 3 104 вместо двенадцати, обработчиков — 2 074 вместо десяти. Это цена не вычислений, а самой страницы: разметки, подсветки кода, иллюстраций и всех подписок на события. Линии идут ступенями, и каждая ступень — очередной кусок страницы, который построили и показали.",
+    "eng": "The picture shows one page of the course loading, 6.75 seconds of it. **^^JS heap^^** grew from 827 kilobytes to 76.9 megabytes, the documents went from three to 21, the DOM nodes from twelve to 3,104, the handlers from ten to 2,074. This is the price of the page itself rather than of any computation: the markup, the highlighted code, the illustrations and every subscription to an event. The lines climb in steps, and each step is one more piece of the page built and shown.",
+    "ua": "На знімку — завантаження однієї сторінки курсу, 6,75 секунди. **^^JS heap^^** зріс з 827 кілобайт до 76,9 мегабайта, документів стало 21 замість трьох, вузлів DOM — 3 104 замість дванадцяти, обробників — 2 074 замість десяти. Це ціна не обчислень, а самої сторінки: розмітки, підсвічування коду, ілюстрацій і всіх підписок на події. Лінії йдуть сходинками, і кожна сходинка — чергова частина сторінки, яку побудували і показали."
+  },
+  "exampleHead": {
+    "ru": "Замер времени на конкретном коде",
+    "eng": "Timing a piece of code",
+    "ua": "Замір часу на конкретному коді"
+  },
+  "scaleUp": {
+    "ru": "Полмиллисекунды на девяти отрезках не говорят почти ни о чём: интересно, что будет, когда отрезков станет много. Построим массив из четырёхсот и нажмём ту же кнопку — консоль DevTools позволяет объявить ~const~ с прежним именем заново:",
+    "eng": "Half a millisecond on nine intervals says next to nothing: the interesting question is what happens when there are many of them. Let us build an array of four hundred and press the same button — the DevTools console lets a ~const~ be declared again under the same name:",
+    "ua": "Пів мілісекунди на дев’яти відрізках не кажуть майже нічого: цікаво, що буде, коли відрізків стане багато. Збудуємо масив із чотирьохсот і натиснемо ту саму кнопку — консоль DevTools дозволяє оголосити ~const~ з колишнім іменем заново:"
+  },
+  "lookCloser": {
+    "ru": "Полторы сотни миллисекунд — это уже заметно: столько времени страница не отвечает ни на клик, ни на прокрутку. Прежде чем винить браузер, перечитаем функцию. В ~reduce~ не используется ни накопитель ~childs~, ни текущий элемент ~section~: колбэк каждый раз вычисляет один и тот же ~filter~ и возвращает его длину. А зовут его почти столько раз, сколько в массиве элементов, и каждый раз он проходит массив целиком. Одна и та же работа повторяется четыреста раз, а нужна она один раз.",
+    "eng": "A hundred and fifty milliseconds is already noticeable: for that long the page answers neither a click nor a scroll. Before blaming the browser, read the function again. The ~reduce~ uses neither its accumulator ~childs~ nor the current element ~section~: the callback computes one and the same ~filter~ every time and returns its length. And it is called nearly as many times as there are elements in the array, walking the whole array on each call. The same work is repeated four hundred times where it is needed once.",
+    "ua": "Півтори сотні мілісекунд — це вже помітно: стільки часу сторінка не відповідає ні на клік, ні на гортання. Перш ніж винуватити браузер, перечитаймо функцію. У ~reduce~ не використовується ані накопичувач ~childs~, ані поточний елемент ~section~: колбек щоразу обчислює один і той самий ~filter~ і повертає його довжину. А кличуть його майже стільки разів, скільки в масиві елементів, і щоразу він проходить масив цілком. Та сама робота повторюється чотириста разів, а потрібна вона один раз."
+  },
+  "rewriteIt": {
+    "ru": "Уберём ~reduce~ — остаётся ровно то, что и считалось:",
+    "eng": "Take the ~reduce~ away, and what is left is exactly what was being computed:",
+    "ua": "Приберемо ~reduce~ — лишається саме те, що й рахувалося:"
+  },
+  "afterRewrite": {
+    "ru": "Ответ прежний — ~[5, 0, 1, 0, 4, 2, 0, 1, 1]~ на девяти отрезках, — а времени уходит полторы миллисекунды вместо ста пятидесяти пяти. Числа на вашей машине будут свои, важно отношение. Ради этого замеры и делают: лишний ~reduce~ глазами не виден, программа ведь отвечает правильно, и только секундомер показывает, что почти вся её работа — впустую.",
+    "eng": "The answer is the same — ~[5, 0, 1, 0, 4, 2, 0, 1, 1]~ on nine intervals — and it now takes a millisecond and a half instead of a hundred and fifty-five. The numbers on your own machine will differ; the ratio is what matters. This is what measuring is for: a pointless ~reduce~ is invisible to the eye, since the program does answer correctly, and only the stopwatch shows that nearly all of its work was wasted.",
+    "ua": "Відповідь та сама — ~[5, 0, 1, 0, 4, 2, 0, 1, 1]~ на дев’яти відрізках, — а часу йде півтори мілісекунди замість ста п’ятдесяти п’яти. Числа на вашій машині будуть свої, важить відношення. Заради цього заміри й роблять: зайвий ~reduce~ оком не видно, програма ж відповідає правильно, і лише секундомір показує, що майже вся її робота — намарно."
   }
 }
