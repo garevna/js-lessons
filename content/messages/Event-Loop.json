@@ -1008,5 +1008,10 @@
     "ru": "Поэтому вызванная напрямую функция возвращает значение туда, откуда её позвали, а колбеку возвращать некуда: того, кто его \"заказал\", в стеке давно нет.",
     "eng": "That is why a function called directly returns its value to where it was called from, while a callback has nowhere to return it: whoever ordered it left the stack long ago.",
     "ua": "Тому викликана напряму функція повертає значення туди, звідки її покликали, а колбеку повертати нікуди: того, хто його \"замовив\", у стеку давно немає."
+  },
+  "taskStream": {
+    "ru": "Таски, микротаски, таймеры, запросы в сеть и тяжёлые вычисления — всё это плывёт к одному-единственному стеку вызовов. В каком порядке они туда попадут, решает **Event Loop**.",
+    "eng": "Tasks, microtasks, timers, network requests and heavy computation — all of it drifts towards one single call stack. The order in which they get there is for the **Event Loop** to decide.",
+    "ua": "Таски, мікротаски, таймери, запити в мережу і важкі обчислення — усе це пливе до одного-єдиного стека викликів. У якому порядку вони туди потраплять, вирішує **Event Loop**."
   }
 }

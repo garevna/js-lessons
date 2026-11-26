@@ -375,6 +375,10 @@ ______________________________
 
 ☼☼☼ Microtasks are cheeky guys ignoring queue ☼☼☼
 
+![](illustrations/task-stream.jpg)
+
+Tasks, microtasks, timers, network requests and heavy computation — all of it drifts towards one single call stack. The order in which they get there is for the **Event Loop** to decide.
+
 Timer callbacks and UI event handlers are **tasks**.
 
 But we also have “magic boxes with two holes” - **promises**!
