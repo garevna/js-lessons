@@ -446,7 +446,22 @@ promise('Third microtask').then(message)
 
 ☼☼☼ {{p132}} ☼☼☼
 
+### ![ico-20 icon] queueMicrotask
+
+{{qmWhat}}
+
+~~~js
+queueMicrotask(callback)
+~~~
+
+{{qmArg}}
+{{qmNoCancel}}
+
+{{qmWhen}}
+
 {{queueMicroWhat}}
+
+{{qmWhere}}
 
 {{queueMicroWhy}}
 

@@ -1040,9 +1040,9 @@
     "ua": "![ico-20 warn] Найпряміший спосіб влаштувати таку пробку — синхронний запит: ~XMLHttpRequest~ з третім аргументом ~false~. Поки сервер не відповість, стек викликів зайнятий очікуванням, і сторінка не відповідає ні на що. Браузери лають його в консолі й радять ~fetch~ — той віддає проміс і нічого не затримує."
   },
   "queueMicroWhat": {
-    "ru": "Промис ради микротаска нужен не всегда. Положить колбек прямо в очередь микротасков умеет **~queueMicrotask()~**: та же очередь и тот же порядок, только без обёртки — ~Promise.resolve().then(fn)~ создаёт ради этого промис, который больше никому не нужен. Разница есть и в ошибках: брошенная внутри ~then~ превращается в отклонённый промис, а брошенная в микротаске из ~queueMicrotask~ уходит в обработчик ошибок окна, как обычное необработанное исключение.",
-    "eng": "A promise is not always needed to make a microtask. **~queueMicrotask()~** puts a callback straight into the microtask queue: the same queue and the same order, only without the wrapping — ~Promise.resolve().then(fn)~ creates a promise for it that nobody else needs. Errors differ too: one thrown inside ~then~ becomes a rejected promise, while one thrown in a ~queueMicrotask~ callback goes to the window's error handler as an ordinary uncaught exception.",
-    "ua": "Проміс заради мікротаска потрібен не завжди. Покласти колбек просто в чергу мікротасків уміє **~queueMicrotask()~**: та сама черга і той самий порядок, тільки без обгортки — ~Promise.resolve().then(fn)~ створює заради цього проміс, який більше нікому не потрібен. Різниця є і в помилках: кинута всередині ~then~ перетворюється на відхилений проміс, а кинута в мікротаску з ~queueMicrotask~ іде до обробника помилок вікна, як звичайний неперехоплений виняток."
+    "ru": "От **~Promise.resolve().then(fn)~**, которым то же самое делали раньше, отличий два. Промис: ~then~ создаёт его ради одного вызова, и больше он никому не нужен. И ошибки: брошенная внутри ~then~ превращается в отклонённый промис и ждёт ~catch~, а брошенная в микротаске из ~queueMicrotask~ уходит в обработчик ошибок окна, как обычное необработанное исключение.",
+    "eng": "It differs from **~Promise.resolve().then(fn)~**, which used to do the same job, in two ways. The promise: ~then~ creates one for the sake of a single call, and nobody needs it afterwards. And errors: one thrown inside ~then~ becomes a rejected promise and waits for a ~catch~, while one thrown in a ~queueMicrotask~ callback goes to the window's error handler as an ordinary uncaught exception.",
+    "ua": "Від **~Promise.resolve().then(fn)~**, яким те саме робили раніше, відмінностей дві. Проміс: ~then~ створює його заради одного виклику, і більше він нікому не потрібен. І помилки: кинута всередині ~then~ перетворюється на відхилений проміс і чекає на ~catch~, а кинута в мікротаску з ~queueMicrotask~ іде до обробника помилок вікна, як звичайний неперехоплений виняток."
   },
   "queueMicroWhy": {
     "ru": "С ним хорошо видно то, о чём спрашивает тест в конце урока: микротаск может поставить следующий микротаск. Таймер здесь заведён первой же строкой — и всё равно ждёт:",
@@ -1068,5 +1068,30 @@
     "ru": "Тридцать точек идут одной строкой, и ни одной звёздочки между ними: пока очередь микротасков не опустела, браузер к экрану не подошёл. У кружков звёздочка стоит через каждые три-шесть штук — между задачами браузер успевает нарисовать кадр. Вот эта разница и стоит за словами \"страница не отвечает\": дело не в том, сколько работы, а в том, даёт ли она браузеру вставить слово.",
     "eng": "Thirty dots go by in a single line with not one asterisk among them: until the microtask queue was empty the browser never got near the screen. Among the circles an asterisk stands every three to six of them — between tasks the browser manages to paint a frame. This is the difference behind the words “the page does not respond”: it is not the amount of work that matters, but whether it lets the browser get a word in.",
     "ua": "Тридцять крапок ідуть одним рядком, і жодної зірочки між ними: поки черга мікротасків не спорожніла, браузер до екрана не підійшов. У кружечків зірочка стоїть кожні три-шість штук — між завданнями браузер встигає намалювати кадр. Саме ця різниця стоїть за словами \"сторінка не відповідає\": річ не в тому, скільки роботи, а в тому, чи дає вона браузерові вставити слово."
+  },
+  "qmWhat": {
+    "ru": "Метод глобального объекта **~queueMicrotask()~** кладёт переданную ему функцию в очередь микротасков — ту самую, которую движок опустошает целиком, прежде чем взять следующую задачу.",
+    "eng": "The global method **~queueMicrotask()~** puts the function you hand it into the microtask queue — the very one the engine empties in full before taking the next task.",
+    "ua": "Метод глобального об'єкта **~queueMicrotask()~** кладе передану йому функцію в чергу мікротасків — ту саму, яку рушій спорожнює цілком, перш ніж узяти наступне завдання."
+  },
+  "qmArg": {
+    "ru": "![ico-20 green-ok] принимает один аргумент — функцию без параметров: всё, что ей понадобится, она забирает из замыкания.",
+    "eng": "![ico-20 green-ok] takes one argument — a function with no parameters: whatever it needs, it takes from its closure.",
+    "ua": "![ico-20 green-ok] приймає один аргумент — функцію без параметрів: усе, що їй знадобиться, вона бере із замикання."
+  },
+  "qmNoCancel": {
+    "ru": "![ico-20 green-ok] ничего не возвращает, и отменить поставленный микротаск нельзя: идентификатора, как у таймера, у него нет.",
+    "eng": "![ico-20 green-ok] returns nothing, and a microtask once queued cannot be cancelled: it has no id, the way a timer has.",
+    "ua": "![ico-20 green-ok] нічого не повертає, і скасувати поставлений мікротаск не можна: ідентифікатора, як у таймера, він не має."
+  },
+  "qmWhen": {
+    "ru": "Выполнена она будет не сразу: сначала до конца отработает текущий код, а когда стек вызовов освободится, движок возьмёт её из очереди — в том порядке, в каком микротаски туда попали, и прежде чем дойдёт до следующей задачи.",
+    "eng": "It will not run straight away: the current code runs to its end first, and once the call stack is free the engine takes it from the queue — in the order the microtasks arrived, and before it gets to the next task.",
+    "ua": "Виконана вона буде не одразу: спочатку до кінця відпрацює поточний код, а коли стек викликів звільниться, рушій візьме її з черги — у тому порядку, в якому мікротаски туди потрапили, і перш ніж дійде до наступного завдання."
+  },
+  "qmWhere": {
+    "ru": "Метод есть во всех нынешних браузерах — с 2019 года, — а также в веб-воркерах и в Node.js начиная с одиннадцатой версии.",
+    "eng": "The method is in every current browser — since 2019 — as well as in web workers and in Node.js from version eleven on.",
+    "ua": "Метод є в усіх нинішніх браузерах — з 2019 року, — а також у вебворкерах і в Node.js починаючи з одинадцятої версії."
   }
 }

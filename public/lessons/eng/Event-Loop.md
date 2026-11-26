@@ -446,7 +446,22 @@ While the tasks are sitting in the task queue and waiting for their turn to get 
 
 ☼☼☼ Microtasks are cheeky little guys who jump into the Call Stack without waiting in line ☼☼☼
 
-A promise is not always needed to make a microtask. **~queueMicrotask()~** puts a callback straight into the microtask queue: the same queue and the same order, only without the wrapping — ~Promise.resolve().then(fn)~ creates a promise for it that nobody else needs. Errors differ too: one thrown inside ~then~ becomes a rejected promise, while one thrown in a ~queueMicrotask~ callback goes to the window's error handler as an ordinary uncaught exception.
+### ![ico-20 icon] queueMicrotask⟪queueMicrotask⟫
+
+The global method **~queueMicrotask()~** puts the function you hand it into the microtask queue — the very one the engine empties in full before taking the next task.
+
+~~~js
+queueMicrotask(callback)
+~~~
+
+![ico-20 green-ok] takes one argument — a function with no parameters: whatever it needs, it takes from its closure.
+![ico-20 green-ok] returns nothing, and a microtask once queued cannot be cancelled: it has no id, the way a timer has.
+
+It will not run straight away: the current code runs to its end first, and once the call stack is free the engine takes it from the queue — in the order the microtasks arrived, and before it gets to the next task.
+
+It differs from **~Promise.resolve().then(fn)~**, which used to do the same job, in two ways. The promise: ~then~ creates one for the sake of a single call, and nobody needs it afterwards. And errors: one thrown inside ~then~ becomes a rejected promise and waits for a ~catch~, while one thrown in a ~queueMicrotask~ callback goes to the window's error handler as an ordinary uncaught exception.
+
+The method is in every current browser — since 2019 — as well as in web workers and in Node.js from version eleven on.
 
 It shows plainly what the test at the end of the lesson asks about: a microtask can schedule the next microtask. The timer here is set on the very first line — and still waits:
 
