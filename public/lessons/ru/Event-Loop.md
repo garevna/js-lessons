@@ -505,8 +505,20 @@ getUser()
 
 ___
 
+## ![ico-25 hw] Тесты⟪Tests⟫
+
+~~~js
+console.log(1)
+
+setTimeout(() => console.log(2))
+
+Promise.resolve().then(() => console.log(3))
+
+console.log(4)
+~~~
+
 ♣♣♣♣
-? Что выведет консоль? **console.log(1); setTimeout(() => console.log(2)); Promise.resolve().then(() => console.log(3)); console.log(4)**
+? Что выведет консоль?
 
 - **1, 2, 3, 4**
 = Так было бы, если бы ~setTimeout~ вызывал колбек сразу. Но колбек таймера — это таск: он только встаёт в очередь, а выполнится, когда освободится стек вызовов.

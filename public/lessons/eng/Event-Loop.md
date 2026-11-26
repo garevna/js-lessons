@@ -505,8 +505,20 @@ To even the odds between tasks and microtasks, the timer's callback sets a timer
 
 ___
 
+## ![ico-25 hw] Tests⟪Tests⟫
+
+~~~js
+console.log(1)
+
+setTimeout(() => console.log(2))
+
+Promise.resolve().then(() => console.log(3))
+
+console.log(4)
+~~~
+
 ♣♣♣♣
-? What will the console print? **console.log(1); setTimeout(() => console.log(2)); Promise.resolve().then(() => console.log(3)); console.log(4)**
+? What will the console print?
 
 - **1, 2, 3, 4**
 = That would be so if ~setTimeout~ called the callback at once. But a timer callback is a task: it only joins the queue, and runs when the call stack is free.

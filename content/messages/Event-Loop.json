@@ -740,9 +740,9 @@
     "ua": "![ico-20 warn] Нуль тут означає \"якнайшвидше\", а не \"негайно\": колбек однаково стає в чергу завдань і чекає, поки звільниться стек викликів. А якщо таймер заводять із колбека таймера, то більш ніж п'ять таких вкладень поспіль — і браузер перестає давати менше за чотири мілісекунди."
   },
   "test01Question": {
-    "ru": "Что выведет консоль? **console.log(1); setTimeout(() => console.log(2)); Promise.resolve().then(() => console.log(3)); console.log(4)**",
-    "eng": "What will the console print? **console.log(1); setTimeout(() => console.log(2)); Promise.resolve().then(() => console.log(3)); console.log(4)**",
-    "ua": "Що виведе консоль? **console.log(1); setTimeout(() => console.log(2)); Promise.resolve().then(() => console.log(3)); console.log(4)**"
+    "ru": "Что выведет консоль?",
+    "eng": "What will the console print?",
+    "ua": "Що виведе консоль?"
   },
   "test01Variant1": {
     "ru": "**1, 2, 3, 4**",

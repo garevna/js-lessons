@@ -352,6 +352,8 @@ for (let x of [1, 2, 3]) {
 
 ___
 
+## ![ico-25 hw] {{common.tests}}
+
 ♣♣♣♣
 ? {{test01Question}}
 

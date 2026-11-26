@@ -368,6 +368,27 @@ One `♣` block may hold several questions: a new `?` after the options starts t
 next. When it does they are shown a card at a time by `test-series`, with its
 counter and its score.
 
+**Code goes above the block, not inside the question.** A question is one line
+of prose; a program written into it arrives as a single unbroken string, and
+`console.log(1); setTimeout(() => console.log(2)); …` is unreadable at a
+glance. Put the listing in a `~~~js` block before the `♣♣♣♣` fence and let the
+question point at it:
+
+```
+~~~js
+console.log(1)
+
+setTimeout(() => console.log(2))
+~~~
+
+♣♣♣♣
+? Что выведет консоль?
+```
+
+The listing is highlighted and spaced like any other code in the lesson, and
+the question card stays short. Only short fragments belong inside a question —
+`typeof 10n`, `x++`, the name of a method.
+
 A card that explains itself waits for the reader. The short form moves on by
 itself after a pause — there is nothing to read but a colour — and the pause is
 drawn as a bar draining under the counter, so that the card leaving is
