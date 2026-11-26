@@ -63,7 +63,7 @@ The second property of most events is that the result of the occurrence of the e
 
 @@@@
 We can't predict with certainty whether the server's response status will be successful, or if the server will return an http error code to us.
-![](illustrations/async-fynny-02.gif)
+![](illustrations/async-surfer.jpg)
 @@@@
 
 If we can't manage events, then we can let the events control our code.

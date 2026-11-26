@@ -63,7 +63,7 @@ ____________________________________
 
 @@@@
 {{p32}}
-![](illustrations/async-fynny-02.gif)
+![](illustrations/async-surfer.jpg)
 @@@@
 
 {{p33}}
