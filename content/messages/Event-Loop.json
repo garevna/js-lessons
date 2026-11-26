@@ -1038,5 +1038,25 @@
     "ru": "![ico-20 warn] Самый прямой способ устроить такую пробку — синхронный запрос: ~XMLHttpRequest~ с третьим аргументом ~false~. Пока сервер не ответит, стек вызовов занят ожиданием, и страница не отвечает ни на что. Браузеры ругаются на него в консоли и советуют ~fetch~ — тот отдаёт промис и ничего не задерживает.",
     "eng": "![ico-20 warn] The most direct way to arrange such a jam is a synchronous request: ~XMLHttpRequest~ with ~false~ as the third argument. Until the server answers, the call stack is busy waiting, and the page answers nothing at all. Browsers complain about it in the console and point to ~fetch~, which returns a promise and holds nothing up.",
     "ua": "![ico-20 warn] Найпряміший спосіб влаштувати таку пробку — синхронний запит: ~XMLHttpRequest~ з третім аргументом ~false~. Поки сервер не відповість, стек викликів зайнятий очікуванням, і сторінка не відповідає ні на що. Браузери лають його в консолі й радять ~fetch~ — той віддає проміс і нічого не затримує."
+  },
+  "queueMicroWhat": {
+    "ru": "Промис ради микротаска нужен не всегда. Положить колбек прямо в очередь микротасков умеет **~queueMicrotask()~**: та же очередь и тот же порядок, только без обёртки — ~Promise.resolve().then(fn)~ создаёт ради этого промис, который больше никому не нужен. Разница есть и в ошибках: брошенная внутри ~then~ превращается в отклонённый промис, а брошенная в микротаске из ~queueMicrotask~ уходит в обработчик ошибок окна, как обычное необработанное исключение.",
+    "eng": "A promise is not always needed to make a microtask. **~queueMicrotask()~** puts a callback straight into the microtask queue: the same queue and the same order, only without the wrapping — ~Promise.resolve().then(fn)~ creates a promise for it that nobody else needs. Errors differ too: one thrown inside ~then~ becomes a rejected promise, while one thrown in a ~queueMicrotask~ callback goes to the window's error handler as an ordinary uncaught exception.",
+    "ua": "Проміс заради мікротаска потрібен не завжди. Покласти колбек просто в чергу мікротасків уміє **~queueMicrotask()~**: та сама черга і той самий порядок, тільки без обгортки — ~Promise.resolve().then(fn)~ створює заради цього проміс, який більше нікому не потрібен. Різниця є і в помилках: кинута всередині ~then~ перетворюється на відхилений проміс, а кинута в мікротаску з ~queueMicrotask~ іде до обробника помилок вікна, як звичайний неперехоплений виняток."
+  },
+  "queueMicroWhy": {
+    "ru": "С ним хорошо видно то, о чём спрашивает тест в конце урока: микротаск может поставить следующий микротаск. Таймер здесь заведён первой же строкой — и всё равно ждёт:",
+    "eng": "It shows plainly what the test at the end of the lesson asks about: a microtask can schedule the next microtask. The timer here is set on the very first line — and still waits:",
+    "ua": "З ним добре видно те, про що питає тест наприкінці уроку: мікротаск може поставити наступний мікротаск. Таймер тут заведено першим же рядком — і все одно чекає:"
+  },
+  "queueMicroOut": {
+    "ru": "Пять микротасков родились один из другого, и все пятеро выполнились раньше таска, хотя таймер был заведён до них. Очередь микротасков опустошается целиком — и «целиком» проверяется заново после каждого: пока в неё добавляют, она не пуста.",
+    "eng": "Five microtasks were born one from another, and all five ran before the task, though the timer had been set before any of them. The microtask queue is emptied in full — and “in full” is checked again after each one: while things are still being added, it is not empty.",
+    "ua": "П'ять мікротасків народилися один з одного, і всі п'ятеро виконалися раніше за таск, хоча таймер було заведено до них. Черга мікротасків спорожнюється цілком — і \"цілком\" перевіряється заново після кожного: поки до неї додають, вона не порожня."
+  },
+  "queueMicroWarn": {
+    "ru": "![ico-20 warn] Отсюда и беда, если убрать условие: микротаск, который ставит следующий безусловно, не выпустит движок из очереди микротасков никогда. Ни таймеры, ни клики, ни перерисовка до стека вызовов не доберутся — вкладка повиснет так же надёжно, как от бесконечного цикла. Только выглядит это безобиднее: каждый отдельный колбек короткий, и в профиле не видно ни одной длинной задачи.",
+    "eng": "![ico-20 warn] Hence the trouble if the condition is removed: a microtask that schedules the next one unconditionally never lets the engine out of the microtask queue. No timer, no click and no repaint will reach the call stack — the tab hangs as surely as from an endless loop. It only looks more innocent: every single callback is short, and the profile shows no long task at all.",
+    "ua": "![ico-20 warn] Звідси й біда, якщо прибрати умову: мікротаск, який ставить наступний безумовно, ніколи не випустить рушій із черги мікротасків. Ні таймери, ні кліки, ні перемальовування до стека викликів не дістануться — вкладка зависне так само надійно, як від нескінченного циклу. Тільки виглядає це безневинніше: кожен окремий колбек короткий, і у профілі не видно жодного довгого завдання."
   }
 }

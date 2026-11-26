@@ -446,6 +446,42 @@ promise('Third microtask').then(message)
 
 ☼☼☼ {{p132}} ☼☼☼
 
+{{queueMicroWhat}}
+
+{{queueMicroWhy}}
+
+◘◘![ico-20 cap] **6**◘◘
+
+~~~js
+setTimeout(() => console.log('task'))
+
+let left = 5
+
+const again = () => {
+  console.log('microtask, left:', left)
+  if (--left) queueMicrotask(again)
+}
+
+queueMicrotask(again)
+~~~
+
+^^^[{{common.result_in_console}}]
+
+~~~console
+microtask, left: 5
+microtask, left: 4
+microtask, left: 3
+microtask, left: 2
+microtask, left: 1
+task
+~~~
+
+^^^
+
+{{queueMicroOut}}
+
+{{queueMicroWarn}}
+
 ___
 
 {{p133}}
@@ -462,7 +498,7 @@ ___
 {{p139}}
 {{p140}}
 
-◘◘![ico-20 cap] ** 6**◘◘
+◘◘![ico-20 cap] **7**◘◘
 
 ~~~js
 const start = Date.now()
