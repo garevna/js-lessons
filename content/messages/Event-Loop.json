@@ -1033,5 +1033,10 @@
     "ru": "Из этой лесенки и выросли **промисы**: они разворачивают вложенность в цепочку, где шаги идут друг за другом, а ошибка ловится одна на всю цепочку. Им посвящён отдельный урок:",
     "eng": "It is out of that staircase that **promises** grew: they unfold the nesting into a chain where the steps follow one another, and one catch serves the whole chain. They have a lesson of their own:",
     "ua": "Саме з цієї драбинки і виросли **проміси**: вони розгортають вкладеність у ланцюжок, де кроки йдуть один за одним, а помилка ловиться одна на весь ланцюжок. Їм присвячено окремий урок:"
+  },
+  "syncXHR": {
+    "ru": "![ico-20 warn] Самый прямой способ устроить такую пробку — синхронный запрос: ~XMLHttpRequest~ с третьим аргументом ~false~. Пока сервер не ответит, стек вызовов занят ожиданием, и страница не отвечает ни на что. Браузеры ругаются на него в консоли и советуют ~fetch~ — тот отдаёт промис и ничего не задерживает.",
+    "eng": "![ico-20 warn] The most direct way to arrange such a jam is a synchronous request: ~XMLHttpRequest~ with ~false~ as the third argument. Until the server answers, the call stack is busy waiting, and the page answers nothing at all. Browsers complain about it in the console and point to ~fetch~, which returns a promise and holds nothing up.",
+    "ua": "![ico-20 warn] Найпряміший спосіб влаштувати таку пробку — синхронний запит: ~XMLHttpRequest~ з третім аргументом ~false~. Поки сервер не відповість, стек викликів зайнятий очікуванням, і сторінка не відповідає ні на що. Браузери лають його в консолі й радять ~fetch~ — той віддає проміс і нічого не затримує."
   }
 }

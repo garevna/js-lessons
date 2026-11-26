@@ -247,11 +247,13 @@ __________________________________________
 A "heavy" task is a task that will occupy the stack for a long time and can seriously delay the execution of other tasks in the queue that had the misfortune of getting there after it...
 
 @@@@
-![](illustrations/event-loop-queue.png)
+![](illustrations/blocking-queue.jpg)
 ^^It's like waiting in line at a doctor's office in a clunky Soviet system.<br>You have an appointment at 2:00 PM, it's already 3:25 PM, and there are still five people ahead of you.<br>^^
 ^^What does this tell you?<br>It tells you the code is extremely poorly written.^^
 ^^<br>Yes, the Soviet system was poorly written code.^^
 @@@@
+
+![ico-20 warn] The most direct way to arrange such a jam is a synchronous request: ~XMLHttpRequest~ with ~false~ as the third argument. Until the server answers, the call stack is busy waiting, and the page answers nothing at all. Browsers complain about it in the console and point to ~fetch~, which returns a promise and holds nothing up.
 
 Write code so that no function takes up the Call Stack for long.
 Otherwise, your page will stop responding to events because the callbacks won't be able to get into the call stack.

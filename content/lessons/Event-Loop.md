@@ -247,11 +247,13 @@ __________________________________________
 {{p101}}
 
 @@@@
-![](illustrations/event-loop-queue.png)
+![](illustrations/blocking-queue.jpg)
 {{p102}}
 {{p103}}
 {{p104}}
 @@@@
+
+{{syncXHR}}
 
 {{p105}}
 {{p106}}
