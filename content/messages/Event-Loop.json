@@ -1013,5 +1013,10 @@
     "ru": "Таски, микротаски, таймеры, запросы в сеть и тяжёлые вычисления — всё это плывёт к одному-единственному стеку вызовов. В каком порядке они туда попадут, решает **Event Loop**.",
     "eng": "Tasks, microtasks, timers, network requests and heavy computation — all of it drifts towards one single call stack. The order in which they get there is for the **Event Loop** to decide.",
     "ua": "Таски, мікротаски, таймери, запити в мережу і важкі обчислення — усе це пливе до одного-єдиного стека викликів. У якому порядку вони туди потраплять, вирішує **Event Loop**."
+  },
+  "eventDriven": {
+    "ru": "Источник события может быть любым — клик мышью, сработавший таймер, сообщение из сети, — а дорога у всех одна: привязанный к событию колбек встаёт в очередь задач, и **Event Loop** по одному отправляет их в стек вызовов.",
+    "eng": "An event may come from anywhere — a click of the mouse, a timer going off, a message from the network — but the road is the same for all of them: the callback bound to the event joins the task queue, and the **Event Loop** sends them into the call stack one by one.",
+    "ua": "Джерело події може бути будь-яким — клік мишею, таймер, що спрацював, повідомлення з мережі, — а дорога в усіх одна: прив'язаний до події колбек стає в чергу завдань, і **Event Loop** по одному відправляє їх у стек викликів."
   }
 }

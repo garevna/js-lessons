@@ -81,6 +81,10 @@ ____________________________________
 
 {{p40}}
 
+![](illustrations/event-driven.jpg)
+
+{{eventDriven}}
+
 [%%%MDN%%%](external/mdn-event-loop)
 
 ________________________________________
