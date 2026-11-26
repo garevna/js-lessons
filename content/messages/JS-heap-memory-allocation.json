@@ -204,11 +204,6 @@
     "eng": "^^the delay is caused by the browser’s main thread potentially being occupied by another task^^",
     "ua": "^^причиною затримки є те, що головний потік браузера може бути зайнятий іншою задачею^^"
   },
-  "p42": {
-    "ru": "Вкладка **^^Performance^^** отображает временную шкалу записанного фрагмента работы приложения",
-    "eng": "The **^^Performance^^** tab displays a timeline of the recorded application session",
-    "ua": "Вкладка **^^Performance^^** відображає часову шкалу записаного фрагмента роботи додатку"
-  },
   "p43": {
     "ru": "Рассмотрим пример кода, производительность которого мы хотим протестировать:",
     "eng": "Let’s look at an example of code whose performance we wish to test:",

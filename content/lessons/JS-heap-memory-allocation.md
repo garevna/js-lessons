@@ -39,7 +39,7 @@ _____________________________________________________________
 {{p20}}
 {{p21}}
 
-![](illustrations/performance-main.png)
+![](illustrations/performance-main-track.png)
 
 {{whereSelfTime}}
 
@@ -91,10 +91,6 @@ _____________________________________________________________
 {{p41}}
 
 {{outdatedMetrics}}
-
-{{p42}}
-
-![](illustrations/performance.png)
 
 [%%%Accessibility%%%](https://web.dev/accessibility)
 

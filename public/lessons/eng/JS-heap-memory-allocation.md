@@ -39,7 +39,7 @@ Perform a few actions on the application page
 Stop recording (press the **^^Stop^^** button)
 You can now view the recorded profile, assess the performance of the application’s various modules (functions) and identify problematic sections of code
 
-![](illustrations/performance-main.png)
+![](illustrations/performance-main-track.png)
 
 The table with the **^^Self Time^^** and **^^Total Time^^** columns is at the bottom, on the **^^Bottom-Up^^** (every function in a list, the most expensive first) and **^^Call Tree^^** (the same thing as a tree of calls) tabs:
 
@@ -91,10 +91,6 @@ This means that:
 ^^the delay is caused by the browser’s main thread potentially being occupied by another task^^
 
 ![ico-20 warn] **^^First Meaningful Paint^^**, **^^First CPU Idle^^** and **^^Max Potential First Input Delay^^** are no longer measured by Lighthouse: they were dropped from the report as unreliable. Today’s report has **^^Largest Contentful Paint^^** (when the largest element on the screen is painted), **^^Total Blocking Time^^** (how long in total the page did not answer input) and **^^Cumulative Layout Shift^^** (how much the content jumped about while loading) instead. The old names remain in articles and in older reports, so they are worth knowing.
-
-The **^^Performance^^** tab displays a timeline of the recorded application session
-
-![](illustrations/performance.png)
 
 [%%%Accessibility%%%](https://web.dev/accessibility)
 
