@@ -446,6 +446,42 @@ While the tasks are sitting in the task queue and waiting for their turn to get 
 
 ☼☼☼ Microtasks are cheeky little guys who jump into the Call Stack without waiting in line ☼☼☼
 
+A promise is not always needed to make a microtask. **~queueMicrotask()~** puts a callback straight into the microtask queue: the same queue and the same order, only without the wrapping — ~Promise.resolve().then(fn)~ creates a promise for it that nobody else needs. Errors differ too: one thrown inside ~then~ becomes a rejected promise, while one thrown in a ~queueMicrotask~ callback goes to the window's error handler as an ordinary uncaught exception.
+
+It shows plainly what the test at the end of the lesson asks about: a microtask can schedule the next microtask. The timer here is set on the very first line — and still waits:
+
+◘◘![ico-20 cap] **6**◘◘
+
+~~~js
+setTimeout(() => console.log('task'))
+
+let left = 5
+
+const again = () => {
+  console.log('microtask, left:', left)
+  if (--left) queueMicrotask(again)
+}
+
+queueMicrotask(again)
+~~~
+
+^^^[Result in the console:]
+
+~~~console
+microtask, left: 5
+microtask, left: 4
+microtask, left: 3
+microtask, left: 2
+microtask, left: 1
+task
+~~~
+
+^^^
+
+Five microtasks were born one from another, and all five ran before the task, though the timer had been set before any of them. The microtask queue is emptied in full — and “in full” is checked again after each one: while things are still being added, it is not empty.
+
+![ico-20 warn] Hence the trouble if the condition is removed: a microtask that schedules the next one unconditionally never lets the engine out of the microtask queue. No timer, no click and no repaint will reach the call stack — the tab hangs as surely as from an endless loop. It only looks more innocent: every single callback is short, and the profile shows no long task at all.
+
 ___
 
 As soon as we run a script for execution, we start a task.
@@ -462,7 +498,7 @@ And **micro-tasks** have their own queue, which has a higher priority and is ser
 Thus, as soon as the Call Stack is free, all the callbacks that are already in the **microtask queue** at that moment will be executed in turn.
 And only then the callbacks from the **task queue** will be executed.
 
-◘◘![ico-20 cap] ** 6**◘◘
+◘◘![ico-20 cap] **7**◘◘
 
 ~~~js
 const start = Date.now()
