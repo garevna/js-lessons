@@ -81,6 +81,10 @@ The browser has such a mechanism, and it is called **Event Loop**.
 
 **_Event Loop_** is an endless loop of task execution.
 
+![](illustrations/event-driven.jpg)
+
+An event may come from anywhere — a click of the mouse, a timer going off, a message from the network — but the road is the same for all of them: the callback bound to the event joins the task queue, and the **Event Loop** sends them into the call stack one by one.
+
 [%%%MDN%%%](external/mdn-event-loop)
 
 ________________________________________
