@@ -41,7 +41,7 @@ You can now view the recorded profile, assess the performance of the application
 
 ![](illustrations/performance-main.png)
 
-The table with the **^^Self Time^^** and **^^Total Time^^** columns is at the bottom, on the **^^Bottom-Up^^** ( every function in a list, the most expensive first) and **^^Call Tree^^** (the same thing as a tree of calls) tabs:
+The table with the **^^Self Time^^** and **^^Total Time^^** columns is at the bottom, on the **^^Bottom-Up^^** (every function in a list, the most expensive first) and **^^Call Tree^^** (the same thing as a tree of calls) tabs:
 
 ~~~console
     Self Time                  Total Time                Function
@@ -97,6 +97,10 @@ The **^^Performance^^** tab displays a timeline of the recorded application sess
 ![](illustrations/performance.png)
 
 [%%%Accessibility%%%](https://web.dev/accessibility)
+
+Here is the whole report — scroll it in the window below: the scores, the metrics, **^^Insights^^** and **^^Diagnostics^^**, and after them **^^Accessibility^^**, **^^Best Practices^^** and **^^SEO^^**. It was taken on this very page of the course; the grip in the bottom right corner drags, if the window wants to be taller.
+
+![scroll](illustrations/lighthouse-report.png)
 
 _____________________________________________________________
 

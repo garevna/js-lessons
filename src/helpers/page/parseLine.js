@@ -45,6 +45,29 @@ export function parseLine (line) {
     return elem
   }
 
+  // ![scroll](illustrations/lighthouse-report.png) — a picture too tall to
+  // stand on the page whole: a report, a long listing, a panel photographed
+  // from top to bottom. It goes into a box the reader scrolls instead of
+  // pushing the rest of the lesson a screen and a half down.
+  //
+  // Written on a line of its own, and the alt slot says `scroll` and nothing
+  // else: ![anything] elsewhere in a line is an icon, and `[![ico-70
+  // youtube]](https://…)` would answer a looser pattern.
+  //
+  // The line is handed to parseImage with the slot emptied, so the address is
+  // resolved the one way every other picture's is — aliases, schemes and the
+  // slogan fallback included.
+  if (line.match(/^\s*!\[scroll\]\(.+\)\s*$/)) {
+    const picture = this.parseImage(line.replace('![scroll]', '![]'))
+
+    if (picture) {
+      const box = document.createElement('div')
+      box.classList.add('scroll-box')
+      box.appendChild(picture)
+      return box
+    }
+  }
+
   const img = this.parseImage(line)
 
   if (img) return img

@@ -98,6 +98,10 @@ _____________________________________________________________
 
 [%%%Accessibility%%%](https://web.dev/accessibility)
 
+{{fullReport}}
+
+![scroll](illustrations/lighthouse-report.png)
+
 _____________________________________________________________
 
 ## ![ico-25 icon] Memory

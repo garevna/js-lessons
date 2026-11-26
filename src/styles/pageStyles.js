@@ -124,6 +124,42 @@ img  {
   vertical-align:  middle;
 }
 
+/* A tall picture in a window of its own — ![scroll](…) in a lesson.
+   The page keeps its length and the reader scrolls the picture inside the
+   frame; the corner grip makes the frame taller for a closer look.
+
+   The height is set, not capped: a cap and a grip contradict each other —
+   dragging past max-height does nothing, and the invitation to drag would
+   be a lie. Only a picture taller than the window is written this way, so
+   there is nothing for the set height to leave empty. */
+.scroll-box  {
+  max-width:  90%;
+  height:  60vh;
+  margin:  16px auto;
+  overflow:  auto;
+  resize:  vertical;
+  border:  solid 1px #ccc;
+  border-radius:  8px;
+  background:  #fafafa;
+}
+
+.scroll-box  >  img  {
+  max-width:  100%;
+  margin:  0;
+}
+
+/* On a narrow screen the picture keeps its own size and the window scrolls
+   sideways as well. Squeezed into 320 points it would be a thumbnail of a
+   report rather than a report: the letters in it are small to begin with. */
+@media (max-width: 760px) {
+  .scroll-box  {
+    max-width:  100%;
+  }
+  .scroll-box  >  img  {
+    max-width:  none;
+  }
+}
+
 a.visible-anchor  {
   text-decoration:  none;
   color:  #079;

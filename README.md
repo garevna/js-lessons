@@ -830,6 +830,24 @@ To add one, drop the two files into `public/images/slogans/` and refer to the
 bare name. There is no list to update — except `initialCachedFiles.js`, if you
 want the drawing available offline on a first visit.
 
+**A picture taller than the screen gets a window of its own.**
+
+```
+![scroll](illustrations/lighthouse-report.png)
+```
+
+The same addresses and the same aliases; what changes is that the reader
+scrolls the picture inside a framed box instead of scrolling the page past
+it, and the grip in the bottom right corner makes the box taller. The line
+stands alone and the slot says `scroll` and nothing else, because `![anything]`
+elsewhere in a line is an icon.
+
+On a narrow screen the picture keeps its own size and the box scrolls sideways
+as well: a report squeezed into 320 points is a picture of a report, not a
+report. So this is for one tall drawing or screenshot — a report, a listing, a
+panel photographed from top to bottom — and not for a gallery; several
+pictures in a row are `!![one.png, two.png]`, the slider.
+
 ### Icons
 
 Icons are inlined by the icon worker, so they cost no request:
