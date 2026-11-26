@@ -178,6 +178,16 @@ So, the difference between the two ways for a function to get into the **Call St
 | The function will be executed immediately | The callback will be added to the task queue |
 | Function will get in the Call Stack when the script that called this function is there | Callback will get in the Call Stack only when Call Stack will be free |
 
+A callback has its other side as well. While there is one of them, all is simple: “do this when the answer comes”. But the answer is usually needed to send the next request, and its answer to show a picture — and callbacks start nesting inside one another. What grows is a staircase to the right, known as **callback hell**.
+
+![](illustrations/callback-hell.jpg)
+
+The trouble is not the beauty of the indentation. The steps are read from the inside out rather than from top to bottom; an error has to be caught in every callback separately, because it will not fall outwards — whoever ordered the callback left the call stack long ago; and the order of the steps is plain only to the reader who got as far as the innermost bracket.
+
+It is out of that staircase that **promises** grew: they unfold the nesting into a chain where the steps follow one another, and one catch serves the whole chain. They have a lesson of their own:
+
+[►►►Promise►►►](page/promise)
+
 _____________________
 
 @@@@
