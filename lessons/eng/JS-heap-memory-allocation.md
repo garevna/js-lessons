@@ -41,7 +41,7 @@ You can now view the recorded profile, assess the performance of the application
 
 ![](illustrations/performance-main.png)
 
-The table with the **^^Self Time^^** and **^^Total Time^^** columns is at the bottom, on the **^^Bottom-Up^^** ( every function in a list, the most expensive first ) and **^^Call Tree^^** ( the same thing as a tree of calls ) tabs:
+The table with the **^^Self Time^^** and **^^Total Time^^** columns is at the bottom, on the **^^Bottom-Up^^** (every function in a list, the most expensive first) and **^^Call Tree^^** (the same thing as a tree of calls) tabs:
 
 ~~~console
     Self Time                  Total Time                Function
@@ -90,13 +90,17 @@ This means that:
 (i.e. clicks a link, button, etc.) until the browser is able to respond to that action
 ^^the delay is caused by the browser’s main thread potentially being occupied by another task^^
 
-![ico-20 warn] **^^First Meaningful Paint^^**, **^^First CPU Idle^^** and **^^Max Potential First Input Delay^^** are no longer measured by Lighthouse: they were dropped from the report as unreliable. Today’s report has **^^Largest Contentful Paint^^** ( when the largest element on the screen is painted ), **^^Total Blocking Time^^** ( how long in total the page did not answer input ) and **^^Cumulative Layout Shift^^** ( how much the content jumped about while loading ) instead. The old names remain in articles and in older reports, so they are worth knowing.
+![ico-20 warn] **^^First Meaningful Paint^^**, **^^First CPU Idle^^** and **^^Max Potential First Input Delay^^** are no longer measured by Lighthouse: they were dropped from the report as unreliable. Today’s report has **^^Largest Contentful Paint^^** (when the largest element on the screen is painted), **^^Total Blocking Time^^** (how long in total the page did not answer input) and **^^Cumulative Layout Shift^^** (how much the content jumped about while loading) instead. The old names remain in articles and in older reports, so they are worth knowing.
 
 The **^^Performance^^** tab displays a timeline of the recorded application session
 
 ![](illustrations/performance.png)
 
 [%%%Accessibility%%%](https://web.dev/accessibility)
+
+Here is the whole report — scroll it in the window below: the scores, the metrics, **^^Insights^^** and **^^Diagnostics^^**, and after them **^^Accessibility^^**, **^^Best Practices^^** and **^^SEO^^**. It was taken on this very page of the course; the grip in the bottom right corner drags, if the window wants to be taller.
+
+![scroll](illustrations/lighthouse-report.png)
 
 _____________________________________________________________
 

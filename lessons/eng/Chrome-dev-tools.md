@@ -91,6 +91,65 @@ In  **Chrome DevTools** , you can also pause code execution when DOM events occu
 
 ![](illustrations/Chrome-devtools-breakpoints.gif)
 
-_______________________________________________________
+_____________________________________________________________________________
 
-[![ico-70 youtube]](https://youtu.be/PQYG2aJf6uI/)
+## ![ico-25 hw] Tests⟪Tests⟫
+
+♣♣♣♣
+? You have set a breakpoint on line **42**. What will the engine do when it gets there?
+
++ It will stop **before** executing line 42.
+= That’s right! The line has not run yet — its result is not in the variables. That is exactly why what you see at this moment is the state **before** the step: to see the outcome, take one step further.
+
+- It will execute line 42 and stop after it.
+= Incorrect — and the confusion is expensive: looking at the values, it is easy to decide the line has already run. It has not. The state after it is one step away.
+
+- It will skip line 42 and carry on with the next one.
+= Incorrect. A breakpoint skips nothing — it only pauses. All the code runs as soon as you resume.
+
+- It will print the value of line 42 to the console and carry on.
+= Incorrect. That describes **~console.log~**, not a breakpoint. The difference is that a pause lets you look at everything at once — the variables, the call stack, the scope — rather than whatever you thought to print in advance.
+
+? You set a breakpoint in code that runs as the page loads — and nothing happened. Why?
+
+- The breakpoint is in the wrong file — it has to be a file from the **Snippets** tab.
+= Incorrect. Breakpoints can be set in any file of the page, not only in snippets. A snippet is a convenience for your own code, not a condition for the debugger to work.
+
+- The changes needed saving — **~Ctrl + S~**.
+= Incorrect. **~Ctrl + S~** saves an edit to the code; a breakpoint is set by clicking the line number and needs no saving.
+
+- Breakpoints do not work in code that runs during page load.
+= Incorrect. They do work, and debugging page load is routine. The loading simply has to happen **after** the breakpoint is set.
+
++ That code has already run — before the breakpoint was set. The page needs reloading.
+= That’s right! A breakpoint waits for the engine to reach that line, and the engine reached it before you opened the debugger. Reload, and it will work. This is the commonest reason for "I set it and it does not stop".
+
+? How does the **Scope** section differ from the **Watch** section?
+
++ **Scope** shows by itself everything visible at the breakpoint; **Watch** shows only what you asked to keep an eye on.
+= That’s right! **Scope** is a slice of the scope chain — Local, Block, Closure, Global — and the list changes by itself as the engine moves from function to function. **Watch** is your own list of expressions; it stays the same everywhere, and where an expression makes no sense you get a message instead of a value.
+
+- **Watch** shows values before the line runs, **Scope** after.
+= Incorrect. Both sections show the same state — the one the engine is standing in now. They do not differ in time.
+
+- Only global variables appear in **Scope**.
+= Incorrect. The globals are there too, but the rest is more interesting: **Local** is the running function’s variables, **Block** the block’s, **Closure** what the function carried away from where it was created.
+
+- In no way: both show the values of variables.
+= Incorrect. Both show values, but they answer different questions: "what is visible here" and "what did I ask to be shown".
+
+? You wrote a snippet, went to another site and opened DevTools there. What has become of the snippet?
+
+- It has been saved into a file of the project open on the **Sources** tab.
+= Incorrect. A snippet does not land in the page’s files — not in the project, not on the server. It lives in the browser’s own storage, beside the DevTools settings.
+
++ It is there, and it can be run right here.
+= That’s right! The browser keeps the snippet, not the page: it survives a reload, a move to another site and the browser being closed. That is the point of it — your own code, runnable on any page, in that page’s surroundings.
+
+- It is gone: snippets live only while the page they were made on is open.
+= Incorrect. That is how code typed into the console behaves — it vanishes on reload. A snippet exists precisely in order to stay.
+
+- It is still there, but runs only on the site where it was created.
+= Incorrect. A snippet is not tied to a site: it runs in the context of whatever page is open now — which is what makes it a handy tool on other people’s pages as well.
+
+♣♣♣♣
