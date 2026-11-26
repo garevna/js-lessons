@@ -1018,5 +1018,20 @@
     "ru": "Источник события может быть любым — клик мышью, сработавший таймер, сообщение из сети, — а дорога у всех одна: привязанный к событию колбек встаёт в очередь задач, и **Event Loop** по одному отправляет их в стек вызовов.",
     "eng": "An event may come from anywhere — a click of the mouse, a timer going off, a message from the network — but the road is the same for all of them: the callback bound to the event joins the task queue, and the **Event Loop** sends them into the call stack one by one.",
     "ua": "Джерело події може бути будь-яким — клік мишею, таймер, що спрацював, повідомлення з мережі, — а дорога в усіх одна: прив'язаний до події колбек стає в чергу завдань, і **Event Loop** по одному відправляє їх у стек викликів."
+  },
+  "callbackHell": {
+    "ru": "У колбека есть и оборотная сторона. Пока он один, всё просто: \"сделай это, когда придёт ответ\". Но ответ обычно нужен, чтобы отправить следующий запрос, а его ответ — чтобы показать картинку, и колбеки начинают вкладываться друг в друга. Получается лесенка вправо, которую называют **адом колбеков**.",
+    "eng": "A callback has its other side as well. While there is one of them, all is simple: “do this when the answer comes”. But the answer is usually needed to send the next request, and its answer to show a picture — and callbacks start nesting inside one another. What grows is a staircase to the right, known as **callback hell**.",
+    "ua": "У колбека є і зворотний бік. Поки він один, усе просто: \"зроби це, коли прийде відповідь\". Але відповідь зазвичай потрібна, щоб надіслати наступний запит, а його відповідь — щоб показати картинку, і колбеки починають вкладатися один в одного. Виходить драбинка праворуч, яку називають **пеклом колбеків**."
+  },
+  "callbackHellWhy": {
+    "ru": "Беда тут не в красоте отступов. Шаги читаются не сверху вниз, а изнутри наружу; ошибку приходится ловить в каждом колбеке отдельно, потому что наружу она не выпадет — того, кто \"заказал\" колбек, в стеке вызовов давно нет; а порядок шагов виден только тому, кто дочитал до самой глубокой скобки.",
+    "eng": "The trouble is not the beauty of the indentation. The steps are read from the inside out rather than from top to bottom; an error has to be caught in every callback separately, because it will not fall outwards — whoever ordered the callback left the call stack long ago; and the order of the steps is plain only to the reader who got as far as the innermost bracket.",
+    "ua": "Біда тут не в красі відступів. Кроки читаються не згори вниз, а зсередини назовні; помилку доводиться ловити в кожному колбеку окремо, бо назовні вона не випаде — того, хто \"замовив\" колбек, у стеку викликів давно немає; а порядок кроків видно лише тому, хто дочитав до найглибшої дужки."
+  },
+  "callbackHellOut": {
+    "ru": "Из этой лесенки и выросли **промисы**: они разворачивают вложенность в цепочку, где шаги идут друг за другом, а ошибка ловится одна на всю цепочку. Им посвящён отдельный урок:",
+    "eng": "It is out of that staircase that **promises** grew: they unfold the nesting into a chain where the steps follow one another, and one catch serves the whole chain. They have a lesson of their own:",
+    "ua": "Саме з цієї драбинки і виросли **проміси**: вони розгортають вкладеність у ланцюжок, де кроки йдуть один за одним, а помилка ловиться одна на весь ланцюжок. Їм присвячено окремий урок:"
   }
 }
