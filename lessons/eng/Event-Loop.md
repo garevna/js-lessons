@@ -482,6 +482,40 @@ Five microtasks were born one from another, and all five ran before the task, th
 
 ![ico-20 warn] Hence the trouble if the condition is removed: a microtask that schedules the next one unconditionally never lets the engine out of the microtask queue. No timer, no click and no repaint will reach the call stack — the tab hangs as surely as from an endless loop. It only looks more innocent: every single callback is short, and the profile shows no long task at all.
 
+The same thing can be seen with the eye. Two bursts of thirty steps: the first chains itself with **~queueMicrotask~**, the second with **~setTimeout~**. A microtask prints a dot, a task a circle, and a repaint marks itself with an asterisk:
+
+◘◘![ico-20 cap] **7**◘◘
+
+~~~js
+const out = document.body.appendChild(document.createElement('pre'))
+
+const burst = (schedule, mark, left, after) => {
+  const step = () => {
+    out.textContent += mark
+    --left ? schedule(step) : after()
+  }
+  schedule(step)
+}
+
+let drawing = true
+
+const frame = () => {
+  out.textContent += '*'
+  if (drawing) requestAnimationFrame(frame)
+}
+
+requestAnimationFrame(frame)
+
+burst(queueMicrotask, '.', 30, () => {
+  out.textContent += '\n'
+  burst(fn => setTimeout(fn), 'o', 30, () => { drawing = false })
+})
+~~~
+
+{{{Event-Loop-frames.js}}}
+
+Thirty dots go by in a single line with not one asterisk among them: until the microtask queue was empty the browser never got near the screen. Among the circles an asterisk stands every three to six of them — between tasks the browser manages to paint a frame. This is the difference behind the words “the page does not respond”: it is not the amount of work that matters, but whether it lets the browser get a word in.
+
 ___
 
 As soon as we run a script for execution, we start a task.
@@ -498,7 +532,7 @@ And **micro-tasks** have their own queue, which has a higher priority and is ser
 Thus, as soon as the Call Stack is free, all the callbacks that are already in the **microtask queue** at that moment will be executed in turn.
 And only then the callbacks from the **task queue** will be executed.
 
-◘◘![ico-20 cap] **7**◘◘
+◘◘![ico-20 cap] **8**◘◘
 
 ~~~js
 const start = Date.now()
