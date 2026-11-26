@@ -1,0 +1,389 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" role="img"
+     aria-label="Microtasks slip into the call stack one after another while heavy tasks wait in the task queue">
+  <title>Microtasks jump the queue</title>
+  <defs>
+    <linearGradient id="taskA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffc247"/><stop offset="1" stop-color="#f98a00"/>
+    </linearGradient>
+    <linearGradient id="taskB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb14a"/><stop offset="1" stop-color="#f07400"/>
+    </linearGradient>
+    <linearGradient id="taskC" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffa14a"/><stop offset="1" stop-color="#e86a00"/>
+    </linearGradient>
+    <linearGradient id="microA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fe3c0"/><stop offset="1" stop-color="#17b890"/>
+    </linearGradient>
+    <linearGradient id="microB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8be9d0"/><stop offset="1" stop-color="#12a884"/>
+    </linearGradient>
+    <linearGradient id="microC" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#76dfbb"/><stop offset="1" stop-color="#0f9c7c"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    text { font-family: Verdana, 'DejaVu Sans', sans-serif }
+    .rider { animation-duration: 13s; animation-timing-function: cubic-bezier(.4, 0, .2, 1); animation-iteration-count: infinite }
+    @media (prefers-reduced-motion: reduce) { .rider { animation: none } }
+@keyframes taskRide0 {
+  0.000% { transform: translate(520px, 234px); opacity: 1 }
+  1.538% { transform: translate(520px, 234px); opacity: 1 }
+  6.154% { transform: translate(158px, 234px); opacity: 1 }
+  18.462% { transform: translate(158px, 234px); opacity: 1 }
+  22.308% { transform: translate(158px, 114px); opacity: 0 }
+  22.385% { transform: translate(520px, 234px); opacity: 0 }
+  99.923% { transform: translate(520px, 234px); opacity: 0 }
+  100.000% { transform: translate(520px, 234px); opacity: 1 }
+}
+@keyframes taskWork0 {
+  0.000% { transform: translateY(0px) }
+  6.077% { transform: translateY(0px) }
+  7.521% { transform: translateY(-4px) }
+  8.889% { transform: translateY(0px) }
+  10.256% { transform: translateY(-4px) }
+  11.624% { transform: translateY(0px) }
+  12.991% { transform: translateY(-4px) }
+  14.359% { transform: translateY(0px) }
+  15.726% { transform: translateY(-4px) }
+  17.094% { transform: translateY(0px) }
+  18.462% { transform: translateY(-4px) }
+  18.462% { transform: translateY(0px) }
+  100.000% { transform: translateY(0px) }
+}
+@keyframes taskRide1 {
+  0.000% { transform: translate(638px, 234px); opacity: 1 }
+  1.538% { transform: translate(638px, 234px); opacity: 1 }
+  3.846% { transform: translate(520px, 234px); opacity: 1 }
+  39.231% { transform: translate(520px, 234px); opacity: 1 }
+  43.846% { transform: translate(158px, 234px); opacity: 1 }
+  56.154% { transform: translate(158px, 234px); opacity: 1 }
+  60.000% { transform: translate(158px, 114px); opacity: 0 }
+  60.077% { transform: translate(638px, 234px); opacity: 0 }
+  99.923% { transform: translate(638px, 234px); opacity: 0 }
+  100.000% { transform: translate(638px, 234px); opacity: 1 }
+}
+@keyframes taskWork1 {
+  0.000% { transform: translateY(0px) }
+  43.769% { transform: translateY(0px) }
+  45.214% { transform: translateY(-4px) }
+  46.581% { transform: translateY(0px) }
+  47.949% { transform: translateY(-4px) }
+  49.316% { transform: translateY(0px) }
+  50.684% { transform: translateY(-4px) }
+  52.051% { transform: translateY(0px) }
+  53.419% { transform: translateY(-4px) }
+  54.786% { transform: translateY(0px) }
+  56.154% { transform: translateY(-4px) }
+  56.154% { transform: translateY(0px) }
+  100.000% { transform: translateY(0px) }
+}
+@keyframes taskRide2 {
+  0.000% { transform: translate(756px, 234px); opacity: 1 }
+  1.538% { transform: translate(756px, 234px); opacity: 1 }
+  3.846% { transform: translate(638px, 234px); opacity: 1 }
+  39.231% { transform: translate(638px, 234px); opacity: 1 }
+  41.538% { transform: translate(520px, 234px); opacity: 1 }
+  78.462% { transform: translate(520px, 234px); opacity: 1 }
+  83.077% { transform: translate(158px, 234px); opacity: 1 }
+  92.308% { transform: translate(158px, 234px); opacity: 1 }
+  96.154% { transform: translate(158px, 114px); opacity: 0 }
+  96.231% { transform: translate(756px, 234px); opacity: 0 }
+  99.923% { transform: translate(756px, 234px); opacity: 0 }
+  100.000% { transform: translate(756px, 234px); opacity: 1 }
+}
+@keyframes taskWork2 {
+  0.000% { transform: translateY(0px) }
+  83.000% { transform: translateY(0px) }
+  84.396% { transform: translateY(-4px) }
+  85.714% { transform: translateY(0px) }
+  87.033% { transform: translateY(-4px) }
+  88.352% { transform: translateY(0px) }
+  89.670% { transform: translateY(-4px) }
+  90.989% { transform: translateY(0px) }
+  92.308% { transform: translateY(-4px) }
+  92.308% { transform: translateY(0px) }
+  100.000% { transform: translateY(0px) }
+}
+@keyframes microRide0 {
+  0.000% { transform: translate(520px, 120px); opacity: 0 }
+  6.769% { transform: translate(520px, 120px); opacity: 0 }
+  6.923% { transform: translate(520px, 120px); opacity: 1 }
+  21.538% { transform: translate(520px, 120px); opacity: 1 }
+  23.692% { transform: translate(158px, 272px); opacity: 1 }
+  25.615% { transform: translate(158px, 272px); opacity: 1 }
+  27.308% { transform: translate(158px, 152px); opacity: 0 }
+  27.385% { transform: translate(520px, 120px); opacity: 0 }
+  99.923% { transform: translate(520px, 120px); opacity: 0 }
+  100.000% { transform: translate(520px, 120px); opacity: 0 }
+}
+@keyframes microRide1 {
+  0.000% { transform: translate(580px, 120px); opacity: 0 }
+  21.538% { transform: translate(580px, 120px); opacity: 1 }
+  23.846% { transform: translate(520px, 120px); opacity: 1 }
+  9.846% { transform: translate(580px, 120px); opacity: 0 }
+  10.000% { transform: translate(580px, 120px); opacity: 1 }
+  26.923% { transform: translate(520px, 120px); opacity: 1 }
+  29.077% { transform: translate(158px, 272px); opacity: 1 }
+  31.000% { transform: translate(158px, 272px); opacity: 1 }
+  32.692% { transform: translate(158px, 152px); opacity: 0 }
+  32.769% { transform: translate(580px, 120px); opacity: 0 }
+  99.923% { transform: translate(580px, 120px); opacity: 0 }
+  100.000% { transform: translate(580px, 120px); opacity: 0 }
+}
+@keyframes microRide2 {
+  0.000% { transform: translate(640px, 120px); opacity: 0 }
+  21.538% { transform: translate(640px, 120px); opacity: 1 }
+  23.846% { transform: translate(580px, 120px); opacity: 1 }
+  26.923% { transform: translate(580px, 120px); opacity: 1 }
+  29.231% { transform: translate(520px, 120px); opacity: 1 }
+  12.923% { transform: translate(640px, 120px); opacity: 0 }
+  13.077% { transform: translate(640px, 120px); opacity: 1 }
+  32.308% { transform: translate(520px, 120px); opacity: 1 }
+  34.462% { transform: translate(158px, 272px); opacity: 1 }
+  36.385% { transform: translate(158px, 272px); opacity: 1 }
+  38.077% { transform: translate(158px, 152px); opacity: 0 }
+  38.154% { transform: translate(640px, 120px); opacity: 0 }
+  99.923% { transform: translate(640px, 120px); opacity: 0 }
+  100.000% { transform: translate(640px, 120px); opacity: 0 }
+}
+@keyframes microRide3 {
+  0.000% { transform: translate(700px, 120px); opacity: 0 }
+  21.538% { transform: translate(700px, 120px); opacity: 0 }
+  23.846% { transform: translate(640px, 120px); opacity: 0 }
+  26.923% { transform: translate(640px, 120px); opacity: 0 }
+  29.231% { transform: translate(580px, 120px); opacity: 0 }
+  32.308% { transform: translate(580px, 120px); opacity: 0 }
+  34.615% { transform: translate(520px, 120px); opacity: 0 }
+  46.000% { transform: translate(520px, 120px); opacity: 0 }
+  46.154% { transform: translate(520px, 120px); opacity: 1 }
+  60.769% { transform: translate(520px, 120px); opacity: 1 }
+  62.923% { transform: translate(158px, 272px); opacity: 1 }
+  64.846% { transform: translate(158px, 272px); opacity: 1 }
+  66.538% { transform: translate(158px, 152px); opacity: 0 }
+  66.615% { transform: translate(700px, 120px); opacity: 0 }
+  99.923% { transform: translate(700px, 120px); opacity: 0 }
+  100.000% { transform: translate(700px, 120px); opacity: 0 }
+}
+@keyframes microRide4 {
+  0.000% { transform: translate(760px, 120px); opacity: 0 }
+  21.538% { transform: translate(760px, 120px); opacity: 0 }
+  23.846% { transform: translate(700px, 120px); opacity: 0 }
+  26.923% { transform: translate(700px, 120px); opacity: 0 }
+  29.231% { transform: translate(640px, 120px); opacity: 0 }
+  32.308% { transform: translate(640px, 120px); opacity: 0 }
+  34.615% { transform: translate(580px, 120px); opacity: 0 }
+  60.769% { transform: translate(580px, 120px); opacity: 1 }
+  63.077% { transform: translate(520px, 120px); opacity: 1 }
+  49.077% { transform: translate(580px, 120px); opacity: 0 }
+  49.231% { transform: translate(580px, 120px); opacity: 1 }
+  66.154% { transform: translate(520px, 120px); opacity: 1 }
+  68.308% { transform: translate(158px, 272px); opacity: 1 }
+  70.231% { transform: translate(158px, 272px); opacity: 1 }
+  71.923% { transform: translate(158px, 152px); opacity: 0 }
+  72.000% { transform: translate(760px, 120px); opacity: 0 }
+  99.923% { transform: translate(760px, 120px); opacity: 0 }
+  100.000% { transform: translate(760px, 120px); opacity: 0 }
+}
+@keyframes microRide5 {
+  0.000% { transform: translate(820px, 120px); opacity: 0 }
+  21.538% { transform: translate(820px, 120px); opacity: 0 }
+  23.846% { transform: translate(760px, 120px); opacity: 0 }
+  26.923% { transform: translate(760px, 120px); opacity: 0 }
+  29.231% { transform: translate(700px, 120px); opacity: 0 }
+  32.308% { transform: translate(700px, 120px); opacity: 0 }
+  34.615% { transform: translate(640px, 120px); opacity: 0 }
+  60.769% { transform: translate(640px, 120px); opacity: 1 }
+  63.077% { transform: translate(580px, 120px); opacity: 1 }
+  66.154% { transform: translate(580px, 120px); opacity: 1 }
+  68.462% { transform: translate(520px, 120px); opacity: 1 }
+  52.154% { transform: translate(640px, 120px); opacity: 0 }
+  52.308% { transform: translate(640px, 120px); opacity: 1 }
+  71.538% { transform: translate(520px, 120px); opacity: 1 }
+  73.692% { transform: translate(158px, 272px); opacity: 1 }
+  75.615% { transform: translate(158px, 272px); opacity: 1 }
+  77.308% { transform: translate(158px, 152px); opacity: 0 }
+  77.385% { transform: translate(820px, 120px); opacity: 0 }
+  99.923% { transform: translate(820px, 120px); opacity: 0 }
+  100.000% { transform: translate(820px, 120px); opacity: 0 }
+}
+@keyframes hop {
+  0%, 100% { transform: translateY(0) }
+  45% { transform: translateY(-5px) }
+}
+  </style>
+
+  <rect width="900" height="400" rx="16" fill="#fbfdff"/>
+
+  <!-- стек -->
+  <rect x="118" y="70" width="196" height="260" rx="14" fill="#fff" stroke="#0799" stroke-width="3"/>
+  <path d="M 128 322 H 304" stroke="#0796" stroke-width="6" stroke-linecap="round"/>
+  <text x="216" y="50" text-anchor="middle" font-size="26" font-weight="bold" fill="#079">Call Stack</text>
+
+  <!-- дорожки очередей, стрелки смотрят в стек -->
+  <path d="M 880 143 H 346" stroke="#bfe6dd" stroke-width="3" stroke-dasharray="10 8"/>
+  <path d="M 880 276 H 346" stroke="#ffd9a8" stroke-width="3" stroke-dasharray="10 8"/>
+  <path d="M 348 143 l 22 -11 v 22 z" fill="#7fd0bb"/>
+  <path d="M 348 276 l 22 -11 v 22 z" fill="#ffc681"/>
+  <text x="878" y="98" text-anchor="end" font-size="21" font-weight="bold" fill="#0a8f72">microtask queue</text>
+  <text x="878" y="372" text-anchor="end" font-size="21" font-weight="bold" fill="#d07000">task queue</text>
+
+  <g class="rider" style="animation-name: taskRide0">
+    <g style="animation: taskWork0 13s linear infinite">
+      
+  <ellipse cx="42" cy="91" rx="35.28" ry="5" fill="#000" opacity=".12"/>
+  <rect width="84" height="84" rx="12" fill="url(#taskA)" stroke="#c05600" stroke-width="2.5"/>
+  <rect x="6" y="68" width="72" height="8" rx="4" fill="#c05600" opacity=".25"/>
+  <g fill="#3a2a10">
+    <ellipse cx="26.88" cy="35.28" rx="4.5" ry="5.5"/>
+    <ellipse cx="57.120000000000005" cy="35.28" rx="4.5" ry="5.5"/>
+  </g>
+  <path d="M 16.8 25.2 L 35.28 30.24" stroke="#3a2a10" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 67.2 25.2 L 48.72 30.24" stroke="#3a2a10" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 25.2 60.48 Q 42 48.72 58.8 60.48" fill="none" stroke="#3a2a10" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 72.24 10.08 q 5 9 0 12 q -5 -3 0 -12" fill="#9fd8f5" stroke="#5fa8d8" stroke-width="1.2"/>
+    </g>
+  </g>
+
+  <g class="rider" style="animation-name: taskRide1">
+    <g style="animation: taskWork1 13s linear infinite">
+      
+  <ellipse cx="42" cy="91" rx="35.28" ry="5" fill="#000" opacity=".12"/>
+  <rect width="84" height="84" rx="12" fill="url(#taskB)" stroke="#b34700" stroke-width="2.5"/>
+  <rect x="6" y="68" width="72" height="8" rx="4" fill="#b34700" opacity=".25"/>
+  <g fill="#3a2a10">
+    <ellipse cx="26.88" cy="35.28" rx="4.5" ry="5.5"/>
+    <ellipse cx="57.120000000000005" cy="35.28" rx="4.5" ry="5.5"/>
+  </g>
+  <path d="M 16.8 25.2 L 35.28 30.24" stroke="#3a2a10" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 67.2 25.2 L 48.72 30.24" stroke="#3a2a10" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 25.2 60.48 Q 42 48.72 58.8 60.48" fill="none" stroke="#3a2a10" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 72.24 10.08 q 5 9 0 12 q -5 -3 0 -12" fill="#9fd8f5" stroke="#5fa8d8" stroke-width="1.2"/>
+    </g>
+  </g>
+
+  <g class="rider" style="animation-name: taskRide2">
+    <g style="animation: taskWork2 13s linear infinite">
+      
+  <ellipse cx="42" cy="91" rx="35.28" ry="5" fill="#000" opacity=".12"/>
+  <rect width="84" height="84" rx="12" fill="url(#taskC)" stroke="#a33f00" stroke-width="2.5"/>
+  <rect x="6" y="68" width="72" height="8" rx="4" fill="#a33f00" opacity=".25"/>
+  <g fill="#3a2a10">
+    <ellipse cx="26.88" cy="35.28" rx="4.5" ry="5.5"/>
+    <ellipse cx="57.120000000000005" cy="35.28" rx="4.5" ry="5.5"/>
+  </g>
+  <path d="M 16.8 25.2 L 35.28 30.24" stroke="#3a2a10" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 67.2 25.2 L 48.72 30.24" stroke="#3a2a10" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 25.2 60.48 Q 42 48.72 58.8 60.48" fill="none" stroke="#3a2a10" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 72.24 10.08 q 5 9 0 12 q -5 -3 0 -12" fill="#9fd8f5" stroke="#5fa8d8" stroke-width="1.2"/>
+    </g>
+  </g>
+
+  <g class="rider" style="animation-name: microRide0">
+    <g style="animation: hop .9s ease-in-out infinite; animation-delay: -0.00s">
+      
+  <ellipse cx="23" cy="52" rx="18.400000000000002" ry="4" fill="#000" opacity=".12"/>
+  <rect width="46" height="46" rx="10" fill="url(#microA)" stroke="#067" stroke-width="2"/>
+  <g fill="#063">
+    <circle cx="15.180000000000001" cy="18.400000000000002" r="3.6"/>
+    <circle cx="30.82" cy="18.400000000000002" r="3.6"/>
+  </g>
+  <path d="M 12.88 27.599999999999998 Q 23 37.72 33.12 27.599999999999998" fill="none" stroke="#063" stroke-width="2.6" stroke-linecap="round"/>
+  <g stroke="#067" stroke-width="2.4" stroke-linecap="round" opacity=".75">
+    <path d="M 51 13.799999999999999 h 12"/>
+    <path d="M 51 25.3 h 18"/>
+    <path d="M 51 36.800000000000004 h 9"/>
+  </g>
+    </g>
+  </g>
+
+  <g class="rider" style="animation-name: microRide1">
+    <g style="animation: hop .9s ease-in-out infinite; animation-delay: -0.17s">
+      
+  <ellipse cx="23" cy="52" rx="18.400000000000002" ry="4" fill="#000" opacity=".12"/>
+  <rect width="46" height="46" rx="10" fill="url(#microB)" stroke="#067" stroke-width="2"/>
+  <g fill="#063">
+    <circle cx="15.180000000000001" cy="18.400000000000002" r="3.6"/>
+    <circle cx="30.82" cy="18.400000000000002" r="3.6"/>
+  </g>
+  <path d="M 12.88 27.599999999999998 Q 23 37.72 33.12 27.599999999999998" fill="none" stroke="#063" stroke-width="2.6" stroke-linecap="round"/>
+  <g stroke="#067" stroke-width="2.4" stroke-linecap="round" opacity=".75">
+    <path d="M 51 13.799999999999999 h 12"/>
+    <path d="M 51 25.3 h 18"/>
+    <path d="M 51 36.800000000000004 h 9"/>
+  </g>
+    </g>
+  </g>
+
+  <g class="rider" style="animation-name: microRide2">
+    <g style="animation: hop .9s ease-in-out infinite; animation-delay: -0.34s">
+      
+  <ellipse cx="23" cy="52" rx="18.400000000000002" ry="4" fill="#000" opacity=".12"/>
+  <rect width="46" height="46" rx="10" fill="url(#microC)" stroke="#067" stroke-width="2"/>
+  <g fill="#063">
+    <circle cx="15.180000000000001" cy="18.400000000000002" r="3.6"/>
+    <circle cx="30.82" cy="18.400000000000002" r="3.6"/>
+  </g>
+  <path d="M 12.88 27.599999999999998 Q 23 37.72 33.12 27.599999999999998" fill="none" stroke="#063" stroke-width="2.6" stroke-linecap="round"/>
+  <g stroke="#067" stroke-width="2.4" stroke-linecap="round" opacity=".75">
+    <path d="M 51 13.799999999999999 h 12"/>
+    <path d="M 51 25.3 h 18"/>
+    <path d="M 51 36.800000000000004 h 9"/>
+  </g>
+    </g>
+  </g>
+
+  <g class="rider" style="animation-name: microRide3">
+    <g style="animation: hop .9s ease-in-out infinite; animation-delay: -0.51s">
+      
+  <ellipse cx="23" cy="52" rx="18.400000000000002" ry="4" fill="#000" opacity=".12"/>
+  <rect width="46" height="46" rx="10" fill="url(#microA)" stroke="#067" stroke-width="2"/>
+  <g fill="#063">
+    <circle cx="15.180000000000001" cy="18.400000000000002" r="3.6"/>
+    <circle cx="30.82" cy="18.400000000000002" r="3.6"/>
+  </g>
+  <path d="M 12.88 27.599999999999998 Q 23 37.72 33.12 27.599999999999998" fill="none" stroke="#063" stroke-width="2.6" stroke-linecap="round"/>
+  <g stroke="#067" stroke-width="2.4" stroke-linecap="round" opacity=".75">
+    <path d="M 51 13.799999999999999 h 12"/>
+    <path d="M 51 25.3 h 18"/>
+    <path d="M 51 36.800000000000004 h 9"/>
+  </g>
+    </g>
+  </g>
+
+  <g class="rider" style="animation-name: microRide4">
+    <g style="animation: hop .9s ease-in-out infinite; animation-delay: -0.68s">
+      
+  <ellipse cx="23" cy="52" rx="18.400000000000002" ry="4" fill="#000" opacity=".12"/>
+  <rect width="46" height="46" rx="10" fill="url(#microB)" stroke="#067" stroke-width="2"/>
+  <g fill="#063">
+    <circle cx="15.180000000000001" cy="18.400000000000002" r="3.6"/>
+    <circle cx="30.82" cy="18.400000000000002" r="3.6"/>
+  </g>
+  <path d="M 12.88 27.599999999999998 Q 23 37.72 33.12 27.599999999999998" fill="none" stroke="#063" stroke-width="2.6" stroke-linecap="round"/>
+  <g stroke="#067" stroke-width="2.4" stroke-linecap="round" opacity=".75">
+    <path d="M 51 13.799999999999999 h 12"/>
+    <path d="M 51 25.3 h 18"/>
+    <path d="M 51 36.800000000000004 h 9"/>
+  </g>
+    </g>
+  </g>
+
+  <g class="rider" style="animation-name: microRide5">
+    <g style="animation: hop .9s ease-in-out infinite; animation-delay: -0.85s">
+      
+  <ellipse cx="23" cy="52" rx="18.400000000000002" ry="4" fill="#000" opacity=".12"/>
+  <rect width="46" height="46" rx="10" fill="url(#microC)" stroke="#067" stroke-width="2"/>
+  <g fill="#063">
+    <circle cx="15.180000000000001" cy="18.400000000000002" r="3.6"/>
+    <circle cx="30.82" cy="18.400000000000002" r="3.6"/>
+  </g>
+  <path d="M 12.88 27.599999999999998 Q 23 37.72 33.12 27.599999999999998" fill="none" stroke="#063" stroke-width="2.6" stroke-linecap="round"/>
+  <g stroke="#067" stroke-width="2.4" stroke-linecap="round" opacity=".75">
+    <path d="M 51 13.799999999999999 h 12"/>
+    <path d="M 51 25.3 h 18"/>
+    <path d="M 51 36.800000000000004 h 9"/>
+  </g>
+    </g>
+  </g>
+</svg>

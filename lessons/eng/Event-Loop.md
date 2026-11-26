@@ -46,7 +46,7 @@ A **stack** is a "fast" chunk of RAM.
 
 ![ico-25 warn] JS is a single-threaded language, so we only have one stack (**~Call Stack~**).
 
-____________________________________
+___
 
 ## ![ico-25 icon] Async stuff⟪Async_stuff⟫
 
@@ -62,11 +62,11 @@ When sending a request to the server, we cannot predict how many milliseconds it
 The second property of most events is that the result of the occurrence of the event is not determined.
 
 @@@@
-We can't predict with certainty whether the server's response status will be successful, or if the server will return an http error code to us.
+^^We can't predict with certainty whether the server's response status will be successful, or if the server will return an http error code to us.^^ ••If we can't manage events, then we can let the events control our code.••
 ![](illustrations/async-surfer.jpg)
 @@@@
 
-If we can't manage events, then we can let the events control our code.
+___
 
 ## ![ico-25 icon] Event-Driven Programming⟪Event-Driven_Programming⟫
 
@@ -87,7 +87,7 @@ An event may come from anywhere — a click of the mouse, a timer going off, a m
 
 [%%%MDN%%%](external/mdn-event-loop)
 
-________________________________________
+___
 
 ## ![ico-25 icon] Callback⟪Callback⟫
 
@@ -120,13 +120,17 @@ But how did it get into **Call Stack**?
 ^^As a result, the script **~anonymous~** “occupied” the Call Stack and began to be executed.^^
 ^^The **~anonymous~** function became a callback and went through the **Event Loop**.^^
 ^^Now **~anonymous~** from the call stack can make **direct calls** to other functions.^^
-----------------------------
+
+___
+
 @@@@ 1
 ![](illustrations/event-loop-02.png)
 @@@@
 
 ^^The **~parent~** function was called from the **~anonymous~** script. This is a **direct call**.^^
-----------------------------
+
+___
+
 @@@@ 1
 ![](illustrations/event-loop-03.png)
 @@@@
@@ -136,7 +140,7 @@ But how did it get into **Call Stack**?
 ^^As we can see, they all “sit” on the call stack at the same time.^^
 ^^At the top there is always the function that is currently being executed.^^
 ^^The **~parent~** function and the **~demo~** function hit the call stack by direct "invitation".^^
-_________________________________________________
+___
 
 But we have one more (anonymous) function, which we assigned as a handler for the **~click~** event of the ~document.body~ element.
 This function is by definition a **callback** function.
@@ -188,7 +192,7 @@ It is out of that staircase that **promises** grew: they unfold the nesting into
 
 [►►►Promise►►►](page/promise)
 
-_____________________
+___
 
 @@@@
 ![](slogans/funcs-rule.svg)
@@ -197,7 +201,7 @@ As we can see, not only the inheritance model, but also asynchrony in JS is base
 
 ☼☼☼ functions actually rule in JS! ☼☼☼
 
-___________________________________________
+___
 
 ## ![ico-25 icon] Event API⟪Event_API⟫
 
@@ -224,7 +228,8 @@ It's not a fact that it will get onto the Call Stack quickly enough.
 There may be many callbacks in the **task queue**, and the timer callback will have to wait for its turn.
 The engine will pull this callback from the **task queue** when it is its turn and the **Call Stack** is free.
 
-◘◘![ico-20 cap] ** 1**◘◘
+◘◘![ico-20 cap] **1**◘◘
+
 ~~~js
 const start = Date.now()
 const timer = (time = 0) => setTimeout(() => console.log(Date.now() - start), time)
@@ -239,18 +244,16 @@ do {
 Note that all timers were set to 500 milliseconds.
 However, the large number of timer callbacks in the task queue led to the fact that the delay in next callback execution increased as the task queue progressed, and ultimately the last callback entered the call stack not after 500 milliseconds, but much later.
 
-__________________________________________
+___
 
 ## ![ico-25 icon] Blocking operations⟪Blocking_operations⟫
 
-![ico-20 warn] **“Heavy” tasks block the browser from redrawing the page and make the page non-interactive, i.e. not responding to user actions.**
-A "heavy" task is a task that will occupy the stack for a long time and can seriously delay the execution of other tasks in the queue that had the misfortune of getting there after it...
+![ico-20 warn] **'Heavy' tasks block the browser from redrawing the page and make the page non-interactive, i.e. not responding to user actions.**
+A 'heavy' task is a task that will occupy the stack for a long time and can seriously delay the execution of other tasks in the queue that had the misfortune of getting there after it...
 
 @@@@
 ![](illustrations/blocking-queue.jpg)
-^^It's like waiting in line at a doctor's office in a clunky Soviet system.<br>You have an appointment at 2:00 PM, it's already 3:25 PM, and there are still five people ahead of you.<br>^^
-^^What does this tell you?<br>It tells you the code is extremely poorly written.^^
-^^<br>Yes, the Soviet system was poorly written code.^^
+^^It's like waiting in line at a doctor's office in a clunky Soviet system.<br>You have an appointment at 2:00 PM, it's already 3:25 PM, and there are still five people ahead of you.<br>^^^^What does this tell you?<br>It tells you the code is extremely poorly written.^^••<br>Yes, the Soviet system was poorly written code.••
 @@@@
 
 ![ico-20 warn] The most direct way to arrange such a jam is a synchronous request: ~XMLHttpRequest~ with ~false~ as the third argument. Until the server answers, the call stack is busy waiting, and the page answers nothing at all. Browsers complain about it in the console and point to ~fetch~, which returns a promise and holds nothing up.
@@ -258,7 +261,7 @@ A "heavy" task is a task that will occupy the stack for a long time and can seri
 Write code so that no function takes up the Call Stack for long.
 Otherwise, your page will stop responding to events because the callbacks won't be able to get into the call stack.
 
-◘◘![ico-20 cap] ** 2**◘◘
+◘◘![ico-20 cap] **2**◘◘
 
 ~~~js
 function message (text) {
@@ -282,7 +285,7 @@ Look what happened
 
 {{{Event-Loop-1.js}}}
 
-__________________________________________________________
+___
 
 Let's declare the auxiliary functions **~createFigure~** and **~message~**:
 
@@ -325,7 +328,7 @@ function message (text) {
 
 to use them in the following examples.
 
-◘◘![ico-20 cap] ** 3**◘◘
+◘◘![ico-20 cap] **3**◘◘
 
 ~~~js
 const start = Date.now()
@@ -348,16 +351,19 @@ setTimeout(function () {
 A task launched by a timer occupies the call stack for a long and blocks page redrawing and message output to the console.
 
 Take a lesson from this example, and you will see why we cannot write a window of our own that stops the code until the user answers.
+••••
 The browser is multi-threaded and each thread has its own call stack, so modal windows are not a problem for it.
 But we only have one call stack.
+••••
 
 ![ico-20 pin] A modal window as such can be made — that is what the ~dialog~ element and its ~showModal()~ method are for: the page behind it goes dim and takes neither clicks nor focus. But the code does not stop at the call: the user's answer arrives as a ~close~ event, not as a returned value. Only ~alert~, ~confirm~ and ~prompt~ stop execution — and it is the browser that stops it, not our code.
 
-____________________________________
+___
 
 Let's fix the problem:
 
-◘◘![ico-20 cap] ** 4**◘◘
+◘◘![ico-20 cap] **4**◘◘
+
 ~~~js
 const start = Date.now()
 
@@ -380,12 +386,12 @@ recurse()
 
 As you can see, the loop works as if “in the background”, without blocking screen redraw and other operations.
 There is no real “background mode” here, though: the page's code still runs in one thread, with one call stack.
-Therefore, we simulate "multithreading" using **Event Loop**.
+Therefore, we simulate "multithreading" using **^^Event Loop^^**.
 
-![ico-20 pin] A second thread can still be asked of the browser — a **Web Worker**: it has its own call stack, its own task queue and its own event loop, and it does run in parallel. The price is no access to the DOM: the worker and the page talk in messages. This course is built that way — separate workers serve the lesson content, the icons and the cache.
+••![ico-20 pin] A second thread can still be asked of the browser — a **^^Web Worker^^**: it has its own call stack, its own task queue and its own event loop, and it does run in parallel. The price is no access to the DOM: the worker and the page talk in messages. This course is built that way — separate workers serve the lesson content, the icons and the cache.••
 
 Later we'll look at asynchronous generators, which do something similar.
-______________________________
+___
 
 ## ![ico-25 icon] Microtask⟪Microtask⟫
 
@@ -401,7 +407,8 @@ But we also have “magic boxes with two holes” - **promises**!
 The **~then~** method of a promise takes a callback too.
 And here in the Event Loop the following miracles happen:
 
-◘◘![ico-20 cap] ** 5**◘◘
+◘◘![ico-20 cap] **5**◘◘
+
 ~~~js
 const start = Date.now()
 
@@ -435,11 +442,11 @@ Only then the engine will move on to the task queue.
 
 While the tasks are sitting in the task queue and waiting for their turn to get into the Call Stack, nimble micro-tasks slip there under their noses. ![ico-25 smile]
 
-![](illustrations/event-loop-micro-task.gif)
+![](illustrations/microtasks-jump-the-queue.svg)
 
 ☼☼☼ Microtasks are cheeky little guys who jump into the Call Stack without waiting in line ☼☼☼
 
-________________________________________
+___
 
 As soon as we run a script for execution, we start a task.
 
@@ -496,10 +503,22 @@ Had we sent a single callback to the task queue with **~setTimeout()~**, every t
 
 To even the odds between tasks and microtasks, the timer's callback sets a timer of its own. The task queue then finds itself in much the same position as the microtask queue.
 
-________________________________________________
+___
+
+## ![ico-25 hw] Tests⟪Tests⟫
+
+~~~js
+console.log(1)
+
+setTimeout(() => console.log(2))
+
+Promise.resolve().then(() => console.log(3))
+
+console.log(4)
+~~~
 
 ♣♣♣♣
-? What will the console print? **console.log(1); setTimeout(() => console.log(2)); Promise.resolve().then(() => console.log(3)); console.log(4)**
+? What will the console print?
 
 - **1, 2, 3, 4**
 = That would be so if ~setTimeout~ called the callback at once. But a timer callback is a task: it only joins the queue, and runs when the call stack is free.

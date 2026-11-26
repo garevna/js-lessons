@@ -352,6 +352,8 @@ for (let x of [1, 2, 3]) {
 
 ___
 
+## ![ico-25 hw] Tests⟪Tests_2⟫
+
 ♣♣♣♣
 ? A loop over three strings pushes three functions into an array, each printing **item**. With **var** all three print **omega**; with **let** they print **alpha**, **sigma**, **omega**. Why?
 
