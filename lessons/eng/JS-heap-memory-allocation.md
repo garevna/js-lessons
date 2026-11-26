@@ -68,7 +68,7 @@ DevTools shows the list of categories to check
 Leave every category selected
 Click the **^^Analyze page load^^** button
 
-![](illustrations/lighthouse.png)
+![](illustrations/lighthouse-scores.png)
 
 ![ico-20 warn] If the browser has extensions installed, Lighthouse says so: they run on the same page and spoil the measurement. An honest result is taken in an incognito window, or in a Chrome profile with no extensions.
 
@@ -115,7 +115,7 @@ These lines are read by their shape, not by their height. A step up means memory
 
 Measure on the deployed site rather than on your own machine. The development server, the live rebuild and the browser extensions live in the same tab and spend memory that has nothing to do with the application: on localhost so much of it goes elsewhere that your own code is lost behind it. It is the same reason Lighthouse asks for an incognito window.
 
-![](illustrations/performance-memory.png)
+![](illustrations/memory-graphs.png)
 
 The picture shows one page of the course loading, 6.75 seconds of it. **^^JS heap^^** grew from 827 kilobytes to 76.9 megabytes, the documents went from three to 21, the DOM nodes from twelve to 3,104, the handlers from ten to 2,074. This is the price of the page itself rather than of any computation: the markup, the highlighted code, the illustrations and every subscription to an event. The lines climb in steps, and each step is one more piece of the page built and shown.
 
