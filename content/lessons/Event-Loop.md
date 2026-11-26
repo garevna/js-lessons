@@ -211,7 +211,7 @@ ___________________________________________
 
 @@@@
 {{p88}}
-![](illustrations/web-api.png)
+![](illustrations/browser-event-api.jpg)
 @@@@
 
 {{p89}}

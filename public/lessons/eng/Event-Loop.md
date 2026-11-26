@@ -211,7 +211,7 @@ The browser can send requests to the network and receive responses.
 
 @@@@
 As a "middleman", the browser offers an application programming interface (**API**) that allows the JS application to access the powerful capabilities of the browser.<br><br>The browser has an API for working with events, and it can be called **Event API**.
-![](illustrations/web-api.png)
+![](illustrations/browser-event-api.jpg)
 @@@@
 
 This term covers various interfaces and methods that allow you to work with events in web applications (more common names:  **Event Handling API** or **Event Listener API**).
