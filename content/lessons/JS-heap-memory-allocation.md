@@ -68,7 +68,7 @@ _____________________________________________________________
 {{p25}}
 {{p26}}
 
-![](illustrations/lighthouse.png)
+![](illustrations/lighthouse-scores.png)
 
 {{incognito}}
 
@@ -115,7 +115,7 @@ _____________________________________________________________
 
 {{memoryWhere}}
 
-![](illustrations/performance-memory.png)
+![](illustrations/memory-graphs.png)
 
 {{readGraph}}
 

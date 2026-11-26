@@ -814,6 +814,16 @@ Paths are resolved through `createPath`, which knows a handful of aliases:
 `images`, `illustrations`, `slogans`, `icons`, `sounds`, `lessons`, `help`,
 `files`, `page`, `external`.
 
+**A picture whose content changes needs a new name.** The service worker holds
+images as settled: `unvalidated` lists `image`, so a cached picture is handed
+back without ever being checked again, and `versions.json` — the map that
+would catch a change — covers lessons only. Replace a drawing in place and
+every reader who has already opened that page keeps the old one, for as long
+as their cache lives. So when a screenshot is retaken or a drawing redone,
+save it under a new name and point the lesson at it: the stale copy is then
+simply never asked for again. (Versioning images instead would add several
+hundred entries to a file that is fetched, uncached, on every page load.)
+
 **`slogans` chooses the language for you.** Every slogan is one drawing
 lettered twice and lives in `public/images/slogans/` as a pair:
 
