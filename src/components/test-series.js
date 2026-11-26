@@ -100,6 +100,15 @@ class TestSeries extends HTMLElement {
       slot.classList.toggle('current', index === this.at)
       slot.classList.toggle('gone', index < this.at)
     })
+
+    // A card may carry the listing its question is about. It unfolds with the
+    // card and folds away with it — told after the classes are set, so the
+    // one on stage can be measured and the ones leaving are not left standing
+    // open behind it.
+    this.tests.forEach((test, index) => {
+      if (typeof test.unfold !== 'function') return
+      index === this.at ? test.unfold() : test.fold()
+    })
   }
 
   answered ({ right, question, chosen, answer }, card) {

@@ -44,10 +44,33 @@ export function createQuiz (fragment) {
   const questions = []
   let current = null
   let option = null
+  let listing = null
 
   // slice(1, -1): the fences are markup, like •••• and @@@@.
   for (const raw of fragment.split('\n').slice(1, -1)) {
     const line = raw.trim()
+
+    // A question about what a program prints needs the program, and a program
+    // squeezed into the question's own line arrives as one unbroken string:
+    // console.log(1); setTimeout(() => console.log(2)); … — nothing to read.
+    // So the listing is an ordinary ~~~js block standing between the ? and
+    // the options, and it belongs to the question it stands in. The card
+    // shows it above itself and unfolds it when its turn comes.
+    if (listing) {
+      if (line.startsWith('~~~')) {
+        if (current) current.code = { lang: listing.lang, text: listing.lines.join('\n') }
+        listing = null
+      } else {
+        listing.lines.push(raw)
+      }
+      continue
+    }
+
+    if (line.startsWith('~~~')) {
+      listing = { lang: line.slice(3).trim() || 'js', lines: [] }
+      continue
+    }
+
     if (!line) continue
 
     const mark = line[0]
@@ -78,10 +101,11 @@ export function createQuiz (fragment) {
 
   const cards = questions
     .filter(({ question, options }) => question.length && options.length)
-    .map(({ question, options }) => {
+    .map(({ question, options, code }) => {
       const card = document.createElement('quiz-card')
       card.fill({
         question: markup(question.join(' ')),
+        code,
         options: options.map(({ text, right, why }) => ({
           text: markup(text),
           right,

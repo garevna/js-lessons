@@ -187,6 +187,7 @@ const quizBlockTrouble = (content) => {
 
   let question = null
   let seen = false
+  let listing = false
 
   const close = () => {
     if (!question) return
@@ -200,6 +201,22 @@ const quizBlockTrouble = (content) => {
 
   for (const raw of lines) {
     const line = raw.trim()
+
+    // Листинг, о котором спрашивает вопрос: ~~~js … ~~~ между ? и вариантами.
+    // Строки внутри него — код, и пометок у них быть не должно.
+    if (listing) {
+      if (line.slice(0, 3) === '~~~') listing = false
+      continue
+    }
+
+    if (line.slice(0, 3) === '~~~') {
+      if (!question) {
+        trouble.push({ what: 'листинг до вопроса — непонятно, к чему он', detail: line.slice(0, 74) })
+      }
+      listing = true
+      continue
+    }
+
     if (!line) continue
 
     const mark = line[0]
@@ -242,6 +259,10 @@ const quizBlockTrouble = (content) => {
   }
 
   close()
+
+  if (listing) {
+    trouble.push({ what: 'листинг не закрыт ~~~ — остаток блока уедет в код', detail: content.trim().slice(0, 74) })
+  }
 
   if (!seen) trouble.push({ what: 'блок без вопросов', detail: content.trim().slice(0, 74) })
 

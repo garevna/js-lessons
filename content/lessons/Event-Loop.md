@@ -507,6 +507,9 @@ ___
 
 ## ![ico-25 hw] {{common.tests}}
 
+♣♣♣♣
+? {{test01Question}}
+
 ~~~js
 console.log(1)
 
@@ -516,9 +519,6 @@ Promise.resolve().then(() => console.log(3))
 
 console.log(4)
 ~~~
-
-♣♣♣♣
-? {{test01Question}}
 
 - {{test01Variant1}}
 = {{test01Variant1Answer}}

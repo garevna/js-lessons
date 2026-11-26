@@ -188,10 +188,46 @@ button.next:hover { background: #09b; }
   margin: 2px 0 0 11px;
 }
 
+/* The listing a question is about: above the dark box, on the page's own
+   ground, so it reads as part of the test rather than as a paragraph of the
+   lesson that happens to stand nearby.
+
+   Folded by height rather than hidden, because a series stacks its cards and
+   grows to the one on stage: a listing appearing at full height makes the
+   stage jump, one that unfolds takes the eye with it. The height is set in
+   JS to the listing's own — a guessed one either clips a long program or
+   makes a short one crawl open. */
+.listing {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .45s ease-in-out, opacity .3s ease-in-out;
+}
+
+.listing.open { opacity: 1; }
+
+.listing pre {
+  margin: 0 0 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: #f6f8fa;
+  border: solid 1px #dde3ea;
+  box-shadow: none;
+  overflow-x: auto;
+}
+
+.listing code { font-size: 14px; line-height: 1.7; }
+
+@media (prefers-reduced-motion: reduce) {
+  .listing { transition: none; }
+}
+
 @media (max-width: 600px) {
   fieldset.quiz { padding: 12px; }
   .question { padding-right: 14px; }
   #result { position: static; margin: 10px 0 0 auto; }
+  .listing pre { padding: 8px 10px; }
+  .listing code { font-size: 13px; }
 }
 `
 

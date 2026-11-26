@@ -368,26 +368,41 @@ One `♣` block may hold several questions: a new `?` after the options starts t
 next. When it does they are shown a card at a time by `test-series`, with its
 counter and its score.
 
-**Code goes above the block, not inside the question.** A question is one line
-of prose; a program written into it arrives as a single unbroken string, and
-`console.log(1); setTimeout(() => console.log(2)); …` is unreadable at a
-glance. Put the listing in a `~~~js` block before the `♣♣♣♣` fence and let the
-question point at it:
+**A question may carry the program it is about.** Written into the question's
+own line a program arrives as one unbroken string — `console.log(1);
+setTimeout(() => console.log(2)); …` — and there is nothing to read. So the
+listing is an ordinary `~~~js` block standing inside the `♣` block, between
+the `?` and the options:
 
 ```
+♣♣♣♣
+? Что выведет консоль?
+
 ~~~js
 console.log(1)
 
 setTimeout(() => console.log(2))
 ~~~
 
++ 1, 4, 3, 2
+= Сначала до конца отрабатывает текущий скрипт…
+- 1, 2, 3, 4
+= Так было бы, если бы setTimeout вызывал колбек сразу…
 ♣♣♣♣
-? Что выведет консоль?
 ```
 
-The listing is highlighted and spaced like any other code in the lesson, and
-the question card stays short. Only short fragments belong inside a question —
-`typeof 10n`, `x++`, the name of a method.
+It belongs to the question it stands in, not to the page: the card shows it
+above itself, coloured the way the lesson colours its code, and unfolds it
+when that question comes up and folds it away when the series moves on. A
+question without a listing shows none.
+
+This is why `Quiz` is matched before the code fences in `pageRegExpr` — were
+it the other way round, the listing would be lifted out of the quiz as a block
+of its own and left standing on the page under a question it no longer
+belonged to.
+
+Only short fragments belong inside the question line itself — `typeof 10n`,
+`x++`, the name of a method.
 
 A card that explains itself waits for the reader. The short form moves on by
 itself after a pause — there is nothing to read but a colour — and the pause is

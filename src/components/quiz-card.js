@@ -1,5 +1,5 @@
 const { createElem } = require('../helpers').default
-const { quizStyles } = require('../styles').default
+const { quizStyles, rainbowStyles } = require('../styles').default
 const { pageLabels, lang } = require('../configs').default
 
 /**
@@ -38,7 +38,16 @@ class QuizCard extends HTMLElement {
     super()
 
     this.shadow = this.attachShadow({ mode: 'open' })
+    // The page's own colours for code: a listing inside a shadow tree is out
+    // of reach of the page stylesheet, so the rules come in with it.
+    createElem('style', this.shadow).textContent = rainbowStyles
     createElem('style', this.shadow).textContent = quizStyles
+
+    // Above the question and outside the dark box, where a listing reads as
+    // part of the test rather than as a paragraph of the lesson that happens
+    // to stand nearby. Empty unless the question brought code with it.
+    this.listing = Object.assign(createElem('div', this.shadow), { className: 'listing' })
+    this.listing.hidden = true
 
     this.box = Object.assign(createElem('fieldset', this.shadow), { className: 'quiz' })
     this.question = Object.assign(createElem('div', this.box), { className: 'question' })
@@ -74,9 +83,11 @@ class QuizCard extends HTMLElement {
    * and icons are the page's business, not this component's, and the helper is
    * where parseLine lives.
    */
-  fill ({ question, options }) {
+  fill ({ question, code, options }) {
     this.question.innerHTML = question
     this.plain = this.question.textContent.trim()
+
+    if (code && code.text.trim()) this.showCode(code)
 
     options.forEach((option, index) => {
       const row = Object.assign(createElem('div', this.list), { className: 'option' })
@@ -103,6 +114,36 @@ class QuizCard extends HTMLElement {
 
       this.rows.push({ ...option, row, input, why, label })
     })
+  }
+
+  /**
+   * The listing the question is about, coloured the way the lesson colours
+   * its code and folded until the card's turn comes.
+   */
+  showCode ({ lang: language, text }) {
+    this.listing.hidden = false
+    this.listing.innerHTML = `<pre><code data-language="${language}">${text.trim()}</code></pre>`
+
+    // Rainbow is the page's highlighter; it walks what it is given, so the
+    // shadow tree is handed over directly.
+    if (typeof Rainbow !== 'undefined') Rainbow.color(this.listing)
+
+    // A card standing alone on the page has no turn to wait for.
+    if (!this.inSeries) requestAnimationFrame(() => this.unfold())
+  }
+
+  /** Smoothly to its own height — the series calls this when the card is up. */
+  unfold () {
+    if (this.listing.hidden) return
+    this.listing.style.maxHeight = `${this.listing.scrollHeight}px`
+    this.listing.classList.add('open')
+  }
+
+  /** And back, when the card goes. */
+  fold () {
+    if (this.listing.hidden) return
+    this.listing.style.maxHeight = '0px'
+    this.listing.classList.remove('open')
   }
 
   choose (index) {

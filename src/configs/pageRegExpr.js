@@ -52,6 +52,19 @@ const generator = function * () {
 
 const pageRegExpr = {
   CodeOutput: /\{{3}.[^}]*\}{3}/,
+  // ♣♣♣♣ … ♣♣♣♣ — questions whose options are sentences. See createQuiz.
+  //
+  // Taken out of the page before the code fences, and that order is the whole
+  // point: a question about what a program prints carries the program with
+  // it, written as an ordinary ~~~js block between the ? and the options. Were
+  // ScriptSnippet to run first it would lift that listing out as a block of
+  // its own, leave a fragment marker inside the quiz, and the question would
+  // end up standing under a listing that no longer belonged to it.
+  //
+  // Nothing else moves: this pattern is anchored to whole lines of four ♣ and
+  // matches nothing but a quiz block, so running it earlier takes no fences
+  // away from the rest of the page.
+  Quiz: /^[ \t]*♣{4}[ \t]*$[\s\S]*?^[ \t]*♣{4}[ \t]*$/m,
   ScriptSpoiler: /~~~~.[^~~~~]+~~~~/,
   ScriptSnippet: /~~~.[^~~~]+~~~/,
   Spoiler: /(\^{3})([\s\S]+?)\1/m,
@@ -90,16 +103,6 @@ const pageRegExpr = {
   // Anchored to whole lines so it cannot be confused with the inline form,
   // and lazy so two blocks on a page stay two blocks.
   BlackBlock: /^[ \t]*•{4}[ \t]*[a-z_-]*[ \t]*$[\s\S]*?^[ \t]*•{4}[ \t]*$/m,
-  // ♣♣♣♣  …  ♣♣♣♣  — questions whose options are sentences, one per
-  // line: ? the question, + the right option, - a wrong one, = why.
-  //
-  // The short form of a question is a line (→→→) and the long form has to be
-  // a block, because its fields are sentences and one of them repeats
-  // another — see createQuiz.
-  //
-  // Anchored to whole lines and lazy, the same as BlackBlock: that is the
-  // shape of fence pattern that has never eaten more than it meant to.
-  Quiz: /^[ \t]*♣{4}[ \t]*$[\s\S]*?^[ \t]*♣{4}[ \t]*$/m,
   // ♠♠♠♠  …  ♠♠♠♠  — code with something wrong in it, which the reader
   // edits and the checks grade. The opening fence carries the task; ??? on a
   // line of its own divides the code from the checks — see createCodeFix.
