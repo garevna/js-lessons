@@ -154,8 +154,22 @@ class CodeFix extends HTMLElement {
     const printed = []
     const real = win.console.log
 
+    // A string is printed as it is; anything else as JSON, because an array
+    // printed as head,body,foot reads like a string with commas in it, and the
+    // reader needs to see that console.log was handed an array.
+    const written = (arg) => {
+      if (typeof arg === 'string') return arg
+
+      try {
+        const text = JSON.stringify(arg)
+        return text === undefined ? String(arg) : text
+      } catch (error) {
+        return String(arg)
+      }
+    }
+
     win.console.log = (...args) => {
-      printed.push(args.map((arg) => typeof arg === 'string' ? arg : String(arg)).join(' '))
+      printed.push(args.map(written).join(' '))
       real.apply(win.console, args)
     }
 

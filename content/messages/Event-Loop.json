@@ -1160,6 +1160,11 @@
     "ua": "частини в ньому стоять у порядку запиту: head body foot"
   },
   "quest03Check3": {
+    "ru": "части и правда приезжают: все три ответа пришли из таймеров",
+    "eng": "the parts really do arrive: all three answers came out of timers",
+    "ua": "частини й справді приїжджають: усі три відповіді прийшли з таймерів"
+  },
+  "quest03Check4": {
     "ru": "готовность не угадана по часам: своего таймера в коде нет",
     "eng": "readiness is not guessed by the clock: the code has no timer of its own",
     "ua": "готовність не вгадана за годинником: власного таймера в коді немає"
