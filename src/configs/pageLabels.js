@@ -50,6 +50,26 @@ export const pageLabels = {
     eng: 'Check',
     ua: 'Перевірити'
   },
+  printedOutput: {
+    ru: 'Что напечатал код',
+    eng: 'What the code printed',
+    ua: 'Що надрукував код'
+  },
+  printedSync: {
+    ru: 'в скрипте',
+    eng: 'in the script',
+    ua: 'у скрипті'
+  },
+  printedMicro: {
+    ru: 'микротаском',
+    eng: 'as a microtask',
+    ua: 'мікротаском'
+  },
+  printedTask: {
+    ru: 'после первой задачи',
+    eng: 'after the first task',
+    ua: 'після першого завдання'
+  },
   stillRunning: {
     ru: 'Код всё ещё работал, когда проверки пошли: счёт неполный.',
     eng: 'The code was still running when the checks ran: the score is incomplete.',

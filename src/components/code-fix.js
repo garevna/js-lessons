@@ -219,7 +219,7 @@ class CodeFix extends HTMLElement {
       }
     })
 
-    this.draw(results, failure)
+    this.draw(results, failure, printed)
   }
 
   /**
@@ -256,7 +256,7 @@ class CodeFix extends HTMLElement {
     })
   }
 
-  draw (results, failure) {
+  draw (results, failure, printed = []) {
     this.report.hidden = false
     this.report.innerHTML = ''
 
@@ -287,6 +287,36 @@ class CodeFix extends HTMLElement {
           textContent: error
         })
       }
+    }
+
+    // What the code printed, and which queue each line came out of. Without
+    // it an exercise about order can only be read with the console open, and
+    // a check that counts synchronous lines looks like a quibble: the reader
+    // sees that line three was printed, not that it was printed too early.
+    if (printed.length) {
+      const box = Object.assign(createElem('div', this.report), { className: 'printed' })
+
+      Object.assign(createElem('div', box), {
+        className: 'printed-head',
+        textContent: this.word('printedOutput')
+      })
+
+      const where = (at) => {
+        if (at < printed.sync) return ['sync', 'printedSync']
+        if (at < printed.sync + printed.micro) return ['micro', 'printedMicro']
+        return ['task', 'printedTask']
+      }
+
+      printed.forEach((line, at) => {
+        const [phase, label] = where(at)
+
+        const row = Object.assign(createElem('div', box), {
+          className: `printed-line ${phase}`
+        })
+
+        Object.assign(createElem('span', row), { className: 'text', textContent: line })
+        Object.assign(createElem('span', row), { className: 'phase', textContent: this.word(label) })
+      })
     }
 
     const got = results.reduce((sum, item) => sum + (item.passed ? item.points : 0), 0)

@@ -142,6 +142,50 @@ button.undo:hover { background: #666; }
 .passed .points { color: #0f0; }
 .failed .points { color: #999; }
 
+/* What the code printed, line by line, each with the queue it came out of.
+   The lines go to the console, and the reader is not looking at the console. */
+.printed { margin-top: 16px; }
+
+.printed-head {
+  margin-bottom: 6px;
+  font-family: var(--main-font);
+  font-size: .9rem;
+  color: #aaa;
+}
+
+.printed-line {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: baseline;
+  padding: 5px 10px;
+  border-left: solid 3px #666;
+  background: #2b2b2b;
+  font-family: Monospace, monospace;
+  font-size: .9rem;
+  color: #eee;
+}
+
+.printed-line + .printed-line { margin-top: 3px; }
+
+.printed-line.sync { border-left-color: #999; }
+.printed-line.micro { border-left-color: #6cf; }
+.printed-line.task { border-left-color: #fc6; }
+
+.printed-line .phase {
+  font-family: var(--main-font);
+  font-size: .8rem;
+  color: #aaa;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .printed-line {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
 /* Only when a check itself blew up, which usually means the code never got
    far enough to make what the check was looking for. */
 .why {

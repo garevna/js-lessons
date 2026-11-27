@@ -478,6 +478,14 @@ And whatever the code declared: a check runs inside the frame, so it can read a
 `const`, a `let` or a function from the exercise by name, which is how a
 counter in the code can be asked how many turns it got.
 
+#### What the reader sees
+
+Under the checks, the report shows what the code printed, line by line, each
+line marked with where it came from: in the script, as a microtask, or after
+the first task. Without it an exercise about order can only be read with the
+console open, and a check that counts synchronous lines looks like a quibble —
+the reader sees that line three was printed, not that it was printed too early.
+
 #### When the checks run
 
 Once the frame has gone quiet: nothing scheduled and no new line since the last

@@ -718,7 +718,7 @@ OUTPUT.length === 5
 ? 4 | the lines come in the order 1 → 2 → 3 → 4 → 5
 OUTPUT.map((line) => (line.match(/^\s*(\d)/) || ['', '?'])[1]).join('') === '12345'
 
-? 2 | the first two lines are printed synchronously
+? 2 | only the first two lines are printed synchronously, the rest are not
 OUTPUT.sync === 2
 
 ? 4 | steps 3 and 4 went through the microtask queue: they are printed before the first task
