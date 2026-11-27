@@ -9,6 +9,5 @@
   "try ... catch",
   "try { ... }",
   "catch",
-  "undefined",
-  "test/exclusions"
+  "undefined"
 ]

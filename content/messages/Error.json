@@ -1,152 +1,507 @@
 {
   "p1": {
     "ru": "Исключения приводят к прерыванию выполнения текущей функции.",
-    "eng": "",
-    "ua": ""
+    "eng": "Exceptions cause the current function to be interrupted.",
+    "ua": "Винятки призводять до переривання виконання поточної функції."
   },
   "p2": {
-    "ru": "Однако мы можем \"перехватывать\" исключения и не допускать прерывания выполнения кода.",
-    "eng": "",
-    "ua": ""
+    "ru": "Однако мы можем 'перехватывать' исключения и не допускать прерывания выполнения кода.",
+    "eng": "However, we can ‘catch’ exceptions and prevent the code from being interrupted.",
+    "ua": "Однак ми можемо «перехоплювати» винятки та не допускати переривання виконання коду."
   },
   "p3": {
-    "ru": "Когда мы \"перехватываем\" исключение, то мы получаем некий объект, который содержит описание того, что привело к генерации исключения.",
-    "eng": "",
-    "ua": ""
+    "ru": "Когда мы 'перехватываем' исключение, то мы получаем некий объект, который содержит описание того, что привело к генерации исключения.",
+    "eng": "When we ‘catch’ an exception, we receive an object that contains a description of what caused the exception to be raised.",
+    "ua": "Коли ми «перехоплюємо» виняток, то отримуємо певний об’єкт, який містить опис того, що призвело до виникнення винятку."
   },
   "p4": {
     "ru": "Прежде, чем перейти к перехвату исключений, разберемся с обектом ошибки (моделью исключения) и, соответственно, конструкторами, которые создают экземпляры ошибки.",
-    "eng": "",
-    "ua": ""
+    "eng": "Before moving on to exception handling, let’s look at the error object (the exception model) and, accordingly, the constructors that create instances of the error.",
+    "ua": "Перш ніж перейти до перехоплення винятків, розберемося з об’єктом помилки (моделлю винятку) і, відповідно, з конструкторами, які створюють екземпляри помилки."
   },
   "p5": {
-    "ru": "Бачиш об'єкт? - шукай конструктор",
-    "eng": "",
-    "ua": ""
+    "ru": "Видишь объект? - ищи конструктор",
+    "eng": "See the object? – look for the constructor",
+    "ua": "Бачиш об’єкт? — шукай конструктор"
   },
   "p6": {
     "ru": "Конструкторы исключений",
-    "eng": "",
-    "ua": ""
+    "eng": "Exception constructors",
+    "ua": "Конструктори винятків"
   },
   "p7": {
     "ru": "Конструктор **Error** создаёт кастомный объект **~⟦f0⟧~**.",
-    "eng": "",
-    "ua": ""
+    "eng": "The **Error** constructor creates a custom object **~⟦f0⟧~**.",
+    "ua": "Конструктор **Error** створює кастомний об’єкт **~⟦f0⟧~**."
   },
   "p8": {
-    "ru": "![ico-20 warn] ^^Конструктор **Error** может быть вызван без ключевого слова **~⟦f1⟧~**.^^",
-    "eng": "",
-    "ua": ""
+    "ru": "![ico-20 warn] Конструктор **Error** может быть вызван без ключевого слова **~⟦f1⟧~**.",
+    "eng": "![ico-20 warn] The **Error** constructor can be called without the keyword **~⟦f1⟧~**.",
+    "ua": "![ico-20 warn] Конструктор **Error** можна викликати без ключового слова **~⟦f1⟧~**."
   },
   "p9": {
     "ru": "Конструктор принимает необязательный параметр - текст сообщения об ошибке",
-    "eng": "",
-    "ua": ""
+    "eng": "The constructor takes an optional parameter – the text of the error message",
+    "ua": "Конструктор приймає необов’язковий параметр — текст повідомлення про помилку"
   },
   "p10": {
     "ru": "^^(остальные опциональные параметры не были стандартизированы, и не поддерживаются браузерами).^^",
-    "eng": "",
-    "ua": ""
+    "eng": "^^(the remaining optional parameters have not been standardised and are not supported by browsers).^^",
+    "ua": "^^(решта опціональних параметрів не були стандартизовані та не підтримуються браузерами).^^"
   },
   "p11": {
     "ru": "Однако мы можем добавлять свойства экземпляру конструктора **Error**.",
-    "eng": "",
-    "ua": ""
+    "eng": "However, we can add properties to an instance of the **Error** constructor.",
+    "ua": "Однак ми можемо додавати властивості до екземпляра конструктора **Error**."
   },
   "p12": {
     "ru": "Мы уже знаем основные типы исключений, такие как ~⟦f2⟧~, ~⟦f3⟧~ and ~⟦f4⟧~.",
-    "eng": "",
-    "ua": ""
+    "eng": "We are already familiar with the main exception types, such as ~⟦f2⟧~, ~⟦f3⟧~ and ~⟦f4⟧~.",
+    "ua": "Ми вже знаємо основні типи винятків, такі як ~⟦f2⟧~, ~⟦f3⟧~ та ~⟦f4⟧~."
   },
   "p13": {
     "ru": "Для каждого типа исключения есть свой конструктор.",
-    "eng": "",
-    "ua": ""
+    "eng": "Each exception type has its own constructor.",
+    "ua": "Для кожного типу винятку є свій конструктор."
   },
   "p14": {
     "ru": "Однако каждый конструктор конкретного типа исключения наследует от конструктора ~⟦f0⟧~.",
-    "eng": "",
-    "ua": ""
+    "eng": "However, every constructor for a specific exception type inherits from the ~⟦f0⟧~ constructor.",
+    "ua": "Однак кожен конструктор конкретного типу винятку успадковується від конструктора ~⟦f0⟧~."
   },
   "p15": {
     "ru": "Оператор throw",
-    "eng": "",
-    "ua": ""
+    "eng": "The throw statement",
+    "ua": "Оператор throw"
   },
   "p16": {
     "ru": "Вы можете сами сгенерировать исключение с помощью оператора throw.",
-    "eng": "",
-    "ua": ""
+    "eng": "You can generate an exception yourself using the throw statement.",
+    "ua": "Ви можете самостійно згенерувати виняток за допомогою оператора throw."
   },
   "p17": {
     "ru": "Оператор **~⟦f5⟧~** генерирует пользовательское исключение (ошибку).",
-    "eng": "",
-    "ua": ""
+    "eng": "The **~⟦f5⟧~** statement generates a user-defined exception (error).",
+    "ua": "Оператор **~⟦f5⟧~** генерує визначений користувачем виняток (помилку)."
   },
   "p18": {
     "ru": "Выполнение текущей функции будет прервано, и управление будет передано в первый блок **_~catch~_** в стеке вызовов.",
-    "eng": "",
-    "ua": ""
+    "eng": "Execution of the current function will be interrupted, and control will be passed to the first **_~catch~_** block in the call stack.",
+    "ua": "Виконання поточної функції буде перервано, а управління передано до першого блоку **_~catch~_** у стеку викликів."
   },
   "p19": {
     "ru": "Если блок **_~catch~_** отсутствует, выполнение программы завершится.",
-    "eng": "",
-    "ua": ""
+    "eng": "If there is no **_~catch~_** block, the programme will terminate.",
+    "ua": "Якщо блок **_~catch~_** відсутній, виконання програми завершиться."
   },
   "p20": {
     "ru": "Как видно из примера, результат в консоли будет тот же самый, что и в случае, когда мы выводим объект ошибки в консоль с помощью ~⟦f6⟧~.",
-    "eng": "",
-    "ua": ""
+    "eng": "As can be seen from the example, the output in the console will be exactly the same as when we output the error object to the console using ~⟦f6⟧~.",
+    "ua": "Як видно з прикладу, результат в консолі буде той самий, що й у випадку, коли ми виводимо об'єкт помилки в консоль за допомогою ~⟦f6⟧~."
   },
   "p21": {
     "ru": "Теперь, когда мы поняли, что из себя представляет экземпляр ошибки, как создавать пользовательские экземпляры ошибок, и как можно сгенерировать исключение, можно переходить к перехвату ошибок.",
-    "eng": "",
-    "ua": ""
+    "eng": "Now that we understand what an error instance is, how to create custom error instances, and how to generate an exception, we can move on to error handling.",
+    "ua": "Тепер, коли ми зрозуміли, що таке екземпляр помилки, як створювати користувацькі екземпляри помилок і як можна згенерувати виняток, можна переходити до обробки помилок."
   },
   "p22": {
-    "ru": "Оператор   ~⟦f7⟧~   позволяет перехватить исключения, возникающие в процессе выполнения кода.",
-    "eng": "",
-    "ua": ""
+    "ru": "Оператор ~⟦f7⟧~ позволяет перехватить исключения, возникающие в процессе выполнения кода.",
+    "eng": "The ~⟦f7⟧~ statement allows you to catch exceptions that occur whilst the code is being executed.",
+    "ua": "Оператор ~⟦f7⟧~ дозволяє перехопити винятки, які виникають під час виконання коду."
   },
   "p23": {
-    "ru": "Если при выполнении кода в блоке  **~⟦f8⟧~**  возникнет ошибка, управление перейдет в блок  **~⟦f9⟧~** с передачей в качестве аргумента объекта ошибки.",
-    "eng": "",
-    "ua": ""
+    "ru": "Если при выполнении кода в блоке **~⟦f8⟧~** возникнет ошибка, управление перейдет в блок **~⟦f9⟧~** с передачей в качестве аргумента объекта ошибки.",
+    "eng": "If an error occurs whilst executing the code in the **~⟦f8⟧~** block, control will transfer to the **~⟦f9⟧~** block, passing the error object as an argument.",
+    "ua": "Якщо під час виконання коду в блоке **~⟦f8⟧~** виникне помилка, управління перейде в блок **~⟦f9⟧~** з передачею в якості аргумента об'єкта помилки."
   },
   "p24": {
     "ru": "В этом примере при выполнении кода",
-    "eng": "",
-    "ua": ""
+    "eng": "In this example, whilst executing the code",
+    "ua": "У цьому прикладі під час виконання коду"
   },
   "p25": {
     "ru": "должно быть сгенерировано исключение, которое приведет к прерыванию работы программы.",
-    "eng": "",
-    "ua": ""
+    "eng": "an exception should be generated, which will cause the programme to terminate.",
+    "ua": "має бути згенеровано виняток, який призведе до переривання роботи програми."
   },
   "p26": {
-    "ru": "Благодаря тому, что исключение \"перехватывается\" в блоке **_~try~_**, управление переходит в блок **_~catch~_**, где переменной  ** x ** присваивается значение **~⟦f10⟧~**, и работа программы продолжается.",
-    "eng": "",
-    "ua": ""
+    "ru": "Благодаря тому, что исключение 'перехватывается' в блоке **_~try~_**, управление переходит в блок **_~catch~_**, где переменной  **~x~** присваивается значение **~⟦f10⟧~**, и работа программы продолжается.",
+    "eng": "Because the exception is ‘caught’ in the **_~try~_** block, control passes to the **_~catch~_** block, where the variable **~x~** is assigned the value **~⟦f10⟧~**, and the programme continues to run.",
+    "ua": "Завдяки тому, що виняток 'перехоплюється' в блоке **_~try~_**, управління переходить в блок **_~catch~_**, де змінній  **~x~** присвоюється значення **~⟦f10⟧~**, і робота програми продовжується."
   },
   "p27": {
     "ru": "С 2019 года в блок **_~catch~_** не обязательно передавать аргумент:",
-    "eng": "",
-    "ua": ""
+    "eng": "Since 2019, it is not necessary to pass an argument to the **_~catch~_** block:",
+    "ua": "З 2019 року в блок **_~catch~_** не обов'язково передавати аргумент:"
   },
   "p28": {
-    "ru": "Этот блок кода отработает назависимо от того, чем завершился `try...catch`",
-    "eng": "",
-    "ua": ""
+    "ru": "Этот блок кода отработает назависимо от того, чем завершился ~try...catch~.",
+    "eng": "This block of code will execute regardless of how the ~try...catch~ block ends.",
+    "ua": "Цей блок коду виконається незалежно від того, як завершився блок ~try...catch~."
   },
   "p29": {
     "ru": "В результате выполнения кода:",
-    "eng": "",
-    "ua": ""
+    "eng": "As a result of executing the code:",
+    "ua": "У результаті виконання коду:"
   },
   "p30": {
     "ru": "в консоль будет выброшено исключение:",
-    "eng": "",
-    "ua": ""
+    "eng": "an exception will be thrown to the console:",
+    "ua": "у консоль буде викинуто виняток:"
+  },
+  "throwAnything": {
+    "ru": "![ico-20 warn] Обрати внимание: здесь брошен обычный объект, а не экземпляр **~Error~**. Оператор **~throw~** принимает любое значение — строку, число, объект, — а свойства ~name~, ~message~ и ~stack~ есть у него только потому, что мы их сами написали.",
+    "eng": "![ico-20 warn] Note that what is thrown here is a plain object, not an instance of **~Error~**. The **~throw~** statement takes any value — a string, a number, an object — and this one has ~name~, ~message~ and ~stack~ only because we wrote them ourselves.",
+    "ua": "![ico-20 warn] Зверни увагу: тут кинуто звичайний об’єкт, а не екземпляр **~Error~**. Оператор **~throw~** приймає будь-яке значення — рядок, число, об’єкт, — а властивості ~name~, ~message~ і ~stack~ є в нього лише тому, що ми їх самі написали."
+  },
+  "aggWhat": {
+    "ru": "Конструктор **AggregateError** создаёт одну ошибку, которая держит в себе несколько других. Он нужен там, где неудача не одна: проверка формы нашла три негодных поля, загрузка пробовала четыре зеркала и ни одно не ответило. Бросать первую попавшуюся и молчать об остальных — значит рассказать четверть правды.",
+    "eng": "The **AggregateError** constructor creates one error that holds several others inside it. It is for the places where the failure is not a single one: a form check found three bad fields, a download tried four mirrors and none of them answered. Throwing whichever came first and saying nothing about the rest tells a quarter of the truth.",
+    "ua": "Конструктор **AggregateError** створює одну помилку, яка тримає в собі кілька інших. Він потрібен там, де невдача не одна: перевірка форми знайшла три негодящі поля, завантаження пробувало чотири дзеркала і жодне не відповіло. Кидати першу-ліпшу й мовчати про решту — означає розповісти чверть правди."
+  },
+  "aggArgs": {
+    "ru": "![ico-20 green-ok] принимает итерируемую коллекцию ошибок и — необязательно — общее сообщение;",
+    "eng": "![ico-20 green-ok] takes an iterable of errors and, optionally, a message for all of them;",
+    "ua": "![ico-20 green-ok] приймає ітеровану колекцію помилок і — необов’язково — спільне повідомлення;"
+  },
+  "aggErrors": {
+    "ru": "![ico-20 green-ok] у экземпляра появляется свойство **~errors~** — массив тех самых ошибок, — а ~name~, ~message~ и ~stack~ у него обычные, как у любой другой ошибки.",
+    "eng": "![ico-20 green-ok] the instance gets an **~errors~** property — an array of those very errors — while its ~name~, ~message~ and ~stack~ are the ordinary ones every error has.",
+    "ua": "![ico-20 green-ok] у екземпляра з’являється властивість **~errors~** — масив тих самих помилок, — а ~name~, ~message~ і ~stack~ у нього звичайні, як у будь-якої іншої помилки."
+  },
+  "aggWhere": {
+    "ru": "Появился в 2020 году: есть во всех нынешних браузерах и в Node.js начиная с пятнадцатой версии.",
+    "eng": "It arrived in 2020: every current browser has it, and Node.js from version fifteen on.",
+    "ua": "З’явився 2020 року: є в усіх нинішніх браузерах і в Node.js починаючи з п’ятнадцятої версії."
+  },
+  "aggCatch": {
+    "ru": "Перехватывают его как любую другую ошибку, а разбирают обходом **~errors~**:",
+    "eng": "It is caught like any other error, and taken apart by walking **~errors~**:",
+    "ua": "Перехоплюють його як будь-яку іншу помилку, а розбирають обходом **~errors~**:"
+  },
+  "aggAny": {
+    "ru": "Сам, без нашего участия, он прилетает из **~Promise.any()~**: этот метод ждёт первый успешный промис, и, если не удался ни один, отвергает результат одним **AggregateError** со всеми отказами внутри.",
+    "eng": "On its own, without our writing it, it arrives from **~Promise.any()~**: that method waits for the first promise to succeed, and if not one of them does, it rejects with a single **AggregateError** holding every refusal.",
+    "ua": "Сам, без нашої участі, він прилітає з **~Promise.any()~**: цей метод чекає на перший успішний проміс, і якщо не вдався жоден, відхиляє результат одним **AggregateError** з усіма відмовами всередині."
+  },
+  "stackNote": {
+    "ru": "![ico-20 warn] Свойство ~stack~ не стандартизировано, и консоль печатает не его: в заголовке она показывает ~name~ и ~message~. Поэтому ошибка, созданная без сообщения, выглядит в консоли просто как **~AggregateError~** — сколько бы текста ни было записано в ~stack~.",
+    "eng": "![ico-20 warn] The ~stack~ property is not standardised, and it is not what the console prints: in the heading it shows ~name~ and ~message~. So an error made without a message shows up in the console as plain **~AggregateError~**, however much text has been written into ~stack~.",
+    "ua": "![ico-20 warn] Властивість ~stack~ не стандартизована, і консоль друкує не її: у заголовку вона показує ~name~ і ~message~. Тому помилка, створена без повідомлення, виглядає в консолі просто як **~AggregateError~** — хоч скільки тексту було б записано в ~stack~."
+  },
+  "test01Question": {
+    "ru": "Что окажется в консоли?",
+    "eng": "What will the console show?",
+    "ua": "Що опиниться в консолі?"
+  },
+  "test01Variant1": {
+    "ru": "Необработанная ошибка **~Uncaught Error: later~**",
+    "eng": "An uncaught **~Error: later~**",
+    "ua": "Неперехоплена помилка **~Uncaught Error: later~**"
+  },
+  "test01Variant1Answer": {
+    "ru": "Да. **~try...catch~** ловит только то, что брошено, пока он выполняется. Колбек таймера — отдельная задача, и к тому времени, когда он попадёт в стек, блок **~try~** давно закончился.",
+    "eng": "Yes. **~try...catch~** catches only what is thrown while it is running. The timer callback is a task of its own, and by the time it reaches the stack the **~try~** block is long finished.",
+    "ua": "Так. **~try...catch~** ловить лише те, що кинуто, поки він виконується. Колбек таймера — окреме завдання, і на той час, коли він потрапить у стек, блок **~try~** давно скінчився."
+  },
+  "test01Variant2": {
+    "ru": "**~caught: later~**",
+    "eng": "**~caught: later~**",
+    "ua": "**~caught: later~**"
+  },
+  "test01Variant2Answer": {
+    "ru": "Нет: к моменту, когда сработает таймер, стека с этим **~catch~** уже нет.",
+    "eng": "No: by the time the timer fires, the stack holding that **~catch~** is gone.",
+    "ua": "Ні: на момент, коли спрацює таймер, стека з цим **~catch~** уже немає."
+  },
+  "test01Variant3": {
+    "ru": "**~caught: undefined~**",
+    "eng": "**~caught: undefined~**",
+    "ua": "**~caught: undefined~**"
+  },
+  "test01Variant3Answer": {
+    "ru": "Нет, блок **~catch~** здесь вообще не выполнится.",
+    "eng": "No, the **~catch~** block will not run at all here.",
+    "ua": "Ні, блок **~catch~** тут узагалі не виконається."
+  },
+  "test01Variant4": {
+    "ru": "Ничего: ошибка внутри таймера пропадёт молча",
+    "eng": "Nothing: an error inside a timer disappears quietly",
+    "ua": "Нічого: помилка всередині таймера зникне мовчки"
+  },
+  "test01Variant4Answer": {
+    "ru": "Нет, она всплывёт как необработанная — поймать её этим **~catch~** нельзя, но и молча она не пропадёт.",
+    "eng": "No, it surfaces as an uncaught error — that **~catch~** cannot take it, but it does not vanish quietly either.",
+    "ua": "Ні, вона спливе як неперехоплена — упіймати її цим **~catch~** не можна, але й мовчки вона не зникне."
+  },
+  "test02Question": {
+    "ru": "Что напечатает этот код?",
+    "eng": "What will this code print?",
+    "ua": "Що надрукує цей код?"
+  },
+  "test02Variant1": {
+    "ru": "**~string undefined~**",
+    "eng": "**~string undefined~**",
+    "ua": "**~string undefined~**"
+  },
+  "test02Variant1Answer": {
+    "ru": "Да. Оператор **~throw~** принимает любое значение; брошена строка, а свойства **~message~** у строки нет.",
+    "eng": "Yes. The **~throw~** statement takes any value; a string was thrown, and a string has no **~message~** property.",
+    "ua": "Так. Оператор **~throw~** приймає будь-яке значення; кинуто рядок, а властивості **~message~** у рядка немає."
+  },
+  "test02Variant2": {
+    "ru": "**~object oops~**",
+    "eng": "**~object oops~**",
+    "ua": "**~object oops~**"
+  },
+  "test02Variant2Answer": {
+    "ru": "Нет: брошенная строка не превращается в объект ошибки.",
+    "eng": "No: a thrown string does not turn into an error object.",
+    "ua": "Ні: кинутий рядок не перетворюється на об’єкт помилки."
+  },
+  "test02Variant3": {
+    "ru": "**~string oops~**",
+    "eng": "**~string oops~**",
+    "ua": "**~string oops~**"
+  },
+  "test02Variant3Answer": {
+    "ru": "Нет: **~err.message~** — свойство объекта ошибки, а здесь в **~err~** лежит сама строка.",
+    "eng": "No: **~err.message~** is a property of an error object, and here **~err~** holds the string itself.",
+    "ua": "Ні: **~err.message~** — властивість об’єкта помилки, а тут у **~err~** лежить сам рядок."
+  },
+  "test02Variant4": {
+    "ru": "**~TypeError~**: бросать можно только ошибки",
+    "eng": "**~TypeError~**: only errors may be thrown",
+    "ua": "**~TypeError~**: кидати можна лише помилки"
+  },
+  "test02Variant4Answer": {
+    "ru": "Нет, бросать можно что угодно — другое дело, что ловить такое неудобно.",
+    "eng": "No, anything at all may be thrown — though catching such a thing is awkward.",
+    "ua": "Ні, кидати можна будь-що — інша річ, що ловити таке незручно."
+  },
+  "test03Question": {
+    "ru": "В каком порядке выйдут строки?",
+    "eng": "In what order will the lines come out?",
+    "ua": "У якому порядку вийдуть рядки?"
+  },
+  "test03Variant1": {
+    "ru": "сначала **~cleanup~**, потом **~value~**",
+    "eng": "**~cleanup~** first, then **~value~**",
+    "ua": "спершу **~cleanup~**, потім **~value~**"
+  },
+  "test03Variant1Answer": {
+    "ru": "Да. Значение уже вычислено и ждёт, но **~finally~** выполняется прежде, чем функция его отдаст.",
+    "eng": "Yes. The value is already worked out and waiting, but **~finally~** runs before the function hands it over.",
+    "ua": "Так. Значення вже обчислене й чекає, але **~finally~** виконується перш ніж функція його віддасть."
+  },
+  "test03Variant2": {
+    "ru": "сначала **~value~**, потом **~cleanup~**",
+    "eng": "**~value~** first, then **~cleanup~**",
+    "ua": "спершу **~value~**, потім **~cleanup~**"
+  },
+  "test03Variant2Answer": {
+    "ru": "Нет: **~return~** не выпускает управление из функции мимо **~finally~**.",
+    "eng": "No: a **~return~** does not let control leave the function past **~finally~**.",
+    "ua": "Ні: **~return~** не випускає управління з функції повз **~finally~**."
+  },
+  "test03Variant3": {
+    "ru": "только **~value~**",
+    "eng": "**~value~** only",
+    "ua": "лише **~value~**"
+  },
+  "test03Variant3Answer": {
+    "ru": "Нет: **~finally~** выполняется всегда, в том числе после **~return~**.",
+    "eng": "No: **~finally~** always runs, after a **~return~** as well.",
+    "ua": "Ні: **~finally~** виконується завжди, зокрема й після **~return~**."
+  },
+  "test03Variant4": {
+    "ru": "только **~cleanup~**",
+    "eng": "**~cleanup~** only",
+    "ua": "лише **~cleanup~**"
+  },
+  "test03Variant4Answer": {
+    "ru": "Нет: возвращённое значение никуда не делось, его печатает внешний **~console.log~**.",
+    "eng": "No: the returned value is still there, and the outer **~console.log~** prints it.",
+    "ua": "Ні: повернене значення нікуди не зникло, його друкує зовнішній **~console.log~**."
+  },
+  "test04Question": {
+    "ru": "Что будет в заголовке красной строки?",
+    "eng": "What will the heading of the red line say?",
+    "ua": "Що буде в заголовку червоного рядка?"
+  },
+  "test04Variant1": {
+    "ru": "**~ValidationError: Arguments not valid~**",
+    "eng": "**~ValidationError: Arguments not valid~**",
+    "ua": "**~ValidationError: Arguments not valid~**"
+  },
+  "test04Variant1Answer": {
+    "ru": "Да. Заголовок складывается из **~name~** и **~message~**, а имя мы переписали до того, как к ошибке обратились.",
+    "eng": "Yes. The heading is made of **~name~** and **~message~**, and the name was rewritten before anything looked at the error.",
+    "ua": "Так. Заголовок складається з **~name~** і **~message~**, а ім’я ми переписали до того, як до помилки звернулися."
+  },
+  "test04Variant2": {
+    "ru": "**~Error: Arguments not valid~**",
+    "eng": "**~Error: Arguments not valid~**",
+    "ua": "**~Error: Arguments not valid~**"
+  },
+  "test04Variant2Answer": {
+    "ru": "Нет: имя — обычное свойство, и его новое значение попадёт в заголовок.",
+    "eng": "No: the name is an ordinary property, and its new value is what the heading shows.",
+    "ua": "Ні: ім’я — звичайна властивість, і його нове значення потрапить у заголовок."
+  },
+  "test04Variant3": {
+    "ru": "**~ValidationError~** без сообщения",
+    "eng": "**~ValidationError~** with no message",
+    "ua": "**~ValidationError~** без повідомлення"
+  },
+  "test04Variant3Answer": {
+    "ru": "Нет: сообщение осталось тем, что передали конструктору.",
+    "eng": "No: the message is still the one given to the constructor.",
+    "ua": "Ні: повідомлення лишилося тим, що передали конструктору."
+  },
+  "test04Variant4": {
+    "ru": "**~Error: ValidationError~**",
+    "eng": "**~Error: ValidationError~**",
+    "ua": "**~Error: ValidationError~**"
+  },
+  "test04Variant4Answer": {
+    "ru": "Нет, местами они не меняются: сначала имя, потом сообщение.",
+    "eng": "No, they do not swap places: the name comes first, the message second.",
+    "ua": "Ні, місцями вони не міняються: спершу ім’я, потім повідомлення."
+  },
+  "test05Question": {
+    "ru": "Что напечатает этот код?",
+    "eng": "What will this code print?",
+    "ua": "Що надрукує цей код?"
+  },
+  "test05Variant1": {
+    "ru": "**~AggregateError | All promises were rejected | 2~**",
+    "eng": "**~AggregateError | All promises were rejected | 2~**",
+    "ua": "**~AggregateError | All promises were rejected | 2~**"
+  },
+  "test05Variant1Answer": {
+    "ru": "Да. **~Promise.any~** ждёт первый успешный промис, и, если не удался ни один, отвергает результат одной **~AggregateError~** — со своим сообщением и обоими отказами в **~errors~**.",
+    "eng": "Yes. **~Promise.any~** waits for the first promise to succeed, and if none does it rejects with a single **~AggregateError~** — with a message of its own and both refusals in **~errors~**.",
+    "ua": "Так. **~Promise.any~** чекає на перший успішний проміс, і якщо не вдався жоден, відхиляє результат однією **~AggregateError~** — зі своїм повідомленням і обома відмовами в **~errors~**."
+  },
+  "test05Variant2": {
+    "ru": "**~Error | A | 2~**",
+    "eng": "**~Error | A | 2~**",
+    "ua": "**~Error | A | 2~**"
+  },
+  "test05Variant2Answer": {
+    "ru": "Нет: в **~catch~** приходит не первая из ошибок, а одна общая, которая держит их все.",
+    "eng": "No: what reaches **~catch~** is not the first of the errors but one common error holding them all.",
+    "ua": "Ні: у **~catch~** приходить не перша з помилок, а одна спільна, яка тримає їх усі."
+  },
+  "test05Variant3": {
+    "ru": "**~AggregateError | A | 2~**",
+    "eng": "**~AggregateError | A | 2~**",
+    "ua": "**~AggregateError | A | 2~**"
+  },
+  "test05Variant3Answer": {
+    "ru": "Нет: сообщение у неё своё — **~All promises were rejected~**, а сообщения отказов лежат внутри, в **~errors~**.",
+    "eng": "No: its message is its own — **~All promises were rejected~** — while the refusals’ messages lie inside, in **~errors~**.",
+    "ua": "Ні: повідомлення в неї власне — **~All promises were rejected~**, а повідомлення відмов лежать усередині, в **~errors~**."
+  },
+  "test05Variant4": {
+    "ru": "Ничего: **~Promise.any~** не отвергает результат",
+    "eng": "Nothing: **~Promise.any~** does not reject",
+    "ua": "Нічого: **~Promise.any~** не відхиляє результат"
+  },
+  "test05Variant4Answer": {
+    "ru": "Отвергает — ровно в одном случае: когда не удался ни один из промисов.",
+    "eng": "It does reject, in exactly one case: when not one of the promises succeeded.",
+    "ua": "Відхиляє — рівно в одному випадку: коли не вдався жоден із промісів."
+  },
+  "test06Question": {
+    "ru": "Что покажет консоль?",
+    "eng": "What will the console show?",
+    "ua": "Що покаже консоль?"
+  },
+  "test06Variant1": {
+    "ru": "**~Uncaught AggregateError~** — и больше ничего",
+    "eng": "**~Uncaught AggregateError~** — and nothing else",
+    "ua": "**~Uncaught AggregateError~** — і більше нічого"
+  },
+  "test06Variant1Answer": {
+    "ru": "Да. В заголовке консоль показывает **~name~** и **~message~**; сообщения у этой ошибки нет, потому что конструктору его не передали, а **~stack~** — не стандарт, и записанное в него консоль не печатает.",
+    "eng": "Yes. In the heading the console shows **~name~** and **~message~**; this error has no message, because none was given to the constructor, and **~stack~** is not standard — what is written into it is not what the console prints.",
+    "ua": "Так. У заголовку консоль показує **~name~** і **~message~**; повідомлення в цієї помилки немає, бо конструктору його не передали, а **~stack~** — не стандарт, і записане в нього консоль не друкує."
+  },
+  "test06Variant2": {
+    "ru": "текст из **~stack~**: **~Parse errors: element 1 is not an integer~**",
+    "eng": "the text from **~stack~**: **~Parse errors: element 1 is not an integer~**",
+    "ua": "текст зі **~stack~**: **~Parse errors: element 1 is not an integer~**"
+  },
+  "test06Variant2Answer": {
+    "ru": "Так было в старых версиях Chrome, и на этом построена не одна картинка в интернете — в том числе та, что до недавнего времени стояла в этом уроке. Сегодня консоль печатает не **~stack~**.",
+    "eng": "That is how older versions of Chrome behaved, and more than one screenshot on the internet rests on it — including the one that stood in this lesson until recently. Today the console does not print **~stack~**.",
+    "ua": "Так було в старих версіях Chrome, і на цьому побудована не одна картинка в інтернеті — зокрема й та, що донедавна стояла в цьому уроці. Сьогодні консоль друкує не **~stack~**."
+  },
+  "test06Variant3": {
+    "ru": "**~Uncaught AggregateError: bad~**",
+    "eng": "**~Uncaught AggregateError: bad~**",
+    "ua": "**~Uncaught AggregateError: bad~**"
+  },
+  "test06Variant3Answer": {
+    "ru": "Нет: **~bad~** — сообщение вложенной ошибки, а у самой **~AggregateError~** сообщения нет.",
+    "eng": "No: **~bad~** is the message of the error inside, while the **~AggregateError~** itself has none.",
+    "ua": "Ні: **~bad~** — повідомлення вкладеної помилки, а в самої **~AggregateError~** повідомлення немає."
+  },
+  "test06Variant4": {
+    "ru": "**~Uncaught TypeError: bad~**",
+    "eng": "**~Uncaught TypeError: bad~**",
+    "ua": "**~Uncaught TypeError: bad~**"
+  },
+  "test06Variant4Answer": {
+    "ru": "Нет: брошена **~AggregateError~**, а вложенные ошибки лежат в **~errors~** и сами по себе не всплывают.",
+    "eng": "No: what was thrown is the **~AggregateError~**; the errors inside lie in **~errors~** and do not surface on their own.",
+    "ua": "Ні: кинуто **~AggregateError~**, а вкладені помилки лежать у **~errors~** і самі по собі не спливають."
+  },
+  "quest01Task": {
+    "ru": "Проверка останавливается на первой же негодной записи, и о второй никто не узнает. Почини так, чтобы она прошла список до конца, собрала все негодные записи и бросила одну **~AggregateError~** с общим сообщением **~The list is not all integers~**, а каждая негодная запись осталась внутри отдельным **~TypeError~** со своим сообщением.",
+    "eng": "The check stops at the first bad entry, and nobody ever hears about the second. Repair it so that it goes through the whole list, collects every bad entry and throws one **~AggregateError~** with the common message **~The list is not all integers~**, each bad entry staying inside as a **~TypeError~** of its own with its own message.",
+    "ua": "Перевірка зупиняється на першому-ліпшому негодящому записі, і про другий ніхто не дізнається. Почини так, щоб вона пройшла список до кінця, зібрала всі негодящі записи й кинула одну **~AggregateError~** зі спільним повідомленням **~The list is not all integers~**, а кожен негодящий запис лишився всередині окремим **~TypeError~** зі своїм повідомленням."
+  },
+  "quest01Check1": {
+    "ru": "брошена одна ошибка, и это AggregateError",
+    "eng": "one error is thrown, and it is an AggregateError",
+    "ua": "кинуто одну помилку, і це AggregateError"
+  },
+  "quest01Check2": {
+    "ru": "в ней собраны обе негодные записи, а не только первая",
+    "eng": "it holds both bad entries, not just the first",
+    "ua": "у ній зібрані обидва негодящі записи, а не тільки перший"
+  },
+  "quest01Check3": {
+    "ru": "у неё своё общее сообщение",
+    "eng": "it has a common message of its own",
+    "ua": "у неї власне спільне повідомлення"
+  },
+  "quest01Check4": {
+    "ru": "внутри остались настоящие TypeError, а не строки",
+    "eng": "inside are real TypeErrors, not strings",
+    "ua": "усередині лишилися справжні TypeError, а не рядки"
+  },
+  "quest02Task": {
+    "ru": "Блок **~finally~** здесь прибирает за собой — и заодно глотает всё подряд: обычный вызов возвращает не прочитанное, а ошибка не доходит до того, кто её ждёт. Почини так, чтобы уборка осталась, значение возвращалось, а ошибка выходила наружу.",
+    "eng": "The **~finally~** block here tidies up after itself — and swallows everything on the way: an ordinary call returns something other than what was read, and the error never reaches the one waiting for it. Repair it so that the tidying stays, the value comes back, and the error gets out.",
+    "ua": "Блок **~finally~** тут прибирає за собою — і заразом ковтає все підряд: звичайний виклик повертає не прочитане, а помилка не доходить до того, хто на неї чекає. Почини так, щоб прибирання лишилося, значення поверталося, а помилка виходила назовні."
+  },
+  "quest02Check1": {
+    "ru": "обычный вызов возвращает прочитанное",
+    "eng": "an ordinary call returns what was read",
+    "ua": "звичайний виклик повертає прочитане"
+  },
+  "quest02Check2": {
+    "ru": "ошибка больше не проглочена: её ловит тот, кто вызывал",
+    "eng": "the error is no longer swallowed: the caller catches it",
+    "ua": "помилка більше не проковтнута: її ловить той, хто викликав"
+  },
+  "quest02Check3": {
+    "ru": "уборка всё равно сделана",
+    "eng": "the tidying up is done all the same",
+    "ua": "прибирання все одно зроблено"
   }
 }
