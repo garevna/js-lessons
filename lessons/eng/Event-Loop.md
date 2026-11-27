@@ -774,12 +774,15 @@ load('foot', 30, (part) => parts.push(part))
 
 setTimeout(() => console.log(parts.join(' ')), 20)
 ???
-? 3 | exactly one line is printed
+? 2 | exactly one line is printed
 OUTPUT.length === 1
 
-? 6 | its parts stand in the order they were asked for: head body foot
+? 5 | its parts stand in the order they were asked for: head body foot
 OUTPUT[0] === 'head body foot'
 
-? 3 | readiness is not guessed by the clock: the code has no timer of its own
+? 3 | the parts really do arrive: all three answers came out of timers
+TASKS >= 3
+
+? 2 | readiness is not guessed by the clock: the code has no timer of its own
 (SOURCE.match(/setTimeout|setInterval/g) || []).length <= 1
 ♠♠♠♠
