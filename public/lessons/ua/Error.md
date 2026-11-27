@@ -500,18 +500,17 @@ const errors = numbers
   .map((item) => new TypeError(`${JSON.stringify(item)} is not an integer`))
 
 const trouble = new AggregateError(errors, 'The list is not all integers')
-
-console.log(trouble.name)
-console.log(trouble.message)
-console.log(trouble.errors.length)
-console.log(trouble.errors.map((err) => err.message))
 ~~~
 
-~~~console
-AggregateError
-The list is not all integers
-2
-► (2) ['"hero" is not an integer', '34.5 is not an integer']
+~~~demo
+> trouble.name
+< 'AggregateError'
+> trouble.message
+< 'The list is not all integers'
+> trouble.errors.length
+< 2
+> trouble.errors.map((err) => err.message)
+< ► (2) ['"hero" is not an integer', '34.5 is not an integer']
 ~~~
 
 ___
@@ -572,7 +571,7 @@ Promise.any([load('mirror A', 10, false), load('mirror B', 20, false)])
 ! mirror B is down
 ~~~
 
-![ico-20 warn] Властивість ~stack~ не стандартизована, і консоль друкує не її: у заголовку вона показує ~name~ і ~message~. Тому помилка, створена без повідомлення, виглядає в консолі просто як **~AggregateError~** — хоч скільки тексту було б записано в ~stack~.
+^^![ico-20 warn] Властивість ~stack~ не стандартизована, і консоль друкує не її: у заголовку вона показує ~name~ і ~message~. Тому помилка, створена без повідомлення, виглядає в консолі просто як **~AggregateError~** — хоч скільки тексту було б записано в ~stack~.^^
 
 ___
 
@@ -884,7 +883,7 @@ ___
 
 ## ![ico-25 hw] Квест⟪Quest⟫
 
-♠♠♠♠ Перевірка зупиняється на першому-ліпшому негодящому записі, і про другий ніхто не дізнається. Почини так, щоб вона пройшла список до кінця, зібрала всі негодящі записи й кинула одну **~AggregateError~** зі спільним повідомленням **~The list is not all integers~**, а кожен негодящий запис лишився всередині окремим **~TypeError~** зі своїм повідомленням.
+♠♠♠♠ Перевірка зупиняється на першому-ліпшому негодящому записі, і про другий ніхто не дізнається. Почини так, щоб вона пройшла список до кінця, зібрала всі негодящі записи й кинула одну **~AggregateError~** зі спільним повідомленням — власним, а не взятим в однієї з вкладених помилок (наприклад, **~The list is not all integers~**), а кожен негодящий запис лишився всередині окремим **~TypeError~** зі своїм повідомленням.
 const numbers = [5, 'hero', 9, 34.5, 11]
 
 const check = (list) => {
@@ -910,8 +909,8 @@ OUTPUT[0] === 'AggregateError'
 ? 4 | у ній зібрані обидва негодящі записи, а не тільки перший
 OUTPUT[2] === '2'
 
-? 3 | у неї власне спільне повідомлення
-OUTPUT[1] === 'The list is not all integers'
+? 3 | у неї власне спільне повідомлення, а не повідомлення однієї з вкладених помилок
+Boolean(OUTPUT[1]) && !/is not an integer$/.test(OUTPUT[1])
 
 ? 2 | усередині лишилися справжні TypeError, а не рядки
 OUTPUT[3] === 'TypeError TypeError'

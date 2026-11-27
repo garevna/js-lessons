@@ -190,9 +190,9 @@
     "ua": "![ico-20 warn] Властивість ~stack~ не стандартизована, і консоль друкує не її: у заголовку вона показує ~name~ і ~message~. Тому помилка, створена без повідомлення, виглядає в консолі просто як **~AggregateError~** — хоч скільки тексту було б записано в ~stack~."
   },
   "quest01Task": {
-    "ru": "Проверка останавливается на первой же негодной записи, и о второй никто не узнает. Почини так, чтобы она прошла список до конца, собрала все негодные записи и бросила одну **~AggregateError~** с общим сообщением **~The list is not all integers~**, а каждая негодная запись осталась внутри отдельным **~TypeError~** со своим сообщением.",
-    "eng": "The check stops at the first bad entry, and nobody ever hears about the second. Repair it so that it goes through the whole list, collects every bad entry and throws one **~AggregateError~** with the common message **~The list is not all integers~**, each bad entry staying inside as a **~TypeError~** of its own with its own message.",
-    "ua": "Перевірка зупиняється на першому-ліпшому негодящому записі, і про другий ніхто не дізнається. Почини так, щоб вона пройшла список до кінця, зібрала всі негодящі записи й кинула одну **~AggregateError~** зі спільним повідомленням **~The list is not all integers~**, а кожен негодящий запис лишився всередині окремим **~TypeError~** зі своїм повідомленням."
+    "ru": "Проверка останавливается на первой же негодной записи, и о второй никто не узнает. Почини так, чтобы она прошла список до конца, собрала все негодные записи и бросила одну **~AggregateError~** с общим сообщением — своим, а не взятым у одной из вложенных ошибок (например, **~The list is not all integers~**), а каждая негодная запись осталась внутри отдельным **~TypeError~** со своим сообщением.",
+    "eng": "The check stops at the first bad entry, and nobody ever hears about the second. Repair it so that it goes through the whole list, collects every bad entry and throws one **~AggregateError~** with a common message — its own, not one borrowed from an error inside (say, **~The list is not all integers~**) — each bad entry staying inside as a **~TypeError~** of its own with its own message.",
+    "ua": "Перевірка зупиняється на першому-ліпшому негодящому записі, і про другий ніхто не дізнається. Почини так, щоб вона пройшла список до кінця, зібрала всі негодящі записи й кинула одну **~AggregateError~** зі спільним повідомленням — власним, а не взятим в однієї з вкладених помилок (наприклад, **~The list is not all integers~**), а кожен негодящий запис лишився всередині окремим **~TypeError~** зі своїм повідомленням."
   },
   "quest01Check1": {
     "ru": "брошена одна ошибка, и это AggregateError",
@@ -205,9 +205,9 @@
     "ua": "у ній зібрані обидва негодящі записи, а не тільки перший"
   },
   "quest01Check3": {
-    "ru": "у неё своё общее сообщение",
-    "eng": "it has a common message of its own",
-    "ua": "у неї власне спільне повідомлення"
+    "ru": "у неё своё общее сообщение, а не сообщение одной из вложенных ошибок",
+    "eng": "it has a common message of its own, not the message of one of the errors inside",
+    "ua": "у неї власне спільне повідомлення, а не повідомлення однієї з вкладених помилок"
   },
   "quest01Check4": {
     "ru": "внутри остались настоящие TypeError, а не строки",

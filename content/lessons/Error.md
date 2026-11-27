@@ -500,18 +500,17 @@ const errors = numbers
   .map((item) => new TypeError(`${JSON.stringify(item)} is not an integer`))
 
 const trouble = new AggregateError(errors, 'The list is not all integers')
-
-console.log(trouble.name)
-console.log(trouble.message)
-console.log(trouble.errors.length)
-console.log(trouble.errors.map((err) => err.message))
 ~~~
 
-~~~console
-AggregateError
-The list is not all integers
-2
-► (2) ['"hero" is not an integer', '34.5 is not an integer']
+~~~demo
+> trouble.name
+< 'AggregateError'
+> trouble.message
+< 'The list is not all integers'
+> trouble.errors.length
+< 2
+> trouble.errors.map((err) => err.message)
+< ► (2) ['"hero" is not an integer', '34.5 is not an integer']
 ~~~
 
 ___
@@ -572,7 +571,7 @@ Promise.any([load('mirror A', 10, false), load('mirror B', 20, false)])
 ! mirror B is down
 ~~~
 
-{{stackNote}}
+^^{{stackNote}}^^
 
 ___
 
@@ -911,7 +910,7 @@ OUTPUT[0] === 'AggregateError'
 OUTPUT[2] === '2'
 
 ? 3 | {{quest01Check3}}
-OUTPUT[1] === 'The list is not all integers'
+Boolean(OUTPUT[1]) && !/is not an integer$/.test(OUTPUT[1])
 
 ? 2 | {{quest01Check4}}
 OUTPUT[3] === 'TypeError TypeError'
