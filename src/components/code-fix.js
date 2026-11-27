@@ -40,8 +40,10 @@ const { pageLabels, lang } = require('../configs').default
  *
  * SOURCE, the text the reader wrote, and OUTPUT, the lines the code printed,
  * in the order they were printed, with OUTPUT.sync saying how many of them
- * came out synchronously. The checks run once the output has stopped coming,
- * which is what makes an exercise about queues gradeable at all.
+ * came out synchronously. The checks run once the frame has gone quiet — out
+ * of output and out of scheduled work — which is what makes an exercise about
+ * queues gradeable at all. They can also read what the code declared, so a
+ * check can ask a counter in the exercise how many turns it got.
  */
 class CodeFix extends HTMLElement {
   constructor () {
@@ -156,6 +158,28 @@ class CodeFix extends HTMLElement {
 
     win.OUTPUT = printed
 
+    // How much the frame still has to do. The output alone does not say when
+    // the code has finished — an exercise can print nothing until its last
+    // step — so the three ways it can ask to be called again are counted, and
+    // the checks wait until nothing is owed.
+    const owed = { count: 0 }
+
+    for (const name of ['setTimeout', 'queueMicrotask', 'requestAnimationFrame']) {
+      const original = win[name]
+      if (typeof original !== 'function') continue
+
+      win[name] = (callback, ...rest) => {
+        if (typeof callback !== 'function') return original.call(win, callback, ...rest)
+
+        owed.count += 1
+
+        return original.call(win, (...args) => {
+          owed.count -= 1
+          return callback(...args)
+        }, ...rest)
+      }
+    }
+
     try {
       const script = doc.createElement('script')
       script.textContent = code
@@ -174,7 +198,9 @@ class CodeFix extends HTMLElement {
     win.SOURCE = code
 
     // A timer or a microtask chain is not finished when its script is.
-    await this.settle(printed)
+    const quiet = await this.settle(printed, owed)
+
+    if (!quiet) failure = failure || this.word('stillRunning')
 
     const results = this.checks.map((item) => {
       try {
@@ -188,22 +214,31 @@ class CodeFix extends HTMLElement {
   }
 
   /**
-   * Waits for the output to stop coming.
+   * Waits for the frame to go quiet.
    *
    * Checking the moment the script ends would grade asynchronous code on the
-   * first line it printed. So look again as long as new lines keep appearing,
-   * and give up after a second: code that prints forever must not hold the
-   * checks hostage.
+   * first line it printed. Waiting for the output to stop is not enough
+   * either: code that prints only its answer prints nothing for as long as it
+   * works. So the frame is quiet when it has nothing left scheduled and no new
+   * line has appeared since the last look — and after four seconds the checks
+   * run anyway, because code that never stops must not hold them hostage. Four
+   * because a repair that cuts a long job into very small pieces pays four
+   * milliseconds of timer clamping for each of them and is honestly slow; it
+   * should be graded on what it computed, not on how patient the component is.
+   *
+   * It answers whether the frame did go quiet, so a score taken from code that
+   * had not finished can say so instead of calling the answer wrong.
    */
-  settle (printed) {
+  settle (printed, owed) {
     const STEP = 60
-    const until = Date.now() + 1000
+    const until = Date.now() + 4000
 
     return new Promise((done) => {
       let seen = -1
 
       const look = () => {
-        if (printed.length === seen || Date.now() > until) return done()
+        if (printed.length === seen && !owed.count) return done(true)
+        if (Date.now() > until) return done(false)
         seen = printed.length
         setTimeout(look, STEP)
       }

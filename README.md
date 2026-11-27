@@ -460,15 +460,29 @@ repair was done elegantly and not only whether it was done.
 `OUTPUT` is what the code printed — an array of lines, in the order
 `console.log` printed them, with `OUTPUT.sync` saying how many of them came
 out synchronously, while the script itself was still running. The recorder is
-in place before the code runs, because afterwards is too late, and the checks
-run once the output has stopped coming: as long as new lines keep appearing the
-component waits, and after a second it stops waiting, so code that prints
-forever cannot hold the checks hostage.
+in place before the code runs, because afterwards is too late.
 
-That is what makes an exercise about queues gradeable. The quest at the end of
-the Event Loop lesson asks for five lines in a given order, and its checks read
-`OUTPUT` for the order and `OUTPUT.sync` for the two lines that are supposed
-to be printed synchronously:
+And whatever the code declared: a check runs inside the frame, so it can read a
+`const`, a `let` or a function from the exercise by name, which is how a
+counter in the code can be asked how many turns it got.
+
+#### When the checks run
+
+Once the frame has gone quiet: nothing scheduled and no new line since the last
+look. Both halves are needed — an exercise can print nothing until its very
+last step, so silence alone does not mean finished — and the component knows
+what is scheduled because it counts the calls to `setTimeout`,
+`queueMicrotask` and `requestAnimationFrame` the code makes.
+
+After four seconds the checks run anyway, so code that never stops cannot hold
+them hostage, and the report says the code was still running and the score is
+incomplete. Four seconds because a repair that cuts a long job into very small
+pieces pays four milliseconds of timer clamping for each piece and is honestly
+slow: it should be graded on what it computed, not on how patient the component
+is.
+
+That is what makes an exercise about queues gradeable. The Event Loop lesson
+ends with two of them. The first asks for five lines in a given order:
 
 ```
 ? 4 | строки идут в порядке 1 → 2 → 3 → 4 → 5
@@ -476,6 +490,19 @@ OUTPUT.map((line) => (line.match(/^\s*(\d)/) || ['', '?'])[1]).join('') === '123
 
 ? 2 | первые две строки напечатаны синхронно
 OUTPUT.sync === 2
+```
+
+The second hangs a long job on the microtask queue, where it starves a timer of
+its turns, and asks for the job to be cut into pieces instead. Its checks read
+the exercise's own variables — the sum it computed, and the number of turns the
+timer got:
+
+```
+? 3 | сумма досчитана до конца и верна
+sum === 200010000
+
+? 5 | таймер получал ход по ходу работы, а не один раз после неё
+ticks >= 5
 ```
 
 #### Where the code runs

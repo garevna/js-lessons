@@ -724,3 +724,41 @@ OUTPUT.sync === 2
 ? 4 | the order is held by the microtask queue, not by nested timers
 /queueMicrotask\s*\(|\.then\s*\(/.test(SOURCE) && (SOURCE.match(/setTimeout/g) || []).length === 1
 ♠♠♠♠
+
+♠♠♠♠ The code adds a sum up — twenty thousand steps — while a timer beside it counts how many turns it got while the work was going on. It gets one, and only once everything is over: the work hangs on the microtask queue, and the engine empties that queue in full, letting nobody in between. Repair it so that the sum is still counted to the end and still correct, but the timer gets its turns while the work goes on rather than after it. Do not cut the amount of work down, and doing it all at once in one synchronous stretch is no way out either — that stops the page for good.
+const TOTAL = 20000
+
+let left = TOTAL
+let sum = 0
+
+const work = () => {
+  sum += left
+
+  if (--left) queueMicrotask(work)
+  else console.log('sum:', sum)
+}
+
+let ticks = 0
+
+const tick = () => {
+  ticks++
+
+  if (left) setTimeout(tick, 0)
+  else console.log('the timer got its turn', ticks, 'time(s)')
+}
+
+queueMicrotask(work)
+setTimeout(tick, 0)
+???
+? 3 | the sum is counted to the end and correct
+sum === 200010000
+
+? 5 | the timer got its turns while the work went on, not once after it
+ticks >= 5
+
+? 2 | the work is not done in one synchronous stretch
+OUTPUT.sync === 0
+
+? 2 | the long job no longer hangs on the microtask queue
+!/queueMicrotask/.test(SOURCE)
+♠♠♠♠

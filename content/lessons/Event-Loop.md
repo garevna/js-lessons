@@ -724,3 +724,41 @@ OUTPUT.sync === 2
 ? 4 | {{quest01Check4}}
 /queueMicrotask\s*\(|\.then\s*\(/.test(SOURCE) && (SOURCE.match(/setTimeout/g) || []).length === 1
 ♠♠♠♠
+
+♠♠♠♠ {{quest02Task}}
+const TOTAL = 20000
+
+let left = TOTAL
+let sum = 0
+
+const work = () => {
+  sum += left
+
+  if (--left) queueMicrotask(work)
+  else console.log('sum:', sum)
+}
+
+let ticks = 0
+
+const tick = () => {
+  ticks++
+
+  if (left) setTimeout(tick, 0)
+  else console.log('the timer got its turn', ticks, 'time(s)')
+}
+
+queueMicrotask(work)
+setTimeout(tick, 0)
+???
+? 3 | {{quest02Check1}}
+sum === 200010000
+
+? 5 | {{quest02Check2}}
+ticks >= 5
+
+? 2 | {{quest02Check3}}
+OUTPUT.sync === 0
+
+? 2 | {{quest02Check4}}
+!/queueMicrotask/.test(SOURCE)
+♠♠♠♠

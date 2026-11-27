@@ -1118,5 +1118,30 @@
     "ru": "порядок держит очередь микротасков, а не вложенные таймеры",
     "eng": "the order is held by the microtask queue, not by nested timers",
     "ua": "порядок тримає черга мікротасків, а не вкладені таймери"
+  },
+  "quest02Task": {
+    "ru": "Код считает сумму — двадцать тысяч шагов, — а рядом таймер отмечает, сколько раз он получил ход, пока работа шла. Получает он его один раз, и то после всего: работа висит на очереди микротасков, а её движок опустошает целиком, никого не пуская между. Почини так, чтобы сумма досчиталась до конца и осталась верной, но таймер получал ход по ходу работы, а не после неё. Объём работы не урезать, и считать всё сразу, одним синхронным куском, тоже не выход — так страница встанет насовсем.",
+    "eng": "The code adds a sum up — twenty thousand steps — while a timer beside it counts how many turns it got while the work was going on. It gets one, and only once everything is over: the work hangs on the microtask queue, and the engine empties that queue in full, letting nobody in between. Repair it so that the sum is still counted to the end and still correct, but the timer gets its turns while the work goes on rather than after it. Do not cut the amount of work down, and doing it all at once in one synchronous stretch is no way out either — that stops the page for good.",
+    "ua": "Код рахує суму — двадцять тисяч кроків, — а поряд таймер відзначає, скільки разів він отримав хід, поки робота тривала. Отримує він його один раз, і то після всього: робота висить на черзі мікротасків, а її рушій спорожнює цілком, не пускаючи нікого між. Почини так, щоб сума дорахувалася до кінця й залишилася правильною, але таймер отримував хід упродовж роботи, а не після неї. Обсяг роботи не зрізати, і порахувати все відразу, одним синхронним куском, теж не вихід — так сторінка стане назовсім."
+  },
+  "quest02Check1": {
+    "ru": "сумма досчитана до конца и верна",
+    "eng": "the sum is counted to the end and correct",
+    "ua": "сума дорахована до кінця й правильна"
+  },
+  "quest02Check2": {
+    "ru": "таймер получал ход по ходу работы, а не один раз после неё",
+    "eng": "the timer got its turns while the work went on, not once after it",
+    "ua": "таймер отримував хід упродовж роботи, а не один раз після неї"
+  },
+  "quest02Check3": {
+    "ru": "работа не сделана одним синхронным куском",
+    "eng": "the work is not done in one synchronous stretch",
+    "ua": "робота не зроблена одним синхронним куском"
+  },
+  "quest02Check4": {
+    "ru": "длинная работа больше не висит на очереди микротасков",
+    "eng": "the long job no longer hangs on the microtask queue",
+    "ua": "довга робота більше не висить на черзі мікротасків"
   }
 }

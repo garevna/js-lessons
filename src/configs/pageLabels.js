@@ -50,6 +50,11 @@ export const pageLabels = {
     eng: 'Check',
     ua: 'Перевірити'
   },
+  stillRunning: {
+    ru: 'Код всё ещё работал, когда проверки пошли: счёт неполный.',
+    eng: 'The code was still running when the checks ran: the score is incomplete.',
+    ua: 'Код усе ще працював, коли пішли перевірки: рахунок неповний.'
+  },
   restoreCode: {
     ru: 'Исходный код',
     eng: 'Reset code',
