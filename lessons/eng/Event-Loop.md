@@ -762,3 +762,24 @@ OUTPUT.sync === 0
 ? 2 | the long job no longer hangs on the microtask queue
 !/queueMicrotask/.test(SOURCE)
 ♠♠♠♠
+
+♠♠♠♠ A page is assembled out of three parts, and each takes its own time to arrive. The code asks for them in order — head, body, foot — and prints whatever has turned up by the twentieth millisecond, in the order it turned up. Repair it so that one line is printed and it reads **~head body foot~**: the order they were asked for, not the order they arrived in. And the moment everything has arrived may not be guessed by the clock: the repaired code is to have no timer of its own and must learn it from the answers themselves.
+const load = (part, ms, done) => setTimeout(() => done(part), ms)
+
+const parts = []
+
+load('head', 60, (part) => parts.push(part))
+load('body', 10, (part) => parts.push(part))
+load('foot', 30, (part) => parts.push(part))
+
+setTimeout(() => console.log(parts.join(' ')), 20)
+???
+? 3 | exactly one line is printed
+OUTPUT.length === 1
+
+? 6 | its parts stand in the order they were asked for: head body foot
+OUTPUT[0] === 'head body foot'
+
+? 3 | readiness is not guessed by the clock: the code has no timer of its own
+(SOURCE.match(/setTimeout|setInterval/g) || []).length <= 1
+♠♠♠♠
