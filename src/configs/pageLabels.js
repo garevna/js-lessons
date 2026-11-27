@@ -71,9 +71,9 @@ export const pageLabels = {
     ua: 'після першого завдання'
   },
   stillRunning: {
-    ru: 'Код всё ещё работал, когда проверки пошли: счёт неполный.',
-    eng: 'The code was still running when the checks ran: the score is incomplete.',
-    ua: 'Код усе ще працював, коли пішли перевірки: рахунок неповний.'
+    ru: 'Код не закончил за четыре секунды, и проверки пошли по недоделанной работе: счёт неполный.',
+    eng: 'The code did not finish within four seconds, and the checks ran on unfinished work: the score is incomplete.',
+    ua: 'Код не закінчив за чотири секунди, і перевірки пішли по недоробленій роботі: рахунок неповний.'
   },
   restoreCode: {
     ru: 'Исходный код',

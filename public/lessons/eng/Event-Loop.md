@@ -725,7 +725,7 @@ OUTPUT.sync === 2
 OUTPUT.micro === 2
 ♠♠♠♠
 
-♠♠♠♠ The code adds a sum up — twenty thousand steps — while a timer beside it counts how many turns it got while the work was going on. It gets one, and only once everything is over: the work hangs on the microtask queue, and the engine empties that queue in full, letting nobody in between. Repair it so that the sum is still counted to the end and still correct, but the timer gets its turns while the work goes on rather than after it. Do not cut the amount of work down, and doing it all at once in one synchronous stretch is no way out either — that stops the page for good.
+♠♠♠♠ The code adds a sum up — twenty thousand steps — while a timer beside it counts how many turns it got while the work was going on. It gets one, and only once everything is over: the work hangs on the microtask queue, and the engine empties that queue in full, letting nobody in between. Repair it so that the sum is still counted to the end and still correct, but the timer gets its turns while the work goes on rather than after it. Do not cut the amount of work down, and doing it all at once in one synchronous stretch is no way out either — that stops the page for good. And the pieces have to be pieces: one step per task is far too fine. Nested timers have a four millisecond floor, so twenty thousand tasks stretch out into a minute and a half, and the checks do not wait that long.
 const TOTAL = 20000
 
 let left = TOTAL
