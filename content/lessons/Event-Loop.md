@@ -688,3 +688,39 @@ console.log(4)
 = {{test06Variant4Answer}}
 
 ♣♣♣♣
+
+___
+
+## ![ico-25 hw] {{common.quest}}
+
+♠♠♠♠ {{quest01Task}}
+console.log('1. script start')
+
+setTimeout(() => {
+  console.log('3. first microtask done')
+
+  setTimeout(() => {
+    console.log('4. second microtask, queued by the first')
+  }, 0)
+}, 0)
+
+setTimeout(() => {
+  console.log('5. macrotask, UI rendering')
+}, 0)
+
+Promise.resolve().then(() => {
+  console.log('2. synchronous finish')
+})
+???
+? 2 | {{quest01Check1}}
+OUTPUT.length === 5
+
+? 4 | {{quest01Check2}}
+OUTPUT.map((line) => (line.match(/^\s*(\d)/) || ['', '?'])[1]).join('') === '12345'
+
+? 2 | {{quest01Check3}}
+OUTPUT.sync === 2
+
+? 4 | {{quest01Check4}}
+/queueMicrotask\s*\(|\.then\s*\(/.test(SOURCE) && (SOURCE.match(/setTimeout/g) || []).length === 1
+♠♠♠♠

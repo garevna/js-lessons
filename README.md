@@ -452,6 +452,32 @@ being tested — followed by the JavaScript that decides it. The last line of
 that JavaScript is the verdict: true if the check passed. Any lines before it
 are there to make something happen first, like clicking the button.
 
+#### What a check is handed
+
+`SOURCE` is the text the reader wrote, which is how a check can ask whether a
+repair was done elegantly and not only whether it was done.
+
+`OUTPUT` is what the code printed — an array of lines, in the order
+`console.log` printed them, with `OUTPUT.sync` saying how many of them came
+out synchronously, while the script itself was still running. The recorder is
+in place before the code runs, because afterwards is too late, and the checks
+run once the output has stopped coming: as long as new lines keep appearing the
+component waits, and after a second it stops waiting, so code that prints
+forever cannot hold the checks hostage.
+
+That is what makes an exercise about queues gradeable. The quest at the end of
+the Event Loop lesson asks for five lines in a given order, and its checks read
+`OUTPUT` for the order and `OUTPUT.sync` for the two lines that are supposed
+to be printed synchronously:
+
+```
+? 4 | строки идут в порядке 1 → 2 → 3 → 4 → 5
+OUTPUT.map((line) => (line.match(/^\s*(\d)/) || ['', '?'])[1]).join('') === '12345'
+
+? 2 | первые две строки напечатаны синхронно
+OUTPUT.sync === 2
+```
+
 #### Where the code runs
 
 In an iframe of its own. `{{{…}}}` runs a demo with `eval` in the lesson's own

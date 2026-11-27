@@ -31,7 +31,9 @@
  * The checks run inside the frame the code ran in, so they can see what it
  * declared and the document it built. They are also handed SOURCE, the text
  * the reader wrote, which is how a check can ask whether a repair was done
- * elegantly rather than merely done.
+ * elegantly rather than merely done, and OUTPUT, the lines the code printed,
+ * in order, with OUTPUT.sync saying how many of them were printed
+ * synchronously.
  *
  * Why the code is not compared with a correct version: see code-fix.js.
  */

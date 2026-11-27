@@ -35,6 +35,13 @@ const { pageLabels, lang } = require('../configs').default
  * class field earns its points where a bind does not. The reader is told the
  * score, not a verdict, because that is the shape of the truth here — the code
  * works, and it could have been written better.
+ *
+ * WHAT A CHECK IS HANDED
+ *
+ * SOURCE, the text the reader wrote, and OUTPUT, the lines the code printed,
+ * in the order they were printed, with OUTPUT.sync saying how many of them
+ * came out synchronously. The checks run once the output has stopped coming,
+ * which is what makes an exercise about queues gradeable at all.
  */
 class CodeFix extends HTMLElement {
   constructor () {
@@ -135,6 +142,20 @@ class CodeFix extends HTMLElement {
     let failure = null
     win.addEventListener('error', (event) => { failure = failure || String(event.message) })
 
+    // What the code printed, in the order it printed it. It is set up before
+    // the code runs, because that is the only moment it can be: an exercise
+    // about queues is graded on the order of its output, and a recorder
+    // cannot be put in after the lines have gone by.
+    const printed = []
+    const real = win.console.log
+
+    win.console.log = (...args) => {
+      printed.push(args.map((arg) => typeof arg === 'string' ? arg : String(arg)).join(' '))
+      real.apply(win.console, args)
+    }
+
+    win.OUTPUT = printed
+
     try {
       const script = doc.createElement('script')
       script.textContent = code
@@ -143,9 +164,17 @@ class CodeFix extends HTMLElement {
       failure = String(error.message)
     }
 
+    // Everything printed up to here was printed while the script itself was
+    // still running — synchronously. Whatever arrives later came out of a
+    // queue, and a check can tell one from the other.
+    printed.sync = printed.length
+
     // The source is a value the checks can look at, so a check can ask how the
     // repair was written and not only what it does.
     win.SOURCE = code
+
+    // A timer or a microtask chain is not finished when its script is.
+    await this.settle(printed)
 
     const results = this.checks.map((item) => {
       try {
@@ -156,6 +185,31 @@ class CodeFix extends HTMLElement {
     })
 
     this.draw(results, failure)
+  }
+
+  /**
+   * Waits for the output to stop coming.
+   *
+   * Checking the moment the script ends would grade asynchronous code on the
+   * first line it printed. So look again as long as new lines keep appearing,
+   * and give up after a second: code that prints forever must not hold the
+   * checks hostage.
+   */
+  settle (printed) {
+    const STEP = 60
+    const until = Date.now() + 1000
+
+    return new Promise((done) => {
+      let seen = -1
+
+      const look = () => {
+        if (printed.length === seen || Date.now() > until) return done()
+        seen = printed.length
+        setTimeout(look, STEP)
+      }
+
+      look()
+    })
   }
 
   draw (results, failure) {
