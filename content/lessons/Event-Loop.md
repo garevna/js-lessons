@@ -754,13 +754,13 @@ setTimeout(tick, 0)
 sum === 200010000
 
 ? 5 | {{quest02Check2}}
-ticks >= 5
+TASKS >= 10
 
 ? 2 | {{quest02Check3}}
 OUTPUT.sync === 0
 
 ? 2 | {{quest02Check4}}
-!/queueMicrotask/.test(SOURCE)
+MICROTASKS <= 100
 ♠♠♠♠
 
 ♠♠♠♠ {{quest03Task}}

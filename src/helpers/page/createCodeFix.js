@@ -34,7 +34,8 @@
  * elegantly rather than merely done, and OUTPUT, the lines the code printed,
  * in order, with OUTPUT.sync saying how many of them were printed
  * synchronously and OUTPUT.micro how many came from the microtask queue,
- * before the first task after the code.
+ * before the first task after the code; and TASKS and MICROTASKS, how many of
+ * each the engine ran while the code worked.
  *
  * Why the code is not compared with a correct version: see code-fix.js.
  */

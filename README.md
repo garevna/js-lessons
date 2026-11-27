@@ -466,6 +466,15 @@ late, and so is the marker that divides the two: a timer registered before the
 code is the first task after it, so whatever was printed before it fired was
 printed either synchronously or by a microtask.
 
+`TASKS` and `MICROTASKS` are how many of each the engine actually ran while
+the code worked. They are counted in the frame, on the way through
+`setTimeout`, `requestAnimationFrame`, `queueMicrotask` and
+`Promise.prototype.then` — not by the exercise, which is the point: a counter
+living in the exercise can be driven by the exercise. A repair that calls the
+ticking function from inside its own loop makes that counter climb to twenty
+thousand while the browser never gets a single turn, and `TASKS` still says
+one.
+
 That is how "is this a microtask" becomes a question about behaviour. Asking
 the source instead — does the repair mention `queueMicrotask` or `.then` —
 is worth nothing: `new Promise(fn)` runs `fn` on the spot, and
@@ -524,8 +533,11 @@ timer got:
 ? 3 | сумма досчитана до конца и верна
 sum === 200010000
 
-? 5 | таймер получал ход по ходу работы, а не один раз после неё
-ticks >= 5
+? 5 | браузер получал ход, пока работа шла: он успел взять не одну задачу, а много
+TASKS >= 10
+
+? 2 | длинная работа больше не висит на очереди микротасков: движок их почти не выполнял
+MICROTASKS <= 100
 ```
 
 The third asks for three parts that arrive in one order to be printed in

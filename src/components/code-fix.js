@@ -43,8 +43,10 @@ const { pageLabels, lang } = require('../configs').default
  * came out synchronously and OUTPUT.micro how many followed from the microtask
  * queue, before the first task. The checks run once the frame has gone quiet —
  * out of output and out of scheduled work — which is what makes an exercise
- * about queues gradeable at all. They can also read what the code declared, so
- * a check can ask a counter in the exercise how many turns it got.
+ * about queues gradeable at all. They are also handed TASKS and MICROTASKS,
+ * how many of each the engine actually ran, and they can read what the code
+ * declared — though a counter inside the exercise is worth less than those
+ * two, because the exercise can drive it by hand.
  */
 class CodeFix extends HTMLElement {
   constructor () {
@@ -165,9 +167,35 @@ class CodeFix extends HTMLElement {
     // the checks wait until nothing is owed.
     const owed = { count: 0 }
 
+    // And how much it has done: the engine's own tally of turns taken. A
+    // counter inside the exercise can be driven by the exercise itself — work
+    // that calls the ticking function by hand makes it climb without the
+    // browser ever getting a turn — so what is graded is counted here.
+    const ran = { tasks: 0, micros: 0 }
+
+    // Taken before the wrapping, so the component's own marker below is not
+    // counted as one of the code's turns.
+    const schedule = win.setTimeout
+
+    // then puts a microtask in the queue as surely as queueMicrotask does, and
+    // a chain built on promises starves the task queue just as thoroughly, so
+    // its callbacks are counted too. An await is the one that slips past this,
+    // and the count of tasks catches that instead.
+    const realThen = win.Promise.prototype.then
+
+    win.Promise.prototype.then = function (onDone, onFail) {
+      const counted = (callback) => typeof callback === 'function'
+        ? (...args) => { ran.micros += 1; return callback(...args) }
+        : callback
+
+      return realThen.call(this, counted(onDone), counted(onFail))
+    }
+
     for (const name of ['setTimeout', 'queueMicrotask', 'requestAnimationFrame']) {
       const original = win[name]
       if (typeof original !== 'function') continue
+
+      const kind = name === 'queueMicrotask' ? 'micros' : 'tasks'
 
       win[name] = (callback, ...rest) => {
         if (typeof callback !== 'function') return original.call(win, callback, ...rest)
@@ -176,6 +204,7 @@ class CodeFix extends HTMLElement {
 
         return original.call(win, (...args) => {
           owed.count -= 1
+          ran[kind] += 1
           return callback(...args)
         }, ...rest)
       }
@@ -187,7 +216,7 @@ class CodeFix extends HTMLElement {
     // That is what turns "did this go through the microtask queue" into a
     // question about behaviour rather than about the text of the repair.
     printed.micro = 0
-    win.setTimeout(() => { printed.micro = printed.length - printed.sync }, 0)
+    schedule.call(win, () => { printed.micro = printed.length - printed.sync }, 0)
 
     try {
       const script = doc.createElement('script')
@@ -210,6 +239,10 @@ class CodeFix extends HTMLElement {
     const quiet = await this.settle(printed, owed)
 
     if (!quiet) failure = failure || this.word('stillRunning')
+
+    // Counted while the code ran, handed over now that it has stopped.
+    win.TASKS = ran.tasks
+    win.MICROTASKS = ran.micros
 
     const results = this.checks.map((item) => {
       try {

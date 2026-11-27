@@ -753,14 +753,14 @@ setTimeout(tick, 0)
 ? 3 | the sum is counted to the end and correct
 sum === 200010000
 
-? 5 | the timer got its turns while the work went on, not once after it
-ticks >= 5
+? 5 | the browser got its turns while the work went on: it took many tasks, not one
+TASKS >= 10
 
 ? 2 | the work is not done in one synchronous stretch
 OUTPUT.sync === 0
 
-? 2 | the long job no longer hangs on the microtask queue
-!/queueMicrotask/.test(SOURCE)
+? 2 | the long job no longer hangs on the microtask queue: the engine ran almost none of them
+MICROTASKS <= 100
 ♠♠♠♠
 
 ♠♠♠♠ A page is assembled out of three parts, and each takes its own time to arrive. The code asks for them in order — head, body, foot — and prints whatever has turned up by the twentieth millisecond, in the order it turned up. Repair it so that one line is printed and it reads **~head body foot~**: the order they were asked for, not the order they arrived in. And the moment everything has arrived may not be guessed by the clock: the repaired code is to have no timer of its own and must learn it from the answers themselves.
