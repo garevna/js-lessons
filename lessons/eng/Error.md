@@ -500,18 +500,17 @@ const errors = numbers
   .map((item) => new TypeError(`${JSON.stringify(item)} is not an integer`))
 
 const trouble = new AggregateError(errors, 'The list is not all integers')
-
-console.log(trouble.name)
-console.log(trouble.message)
-console.log(trouble.errors.length)
-console.log(trouble.errors.map((err) => err.message))
 ~~~
 
-~~~console
-AggregateError
-The list is not all integers
-2
-► (2) ['"hero" is not an integer', '34.5 is not an integer']
+~~~demo
+> trouble.name
+< 'AggregateError'
+> trouble.message
+< 'The list is not all integers'
+> trouble.errors.length
+< 2
+> trouble.errors.map((err) => err.message)
+< ► (2) ['"hero" is not an integer', '34.5 is not an integer']
 ~~~
 
 ___
@@ -572,7 +571,7 @@ Promise.any([load('mirror A', 10, false), load('mirror B', 20, false)])
 ! mirror B is down
 ~~~
 
-![ico-20 warn] The ~stack~ property is not standardised, and it is not what the console prints: in the heading it shows ~name~ and ~message~. So an error made without a message shows up in the console as plain **~AggregateError~**, however much text has been written into ~stack~.
+^^![ico-20 warn] The ~stack~ property is not standardised, and it is not what the console prints: in the heading it shows ~name~ and ~message~. So an error made without a message shows up in the console as plain **~AggregateError~**, however much text has been written into ~stack~.^^
 
 ___
 
@@ -884,7 +883,7 @@ ___
 
 ## ![ico-25 hw] Quest⟪Quest⟫
 
-♠♠♠♠ The check stops at the first bad entry, and nobody ever hears about the second. Repair it so that it goes through the whole list, collects every bad entry and throws one **~AggregateError~** with the common message **~The list is not all integers~**, each bad entry staying inside as a **~TypeError~** of its own with its own message.
+♠♠♠♠ The check stops at the first bad entry, and nobody ever hears about the second. Repair it so that it goes through the whole list, collects every bad entry and throws one **~AggregateError~** with a common message — its own, not one borrowed from an error inside (say, **~The list is not all integers~**) — each bad entry staying inside as a **~TypeError~** of its own with its own message.
 const numbers = [5, 'hero', 9, 34.5, 11]
 
 const check = (list) => {
@@ -910,8 +909,8 @@ OUTPUT[0] === 'AggregateError'
 ? 4 | it holds both bad entries, not just the first
 OUTPUT[2] === '2'
 
-? 3 | it has a common message of its own
-OUTPUT[1] === 'The list is not all integers'
+? 3 | it has a common message of its own, not the message of one of the errors inside
+Boolean(OUTPUT[1]) && !/is not an integer$/.test(OUTPUT[1])
 
 ? 2 | inside are real TypeErrors, not strings
 OUTPUT[3] === 'TypeError TypeError'
