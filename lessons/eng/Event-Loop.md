@@ -688,3 +688,39 @@ console.log(4)
 = That is why a function called directly returns its value to where it was called from, while a callback has nowhere to return it: whoever ordered it left the stack long ago.
 
 ♣♣♣♣
+
+___
+
+## ![ico-25 hw] Quest⟪Quest⟫
+
+♠♠♠♠ The code should print its lines in this order and no other: 1 → 2 → 3 → 4 → 5. It prints them differently, and its labels lie into the bargain: what it calls a microtask is nothing of the kind. Repair it so that step 2 runs synchronously, step 3 is a microtask that queues step 4 — a microtask too — at the end of its work, and step 5 stays a macrotask (**~setTimeout~**) that is guaranteed to fire after the third and the fourth.
+console.log('1. script start')
+
+setTimeout(() => {
+  console.log('3. first microtask done')
+
+  setTimeout(() => {
+    console.log('4. second microtask, queued by the first')
+  }, 0)
+}, 0)
+
+setTimeout(() => {
+  console.log('5. macrotask, UI rendering')
+}, 0)
+
+Promise.resolve().then(() => {
+  console.log('2. synchronous finish')
+})
+???
+? 2 | all five lines are printed
+OUTPUT.length === 5
+
+? 4 | the lines come in the order 1 → 2 → 3 → 4 → 5
+OUTPUT.map((line) => (line.match(/^\s*(\d)/) || ['', '?'])[1]).join('') === '12345'
+
+? 2 | the first two lines are printed synchronously
+OUTPUT.sync === 2
+
+? 4 | the order is held by the microtask queue, not by nested timers
+/queueMicrotask\s*\(|\.then\s*\(/.test(SOURCE) && (SOURCE.match(/setTimeout/g) || []).length === 1
+♠♠♠♠
