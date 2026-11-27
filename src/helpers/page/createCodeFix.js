@@ -33,7 +33,8 @@
  * the reader wrote, which is how a check can ask whether a repair was done
  * elegantly rather than merely done, and OUTPUT, the lines the code printed,
  * in order, with OUTPUT.sync saying how many of them were printed
- * synchronously.
+ * synchronously and OUTPUT.micro how many came from the microtask queue,
+ * before the first task after the code.
  *
  * Why the code is not compared with a correct version: see code-fix.js.
  */

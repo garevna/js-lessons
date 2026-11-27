@@ -722,7 +722,7 @@ OUTPUT.map((line) => (line.match(/^\s*(\d)/) || ['', '?'])[1]).join('') === '123
 OUTPUT.sync === 2
 
 ? 4 | {{quest01Check4}}
-/queueMicrotask\s*\(|\.then\s*\(/.test(SOURCE) && (SOURCE.match(/setTimeout/g) || []).length === 1
+OUTPUT.micro === 2
 ♠♠♠♠
 
 ♠♠♠♠ {{quest02Task}}

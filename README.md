@@ -459,8 +459,20 @@ repair was done elegantly and not only whether it was done.
 
 `OUTPUT` is what the code printed — an array of lines, in the order
 `console.log` printed them, with `OUTPUT.sync` saying how many of them came
-out synchronously, while the script itself was still running. The recorder is
-in place before the code runs, because afterwards is too late.
+out synchronously, while the script itself was still running, and
+`OUTPUT.micro` how many followed from the microtask queue, before the first
+task. The recorder is in place before the code runs, because afterwards is too
+late, and so is the marker that divides the two: a timer registered before the
+code is the first task after it, so whatever was printed before it fired was
+printed either synchronously or by a microtask.
+
+That is how "is this a microtask" becomes a question about behaviour. Asking
+the source instead — does the repair mention `queueMicrotask` or `.then` —
+is worth nothing: `new Promise(fn)` runs `fn` on the spot, and
+`.then(new Promise(fn))` hands `.then` an object rather than a function, so
+a repair can be full of promise vocabulary and not queue a single microtask.
+`OUTPUT.micro` counts what actually went through the queue, and an `await`
+between two lines counts the same as a `queueMicrotask` around them.
 
 And whatever the code declared: a check runs inside the frame, so it can read a
 `const`, a `let` or a function from the exercise by name, which is how a
@@ -490,6 +502,9 @@ OUTPUT.map((line) => (line.match(/^\s*(\d)/) || ['', '?'])[1]).join('') === '123
 
 ? 2 | первые две строки напечатаны синхронно
 OUTPUT.sync === 2
+
+? 4 | шаги 3 и 4 прошли очередью микротасков: они напечатаны до первой задачи
+OUTPUT.micro === 2
 ```
 
 The second hangs a long job on the microtask queue, where it starves a timer of

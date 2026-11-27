@@ -40,10 +40,11 @@ const { pageLabels, lang } = require('../configs').default
  *
  * SOURCE, the text the reader wrote, and OUTPUT, the lines the code printed,
  * in the order they were printed, with OUTPUT.sync saying how many of them
- * came out synchronously. The checks run once the frame has gone quiet — out
- * of output and out of scheduled work — which is what makes an exercise about
- * queues gradeable at all. They can also read what the code declared, so a
- * check can ask a counter in the exercise how many turns it got.
+ * came out synchronously and OUTPUT.micro how many followed from the microtask
+ * queue, before the first task. The checks run once the frame has gone quiet —
+ * out of output and out of scheduled work — which is what makes an exercise
+ * about queues gradeable at all. They can also read what the code declared, so
+ * a check can ask a counter in the exercise how many turns it got.
  */
 class CodeFix extends HTMLElement {
   constructor () {
@@ -179,6 +180,14 @@ class CodeFix extends HTMLElement {
         }, ...rest)
       }
     }
+
+    // Where the next task begins. This timer is registered before the code
+    // runs, so it is the first task to follow it, and everything printed
+    // before it fired was printed either synchronously or by a microtask.
+    // That is what turns "did this go through the microtask queue" into a
+    // question about behaviour rather than about the text of the repair.
+    printed.micro = 0
+    win.setTimeout(() => { printed.micro = printed.length - printed.sync }, 0)
 
     try {
       const script = doc.createElement('script')
