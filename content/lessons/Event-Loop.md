@@ -762,3 +762,24 @@ OUTPUT.sync === 0
 ? 2 | {{quest02Check4}}
 !/queueMicrotask/.test(SOURCE)
 ♠♠♠♠
+
+♠♠♠♠ {{quest03Task}}
+const load = (part, ms, done) => setTimeout(() => done(part), ms)
+
+const parts = []
+
+load('head', 60, (part) => parts.push(part))
+load('body', 10, (part) => parts.push(part))
+load('foot', 30, (part) => parts.push(part))
+
+setTimeout(() => console.log(parts.join(' ')), 20)
+???
+? 3 | {{quest03Check1}}
+OUTPUT.length === 1
+
+? 6 | {{quest03Check2}}
+OUTPUT[0] === 'head body foot'
+
+? 3 | {{quest03Check3}}
+(SOURCE.match(/setTimeout|setInterval/g) || []).length <= 1
+♠♠♠♠

@@ -1143,5 +1143,25 @@
     "ru": "длинная работа больше не висит на очереди микротасков",
     "eng": "the long job no longer hangs on the microtask queue",
     "ua": "довга робота більше не висить на черзі мікротасків"
+  },
+  "quest03Task": {
+    "ru": "Страница собирается из трёх частей, и каждая приезжает за своё время. Код просит их по порядку — head, body, foot, — а печатает то, что успело приехать к двадцатой миллисекунде, и в том порядке, в каком приехало. Почини так, чтобы строка печаталась один раз и в ней стояло **~head body foot~** — в порядке запроса, а не прихода. И момент, когда приехало всё, угадывать по часам нельзя: своего таймера в починенном коде быть не должно, узнать об этом надо от самих ответов.",
+    "eng": "A page is assembled out of three parts, and each takes its own time to arrive. The code asks for them in order — head, body, foot — and prints whatever has turned up by the twentieth millisecond, in the order it turned up. Repair it so that one line is printed and it reads **~head body foot~**: the order they were asked for, not the order they arrived in. And the moment everything has arrived may not be guessed by the clock: the repaired code is to have no timer of its own and must learn it from the answers themselves.",
+    "ua": "Сторінка збирається з трьох частин, і кожна приїжджає за свій час. Код просить їх по порядку — head, body, foot, — а друкує те, що встигло приїхати до двадцятої мілісекунди, і в тому порядку, в якому приїхало. Почини так, щоб рядок друкувався один раз і в ньому стояло **~head body foot~** — у порядку запиту, а не приходу. І момент, коли приїхало все, вгадувати за годинником не можна: власного таймера в починеному коді бути не повинно, дізнатися про це треба від самих відповідей."
+  },
+  "quest03Check1": {
+    "ru": "напечатана ровно одна строка",
+    "eng": "exactly one line is printed",
+    "ua": "надруковано рівно один рядок"
+  },
+  "quest03Check2": {
+    "ru": "части в ней стоят в порядке запроса: head body foot",
+    "eng": "its parts stand in the order they were asked for: head body foot",
+    "ua": "частини в ньому стоять у порядку запиту: head body foot"
+  },
+  "quest03Check3": {
+    "ru": "готовность не угадана по часам: своего таймера в коде нет",
+    "eng": "readiness is not guessed by the clock: the code has no timer of its own",
+    "ua": "готовність не вгадана за годинником: власного таймера в коді немає"
   }
 }

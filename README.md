@@ -505,6 +505,17 @@ sum === 200010000
 ticks >= 5
 ```
 
+The third asks for three parts that arrive in one order to be printed in
+another — the order they were asked for — and for the moment they have all
+arrived not to be guessed by the clock. That last one is what a source check is
+for, since no behaviour distinguishes a correct answer from a correct answer
+that waited long enough:
+
+```
+? 3 | готовность не угадана по часам: своего таймера в коде нет
+(SOURCE.match(/setTimeout|setInterval/g) || []).length <= 1
+```
+
 #### Where the code runs
 
 In an iframe of its own. `{{{…}}}` runs a demo with `eval` in the lesson's own
