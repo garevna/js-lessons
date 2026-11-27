@@ -1,0 +1,785 @@
+# ![ico-30 study] Exceptions⟪Exceptions⟫
+
+Exceptions cause the current function to be interrupted.
+However, we can ‘catch’ exceptions and prevent the code from being interrupted.
+
+When we ‘catch’ an exception, we receive an object that contains a description of what caused the exception to be raised.
+
+Before moving on to exception handling, let’s look at the error object (the exception model) and, accordingly, the constructors that create instances of the error.
+
+___
+
+## ![ico-30 icon] Exception constructors⟪Exception_constructors⟫
+
+☼☼☼ See the object? – look for the constructor ☼☼☼
+
+### ![ico-20 icon] Error⟪Error⟫
+
+The **Error** constructor creates a custom object **~Error~**.
+
+~~~js
+console.dir(Error)
+~~~
+
+~~~console
+▼ ƒ Error()
+    stackTraceLimit: 10
+  ► captureStackTrace: ƒ captureStackTrace()
+  ► isError: ƒ isError()
+    length: 1
+    name: "Error"
+  ► prototype: {name: 'Error', message: '', toString: ƒ}
+  ► arguments: (...)
+  ► caller: (...)
+  ► [[Prototype]]: ƒ ()
+~~~
+
+![ico-20 warn] The **Error** constructor can be called without the keyword **~new~**.
+
+The constructor takes an optional parameter – the text of the error message
+^^(the remaining optional parameters have not been standardised and are not supported by browsers).^^
+
+◘◘![ico-25 cap] **1**◘◘
+
+~~~js
+var err = new Error('Arguments are not valid')
+console.dir(err)
+~~~
+
+~~~console
+▼ Error: Arguments are not valid
+    at <anonymous>:1:11
+    message: "Arguments are not valid"
+    stack: "Error: Arguments are not valid\n    at <anonymous>:1:11"
+  ▼ [[Prototype]]: Object
+      ► constructor: ƒ Error()
+        message: ""
+        name: "Error"
+      ► toString: ƒ toString()
+      ► [[Prototype]]: Object
+~~~
+
+However, we can add properties to an instance of the **Error** constructor.
+
+◘◘![ico-25 cap] **2**◘◘
+
+~~~js
+var error = Object.assign(new Error('Hello'), {
+  fileName: 'figure',
+  lineNumber: 11,
+  stack: 'Welcome'
+})
+
+console.dir(error)
+~~~
+
+~~~console
+▼ Error: Hello
+    fileName: "figure"
+    lineNumber: 11
+    message: "Hello"
+    stack: "Welcome"
+  ► [[Prototype]]: Object
+~~~
+
+~~~js
+console.error(error)
+~~~
+
+~~~console
+! Error: Hello
+~~~
+
+___
+
+We are already familiar with the main exception types, such as ~SyntaxError~, ~ReferenceError~ and ~TypeError~.
+Each exception type has its own constructor.
+However, every constructor for a specific exception type inherits from the ~Error~ constructor.
+
+### ![ico-20 icon] SyntaxError⟪SyntaxError⟫
+
+~~~console
+▼ ƒ SyntaxError()
+    length: 1
+    name: "SyntaxError"
+  ► prototype: Error {name: 'SyntaxError', message: ''}
+  ► arguments: (...)
+  ► caller: (...)
+  ▼ [[Prototype]]: ƒ Error()
+      stackTraceLimit: 10
+    ► captureStackTrace: ƒ captureStackTrace()
+    ► isError: ƒ isError()
+      length: 1
+      name: "Error"
+    ► prototype: {name: 'Error', message: '', toString: ƒ}
+    ► arguments: (...)
+    ► caller: (...)
+    ► [[Prototype]]: ƒ ()
+~~~
+
+◘◘![ico-25 cap] **3**◘◘
+
+~~~js
+const syntaxError = Object.assign(new SyntaxError(), {
+  message: 'You should learn JS.',
+  name: 'Ignorant newbie Error.',
+  stack: 'Code execution failed.'
+})
+
+console.dir(syntaxError)
+~~~
+
+~~~console
+▼ Ignorant newbie Error.: You should learn JS.
+    message: "You should learn JS."
+    name: "Ignorant newbie Error."
+    stack: "Code execution failed."
+  ► [[Prototype]]: Error
+~~~
+
+~~~js
+console.error(syntaxError)
+~~~
+
+~~~console
+! Ignorant newbie Error.: You should learn JS.
+~~~
+
+___
+
+### ![ico-20 icon] ReferenceError⟪ReferenceError⟫
+
+~~~console
+▼ ƒ ReferenceError()
+    length: 1
+    name: "ReferenceError"
+  ▼ prototype: Error
+      ► constructor: ƒ ReferenceError()
+        message: ""
+        name: "ReferenceError"
+      ► [[Prototype]]: Object
+      ► arguments: (...)
+      ► caller: (...)
+      ► [[Prototype]]: ƒ Error()
+~~~
+
+◘◘![ico-25 cap] **4**◘◘
+
+~~~js
+const referenceError = Object.assign(new ReferenceError(), {
+  message: 'We do not know such a person.',
+  name: 'Identification Error.',
+  stack: 'Search for person failed.'
+})
+console.dir(referenceError)
+~~~
+
+~~~console
+▼ Identification Error.: We do not know such a person.
+    message: "We do not know such a person."
+    name: "Identification Error."
+    stack: "Search for person failed."
+  ► [[Prototype]]: Error
+~~~
+
+~~~js
+console.error(referenceError)
+~~~
+
+~~~console
+! Identification Error.: We do not know such a person.
+~~~
+
+___
+
+### ![ico-20 icon] TypeError⟪TypeError⟫
+
+~~~console
+▼ ƒ TypeError()
+    length: 1
+    name: "TypeError"
+  ► prototype: Error {name: 'TypeError', message: ''}
+  ► arguments: (...)
+  ► caller: (...)
+  ▼ [[Prototype]]: ƒ Error()
+        stackTraceLimit: 10
+      ► captureStackTrace: ƒ captureStackTrace()
+      ► isError: ƒ isError()
+        length: 1
+        name: "Error"
+      ► prototype: {name: 'Error', message: '', toString: ƒ}
+      ► arguments: (...)
+      ► caller: (...)
+      ► [[Prototype]]: ƒ ()
+~~~
+
+◘◘![ico-25 cap] **5**◘◘
+
+~~~js
+const typeError = Object.assign(new TypeError(), {
+  message: 'Invalid pincode',
+  name: 'Custom Error',
+  stack: 'Look here...'
+})
+
+console.dir(typeError)
+~~~
+
+~~~console
+▼ Custom Error: Invalid pincode
+    message: "Invalid pincode"
+    name: "Custom Error"
+    stack: "Look here..."
+  ▼ [[Prototype]]: Error
+    ► constructor: ƒ TypeError()
+      message: ""
+      name: "TypeError"
+    ► [[Prototype]]: Object
+~~~
+
+~~~js
+console.error(typeError)
+~~~
+
+~~~console
+! Custom Error: Invalid pincode
+~~~
+
+___
+
+## ![ico-30 icon] The throw statement⟪The_throw_statement⟫
+
+You can generate an exception yourself using the throw statement.
+
+The **~throw~** statement generates a user-defined exception (error).
+
+Execution of the current function will be interrupted, and control will be passed to the first **_~catch~_** block in the call stack.
+
+If there is no **_~catch~_** block, the programme will terminate.
+
+◘◘![ico-25 cap] **6**◘◘
+
+~~~js
+const syntaxError = Object.assign(new SyntaxError(), {
+  message: 'You should learn JS.',
+  name: 'Ignorant newbie Error.',
+  stack: 'Code execution failed.'
+})
+
+throw syntaxError
+~~~
+
+~~~console
+! Uncaught Ignorant newbie Error.: You should learn JS. (at VM5957:7:1)
+~~~
+
+As can be seen from the example, the output in the console will be exactly the same as when we output the error object to the console using ~console.log~.
+
+Now that we understand what an error instance is, how to create custom error instances, and how to generate an exception, we can move on to error handling.
+
+___
+
+## ![ico-25 icon] try ... catch⟪try_..._catch⟫
+
+The ~try ... catch~ statement allows you to catch exceptions that occur whilst the code is being executed.
+
+~~~js
+try {
+  ...
+} catch (err) {
+  ...
+}
+~~~
+
+If an error occurs whilst executing the code in the **~try { ... }~** block, control will transfer to the **~catch~** block, passing the error object as an argument.
+
+◘◘![ico-25 cap] **7**◘◘
+
+~~~js
+var obj = null
+
+try {
+  var x = obj.name
+} catch (err) {
+  var x = null
+}
+~~~
+
+In this example, whilst executing the code
+
+~~~js
+var x = obj.name
+~~~
+
+an exception should be generated, which will cause the programme to terminate.
+
+Because the exception is ‘caught’ in the **_~try~_** block, control passes to the **_~catch~_** block, where the variable **~x~** is assigned the value **~undefined~**, and the programme continues to run.
+
+___
+
+◘◘![ico-25 cap] **8**◘◘
+
+~~~js
+function outerFunc () {
+  return innerFunc()
+}
+
+function innerFunc () {
+  try {
+    return sample()
+  } catch (err) {
+    console.group(err.name)
+    console.warn(err.message)
+    console.groupEnd(err.name)
+    return err.name === 'ReferenceError' ? 1 : 2
+  }
+}
+
+console.log('Result:', outerFunc())
+~~~
+
+~~~console
+▼ ReferenceError
+
+  ? sample is not defined
+Result: 1
+~~~
+
+◘◘![ico-25 cap] **9**◘◘
+
+~~~js
+sample = 5
+
+function outerFunc () {
+  return innerFunc()
+}
+
+function innerFunc () {
+  try {
+    return sample()
+  } catch (err) {
+    console.group(err.name)
+    console.warn(err.message)
+    console.groupEnd(err.name)
+    return err.name === 'ReferenceError' ? 1 : 2
+  }
+}
+
+console.log('Result:', outerFunc())
+~~~
+
+~~~console
+▼ TypeError
+
+    ? sample is not a function
+Result: 2
+~~~
+
+___
+
+^^^[ES 2019]
+
+Since 2019, it is not necessary to pass an argument to the **_~catch~_** block:
+
+~~~js
+var obj = null
+
+try {
+  var x = obj.name
+} catch {
+  x = null
+}
+~~~
+
+^^^
+
+### ![ico-20 icon] finally⟪finally⟫
+
+This block of code will execute regardless of how the ~try...catch~ block ends.
+
+◘◘![ico-25 cap] **10**◘◘
+
+~~~js
+try {
+  throw({
+    name: 'Hi',
+    message: 'It\'s a joke',
+    stack: `Hello, sorry for the interruption, I really wanted to say hello 😉`
+  })
+} catch (err) {
+    console.error(err.stack)
+} finally {
+   console.info('try...catch completed')
+}
+~~~
+
+~~~console
+! Hello, sorry for the interruption, I really wanted to say hello 😉
+try...catch completed
+~~~
+
+![ico-20 warn] Note that what is thrown here is a plain object, not an instance of **~Error~**. The **~throw~** statement takes any value — a string, a number, an object — and this one has ~name~, ~message~ and ~stack~ only because we wrote them ourselves.
+
+___
+
+As a result of executing the code:
+
+◘◘![ico-25 cap] **11**◘◘
+
+~~~js
+try {
+  throw new Error('Arguments not valid')
+} catch (err) {
+  console.error(`${err.name}: ${err.message}`)
+}
+~~~
+
+an exception will be thrown to the console:
+
+~~~console
+! Error: Arguments not valid
+~~~
+
+___
+
+◘◘![ico-25 cap] **12**◘◘
+
+~~~js
+var num = {}
+
+try {
+  if (typeof num !== 'number') {
+    var err = new Error('Arguments not valid')
+    err.name = 'ValidationError'
+    throw err
+  }
+} catch (err) {
+  console.error(`${err.name}: ${err.message}`)
+}
+~~~
+
+~~~console
+! ValidationError: Arguments not valid
+~~~
+
+~~~js
+console.dir(err)
+~~~
+
+~~~console
+▼ ValidationError: Arguments not valid
+    at <anonymous>:5:15
+    name: "ValidationError"
+    message: "Arguments not valid"
+    stack: "ValidationError: Arguments not valid\n    at <anonymous>:5:15"
+  ► [[Prototype]]: Object
+~~~
+
+___
+
+## ![ico-30 icon] AggregateError⟪AggregateError⟫
+
+The **AggregateError** constructor creates one error that holds several others inside it. It is for the places where the failure is not a single one: a form check found three bad fields, a download tried four mirrors and none of them answered. Throwing whichever came first and saying nothing about the rest tells a quarter of the truth.
+
+~~~js
+new AggregateError(errors, message)
+~~~
+
+![ico-20 green-ok] takes an iterable of errors and, optionally, a message for all of them;
+![ico-20 green-ok] the instance gets an **~errors~** property — an array of those very errors — while its ~name~, ~message~ and ~stack~ are the ordinary ones every error has.
+
+It arrived in 2020: every current browser has it, and Node.js from version fifteen on.
+
+◘◘![ico-25 cap] **13**◘◘
+
+~~~js
+const numbers = [5, 'hero', 9, 34.5, 11]
+
+const errors = numbers
+  .filter((item) => !Number.isInteger(item))
+  .map((item) => new TypeError(`${JSON.stringify(item)} is not an integer`))
+
+const trouble = new AggregateError(errors, 'The list is not all integers')
+
+console.log(trouble.name)
+console.log(trouble.message)
+console.log(trouble.errors.length)
+console.log(trouble.errors.map((err) => err.message))
+~~~
+
+~~~console
+AggregateError
+The list is not all integers
+2
+► (2) ['"hero" is not an integer', '34.5 is not an integer']
+~~~
+
+___
+
+It is caught like any other error, and taken apart by walking **~errors~**:
+
+◘◘![ico-25 cap] **14**◘◘
+
+~~~js
+const numbers = [5, 'hero', 9, 34.5, 11]
+
+const check = (list) => {
+  const errors = list
+    .filter((item) => !Number.isInteger(item))
+    .map((item) => new TypeError(`${JSON.stringify(item)} is not an integer`))
+
+  if (errors.length) throw new AggregateError(errors, 'The list is not all integers')
+
+  return list
+}
+
+try {
+  check(numbers)
+} catch (err) {
+  console.error(err.message)
+  for (const one of err.errors) console.error(`${one.name}: ${one.message}`)
+}
+~~~
+
+~~~console
+! The list is not all integers
+! TypeError: "hero" is not an integer
+! TypeError: 34.5 is not an integer
+~~~
+
+___
+
+On its own, without our writing it, it arrives from **~Promise.any()~**: that method waits for the first promise to succeed, and if not one of them does, it rejects with a single **AggregateError** holding every refusal.
+
+◘◘![ico-25 cap] **15**◘◘
+
+~~~js
+const load = (name, ms, answers) => new Promise((resolve, reject) => {
+  setTimeout(() => answers ? resolve(name) : reject(new Error(`${name} is down`)), ms)
+})
+
+Promise.any([load('mirror A', 10, false), load('mirror B', 20, false)])
+  .then((name) => console.log('answered:', name))
+  .catch((err) => {
+    console.error(`${err.name}: ${err.message}`)
+    for (const one of err.errors) console.error(one.message)
+  })
+~~~
+
+~~~console
+! AggregateError: All promises were rejected
+! mirror A is down
+! mirror B is down
+~~~
+
+![ico-20 warn] The ~stack~ property is not standardised, and it is not what the console prints: in the heading it shows ~name~ and ~message~. So an error made without a message shows up in the console as plain **~AggregateError~**, however much text has been written into ~stack~.
+
+___
+
+## ![ico-25 hw] Tests⟪Tests⟫
+
+♣♣♣♣
+? What will the console show?
+
+~~~js
+try {
+  setTimeout(() => {
+    throw new Error('later')
+  })
+} catch (err) {
+  console.log('caught:', err.message)
+}
+~~~
+
++ An uncaught **~Error: later~**
+= Yes. **~try...catch~** catches only what is thrown while it is running. The timer callback is a task of its own, and by the time it reaches the stack the **~try~** block is long finished.
+
+- **~caught: later~**
+= No: by the time the timer fires, the stack holding that **~catch~** is gone.
+
+- **~caught: undefined~**
+= No, the **~catch~** block will not run at all here.
+
+- Nothing: an error inside a timer disappears quietly
+= No, it surfaces as an uncaught error — that **~catch~** cannot take it, but it does not vanish quietly either.
+
+? What will this code print?
+
+~~~js
+try {
+  throw 'oops'
+} catch (err) {
+  console.log(typeof err, err.message)
+}
+~~~
+
++ **~string undefined~**
+= Yes. The **~throw~** statement takes any value; a string was thrown, and a string has no **~message~** property.
+
+- **~object oops~**
+= No: a thrown string does not turn into an error object.
+
+- **~string oops~**
+= No: **~err.message~** is a property of an error object, and here **~err~** holds the string itself.
+
+- **~TypeError~**: only errors may be thrown
+= No, anything at all may be thrown — though catching such a thing is awkward.
+
+? In what order will the lines come out?
+
+~~~js
+const read = () => {
+  try {
+    return 'value'
+  } finally {
+    console.log('cleanup')
+  }
+}
+
+console.log(read())
+~~~
+
++ **~cleanup~** first, then **~value~**
+= Yes. The value is already worked out and waiting, but **~finally~** runs before the function hands it over.
+
+- **~value~** first, then **~cleanup~**
+= No: a **~return~** does not let control leave the function past **~finally~**.
+
+- **~value~** only
+= No: **~finally~** always runs, after a **~return~** as well.
+
+- **~cleanup~** only
+= No: the returned value is still there, and the outer **~console.log~** prints it.
+
+? What will the heading of the red line say?
+
+~~~js
+const err = new Error('Arguments not valid')
+
+err.name = 'ValidationError'
+
+console.error(err)
+~~~
+
++ **~ValidationError: Arguments not valid~**
+= Yes. The heading is made of **~name~** and **~message~**, and the name was rewritten before anything looked at the error.
+
+- **~Error: Arguments not valid~**
+= No: the name is an ordinary property, and its new value is what the heading shows.
+
+- **~ValidationError~** with no message
+= No: the message is still the one given to the constructor.
+
+- **~Error: ValidationError~**
+= No, they do not swap places: the name comes first, the message second.
+
+? What will this code print?
+
+~~~js
+const fail = (text) => Promise.reject(new Error(text))
+
+Promise.any([fail('A'), fail('B')])
+  .catch((err) => console.log(err.name, '|', err.message, '|', err.errors.length))
+~~~
+
++ **~AggregateError | All promises were rejected | 2~**
+= Yes. **~Promise.any~** waits for the first promise to succeed, and if none does it rejects with a single **~AggregateError~** — with a message of its own and both refusals in **~errors~**.
+
+- **~Error | A | 2~**
+= No: what reaches **~catch~** is not the first of the errors but one common error holding them all.
+
+- **~AggregateError | A | 2~**
+= No: its message is its own — **~All promises were rejected~** — while the refusals’ messages lie inside, in **~errors~**.
+
+- Nothing: **~Promise.any~** does not reject
+= It does reject, in exactly one case: when not one of the promises succeeded.
+
+? What will the console show?
+
+~~~js
+const trouble = new AggregateError([new TypeError('bad')])
+
+trouble.stack = 'Parse errors: element 1 is not an integer'
+
+throw trouble
+~~~
+
++ **~Uncaught AggregateError~** — and nothing else
+= Yes. In the heading the console shows **~name~** and **~message~**; this error has no message, because none was given to the constructor, and **~stack~** is not standard — what is written into it is not what the console prints.
+
+- the text from **~stack~**: **~Parse errors: element 1 is not an integer~**
+= That is how older versions of Chrome behaved, and more than one screenshot on the internet rests on it — including the one that stood in this lesson until recently. Today the console does not print **~stack~**.
+
+- **~Uncaught AggregateError: bad~**
+= No: **~bad~** is the message of the error inside, while the **~AggregateError~** itself has none.
+
+- **~Uncaught TypeError: bad~**
+= No: what was thrown is the **~AggregateError~**; the errors inside lie in **~errors~** and do not surface on their own.
+♣♣♣♣
+
+___
+
+## ![ico-25 hw] Quest⟪Quest⟫
+
+♠♠♠♠ The check stops at the first bad entry, and nobody ever hears about the second. Repair it so that it goes through the whole list, collects every bad entry and throws one **~AggregateError~** with the common message **~The list is not all integers~**, each bad entry staying inside as a **~TypeError~** of its own with its own message.
+const numbers = [5, 'hero', 9, 34.5, 11]
+
+const check = (list) => {
+  list.forEach((item) => {
+    if (!Number.isInteger(item)) throw new TypeError(`${JSON.stringify(item)} is not an integer`)
+  })
+
+  return list
+}
+
+try {
+  check(numbers)
+} catch (err) {
+  console.log(err.name)
+  console.log(err.message)
+  console.log(err.errors ? err.errors.length : 0)
+  console.log(err.errors ? err.errors.map((one) => one.name).join(' ') : err.name)
+}
+???
+? 3 | one error is thrown, and it is an AggregateError
+OUTPUT[0] === 'AggregateError'
+
+? 4 | it holds both bad entries, not just the first
+OUTPUT[2] === '2'
+
+? 3 | it has a common message of its own
+OUTPUT[1] === 'The list is not all integers'
+
+? 2 | inside are real TypeErrors, not strings
+OUTPUT[3] === 'TypeError TypeError'
+♠♠♠♠
+
+♠♠♠♠ The **~finally~** block here tidies up after itself — and swallows everything on the way: an ordinary call returns something other than what was read, and the error never reaches the one waiting for it. Repair it so that the tidying stays, the value comes back, and the error gets out.
+let open = true
+
+const read = (ok) => {
+  try {
+    if (!ok) throw new Error('nothing to read')
+
+    return 'value'
+  } finally {
+    open = false
+
+    return 'closed'
+  }
+}
+
+try { console.log(read(true)) } catch (err) { console.log('caught:', err.message) }
+try { console.log(read(false)) } catch (err) { console.log('caught:', err.message) }
+
+console.log('open:', open)
+???
+? 4 | an ordinary call returns what was read
+OUTPUT[0] === 'value'
+
+? 5 | the error is no longer swallowed: the caller catches it
+OUTPUT[1] === 'caught: nothing to read'
+
+? 3 | the tidying up is done all the same
+OUTPUT[2] === 'open: false'
+♠♠♠♠
