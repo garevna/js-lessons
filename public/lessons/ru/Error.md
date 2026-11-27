@@ -579,29 +579,101 @@ ___
 ## ![ico-25 hw] Тесты⟪Tests⟫
 
 ♣♣♣♣
-? Что окажется в консоли?
+? Что увидит консоль?
 
 ~~~js
+const errors = {
+  notArray: new Error('Argument must be an array'),
+  notNumber: new Error('Argument must be a number')
+}
+
 try {
-  setTimeout(() => {
-    throw new Error('later')
-  })
-} catch (err) {
-  console.log('caught:', err.message)
+  const arr = null
+  for (const x of arr) console.log(x)
+} catch (error) {
+  throw errors.notArray
 }
 ~~~
 
-+ Необработанная ошибка **~Uncaught Error: later~**
-= Да. **~try...catch~** ловит только то, что брошено, пока он выполняется. Колбек таймера — отдельная задача, и к тому времени, когда он попадёт в стек, блок **~try~** давно закончился.
++ **~Uncaught Error: Argument must be an array~**
+= Да. Перебор **~null~** бросает ~TypeError~, его ловит **~catch~** — и бросает дальше уже свою, заготовленную ошибку; ловить её некому. ![ico-20 warn] Заготовки удобны, но у такой ошибки стек указывает на строку, где её **создали**, а не где бросили, и один и тот же объект гуляет по всему коду.
 
-- **~caught: later~**
-= Нет: к моменту, когда сработает таймер, стека с этим **~catch~** уже нет.
+- **~Uncaught TypeError: arr is not iterable~**
+= Эта ошибка возникла первой, но её перехватил **~catch~**; наружу вышла другая.
 
-- **~caught: undefined~**
-= Нет, блок **~catch~** здесь вообще не выполнится.
+- **~Uncaught Error: Argument must be a number~**
+= Такая заготовка в коде есть, но её никто не бросал.
 
-- Ничего: ошибка внутри таймера пропадёт молча
-= Нет, она всплывёт как необработанная — поймать её этим **~catch~** нельзя, но и молча она не пропадёт.
+- Ничего: исключение перехвачено
+= Перехвачено первое, а **~catch~** бросил новое — и этого уже никто не ловит.
+
+? Что окажется на странице?
+
+~~~js
+const errors = {
+  noArguments: new Error('There must be some arguments'),
+  notProperty: new Error('There is no such a property')
+}
+
+for (const key in errors) {
+  errors[key].name = key
+  errors[key].callback = function () {
+    document.body.append(this.toString())
+  }
+}
+
+const testProp = (obj, prop) => {
+  if (!Object.hasOwn(obj, prop)) throw errors.notProperty
+}
+
+try {
+  testProp({}, 'name')
+} catch (error) {
+  error.callback()
+}
+~~~
+
++ **~notProperty: There is no such a property~**
+= Да. Ошибка — обычный объект: ей дали имя (ключ, под которым она лежит) и дописали метод. Метод вызван как **~error.callback()~**, поэтому **~this~** внутри — сама ошибка, а **~toString()~** у ошибки складывает имя и сообщение.
+
+- **~There is no such a property~**
+= Это только сообщение, а **~toString()~** ставит перед ним имя.
+
+- **~Error: There is no such a property~**
+= Так было бы, не перепиши цикл имя: он поставил вместо **~Error~** ключ **~notProperty~**.
+
+- Ничего: у ошибки не может быть своих методов
+= Может: экземпляр ошибки — такой же объект, как любой другой, и свойства ему дописываются так же.
+
+? Что увидит консоль?
+
+~~~js
+const errors = {
+  noArguments: new Error('There are no arguments')
+}
+
+const testArgs = (arg) => {
+  if (!arg) throw errors.noArguments
+}
+
+try {
+  testArgs()
+} catch (error) {
+  `Custom ${error.toString()}`
+}
+~~~
+
++ Ничего
+= Да. Строка в **~catch~** вычисляется и выбрасывается: её никто не печатает и никуда не записывает. Исключение было, но от него не осталось следа — это худший вид обработки: код сделал вид, что ничего не случилось.
+
+- **~Custom Error: There are no arguments~**
+= Такая строка действительно собирается — и тут же пропадает: её не передали ни в **~console.log~**, ни куда-либо ещё.
+
+- **~Uncaught Error: There are no arguments~**
+= Нет: ошибка перехвачена, наружу она не вышла.
+
+- **~Error: There are no arguments~**
+= Исключение с таким текстом было сгенерировано, но в консоль оно не попало: его перехватили и промолчали.
 
 ? Что напечатает этот код?
 
@@ -624,6 +696,95 @@ try {
 
 - **~TypeError~**: бросать можно только ошибки
 = Нет, бросать можно что угодно — другое дело, что ловить такое неудобно.
+
+? Что будет в заголовке красной строки?
+
+~~~js
+const err = new Error('Arguments not valid')
+
+err.name = 'ValidationError'
+
+console.error(err)
+~~~
+
++ **~ValidationError: Arguments not valid~**
+= Да. Заголовок складывается из **~name~** и **~message~**, а имя переписали до того, как к ошибке обратились.
+
+- **~Error: Arguments not valid~**
+= Нет: имя — обычное свойство, и его новое значение попадёт в заголовок.
+
+- **~ValidationError~** без сообщения
+= Нет: сообщение осталось тем, что передали конструктору.
+
+- **~Error: ValidationError~**
+= Нет, местами они не меняются: сначала имя, потом сообщение.
+
+? Что напечатает код?
+
+~~~js
+const obj = {
+  name: 'sample',
+  type: 'figure',
+  test () {
+    throw new Error('Sample error')
+  }
+}
+
+for (const prop in obj) {
+  console.log(typeof obj[prop] === 'function' ? obj[prop]() : obj[prop])
+}
+~~~
+
++ **~sample~**, **~figure~** — и дальше необработанная **~Error: Sample error~**
+= Да. Два первых свойства печатаются, на третьем вызов бросает ошибку, и, поскольку ловить её некому, цикл не продолжится: прерывается не итерация, а всё, что было в стеке.
+
+- **~sample~**, **~figure~**, **~undefined~**
+= Нет: функция не вернула ничего — она бросила ошибку, а это не то же самое.
+
+- **~sample~**, **~figure~** — и больше ничего, ошибка пропадёт
+= Нет: непойманная ошибка не пропадает, она выходит в консоль.
+
+- Ничего: ошибка случится до первой печати
+= Нет: до метода цикл доходит третьим, и две строки уже напечатаны.
+
+? А здесь?
+
+~~~js
+const obj = {
+  name: 'sample',
+  type: 'figure',
+  test () {
+    const err = new Error('Ha-ha!')
+    err.name = 'It is a joke: '
+    throw err
+  }
+}
+
+for (const prop in obj) {
+  if (typeof obj[prop] !== 'function') {
+    console.log(obj[prop])
+    continue
+  }
+
+  try {
+    obj[prop]()
+  } catch (err) {
+    console.log(err.name, err.message)
+  }
+}
+~~~
+
++ **~sample~**, **~figure~**, **~It is a joke:  Ha-ha!~**
+= Да. Исключение сгенерировано и здесь, но его перехватили — и цикл спокойно дошёл до конца. Двойной пробел не опечатка: двоеточие с пробелом дописаны в само имя, а **~console.log~** ставит свой пробел между аргументами.
+
+- **~sample~**, **~figure~** — и необработанная ошибка
+= Нет: вызов обёрнут в **~try~**, и ошибка дальше **~catch~** не ушла.
+
+- **~sample~**, **~figure~**, **~Error: Ha-ha!~**
+= Нет: имя у ошибки переписано, и печатается именно оно.
+
+- **~sample~**, **~figure~**, **~undefined~**
+= Нет: в **~catch~** печатают имя и сообщение, а не то, что вернул метод.
 
 ? В каком порядке выйдут строки?
 
@@ -651,27 +812,29 @@ console.log(read())
 - только **~cleanup~**
 = Нет: возвращённое значение никуда не делось, его печатает внешний **~console.log~**.
 
-? Что будет в заголовке красной строки?
+? Что окажется в консоли?
 
 ~~~js
-const err = new Error('Arguments not valid')
-
-err.name = 'ValidationError'
-
-console.error(err)
+try {
+  setTimeout(() => {
+    throw new Error('later')
+  })
+} catch (err) {
+  console.log('caught:', err.message)
+}
 ~~~
 
-+ **~ValidationError: Arguments not valid~**
-= Да. Заголовок складывается из **~name~** и **~message~**, а имя мы переписали до того, как к ошибке обратились.
++ Необработанная ошибка **~Uncaught Error: later~**
+= Да. **~try...catch~** ловит только то, что брошено, пока он выполняется. Колбек таймера — отдельная задача, и к тому времени, когда он попадёт в стек, блок **~try~** давно закончился.
 
-- **~Error: Arguments not valid~**
-= Нет: имя — обычное свойство, и его новое значение попадёт в заголовок.
+- **~caught: later~**
+= Нет: к моменту, когда сработает таймер, стека с этим **~catch~** уже нет.
 
-- **~ValidationError~** без сообщения
-= Нет: сообщение осталось тем, что передали конструктору.
+- **~caught: undefined~**
+= Нет, блок **~catch~** здесь вообще не выполнится.
 
-- **~Error: ValidationError~**
-= Нет, местами они не меняются: сначала имя, потом сообщение.
+- Ничего: ошибка внутри таймера пропадёт молча
+= Нет, она всплывёт как необработанная — поймать её этим **~catch~** нельзя, но и молча она не пропадёт.
 
 ? Что напечатает этот код?
 
@@ -782,4 +945,43 @@ OUTPUT[1] === 'caught: nothing to read'
 
 ? 3 | уборка всё равно сделана
 OUTPUT[2] === 'open: false'
+♠♠♠♠
+
+♠♠♠♠ Метод **~changeParams~** верит аргументу на слово, и любой вызов не по форме роняет код: **~null~**, вызов без аргумента, объект без **~center~**, пустой массив. Почини так, чтобы ни один из пяти вызовов не бросил исключение: правильный аргумент применяется целиком, а любой другой не меняет ничего — параметры остаются такими, какими были.
+const figure = {
+  type: 'circle',
+  params: {
+    center: [0, 0],
+    radius: 10
+  },
+  changeParams (newParams) {
+    this.params.center[0] = newParams.center[0] || 0
+    this.params.center[1] = newParams.center[1] || 0
+    this.params.radius = newParams.radius || 10
+  }
+}
+
+const show = (what) => {
+  try {
+    figure.changeParams(what)
+    console.log(JSON.stringify(figure.params))
+  } catch (err) {
+    console.log(`${err.name}: ${err.message}`)
+  }
+}
+
+show({ center: [3, 4], radius: 7 })
+show(null)
+show()
+show({ name: 5, size: 8 })
+show([])
+???
+? 4 | ни один вызов не уронил код: пять строк, и ни одного TypeError
+OUTPUT.length === 5 && !OUTPUT.some((line) => line.includes('TypeError'))
+
+? 4 | правильный аргумент применён целиком
+OUTPUT[0] === '{"center":[3,4],"radius":7}'
+
+? 4 | негодные аргументы ничего не испортили: параметры остались прежними
+OUTPUT.slice(1).every((line) => line === OUTPUT[0])
 ♠♠♠♠

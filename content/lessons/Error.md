@@ -582,12 +582,16 @@ ___
 ? {{test01Question}}
 
 ~~~js
+const errors = {
+  notArray: new Error('Argument must be an array'),
+  notNumber: new Error('Argument must be a number')
+}
+
 try {
-  setTimeout(() => {
-    throw new Error('later')
-  })
-} catch (err) {
-  console.log('caught:', err.message)
+  const arr = null
+  for (const x of arr) console.log(x)
+} catch (error) {
+  throw errors.notArray
 }
 ~~~
 
@@ -606,10 +610,26 @@ try {
 ? {{test02Question}}
 
 ~~~js
+const errors = {
+  noArguments: new Error('There must be some arguments'),
+  notProperty: new Error('There is no such a property')
+}
+
+for (const key in errors) {
+  errors[key].name = key
+  errors[key].callback = function () {
+    document.body.append(this.toString())
+  }
+}
+
+const testProp = (obj, prop) => {
+  if (!Object.hasOwn(obj, prop)) throw errors.notProperty
+}
+
 try {
-  throw 'oops'
-} catch (err) {
-  console.log(typeof err, err.message)
+  testProp({}, 'name')
+} catch (error) {
+  error.callback()
 }
 ~~~
 
@@ -628,15 +648,19 @@ try {
 ? {{test03Question}}
 
 ~~~js
-const read = () => {
-  try {
-    return 'value'
-  } finally {
-    console.log('cleanup')
-  }
+const errors = {
+  noArguments: new Error('There are no arguments')
 }
 
-console.log(read())
+const testArgs = (arg) => {
+  if (!arg) throw errors.noArguments
+}
+
+try {
+  testArgs()
+} catch (error) {
+  `Custom ${error.toString()}`
+}
 ~~~
 
 + {{test03Variant1}}
@@ -654,11 +678,11 @@ console.log(read())
 ? {{test04Question}}
 
 ~~~js
-const err = new Error('Arguments not valid')
-
-err.name = 'ValidationError'
-
-console.error(err)
+try {
+  throw 'oops'
+} catch (err) {
+  console.log(typeof err, err.message)
+}
 ~~~
 
 + {{test04Variant1}}
@@ -676,10 +700,11 @@ console.error(err)
 ? {{test05Question}}
 
 ~~~js
-const fail = (text) => Promise.reject(new Error(text))
+const err = new Error('Arguments not valid')
 
-Promise.any([fail('A'), fail('B')])
-  .catch((err) => console.log(err.name, '|', err.message, '|', err.errors.length))
+err.name = 'ValidationError'
+
+console.error(err)
 ~~~
 
 + {{test05Variant1}}
@@ -697,11 +722,17 @@ Promise.any([fail('A'), fail('B')])
 ? {{test06Question}}
 
 ~~~js
-const trouble = new AggregateError([new TypeError('bad')])
+const obj = {
+  name: 'sample',
+  type: 'figure',
+  test () {
+    throw new Error('Sample error')
+  }
+}
 
-trouble.stack = 'Parse errors: element 1 is not an integer'
-
-throw trouble
+for (const prop in obj) {
+  console.log(typeof obj[prop] === 'function' ? obj[prop]() : obj[prop])
+}
 ~~~
 
 + {{test06Variant1}}
@@ -715,6 +746,138 @@ throw trouble
 
 - {{test06Variant4}}
 = {{test06Variant4Answer}}
+
+? {{test07Question}}
+
+~~~js
+const obj = {
+  name: 'sample',
+  type: 'figure',
+  test () {
+    const err = new Error('Ha-ha!')
+    err.name = 'It is a joke: '
+    throw err
+  }
+}
+
+for (const prop in obj) {
+  if (typeof obj[prop] !== 'function') {
+    console.log(obj[prop])
+    continue
+  }
+
+  try {
+    obj[prop]()
+  } catch (err) {
+    console.log(err.name, err.message)
+  }
+}
+~~~
+
++ {{test07Variant1}}
+= {{test07Variant1Answer}}
+
+- {{test07Variant2}}
+= {{test07Variant2Answer}}
+
+- {{test07Variant3}}
+= {{test07Variant3Answer}}
+
+- {{test07Variant4}}
+= {{test07Variant4Answer}}
+
+? {{test08Question}}
+
+~~~js
+const read = () => {
+  try {
+    return 'value'
+  } finally {
+    console.log('cleanup')
+  }
+}
+
+console.log(read())
+~~~
+
++ {{test08Variant1}}
+= {{test08Variant1Answer}}
+
+- {{test08Variant2}}
+= {{test08Variant2Answer}}
+
+- {{test08Variant3}}
+= {{test08Variant3Answer}}
+
+- {{test08Variant4}}
+= {{test08Variant4Answer}}
+
+? {{test09Question}}
+
+~~~js
+try {
+  setTimeout(() => {
+    throw new Error('later')
+  })
+} catch (err) {
+  console.log('caught:', err.message)
+}
+~~~
+
++ {{test09Variant1}}
+= {{test09Variant1Answer}}
+
+- {{test09Variant2}}
+= {{test09Variant2Answer}}
+
+- {{test09Variant3}}
+= {{test09Variant3Answer}}
+
+- {{test09Variant4}}
+= {{test09Variant4Answer}}
+
+? {{test10Question}}
+
+~~~js
+const fail = (text) => Promise.reject(new Error(text))
+
+Promise.any([fail('A'), fail('B')])
+  .catch((err) => console.log(err.name, '|', err.message, '|', err.errors.length))
+~~~
+
++ {{test10Variant1}}
+= {{test10Variant1Answer}}
+
+- {{test10Variant2}}
+= {{test10Variant2Answer}}
+
+- {{test10Variant3}}
+= {{test10Variant3Answer}}
+
+- {{test10Variant4}}
+= {{test10Variant4Answer}}
+
+? {{test11Question}}
+
+~~~js
+const trouble = new AggregateError([new TypeError('bad')])
+
+trouble.stack = 'Parse errors: element 1 is not an integer'
+
+throw trouble
+~~~
+
++ {{test11Variant1}}
+= {{test11Variant1Answer}}
+
+- {{test11Variant2}}
+= {{test11Variant2Answer}}
+
+- {{test11Variant3}}
+= {{test11Variant3Answer}}
+
+- {{test11Variant4}}
+= {{test11Variant4Answer}}
 ♣♣♣♣
 
 ___
@@ -782,4 +945,43 @@ OUTPUT[1] === 'caught: nothing to read'
 
 ? 3 | {{quest02Check3}}
 OUTPUT[2] === 'open: false'
+♠♠♠♠
+
+♠♠♠♠ {{quest03Task}}
+const figure = {
+  type: 'circle',
+  params: {
+    center: [0, 0],
+    radius: 10
+  },
+  changeParams (newParams) {
+    this.params.center[0] = newParams.center[0] || 0
+    this.params.center[1] = newParams.center[1] || 0
+    this.params.radius = newParams.radius || 10
+  }
+}
+
+const show = (what) => {
+  try {
+    figure.changeParams(what)
+    console.log(JSON.stringify(figure.params))
+  } catch (err) {
+    console.log(`${err.name}: ${err.message}`)
+  }
+}
+
+show({ center: [3, 4], radius: 7 })
+show(null)
+show()
+show({ name: 5, size: 8 })
+show([])
+???
+? 4 | {{quest03Check1}}
+OUTPUT.length === 5 && !OUTPUT.some((line) => line.includes('TypeError'))
+
+? 4 | {{quest03Check2}}
+OUTPUT[0] === '{"center":[3,4],"radius":7}'
+
+? 4 | {{quest03Check3}}
+OUTPUT.slice(1).every((line) => line === OUTPUT[0])
 ♠♠♠♠

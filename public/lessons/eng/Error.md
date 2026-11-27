@@ -579,29 +579,101 @@ ___
 ## ![ico-25 hw] Tests⟪Tests⟫
 
 ♣♣♣♣
-? What will the console show?
+? What will the console see?
 
 ~~~js
+const errors = {
+  notArray: new Error('Argument must be an array'),
+  notNumber: new Error('Argument must be a number')
+}
+
 try {
-  setTimeout(() => {
-    throw new Error('later')
-  })
-} catch (err) {
-  console.log('caught:', err.message)
+  const arr = null
+  for (const x of arr) console.log(x)
+} catch (error) {
+  throw errors.notArray
 }
 ~~~
 
-+ An uncaught **~Error: later~**
-= Yes. **~try...catch~** catches only what is thrown while it is running. The timer callback is a task of its own, and by the time it reaches the stack the **~try~** block is long finished.
++ **~Uncaught Error: Argument must be an array~**
+= Yes. Iterating **~null~** throws a ~TypeError~, the **~catch~** takes it — and throws its own ready-made error instead, which nobody is left to catch. ![ico-20 warn] Ready-made errors are convenient, but such an error’s stack points at the line where it was **created**, not where it was thrown, and the same object travels through the whole codebase.
 
-- **~caught: later~**
-= No: by the time the timer fires, the stack holding that **~catch~** is gone.
+- **~Uncaught TypeError: arr is not iterable~**
+= That error came first, but the **~catch~** took it; a different one got out.
 
-- **~caught: undefined~**
-= No, the **~catch~** block will not run at all here.
+- **~Uncaught Error: Argument must be a number~**
+= That ready-made error is there in the code, but nobody threw it.
 
-- Nothing: an error inside a timer disappears quietly
-= No, it surfaces as an uncaught error — that **~catch~** cannot take it, but it does not vanish quietly either.
+- Nothing: the exception was caught
+= The first one was caught, and then the **~catch~** threw a new one — and that one nobody catches.
+
+? What will end up on the page?
+
+~~~js
+const errors = {
+  noArguments: new Error('There must be some arguments'),
+  notProperty: new Error('There is no such a property')
+}
+
+for (const key in errors) {
+  errors[key].name = key
+  errors[key].callback = function () {
+    document.body.append(this.toString())
+  }
+}
+
+const testProp = (obj, prop) => {
+  if (!Object.hasOwn(obj, prop)) throw errors.notProperty
+}
+
+try {
+  testProp({}, 'name')
+} catch (error) {
+  error.callback()
+}
+~~~
+
++ **~notProperty: There is no such a property~**
+= Yes. An error is an ordinary object: it was given a name — the key it is stored under — and a method was added to it. The method is called as **~error.callback()~**, so **~this~** inside it is the error itself, and an error’s **~toString()~** joins name and message.
+
+- **~There is no such a property~**
+= That is the message alone, and **~toString()~** puts the name in front of it.
+
+- **~Error: There is no such a property~**
+= That is what it would say had the loop not rewritten the name: it put the key **~notProperty~** in place of **~Error~**.
+
+- Nothing: an error cannot have methods of its own
+= It can: an error instance is an object like any other, and properties are added to it the same way.
+
+? What will the console see?
+
+~~~js
+const errors = {
+  noArguments: new Error('There are no arguments')
+}
+
+const testArgs = (arg) => {
+  if (!arg) throw errors.noArguments
+}
+
+try {
+  testArgs()
+} catch (error) {
+  `Custom ${error.toString()}`
+}
+~~~
+
++ Nothing
+= Yes. The string in the **~catch~** is worked out and dropped: nobody prints it or writes it anywhere. There was an exception, and not a trace of it is left — the worst kind of handling: the code pretended nothing happened.
+
+- **~Custom Error: There are no arguments~**
+= That string really is put together — and vanishes at once: it was not handed to **~console.log~** or to anything else.
+
+- **~Uncaught Error: There are no arguments~**
+= No: the error was caught and never got out.
+
+- **~Error: There are no arguments~**
+= An exception with that text was raised, but it never reached the console: it was caught and passed over in silence.
 
 ? What will this code print?
 
@@ -624,6 +696,95 @@ try {
 
 - **~TypeError~**: only errors may be thrown
 = No, anything at all may be thrown — though catching such a thing is awkward.
+
+? What will the heading of the red line say?
+
+~~~js
+const err = new Error('Arguments not valid')
+
+err.name = 'ValidationError'
+
+console.error(err)
+~~~
+
++ **~ValidationError: Arguments not valid~**
+= Yes. The heading is made of **~name~** and **~message~**, and the name was rewritten before anything looked at the error.
+
+- **~Error: Arguments not valid~**
+= No: the name is an ordinary property, and its new value is what the heading shows.
+
+- **~ValidationError~** with no message
+= No: the message is still the one given to the constructor.
+
+- **~Error: ValidationError~**
+= No, they do not swap places: the name comes first, the message second.
+
+? What will the code print?
+
+~~~js
+const obj = {
+  name: 'sample',
+  type: 'figure',
+  test () {
+    throw new Error('Sample error')
+  }
+}
+
+for (const prop in obj) {
+  console.log(typeof obj[prop] === 'function' ? obj[prop]() : obj[prop])
+}
+~~~
+
++ **~sample~**, **~figure~** — and then an uncaught **~Error: Sample error~**
+= Yes. The first two properties are printed, on the third the call throws, and as nobody is there to catch it the loop does not go on: it is not one iteration that stops but everything on the stack.
+
+- **~sample~**, **~figure~**, **~undefined~**
+= No: the function did not return nothing — it threw, which is not the same thing.
+
+- **~sample~**, **~figure~** — and nothing more, the error disappears
+= No: an uncaught error does not disappear, it reaches the console.
+
+- Nothing: the error happens before the first line is printed
+= No: the loop reaches the method third, and two lines are already printed.
+
+? And here?
+
+~~~js
+const obj = {
+  name: 'sample',
+  type: 'figure',
+  test () {
+    const err = new Error('Ha-ha!')
+    err.name = 'It is a joke: '
+    throw err
+  }
+}
+
+for (const prop in obj) {
+  if (typeof obj[prop] !== 'function') {
+    console.log(obj[prop])
+    continue
+  }
+
+  try {
+    obj[prop]()
+  } catch (err) {
+    console.log(err.name, err.message)
+  }
+}
+~~~
+
++ **~sample~**, **~figure~**, **~It is a joke:  Ha-ha!~**
+= Yes. An exception is raised here too, but it was caught — and the loop ran calmly to its end. The double space is no typo: the colon and space are part of the name itself, and **~console.log~** puts its own space between arguments.
+
+- **~sample~**, **~figure~** — and an uncaught error
+= No: the call is wrapped in a **~try~**, and the error went no further than the **~catch~**.
+
+- **~sample~**, **~figure~**, **~Error: Ha-ha!~**
+= No: the error’s name was rewritten, and that is what is printed.
+
+- **~sample~**, **~figure~**, **~undefined~**
+= No: the **~catch~** prints the name and the message, not what the method returned.
 
 ? In what order will the lines come out?
 
@@ -651,27 +812,29 @@ console.log(read())
 - **~cleanup~** only
 = No: the returned value is still there, and the outer **~console.log~** prints it.
 
-? What will the heading of the red line say?
+? What will the console show?
 
 ~~~js
-const err = new Error('Arguments not valid')
-
-err.name = 'ValidationError'
-
-console.error(err)
+try {
+  setTimeout(() => {
+    throw new Error('later')
+  })
+} catch (err) {
+  console.log('caught:', err.message)
+}
 ~~~
 
-+ **~ValidationError: Arguments not valid~**
-= Yes. The heading is made of **~name~** and **~message~**, and the name was rewritten before anything looked at the error.
++ An uncaught **~Error: later~**
+= Yes. **~try...catch~** catches only what is thrown while it is running. The timer callback is a task of its own, and by the time it reaches the stack the **~try~** block is long finished.
 
-- **~Error: Arguments not valid~**
-= No: the name is an ordinary property, and its new value is what the heading shows.
+- **~caught: later~**
+= No: by the time the timer fires, the stack holding that **~catch~** is gone.
 
-- **~ValidationError~** with no message
-= No: the message is still the one given to the constructor.
+- **~caught: undefined~**
+= No, the **~catch~** block will not run at all here.
 
-- **~Error: ValidationError~**
-= No, they do not swap places: the name comes first, the message second.
+- Nothing: an error inside a timer disappears quietly
+= No, it surfaces as an uncaught error — that **~catch~** cannot take it, but it does not vanish quietly either.
 
 ? What will this code print?
 
@@ -782,4 +945,43 @@ OUTPUT[1] === 'caught: nothing to read'
 
 ? 3 | the tidying up is done all the same
 OUTPUT[2] === 'open: false'
+♠♠♠♠
+
+♠♠♠♠ The **~changeParams~** method takes its argument on trust, and any call out of shape brings the code down: **~null~**, a call with no argument, an object with no **~center~**, an empty array. Repair it so that not one of the five calls throws: a proper argument is applied in full, and any other one changes nothing — the parameters stay as they were.
+const figure = {
+  type: 'circle',
+  params: {
+    center: [0, 0],
+    radius: 10
+  },
+  changeParams (newParams) {
+    this.params.center[0] = newParams.center[0] || 0
+    this.params.center[1] = newParams.center[1] || 0
+    this.params.radius = newParams.radius || 10
+  }
+}
+
+const show = (what) => {
+  try {
+    figure.changeParams(what)
+    console.log(JSON.stringify(figure.params))
+  } catch (err) {
+    console.log(`${err.name}: ${err.message}`)
+  }
+}
+
+show({ center: [3, 4], radius: 7 })
+show(null)
+show()
+show({ name: 5, size: 8 })
+show([])
+???
+? 4 | not one call brought the code down: five lines, and not one TypeError
+OUTPUT.length === 5 && !OUTPUT.some((line) => line.includes('TypeError'))
+
+? 4 | the proper argument is applied in full
+OUTPUT[0] === '{"center":[3,4],"radius":7}'
+
+? 4 | the bad arguments spoiled nothing: the parameters stayed as they were
+OUTPUT.slice(1).every((line) => line === OUTPUT[0])
 ♠♠♠♠
