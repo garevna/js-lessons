@@ -579,29 +579,101 @@ ___
 ## ![ico-25 hw] Тести⟪Tests⟫
 
 ♣♣♣♣
-? Що опиниться в консолі?
+? Що побачить консоль?
 
 ~~~js
+const errors = {
+  notArray: new Error('Argument must be an array'),
+  notNumber: new Error('Argument must be a number')
+}
+
 try {
-  setTimeout(() => {
-    throw new Error('later')
-  })
-} catch (err) {
-  console.log('caught:', err.message)
+  const arr = null
+  for (const x of arr) console.log(x)
+} catch (error) {
+  throw errors.notArray
 }
 ~~~
 
-+ Неперехоплена помилка **~Uncaught Error: later~**
-= Так. **~try...catch~** ловить лише те, що кинуто, поки він виконується. Колбек таймера — окреме завдання, і на той час, коли він потрапить у стек, блок **~try~** давно скінчився.
++ **~Uncaught Error: Argument must be an array~**
+= Так. Перебір **~null~** кидає ~TypeError~, його ловить **~catch~** — і кидає далі вже свою, заготовлену помилку; ловити її нікому. ![ico-20 warn] Заготовки зручні, але в такої помилки стек указує на рядок, де її **створили**, а не де кинули, і той самий об’єкт мандрує всім кодом.
 
-- **~caught: later~**
-= Ні: на момент, коли спрацює таймер, стека з цим **~catch~** уже немає.
+- **~Uncaught TypeError: arr is not iterable~**
+= Ця помилка виникла першою, але її перехопив **~catch~**; назовні вийшла інша.
 
-- **~caught: undefined~**
-= Ні, блок **~catch~** тут узагалі не виконається.
+- **~Uncaught Error: Argument must be a number~**
+= Така заготовка в коді є, але її ніхто не кидав.
 
-- Нічого: помилка всередині таймера зникне мовчки
-= Ні, вона спливе як неперехоплена — упіймати її цим **~catch~** не можна, але й мовчки вона не зникне.
+- Нічого: виняток перехоплено
+= Перехоплено перше, а **~catch~** кинув нове — і цього вже ніхто не ловить.
+
+? Що опиниться на сторінці?
+
+~~~js
+const errors = {
+  noArguments: new Error('There must be some arguments'),
+  notProperty: new Error('There is no such a property')
+}
+
+for (const key in errors) {
+  errors[key].name = key
+  errors[key].callback = function () {
+    document.body.append(this.toString())
+  }
+}
+
+const testProp = (obj, prop) => {
+  if (!Object.hasOwn(obj, prop)) throw errors.notProperty
+}
+
+try {
+  testProp({}, 'name')
+} catch (error) {
+  error.callback()
+}
+~~~
+
++ **~notProperty: There is no such a property~**
+= Так. Помилка — звичайний об’єкт: їй дали ім’я (ключ, під яким вона лежить) і дописали метод. Метод викликано як **~error.callback()~**, тому **~this~** усередині — сама помилка, а **~toString()~** у помилки складає ім’я та повідомлення.
+
+- **~There is no such a property~**
+= Це лише повідомлення, а **~toString()~** ставить перед ним ім’я.
+
+- **~Error: There is no such a property~**
+= Так було б, якби цикл не переписав ім’я: він поставив замість **~Error~** ключ **~notProperty~**.
+
+- Нічого: помилка не може мати власних методів
+= Може: екземпляр помилки — такий самий об’єкт, як будь-який інший, і властивості йому дописуються так само.
+
+? Що побачить консоль?
+
+~~~js
+const errors = {
+  noArguments: new Error('There are no arguments')
+}
+
+const testArgs = (arg) => {
+  if (!arg) throw errors.noArguments
+}
+
+try {
+  testArgs()
+} catch (error) {
+  `Custom ${error.toString()}`
+}
+~~~
+
++ Нічого
+= Так. Рядок у **~catch~** обчислюється й викидається: його ніхто не друкує й нікуди не записує. Виняток був, але від нього не лишилося сліду — це найгірший вид обробки: код удав, що нічого не сталося.
+
+- **~Custom Error: There are no arguments~**
+= Такий рядок справді збирається — і одразу зникає: його не передали ні в **~console.log~**, ні кудись іще.
+
+- **~Uncaught Error: There are no arguments~**
+= Ні: помилку перехоплено, назовні вона не вийшла.
+
+- **~Error: There are no arguments~**
+= Виняток із таким текстом було згенеровано, але в консоль він не потрапив: його перехопили й промовчали.
 
 ? Що надрукує цей код?
 
@@ -624,6 +696,95 @@ try {
 
 - **~TypeError~**: кидати можна лише помилки
 = Ні, кидати можна будь-що — інша річ, що ловити таке незручно.
+
+? Що буде в заголовку червоного рядка?
+
+~~~js
+const err = new Error('Arguments not valid')
+
+err.name = 'ValidationError'
+
+console.error(err)
+~~~
+
++ **~ValidationError: Arguments not valid~**
+= Так. Заголовок складається з **~name~** і **~message~**, а ім’я переписали до того, як до помилки звернулися.
+
+- **~Error: Arguments not valid~**
+= Ні: ім’я — звичайна властивість, і його нове значення потрапить у заголовок.
+
+- **~ValidationError~** без повідомлення
+= Ні: повідомлення лишилося тим, що передали конструктору.
+
+- **~Error: ValidationError~**
+= Ні, місцями вони не міняються: спершу ім’я, потім повідомлення.
+
+? Що надрукує код?
+
+~~~js
+const obj = {
+  name: 'sample',
+  type: 'figure',
+  test () {
+    throw new Error('Sample error')
+  }
+}
+
+for (const prop in obj) {
+  console.log(typeof obj[prop] === 'function' ? obj[prop]() : obj[prop])
+}
+~~~
+
++ **~sample~**, **~figure~** — і далі неперехоплена **~Error: Sample error~**
+= Так. Два перші властивості друкуються, на третій виклик кидає помилку, і, оскільки ловити її нікому, цикл не продовжиться: переривається не ітерація, а все, що було в стеку.
+
+- **~sample~**, **~figure~**, **~undefined~**
+= Ні: функція не повернула нічого — вона кинула помилку, а це не те саме.
+
+- **~sample~**, **~figure~** — і більше нічого, помилка зникне
+= Ні: неперехоплена помилка не зникає, вона виходить у консоль.
+
+- Нічого: помилка станеться до першого друку
+= Ні: до методу цикл доходить третім, і два рядки вже надруковано.
+
+? А тут?
+
+~~~js
+const obj = {
+  name: 'sample',
+  type: 'figure',
+  test () {
+    const err = new Error('Ha-ha!')
+    err.name = 'It is a joke: '
+    throw err
+  }
+}
+
+for (const prop in obj) {
+  if (typeof obj[prop] !== 'function') {
+    console.log(obj[prop])
+    continue
+  }
+
+  try {
+    obj[prop]()
+  } catch (err) {
+    console.log(err.name, err.message)
+  }
+}
+~~~
+
++ **~sample~**, **~figure~**, **~It is a joke:  Ha-ha!~**
+= Так. Виняток згенеровано й тут, але його перехопили — і цикл спокійно дійшов до кінця. Подвійний пробіл не помилка: двокрапку з пробілом дописано в саме ім’я, а **~console.log~** ставить свій пробіл між аргументами.
+
+- **~sample~**, **~figure~** — і неперехоплена помилка
+= Ні: виклик загорнутий у **~try~**, і помилка далі **~catch~** не пішла.
+
+- **~sample~**, **~figure~**, **~Error: Ha-ha!~**
+= Ні: ім’я в помилки переписано, і друкується саме воно.
+
+- **~sample~**, **~figure~**, **~undefined~**
+= Ні: у **~catch~** друкують ім’я та повідомлення, а не те, що повернув метод.
 
 ? У якому порядку вийдуть рядки?
 
@@ -651,27 +812,29 @@ console.log(read())
 - лише **~cleanup~**
 = Ні: повернене значення нікуди не зникло, його друкує зовнішній **~console.log~**.
 
-? Що буде в заголовку червоного рядка?
+? Що опиниться в консолі?
 
 ~~~js
-const err = new Error('Arguments not valid')
-
-err.name = 'ValidationError'
-
-console.error(err)
+try {
+  setTimeout(() => {
+    throw new Error('later')
+  })
+} catch (err) {
+  console.log('caught:', err.message)
+}
 ~~~
 
-+ **~ValidationError: Arguments not valid~**
-= Так. Заголовок складається з **~name~** і **~message~**, а ім’я ми переписали до того, як до помилки звернулися.
++ Неперехоплена помилка **~Uncaught Error: later~**
+= Так. **~try...catch~** ловить лише те, що кинуто, поки він виконується. Колбек таймера — окреме завдання, і на той час, коли він потрапить у стек, блок **~try~** давно скінчився.
 
-- **~Error: Arguments not valid~**
-= Ні: ім’я — звичайна властивість, і його нове значення потрапить у заголовок.
+- **~caught: later~**
+= Ні: на момент, коли спрацює таймер, стека з цим **~catch~** уже немає.
 
-- **~ValidationError~** без повідомлення
-= Ні: повідомлення лишилося тим, що передали конструктору.
+- **~caught: undefined~**
+= Ні, блок **~catch~** тут узагалі не виконається.
 
-- **~Error: ValidationError~**
-= Ні, місцями вони не міняються: спершу ім’я, потім повідомлення.
+- Нічого: помилка всередині таймера зникне мовчки
+= Ні, вона спливе як неперехоплена — упіймати її цим **~catch~** не можна, але й мовчки вона не зникне.
 
 ? Що надрукує цей код?
 
@@ -782,4 +945,43 @@ OUTPUT[1] === 'caught: nothing to read'
 
 ? 3 | прибирання все одно зроблено
 OUTPUT[2] === 'open: false'
+♠♠♠♠
+
+♠♠♠♠ Метод **~changeParams~** вірить аргументу на слово, і будь-який виклик не за формою валить код: **~null~**, виклик без аргумента, об’єкт без **~center~**, порожній масив. Почини так, щоб жоден із п’яти викликів не кинув винятку: правильний аргумент застосовується цілком, а будь-який інший не змінює нічого — параметри лишаються такими, якими були.
+const figure = {
+  type: 'circle',
+  params: {
+    center: [0, 0],
+    radius: 10
+  },
+  changeParams (newParams) {
+    this.params.center[0] = newParams.center[0] || 0
+    this.params.center[1] = newParams.center[1] || 0
+    this.params.radius = newParams.radius || 10
+  }
+}
+
+const show = (what) => {
+  try {
+    figure.changeParams(what)
+    console.log(JSON.stringify(figure.params))
+  } catch (err) {
+    console.log(`${err.name}: ${err.message}`)
+  }
+}
+
+show({ center: [3, 4], radius: 7 })
+show(null)
+show()
+show({ name: 5, size: 8 })
+show([])
+???
+? 4 | жоден виклик не повалив код: п’ять рядків, і жодного TypeError
+OUTPUT.length === 5 && !OUTPUT.some((line) => line.includes('TypeError'))
+
+? 4 | правильний аргумент застосовано цілком
+OUTPUT[0] === '{"center":[3,4],"radius":7}'
+
+? 4 | негодящі аргументи нічого не зіпсували: параметри лишилися колишніми
+OUTPUT.slice(1).every((line) => line === OUTPUT[0])
 ♠♠♠♠
