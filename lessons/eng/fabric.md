@@ -9,6 +9,8 @@
 
 The keyword **~new~** before a function call turns that function into a constructor, and such a call will always return an object, regardless of whether or not the function body contains the ~return~ statement.
 
+Strictly speaking, a constructor does not create the object: the **~new~** operator does — with **~F.prototype~** as its prototype from the start — and hands it to the function as **~this~**. The function only fills it in.
+
 If it does this without using the keyword **_~new~_**, then such a function is a **factory**:
 
 ~~~js
@@ -19,8 +21,8 @@ In this example we use an arrow function, and it cannot be a constructor at all:
 It is a factory because it returns an object.
 And this object will know nothing about the function **~creator~**. It will be an instance of **~Object~**.
 
-![ico-20 warn] A function can be either a factory or a constructor.
-Let’s prove this statement.
+![ico-20 warn] A function cannot be a factory and a constructor at once. It may also be neither: a callback, or a function that works something out, is just a function. What makes it a factory or a constructor is not how it is declared but what it returns and how it is called.
+Let’s prove the first part.
 
 A necessary but insufficient (![ico-20 warn]) condition for a function to be a factory is the presence of the operator **~return~**.
 
