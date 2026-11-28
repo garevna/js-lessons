@@ -5,14 +5,14 @@
     "ua": "Фабричні методи"
   },
   "p2": {
-    "ru": "Лише скажи 'new' і кожна function поверне об'єкт",
-    "eng": "Just say ‘new’ and every function will return an object",
-    "ua": "Просто скажи «new», і кожна функція поверне об’єкт"
+    "ru": "Только скажи «new» — и (почти) любая функция вернёт объект.",
+    "eng": "Just say ‘new’ and (almost) every function will return an object.",
+    "ua": "Просто скажи «new», і (майже) кожна функція поверне об’єкт."
   },
   "p3": {
-    "ru": "^^Причем не важно, есть или нет в теле функции оператор ~⟦f0⟧~.^^",
-    "eng": "^^It doesn’t matter whether or not the function body contains the ~⟦f0⟧~ operator.^^",
-    "ua": "^^Причому не має значення, чи є в тілі функції оператор ~⟦f0⟧~.^^"
+    "ru": "Ключевое слово **~new~** перед вызовом функции превращает эту функцию в конструктор, и результатом такого вызова всегда будет объект, независимо от того, есть или нет в теле функции оператор ~⟦f0⟧~.",
+    "eng": "The keyword **~new~** before a function call turns that function into a constructor, and such a call will always return an object, regardless of whether or not the function body contains the ~⟦f0⟧~ statement.",
+    "ua": "Ключове слово **~new~** перед викликом функції перетворює цю функцію на конструктор, і результатом такого виклику завжди буде об’єкт, незалежно від того, чи є в тілі функції оператор ~⟦f0⟧~."
   },
   "p4": {
     "ru": "Если она делает это без использования ключевого слова **_~⟦f1⟧~_**, то такая функция является **фабрикой**:",
@@ -20,9 +20,9 @@
     "ua": "Якщо вона робить це без використання ключового слова **_~⟦f1⟧~_**, то така функція є **фабрикою**:"
   },
   "p5": {
-    "ru": "В этом примере мы используем стрелочную функцию, которая по определению не может быть конструктором ввиду отсутствия у нее свойства **~⟦f2⟧~**.",
-    "eng": "In this example, we are using an arrow function, which by definition cannot be a constructor as it lacks the **~⟦f2⟧~** property.",
-    "ua": "У цьому прикладі ми використовуємо стрілкову функцію, яка за визначенням не може бути конструктором через відсутність у неї властивості **~⟦f2⟧~**."
+    "ru": "В этом примере мы используем стрелочную функцию, а она не может быть конструктором вовсе: у неё нет внутреннего метода **[[Construct]]**, и вызов с **~⟦f1⟧~** бросит **~TypeError~**. Свойства **~⟦f2⟧~** у неё тоже нет, но дело не в нём: обычная функция, у которой ~⟦f2⟧~ отняли, вызывается с ~⟦f1⟧~ как ни в чём не бывало.",
+    "eng": "In this example we use an arrow function, and it cannot be a constructor at all: it has no internal **[[Construct]]** method, and calling it with **~⟦f1⟧~** throws a **~TypeError~**. It has no **~⟦f2⟧~** property either, but that is not the reason: an ordinary function whose ~⟦f2⟧~ has been taken away is called with ~⟦f1⟧~ as if nothing had happened.",
+    "ua": "У цьому прикладі ми використовуємо стрілкову функцію, а вона не може бути конструктором узагалі: у неї немає внутрішнього методу **[[Construct]]**, і виклик із **~⟦f1⟧~** кине **~TypeError~**. Властивості **~⟦f2⟧~** у неї теж немає, але річ не в ній: звичайна функція, в якої ~⟦f2⟧~ відібрали, викликається з ~⟦f1⟧~ як ні в чому не бувало."
   },
   "p6": {
     "ru": "Она является фабрикой, потому что возвращает объект.",
@@ -90,9 +90,9 @@
     "ua": "Аналогічна ситуація буде у випадку, якщо функція повертає рядок, або ~⟦f7⟧~, або ~⟦f8⟧~. Можете перевірити самостійно."
   },
   "p19": {
-    "ru": "Т.е. функция будет фабрикой только в том случае, если она возвращает экземпляр **~⟦f4⟧~**.",
-    "eng": "In other words, the function will be a factory only if it returns an instance of **~⟦f4⟧~**.",
-    "ua": "Тобто функція буде фабрикою лише в тому випадку, якщо вона повертає екземпляр **~⟦f4⟧~**."
+    "ru": "Т.е. функция будет фабрикой только в том случае, если она возвращает объект — любой: литерал, массив, функцию, — а не примитив.",
+    "eng": "In other words, the function is a factory only if it returns an object — any object: a literal, an array, a function — and not a primitive.",
+    "ua": "Тобто функція буде фабрикою лише в тому випадку, якщо вона повертає об’єкт — будь-який: літерал, масив, функцію, — а не примітив."
   },
   "p20": {
     "ru": "ООП-объекты и структуры данных",
@@ -100,24 +100,19 @@
     "ua": "ООП-об’єкти та структури даних"
   },
   "p21": {
-    "ru": "••^^Роберт Мартин, «Чистый код»:^^••",
-    "eng": "••^^Robert Martin, ‘Clean Code’:^^••",
-    "ua": "••^^Роберт Мартін, «Чистий код»:^^••"
+    "ru": "Роберт Мартин, «Чистый код»:",
+    "eng": "Robert Martin, ‘Clean Code’:",
+    "ua": "Роберт Мартін, «Чистий код»:"
   },
   "p41": {
-    "ru": "_Объекты предоставляют поведение и скрывают данные",
-    "eng": "_Objects provide behaviour and hide data",
-    "ua": "_Об’єкти забезпечують поведінку та приховують дані"
+    "ru": "Объекты предоставляют поведение и скрывают данные.",
+    "eng": "Objects provide behaviour and hide data.",
+    "ua": "Об’єкти забезпечують поведінку та приховують дані."
   },
   "p42": {
-    "ru": "Структуры данных предоставляют данные,",
-    "eng": "Data structures provide data,",
-    "ua": "Структури даних надають дані,"
-  },
-  "p43": {
-    "ru": "но не обладают сколько-нибудь значительным поведением_",
-    "eng": "but do not possess any significant behaviour_",
-    "ua": "але не мають жодної значущої поведінки_"
+    "ru": "Структуры данных предоставляют данные, но не обладают сколько-нибудь значительным поведением.",
+    "eng": "Data structures provide data but do not possess any significant behaviour",
+    "ua": "Структури даних надають дані, але не мають жодної значущої поведінки."
   },
   "p23": {
     "ru": "**Паттерн \"_Модуль_\"**",
@@ -129,15 +124,10 @@
     "eng": "^^In this example, an IIFE and closure are used to create an object whose data is hidden from direct access and is only accessible via an interface provided by the _**getVar**_ method^^",
     "ua": "^^У цьому прикладі за допомогою IIFE та замикання створюється об’єкт, дані якого приховані від безпосереднього доступу й доступні лише через інтерфейс, представлений методом _**getVar**_^^"
   },
-  "p25": {
-    "ru": "^^Выведем объект **google** в консоль:^^",
-    "eng": "^^Let’s print the **google** object to the console:^^",
-    "ua": "^^Виведемо об’єкт **google** у консоль:^^"
-  },
   "p26": {
-    "ru": "^^В этом примере мы делаем то же самое, но используя расширение класса _User_^^",
-    "eng": "^^In this example, we do the same thing, but using a subclass of the _User_ class^^",
-    "ua": "^^У цьому прикладі ми робимо те саме, але використовуємо розширення класу _User_^^"
+    "ru": "^^В этом примере то же самое делает статический метод класса _User_^^",
+    "eng": "^^In this example the same thing is done by a static method of the _User_ class^^",
+    "ua": "^^У цьому прикладі те саме робить статичний метод класу _User_^^"
   },
   "p27": {
     "ru": "^^Конструктор класса создает публичное свойство _name_^^",
@@ -145,14 +135,9 @@
     "ua": "^^Конструктор класу створює публічну властивість _name_^^"
   },
   "p28": {
-    "ru": "^^Фабричный метод класса _updateUser_ позволяет расширить функционал класса, создать скрытые данные, доступные через интерфейс ( метод _**getVar**_ )^^",
-    "eng": "^^The class’s factory method _updateUser_ allows us to extend the class’s functionality and create hidden data accessible via an interface (the _**getVar**_ method)^^",
-    "ua": "^^Фабричний метод класу _updateUser_ дозволяє розширити функціонал класу, створити приховані дані, доступні через інтерфейс (метод _**getVar**_)^^"
-  },
-  "p29": {
-    "ru": "^^Выведем объект **google** в консоль:^^",
-    "eng": "^^Let’s print the **google** object to the console:^^",
-    "ua": "^^Виведемо об’єкт **google** у консоль:^^"
+    "ru": "^^Фабричный метод класса _createUser_ создаёт экземпляр и сразу дополняет его: скрытые данные остаются в замыкании, а доступ к ним даёт интерфейс — метод _**getVar**_^^",
+    "eng": "^^The class’s factory method _createUser_ makes an instance and fills it in at once: the hidden data stays in the closure, and the interface — the _**getVar**_ method — is the way to it^^",
+    "ua": "^^Фабричний метод класу _createUser_ створює екземпляр і одразу доповнює його: приховані дані лишаються в замиканні, а доступ до них дає інтерфейс — метод _**getVar**_^^"
   },
   "p30": {
     "ru": "Полиморфизм",
@@ -160,34 +145,29 @@
     "ua": "Поліморфізм"
   },
   "p31": {
-    "ru": "Фабричные методы дают возможность расширять функциональность конструктора, обеспечивая его полиморфизм.",
-    "eng": "Factory methods make it possible to extend the functionality of the constructor, ensuring its polymorphism.",
-    "ua": "Фабричні методи дають можливість розширювати функціональність конструктора, забезпечуючи його поліморфізм."
+    "ru": "Фабричный метод может жить и на самом конструкторе — как статический метод. Тогда он создаёт экземпляры этого конструктора, но с разным набором свойств и методов.",
+    "eng": "A factory method can also live on the constructor itself, as a static method. It then makes instances of that constructor, but with different sets of properties and methods.",
+    "ua": "Фабричний метод може жити й на самому конструкторі — як статичний метод. Тоді він створює екземпляри цього конструктора, але з різним набором властивостей і методів."
   },
   "p32": {
-    "ru": "В следующем примере конструктор  **User**  имеет фабричный метод   **_createNewUser_**,",
-    "eng": "In the following example, the **User** constructor has a factory method **_createNewUser_**,",
-    "ua": "У наступному прикладі конструктор  **User**  має фабричний метод   **_createNewUser_**,"
+    "ru": "В следующем примере конструктор **~User~** имеет фабричный метод **~createNewUser~**, позволяющий создавать экземпляры класса с различным набором свойств и методов.",
+    "eng": "In the following example, the **~User~** constructor has a factory method **~createNewUser~** which allows instances of the class to be created with different sets of properties and methods.",
+    "ua": "У наступному прикладі конструктор **~User~** має фабричний метод **~createNewUser~**, що дозволяє створювати екземпляри класу з різним набором властивостей і методів."
   },
   "p33": {
-    "ru": "позволяющий создавать экземпляры класса с различным набором свойств и методов.",
-    "eng": "which allows instances of the class to be created with different sets of properties and methods.",
-    "ua": "що дозволяє створювати екземпляри класу з різним набором властивостей і методів."
+    "ru": "Получили _перечислимый_ статический метод **~createNewUser~** конструктора.",
+    "eng": "We have obtained an _enumerable_ static method **~createNewUser~** from the constructor.",
+    "ua": "Отримали _перелічуваний_ статичний метод **~createNewUser~** конструктора."
   },
   "p34": {
-    "ru": "экземпляры  **visitor**  и  **currentUser**,  созданные конструктором  **User**,",
-    "eng": "Instances of **visitor** and **currentUser**, created by the **User** constructor,",
-    "ua": "екземпляри  **visitor**  та  **currentUser**,  створені конструктором  **User**,"
+    "ru": "Создадим с его помощью два экземпляра класса **~User~** с различным набором свойств и методов.",
+    "eng": "Let’s create two instances of the **~User~** class with different sets of properties and methods using this factory method.",
+    "ua": "Створимо з його допомогою два екземпляри класу **~User~** з різним набором властивостей і методів."
   },
   "p35": {
-    "ru": "имеют различные свойства и методы.",
-    "eng": "have different properties and methods.",
-    "ua": "мають різні властивості та методи."
-  },
-  "p36": {
-    "ru": "Получили _перечислимый_ статический метод **_createNewUser_** конструктора.",
-    "eng": "We have obtained an _enumerable_ static method **_createNewUser_** from the constructor.",
-    "ua": "Отримали _перелічуваний_ статичний метод **_createNewUser_** конструктора."
+    "ru": "Экземпляры **~visitor~** и **~currentUser~** созданы одним конструктором **~User~**, но свойства и методы у них разные.",
+    "eng": "The instances **~visitor~** and **~currentUser~** are made by one and the same **~User~** constructor, and yet their properties and methods differ.",
+    "ua": "Екземпляри **~visitor~** і **~currentUser~** створені одним конструктором **~User~**, але властивості й методи в них різні."
   },
   "p37": {
     "ru": "Сделаем то же самое с помощью класса:",
@@ -195,18 +175,438 @@
     "ua": "Зробимо те саме за допомогою класу:"
   },
   "p38": {
-    "ru": "В этом случае статический метод класса **_createNewUser_** будет неперечислимым,<br/>",
-    "eng": "In this case, the class’s static method **_createNewUser_** will be non-enumerable,<br/>",
-    "ua": "У цьому випадку статичний метод класу **_createNewUser_** буде неперелічуваним,<br/>"
-  },
-  "p39": {
-    "ru": "а в остальном все будет аналогично варианту с конструктором<br/>",
-    "eng": "whilst everything else will be similar to the constructor-based variant<br/>",
-    "ua": "а в іншому все буде аналогічно варіанту з конструктором<br/>"
+    "ru": "В этом случае статический метод класса **~createNewUser~** будет неперечислимым, а в остальном все будет аналогично варианту с конструктором",
+    "eng": "In this case, the class’s static method **~createNewUser~** will be non-enumerable whilst everything else will be similar to the constructor-based variant",
+    "ua": "У цьому випадку статичний метод класу **~createNewUser~** буде неперелічуваним, а в іншому все буде аналогічно варіанту з конструктором"
   },
   "p40": {
-    "ru": "^^Так что \"под капотом\" работает все то же прототипное наследование, только с косметическими \"добавками\".^^",
-    "eng": "^^So, ‘under the bonnet’, it’s still the same prototype-based inheritance at work, just with a few cosmetic ‘additions’.^^",
-    "ua": "^^Тож «під капотом» працює те саме прототипне успадкування, тільки з косметичними «добавками».^^"
+    "ru": "^^А «под капотом» класс — всё тот же конструктор, и работает всё то же прототипное наследование.^^",
+    "eng": "^^And ‘under the bonnet’ a class is the same constructor, with the same prototype-based inheritance at work.^^",
+    "ua": "^^А «під капотом» клас — той самий конструктор, і працює те саме прототипне успадкування.^^"
+  },
+  "objectsBridge": {
+    "ru": "Фабрика может вернуть и то и другое. Конструктор кладёт данные в **~this~**, и они открыты всем. Фабрика может оставить их в замыкании и отдать наружу только поведение — получится объект в том смысле, в каком о нём говорит Мартин. Так устроен паттерн «Модуль»:",
+    "eng": "A factory can return either. A constructor puts the data into **~this~**, where everybody can see it. A factory can leave it in a closure and hand out only the behaviour — which makes an object in Martin’s sense of the word. That is how the ‘Module’ pattern works:",
+    "ua": "Фабрика може повернути і те, і інше. Конструктор кладе дані в **~this~**, і вони відкриті всім. Фабрика може залишити їх у замиканні й віддати назовні лише поведінку — вийде об’єкт у тому сенсі, у якому про нього говорить Мартін. Так влаштований патерн «Модуль»:"
+  },
+  "moduleIsFactory": {
+    "ru": "IIFE здесь — та же фабрика, только вызванная один раз, на месте. Вызовите её дважды — получите два объекта, и у каждого будут свои скрытые данные: у каждого вызова фабрики своё замыкание.",
+    "eng": "The IIFE here is the same factory, only called once, on the spot. Call it twice and you get two objects, each with hidden data of its own: every call of a factory has a closure of its own.",
+    "ua": "IIFE тут — та сама фабрика, тільки викликана один раз, на місці. Викличте її двічі — отримаєте два об’єкти, і в кожного будуть свої приховані дані: у кожного виклику фабрики своє замикання."
+  },
+  "polyWhat": {
+    "ru": "Полиморфизм — это когда один и тот же вызов работает с объектами разных видов, и каждый отвечает на него по-своему. Код, который вызывает **~shape.area()~**, не знает и не должен знать, круг перед ним или квадрат. А решается, какой именно объект родится, в одном месте — в фабрике.",
+    "eng": "Polymorphism is one and the same call working on objects of different kinds, each of them answering it in its own way. The code that calls **~shape.area()~** does not know, and has no need to know, whether it holds a circle or a square. Which object is born is decided in one place — the factory.",
+    "ua": "Поліморфізм — це коли той самий виклик працює з об’єктами різних видів, і кожен відповідає на нього по-своєму. Код, який викликає **~shape.area()~**, не знає й не мусить знати, коло перед ним чи квадрат. А вирішується, який саме об’єкт народиться, в одному місці — у фабриці."
+  },
+  "polyLoop": {
+    "ru": "Цикл вызывает **~area()~** у каждой фигуры, не спрашивая, кто она. Чтобы добавить треугольник, достаточно дописать одну ветку в фабрике — цикл менять не нужно.",
+    "eng": "The loop calls **~area()~** on every shape without asking what it is. Adding a triangle takes one more branch in the factory, and the loop stays as it is.",
+    "ua": "Цикл викликає **~area()~** у кожної фігури, не питаючи, хто вона. Щоб додати трикутник, досить дописати одну гілку у фабриці — цикл міняти не треба."
+  },
+  "newThis": {
+    "ru": "Обратите внимание на **~new this~** внутри метода. **~this~** здесь — тот конструктор, у которого метод вызвали. Вызовите его у наследника — и получите экземпляр наследника, хотя сам метод написан один раз, в родителе. Это и есть полиморфизм фабричного метода:",
+    "eng": "Notice the **~new this~** inside the method. **~this~** here is whichever constructor the method was called on. Call it on a subclass and you get an instance of the subclass, though the method itself is written once, in the parent. That is the polymorphism of a factory method:",
+    "ua": "Зверніть увагу на **~new this~** усередині методу. **~this~** тут — той конструктор, у якого метод викликали. Викличте його в нащадка — і отримаєте екземпляр нащадка, хоча сам метод написано один раз, у батьківському класі. Це і є поліморфізм фабричного методу:"
+  },
+  "versus": {
+    "ru": "Фабрика или конструктор?",
+    "eng": "A factory or a constructor?",
+    "ua": "Фабрика чи конструктор?"
+  },
+  "versusNew": {
+    "ru": "![ico-20 green-ok] фабрику вызывают без **~new~**, и забыть его нельзя. Конструктор, вызванный без **~new~**, вернёт **~undefined~**, а в нестрогом режиме ещё и молча запишет свойства в глобальный объект;",
+    "eng": "![ico-20 green-ok] a factory is called without **~new~**, so there is no forgetting it. A constructor called without **~new~** returns **~undefined~**, and in sloppy mode quietly writes its properties into the global object besides;",
+    "ua": "![ico-20 green-ok] фабрику викликають без **~new~**, і забути його неможливо. Конструктор, викликаний без **~new~**, поверне **~undefined~**, а в нестрогому режимі ще й мовчки запише властивості в глобальний об’єкт;"
+  },
+  "versusPrivate": {
+    "ru": "![ico-20 green-ok] данные можно спрятать в замыкании, а не выставлять в **~this~**;",
+    "eng": "![ico-20 green-ok] the data can be hidden in a closure instead of being put out on **~this~**;",
+    "ua": "![ico-20 green-ok] дані можна сховати в замиканні, а не виставляти в **~this~**;"
+  },
+  "versusKinds": {
+    "ru": "![ico-20 green-ok] фабрика может вернуть объект любого вида — в этом её полиморфизм;",
+    "eng": "![ico-20 green-ok] a factory can return an object of any kind — that is its polymorphism;",
+    "ua": "![ico-20 green-ok] фабрика може повернути об’єкт будь-якого виду — у цьому її поліморфізм;"
+  },
+  "versusInstanceof": {
+    "ru": "![ico-20 warn] **~instanceof~** о фабрике ничего не скажет: литерал, который она вернула, — экземпляр **~Object~**;",
+    "eng": "![ico-20 warn] **~instanceof~** has nothing to say about a factory: the literal it returned is an instance of **~Object~**;",
+    "ua": "![ico-20 warn] **~instanceof~** про фабрику нічого не скаже: літерал, який вона повернула, — екземпляр **~Object~**;"
+  },
+  "versusMethods": {
+    "ru": "![ico-20 warn] методы, объявленные в возвращаемом литерале, у каждого объекта свои. Чтобы они были общими, как у экземпляров конструктора, фабрика создаёт объект через **~Object.create(proto)~**:",
+    "eng": "![ico-20 warn] methods declared in the returned literal belong to each object separately. To make them shared, as an instance’s methods are, the factory makes the object with **~Object.create(proto)~**:",
+    "ua": "![ico-20 warn] методи, оголошені в літералі, що повертається, у кожного об’єкта свої. Щоб вони були спільними, як в екземплярів конструктора, фабрика створює об’єкт через **~Object.create(proto)~**:"
+  },
+  "versusProto": {
+    "ru": "Метод **~greet~** у всех объектов один — он лежит в прототипе, а у самих объектов есть только **~name~**.",
+    "eng": "There is one **~greet~** method for all the objects — it lives in the prototype, and the objects themselves have only **~name~**.",
+    "ua": "Метод **~greet~** в усіх об’єктів один — він лежить у прототипі, а в самих об’єктів є лише **~name~**."
+  },
+  "test01Question": {
+    "ru": "Что произойдёт?",
+    "eng": "What will happen?",
+    "ua": "Що станеться?"
+  },
+  "test01Variant1": {
+    "ru": "**~TypeError: creator is not a constructor~**",
+    "eng": "**~TypeError: creator is not a constructor~**",
+    "ua": "**~TypeError: creator is not a constructor~**"
+  },
+  "test01Variant1Answer": {
+    "ru": "Да. У стрелочной функции нет внутреннего метода **[[Construct]]**, и вызвать её с **~new~** нельзя. Фабрикой она быть может, конструктором — нет.",
+    "eng": "Yes. An arrow function has no internal **[[Construct]]** method, and it cannot be called with **~new~**. It can be a factory, never a constructor.",
+    "ua": "Так. У стрілкової функції немає внутрішнього методу **[[Construct]]**, і викликати її з **~new~** не можна. Фабрикою вона бути може, конструктором — ні."
+  },
+  "test01Variant2": {
+    "ru": "**~user~** — **~{ name: 'Ann', age: 25 }~**",
+    "eng": "**~user~** is **~{ name: 'Ann', age: 25 }~**",
+    "ua": "**~user~** — **~{ name: 'Ann', age: 25 }~**"
+  },
+  "test01Variant2Answer": {
+    "ru": "Так было бы без **~new~**. С ним до тела функции дело не доходит.",
+    "eng": "That is what you would get without **~new~**. With it, the body of the function is never reached.",
+    "ua": "Так було б без **~new~**. З ним до тіла функції справа не доходить."
+  },
+  "test01Variant3": {
+    "ru": "**~user~** — пустой экземпляр **~creator {}~**",
+    "eng": "**~user~** is an empty instance **~creator {}~**",
+    "ua": "**~user~** — порожній екземпляр **~creator {}~**"
+  },
+  "test01Variant3Answer": {
+    "ru": "Нет: экземпляр стрелочной функции создать нельзя вообще.",
+    "eng": "No: an instance of an arrow function cannot be made at all.",
+    "ua": "Ні: екземпляр стрілкової функції створити не можна взагалі."
+  },
+  "test01Variant4": {
+    "ru": "**~user~** — **~undefined~**",
+    "eng": "**~user~** is **~undefined~**",
+    "ua": "**~user~** — **~undefined~**"
+  },
+  "test01Variant4Answer": {
+    "ru": "Нет: до присваивания дело не дойдёт, вызов бросит исключение.",
+    "eng": "No: the assignment never happens, the call throws.",
+    "ua": "Ні: до присвоєння справа не дійде, виклик кине виняток."
+  },
+  "test02Question": {
+    "ru": "Что напечатает код?",
+    "eng": "What will the code print?",
+    "ua": "Що надрукує код?"
+  },
+  "test02Variant1": {
+    "ru": "**~false true~**",
+    "eng": "**~false true~**",
+    "ua": "**~false true~**"
+  },
+  "test02Variant1Answer": {
+    "ru": "Да. Функция вернула объект, и **~new~** отдаёт именно его, а не созданный было экземпляр. Это литерал, он ничего не знает о **~creator~** — экземпляр **~Object~**.",
+    "eng": "Yes. The function returned an object, and **~new~** hands over that object rather than the instance it had started to make. It is a literal; it knows nothing about **~creator~** and is an instance of **~Object~**.",
+    "ua": "Так. Функція повернула об’єкт, і **~new~** віддає саме його, а не створений було екземпляр. Це літерал, він нічого не знає про **~creator~** — екземпляр **~Object~**."
+  },
+  "test02Variant2": {
+    "ru": "**~true true~**",
+    "eng": "**~true true~**",
+    "ua": "**~true true~**"
+  },
+  "test02Variant2Answer": {
+    "ru": "Нет: функция, которая возвращает объект, — фабрика, и **~new~** этого не меняет.",
+    "eng": "No: a function that returns an object is a factory, and **~new~** does not change that.",
+    "ua": "Ні: функція, яка повертає об’єкт, — фабрика, і **~new~** цього не змінює."
+  },
+  "test02Variant3": {
+    "ru": "**~true false~**",
+    "eng": "**~true false~**",
+    "ua": "**~true false~**"
+  },
+  "test02Variant3Answer": {
+    "ru": "Нет: любой объект-литерал — экземпляр **~Object~**.",
+    "eng": "No: every object literal is an instance of **~Object~**.",
+    "ua": "Ні: будь-який об’єкт-літерал — екземпляр **~Object~**."
+  },
+  "test02Variant4": {
+    "ru": "**~false false~**",
+    "eng": "**~false false~**",
+    "ua": "**~false false~**"
+  },
+  "test02Variant4Answer": {
+    "ru": "Нет: литерал — экземпляр **~Object~**.",
+    "eng": "No: a literal is an instance of **~Object~**.",
+    "ua": "Ні: літерал — екземпляр **~Object~**."
+  },
+  "test03Question": {
+    "ru": "Что будет в **~obj~**?",
+    "eng": "What will **~obj~** hold?",
+    "ua": "Що буде в **~obj~**?"
+  },
+  "test03Variant1": {
+    "ru": "пустой экземпляр **~simple {}~**",
+    "eng": "an empty instance **~simple {}~**",
+    "ua": "порожній екземпляр **~simple {}~**"
+  },
+  "test03Variant1Answer": {
+    "ru": "Да. Число — примитив, и **~new~** его не замечает: он возвращает экземпляр, который создал сам. Функция, возвращающая примитив, фабрикой не является.",
+    "eng": "Yes. A number is a primitive, and **~new~** pays it no attention: it returns the instance it made itself. A function that returns a primitive is no factory.",
+    "ua": "Так. Число — примітив, і **~new~** його не помічає: він повертає екземпляр, який створив сам. Функція, що повертає примітив, фабрикою не є."
+  },
+  "test03Variant2": {
+    "ru": "**~42~**",
+    "eng": "**~42~**",
+    "ua": "**~42~**"
+  },
+  "test03Variant2Answer": {
+    "ru": "Так вернул бы обычный вызов, без **~new~**.",
+    "eng": "That is what an ordinary call, without **~new~**, would return.",
+    "ua": "Так повернув би звичайний виклик, без **~new~**."
+  },
+  "test03Variant3": {
+    "ru": "**~Number {42}~**",
+    "eng": "**~Number {42}~**",
+    "ua": "**~Number {42}~**"
+  },
+  "test03Variant3Answer": {
+    "ru": "Нет: **~new~** не оборачивает возвращённый примитив, он его отбрасывает.",
+    "eng": "No: **~new~** does not wrap the returned primitive; it throws it away.",
+    "ua": "Ні: **~new~** не обгортає повернений примітив, він його відкидає."
+  },
+  "test03Variant4": {
+    "ru": "**~undefined~**",
+    "eng": "**~undefined~**",
+    "ua": "**~undefined~**"
+  },
+  "test03Variant4Answer": {
+    "ru": "Нет: вызов с **~new~** всегда даёт объект.",
+    "eng": "No: a call with **~new~** always gives an object.",
+    "ua": "Ні: виклик із **~new~** завжди дає об’єкт."
+  },
+  "test04Question": {
+    "ru": "Что напечатает код?",
+    "eng": "What will the code print?",
+    "ua": "Що надрукує код?"
+  },
+  "test04Variant1": {
+    "ru": "**~3 1 false~**",
+    "eng": "**~3 1 false~**",
+    "ua": "**~3 1 false~**"
+  },
+  "test04Variant1Answer": {
+    "ru": "Да. У каждого вызова фабрики своё замыкание: **~a~** досчитал до трёх, **~b~** начал свой счёт с нуля. А переменной **~n~** у объекта нет — она в замыкании, снаружи до неё не дотянуться.",
+    "eng": "Yes. Every call of the factory has a closure of its own: **~a~** has counted to three, **~b~** started its own count from zero. And the object has no **~n~** — it lives in the closure, out of reach.",
+    "ua": "Так. У кожного виклику фабрики своє замикання: **~a~** дорахував до трьох, **~b~** почав свій рахунок із нуля. А змінної **~n~** в об’єкта немає — вона в замиканні, ззовні до неї не дотягтися."
+  },
+  "test04Variant2": {
+    "ru": "**~3 4 false~**",
+    "eng": "**~3 4 false~**",
+    "ua": "**~3 4 false~**"
+  },
+  "test04Variant2Answer": {
+    "ru": "Нет: счёт у **~a~** и **~b~** не общий — каждый вызов **~counter()~** заводит свой **~n~**.",
+    "eng": "No: **~a~** and **~b~** do not share a count — every call of **~counter()~** starts an **~n~** of its own.",
+    "ua": "Ні: рахунок у **~a~** і **~b~** не спільний — кожен виклик **~counter()~** заводить свій **~n~**."
+  },
+  "test04Variant3": {
+    "ru": "**~3 1 true~**",
+    "eng": "**~3 1 true~**",
+    "ua": "**~3 1 true~**"
+  },
+  "test04Variant3Answer": {
+    "ru": "Нет: у объекта есть только **~next~**, а **~n~** осталась в замыкании.",
+    "eng": "No: the object has only **~next~**, and **~n~** stayed in the closure.",
+    "ua": "Ні: в об’єкта є лише **~next~**, а **~n~** лишилася в замиканні."
+  },
+  "test04Variant4": {
+    "ru": "**~1 1 false~**",
+    "eng": "**~1 1 false~**",
+    "ua": "**~1 1 false~**"
+  },
+  "test04Variant4Answer": {
+    "ru": "Нет: **~a.next()~** уже вызывали дважды, и **~n~** помнит это между вызовами.",
+    "eng": "No: **~a.next()~** has been called twice already, and **~n~** remembers that between calls.",
+    "ua": "Ні: **~a.next()~** уже викликали двічі, і **~n~** пам’ятає це між викликами."
+  },
+  "test05Question": {
+    "ru": "Что напечатает код?",
+    "eng": "What will the code print?",
+    "ua": "Що надрукує код?"
+  },
+  "test05Variant1": {
+    "ru": "**~true~**",
+    "eng": "**~true~**",
+    "ua": "**~true~**"
+  },
+  "test05Variant1Answer": {
+    "ru": "Да. **~this~** в статическом методе — тот класс, у которого метод вызвали, здесь **~Admin~**. Метод написан один раз, в **~User~**, а создаёт экземпляры любого наследника.",
+    "eng": "Yes. **~this~** in a static method is the class the method was called on — here **~Admin~**. The method is written once, in **~User~**, and makes instances of any subclass.",
+    "ua": "Так. **~this~** у статичному методі — той клас, у якого метод викликали, тут **~Admin~**. Метод написано один раз, у **~User~**, а створює він екземпляри будь-якого нащадка."
+  },
+  "test05Variant2": {
+    "ru": "**~false~**: метод написан в **~User~** и создаёт **~User~**",
+    "eng": "**~false~**: the method is written in **~User~** and makes a **~User~**",
+    "ua": "**~false~**: метод написано в **~User~**, і він створює **~User~**"
+  },
+  "test05Variant2Answer": {
+    "ru": "Так было бы с **~new User()~**. **~new this()~** создаёт экземпляр того, у кого метод вызвали.",
+    "eng": "That would be so with **~new User()~**. **~new this()~** makes an instance of whatever the method was called on.",
+    "ua": "Так було б із **~new User()~**. **~new this()~** створює екземпляр того, у кого метод викликали."
+  },
+  "test05Variant3": {
+    "ru": "**~TypeError~**",
+    "eng": "**~TypeError~**",
+    "ua": "**~TypeError~**"
+  },
+  "test05Variant3Answer": {
+    "ru": "Нет: статические методы наследуются, у **~Admin~** метод **~create~** есть.",
+    "eng": "No: static methods are inherited, and **~Admin~** has **~create~**.",
+    "ua": "Ні: статичні методи успадковуються, в **~Admin~** метод **~create~** є."
+  },
+  "test05Variant4": {
+    "ru": "**~undefined~**",
+    "eng": "**~undefined~**",
+    "ua": "**~undefined~**"
+  },
+  "test05Variant4Answer": {
+    "ru": "Нет: **~instanceof~** отвечает только **~true~** или **~false~**.",
+    "eng": "No: **~instanceof~** answers only **~true~** or **~false~**.",
+    "ua": "Ні: **~instanceof~** відповідає лише **~true~** або **~false~**."
+  },
+  "test06Question": {
+    "ru": "Что напечатает код?",
+    "eng": "What will the code print?",
+    "ua": "Що надрукує код?"
+  },
+  "test06Variant1": {
+    "ru": "**~true~** и **~['name']~**",
+    "eng": "**~true~** and **~['name']~**",
+    "ua": "**~true~** і **~['name']~**"
+  },
+  "test06Variant1Answer": {
+    "ru": "Да. **~greet~** лежит в прототипе, один на всех, а у самих объектов есть только **~name~** — **~Object.keys~** показывает лишь собственные свойства.",
+    "eng": "Yes. **~greet~** lives in the prototype, one for all of them, and the objects themselves have only **~name~** — **~Object.keys~** shows own properties alone.",
+    "ua": "Так. **~greet~** лежить у прототипі, один на всіх, а в самих об’єктів є лише **~name~** — **~Object.keys~** показує тільки власні властивості."
+  },
+  "test06Variant2": {
+    "ru": "**~false~** и **~['name']~**",
+    "eng": "**~false~** and **~['name']~**",
+    "ua": "**~false~** і **~['name']~**"
+  },
+  "test06Variant2Answer": {
+    "ru": "Нет: метод не копируется в объекты, он один, в прототипе.",
+    "eng": "No: the method is not copied into the objects; there is one, in the prototype.",
+    "ua": "Ні: метод не копіюється в об’єкти, він один, у прототипі."
+  },
+  "test06Variant3": {
+    "ru": "**~true~** и **~['name', 'greet']~**",
+    "eng": "**~true~** and **~['name', 'greet']~**",
+    "ua": "**~true~** і **~['name', 'greet']~**"
+  },
+  "test06Variant3Answer": {
+    "ru": "Нет: **~greet~** не собственное свойство объекта, а унаследованное.",
+    "eng": "No: **~greet~** is not an own property of the object but an inherited one.",
+    "ua": "Ні: **~greet~** не власна властивість об’єкта, а успадкована."
+  },
+  "test06Variant4": {
+    "ru": "**~false~** и **~['name', 'greet']~**",
+    "eng": "**~false~** and **~['name', 'greet']~**",
+    "ua": "**~false~** і **~['name', 'greet']~**"
+  },
+  "test06Variant4Answer": {
+    "ru": "Так было бы, если бы **~greet~** объявили прямо в литерале, который возвращает фабрика.",
+    "eng": "That is what you would get if **~greet~** were declared right in the literal the factory returns.",
+    "ua": "Так було б, якби **~greet~** оголосили просто в літералі, який повертає фабрика."
+  },
+  "test07Question": {
+    "ru": "Что напечатает код?",
+    "eng": "What will the code print?",
+    "ua": "Що надрукує код?"
+  },
+  "test07Variant1": {
+    "ru": "**~undefined~**",
+    "eng": "**~undefined~**",
+    "ua": "**~undefined~**"
+  },
+  "test07Variant1Answer": {
+    "ru": "Да. Без **~new~** конструктор — обычная функция без **~return~**. А **~this~** в нестрогом режиме — глобальный объект, так что **~name~** молча ушло туда; в строгом режиме вызов бросил бы **~TypeError~**. Фабрику так не сломать: её и вызывают без **~new~**.",
+    "eng": "Yes. Without **~new~** a constructor is an ordinary function with no **~return~**. And **~this~** in sloppy mode is the global object, so **~name~** went there quietly; in strict mode the call would have thrown a **~TypeError~**. A factory cannot be broken this way: it is called without **~new~** to begin with.",
+    "ua": "Так. Без **~new~** конструктор — звичайна функція без **~return~**. А **~this~** у нестрогому режимі — глобальний об’єкт, тож **~name~** мовчки пішло туди; у строгому режимі виклик кинув би **~TypeError~**. Фабрику так не зламати: її й викликають без **~new~**."
+  },
+  "test07Variant2": {
+    "ru": "**~Person {name: 'Ann'}~**",
+    "eng": "**~Person {name: 'Ann'}~**",
+    "ua": "**~Person {name: 'Ann'}~**"
+  },
+  "test07Variant2Answer": {
+    "ru": "Так было бы с **~new~**.",
+    "eng": "That is what you would get with **~new~**.",
+    "ua": "Так було б із **~new~**."
+  },
+  "test07Variant3": {
+    "ru": "**~{name: 'Ann'}~**",
+    "eng": "**~{name: 'Ann'}~**",
+    "ua": "**~{name: 'Ann'}~**"
+  },
+  "test07Variant3Answer": {
+    "ru": "Нет: функция ничего не возвращает, объект ниоткуда не возьмётся.",
+    "eng": "No: the function returns nothing, and no object comes from anywhere.",
+    "ua": "Ні: функція нічого не повертає, об’єкт нізвідки не візьметься."
+  },
+  "test07Variant4": {
+    "ru": "**~TypeError~**",
+    "eng": "**~TypeError~**",
+    "ua": "**~TypeError~**"
+  },
+  "test07Variant4Answer": {
+    "ru": "Так было бы в строгом режиме, где **~this~** без **~new~** — **~undefined~**. В нестрогом ошибки нет.",
+    "eng": "So it would be in strict mode, where **~this~** without **~new~** is **~undefined~**. In sloppy mode there is no error.",
+    "ua": "Так було б у строгому режимі, де **~this~** без **~new~** — **~undefined~**. У нестрогому помилки немає."
+  },
+  "quest01Task": {
+    "ru": "Баланс счёта лежит в **~this~**, и любой может переписать его в обход **~deposit~**. Перепиши конструктор **~Account~** фабрикой **~createAccount(owner, balance)~**, которую вызывают без **~new~**. Она возвращает объект с **~owner~**, методом **~deposit(sum)~** и методом **~getBalance()~**, а сам баланс держит в замыкании, чтобы снаружи его было не изменить.",
+    "eng": "The account balance lives in **~this~**, and anyone can rewrite it behind **~deposit~**’s back. Rewrite the **~Account~** constructor as a factory **~createAccount(owner, balance)~** that is called without **~new~**. It returns an object with **~owner~**, a **~deposit(sum)~** method and a **~getBalance()~** method, and keeps the balance itself in a closure, so that it cannot be changed from outside.",
+    "ua": "Баланс рахунку лежить у **~this~**, і будь-хто може переписати його в обхід **~deposit~**. Перепиши конструктор **~Account~** фабрикою **~createAccount(owner, balance)~**, яку викликають без **~new~**. Вона повертає об’єкт з **~owner~**, методом **~deposit(sum)~** і методом **~getBalance()~**, а сам баланс тримає в замиканні, щоб ззовні його не можна було змінити."
+  },
+  "quest01Check1": {
+    "ru": "счёт создаётся вызовом createAccount, без new",
+    "eng": "an account is made by calling createAccount, without new",
+    "ua": "рахунок створюється викликом createAccount, без new"
+  },
+  "quest01Check2": {
+    "ru": "деньги кладутся, а баланс читается методом",
+    "eng": "money goes in, and the balance is read by a method",
+    "ua": "гроші кладуться, а баланс читається методом"
+  },
+  "quest01Check3": {
+    "ru": "баланс снаружи не переписать",
+    "eng": "the balance cannot be rewritten from outside",
+    "ua": "баланс ззовні не переписати"
+  },
+  "quest01Check4": {
+    "ru": "у каждого счёта свой баланс",
+    "eng": "every account has a balance of its own",
+    "ua": "у кожного рахунку свій баланс"
+  },
+  "quest02Task": {
+    "ru": "Цикл считает общую площадь фигур и падает: квадрат отвечает на **~getArea()~** вместо **~area()~**, а треугольника фабрика не знает вовсе. Почини фабрику **~createShape~** так, чтобы все фигуры отвечали на один и тот же метод **~area()~** и цикл не пришлось менять. Добавь равносторонний треугольник со стороной **~size~** (его площадь — √3 / 4 · size²), а на неизвестную фигуру фабрика пусть бросает **~TypeError~**.",
+    "eng": "The loop adds up the area of the shapes and falls over: the square answers **~getArea()~** instead of **~area()~**, and the factory does not know a triangle at all. Repair the **~createShape~** factory so that every shape answers one and the same **~area()~** and the loop needs no change. Add an equilateral triangle with side **~size~** (its area is √3 / 4 · size²), and make the factory throw a **~TypeError~** for a shape it does not know.",
+    "ua": "Цикл рахує загальну площу фігур і падає: квадрат відповідає на **~getArea()~** замість **~area()~**, а трикутника фабрика не знає взагалі. Почини фабрику **~createShape~** так, щоб усі фігури відповідали на той самий метод **~area()~** і цикл не довелося міняти. Додай рівносторонній трикутник зі стороною **~size~** (його площа — √3 / 4 · size²), а на невідому фігуру фабрика хай кидає **~TypeError~**."
+  },
+  "quest02Check1": {
+    "ru": "цикл досчитал общую площадь: total: 8.87",
+    "eng": "the loop has added up the total area: total: 8.87",
+    "ua": "цикл дорахував загальну площу: total: 8.87"
+  },
+  "quest02Check2": {
+    "ru": "у всех фигур один и тот же метод area()",
+    "eng": "every shape has one and the same area() method",
+    "ua": "у всіх фігур той самий метод area()"
+  },
+  "quest02Check3": {
+    "ru": "площадь треугольника посчитана верно",
+    "eng": "the triangle’s area is right",
+    "ua": "площу трикутника пораховано правильно"
+  },
+  "quest02Check4": {
+    "ru": "на неизвестную фигуру фабрика бросает TypeError",
+    "eng": "the factory throws a TypeError for a shape it does not know",
+    "ua": "на невідому фігуру фабрика кидає TypeError"
   }
 }
