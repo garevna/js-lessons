@@ -35,14 +35,14 @@
     "ua": "І цей об’єкт нічого не знатиме про функцію **~⟦f3⟧~**. Він буде екземпляром **~⟦f4⟧~**."
   },
   "p8": {
-    "ru": "![ico-20 warn] Функция может быть либо фабрикой, либо конструктором.",
-    "eng": "![ico-20 warn] A function can be either a factory or a constructor.",
-    "ua": "![ico-20 warn] Функція може бути або фабрикою, або конструктором."
+    "ru": "![ico-20 warn] Функция не может быть одновременно и фабрикой, и конструктором. А может не быть ни тем, ни другим: колбек или функция, которая что-то вычисляет, — просто функции. Фабрикой или конструктором её делает не объявление, а то, что она возвращает и как её вызывают.",
+    "eng": "![ico-20 warn] A function cannot be a factory and a constructor at once. It may also be neither: a callback, or a function that works something out, is just a function. What makes it a factory or a constructor is not how it is declared but what it returns and how it is called.",
+    "ua": "![ico-20 warn] Функція не може бути одночасно і фабрикою, і конструктором. А може не бути ні тим, ні іншим: колбек або функція, яка щось обчислює, — просто функції. Фабрикою чи конструктором її робить не оголошення, а те, що вона повертає і як її викликають."
   },
   "p9": {
-    "ru": "Докажем это утверждение.",
-    "eng": "Let’s prove this statement.",
-    "ua": "Доведемо це твердження."
+    "ru": "Докажем первую часть.",
+    "eng": "Let’s prove the first part.",
+    "ua": "Доведемо першу частину."
   },
   "p10": {
     "ru": "Необходимым, но недостаточным (![ico-20 warn]) условием того, чтобы функция стала фабрикой, является наличие оператора **~⟦f0⟧~**.",
@@ -608,5 +608,10 @@
     "ru": "на неизвестную фигуру фабрика бросает TypeError",
     "eng": "the factory throws a TypeError for a shape it does not know",
     "ua": "на невідому фігуру фабрика кидає TypeError"
+  },
+  "newCreates": {
+    "ru": "Строго говоря, конструктор объект не создаёт: его создаёт оператор **~⟦f1⟧~** — сразу с прототипом **~F.prototype~** — и передаёт функции как **~this~**. Функция его только заполняет.",
+    "eng": "Strictly speaking, a constructor does not create the object: the **~⟦f1⟧~** operator does — with **~F.prototype~** as its prototype from the start — and hands it to the function as **~this~**. The function only fills it in.",
+    "ua": "Строго кажучи, конструктор об’єкт не створює: його створює оператор **~⟦f1⟧~** — одразу з прототипом **~F.prototype~** — і передає функції як **~this~**. Функція його лише заповнює."
   }
 }
