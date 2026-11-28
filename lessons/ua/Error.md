@@ -916,34 +916,47 @@ Boolean(OUTPUT[1]) && !/is not an integer$/.test(OUTPUT[1])
 OUTPUT[3] === 'TypeError TypeError'
 ♠♠♠♠
 
-♠♠♠♠ Блок **~finally~** тут прибирає за собою — і заразом ковтає все підряд: звичайний виклик повертає не прочитане, а помилка не доходить до того, хто на неї чекає. Почини так, щоб прибирання лишилося, значення поверталося, а помилка виходила назовні.
-let open = true
+♠♠♠♠ Функція **~read~** перевіряє значення й повертає його, а блок **~finally~** після кожного виклику прибирає за собою — і заразом ковтає все підряд: замість прочитаного повертається **~closed~**, а помилки не доходять до того, хто на них чекає. Почини так, щоб правильне значення поверталося, помилки виходили назовні, а прибирання, як і раніше, робилося після кожного виклику.
+let closed = 0
 
-const read = (ok) => {
+const read = (value) => {
   try {
-    if (!ok) throw new Error('nothing to read')
+    if (typeof value !== 'number') throw new Error('Not a number!')
+    if (value < 1000) throw new Error('Not enough!')
 
-    return 'value'
+    return value
   } finally {
-    open = false
+    closed++
 
     return 'closed'
   }
 }
 
-try { console.log(read(true)) } catch (err) { console.log('caught:', err.message) }
-try { console.log(read(false)) } catch (err) { console.log('caught:', err.message) }
+try { console.log(read(1500)) } catch (err) { console.log('caught:', err.message) }
+try { console.log(read(500)) } catch (err) { console.log('caught:', err.message) }
+try { console.log(read()) } catch (err) { console.log('caught:', err.message) }
 
-console.log('open:', open)
+console.log('closed:', closed)
 ???
-? 4 | звичайний виклик повертає прочитане
-OUTPUT[0] === 'value'
+? 3 | правильне значення повертається
+OUTPUT[0] === '1500'
 
-? 5 | помилка більше не проковтнута: її ловить той, хто викликав
-OUTPUT[1] === 'caught: nothing to read'
+? 4 | обидві помилки дійшли до того, хто викликав
+OUTPUT[1] === 'caught: Not enough!' && OUTPUT[2] === 'caught: Not a number!'
 
-? 3 | прибирання все одно зроблено
-OUTPUT[2] === 'open: false'
+? 2 | прибирання зроблено після кожного з трьох викликів
+OUTPUT[3] === 'closed: 3'
+
+? 3 | прибирання лишилося у finally, і він лише прибирає: у ньому немає ні return, ні throw
+const from = SOURCE.search(/finally\s*\{/)
+const open = SOURCE.indexOf('{', from)
+let depth = 0
+let to = SOURCE.length
+for (let at = open; at < SOURCE.length; at++) {
+  if (SOURCE[at] === '{') depth++
+  if (SOURCE[at] === '}' && --depth === 0) { to = at; break }
+}
+from !== -1 && !/\b(return|throw)\b/.test(SOURCE.slice(open, to))
 ♠♠♠♠
 
 ♠♠♠♠ Метод **~changeParams~** вірить аргументу на слово, і будь-який виклик не за формою валить код: **~null~**, виклик без аргумента, об’єкт без **~center~**, порожній масив. Почини так, щоб жоден із п’яти викликів не кинув винятку: правильний аргумент застосовується цілком, а будь-який інший не змінює нічого — параметри лишаються такими, якими були.
