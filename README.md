@@ -1721,13 +1721,14 @@ Both are compiled into the content worker, so after editing either run
 
 The search box does not read the lessons. It looks for what was typed among
 the words each lesson is known by, and narrows the menu to the lessons that
-have it. A lesson is known by:
+have it. A lesson is known by what it is about — never by what it merely uses:
+a reader who types a concept wants the lesson on it, not every page that
+happens to call it. What it is about is:
 
 | Words | Where they come from |
 |---|---|
-| what it is about | `content-worker/src/assets/keywords.js`, by hand |
-| the rings of the course map it sits in | `content/areas.json`, by way of `uses.js` |
-| what it uses — a factory, a closure, `Proxy`, `fetch` | found in its text and its code by `tools/uses.js`, written to `uses.js` |
+| its keywords | `content-worker/src/assets/keywords.js`, by hand |
+| where it sits on the course map | `public/maps/course.json`, by way of `rings.js` |
 | its title, and its section's title | `mainMenu.js`, in all three languages |
 
 Nothing depends on the interface language. A lesson is found by an English
@@ -1748,40 +1749,40 @@ closure: { eng: ['closure'], ru: ['замыкание'], ua: ['замиканн�
 },
 ```
 
-A lesson never repeats those words. Its keywords — or its uses — name the
-concept, and search gives it every word of the entry. `closure` in a lesson's
+A lesson never repeats those words. Its keywords — or the ring it sits in —
+name the concept, and search gives it every word of the entry. `closure` in a lesson's
 list is also «замыкание» and «замикання»; the English list doubles as the
 names a concept goes by, so a lesson whose keywords say `cycle` gets
 everything `loop` has, and `fabric` is `factory`. A word should sit in one
-entry only, and `npm run uses` says so when it finds one in two.
+entry only, and `npm run rings` says so when it finds one in two.
 
 To add a word a reader types — a translation, a bit of slang, a synonym — add
 it to the entry. It reaches every lesson that has the concept.
 
-#### What a lesson uses
+#### Where a lesson sits on the map
 
-`npm run uses` (`tools/uses.js`) reads the built pages and writes
-`content-worker/src/assets/uses.js`: for each lesson, the keys of the
-concepts it uses. Two sources:
+The course map (`public/maps/course.json`, the one the menu opens) already
+lays the lessons out by meaning: four rings from the core outwards, their
+branches, the points on the branches, and the satellites on the outer orbit —
+each with its title in three languages and the lessons it refers to.
 
-- **the rings of the course map.** Every lesson in the ring «Прототипное
-  наследование» gets `inheritance`, every lesson in «Асинхронщина» gets
-  `asynchrony`. The broad ideas are not guessed from the text: which lessons
-  they belong to was decided by hand when the map was laid out.
-- **the narrow things**, by rule: a factory is the word in the text or a
-  `createSomething` in the code; `Proxy` is `new Proxy`; a promise is
-  `.then(`, `new Promise`, `Promise.all`. So "fabric" brings the lesson on
-  factories and every lesson that builds its objects with one.
+`npm run rings` (`tools/rings.js`) turns that into
+`content-worker/src/assets/rings.js`: every place on the map with its titles,
+once, and for each lesson only the places on the way to wherever it sits. A
+lesson is found by every one of those titles. `inheritance-model` is found by
+«Прототипное наследование», «Модель наследования» and «Цепочка прототипов»,
+in each language — so «наследование» finds the whole ring, and «цепочка
+прототипов» the one point.
 
-A rule may ask for more than one sighting (`min`), for what a page mentions in
-passing without using. Rules are kept to what is not on every page — an arrow
-function is in most of the later lessons, and a search that answers with sixty
-of them answers nothing. The exercises' checks and the console output pasted
-into listings are not counted as the lesson's code.
+The rings and the satellites are also concepts of the dictionary — the second
+ring is `inheritance`, the third `functional programming` — which brings the
+names the map does not print: `fp` and "func staff" for the third ring,
+`async` for the fourth. Which is which is `CONCEPTS` in `tools/rings.js`.
 
-`uses.js` is generated: change the rules or the dictionary, not the file. It
-is rewritten on every `npm run content-worker`, which is how a new lesson, or
-a lesson that started using a closure, is picked up.
+`rings.js` is generated, and `npm run content-worker` rewrites it, so a
+lesson placed on the map with the map editor becomes findable by its place
+with the next build. A lesson that is not on the map is still found by its
+keywords and its title.
 
 #### How a word is compared
 

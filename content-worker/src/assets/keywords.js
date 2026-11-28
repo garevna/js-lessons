@@ -135,7 +135,7 @@ export const keywords = {
   'webpack-exercise-8': ['webpack', 'module', 'package', 'embedding', 'build', 'builder', 'bundle', 'file', 'font', 'font awesome', 'google fonts'],
   'Final-project': ['sprint', 'final', 'project', 'финальный', 'ts', 'specification', 'task'],
   Symbol: ['symbol', 'property', 'name', 'symbol', 'property', 'global', 'registry', 'description'],
-  Set: ['set', 'constructor', 'unique', 'конструктор', 'object', 'iterable', 'ітерабельний', 'итерабельный'],
+  Set: ['set', 'weakset', 'collection', 'constructor', 'unique', 'конструктор', 'object', 'iterable', 'ітерабельний', 'итерабельный'],
   patterns: ['design', 'pattern', 'template', 'OOP', 'delegation', 'iterator', 'gang of four'],
   'pattern-Observer': ['design', 'pattern', 'observer', 'template', 'OOP'],
   'pattern-Decorator': ['design', 'pattern', 'decorator', 'template', 'OOP'],

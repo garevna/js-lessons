@@ -3,12 +3,13 @@
  *
  * An entry is a concept: its key, the English words for it, and the Russian
  * and Ukrainian ones. A lesson never repeats these words. It names the concept
- * — in its keywords (keywords.js, by hand) or in what it uses (uses.js, found
- * in its text by tools/uses.js) — and search gives it every word of the entry.
+ * — in its keywords (keywords.js, by hand) or by the ring of the course map it
+ * sits in (rings.js, written by tools/rings.js) — and search gives it every
+ * word of the entry.
  *
  * The English list doubles as a list of names the concept goes by: a lesson
  * whose keywords say cycle gets everything loop has, one that says fabric
- * gets factory. So a word should sit in one entry only; tools/uses.js warns
+ * gets factory. So a word should sit in one entry only; npm run rings warns
  * when it finds the same word in two.
  *
  * Not every form of a word: search cuts the ending off before it compares, so
@@ -17,11 +18,12 @@
  * the root itself is listed, and every query with that root in it is found.
  */
 export const dictionary = {
-  // ——— the rings of the course map (content/areas.json) ———
+  // ——— the rings and satellites of the course map (public/maps/course.json) ———
   //
-  // Each ring is a concept, and every lesson in the ring has it: tools/uses.js
-  // gives it to them. Three of the six are further down, where they belong by
-  // subject — inheritance, functional programming, asynchrony.
+  // Each ring and satellite is a concept, and every lesson placed in it has
+  // the concept: tools/rings.js says which is which. Those not here are further
+  // down, where they belong by subject — inheritance, functional programming,
+  // asynchrony, design pattern, principle.
 
   basics: { eng: ['basics', 'fundamentals', 'js basics'], ru: ['основы'], ua: ['основи'] },
   browser: { eng: ['browser', 'browser api', 'web api'], ru: ['браузер'], ua: ['браузер'] },
@@ -193,8 +195,8 @@ export const dictionary = {
   specification: { eng: ['specification', 'standard'], ru: ['спецификация', 'стандарт'], ua: ['специфікація', 'стандарт'] },
   sort: { eng: ['sort', 'sorting'], ru: ['сортировка'], ua: ['сортування'] },
 
-  // ——— by name: what is looked for by its own name in any language, and
-  // listed so tools/uses.js can say which lessons use it ———
+  // ——— by name: what is looked for by its own name in any language, so a
+  // lesson's keyword stated in another form still reaches it ———
 
   json: { eng: ['json', 'json.parse', 'json.stringify'] },
   bigint: { eng: ['bigint'] },
