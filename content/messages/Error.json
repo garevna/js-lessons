@@ -215,24 +215,24 @@
     "ua": "усередині лишилися справжні TypeError, а не рядки"
   },
   "quest02Task": {
-    "ru": "Блок **~finally~** здесь прибирает за собой — и заодно глотает всё подряд: обычный вызов возвращает не прочитанное, а ошибка не доходит до того, кто её ждёт. Почини так, чтобы уборка осталась, значение возвращалось, а ошибка выходила наружу.",
-    "eng": "The **~finally~** block here tidies up after itself — and swallows everything on the way: an ordinary call returns something other than what was read, and the error never reaches the one waiting for it. Repair it so that the tidying stays, the value comes back, and the error gets out.",
-    "ua": "Блок **~finally~** тут прибирає за собою — і заразом ковтає все підряд: звичайний виклик повертає не прочитане, а помилка не доходить до того, хто на неї чекає. Почини так, щоб прибирання лишилося, значення поверталося, а помилка виходила назовні."
+    "ru": "Функция **~read~** проверяет значение и возвращает его, а блок **~finally~** после каждого вызова прибирает за собой — и заодно глотает всё подряд: вместо прочитанного возвращается **~closed~**, а ошибки не доходят до того, кто их ждёт. Почини так, чтобы правильное значение возвращалось, ошибки выходили наружу, а уборка по-прежнему делалась после каждого вызова.",
+    "eng": "The **~read~** function checks a value and returns it, and the **~finally~** block tidies up after every call — and swallows everything on the way: **~closed~** comes back instead of what was read, and the errors never reach the one waiting for them. Repair it so that a proper value comes back, the errors get out, and the tidying up is still done after every call.",
+    "ua": "Функція **~read~** перевіряє значення й повертає його, а блок **~finally~** після кожного виклику прибирає за собою — і заразом ковтає все підряд: замість прочитаного повертається **~closed~**, а помилки не доходять до того, хто на них чекає. Почини так, щоб правильне значення поверталося, помилки виходили назовні, а прибирання, як і раніше, робилося після кожного виклику."
   },
   "quest02Check1": {
-    "ru": "обычный вызов возвращает прочитанное",
-    "eng": "an ordinary call returns what was read",
-    "ua": "звичайний виклик повертає прочитане"
+    "ru": "правильное значение возвращается",
+    "eng": "a proper value comes back",
+    "ua": "правильне значення повертається"
   },
   "quest02Check2": {
-    "ru": "ошибка больше не проглочена: её ловит тот, кто вызывал",
-    "eng": "the error is no longer swallowed: the caller catches it",
-    "ua": "помилка більше не проковтнута: її ловить той, хто викликав"
+    "ru": "обе ошибки дошли до того, кто вызывал",
+    "eng": "both errors reached the caller",
+    "ua": "обидві помилки дійшли до того, хто викликав"
   },
   "quest02Check3": {
-    "ru": "уборка всё равно сделана",
-    "eng": "the tidying up is done all the same",
-    "ua": "прибирання все одно зроблено"
+    "ru": "уборка сделана после каждого из трёх вызовов",
+    "eng": "the tidying up is done after each of the three calls",
+    "ua": "прибирання зроблено після кожного з трьох викликів"
   },
   "test01Question": {
     "ru": "Что увидит консоль?",
@@ -748,5 +748,10 @@
     "ru": "негодные аргументы ничего не испортили: параметры остались прежними",
     "eng": "the bad arguments spoiled nothing: the parameters stayed as they were",
     "ua": "негодящі аргументи нічого не зіпсували: параметри лишилися колишніми"
+  },
+  "quest02Check4": {
+    "ru": "уборка осталась в finally, и он только прибирает: в нём нет ни return, ни throw",
+    "eng": "the tidying up stays in finally, and finally only tidies up: no return or throw in it",
+    "ua": "прибирання лишилося у finally, і він лише прибирає: у ньому немає ні return, ні throw"
   }
 }

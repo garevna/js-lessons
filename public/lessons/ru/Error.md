@@ -916,34 +916,47 @@ Boolean(OUTPUT[1]) && !/is not an integer$/.test(OUTPUT[1])
 OUTPUT[3] === 'TypeError TypeError'
 ♠♠♠♠
 
-♠♠♠♠ Блок **~finally~** здесь прибирает за собой — и заодно глотает всё подряд: обычный вызов возвращает не прочитанное, а ошибка не доходит до того, кто её ждёт. Почини так, чтобы уборка осталась, значение возвращалось, а ошибка выходила наружу.
-let open = true
+♠♠♠♠ Функция **~read~** проверяет значение и возвращает его, а блок **~finally~** после каждого вызова прибирает за собой — и заодно глотает всё подряд: вместо прочитанного возвращается **~closed~**, а ошибки не доходят до того, кто их ждёт. Почини так, чтобы правильное значение возвращалось, ошибки выходили наружу, а уборка по-прежнему делалась после каждого вызова.
+let closed = 0
 
-const read = (ok) => {
+const read = (value) => {
   try {
-    if (!ok) throw new Error('nothing to read')
+    if (typeof value !== 'number') throw new Error('Not a number!')
+    if (value < 1000) throw new Error('Not enough!')
 
-    return 'value'
+    return value
   } finally {
-    open = false
+    closed++
 
     return 'closed'
   }
 }
 
-try { console.log(read(true)) } catch (err) { console.log('caught:', err.message) }
-try { console.log(read(false)) } catch (err) { console.log('caught:', err.message) }
+try { console.log(read(1500)) } catch (err) { console.log('caught:', err.message) }
+try { console.log(read(500)) } catch (err) { console.log('caught:', err.message) }
+try { console.log(read()) } catch (err) { console.log('caught:', err.message) }
 
-console.log('open:', open)
+console.log('closed:', closed)
 ???
-? 4 | обычный вызов возвращает прочитанное
-OUTPUT[0] === 'value'
+? 3 | правильное значение возвращается
+OUTPUT[0] === '1500'
 
-? 5 | ошибка больше не проглочена: её ловит тот, кто вызывал
-OUTPUT[1] === 'caught: nothing to read'
+? 4 | обе ошибки дошли до того, кто вызывал
+OUTPUT[1] === 'caught: Not enough!' && OUTPUT[2] === 'caught: Not a number!'
 
-? 3 | уборка всё равно сделана
-OUTPUT[2] === 'open: false'
+? 2 | уборка сделана после каждого из трёх вызовов
+OUTPUT[3] === 'closed: 3'
+
+? 3 | уборка осталась в finally, и он только прибирает: в нём нет ни return, ни throw
+const from = SOURCE.search(/finally\s*\{/)
+const open = SOURCE.indexOf('{', from)
+let depth = 0
+let to = SOURCE.length
+for (let at = open; at < SOURCE.length; at++) {
+  if (SOURCE[at] === '{') depth++
+  if (SOURCE[at] === '}' && --depth === 0) { to = at; break }
+}
+from !== -1 && !/\b(return|throw)\b/.test(SOURCE.slice(open, to))
 ♠♠♠♠
 
 ♠♠♠♠ Метод **~changeParams~** верит аргументу на слово, и любой вызов не по форме роняет код: **~null~**, вызов без аргумента, объект без **~center~**, пустой массив. Почини так, чтобы ни один из пяти вызовов не бросил исключение: правильный аргумент применяется целиком, а любой другой не меняет ничего — параметры остаются такими, какими были.

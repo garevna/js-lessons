@@ -916,34 +916,47 @@ Boolean(OUTPUT[1]) && !/is not an integer$/.test(OUTPUT[1])
 OUTPUT[3] === 'TypeError TypeError'
 ♠♠♠♠
 
-♠♠♠♠ The **~finally~** block here tidies up after itself — and swallows everything on the way: an ordinary call returns something other than what was read, and the error never reaches the one waiting for it. Repair it so that the tidying stays, the value comes back, and the error gets out.
-let open = true
+♠♠♠♠ The **~read~** function checks a value and returns it, and the **~finally~** block tidies up after every call — and swallows everything on the way: **~closed~** comes back instead of what was read, and the errors never reach the one waiting for them. Repair it so that a proper value comes back, the errors get out, and the tidying up is still done after every call.
+let closed = 0
 
-const read = (ok) => {
+const read = (value) => {
   try {
-    if (!ok) throw new Error('nothing to read')
+    if (typeof value !== 'number') throw new Error('Not a number!')
+    if (value < 1000) throw new Error('Not enough!')
 
-    return 'value'
+    return value
   } finally {
-    open = false
+    closed++
 
     return 'closed'
   }
 }
 
-try { console.log(read(true)) } catch (err) { console.log('caught:', err.message) }
-try { console.log(read(false)) } catch (err) { console.log('caught:', err.message) }
+try { console.log(read(1500)) } catch (err) { console.log('caught:', err.message) }
+try { console.log(read(500)) } catch (err) { console.log('caught:', err.message) }
+try { console.log(read()) } catch (err) { console.log('caught:', err.message) }
 
-console.log('open:', open)
+console.log('closed:', closed)
 ???
-? 4 | an ordinary call returns what was read
-OUTPUT[0] === 'value'
+? 3 | a proper value comes back
+OUTPUT[0] === '1500'
 
-? 5 | the error is no longer swallowed: the caller catches it
-OUTPUT[1] === 'caught: nothing to read'
+? 4 | both errors reached the caller
+OUTPUT[1] === 'caught: Not enough!' && OUTPUT[2] === 'caught: Not a number!'
 
-? 3 | the tidying up is done all the same
-OUTPUT[2] === 'open: false'
+? 2 | the tidying up is done after each of the three calls
+OUTPUT[3] === 'closed: 3'
+
+? 3 | the tidying up stays in finally, and finally only tidies up: no return or throw in it
+const from = SOURCE.search(/finally\s*\{/)
+const open = SOURCE.indexOf('{', from)
+let depth = 0
+let to = SOURCE.length
+for (let at = open; at < SOURCE.length; at++) {
+  if (SOURCE[at] === '{') depth++
+  if (SOURCE[at] === '}' && --depth === 0) { to = at; break }
+}
+from !== -1 && !/\b(return|throw)\b/.test(SOURCE.slice(open, to))
 ♠♠♠♠
 
 ♠♠♠♠ The **~changeParams~** method takes its argument on trust, and any call out of shape brings the code down: **~null~**, a call with no argument, an object with no **~center~**, an empty array. Repair it so that not one of the five calls throws: a proper argument is applied in full, and any other one changes nothing — the parameters stay as they were.

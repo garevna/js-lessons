@@ -917,33 +917,46 @@ OUTPUT[3] === 'TypeError TypeError'
 ♠♠♠♠
 
 ♠♠♠♠ {{quest02Task}}
-let open = true
+let closed = 0
 
-const read = (ok) => {
+const read = (value) => {
   try {
-    if (!ok) throw new Error('nothing to read')
+    if (typeof value !== 'number') throw new Error('Not a number!')
+    if (value < 1000) throw new Error('Not enough!')
 
-    return 'value'
+    return value
   } finally {
-    open = false
+    closed++
 
     return 'closed'
   }
 }
 
-try { console.log(read(true)) } catch (err) { console.log('caught:', err.message) }
-try { console.log(read(false)) } catch (err) { console.log('caught:', err.message) }
+try { console.log(read(1500)) } catch (err) { console.log('caught:', err.message) }
+try { console.log(read(500)) } catch (err) { console.log('caught:', err.message) }
+try { console.log(read()) } catch (err) { console.log('caught:', err.message) }
 
-console.log('open:', open)
+console.log('closed:', closed)
 ???
-? 4 | {{quest02Check1}}
-OUTPUT[0] === 'value'
+? 3 | {{quest02Check1}}
+OUTPUT[0] === '1500'
 
-? 5 | {{quest02Check2}}
-OUTPUT[1] === 'caught: nothing to read'
+? 4 | {{quest02Check2}}
+OUTPUT[1] === 'caught: Not enough!' && OUTPUT[2] === 'caught: Not a number!'
 
-? 3 | {{quest02Check3}}
-OUTPUT[2] === 'open: false'
+? 2 | {{quest02Check3}}
+OUTPUT[3] === 'closed: 3'
+
+? 3 | {{quest02Check4}}
+const from = SOURCE.search(/finally\s*\{/)
+const open = SOURCE.indexOf('{', from)
+let depth = 0
+let to = SOURCE.length
+for (let at = open; at < SOURCE.length; at++) {
+  if (SOURCE[at] === '{') depth++
+  if (SOURCE[at] === '}' && --depth === 0) { to = at; break }
+}
+from !== -1 && !/\b(return|throw)\b/.test(SOURCE.slice(open, to))
 ♠♠♠♠
 
 ♠♠♠♠ {{quest03Task}}
