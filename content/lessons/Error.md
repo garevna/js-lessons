@@ -923,18 +923,28 @@ const read = (value) => {
   try {
     if (typeof value !== 'number') throw new Error('Not a number!')
     if (value < 1000) throw new Error('Not enough!')
-
     return value
   } finally {
     closed++
-
     return 'closed'
   }
 }
 
-try { console.log(read(1500)) } catch (err) { console.log('caught:', err.message) }
-try { console.log(read(500)) } catch (err) { console.log('caught:', err.message) }
-try { console.log(read()) } catch (err) { console.log('caught:', err.message) }
+try {
+  console.log(read(1500))
+} catch (err) {
+  console.log('caught:', err.message)
+}
+try {
+  console.log(read(500))
+} catch (err) {
+  console.log('caught:', err.message)
+}
+try {
+  console.log(read())
+} catch (err) {
+  console.log('caught:', err.message)
+}
 
 console.log('closed:', closed)
 ???
