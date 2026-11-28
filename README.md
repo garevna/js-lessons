@@ -1711,41 +1711,95 @@ by hand, because nothing can guess either of them:
 
 - **the menu** — `content-worker/src/assets/mainMenu.js`. A page reaches the
   menu only by being named there.
-- **the keywords** — `content-worker/src/assets/keywords.js`. Without them the
-  page cannot be found by search at all.
+- **the keywords** — `content-worker/src/assets/keywords.js`. The page is
+  found by its title without them, but not by what it is about.
 
 Both are compiled into the content worker, so after editing either run
 `npm run content-worker` (or `npm run full`).
 
 ### Keywords: how a lesson is found
 
-The search box does not read the lessons. It matches what you type against
-`content-worker/src/assets/keywords.js` — one list of words per page:
+The search box does not read the lessons. It looks for what was typed among
+the words each lesson is known by, and narrows the menu to the lessons that
+have it. A lesson is known by:
+
+| Words | Where they come from |
+|---|---|
+| what it is about | `content-worker/src/assets/keywords.js`, by hand |
+| the rings of the course map it sits in | `content/areas.json`, by way of `uses.js` |
+| what it uses — a factory, a closure, `Proxy`, `fetch` | found in its text and its code by `tools/uses.js`, written to `uses.js` |
+| its title, and its section's title | `mainMenu.js`, in all three languages |
+
+Nothing depends on the interface language. A lesson is found by an English
+word in the Ukrainian interface and by a Russian word in the English one: the
+words are one pool.
+
+#### One concept, said once
+
+`content-worker/src/assets/dictionary.js` holds the concepts the course talks
+about, each with its words in each language:
 
 ```js
-export const keywords = {
-  'Block-diagram': ['algorithm', 'sequence', 'branching', 'loop', 'flowchart'],
-  var: ['var', 'referenceerror', 'undefined', 'string', 'number', 'typing'],
-  …
-}
+closure: { eng: ['closure'], ru: ['замыкание'], ua: ['замикання'] },
+'functional programming': {
+  eng: ['functional programming', 'fp', 'func stuff', 'func staff', …],
+  ru: ['функциональное программирование', 'функциональщина', 'функциональ'],
+  ua: ['функціональне програмування', 'функціональщина', 'функціональ']
+},
 ```
 
-A page whose `ref` is missing from that object is invisible to search, however
-well it is written. That is the whole mechanism: a substring match against
-these lists, and the menu is then narrowed to the pages that matched.
+A lesson never repeats those words. Its keywords — or its uses — name the
+concept, and search gives it every word of the entry. `closure` in a lesson's
+list is also «замыкание» and «замикання»; the English list doubles as the
+names a concept goes by, so a lesson whose keywords say `cycle` gets
+everything `loop` has, and `fabric` is `factory`. A word should sit in one
+entry only, and `npm run uses` says so when it finds one in two.
 
-Two things follow from how the match is made.
+To add a word a reader types — a translation, a bit of slang, a synonym — add
+it to the entry. It reaches every lesson that has the concept.
 
-**Keywords must be lower case.** The search box lowercases what the reader
-types (`src/main-menu/search-component.js`) and then looks for it inside each
-keyword, unchanged. So a keyword written `parseInt` can never match anything:
-the query has already become `parseint`. There are 47 such keywords across 27
-lessons — `scroll` alone has eight, all of its `scrollHeight`/`clientWidth`
-family, and none of them can be found.
+#### What a lesson uses
 
-**A word finds the page only if it is in the list.** The lists are almost
-entirely English, so `замыкание` finds `Closure` only if somebody wrote
-`замыкание` into it. Twelve lines in the whole file contain any Cyrillic.
+`npm run uses` (`tools/uses.js`) reads the built pages and writes
+`content-worker/src/assets/uses.js`: for each lesson, the keys of the
+concepts it uses. Two sources:
+
+- **the rings of the course map.** Every lesson in the ring «Прототипное
+  наследование» gets `inheritance`, every lesson in «Асинхронщина» gets
+  `asynchrony`. The broad ideas are not guessed from the text: which lessons
+  they belong to was decided by hand when the map was laid out.
+- **the narrow things**, by rule: a factory is the word in the text or a
+  `createSomething` in the code; `Proxy` is `new Proxy`; a promise is
+  `.then(`, `new Promise`, `Promise.all`. So "fabric" brings the lesson on
+  factories and every lesson that builds its objects with one.
+
+A rule may ask for more than one sighting (`min`), for what a page mentions in
+passing without using. Rules are kept to what is not on every page — an arrow
+function is in most of the later lessons, and a search that answers with sixty
+of them answers nothing. The exercises' checks and the console output pasted
+into listings are not counted as the lesson's code.
+
+`uses.js` is generated: change the rules or the dictionary, not the file. It
+is rewritten on every `npm run content-worker`, which is how a new lesson, or
+a lesson that started using a closure, is picked up.
+
+#### How a word is compared
+
+In `content-worker/src/helpers/match.js`:
+
+- **case does not matter**, and a trailing space is not a different query;
+- **endings do not matter** in Russian and Ukrainian: both sides lose their
+  ending before they are compared, so «функции» finds «функция», «промисы»
+  finds «промис», «типов» finds «типы»;
+- **a word may be found inside the query** when the query is that word with an
+  ending: `promises` has `promise`, «асинхронщина» has the root «асинхрон».
+  Never a short English word (`set` would be found in `settimeout`), and never
+  more than an ending left over (функци was the beginning of функциональ);
+- **several words** are first looked for as one phrase — "func staff", "event
+  loop", «приведение типов» — and only if no lesson has the phrase, word by
+  word.
+
+#### Drafting a lesson's keywords
 
 ```
 npm run keywords              draft for every lesson that has none
@@ -1755,13 +1809,10 @@ npm run keywords -- <page>    for one
 
 It draws on two things the lesson already says: the identifiers it gives a
 heading to — those are its subject — and the code terms in its fragment table,
-which are what it handles. So it proposes `IIFE, Function, data, func` for
-`Closure` and stops there: the words a reader would actually type — "замыкание",
-"closure", "scope" — are not in the page as code, and a person still has to add
-them.
-
-It prints and never writes. The draft is a starting point to paste in and
-edit, not an answer.
+which are what it handles. It prints and never writes. The draft is a starting
+point to paste in and edit, not an answer; and a word that names a concept of
+the dictionary is worth more than a word that does not, because it brings the
+other two languages with it.
 
 ## How it is built
 

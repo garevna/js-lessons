@@ -24,7 +24,7 @@
     "full": "npm run sw-identity && npm run lessons && npm run icons-worker && npm run content-worker && npm run prod && npm run service-worker",
     "sw-identity": "node service-worker/config-service-worker.js --identity",
     "icons-worker": "cd icons-worker && npm run prod",
-    "content-worker": "node content-worker/build-content.js && cd content-worker && npm run prod",
+    "content-worker": "node tools/uses.js && node content-worker/build-content.js && cd content-worker && npm run prod",
     "service-worker": "node service-worker/config-service-worker.js --versions && cd service-worker && npm run prod",
 
     "i18n": "node tools/i18n-status.js",
@@ -47,6 +47,7 @@
     "icon": "node tools/icon-add.js",
     "areas": "node tools/areas.js",
     "keywords": "node tools/keywords.js",
+    "uses": "node tools/uses.js",
     "map-edit": "node tools/map-edit.js",
     "animation": "node tools/microtasks-animation.js",
     "toc": "node tools/toc.js",
